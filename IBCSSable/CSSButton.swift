@@ -23,4 +23,34 @@ import UIKit
       configBorderRadius()
     }
   }
+
+  @IBInspectable public var shadowColor: UIColor = UIColor.clearColor() {
+    didSet {
+      configShadowColor()
+    }
+  }
+
+  @IBInspectable public var shadowRadius: CGFloat = 0 {
+    didSet {
+      configShadowRadius()
+    }
+  }
+
+  @IBInspectable public var shadowOpacity: CGFloat = 0 {
+    didSet {
+      configShadowOpacity()
+    }
+  }
+
+  @IBInspectable public var shadowOffsetX: CGFloat = 0 {
+    didSet {
+      configShadowOffsetX()
+    }
+  }
+
+  @IBInspectable public var shadowOffsetY: CGFloat = 0 {
+    didSet {
+      configShadowOffsetY()
+    }
+  }
 }
