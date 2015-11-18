@@ -5,7 +5,8 @@
 
 import UIKit
 
-public extension UIView {
+// @IBDesignable doesn't work in extension 😢
+//extension UIView : CSSable {
 //  @IBInspectable public var borderRadius: CGFloat {
 //    get {
 //      return layer.cornerRadius
@@ -33,4 +34,4 @@ public extension UIView {
 //      layer.borderWidth = borderWidth
 //    }
 //  }
-}
+//}

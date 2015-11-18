@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable public class CSSView: UIView {
+@IBDesignable public class CSSView: UIView, CSSable {
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
     didSet {
       layer.borderColor = borderColor.CGColor
@@ -20,12 +20,11 @@ import UIKit
       layer.borderWidth = borderWidth
     }
   }
-  
+
   @IBInspectable public var borderRadius: CGFloat = 0 {
     didSet {
       layer.cornerRadius = borderRadius
       layer.masksToBounds = borderRadius > 0
     }
   }
-
 }
