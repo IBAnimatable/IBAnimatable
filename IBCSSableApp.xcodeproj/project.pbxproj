@@ -14,6 +14,7 @@
 		AE6C670D1BFBF93500134A35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE6C670B1BFBF93500134A35 /* LaunchScreen.storyboard */; };
 		AE6C67161BFBFB8C00134A35 /* CSSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6C67151BFBFB8C00134A35 /* CSSView.swift */; };
 		AE6C67181BFC3C0E00134A35 /* ViewCSSable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6C67171BFC3C0E00134A35 /* ViewCSSable.swift */; };
+		CAB560C7055B5821227FC2C8 /* CSSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56E56DEF4CF78E6A8F319 /* CSSButton.swift */; };
 		CAB56C6B462D0012CA0A6EA6 /* UIView+CSSable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5614554E33E8FB0C5E680 /* UIView+CSSable.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		AE6C67151BFBFB8C00134A35 /* CSSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSView.swift; sourceTree = "<group>"; };
 		AE6C67171BFC3C0E00134A35 /* ViewCSSable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewCSSable.swift; sourceTree = "<group>"; };
 		CAB5614554E33E8FB0C5E680 /* UIView+CSSable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CSSable.swift"; sourceTree = "<group>"; };
+		CAB56E56DEF4CF78E6A8F319 /* CSSButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				AE6C67151BFBFB8C00134A35 /* CSSView.swift */,
 				CAB5614554E33E8FB0C5E680 /* UIView+CSSable.swift */,
 				AE6C67171BFC3C0E00134A35 /* ViewCSSable.swift */,
+				CAB56E56DEF4CF78E6A8F319 /* CSSButton.swift */,
 			);
 			path = IBCSSable;
 			sourceTree = SOURCE_ROOT;
@@ -157,6 +160,7 @@
 				AE6C67181BFC3C0E00134A35 /* ViewCSSable.swift in Sources */,
 				AE6C67031BFBF93500134A35 /* AppDelegate.swift in Sources */,
 				CAB56C6B462D0012CA0A6EA6 /* UIView+CSSable.swift in Sources */,
+				CAB560C7055B5821227FC2C8 /* CSSButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
