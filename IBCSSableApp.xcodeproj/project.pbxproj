@@ -13,7 +13,7 @@
 		AE6C670A1BFBF93500134A35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE6C67091BFBF93500134A35 /* Assets.xcassets */; };
 		AE6C670D1BFBF93500134A35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE6C670B1BFBF93500134A35 /* LaunchScreen.storyboard */; };
 		AE6C67161BFBFB8C00134A35 /* CSSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6C67151BFBFB8C00134A35 /* CSSView.swift */; };
-		AE6C67181BFC3C0E00134A35 /* CSSable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6C67171BFC3C0E00134A35 /* CSSable.swift */; };
+		AE6C67181BFC3C0E00134A35 /* ViewCSSable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6C67171BFC3C0E00134A35 /* ViewCSSable.swift */; };
 		CAB56C6B462D0012CA0A6EA6 /* UIView+CSSable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5614554E33E8FB0C5E680 /* UIView+CSSable.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +26,7 @@
 		AE6C670C1BFBF93500134A35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE6C670E1BFBF93500134A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE6C67151BFBFB8C00134A35 /* CSSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSView.swift; sourceTree = "<group>"; };
-		AE6C67171BFC3C0E00134A35 /* CSSable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSable.swift; sourceTree = "<group>"; };
+		AE6C67171BFC3C0E00134A35 /* ViewCSSable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewCSSable.swift; sourceTree = "<group>"; };
 		CAB5614554E33E8FB0C5E680 /* UIView+CSSable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CSSable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,7 +76,7 @@
 			children = (
 				AE6C67151BFBFB8C00134A35 /* CSSView.swift */,
 				CAB5614554E33E8FB0C5E680 /* UIView+CSSable.swift */,
-				AE6C67171BFC3C0E00134A35 /* CSSable.swift */,
+				AE6C67171BFC3C0E00134A35 /* ViewCSSable.swift */,
 			);
 			path = IBCSSable;
 			sourceTree = SOURCE_ROOT;
@@ -154,7 +154,7 @@
 			files = (
 				AE6C67051BFBF93500134A35 /* ViewController.swift in Sources */,
 				AE6C67161BFBFB8C00134A35 /* CSSView.swift in Sources */,
-				AE6C67181BFC3C0E00134A35 /* CSSable.swift in Sources */,
+				AE6C67181BFC3C0E00134A35 /* ViewCSSable.swift in Sources */,
 				AE6C67031BFBF93500134A35 /* AppDelegate.swift in Sources */,
 				CAB56C6B462D0012CA0A6EA6 /* UIView+CSSable.swift in Sources */,
 			);

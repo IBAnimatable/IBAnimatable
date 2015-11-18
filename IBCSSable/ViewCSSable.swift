@@ -1,5 +1,5 @@
 //
-//  CSSable.swift
+//  ViewCSSable.swift
 //  IBCSSableApp
 //
 //  Created by Jake Lin on 11/18/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol CSSable {
+public protocol ViewCSSable {
   /**
     `border-color`
   */
@@ -51,7 +51,7 @@ public protocol CSSable {
 //  var shadowOffsetY: CGFloat { get set }
 }
 
-public extension CSSable where Self:UIView {
+public extension ViewCSSable where Self:UIView {
 //  // Only instance properties can be declared @IBInspectable
 //  // @IBInspectable 
 //  public var borderRadius: CGFloat {
