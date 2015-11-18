@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable public class CSSButton: UIButton, ViewCSSable {
+@IBDesignable public class CSSButton: UIButton, CSSBorderable, CSSBoxShadowable {
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
     didSet {
       configBorderColor()

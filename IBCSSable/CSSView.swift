@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable public class CSSView: UIView, ViewCSSable {
+@IBDesignable public class CSSView: UIView, CSSBorderable, CSSBoxShadowable {
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
     didSet {
       configBorderColor()
