@@ -11,20 +11,19 @@ import UIKit
 @IBDesignable public class CSSView: UIView, CSSable {
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
     didSet {
-      layer.borderColor = borderColor.CGColor
+      configBorderColor()
     }
   }
   
   @IBInspectable public var borderWidth: CGFloat = 0 {
     didSet {
-      layer.borderWidth = borderWidth
+      configBorderWidth()
     }
   }
 
   @IBInspectable public var borderRadius: CGFloat = 0 {
     didSet {
-      layer.cornerRadius = borderRadius
-      layer.masksToBounds = borderRadius > 0
+      configBorderRadius()
     }
   }
 }

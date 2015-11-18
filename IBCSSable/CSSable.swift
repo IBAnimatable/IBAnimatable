@@ -14,7 +14,7 @@ public protocol CSSable {
   var borderRadius: CGFloat { get set }
 }
 
-//extension CSSable where Self:UIView {
+extension CSSable where Self:UIView {
 //  // Only instance properties can be declared @IBInspectable
 //  // @IBInspectable 
 //  public var borderRadius: CGFloat {
@@ -26,4 +26,17 @@ public protocol CSSable {
 //      layer.masksToBounds = borderRadius > 0
 //    }
 //  }
-//}
+  
+  public func configBorderColor() {
+    layer.borderColor = borderColor.CGColor
+  }
+  
+  public func configBorderWidth() {
+    layer.borderWidth = borderWidth
+  }
+  
+  public func configBorderRadius() {
+    layer.cornerRadius = borderRadius
+    layer.masksToBounds = borderRadius > 0
+  }
+}
