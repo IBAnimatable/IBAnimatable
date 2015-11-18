@@ -34,39 +34,29 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
                                         <real key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" red="0.96142769610000001" green="0.19560617420000001" blue="0.27446546059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetX">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
-                                        <real key="value" value="18"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFy-Ec-G0k" customClass="CSSButton" customModule="IBCSSableApp" customModuleProvider="target">
-                                <rect key="frame" x="277" y="396" width="60" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFy-Ec-G0k" customClass="CSSButton" customModule="IBCSSableApp" customModuleProvider="target">
+                                <rect key="frame" x="260" y="396" width="80" height="44"/>
                                 <animations/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="L0F-fd-cpE"/>
+                                    <constraint firstAttribute="width" constant="80" id="fVL-1E-KPJ"/>
+                                </constraints>
                                 <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.89411764709999997" green="0.0" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
+                                        <real key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
-                                        <real key="value" value="3"/>
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.90588235289999997" green="0.0" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
@@ -74,7 +64,9 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="gFy-Ec-G0k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MPS-3o-nnW"/>
                             <constraint firstItem="FMb-D0-x1i" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e9Y-sK-lyB"/>
+                            <constraint firstItem="gFy-Ec-G0k" firstAttribute="top" secondItem="FMb-D0-x1i" secondAttribute="bottom" constant="32" id="nha-ZM-v4Y"/>
                             <constraint firstItem="FMb-D0-x1i" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wvh-35-RJc"/>
                         </constraints>
                     </view>
