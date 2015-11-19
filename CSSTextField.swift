@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable public class CSSTextField: UITextField, CSSBorderable, CSSBoxShadowable, CSSPaddingable {
+@IBDesignable public class CSSTextField: UITextField, CSSBorderable, CSSBoxShadowable, CSSPaddingable, CSSPlaceholderable {
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
     didSet {
       configBorderColor()
@@ -72,6 +72,12 @@ import UIKit
   @IBInspectable public var paddingSide: CGFloat = 0 {
     didSet {
       configPaddingSide()
+    }
+  }
+  
+  @IBInspectable public var placeholderColor: UIColor = UIColor.clearColor() {
+    didSet {
+      configPlaceholderColor()
     }
   }
 }

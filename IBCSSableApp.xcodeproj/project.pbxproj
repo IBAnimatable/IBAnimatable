@@ -15,6 +15,7 @@
 		AE6C67161BFBFB8C00134A35 /* CSSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6C67151BFBFB8C00134A35 /* CSSView.swift */; };
 		AE6C67181BFC3C0E00134A35 /* CSSBorderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6C67171BFC3C0E00134A35 /* CSSBorderable.swift */; };
 		AE6F187A1BFD4AAC00CFDF4F /* CSSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F18791BFD4AAC00CFDF4F /* CSSTextField.swift */; };
+		AE6F187C1BFD775100CFDF4F /* CSSPlaceholderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F187B1BFD775100CFDF4F /* CSSPlaceholderable.swift */; };
 		CAB560C7055B5821227FC2C8 /* CSSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56E56DEF4CF78E6A8F319 /* CSSButton.swift */; };
 		CAB565D02C88ACC75F12C1A4 /* CSSPaddingable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56AB484D792ACCFBC6F93 /* CSSPaddingable.swift */; };
 		CAB5660BD71EA3151F77769B /* CSSBoxShadowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB560C32378CF068A0F3C95 /* CSSBoxShadowable.swift */; };
@@ -32,6 +33,7 @@
 		AE6C67151BFBFB8C00134A35 /* CSSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSView.swift; sourceTree = "<group>"; };
 		AE6C67171BFC3C0E00134A35 /* CSSBorderable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSBorderable.swift; sourceTree = "<group>"; };
 		AE6F18791BFD4AAC00CFDF4F /* CSSTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSSTextField.swift; path = ../CSSTextField.swift; sourceTree = "<group>"; };
+		AE6F187B1BFD775100CFDF4F /* CSSPlaceholderable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSPlaceholderable.swift; sourceTree = "<group>"; };
 		CAB560C32378CF068A0F3C95 /* CSSBoxShadowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSBoxShadowable.swift; sourceTree = "<group>"; };
 		CAB5614554E33E8FB0C5E680 /* UIView+CSSable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CSSable.swift"; sourceTree = "<group>"; };
 		CAB56AB484D792ACCFBC6F93 /* CSSPaddingable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSPaddingable.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				AE6C67171BFC3C0E00134A35 /* CSSBorderable.swift */,
 				CAB560C32378CF068A0F3C95 /* CSSBoxShadowable.swift */,
 				CAB56AB484D792ACCFBC6F93 /* CSSPaddingable.swift */,
+				AE6F187B1BFD775100CFDF4F /* CSSPlaceholderable.swift */,
 			);
 			name = protocol;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				AE6C67181BFC3C0E00134A35 /* CSSBorderable.swift in Sources */,
 				AE6C67031BFBF93500134A35 /* AppDelegate.swift in Sources */,
 				CAB56C6B462D0012CA0A6EA6 /* UIView+CSSable.swift in Sources */,
+				AE6F187C1BFD775100CFDF4F /* CSSPlaceholderable.swift in Sources */,
 				CAB560C7055B5821227FC2C8 /* CSSButton.swift in Sources */,
 				CAB5660BD71EA3151F77769B /* CSSBoxShadowable.swift in Sources */,
 				AE6F187A1BFD4AAC00CFDF4F /* CSSTextField.swift in Sources */,
