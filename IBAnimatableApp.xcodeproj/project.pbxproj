@@ -15,7 +15,7 @@
 		AE6C67161BFBFB8C00134A35 /* CSSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6C67151BFBFB8C00134A35 /* CSSView.swift */; };
 		AE6C67181BFC3C0E00134A35 /* BorderDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6C67171BFC3C0E00134A35 /* BorderDesignable.swift */; };
 		AE6F187A1BFD4AAC00CFDF4F /* CSSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F18791BFD4AAC00CFDF4F /* CSSTextField.swift */; };
-		AE6F187C1BFD775100CFDF4F /* CSSPlaceholderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F187B1BFD775100CFDF4F /* CSSPlaceholderable.swift */; };
+		AE6F187C1BFD775100CFDF4F /* PlaceholderDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F187B1BFD775100CFDF4F /* PlaceholderDesignable.swift */; };
 		AE6F187E1BFD794A00CFDF4F /* CSSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F187D1BFD794A00CFDF4F /* CSSImageView.swift */; };
 		AE6F18801BFD7D6500CFDF4F /* CSSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F187F1BFD7D6500CFDF4F /* CSSTextView.swift */; };
 		AE6F18821BFD89B900CFDF4F /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F18811BFD89B900CFDF4F /* Animatable.swift */; };
@@ -37,7 +37,7 @@
 		AE6C67151BFBFB8C00134A35 /* CSSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSView.swift; sourceTree = "<group>"; };
 		AE6C67171BFC3C0E00134A35 /* BorderDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderDesignable.swift; sourceTree = "<group>"; };
 		AE6F18791BFD4AAC00CFDF4F /* CSSTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSSTextField.swift; path = ../CSSTextField.swift; sourceTree = "<group>"; };
-		AE6F187B1BFD775100CFDF4F /* CSSPlaceholderable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSPlaceholderable.swift; sourceTree = "<group>"; };
+		AE6F187B1BFD775100CFDF4F /* PlaceholderDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderDesignable.swift; sourceTree = "<group>"; };
 		AE6F187D1BFD794A00CFDF4F /* CSSImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSImageView.swift; sourceTree = "<group>"; };
 		AE6F187F1BFD7D6500CFDF4F /* CSSTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSTextView.swift; sourceTree = "<group>"; };
 		AE6F18811BFD89B900CFDF4F /* Animatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animatable.swift; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 				AE6C67171BFC3C0E00134A35 /* BorderDesignable.swift */,
 				CAB560C32378CF068A0F3C95 /* BoxShadowDesignable.swift */,
 				CAB56AB484D792ACCFBC6F93 /* PaddingDesignable.swift */,
-				AE6F187B1BFD775100CFDF4F /* CSSPlaceholderable.swift */,
+				AE6F187B1BFD775100CFDF4F /* PlaceholderDesignable.swift */,
 			);
 			name = protocol;
 			sourceTree = "<group>";
@@ -220,7 +220,7 @@
 				AE6F187E1BFD794A00CFDF4F /* CSSImageView.swift in Sources */,
 				AE6F18801BFD7D6500CFDF4F /* CSSTextView.swift in Sources */,
 				CAB56C6B462D0012CA0A6EA6 /* UIView+CSSable.swift in Sources */,
-				AE6F187C1BFD775100CFDF4F /* CSSPlaceholderable.swift in Sources */,
+				AE6F187C1BFD775100CFDF4F /* PlaceholderDesignable.swift in Sources */,
 				CAB560C7055B5821227FC2C8 /* CSSButton.swift in Sources */,
 				AE6F18821BFD89B900CFDF4F /* Animatable.swift in Sources */,
 				AE6F18851BFD936400CFDF4F /* AnimationType.swift in Sources */,
