@@ -128,12 +128,35 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <imageView opaque="NO" multipleTouchEnabled="YES" contentMode="center" image="swift" translatesAutoresizingMaskIntoConstraints="NO" id="H38-B3-S8R" customClass="CSSImageView" customModule="IBCSSableApp" customModuleProvider="target">
+                                <rect key="frame" x="250" y="108" width="100" height="100"/>
+                                <animations/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.90588235289999997" green="0.0" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetX">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ggE-nD-JKW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2C6-0M-OzQ"/>
+                            <constraint firstItem="H38-B3-S8R" firstAttribute="top" secondItem="ggE-nD-JKW" secondAttribute="bottom" constant="28" id="ERj-1i-4tE"/>
                             <constraint firstItem="gFy-Ec-G0k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MPS-3o-nnW"/>
+                            <constraint firstItem="H38-B3-S8R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="U5z-uq-ZGU"/>
                             <constraint firstItem="FMb-D0-x1i" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e9Y-sK-lyB"/>
                             <constraint firstItem="ggE-nD-JKW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="nAE-nJ-JQ4"/>
                             <constraint firstItem="gFy-Ec-G0k" firstAttribute="top" secondItem="FMb-D0-x1i" secondAttribute="bottom" constant="32" id="nha-ZM-v4Y"/>
@@ -147,4 +170,7 @@
             <point key="canvasLocation" x="444" y="491"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="swift" width="100" height="100"/>
+    </resources>
 </document>
