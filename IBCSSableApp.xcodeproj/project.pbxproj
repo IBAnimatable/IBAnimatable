@@ -18,6 +18,8 @@
 		AE6F187C1BFD775100CFDF4F /* CSSPlaceholderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F187B1BFD775100CFDF4F /* CSSPlaceholderable.swift */; };
 		AE6F187E1BFD794A00CFDF4F /* CSSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F187D1BFD794A00CFDF4F /* CSSImageView.swift */; };
 		AE6F18801BFD7D6500CFDF4F /* CSSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F187F1BFD7D6500CFDF4F /* CSSTextView.swift */; };
+		AE6F18821BFD89B900CFDF4F /* CSSAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F18811BFD89B900CFDF4F /* CSSAnimatable.swift */; };
+		AE6F18851BFD936400CFDF4F /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F18841BFD936400CFDF4F /* AnimationType.swift */; };
 		CAB560C7055B5821227FC2C8 /* CSSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56E56DEF4CF78E6A8F319 /* CSSButton.swift */; };
 		CAB565D02C88ACC75F12C1A4 /* CSSPaddingable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56AB484D792ACCFBC6F93 /* CSSPaddingable.swift */; };
 		CAB5660BD71EA3151F77769B /* CSSBoxShadowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB560C32378CF068A0F3C95 /* CSSBoxShadowable.swift */; };
@@ -38,6 +40,8 @@
 		AE6F187B1BFD775100CFDF4F /* CSSPlaceholderable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSPlaceholderable.swift; sourceTree = "<group>"; };
 		AE6F187D1BFD794A00CFDF4F /* CSSImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSImageView.swift; sourceTree = "<group>"; };
 		AE6F187F1BFD7D6500CFDF4F /* CSSTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSTextView.swift; sourceTree = "<group>"; };
+		AE6F18811BFD89B900CFDF4F /* CSSAnimatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSAnimatable.swift; sourceTree = "<group>"; };
+		AE6F18841BFD936400CFDF4F /* AnimationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationType.swift; sourceTree = "<group>"; };
 		CAB560C32378CF068A0F3C95 /* CSSBoxShadowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSBoxShadowable.swift; sourceTree = "<group>"; };
 		CAB5614554E33E8FB0C5E680 /* UIView+CSSable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CSSable.swift"; sourceTree = "<group>"; };
 		CAB56AB484D792ACCFBC6F93 /* CSSPaddingable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSPaddingable.swift; sourceTree = "<group>"; };
@@ -88,6 +92,7 @@
 		AE6C67141BFBF9BD00134A35 /* IBCSSable */ = {
 			isa = PBXGroup;
 			children = (
+				AE6F18831BFD934A00CFDF4F /* enum */,
 				AE6F18741BFD49DE00CFDF4F /* protocol */,
 				AE6F18761BFD4A3200CFDF4F /* view */,
 				AE6F18751BFD4A1800CFDF4F /* extension */,
@@ -98,6 +103,7 @@
 		AE6F18741BFD49DE00CFDF4F /* protocol */ = {
 			isa = PBXGroup;
 			children = (
+				AE6F18811BFD89B900CFDF4F /* CSSAnimatable.swift */,
 				AE6C67171BFC3C0E00134A35 /* CSSBorderable.swift */,
 				CAB560C32378CF068A0F3C95 /* CSSBoxShadowable.swift */,
 				CAB56AB484D792ACCFBC6F93 /* CSSPaddingable.swift */,
@@ -124,6 +130,14 @@
 				AE6F187F1BFD7D6500CFDF4F /* CSSTextView.swift */,
 			);
 			name = view;
+			sourceTree = "<group>";
+		};
+		AE6F18831BFD934A00CFDF4F /* enum */ = {
+			isa = PBXGroup;
+			children = (
+				AE6F18841BFD936400CFDF4F /* AnimationType.swift */,
+			);
+			name = enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +220,8 @@
 				CAB56C6B462D0012CA0A6EA6 /* UIView+CSSable.swift in Sources */,
 				AE6F187C1BFD775100CFDF4F /* CSSPlaceholderable.swift in Sources */,
 				CAB560C7055B5821227FC2C8 /* CSSButton.swift in Sources */,
+				AE6F18821BFD89B900CFDF4F /* CSSAnimatable.swift in Sources */,
+				AE6F18851BFD936400CFDF4F /* AnimationType.swift in Sources */,
 				CAB5660BD71EA3151F77769B /* CSSBoxShadowable.swift in Sources */,
 				AE6F187A1BFD4AAC00CFDF4F /* CSSTextField.swift in Sources */,
 				CAB565D02C88ACC75F12C1A4 /* CSSPaddingable.swift in Sources */,
