@@ -8,6 +8,7 @@
 
 import Foundation
 
-public enum AnimationType {
-  case BounceLeft
+public enum AnimationType: String {
+  case BounceLeft = "bounceLeft"
+  case BounceRight = "bounceRight"
 }

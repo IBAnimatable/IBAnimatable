@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable public class CSSView: UIView, CSSBorderable, CSSBoxShadowable {
+@IBDesignable public class CSSView: UIView, CSSBorderable, CSSBoxShadowable, CSSAnimatable {
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
     didSet {
       configBorderColor()
@@ -55,5 +55,28 @@ import UIKit
     didSet {
       configShadowOffsetY()
     }
+  }
+  
+  @IBInspectable public var animationType: String = AnimationType.BounceLeft.rawValue {
+    didSet {
+//      configAnimationType()
+    }
+  }
+  
+  @IBInspectable public var animationDuration: CGFloat = 0 {
+    didSet {
+//      configAnimationDuration()
+    }
+  }
+  
+  @IBInspectable public var animationDelay: CGFloat = 0 {
+    didSet {
+//      configAnimationDelay()
+    }
+  }
+  
+  public override func layoutSubviews() {
+    super.layoutSubviews()
+    animate()
   }
 }
