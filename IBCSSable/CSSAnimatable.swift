@@ -10,24 +10,15 @@ import UIKit
 
 public protocol CSSAnimatable {
   var animationType: String { get set }
-  var animationDuration: CGFloat { get set }
-  var animationDelay: CGFloat { get set }
+  var duration: CGFloat { get set }
+  var delay: CGFloat { get set }
   
   func animate()
 }
 
-public extension CSSAnimatable where Self: UIView {
-  func configAnimationType() {
-  }
-  
-  func configAnimationDuration() {
-  }
-  
-  func configAnimationDelay() {
-  }
-  
+public extension CSSAnimatable where Self: UIView {  
   func animate() {
-    UIView.animateWithDuration(Double(animationDuration), delay: Double(animationDelay), usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: { () -> Void in
+    UIView.animateWithDuration(Double(duration), delay: Double(delay), usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: { () -> Void in
       switch(self.animationType) {
       case AnimationType.BounceLeft.rawValue:
         self.center.x -= 100
@@ -36,7 +27,6 @@ public extension CSSAnimatable where Self: UIView {
       default:
         break
       }
-      
       }, completion: nil)
   }
 }

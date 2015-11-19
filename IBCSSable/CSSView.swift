@@ -59,19 +59,16 @@ import UIKit
   
   @IBInspectable public var animationType: String = AnimationType.BounceLeft.rawValue {
     didSet {
-//      configAnimationType()
     }
   }
   
-  @IBInspectable public var animationDuration: CGFloat = 0 {
+  @IBInspectable public var duration: CGFloat = 0 {
     didSet {
-//      configAnimationDuration()
     }
   }
   
-  @IBInspectable public var animationDelay: CGFloat = 0 {
+  @IBInspectable public var delay: CGFloat = 0 {
     didSet {
-//      configAnimationDelay()
     }
   }
   
