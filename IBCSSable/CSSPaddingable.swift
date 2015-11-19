@@ -18,7 +18,7 @@ public protocol CSSPaddingable {
 
   /**
    `padding-left` and `padding-right`
- */
+  */
   var paddingSide: CGFloat { get set }
 }
 
