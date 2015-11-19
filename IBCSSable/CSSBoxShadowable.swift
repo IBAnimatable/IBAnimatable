@@ -8,7 +8,12 @@
 
 import UIKit
 
-// These properties are not able to render in IB, it maybe a bug of IB
+/**
+  These properties are not able to render in IB, it maybe a bug of IB.
+ 
+  To use them, `UIView`'s `clipsToBounds` and `CALayer`'s `masksToBounds` (`Clip Subviews` in IB) must be `false`,
+*/
+
 public protocol CSSBoxShadowable {
   /**
    `color` when using with `box-shadow`
