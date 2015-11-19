@@ -14,6 +14,7 @@
 		AE6C670D1BFBF93500134A35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE6C670B1BFBF93500134A35 /* LaunchScreen.storyboard */; };
 		AE6C67161BFBFB8C00134A35 /* CSSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6C67151BFBFB8C00134A35 /* CSSView.swift */; };
 		AE6C67181BFC3C0E00134A35 /* CSSBorderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6C67171BFC3C0E00134A35 /* CSSBorderable.swift */; };
+		AE6F187A1BFD4AAC00CFDF4F /* CSSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F18791BFD4AAC00CFDF4F /* CSSTextField.swift */; };
 		CAB560C7055B5821227FC2C8 /* CSSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56E56DEF4CF78E6A8F319 /* CSSButton.swift */; };
 		CAB5660BD71EA3151F77769B /* CSSBoxShadowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB560C32378CF068A0F3C95 /* CSSBoxShadowable.swift */; };
 		CAB56C6B462D0012CA0A6EA6 /* UIView+CSSable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5614554E33E8FB0C5E680 /* UIView+CSSable.swift */; };
@@ -29,6 +30,7 @@
 		AE6C670E1BFBF93500134A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE6C67151BFBFB8C00134A35 /* CSSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSView.swift; sourceTree = "<group>"; };
 		AE6C67171BFC3C0E00134A35 /* CSSBorderable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSBorderable.swift; sourceTree = "<group>"; };
+		AE6F18791BFD4AAC00CFDF4F /* CSSTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSSTextField.swift; path = ../CSSTextField.swift; sourceTree = "<group>"; };
 		CAB560C32378CF068A0F3C95 /* CSSBoxShadowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSBoxShadowable.swift; sourceTree = "<group>"; };
 		CAB5614554E33E8FB0C5E680 /* UIView+CSSable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CSSable.swift"; sourceTree = "<group>"; };
 		CAB56E56DEF4CF78E6A8F319 /* CSSButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSButton.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				AE6C67151BFBFB8C00134A35 /* CSSView.swift */,
 				CAB56E56DEF4CF78E6A8F319 /* CSSButton.swift */,
+				AE6F18791BFD4AAC00CFDF4F /* CSSTextField.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				CAB56C6B462D0012CA0A6EA6 /* UIView+CSSable.swift in Sources */,
 				CAB560C7055B5821227FC2C8 /* CSSButton.swift in Sources */,
 				CAB5660BD71EA3151F77769B /* CSSBoxShadowable.swift in Sources */,
+				AE6F187A1BFD4AAC00CFDF4F /* CSSTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

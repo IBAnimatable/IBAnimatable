@@ -75,19 +75,48 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ggE-nD-JKW">
-                                <rect key="frame" x="252" y="20" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ggE-nD-JKW" customClass="CSSTextField" customModule="IBCSSableApp" customModuleProvider="target">
+                                <rect key="frame" x="192" y="50" width="216" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.89411764709999997" green="0.0" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.40933579640000001" green="0.80104922519999999" blue="0.036929481930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetX">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ggE-nD-JKW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2C6-0M-OzQ"/>
                             <constraint firstItem="gFy-Ec-G0k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MPS-3o-nnW"/>
                             <constraint firstItem="FMb-D0-x1i" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e9Y-sK-lyB"/>
+                            <constraint firstItem="ggE-nD-JKW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="nAE-nJ-JQ4"/>
                             <constraint firstItem="gFy-Ec-G0k" firstAttribute="top" secondItem="FMb-D0-x1i" secondAttribute="bottom" constant="32" id="nha-ZM-v4Y"/>
+                            <constraint firstItem="ggE-nD-JKW" firstAttribute="width" secondItem="FMb-D0-x1i" secondAttribute="width" id="wDw-nM-mEt"/>
                             <constraint firstItem="FMb-D0-x1i" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wvh-35-RJc"/>
                         </constraints>
                     </view>
