@@ -149,14 +149,37 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PJo-xq-4WA" customClass="CSSTextView" customModule="IBCSSableApp" customModuleProvider="target">
+                                <rect key="frame" x="192" y="452" width="216" height="128"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.90588235289999997" green="0.0" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="PJo-xq-4WA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1cF-V4-vIc"/>
                             <constraint firstItem="ggE-nD-JKW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2C6-0M-OzQ"/>
+                            <constraint firstItem="PJo-xq-4WA" firstAttribute="top" secondItem="gFy-Ec-G0k" secondAttribute="bottom" constant="12" id="EPZ-Nq-6OF"/>
                             <constraint firstItem="H38-B3-S8R" firstAttribute="top" secondItem="ggE-nD-JKW" secondAttribute="bottom" constant="28" id="ERj-1i-4tE"/>
                             <constraint firstItem="gFy-Ec-G0k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MPS-3o-nnW"/>
+                            <constraint firstItem="PJo-xq-4WA" firstAttribute="width" secondItem="FMb-D0-x1i" secondAttribute="width" id="Sa0-jX-apc"/>
                             <constraint firstItem="H38-B3-S8R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="U5z-uq-ZGU"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PJo-xq-4WA" secondAttribute="bottom" constant="20" id="ZXa-Fc-vgx"/>
                             <constraint firstItem="FMb-D0-x1i" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e9Y-sK-lyB"/>
                             <constraint firstItem="ggE-nD-JKW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="nAE-nJ-JQ4"/>
                             <constraint firstItem="gFy-Ec-G0k" firstAttribute="top" secondItem="FMb-D0-x1i" secondAttribute="bottom" constant="32" id="nha-ZM-v4Y"/>
