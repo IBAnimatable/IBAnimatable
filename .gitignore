@@ -120,3 +120,5 @@ xcuserdata
 *.moved-aside
 *.xcuserstate
 
+
+*.xcworkspacedata

@@ -5,7 +5,7 @@
 
 import UIKit
 
-public protocol CSSAnimatable {
+public protocol Animatable {
   
   // Doesn't support animation in IB
   // var animationPreview: Bool { get set }
@@ -19,7 +19,7 @@ public protocol CSSAnimatable {
   func customLayoutSubviews()
 }
 
-public extension CSSAnimatable where Self: UIView {
+public extension Animatable where Self: UIView {
   private func animate() {
     guard let animationType = AnimationType(rawValue: animationType) else {
       return

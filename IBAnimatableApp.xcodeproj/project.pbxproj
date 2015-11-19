@@ -18,7 +18,7 @@
 		AE6F187C1BFD775100CFDF4F /* CSSPlaceholderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F187B1BFD775100CFDF4F /* CSSPlaceholderable.swift */; };
 		AE6F187E1BFD794A00CFDF4F /* CSSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F187D1BFD794A00CFDF4F /* CSSImageView.swift */; };
 		AE6F18801BFD7D6500CFDF4F /* CSSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F187F1BFD7D6500CFDF4F /* CSSTextView.swift */; };
-		AE6F18821BFD89B900CFDF4F /* CSSAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F18811BFD89B900CFDF4F /* CSSAnimatable.swift */; };
+		AE6F18821BFD89B900CFDF4F /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F18811BFD89B900CFDF4F /* Animatable.swift */; };
 		AE6F18851BFD936400CFDF4F /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F18841BFD936400CFDF4F /* AnimationType.swift */; };
 		CAB560C7055B5821227FC2C8 /* CSSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56E56DEF4CF78E6A8F319 /* CSSButton.swift */; };
 		CAB565D02C88ACC75F12C1A4 /* CSSPaddingable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56AB484D792ACCFBC6F93 /* CSSPaddingable.swift */; };
@@ -27,7 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AE6C66FF1BFBF93500134A35 /* IBCSSableApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBCSSableApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE6C66FF1BFBF93500134A35 /* IBAnimatableApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBAnimatableApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE6C67021BFBF93500134A35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE6C67041BFBF93500134A35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AE6C67071BFBF93500134A35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,7 +40,7 @@
 		AE6F187B1BFD775100CFDF4F /* CSSPlaceholderable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSPlaceholderable.swift; sourceTree = "<group>"; };
 		AE6F187D1BFD794A00CFDF4F /* CSSImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSImageView.swift; sourceTree = "<group>"; };
 		AE6F187F1BFD7D6500CFDF4F /* CSSTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSTextView.swift; sourceTree = "<group>"; };
-		AE6F18811BFD89B900CFDF4F /* CSSAnimatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSAnimatable.swift; sourceTree = "<group>"; };
+		AE6F18811BFD89B900CFDF4F /* Animatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animatable.swift; sourceTree = "<group>"; };
 		AE6F18841BFD936400CFDF4F /* AnimationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationType.swift; sourceTree = "<group>"; };
 		CAB560C32378CF068A0F3C95 /* CSSBoxShadowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSBoxShadowable.swift; sourceTree = "<group>"; };
 		CAB5614554E33E8FB0C5E680 /* UIView+CSSable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CSSable.swift"; sourceTree = "<group>"; };
@@ -62,8 +62,8 @@
 		AE6C66F61BFBF93500134A35 = {
 			isa = PBXGroup;
 			children = (
-				AE6C67141BFBF9BD00134A35 /* IBCSSable */,
-				AE6C67011BFBF93500134A35 /* IBCSSableApp */,
+				AE6C67141BFBF9BD00134A35 /* IBAnimatable */,
+				AE6C67011BFBF93500134A35 /* IBAnimatableApp */,
 				AE6C67001BFBF93500134A35 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,12 +71,12 @@
 		AE6C67001BFBF93500134A35 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AE6C66FF1BFBF93500134A35 /* IBCSSableApp.app */,
+				AE6C66FF1BFBF93500134A35 /* IBAnimatableApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AE6C67011BFBF93500134A35 /* IBCSSableApp */ = {
+		AE6C67011BFBF93500134A35 /* IBAnimatableApp */ = {
 			isa = PBXGroup;
 			children = (
 				AE6C67021BFBF93500134A35 /* AppDelegate.swift */,
@@ -86,10 +86,11 @@
 				AE6C670B1BFBF93500134A35 /* LaunchScreen.storyboard */,
 				AE6C670E1BFBF93500134A35 /* Info.plist */,
 			);
+			name = IBAnimatableApp;
 			path = IBCSSableApp;
 			sourceTree = "<group>";
 		};
-		AE6C67141BFBF9BD00134A35 /* IBCSSable */ = {
+		AE6C67141BFBF9BD00134A35 /* IBAnimatable */ = {
 			isa = PBXGroup;
 			children = (
 				AE6F18831BFD934A00CFDF4F /* enum */,
@@ -97,13 +98,14 @@
 				AE6F18761BFD4A3200CFDF4F /* view */,
 				AE6F18751BFD4A1800CFDF4F /* extension */,
 			);
+			name = IBAnimatable;
 			path = IBCSSable;
 			sourceTree = SOURCE_ROOT;
 		};
 		AE6F18741BFD49DE00CFDF4F /* protocol */ = {
 			isa = PBXGroup;
 			children = (
-				AE6F18811BFD89B900CFDF4F /* CSSAnimatable.swift */,
+				AE6F18811BFD89B900CFDF4F /* Animatable.swift */,
 				AE6C67171BFC3C0E00134A35 /* CSSBorderable.swift */,
 				CAB560C32378CF068A0F3C95 /* CSSBoxShadowable.swift */,
 				CAB56AB484D792ACCFBC6F93 /* CSSPaddingable.swift */,
@@ -143,9 +145,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AE6C66FE1BFBF93500134A35 /* IBCSSableApp */ = {
+		AE6C66FE1BFBF93500134A35 /* IBAnimatableApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AE6C67111BFBF93500134A35 /* Build configuration list for PBXNativeTarget "IBCSSableApp" */;
+			buildConfigurationList = AE6C67111BFBF93500134A35 /* Build configuration list for PBXNativeTarget "IBAnimatableApp" */;
 			buildPhases = (
 				AE6C66FB1BFBF93500134A35 /* Sources */,
 				AE6C66FC1BFBF93500134A35 /* Frameworks */,
@@ -155,9 +157,9 @@
 			);
 			dependencies = (
 			);
-			name = IBCSSableApp;
+			name = IBAnimatableApp;
 			productName = IBCSSableApp;
-			productReference = AE6C66FF1BFBF93500134A35 /* IBCSSableApp.app */;
+			productReference = AE6C66FF1BFBF93500134A35 /* IBAnimatableApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -175,7 +177,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AE6C66FA1BFBF93500134A35 /* Build configuration list for PBXProject "IBCSSableApp" */;
+			buildConfigurationList = AE6C66FA1BFBF93500134A35 /* Build configuration list for PBXProject "IBAnimatableApp" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -188,7 +190,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AE6C66FE1BFBF93500134A35 /* IBCSSableApp */,
+				AE6C66FE1BFBF93500134A35 /* IBAnimatableApp */,
 			);
 		};
 /* End PBXProject section */
@@ -220,7 +222,7 @@
 				CAB56C6B462D0012CA0A6EA6 /* UIView+CSSable.swift in Sources */,
 				AE6F187C1BFD775100CFDF4F /* CSSPlaceholderable.swift in Sources */,
 				CAB560C7055B5821227FC2C8 /* CSSButton.swift in Sources */,
-				AE6F18821BFD89B900CFDF4F /* CSSAnimatable.swift in Sources */,
+				AE6F18821BFD89B900CFDF4F /* Animatable.swift in Sources */,
 				AE6F18851BFD936400CFDF4F /* AnimationType.swift in Sources */,
 				CAB5660BD71EA3151F77769B /* CSSBoxShadowable.swift in Sources */,
 				AE6F187A1BFD4AAC00CFDF4F /* CSSTextField.swift in Sources */,
@@ -340,7 +342,7 @@
 				INFOPLIST_FILE = IBCSSableApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JakeLin.IBCSSableApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = IBAnimatableApp;
 			};
 			name = Debug;
 		};
@@ -351,14 +353,14 @@
 				INFOPLIST_FILE = IBCSSableApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JakeLin.IBCSSableApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = IBAnimatableApp;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AE6C66FA1BFBF93500134A35 /* Build configuration list for PBXProject "IBCSSableApp" */ = {
+		AE6C66FA1BFBF93500134A35 /* Build configuration list for PBXProject "IBAnimatableApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AE6C670F1BFBF93500134A35 /* Debug */,
@@ -367,7 +369,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AE6C67111BFBF93500134A35 /* Build configuration list for PBXNativeTarget "IBCSSableApp" */ = {
+		AE6C67111BFBF93500134A35 /* Build configuration list for PBXNativeTarget "IBAnimatableApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AE6C67121BFBF93500134A35 /* Debug */,
