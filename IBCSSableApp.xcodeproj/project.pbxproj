@@ -78,14 +78,38 @@
 		AE6C67141BFBF9BD00134A35 /* IBCSSable */ = {
 			isa = PBXGroup;
 			children = (
-				AE6C67151BFBFB8C00134A35 /* CSSView.swift */,
-				CAB5614554E33E8FB0C5E680 /* UIView+CSSable.swift */,
-				AE6C67171BFC3C0E00134A35 /* CSSBorderable.swift */,
-				CAB56E56DEF4CF78E6A8F319 /* CSSButton.swift */,
-				CAB560C32378CF068A0F3C95 /* CSSBoxShadowable.swift */,
+				AE6F18741BFD49DE00CFDF4F /* protocol */,
+				AE6F18761BFD4A3200CFDF4F /* view */,
+				AE6F18751BFD4A1800CFDF4F /* extension */,
 			);
 			path = IBCSSable;
 			sourceTree = SOURCE_ROOT;
+		};
+		AE6F18741BFD49DE00CFDF4F /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				AE6C67171BFC3C0E00134A35 /* CSSBorderable.swift */,
+				CAB560C32378CF068A0F3C95 /* CSSBoxShadowable.swift */,
+			);
+			name = protocol;
+			sourceTree = "<group>";
+		};
+		AE6F18751BFD4A1800CFDF4F /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				CAB5614554E33E8FB0C5E680 /* UIView+CSSable.swift */,
+			);
+			name = extension;
+			sourceTree = "<group>";
+		};
+		AE6F18761BFD4A3200CFDF4F /* view */ = {
+			isa = PBXGroup;
+			children = (
+				AE6C67151BFBFB8C00134A35 /* CSSView.swift */,
+				CAB56E56DEF4CF78E6A8F319 /* CSSButton.swift */,
+			);
+			name = view;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
