@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable public class CSSTextField: UITextField, BorderDesignable, BoxShadowDesignable, PaddingDesignable, PlaceholderDesignable {
+@IBDesignable public class AnimatableTextField: UITextField, BorderDesignable, BoxShadowDesignable, PaddingDesignable, PlaceholderDesignable {
  
   // MARK: - CSSBorderable
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
