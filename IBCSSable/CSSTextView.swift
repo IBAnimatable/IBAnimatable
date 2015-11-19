@@ -9,6 +9,8 @@
 import UIKit
 
 @IBDesignable public class CSSTextView: UITextView, CSSBorderable {
+  
+  // MARK: - CSSBorderable
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
     didSet {
       configBorderColor()

@@ -9,6 +9,8 @@
 import UIKit
 
 @IBDesignable public class CSSView: UIView, CSSBorderable, CSSBoxShadowable, CSSAnimatable {
+  
+  // MARK: - CSSBorderable
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
     didSet {
       configBorderColor()
@@ -27,6 +29,7 @@ import UIKit
     }
   }
   
+  // MARK: - CSSBoxShadowable
   @IBInspectable public var shadowColor: UIColor = UIColor.clearColor() {
     didSet {
       configShadowColor()
@@ -57,6 +60,7 @@ import UIKit
     }
   }
   
+  // MARK: - CSSAnimatable
   @IBInspectable public var animationType: String = AnimationType.BounceLeft.rawValue {
     didSet {
     }

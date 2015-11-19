@@ -9,6 +9,8 @@
 import UIKit
 
 @IBDesignable public class CSSImageView: UIImageView, CSSBorderable, CSSBoxShadowable {
+  
+  // MARK: - CSSBorderable
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
     didSet {
       configBorderColor()
@@ -27,6 +29,7 @@ import UIKit
     }
   }
   
+  // MARK: - CSSBoxShadowable
   @IBInspectable public var shadowColor: UIColor = UIColor.clearColor() {
     didSet {
       configShadowColor()

@@ -9,6 +9,8 @@
 import UIKit
 
 @IBDesignable public class CSSTextField: UITextField, CSSBorderable, CSSBoxShadowable, CSSPaddingable, CSSPlaceholderable {
+ 
+  // MARK: - CSSBorderable
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
     didSet {
       configBorderColor()
@@ -27,6 +29,7 @@ import UIKit
     }
   }
   
+  // MARK: - CSSBoxShadowable
   @IBInspectable public var shadowColor: UIColor = UIColor.clearColor() {
     didSet {
       configShadowColor()
@@ -57,6 +60,7 @@ import UIKit
     }
   }
   
+  // MARK: - CSSPaddingable
   @IBInspectable public var paddingLeft: CGFloat = 0 {
     didSet {
       configPaddingLeft()
@@ -75,6 +79,7 @@ import UIKit
     }
   }
   
+  // MARK: - CSSPlaceholderable
   @IBInspectable public var placeholderColor: UIColor = UIColor.clearColor() {
     didSet {
       configPlaceholderColor()
