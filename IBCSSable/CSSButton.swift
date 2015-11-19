@@ -1,6 +1,6 @@
 //
 // Created by Jake Lin on 11/18/15.
-// Copyright (c) 2015 Jake Lin. All rights reserved.
+// Copyright © 2015 Jake Lin. All rights reserved.
 //
 
 import UIKit

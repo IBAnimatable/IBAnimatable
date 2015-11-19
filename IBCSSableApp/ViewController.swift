@@ -1,7 +1,4 @@
 //
-//  ViewController.swift
-//  IBCSSableApp
-//
 //  Created by Jake Lin on 11/18/15.
 //  Copyright © 2015 Jake Lin. All rights reserved.
 //
