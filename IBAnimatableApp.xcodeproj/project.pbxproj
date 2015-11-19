@@ -13,7 +13,7 @@
 		AE6C670A1BFBF93500134A35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE6C67091BFBF93500134A35 /* Assets.xcassets */; };
 		AE6C670D1BFBF93500134A35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE6C670B1BFBF93500134A35 /* LaunchScreen.storyboard */; };
 		AE6C67161BFBFB8C00134A35 /* CSSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6C67151BFBFB8C00134A35 /* CSSView.swift */; };
-		AE6C67181BFC3C0E00134A35 /* CSSBorderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6C67171BFC3C0E00134A35 /* CSSBorderable.swift */; };
+		AE6C67181BFC3C0E00134A35 /* BorderDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6C67171BFC3C0E00134A35 /* BorderDesignable.swift */; };
 		AE6F187A1BFD4AAC00CFDF4F /* CSSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F18791BFD4AAC00CFDF4F /* CSSTextField.swift */; };
 		AE6F187C1BFD775100CFDF4F /* CSSPlaceholderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F187B1BFD775100CFDF4F /* CSSPlaceholderable.swift */; };
 		AE6F187E1BFD794A00CFDF4F /* CSSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F187D1BFD794A00CFDF4F /* CSSImageView.swift */; };
@@ -35,7 +35,7 @@
 		AE6C670C1BFBF93500134A35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE6C670E1BFBF93500134A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE6C67151BFBFB8C00134A35 /* CSSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSView.swift; sourceTree = "<group>"; };
-		AE6C67171BFC3C0E00134A35 /* CSSBorderable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSBorderable.swift; sourceTree = "<group>"; };
+		AE6C67171BFC3C0E00134A35 /* BorderDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderDesignable.swift; sourceTree = "<group>"; };
 		AE6F18791BFD4AAC00CFDF4F /* CSSTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSSTextField.swift; path = ../CSSTextField.swift; sourceTree = "<group>"; };
 		AE6F187B1BFD775100CFDF4F /* CSSPlaceholderable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSPlaceholderable.swift; sourceTree = "<group>"; };
 		AE6F187D1BFD794A00CFDF4F /* CSSImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSImageView.swift; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				AE6F18811BFD89B900CFDF4F /* Animatable.swift */,
-				AE6C67171BFC3C0E00134A35 /* CSSBorderable.swift */,
+				AE6C67171BFC3C0E00134A35 /* BorderDesignable.swift */,
 				CAB560C32378CF068A0F3C95 /* CSSBoxShadowable.swift */,
 				CAB56AB484D792ACCFBC6F93 /* CSSPaddingable.swift */,
 				AE6F187B1BFD775100CFDF4F /* CSSPlaceholderable.swift */,
@@ -215,7 +215,7 @@
 			files = (
 				AE6C67051BFBF93500134A35 /* ViewController.swift in Sources */,
 				AE6C67161BFBFB8C00134A35 /* CSSView.swift in Sources */,
-				AE6C67181BFC3C0E00134A35 /* CSSBorderable.swift in Sources */,
+				AE6C67181BFC3C0E00134A35 /* BorderDesignable.swift in Sources */,
 				AE6C67031BFBF93500134A35 /* AppDelegate.swift in Sources */,
 				AE6F187E1BFD794A00CFDF4F /* CSSImageView.swift in Sources */,
 				AE6F18801BFD7D6500CFDF4F /* CSSTextView.swift in Sources */,

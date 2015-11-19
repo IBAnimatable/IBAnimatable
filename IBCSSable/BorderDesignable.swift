@@ -5,7 +5,7 @@
 
 import UIKit
 
-public protocol CSSBorderable {
+public protocol BorderDesignable {
   /**
     `border-color`
   */
@@ -22,7 +22,7 @@ public protocol CSSBorderable {
   var borderRadius: CGFloat { get set }
 }
 
-public extension CSSBorderable where Self:UIView {
+public extension BorderDesignable where Self:UIView {
 //  // Only instance properties can be declared @IBInspectable
 //  // @IBInspectable 
 //  public var borderRadius: CGFloat {

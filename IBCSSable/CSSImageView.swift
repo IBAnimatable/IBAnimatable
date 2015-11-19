@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable public class CSSImageView: UIImageView, CSSBorderable, CSSBoxShadowable {
+@IBDesignable public class CSSImageView: UIImageView, BorderDesignable, CSSBoxShadowable {
   
   // MARK: - CSSBorderable
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {

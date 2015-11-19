@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable public class CSSButton: UIButton, CSSBorderable, CSSBoxShadowable {
+@IBDesignable public class CSSButton: UIButton, BorderDesignable, CSSBoxShadowable {
   
   // MARK: - CSSBorderable
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
