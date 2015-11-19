@@ -12,7 +12,7 @@
 		AE6C67081BFBF93500134A35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE6C67061BFBF93500134A35 /* Main.storyboard */; };
 		AE6C670A1BFBF93500134A35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE6C67091BFBF93500134A35 /* Assets.xcassets */; };
 		AE6C670D1BFBF93500134A35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE6C670B1BFBF93500134A35 /* LaunchScreen.storyboard */; };
-		AE6C67161BFBFB8C00134A35 /* CSSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6C67151BFBFB8C00134A35 /* CSSView.swift */; };
+		AE6C67161BFBFB8C00134A35 /* AnimatableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6C67151BFBFB8C00134A35 /* AnimatableView.swift */; };
 		AE6C67181BFC3C0E00134A35 /* BorderDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6C67171BFC3C0E00134A35 /* BorderDesignable.swift */; };
 		AE6F187A1BFD4AAC00CFDF4F /* CSSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F18791BFD4AAC00CFDF4F /* CSSTextField.swift */; };
 		AE6F187C1BFD775100CFDF4F /* PlaceholderDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F187B1BFD775100CFDF4F /* PlaceholderDesignable.swift */; };
@@ -34,7 +34,7 @@
 		AE6C67091BFBF93500134A35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE6C670C1BFBF93500134A35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE6C670E1BFBF93500134A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AE6C67151BFBFB8C00134A35 /* CSSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSView.swift; sourceTree = "<group>"; };
+		AE6C67151BFBFB8C00134A35 /* AnimatableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableView.swift; sourceTree = "<group>"; };
 		AE6C67171BFC3C0E00134A35 /* BorderDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderDesignable.swift; sourceTree = "<group>"; };
 		AE6F18791BFD4AAC00CFDF4F /* CSSTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSSTextField.swift; path = ../CSSTextField.swift; sourceTree = "<group>"; };
 		AE6F187B1BFD775100CFDF4F /* PlaceholderDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderDesignable.swift; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		AE6F18761BFD4A3200CFDF4F /* view */ = {
 			isa = PBXGroup;
 			children = (
-				AE6C67151BFBFB8C00134A35 /* CSSView.swift */,
+				AE6C67151BFBFB8C00134A35 /* AnimatableView.swift */,
 				CAB56E56DEF4CF78E6A8F319 /* CSSButton.swift */,
 				AE6F187D1BFD794A00CFDF4F /* CSSImageView.swift */,
 				AE6F18791BFD4AAC00CFDF4F /* CSSTextField.swift */,
@@ -214,7 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE6C67051BFBF93500134A35 /* ViewController.swift in Sources */,
-				AE6C67161BFBFB8C00134A35 /* CSSView.swift in Sources */,
+				AE6C67161BFBFB8C00134A35 /* AnimatableView.swift in Sources */,
 				AE6C67181BFC3C0E00134A35 /* BorderDesignable.swift in Sources */,
 				AE6C67031BFBF93500134A35 /* AppDelegate.swift in Sources */,
 				AE6F187E1BFD794A00CFDF4F /* CSSImageView.swift in Sources */,

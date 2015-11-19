@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="IBCSSableApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ggE-nD-JKW" userLabel="TextField" customClass="CSSTextField" customModule="IBCSSableApp" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ggE-nD-JKW" userLabel="TextField" customClass="CSSTextField" customModule="IBAnimatableApp" customModuleProvider="target">
                                 <rect key="frame" x="192" y="30" width="216" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -58,7 +58,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FMb-D0-x1i" userLabel="View" customClass="CSSView" customModule="IBCSSableApp" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FMb-D0-x1i" userLabel="View" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
                                 <rect key="frame" x="192" y="90" width="216" height="130"/>
                                 <animations/>
                                 <constraints>
@@ -102,7 +102,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFy-Ec-G0k" customClass="CSSButton" customModule="IBCSSableApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFy-Ec-G0k" customClass="CSSButton" customModule="IBAnimatableApp" customModuleProvider="target">
                                 <rect key="frame" x="260" y="378" width="80" height="44"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -141,7 +141,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <imageView opaque="NO" multipleTouchEnabled="YES" contentMode="center" image="swift" translatesAutoresizingMaskIntoConstraints="NO" id="H38-B3-S8R" userLabel="Image" customClass="CSSImageView" customModule="IBCSSableApp" customModuleProvider="target">
+                            <imageView opaque="NO" multipleTouchEnabled="YES" contentMode="center" image="swift" translatesAutoresizingMaskIntoConstraints="NO" id="H38-B3-S8R" userLabel="Image" customClass="CSSImageView" customModule="IBAnimatableApp" customModuleProvider="target">
                                 <rect key="frame" x="250" y="248" width="100" height="100"/>
                                 <animations/>
                                 <userDefinedRuntimeAttributes>
@@ -162,7 +162,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PJo-xq-4WA" userLabel="TextView" customClass="CSSTextView" customModule="IBCSSableApp" customModuleProvider="target">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PJo-xq-4WA" userLabel="TextView" customClass="CSSTextView" customModule="IBAnimatableApp" customModuleProvider="target">
                                 <rect key="frame" x="192" y="452" width="216" height="128"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
