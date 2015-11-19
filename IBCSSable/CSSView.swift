@@ -58,6 +58,15 @@ import UIKit
   }
   
   // MARK: - CSSAnimatable
+  
+  // Doesn't support animation in IB
+  // @IBInspectable public var animationPreview: Bool = false {
+  //   didSet {
+  //     print(animationPreview)
+  //     animate()
+  //   }
+  // }
+  
   @IBInspectable public var animationType: String = AnimationType.BounceLeft.rawValue {
     didSet {
     }

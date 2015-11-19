@@ -6,6 +6,8 @@
 import UIKit
 
 public protocol CSSAnimatable {
+  // Doesn't support animation in IB
+  // var animationPreview: Bool { get set }
   var animationType: String { get set }
   var duration: CGFloat { get set }
   var delay: CGFloat { get set }
@@ -24,6 +26,8 @@ public extension CSSAnimatable where Self: UIView {
       default:
         break
       }
-      }, completion: nil)
+      }, completion: { (completed) in
+//        self.animationPreview = true
+    })
   }
 }
