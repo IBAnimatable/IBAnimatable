@@ -21,21 +21,28 @@ public protocol CSSAnimatable {
 
 public extension CSSAnimatable where Self: UIView {
   private func animate() {
+    guard let animationType = AnimationType(rawValue: animationType) else {
+      return
+    }
     
-  }
-  
-  func customLayoutSubviews() {
     UIView.animateWithDuration(duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [], animations: { () -> Void in
-      switch(self.animationType) {
-      case AnimationType.BounceLeft.rawValue:
+      
+      
+      switch(animationType) {
+      case .SlideLeft:
         self.center.x -= 100
-      case AnimationType.BounceRight.rawValue:
+      case .SlideRight:
         self.center.x += 100
       default:
         break
       }
       }, completion: { (completed) in
-//        self.animationPreview = true
+        //        self.animationPreview = true
     })
+
+  }
+  
+  func customLayoutSubviews() {
+    animate()
   }
 }

@@ -67,7 +67,7 @@ import UIKit
   //   }
   // }
   
-  @IBInspectable public var animationType: String = AnimationType.BounceLeft.rawValue
+  @IBInspectable public var animationType: String = ""
   @IBInspectable public var duration: Double = 0
   @IBInspectable public var delay: Double = 0
   @IBInspectable public var damping: CGFloat = 0.7

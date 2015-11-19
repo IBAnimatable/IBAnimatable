@@ -58,7 +58,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FMb-D0-x1i" userLabel="View" customClass="CSSView" customModule="IBCSSableApp" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FMb-D0-x1i" userLabel="View" customClass="CSSView" customModule="IBCSSableApp" customModuleProvider="target">
                                 <rect key="frame" x="192" y="90" width="216" height="130"/>
                                 <animations/>
                                 <constraints>
@@ -90,9 +90,9 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="bounceLeft"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="slideRight"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="duration">
-                                        <real key="value" value="5"/>
+                                        <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="damping">
                                         <real key="value" value="0.10000000000000001"/>
