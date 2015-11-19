@@ -10,7 +10,7 @@ import UIKit
  
   To use them, `UIView`'s `clipsToBounds` and `CALayer`'s `masksToBounds` (`Clip Subviews` in IB) must be `false`,
 */
-public protocol CSSBoxShadowable {
+public protocol BoxShadowDesignable {
   /**
    `color` when using with `box-shadow`
   */
@@ -37,7 +37,7 @@ public protocol CSSBoxShadowable {
   var shadowOffsetY: CGFloat { get set }
 }
 
-public extension CSSBoxShadowable where Self:UIView {
+public extension BoxShadowDesignable where Self:UIView {
   public func configShadowColor() {
     layer.shadowColor = shadowColor.CGColor
   }
