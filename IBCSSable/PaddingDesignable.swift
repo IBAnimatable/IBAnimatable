@@ -5,7 +5,7 @@
 
 import UIKit
 
-public protocol CSSPaddingable {
+public protocol PaddingDesignable {
   /**
     `padding-left`
   */
@@ -22,7 +22,7 @@ public protocol CSSPaddingable {
   var paddingSide: CGFloat { get set }
 }
 
-public extension CSSPaddingable where Self:UITextField {
+public extension PaddingDesignable where Self:UITextField {
   public func configPaddingLeft() {
     let padding = UIView(frame: CGRectMake(0, 0, paddingLeft, 0))
     leftViewMode = UITextFieldViewMode.Always
