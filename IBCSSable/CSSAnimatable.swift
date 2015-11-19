@@ -6,18 +6,26 @@
 import UIKit
 
 public protocol CSSAnimatable {
+  
   // Doesn't support animation in IB
   // var animationPreview: Bool { get set }
-  var animationType: String { get set }
-  var duration: CGFloat { get set }
-  var delay: CGFloat { get set }
   
-  func animate()
+  var animationType: String { get set }
+  var duration: Double { get set }
+  var delay: Double { get set }
+  var damping: CGFloat { get set }
+  var velocity: CGFloat { get set }
+  
+  func customLayoutSubviews()
 }
 
-public extension CSSAnimatable where Self: UIView {  
-  func animate() {
-    UIView.animateWithDuration(Double(duration), delay: Double(delay), usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: { () -> Void in
+public extension CSSAnimatable where Self: UIView {
+  private func animate() {
+    
+  }
+  
+  func customLayoutSubviews() {
+    UIView.animateWithDuration(duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [], animations: { () -> Void in
       switch(self.animationType) {
       case AnimationType.BounceLeft.rawValue:
         self.center.x -= 100

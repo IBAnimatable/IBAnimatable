@@ -67,23 +67,15 @@ import UIKit
   //   }
   // }
   
-  @IBInspectable public var animationType: String = AnimationType.BounceLeft.rawValue {
-    didSet {
-    }
-  }
+  @IBInspectable public var animationType: String = AnimationType.BounceLeft.rawValue
+  @IBInspectable public var duration: Double = 0
+  @IBInspectable public var delay: Double = 0
+  @IBInspectable public var damping: CGFloat = 0.7
+  @IBInspectable public var velocity: CGFloat = 0.7
   
-  @IBInspectable public var duration: CGFloat = 0 {
-    didSet {
-    }
-  }
-  
-  @IBInspectable public var delay: CGFloat = 0 {
-    didSet {
-    }
-  }
-  
+  // MARK: - Life cycle
   public override func layoutSubviews() {
     super.layoutSubviews()
-    animate()
+    customLayoutSubviews()
   }
 }
