@@ -27,6 +27,7 @@
 		AED1A1201BFE983A001346FA /* UIView+CSSable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1141BFE983A001346FA /* UIView+CSSable.swift */; };
 		AED1A1221BFEA05F001346FA /* PositionAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1211BFEA05F001346FA /* PositionAnimatable.swift */; };
 		AED1A1281BFEA3E1001346FA /* Slidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1271BFEA3E1001346FA /* Slidable.swift */; };
+		AED1A12A1BFEA4EF001346FA /* Squeezable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1291BFEA4EF001346FA /* Squeezable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		AED1A1141BFE983A001346FA /* UIView+CSSable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+CSSable.swift"; path = "IBAnimatable/UIView+CSSable.swift"; sourceTree = SOURCE_ROOT; };
 		AED1A1211BFEA05F001346FA /* PositionAnimatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionAnimatable.swift; sourceTree = "<group>"; };
 		AED1A1271BFEA3E1001346FA /* Slidable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slidable.swift; sourceTree = "<group>"; };
+		AED1A1291BFEA4EF001346FA /* Squeezable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Squeezable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 				AED1A10A1BFE983A001346FA /* Animatable.swift */,
 				AED1A1211BFEA05F001346FA /* PositionAnimatable.swift */,
 				AED1A1271BFEA3E1001346FA /* Slidable.swift */,
+				AED1A1291BFEA4EF001346FA /* Squeezable.swift */,
 			);
 			name = Animatable;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AED1A12A1BFEA4EF001346FA /* Squeezable.swift in Sources */,
 				AED1A1221BFEA05F001346FA /* PositionAnimatable.swift in Sources */,
 				AED1A11A1BFE983A001346FA /* AnimatableView.swift in Sources */,
 				AED1A1081BFE9820001346FA /* ViewController.swift in Sources */,
