@@ -5,6 +5,9 @@
 
 import Foundation
 
+/**
+ Supported Animation Type
+ */
 public enum AnimationType: String {
   case SlideLeft = "slideLeft"
   case SlideRight = "slideRight"
