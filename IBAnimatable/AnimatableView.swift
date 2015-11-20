@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableView: UIView, BorderDesignable, BoxShadowDesignable, Animatable {
+@IBDesignable public class AnimatableView: UIView, BorderDesignable, BoxShadowDesignable, PositionAnimatable {
   
   // MARK: - CSSBorderable
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
@@ -57,7 +57,7 @@ import UIKit
     }
   }
   
-  // MARK: - CSSAnimatable
+  // MARK: - Animatable
   
   // Doesn't support animation in IB
   // @IBInspectable public var animationPreview: Bool = false {
@@ -68,10 +68,26 @@ import UIKit
   // }
   
   @IBInspectable public var animationType: String = ""
-  @IBInspectable public var duration: Double = 0
+  @IBInspectable public var duration: Double = 0.7
   @IBInspectable public var delay: Double = 0
+  @IBInspectable public var force: CGFloat = 1
   @IBInspectable public var damping: CGFloat = 0.7
   @IBInspectable public var velocity: CGFloat = 0.7
+  
+  // MARK: - PositionAnimatable
+  
+  // Doesn't support animation in IB
+  // @IBInspectable public var animationPreview: Bool = false {
+  //   didSet {
+  //     print(animationPreview)
+  //     animate()
+  //   }
+  // }
+  
+  @IBInspectable public var x: CGFloat = 0
+  @IBInspectable public var y: CGFloat = 0
+  
+  
   
   // MARK: - Life cycle
   public override func layoutSubviews() {
