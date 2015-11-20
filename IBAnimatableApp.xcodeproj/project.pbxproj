@@ -7,45 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AE6C67031BFBF93500134A35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6C67021BFBF93500134A35 /* AppDelegate.swift */; };
-		AE6C67051BFBF93500134A35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6C67041BFBF93500134A35 /* ViewController.swift */; };
-		AE6C67081BFBF93500134A35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE6C67061BFBF93500134A35 /* Main.storyboard */; };
-		AE6C670A1BFBF93500134A35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE6C67091BFBF93500134A35 /* Assets.xcassets */; };
-		AE6C670D1BFBF93500134A35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE6C670B1BFBF93500134A35 /* LaunchScreen.storyboard */; };
-		AE6C67161BFBFB8C00134A35 /* AnimatableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6C67151BFBFB8C00134A35 /* AnimatableView.swift */; };
-		AE6C67181BFC3C0E00134A35 /* BorderDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6C67171BFC3C0E00134A35 /* BorderDesignable.swift */; };
-		AE6F187A1BFD4AAC00CFDF4F /* AnimatableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F18791BFD4AAC00CFDF4F /* AnimatableTextField.swift */; };
-		AE6F187C1BFD775100CFDF4F /* PlaceholderDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F187B1BFD775100CFDF4F /* PlaceholderDesignable.swift */; };
-		AE6F187E1BFD794A00CFDF4F /* AnimatableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F187D1BFD794A00CFDF4F /* AnimatableImageView.swift */; };
-		AE6F18801BFD7D6500CFDF4F /* CSSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F187F1BFD7D6500CFDF4F /* CSSTextView.swift */; };
-		AE6F18821BFD89B900CFDF4F /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F18811BFD89B900CFDF4F /* Animatable.swift */; };
-		AE6F18851BFD936400CFDF4F /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F18841BFD936400CFDF4F /* AnimationType.swift */; };
-		CAB560C7055B5821227FC2C8 /* AnimatabeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56E56DEF4CF78E6A8F319 /* AnimatabeButton.swift */; };
-		CAB565D02C88ACC75F12C1A4 /* PaddingDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56AB484D792ACCFBC6F93 /* PaddingDesignable.swift */; };
-		CAB5660BD71EA3151F77769B /* BoxShadowDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB560C32378CF068A0F3C95 /* BoxShadowDesignable.swift */; };
-		CAB56C6B462D0012CA0A6EA6 /* UIView+CSSable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5614554E33E8FB0C5E680 /* UIView+CSSable.swift */; };
+		AED1A1031BFE9820001346FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A0FA1BFE9820001346FA /* AppDelegate.swift */; };
+		AED1A1041BFE9820001346FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AED1A0FB1BFE9820001346FA /* Assets.xcassets */; };
+		AED1A1051BFE9820001346FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AED1A0FD1BFE9820001346FA /* LaunchScreen.storyboard */; };
+		AED1A1061BFE9820001346FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AED1A0FF1BFE9820001346FA /* Main.storyboard */; };
+		AED1A1071BFE9820001346FA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AED1A1011BFE9820001346FA /* Info.plist */; };
+		AED1A1081BFE9820001346FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1021BFE9820001346FA /* ViewController.swift */; };
+		AED1A1151BFE983A001346FA /* AnimatabeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1091BFE983A001346FA /* AnimatabeButton.swift */; };
+		AED1A1161BFE983A001346FA /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A10A1BFE983A001346FA /* Animatable.swift */; };
+		AED1A1171BFE983A001346FA /* AnimatableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A10B1BFE983A001346FA /* AnimatableImageView.swift */; };
+		AED1A1181BFE983A001346FA /* AnimatableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A10C1BFE983A001346FA /* AnimatableTextField.swift */; };
+		AED1A1191BFE983A001346FA /* AnimatableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A10D1BFE983A001346FA /* AnimatableTextView.swift */; };
+		AED1A11A1BFE983A001346FA /* AnimatableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A10E1BFE983A001346FA /* AnimatableView.swift */; };
+		AED1A11B1BFE983A001346FA /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A10F1BFE983A001346FA /* AnimationType.swift */; };
+		AED1A11C1BFE983A001346FA /* BorderDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1101BFE983A001346FA /* BorderDesignable.swift */; };
+		AED1A11D1BFE983A001346FA /* BoxShadowDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1111BFE983A001346FA /* BoxShadowDesignable.swift */; };
+		AED1A11E1BFE983A001346FA /* PaddingDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1121BFE983A001346FA /* PaddingDesignable.swift */; };
+		AED1A11F1BFE983A001346FA /* PlaceholderDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1131BFE983A001346FA /* PlaceholderDesignable.swift */; };
+		AED1A1201BFE983A001346FA /* UIView+CSSable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1141BFE983A001346FA /* UIView+CSSable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AE6C66FF1BFBF93500134A35 /* IBAnimatableApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBAnimatableApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE6C67021BFBF93500134A35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AE6C67041BFBF93500134A35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AE6C67071BFBF93500134A35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AE6C67091BFBF93500134A35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AE6C670C1BFBF93500134A35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AE6C670E1BFBF93500134A35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AE6C67151BFBFB8C00134A35 /* AnimatableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableView.swift; sourceTree = "<group>"; };
-		AE6C67171BFC3C0E00134A35 /* BorderDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderDesignable.swift; sourceTree = "<group>"; };
-		AE6F18791BFD4AAC00CFDF4F /* AnimatableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableTextField.swift; path = ../AnimatableTextField.swift; sourceTree = "<group>"; };
-		AE6F187B1BFD775100CFDF4F /* PlaceholderDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderDesignable.swift; sourceTree = "<group>"; };
-		AE6F187D1BFD794A00CFDF4F /* AnimatableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableImageView.swift; sourceTree = "<group>"; };
-		AE6F187F1BFD7D6500CFDF4F /* CSSTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSTextView.swift; sourceTree = "<group>"; };
-		AE6F18811BFD89B900CFDF4F /* Animatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animatable.swift; sourceTree = "<group>"; };
-		AE6F18841BFD936400CFDF4F /* AnimationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationType.swift; sourceTree = "<group>"; };
-		CAB560C32378CF068A0F3C95 /* BoxShadowDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxShadowDesignable.swift; sourceTree = "<group>"; };
-		CAB5614554E33E8FB0C5E680 /* UIView+CSSable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CSSable.swift"; sourceTree = "<group>"; };
-		CAB56AB484D792ACCFBC6F93 /* PaddingDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingDesignable.swift; sourceTree = "<group>"; };
-		CAB56E56DEF4CF78E6A8F319 /* AnimatabeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatabeButton.swift; sourceTree = "<group>"; };
+		AED1A0FA1BFE9820001346FA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = IBAnimatableApp/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		AED1A0FB1BFE9820001346FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = IBAnimatableApp/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		AED1A0FE1BFE9820001346FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AED1A1001BFE9820001346FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		AED1A1011BFE9820001346FA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = IBAnimatableApp/Info.plist; sourceTree = SOURCE_ROOT; };
+		AED1A1021BFE9820001346FA /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = IBAnimatableApp/ViewController.swift; sourceTree = SOURCE_ROOT; };
+		AED1A1091BFE983A001346FA /* AnimatabeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatabeButton.swift; path = IBAnimatable/AnimatabeButton.swift; sourceTree = SOURCE_ROOT; };
+		AED1A10A1BFE983A001346FA /* Animatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Animatable.swift; path = IBAnimatable/Animatable.swift; sourceTree = SOURCE_ROOT; };
+		AED1A10B1BFE983A001346FA /* AnimatableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableImageView.swift; path = IBAnimatable/AnimatableImageView.swift; sourceTree = SOURCE_ROOT; };
+		AED1A10C1BFE983A001346FA /* AnimatableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableTextField.swift; path = IBAnimatable/AnimatableTextField.swift; sourceTree = SOURCE_ROOT; };
+		AED1A10D1BFE983A001346FA /* AnimatableTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableTextView.swift; path = IBAnimatable/AnimatableTextView.swift; sourceTree = SOURCE_ROOT; };
+		AED1A10E1BFE983A001346FA /* AnimatableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableView.swift; path = IBAnimatable/AnimatableView.swift; sourceTree = SOURCE_ROOT; };
+		AED1A10F1BFE983A001346FA /* AnimationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimationType.swift; path = IBAnimatable/AnimationType.swift; sourceTree = SOURCE_ROOT; };
+		AED1A1101BFE983A001346FA /* BorderDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BorderDesignable.swift; path = IBAnimatable/BorderDesignable.swift; sourceTree = SOURCE_ROOT; };
+		AED1A1111BFE983A001346FA /* BoxShadowDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoxShadowDesignable.swift; path = IBAnimatable/BoxShadowDesignable.swift; sourceTree = SOURCE_ROOT; };
+		AED1A1121BFE983A001346FA /* PaddingDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaddingDesignable.swift; path = IBAnimatable/PaddingDesignable.swift; sourceTree = SOURCE_ROOT; };
+		AED1A1131BFE983A001346FA /* PlaceholderDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceholderDesignable.swift; path = IBAnimatable/PlaceholderDesignable.swift; sourceTree = SOURCE_ROOT; };
+		AED1A1141BFE983A001346FA /* UIView+CSSable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+CSSable.swift"; path = "IBAnimatable/UIView+CSSable.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,15 +80,15 @@
 		AE6C67011BFBF93500134A35 /* IBAnimatableApp */ = {
 			isa = PBXGroup;
 			children = (
-				AE6C67021BFBF93500134A35 /* AppDelegate.swift */,
-				AE6C67041BFBF93500134A35 /* ViewController.swift */,
-				AE6C67061BFBF93500134A35 /* Main.storyboard */,
-				AE6C67091BFBF93500134A35 /* Assets.xcassets */,
-				AE6C670B1BFBF93500134A35 /* LaunchScreen.storyboard */,
-				AE6C670E1BFBF93500134A35 /* Info.plist */,
+				AED1A0FA1BFE9820001346FA /* AppDelegate.swift */,
+				AED1A1021BFE9820001346FA /* ViewController.swift */,
+				AED1A0FB1BFE9820001346FA /* Assets.xcassets */,
+				AED1A0FD1BFE9820001346FA /* LaunchScreen.storyboard */,
+				AED1A0FF1BFE9820001346FA /* Main.storyboard */,
+				AED1A1011BFE9820001346FA /* Info.plist */,
 			);
 			name = IBAnimatableApp;
-			path = IBCSSableApp;
+			path = IBAnimatableApp;
 			sourceTree = "<group>";
 		};
 		AE6C67141BFBF9BD00134A35 /* IBAnimatable */ = {
@@ -99,17 +100,17 @@
 				AE6F18751BFD4A1800CFDF4F /* extension */,
 			);
 			name = IBAnimatable;
-			path = IBCSSable;
+			path = IBAnimatable;
 			sourceTree = SOURCE_ROOT;
 		};
 		AE6F18741BFD49DE00CFDF4F /* protocol */ = {
 			isa = PBXGroup;
 			children = (
-				AE6F18811BFD89B900CFDF4F /* Animatable.swift */,
-				AE6C67171BFC3C0E00134A35 /* BorderDesignable.swift */,
-				CAB560C32378CF068A0F3C95 /* BoxShadowDesignable.swift */,
-				CAB56AB484D792ACCFBC6F93 /* PaddingDesignable.swift */,
-				AE6F187B1BFD775100CFDF4F /* PlaceholderDesignable.swift */,
+				AED1A10A1BFE983A001346FA /* Animatable.swift */,
+				AED1A1101BFE983A001346FA /* BorderDesignable.swift */,
+				AED1A1111BFE983A001346FA /* BoxShadowDesignable.swift */,
+				AED1A1121BFE983A001346FA /* PaddingDesignable.swift */,
+				AED1A1131BFE983A001346FA /* PlaceholderDesignable.swift */,
 			);
 			name = protocol;
 			sourceTree = "<group>";
@@ -117,7 +118,7 @@
 		AE6F18751BFD4A1800CFDF4F /* extension */ = {
 			isa = PBXGroup;
 			children = (
-				CAB5614554E33E8FB0C5E680 /* UIView+CSSable.swift */,
+				AED1A1141BFE983A001346FA /* UIView+CSSable.swift */,
 			);
 			name = extension;
 			sourceTree = "<group>";
@@ -125,11 +126,11 @@
 		AE6F18761BFD4A3200CFDF4F /* view */ = {
 			isa = PBXGroup;
 			children = (
-				AE6C67151BFBFB8C00134A35 /* AnimatableView.swift */,
-				CAB56E56DEF4CF78E6A8F319 /* AnimatabeButton.swift */,
-				AE6F187D1BFD794A00CFDF4F /* AnimatableImageView.swift */,
-				AE6F18791BFD4AAC00CFDF4F /* AnimatableTextField.swift */,
-				AE6F187F1BFD7D6500CFDF4F /* CSSTextView.swift */,
+				AED1A10E1BFE983A001346FA /* AnimatableView.swift */,
+				AED1A1091BFE983A001346FA /* AnimatabeButton.swift */,
+				AED1A10B1BFE983A001346FA /* AnimatableImageView.swift */,
+				AED1A10C1BFE983A001346FA /* AnimatableTextField.swift */,
+				AED1A10D1BFE983A001346FA /* AnimatableTextView.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -137,7 +138,7 @@
 		AE6F18831BFD934A00CFDF4F /* enum */ = {
 			isa = PBXGroup;
 			children = (
-				AE6F18841BFD936400CFDF4F /* AnimationType.swift */,
+				AED1A10F1BFE983A001346FA /* AnimationType.swift */,
 			);
 			name = enum;
 			sourceTree = "<group>";
@@ -158,7 +159,7 @@
 			dependencies = (
 			);
 			name = IBAnimatableApp;
-			productName = IBCSSableApp;
+			productName = IBAnimatableApp;
 			productReference = AE6C66FF1BFBF93500134A35 /* IBAnimatableApp.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -200,9 +201,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE6C670D1BFBF93500134A35 /* LaunchScreen.storyboard in Resources */,
-				AE6C670A1BFBF93500134A35 /* Assets.xcassets in Resources */,
-				AE6C67081BFBF93500134A35 /* Main.storyboard in Resources */,
+				AED1A1071BFE9820001346FA /* Info.plist in Resources */,
+				AED1A1061BFE9820001346FA /* Main.storyboard in Resources */,
+				AED1A1041BFE9820001346FA /* Assets.xcassets in Resources */,
+				AED1A1051BFE9820001346FA /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,40 +215,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE6C67051BFBF93500134A35 /* ViewController.swift in Sources */,
-				AE6C67161BFBFB8C00134A35 /* AnimatableView.swift in Sources */,
-				AE6C67181BFC3C0E00134A35 /* BorderDesignable.swift in Sources */,
-				AE6C67031BFBF93500134A35 /* AppDelegate.swift in Sources */,
-				AE6F187E1BFD794A00CFDF4F /* AnimatableImageView.swift in Sources */,
-				AE6F18801BFD7D6500CFDF4F /* CSSTextView.swift in Sources */,
-				CAB56C6B462D0012CA0A6EA6 /* UIView+CSSable.swift in Sources */,
-				AE6F187C1BFD775100CFDF4F /* PlaceholderDesignable.swift in Sources */,
-				CAB560C7055B5821227FC2C8 /* AnimatabeButton.swift in Sources */,
-				AE6F18821BFD89B900CFDF4F /* Animatable.swift in Sources */,
-				AE6F18851BFD936400CFDF4F /* AnimationType.swift in Sources */,
-				CAB5660BD71EA3151F77769B /* BoxShadowDesignable.swift in Sources */,
-				AE6F187A1BFD4AAC00CFDF4F /* AnimatableTextField.swift in Sources */,
-				CAB565D02C88ACC75F12C1A4 /* PaddingDesignable.swift in Sources */,
+				AED1A11A1BFE983A001346FA /* AnimatableView.swift in Sources */,
+				AED1A1081BFE9820001346FA /* ViewController.swift in Sources */,
+				AED1A11B1BFE983A001346FA /* AnimationType.swift in Sources */,
+				AED1A11E1BFE983A001346FA /* PaddingDesignable.swift in Sources */,
+				AED1A1201BFE983A001346FA /* UIView+CSSable.swift in Sources */,
+				AED1A1171BFE983A001346FA /* AnimatableImageView.swift in Sources */,
+				AED1A1191BFE983A001346FA /* AnimatableTextView.swift in Sources */,
+				AED1A1161BFE983A001346FA /* Animatable.swift in Sources */,
+				AED1A11D1BFE983A001346FA /* BoxShadowDesignable.swift in Sources */,
+				AED1A1181BFE983A001346FA /* AnimatableTextField.swift in Sources */,
+				AED1A11C1BFE983A001346FA /* BorderDesignable.swift in Sources */,
+				AED1A1031BFE9820001346FA /* AppDelegate.swift in Sources */,
+				AED1A11F1BFE983A001346FA /* PlaceholderDesignable.swift in Sources */,
+				AED1A1151BFE983A001346FA /* AnimatabeButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AE6C67061BFBF93500134A35 /* Main.storyboard */ = {
+		AED1A0FD1BFE9820001346FA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AE6C67071BFBF93500134A35 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		AE6C670B1BFBF93500134A35 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AE6C670C1BFBF93500134A35 /* Base */,
+				AED1A0FE1BFE9820001346FA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ../IBAnimatableApp/Base.lproj;
+			sourceTree = "<group>";
+		};
+		AED1A0FF1BFE9820001346FA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AED1A1001BFE9820001346FA /* Base */,
+			);
+			name = Main.storyboard;
+			path = ../IBAnimatableApp/Base.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -339,10 +343,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = IBCSSableApp/Info.plist;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = IBAnimatableApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JakeLin.IBCSSableApp;
+				PRODUCT_BUNDLE_IDENTIFIER = JakeLin.IBAnimatableApp;
 				PRODUCT_NAME = IBAnimatableApp;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -350,9 +356,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = IBCSSableApp/Info.plist;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = IBAnimatableApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JakeLin.IBCSSableApp;
+				PRODUCT_BUNDLE_IDENTIFIER = JakeLin.IBAnimatableApp;
 				PRODUCT_NAME = IBAnimatableApp;
 			};
 			name = Release;

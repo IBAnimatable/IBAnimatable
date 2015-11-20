@@ -1,2 +1,2 @@
-# IBCSSable
-Support CSS in Interface Builder
+# IBAnimatable
+Make Interface Builder designale and animatable.
