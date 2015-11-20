@@ -6,6 +6,4 @@
 import UIKit
 
 public protocol PositionAnimatable : Animatable {
-  var x: CGFloat { get set }
-  var y: CGFloat { get set }
 }

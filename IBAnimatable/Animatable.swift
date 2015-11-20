@@ -48,41 +48,15 @@ public protocol Animatable {
    customLayoutSubviews method, should be called in layoutSubviews() method
    */
   func customLayoutSubviews()
+  
+  /**
+   animate method, used in sub-protocol
+  */
+  func animate()
 }
 
 public extension Animatable where Self: UIView {
-  private func willAnimate() {
-    guard let animationType = AnimationType(rawValue: animationType) else {
-      return
-    }
-    switch(animationType) {
-    case .SlideLeft:
-      self.center.x = 300 * self.force
-    case .SlideRight:
-      self.center.x -= 300 * self.force
-    default:
-      break
-    }
-  }
-  
-  private func animate() {
-    
-    UIView.animateWithDuration(duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [], animations: { () -> Void in
-      let translate = CGAffineTransformMakeTranslation(self.center.x, self.center.y)
-      
-//      let scale = CGAffineTransformMakeScale(self.transform..scaleX, self.scaleY)
-//      let rotate = CGAffineTransformMakeRotation(self.rotate)
-//      let translateAndScale = CGAffineTransformConcat(translate, scale)
-//      self.transform = CGAffineTransformConcat(rotate, translateAndScale)
-//      
-      }, completion: { (completed) in
-        //        self.animationPreview = true
-    })
-
-  }
-  
   func customLayoutSubviews() {
-    willAnimate()
     animate()
   }
 }
