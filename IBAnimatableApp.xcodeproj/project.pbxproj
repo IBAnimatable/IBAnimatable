@@ -26,7 +26,7 @@
 		AED1A11F1BFE983A001346FA /* PlaceholderDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1131BFE983A001346FA /* PlaceholderDesignable.swift */; };
 		AED1A1201BFE983A001346FA /* UIView+CSSable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1141BFE983A001346FA /* UIView+CSSable.swift */; };
 		AED1A1221BFEA05F001346FA /* PositionAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1211BFEA05F001346FA /* PositionAnimatable.swift */; };
-		AED1A1281BFEA3E1001346FA /* Slidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1271BFEA3E1001346FA /* Slidable.swift */; };
+		AED1A1281BFEA3E1001346FA /* SlideAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1271BFEA3E1001346FA /* SlideAnimatable.swift */; };
 		AED1A12A1BFEA4EF001346FA /* Squeezable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1291BFEA4EF001346FA /* Squeezable.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +51,7 @@
 		AED1A1131BFE983A001346FA /* PlaceholderDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceholderDesignable.swift; path = IBAnimatable/PlaceholderDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AED1A1141BFE983A001346FA /* UIView+CSSable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+CSSable.swift"; path = "IBAnimatable/UIView+CSSable.swift"; sourceTree = SOURCE_ROOT; };
 		AED1A1211BFEA05F001346FA /* PositionAnimatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionAnimatable.swift; sourceTree = "<group>"; };
-		AED1A1271BFEA3E1001346FA /* Slidable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slidable.swift; sourceTree = "<group>"; };
+		AED1A1271BFEA3E1001346FA /* SlideAnimatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideAnimatable.swift; sourceTree = "<group>"; };
 		AED1A1291BFEA4EF001346FA /* Squeezable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Squeezable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,7 +160,7 @@
 			children = (
 				AED1A10A1BFE983A001346FA /* Animatable.swift */,
 				AED1A1211BFEA05F001346FA /* PositionAnimatable.swift */,
-				AED1A1271BFEA3E1001346FA /* Slidable.swift */,
+				AED1A1271BFEA3E1001346FA /* SlideAnimatable.swift */,
 				AED1A1291BFEA4EF001346FA /* Squeezable.swift */,
 			);
 			name = Animatable;
@@ -248,7 +248,7 @@
 				AED1A1171BFE983A001346FA /* AnimatableImageView.swift in Sources */,
 				AED1A1191BFE983A001346FA /* AnimatableTextView.swift in Sources */,
 				AED1A1161BFE983A001346FA /* Animatable.swift in Sources */,
-				AED1A1281BFEA3E1001346FA /* Slidable.swift in Sources */,
+				AED1A1281BFEA3E1001346FA /* SlideAnimatable.swift in Sources */,
 				AED1A11D1BFE983A001346FA /* BoxShadowDesignable.swift in Sources */,
 				AED1A1181BFE983A001346FA /* AnimatableTextField.swift in Sources */,
 				AED1A11C1BFE983A001346FA /* BorderDesignable.swift in Sources */,

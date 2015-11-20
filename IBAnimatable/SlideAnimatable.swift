@@ -5,10 +5,10 @@
 
 import UIKit
 
-public protocol Slidable : PositionAnimatable {
+public protocol SlideAnimatable : PositionAnimatable {
 }
 
-public extension Slidable where Self: UIView {
+public extension SlideAnimatable where Self: UIView {
   func animate() {
     guard let animationType = AnimationType(rawValue: animationType) else {
       return

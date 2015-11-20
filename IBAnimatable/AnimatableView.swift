@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableView: UIView, BorderDesignable, BoxShadowDesignable, Slidable, Squeezable {
+@IBDesignable public class AnimatableView: UIView, BorderDesignable, BoxShadowDesignable, SlideAnimatable, Squeezable {
   
   // MARK: - CSSBorderable
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
