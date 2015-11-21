@@ -63,8 +63,8 @@ public extension Animatable where Self: UIView {
     
     var x: CGFloat = 0
     var y: CGFloat = 0
-    var scaleX: CGFloat = 0
-    var scaleY: CGFloat = 0
+    var scaleX: CGFloat = 1
+    var scaleY: CGFloat = 1
   
     switch(animationType) {
     case .SlideLeft:
@@ -87,6 +87,8 @@ public extension Animatable where Self: UIView {
     case .SqueezeUp:
       y = 300 * force
       scaleY = 3 * force
+    case .FadeIn:
+      alpha = 0
     default:
       return
     }
@@ -99,6 +101,7 @@ public extension Animatable where Self: UIView {
 
     UIView.animateWithDuration(duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [], animations: { () -> Void in
       self.transform = CGAffineTransformIdentity
+      self.alpha = 1
       }, completion:nil)
   }
   

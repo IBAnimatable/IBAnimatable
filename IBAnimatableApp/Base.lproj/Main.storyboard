@@ -90,7 +90,10 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="slideUp"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="fadeIn"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFy-Ec-G0k" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
