@@ -105,16 +105,20 @@ public extension Animatable where Self: UIView {
       layer.addAnimation(animation, forKey: "fade")
       return
     case .FadeInLeft:
+      x = 300 * force
       alpha = 0
-      x = 300*force
     case .FadeInRight:
-      x = -300*force
+      x = -300 * force
       alpha = 0
     case .FadeInDown:
-      y = -300*force
+      y = -300 * force
       alpha = 0
     case .FadeInUp:
-      y = 300*force
+      y = 300 * force
+      alpha = 0
+    case .ZoomIn:
+      scaleX = 2 * force
+      scaleY = 2 * force
       alpha = 0
     default:
       return
