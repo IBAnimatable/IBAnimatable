@@ -94,6 +94,29 @@ public extension Animatable where Self: UIView {
         self.alpha = 0
         }, completion:nil)
       return
+    case .FadeOutIn:
+      let animation = CABasicAnimation()
+      animation.keyPath = "opacity"
+      animation.fromValue = 1
+      animation.toValue = 0
+      animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      animation.duration = CFTimeInterval(duration)
+      animation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
+      animation.autoreverses = true
+      layer.addAnimation(animation, forKey: "fade")
+      return
+    case .FadeInLeft:
+      alpha = 0
+      x = 300*force
+    case .FadeInRight:
+      x = -300*force
+      alpha = 0
+    case .FadeInDown:
+      y = -300*force
+      alpha = 0
+    case .FadeInUp:
+      y = 300*force
+      alpha = 0
     default:
       return
     }
