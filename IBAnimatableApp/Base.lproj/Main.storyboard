@@ -90,7 +90,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="fadeIn"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="fadeOut"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>

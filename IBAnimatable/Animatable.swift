@@ -89,6 +89,11 @@ public extension Animatable where Self: UIView {
       scaleY = 3 * force
     case .FadeIn:
       alpha = 0
+    case .FadeOut:
+      UIView.animateWithDuration(duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [], animations: { () -> Void in
+        self.alpha = 0
+        }, completion:nil)
+      return
     default:
       return
     }
