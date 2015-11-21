@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableView: UIView, BorderDesignable, BoxShadowDesignable, SlideAnimatable, SqueezeAnimatable {
+@IBDesignable public class AnimatableView: UIView, BorderDesignable, BoxShadowDesignable, Animatable {
   
   // MARK: - CSSBorderable
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
@@ -74,7 +74,7 @@ import UIKit
   @IBInspectable public var damping: CGFloat = 0.7
   @IBInspectable public var velocity: CGFloat = 0.7
   
-  // MARK: - PositionAnimatable
+  // MARK: - Animatable
   
   // Doesn't support animation in IB
   // @IBInspectable public var animationPreview: Bool = false {
@@ -84,12 +84,6 @@ import UIKit
   //   }
   // }
   
-  public func animate() {
-    let slideAnimatable:SlideAnimatable = self
-    slideAnimatable.animate()
-//    (self as SlideAnimatable).animate()
-//    (self as SqueezeAnimatable).animate()
-  }
   
   // MARK: - Life cycle
   public override func layoutSubviews() {

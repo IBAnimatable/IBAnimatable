@@ -25,9 +25,6 @@
 		AED1A11E1BFE983A001346FA /* PaddingDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1121BFE983A001346FA /* PaddingDesignable.swift */; };
 		AED1A11F1BFE983A001346FA /* PlaceholderDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1131BFE983A001346FA /* PlaceholderDesignable.swift */; };
 		AED1A1201BFE983A001346FA /* UIView+CSSable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1141BFE983A001346FA /* UIView+CSSable.swift */; };
-		AED1A1221BFEA05F001346FA /* PositionAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1211BFEA05F001346FA /* PositionAnimatable.swift */; };
-		AED1A1281BFEA3E1001346FA /* SlideAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1271BFEA3E1001346FA /* SlideAnimatable.swift */; };
-		AED1A12A1BFEA4EF001346FA /* SqueezeAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1291BFEA4EF001346FA /* SqueezeAnimatable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,9 +47,6 @@
 		AED1A1121BFE983A001346FA /* PaddingDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaddingDesignable.swift; path = IBAnimatable/PaddingDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AED1A1131BFE983A001346FA /* PlaceholderDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceholderDesignable.swift; path = IBAnimatable/PlaceholderDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AED1A1141BFE983A001346FA /* UIView+CSSable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+CSSable.swift"; path = "IBAnimatable/UIView+CSSable.swift"; sourceTree = SOURCE_ROOT; };
-		AED1A1211BFEA05F001346FA /* PositionAnimatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionAnimatable.swift; sourceTree = "<group>"; };
-		AED1A1271BFEA3E1001346FA /* SlideAnimatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideAnimatable.swift; sourceTree = "<group>"; };
-		AED1A1291BFEA4EF001346FA /* SqueezeAnimatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SqueezeAnimatable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,9 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				AED1A10A1BFE983A001346FA /* Animatable.swift */,
-				AED1A1211BFEA05F001346FA /* PositionAnimatable.swift */,
-				AED1A1271BFEA3E1001346FA /* SlideAnimatable.swift */,
-				AED1A1291BFEA4EF001346FA /* SqueezeAnimatable.swift */,
 			);
 			name = Animatable;
 			sourceTree = "<group>";
@@ -238,8 +229,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AED1A12A1BFEA4EF001346FA /* SqueezeAnimatable.swift in Sources */,
-				AED1A1221BFEA05F001346FA /* PositionAnimatable.swift in Sources */,
 				AED1A11A1BFE983A001346FA /* AnimatableView.swift in Sources */,
 				AED1A1081BFE9820001346FA /* ViewController.swift in Sources */,
 				AED1A11B1BFE983A001346FA /* AnimationType.swift in Sources */,
@@ -248,7 +237,6 @@
 				AED1A1171BFE983A001346FA /* AnimatableImageView.swift in Sources */,
 				AED1A1191BFE983A001346FA /* AnimatableTextView.swift in Sources */,
 				AED1A1161BFE983A001346FA /* Animatable.swift in Sources */,
-				AED1A1281BFEA3E1001346FA /* SlideAnimatable.swift in Sources */,
 				AED1A11D1BFE983A001346FA /* BoxShadowDesignable.swift in Sources */,
 				AED1A1181BFE983A001346FA /* AnimatableTextField.swift in Sources */,
 				AED1A11C1BFE983A001346FA /* BorderDesignable.swift in Sources */,
