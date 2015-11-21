@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableView: UIView, BorderDesignable, BoxShadowDesignable, SlideAnimatable, Squeezable {
+@IBDesignable public class AnimatableView: UIView, BorderDesignable, BoxShadowDesignable, SlideAnimatable, SqueezeAnimatable {
   
   // MARK: - CSSBorderable
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
@@ -84,9 +84,12 @@ import UIKit
   //   }
   // }
   
-  @IBInspectable public var x: CGFloat = 0
-  @IBInspectable public var y: CGFloat = 0
-  
+  public func animate() {
+    let slideAnimatable:SlideAnimatable = self
+    slideAnimatable.animate()
+//    (self as SlideAnimatable).animate()
+//    (self as SqueezeAnimatable).animate()
+  }
   
   // MARK: - Life cycle
   public override func layoutSubviews() {
