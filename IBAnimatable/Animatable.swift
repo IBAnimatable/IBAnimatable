@@ -120,6 +120,16 @@ public extension Animatable where Self: UIView {
       scaleX = 2 * force
       scaleY = 2 * force
       alpha = 0
+    case .ZoomOut:
+      scaleX = 2 * force
+      scaleY = 2 * force
+      let scale = CGAffineTransformMakeScale(scaleX, scaleY)
+      
+      UIView.animateWithDuration(duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [], animations: { () -> Void in
+        self.transform = scale
+        self.alpha = 0
+        }, completion:nil)
+      return
     default:
       return
     }
