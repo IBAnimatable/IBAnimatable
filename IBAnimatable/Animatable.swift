@@ -185,6 +185,26 @@ public extension Animatable where Self: UIView {
       morphY.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
       layer.addAnimation(morphY, forKey: "morphY")
       return
+    case .Squeeze:
+      let squeezeX = CAKeyframeAnimation()
+      squeezeX.keyPath = "transform.scale.x"
+      squeezeX.values = [1, 1.5*force, 0.5, 1.5*force, 1]
+      squeezeX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+      squeezeX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      squeezeX.duration = CFTimeInterval(duration)
+      squeezeX.repeatCount = repeatCount
+      squeezeX.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
+      layer.addAnimation(squeezeX, forKey: "squeezeX")
+      
+      let squeezeY = CAKeyframeAnimation()
+      squeezeY.keyPath = "transform.scale.y"
+      squeezeY.values = [1, 0.5, 1, 0.5, 1]
+      squeezeY.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+      squeezeY.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      squeezeY.duration = CFTimeInterval(duration)
+      squeezeY.repeatCount = repeatCount
+      squeezeY.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
+      layer.addAnimation(squeezeY, forKey: "squeezeY")
     default:
       return
     }
