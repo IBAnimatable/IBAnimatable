@@ -146,6 +146,45 @@ public extension Animatable where Self: UIView {
       animation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
       layer.addAnimation(animation, forKey: "shake")
       return
+    case .Pop:
+      let animation = CAKeyframeAnimation()
+      animation.keyPath = "transform.scale"
+      animation.values = [0, 0.2*force, -0.2*force, 0.2*force, 0]
+      animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+      animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      animation.duration = CFTimeInterval(duration)
+      animation.additive = true
+      animation.repeatCount = repeatCount
+      animation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
+      layer.addAnimation(animation, forKey: "pop")
+      return
+    case .FlipX:
+      scaleX = 1
+      scaleY = -1
+    case .FlipY:
+      scaleX = -1
+      scaleY = 1
+    case .Morph:
+      let morphX = CAKeyframeAnimation()
+      morphX.keyPath = "transform.scale.x"
+      morphX.values = [1, 1.3*force, 0.7, 1.3*force, 1]
+      morphX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+      morphX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      morphX.duration = CFTimeInterval(duration)
+      morphX.repeatCount = repeatCount
+      morphX.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
+      layer.addAnimation(morphX, forKey: "morphX")
+      
+      let morphY = CAKeyframeAnimation()
+      morphY.keyPath = "transform.scale.y"
+      morphY.values = [1, 0.7, 1.3*force, 0.7, 1]
+      morphY.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+      morphY.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      morphY.duration = CFTimeInterval(duration)
+      morphY.repeatCount = repeatCount
+      morphY.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
+      layer.addAnimation(morphY, forKey: "morphY")
+      return
     default:
       return
     }
