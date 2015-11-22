@@ -45,6 +45,11 @@ public protocol Animatable {
   var velocity: CGFloat { get set }
   
   /**
+   Repeat count for some animations like shake
+   */
+  var repeatCount: Float { get set }
+  
+  /**
    customLayoutSubviews method, should be called in layoutSubviews() method
    */
   func customLayoutSubviews()
@@ -124,11 +129,22 @@ public extension Animatable where Self: UIView {
       scaleX = 2 * force
       scaleY = 2 * force
       let scale = CGAffineTransformMakeScale(scaleX, scaleY)
-      
       UIView.animateWithDuration(duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [], animations: { () -> Void in
         self.transform = scale
         self.alpha = 0
         }, completion:nil)
+      return
+    case .Shake:
+      let animation = CAKeyframeAnimation()
+      animation.keyPath = "position.x"
+      animation.values = [0, 30*force, -30*force, 30*force, 0]
+      animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+      animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      animation.duration = CFTimeInterval(duration)
+      animation.additive = true
+      animation.repeatCount = repeatCount
+      animation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
+      layer.addAnimation(animation, forKey: "shake")
       return
     default:
       return

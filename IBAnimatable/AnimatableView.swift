@@ -73,6 +73,7 @@ import UIKit
   @IBInspectable public var force: CGFloat = 1
   @IBInspectable public var damping: CGFloat = 0.7
   @IBInspectable public var velocity: CGFloat = 0.7
+  @IBInspectable public var repeatCount: Float = 1
   
   // MARK: - Animatable
   
