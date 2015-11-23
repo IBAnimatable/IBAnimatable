@@ -5,9 +5,9 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableView: UIView, BorderDesignable, BoxShadowDesignable, Animatable {
+@IBDesignable public class AnimatableView: UIView, BorderDesignable, BoxShadowDesignable, BlurDesignable, Animatable {
   
-  // MARK: - CSSBorderable
+  // MARK: - BorderDesignable
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
     didSet {
       configBorderColor()
@@ -26,7 +26,7 @@ import UIKit
     }
   }
   
-  // MARK: - CSSBoxShadowable
+  // MARK: - ShadowDesignable
   @IBInspectable public var shadowColor: UIColor = UIColor.clearColor() {
     didSet {
       configShadowColor()
@@ -54,6 +54,13 @@ import UIKit
   @IBInspectable public var shadowOffsetY: CGFloat = 0 {
     didSet {
       configShadowOffsetY()
+    }
+  }
+  
+  // MARK: - BlurDesignable
+  @IBInspectable public var blurEffectStyle: String = "" {
+    didSet {
+      configBlurEffectStyle()
     }
   }
   

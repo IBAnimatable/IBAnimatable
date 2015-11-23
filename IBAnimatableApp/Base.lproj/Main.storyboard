@@ -92,6 +92,7 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="pop"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="blurEffectStyle" value="ExtraLight"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFy-Ec-G0k" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">

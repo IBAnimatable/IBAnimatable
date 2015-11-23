@@ -7,7 +7,7 @@ import UIKit
 
 @IBDesignable public class CSSTextView: UITextView, BorderDesignable {
   
-  // MARK: - CSSBorderable
+  // MARK: - BorderDesignable
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
     didSet {
       configBorderColor()

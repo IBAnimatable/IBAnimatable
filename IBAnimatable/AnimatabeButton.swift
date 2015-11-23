@@ -7,7 +7,7 @@ import UIKit
 
 @IBDesignable public class AnimatabeButton: UIButton, BorderDesignable, BoxShadowDesignable {
   
-  // MARK: - CSSBorderable
+  // MARK: - BorderDesignable
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
     didSet {
       configBorderColor()
@@ -26,7 +26,7 @@ import UIKit
     }
   }
 
-  // MARK: - CSSBoxShadowable
+  // MARK: - BoxShadowDesignable
   @IBInspectable public var shadowColor: UIColor = UIColor.clearColor() {
     didSet {
       configShadowColor()

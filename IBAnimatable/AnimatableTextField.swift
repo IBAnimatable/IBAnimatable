@@ -7,7 +7,7 @@ import UIKit
 
 @IBDesignable public class AnimatableTextField: UITextField, BorderDesignable, BoxShadowDesignable, PaddingDesignable, PlaceholderDesignable {
  
-  // MARK: - CSSBorderable
+  // MARK: - BorderDesignable
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
     didSet {
       configBorderColor()
@@ -26,7 +26,7 @@ import UIKit
     }
   }
   
-  // MARK: - CSSBoxShadowable
+  // MARK: - BoxShadowDesignable
   @IBInspectable public var shadowColor: UIColor = UIColor.clearColor() {
     didSet {
       configShadowColor()
@@ -57,7 +57,7 @@ import UIKit
     }
   }
   
-  // MARK: - CSSPaddingable
+  // MARK: - PaddingDesignable
   @IBInspectable public var paddingLeft: CGFloat = 0 {
     didSet {
       configPaddingLeft()
