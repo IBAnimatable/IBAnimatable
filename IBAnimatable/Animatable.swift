@@ -238,6 +238,16 @@ public extension Animatable where Self: UIView {
       positionX.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
       layer.addAnimation(positionX, forKey: "positionX")
       return
+    case .Swing:
+      let animation = CAKeyframeAnimation()
+      animation.keyPath = "transform.rotation"
+      animation.values = [0, 0.3*force, -0.3*force, 0.3*force, 0]
+      animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+      animation.duration = CFTimeInterval(duration)
+      animation.additive = true
+      animation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
+      layer.addAnimation(animation, forKey: "swing")
+      return
     default:
       return
     }
