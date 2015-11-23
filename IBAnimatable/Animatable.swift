@@ -217,6 +217,27 @@ public extension Animatable where Self: UIView {
       animation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
       layer.addAnimation(animation, forKey: "flash")
       return
+    case .Wobble:
+      let rotation = CAKeyframeAnimation()
+      rotation.keyPath = "transform.rotation"
+      rotation.values = [0, 0.3*force, -0.3*force, 0.3*force, 0]
+      rotation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+      rotation.duration = CFTimeInterval(duration)
+      rotation.additive = true
+      rotation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
+      layer.addAnimation(rotation, forKey: "rotation")
+      
+      let positionX = CAKeyframeAnimation()
+      positionX.keyPath = "position.x"
+      positionX.values = [0, 30*force, -30*force, 30*force, 0]
+      positionX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+      positionX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      positionX.duration = CFTimeInterval(duration)
+      positionX.additive = true
+      positionX.repeatCount = repeatCount
+      positionX.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
+      layer.addAnimation(positionX, forKey: "positionX")
+      return
     default:
       return
     }
