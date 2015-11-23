@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableImageView: UIImageView, BorderDesignable, BoxShadowDesignable {
+@IBDesignable public class AnimatableImageView: UIImageView, BorderDesignable, BoxShadowDesignable, BlurDesignable {
   
   // MARK: - BorderDesignable
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
@@ -54,6 +54,13 @@ import UIKit
   @IBInspectable public var shadowOffsetY: CGFloat = 0 {
     didSet {
       configShadowOffsetY()
+    }
+  }
+  
+  // MARK: - BlurDesignable
+  @IBInspectable public var blurEffectStyle: String = "" {
+    didSet {
+      configBlurEffectStyle()
     }
   }
 }

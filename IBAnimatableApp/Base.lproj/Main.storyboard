@@ -17,6 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="0Fc-GN-4C8" customClass="AnimatableImageView" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="-12" y="0.0" width="625" height="390"/>
+                                <animations/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="blurEffectStyle" value="ExtraLight"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ggE-nD-JKW" userLabel="TextField" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
                                 <rect key="frame" x="192" y="30" width="216" height="30"/>
                                 <animations/>
@@ -92,7 +99,6 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="pop"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="blurEffectStyle" value="ExtraLight"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFy-Ec-G0k" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
@@ -207,6 +213,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="background" width="625" height="390"/>
         <image name="swift" width="100" height="100"/>
     </resources>
 </document>
