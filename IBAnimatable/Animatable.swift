@@ -205,6 +205,18 @@ public extension Animatable where Self: UIView {
       squeezeY.repeatCount = repeatCount
       squeezeY.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
       layer.addAnimation(squeezeY, forKey: "squeezeY")
+      return
+    case .Flash:
+      let animation = CABasicAnimation()
+      animation.keyPath = "opacity"
+      animation.fromValue = 1
+      animation.toValue = 0
+      animation.duration = CFTimeInterval(duration)
+      animation.repeatCount = repeatCount * 2.0
+      animation.autoreverses = true
+      animation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
+      layer.addAnimation(animation, forKey: "flash")
+      return
     default:
       return
     }
