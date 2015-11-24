@@ -22,10 +22,13 @@ public protocol TintDesignable {
 
 public extension TintDesignable where Self:UIView {
   public func configTintedColor() {
-    let sublayer = CALayer()
-    sublayer.backgroundColor = tintedColor.CGColor
-    sublayer.opacity = tintOpacity
-    sublayer.frame = frame
-    self.layer.insertSublayer(sublayer, atIndex: 0)
+    if (tintedColor != UIColor.clearColor()
+      && tintOpacity>0 && tintOpacity<=1) {
+        let sublayer = CALayer()
+        sublayer.backgroundColor = tintedColor.CGColor
+        sublayer.opacity = tintOpacity
+        sublayer.frame = frame
+        self.layer.insertSublayer(sublayer, atIndex: 0)
+    }
   }
 }
