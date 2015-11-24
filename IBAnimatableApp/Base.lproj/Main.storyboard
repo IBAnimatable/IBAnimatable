@@ -17,11 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="0Fc-GN-4C8" customClass="AnimatableImageView" customModule="IBAnimatableApp" customModuleProvider="target">
-                                <rect key="frame" x="-12" y="0.0" width="625" height="390"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="mpo-zo-ZPz" customClass="AnimatableImageView" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="blurEffectStyle" value="ExtraLight"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="tintedColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="tintOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ggE-nD-JKW" userLabel="TextField" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
@@ -75,13 +80,13 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.40933579640000001" green="0.80104922519999999" blue="0.036929481930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.89411764709999997" green="0.0" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="4"/>
+                                        <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
-                                        <real key="value" value="15"/>
+                                        <real key="value" value="17"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                         <color key="value" red="0.96142769610000001" green="0.19560617420000001" blue="0.27446546059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -98,7 +103,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="pop"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="slideLeft"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFy-Ec-G0k" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
@@ -192,12 +197,16 @@
                             <constraint firstItem="H38-B3-S8R" firstAttribute="top" secondItem="FMb-D0-x1i" secondAttribute="bottom" constant="28" id="Aql-gf-2uy"/>
                             <constraint firstItem="ggE-nD-JKW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="FhD-Rg-nmA"/>
                             <constraint firstItem="gFy-Ec-G0k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gec-6E-CsC"/>
+                            <constraint firstItem="mpo-zo-ZPz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JQF-4t-0Ew"/>
                             <constraint firstItem="FMb-D0-x1i" firstAttribute="top" secondItem="ggE-nD-JKW" secondAttribute="bottom" constant="30" id="JdD-iF-ugY"/>
+                            <constraint firstItem="mpo-zo-ZPz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JfU-06-loo"/>
                             <constraint firstItem="FMb-D0-x1i" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UoP-uA-54H"/>
+                            <constraint firstItem="mpo-zo-ZPz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="fio-27-1lk"/>
                             <constraint firstItem="gFy-Ec-G0k" firstAttribute="top" secondItem="H38-B3-S8R" secondAttribute="bottom" constant="30" id="geA-EH-54o"/>
                             <constraint firstItem="FMb-D0-x1i" firstAttribute="centerX" secondItem="ggE-nD-JKW" secondAttribute="centerX" id="idS-Jf-Cxb"/>
                             <constraint firstItem="PJo-xq-4WA" firstAttribute="top" secondItem="gFy-Ec-G0k" secondAttribute="bottom" constant="30" id="jiK-i0-8F3"/>
                             <constraint firstItem="PJo-xq-4WA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mJW-4V-DGm"/>
+                            <constraint firstItem="mpo-zo-ZPz" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="rpz-2C-emb"/>
                             <constraint firstItem="ggE-nD-JKW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s5g-yu-GMa"/>
                         </constraints>
                         <variation key="default">

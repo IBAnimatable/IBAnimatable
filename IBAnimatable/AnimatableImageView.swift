@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableImageView: UIImageView, BorderDesignable, BoxShadowDesignable, BlurDesignable {
+@IBDesignable public class AnimatableImageView: UIImageView, BorderDesignable, BoxShadowDesignable, BlurDesignable, TintDesignable {
   
   // MARK: - BorderDesignable
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
@@ -63,4 +63,13 @@ import UIKit
       configBlurEffectStyle()
     }
   }
+  
+  // MARK: - TintDesignable
+  @IBInspectable public var tintedColor: UIColor = UIColor.clearColor() {
+    didSet {
+      configTintedColor()
+    }
+  }
+  
+  @IBInspectable public var tintOpacity: CGFloat = 0
 }

@@ -45,7 +45,7 @@ public extension BorderDesignable where Self:UIView {
   
   public func configBorderRadius() {
     layer.cornerRadius = borderRadius
-    // if `layer.masksToBounds == true` then shadow doesn't word any more.s
+    // if `layer.masksToBounds == true` then shadow doesn't work any more.
     // layer.masksToBounds = borderRadius > 0
   }
 }
