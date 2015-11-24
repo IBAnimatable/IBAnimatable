@@ -65,11 +65,12 @@ import UIKit
   }
   
   // MARK: - TintDesignable
-  @IBInspectable public var tintedColor: UIColor = UIColor.clearColor() {
-    didSet {
-      configTintedColor()
-    }
-  }
+  @IBInspectable public var tintedColor: UIColor = UIColor.clearColor()
+  @IBInspectable public var tintOpacity: Float = 0
   
-  @IBInspectable public var tintOpacity: CGFloat = 0
+  // MARK: - Life cycle
+  public override func layoutSubviews() {
+    super.layoutSubviews()
+    configTintedColor()
+  }
 }

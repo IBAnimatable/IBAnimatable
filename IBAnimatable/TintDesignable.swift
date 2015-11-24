@@ -17,12 +17,15 @@ public protocol TintDesignable {
   /**
    Opacity in tinted view: from 0 to 1
    */
-  var tintOpacity: CGFloat { get set }
+  var tintOpacity: Float { get set }
 }
 
-public extension TintDesignable where Self:UIImageView {
+public extension TintDesignable where Self:UIView {
   public func configTintedColor() {
-    image = image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-    (self as UIImageView).tintColor = tintedColor
+    let sublayer = CALayer()
+    sublayer.backgroundColor = tintedColor.CGColor
+    sublayer.opacity = tintOpacity
+    sublayer.frame = frame
+    self.layer.insertSublayer(sublayer, atIndex: 0)
   }
 }
