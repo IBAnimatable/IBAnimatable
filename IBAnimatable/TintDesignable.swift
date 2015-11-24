@@ -20,12 +20,9 @@ public protocol TintDesignable {
   var tintOpacity: CGFloat { get set }
 }
 
-public extension TintDesignable where Self:UIView {
+public extension TintDesignable where Self:UIImageView {
   public func configTintedColor() {
-    let tintedView = UIView()
-    tintedView.backgroundColor = tintedColor
-    tintedView.alpha = tintOpacity
-    tintedView.frame = bounds
-    insertSubview(tintedView, atIndex: 0)
+    image = image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+    (self as UIImageView).tintColor = tintedColor
   }
 }
