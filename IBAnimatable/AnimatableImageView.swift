@@ -58,11 +58,7 @@ import UIKit
   }
   
   // MARK: - BlurDesignable
-  @IBInspectable public var blurEffectStyle: String = "" {
-    didSet {
-      configBlurEffectStyle()
-    }
-  }
+  @IBInspectable public var blurEffectStyle: String = ""
   
   // MARK: - TintDesignable
   @IBInspectable public var tintedColor: UIColor = UIColor.clearColor()
@@ -71,6 +67,8 @@ import UIKit
   // MARK: - Life cycle
   public override func layoutSubviews() {
     super.layoutSubviews()
+    
+    configBlurEffectStyle()
     configTintedColor()
   }
 }
