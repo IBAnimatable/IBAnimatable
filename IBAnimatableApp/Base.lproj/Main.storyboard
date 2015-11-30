@@ -104,6 +104,12 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="pop"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="tintedColor">
+                                        <color key="value" red="0.96142769610000001" green="0.19560617420000001" blue="0.27446546059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="tintOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFy-Ec-G0k" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">

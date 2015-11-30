@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableView: UIView, BorderDesignable, BoxShadowDesignable, BlurDesignable, Animatable {
+@IBDesignable public class AnimatableView: UIView, BorderDesignable, BoxShadowDesignable, BlurDesignable, TintDesignable, Animatable {
   
   // MARK: - BorderDesignable
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
@@ -58,11 +58,11 @@ import UIKit
   }
   
   // MARK: - BlurDesignable
-  @IBInspectable public var blurEffectStyle: String = "" {
-    didSet {
-      configBlurEffectStyle()
-    }
-  }
+  @IBInspectable public var blurEffectStyle: String = "";
+  
+  // MARK: - TintDesignable
+  @IBInspectable public var tintedColor: UIColor = UIColor.clearColor()
+  @IBInspectable public var tintOpacity: Float = 0
   
   // MARK: - Animatable
   
@@ -96,6 +96,10 @@ import UIKit
   // MARK: - Life cycle
   public override func layoutSubviews() {
     super.layoutSubviews()
+    
+    configBlurEffectStyle()
+    configTintedColor()
+    
     customLayoutSubviews()
   }
 }
