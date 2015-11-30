@@ -100,6 +100,6 @@ import UIKit
     configBlurEffectStyle()
     configTintedColor()
     
-    customLayoutSubviews()
+    configAnimation()
   }
 }

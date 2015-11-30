@@ -50,11 +50,6 @@ public protocol Animatable {
   var repeatCount: Float { get set }
   
   /**
-   customLayoutSubviews method, should be called in layoutSubviews() method
-   */
-  func customLayoutSubviews()
-  
-  /**
    animate method, used in sub-protocol
   */
   func animate()
@@ -269,7 +264,10 @@ public extension Animatable where Self: UIView {
       }, completion:nil)
   }
   
-  func customLayoutSubviews() {
+  /**
+   configAnimation method, should be called in layoutSubviews() method
+   */
+  func configAnimation() {
     animate()
   }
 }

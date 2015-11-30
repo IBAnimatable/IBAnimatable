@@ -16,6 +16,9 @@ public protocol BlurDesignable {
 }
 
 public extension BlurDesignable where Self:UIView {
+  /**
+   configBlurEffectStyle method, should be called in layoutSubviews() method
+   */
   public func configBlurEffectStyle() {
     var style: UIBlurEffectStyle?
     switch blurEffectStyle {

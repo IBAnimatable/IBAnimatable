@@ -21,6 +21,9 @@ public protocol TintDesignable {
 }
 
 public extension TintDesignable where Self:UIView {
+  /**
+   configTintedColor method, should be called in layoutSubviews() method
+   */
   public func configTintedColor() {
     if (tintedColor != UIColor.clearColor()
       && tintOpacity>0 && tintOpacity<=1) {
