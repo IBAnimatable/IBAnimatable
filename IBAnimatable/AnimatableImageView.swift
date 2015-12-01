@@ -67,7 +67,7 @@ import UIKit
   
   // MARK: - Life cycle
   
-  override public func prepareForInterfaceBuilder() {
+  public override func prepareForInterfaceBuilder() {
     configTintedColor()
     configBlurEffectStyle()
   }

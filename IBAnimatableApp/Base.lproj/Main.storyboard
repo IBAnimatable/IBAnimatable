@@ -139,6 +139,9 @@
                                         <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zd1-Qn-n5n"/>
+                                </connections>
                             </button>
                             <imageView opaque="NO" multipleTouchEnabled="YES" contentMode="center" image="swift" translatesAutoresizingMaskIntoConstraints="NO" id="H38-B3-S8R" userLabel="Image" customClass="AnimatableImageView" customModule="IBAnimatableApp" customModuleProvider="target">
                                 <rect key="frame" x="250" y="248" width="100" height="100"/>

@@ -57,4 +57,18 @@ import UIKit
       configShadowOffsetY()
     }
   }
+  
+  // MARK: - Life cycle
+  
+  public override func prepareForInterfaceBuilder() {
+
+  }
+  
+  public override func awakeFromNib() {
+
+  }
+  
+  public override func layoutSubviews() {
+    super.layoutSubviews()
+  }
 }
