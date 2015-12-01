@@ -30,7 +30,7 @@ public extension TintDesignable where Self:UIView {
         let subview = UIView(frame: self.frame)
         subview.backgroundColor = tintedColor
         subview.alpha = tintOpacity
-        subview.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
+        subview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         self.insertSubview(subview, atIndex: 0)
     }
   }
