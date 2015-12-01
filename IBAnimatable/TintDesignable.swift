@@ -27,7 +27,7 @@ public extension TintDesignable where Self:UIView {
   public func configTintedColor() {
     if (tintedColor != UIColor.clearColor()
       && tintOpacity>0 && tintOpacity<=1) {        
-        let subview = UIView(frame: self.frame)
+        let subview = UIView(frame: self.bounds)
         subview.backgroundColor = tintedColor
         subview.alpha = tintOpacity
         subview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
