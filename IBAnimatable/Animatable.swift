@@ -7,9 +7,6 @@ import UIKit
 
 public protocol Animatable {
   
-  // Doesn't support animation in IB
-  // var animationPreview: Bool { get set }
-  
   /**
     Animation Type
       slideLeft
@@ -265,7 +262,7 @@ public extension Animatable where Self: UIView {
   }
   
   /**
-   configAnimation method, should be called in layoutSubviews() method
+   startAnimation method, should be called in layoutSubviews() method
    */
   func startAnimation() {
     animate()

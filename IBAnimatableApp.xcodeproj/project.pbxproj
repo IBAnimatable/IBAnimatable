@@ -27,7 +27,6 @@
 		AED1A11D1BFE983A001346FA /* BoxShadowDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1111BFE983A001346FA /* BoxShadowDesignable.swift */; };
 		AED1A11E1BFE983A001346FA /* PaddingDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1121BFE983A001346FA /* PaddingDesignable.swift */; };
 		AED1A11F1BFE983A001346FA /* PlaceholderDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1131BFE983A001346FA /* PlaceholderDesignable.swift */; };
-		AED1A1201BFE983A001346FA /* UIView+CSSable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1141BFE983A001346FA /* UIView+CSSable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +51,6 @@
 		AED1A1111BFE983A001346FA /* BoxShadowDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoxShadowDesignable.swift; path = IBAnimatable/BoxShadowDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AED1A1121BFE983A001346FA /* PaddingDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaddingDesignable.swift; path = IBAnimatable/PaddingDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AED1A1131BFE983A001346FA /* PlaceholderDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceholderDesignable.swift; path = IBAnimatable/PlaceholderDesignable.swift; sourceTree = SOURCE_ROOT; };
-		AED1A1141BFE983A001346FA /* UIView+CSSable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+CSSable.swift"; path = "IBAnimatable/UIView+CSSable.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +100,6 @@
 				AE6F18831BFD934A00CFDF4F /* enum */,
 				AE6F18741BFD49DE00CFDF4F /* protocol */,
 				AE6F18761BFD4A3200CFDF4F /* view */,
-				AE6F18751BFD4A1800CFDF4F /* extension */,
 			);
 			path = IBAnimatable;
 			sourceTree = SOURCE_ROOT;
@@ -114,14 +111,6 @@
 				AED1A1231BFEA319001346FA /* Designable */,
 			);
 			name = protocol;
-			sourceTree = "<group>";
-		};
-		AE6F18751BFD4A1800CFDF4F /* extension */ = {
-			isa = PBXGroup;
-			children = (
-				AED1A1141BFE983A001346FA /* UIView+CSSable.swift */,
-			);
-			name = extension;
 			sourceTree = "<group>";
 		};
 		AE6F18761BFD4A3200CFDF4F /* view */ = {
@@ -243,7 +232,6 @@
 				AED1A1081BFE9820001346FA /* ViewController.swift in Sources */,
 				AED1A11B1BFE983A001346FA /* AnimationType.swift in Sources */,
 				AED1A11E1BFE983A001346FA /* PaddingDesignable.swift in Sources */,
-				AED1A1201BFE983A001346FA /* UIView+CSSable.swift in Sources */,
 				AED1A1171BFE983A001346FA /* AnimatableImageView.swift in Sources */,
 				AED1A1191BFE983A001346FA /* AnimatableTextView.swift in Sources */,
 				AED1A1161BFE983A001346FA /* Animatable.swift in Sources */,

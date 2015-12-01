@@ -66,15 +66,6 @@ import UIKit
   @IBInspectable public var tintOpacity: CGFloat = 0
   
   // MARK: - Animatable
-  
-  // Doesn't support animation in IB
-  // @IBInspectable public var animationPreview: Bool = false {
-  //   didSet {
-  //     print(animationPreview)
-  //     animate()
-  //   }
-  // }
-  
   @IBInspectable public var animationType: String = ""
   @IBInspectable public var duration: Double = 0.7
   @IBInspectable public var delay: Double = 0
@@ -83,19 +74,7 @@ import UIKit
   @IBInspectable public var velocity: CGFloat = 0.7
   @IBInspectable public var repeatCount: Float = 1
   
-  // MARK: - Animatable
-  
-  // Doesn't support animation in IB
-  // @IBInspectable public var animationPreview: Bool = false {
-  //   didSet {
-  //     print(animationPreview)
-  //     animate()
-  //   }
-  // }
-  
-  
   // MARK: - Life cycle
-  
   public override func prepareForInterfaceBuilder() {
     configTintedColor()
     configBlurEffectStyle()
