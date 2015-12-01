@@ -5,15 +5,16 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableTextField: UITextField, BorderDesignable, BoxShadowDesignable, PaddingDesignable, PlaceholderDesignable {
+@IBDesignable public class AnimatableTextField: UITextField, CornerDesignable, BorderDesignable, BoxShadowDesignable, PaddingDesignable, PlaceholderDesignable {
  
-  // MARK: - BorderDesignable
+  // MARK: - CornerDesignable
   @IBInspectable public var cornerRadius: CGFloat = 0 {
     didSet {
       configCornerRadius()
     }
   }
   
+  // MARK: - BorderDesignable
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
     didSet {
       configBorderColor()

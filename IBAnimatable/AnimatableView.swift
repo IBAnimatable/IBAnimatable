@@ -5,15 +5,16 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableView: UIView, BorderDesignable, BoxShadowDesignable, BlurDesignable, TintDesignable, Animatable {
+@IBDesignable public class AnimatableView: UIView, CornerDesignable, BorderDesignable, BoxShadowDesignable, BlurDesignable, TintDesignable, Animatable {
   
-  // MARK: - BorderDesignable
+  // MARK: - CornerDesignable
   @IBInspectable public var cornerRadius: CGFloat = 0 {
     didSet {
       configCornerRadius()
     }
   }
   
+  // MARK: - BorderDesignable
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
     didSet {
       configBorderColor()

@@ -5,15 +5,16 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableTextView: UITextView, BorderDesignable {
+@IBDesignable public class AnimatableTextView: UITextView, CornerDesignable, BorderDesignable {
   
-  // MARK: - BorderDesignable
+  // MARK: - CornerDesignable
   @IBInspectable public var cornerRadius: CGFloat = 0 {
     didSet {
       configCornerRadius()
     }
   }
   
+  // MARK: - BorderDesignable
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
     didSet {
       configBorderColor()
