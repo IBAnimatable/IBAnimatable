@@ -62,13 +62,24 @@ import UIKit
   
   // MARK: - TintDesignable
   @IBInspectable public var tintedColor: UIColor = UIColor.clearColor()
-  @IBInspectable public var tintOpacity: Float = 0
+  @IBInspectable public var tintOpacity: CGFloat = 0
   
   // MARK: - Life cycle
+  public override func awakeFromNib() {
+    print(__FILE__)
+    print(__FUNCTION__)
+    
+    configTintedColor()
+    configBlurEffectStyle()
+  }
+  
   public override func layoutSubviews() {
     super.layoutSubviews()
     
-    configBlurEffectStyle()
-    configTintedColor()
+    print(__FILE__)
+    print(__FUNCTION__)
+    
+//    configTintedColor()
+//    configBlurEffectStyle()
   }
 }

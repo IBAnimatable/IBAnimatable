@@ -62,7 +62,7 @@ import UIKit
   
   // MARK: - TintDesignable
   @IBInspectable public var tintedColor: UIColor = UIColor.clearColor()
-  @IBInspectable public var tintOpacity: Float = 0
+  @IBInspectable public var tintOpacity: CGFloat = 0
   
   // MARK: - Animatable
   
@@ -97,8 +97,11 @@ import UIKit
   public override func layoutSubviews() {
     super.layoutSubviews()
     
-    configBlurEffectStyle()
+    print("AnimatableView")
+    
+    print(__FUNCTION__)
     configTintedColor()
+    configBlurEffectStyle()
     
     configAnimation()
   }

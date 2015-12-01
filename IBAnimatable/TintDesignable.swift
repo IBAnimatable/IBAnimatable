@@ -17,7 +17,7 @@ public protocol TintDesignable {
   /**
    Opacity in tinted view: from 0 to 1
    */
-  var tintOpacity: Float { get set }
+  var tintOpacity: CGFloat { get set }
 }
 
 public extension TintDesignable where Self:UIView {
@@ -26,12 +26,12 @@ public extension TintDesignable where Self:UIView {
    */
   public func configTintedColor() {
     if (tintedColor != UIColor.clearColor()
-      && tintOpacity>0 && tintOpacity<=1) {
-        let sublayer = CALayer()
-        sublayer.backgroundColor = tintedColor.CGColor
-        sublayer.opacity = tintOpacity
-        sublayer.frame = frame
-        self.layer.insertSublayer(sublayer, atIndex: 0)
+      && tintOpacity>0 && tintOpacity<=1) {        
+        let subview = UIView(frame: self.frame)
+        subview.backgroundColor = tintedColor
+        subview.alpha = tintOpacity
+        subview.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
+        self.insertSubview(subview, atIndex: 0)
     }
   }
 }
