@@ -19,7 +19,7 @@ public protocol BorderDesignable {
   /**
    `border-radius`
   */
-  var borderRadius: CGFloat { get set }
+  var cornerRadius: CGFloat { get set }
 }
 
 public extension BorderDesignable where Self:UIView {
@@ -43,8 +43,8 @@ public extension BorderDesignable where Self:UIView {
     layer.borderWidth = borderWidth
   }
   
-  public func configBorderRadius() {
-    layer.cornerRadius = borderRadius
+  public func configCornerRadius() {
+    layer.cornerRadius = cornerRadius
     // if `layer.masksToBounds == true` then shadow doesn't work any more.
     // layer.masksToBounds = borderRadius > 0
   }

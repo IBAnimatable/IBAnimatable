@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable public class CSSTextView: UITextView, BorderDesignable {
+@IBDesignable public class AnimatableTextView: UITextView, BorderDesignable {
   
   // MARK: - BorderDesignable
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
@@ -20,9 +20,9 @@ import UIKit
     }
   }
   
-  @IBInspectable public var borderRadius: CGFloat = 0 {
+  @IBInspectable public var cornerRadius: CGFloat = 0 {
     didSet {
-      configBorderRadius()
+      configCornerRadius()
     }
   }
 }
