@@ -39,6 +39,10 @@ public extension BlurDesignable where Self:UIView {
     let blurEffect = UIBlurEffect(style: unrappedStyle)
     let blurEffectView = UIVisualEffectView(effect: blurEffect)
     blurEffectView.frame = bounds
+    if (layer.cornerRadius > 0) {
+      blurEffectView.layer.cornerRadius = layer.cornerRadius
+      blurEffectView.clipsToBounds = true
+    }
     blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
     insertSubview(blurEffectView, atIndex: 0)
   }
