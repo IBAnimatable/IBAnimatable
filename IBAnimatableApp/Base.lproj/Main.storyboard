@@ -157,6 +157,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="tintOpacity">
                                         <real key="value" value="0.29999999999999999"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="squeeze"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PJo-xq-4WA" userLabel="TextView" customClass="AnimatableTextView" customModule="IBAnimatableApp" customModuleProvider="target">
