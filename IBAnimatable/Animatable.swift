@@ -63,7 +63,7 @@ public extension Animatable where Self: UIView {
     var scaleX: CGFloat = 1
     var scaleY: CGFloat = 1
   
-    var willdisappear = false
+    var willDisappear = false
     
     switch(animationType) {
     case .SlideLeft:
@@ -89,7 +89,7 @@ public extension Animatable where Self: UIView {
     case .FadeIn:
       alpha = 0
     case .FadeOut:
-      willdisappear = true
+      willDisappear = true
     case .FadeOutIn:
       let animation = CABasicAnimation()
       animation.keyPath = "opacity"
@@ -252,7 +252,7 @@ public extension Animatable where Self: UIView {
 
     UIView.animateWithDuration(duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [], animations: { () -> Void in
       self.transform = CGAffineTransformIdentity
-      if willdisappear {
+      if willDisappear {
         self.alpha = 0
       }
       else {
