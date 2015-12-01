@@ -8,6 +8,12 @@ import UIKit
 @IBDesignable public class AnimatabeButton: UIButton, BorderDesignable, BoxShadowDesignable {
   
   // MARK: - BorderDesignable
+  @IBInspectable public var cornerRadius: CGFloat = 0 {
+    didSet {
+      configCornerRadius()
+    }
+  }
+  
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
     didSet {
       configBorderColor()
@@ -17,12 +23,6 @@ import UIKit
   @IBInspectable public var borderWidth: CGFloat = 0 {
     didSet {
       configBorderWidth()
-    }
-  }
-
-  @IBInspectable public var cornerRadius: CGFloat = 0 {
-    didSet {
-      configCornerRadius()
     }
   }
 

@@ -7,6 +7,11 @@ import UIKit
 
 public protocol BorderDesignable {
   /**
+   `border-radius`
+   */
+  var cornerRadius: CGFloat { get set }
+  
+  /**
     `border-color`
   */
   var borderColor: UIColor { get set }
@@ -15,11 +20,6 @@ public protocol BorderDesignable {
     `border-width`
   */
   var borderWidth: CGFloat { get set }
-
-  /**
-   `border-radius`
-  */
-  var cornerRadius: CGFloat { get set }
 }
 
 public extension BorderDesignable where Self:UIView {
