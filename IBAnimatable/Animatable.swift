@@ -267,7 +267,7 @@ public extension Animatable where Self: UIView {
   /**
    configAnimation method, should be called in layoutSubviews() method
    */
-  func configAnimation() {
+  func startAnimation() {
     animate()
   }
 }

@@ -1,7 +1,4 @@
 //
-//  TintDesignable.swift
-//  IBAnimatableApp
-//
 //  Created by Jake Lin on 11/24/15.
 //  Copyright © 2015 Jake Lin. All rights reserved.
 //

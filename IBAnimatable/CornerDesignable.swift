@@ -1,7 +1,4 @@
 //
-//  CornerDesignable.swift
-//  IBAnimatableApp
-//
 //  Created by Jake Lin on 12/1/15.
 //  Copyright © 2015 Jake Lin. All rights reserved.
 //

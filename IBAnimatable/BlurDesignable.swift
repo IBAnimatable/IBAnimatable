@@ -1,7 +1,4 @@
 //
-//  Blurable.swift
-//  IBAnimatableApp
-//
 //  Created by Jake Lin on 11/23/15.
 //  Copyright © 2015 Jake Lin. All rights reserved.
 //

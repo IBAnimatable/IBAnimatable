@@ -95,15 +95,20 @@ import UIKit
   
   
   // MARK: - Life cycle
+  
+  public override func prepareForInterfaceBuilder() {
+    configTintedColor()
+    configBlurEffectStyle()
+  }
+  
+  public override func awakeFromNib() {
+    configTintedColor()
+    configBlurEffectStyle()
+  }
+  
   public override func layoutSubviews() {
     super.layoutSubviews()
     
-    print("AnimatableView")
-    
-    print(__FUNCTION__)
-    configTintedColor()
-    configBlurEffectStyle()
-    
-    configAnimation()
+    startAnimation()
   }
 }
