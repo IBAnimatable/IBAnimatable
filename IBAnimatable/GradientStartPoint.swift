@@ -5,7 +5,7 @@
 
 import Foundation
 
-public enum GradientStartPoint {
+public enum GradientStartPoint: String {
   case Top
   case TopRight
   case Right

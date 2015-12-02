@@ -10,7 +10,7 @@ import UIKit
 @IBDesignable public class DesignableGradientView : UIView {
   @IBInspectable var startColor: UIColor = UIColor.clearColor()
   @IBInspectable var endColor: UIColor = UIColor.clearColor()
-  @IBInspectable var direction: String = ""
+  @IBInspectable var startPoint: String = "Top"
   @IBInspectable var cornerRadius: CGFloat = 0.0
   
   var gradientLayer: CAGradientLayer {
@@ -37,8 +37,37 @@ import UIKit
       return
     }
     
+    guard let gradientStartPoint = GradientStartPoint(rawValue: startPoint) else {
+      return
+    }
+    
     gradientLayer.colors = [startColor.CGColor, endColor.CGColor]
     gradientLayer.cornerRadius = cornerRadius
-    gradientLayer.endPoint = CGPoint(x: 1, y: 0)
+    switch (gradientStartPoint) {
+    case .Top:
+      gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
+      gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
+    case .TopRight:
+      gradientLayer.startPoint = CGPoint(x: 1, y: 0)
+      gradientLayer.endPoint = CGPoint(x: 0, y: 1)
+    case .Right:
+      gradientLayer.startPoint = CGPoint(x: 1, y: 0.5)
+      gradientLayer.endPoint = CGPoint(x: 0, y: 0.5)
+    case .BottomRight:
+      gradientLayer.startPoint = CGPoint(x: 1, y: 1)
+      gradientLayer.endPoint = CGPoint(x: 0, y: 0)
+    case .Bottom:
+      gradientLayer.startPoint = CGPoint(x: 0.5, y: 1)
+      gradientLayer.endPoint = CGPoint(x: 0.5, y: 0)
+    case .BottomLeft:
+      gradientLayer.startPoint = CGPoint(x: 0, y: 1)
+      gradientLayer.endPoint = CGPoint(x: 1, y: 0)
+    case .Left:
+      gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
+      gradientLayer.endPoint = CGPoint(x: 0, y: 0.5)
+    case .TopLeft:
+      gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+      gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+    }
   }
 }
