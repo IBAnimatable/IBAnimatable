@@ -10,6 +10,7 @@
 		AE216FDD1C0DBC5D00BC6366 /* CornerDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE216FDC1C0DBC5D00BC6366 /* CornerDesignable.swift */; };
 		AE299BDA1C0338C70018CCDC /* BlurDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE299BD91C0338C70018CCDC /* BlurDesignable.swift */; };
 		AE299BDC1C03BB670018CCDC /* TintDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE299BDB1C03BB670018CCDC /* TintDesignable.swift */; };
+		AE8C53AE1C0F111600A775AF /* DesignableGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C53AD1C0F111600A775AF /* DesignableGradientView.swift */; };
 		AED1A1031BFE9820001346FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A0FA1BFE9820001346FA /* AppDelegate.swift */; };
 		AED1A1041BFE9820001346FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AED1A0FB1BFE9820001346FA /* Assets.xcassets */; };
 		AED1A1051BFE9820001346FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AED1A0FD1BFE9820001346FA /* LaunchScreen.storyboard */; };
@@ -34,6 +35,7 @@
 		AE299BD91C0338C70018CCDC /* BlurDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlurDesignable.swift; path = IBAnimatable/BlurDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AE299BDB1C03BB670018CCDC /* TintDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TintDesignable.swift; path = IBAnimatable/TintDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AE6C66FF1BFBF93500134A35 /* IBAnimatableApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBAnimatableApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE8C53AD1C0F111600A775AF /* DesignableGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableGradientView.swift; sourceTree = "<group>"; };
 		AED1A0FA1BFE9820001346FA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = IBAnimatableApp/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		AED1A0FB1BFE9820001346FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = IBAnimatableApp/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		AED1A0FE1BFE9820001346FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				AED1A10B1BFE983A001346FA /* AnimatableImageView.swift */,
 				AED1A10C1BFE983A001346FA /* AnimatableTextField.swift */,
 				AED1A10D1BFE983A001346FA /* AnimatableTextView.swift */,
+				AE8C53AD1C0F111600A775AF /* DesignableGradientView.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				AE299BDA1C0338C70018CCDC /* BlurDesignable.swift in Sources */,
 				AED1A1081BFE9820001346FA /* ViewController.swift in Sources */,
 				AED1A11B1BFE983A001346FA /* AnimationType.swift in Sources */,
+				AE8C53AE1C0F111600A775AF /* DesignableGradientView.swift in Sources */,
 				AED1A11E1BFE983A001346FA /* PaddingDesignable.swift in Sources */,
 				AED1A1171BFE983A001346FA /* AnimatableImageView.swift in Sources */,
 				AED1A1191BFE983A001346FA /* AnimatableTextView.swift in Sources */,
