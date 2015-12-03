@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableView: UIView, CornerDesignable, BorderDesignable, BoxShadowDesignable, BlurDesignable, TintDesignable, Animatable {
+@IBDesignable public class AnimatableView: UIView, CornerDesignable, BorderDesignable, BoxShadowDesignable, BlurDesignable, TintDesignable, GradientDesignable, Animatable {
   
   // MARK: - CornerDesignable
   @IBInspectable public var cornerRadius: CGFloat = 0 {
@@ -65,6 +65,11 @@ import UIKit
   @IBInspectable public var tintedColor: UIColor = UIColor.clearColor()
   @IBInspectable public var tintOpacity: CGFloat = 0
   
+  // MARK: - GradientDesignable
+  @IBInspectable public var startColor: UIColor = UIColor.clearColor()
+  @IBInspectable public var endColor: UIColor = UIColor.clearColor()
+  @IBInspectable public var startPoint: String = "Top"
+  
   // MARK: - Animatable
   @IBInspectable public var animationType: String = ""
   @IBInspectable public var duration: Double = 0.7
@@ -74,15 +79,17 @@ import UIKit
   @IBInspectable public var velocity: CGFloat = 0.7
   @IBInspectable public var repeatCount: Float = 1
   
-  // MARK: - Life cycle
+  // MARK: - Lifecycle
   public override func prepareForInterfaceBuilder() {
     configTintedColor()
     configBlurEffectStyle()
+    configGradent()
   }
   
   public override func awakeFromNib() {
     configTintedColor()
     configBlurEffectStyle()
+    configGradent()
   }
   
   public override func layoutSubviews() {

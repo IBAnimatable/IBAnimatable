@@ -32,5 +32,6 @@ public extension GradientDesignable where Self : UIView {
     
     gradientView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
     self.insertSubview(gradientView, atIndex: 0)
+    gradientView.configGradient()
   }
 }

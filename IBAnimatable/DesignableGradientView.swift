@@ -22,7 +22,7 @@ import UIKit
     return CAGradientLayer.self
   }
   
-  // MARK: - Life cycle
+  // MARK: - Lifecycle
   public override func prepareForInterfaceBuilder() {
     configGradient()
   }
@@ -31,7 +31,7 @@ import UIKit
     configGradient()
   }
   
-  private func configGradient() {
+  func configGradient() {
     // Return if both colors are unset.
     if (startColor == UIColor.clearColor() && endColor == UIColor.clearColor()) {
       return
