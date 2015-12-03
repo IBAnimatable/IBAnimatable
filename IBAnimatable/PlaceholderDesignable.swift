@@ -12,7 +12,7 @@ public protocol PlaceholderDesignable {
   var placeholderColor: UIColor { get set }
 }
 
-public extension PlaceholderDesignable where Self:UITextField {
+public extension PlaceholderDesignable where Self : UITextField {
   public func configPlaceholderColor() {
     attributedPlaceholder = NSAttributedString(string: placeholder!, attributes: [NSForegroundColorAttributeName: placeholderColor])
   }

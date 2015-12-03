@@ -17,7 +17,7 @@ public protocol BorderDesignable {
   var borderWidth: CGFloat { get set }
 }
 
-public extension BorderDesignable where Self:UIView {
+public extension BorderDesignable where Self : UIView {
 //  // Only instance properties can be declared @IBInspectable
 //  // @IBInspectable 
 //  public var borderRadius: CGFloat {

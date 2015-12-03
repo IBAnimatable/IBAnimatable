@@ -12,7 +12,7 @@ public protocol CornerDesignable {
   var cornerRadius: CGFloat { get set }
 }
 
-public extension CornerDesignable where Self:UIView {
+public extension CornerDesignable where Self : UIView {
   public func configCornerRadius() {
     layer.cornerRadius = cornerRadius
     // if `layer.masksToBounds == true` then shadow doesn't work any more.

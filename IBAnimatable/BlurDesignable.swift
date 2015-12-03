@@ -12,7 +12,7 @@ public protocol BlurDesignable {
   var blurEffectStyle: String { get set }
 }
 
-public extension BlurDesignable where Self:UIView {
+public extension BlurDesignable where Self : UIView {
   /**
    configBlurEffectStyle method, should be called in layoutSubviews() method
    */

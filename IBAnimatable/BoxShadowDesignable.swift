@@ -37,7 +37,7 @@ public protocol BoxShadowDesignable {
   var shadowOffsetY: CGFloat { get set }
 }
 
-public extension BoxShadowDesignable where Self:UIView {
+public extension BoxShadowDesignable where Self : UIView {
   public func configShadowColor() {
     layer.shadowColor = shadowColor.CGColor
   }
