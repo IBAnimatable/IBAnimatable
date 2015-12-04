@@ -94,20 +94,23 @@ import UIKit
   
   // MARK: - Lifecycle
   public override func prepareForInterfaceBuilder() {
-    configTintedColor()
-    configBlurEffectStyle()
-    configGradent()
+    configDesignableProperties()
   }
   
   public override func awakeFromNib() {
-    configTintedColor()
-    configBlurEffectStyle()
-    configGradent()
+    configDesignableProperties()
   }
   
   public override func layoutSubviews() {
     super.layoutSubviews()
     
     startAnimation()
+  }
+  
+  // MARK: - Private
+  private func configDesignableProperties() {
+    configTintedColor()
+    configBlurEffectStyle()
+    configGradent()
   }
 }

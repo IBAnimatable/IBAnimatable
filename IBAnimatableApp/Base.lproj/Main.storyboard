@@ -154,12 +154,13 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="opacity">
                                         <real key="value" value="0.90000000000000002"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="tintedColor">
-                                        <color key="value" red="0.40933579640000001" green="0.80104922519999999" blue="0.036929481930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="0.76862745099999996" green="0.17254901959999999" blue="0.16862745100000001" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="tintOpacity">
-                                        <real key="value" value="0.10000000000000001"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="0.19574044070545943" green="0.32294631087992953" blue="0.70921331644058228" alpha="0.5" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="startPoint" value="Top"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <textView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PJo-xq-4WA" userLabel="TextView" customClass="AnimatableTextView" customModule="IBAnimatableApp" customModuleProvider="target">

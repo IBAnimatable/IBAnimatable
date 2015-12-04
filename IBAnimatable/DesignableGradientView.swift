@@ -31,6 +31,7 @@ import UIKit
     configGradient()
   }
   
+  // MARK: - Internal
   func configGradient() {
     // Return if both colors are unset.
     if (startColor == UIColor.clearColor() && endColor == UIColor.clearColor()) {
