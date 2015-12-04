@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableTextView: UITextView, CornerDesignable, BorderDesignable, Animatable {
+@IBDesignable public class AnimatableTextView: UITextView, CornerDesignable, FillDesignable, BorderDesignable, Animatable {
   
   // MARK: - CornerDesignable
   @IBInspectable public var cornerRadius: CGFloat = 0 {
@@ -14,6 +14,19 @@ import UIKit
     }
   }
   
+  // MARK: - FillDesignable
+  @IBInspectable public var fillColor: UIColor = UIColor.whiteColor() {
+    didSet {
+      configFillColor()
+    }
+  }
+  
+  @IBInspectable public var opacity: CGFloat = 1 {
+    didSet {
+      configOpacity()
+    }
+  }
+
   // MARK: - BorderDesignable
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
     didSet {

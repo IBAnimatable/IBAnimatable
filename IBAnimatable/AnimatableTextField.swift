@@ -5,12 +5,25 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableTextField: UITextField, CornerDesignable, BorderDesignable, ShadowDesignable, PaddingDesignable, PlaceholderDesignable, Animatable {
+@IBDesignable public class AnimatableTextField: UITextField, CornerDesignable, FillDesignable, BorderDesignable, ShadowDesignable, PaddingDesignable, PlaceholderDesignable, Animatable {
  
   // MARK: - CornerDesignable
   @IBInspectable public var cornerRadius: CGFloat = 0 {
     didSet {
       configCornerRadius()
+    }
+  }
+  
+  // MARK: - FillDesignable
+  @IBInspectable public var fillColor: UIColor = UIColor.whiteColor() {
+    didSet {
+      configFillColor()
+    }
+  }
+  
+  @IBInspectable public var opacity: CGFloat = 1 {
+    didSet {
+      configOpacity()
     }
   }
   
