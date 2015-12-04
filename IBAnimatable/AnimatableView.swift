@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableView: UIView, CornerDesignable, BorderDesignable, BoxShadowDesignable, BlurDesignable, TintDesignable, GradientDesignable, Animatable {
+@IBDesignable public class AnimatableView: UIView, CornerDesignable, BorderDesignable, ShadowDesignable, BlurDesignable, TintDesignable, GradientDesignable, Animatable {
   
   // MARK: - CornerDesignable
   @IBInspectable public var cornerRadius: CGFloat = 0 {

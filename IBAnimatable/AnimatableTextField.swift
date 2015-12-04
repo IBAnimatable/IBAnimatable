@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableTextField: UITextField, CornerDesignable, BorderDesignable, BoxShadowDesignable, PaddingDesignable, PlaceholderDesignable, Animatable {
+@IBDesignable public class AnimatableTextField: UITextField, CornerDesignable, BorderDesignable, ShadowDesignable, PaddingDesignable, PlaceholderDesignable, Animatable {
  
   // MARK: - CornerDesignable
   @IBInspectable public var cornerRadius: CGFloat = 0 {
@@ -27,7 +27,7 @@ import UIKit
     }
   }
   
-  // MARK: - BoxShadowDesignable
+  // MARK: - ShadowDesignable
   @IBInspectable public var shadowColor: UIColor = UIColor.clearColor() {
     didSet {
       configShadowColor()

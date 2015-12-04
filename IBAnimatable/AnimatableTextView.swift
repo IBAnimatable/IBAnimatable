@@ -26,7 +26,7 @@ import UIKit
       configBorderWidth()
     }
   }
-  
+
   // MARK: - Animatable
   @IBInspectable public var animationType: String = ""
   @IBInspectable public var duration: Double = 0.7

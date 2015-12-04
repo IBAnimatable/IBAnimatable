@@ -10,7 +10,7 @@ import UIKit
  
   To use them, `UIView`'s `clipsToBounds` and `CALayer`'s `masksToBounds` (`Clip Subviews` in IB) must be `false`,
 */
-public protocol BoxShadowDesignable {
+public protocol ShadowDesignable {
   /**
    `color` when using with `box-shadow`
   */
@@ -37,24 +37,31 @@ public protocol BoxShadowDesignable {
   var shadowOffsetY: CGFloat { get set }
 }
 
-public extension BoxShadowDesignable where Self: UIView {
+public extension ShadowDesignable where Self: UIView {
+  
+  // if `layer.masksToBounds == true` then shadow doesn't work any more.
   public func configShadowColor() {
     layer.shadowColor = shadowColor.CGColor
+    layer.masksToBounds = false
   }
 
   public func configShadowRadius() {
     layer.shadowRadius = shadowRadius
+    layer.masksToBounds = false
   }
 
   public func configShadowOpacity() {
     layer.shadowOpacity = Float(shadowOpacity)
+    layer.masksToBounds = false
   }
 
   public func configShadowOffsetX() {
     layer.shadowOffset.width = shadowOffsetX
+    layer.masksToBounds = false
   }
 
   public func configShadowOffsetY() {
     layer.shadowOffset.height = shadowOffsetY
+    layer.masksToBounds = false
   }
 }

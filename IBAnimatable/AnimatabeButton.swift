@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable public class AnimatabeButton: UIButton, CornerDesignable, BorderDesignable, BoxShadowDesignable, Animatable {
+@IBDesignable public class AnimatabeButton: UIButton, CornerDesignable, BorderDesignable, ShadowDesignable, Animatable {
   
   // MARK: - CornerDesignable
   @IBInspectable public var cornerRadius: CGFloat = 0 {
@@ -27,7 +27,7 @@ import UIKit
     }
   }
 
-  // MARK: - BoxShadowDesignable
+  // MARK: - ShadowDesignable
   @IBInspectable public var shadowColor: UIColor = UIColor.clearColor() {
     didSet {
       configShadowColor()

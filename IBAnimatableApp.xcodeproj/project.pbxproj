@@ -27,7 +27,7 @@
 		AED1A11A1BFE983A001346FA /* AnimatableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A10E1BFE983A001346FA /* AnimatableView.swift */; };
 		AED1A11B1BFE983A001346FA /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A10F1BFE983A001346FA /* AnimationType.swift */; };
 		AED1A11C1BFE983A001346FA /* BorderDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1101BFE983A001346FA /* BorderDesignable.swift */; };
-		AED1A11D1BFE983A001346FA /* BoxShadowDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1111BFE983A001346FA /* BoxShadowDesignable.swift */; };
+		AED1A11D1BFE983A001346FA /* ShadowDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1111BFE983A001346FA /* ShadowDesignable.swift */; };
 		AED1A11E1BFE983A001346FA /* PaddingDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1121BFE983A001346FA /* PaddingDesignable.swift */; };
 		AED1A11F1BFE983A001346FA /* PlaceholderDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1131BFE983A001346FA /* PlaceholderDesignable.swift */; };
 /* End PBXBuildFile section */
@@ -54,7 +54,7 @@
 		AED1A10E1BFE983A001346FA /* AnimatableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableView.swift; path = IBAnimatable/AnimatableView.swift; sourceTree = SOURCE_ROOT; };
 		AED1A10F1BFE983A001346FA /* AnimationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimationType.swift; path = IBAnimatable/AnimationType.swift; sourceTree = SOURCE_ROOT; };
 		AED1A1101BFE983A001346FA /* BorderDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BorderDesignable.swift; path = IBAnimatable/BorderDesignable.swift; sourceTree = SOURCE_ROOT; };
-		AED1A1111BFE983A001346FA /* BoxShadowDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoxShadowDesignable.swift; path = IBAnimatable/BoxShadowDesignable.swift; sourceTree = SOURCE_ROOT; };
+		AED1A1111BFE983A001346FA /* ShadowDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShadowDesignable.swift; path = IBAnimatable/ShadowDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AED1A1121BFE983A001346FA /* PaddingDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaddingDesignable.swift; path = IBAnimatable/PaddingDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AED1A1131BFE983A001346FA /* PlaceholderDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceholderDesignable.swift; path = IBAnimatable/PlaceholderDesignable.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -146,7 +146,7 @@
 			children = (
 				AE299BD91C0338C70018CCDC /* BlurDesignable.swift */,
 				AED1A1101BFE983A001346FA /* BorderDesignable.swift */,
-				AED1A1111BFE983A001346FA /* BoxShadowDesignable.swift */,
+				AED1A1111BFE983A001346FA /* ShadowDesignable.swift */,
 				AE216FDC1C0DBC5D00BC6366 /* CornerDesignable.swift */,
 				AE81DAED1C10F14C000AEB20 /* GradientDesignable.swift */,
 				AED1A1121BFE983A001346FA /* PaddingDesignable.swift */,
@@ -247,7 +247,7 @@
 				AED1A1191BFE983A001346FA /* AnimatableTextView.swift in Sources */,
 				AED1A1161BFE983A001346FA /* Animatable.swift in Sources */,
 				AE8C53B01C0F1C0400A775AF /* GradientStartPoint.swift in Sources */,
-				AED1A11D1BFE983A001346FA /* BoxShadowDesignable.swift in Sources */,
+				AED1A11D1BFE983A001346FA /* ShadowDesignable.swift in Sources */,
 				AED1A1181BFE983A001346FA /* AnimatableTextField.swift in Sources */,
 				AED1A11C1BFE983A001346FA /* BorderDesignable.swift in Sources */,
 				AE299BDC1C03BB670018CCDC /* TintDesignable.swift in Sources */,

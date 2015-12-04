@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableImageView: UIImageView, CornerDesignable, BorderDesignable, BoxShadowDesignable, BlurDesignable, TintDesignable, Animatable {
+@IBDesignable public class AnimatableImageView: UIImageView, CornerDesignable, BorderDesignable, ShadowDesignable, BlurDesignable, TintDesignable, Animatable {
   
   // MARK: - CornerDesignable
   @IBInspectable public var cornerRadius: CGFloat = 0 {
@@ -27,7 +27,7 @@ import UIKit
     }
   }
   
-  // MARK: - BoxShadowDesignable
+  // MARK: - ShadowDesignable
   @IBInspectable public var shadowColor: UIColor = UIColor.clearColor() {
     didSet {
       configShadowColor()
