@@ -5,12 +5,25 @@
 
 import UIKit
 
-@IBDesignable public class AnimatabeButton: UIButton, CornerDesignable, BorderDesignable, ShadowDesignable, Animatable {
+@IBDesignable public class AnimatabeButton: UIButton, CornerDesignable, FillDesignable, BorderDesignable, ShadowDesignable, Animatable {
   
   // MARK: - CornerDesignable
   @IBInspectable public var cornerRadius: CGFloat = 0 {
     didSet {
       configCornerRadius()
+    }
+  }
+  
+  // MARK: - FillDesignable
+  @IBInspectable public var fillColor: UIColor = UIColor.whiteColor() {
+    didSet {
+      configFillColor()
+    }
+  }
+  
+  @IBInspectable public var opacity: CGFloat = 1 {
+    didSet {
+      configOpacity()
     }
   }
   
