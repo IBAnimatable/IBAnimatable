@@ -18,18 +18,6 @@ public protocol BorderDesignable {
 }
 
 public extension BorderDesignable where Self: UIView {
-//  // Only instance properties can be declared @IBInspectable
-//  // @IBInspectable 
-//  public var borderRadius: CGFloat {
-//    get {
-//      return layer.cornerRadius
-//    }
-//    set {
-//      layer.cornerRadius = borderRadius
-//      layer.masksToBounds = borderRadius > 0
-//    }
-//  }
-  
   public func configBorderColor() {
     layer.borderColor = borderColor.CGColor
   }
