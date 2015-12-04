@@ -7,7 +7,7 @@ import Foundation
 
 import UIKit
 
-@IBDesignable public class DesignableGradientView : UIView {
+@IBDesignable public class DesignableGradientView: UIView {
   @IBInspectable var startColor: UIColor = UIColor.clearColor()
   @IBInspectable var endColor: UIColor = UIColor.clearColor()
   @IBInspectable var startPoint: String = "Top"

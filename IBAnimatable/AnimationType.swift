@@ -9,31 +9,31 @@ import Foundation
  Predefined Animation Type
  */
 public enum AnimationType: String {
-  case SlideLeft = "slideLeft"
-  case SlideRight = "slideRight"
-  case SlideDown = "slideDown"
-  case SlideUp = "slideUp"
-  case SqueezeLeft = "squeezeLeft"
-  case SqueezeRight = "squeezeRight"
-  case SqueezeDown = "squeezeDown"
-  case SqueezeUp = "squeezeUp"
-  case FadeIn = "fadeIn"
-  case FadeOut = "fadeOut"
-  case FadeOutIn = "fadeOutIn"
-  case FadeInLeft = "fadeInLeft"
-  case FadeInRight = "fadeInRight"
-  case FadeInDown = "fadeInDown"
-  case FadeInUp = "fadeInUp"
-  case ZoomIn = "zoomIn"
-  case ZoomOut = "zoomOut"
-  case Fall = "fall"
-  case Shake = "shake"
-  case Pop = "pop"
-  case FlipX = "flipX"
-  case FlipY = "flipY"
-  case Morph = "morph"
-  case Squeeze = "squeeze"
-  case Flash = "flash"
-  case Wobble = "wobble"
-  case Swing = "swing"
+  case SlideLeft
+  case SlideRight
+  case SlideDown
+  case SlideUp
+  case SqueezeLeft
+  case SqueezeRight
+  case SqueezeDown
+  case SqueezeUp
+  case FadeIn
+  case FadeOut
+  case FadeOutIn
+  case FadeInLeft
+  case FadeInRight
+  case FadeInDown
+  case FadeInUp
+  case ZoomIn
+  case ZoomOut
+  case Fall
+  case Shake
+  case Pop
+  case FlipX
+  case FlipY
+  case Morph
+  case Squeeze
+  case Flash
+  case Wobble
+  case Swing
 }

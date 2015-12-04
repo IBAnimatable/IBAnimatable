@@ -11,7 +11,7 @@ public protocol GradientDesignable {
   var startPoint: String { get set }
 }
 
-public extension GradientDesignable where Self : UIView {
+public extension GradientDesignable where Self: UIView {
   public func configGradent() {
     // Return if both colors are unset.
     if (startColor == UIColor.clearColor() && endColor == UIColor.clearColor()) {

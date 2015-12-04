@@ -17,7 +17,7 @@ public protocol TintDesignable {
   var tintOpacity: CGFloat { get set }
 }
 
-public extension TintDesignable where Self : UIView {
+public extension TintDesignable where Self: UIView {
   /**
    configTintedColor method, should be called in layoutSubviews() method
    */
