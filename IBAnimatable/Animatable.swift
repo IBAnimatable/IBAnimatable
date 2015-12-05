@@ -91,8 +91,7 @@ public extension Animatable where Self: UIView {
     case .FadeOut:
       willDisappear = true
     case .FadeOutIn:
-      let animation = CABasicAnimation()
-      animation.keyPath = "opacity"
+      let animation = CABasicAnimation(keyPath: "opacity")
       animation.fromValue = 1
       animation.toValue = 0
       animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
@@ -127,8 +126,7 @@ public extension Animatable where Self: UIView {
         }, completion:nil)
       return
     case .Shake:
-      let animation = CAKeyframeAnimation()
-      animation.keyPath = "position.x"
+      let animation = CAKeyframeAnimation(keyPath: "position.x")
       animation.values = [0, 30*force, -30*force, 30*force, 0]
       animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
@@ -139,8 +137,7 @@ public extension Animatable where Self: UIView {
       layer.addAnimation(animation, forKey: "shake")
       return
     case .Pop:
-      let animation = CAKeyframeAnimation()
-      animation.keyPath = "transform.scale"
+      let animation = CAKeyframeAnimation(keyPath: "transform.scale")
       animation.values = [0, 0.2*force, -0.2*force, 0.2*force, 0]
       animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
@@ -157,8 +154,7 @@ public extension Animatable where Self: UIView {
       scaleX = -1
       scaleY = 1
     case .Morph:
-      let morphX = CAKeyframeAnimation()
-      morphX.keyPath = "transform.scale.x"
+      let morphX = CAKeyframeAnimation(keyPath: "transform.scale.x")
       morphX.values = [1, 1.3*force, 0.7, 1.3*force, 1]
       morphX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       morphX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
@@ -167,8 +163,7 @@ public extension Animatable where Self: UIView {
       morphX.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
       layer.addAnimation(morphX, forKey: "morphX")
       
-      let morphY = CAKeyframeAnimation()
-      morphY.keyPath = "transform.scale.y"
+      let morphY = CAKeyframeAnimation(keyPath: "transform.scale.y")
       morphY.values = [1, 0.7, 1.3*force, 0.7, 1]
       morphY.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       morphY.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
@@ -178,8 +173,7 @@ public extension Animatable where Self: UIView {
       layer.addAnimation(morphY, forKey: "morphY")
       return
     case .Squeeze:
-      let squeezeX = CAKeyframeAnimation()
-      squeezeX.keyPath = "transform.scale.x"
+      let squeezeX = CAKeyframeAnimation(keyPath: "transform.scale.x")
       squeezeX.values = [1, 1.5*force, 0.5, 1.5*force, 1]
       squeezeX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       squeezeX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
@@ -188,8 +182,7 @@ public extension Animatable where Self: UIView {
       squeezeX.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
       layer.addAnimation(squeezeX, forKey: "squeezeX")
       
-      let squeezeY = CAKeyframeAnimation()
-      squeezeY.keyPath = "transform.scale.y"
+      let squeezeY = CAKeyframeAnimation(keyPath: "transform.scale.y")
       squeezeY.values = [1, 0.5, 1, 0.5, 1]
       squeezeY.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       squeezeY.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
@@ -199,8 +192,7 @@ public extension Animatable where Self: UIView {
       layer.addAnimation(squeezeY, forKey: "squeezeY")
       return
     case .Flash:
-      let animation = CABasicAnimation()
-      animation.keyPath = "opacity"
+      let animation = CABasicAnimation(keyPath: "opacity")
       animation.fromValue = 1
       animation.toValue = 0
       animation.duration = CFTimeInterval(duration)
@@ -210,8 +202,7 @@ public extension Animatable where Self: UIView {
       layer.addAnimation(animation, forKey: "flash")
       return
     case .Wobble:
-      let rotation = CAKeyframeAnimation()
-      rotation.keyPath = "transform.rotation"
+      let rotation = CAKeyframeAnimation(keyPath: "transform.rotation")
       rotation.values = [0, 0.3*force, -0.3*force, 0.3*force, 0]
       rotation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       rotation.duration = CFTimeInterval(duration)
@@ -219,8 +210,7 @@ public extension Animatable where Self: UIView {
       rotation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
       layer.addAnimation(rotation, forKey: "rotation")
       
-      let positionX = CAKeyframeAnimation()
-      positionX.keyPath = "position.x"
+      let positionX = CAKeyframeAnimation(keyPath: "position.x")
       positionX.values = [0, 30*force, -30*force, 30*force, 0]
       positionX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       positionX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
@@ -231,8 +221,7 @@ public extension Animatable where Self: UIView {
       layer.addAnimation(positionX, forKey: "positionX")
       return
     case .Swing:
-      let animation = CAKeyframeAnimation()
-      animation.keyPath = "transform.rotation"
+      let animation = CAKeyframeAnimation(keyPath: "transform.rotation")
       animation.values = [0, 0.3*force, -0.3*force, 0.3*force, 0]
       animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       animation.duration = CFTimeInterval(duration)
