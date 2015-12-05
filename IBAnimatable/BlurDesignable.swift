@@ -10,6 +10,8 @@ public protocol BlurDesignable {
    blur effect style: `ExtraLight`, `Light` or `Dark`
    */
   var blurEffectStyle: String { get set }
+  
+  var blurOpacity: CGFloat { get set }
 }
 
 public extension BlurDesignable where Self: UIView {
@@ -18,24 +20,23 @@ public extension BlurDesignable where Self: UIView {
    */
   public func configBlurEffectStyle() {
     var style: UIBlurEffectStyle?
-    switch blurEffectStyle {
-    case "ExtraLight":
-      style = .ExtraLight
-    case "Light":
-      style = .Light
-    case "Dark":
-      style = .Dark
-    default:
-      break
-    }
-    
-    guard let unrappedStyle = style else {
+    guard let blurEffectStyle = BlurEffectStyle(rawValue: blurEffectStyle) else {
       return
     }
     
-    let blurEffect = UIBlurEffect(style: unrappedStyle)
+    switch blurEffectStyle {
+    case .ExtraLight:
+      style = .ExtraLight
+    case .Light:
+      style = .Light
+    case .Dark:
+      style = .Dark
+    }
+    
+    let blurEffect = UIBlurEffect(style: style!)
     let blurEffectView = UIVisualEffectView(effect: blurEffect)
     blurEffectView.frame = bounds
+    blurEffectView.alpha = blurOpacity
     if (layer.cornerRadius > 0) {
       blurEffectView.layer.cornerRadius = layer.cornerRadius
       blurEffectView.clipsToBounds = true

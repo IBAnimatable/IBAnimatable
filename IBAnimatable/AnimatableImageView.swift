@@ -73,6 +73,7 @@ import UIKit
   
   // MARK: - BlurDesignable
   @IBInspectable public var blurEffectStyle: String = ""
+  @IBInspectable public var blurOpacity: CGFloat = 1
   
   // MARK: - TintDesignable
   @IBInspectable public var tintedColor: UIColor = UIColor.clearColor()
