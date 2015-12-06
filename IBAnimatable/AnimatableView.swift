@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableView: UIView, CornerDesignable, FillDesignable, BorderDesignable, ShadowDesignable, BlurDesignable, TintDesignable, GradientDesignable, Animatable {
+@IBDesignable public class AnimatableView: UIView, CornerDesignable, FillDesignable, RotationDesignable, BorderDesignable, ShadowDesignable, BlurDesignable, TintDesignable, GradientDesignable, Animatable {
   
   // MARK: - CornerDesignable
   @IBInspectable public var cornerRadius: CGFloat = 0 {
@@ -24,6 +24,13 @@ import UIKit
   @IBInspectable public var opacity: CGFloat = 1 {
     didSet {
       configOpacity()
+    }
+  }
+  
+  // MARK: - RotationDesignable
+  @IBInspectable public var rotate: CGFloat = 0 {
+    didSet {
+      configRotate()
     }
   }
   
