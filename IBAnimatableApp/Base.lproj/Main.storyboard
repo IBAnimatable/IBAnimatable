@@ -234,25 +234,32 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="kMX-KN-rVM">
+                                <rect key="frame" x="112" y="150" width="150" height="116"/>
+                                <animations/>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0VW-he-GSd" firstAttribute="centerX" secondItem="Hsl-lh-dWZ" secondAttribute="centerX" id="0jg-Xu-bNh"/>
+                            <constraint firstItem="kMX-KN-rVM" firstAttribute="centerX" secondItem="Hsl-lh-dWZ" secondAttribute="centerX" id="L4J-W7-yub"/>
                             <constraint firstItem="0VW-he-GSd" firstAttribute="width" secondItem="Hsl-lh-dWZ" secondAttribute="width" id="OGg-yg-8dh"/>
                             <constraint firstItem="0VW-he-GSd" firstAttribute="centerY" secondItem="Hsl-lh-dWZ" secondAttribute="centerY" id="TNd-YB-ZKd"/>
                             <constraint firstItem="0VW-he-GSd" firstAttribute="height" secondItem="Hsl-lh-dWZ" secondAttribute="height" id="bHL-gL-29l"/>
+                            <constraint firstItem="kMX-KN-rVM" firstAttribute="top" secondItem="gSc-Fb-cEP" secondAttribute="bottom" constant="130" id="dLk-Ws-apS"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1276" y="497"/>
+            <point key="canvasLocation" x="1275.5" y="496.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="background" width="625" height="390"/>
         <image name="login-bg" width="375" height="667"/>
+        <image name="logo" width="150" height="116"/>
         <image name="swift" width="100" height="100"/>
     </resources>
 </document>
