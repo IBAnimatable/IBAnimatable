@@ -83,8 +83,10 @@ import UIKit
   @IBInspectable public var blurOpacity: CGFloat = 1
   
   // MARK: - TintDesignable
-  @IBInspectable public var tintedColor: UIColor = UIColor.clearColor()
   @IBInspectable public var tintOpacity: CGFloat = 0
+  @IBInspectable public var shadeOpacity: CGFloat = 0
+  @IBInspectable public var toneColor: UIColor = UIColor.clearColor()
+  @IBInspectable public var toneOpacity: CGFloat = 0
   
   // MARK: - GradientDesignable
   @IBInspectable public var startColor: UIColor = UIColor.clearColor()
