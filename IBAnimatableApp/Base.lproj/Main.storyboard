@@ -216,11 +216,35 @@
                         <viewControllerLayoutGuide type="bottom" id="p9q-ym-dQp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Hsl-lh-dWZ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="login-bg" translatesAutoresizingMaskIntoConstraints="NO" id="0VW-he-GSd" customClass="AnimatableImageView" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <animations/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadeOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="toneColor">
+                                        <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="toneOpacity">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0VW-he-GSd" firstAttribute="centerX" secondItem="Hsl-lh-dWZ" secondAttribute="centerX" id="0jg-Xu-bNh"/>
+                            <constraint firstItem="0VW-he-GSd" firstAttribute="width" secondItem="Hsl-lh-dWZ" secondAttribute="width" id="OGg-yg-8dh"/>
+                            <constraint firstItem="0VW-he-GSd" firstAttribute="centerY" secondItem="Hsl-lh-dWZ" secondAttribute="centerY" id="TNd-YB-ZKd"/>
+                            <constraint firstItem="0VW-he-GSd" firstAttribute="height" secondItem="Hsl-lh-dWZ" secondAttribute="height" id="bHL-gL-29l"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1276" y="497"/>
@@ -228,6 +252,7 @@
     </scenes>
     <resources>
         <image name="background" width="625" height="390"/>
+        <image name="login-bg" width="375" height="667"/>
         <image name="swift" width="100" height="100"/>
     </resources>
 </document>

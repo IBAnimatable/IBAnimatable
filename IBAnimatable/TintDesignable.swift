@@ -38,7 +38,7 @@ public extension TintDesignable where Self: UIView {
     }
     
     if (shadeOpacity > 0 && shadeOpacity <= 1) {
-      addColorView(UIColor.whiteColor(), opacity: shadeOpacity)
+      addColorView(UIColor.blackColor(), opacity: shadeOpacity)
     }
     
     if (toneColor != UIColor.clearColor()
