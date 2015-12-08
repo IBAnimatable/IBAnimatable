@@ -32,6 +32,7 @@
 		AED1A11D1BFE983A001346FA /* ShadowDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1111BFE983A001346FA /* ShadowDesignable.swift */; };
 		AED1A11E1BFE983A001346FA /* PaddingDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1121BFE983A001346FA /* PaddingDesignable.swift */; };
 		AED1A11F1BFE983A001346FA /* PlaceholderDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1131BFE983A001346FA /* PlaceholderDesignable.swift */; };
+		AED97B861C1710A900D2B0B8 /* BorderSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED97B851C1710A900D2B0B8 /* BorderSide.swift */; };
 		CAB569B1A6DDC08165BE389A /* FillDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB562E75DABEED7FCE0F309 /* FillDesignable.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		AED1A1111BFE983A001346FA /* ShadowDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShadowDesignable.swift; path = IBAnimatable/ShadowDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AED1A1121BFE983A001346FA /* PaddingDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaddingDesignable.swift; path = IBAnimatable/PaddingDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AED1A1131BFE983A001346FA /* PlaceholderDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceholderDesignable.swift; path = IBAnimatable/PlaceholderDesignable.swift; sourceTree = SOURCE_ROOT; };
+		AED97B851C1710A900D2B0B8 /* BorderSide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderSide.swift; sourceTree = "<group>"; };
 		CAB562E75DABEED7FCE0F309 /* FillDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillDesignable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,6 +146,7 @@
 			children = (
 				AED1A10F1BFE983A001346FA /* AnimationType.swift */,
 				AE81DB4D1C11DF00000AEB20 /* BlurEffectStyle.swift */,
+				AED97B851C1710A900D2B0B8 /* BorderSide.swift */,
 				AE8C53AF1C0F1C0400A775AF /* GradientStartPoint.swift */,
 			);
 			name = enum;
@@ -268,6 +271,7 @@
 				AED1A11F1BFE983A001346FA /* PlaceholderDesignable.swift in Sources */,
 				AE81DB4E1C11DF00000AEB20 /* BlurEffectStyle.swift in Sources */,
 				AED1A1151BFE983A001346FA /* AnimatabeButton.swift in Sources */,
+				AED97B861C1710A900D2B0B8 /* BorderSide.swift in Sources */,
 				CAB569B1A6DDC08165BE389A /* FillDesignable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
