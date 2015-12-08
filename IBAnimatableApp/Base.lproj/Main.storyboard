@@ -331,6 +331,9 @@
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Zfk-dt-o4j" kind="presentation" modalTransitionStyle="flipHorizontal" id="lQj-YI-THO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xH8-G7-l9G" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
                                 <rect key="frame" x="264" y="620" width="95" height="27"/>
@@ -365,6 +368,28 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oMr-Kw-Kza" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1275.5" y="496.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="49D-bG-Jl6">
+            <objects>
+                <viewController id="Zfk-dt-o4j" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Xa-fU-nLk"/>
+                        <viewControllerLayoutGuide type="bottom" id="kcF-hK-ZQq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AIb-Ub-Jfk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="B8i-im-7GU"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DJS-MA-eyY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1771.5" y="496.5"/>
         </scene>
     </scenes>
     <resources>
