@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7ne-VT-Tkk">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -236,56 +237,88 @@
                                 <rect key="frame" x="112" y="150" width="150" height="116"/>
                                 <animations/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G6K-68-JlC" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
-                                <rect key="frame" x="20" y="332" width="335" height="60"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1f4-pm-avJ" userLabel="Container view">
+                                <rect key="frame" x="16" y="346" width="343" height="180"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G6K-68-JlC" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Rn5-qb-vBe"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="leftImage" value="username"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="leftImageLeftPadding">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="leftImageRightPadding">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="leftImageName" value="username"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="00x-ai-icw" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="60" width="343" height="60"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="DGj-Jg-RSw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="leftImage" value="username"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="leftImageLeftPadding">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="leftImageRightPadding">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="leftImageName" value="password"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHw-QK-EpD" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="120" width="343" height="60"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="343" id="0bW-4G-PNx"/>
+                                        </constraints>
+                                        <state key="normal" title="Sing In">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="leftImage" value="username"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="leftImageLeftPadding">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="leftImageRightPadding">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="leftImageName" value="username"/>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="00x-ai-icw" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
-                                <rect key="frame" x="20" y="393" width="335" height="60"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="leftImage" value="username"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="leftImageLeftPadding">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="leftImageRightPadding">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="leftImageName" value="password"/>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHw-QK-EpD" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
-                                <rect key="frame" x="20" y="454" width="335" height="60"/>
-                                <animations/>
-                                <state key="normal" title="Sing In">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                        <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="00x-ai-icw" firstAttribute="leading" secondItem="1f4-pm-avJ" secondAttribute="leading" id="15E-qP-4cm"/>
+                                    <constraint firstItem="00x-ai-icw" firstAttribute="top" secondItem="G6K-68-JlC" secondAttribute="bottom" id="4Ia-gZ-i3V"/>
+                                    <constraint firstAttribute="trailing" secondItem="G6K-68-JlC" secondAttribute="trailing" id="7HR-NY-CcU"/>
+                                    <constraint firstItem="00x-ai-icw" firstAttribute="top" secondItem="G6K-68-JlC" secondAttribute="bottom" id="821-A3-ggJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="00x-ai-icw" secondAttribute="trailing" id="91d-nT-q5P"/>
+                                    <constraint firstAttribute="trailing" secondItem="fHw-QK-EpD" secondAttribute="trailing" id="MLz-ta-vIk"/>
+                                    <constraint firstItem="00x-ai-icw" firstAttribute="leading" secondItem="1f4-pm-avJ" secondAttribute="leading" id="Odp-vY-Duw"/>
+                                    <constraint firstItem="G6K-68-JlC" firstAttribute="leading" secondItem="1f4-pm-avJ" secondAttribute="leading" id="VFe-A5-BhZ"/>
+                                    <constraint firstItem="G6K-68-JlC" firstAttribute="top" secondItem="1f4-pm-avJ" secondAttribute="top" id="W5d-fm-UHu"/>
+                                    <constraint firstItem="fHw-QK-EpD" firstAttribute="top" secondItem="00x-ai-icw" secondAttribute="bottom" id="Yph-G2-ZcV"/>
+                                    <constraint firstAttribute="height" constant="180" id="a9n-G1-6HI"/>
+                                    <constraint firstItem="fHw-QK-EpD" firstAttribute="leading" secondItem="1f4-pm-avJ" secondAttribute="leading" id="jWj-Ng-pjv"/>
+                                    <constraint firstAttribute="bottom" secondItem="fHw-QK-EpD" secondAttribute="bottom" id="qM9-Oa-AQv"/>
+                                    <constraint firstAttribute="trailing" secondItem="00x-ai-icw" secondAttribute="trailing" id="sar-NO-SCW"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -294,8 +327,11 @@
                             <constraint firstItem="kMX-KN-rVM" firstAttribute="centerX" secondItem="Hsl-lh-dWZ" secondAttribute="centerX" id="L4J-W7-yub"/>
                             <constraint firstItem="0VW-he-GSd" firstAttribute="width" secondItem="Hsl-lh-dWZ" secondAttribute="width" id="OGg-yg-8dh"/>
                             <constraint firstItem="0VW-he-GSd" firstAttribute="centerY" secondItem="Hsl-lh-dWZ" secondAttribute="centerY" id="TNd-YB-ZKd"/>
+                            <constraint firstItem="1f4-pm-avJ" firstAttribute="leading" secondItem="Hsl-lh-dWZ" secondAttribute="leadingMargin" id="adM-Ac-cjy"/>
                             <constraint firstItem="0VW-he-GSd" firstAttribute="height" secondItem="Hsl-lh-dWZ" secondAttribute="height" id="bHL-gL-29l"/>
                             <constraint firstItem="kMX-KN-rVM" firstAttribute="top" secondItem="gSc-Fb-cEP" secondAttribute="bottom" constant="130" id="dLk-Ws-apS"/>
+                            <constraint firstItem="1f4-pm-avJ" firstAttribute="top" secondItem="kMX-KN-rVM" secondAttribute="bottom" constant="80" id="qYs-9d-YHu"/>
+                            <constraint firstItem="1f4-pm-avJ" firstAttribute="trailing" secondItem="Hsl-lh-dWZ" secondAttribute="trailingMargin" id="zXW-m7-mCO"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
