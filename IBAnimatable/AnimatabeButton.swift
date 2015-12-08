@@ -28,17 +28,9 @@ import UIKit
   }
   
   // MARK: - BorderDesignable
-  @IBInspectable public var borderColor: UIColor = UIColor.clearColor() {
-    didSet {
-      configBorderColor()
-    }
-  }
-
-  @IBInspectable public var borderWidth: CGFloat = 0 {
-    didSet {
-      configBorderWidth()
-    }
-  }
+  @IBInspectable public var borderColor: UIColor = UIColor.clearColor()
+  @IBInspectable public var borderWidth: CGFloat = 0
+  @IBInspectable public var borderSide: String = ""
 
   // MARK: - ShadowDesignable
   @IBInspectable public var shadowColor: UIColor = UIColor.clearColor() {
@@ -82,16 +74,21 @@ import UIKit
   
   // MARK: - Lifecycle
   public override func prepareForInterfaceBuilder() {
-
+    configDesignableProperties()
   }
   
   public override func awakeFromNib() {
-
+    configDesignableProperties()
   }
   
   public override func layoutSubviews() {
     super.layoutSubviews()
     
     startAnimation()
+  }
+  
+  // MARK: - Private
+  private func configDesignableProperties() {
+    configBorder()
   }
 }
