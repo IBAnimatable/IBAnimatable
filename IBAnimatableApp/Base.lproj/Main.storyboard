@@ -252,7 +252,6 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                                 <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="leftImage" value="username"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftImageLeftPadding">
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
@@ -274,7 +273,6 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                                 <color key="value" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="leftImage" value="username"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftImageLeftPadding">
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
@@ -289,6 +287,7 @@
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="343" id="0bW-4G-PNx"/>
+                                            <constraint firstAttribute="height" constant="60" id="2q7-zb-5Oq"/>
                                         </constraints>
                                         <state key="normal" title="Sing In">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -313,7 +312,6 @@
                                     <constraint firstItem="G6K-68-JlC" firstAttribute="leading" secondItem="1f4-pm-avJ" secondAttribute="leading" id="VFe-A5-BhZ"/>
                                     <constraint firstItem="G6K-68-JlC" firstAttribute="top" secondItem="1f4-pm-avJ" secondAttribute="top" id="W5d-fm-UHu"/>
                                     <constraint firstItem="fHw-QK-EpD" firstAttribute="top" secondItem="00x-ai-icw" secondAttribute="bottom" id="Yph-G2-ZcV"/>
-                                    <constraint firstAttribute="height" constant="180" id="a9n-G1-6HI"/>
                                     <constraint firstItem="fHw-QK-EpD" firstAttribute="leading" secondItem="1f4-pm-avJ" secondAttribute="leading" id="jWj-Ng-pjv"/>
                                     <constraint firstAttribute="bottom" secondItem="fHw-QK-EpD" secondAttribute="bottom" id="qM9-Oa-AQv"/>
                                     <constraint firstAttribute="trailing" secondItem="00x-ai-icw" secondAttribute="trailing" id="sar-NO-SCW"/>
