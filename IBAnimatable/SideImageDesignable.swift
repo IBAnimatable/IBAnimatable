@@ -29,13 +29,12 @@ public protocol SideImageDesignable {
 
 public extension SideImageDesignable where Self: UITextField {
   public func configLeftImage() {
-    print(__FUNCTION__)
-    print(leftImageName)
     if (leftImageName == "") {
       return
     }
     
-    let image = UIImage(named: leftImageName)
+    let bundle = NSBundle(forClass: self.dynamicType)
+    let image =  UIImage(named: leftImageName, inBundle: bundle, compatibleWithTraitCollection: self.traitCollection)
     let imageView = UIImageView(image: image)
     
     // If does not specify `leftImageTopPadding`, then center it in the middle
