@@ -25,22 +25,22 @@ public protocol PaddingDesignable {
 public extension PaddingDesignable where Self: UITextField {
   public func configPaddingLeft() {
     let padding = UIView(frame: CGRectMake(0, 0, paddingLeft, 0))
-    leftViewMode = UITextFieldViewMode.Always
+    leftViewMode = .Always
     leftView = padding
   }
   
   public func configPaddingRight() {
     let padding = UIView(frame: CGRectMake(0, 0, paddingRight, 0))
-    rightViewMode = UITextFieldViewMode.Always
+    rightViewMode = .Always
     rightView = padding
   }
 
   public func configPaddingSide() {
     let padding = UIView(frame: CGRectMake(0, 0, paddingSide, paddingSide))
-    leftViewMode = UITextFieldViewMode.Always
+    leftViewMode = .Always
     leftView = padding
 
-    rightViewMode = UITextFieldViewMode.Always
+    rightViewMode = .Always
     rightView = padding
   }
 }
