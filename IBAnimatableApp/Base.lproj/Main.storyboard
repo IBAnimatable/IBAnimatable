@@ -324,11 +324,29 @@
                                     <constraint firstAttribute="trailing" secondItem="00x-ai-icw" secondAttribute="trailing" id="sar-NO-SCW"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8m-bE-oxM" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="620" width="88" height="27"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Create Account">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xH8-G7-l9G" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="264" y="620" width="95" height="27"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Forgot Password">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0VW-he-GSd" firstAttribute="centerX" secondItem="Hsl-lh-dWZ" secondAttribute="centerX" id="0jg-Xu-bNh"/>
+                            <constraint firstItem="p9q-ym-dQp" firstAttribute="top" secondItem="R8m-bE-oxM" secondAttribute="bottom" constant="20" id="CO3-RH-bte"/>
+                            <constraint firstItem="p9q-ym-dQp" firstAttribute="top" secondItem="xH8-G7-l9G" secondAttribute="bottom" constant="20" id="E1u-Sc-OhK"/>
                             <constraint firstItem="kMX-KN-rVM" firstAttribute="centerX" secondItem="Hsl-lh-dWZ" secondAttribute="centerX" id="L4J-W7-yub"/>
                             <constraint firstItem="0VW-he-GSd" firstAttribute="width" secondItem="Hsl-lh-dWZ" secondAttribute="width" id="OGg-yg-8dh"/>
                             <constraint firstItem="0VW-he-GSd" firstAttribute="centerY" secondItem="Hsl-lh-dWZ" secondAttribute="centerY" id="TNd-YB-ZKd"/>
@@ -336,6 +354,8 @@
                             <constraint firstItem="0VW-he-GSd" firstAttribute="height" secondItem="Hsl-lh-dWZ" secondAttribute="height" id="bHL-gL-29l"/>
                             <constraint firstItem="kMX-KN-rVM" firstAttribute="top" secondItem="gSc-Fb-cEP" secondAttribute="bottom" constant="130" id="dLk-Ws-apS"/>
                             <constraint firstItem="1f4-pm-avJ" firstAttribute="top" secondItem="kMX-KN-rVM" secondAttribute="bottom" constant="80" id="qYs-9d-YHu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xH8-G7-l9G" secondAttribute="trailing" id="rdW-na-JtG"/>
+                            <constraint firstItem="R8m-bE-oxM" firstAttribute="leading" secondItem="Hsl-lh-dWZ" secondAttribute="leadingMargin" id="yn1-xl-CoZ"/>
                             <constraint firstItem="1f4-pm-avJ" firstAttribute="trailing" secondItem="Hsl-lh-dWZ" secondAttribute="trailingMargin" id="zXW-m7-mCO"/>
                         </constraints>
                     </view>
