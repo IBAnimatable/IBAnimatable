@@ -13,9 +13,16 @@ public protocol SideImageDesignable {
 
 public extension SideImageDesignable where Self: UITextField {
   public func configLeftImage() {
+    if (leftImage == "") {
+      return
+    }
+    
     let image = UIImage(named: leftImage)
-    let sideView = UIView(frame: CGRectMake(0, 0, leftImagePaddingLeft + leftImagePaddingRight, 0))
-    sideView.addSubview(UIImageView(image: image))
+    let imageView = UIImageView(image: image)
+    print(imageView.bounds.size.width)
+    let padding = leftImagePaddingLeft + imageView.bounds.size.width + leftImagePaddingRight
+    let sideView = UIView(frame: CGRectMake(0, 0, padding, 0))
+    sideView.addSubview(imageView)
     
     leftViewMode = .Always
     leftView = sideView

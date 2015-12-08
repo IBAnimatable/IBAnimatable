@@ -91,7 +91,7 @@ import UIKit
   }
   
   // MARK: - SideImageDesignable
-  @IBInspectable public var leftImage: String = "User"
+  @IBInspectable public var leftImage: String = ""
   @IBInspectable public var leftImagePaddingLeft: CGFloat = 0
   @IBInspectable public var leftImagePaddingRight: CGFloat = 0
 
