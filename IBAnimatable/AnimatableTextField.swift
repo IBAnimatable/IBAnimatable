@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableTextField: UITextField, CornerDesignable, FillDesignable, BorderDesignable, ShadowDesignable, PaddingDesignable, PlaceholderDesignable, Animatable {
+@IBDesignable public class AnimatableTextField: UITextField, CornerDesignable, FillDesignable, BorderDesignable, ShadowDesignable, PaddingDesignable, SideImageDesignable, PlaceholderDesignable, Animatable {
  
   // MARK: - CornerDesignable
   @IBInspectable public var cornerRadius: CGFloat = 0 {
@@ -90,6 +90,12 @@ import UIKit
     }
   }
   
+  // MARK: - SideImageDesignable
+  @IBInspectable public var leftImage: String = "User"
+  @IBInspectable public var leftImagePaddingLeft: CGFloat = 0
+  @IBInspectable public var leftImagePaddingRight: CGFloat = 0
+
+  
   // MARK: - CSSPlaceholderable
   @IBInspectable public var placeholderColor: UIColor = UIColor.clearColor() {
     didSet {
@@ -108,17 +114,22 @@ import UIKit
   
   // MARK: - Lifecycle
   public override func prepareForInterfaceBuilder() {
-    
+    configDesignableProperties()
   }
   
   public override func awakeFromNib() {
-    
+    configDesignableProperties()
   }
   
   public override func layoutSubviews() {
     super.layoutSubviews()
     
     startAnimation()
+  }
+  
+  // MARK: - Private
+  private func configDesignableProperties() {
+    configLeftImage()
   }
 }
 

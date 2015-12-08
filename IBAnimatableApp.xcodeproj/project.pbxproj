@@ -10,6 +10,7 @@
 		AE216FDD1C0DBC5D00BC6366 /* CornerDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE216FDC1C0DBC5D00BC6366 /* CornerDesignable.swift */; };
 		AE299BDA1C0338C70018CCDC /* BlurDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE299BD91C0338C70018CCDC /* BlurDesignable.swift */; };
 		AE299BDC1C03BB670018CCDC /* TintDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE299BDB1C03BB670018CCDC /* TintDesignable.swift */; };
+		AE74D6D71C166FB100718E0E /* SideImageDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE74D6D61C166FB100718E0E /* SideImageDesignable.swift */; };
 		AE81DAEE1C10F14C000AEB20 /* GradientDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE81DAED1C10F14C000AEB20 /* GradientDesignable.swift */; };
 		AE81DB4E1C11DF00000AEB20 /* BlurEffectStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE81DB4D1C11DF00000AEB20 /* BlurEffectStyle.swift */; };
 		AE81DB501C12E060000AEB20 /* RotationDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE81DB4F1C12E060000AEB20 /* RotationDesignable.swift */; };
@@ -39,6 +40,7 @@
 		AE299BD91C0338C70018CCDC /* BlurDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlurDesignable.swift; path = IBAnimatable/BlurDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AE299BDB1C03BB670018CCDC /* TintDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TintDesignable.swift; path = IBAnimatable/TintDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AE6C66FF1BFBF93500134A35 /* IBAnimatableApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBAnimatableApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE74D6D61C166FB100718E0E /* SideImageDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideImageDesignable.swift; sourceTree = "<group>"; };
 		AE81DAED1C10F14C000AEB20 /* GradientDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientDesignable.swift; path = IBAnimatable/GradientDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AE81DB4D1C11DF00000AEB20 /* BlurEffectStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlurEffectStyle.swift; path = IBAnimatable/BlurEffectStyle.swift; sourceTree = SOURCE_ROOT; };
 		AE81DB4F1C12E060000AEB20 /* RotationDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RotationDesignable.swift; path = IBAnimatable/RotationDesignable.swift; sourceTree = SOURCE_ROOT; };
@@ -159,6 +161,7 @@
 				AED1A1131BFE983A001346FA /* PlaceholderDesignable.swift */,
 				AE81DB4F1C12E060000AEB20 /* RotationDesignable.swift */,
 				AED1A1111BFE983A001346FA /* ShadowDesignable.swift */,
+				AE74D6D61C166FB100718E0E /* SideImageDesignable.swift */,
 				AE299BDB1C03BB670018CCDC /* TintDesignable.swift */,
 			);
 			name = Designable;
@@ -248,6 +251,7 @@
 				AE299BDA1C0338C70018CCDC /* BlurDesignable.swift in Sources */,
 				AE81DB501C12E060000AEB20 /* RotationDesignable.swift in Sources */,
 				AED1A1081BFE9820001346FA /* ViewController.swift in Sources */,
+				AE74D6D71C166FB100718E0E /* SideImageDesignable.swift in Sources */,
 				AED1A11B1BFE983A001346FA /* AnimationType.swift in Sources */,
 				AE8C53AE1C0F111600A775AF /* DesignableGradientView.swift in Sources */,
 				AED1A11E1BFE983A001346FA /* PaddingDesignable.swift in Sources */,
@@ -328,7 +332,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -367,7 +371,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
