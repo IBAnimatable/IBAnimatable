@@ -209,7 +209,6 @@
         <!--View Controller-->
         <scene sceneID="8Rd-3V-pdH">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oMr-Kw-Kza" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="7ne-VT-Tkk" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gSc-Fb-cEP"/>
@@ -238,6 +237,20 @@
                                 <rect key="frame" x="112" y="150" width="150" height="116"/>
                                 <animations/>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G6K-68-JlC" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="473" width="335" height="60"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="paddingLeft">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -252,6 +265,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oMr-Kw-Kza" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1275.5" y="496.5"/>
         </scene>
