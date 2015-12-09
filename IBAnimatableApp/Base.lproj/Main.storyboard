@@ -374,7 +374,7 @@
             <objects>
                 <navigationController id="H7o-ac-7B2" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="wga-Zk-Pz9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="wga-Zk-Pz9" customClass="DesignableNavigationBar" customModule="IBAnimatableApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
@@ -383,6 +383,9 @@
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
                         </textAttributes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="solidColor" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="abI-D4-Wx8" kind="relationship" relationship="rootViewController" id="f9Y-Io-dW7"/>

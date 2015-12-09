@@ -3,8 +3,6 @@
 //  Copyright © 2015 Jake Lin. All rights reserved.
 //
 
-import Foundation
-
 import UIKit
 
 @IBDesignable public class DesignableGradientView: UIView {

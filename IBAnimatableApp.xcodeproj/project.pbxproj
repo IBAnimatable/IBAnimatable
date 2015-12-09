@@ -33,6 +33,8 @@
 		AED1A11E1BFE983A001346FA /* PaddingDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1121BFE983A001346FA /* PaddingDesignable.swift */; };
 		AED1A11F1BFE983A001346FA /* PlaceholderDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1131BFE983A001346FA /* PlaceholderDesignable.swift */; };
 		AED97B861C1710A900D2B0B8 /* BorderSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED97B851C1710A900D2B0B8 /* BorderSide.swift */; };
+		AEEE200B1C18CFD200AD033B /* NavigationBarDesginable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEE200A1C18CFD200AD033B /* NavigationBarDesginable.swift */; };
+		AEEE200D1C18D10C00AD033B /* DesignableNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEE200C1C18D10C00AD033B /* DesignableNavigationBar.swift */; };
 		CAB569B1A6DDC08165BE389A /* FillDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB562E75DABEED7FCE0F309 /* FillDesignable.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,8 @@
 		AED1A1121BFE983A001346FA /* PaddingDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaddingDesignable.swift; path = IBAnimatable/PaddingDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AED1A1131BFE983A001346FA /* PlaceholderDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceholderDesignable.swift; path = IBAnimatable/PlaceholderDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AED97B851C1710A900D2B0B8 /* BorderSide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderSide.swift; sourceTree = "<group>"; };
+		AEEE200A1C18CFD200AD033B /* NavigationBarDesginable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarDesginable.swift; sourceTree = "<group>"; };
+		AEEE200C1C18D10C00AD033B /* DesignableNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableNavigationBar.swift; sourceTree = "<group>"; };
 		CAB562E75DABEED7FCE0F309 /* FillDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillDesignable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +141,7 @@
 				AED1A10C1BFE983A001346FA /* AnimatableTextField.swift */,
 				AED1A10D1BFE983A001346FA /* AnimatableTextView.swift */,
 				AE8C53AD1C0F111600A775AF /* DesignableGradientView.swift */,
+				AEEE200C1C18D10C00AD033B /* DesignableNavigationBar.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 				AE216FDC1C0DBC5D00BC6366 /* CornerDesignable.swift */,
 				CAB562E75DABEED7FCE0F309 /* FillDesignable.swift */,
 				AE81DAED1C10F14C000AEB20 /* GradientDesignable.swift */,
+				AEEE200A1C18CFD200AD033B /* NavigationBarDesginable.swift */,
 				AED1A1121BFE983A001346FA /* PaddingDesignable.swift */,
 				AED1A1131BFE983A001346FA /* PlaceholderDesignable.swift */,
 				AE81DB4F1C12E060000AEB20 /* RotationDesignable.swift */,
@@ -266,6 +272,7 @@
 				AED1A1181BFE983A001346FA /* AnimatableTextField.swift in Sources */,
 				AED1A11C1BFE983A001346FA /* BorderDesignable.swift in Sources */,
 				AE299BDC1C03BB670018CCDC /* TintDesignable.swift in Sources */,
+				AEEE200D1C18D10C00AD033B /* DesignableNavigationBar.swift in Sources */,
 				AED1A1031BFE9820001346FA /* AppDelegate.swift in Sources */,
 				AE216FDD1C0DBC5D00BC6366 /* CornerDesignable.swift in Sources */,
 				AED1A11F1BFE983A001346FA /* PlaceholderDesignable.swift in Sources */,
@@ -273,6 +280,7 @@
 				AED1A1151BFE983A001346FA /* AnimatabeButton.swift in Sources */,
 				AED97B861C1710A900D2B0B8 /* BorderSide.swift in Sources */,
 				CAB569B1A6DDC08165BE389A /* FillDesignable.swift in Sources */,
+				AEEE200B1C18CFD200AD033B /* NavigationBarDesginable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
