@@ -409,9 +409,18 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9nM-c6-zFs" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="186"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJ5-6f-Fhe" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                        <rect key="frame" x="162" y="67" width="50" height="51"/>
+                                        <animations/>
+                                        <state key="normal" image="add-photo"/>
+                                    </button>
+                                </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="cJ5-6f-Fhe" firstAttribute="centerY" secondItem="9nM-c6-zFs" secondAttribute="centerY" id="c7v-cp-OD3"/>
+                                    <constraint firstItem="cJ5-6f-Fhe" firstAttribute="centerX" secondItem="9nM-c6-zFs" secondAttribute="centerX" id="icf-jc-MSO"/>
                                     <constraint firstAttribute="height" constant="186" id="zGH-zc-AzQ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -438,6 +447,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add-photo" width="50" height="51"/>
         <image name="background" width="625" height="390"/>
         <image name="login-bg" width="375" height="667"/>
         <image name="logo" width="150" height="116"/>
