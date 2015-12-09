@@ -429,12 +429,43 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A0O-s7-rko" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="196" width="343" height="50"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5Ik-zY-GJF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftImageRightPadding">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="leftImageName" value="username"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="borderSide" value="Bottom"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="0.050000000000000003" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" red="0.0" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="A0O-s7-rko" firstAttribute="top" secondItem="9nM-c6-zFs" secondAttribute="bottom" constant="10" id="1uj-zn-S5I"/>
+                            <constraint firstItem="A0O-s7-rko" firstAttribute="leading" secondItem="p1U-ED-v0e" secondAttribute="leadingMargin" id="5kd-YF-KOG"/>
                             <constraint firstItem="9nM-c6-zFs" firstAttribute="top" secondItem="OE6-Ss-xGt" secondAttribute="bottom" id="CRG-gL-EIV"/>
                             <constraint firstAttribute="trailing" secondItem="9nM-c6-zFs" secondAttribute="trailing" id="DB4-6B-hJZ"/>
+                            <constraint firstItem="A0O-s7-rko" firstAttribute="trailing" secondItem="p1U-ED-v0e" secondAttribute="trailingMargin" id="NJU-D8-f6O"/>
                             <constraint firstItem="9nM-c6-zFs" firstAttribute="leading" secondItem="p1U-ED-v0e" secondAttribute="leading" id="YOZ-S1-bL7"/>
                         </constraints>
                     </view>
