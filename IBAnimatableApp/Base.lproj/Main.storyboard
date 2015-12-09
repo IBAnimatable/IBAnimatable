@@ -332,7 +332,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Zfk-dt-o4j" kind="presentation" modalTransitionStyle="flipHorizontal" id="lQj-YI-THO"/>
+                                    <segue destination="H7o-ac-7B2" kind="presentation" modalTransitionStyle="flipHorizontal" id="oKe-Aa-xS2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xH8-G7-l9G" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
@@ -369,27 +369,69 @@
             </objects>
             <point key="canvasLocation" x="1275.5" y="496.5"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="49D-bG-Jl6">
+        <!--Navigation Controller-->
+        <scene sceneID="Cq3-ok-T1r">
             <objects>
-                <viewController id="Zfk-dt-o4j" sceneMemberID="viewController">
+                <navigationController id="H7o-ac-7B2" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="wga-Zk-Pz9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <color key="barTintColor" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="abI-D4-Wx8" kind="relationship" relationship="rootViewController" id="f9Y-Io-dW7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YsY-xl-nh6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1767.5" y="496.5"/>
+        </scene>
+        <!--Create Account-->
+        <scene sceneID="RCJ-bf-u35">
+            <objects>
+                <viewController id="abI-D4-Wx8" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="0Xa-fU-nLk"/>
-                        <viewControllerLayoutGuide type="bottom" id="kcF-hK-ZQq"/>
+                        <viewControllerLayoutGuide type="top" id="OE6-Ss-xGt"/>
+                        <viewControllerLayoutGuide type="bottom" id="W2Y-EV-m8y"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="AIb-Ub-Jfk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleToFill" id="p1U-ED-v0e">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9nM-c6-zFs" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="186"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="186" id="zGH-zc-AzQ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9nM-c6-zFs" firstAttribute="top" secondItem="OE6-Ss-xGt" secondAttribute="bottom" id="CRG-gL-EIV"/>
+                            <constraint firstAttribute="trailing" secondItem="9nM-c6-zFs" secondAttribute="trailing" id="DB4-6B-hJZ"/>
+                            <constraint firstItem="9nM-c6-zFs" firstAttribute="leading" secondItem="p1U-ED-v0e" secondAttribute="leading" id="YOZ-S1-bL7"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="B8i-im-7GU"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <navigationItem key="navigationItem" title="Create Account" id="xhm-Sr-SOj"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DJS-MA-eyY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C3z-F5-SBl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1771.5" y="496.5"/>
+            <point key="canvasLocation" x="2252.5" y="496.5"/>
         </scene>
     </scenes>
     <resources>
