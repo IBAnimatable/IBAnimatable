@@ -411,7 +411,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="186"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJ5-6f-Fhe" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
-                                        <rect key="frame" x="162.5" y="55" width="50" height="51"/>
+                                        <rect key="frame" x="162" y="55" width="50" height="51"/>
                                         <animations/>
                                         <state key="normal" image="add-photo"/>
                                         <userDefinedRuntimeAttributes>
@@ -581,12 +581,35 @@
                                 </subviews>
                                 <animations/>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oKJ-oa-unX">
+                                <rect key="frame" x="81.5" y="553" width="212.5" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ApC-Me-w5Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="155.5" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="0.5" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmX-Uq-CmY" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                        <rect key="frame" x="165" y="0.0" width="47" height="30"/>
+                                        <animations/>
+                                        <state key="normal" title="Sign In">
+                                            <color key="titleColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                            </stackView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="W2Y-EV-m8y" firstAttribute="top" secondItem="oKJ-oa-unX" secondAttribute="bottom" constant="20" id="7ac-Gp-R1M"/>
                             <constraint firstItem="9nM-c6-zFs" firstAttribute="top" secondItem="OE6-Ss-xGt" secondAttribute="bottom" id="CRG-gL-EIV"/>
+                            <constraint firstItem="oKJ-oa-unX" firstAttribute="centerX" secondItem="p1U-ED-v0e" secondAttribute="centerX" id="D39-jD-FjU"/>
                             <constraint firstAttribute="trailing" secondItem="9nM-c6-zFs" secondAttribute="trailing" id="DB4-6B-hJZ"/>
+                            <constraint firstItem="oKJ-oa-unX" firstAttribute="centerX" secondItem="p1U-ED-v0e" secondAttribute="centerX" id="DXy-mq-OgA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZQG-TL-NqK" secondAttribute="trailing" id="TJ8-LP-7j0"/>
                             <constraint firstItem="ZQG-TL-NqK" firstAttribute="top" secondItem="9nM-c6-zFs" secondAttribute="bottom" id="Vqs-ky-7et"/>
                             <constraint firstItem="9nM-c6-zFs" firstAttribute="leading" secondItem="p1U-ED-v0e" secondAttribute="leading" id="YOZ-S1-bL7"/>
