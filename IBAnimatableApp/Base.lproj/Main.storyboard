@@ -450,7 +450,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.0" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="SlideRight"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="SlideInRight"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                                 <real key="value" value="0.29999999999999999"/>
                                             </userDefinedRuntimeAttribute>
@@ -482,7 +482,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.0" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="SlideRight"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="SlideInRight"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                                 <real key="value" value="0.34999999999999998"/>
                                             </userDefinedRuntimeAttribute>
@@ -514,7 +514,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.0" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="SlideRight"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="SlideInRight"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                                 <real key="value" value="0.40000000000000002"/>
                                             </userDefinedRuntimeAttribute>
@@ -546,7 +546,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.0" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="SlideRight"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="SlideInRight"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                                 <real key="value" value="0.45000000000000001"/>
                                             </userDefinedRuntimeAttribute>
@@ -578,7 +578,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.0" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="SlideRight"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="SlideInRight"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                                 <real key="value" value="0.5"/>
                                             </userDefinedRuntimeAttribute>

@@ -9,14 +9,14 @@ import Foundation
  Predefined Animation Type
  */
 public enum AnimationType: String {
-  case SlideLeft
-  case SlideRight
-  case SlideDown
-  case SlideUp
-  case SqueezeLeft
-  case SqueezeRight
-  case SqueezeDown
-  case SqueezeUp
+  case SlideInLeft
+  case SlideInRight
+  case SlideInDown
+  case SlideInUp
+  case SqueezeInLeft
+  case SqueezeInRight
+  case SqueezeInDown
+  case SqueezeInUp
   case FadeIn
   case FadeOut
   case FadeOutIn

@@ -62,24 +62,24 @@ public extension Animatable where Self: UIView {
     var willDisappear = false
     
     switch(animationType) {
-    case .SlideLeft:
+    case .SlideInLeft:
       x = -300 * force
-    case .SlideRight:
+    case .SlideInRight:
       x = 300 * force
-    case .SlideDown:
+    case .SlideInDown:
       y = -300 * force
-    case .SlideUp:
+    case .SlideInUp:
       y = 300 * force
-    case .SqueezeLeft:
+    case .SqueezeInLeft:
       x = -300 * force
       scaleX = 3 * force
-    case .SqueezeRight:
+    case .SqueezeInRight:
       x = 300 * force
       scaleX = 3 * force
-    case .SqueezeDown:
+    case .SqueezeInDown:
       y = -300 * force
       scaleY = 3 * force
-    case .SqueezeUp:
+    case .SqueezeInUp:
       y = 300 * force
       scaleY = 3 * force
     case .FadeIn:
