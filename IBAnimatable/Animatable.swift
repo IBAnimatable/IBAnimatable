@@ -8,11 +8,7 @@ import UIKit
 public protocol Animatable {
   
   /**
-    Animation Type
-      slideLeft
-      slideRight
-      slideDown
-      slideUp
+    String value of `AnimationType` enum
   */
   var animationType: String { get set }
   
