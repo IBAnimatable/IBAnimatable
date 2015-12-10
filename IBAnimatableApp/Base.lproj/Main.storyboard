@@ -237,8 +237,27 @@
                                 <rect key="frame" x="112" y="150" width="150" height="116"/>
                                 <animations/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1f4-pm-avJ" userLabel="Container view">
-                                <rect key="frame" x="16" y="346" width="343" height="180"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8m-bE-oxM" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="620" width="88" height="27"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Create Account">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="H7o-ac-7B2" kind="presentation" modalTransitionStyle="flipHorizontal" id="oKe-Aa-xS2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xH8-G7-l9G" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="264" y="620" width="95" height="27"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Forgot Password">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wBb-ns-Bw1">
+                                <rect key="frame" x="16" y="387" width="343" height="180"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G6K-68-JlC" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
@@ -293,7 +312,6 @@
                                         <rect key="frame" x="0.0" y="120" width="343" height="60"/>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="343" id="0bW-4G-PNx"/>
                                             <constraint firstAttribute="height" constant="60" id="2q7-zb-5Oq"/>
                                         </constraints>
                                         <state key="normal" title="Sing In">
@@ -307,59 +325,24 @@
                                     </button>
                                 </subviews>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="00x-ai-icw" firstAttribute="leading" secondItem="1f4-pm-avJ" secondAttribute="leading" id="15E-qP-4cm"/>
-                                    <constraint firstItem="00x-ai-icw" firstAttribute="top" secondItem="G6K-68-JlC" secondAttribute="bottom" id="4Ia-gZ-i3V"/>
-                                    <constraint firstAttribute="trailing" secondItem="G6K-68-JlC" secondAttribute="trailing" id="7HR-NY-CcU"/>
-                                    <constraint firstItem="00x-ai-icw" firstAttribute="top" secondItem="G6K-68-JlC" secondAttribute="bottom" id="821-A3-ggJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="00x-ai-icw" secondAttribute="trailing" id="91d-nT-q5P"/>
-                                    <constraint firstAttribute="trailing" secondItem="fHw-QK-EpD" secondAttribute="trailing" id="MLz-ta-vIk"/>
-                                    <constraint firstItem="00x-ai-icw" firstAttribute="leading" secondItem="1f4-pm-avJ" secondAttribute="leading" id="Odp-vY-Duw"/>
-                                    <constraint firstItem="G6K-68-JlC" firstAttribute="leading" secondItem="1f4-pm-avJ" secondAttribute="leading" id="VFe-A5-BhZ"/>
-                                    <constraint firstItem="G6K-68-JlC" firstAttribute="top" secondItem="1f4-pm-avJ" secondAttribute="top" id="W5d-fm-UHu"/>
-                                    <constraint firstItem="fHw-QK-EpD" firstAttribute="top" secondItem="00x-ai-icw" secondAttribute="bottom" id="Yph-G2-ZcV"/>
-                                    <constraint firstItem="fHw-QK-EpD" firstAttribute="leading" secondItem="1f4-pm-avJ" secondAttribute="leading" id="jWj-Ng-pjv"/>
-                                    <constraint firstAttribute="bottom" secondItem="fHw-QK-EpD" secondAttribute="bottom" id="qM9-Oa-AQv"/>
-                                    <constraint firstAttribute="trailing" secondItem="00x-ai-icw" secondAttribute="trailing" id="sar-NO-SCW"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8m-bE-oxM" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
-                                <rect key="frame" x="16" y="620" width="88" height="27"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="Create Account">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="H7o-ac-7B2" kind="presentation" modalTransitionStyle="flipHorizontal" id="oKe-Aa-xS2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xH8-G7-l9G" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
-                                <rect key="frame" x="264" y="620" width="95" height="27"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="Forgot Password">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                            </stackView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="wBb-ns-Bw1" secondAttribute="trailing" id="0fA-Zr-GeW"/>
                             <constraint firstItem="0VW-he-GSd" firstAttribute="centerX" secondItem="Hsl-lh-dWZ" secondAttribute="centerX" id="0jg-Xu-bNh"/>
                             <constraint firstItem="p9q-ym-dQp" firstAttribute="top" secondItem="R8m-bE-oxM" secondAttribute="bottom" constant="20" id="CO3-RH-bte"/>
                             <constraint firstItem="p9q-ym-dQp" firstAttribute="top" secondItem="xH8-G7-l9G" secondAttribute="bottom" constant="20" id="E1u-Sc-OhK"/>
+                            <constraint firstItem="p9q-ym-dQp" firstAttribute="top" secondItem="wBb-ns-Bw1" secondAttribute="bottom" constant="100" id="FRO-KX-xMQ"/>
+                            <constraint firstItem="wBb-ns-Bw1" firstAttribute="leading" secondItem="Hsl-lh-dWZ" secondAttribute="leadingMargin" id="FhX-8n-hk9"/>
                             <constraint firstItem="kMX-KN-rVM" firstAttribute="centerX" secondItem="Hsl-lh-dWZ" secondAttribute="centerX" id="L4J-W7-yub"/>
                             <constraint firstItem="0VW-he-GSd" firstAttribute="width" secondItem="Hsl-lh-dWZ" secondAttribute="width" id="OGg-yg-8dh"/>
                             <constraint firstItem="0VW-he-GSd" firstAttribute="centerY" secondItem="Hsl-lh-dWZ" secondAttribute="centerY" id="TNd-YB-ZKd"/>
-                            <constraint firstItem="1f4-pm-avJ" firstAttribute="leading" secondItem="Hsl-lh-dWZ" secondAttribute="leadingMargin" id="adM-Ac-cjy"/>
                             <constraint firstItem="0VW-he-GSd" firstAttribute="height" secondItem="Hsl-lh-dWZ" secondAttribute="height" id="bHL-gL-29l"/>
                             <constraint firstItem="kMX-KN-rVM" firstAttribute="top" secondItem="gSc-Fb-cEP" secondAttribute="bottom" constant="130" id="dLk-Ws-apS"/>
-                            <constraint firstItem="1f4-pm-avJ" firstAttribute="top" secondItem="kMX-KN-rVM" secondAttribute="bottom" constant="80" id="qYs-9d-YHu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xH8-G7-l9G" secondAttribute="trailing" id="rdW-na-JtG"/>
                             <constraint firstItem="R8m-bE-oxM" firstAttribute="leading" secondItem="Hsl-lh-dWZ" secondAttribute="leadingMargin" id="yn1-xl-CoZ"/>
-                            <constraint firstItem="1f4-pm-avJ" firstAttribute="trailing" secondItem="Hsl-lh-dWZ" secondAttribute="trailingMargin" id="zXW-m7-mCO"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
