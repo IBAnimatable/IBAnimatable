@@ -93,17 +93,13 @@ public extension Animatable where Self: UIView {
       layer.addAnimation(animation, forKey: "fade")
       return
     case .FadeInLeft:
-      x = 300 * force
-      alpha = 0
+      fadeInLeft()
     case .FadeInRight:
-      x = -300 * force
-      alpha = 0
+      fadeInRight()
     case .FadeInDown:
-      y = -300 * force
-      alpha = 0
+      fadeInDown()
     case .FadeInUp:
-      y = 300 * force
-      alpha = 0
+      fadeInUp()
     case .ZoomIn:
       scaleX = 2 * force
       scaleY = 2 * force
@@ -276,6 +272,26 @@ public extension Animatable where Self: UIView {
     let y = 300 * force
     let scaleY = 3 * force
     animateInWithY(y, scaleY: scaleY)
+  }
+  
+  public func fadeInLeft() {
+    alpha = 0
+    slideInLeft()
+  }
+  
+  public func fadeInRight() {
+    alpha = 0
+    slideInRight()
+  }
+  
+  public func fadeInDown() {
+    alpha = 0
+    slideInDown()
+  }
+  
+  public func fadeInUp() {
+    alpha = 0
+    slideInUp()
   }
   
   // MARK: - Private
