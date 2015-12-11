@@ -58,9 +58,7 @@ public extension Animatable where Self: UIView {
     var y: CGFloat = 0
     var scaleX: CGFloat = 1
     var scaleY: CGFloat = 1
-  
-    var willDisappear = false
-    
+
     switch(animationType) {
     case .SlideInLeft:
       slideInLeft()
@@ -79,9 +77,9 @@ public extension Animatable where Self: UIView {
     case .SqueezeInUp:
       squeezeInUp()
     case .FadeIn:
-      alpha = 0
+      fadeIn()
     case .FadeOut:
-      willDisappear = true
+      fadeOut()
     case .FadeOutIn:
       let animation = CABasicAnimation(keyPath: "opacity")
       animation.fromValue = 1
@@ -293,7 +291,20 @@ public extension Animatable where Self: UIView {
     alpha = 0
     slideInUp()
   }
-  
+
+  public func fadeIn() {
+    alpha = 0
+    UIView.animateWithDuration(duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [], animations: { () -> Void in
+      self.alpha = 1
+    }, completion:nil)
+  }
+
+  public func fadeOut() {
+    UIView.animateWithDuration(duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [], animations: { () -> Void in
+      self.alpha = 0
+    }, completion:nil)
+  }
+
   // MARK: - Private
   private func animateInWithX(x: CGFloat) {
     animateIn(x, 0, 1, 1);
