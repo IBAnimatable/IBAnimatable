@@ -49,7 +49,7 @@ public protocol Animatable {
 }
 
 public extension Animatable where Self: UIView {
-  func animate() {
+  public func animate() {
     guard let animationType = AnimationType(rawValue: animationType) else {
       return
     }
@@ -63,13 +63,13 @@ public extension Animatable where Self: UIView {
     
     switch(animationType) {
     case .SlideInLeft:
-      x = -300 * force
+      slideInLeft()
     case .SlideInRight:
-      x = 300 * force
+      slideInRight()
     case .SlideInDown:
-      y = -300 * force
+      slideInDown()
     case .SlideInUp:
-      y = 300 * force
+      slideInUp()
     case .SqueezeInLeft:
       x = -300 * force
       scaleX = 3 * force
@@ -228,28 +228,55 @@ public extension Animatable where Self: UIView {
     default:
       return
     }
-    
-    let translate = CGAffineTransformMakeTranslation(x, y)
-    let scale = CGAffineTransformMakeScale(scaleX, scaleY)
-    let translateAndScale = CGAffineTransformConcat(translate, scale)
-    
-    self.transform = translateAndScale
-
-    UIView.animateWithDuration(duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [], animations: { () -> Void in
-      self.transform = CGAffineTransformIdentity
-      if willDisappear {
-        self.alpha = 0
-      }
-      else {
-        self.alpha = 1
-      }
-      }, completion:nil)
   }
   
   /**
    startAnimation method, should be called in layoutSubviews() method
    */
-  func startAnimation() {
+  public func startAnimation() {
     animate()
+  }
+  
+  // MARK: - Animation methods
+  public func slideInLeft() {
+    let x = -300 * force
+    animateInWithX(x);
+  }
+
+  public func slideInRight() {
+    let x = 300 * force
+    animateInWithX(x);
+  }
+
+  public func slideInDown() {
+    let y = -300 * force
+    animateInWithY(y)
+  }
+
+  public func slideInUp() {
+    let y = 300 * force
+    animateInWithY(y)
+  }
+
+  // MARK: - Private
+  private func animateInWithX(x: CGFloat) {
+    animateIn(x, 0, 1, 1);
+  }
+
+  private func animateInWithX(x: CGFloat) {
+    animateIn(0, y, 1, 1);
+  }
+
+  private func animateIn(x: CGFloat, _ y: CGFloat, _ scaleX: CGFloat, _ scaleY: CGFloat) {
+    let translate = CGAffineTransformMakeTranslation(x, y)
+    let scale = CGAffineTransformMakeScale(scaleX, scaleY)
+    let translateAndScale = CGAffineTransformConcat(translate, scale)
+
+    self.transform = translateAndScale
+
+    UIView.animateWithDuration(duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [], animations: { () -> Void in
+      self.transform = CGAffineTransformIdentity
+      self.alpha = 1
+    }, completion:nil)
   }
 }
