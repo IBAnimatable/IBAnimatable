@@ -294,35 +294,53 @@ public extension Animatable where Self: UIView {
 
   public func fadeIn() {
     alpha = 0
-    UIView.animateWithDuration(duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [], animations: { () -> Void in
-      self.alpha = 1
-    }, completion:nil)
+    animateWithAlpha(1)
   }
 
   public func fadeOut() {
-    UIView.animateWithDuration(duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [], animations: { () -> Void in
-      self.alpha = 0
-    }, completion:nil)
+    alpha = 1
+    animateWithAlpha(0)
   }
 
   // MARK: - Private
   private func animateInWithX(x: CGFloat) {
-    animateIn(x, 0, 1, 1);
+    animateIn(x, 0, 1, 1, 1);
   }
 
   private func animateInWithY(y: CGFloat) {
-    animateIn(0, y, 1, 1);
+    animateIn(0, y, 1, 1, 1);
   }
 
   private func animateInWithX(x: CGFloat, scaleX: CGFloat) {
-    animateIn(x, 0, scaleX, 1);
+    animateIn(x, 0, scaleX, 1, 1);
   }
   
   private func animateInWithY(y: CGFloat, scaleY: CGFloat) {
-    animateIn(0, y, 1, scaleY);
+    animateIn(0, y, 1, scaleY, 1);
+  }
+  
+  private func animateWithAlpha(alpha: CGFloat, completion:((Bool) -> Void)? = nil) {
+    UIView.animateWithDuration(duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [], animations: { () -> Void in
+      self.alpha = alpha
+      }, completion:completion)
   }
 
-  private func animateIn(x: CGFloat, _ y: CGFloat, _ scaleX: CGFloat, _ scaleY: CGFloat) {
+  private func animateIn(x: CGFloat, _ y: CGFloat, _ scaleX: CGFloat, _ scaleY: CGFloat, _ alpha: CGFloat, completion:((Bool) -> Void)? = nil) {
+    let translate = CGAffineTransformMakeTranslation(x, y)
+    let scale = CGAffineTransformMakeScale(scaleX, scaleY)
+    let translateAndScale = CGAffineTransformConcat(translate, scale)
+
+    transform = translateAndScale
+
+    UIView.animateWithDuration(duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [], animations: { () -> Void in
+      self.transform = CGAffineTransformIdentity
+      self.alpha = alpha
+    }, completion:completion)
+  }
+
+  private func animateOut(x: CGFloat, _ y: CGFloat, _ scaleX: CGFloat, _ scaleY: CGFloat, _ alpha: CGFloat, completion:((Bool) -> Void)? = nil) {
+    transform = CGAffineTransformIdentity
+
     let translate = CGAffineTransformMakeTranslation(x, y)
     let scale = CGAffineTransformMakeScale(scaleX, scaleY)
     let translateAndScale = CGAffineTransformConcat(translate, scale)
@@ -330,8 +348,7 @@ public extension Animatable where Self: UIView {
     self.transform = translateAndScale
 
     UIView.animateWithDuration(duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [], animations: { () -> Void in
-      self.transform = CGAffineTransformIdentity
-      self.alpha = 1
-    }, completion:nil)
+      self.alpha = alpha
+    }, completion:completion)
   }
 }
