@@ -144,6 +144,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="rotate">
                                         <real key="value" value="270"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="ZoomIn"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <textView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PJo-xq-4WA" userLabel="TextView" customClass="AnimatableTextView" customModule="IBAnimatableApp" customModuleProvider="target">
@@ -233,7 +234,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="kMX-KN-rVM">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="kMX-KN-rVM" customClass="AnimatableImageView" customModule="IBAnimatableApp" customModuleProvider="target">
                                 <rect key="frame" x="112" y="150" width="150" height="116"/>
                                 <animations/>
                             </imageView>
@@ -326,7 +327,7 @@
                                 </subviews>
                                 <animations/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Pop"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="ZoomIn"/>
                                 </userDefinedRuntimeAttributes>
                             </stackView>
                         </subviews>
