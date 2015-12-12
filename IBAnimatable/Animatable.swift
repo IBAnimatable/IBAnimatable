@@ -81,15 +81,7 @@ public extension Animatable where Self: UIView {
     case .FadeOut:
       fadeOut()
     case .FadeOutIn:
-      let animation = CABasicAnimation(keyPath: "opacity")
-      animation.fromValue = 1
-      animation.toValue = 0
-      animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-      animation.duration = CFTimeInterval(duration)
-      animation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
-      animation.autoreverses = true
-      layer.addAnimation(animation, forKey: "fade")
-      return
+      fadeOutIn()
     case .FadeInLeft:
       fadeInLeft()
     case .FadeInRight:
@@ -291,6 +283,17 @@ public extension Animatable where Self: UIView {
   public func fadeOut() {
     alpha = 1
     animateWithAlpha(0)
+  }
+  
+  public func fadeOutIn() {
+    let animation = CABasicAnimation(keyPath: "opacity")
+    animation.fromValue = 1
+    animation.toValue = 0
+    animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+    animation.duration = CFTimeInterval(duration)
+    animation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
+    animation.autoreverses = true
+    layer.addAnimation(animation, forKey: "fade")
   }
   
   public func zoomIn() {
