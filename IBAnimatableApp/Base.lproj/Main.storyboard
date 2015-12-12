@@ -257,8 +257,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wBb-ns-Bw1" customClass="AnimatableStackView" customModule="IBAnimatableApp" customModuleProvider="target">
-                                <rect key="frame" x="16" y="387" width="343" height="180"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wBb-ns-Bw1" customClass="AnimatableStackView" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="387" width="686" height="360"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G6K-68-JlC" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
@@ -327,7 +327,10 @@
                                 </subviews>
                                 <animations/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="ZoomIn"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="ZoomOut"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </stackView>
                         </subviews>
