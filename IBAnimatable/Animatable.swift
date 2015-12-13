@@ -54,11 +54,6 @@ public extension Animatable where Self: UIView {
       return
     }
     
-    var x: CGFloat = 0
-    var y: CGFloat = 0
-    var scaleX: CGFloat = 1
-    var scaleY: CGFloat = 1
-
     switch(animationType) {
     case .SlideInLeft:
       slideInLeft()
