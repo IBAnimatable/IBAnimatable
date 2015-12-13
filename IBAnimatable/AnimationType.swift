@@ -28,6 +28,7 @@ public enum AnimationType: String {
   case FadeIn
   case FadeOut
   case FadeOutIn
+  case FadeInOut
   case FadeInLeft
   case FadeInRight
   case FadeInDown
