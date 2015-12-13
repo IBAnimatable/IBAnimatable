@@ -63,6 +63,8 @@ public extension Animatable where Self: UIView {
       slideInDown()
     case .SlideInUp:
       slideInUp()
+    case .SlideOutLeft:
+      slideOutLeft()
     case .SqueezeInLeft:
       squeezeInLeft()
     case .SqueezeInRight:
@@ -107,8 +109,9 @@ public extension Animatable where Self: UIView {
       wobble()
     case .Swing:
       swing()
-    default:
-      return
+    case .Fall:
+      // TODO
+      break
     }
   }
   
@@ -138,6 +141,11 @@ public extension Animatable where Self: UIView {
   public func slideInUp() {
     let y = 300 * force
     animateInWithY(y)
+  }
+  
+  public func slideOutLeft() {
+    let x = -300 * force
+    animateOutWithX(x);
   }
 
   public func squeezeInLeft() {
@@ -345,6 +353,10 @@ public extension Animatable where Self: UIView {
   private func animateInWithX(x: CGFloat) {
     animateIn(x, 0, 1, 1, 1);
   }
+  
+  private func animateOutWithX(x: CGFloat) {
+    animateOut(x, 0, 1, 1, 1);
+  }
 
   private func animateInWithY(y: CGFloat) {
     animateIn(0, y, 1, 1, 1);
@@ -385,8 +397,6 @@ public extension Animatable where Self: UIView {
   }
 
   private func animateOut(x: CGFloat, _ y: CGFloat, _ scaleX: CGFloat, _ scaleY: CGFloat, _ alpha: CGFloat, completion:((Bool) -> Void)? = nil) {
-    transform = CGAffineTransformIdentity
-
     let translate = CGAffineTransformMakeTranslation(x, y)
     let scale = CGAffineTransformMakeScale(scaleX, scaleY)
     let translateAndScale = CGAffineTransformConcat(translate, scale)
