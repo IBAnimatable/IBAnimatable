@@ -33,6 +33,10 @@ public enum AnimationType: String {
   case FadeInRight
   case FadeInDown
   case FadeInUp
+  case FadeOutLeft
+  case FadeOutRight
+  case FadeOutDown
+  case FadeOutUp
   case ZoomIn
   case ZoomOut
   case Fall

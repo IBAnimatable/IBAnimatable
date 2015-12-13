@@ -103,6 +103,14 @@ public extension Animatable where Self: UIView {
       fadeInDown()
     case .FadeInUp:
       fadeInUp()
+    case .FadeOutLeft:
+      fadeOutLeft()
+    case .FadeOutRight:
+      fadeOutRight()
+    case .FadeOutDown:
+      fadeOutDown()
+    case .FadeOutUp:
+      fadeOutUp()
     case .ZoomIn:
       zoomIn()
     case .ZoomOut:
@@ -161,22 +169,22 @@ public extension Animatable where Self: UIView {
   
   public func slideOutLeft() {
     let x = -300 * force
-    animateOutWithX(x);
+    animateOutWithX(x, alpha: 1);
   }
 
   public func slideOutRight() {
     let x = 300 * force
-    animateOutWithX(x);
+    animateOutWithX(x, alpha: 1);
   }
   
   public func slideOutDown() {
     let y = 300 * force
-    animateOutWithY(y);
+    animateOutWithY(y, alpha: 1);
   }
   
   public func slideOutUp() {
     let y = -300 * force
-    animateOutWithY(y);
+    animateOutWithY(y, alpha: 1);
   }
   
   public func squeezeInLeft() {
@@ -245,6 +253,26 @@ public extension Animatable where Self: UIView {
   public func fadeInUp() {
     alpha = 0
     slideInUp()
+  }
+  
+  public func fadeOutLeft() {
+    let x = -300 * force
+    animateOutWithX(x, alpha: 0);
+  }
+  
+  public func fadeOutRight() {
+    let x = 300 * force
+    animateOutWithX(x, alpha: 0);
+  }
+  
+  public func fadeOutDown() {
+    let y = 300 * force
+    animateOutWithY(y, alpha: 0);
+  }
+  
+  public func fadeOutUp() {
+    let y = -300 * force
+    animateOutWithY(y, alpha: 0);
   }
 
   public func fadeIn() {
@@ -425,16 +453,16 @@ public extension Animatable where Self: UIView {
     animateIn(x, 0, 1, 1, 1);
   }
   
-  private func animateOutWithX(x: CGFloat) {
-    animateOut(x, 0, 1, 1, 1);
+  private func animateOutWithX(x: CGFloat, alpha: CGFloat) {
+    animateOut(x, 0, 1, 1, alpha);
   }
 
   private func animateInWithY(y: CGFloat) {
     animateIn(0, y, 1, 1, 1);
   }
   
-  private func animateOutWithY(y: CGFloat) {
-    animateOut(0, y, 1, 1, 1);
+  private func animateOutWithY(y: CGFloat, alpha: CGFloat) {
+    animateOut(0, y, 1, 1, alpha);
   }
 
   private func animateInWithX(x: CGFloat, scaleX: CGFloat) {
