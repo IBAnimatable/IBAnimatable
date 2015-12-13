@@ -95,109 +95,23 @@ public extension Animatable where Self: UIView {
     case .ZoomOut:
       zoomOut()
     case .Shake:
-      let animation = CAKeyframeAnimation(keyPath: "position.x")
-      animation.values = [0, 30*force, -30*force, 30*force, 0]
-      animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-      animation.duration = CFTimeInterval(duration)
-      animation.additive = true
-      animation.repeatCount = repeatCount
-      animation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
-      layer.addAnimation(animation, forKey: "shake")
-      return
+      shake()
     case .Pop:
-      let animation = CAKeyframeAnimation(keyPath: "transform.scale")
-      animation.values = [0, 0.2*force, -0.2*force, 0.2*force, 0]
-      animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-      animation.duration = CFTimeInterval(duration)
-      animation.additive = true
-      animation.repeatCount = repeatCount
-      animation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
-      layer.addAnimation(animation, forKey: "pop")
-      return
+      pop()
     case .FlipX:
-      scaleX = 1
-      scaleY = -1
+      flipX()
     case .FlipY:
-      scaleX = -1
-      scaleY = 1
+      flipY()
     case .Morph:
-      let morphX = CAKeyframeAnimation(keyPath: "transform.scale.x")
-      morphX.values = [1, 1.3*force, 0.7, 1.3*force, 1]
-      morphX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      morphX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-      morphX.duration = CFTimeInterval(duration)
-      morphX.repeatCount = repeatCount
-      morphX.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
-      layer.addAnimation(morphX, forKey: "morphX")
-      
-      let morphY = CAKeyframeAnimation(keyPath: "transform.scale.y")
-      morphY.values = [1, 0.7, 1.3*force, 0.7, 1]
-      morphY.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      morphY.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-      morphY.duration = CFTimeInterval(duration)
-      morphY.repeatCount = repeatCount
-      morphY.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
-      layer.addAnimation(morphY, forKey: "morphY")
-      return
+      morph()
     case .Squeeze:
-      let squeezeX = CAKeyframeAnimation(keyPath: "transform.scale.x")
-      squeezeX.values = [1, 1.5*force, 0.5, 1.5*force, 1]
-      squeezeX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      squeezeX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-      squeezeX.duration = CFTimeInterval(duration)
-      squeezeX.repeatCount = repeatCount
-      squeezeX.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
-      layer.addAnimation(squeezeX, forKey: "squeezeX")
-      
-      let squeezeY = CAKeyframeAnimation(keyPath: "transform.scale.y")
-      squeezeY.values = [1, 0.5, 1, 0.5, 1]
-      squeezeY.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      squeezeY.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-      squeezeY.duration = CFTimeInterval(duration)
-      squeezeY.repeatCount = repeatCount
-      squeezeY.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
-      layer.addAnimation(squeezeY, forKey: "squeezeY")
-      return
+      squeeze()
     case .Flash:
-      let animation = CABasicAnimation(keyPath: "opacity")
-      animation.fromValue = 1
-      animation.toValue = 0
-      animation.duration = CFTimeInterval(duration)
-      animation.repeatCount = repeatCount * 2.0
-      animation.autoreverses = true
-      animation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
-      layer.addAnimation(animation, forKey: "flash")
-      return
+      flash()
     case .Wobble:
-      let rotation = CAKeyframeAnimation(keyPath: "transform.rotation")
-      rotation.values = [0, 0.3*force, -0.3*force, 0.3*force, 0]
-      rotation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      rotation.duration = CFTimeInterval(duration)
-      rotation.additive = true
-      rotation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
-      layer.addAnimation(rotation, forKey: "rotation")
-      
-      let positionX = CAKeyframeAnimation(keyPath: "position.x")
-      positionX.values = [0, 30*force, -30*force, 30*force, 0]
-      positionX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      positionX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-      positionX.duration = CFTimeInterval(duration)
-      positionX.additive = true
-      positionX.repeatCount = repeatCount
-      positionX.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
-      layer.addAnimation(positionX, forKey: "positionX")
-      return
+      wobble()
     case .Swing:
-      let animation = CAKeyframeAnimation(keyPath: "transform.rotation")
-      animation.values = [0, 0.3*force, -0.3*force, 0.3*force, 0]
-      animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      animation.duration = CFTimeInterval(duration)
-      animation.additive = true
-      animation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
-      layer.addAnimation(animation, forKey: "swing")
-      return
+      swing()
     default:
       return
     }
@@ -310,6 +224,126 @@ public extension Animatable where Self: UIView {
     alpha = 1
     let toAlpha: CGFloat = 0
     animateOutWithScaleX(scaleX, scaleY: scaleY, alpha: toAlpha)
+  }
+  
+  public func shake() {
+    let animation = CAKeyframeAnimation(keyPath: "position.x")
+    animation.values = [0, 30*force, -30*force, 30*force, 0]
+    animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+    animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+    animation.duration = CFTimeInterval(duration)
+    animation.additive = true
+    animation.repeatCount = repeatCount
+    animation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
+    layer.addAnimation(animation, forKey: "shake")
+  }
+  
+  public func pop() {
+    let animation = CAKeyframeAnimation(keyPath: "transform.scale")
+    animation.values = [0, 0.2*force, -0.2*force, 0.2*force, 0]
+    animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+    animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+    animation.duration = CFTimeInterval(duration)
+    animation.additive = true
+    animation.repeatCount = repeatCount
+    animation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
+    layer.addAnimation(animation, forKey: "pop")
+  }
+  
+  public func morph() {
+    let morphX = CAKeyframeAnimation(keyPath: "transform.scale.x")
+    morphX.values = [1, 1.3*force, 0.7, 1.3*force, 1]
+    morphX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+    morphX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+    morphX.duration = CFTimeInterval(duration)
+    morphX.repeatCount = repeatCount
+    morphX.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
+    
+    let morphY = CAKeyframeAnimation(keyPath: "transform.scale.y")
+    morphY.values = [1, 0.7, 1.3*force, 0.7, 1]
+    morphY.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+    morphY.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+    morphY.duration = CFTimeInterval(duration)
+    morphY.repeatCount = repeatCount
+    morphY.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
+   
+    layer.addAnimation(morphX, forKey: "morphX")
+    layer.addAnimation(morphY, forKey: "morphY")
+  }
+
+  public func squeeze() {
+    let squeezeX = CAKeyframeAnimation(keyPath: "transform.scale.x")
+    squeezeX.values = [1, 1.5*force, 0.5, 1.5*force, 1]
+    squeezeX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+    squeezeX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+    squeezeX.duration = CFTimeInterval(duration)
+    squeezeX.repeatCount = repeatCount
+    squeezeX.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
+    
+    let squeezeY = CAKeyframeAnimation(keyPath: "transform.scale.y")
+    squeezeY.values = [1, 0.5, 1, 0.5, 1]
+    squeezeY.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+    squeezeY.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+    squeezeY.duration = CFTimeInterval(duration)
+    squeezeY.repeatCount = repeatCount
+    squeezeY.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
+    
+    layer.addAnimation(squeezeX, forKey: "squeezeX")
+    layer.addAnimation(squeezeY, forKey: "squeezeY")
+  }
+  
+  public func flipX() {
+    let scaleX: CGFloat = 1
+    let scaleY: CGFloat = -1
+    animateInWithScaleX(scaleX, scaleY: scaleY, alpha: 1)
+  }
+  
+  public func flipY() {
+    let scaleX: CGFloat = -1
+    let scaleY: CGFloat = 1
+    animateInWithScaleX(scaleX, scaleY: scaleY, alpha: 1)
+  }
+  
+  public func flash() {
+    let animation = CABasicAnimation(keyPath: "opacity")
+    animation.fromValue = 1
+    animation.toValue = 0
+    animation.duration = CFTimeInterval(duration)
+    animation.repeatCount = repeatCount * 2.0
+    animation.autoreverses = true
+    animation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
+    layer.addAnimation(animation, forKey: "flash")
+  }
+  
+  public func wobble() {
+    let rotation = CAKeyframeAnimation(keyPath: "transform.rotation")
+    rotation.values = [0, 0.3*force, -0.3*force, 0.3*force, 0]
+    rotation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+    rotation.duration = CFTimeInterval(duration)
+    rotation.additive = true
+    rotation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
+    
+    let positionX = CAKeyframeAnimation(keyPath: "position.x")
+    positionX.values = [0, 30*force, -30*force, 30*force, 0]
+    positionX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+    positionX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+    positionX.duration = CFTimeInterval(duration)
+    positionX.additive = true
+    positionX.repeatCount = repeatCount
+    positionX.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
+    
+    layer.addAnimation(rotation, forKey: "rotation")
+    layer.addAnimation(positionX, forKey: "positionX")
+  }
+  
+  public func swing() {
+    let animation = CAKeyframeAnimation(keyPath: "transform.rotation")
+    animation.values = [0, 0.3*force, -0.3*force, 0.3*force, 0]
+    animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+    animation.duration = CFTimeInterval(duration)
+    animation.additive = true
+    animation.beginTime = CACurrentMediaTime() + CFTimeInterval(delay)
+    layer.addAnimation(animation, forKey: "swing")
   }
 
   // MARK: - Private
