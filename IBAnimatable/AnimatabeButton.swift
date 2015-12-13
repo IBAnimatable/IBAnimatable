@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable public class AnimatabeButton: UIButton, CornerDesignable, FillDesignable, BorderDesignable, ShadowDesignable, Animatable {
+@IBDesignable public class AnimatabeButton: UIButton, CornerDesignable, FillDesignable, BorderDesignable, ShadowDesignable, MaskDesignable, Animatable {
   
   // MARK: - CornerDesignable
   @IBInspectable public var cornerRadius: CGFloat = 0 {
@@ -60,6 +60,13 @@ import UIKit
   @IBInspectable public var shadowOffsetY: CGFloat = 0 {
     didSet {
       configShadowOffsetY()
+    }
+  }
+  
+  // MARK: - MaksDesignable
+  @IBInspectable public var maskType: String = "" {
+    didSet {
+      configMask()
     }
   }
   

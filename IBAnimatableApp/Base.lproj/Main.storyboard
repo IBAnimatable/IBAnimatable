@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7ne-VT-Tkk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sUc-K8-vaF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -589,10 +589,10 @@
                                 <animations/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oKJ-oa-unX">
-                                <rect key="frame" x="81.5" y="553" width="212.5" height="30"/>
+                                <rect key="frame" x="82" y="553" width="212" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ApC-Me-w5Z">
-                                        <rect key="frame" x="0.0" y="0.0" width="155.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="156" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="0.5" colorSpace="calibratedRGB"/>
@@ -630,12 +630,83 @@
             </objects>
             <point key="canvasLocation" x="2252.5" y="496.5"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="XnI-Ym-alh">
+            <objects>
+                <viewController id="sUc-K8-vaF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4KK-9l-azn"/>
+                        <viewControllerLayoutGuide type="bottom" id="tfe-FS-ZKP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wXw-Vx-8Ir">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="walkthrough-bg" translatesAutoresizingMaskIntoConstraints="NO" id="tcJ-QC-zyC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <animations/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2 of 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgQ-5t-TJG">
+                                <rect key="frame" x="171" y="40" width="33" height="15"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quickly manage tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NgR-IK-PgQ">
+                                <rect key="frame" x="89" y="95" width="197" height="24"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjG-ZA-8SC" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="572" width="335" height="55"/>
+                                <animations/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQ1-zw-G3x" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="160" y="318" width="55" height="55"/>
+                                <animations/>
+                                <state key="normal" image="add"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tcJ-QC-zyC" firstAttribute="centerY" secondItem="wXw-Vx-8Ir" secondAttribute="centerY" id="IYP-Km-WPO"/>
+                            <constraint firstItem="tcJ-QC-zyC" firstAttribute="height" secondItem="wXw-Vx-8Ir" secondAttribute="height" id="dd0-xG-DtO"/>
+                            <constraint firstItem="tcJ-QC-zyC" firstAttribute="width" secondItem="wXw-Vx-8Ir" secondAttribute="width" id="p72-tU-8l6"/>
+                            <constraint firstItem="tcJ-QC-zyC" firstAttribute="centerX" secondItem="wXw-Vx-8Ir" secondAttribute="centerX" id="vDo-80-7bp"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p6a-8u-Q9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2751.5" y="496.5"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="add" width="22" height="22"/>
         <image name="add-photo" width="50" height="51"/>
         <image name="background" width="625" height="390"/>
         <image name="login-bg" width="375" height="667"/>
         <image name="logo" width="150" height="116"/>
         <image name="swift" width="100" height="100"/>
+        <image name="walkthrough-bg" width="375" height="667"/>
     </resources>
 </document>
