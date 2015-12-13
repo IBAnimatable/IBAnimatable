@@ -79,6 +79,14 @@ public extension Animatable where Self: UIView {
       squeezeInDown()
     case .SqueezeInUp:
       squeezeInUp()
+    case .SqueezeOutLeft:
+      squeezeOutLeft()
+    case .SqueezeOutRight:
+      squeezeOutRight()
+    case .SqueezeOutDown:
+      squeezeOutDown()
+    case .SqueezeOutUp:
+      squeezeOutUp()
     case .FadeIn:
       fadeIn()
     case .FadeOut:
@@ -191,6 +199,30 @@ public extension Animatable where Self: UIView {
     let y = 300 * force
     let scaleY = 3 * force
     animateInWithY(y, scaleY: scaleY)
+  }
+  
+  public func squeezeOutLeft() {
+    let x = -300 * force
+    let scaleX = 3 * force
+    animateOutWithX(x, scaleX: scaleX)
+  }
+  
+  public func squeezeOutRight() {
+    let x = 300 * force
+    let scaleX = 3 * force
+    animateOutWithX(x, scaleX: scaleX)
+  }
+  
+  public func squeezeOutDown() {
+    let y = 300 * force
+    let scaleY = 3 * force
+    animateOutWithY(y, scaleY: scaleY)
+  }
+  
+  public func squeezeOutUp() {
+    let y = -300 * force
+    let scaleY = 3 * force
+    animateOutWithY(y, scaleY: scaleY)
   }
   
   public func fadeInLeft() {
@@ -391,8 +423,16 @@ public extension Animatable where Self: UIView {
     animateIn(x, 0, scaleX, 1, 1);
   }
   
+  private func animateOutWithX(x: CGFloat, scaleX: CGFloat) {
+    animateOut(x, 0, scaleX, 1, 1);
+  }
+  
   private func animateInWithY(y: CGFloat, scaleY: CGFloat) {
     animateIn(0, y, 1, scaleY, 1);
+  }
+  
+  private func animateOutWithY(y: CGFloat, scaleY: CGFloat) {
+    animateOut(0, y, 1, scaleY, 1);
   }
   
   private func animateInWithScaleX(scaleX: CGFloat, scaleY: CGFloat, alpha: CGFloat) {

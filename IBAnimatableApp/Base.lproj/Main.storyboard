@@ -238,7 +238,7 @@
                                 <rect key="frame" x="112" y="150" width="150" height="116"/>
                                 <animations/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="SlideOutDown"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="SqueezeOutRight"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                         <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
