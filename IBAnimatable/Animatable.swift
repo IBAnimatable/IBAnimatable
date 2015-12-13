@@ -65,6 +65,12 @@ public extension Animatable where Self: UIView {
       slideInUp()
     case .SlideOutLeft:
       slideOutLeft()
+    case .SlideOutRight:
+      slideOutRight()
+    case .SlideOutDown:
+      slideOutDown()
+    case .SlideOutUp:
+      slideOutUp()
     case .SqueezeInLeft:
       squeezeInLeft()
     case .SqueezeInRight:
@@ -148,6 +154,21 @@ public extension Animatable where Self: UIView {
     animateOutWithX(x);
   }
 
+  public func slideOutRight() {
+    let x = 300 * force
+    animateOutWithX(x);
+  }
+  
+  public func slideOutDown() {
+    let y = 300 * force
+    animateOutWithY(y);
+  }
+  
+  public func slideOutUp() {
+    let y = -300 * force
+    animateOutWithY(y);
+  }
+  
   public func squeezeInLeft() {
     let x = -300 * force
     let scaleX = 3 * force
@@ -360,6 +381,10 @@ public extension Animatable where Self: UIView {
 
   private func animateInWithY(y: CGFloat) {
     animateIn(0, y, 1, 1, 1);
+  }
+  
+  private func animateOutWithY(y: CGFloat) {
+    animateOut(0, y, 1, 1, 1);
   }
 
   private func animateInWithX(x: CGFloat, scaleX: CGFloat) {

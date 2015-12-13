@@ -14,6 +14,9 @@ public enum AnimationType: String {
   case SlideInDown
   case SlideInUp
   case SlideOutLeft
+  case SlideOutRight
+  case SlideOutDown
+  case SlideOutUp
   case SqueezeInLeft
   case SqueezeInRight
   case SqueezeInDown
