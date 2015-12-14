@@ -6,7 +6,7 @@
 import UIKit
 
 // FIXME: almost same as `AnimatableView`, Need to refactor to encasuplate.
-@IBDesignable public class AnimatableStackView: UIStackView, CornerDesignable, FillDesignable, BorderDesignable, RotationDesignable, ShadowDesignable, BlurDesignable, TintDesignable, GradientDesignable, Animatable {
+@IBDesignable public class AnimatableStackView: UIStackView, CornerDesignable, FillDesignable, BorderDesignable, RotationDesignable, ShadowDesignable, BlurDesignable, TintDesignable, GradientDesignable, MaskDesignable, Animatable {
   
   // MARK: - CornerDesignable
   @IBInspectable public var cornerRadius: CGFloat = 0 {
@@ -85,6 +85,13 @@ import UIKit
   @IBInspectable public var startColor: UIColor = UIColor.clearColor()
   @IBInspectable public var endColor: UIColor = UIColor.clearColor()
   @IBInspectable public var startPoint: String = "Top"
+  
+  // MARK: - MaksDesignable
+  @IBInspectable public var maskType: String = "" {
+    didSet {
+      configMask()
+    }
+  }
   
   // MARK: - Animatable
   @IBInspectable public var animationType: String = ""
