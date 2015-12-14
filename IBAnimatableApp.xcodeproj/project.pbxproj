@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AE0FAD3B1C1ECA4200B5289B /* UIViewController+UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FAD3A1C1ECA4200B5289B /* UIViewController+UnwindSegue.swift */; };
 		AE0FAD3D1C1ED1EC00B5289B /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FAD3C1C1ED1EC00B5289B /* DismissSegue.swift */; };
+		AE0FAD411C1ED41D00B5289B /* DesignableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FAD401C1ED41D00B5289B /* DesignableViewController.swift */; };
+		AE0FAD431C1ED52800B5289B /* ViewControllerDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FAD421C1ED52800B5289B /* ViewControllerDesignable.swift */; };
 		AE18787A1C1A25C100300246 /* AnimatableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1878791C1A25C100300246 /* AnimatableStackView.swift */; };
 		AE18787C1C1D97F500300246 /* MaskDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE18787B1C1D97F500300246 /* MaskDesignable.swift */; };
 		AE18787E1C1D980D00300246 /* MaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE18787D1C1D980D00300246 /* MaskType.swift */; };
@@ -46,6 +48,8 @@
 /* Begin PBXFileReference section */
 		AE0FAD3A1C1ECA4200B5289B /* UIViewController+UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+UnwindSegue.swift"; sourceTree = "<group>"; };
 		AE0FAD3C1C1ED1EC00B5289B /* DismissSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
+		AE0FAD401C1ED41D00B5289B /* DesignableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableViewController.swift; sourceTree = "<group>"; };
+		AE0FAD421C1ED52800B5289B /* ViewControllerDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDesignable.swift; sourceTree = "<group>"; };
 		AE1878791C1A25C100300246 /* AnimatableStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableStackView.swift; sourceTree = "<group>"; };
 		AE18787B1C1D97F500300246 /* MaskDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskDesignable.swift; sourceTree = "<group>"; };
 		AE18787D1C1D980D00300246 /* MaskType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskType.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 		AE0FAD3F1C1ED2BD00B5289B /* viewController */ = {
 			isa = PBXGroup;
 			children = (
+				AE0FAD401C1ED41D00B5289B /* DesignableViewController.swift */,
 			);
 			name = viewController;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 				AED1A1111BFE983A001346FA /* ShadowDesignable.swift */,
 				AE74D6D61C166FB100718E0E /* SideImageDesignable.swift */,
 				AE299BDB1C03BB670018CCDC /* TintDesignable.swift */,
+				AE0FAD421C1ED52800B5289B /* ViewControllerDesignable.swift */,
 			);
 			name = Designable;
 			sourceTree = "<group>";
@@ -300,6 +306,7 @@
 				AE81DB501C12E060000AEB20 /* RotationDesignable.swift in Sources */,
 				AED1A1081BFE9820001346FA /* ViewController.swift in Sources */,
 				AE74D6D71C166FB100718E0E /* SideImageDesignable.swift in Sources */,
+				AE0FAD411C1ED41D00B5289B /* DesignableViewController.swift in Sources */,
 				AE0FAD3B1C1ECA4200B5289B /* UIViewController+UnwindSegue.swift in Sources */,
 				AED1A11B1BFE983A001346FA /* AnimationType.swift in Sources */,
 				AE8C53AE1C0F111600A775AF /* DesignableGradientView.swift in Sources */,
@@ -316,6 +323,7 @@
 				AE299BDC1C03BB670018CCDC /* TintDesignable.swift in Sources */,
 				AEEE200D1C18D10C00AD033B /* DesignableNavigationBar.swift in Sources */,
 				AE18787A1C1A25C100300246 /* AnimatableStackView.swift in Sources */,
+				AE0FAD431C1ED52800B5289B /* ViewControllerDesignable.swift in Sources */,
 				AED1A1031BFE9820001346FA /* AppDelegate.swift in Sources */,
 				AE216FDD1C0DBC5D00BC6366 /* CornerDesignable.swift in Sources */,
 				AED1A11F1BFE983A001346FA /* PlaceholderDesignable.swift in Sources */,
