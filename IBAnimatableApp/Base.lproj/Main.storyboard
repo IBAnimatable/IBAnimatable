@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sUc-K8-vaF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7ne-VT-Tkk">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -623,7 +623,14 @@
                             <constraint firstItem="ZQG-TL-NqK" firstAttribute="leading" secondItem="p1U-ED-v0e" secondAttribute="leadingMargin" id="ZBN-2M-ysa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Create Account" id="xhm-Sr-SOj"/>
+                    <navigationItem key="navigationItem" title="Create Account" id="xhm-Sr-SOj">
+                        <barButtonItem key="leftBarButtonItem" image="back" style="plain" id="iqk-Sp-bA7">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="done" style="plain" id="ln6-2d-9tJ">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C3z-F5-SBl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -742,7 +749,9 @@
     <resources>
         <image name="add" width="22" height="22"/>
         <image name="add-photo" width="50" height="51"/>
+        <image name="back" width="21" height="21"/>
         <image name="background" width="625" height="390"/>
+        <image name="done" width="23" height="17"/>
         <image name="login-bg" width="375" height="667"/>
         <image name="logo" width="150" height="116"/>
         <image name="swift" width="100" height="100"/>
