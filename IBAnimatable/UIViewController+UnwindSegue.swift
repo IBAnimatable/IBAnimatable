@@ -9,4 +9,9 @@ public extension UIViewController {
   @IBAction public func unwindToViewController (sender: UIStoryboardSegue) {
     print(sender.sourceViewController)
   }
+  
+  @IBAction public func dismissCurrentViewController (sender: UIStoryboardSegue) {
+    sender.sourceViewController.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+  }
+  
 }
