@@ -658,11 +658,11 @@
                         <viewControllerLayoutGuide type="bottom" id="tfe-FS-ZKP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wXw-Vx-8Ir">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="walkthrough-bg" translatesAutoresizingMaskIntoConstraints="NO" id="tcJ-QC-zyC">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <animations/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2 of 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgQ-5t-TJG">
@@ -751,6 +751,8 @@
                             <constraint firstItem="tcJ-QC-zyC" firstAttribute="centerX" secondItem="wXw-Vx-8Ir" secondAttribute="centerX" id="vDo-80-7bp"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="hideNavigationBar" value="YES"/>

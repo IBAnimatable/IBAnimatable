@@ -9,8 +9,8 @@ import UIKit
   @IBInspectable public var hideNavigationBar: Bool = false
   
   // MARK: - Lifecylce
-  public override func viewWillAppear(animated: Bool) {
-    super.viewWillAppear(animated)
+  public override func viewDidLoad() {
+    super.viewDidLoad()
     confingHideNavigationBar()
   }
 }
