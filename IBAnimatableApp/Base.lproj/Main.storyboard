@@ -246,7 +246,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="H7o-ac-7B2" kind="presentation" modalTransitionStyle="flipHorizontal" id="oKe-Aa-xS2"/>
+                                    <segue destination="Ya1-vA-pSE" kind="show" id="YMZ-FL-mTb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xH8-G7-l9G" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
@@ -356,54 +356,31 @@
             </objects>
             <point key="canvasLocation" x="1275.5" y="496.5"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Cq3-ok-T1r">
+        <!--View Controller-->
+        <scene sceneID="ehL-9E-b6y">
             <objects>
-                <navigationController id="H7o-ac-7B2" sceneMemberID="viewController">
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="wga-Zk-Pz9" customClass="DesignableNavigationBar" customModule="IBAnimatableApp" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                        <color key="barTintColor" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
-                        </textAttributes>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="solidColor" value="YES"/>
-                        </userDefinedRuntimeAttributes>
-                    </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="egu-56-qlT">
-                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="abI-D4-Wx8" kind="relationship" relationship="rootViewController" id="f9Y-Io-dW7"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YsY-xl-nh6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1767.5" y="496.5"/>
-        </scene>
-        <!--Create Account-->
-        <scene sceneID="RCJ-bf-u35">
-            <objects>
-                <viewController id="abI-D4-Wx8" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="Ya1-vA-pSE" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="OE6-Ss-xGt"/>
-                        <viewControllerLayoutGuide type="bottom" id="W2Y-EV-m8y"/>
+                        <viewControllerLayoutGuide type="top" id="UPX-ER-qv3"/>
+                        <viewControllerLayoutGuide type="bottom" id="aKz-Oq-qpJ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="p1U-ED-v0e">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <view key="view" contentMode="scaleToFill" id="698-SO-Nb7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9nM-c6-zFs" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="186"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1R-AZ-zAq" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="255"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJ5-6f-Fhe" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
-                                        <rect key="frame" x="162" y="55" width="50" height="51"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8FW-si-qqJ" userLabel="Back" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="21" width="21" height="22"/>
+                                        <animations/>
+                                        <state key="normal" image="back"/>
+                                        <connections>
+                                            <segue destination="5KN-5i-Hxc" kind="unwind" unwindAction="dismissCurrentViewController:" id="uZp-gH-taz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5V6-mq-vby" userLabel="Add photo" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                        <rect key="frame" x="162" y="124" width="50" height="51"/>
                                         <animations/>
                                         <state key="normal" image="add-photo"/>
                                         <userDefinedRuntimeAttributes>
@@ -413,13 +390,23 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMA-fb-DK0" userLabel="Done" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                        <rect key="frame" x="339" y="21" width="21" height="22"/>
+                                        <animations/>
+                                        <state key="normal" image="done"/>
+                                        <connections>
+                                            <segue destination="sUc-K8-vaF" kind="show" id="7Cl-bu-Udh"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="cJ5-6f-Fhe" secondAttribute="bottom" constant="80" id="4pi-5W-P9J"/>
-                                    <constraint firstItem="cJ5-6f-Fhe" firstAttribute="centerX" secondItem="9nM-c6-zFs" secondAttribute="centerX" id="9y6-jL-Hdi"/>
-                                    <constraint firstAttribute="height" constant="186" id="zGH-zc-AzQ"/>
+                                    <constraint firstItem="8FW-si-qqJ" firstAttribute="top" secondItem="e1R-AZ-zAq" secondAttribute="top" constant="21" id="0t6-WM-qR7"/>
+                                    <constraint firstAttribute="bottom" secondItem="5V6-mq-vby" secondAttribute="bottom" constant="80" id="V5R-28-aWT"/>
+                                    <constraint firstItem="5V6-mq-vby" firstAttribute="centerX" secondItem="e1R-AZ-zAq" secondAttribute="centerX" id="bvU-JE-SDA"/>
+                                    <constraint firstAttribute="height" constant="255" id="goN-7N-UP6"/>
+                                    <constraint firstItem="8FW-si-qqJ" firstAttribute="leading" secondItem="e1R-AZ-zAq" secondAttribute="leading" constant="15" id="wrt-52-PCj"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
@@ -427,14 +414,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZQG-TL-NqK">
-                                <rect key="frame" x="16" y="186" width="343" height="290"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="erI-aB-QSr">
+                                <rect key="frame" x="20" y="255" width="335" height="290"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A0O-s7-rko" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xNI-La-5Tj" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="5Ik-zY-GJF"/>
+                                            <constraint firstAttribute="height" constant="50" id="Tk0-dp-yeS"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -454,7 +441,7 @@
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                <color key="value" red="0.0" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.0" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="SlideInRight"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
@@ -462,11 +449,11 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c4V-M4-xLX" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="60" width="343" height="50"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z51-4n-TE1" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="60" width="335" height="50"/>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="tib-j9-oe9"/>
+                                            <constraint firstAttribute="height" constant="50" id="a5E-kL-8Wd"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -494,11 +481,11 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dMh-70-z0j" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="120" width="343" height="50"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xLI-LO-iOO" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="120" width="335" height="50"/>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="o76-sR-zQm"/>
+                                            <constraint firstAttribute="height" constant="50" id="KUS-Xj-q7b"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -526,11 +513,11 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Birthday" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yDG-lo-Z3s" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="180" width="343" height="50"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Birthday" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eYa-ff-J33" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="180" width="335" height="50"/>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="c53-iP-aaU"/>
+                                            <constraint firstAttribute="height" constant="50" id="gEC-5V-LVZ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -558,11 +545,11 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TfO-Py-O3Y" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="240" width="343" height="50"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xdT-JQ-oZF" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="240" width="335" height="50"/>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="kMv-Xc-T3u"/>
+                                            <constraint firstAttribute="height" constant="50" id="Jwe-VU-ZY0"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -593,21 +580,21 @@
                                 </subviews>
                                 <animations/>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oKJ-oa-unX">
-                                <rect key="frame" x="81" y="553" width="212.5" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GZR-rR-mKQ">
+                                <rect key="frame" x="82" y="617" width="213" height="30"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ApC-Me-w5Z">
-                                        <rect key="frame" x="0.0" y="0.0" width="155.5" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1X-Pa-ce0">
+                                        <rect key="frame" x="0.0" y="0.0" width="156" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="0.5" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="0.5" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmX-Uq-CmY" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
-                                        <rect key="frame" x="165" y="0.0" width="47" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7M-bI-17u" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                        <rect key="frame" x="166" y="0.0" width="47" height="30"/>
                                         <animations/>
                                         <state key="normal" title="Sign In">
-                                            <color key="titleColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
                                 </subviews>
@@ -617,37 +604,54 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="W2Y-EV-m8y" firstAttribute="top" secondItem="oKJ-oa-unX" secondAttribute="bottom" constant="20" id="7ac-Gp-R1M"/>
-                            <constraint firstItem="9nM-c6-zFs" firstAttribute="top" secondItem="OE6-Ss-xGt" secondAttribute="bottom" id="CRG-gL-EIV"/>
-                            <constraint firstItem="oKJ-oa-unX" firstAttribute="centerX" secondItem="p1U-ED-v0e" secondAttribute="centerX" id="D39-jD-FjU"/>
-                            <constraint firstAttribute="trailing" secondItem="9nM-c6-zFs" secondAttribute="trailing" id="DB4-6B-hJZ"/>
-                            <constraint firstItem="oKJ-oa-unX" firstAttribute="centerX" secondItem="p1U-ED-v0e" secondAttribute="centerX" id="DXy-mq-OgA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZQG-TL-NqK" secondAttribute="trailing" id="TJ8-LP-7j0"/>
-                            <constraint firstItem="ZQG-TL-NqK" firstAttribute="top" secondItem="9nM-c6-zFs" secondAttribute="bottom" id="Vqs-ky-7et"/>
-                            <constraint firstItem="9nM-c6-zFs" firstAttribute="leading" secondItem="p1U-ED-v0e" secondAttribute="leading" id="YOZ-S1-bL7"/>
-                            <constraint firstItem="ZQG-TL-NqK" firstAttribute="leading" secondItem="p1U-ED-v0e" secondAttribute="leadingMargin" id="ZBN-2M-ysa"/>
+                            <constraint firstItem="erI-aB-QSr" firstAttribute="leading" secondItem="698-SO-Nb7" secondAttribute="leading" constant="20" symbolic="YES" id="ABm-Zf-SB3"/>
+                            <constraint firstItem="e1R-AZ-zAq" firstAttribute="leading" secondItem="698-SO-Nb7" secondAttribute="leading" id="B1Y-cA-vt1"/>
+                            <constraint firstItem="erI-aB-QSr" firstAttribute="top" secondItem="e1R-AZ-zAq" secondAttribute="bottom" id="LnQ-i5-sRu"/>
+                            <constraint firstItem="erI-aB-QSr" firstAttribute="top" secondItem="e1R-AZ-zAq" secondAttribute="bottom" id="Ook-rL-ndC"/>
+                            <constraint firstAttribute="trailing" secondItem="e1R-AZ-zAq" secondAttribute="trailing" id="gQS-tm-d18"/>
+                            <constraint firstItem="aKz-Oq-qpJ" firstAttribute="top" secondItem="GZR-rR-mKQ" secondAttribute="bottom" constant="20" id="npx-n4-FKT"/>
+                            <constraint firstItem="GZR-rR-mKQ" firstAttribute="centerX" secondItem="698-SO-Nb7" secondAttribute="centerX" id="xQg-AJ-MK6"/>
+                            <constraint firstItem="e1R-AZ-zAq" firstAttribute="top" secondItem="698-SO-Nb7" secondAttribute="top" id="zou-BV-5Se"/>
+                            <constraint firstAttribute="trailing" secondItem="erI-aB-QSr" secondAttribute="trailing" constant="20" symbolic="YES" id="zwZ-Y3-BLK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Create Account" id="xhm-Sr-SOj">
-                        <barButtonItem key="leftBarButtonItem" image="back" style="plain" id="iqk-Sp-bA7">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="YdV-eG-0m4" kind="unwind" unwindAction="dismissCurrentViewController:" id="6TV-2z-Zkw"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="done" style="plain" id="ln6-2d-9tJ">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="sUc-K8-vaF" kind="show" id="EQl-1W-TPR"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="C3z-F5-SBl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="YdV-eG-0m4" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nkl-Ey-RrO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5KN-5i-Hxc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2252.5" y="496.5"/>
+            <point key="canvasLocation" x="1724.5" y="496.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Cq3-ok-T1r">
+            <objects>
+                <navigationController id="H7o-ac-7B2" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="wga-Zk-Pz9" customClass="DesignableNavigationBar" customModule="IBAnimatableApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <color key="barTintColor" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                        </textAttributes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="solidColor" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="egu-56-qlT">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="5MM-6e-MSk" kind="relationship" relationship="rootViewController" id="WQf-fC-xft"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YsY-xl-nh6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2627.5" y="496.5"/>
         </scene>
         <!--Designable View Controller-->
         <scene sceneID="XnI-Ym-alh">
@@ -694,7 +698,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="5MM-6e-MSk" kind="show" id="mli-Hl-gx6"/>
+                                    <segue destination="H7o-ac-7B2" kind="show" id="ldY-jW-dxG"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nzM-7X-Tmq" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
@@ -773,13 +777,10 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="hideNavigationBar" value="YES"/>
-                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p6a-8u-Q9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2751.5" y="496.5"/>
+            <point key="canvasLocation" x="2178.5" y="496.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="xAi-ua-zKH">
@@ -790,16 +791,17 @@
                         <viewControllerLayoutGuide type="bottom" id="yeL-8z-Uqg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nti-uw-YbL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="oqc-2u-geW"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eh7-Kx-MO0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3233.5" y="496.5"/>
+            <point key="canvasLocation" x="3076.5" y="496.5"/>
         </scene>
     </scenes>
     <resources>
