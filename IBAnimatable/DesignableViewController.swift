@@ -5,8 +5,10 @@
 
 import UIKit
 
-@IBDesignable public class DesignableViewController: UIViewController, ViewControllerDesignable {
+@IBDesignable public class DesignableViewController: UIViewController, ViewControllerDesignable, StatusBarDesignable {
   @IBInspectable public var hideNavigationBar: Bool = false
+  
+  @IBInspectable public var lightStatusBar: Bool = false
   
   // MARK: - Lifecylce
   public override func viewWillAppear(animated: Bool) {
@@ -17,5 +19,13 @@ import UIKit
   public override func viewWillDisappear(animated: Bool) {
     super.viewWillDisappear(animated)
     resetHideNavigationBar()
+  }
+  
+  public override func preferredStatusBarStyle() -> UIStatusBarStyle {
+    if (lightStatusBar) {
+      return .LightContent
+    }
+    
+    return .Default
   }
 }

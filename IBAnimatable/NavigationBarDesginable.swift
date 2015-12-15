@@ -27,5 +27,4 @@ public extension NavigationBarDesignable where Self: UINavigationBar {
       shadowImage = nil
     }
   }
-  
 }
