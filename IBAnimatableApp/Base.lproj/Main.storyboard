@@ -632,6 +632,7 @@
         <scene sceneID="Cq3-ok-T1r">
             <objects>
                 <navigationController id="H7o-ac-7B2" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="wga-Zk-Pz9" customClass="DesignableNavigationBar" customModule="IBAnimatableApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -800,17 +801,101 @@
                         <viewControllerLayoutGuide type="bottom" id="yeL-8z-Uqg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nti-uw-YbL">
-                        <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Sv-D9-jZd" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="136"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="jakelin" translatesAutoresizingMaskIntoConstraints="NO" id="1Zj-mQ-ZXk" customClass="AnimatableImageView" customModule="IBAnimatableApp" customModuleProvider="target">
+                                        <rect key="frame" x="152" y="33" width="70" height="70"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="idf-Db-fGz"/>
+                                            <constraint firstAttribute="height" constant="70" id="ldd-FH-fdC"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="1Zj-mQ-ZXk" firstAttribute="centerX" secondItem="2Sv-D9-jZd" secondAttribute="centerX" id="K0v-Go-4qO"/>
+                                    <constraint firstItem="1Zj-mQ-ZXk" firstAttribute="centerY" secondItem="2Sv-D9-jZd" secondAttribute="centerY" id="SUe-q8-NnC"/>
+                                    <constraint firstAttribute="height" constant="136" id="sHZ-pz-1tN"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9vV-aM-FT4">
+                                <rect key="frame" x="0.0" y="136" width="375" height="467"/>
+                                <animations/>
+                                <connections>
+                                    <segue destination="nVK-Ue-sho" kind="embed" id="D32-Pd-dDa"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9vV-aM-FT4" firstAttribute="top" secondItem="2Sv-D9-jZd" secondAttribute="bottom" id="7EH-Cx-uLk"/>
+                            <constraint firstItem="9vV-aM-FT4" firstAttribute="leading" secondItem="nti-uw-YbL" secondAttribute="leading" id="8IP-Ay-KWa"/>
+                            <constraint firstAttribute="trailing" secondItem="9vV-aM-FT4" secondAttribute="trailing" id="8yB-yL-a5G"/>
+                            <constraint firstItem="yeL-8z-Uqg" firstAttribute="top" secondItem="9vV-aM-FT4" secondAttribute="bottom" id="eNG-R0-o8z"/>
+                            <constraint firstAttribute="trailing" secondItem="2Sv-D9-jZd" secondAttribute="trailing" id="j3Y-Rd-bzE"/>
+                            <constraint firstItem="2Sv-D9-jZd" firstAttribute="top" secondItem="9Ul-Q6-pqm" secondAttribute="bottom" id="rKA-cH-uWc"/>
+                            <constraint firstItem="2Sv-D9-jZd" firstAttribute="leading" secondItem="nti-uw-YbL" secondAttribute="leading" id="xcS-E9-lWM"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="oqc-2u-geW"/>
+                    <navigationItem key="navigationItem" id="oqc-2u-geW">
+                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="stop" id="3XN-mc-WUn">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="logout" id="u96-Kp-CHI">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eh7-Kx-MO0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3076.5" y="496.5"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="iaN-qF-zET">
+            <objects>
+                <tableViewController id="nVK-Ue-sho" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4wh-3k-a9t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="467"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="DpO-kg-6oM">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DpO-kg-6oM" id="VEv-Wi-SKt">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nVK-Ue-sho" id="lnm-gQ-2UM"/>
+                            <outlet property="delegate" destination="nVK-Ue-sho" id="TRY-SP-vuN"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lf1-sP-NHl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3521.5" y="596.5"/>
         </scene>
     </scenes>
     <resources>
@@ -819,8 +904,10 @@
         <image name="back" width="21" height="21"/>
         <image name="background" width="625" height="390"/>
         <image name="done" width="23" height="17"/>
+        <image name="jakelin" width="110" height="110"/>
         <image name="login-bg" width="375" height="667"/>
         <image name="logo" width="150" height="116"/>
+        <image name="logout" width="20" height="21"/>
         <image name="swift" width="100" height="100"/>
         <image name="walkthrough-bg" width="375" height="667"/>
     </resources>
