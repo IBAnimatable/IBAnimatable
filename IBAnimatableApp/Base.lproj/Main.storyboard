@@ -661,27 +661,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="walkthrough-bg" translatesAutoresizingMaskIntoConstraints="NO" id="tcJ-QC-zyC">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="walkthrough-bg" translatesAutoresizingMaskIntoConstraints="NO" id="tcJ-QC-zyC">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <animations/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2 of 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgQ-5t-TJG">
-                                <rect key="frame" x="171" y="40" width="33" height="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 of 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgQ-5t-TJG">
+                                <rect key="frame" x="171" y="40" width="33" height="14.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quickly manage tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NgR-IK-PgQ">
-                                <rect key="frame" x="89" y="95" width="197" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quickly manage tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NgR-IK-PgQ">
+                                <rect key="frame" x="89" y="94" width="197" height="24"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjG-ZA-8SC" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
-                                <rect key="frame" x="20" y="572" width="335" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjG-ZA-8SC" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="572" width="343" height="55"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="PzQ-ZF-owI"/>
+                                </constraints>
                                 <state key="normal" title="Next">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -691,7 +694,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nzM-7X-Tmq" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nzM-7X-Tmq" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
                                 <rect key="frame" x="85" y="231" width="205" height="205"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yae-ic-bRJ" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
@@ -734,6 +737,10 @@
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="205" id="dy8-2e-INa"/>
+                                    <constraint firstAttribute="width" constant="205" id="py2-XO-bFo"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
@@ -746,9 +753,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="tcJ-QC-zyC" firstAttribute="centerY" secondItem="wXw-Vx-8Ir" secondAttribute="centerY" id="IYP-Km-WPO"/>
+                            <constraint firstItem="nzM-7X-Tmq" firstAttribute="centerY" secondItem="wXw-Vx-8Ir" secondAttribute="centerY" id="Iav-FX-G4v"/>
+                            <constraint firstItem="YgQ-5t-TJG" firstAttribute="top" secondItem="4KK-9l-azn" secondAttribute="bottom" constant="40" id="KUR-5W-ahZ"/>
+                            <constraint firstItem="YgQ-5t-TJG" firstAttribute="centerX" secondItem="wXw-Vx-8Ir" secondAttribute="centerX" id="MLg-W7-fHg"/>
+                            <constraint firstItem="fjG-ZA-8SC" firstAttribute="trailing" secondItem="wXw-Vx-8Ir" secondAttribute="trailingMargin" id="Yag-4J-3GC"/>
                             <constraint firstItem="tcJ-QC-zyC" firstAttribute="height" secondItem="wXw-Vx-8Ir" secondAttribute="height" id="dd0-xG-DtO"/>
+                            <constraint firstItem="nzM-7X-Tmq" firstAttribute="centerX" secondItem="wXw-Vx-8Ir" secondAttribute="centerX" id="gBB-K0-R5l"/>
+                            <constraint firstItem="NgR-IK-PgQ" firstAttribute="centerX" secondItem="wXw-Vx-8Ir" secondAttribute="centerX" id="ivs-Ay-4Vy"/>
                             <constraint firstItem="tcJ-QC-zyC" firstAttribute="width" secondItem="wXw-Vx-8Ir" secondAttribute="width" id="p72-tU-8l6"/>
+                            <constraint firstItem="NgR-IK-PgQ" firstAttribute="top" secondItem="YgQ-5t-TJG" secondAttribute="bottom" constant="40" id="tSj-eE-Lx0"/>
+                            <constraint firstItem="fjG-ZA-8SC" firstAttribute="leading" secondItem="wXw-Vx-8Ir" secondAttribute="leadingMargin" id="tYm-hH-Rjn"/>
                             <constraint firstItem="tcJ-QC-zyC" firstAttribute="centerX" secondItem="wXw-Vx-8Ir" secondAttribute="centerX" id="vDo-80-7bp"/>
+                            <constraint firstItem="tfe-FS-ZKP" firstAttribute="top" secondItem="fjG-ZA-8SC" secondAttribute="bottom" constant="40" id="viX-yN-fd8"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
