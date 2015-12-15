@@ -12,6 +12,7 @@
 		AE0FAD411C1ED41D00B5289B /* DesignableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FAD401C1ED41D00B5289B /* DesignableViewController.swift */; };
 		AE0FAD431C1ED52800B5289B /* ViewControllerDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FAD421C1ED52800B5289B /* ViewControllerDesignable.swift */; };
 		AE0FADAB1C20357C00B5289B /* StatusBarDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FADAA1C20357C00B5289B /* StatusBarDesignable.swift */; };
+		AE0FADAF1C203F9A00B5289B /* AnimatableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FADAE1C203F9A00B5289B /* AnimatableTableView.swift */; };
 		AE18787A1C1A25C100300246 /* AnimatableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1878791C1A25C100300246 /* AnimatableStackView.swift */; };
 		AE18787C1C1D97F500300246 /* MaskDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE18787B1C1D97F500300246 /* MaskDesignable.swift */; };
 		AE18787E1C1D980D00300246 /* MaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE18787D1C1D980D00300246 /* MaskType.swift */; };
@@ -52,6 +53,7 @@
 		AE0FAD401C1ED41D00B5289B /* DesignableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableViewController.swift; sourceTree = "<group>"; };
 		AE0FAD421C1ED52800B5289B /* ViewControllerDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDesignable.swift; sourceTree = "<group>"; };
 		AE0FADAA1C20357C00B5289B /* StatusBarDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarDesignable.swift; sourceTree = "<group>"; };
+		AE0FADAE1C203F9A00B5289B /* AnimatableTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableTableView.swift; sourceTree = "<group>"; };
 		AE1878791C1A25C100300246 /* AnimatableStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableStackView.swift; sourceTree = "<group>"; };
 		AE18787B1C1D97F500300246 /* MaskDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskDesignable.swift; sourceTree = "<group>"; };
 		AE18787D1C1D980D00300246 /* MaskType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskType.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				AED1A1091BFE983A001346FA /* AnimatabeButton.swift */,
 				AED1A10B1BFE983A001346FA /* AnimatableImageView.swift */,
 				AE1878791C1A25C100300246 /* AnimatableStackView.swift */,
+				AE0FADAE1C203F9A00B5289B /* AnimatableTableView.swift */,
 				AED1A10C1BFE983A001346FA /* AnimatableTextField.swift */,
 				AED1A10D1BFE983A001346FA /* AnimatableTextView.swift */,
 				AE8C53AD1C0F111600A775AF /* DesignableGradientView.swift */,
@@ -334,6 +337,7 @@
 				AE0FAD3D1C1ED1EC00B5289B /* DismissSegue.swift in Sources */,
 				AE81DB4E1C11DF00000AEB20 /* BlurEffectStyle.swift in Sources */,
 				AED1A1151BFE983A001346FA /* AnimatabeButton.swift in Sources */,
+				AE0FADAF1C203F9A00B5289B /* AnimatableTableView.swift in Sources */,
 				AED97B861C1710A900D2B0B8 /* BorderSide.swift in Sources */,
 				CAB569B1A6DDC08165BE389A /* FillDesignable.swift in Sources */,
 				AEEE200B1C18CFD200AD033B /* NavigationBarDesginable.swift in Sources */,
