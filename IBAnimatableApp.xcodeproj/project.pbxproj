@@ -30,7 +30,7 @@
 		AED1A1051BFE9820001346FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AED1A0FD1BFE9820001346FA /* LaunchScreen.storyboard */; };
 		AED1A1061BFE9820001346FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AED1A0FF1BFE9820001346FA /* Main.storyboard */; };
 		AED1A1081BFE9820001346FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1021BFE9820001346FA /* ViewController.swift */; };
-		AED1A1151BFE983A001346FA /* AnimatabeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1091BFE983A001346FA /* AnimatabeButton.swift */; };
+		AED1A1151BFE983A001346FA /* AnimatableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1091BFE983A001346FA /* AnimatableButton.swift */; };
 		AED1A1161BFE983A001346FA /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A10A1BFE983A001346FA /* Animatable.swift */; };
 		AED1A1171BFE983A001346FA /* AnimatableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A10B1BFE983A001346FA /* AnimatableImageView.swift */; };
 		AED1A1181BFE983A001346FA /* AnimatableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A10C1BFE983A001346FA /* AnimatableTextField.swift */; };
@@ -73,7 +73,7 @@
 		AED1A1001BFE9820001346FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		AED1A1011BFE9820001346FA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = IBAnimatableApp/Info.plist; sourceTree = SOURCE_ROOT; };
 		AED1A1021BFE9820001346FA /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = IBAnimatableApp/ViewController.swift; sourceTree = SOURCE_ROOT; };
-		AED1A1091BFE983A001346FA /* AnimatabeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatabeButton.swift; path = IBAnimatable/AnimatabeButton.swift; sourceTree = SOURCE_ROOT; };
+		AED1A1091BFE983A001346FA /* AnimatableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableButton.swift; path = IBAnimatable/AnimatableButton.swift; sourceTree = SOURCE_ROOT; };
 		AED1A10A1BFE983A001346FA /* Animatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Animatable.swift; path = IBAnimatable/Animatable.swift; sourceTree = SOURCE_ROOT; };
 		AED1A10B1BFE983A001346FA /* AnimatableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableImageView.swift; path = IBAnimatable/AnimatableImageView.swift; sourceTree = SOURCE_ROOT; };
 		AED1A10C1BFE983A001346FA /* AnimatableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableTextField.swift; path = IBAnimatable/AnimatableTextField.swift; sourceTree = SOURCE_ROOT; };
@@ -181,7 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				AED1A10E1BFE983A001346FA /* AnimatableView.swift */,
-				AED1A1091BFE983A001346FA /* AnimatabeButton.swift */,
+				AED1A1091BFE983A001346FA /* AnimatableButton.swift */,
 				AED1A10B1BFE983A001346FA /* AnimatableImageView.swift */,
 				AE1878791C1A25C100300246 /* AnimatableStackView.swift */,
 				AE0FADAE1C203F9A00B5289B /* AnimatableTableView.swift */,
@@ -336,7 +336,7 @@
 				AED1A11F1BFE983A001346FA /* PlaceholderDesignable.swift in Sources */,
 				AE0FAD3D1C1ED1EC00B5289B /* DismissSegue.swift in Sources */,
 				AE81DB4E1C11DF00000AEB20 /* BlurEffectStyle.swift in Sources */,
-				AED1A1151BFE983A001346FA /* AnimatabeButton.swift in Sources */,
+				AED1A1151BFE983A001346FA /* AnimatableButton.swift in Sources */,
 				AE0FADAF1C203F9A00B5289B /* AnimatableTableView.swift in Sources */,
 				AED97B861C1710A900D2B0B8 /* BorderSide.swift in Sources */,
 				CAB569B1A6DDC08165BE389A /* FillDesignable.swift in Sources */,
