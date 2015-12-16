@@ -8,17 +8,8 @@ import UIKit
 @IBDesignable public class AnimatableTableView: UITableView, FillDesignable, BorderDesignable, Animatable {
   
   // MARK: - FillDesignable
-  @IBInspectable public var fillColor: UIColor = UIColor.whiteColor() {
-    didSet {
-      configFillColor()
-    }
-  }
-  
-  @IBInspectable public var opacity: CGFloat = 1 {
-    didSet {
-      configOpacity()
-    }
-  }
+  @IBInspectable public var fillColor: UIColor = UIColor.whiteColor()
+  @IBInspectable public var opacity: CGFloat = 1
   
   // MARK: - BorderDesignable
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor()
@@ -51,6 +42,8 @@ import UIKit
   
   // MARK: - Private
   private func configDesignableProperties() {
+    configFillColor()
+    configOpacity()
     configBorder()
   }
 }
