@@ -389,7 +389,7 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Pop"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
-                                                <real key="value" value="0.5"/>
+                                                <real key="value" value="0.80000000000000004"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
@@ -448,7 +448,7 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="SlideInRight"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
-                                                <real key="value" value="0.29999999999999999"/>
+                                                <real key="value" value="0.59999999999999998"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
@@ -480,7 +480,7 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="SlideInRight"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
-                                                <real key="value" value="0.34999999999999998"/>
+                                                <real key="value" value="0.65000000000000002"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
@@ -512,7 +512,7 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="SlideInRight"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
-                                                <real key="value" value="0.40000000000000002"/>
+                                                <real key="value" value="0.69999999999999996"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
@@ -544,7 +544,7 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="SlideInRight"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
-                                                <real key="value" value="0.45000000000000001"/>
+                                                <real key="value" value="0.75"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
@@ -576,7 +576,7 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="SlideInRight"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
-                                                <real key="value" value="0.5"/>
+                                                <real key="value" value="0.80000000000000004"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
@@ -726,6 +726,10 @@
                                                                 <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Pop"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                                                <real key="value" value="0.29999999999999999"/>
+                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </button>
                                                 </subviews>
