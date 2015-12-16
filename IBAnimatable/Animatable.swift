@@ -518,3 +518,9 @@ public extension Animatable where Self: UIView {
     }, completion:completion)
   }
 }
+
+public extension Animatable where Self: UIBarItem {
+  public func animate() {
+    // TODO: animations for `UIBarItem`
+  }
+}

@@ -20,6 +20,8 @@
 		AE299BDA1C0338C70018CCDC /* BlurDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE299BD91C0338C70018CCDC /* BlurDesignable.swift */; };
 		AE299BDC1C03BB670018CCDC /* TintDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE299BDB1C03BB670018CCDC /* TintDesignable.swift */; };
 		AE3C54451C21439100829B10 /* AnimatableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3C54441C21439100829B10 /* AnimatableTableViewCell.swift */; };
+		AE3C54471C217F7F00829B10 /* BarButtonItemDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3C54461C217F7F00829B10 /* BarButtonItemDesignable.swift */; };
+		AE3C54491C2180D500829B10 /* AnimatableBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3C54481C2180D500829B10 /* AnimatableBarButtonItem.swift */; };
 		AE74D6D71C166FB100718E0E /* SideImageDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE74D6D61C166FB100718E0E /* SideImageDesignable.swift */; };
 		AE81DAEE1C10F14C000AEB20 /* GradientDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE81DAED1C10F14C000AEB20 /* GradientDesignable.swift */; };
 		AE81DB4E1C11DF00000AEB20 /* BlurEffectStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE81DB4D1C11DF00000AEB20 /* BlurEffectStyle.swift */; };
@@ -62,6 +64,8 @@
 		AE299BD91C0338C70018CCDC /* BlurDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlurDesignable.swift; path = IBAnimatable/BlurDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AE299BDB1C03BB670018CCDC /* TintDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TintDesignable.swift; path = IBAnimatable/TintDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AE3C54441C21439100829B10 /* AnimatableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableTableViewCell.swift; sourceTree = "<group>"; };
+		AE3C54461C217F7F00829B10 /* BarButtonItemDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarButtonItemDesignable.swift; sourceTree = "<group>"; };
+		AE3C54481C2180D500829B10 /* AnimatableBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableBarButtonItem.swift; sourceTree = "<group>"; };
 		AE6C66FF1BFBF93500134A35 /* IBAnimatableApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBAnimatableApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE74D6D61C166FB100718E0E /* SideImageDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideImageDesignable.swift; sourceTree = "<group>"; };
 		AE81DAED1C10F14C000AEB20 /* GradientDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientDesignable.swift; path = IBAnimatable/GradientDesignable.swift; sourceTree = SOURCE_ROOT; };
@@ -183,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				AED1A10E1BFE983A001346FA /* AnimatableView.swift */,
+				AE3C54481C2180D500829B10 /* AnimatableBarButtonItem.swift */,
 				AED1A1091BFE983A001346FA /* AnimatableButton.swift */,
 				AED1A10B1BFE983A001346FA /* AnimatableImageView.swift */,
 				AE1878791C1A25C100300246 /* AnimatableStackView.swift */,
@@ -225,6 +230,7 @@
 				AE74D6D61C166FB100718E0E /* SideImageDesignable.swift */,
 				AE0FADAA1C20357C00B5289B /* StatusBarDesignable.swift */,
 				AE299BDB1C03BB670018CCDC /* TintDesignable.swift */,
+				AE3C54461C217F7F00829B10 /* BarButtonItemDesignable.swift */,
 				AE0FAD421C1ED52800B5289B /* ViewControllerDesignable.swift */,
 			);
 			name = Designable;
@@ -322,6 +328,7 @@
 				AE8C53AE1C0F111600A775AF /* DesignableGradientView.swift in Sources */,
 				AED1A11E1BFE983A001346FA /* PaddingDesignable.swift in Sources */,
 				AED1A1171BFE983A001346FA /* AnimatableImageView.swift in Sources */,
+				AE3C54471C217F7F00829B10 /* BarButtonItemDesignable.swift in Sources */,
 				AE18787E1C1D980D00300246 /* MaskType.swift in Sources */,
 				AED1A1191BFE983A001346FA /* AnimatableTextView.swift in Sources */,
 				AED1A1161BFE983A001346FA /* Animatable.swift in Sources */,
@@ -338,6 +345,7 @@
 				AED1A1031BFE9820001346FA /* AppDelegate.swift in Sources */,
 				AE216FDD1C0DBC5D00BC6366 /* CornerDesignable.swift in Sources */,
 				AED1A11F1BFE983A001346FA /* PlaceholderDesignable.swift in Sources */,
+				AE3C54491C2180D500829B10 /* AnimatableBarButtonItem.swift in Sources */,
 				AE0FAD3D1C1ED1EC00B5289B /* DismissSegue.swift in Sources */,
 				AE81DB4E1C11DF00000AEB20 /* BlurEffectStyle.swift in Sources */,
 				AED1A1151BFE983A001346FA /* AnimatableButton.swift in Sources */,

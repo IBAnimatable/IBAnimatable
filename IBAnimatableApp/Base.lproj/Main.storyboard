@@ -88,7 +88,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFy-Ec-G0k" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFy-Ec-G0k" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
                                 <rect key="frame" x="260" y="378" width="80" height="44"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1126,8 +1126,56 @@
                     <view key="view" contentMode="scaleToFill" id="b6t-9j-kdH">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="home-bg" translatesAutoresizingMaskIntoConstraints="NO" id="UNq-m5-dy4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <animations/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ira-V5-nBZ" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCc-L9-acb">
+                                        <rect key="frame" x="126" y="13" width="123" height="42"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="35"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="February 8, 2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hO5-Zi-kED">
+                                        <rect key="frame" x="139.5" y="71" width="96" height="14.5"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="oCc-L9-acb" firstAttribute="centerX" secondItem="ira-V5-nBZ" secondAttribute="centerX" id="2cA-aZ-avB"/>
+                                    <constraint firstItem="hO5-Zi-kED" firstAttribute="centerX" secondItem="ira-V5-nBZ" secondAttribute="centerX" id="9Z3-AH-tvs"/>
+                                    <constraint firstAttribute="height" constant="116" id="BKa-Uk-UC5"/>
+                                    <constraint firstItem="oCc-L9-acb" firstAttribute="top" secondItem="ira-V5-nBZ" secondAttribute="top" constant="13" id="RqD-7g-FOI"/>
+                                    <constraint firstItem="hO5-Zi-kED" firstAttribute="top" secondItem="oCc-L9-acb" secondAttribute="bottom" constant="16" id="bZN-CN-UJc"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UNq-m5-dy4" firstAttribute="centerY" secondItem="b6t-9j-kdH" secondAttribute="centerY" id="1kH-oH-kY5"/>
+                            <constraint firstAttribute="trailing" secondItem="ira-V5-nBZ" secondAttribute="trailing" id="JHf-hY-FO2"/>
+                            <constraint firstItem="UNq-m5-dy4" firstAttribute="width" secondItem="b6t-9j-kdH" secondAttribute="width" id="UUh-UZ-JIu"/>
+                            <constraint firstItem="UNq-m5-dy4" firstAttribute="centerX" secondItem="b6t-9j-kdH" secondAttribute="centerX" id="Zml-mK-QpN"/>
+                            <constraint firstItem="ira-V5-nBZ" firstAttribute="leading" secondItem="b6t-9j-kdH" secondAttribute="leading" id="hHZ-Lw-40c"/>
+                            <constraint firstItem="UNq-m5-dy4" firstAttribute="height" secondItem="b6t-9j-kdH" secondAttribute="height" id="ySF-LT-g2W"/>
+                            <constraint firstItem="ira-V5-nBZ" firstAttribute="top" secondItem="N1z-tU-oCd" secondAttribute="bottom" id="yl6-85-qXd"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Good morning!" id="57E-Ig-cKr">
@@ -1136,6 +1184,11 @@
                             <connections>
                                 <segue destination="P2R-hj-3D0" kind="unwind" unwindAction="unwindToViewController:" id="tTq-td-QTd"/>
                             </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" id="4yV-ju-CdG" customClass="AnimatableBarButtonItem" customModule="IBAnimatableApp" customModuleProvider="target">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="roundedImage" value="jakelin-small"/>
+                            </userDefinedRuntimeAttributes>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
@@ -1154,6 +1207,7 @@
         <image name="done" width="23" height="17"/>
         <image name="groups" width="18" height="18"/>
         <image name="home" width="25" height="22"/>
+        <image name="home-bg" width="375" height="667"/>
         <image name="jakelin" width="110" height="110"/>
         <image name="lists" width="21" height="19"/>
         <image name="login-bg" width="375" height="667"/>
