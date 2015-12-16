@@ -13,10 +13,10 @@ public protocol ViewControllerDesignable {
 
 public extension ViewControllerDesignable where Self: UIViewController {
   public func confingHideNavigationBar() {
-    self.navigationController?.navigationBarHidden = hideNavigationBar
+    navigationController?.navigationBarHidden = hideNavigationBar
   }
   
   public func resetHideNavigationBar() {
-    self.navigationController?.navigationBarHidden = false
+    navigationController?.navigationBarHidden = false
   }
 }
