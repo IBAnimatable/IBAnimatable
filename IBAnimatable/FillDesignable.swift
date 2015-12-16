@@ -26,3 +26,10 @@ public extension FillDesignable where Self: UIView {
     }
   }
 }
+
+public extension FillDesignable where Self: UITableViewCell {
+  public func configFillColor() {
+    backgroundColor = fillColor
+    contentView.backgroundColor = fillColor
+  }
+}

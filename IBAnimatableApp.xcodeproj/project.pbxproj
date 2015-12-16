@@ -19,6 +19,7 @@
 		AE216FDD1C0DBC5D00BC6366 /* CornerDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE216FDC1C0DBC5D00BC6366 /* CornerDesignable.swift */; };
 		AE299BDA1C0338C70018CCDC /* BlurDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE299BD91C0338C70018CCDC /* BlurDesignable.swift */; };
 		AE299BDC1C03BB670018CCDC /* TintDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE299BDB1C03BB670018CCDC /* TintDesignable.swift */; };
+		AE3C54451C21439100829B10 /* AnimatableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3C54441C21439100829B10 /* AnimatableTableViewCell.swift */; };
 		AE74D6D71C166FB100718E0E /* SideImageDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE74D6D61C166FB100718E0E /* SideImageDesignable.swift */; };
 		AE81DAEE1C10F14C000AEB20 /* GradientDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE81DAED1C10F14C000AEB20 /* GradientDesignable.swift */; };
 		AE81DB4E1C11DF00000AEB20 /* BlurEffectStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE81DB4D1C11DF00000AEB20 /* BlurEffectStyle.swift */; };
@@ -60,6 +61,7 @@
 		AE216FDC1C0DBC5D00BC6366 /* CornerDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerDesignable.swift; sourceTree = "<group>"; };
 		AE299BD91C0338C70018CCDC /* BlurDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlurDesignable.swift; path = IBAnimatable/BlurDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AE299BDB1C03BB670018CCDC /* TintDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TintDesignable.swift; path = IBAnimatable/TintDesignable.swift; sourceTree = SOURCE_ROOT; };
+		AE3C54441C21439100829B10 /* AnimatableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableTableViewCell.swift; sourceTree = "<group>"; };
 		AE6C66FF1BFBF93500134A35 /* IBAnimatableApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBAnimatableApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE74D6D61C166FB100718E0E /* SideImageDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideImageDesignable.swift; sourceTree = "<group>"; };
 		AE81DAED1C10F14C000AEB20 /* GradientDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientDesignable.swift; path = IBAnimatable/GradientDesignable.swift; sourceTree = SOURCE_ROOT; };
@@ -185,6 +187,7 @@
 				AED1A10B1BFE983A001346FA /* AnimatableImageView.swift */,
 				AE1878791C1A25C100300246 /* AnimatableStackView.swift */,
 				AE0FADAE1C203F9A00B5289B /* AnimatableTableView.swift */,
+				AE3C54441C21439100829B10 /* AnimatableTableViewCell.swift */,
 				AED1A10C1BFE983A001346FA /* AnimatableTextField.swift */,
 				AED1A10D1BFE983A001346FA /* AnimatableTextView.swift */,
 				AE8C53AD1C0F111600A775AF /* DesignableGradientView.swift */,
@@ -327,6 +330,7 @@
 				AED1A11D1BFE983A001346FA /* ShadowDesignable.swift in Sources */,
 				AED1A1181BFE983A001346FA /* AnimatableTextField.swift in Sources */,
 				AED1A11C1BFE983A001346FA /* BorderDesignable.swift in Sources */,
+				AE3C54451C21439100829B10 /* AnimatableTableViewCell.swift in Sources */,
 				AE299BDC1C03BB670018CCDC /* TintDesignable.swift in Sources */,
 				AEEE200D1C18D10C00AD033B /* DesignableNavigationBar.swift in Sources */,
 				AE18787A1C1A25C100300246 /* AnimatableStackView.swift in Sources */,
