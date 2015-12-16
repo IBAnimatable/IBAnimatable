@@ -653,7 +653,7 @@
                         <animations/>
                     </toolbar>
                     <connections>
-                        <segue destination="5MM-6e-MSk" kind="relationship" relationship="rootViewController" id="WQf-fC-xft"/>
+                        <segue destination="nVK-Ue-sho" kind="relationship" relationship="rootViewController" id="06k-kY-a7c"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YsY-xl-nh6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -805,10 +805,10 @@
                         <viewControllerLayoutGuide type="bottom" id="yeL-8z-Uqg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nti-uw-YbL">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Sv-D9-jZd" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Sv-D9-jZd" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="136"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="jakelin" translatesAutoresizingMaskIntoConstraints="NO" id="1Zj-mQ-ZXk" customClass="AnimatableImageView" customModule="IBAnimatableApp" customModuleProvider="target">
@@ -836,12 +836,9 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9vV-aM-FT4">
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9vV-aM-FT4">
                                 <rect key="frame" x="0.0" y="136" width="375" height="467"/>
                                 <animations/>
-                                <connections>
-                                    <segue destination="nVK-Ue-sho" kind="embed" id="D32-Pd-dDa"/>
-                                </connections>
                             </containerView>
                         </subviews>
                         <animations/>
@@ -868,14 +865,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eh7-Kx-MO0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3076.5" y="496.5"/>
+            <point key="canvasLocation" x="3073.5" y="1215.5"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="iaN-qF-zET">
             <objects>
                 <tableViewController id="nVK-Ue-sho" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4wh-3k-a9t" customClass="AnimatableTableView" customModule="IBAnimatableApp" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="467"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -913,6 +910,9 @@
                                                 <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="opU-NG-c5g" kind="show" id="KcO-fG-hRd"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="QKR-Io-ywq" imageView="FHV-bQ-cuc" style="IBUITableViewCellStyleDefault" id="57X-T1-gQy" customClass="AnimatableTableViewCell" customModule="IBAnimatableApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -1144,10 +1144,47 @@
                             <outlet property="delegate" destination="nVK-Ue-sho" id="TRY-SP-vuN"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="xQT-3a-rqL">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="7dP-GX-Tbv">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="logout" id="mVg-II-K6g">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lf1-sP-NHl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3521.5" y="596.5"/>
+            <point key="canvasLocation" x="3073.5" y="496.5"/>
+        </scene>
+        <!--Good morning!-->
+        <scene sceneID="hge-77-YkM">
+            <objects>
+                <viewController id="opU-NG-c5g" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N1z-tU-oCd"/>
+                        <viewControllerLayoutGuide type="bottom" id="pll-88-HyY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b6t-9j-kdH">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Good morning!" id="57E-Ig-cKr">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="3cg-4x-gFa">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="P2R-hj-3D0" kind="unwind" unwindAction="unwindToViewController:" id="tTq-td-QTd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Krv-zY-l1o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="P2R-hj-3D0" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3521.5" y="496.5"/>
         </scene>
     </scenes>
     <resources>
@@ -1164,6 +1201,7 @@
         <image name="login-bg" width="375" height="667"/>
         <image name="logo" width="150" height="116"/>
         <image name="logout" width="20" height="21"/>
+        <image name="menu" width="21" height="17"/>
         <image name="overview" width="22" height="22"/>
         <image name="profile" width="20" height="19"/>
         <image name="settings" width="21" height="21"/>
