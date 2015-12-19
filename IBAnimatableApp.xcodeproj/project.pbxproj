@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE0B0FEA1C25372200E36B78 /* TableViewCellDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0B0FE91C25372200E36B78 /* TableViewCellDesignable.swift */; };
 		AE0FAD3B1C1ECA4200B5289B /* UIViewController+UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FAD3A1C1ECA4200B5289B /* UIViewController+UnwindSegue.swift */; };
 		AE0FAD3D1C1ED1EC00B5289B /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FAD3C1C1ED1EC00B5289B /* DismissSegue.swift */; };
 		AE0FAD411C1ED41D00B5289B /* DesignableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FAD401C1ED41D00B5289B /* DesignableViewController.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE0B0FE91C25372200E36B78 /* TableViewCellDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellDesignable.swift; sourceTree = "<group>"; };
 		AE0FAD3A1C1ECA4200B5289B /* UIViewController+UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+UnwindSegue.swift"; sourceTree = "<group>"; };
 		AE0FAD3C1C1ED1EC00B5289B /* DismissSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
 		AE0FAD401C1ED41D00B5289B /* DesignableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableViewController.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				AED1A1111BFE983A001346FA /* ShadowDesignable.swift */,
 				AE74D6D61C166FB100718E0E /* SideImageDesignable.swift */,
 				AE0FADAA1C20357C00B5289B /* StatusBarDesignable.swift */,
+				AE0B0FE91C25372200E36B78 /* TableViewCellDesignable.swift */,
 				AE299BDB1C03BB670018CCDC /* TintDesignable.swift */,
 				AE3C54461C217F7F00829B10 /* BarButtonItemDesignable.swift */,
 				AE0FAD421C1ED52800B5289B /* ViewControllerDesignable.swift */,
@@ -329,6 +332,7 @@
 				AED1A11E1BFE983A001346FA /* PaddingDesignable.swift in Sources */,
 				AED1A1171BFE983A001346FA /* AnimatableImageView.swift in Sources */,
 				AE3C54471C217F7F00829B10 /* BarButtonItemDesignable.swift in Sources */,
+				AE0B0FEA1C25372200E36B78 /* TableViewCellDesignable.swift in Sources */,
 				AE18787E1C1D980D00300246 /* MaskType.swift in Sources */,
 				AED1A1191BFE983A001346FA /* AnimatableTextView.swift in Sources */,
 				AED1A1161BFE983A001346FA /* Animatable.swift in Sources */,

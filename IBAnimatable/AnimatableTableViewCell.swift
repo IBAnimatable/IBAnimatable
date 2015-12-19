@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableTableViewCell: UITableViewCell, FillDesignable, BorderDesignable, Animatable {
+@IBDesignable public class AnimatableTableViewCell: UITableViewCell, FillDesignable, BorderDesignable, TableViewCellDesignable, Animatable {
   
   // MARK: - FillDesignable
   @IBInspectable public var fillColor: UIColor = UIColor.whiteColor()
@@ -15,6 +15,8 @@ import UIKit
   @IBInspectable public var borderColor: UIColor = UIColor.clearColor()
   @IBInspectable public var borderWidth: CGFloat = 0
   @IBInspectable public var borderSide: String = ""
+  
+  @IBInspectable public var removeSeparatorMargins: Bool = false
   
   // MARK: - Animatable
   @IBInspectable public var animationType: String = ""
@@ -45,5 +47,6 @@ import UIKit
     configFillColor()
     configOpacity()
     configBorder()
+    configSeparatorMargins()
   }
 }

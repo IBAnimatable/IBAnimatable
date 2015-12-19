@@ -2182,7 +2182,6 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <stackView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" id="d8R-0C-eL5">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2286,6 +2285,9 @@
                                                 <constraint firstAttribute="bottom" secondItem="6ii-Fg-lw3" secondAttribute="bottom" constant="20" id="xHO-43-RB6"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="removeSeparatorMargins" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Ybq-pW-18L" customClass="AnimatableTableViewCell" customModule="IBAnimatableApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="223" width="375" height="179"/>
@@ -2332,6 +2334,9 @@
                                                 <constraint firstItem="Ais-XN-CDv" firstAttribute="width" secondItem="SF6-21-gh6" secondAttribute="width" id="q8h-lj-IMK"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="removeSeparatorMargins" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="iOC-nU-P2z" customClass="AnimatableTableViewCell" customModule="IBAnimatableApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="402" width="375" height="179"/>
@@ -2378,6 +2383,9 @@
                                                 <constraint firstItem="8sP-hs-JHd" firstAttribute="width" secondItem="gdv-TZ-N01" secondAttribute="width" id="rhN-Hz-VhG"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="removeSeparatorMargins" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2ww-Ma-YOf" customClass="AnimatableTableViewCell" customModule="IBAnimatableApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="581" width="375" height="179"/>
@@ -2424,6 +2432,9 @@
                                                 <constraint firstItem="Add-xy-b3S" firstAttribute="height" secondItem="d3U-xh-uUe" secondAttribute="height" id="xtB-OF-mxO"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="removeSeparatorMargins" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
