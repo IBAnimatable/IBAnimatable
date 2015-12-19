@@ -715,6 +715,9 @@
                                                 <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="LZa-AL-grD" kind="show" id="5HE-U7-adc"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="xmo-gh-c3I" imageView="Ud1-LT-wDQ" style="IBUITableViewCellStyleDefault" id="U8K-rC-mQH" customClass="AnimatableTableViewCell" customModule="IBAnimatableApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="312" width="375" height="44"/>
@@ -2171,10 +2174,209 @@
             </objects>
             <point key="canvasLocation" x="4348.5" y="496.5"/>
         </scene>
+        <!--Groups-->
+        <scene sceneID="Pqp-DJ-TMi">
+            <objects>
+                <viewController id="LZa-AL-grD" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sVz-q3-YIc"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xpz-gB-RzZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fOZ-Ks-enf">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H0x-aK-2Hf" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7bg-n3-QMt" userLabel="Selected View" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="63" width="125" height="3"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="3" id="D3i-t1-g6y"/>
+                                            <constraint firstAttribute="width" constant="125" id="HPL-0U-55m"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POPULAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vg-aK-gH0">
+                                        <rect key="frame" x="36" y="34" width="52" height="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ARCHIVED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTM-7c-U9k">
+                                        <rect key="frame" x="286" y="34" width="57" height="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LATEST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4QS-3K-PMM">
+                                        <rect key="frame" x="167" y="34" width="41" height="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="7bg-n3-QMt" firstAttribute="leading" secondItem="H0x-aK-2Hf" secondAttribute="leading" id="7gY-ZK-ouM"/>
+                                    <constraint firstItem="QTM-7c-U9k" firstAttribute="baseline" secondItem="9vg-aK-gH0" secondAttribute="baseline" id="EeO-2C-B4U"/>
+                                    <constraint firstItem="9vg-aK-gH0" firstAttribute="leading" secondItem="H0x-aK-2Hf" secondAttribute="leading" constant="36" id="G5r-7c-X8Q"/>
+                                    <constraint firstAttribute="bottom" secondItem="7bg-n3-QMt" secondAttribute="bottom" id="Jm2-yz-Fgq"/>
+                                    <constraint firstAttribute="height" constant="66" id="KzH-Xq-r7c"/>
+                                    <constraint firstItem="4QS-3K-PMM" firstAttribute="baseline" secondItem="9vg-aK-gH0" secondAttribute="baseline" id="bDj-S2-zaB"/>
+                                    <constraint firstAttribute="trailing" secondItem="QTM-7c-U9k" secondAttribute="trailing" constant="32" id="dEe-ld-wod"/>
+                                    <constraint firstAttribute="bottom" secondItem="9vg-aK-gH0" secondAttribute="bottom" constant="18" id="jVV-PQ-xf4"/>
+                                    <constraint firstItem="4QS-3K-PMM" firstAttribute="centerX" secondItem="H0x-aK-2Hf" secondAttribute="centerX" id="q2u-MK-Fqu"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" ambiguous="YES" misplaced="YES" image="work-bg" translatesAutoresizingMaskIntoConstraints="NO" id="Wxl-i3-yWG">
+                                <rect key="frame" x="0.0" y="66" width="375" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="8H8-be-LvJ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Work" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwp-t2-xj0">
+                                <rect key="frame" x="20" y="191" width="58" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7tL-Jn-5RP" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="315" y="186" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Vee-n5-PRm"/>
+                                    <constraint firstAttribute="width" constant="40" id="eHW-zY-qzU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="28">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" ambiguous="YES" misplaced="YES" image="food-bg" translatesAutoresizingMaskIntoConstraints="NO" id="Fxh-KM-6h5">
+                                <rect key="frame" x="0.0" y="246" width="375" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="EoQ-fc-gKD"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAo-Kz-uvk">
+                                <rect key="frame" x="20" y="371" width="57" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FrU-gG-LHY" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="315" y="366" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Xk2-VR-mee"/>
+                                    <constraint firstAttribute="height" constant="40" id="uVy-if-RxW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="14">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" ambiguous="YES" misplaced="YES" image="auto-bg" translatesAutoresizingMaskIntoConstraints="NO" id="LZa-Yy-YbL">
+                                <rect key="frame" x="0.0" y="426" width="375" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="ett-kO-GCZ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Auto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sM9-IJ-VW5">
+                                <rect key="frame" x="25" y="553" width="52" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3X-ZT-SZw" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="321" y="548" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Lg7-5x-Fns"/>
+                                    <constraint firstAttribute="width" constant="40" id="wej-yP-9nP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="7">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sM9-IJ-VW5" firstAttribute="leading" secondItem="LZa-Yy-YbL" secondAttribute="leading" id="2cR-fR-wWT"/>
+                            <constraint firstAttribute="trailing" secondItem="7tL-Jn-5RP" secondAttribute="trailing" constant="20" id="38N-ZQ-a6m"/>
+                            <constraint firstAttribute="trailing" secondItem="FrU-gG-LHY" secondAttribute="trailing" constant="20" id="4ue-Nw-jdY"/>
+                            <constraint firstItem="Wxl-i3-yWG" firstAttribute="leading" secondItem="fOZ-Ks-enf" secondAttribute="leading" id="7Pg-sH-Fqp"/>
+                            <constraint firstItem="Fxh-KM-6h5" firstAttribute="top" secondItem="nwp-t2-xj0" secondAttribute="bottom" constant="25" id="7Zc-IC-YKu"/>
+                            <constraint firstItem="LZa-Yy-YbL" firstAttribute="top" secondItem="Fxh-KM-6h5" secondAttribute="bottom" id="CsP-Ji-TCU"/>
+                            <constraint firstItem="nwp-t2-xj0" firstAttribute="leading" secondItem="fOZ-Ks-enf" secondAttribute="leading" constant="20" id="FWE-7K-eNa"/>
+                            <constraint firstAttribute="trailing" secondItem="Wxl-i3-yWG" secondAttribute="trailing" id="UPf-8D-NYt"/>
+                            <constraint firstAttribute="trailing" secondItem="H0x-aK-2Hf" secondAttribute="trailing" id="YCu-oR-w9b"/>
+                            <constraint firstItem="H0x-aK-2Hf" firstAttribute="leading" secondItem="fOZ-Ks-enf" secondAttribute="leading" id="cd2-b7-V8X"/>
+                            <constraint firstItem="LZa-Yy-YbL" firstAttribute="top" secondItem="FrU-gG-LHY" secondAttribute="bottom" constant="20" id="dVa-mc-xbh"/>
+                            <constraint firstItem="LZa-Yy-YbL" firstAttribute="top" secondItem="oAo-Kz-uvk" secondAttribute="bottom" constant="25" id="eSg-Fx-QUY"/>
+                            <constraint firstItem="sM9-IJ-VW5" firstAttribute="bottom" secondItem="LZa-Yy-YbL" secondAttribute="bottom" id="fSo-rC-A7o"/>
+                            <constraint firstAttribute="trailing" secondItem="Fxh-KM-6h5" secondAttribute="trailing" id="gDS-ec-2GW"/>
+                            <constraint firstItem="LZa-Yy-YbL" firstAttribute="leading" secondItem="fOZ-Ks-enf" secondAttribute="leading" id="hRb-Wp-AxH"/>
+                            <constraint firstAttribute="trailing" secondItem="LZa-Yy-YbL" secondAttribute="trailing" id="m16-le-he1"/>
+                            <constraint firstItem="Fxh-KM-6h5" firstAttribute="top" secondItem="Wxl-i3-yWG" secondAttribute="bottom" id="nsb-7c-wz2"/>
+                            <constraint firstItem="oAo-Kz-uvk" firstAttribute="leading" secondItem="fOZ-Ks-enf" secondAttribute="leading" constant="20" id="t5d-Rz-Hc0"/>
+                            <constraint firstItem="Fxh-KM-6h5" firstAttribute="leading" secondItem="fOZ-Ks-enf" secondAttribute="leading" id="tBt-9r-kLe"/>
+                            <constraint firstItem="Fxh-KM-6h5" firstAttribute="top" secondItem="7tL-Jn-5RP" secondAttribute="bottom" constant="20" id="ug5-IS-yNF"/>
+                            <constraint firstItem="H0x-aK-2Hf" firstAttribute="top" secondItem="sVz-q3-YIc" secondAttribute="bottom" id="yBc-O1-kcH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Groups" id="ZPH-jG-Woz">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="erG-2N-u38">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="Guv-GP-kwE" kind="unwind" unwindAction="unwindToViewController:" id="DUp-Lf-e4f"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" id="XJ4-ID-9Vx" customClass="AnimatableBarButtonItem" customModule="IBAnimatableApp" customModuleProvider="target">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="roundedImage" value="jakelin-small"/>
+                            </userDefinedRuntimeAttributes>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kDg-1E-hg5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Guv-GP-kwE" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4746.5" y="496.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="add" width="22" height="22"/>
         <image name="add-photo" width="50" height="51"/>
+        <image name="auto-bg" width="375" height="179"/>
         <image name="avatar1" width="30" height="30"/>
         <image name="avatar2" width="30" height="30"/>
         <image name="avatar3" width="30" height="30"/>
@@ -2182,6 +2384,7 @@
         <image name="calendar" width="22" height="22"/>
         <image name="calendar-bg" width="375" height="667"/>
         <image name="done" width="23" height="17"/>
+        <image name="food-bg" width="375" height="179"/>
         <image name="groups" width="18" height="18"/>
         <image name="home" width="25" height="22"/>
         <image name="home-bg" width="375" height="667"/>
@@ -2197,5 +2400,6 @@
         <image name="settings" width="21" height="21"/>
         <image name="timeline" width="23" height="23"/>
         <image name="walkthrough-bg" width="375" height="667"/>
+        <image name="work-bg" width="375" height="179"/>
     </resources>
 </document>
