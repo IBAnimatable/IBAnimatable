@@ -2504,6 +2504,9 @@
                                         <real key="value" value="0.29999999999999999"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="rjQ-5c-Pf1" kind="show" id="MVF-mu-DeL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2895,6 +2898,121 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Fa-Fc-FHC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5164.5" y="1202.5"/>
+        </scene>
+        <!--Add New-->
+        <scene sceneID="sXe-3X-H9b">
+            <objects>
+                <viewController id="rjQ-5c-Pf1" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OMA-YZ-8c0"/>
+                        <viewControllerLayoutGuide type="bottom" id="pZC-Qg-Ay1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pck-2a-94w">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zh3-8a-r1Q" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="146"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J5J-mW-Tm2" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="20" width="335" height="42"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="35"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Description" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9iI-V0-ybN" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="72" width="335" height="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="9iI-V0-ybN" firstAttribute="top" secondItem="J5J-mW-Tm2" secondAttribute="bottom" constant="10" id="4QZ-SS-oEF"/>
+                                    <constraint firstItem="J5J-mW-Tm2" firstAttribute="leading" secondItem="Zh3-8a-r1Q" secondAttribute="leading" constant="20" id="6NH-cy-35T"/>
+                                    <constraint firstAttribute="trailing" secondItem="9iI-V0-ybN" secondAttribute="trailing" constant="20" id="C0i-1P-P8p"/>
+                                    <constraint firstAttribute="height" constant="146" id="INc-zt-jf1"/>
+                                    <constraint firstAttribute="trailing" secondItem="J5J-mW-Tm2" secondAttribute="trailing" constant="20" id="JBs-9q-cfQ"/>
+                                    <constraint firstItem="J5J-mW-Tm2" firstAttribute="top" secondItem="Zh3-8a-r1Q" secondAttribute="top" constant="20" id="Tif-so-ZAl"/>
+                                    <constraint firstItem="9iI-V0-ybN" firstAttribute="leading" secondItem="Zh3-8a-r1Q" secondAttribute="leading" constant="20" id="Xs3-Z0-T84"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAR-h5-tUt">
+                                <rect key="frame" x="20" y="170" width="74" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziQ-WV-83V" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="241" y="164" width="114" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="February 9, 2015 ">
+                                    <color key="titleColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MJp-WC-6ev" userLabel="Devider" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="211" width="335" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="eZe-jD-giC"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="0.5" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OAR-h5-tUt" firstAttribute="top" secondItem="Zh3-8a-r1Q" secondAttribute="bottom" constant="24" id="2g3-R4-SJS"/>
+                            <constraint firstItem="Zh3-8a-r1Q" firstAttribute="leading" secondItem="pck-2a-94w" secondAttribute="leading" id="3w5-8C-Fb5"/>
+                            <constraint firstAttribute="trailing" secondItem="Zh3-8a-r1Q" secondAttribute="trailing" id="8i3-l5-Ngn"/>
+                            <constraint firstItem="OAR-h5-tUt" firstAttribute="leading" secondItem="pck-2a-94w" secondAttribute="leading" constant="20" id="CP2-vg-u0P"/>
+                            <constraint firstItem="Zh3-8a-r1Q" firstAttribute="top" secondItem="OMA-YZ-8c0" secondAttribute="bottom" id="Ggr-83-Dce"/>
+                            <constraint firstItem="MJp-WC-6ev" firstAttribute="top" secondItem="OAR-h5-tUt" secondAttribute="bottom" constant="24" id="MWb-Bm-kKG"/>
+                            <constraint firstAttribute="trailing" secondItem="MJp-WC-6ev" secondAttribute="trailing" constant="20" id="wNL-eJ-hRw"/>
+                            <constraint firstItem="MJp-WC-6ev" firstAttribute="leading" secondItem="pck-2a-94w" secondAttribute="leading" constant="20" id="wdC-Mb-aKq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add New" id="cyN-J8-67f">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="Mhx-ae-N6c">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="Lmb-XJ-KRv" kind="unwind" unwindAction="unwindToViewController:" id="DwR-0g-qEC"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="done" id="934-R0-7bL">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dhf-fE-52U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Lmb-XJ-KRv" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="5575.5" y="1234.5"/>
         </scene>
     </scenes>
     <resources>
