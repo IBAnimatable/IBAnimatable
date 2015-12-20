@@ -2971,6 +2971,13 @@
                                 <color key="textColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziQ-WV-83V" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="241" y="164" width="114" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="February 9, 2015 ">
+                                    <color key="titleColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MJp-WC-6ev" userLabel="Devider" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
                                 <rect key="frame" x="20" y="211" width="335" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2983,6 +2990,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4X-WT-ted">
+                                <rect key="frame" x="20" y="235" width="73" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXZ-Dt-8eA" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
                                 <rect key="frame" x="227" y="229" width="128" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -3002,39 +3015,168 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4X-WT-ted">
-                                <rect key="frame" x="20" y="235" width="73" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xo2-7a-c5O">
+                                <rect key="frame" x="20" y="300" width="44" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziQ-WV-83V" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
-                                <rect key="frame" x="241" y="164" width="114" height="29"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dji-rD-5Vm">
+                                <rect key="frame" x="306" y="293" width="51" height="31"/>
+                                <color key="onTintColor" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </switch>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O7t-Gd-8BE" userLabel="Devider" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="341" width="335" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="So0-Gn-2Eb"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="0.5" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Duy-Wn-TiR">
+                                <rect key="frame" x="20" y="365" width="56" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="February 9, 2015 ">
+                                <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ca-Wv-aMN" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="320" y="359" width="35" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="None">
+                                    <color key="titleColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MaA-fY-8wq" userLabel="Devider" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="406" width="335" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="qBA-Oj-hJu"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="0.5" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDN-9a-rXF">
+                                <rect key="frame" x="20" y="430" width="75" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NiQ-Ua-zyU" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="303" y="424" width="52" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="via SMS">
+                                    <color key="titleColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BB2-4g-00d" userLabel="Devider" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="471" width="335" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="h0w-wm-s3n"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="0.5" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQS-Yy-mJ3">
+                                <rect key="frame" x="20" y="495" width="45" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiX-Cf-lld" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="320" y="489" width="35" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="None">
+                                    <color key="titleColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oqc-no-M7O" userLabel="Devider" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="536" width="335" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="QTm-qJ-x48"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="0.5" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FdD-JU-ocM">
+                                <rect key="frame" x="20" y="560" width="46" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWE-6r-FrP" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="325" y="554" width="30" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="No">
                                     <color key="titleColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="AWE-6r-FrP" firstAttribute="centerY" secondItem="FdD-JU-ocM" secondAttribute="centerY" id="0Ie-sO-qhq"/>
+                            <constraint firstItem="Dji-rD-5Vm" firstAttribute="centerY" secondItem="Xo2-7a-c5O" secondAttribute="centerY" id="0lk-EW-VoW"/>
                             <constraint firstItem="OAR-h5-tUt" firstAttribute="top" secondItem="Zh3-8a-r1Q" secondAttribute="bottom" constant="24" id="2g3-R4-SJS"/>
                             <constraint firstItem="Zh3-8a-r1Q" firstAttribute="leading" secondItem="pck-2a-94w" secondAttribute="leading" id="3w5-8C-Fb5"/>
+                            <constraint firstItem="oqc-no-M7O" firstAttribute="leading" secondItem="pck-2a-94w" secondAttribute="leading" constant="20" id="6Bp-GM-1P9"/>
+                            <constraint firstItem="MQS-Yy-mJ3" firstAttribute="top" secondItem="BB2-4g-00d" secondAttribute="bottom" constant="23" id="8Wx-Lr-beG"/>
                             <constraint firstAttribute="trailing" secondItem="sXZ-Dt-8eA" secondAttribute="trailing" constant="20" id="8eS-Of-ZK8"/>
                             <constraint firstAttribute="trailing" secondItem="Zh3-8a-r1Q" secondAttribute="trailing" id="8i3-l5-Ngn"/>
+                            <constraint firstAttribute="trailing" secondItem="oqc-no-M7O" secondAttribute="trailing" constant="20" id="8iP-UZ-ULm"/>
                             <constraint firstItem="sXZ-Dt-8eA" firstAttribute="centerY" secondItem="m4X-WT-ted" secondAttribute="centerY" id="9n5-Wn-6Lj"/>
                             <constraint firstItem="OAR-h5-tUt" firstAttribute="leading" secondItem="pck-2a-94w" secondAttribute="leading" constant="20" id="CP2-vg-u0P"/>
+                            <constraint firstItem="Xo2-7a-c5O" firstAttribute="leading" secondItem="pck-2a-94w" secondAttribute="leading" constant="20" id="D77-Su-1Is"/>
+                            <constraint firstAttribute="trailing" secondItem="Dji-rD-5Vm" secondAttribute="trailing" constant="20" id="EGo-Af-4Ew"/>
                             <constraint firstItem="Zh3-8a-r1Q" firstAttribute="top" secondItem="OMA-YZ-8c0" secondAttribute="bottom" id="Ggr-83-Dce"/>
+                            <constraint firstAttribute="trailing" secondItem="O7t-Gd-8BE" secondAttribute="trailing" constant="20" id="IGf-oe-9ct"/>
+                            <constraint firstItem="oqc-no-M7O" firstAttribute="top" secondItem="MQS-Yy-mJ3" secondAttribute="bottom" constant="24" id="JRC-hQ-olI"/>
+                            <constraint firstItem="2ca-Wv-aMN" firstAttribute="centerY" secondItem="Duy-Wn-TiR" secondAttribute="centerY" id="JgU-fV-80x"/>
+                            <constraint firstItem="O7t-Gd-8BE" firstAttribute="leading" secondItem="pck-2a-94w" secondAttribute="leading" constant="20" id="LOl-tg-Ola"/>
+                            <constraint firstAttribute="trailing" secondItem="NiQ-Ua-zyU" secondAttribute="trailing" constant="20" id="MLG-59-HM5"/>
                             <constraint firstItem="MJp-WC-6ev" firstAttribute="top" secondItem="OAR-h5-tUt" secondAttribute="bottom" constant="24" id="MWb-Bm-kKG"/>
+                            <constraint firstAttribute="trailing" secondItem="EiX-Cf-lld" secondAttribute="trailing" constant="20" id="Mcg-l4-ZCP"/>
+                            <constraint firstAttribute="trailing" secondItem="MaA-fY-8wq" secondAttribute="trailing" constant="20" id="NWH-Ze-kuh"/>
+                            <constraint firstAttribute="trailing" secondItem="AWE-6r-FrP" secondAttribute="trailing" constant="20" id="RoP-GQ-84V"/>
+                            <constraint firstItem="BB2-4g-00d" firstAttribute="top" secondItem="wDN-9a-rXF" secondAttribute="bottom" constant="24" id="WVr-p1-Lgh"/>
+                            <constraint firstAttribute="trailing" secondItem="BB2-4g-00d" secondAttribute="trailing" constant="20" id="Yjr-ec-74n"/>
                             <constraint firstItem="m4X-WT-ted" firstAttribute="leading" secondItem="pck-2a-94w" secondAttribute="leading" constant="20" id="ZVf-re-PUu"/>
+                            <constraint firstItem="EiX-Cf-lld" firstAttribute="centerY" secondItem="MQS-Yy-mJ3" secondAttribute="centerY" id="cl4-kg-yZV"/>
+                            <constraint firstAttribute="trailing" secondItem="2ca-Wv-aMN" secondAttribute="trailing" constant="20" id="dNt-TN-7zL"/>
                             <constraint firstItem="m4X-WT-ted" firstAttribute="top" secondItem="MJp-WC-6ev" secondAttribute="bottom" constant="23" id="dpF-ia-sMw"/>
+                            <constraint firstItem="wDN-9a-rXF" firstAttribute="leading" secondItem="pck-2a-94w" secondAttribute="leading" constant="20" id="efH-bE-ARo"/>
                             <constraint firstItem="f9G-Ll-Cf7" firstAttribute="leading" secondItem="pck-2a-94w" secondAttribute="leading" constant="20" id="fAB-7W-asd"/>
+                            <constraint firstItem="FdD-JU-ocM" firstAttribute="top" secondItem="oqc-no-M7O" secondAttribute="bottom" constant="23" id="kTB-nU-ce8"/>
+                            <constraint firstItem="O7t-Gd-8BE" firstAttribute="top" secondItem="Xo2-7a-c5O" secondAttribute="bottom" constant="24" id="kg0-CR-FOc"/>
                             <constraint firstItem="f9G-Ll-Cf7" firstAttribute="top" secondItem="m4X-WT-ted" secondAttribute="bottom" constant="24" id="mZN-FS-AJX"/>
+                            <constraint firstItem="Xo2-7a-c5O" firstAttribute="top" secondItem="f9G-Ll-Cf7" secondAttribute="bottom" constant="23" id="nG3-33-gdh"/>
                             <constraint firstAttribute="trailing" secondItem="f9G-Ll-Cf7" secondAttribute="trailing" constant="20" id="naW-ZE-QNz"/>
+                            <constraint firstItem="FdD-JU-ocM" firstAttribute="leading" secondItem="pck-2a-94w" secondAttribute="leading" constant="20" id="oBX-Kq-20n"/>
+                            <constraint firstItem="MQS-Yy-mJ3" firstAttribute="leading" secondItem="pck-2a-94w" secondAttribute="leading" constant="20" id="p5D-Qq-4HI"/>
+                            <constraint firstItem="MaA-fY-8wq" firstAttribute="leading" secondItem="pck-2a-94w" secondAttribute="leading" constant="20" id="qCs-nZ-hCn"/>
+                            <constraint firstItem="MaA-fY-8wq" firstAttribute="top" secondItem="Duy-Wn-TiR" secondAttribute="bottom" constant="24" id="qTR-Eq-fjJ"/>
+                            <constraint firstItem="Duy-Wn-TiR" firstAttribute="leading" secondItem="pck-2a-94w" secondAttribute="leading" constant="20" id="sp1-gv-gJM"/>
                             <constraint firstAttribute="trailing" secondItem="ziQ-WV-83V" secondAttribute="trailing" constant="20" id="tKa-x9-5tY"/>
                             <constraint firstItem="ziQ-WV-83V" firstAttribute="centerY" secondItem="OAR-h5-tUt" secondAttribute="centerY" id="tfk-DP-nFL"/>
+                            <constraint firstItem="wDN-9a-rXF" firstAttribute="top" secondItem="MaA-fY-8wq" secondAttribute="bottom" constant="23" id="uOX-kS-Fj2"/>
+                            <constraint firstItem="NiQ-Ua-zyU" firstAttribute="centerY" secondItem="wDN-9a-rXF" secondAttribute="centerY" id="vJX-GC-1tP"/>
+                            <constraint firstItem="BB2-4g-00d" firstAttribute="leading" secondItem="pck-2a-94w" secondAttribute="leading" constant="20" id="vPc-1k-zYH"/>
                             <constraint firstAttribute="trailing" secondItem="MJp-WC-6ev" secondAttribute="trailing" constant="20" id="wNL-eJ-hRw"/>
                             <constraint firstItem="MJp-WC-6ev" firstAttribute="leading" secondItem="pck-2a-94w" secondAttribute="leading" constant="20" id="wdC-Mb-aKq"/>
+                            <constraint firstItem="Duy-Wn-TiR" firstAttribute="top" secondItem="O7t-Gd-8BE" secondAttribute="bottom" constant="23" id="xbc-jv-s7H"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add New" id="cyN-J8-67f">
