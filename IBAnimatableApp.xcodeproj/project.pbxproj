@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AE0B0FEA1C25372200E36B78 /* TableViewCellDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0B0FE91C25372200E36B78 /* TableViewCellDesignable.swift */; };
+		AE0B0FEC1C26397700E36B78 /* AnimatableCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0B0FEB1C26397700E36B78 /* AnimatableCheckBox.swift */; };
+		AE0B0FEE1C263A1900E36B78 /* CheckBoxDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0B0FED1C263A1900E36B78 /* CheckBoxDesignable.swift */; };
 		AE0FAD3B1C1ECA4200B5289B /* UIViewController+UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FAD3A1C1ECA4200B5289B /* UIViewController+UnwindSegue.swift */; };
 		AE0FAD3D1C1ED1EC00B5289B /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FAD3C1C1ED1EC00B5289B /* DismissSegue.swift */; };
 		AE0FAD411C1ED41D00B5289B /* DesignableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FAD401C1ED41D00B5289B /* DesignableViewController.swift */; };
@@ -53,6 +55,8 @@
 
 /* Begin PBXFileReference section */
 		AE0B0FE91C25372200E36B78 /* TableViewCellDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellDesignable.swift; sourceTree = "<group>"; };
+		AE0B0FEB1C26397700E36B78 /* AnimatableCheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableCheckBox.swift; sourceTree = "<group>"; };
+		AE0B0FED1C263A1900E36B78 /* CheckBoxDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBoxDesignable.swift; sourceTree = "<group>"; };
 		AE0FAD3A1C1ECA4200B5289B /* UIViewController+UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+UnwindSegue.swift"; sourceTree = "<group>"; };
 		AE0FAD3C1C1ED1EC00B5289B /* DismissSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
 		AE0FAD401C1ED41D00B5289B /* DesignableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 				AED1A10E1BFE983A001346FA /* AnimatableView.swift */,
 				AE3C54481C2180D500829B10 /* AnimatableBarButtonItem.swift */,
 				AED1A1091BFE983A001346FA /* AnimatableButton.swift */,
+				AE0B0FEB1C26397700E36B78 /* AnimatableCheckBox.swift */,
 				AED1A10B1BFE983A001346FA /* AnimatableImageView.swift */,
 				AE1878791C1A25C100300246 /* AnimatableStackView.swift */,
 				AE0FADAE1C203F9A00B5289B /* AnimatableTableView.swift */,
@@ -220,6 +225,7 @@
 			children = (
 				AE299BD91C0338C70018CCDC /* BlurDesignable.swift */,
 				AED1A1101BFE983A001346FA /* BorderDesignable.swift */,
+				AE0B0FED1C263A1900E36B78 /* CheckBoxDesignable.swift */,
 				AE216FDC1C0DBC5D00BC6366 /* CornerDesignable.swift */,
 				CAB562E75DABEED7FCE0F309 /* FillDesignable.swift */,
 				AE81DAED1C10F14C000AEB20 /* GradientDesignable.swift */,
@@ -318,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE0B0FEE1C263A1900E36B78 /* CheckBoxDesignable.swift in Sources */,
 				AED1A11A1BFE983A001346FA /* AnimatableView.swift in Sources */,
 				AE81DAEE1C10F14C000AEB20 /* GradientDesignable.swift in Sources */,
 				AE299BDA1C0338C70018CCDC /* BlurDesignable.swift in Sources */,
@@ -350,6 +357,7 @@
 				AE216FDD1C0DBC5D00BC6366 /* CornerDesignable.swift in Sources */,
 				AED1A11F1BFE983A001346FA /* PlaceholderDesignable.swift in Sources */,
 				AE3C54491C2180D500829B10 /* AnimatableBarButtonItem.swift in Sources */,
+				AE0B0FEC1C26397700E36B78 /* AnimatableCheckBox.swift in Sources */,
 				AE0FAD3D1C1ED1EC00B5289B /* DismissSegue.swift in Sources */,
 				AE81DB4E1C11DF00000AEB20 /* BlurEffectStyle.swift in Sources */,
 				AED1A1151BFE983A001346FA /* AnimatableButton.swift in Sources */,

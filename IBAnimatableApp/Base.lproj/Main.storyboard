@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7ne-VT-Tkk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dy3-eL-dcX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -745,6 +745,9 @@
                                                 <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="dy3-eL-dcX" kind="show" id="oRe-ai-rYL"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="C9G-VQ-fhS" imageView="XZ9-WL-gzy" style="IBUITableViewCellStyleDefault" id="Uvs-YG-0xP" customClass="AnimatableTableViewCell" customModule="IBAnimatableApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="356" width="375" height="44"/>
@@ -2469,6 +2472,102 @@
             </objects>
             <point key="canvasLocation" x="4755.5" y="496.5"/>
         </scene>
+        <!--Auto-->
+        <scene sceneID="WBq-8j-31I">
+            <objects>
+                <viewController id="dy3-eL-dcX" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EZ5-w4-1M8"/>
+                        <viewControllerLayoutGuide type="bottom" id="TX5-2d-KiK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tGv-kW-leH">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qJC-Ab-ezA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <connections>
+                                    <segue destination="zQB-Rp-0If" kind="embed" id="AZN-6k-TAH"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="qJC-Ab-ezA" secondAttribute="trailing" id="ccl-QS-TeC"/>
+                            <constraint firstItem="qJC-Ab-ezA" firstAttribute="top" secondItem="EZ5-w4-1M8" secondAttribute="bottom" id="hrI-pW-Msg"/>
+                            <constraint firstItem="qJC-Ab-ezA" firstAttribute="leading" secondItem="tGv-kW-leH" secondAttribute="leading" id="rSt-CD-hGP"/>
+                            <constraint firstItem="TX5-2d-KiK" firstAttribute="top" secondItem="qJC-Ab-ezA" secondAttribute="bottom" id="xPF-zD-ufr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Auto" id="tfr-Af-gAZ">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="a4B-RE-MfK">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="aRI-Xc-X7r" kind="unwind" unwindAction="unwindToViewController:" id="nsU-O7-vaF"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="WfR-YK-ya1">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J9Y-BG-usQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="aRI-Xc-X7r" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="5164.5" y="496.5"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="D23-gn-Avk">
+            <objects>
+                <tableViewController id="zQB-Rp-0If" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="dlQ-N8-yij">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                        <sections>
+                            <tableViewSection id="0uH-yT-Efg">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="sqs-ho-F4M">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sqs-ho-F4M" id="O1Z-6u-Ii9">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOi-4W-y3M" customClass="AnimatableCheckBox" customModule="IBAnimatableApp" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="20" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="pr5-H7-5AM"/>
+                                                        <constraint firstAttribute="width" constant="40" id="rMr-nN-Gf8"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="checked"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checked"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="unchecked"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="JOi-4W-y3M" firstAttribute="top" secondItem="O1Z-6u-Ii9" secondAttribute="top" constant="20" id="E9R-ZQ-JpV"/>
+                                                <constraint firstItem="JOi-4W-y3M" firstAttribute="leading" secondItem="O1Z-6u-Ii9" secondAttribute="leading" constant="20" id="vf7-hM-iuX"/>
+                                                <constraint firstAttribute="bottom" secondItem="JOi-4W-y3M" secondAttribute="bottom" constant="19" id="xVp-i1-usc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="zQB-Rp-0If" id="wfZ-JC-Fpk"/>
+                            <outlet property="delegate" destination="zQB-Rp-0If" id="7yJ-8T-Azq"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Fa-Fc-FHC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5164.5" y="1202.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="add" width="22" height="22"/>
@@ -2480,6 +2579,7 @@
         <image name="back" width="21" height="21"/>
         <image name="calendar" width="22" height="22"/>
         <image name="calendar-bg" width="375" height="667"/>
+        <image name="checked" width="80" height="80"/>
         <image name="done" width="23" height="17"/>
         <image name="food-bg" width="375" height="179"/>
         <image name="groups" width="18" height="18"/>
@@ -2496,6 +2596,7 @@
         <image name="profile" width="20" height="19"/>
         <image name="settings" width="21" height="21"/>
         <image name="timeline" width="23" height="23"/>
+        <image name="unchecked" width="80" height="81"/>
         <image name="walkthrough-bg" width="375" height="667"/>
         <image name="work-bg" width="375" height="179"/>
     </resources>
