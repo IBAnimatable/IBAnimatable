@@ -2615,6 +2615,10 @@
                                                     <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="0.5" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4U-MZ-zvJ" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                                    <rect key="frame" x="324" y="28" width="23" height="23"/>
+                                                    <state key="normal" backgroundImage="attention"/>
+                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Oil" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yT-cp-HMV">
                                                     <rect key="frame" x="88" y="20" width="80" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -2627,7 +2631,9 @@
                                                 <constraint firstItem="6yT-cp-HMV" firstAttribute="top" secondItem="gO1-lV-Sk3" secondAttribute="topMargin" constant="12" id="93S-tz-5sE"/>
                                                 <constraint firstItem="i2H-vl-YLH" firstAttribute="leading" secondItem="3LK-p6-yUj" secondAttribute="trailing" constant="20" id="EWU-1y-N8H"/>
                                                 <constraint firstItem="6yT-cp-HMV" firstAttribute="leading" secondItem="3LK-p6-yUj" secondAttribute="trailing" constant="20" id="NWu-jd-Lle"/>
+                                                <constraint firstItem="M4U-MZ-zvJ" firstAttribute="centerY" secondItem="gO1-lV-Sk3" secondAttribute="centerY" id="ONt-nj-Wlh"/>
                                                 <constraint firstItem="3LK-p6-yUj" firstAttribute="centerY" secondItem="gO1-lV-Sk3" secondAttribute="centerY" id="SgI-q9-dyS"/>
+                                                <constraint firstAttribute="trailing" secondItem="M4U-MZ-zvJ" secondAttribute="trailing" constant="28" id="WTI-Px-G9a"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="i2H-vl-YLH" secondAttribute="bottom" constant="11" id="djP-Cr-bST"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -2965,13 +2971,6 @@
                                 <color key="textColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziQ-WV-83V" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
-                                <rect key="frame" x="241" y="164" width="114" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="February 9, 2015 ">
-                                    <color key="titleColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MJp-WC-6ev" userLabel="Devider" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
                                 <rect key="frame" x="20" y="211" width="335" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2984,15 +2983,56 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXZ-Dt-8eA" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="227" y="229" width="128" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="9:00am  –  10:00am">
+                                    <color key="titleColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f9G-Ll-Cf7" userLabel="Devider" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="276" width="335" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="ujW-ZH-Q7B"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="0.5" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4X-WT-ted">
+                                <rect key="frame" x="20" y="235" width="73" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziQ-WV-83V" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="241" y="164" width="114" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="February 9, 2015 ">
+                                    <color key="titleColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="OAR-h5-tUt" firstAttribute="top" secondItem="Zh3-8a-r1Q" secondAttribute="bottom" constant="24" id="2g3-R4-SJS"/>
                             <constraint firstItem="Zh3-8a-r1Q" firstAttribute="leading" secondItem="pck-2a-94w" secondAttribute="leading" id="3w5-8C-Fb5"/>
+                            <constraint firstAttribute="trailing" secondItem="sXZ-Dt-8eA" secondAttribute="trailing" constant="20" id="8eS-Of-ZK8"/>
                             <constraint firstAttribute="trailing" secondItem="Zh3-8a-r1Q" secondAttribute="trailing" id="8i3-l5-Ngn"/>
+                            <constraint firstItem="sXZ-Dt-8eA" firstAttribute="centerY" secondItem="m4X-WT-ted" secondAttribute="centerY" id="9n5-Wn-6Lj"/>
                             <constraint firstItem="OAR-h5-tUt" firstAttribute="leading" secondItem="pck-2a-94w" secondAttribute="leading" constant="20" id="CP2-vg-u0P"/>
                             <constraint firstItem="Zh3-8a-r1Q" firstAttribute="top" secondItem="OMA-YZ-8c0" secondAttribute="bottom" id="Ggr-83-Dce"/>
                             <constraint firstItem="MJp-WC-6ev" firstAttribute="top" secondItem="OAR-h5-tUt" secondAttribute="bottom" constant="24" id="MWb-Bm-kKG"/>
+                            <constraint firstItem="m4X-WT-ted" firstAttribute="leading" secondItem="pck-2a-94w" secondAttribute="leading" constant="20" id="ZVf-re-PUu"/>
+                            <constraint firstItem="m4X-WT-ted" firstAttribute="top" secondItem="MJp-WC-6ev" secondAttribute="bottom" constant="23" id="dpF-ia-sMw"/>
+                            <constraint firstItem="f9G-Ll-Cf7" firstAttribute="leading" secondItem="pck-2a-94w" secondAttribute="leading" constant="20" id="fAB-7W-asd"/>
+                            <constraint firstItem="f9G-Ll-Cf7" firstAttribute="top" secondItem="m4X-WT-ted" secondAttribute="bottom" constant="24" id="mZN-FS-AJX"/>
+                            <constraint firstAttribute="trailing" secondItem="f9G-Ll-Cf7" secondAttribute="trailing" constant="20" id="naW-ZE-QNz"/>
+                            <constraint firstAttribute="trailing" secondItem="ziQ-WV-83V" secondAttribute="trailing" constant="20" id="tKa-x9-5tY"/>
+                            <constraint firstItem="ziQ-WV-83V" firstAttribute="centerY" secondItem="OAR-h5-tUt" secondAttribute="centerY" id="tfk-DP-nFL"/>
                             <constraint firstAttribute="trailing" secondItem="MJp-WC-6ev" secondAttribute="trailing" constant="20" id="wNL-eJ-hRw"/>
                             <constraint firstItem="MJp-WC-6ev" firstAttribute="leading" secondItem="pck-2a-94w" secondAttribute="leading" constant="20" id="wdC-Mb-aKq"/>
                         </constraints>
@@ -3018,6 +3058,7 @@
     <resources>
         <image name="add" width="22" height="22"/>
         <image name="add-photo" width="50" height="51"/>
+        <image name="attention" width="23" height="23"/>
         <image name="auto-bg" width="375" height="179"/>
         <image name="avatar1" width="30" height="30"/>
         <image name="avatar2" width="30" height="30"/>
