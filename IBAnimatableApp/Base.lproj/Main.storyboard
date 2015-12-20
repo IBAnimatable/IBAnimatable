@@ -2541,14 +2541,29 @@
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checked"/>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="unchecked"/>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="checked" value="YES"/>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Pop"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mar 25, 2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3y-sH-hQ7">
+                                                    <rect key="frame" x="88" y="44" width="80" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Tires" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvg-xL-Ex6">
+                                                    <rect key="frame" x="88" y="20" width="73" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="gvg-xL-Ex6" firstAttribute="leading" secondItem="eZo-bc-vZ4" secondAttribute="trailing" constant="20" id="A6q-8U-MZw"/>
                                                 <constraint firstItem="eZo-bc-vZ4" firstAttribute="centerY" secondItem="O1Z-6u-Ii9" secondAttribute="centerY" id="Wst-Ji-mkq"/>
+                                                <constraint firstItem="gvg-xL-Ex6" firstAttribute="top" secondItem="O1Z-6u-Ii9" secondAttribute="topMargin" constant="12" id="Yrf-Mz-ioL"/>
                                                 <constraint firstItem="eZo-bc-vZ4" firstAttribute="leading" secondItem="O1Z-6u-Ii9" secondAttribute="leadingMargin" constant="20" id="bb0-m9-QUM"/>
+                                                <constraint firstItem="A3y-sH-hQ7" firstAttribute="leading" secondItem="eZo-bc-vZ4" secondAttribute="trailing" constant="20" id="gO8-sP-9To"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="A3y-sH-hQ7" secondAttribute="bottom" constant="11" id="k58-hE-eRh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
