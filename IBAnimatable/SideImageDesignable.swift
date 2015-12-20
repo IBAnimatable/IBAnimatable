@@ -7,9 +7,9 @@ import UIKit
 
 public protocol SideImageDesignable {
   /**
-   * Image name of the left image
+   * The left image
    */
-  var leftImageName: String { get set }
+  var leftImage: UIImage? { get set }
   
   /**
    * Left padding of the left image, default value is 0
@@ -29,13 +29,11 @@ public protocol SideImageDesignable {
 
 public extension SideImageDesignable where Self: UITextField {
   public func configLeftImage() {
-    if (leftImageName == "") {
+    guard let wrappedLeftImage = leftImage else {
       return
     }
     
-    let bundle = NSBundle(forClass: self.dynamicType)
-    let image =  UIImage(named: leftImageName, inBundle: bundle, compatibleWithTraitCollection: self.traitCollection)
-    let imageView = UIImageView(image: image)
+    let imageView = UIImageView(image: wrappedLeftImage)
     
     // If does not specify `leftImageTopPadding`, then center it in the middle
     if (leftImageTopPadding.isNaN) {

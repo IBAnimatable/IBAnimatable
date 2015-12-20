@@ -83,7 +83,7 @@ import UIKit
   }
   
   // MARK: - SideImageDesignable
-  @IBInspectable public var leftImageName: String = ""
+  @IBInspectable public var leftImage: UIImage? = nil
   @IBInspectable public var leftImageLeftPadding: CGFloat = 0
   @IBInspectable public var leftImageRightPadding: CGFloat = 0
   @IBInspectable public var leftImageTopPadding: CGFloat = CGFloat.NaN

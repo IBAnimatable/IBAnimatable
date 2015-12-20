@@ -34,7 +34,7 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="kMX-KN-rVM" customClass="AnimatableImageView" customModule="IBAnimatableApp" customModuleProvider="target">
                                 <rect key="frame" x="112" y="150" width="150" height="116"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8m-bE-oxM" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8m-bE-oxM">
                                 <rect key="frame" x="16" y="620" width="88" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="Create Account">
@@ -44,7 +44,7 @@
                                     <segue destination="Ya1-vA-pSE" kind="show" id="YMZ-FL-mTb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xH8-G7-l9G" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xH8-G7-l9G">
                                 <rect key="frame" x="264" y="620" width="95" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="Forgot Password">
@@ -71,7 +71,6 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftImageRightPadding">
                                                 <real key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="leftImageName" value="username"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="borderSide" value="Bottom"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" red="0.11372549019607843" green="0.11372549019607843" blue="0.14901960784313725" alpha="0.050000000000000003" colorSpace="calibratedRGB"/>
@@ -79,6 +78,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="username"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="00x-ai-icw" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
@@ -98,7 +98,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftImageRightPadding">
                                                 <real key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="leftImageName" value="password"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="password"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHw-QK-EpD" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
@@ -219,7 +219,6 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftImageRightPadding">
                                                 <real key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="leftImageName" value="username"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="borderSide" value="Bottom"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="0.050000000000000003" colorSpace="calibratedRGB"/>
@@ -234,6 +233,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                                 <real key="value" value="0.59999999999999998"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="username"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z51-4n-TE1" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
@@ -250,7 +250,6 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftImageRightPadding">
                                                 <real key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="leftImageName" value="email"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="borderSide" value="Bottom"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="0.050000000000000003" colorSpace="calibratedRGB"/>
@@ -265,6 +264,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                                 <real key="value" value="0.65000000000000002"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="email"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xLI-LO-iOO" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
@@ -281,7 +281,6 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftImageRightPadding">
                                                 <real key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="leftImageName" value="password"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="borderSide" value="Bottom"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="0.050000000000000003" colorSpace="calibratedRGB"/>
@@ -296,6 +295,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                                 <real key="value" value="0.69999999999999996"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="password"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Birthday" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eYa-ff-J33" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
@@ -312,7 +312,6 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftImageRightPadding">
                                                 <real key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="leftImageName" value="birthday"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="borderSide" value="Bottom"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="0.050000000000000003" colorSpace="calibratedRGB"/>
@@ -327,6 +326,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                                 <real key="value" value="0.75"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="birthday"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xdT-JQ-oZF" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
@@ -343,7 +343,6 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftImageRightPadding">
                                                 <real key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="leftImageName" value="gender"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="borderSide" value="Bottom"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="0.050000000000000003" colorSpace="calibratedRGB"/>
@@ -358,6 +357,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                                 <real key="value" value="0.80000000000000004"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="gender"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
@@ -371,7 +371,7 @@
                                         <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="0.5" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7M-bI-17u" customClass="AnimatabeButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7M-bI-17u">
                                         <rect key="frame" x="166" y="0.0" width="47" height="30"/>
                                         <state key="normal" title="Sign In">
                                             <color key="titleColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -2574,11 +2574,14 @@
         <image name="avatar2" width="30" height="30"/>
         <image name="avatar3" width="30" height="30"/>
         <image name="back" width="21" height="21"/>
+        <image name="birthday" width="20" height="22"/>
         <image name="calendar" width="22" height="22"/>
         <image name="calendar-bg" width="375" height="667"/>
         <image name="checked" width="80" height="80"/>
         <image name="done" width="23" height="17"/>
+        <image name="email" width="21" height="18"/>
         <image name="food-bg" width="375" height="179"/>
+        <image name="gender" width="20" height="26"/>
         <image name="groups" width="18" height="18"/>
         <image name="home" width="25" height="22"/>
         <image name="home-bg" width="375" height="667"/>
@@ -2591,10 +2594,12 @@
         <image name="menu" width="21" height="17"/>
         <image name="overview" width="22" height="22"/>
         <image name="overview-bg" width="375" height="667"/>
+        <image name="password" width="20" height="22"/>
         <image name="profile" width="20" height="19"/>
         <image name="settings" width="21" height="21"/>
         <image name="timeline" width="23" height="23"/>
         <image name="unchecked" width="80" height="81"/>
+        <image name="username" width="20" height="19"/>
         <image name="walkthrough-bg" width="375" height="667"/>
         <image name="work-bg" width="375" height="179"/>
     </resources>
