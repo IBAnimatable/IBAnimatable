@@ -6,12 +6,16 @@
 import UIKit
 
 public protocol BarButtonItemDesignable {
-  var roundedImage: String { get set }
+  var roundedImage: UIImage? { get set }
 }
 
 public extension BarButtonItemDesignable where Self: UIBarButtonItem {
   public func confingBarButtonItemImage() {
-    let originalImage: UIImage? = UIImage(named: roundedImage)?.imageWithRenderingMode(.AlwaysOriginal)
+    guard let unwrappedRoundedImage = roundedImage else {
+      return
+    }
+    
+    let originalImage: UIImage? = unwrappedRoundedImage.imageWithRenderingMode(.AlwaysOriginal)
     if let unwrappedImage = originalImage {
       image = unwrappedImage
     }

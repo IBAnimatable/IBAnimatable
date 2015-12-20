@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dy3-eL-dcX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7ne-VT-Tkk">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -1091,7 +1091,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="4yV-ju-CdG" customClass="AnimatableBarButtonItem" customModule="IBAnimatableApp" customModuleProvider="target">
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="roundedImage" value="jakelin-small"/>
+                                <userDefinedRuntimeAttribute type="image" keyPath="roundedImage" value="jakelin-small"/>
                             </userDefinedRuntimeAttributes>
                         </barButtonItem>
                     </navigationItem>
@@ -2167,7 +2167,7 @@
                         <barButtonItem key="rightBarButtonItem" id="MDR-FS-CZ4" customClass="AnimatableBarButtonItem" customModule="IBAnimatableApp" customModuleProvider="target">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="roundedImage" value="jakelin-small"/>
+                                <userDefinedRuntimeAttribute type="image" keyPath="roundedImage" value="jakelin-small"/>
                             </userDefinedRuntimeAttributes>
                         </barButtonItem>
                     </navigationItem>
@@ -2459,11 +2459,8 @@
                                 <segue destination="0PD-ug-AuR" kind="unwind" unwindAction="unwindToViewController:" id="KVT-NA-P6K"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" id="8h4-Lg-zEg" customClass="AnimatableBarButtonItem" customModule="IBAnimatableApp" customModuleProvider="target">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="8h4-Lg-zEg">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="roundedImage" value="jakelin-small"/>
-                            </userDefinedRuntimeAttributes>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
@@ -2586,6 +2583,7 @@
         <image name="home" width="25" height="22"/>
         <image name="home-bg" width="375" height="667"/>
         <image name="jakelin" width="110" height="110"/>
+        <image name="jakelin-small" width="30" height="30"/>
         <image name="lists" width="21" height="19"/>
         <image name="login-bg" width="375" height="667"/>
         <image name="logo" width="150" height="116"/>

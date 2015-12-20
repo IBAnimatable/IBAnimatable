@@ -7,7 +7,7 @@ import UIKit
 
 @IBDesignable public class AnimatableBarButtonItem: UIBarButtonItem, BarButtonItemDesignable, Animatable {
   // MARK: - BarButtonItemDesignable
-  @IBInspectable public var roundedImage: String = ""
+  @IBInspectable public var roundedImage: UIImage?
   
   // MARK: - Lifecycle
   public override func prepareForInterfaceBuilder() {
