@@ -5,7 +5,26 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableCheckBox: UIButton, CornerDesignable, FillDesignable, BorderDesignable, ShadowDesignable, MaskDesignable, CheckBoxDesignable, Animatable {
+@IBDesignable public class AnimatableCheckBox: UIButton, CheckBoxDesignable, CornerDesignable, FillDesignable, BorderDesignable, ShadowDesignable, MaskDesignable, Animatable {
+  
+  // MARK: - CheckBoxDesignable
+  @IBInspectable public var checked: Bool = false {
+    didSet {
+      configCheckBoxChecked()
+    }
+  }
+  
+  @IBInspectable public var checkedImage: UIImage? = nil {
+    didSet {
+      configCheckBoxCheckedImage()
+    }
+  }
+  
+  @IBInspectable public var uncheckedImage: UIImage? = nil {
+    didSet {
+      configCheckBoxUncheckedImage()
+    }
+  }
   
   // MARK: - CornerDesignable
   @IBInspectable public var cornerRadius: CGFloat = 0 {
@@ -70,25 +89,6 @@ import UIKit
     }
   }
   
-  // MARK: - CheckBoxDesignable
-  @IBInspectable public var checked: Bool = false {
-    didSet {
-      configCheckBoxChecked()
-    }
-  }
-  
-  @IBInspectable public var checkedImage: UIImage? = nil {
-    didSet {
-      configCheckBoxCheckedImage()
-    }
-  }
-  
-  @IBInspectable public var uncheckedImage: UIImage? = nil {
-    didSet {
-      configCheckBoxUncheckedImage()
-    }
-  }
-  
   // MARK: - Animatable
   @IBInspectable public var animationType: String = ""
   @IBInspectable public var duration: Double = 0.7
@@ -100,10 +100,12 @@ import UIKit
   
   // MARK: - Lifecycle
   public override func prepareForInterfaceBuilder() {
+    setup()
     configDesignableProperties()
   }
   
   public override func awakeFromNib() {
+    setup()
     configDesignableProperties()
   }
   
@@ -123,6 +125,12 @@ import UIKit
   }
   
   // MARK: - Private
+  private func setup() {
+    // No title for CheckBox
+    setTitle("", forState: .Normal)
+    tintColor = UIColor.clearColor()
+  }
+  
   private func configDesignableProperties() {
     configBorder()
   }
