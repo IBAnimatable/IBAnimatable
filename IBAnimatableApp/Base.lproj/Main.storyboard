@@ -835,6 +835,9 @@
                                                 <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="KkQ-yF-ip9" kind="show" id="gzl-ep-Ugi"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -2974,6 +2977,111 @@
             </objects>
             <point key="canvasLocation" x="5982.5" y="496.5"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="XBJ-Q6-5el">
+            <objects>
+                <viewController id="KkQ-yF-ip9" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eOh-OB-i83"/>
+                        <viewControllerLayoutGuide type="bottom" id="ILO-Lh-cQc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n2y-e3-60n">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zus-Wg-U5t" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="151"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="jakelin" translatesAutoresizingMaskIntoConstraints="NO" id="B6h-hI-cwD" customClass="AnimatableImageView" customModule="IBAnimatableApp" customModuleProvider="target">
+                                        <rect key="frame" x="152" y="20" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="OXh-ql-VRF"/>
+                                            <constraint firstAttribute="width" constant="70" id="x5B-wF-MMS"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZwC-ha-hwz">
+                                        <rect key="frame" x="0.0" y="125" width="375" height="26"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOK-VP-a8P" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="188" height="26"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <state key="normal" title="GENERAL">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="borderSide" value="Bottom"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcx-ce-EFg" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                                <rect key="frame" x="188" y="0.0" width="187" height="26"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <state key="normal" title="ALERTS">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="fcx-ce-EFg" firstAttribute="width" secondItem="rOK-VP-a8P" secondAttribute="width" id="stL-53-5GQ"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="B6h-hI-cwD" firstAttribute="top" secondItem="zus-Wg-U5t" secondAttribute="top" constant="20" id="88t-ef-Ms8"/>
+                                    <constraint firstAttribute="height" constant="151" id="8Q4-Sr-lev"/>
+                                    <constraint firstItem="B6h-hI-cwD" firstAttribute="centerX" secondItem="zus-Wg-U5t" secondAttribute="centerX" id="RM8-ai-gRS"/>
+                                    <constraint firstItem="ZwC-ha-hwz" firstAttribute="leading" secondItem="zus-Wg-U5t" secondAttribute="leading" id="YG2-z5-ATq"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZwC-ha-hwz" secondAttribute="trailing" id="ePB-8Y-buv"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZwC-ha-hwz" secondAttribute="bottom" id="i5l-bs-aY2"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zus-Wg-U5t" firstAttribute="top" secondItem="eOh-OB-i83" secondAttribute="bottom" id="CAB-FN-kg3"/>
+                            <constraint firstAttribute="trailing" secondItem="zus-Wg-U5t" secondAttribute="trailing" id="qWs-tc-hoQ"/>
+                            <constraint firstItem="zus-Wg-U5t" firstAttribute="leading" secondItem="n2y-e3-60n" secondAttribute="leading" id="sPL-Cl-h76"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="DbX-wc-UCL">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="oug-9Y-7Ib">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="99s-0T-Gny" kind="unwind" unwindAction="unwindToViewController:" id="0mF-Jl-hfb"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="more" id="mOD-40-1dj" customClass="AnimatableBarButtonItem" customModule="IBAnimatableApp" customModuleProvider="target">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T4t-h8-5Ww" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="99s-0T-Gny" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="6397.5" y="496.5"/>
+        </scene>
         <!--Table View Controller-->
         <scene sceneID="3oo-QP-Iqp">
             <objects>
@@ -4116,6 +4224,7 @@
         <image name="logo" width="150" height="116"/>
         <image name="logout" width="20" height="21"/>
         <image name="menu" width="21" height="17"/>
+        <image name="more" width="23" height="6"/>
         <image name="overview" width="22" height="22"/>
         <image name="overview-bg" width="375" height="667"/>
         <image name="password" width="20" height="22"/>
