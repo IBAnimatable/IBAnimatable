@@ -18,6 +18,7 @@ import UIKit
   
   // MARK: - Animatable
   @IBInspectable public var animationType: String = ""
+  @IBInspectable public var autoRun: Bool = true
   @IBInspectable public var duration: Double = 0.7
   @IBInspectable public var delay: Double = 0
   @IBInspectable public var force: CGFloat = 1
@@ -37,7 +38,7 @@ import UIKit
   public override func layoutSubviews() {
     super.layoutSubviews()
     
-    startAnimation()
+    autoRunAnimation()
   }
   
   // MARK: - Private

@@ -13,6 +13,11 @@ public protocol Animatable {
   var animationType: String { get set }
   
   /**
+   Auto run flag, if `true` it will automatically start animation when `layoutSubviews`. Default should be `true`
+   */
+  var autoRun: Bool { get set }
+  
+  /**
    Animation duration (seconds)
    */
   var duration: Double { get set }
@@ -140,10 +145,12 @@ public extension Animatable where Self: UIView {
   }
   
   /**
-   startAnimation method, should be called in layoutSubviews() method
+   autoRunAnimation method, should be called in layoutSubviews() method
    */
-  public func startAnimation() {
-    animate()
+  public func autoRunAnimation() {
+    if autoRun {
+      animate()
+    }
   }
   
   // MARK: - Animation methods
