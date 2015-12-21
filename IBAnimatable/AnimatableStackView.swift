@@ -106,6 +106,7 @@ import UIKit
   
   // MARK: - Lifecycle
   public override func prepareForInterfaceBuilder() {
+    super.prepareForInterfaceBuilder()
     configDesignableProperties()
   }
   
