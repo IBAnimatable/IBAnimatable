@@ -716,7 +716,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="RFo-Av-pzd" kind="show" id="36v-Si-TD4"/>
+                                            <segue destination="POh-CX-coW" kind="show" id="1U3-va-MTq"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="xmo-gh-c3I" imageView="Ud1-LT-wDQ" style="IBUITableViewCellStyleDefault" id="U8K-rC-mQH" customClass="AnimatableTableViewCell" customModule="IBAnimatableApp" customModuleProvider="target">
@@ -2214,73 +2214,156 @@
             <point key="canvasLocation" x="4348.5" y="496.5"/>
         </scene>
         <!--Groups-->
+        <scene sceneID="RXo-MZ-0rg">
+            <objects>
+                <viewController id="POh-CX-coW" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NNh-3I-Dml"/>
+                        <viewControllerLayoutGuide type="bottom" id="mqj-yc-GX0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="E3k-43-Un4" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gq7-a6-7In">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdD-Zx-ILm" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="p2K-0W-ya5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <state key="normal" title="POPULAR">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="borderSide" value="Bottom"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BeK-Qh-K8U" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                        <rect key="frame" x="125" y="0.0" width="125" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <state key="normal" title="LATEST">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="borderSide" value="Bottom"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhP-1m-1sC" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                        <rect key="frame" x="250" y="0.0" width="125" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <state key="normal" title="ARCHIVED">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="borderSide" value="Bottom"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="BeK-Qh-K8U" firstAttribute="width" secondItem="CdD-Zx-ILm" secondAttribute="width" id="gGM-cJ-LTd"/>
+                                    <constraint firstItem="bhP-1m-1sC" firstAttribute="width" secondItem="CdD-Zx-ILm" secondAttribute="width" id="y3s-8J-crZ"/>
+                                </constraints>
+                            </stackView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xbe-tX-u2g">
+                                <rect key="frame" x="0.0" y="64" width="375" height="539"/>
+                                <connections>
+                                    <segue destination="RFo-Av-pzd" kind="embed" id="Y0m-1O-hlp"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGb-ay-3G9" userLabel="Add button" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="160" y="528" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="LI2-8d-T2D"/>
+                                    <constraint firstAttribute="width" constant="55" id="dpa-6W-x5f"/>
+                                </constraints>
+                                <state key="normal" image="add"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Pop"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Xbe-tX-u2g" secondAttribute="trailing" id="2su-56-Ens"/>
+                            <constraint firstItem="Xbe-tX-u2g" firstAttribute="top" secondItem="Gq7-a6-7In" secondAttribute="bottom" id="5Ki-Q8-enM"/>
+                            <constraint firstItem="mqj-yc-GX0" firstAttribute="top" secondItem="vGb-ay-3G9" secondAttribute="bottom" constant="20" id="5eI-w0-K3Z"/>
+                            <constraint firstItem="vGb-ay-3G9" firstAttribute="centerX" secondItem="E3k-43-Un4" secondAttribute="centerX" id="76Y-MA-QnO"/>
+                            <constraint firstItem="Xbe-tX-u2g" firstAttribute="leading" secondItem="E3k-43-Un4" secondAttribute="leading" id="NlN-IV-b1D"/>
+                            <constraint firstAttribute="trailing" secondItem="Gq7-a6-7In" secondAttribute="trailing" id="UGQ-uM-Pa0"/>
+                            <constraint firstItem="Gq7-a6-7In" firstAttribute="leading" secondItem="E3k-43-Un4" secondAttribute="leading" id="YDf-Au-mpQ"/>
+                            <constraint firstItem="mqj-yc-GX0" firstAttribute="top" secondItem="Xbe-tX-u2g" secondAttribute="bottom" id="bOL-Qo-bkV"/>
+                            <constraint firstItem="Gq7-a6-7In" firstAttribute="top" secondItem="NNh-3I-Dml" secondAttribute="bottom" constant="20" id="xPl-ST-EdP"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <navigationItem key="navigationItem" title="Groups" id="UQJ-7h-KlI">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="Hyf-1U-9s6">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="gwe-Yg-aET" kind="unwind" unwindAction="unwindToViewController:" id="ocg-qR-rxd"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="qet-gY-RjE">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8j4-Uq-g2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="gwe-Yg-aET" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4755.5" y="496.5"/>
+        </scene>
+        <!--Table View Controller-->
         <scene sceneID="hs0-zX-xEj">
             <objects>
                 <tableViewController id="RFo-Av-pzd" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="179" sectionHeaderHeight="28" sectionFooterHeight="28" id="7dc-MR-Mnp" customClass="AnimatableTableView" customModule="IBAnimatableApp" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="539"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <stackView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" id="d8R-0C-eL5">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1M-wD-2wv" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="125" height="44"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                    <state key="normal" title="POPULAR">
-                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                            <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="borderSide" value="Bottom"/>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                            <color key="value" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                            <real key="value" value="3"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8O-lT-4ax" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
-                                    <rect key="frame" x="125" y="0.0" width="125" height="44"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                    <state key="normal" title="LATEST">
-                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                            <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="borderSide" value="Bottom"/>
-                                    </userDefinedRuntimeAttributes>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqq-we-BVl" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
-                                    <rect key="frame" x="250" y="0.0" width="125" height="44"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                    <state key="normal" title="ARCHIVED">
-                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                            <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="borderSide" value="Bottom"/>
-                                    </userDefinedRuntimeAttributes>
-                                </button>
-                            </subviews>
-                            <constraints>
-                                <constraint firstItem="h8O-lT-4ax" firstAttribute="width" secondItem="m1M-wD-2wv" secondAttribute="width" id="JGE-Uj-Phk"/>
-                                <constraint firstItem="gqq-we-BVl" firstAttribute="width" secondItem="m1M-wD-2wv" secondAttribute="width" id="RXH-Lr-ewD"/>
-                            </constraints>
-                        </stackView>
                         <sections>
                             <tableViewSection id="fBp-ry-5gu">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dPq-Qw-4O3" customClass="AnimatableTableViewCell" customModule="IBAnimatableApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44" width="375" height="179"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="179"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dPq-Qw-4O3" id="Q7q-ck-Vtm">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="178.5"/>
@@ -2329,7 +2412,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Ybq-pW-18L" customClass="AnimatableTableViewCell" customModule="IBAnimatableApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="223" width="375" height="179"/>
+                                        <rect key="frame" x="0.0" y="179" width="375" height="179"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ybq-pW-18L" id="SF6-21-gh6">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="178.5"/>
@@ -2378,7 +2461,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="iOC-nU-P2z" customClass="AnimatableTableViewCell" customModule="IBAnimatableApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="402" width="375" height="179"/>
+                                        <rect key="frame" x="0.0" y="358" width="375" height="179"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iOC-nU-P2z" id="gdv-TZ-N01">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="178.5"/>
@@ -2427,7 +2510,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2ww-Ma-YOf" customClass="AnimatableTableViewCell" customModule="IBAnimatableApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="581" width="375" height="179"/>
+                                        <rect key="frame" x="0.0" y="537" width="375" height="179"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2ww-Ma-YOf" id="d3U-xh-uUe">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="178.5"/>
@@ -2488,22 +2571,10 @@
                             <outlet property="delegate" destination="RFo-Av-pzd" id="YfK-su-ZQU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Groups" id="u9R-0v-DfC">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="Ur8-ZB-ilC">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="0PD-ug-AuR" kind="unwind" unwindAction="unwindToViewController:" id="KVT-NA-P6K"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="8h4-Lg-zEg">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
-                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OFf-Sv-UEB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="0PD-ug-AuR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4755.5" y="496.5"/>
+            <point key="canvasLocation" x="4755.5" y="1202.5"/>
         </scene>
         <!--Auto-->
         <scene sceneID="WBq-8j-31I">
