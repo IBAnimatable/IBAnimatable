@@ -806,7 +806,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="DWs-Hm-hGO" kind="show" id="5uk-bP-mdK"/>
+                                            <segue destination="wPm-nl-DBH" kind="show" id="NOy-Cs-4jS"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="5jX-Bo-ftD" imageView="kiT-BF-1p3" style="IBUITableViewCellStyleDefault" id="eRn-nQ-nms" customClass="AnimatableTableViewCell" customModule="IBAnimatableApp" customModuleProvider="target">
@@ -2872,11 +2872,87 @@
             <point key="canvasLocation" x="5567.5" y="496.5"/>
         </scene>
         <!--Timeline-->
+        <scene sceneID="nRH-de-tX1">
+            <objects>
+                <viewController id="wPm-nl-DBH" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9lS-vK-brf"/>
+                        <viewControllerLayoutGuide type="bottom" id="S8A-WG-RbZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rG5-bH-aS0">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9N5-GB-o6d">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <connections>
+                                    <segue destination="DWs-Hm-hGO" kind="embed" id="BSy-kv-obs"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7SA-l0-VwR" userLabel="Filter button" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="160" y="528" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="DQ3-pI-bZD"/>
+                                    <constraint firstAttribute="height" constant="55" id="so8-ml-jcl"/>
+                                </constraints>
+                                <state key="normal" image="filter"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Pop"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7SA-l0-VwR" firstAttribute="centerX" secondItem="rG5-bH-aS0" secondAttribute="centerX" id="7p7-rC-M6g"/>
+                            <constraint firstItem="S8A-WG-RbZ" firstAttribute="top" secondItem="7SA-l0-VwR" secondAttribute="bottom" constant="20" id="Enu-8A-V5e"/>
+                            <constraint firstAttribute="trailing" secondItem="9N5-GB-o6d" secondAttribute="trailing" id="Lab-4b-LtN"/>
+                            <constraint firstItem="9N5-GB-o6d" firstAttribute="top" secondItem="9lS-vK-brf" secondAttribute="bottom" id="Nba-nj-IhB"/>
+                            <constraint firstItem="S8A-WG-RbZ" firstAttribute="top" secondItem="9N5-GB-o6d" secondAttribute="bottom" id="S8o-pw-d6W"/>
+                            <constraint firstItem="9N5-GB-o6d" firstAttribute="leading" secondItem="rG5-bH-aS0" secondAttribute="leading" id="o1s-6J-blq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Timeline" id="eDC-5A-gdJ">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="I1k-o4-Hee">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="C4D-tg-JJK" kind="unwind" unwindAction="unwindToViewController:" id="JBf-fD-2kx"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" id="V6o-Md-niu" customClass="AnimatableBarButtonItem" customModule="IBAnimatableApp" customModuleProvider="target">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="roundedImage" value="jakelin-small"/>
+                            </userDefinedRuntimeAttributes>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vae-yV-eWm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="C4D-tg-JJK" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="5982.5" y="496.5"/>
+        </scene>
+        <!--Table View Controller-->
         <scene sceneID="3oo-QP-Iqp">
             <objects>
                 <tableViewController id="DWs-Hm-hGO" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="117" sectionHeaderHeight="28" sectionFooterHeight="28" id="ho8-uA-Rom" customClass="AnimatableTableView" customModule="IBAnimatableApp" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="iMt-0h-244">
@@ -3318,25 +3394,10 @@
                             <outlet property="delegate" destination="DWs-Hm-hGO" id="sbK-sG-FUs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Timeline" id="Kbl-ey-QjJ">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="eku-LV-Ag2">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="Nmr-aN-2PZ" kind="unwind" unwindAction="unwindToViewController:" id="2ju-ic-FPF"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" id="sFo-FH-Ktc" customClass="AnimatableBarButtonItem" customModule="IBAnimatableApp" customModuleProvider="target">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="image" keyPath="roundedImage" value="jakelin-small"/>
-                            </userDefinedRuntimeAttributes>
-                        </barButtonItem>
-                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ho-XZ-9UL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Nmr-aN-2PZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5975.5" y="496.5"/>
+            <point key="canvasLocation" x="5982.5" y="1202.5"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="D23-gn-Avk">
@@ -4014,6 +4075,7 @@
         <image name="checked" width="80" height="80"/>
         <image name="done" width="23" height="17"/>
         <image name="email" width="21" height="18"/>
+        <image name="filter" width="21" height="15"/>
         <image name="food-bg" width="375" height="179"/>
         <image name="gender" width="20" height="26"/>
         <image name="groups" width="18" height="18"/>
