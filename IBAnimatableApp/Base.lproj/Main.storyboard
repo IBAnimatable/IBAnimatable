@@ -2946,6 +2946,56 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x5f-Jt-N1I" id="DDQ-oq-MtK">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B77-3s-Q9f">
+                                            <rect key="frame" x="73" y="29" width="28" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Icons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wec-Ge-E2u">
+                                            <rect key="frame" x="161" y="27" width="76" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gAH-Bs-hu3" userLabel="Overdue View" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                                            <rect key="frame" x="30" y="30" width="13" height="13"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="13" id="GYj-XJ-c8w"/>
+                                                <constraint firstAttribute="height" constant="13" id="ZsJ-Cr-pN3"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                    <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" red="1" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6I-ei-OVj">
+                                            <rect key="frame" x="161" y="52" width="64" height="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="B77-3s-Q9f" firstAttribute="centerY" secondItem="gAH-Bs-hu3" secondAttribute="centerY" id="1mE-iY-XKC"/>
+                                        <constraint firstItem="wec-Ge-E2u" firstAttribute="leading" secondItem="B77-3s-Q9f" secondAttribute="trailing" constant="60" id="3BF-3u-Ldf"/>
+                                        <constraint firstItem="B77-3s-Q9f" firstAttribute="leading" secondItem="gAH-Bs-hu3" secondAttribute="trailing" constant="30" id="4De-fK-d9T"/>
+                                        <constraint firstItem="wec-Ge-E2u" firstAttribute="centerY" secondItem="B77-3s-Q9f" secondAttribute="centerY" id="8fJ-Qm-K6w"/>
+                                        <constraint firstItem="gAH-Bs-hu3" firstAttribute="leading" secondItem="DDQ-oq-MtK" secondAttribute="leading" constant="30" id="R2V-O6-sRt"/>
+                                        <constraint firstItem="x6I-ei-OVj" firstAttribute="top" secondItem="wec-Ge-E2u" secondAttribute="bottom" constant="5" id="X9y-OH-8bi"/>
+                                        <constraint firstItem="gAH-Bs-hu3" firstAttribute="top" secondItem="DDQ-oq-MtK" secondAttribute="top" constant="30" id="Xkn-Z0-EZd"/>
+                                        <constraint firstItem="x6I-ei-OVj" firstAttribute="leading" secondItem="wec-Ge-E2u" secondAttribute="leading" id="fMP-Jx-pe7"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="82" id="4g4-e6-4qo">
