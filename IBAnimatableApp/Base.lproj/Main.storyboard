@@ -805,6 +805,9 @@
                                                 <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="DWs-Hm-hGO" kind="show" id="5uk-bP-mdK"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="5jX-Bo-ftD" imageView="kiT-BF-1p3" style="IBUITableViewCellStyleDefault" id="eRn-nQ-nms" customClass="AnimatableTableViewCell" customModule="IBAnimatableApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="444" width="375" height="44"/>
@@ -2859,6 +2862,131 @@
             </objects>
             <point key="canvasLocation" x="5567.5" y="496.5"/>
         </scene>
+        <!--Timeline-->
+        <scene sceneID="fyp-Qh-gdL">
+            <objects>
+                <viewController id="qip-a2-xGk" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iTi-U4-YrW"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uhu-4v-KSA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fRe-5M-41C">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Timeline" id="pf3-QR-df4">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="gZv-6g-drc">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" id="ezr-Bn-xy5" customClass="AnimatableBarButtonItem" customModule="IBAnimatableApp" customModuleProvider="target">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="roundedImage" value="jakelin-small"/>
+                            </userDefinedRuntimeAttributes>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b4h-i5-SUm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6082" y="463"/>
+        </scene>
+        <!--Timeline-->
+        <scene sceneID="3oo-QP-Iqp">
+            <objects>
+                <tableViewController id="DWs-Hm-hGO" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="117" sectionHeaderHeight="28" sectionFooterHeight="28" id="ho8-uA-Rom">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="iMt-0h-244">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="timeline-bg" translatesAutoresizingMaskIntoConstraints="NO" id="nix-9Y-ybX">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bT-kq-qgM">
+                                    <rect key="frame" x="166" y="26" width="42" height="84"/>
+                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="70"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuesday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unS-ao-PKN">
+                                    <rect key="frame" x="131" y="109" width="113" height="36"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FEBRUARY 2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ci4-bP-T7P">
+                                    <rect key="frame" x="144" y="151" width="87" height="14"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="nix-9Y-ybX" firstAttribute="top" secondItem="iMt-0h-244" secondAttribute="top" id="8eb-an-ME1"/>
+                                <constraint firstItem="unS-ao-PKN" firstAttribute="centerX" secondItem="iMt-0h-244" secondAttribute="centerX" id="Ljr-fZ-ryD"/>
+                                <constraint firstItem="nix-9Y-ybX" firstAttribute="leading" secondItem="iMt-0h-244" secondAttribute="leading" id="Njo-sU-5Pa"/>
+                                <constraint firstAttribute="trailing" secondItem="nix-9Y-ybX" secondAttribute="trailing" id="Srr-VB-5fN"/>
+                                <constraint firstAttribute="bottom" secondItem="nix-9Y-ybX" secondAttribute="bottom" id="SsH-eN-UTl"/>
+                                <constraint firstItem="Ci4-bP-T7P" firstAttribute="top" secondItem="unS-ao-PKN" secondAttribute="bottom" constant="6" id="Ucy-5N-sSd"/>
+                                <constraint firstItem="1bT-kq-qgM" firstAttribute="top" secondItem="iMt-0h-244" secondAttribute="top" constant="26" id="WbY-Rp-Ba2"/>
+                                <constraint firstItem="1bT-kq-qgM" firstAttribute="centerX" secondItem="iMt-0h-244" secondAttribute="centerX" id="ZNH-0L-GbK"/>
+                                <constraint firstItem="Ci4-bP-T7P" firstAttribute="centerX" secondItem="iMt-0h-244" secondAttribute="centerX" id="gas-xC-NJZ"/>
+                                <constraint firstItem="unS-ao-PKN" firstAttribute="top" secondItem="1bT-kq-qgM" secondAttribute="bottom" constant="-1" id="yP8-Vq-os3"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="117" id="x5f-Jt-N1I">
+                                <rect key="frame" x="0.0" y="228" width="375" height="117"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x5f-Jt-N1I" id="DDQ-oq-MtK">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="82" id="4g4-e6-4qo">
+                                <rect key="frame" x="0.0" y="345" width="375" height="82"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4g4-e6-4qo" id="U5d-py-RaO">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="117" id="9W2-sn-3SG">
+                                <rect key="frame" x="0.0" y="427" width="375" height="117"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9W2-sn-3SG" id="kXV-6K-Fld">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="DWs-Hm-hGO" id="bum-D6-S8l"/>
+                            <outlet property="delegate" destination="DWs-Hm-hGO" id="sbK-sG-FUs"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Timeline" id="Kbl-ey-QjJ">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="eku-LV-Ag2">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" id="sFo-FH-Ktc" customClass="AnimatableBarButtonItem" customModule="IBAnimatableApp" customModuleProvider="target">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="roundedImage" value="jakelin-small"/>
+                            </userDefinedRuntimeAttributes>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ho-XZ-9UL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6657.5" y="496.5"/>
+        </scene>
         <!--Table View Controller-->
         <scene sceneID="D23-gn-Avk">
             <objects>
@@ -3556,6 +3684,7 @@
         <image name="right" width="9" height="17"/>
         <image name="settings" width="21" height="21"/>
         <image name="timeline" width="23" height="23"/>
+        <image name="timeline-bg" width="375" height="200"/>
         <image name="unchecked" width="80" height="81"/>
         <image name="username" width="20" height="19"/>
         <image name="walkthrough-bg" width="375" height="667"/>
