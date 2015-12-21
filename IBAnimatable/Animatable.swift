@@ -18,6 +18,11 @@ public protocol Animatable {
   var autoRun: Bool { get set }
   
   /**
+   Specify whether only run once for `autoRun`
+   */
+  var autoRunOnce: Bool { get set }
+  
+  /**
    Animation duration (seconds)
    */
   var duration: Double { get set }
@@ -147,7 +152,7 @@ public extension Animatable where Self: UIView {
   /**
    autoRunAnimation method, should be called in layoutSubviews() method
    */
-  public func autoRunAnimation() {
+  func autoRunAnimation() {
     if autoRun {
       animate()
     }

@@ -26,6 +26,7 @@ import UIKit
   }
   
   public override func awakeFromNib() {
+    super.awakeFromNib()
     configGradient()
   }
   
