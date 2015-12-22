@@ -5,6 +5,8 @@
 
 import UIKit
 
+public typealias AnimatableCompletion = () -> Void
+
 public protocol Animatable: class {
   
   /**
@@ -53,13 +55,18 @@ public protocol Animatable: class {
   var repeatCount: Float { get set }
   
   /**
-   animate method, used in sub-protocol
+   animate method
   */
   func animate()
+
+  /**
+   animate with completion
+   */
+  func animate(completion: AnimatableCompletion)
 }
 
 public extension Animatable where Self: UIView {
-  public func animate() {
+  public func animate(completion: AnimatableCompletion) {
     guard let animationType = AnimationType(rawValue: animationType) else {
       return
     }
@@ -143,14 +150,15 @@ public extension Animatable where Self: UIView {
       wobble()
     case .Swing:
       swing()
-    case .Fall:
-      // TODO
-      break
     }
   }
   
+  public func animate() {
+    animate{}
+  }
+  
   /**
-   autoRunAnimation method, should be called in layoutSubviews() method
+   `autoRunAnimation` method, should be called in layoutSubviews() method
    */
   func autoRunAnimation() {
     if autoRun {
@@ -533,7 +541,13 @@ public extension Animatable where Self: UIView {
 }
 
 public extension Animatable where Self: UIBarItem {
+  // TODO: animations for `UIBarItem`
+  
   public func animate() {
-    // TODO: animations for `UIBarItem`
+    animate{}
+  }
+  
+  public func animate(completion: AnimatableCompletion) {
+    
   }
 }

@@ -39,7 +39,6 @@ public enum AnimationType: String {
   case FadeOutUp
   case ZoomIn
   case ZoomOut
-  case Fall
   case Shake
   case Pop
   case FlipX
