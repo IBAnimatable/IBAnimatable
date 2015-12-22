@@ -5,7 +5,7 @@
 
 import UIKit
 
-public protocol Animatable {
+public protocol Animatable: class {
   
   /**
     String value of `AnimationType` enum
@@ -154,6 +154,7 @@ public extension Animatable where Self: UIView {
    */
   func autoRunAnimation() {
     if autoRun {
+      autoRun = false
       animate()
     }
   }
