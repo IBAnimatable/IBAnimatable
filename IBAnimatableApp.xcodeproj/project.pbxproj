@@ -26,7 +26,6 @@
 		AE3C54451C21439100829B10 /* AnimatableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3C54441C21439100829B10 /* AnimatableTableViewCell.swift */; };
 		AE3C54471C217F7F00829B10 /* BarButtonItemDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3C54461C217F7F00829B10 /* BarButtonItemDesignable.swift */; };
 		AE3C54491C2180D500829B10 /* AnimatableBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3C54481C2180D500829B10 /* AnimatableBarButtonItem.swift */; };
-		AE6B01581C2A082300950BB2 /* IBAnimatable.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6B01571C2A082300950BB2 /* IBAnimatable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE6B015C1C2A082300950BB2 /* IBAnimatable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE6B01551C2A082300950BB2 /* IBAnimatable.framework */; };
 		AE6B015D1C2A082300950BB2 /* IBAnimatable.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE6B01551C2A082300950BB2 /* IBAnimatable.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE6B01621C2A444000950BB2 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A10F1BFE983A001346FA /* AnimationType.swift */; };
@@ -141,8 +140,6 @@
 		AE3C54461C217F7F00829B10 /* BarButtonItemDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarButtonItemDesignable.swift; sourceTree = "<group>"; };
 		AE3C54481C2180D500829B10 /* AnimatableBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableBarButtonItem.swift; sourceTree = "<group>"; };
 		AE6B01551C2A082300950BB2 /* IBAnimatable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IBAnimatable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE6B01571C2A082300950BB2 /* IBAnimatable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBAnimatable.h; sourceTree = "<group>"; };
-		AE6B01591C2A082300950BB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE6C66FF1BFBF93500134A35 /* IBAnimatableApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBAnimatableApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE74D6D61C166FB100718E0E /* SideImageDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideImageDesignable.swift; sourceTree = "<group>"; };
 		AE81DAED1C10F14C000AEB20 /* GradientDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientDesignable.swift; path = IBAnimatable/GradientDesignable.swift; sourceTree = SOURCE_ROOT; };
@@ -215,21 +212,11 @@
 			name = viewController;
 			sourceTree = "<group>";
 		};
-		AE6B01561C2A082300950BB2 /* IBAnimatable */ = {
-			isa = PBXGroup;
-			children = (
-				AE6B01571C2A082300950BB2 /* IBAnimatable.h */,
-				AE6B01591C2A082300950BB2 /* Info.plist */,
-			);
-			path = IBAnimatable;
-			sourceTree = "<group>";
-		};
 		AE6C66F61BFBF93500134A35 = {
 			isa = PBXGroup;
 			children = (
 				AE6C67141BFBF9BD00134A35 /* IBAnimatable */,
 				AE6C67011BFBF93500134A35 /* IBAnimatableApp */,
-				AE6B01561C2A082300950BB2 /* IBAnimatable */,
 				AE6C67001BFBF93500134A35 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -349,7 +336,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE6B01581C2A082300950BB2 /* IBAnimatable.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,7 +572,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = IBAnimatable/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/IBAnimatableApp/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -606,7 +592,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = IBAnimatable/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/IBAnimatableApp/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
