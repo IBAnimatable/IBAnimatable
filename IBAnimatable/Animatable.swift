@@ -21,11 +21,6 @@ public protocol Animatable: class {
   var autoRun: Bool { get set }
   
   /**
-   Specify whether only run once for `autoRun`
-   */
-  var autoRunOnce: Bool { get set }
-  
-  /**
    Animation duration (seconds)
    */
   var duration: Double { get set }
