@@ -26,14 +26,9 @@ public protocol Animatable: class {
   var duration: Double { get set }
   
   /**
-   Animation delay (seconds, default value should be 0.7)
+   Animation delay (seconds, default value should be 0)
    */
   var delay: Double { get set }
-  
-  /**
-   Animation farece (default value should be 1)
-   */
-  var force: CGFloat  { get set }
   
   /**
    Spring animation damping (default value should be 0.7)
@@ -44,6 +39,11 @@ public protocol Animatable: class {
    Spring animation velocity (default value should be 0.7)
    */
   var velocity: CGFloat { get set }
+  
+  /**
+   Animation farece (default value should be 1)
+   */
+  var force: CGFloat  { get set }
   
   /**
    Repeat count for some animations like shake
