@@ -24,6 +24,9 @@ view.fillColor = UIColor(red: 0xba/0xff, green: 0x77/0xff, blue: 1, alpha: 1)
 view.maskType = "Circle"
 
 //: Animations
+
+// Uncomment one line to play the animation
+
 //view.slideInLeft()
 //view.slideInRight()
 //view.slideInDown()
