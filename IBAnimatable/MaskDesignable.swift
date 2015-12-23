@@ -23,6 +23,6 @@ public extension MaskDesignable where Self: UIView {
   
   // MARK: - Private
   private func maskCircle() {
-    layer.cornerRadius = min(bounds.width, bounds.height)/2
+    layer.cornerRadius = ceil(min(bounds.width, bounds.height))/2
   }
 }
