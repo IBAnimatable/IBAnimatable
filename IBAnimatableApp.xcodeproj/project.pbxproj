@@ -196,12 +196,12 @@
 			name = extension;
 			sourceTree = "<group>";
 		};
-		AE0FAD3E1C1ED26A00B5289B /* sugue */ = {
+		AE0FAD3E1C1ED26A00B5289B /* segue */ = {
 			isa = PBXGroup;
 			children = (
 				AE0FAD3C1C1ED1EC00B5289B /* DismissSegue.swift */,
 			);
-			name = sugue;
+			name = segue;
 			sourceTree = "<group>";
 		};
 		AE0FAD3F1C1ED2BD00B5289B /* viewController */ = {
@@ -250,7 +250,7 @@
 				AE6F18761BFD4A3200CFDF4F /* view */,
 				AE0FAD3F1C1ED2BD00B5289B /* viewController */,
 				AE0FAD391C1ECA2900B5289B /* extension */,
-				AE0FAD3E1C1ED26A00B5289B /* sugue */,
+				AE0FAD3E1C1ED26A00B5289B /* segue */,
 			);
 			path = IBAnimatable;
 			sourceTree = SOURCE_ROOT;
