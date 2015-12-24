@@ -1,2 +1,2 @@
 # IBAnimatable
-Make Interface Builder designale and animatable.
+Make Interface Builder designable and animatable.
