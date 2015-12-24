@@ -407,13 +407,13 @@ public extension Animatable where Self: UIView {
   public func flipX(completion: AnimatableCompletion? = nil) {
     let scaleX: CGFloat = 1
     let scaleY: CGFloat = -1
-    animateInWithScaleX(scaleX, scaleY: scaleY, alpha: 1)
+    animateInWithScaleX(scaleX, scaleY: scaleY, alpha: 1, completion: completion)
   }
   
   public func flipY(completion: AnimatableCompletion? = nil) {
     let scaleX: CGFloat = -1
     let scaleY: CGFloat = 1
-    animateInWithScaleX(scaleX, scaleY: scaleY, alpha: 1)
+    animateInWithScaleX(scaleX, scaleY: scaleY, alpha: 1, completion: completion)
   }
   
   public func flash(completion: AnimatableCompletion? = nil) {
