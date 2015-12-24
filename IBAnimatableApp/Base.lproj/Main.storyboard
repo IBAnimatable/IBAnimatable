@@ -942,7 +942,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lz7-eI-tHb" userLabel="Devider">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lz7-eI-tHb" userLabel="Divider">
                                 <rect key="frame" x="20" y="211" width="335" height="1"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -955,7 +955,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXT-5u-DRu" userLabel="Devider">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXT-5u-DRu" userLabel="Divider">
                                 <rect key="frame" x="20" y="277" width="335" height="1"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1000,7 +1000,7 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S56-Sy-wUI" userLabel="Devider">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S56-Sy-wUI" userLabel="Divider">
                                 <rect key="frame" x="20" y="402" width="335" height="1"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -2000,7 +2000,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pXa-Gz-i5O" userLabel="Devider" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pXa-Gz-i5O" userLabel="Divider" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
                                 <rect key="frame" x="20" y="423" width="335" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -2012,7 +2012,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lLg-UP-bPN" userLabel="Devider" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lLg-UP-bPN" userLabel="Divider" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
                                 <rect key="frame" x="20" y="482" width="335" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -4239,7 +4239,7 @@
                                     <color key="titleColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MJp-WC-6ev" userLabel="Devider" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MJp-WC-6ev" userLabel="Divider" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
                                 <rect key="frame" x="20" y="211" width="335" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -4264,7 +4264,7 @@
                                     <color key="titleColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f9G-Ll-Cf7" userLabel="Devider" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f9G-Ll-Cf7" userLabel="Divider" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
                                 <rect key="frame" x="20" y="276" width="335" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -4286,7 +4286,7 @@
                                 <rect key="frame" x="306" y="293" width="51" height="31"/>
                                 <color key="onTintColor" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                             </switch>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O7t-Gd-8BE" userLabel="Devider" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O7t-Gd-8BE" userLabel="Divider" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
                                 <rect key="frame" x="20" y="341" width="335" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -4311,7 +4311,7 @@
                                     <color key="titleColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MaA-fY-8wq" userLabel="Devider" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MaA-fY-8wq" userLabel="Divider" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
                                 <rect key="frame" x="20" y="406" width="335" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -4336,7 +4336,7 @@
                                     <color key="titleColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BB2-4g-00d" userLabel="Devider" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BB2-4g-00d" userLabel="Divider" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
                                 <rect key="frame" x="20" y="471" width="335" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -4361,7 +4361,7 @@
                                     <color key="titleColor" red="0.1137254902" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oqc-no-M7O" userLabel="Devider" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oqc-no-M7O" userLabel="Divider" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
                                 <rect key="frame" x="20" y="536" width="335" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
