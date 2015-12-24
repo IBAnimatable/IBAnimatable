@@ -26,12 +26,12 @@ public protocol Animatable: class {
   var duration: Double { get set }
   
   /**
-   Animation delay (seconds, default value should be 0)
+   Animation delay (in seconds, default value should be 0)
    */
   var delay: Double { get set }
   
   /**
-   Spring animation damping (default value should be 0.7)
+   Spring animation damping (0 ~ 1, default value should be 0.7)
    */
   var damping: CGFloat { get set }
   
@@ -46,7 +46,7 @@ public protocol Animatable: class {
   var force: CGFloat  { get set }
   
   /**
-   Repeat count for some animations like shake
+   Repeat count for Shake, Pop, Morph, Squeeze, Flash, Wobble and Swing animations
    */
   var repeatCount: Float { get set }
 }
@@ -441,12 +441,12 @@ public extension Animatable where Self: UIView {
       positionX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       positionX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
       positionX.additive = true
-      positionX.repeatCount = self.repeatCount
       
       let animationGroup = CAAnimationGroup()
       animationGroup.animations = [rotation, positionX]
       animationGroup.duration = CFTimeInterval(self.duration)
       animationGroup.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
+      animationGroup.repeatCount = self.repeatCount
       self.layer.addAnimation(animationGroup, forKey: "wobble")
       }, completion: completion)
   }
@@ -458,6 +458,7 @@ public extension Animatable where Self: UIView {
       animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       animation.duration = CFTimeInterval(self.duration)
       animation.additive = true
+      animation.repeatCount = self.repeatCount
       animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       self.layer.addAnimation(animation, forKey: "swing")
       }, completion: completion)
