@@ -2,7 +2,6 @@
 
 //: ## Animation Properties
 
-
 import UIKit
 import XCPlayground
 import IBAnimatable
