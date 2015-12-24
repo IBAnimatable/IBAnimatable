@@ -26,6 +26,14 @@ view.fillColor = UIColor(red: 0xba/0xff, green: 0x77/0xff, blue: 1, alpha: 1)
 view.maskType = "Circle"
 
 //: Start another animation in completion closure
-view.squeezeInDown{ view.pop { view.shake{ view.squeeze{ view.wobble{ view.flipX { view.flash{ view.fadeOutDown() } } } } } } }
+view.squeezeInDown{ view.pop { view.shake{ view.squeeze{ view.wobble{ view.flipX { view.flash{ view.flipY { view.fadeOutDown() } } } } } } } }
+
+//: To apply delay, we can specify the animationType and delay
+//view.animationType = "Pop"
+//view.animate{
+//  view.delay = 0.3
+//  view.animationType = "Shake"
+//  view.animate()
+//}
 
 //: [Next](@next)
