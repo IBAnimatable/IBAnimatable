@@ -116,9 +116,12 @@ public extension Animatable where Self: UIView {
       fadeOutUp(completion)
     case .SqueezeFadeInLeft:
       squeezeFadeInLeft()
-//    case SqueezeFadeInRight
-//    case SqueezeFadeInDown
-//    case SqueezeFadeInUp
+    case .SqueezeFadeInRight:
+      squeezeFadeInRight()
+    case .SqueezeFadeInDown:
+      squeezeFadeInDown()
+    case .SqueezeFadeInUp:
+      squeezeFadeInUp()
     case .ZoomIn:
       zoomIn(completion)
     case .ZoomOut:
@@ -286,6 +289,21 @@ public extension Animatable where Self: UIView {
   public func squeezeFadeInLeft(completion: AnimatableCompletion? = nil) {
     alpha = 0
     squeezeInLeft(completion)
+  }
+  
+  public func squeezeFadeInRight(completion: AnimatableCompletion? = nil) {
+    alpha = 0
+    squeezeInRight(completion)
+  }
+  
+  public func squeezeFadeInDown(completion: AnimatableCompletion? = nil) {
+    alpha = 0
+    squeezeInDown(completion)
+  }
+  
+  public func squeezeFadeInUp(completion: AnimatableCompletion? = nil) {
+    alpha = 0
+    squeezeInUp(completion)
   }
 
   public func fadeIn(completion: AnimatableCompletion? = nil) {
