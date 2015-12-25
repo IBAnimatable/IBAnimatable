@@ -142,6 +142,9 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="lightStatusBar" value="YES"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="rootWindowBackgroundColor">
+                            <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oMr-Kw-Kza" userLabel="First Responder" sceneMemberID="firstResponder"/>

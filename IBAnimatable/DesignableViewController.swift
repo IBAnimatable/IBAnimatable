@@ -5,15 +5,21 @@
 
 import UIKit
 
-@IBDesignable public class DesignableViewController: UIViewController, ViewControllerDesignable, StatusBarDesignable {
+@IBDesignable public class DesignableViewController: UIViewController, ViewControllerDesignable, StatusBarDesignable, RootWindowDesignable {
+  // MARK: - ViewControllerDesignable
   @IBInspectable public var hideNavigationBar: Bool = false
   
+  // MARK: - StatusBarDesignable
   @IBInspectable public var lightStatusBar: Bool = false
+  
+  // MARK: - RootWindowDesignable
+  @IBInspectable public var rootWindowBackgroundColor: UIColor = UIColor.clearColor()
   
   // MARK: - Lifecylce
   public override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
     confingHideNavigationBar()
+    configRootWindowBackgroundColor()
   }
   
   public override func viewWillDisappear(animated: Bool) {

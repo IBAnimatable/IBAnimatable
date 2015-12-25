@@ -14,7 +14,14 @@ public protocol RootWindowDesignable {
 
 public extension RootWindowDesignable where Self: UIViewController {
   public func configRootWindowBackgroundColor() {
-    view.window?.backgroundColor = rootWindowBackgroundColor
+    if rootWindowBackgroundColor == UIColor.clearColor() {
+      return
+    }
+    
+    if let delegate = UIApplication.sharedApplication().delegate {
+      if let rootWindow = delegate.window {
+        rootWindow?.backgroundColor = rootWindowBackgroundColor
+      }
+    }
   }
 }
-
