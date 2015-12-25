@@ -3165,7 +3165,7 @@
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="username"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="j@mail.com" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sl4-9c-7nx" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="jakelinau@gmail.com" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sl4-9c-7nx" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="60" width="343" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="5dU-yW-S54"/>
