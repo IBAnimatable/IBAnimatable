@@ -72,6 +72,8 @@
 		AE81DAEE1C10F14C000AEB20 /* GradientDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE81DAED1C10F14C000AEB20 /* GradientDesignable.swift */; };
 		AE81DB4E1C11DF00000AEB20 /* BlurEffectStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE81DB4D1C11DF00000AEB20 /* BlurEffectStyle.swift */; };
 		AE81DB501C12E060000AEB20 /* RotationDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE81DB4F1C12E060000AEB20 /* RotationDesignable.swift */; };
+		AE8964DB1C2CC0D100D3E9F0 /* RootWindowDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8964DA1C2CC0D100D3E9F0 /* RootWindowDesignable.swift */; };
+		AE8964DC1C2CC2E000D3E9F0 /* RootWindowDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8964DA1C2CC0D100D3E9F0 /* RootWindowDesignable.swift */; };
 		AE8C53AE1C0F111600A775AF /* DesignableGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C53AD1C0F111600A775AF /* DesignableGradientView.swift */; };
 		AE8C53B01C0F1C0400A775AF /* GradientStartPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C53AF1C0F1C0400A775AF /* GradientStartPoint.swift */; };
 		AED1A1031BFE9820001346FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A0FA1BFE9820001346FA /* AppDelegate.swift */; };
@@ -145,6 +147,7 @@
 		AE81DAED1C10F14C000AEB20 /* GradientDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientDesignable.swift; path = IBAnimatable/GradientDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AE81DB4D1C11DF00000AEB20 /* BlurEffectStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlurEffectStyle.swift; path = IBAnimatable/BlurEffectStyle.swift; sourceTree = SOURCE_ROOT; };
 		AE81DB4F1C12E060000AEB20 /* RotationDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RotationDesignable.swift; path = IBAnimatable/RotationDesignable.swift; sourceTree = SOURCE_ROOT; };
+		AE8964DA1C2CC0D100D3E9F0 /* RootWindowDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootWindowDesignable.swift; path = IBAnimatable/RootWindowDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AE8C53AD1C0F111600A775AF /* DesignableGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableGradientView.swift; sourceTree = "<group>"; };
 		AE8C53AF1C0F1C0400A775AF /* GradientStartPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientStartPoint.swift; path = IBAnimatable/GradientStartPoint.swift; sourceTree = SOURCE_ROOT; };
 		AED1A0FA1BFE9820001346FA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = IBAnimatableApp/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
@@ -309,6 +312,7 @@
 				AE18787B1C1D97F500300246 /* MaskDesignable.swift */,
 				AED1A1121BFE983A001346FA /* PaddingDesignable.swift */,
 				AED1A1131BFE983A001346FA /* PlaceholderDesignable.swift */,
+				AE8964DA1C2CC0D100D3E9F0 /* RootWindowDesignable.swift */,
 				AE81DB4F1C12E060000AEB20 /* RotationDesignable.swift */,
 				AED1A1111BFE983A001346FA /* ShadowDesignable.swift */,
 				AE74D6D61C166FB100718E0E /* SideImageDesignable.swift */,
@@ -453,6 +457,7 @@
 				AE6B01621C2A444000950BB2 /* AnimationType.swift in Sources */,
 				AE6B01871C2A445400950BB2 /* DesignableViewController.swift in Sources */,
 				AE6B016D1C2A444900950BB2 /* GradientDesignable.swift in Sources */,
+				AE8964DB1C2CC0D100D3E9F0 /* RootWindowDesignable.swift in Sources */,
 				AE6B01651C2A444000950BB2 /* GradientStartPoint.swift in Sources */,
 				AE6B017A1C2A445100950BB2 /* AnimatableView.swift in Sources */,
 				AE6B01751C2A444900950BB2 /* StatusBarDesignable.swift in Sources */,
@@ -505,6 +510,7 @@
 				AE0B0FEA1C25372200E36B78 /* TableViewCellDesignable.swift in Sources */,
 				AE18787E1C1D980D00300246 /* MaskType.swift in Sources */,
 				AED1A1191BFE983A001346FA /* AnimatableTextView.swift in Sources */,
+				AE8964DC1C2CC2E000D3E9F0 /* RootWindowDesignable.swift in Sources */,
 				AED1A1161BFE983A001346FA /* Animatable.swift in Sources */,
 				AE8C53B01C0F1C0400A775AF /* GradientStartPoint.swift in Sources */,
 				AE0B0FF01C26655000E36B78 /* AnimatableLabel.swift in Sources */,
@@ -724,6 +730,7 @@
 				AE6B01601C2A082300950BB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AE6C66FA1BFBF93500134A35 /* Build configuration list for PBXProject "IBAnimatableApp" */ = {
 			isa = XCConfigurationList;

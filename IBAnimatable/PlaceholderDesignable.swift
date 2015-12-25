@@ -17,4 +17,3 @@ public extension PlaceholderDesignable where Self: UITextField {
     attributedPlaceholder = NSAttributedString(string: placeholder!, attributes: [NSForegroundColorAttributeName: placeholderColor])
   }
 }
-
