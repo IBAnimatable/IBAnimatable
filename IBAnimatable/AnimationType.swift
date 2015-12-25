@@ -42,6 +42,9 @@ public enum AnimationType: String {
   case SqueezeFadeInDown
   case SqueezeFadeInUp
   case SqueezeFadeOutLeft
+  case SqueezeFadeOutRight
+  case SqueezeFadeOutDown
+  case SqueezeFadeOutUp
   case ZoomIn
   case ZoomOut
   case Shake

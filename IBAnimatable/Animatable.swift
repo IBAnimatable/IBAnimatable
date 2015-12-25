@@ -124,6 +124,12 @@ public extension Animatable where Self: UIView {
       squeezeFadeInUp()
     case .SqueezeFadeOutLeft:
       squeezeFadeOutLeft()
+    case .SqueezeFadeOutRight:
+      squeezeFadeOutRight()
+    case .SqueezeFadeOutDown:
+      squeezeFadeOutDown()
+    case .SqueezeFadeOutUp:
+      squeezeFadeOutUp()
     case .ZoomIn:
       zoomIn(completion)
     case .ZoomOut:
@@ -239,13 +245,13 @@ public extension Animatable where Self: UIView {
   public func squeezeOutDown(completion: AnimatableCompletion? = nil) {
     let y = 300 * force
     let scaleY = 3 * force
-    animateOutWithY(y, scaleY: scaleY, completion: completion)
+    animateOutWithY(y, scaleY: scaleY, alpha: 1, completion: completion)
   }
   
   public func squeezeOutUp(completion: AnimatableCompletion? = nil) {
     let y = -300 * force
     let scaleY = 3 * force
-    animateOutWithY(y, scaleY: scaleY, completion: completion)
+    animateOutWithY(y, scaleY: scaleY, alpha: 1, completion: completion)
   }
   
   public func fadeInLeft(completion: AnimatableCompletion? = nil) {
@@ -312,6 +318,24 @@ public extension Animatable where Self: UIView {
     let x = -300 * force
     let scaleX = 3 * force
     animateOutWithX(x, scaleX: scaleX, alpha: 0, completion: completion)
+  }
+
+  public func squeezeFadeOutRight(completion: AnimatableCompletion? = nil) {
+    let x = 300 * force
+    let scaleX = 3 * force
+    animateOutWithX(x, scaleX: scaleX, alpha: 0, completion: completion)
+  }
+  
+  public func squeezeFadeOutDown(completion: AnimatableCompletion? = nil) {
+    let y = 300 * force
+    let scaleY = 3 * force
+    animateOutWithY(y, scaleY: scaleY, alpha: 0, completion: completion)
+  }
+  
+  public func squeezeFadeOutUp(completion: AnimatableCompletion? = nil) {
+    let y = -300 * force
+    let scaleY = 3 * force
+    animateOutWithY(y, scaleY: scaleY, alpha: 0, completion: completion)
   }
 
   public func fadeIn(completion: AnimatableCompletion? = nil) {
@@ -536,8 +560,8 @@ public extension Animatable where Self: UIView {
     animateIn(0, y, 1, scaleY, 1, completion);
   }
   
-  private func animateOutWithY(y: CGFloat, scaleY: CGFloat, completion: AnimatableCompletion? = nil) {
-    animateOut(0, y, 1, scaleY, 1, completion);
+  private func animateOutWithY(y: CGFloat, scaleY: CGFloat, alpha: CGFloat, completion: AnimatableCompletion? = nil) {
+    animateOut(0, y, 1, scaleY, alpha, completion);
   }
   
   private func animateInWithScaleX(scaleX: CGFloat, scaleY: CGFloat, alpha: CGFloat, completion: AnimatableCompletion? = nil) {
