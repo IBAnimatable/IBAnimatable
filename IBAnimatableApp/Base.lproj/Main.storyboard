@@ -114,6 +114,9 @@
                                                 <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="sUc-K8-vaF" kind="show" id="4ed-KQ-MWR"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <userDefinedRuntimeAttributes>
@@ -4508,4 +4511,7 @@
         <image name="walkthrough-bg" width="375" height="667"/>
         <image name="work-bg" width="375" height="179"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="4ed-KQ-MWR"/>
+    </inferredMetricsTieBreakers>
 </document>
