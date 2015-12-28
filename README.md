@@ -11,3 +11,25 @@ As a designer, we love Sketch, which is simple but yet super powerful tool to de
 * Navigation support - We can use default navigation pattern in the App and `IBAnimatable` also adds unwind segues to to unwind or dismiss scene without code.
 * Protocol oriented programming - `IBAnimatable` used protocol oriented programming paradigm. Thanks to Swift protocol extension, it is very easy to support more designable or animatable features. We can even use protocol extension create own set of AnimatableViews instead of using the default ones from `IBAnimatable`.  
 
+## How to use
+
+
+## APIs
+
+## Design in Interface Builder
+
+## Animate in Swift playground
+
+## How to animate programmatically
+
+
+
+## How to install
+
+## How to contribute
+
+## Inspirations
+* `IBDesignable` and `IBInspectable`, The entire project is based on that.
+* Sketch, Interface Builder should be as easy as Sketch to use
+* Framer
+* Spring by Meng To, steal a lot of animation parameters from this project.
