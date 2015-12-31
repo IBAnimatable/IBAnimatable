@@ -28,8 +28,42 @@ To use `IBAnimatable` to design the UI and animations in Interface Builder, just
 We can configure the animation settings in Attribute Inspector. However, Interface Builder doesn't support preview Animations, but we can still prototype animations in Swift playgournd. There are three sample pages to demostrate how to animate in Swift playground. You can find them in [IBAnimatable.playground](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground)
 
 ## How to animate programmatically
+As you saw above, we can prototype an App fully in Interface Builder withouth single line of code, but if `IBAnimatable` also provides programmable APIs to let us fully control the UI and animations. `IBAnimatable` provides simple APIs like `pop()`. We can simplly call them in one line.
 
+```
+view.pop() // pop animation for the view
+view.squeezeFadeInLeft() // squeeze and fade in from left animation
+```  
 
+You can play around all these animations in [Swift playgournd Page - Predefined Animations](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground/Pages/Predefined%20Animations.xcplaygroundpage)
+
+### Animation Properties
+There are some properties we can change to customise the animation. What we need to do is to set the properties and call `animate()` method to start the animation.
+
+```
+// Setup the animation
+view.animationType = "SqueezeInLeft"
+view.delay = 0.5
+view.damping = 0.5
+view.velocity = 2
+view.force = 1
+
+// Start the animation
+view.animate()
+```
+
+You can play around all animations with properties in [Swift playgournd Page - Animation Properties](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground/Pages/Animation%20Properties.xcplaygroundpage)
+
+### Chaining Animations
+Sometimes, we need to run one animation after another one. With `IBAnimatble`, we can easily chain animations together to provide sleek user experience.
+
+```
+// Simplly put the next animation in `{}` closure like below. It is an example to pop the view after squeeze in from the top.
+view.squeezeInDown{ view.pop() }
+
+// Heaps of animations have been chained togehter, it is source code of gif in "Animate in Swift playground" section
+view.squeezeInDown{ view.pop { view.shake{ view.squeeze{ view.wobble{ view.flipX { view.flash{ view.flipY { view.fadeOutDown() } } } } } } } }
+```
 
 ## How to install
 ### Manually install
