@@ -23,8 +23,9 @@ To use `IBAnimatable` to design the UI and animations in Interface Builder, just
 
 
 ## Animate in Swift playground
+![](https://github.com/JakeLin/IBAnimatable/blob/master/Screenshots/AnimateInSwiftPlayground.gif)
 
-
+We can configure the animation settings in Attribute Inspector. However, Interface Builder doesn't support preview Animations, but we can still prototype animations in Swift playgournd. There are three sample pages to demostrate how to animate in Swift playground. You can find them in [IBAnimatable.playground](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground)
 
 ## How to animate programmatically
 
