@@ -11,11 +11,15 @@ As a designer, we love Sketch, which is simple but yet super powerful tool to de
 * Navigation support - We can use default navigation pattern in the App and `IBAnimatable` also adds unwind segues to to unwind or dismiss scene without code.
 * Protocol oriented programming - `IBAnimatable` used protocol oriented programming paradigm. Thanks to Swift protocol extension, it is very easy to support more designable or animatable features. We can even use protocol extension create own set of AnimatableViews instead of using the default ones from `IBAnimatable`.  
 
-## How to use
-
-
 ## Design in Interface Builder
+![](https://raw.githubusercontent.com/JakeLin/IBAnimatable/master/Screenshots/DesignInInterfaceBuilder.png)
 
+To use `IBAnimatable` to design the UI and animations in Interface Builder, just follow few steps as below:
+
+1. Open a storyboard or Xib file.
+2. Drag and drop a view or controller to a ViewController.
+3. In Identity Inspector, connect the view or controller to `Animatable` classes, you can find all `Animatable` classes in APIs section.
+4. Configure the UI and animations in Attribute Inspector.
 
 
 ## Animate in Swift playground
