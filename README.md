@@ -14,11 +14,13 @@ As a designer, we love Sketch, which is simple but yet super powerful tool to de
 ## How to use
 
 
-## APIs
 
 ## Design in Interface Builder
 
+
 ## Animate in Swift playground
+
+
 
 ## How to animate programmatically
 
@@ -26,10 +28,15 @@ As a designer, we love Sketch, which is simple but yet super powerful tool to de
 
 ## How to install
 
+
+## APIs
+
+
 ## How to contribute
 
 ## Inspirations
-* `IBDesignable` and `IBInspectable`, The entire project is based on that.
-* Sketch, Interface Builder should be as easy as Sketch to use
+* `IBDesignable` and `IBInspectable` - The entire project is based on that.
+* Sketch -  Interface Builder should be as easy as Sketch to use
 * Framer
-* Spring by Meng To, steal a lot of animation parameters from this project.
+* [Spring by Meng To](github.com/MengTo/Spring) - steal a lot of animation parameters from this project.
+* [Invision ToDo App UI Kit](http://www.invisionapp.com/do), The demo App's original design is from this UI Kit and redone in Interface Builder. We also added interaction, navigation and animations.
