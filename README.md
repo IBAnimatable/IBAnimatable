@@ -11,6 +11,7 @@ As a designer, we love Sketch, which is simple but yet super powerful tool to de
 * Navigation support - We can use default navigation pattern in the App and `IBAnimatable` also adds unwind segues to to unwind or dismiss scene without code.
 * Protocol oriented programming - `IBAnimatable` used protocol oriented programming paradigm. Thanks to Swift protocol extension, it is very easy to support more designable or animatable features. We can even use protocol extension create own set of AnimatableViews instead of using the default ones from `IBAnimatable`.  
 
+
 ## Design in Interface Builder
 ![](https://raw.githubusercontent.com/JakeLin/IBAnimatable/master/Screenshots/DesignInInterfaceBuilder.png)
 
@@ -93,3 +94,7 @@ TBD [Issue #6 - Carthage support ](https://github.com/JakeLin/IBAnimatable/issue
 * Framer
 * [Spring by Meng To](github.com/MengTo/Spring) - steal a lot of animation parameters from this project.
 * [Invision ToDo App UI Kit](http://www.invisionapp.com/do), The demo App's original design is from this UI Kit and redone in Interface Builder. We also added interaction, navigation and animations.
+
+## License
+`IBAnimatable` is released under the MIT license. See [LICENSE](https://github.com/JakeLin/IBAnimatable/blob/master/LICENSE) for details.
+
