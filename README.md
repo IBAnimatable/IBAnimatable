@@ -27,6 +27,20 @@ As a designer, we love Sketch, which is simple but yet super powerful tool to de
 
 
 ## How to install
+### Manually install
+Copy and paste `IBAnimatable` folder in your Xcode project.
+
+### Git submodule
+TBD [Issue #22 - Swift package manager support](https://github.com/JakeLin/IBAnimatable/issues/22)
+
+### Swift package manager
+TBD [Issue #5 - Swift package manager support](https://github.com/JakeLin/IBAnimatable/issues/5)
+
+### CocoaPods
+TBD [Issue #7 - CocoaPods support](https://github.com/JakeLin/IBAnimatable/issues/7)
+
+### Carthage 
+TBD [Issue #6 - Carthage support ](https://github.com/JakeLin/IBAnimatable/issues/6)
 
 
 ## APIs
