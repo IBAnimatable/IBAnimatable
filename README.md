@@ -1,15 +1,17 @@
 # IBAnimatable
 IBAnimatable helps designers and developers design UI, navigations, interactions and animations in Interface Builder.
 
-As a designer, we love Sketch, which is simple but yet super powerful tool to design UI. But Sketch doesn't support navigations, interactions and animations, we may need another tool like Framer to design them. Also, to make a shippable App, we need to use Xcode and Interface Builder to redo the UI and animations. To smooth the process and minimise the waste, we create `IBAnimatable` to make Interface Builder designable and animatable.   
+As a designer, we love Sketch, which is a simple but yet super powerful tool to design UI. However, Sketch doesn't support navigations, interactions and animations, we may need another tool like Framer to design them. Also, to make a shippable App, we need to use Xcode and Interface Builder to redo the UI and animations. To smooth the process and minimise the waste, we create `IBAnimatable` to make Interface Builder designable and animatable.   
 
 ## Features
-* From design to shippable App - What you design in Interface Builder is what the App exactly looks like. Fewer overheads mean less time to build quality Apps and more time to enjoy coffee☕️.
+* From design to shippable App - What you design in Interface Builder is what the App exactly looks like. 
 * Designer friendly - Sketch-ish configuration panel on Attributes Inspector to lower the learning curve to use Interface Builder.   
-* Animation desigin support in Swift playground - Design motion/animation on Swift playground to save time for runing on simulator or actual iOS devices.
-* Built-in Auto Layout support - We can use Auto Layout with `IBAnimatable` to support multiple iOS devices. 
-* Navigation support - We can use default navigation pattern in the App and `IBAnimatable` also adds unwind segues to to unwind or dismiss scene without code.
+* Animation desigin support in Swift playground - Design animations on Swift playground to save time for runing on simulator or actual iOS devices.
+* Built-in Auto Layout support - We can use Auto Layout and Size Classes with `IBAnimatable` to support multiple iOS devices. 
+* Navigation support - We can use default navigation pattern in the App and `IBAnimatable` also adds unwind segues to unwind or dismiss scene without any code.
 * Protocol oriented programming - `IBAnimatable` used protocol oriented programming paradigm. Thanks to Swift protocol extension, it is very easy to support more designable or animatable features. We can even use protocol extension create own set of AnimatableViews instead of using the default ones from `IBAnimatable`.  
+
+## How to run sample project
 
 
 ## Design in Interface Builder
@@ -87,6 +89,16 @@ TBD [Issue #6 - Carthage support ](https://github.com/JakeLin/IBAnimatable/issue
 
 
 ## How to contribute
+All of us can contribute to this project. Fewer overheads mean less time to build quality Apps and more time to enjoy coffee ☕️.
+
+If you are a design, you can design in Interface Builder with `IBAnimatable` or redo your existing design from Sketch or Photoshop. You should be able to do <del>all</del> most of design work in Interface Builder. If you have any feature request, please [create a GitHub Issue](https://github.com/JakeLin/IBAnimatable/issues/new) and we will put it in the backlog. If you have done any design with `IBAnimatable`, please let us know via creating Pull Request or GitHub Issue. We will add it to Readme file.
+
+If you are a developer, you can work on features or fix bugs, please check out [GitHub Issues](https://github.com/JakeLin/IBAnimatable/issues) to find out the backlog. If you have used `IBAnimatable` in you App, please let us know via creating Pull Request or GitHub Issue. We will add it to Readme file.
+
+If you are good at English, please correct my English 😁. If you are good at other languages, please create a Readme file in those languages.
+
+If you like the project, please share it with the other designers and developers, and star 🌟 the project. 🤗
+
 
 ## Inspirations
 * `IBDesignable` and `IBInspectable` - The entire project is based on that.
