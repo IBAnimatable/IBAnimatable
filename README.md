@@ -87,6 +87,25 @@ TBD [Issue #6 - Carthage support ](https://github.com/JakeLin/IBAnimatable/issue
 
 ## APIs
 
+### Animatable UI Elements 
+The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and connect with `Animatable` UI elements in Identity Inspector.
+
+| UIKit elements | Animatable UI elements |   |
+| ------------- |:-------------:| -----:|
+| UIView | AnimatableView | |
+| UIBarButtonItem | AnimatableBarButtonItem | |
+| UIButton | AnimatableButton | |
+| UIButton | AnimatableCheckBox | Connect UIButton as AnimatableCheckBox to make CheckBox control |
+| UIImageView | AnimatableImageView | |
+| UILabel | AnimatableLabel | To style the text in Label, we can use Interface Builder built-in Attributed Text |
+| UIStackView | AnimatableStackView | |
+| UITableView | AnimatableTableView | |
+| UITableViewCell | AnimatableTableViewCell | |
+| UITextField | AnimatableTextField | |
+| UITextView | AnimatableTextView | |
+| UIView | DesignableGradientView | |
+| UINavigationBar | DesignableNavigationBar | |
+
 
 ## How to contribute
 All of us can contribute to this project. Fewer overheads mean less time to build quality Apps and more time to enjoy coffee ☕️.
@@ -104,7 +123,7 @@ If you like the project, please share it with the other designers and developers
 * `IBDesignable` and `IBInspectable` - The entire project is based on that.
 * Sketch -  Interface Builder should be as easy as Sketch to use
 * Framer
-* [Spring by Meng To](github.com/MengTo/Spring) - steal a lot of animation parameters from this project.
+* [Spring by Meng To](https://github.com/MengTo/Spring) - steal a lot of animation parameters from this project.
 * [Invision ToDo App UI Kit](http://www.invisionapp.com/do), The demo App's original design is from this UI Kit and redone in Interface Builder. We also added interaction, navigation and animations.
 
 ## License
