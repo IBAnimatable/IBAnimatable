@@ -110,14 +110,33 @@ The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and con
 ### Designable protocols
 Because of the bueaty of protocol oriented programming in Swift, We don't have to use Animatable UI elements to unlocked the power of `IBAnimatable`. We can create our own custom UI elements and conform to `IBAnimatable` protocols to use the default implementation in protocol extension. Here are supported Designable protocols
 
-#### `BlurDesignable`
+#### `BarButtonItemDesignable`
 
+#### `BlurDesignable`
 
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
-| blurEffectStyle | String | Support three different blur effects: `ExtraLight`, `Light` and `Dark` defined in `BlurEffectStyle`. The look of blur effect in Interface Builder is different from Simulator or device |
-| blurOpacity | CGFloat | Opacity of the blur effect specified above. From 0.0 to 1.0, because sometimes the blur effect is too heavy, we can use opacity to smooth the blur effect |
+| blurEffectStyle | String | Support three different blur effects: `ExtraLight`, `Light` and `Dark` defined in `BlurEffectStyle`. The look of blur effect in Interface Builder is different from Simulator or device. |
+| blurOpacity | CGFloat | Opacity of the blur effect specified above. From 0.0 to 1.0. |
 
+
+#### `BorderDesignable`
+#### `CheckBoxDesignable`
+#### `CornerDesignable`
+#### `FillDesignable`
+#### `GradientDesignable`
+#### `NavigationBarDesignable`
+#### `MaskDesignable`
+#### `PaddingDesignable`
+#### `PlaceholderDesignable`
+#### `RootWindowDesignable`
+#### `RotationDesignable`
+#### `ShadowDesignable`
+#### `SideImageDesignable`
+#### `StatusBarDesignable`
+#### `TableViewCellDesignable`
+#### `TintDesignable`
+#### `ViewControllerDesignable`
 
 ## How to contribute
 All of us can contribute to this project. Fewer overheads mean less time to build quality Apps and more time to enjoy coffee ☕️.

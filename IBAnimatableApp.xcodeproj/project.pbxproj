@@ -302,6 +302,7 @@
 		AED1A1231BFEA319001346FA /* Designable */ = {
 			isa = PBXGroup;
 			children = (
+				AE3C54461C217F7F00829B10 /* BarButtonItemDesignable.swift */,
 				AE299BD91C0338C70018CCDC /* BlurDesignable.swift */,
 				AED1A1101BFE983A001346FA /* BorderDesignable.swift */,
 				AE0B0FED1C263A1900E36B78 /* CheckBoxDesignable.swift */,
@@ -319,7 +320,6 @@
 				AE0FADAA1C20357C00B5289B /* StatusBarDesignable.swift */,
 				AE0B0FE91C25372200E36B78 /* TableViewCellDesignable.swift */,
 				AE299BDB1C03BB670018CCDC /* TintDesignable.swift */,
-				AE3C54461C217F7F00829B10 /* BarButtonItemDesignable.swift */,
 				AE0FAD421C1ED52800B5289B /* ViewControllerDesignable.swift */,
 			);
 			name = Designable;
