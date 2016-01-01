@@ -40,7 +40,7 @@ view.squeezeFadeInLeft() // squeeze and fade in from left animation
 
 You can play around all these animations in [Swift playgournd Page - Predefined Animations](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground/Pages/Predefined%20Animations.xcplaygroundpage)
 
-### Animation Properties
+### Animation properties
 There are some properties we can change to customise the animation. What we need to do is to set the properties and call `animate()` method to start the animation.
 
 ```
@@ -57,7 +57,7 @@ view.animate()
 
 You can play around all animations with properties in [Swift playgournd Page - Animation Properties](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground/Pages/Animation%20Properties.xcplaygroundpage)
 
-### Chaining Animations
+### Chaining animations
 Sometimes, we need to run one animation after another one. With `IBAnimatble`, we can easily chain animations together to provide sleek user experience.
 
 ```
@@ -87,11 +87,11 @@ TBD [Issue #6 - Carthage support ](https://github.com/JakeLin/IBAnimatable/issue
 
 ## APIs
 
-### Animatable UI Elements 
+### Animatable UI elements 
 The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and connect with `Animatable` UI elements in Identity Inspector.
 
-| UIKit elements | Animatable UI elements |   |
-| ------------- |:-------------:| -----:|
+| UIKit elements | Animatable UI elements | Remark |
+| ------------- |:-------------:| ----- |
 | UIView | AnimatableView | |
 | UIBarButtonItem | AnimatableBarButtonItem | |
 | UIButton | AnimatableButton | |
@@ -105,6 +105,18 @@ The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and con
 | UITextView | AnimatableTextView | |
 | UIView | DesignableGradientView | |
 | UINavigationBar | DesignableNavigationBar | |
+| UIViewController | DesignableViewController | |
+
+### Designable protocols
+Because of the bueaty of protocol oriented programming in Swift, We don't have to use Animatable UI elements to unlocked the power of `IBAnimatable`. We can create our own custom UI elements and conform to `IBAnimatable` protocols to use the default implementation in protocol extension. Here are supported Designable protocols
+
+#### `BlurDesignable`
+
+
+| Property name | Data type | Remark |
+| ------------- |:-------------:| ----- |
+| blurEffectStyle | String | Support three different blur effects: `ExtraLight`, `Light` and `Dark` defined in `BlurEffectStyle`. The look of blur effect in Interface Builder is different from Simulator or device |
+| blurOpacity | CGFloat | Opacity of the blur effect specified above. From 0.0 to 1.0, because sometimes the blur effect is too heavy, we can use opacity to smooth the blur effect |
 
 
 ## How to contribute
