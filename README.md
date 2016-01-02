@@ -139,6 +139,10 @@ Because of the bueaty of protocol oriented programming in Swift, We don't have t
 | uncheckedImage | Optional&lt;UIImage> | The image to display when CheckBox is unchecked |
 
 #### `CornerDesignable`
+| Property name | Data type | Remark |
+| ------------- |:-------------:| ----- |
+| cornerRadius | CGFloat | rounded corner radius. Default value is `CGFloat.NaN` |
+
 #### `FillDesignable`
 #### `GradientDesignable`
 #### `NavigationBarDesignable`
