@@ -117,23 +117,27 @@ Because of the bueaty of protocol oriented programming in Swift, We don't have t
 
 
 #### `BlurDesignable`
-
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
 | blurEffectStyle | Optional&lt;String> | Support three different blur effects: `ExtraLight`, `Light` and `Dark` defined in `BlurEffectStyle`. The look of blur effect in Interface Builder is different from Simulator or device. |
-| blurOpacity | CGFloat | Opacity of the blur effect specified above. From 0.0 to 1.0. |
+| blurOpacity | CGFloat | Opacity of the blur effect specified above. Default value is `CGFloat.NaN`, value is from 0.0 to 1.0. |
 
 
 #### `BorderDesignable`
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
 | borderColor | Optional&lt;UIColor> | border color |
-| borderWidth | CGFloat | border width, default values is `CGFloat.NaN` |
+| borderWidth | CGFloat | border width. Default value is `CGFloat.NaN`, value is greater than 0 |
 | borderSide | Optional&lt;String> | border side, `Top`, `Right`, `Bottom` or `Left`. If not specify, then display four sides |
 
 
-
 #### `CheckBoxDesignable`
+| Property name | Data type | Remark |
+| ------------- |:-------------:| ----- |
+| checked | Bool | Default value is `false` |
+| checkedImage | Optional&lt;UIImage> | The image to display when CheckBox is checked |
+| uncheckedImage | Optional&lt;UIImage> | The image to display when CheckBox is unchecked |
+
 #### `CornerDesignable`
 #### `FillDesignable`
 #### `GradientDesignable`
