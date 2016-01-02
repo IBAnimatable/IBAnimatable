@@ -28,7 +28,7 @@ import UIKit
   }
   
   // MARK: - BorderDesignable
-  @IBInspectable public var borderColor: UIColor = UIColor.clearColor()
+  @IBInspectable public var borderColor: UIColor?
   @IBInspectable public var borderWidth: CGFloat = 0
   @IBInspectable public var borderSide: String = ""
 

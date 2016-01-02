@@ -9,7 +9,7 @@ public protocol BorderDesignable {
   /**
     `border-color`, border color, default value is `UIColor.clearColor()`
   */
-  var borderColor: UIColor { get set }
+  var borderColor: UIColor? { get set }
 
   /**
    `border-width`, border width, default value is `0`
@@ -25,14 +25,19 @@ public protocol BorderDesignable {
 
 public extension BorderDesignable where Self: UIView {
   public func configBorder() {
-    if (borderColor == UIColor.clearColor() || borderWidth == 0) {
+    guard let unwrappedBorderColor = borderColor else {
+      return
+    }
+    
+    if (borderWidth == 0) {
       return
     }
     
     // if borderSide has been specified, only display one side
     if let side = BorderSide(rawValue: borderSide) {
       let border = CALayer()
-      border.backgroundColor = borderColor.CGColor
+      
+      border.backgroundColor = unwrappedBorderColor.CGColor
       
       switch side {
       case .Top:
@@ -49,7 +54,7 @@ public extension BorderDesignable where Self: UIView {
     }
     else {
       // Otherwise, display all border sides
-      layer.borderColor = borderColor.CGColor
+      layer.borderColor = unwrappedBorderColor.CGColor
       layer.borderWidth = borderWidth
     }
   }
