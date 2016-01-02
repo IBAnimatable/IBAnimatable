@@ -7,7 +7,7 @@ import UIKit
 
 public protocol BorderDesignable {
   /**
-    `border-color`, border color, default value is `UIColor.clearColor()`
+    `border-color`, border color
   */
   var borderColor: UIColor? { get set }
 

@@ -9,7 +9,7 @@ public protocol BlurDesignable {
   /**
    blur effect style: `ExtraLight`, `Light` or `Dark`
    */
-  var blurEffectStyle: String { get set }
+  var blurEffectStyle: String? { get set }
   
   var blurOpacity: CGFloat { get set }
 }
@@ -19,8 +19,12 @@ public extension BlurDesignable where Self: UIView {
    configBlurEffectStyle method, should be called in layoutSubviews() method
    */
   public func configBlurEffectStyle() {
+    guard let unwrappedBlurEffectStyle = blurEffectStyle else {
+      return
+    }
+    
     var style: UIBlurEffectStyle?
-    guard let blurEffectStyle = BlurEffectStyle(rawValue: blurEffectStyle) else {
+    guard let blurEffectStyle = BlurEffectStyle(rawValue: unwrappedBlurEffectStyle) else {
       return
     }
     
