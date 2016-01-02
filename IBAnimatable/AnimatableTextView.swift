@@ -30,7 +30,7 @@ import UIKit
   // MARK: - BorderDesignable
   @IBInspectable public var borderColor: UIColor?
   @IBInspectable public var borderWidth: CGFloat = 0
-  @IBInspectable public var borderSide: String = ""
+  @IBInspectable public var borderSide: String?
 
   // MARK: - Animatable
   @IBInspectable public var animationType: String = ""

@@ -31,7 +31,7 @@ import UIKit
   // MARK: - BorderDesignable
   @IBInspectable public var borderColor: UIColor?
   @IBInspectable public var borderWidth: CGFloat = 0
-  @IBInspectable public var borderSide: String = ""
+  @IBInspectable public var borderSide: String?
   
   // MARK: - RotationDesignable
   @IBInspectable public var rotate: CGFloat = 0 {

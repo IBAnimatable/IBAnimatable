@@ -19,7 +19,7 @@ public protocol BorderDesignable {
   /**
    border side: Top, Right, Bottom or Left, if not specified, all border sides will display,
    */
-  var borderSide: String { get set }
+  var borderSide: String? { get set }
   
 }
 
@@ -33,8 +33,12 @@ public extension BorderDesignable where Self: UIView {
       return
     }
     
+    guard let unwrappedBorderSide = borderSide else {
+      return
+    }
+    
     // if borderSide has been specified, only display one side
-    if let side = BorderSide(rawValue: borderSide) {
+    if let side = BorderSide(rawValue: unwrappedBorderSide) {
       let border = CALayer()
       
       border.backgroundColor = unwrappedBorderColor.CGColor
