@@ -121,7 +121,6 @@ import UIKit
   public override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
     if touchInside {
       checked = !checked
-      selected = checked
       sendActionsForControlEvents(.ValueChanged)
     }
     super.touchesEnded(touches, withEvent: event)
