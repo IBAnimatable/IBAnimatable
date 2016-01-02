@@ -8,7 +8,7 @@ import UIKit
 @IBDesignable public class AnimatableButton: UIButton, CornerDesignable, FillDesignable, BorderDesignable, ShadowDesignable, MaskDesignable, Animatable {
   
   // MARK: - CornerDesignable
-  @IBInspectable public var cornerRadius: CGFloat = 0 {
+  @IBInspectable public var cornerRadius: CGFloat = CGFloat.NaN {
     didSet {
       configCornerRadius()
     }

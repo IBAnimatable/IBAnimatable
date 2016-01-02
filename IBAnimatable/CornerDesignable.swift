@@ -14,8 +14,8 @@ public protocol CornerDesignable {
 
 public extension CornerDesignable where Self: UIView {
   public func configCornerRadius() {
-    layer.cornerRadius = cornerRadius
-    // if `layer.masksToBounds == true` then shadow doesn't work any more.
-    // layer.masksToBounds = cornerRadius > 0
+    if !cornerRadius.isNaN && cornerRadius >= 0 {
+      layer.cornerRadius = cornerRadius
+    }
   }
 }

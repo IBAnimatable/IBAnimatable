@@ -9,7 +9,7 @@ import UIKit
 @IBDesignable public class AnimatableStackView: UIStackView, CornerDesignable, FillDesignable, BorderDesignable, RotationDesignable, ShadowDesignable, BlurDesignable, TintDesignable, GradientDesignable, MaskDesignable, Animatable {
   
   // MARK: - CornerDesignable
-  @IBInspectable public var cornerRadius: CGFloat = 0 {
+  @IBInspectable public var cornerRadius: CGFloat = CGFloat.NaN {
     didSet {
       configCornerRadius()
     }

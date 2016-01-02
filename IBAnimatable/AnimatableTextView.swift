@@ -8,7 +8,7 @@ import UIKit
 @IBDesignable public class AnimatableTextView: UITextView, CornerDesignable, FillDesignable, BorderDesignable, Animatable {
   
   // MARK: - CornerDesignable
-  @IBInspectable public var cornerRadius: CGFloat = 0 {
+  @IBInspectable public var cornerRadius: CGFloat = CGFloat.NaN {
     didSet {
       configCornerRadius()
     }

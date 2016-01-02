@@ -29,7 +29,7 @@ public extension BorderDesignable where Self: UIView {
       return
     }
     
-    if (borderWidth.isNaN || borderWidth <= 0) {
+    if borderWidth.isNaN || borderWidth <= 0 {
       return
     }
     

@@ -27,7 +27,7 @@ import UIKit
   }
   
   // MARK: - CornerDesignable
-  @IBInspectable public var cornerRadius: CGFloat = 0 {
+  @IBInspectable public var cornerRadius: CGFloat = CGFloat.NaN {
     didSet {
       configCornerRadius()
     }
