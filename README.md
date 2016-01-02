@@ -111,6 +111,10 @@ The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and con
 Because of the bueaty of protocol oriented programming in Swift, We don't have to use Animatable UI elements to unlocked the power of `IBAnimatable`. We can create our own custom UI elements and conform to `IBAnimatable` protocols to use the default implementation in protocol extension. Here are supported Designable protocols
 
 #### `BarButtonItemDesignable`
+| Property name | Data type | Remark |
+| ------------- |:-------------:| ----- |
+| roundedImage | UIImage? | By default, Interface Builder can only support outline images for Bar Button Item. We can set this property to display a rounded image. The image can not be previewed in Interface Builder. |
+
 
 #### `BlurDesignable`
 
