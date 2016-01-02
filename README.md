@@ -113,18 +113,26 @@ Because of the bueaty of protocol oriented programming in Swift, We don't have t
 #### `BarButtonItemDesignable`
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
-| roundedImage | UIImage? | By default, Interface Builder can only support outline images for Bar Button Item. We can set this property to display a rounded image. The image can not be previewed in Interface Builder. |
+| roundedImage | Optional&lt;UIImage> | By default, Interface Builder can only support outline images for Bar Button Item. We can set this property to display a rounded image. The image can not be previewed in Interface Builder. |
 
 
 #### `BlurDesignable`
 
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
-| blurEffectStyle | String | Support three different blur effects: `ExtraLight`, `Light` and `Dark` defined in `BlurEffectStyle`. The look of blur effect in Interface Builder is different from Simulator or device. |
+| blurEffectStyle | Optional&lt;String> | Support three different blur effects: `ExtraLight`, `Light` and `Dark` defined in `BlurEffectStyle`. The look of blur effect in Interface Builder is different from Simulator or device. |
 | blurOpacity | CGFloat | Opacity of the blur effect specified above. From 0.0 to 1.0. |
 
 
 #### `BorderDesignable`
+| Property name | Data type | Remark |
+| ------------- |:-------------:| ----- |
+| borderColor | Optional&lt;UIColor> | border color |
+| borderWidth | CGFloat | border width, default values is `CGFloat.NaN` |
+| borderSide | Optional&lt;String> | border side, `Top`, `Right`, `Bottom` or `Left`. If not specify, then display four sides |
+
+
+
 #### `CheckBoxDesignable`
 #### `CornerDesignable`
 #### `FillDesignable`
