@@ -11,7 +11,7 @@ public protocol BlurDesignable {
    */
   var blurEffectStyle: String? { get set }
   
-  var blurOpacity: Double? { get set }
+  var blurOpacity: CGFloat { get set }
 }
 
 public extension BlurDesignable where Self: UIView {
@@ -40,10 +40,8 @@ public extension BlurDesignable where Self: UIView {
     let blurEffect = UIBlurEffect(style: style!)
     let blurEffectView = UIVisualEffectView(effect: blurEffect)
     blurEffectView.frame = bounds
-    print(blurOpacity)
-    let opacity = blurOpacity ?? 1.0 // Default is 1.0
-    blurEffectView.alpha = CGFloat(opacity)
-    print(blurEffectView.alpha)
+    let opacity = blurOpacity.isNaN ? 1.0 : blurOpacity // Default is 1.0
+    blurEffectView.alpha = opacity
     if (layer.cornerRadius > 0) {
       blurEffectView.layer.cornerRadius = layer.cornerRadius
       blurEffectView.clipsToBounds = true
