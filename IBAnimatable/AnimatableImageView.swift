@@ -72,7 +72,7 @@ import UIKit
   
   // MARK: - BlurDesignable
   @IBInspectable public var blurEffectStyle: String?
-  @IBInspectable public var blurOpacity: CGFloat = 1
+  @IBInspectable public var blurOpacity: Double?
   
   // MARK: - TintDesignable
   @IBInspectable public var tintOpacity: CGFloat = 0
