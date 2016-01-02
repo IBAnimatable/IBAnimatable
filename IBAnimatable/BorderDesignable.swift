@@ -12,7 +12,7 @@ public protocol BorderDesignable {
   var borderColor: UIColor? { get set }
 
   /**
-   `border-width`, border width, default value is `0`
+   `border-width`, border width
    */
   var borderWidth: CGFloat { get set }
   
@@ -29,7 +29,7 @@ public extension BorderDesignable where Self: UIView {
       return
     }
     
-    if (borderWidth == 0) {
+    if (borderWidth.isNaN || borderWidth <= 0) {
       return
     }
     

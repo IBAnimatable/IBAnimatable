@@ -48,7 +48,7 @@ import UIKit
   
   // MARK: - BorderDesignable
   @IBInspectable public var borderColor: UIColor?
-  @IBInspectable public var borderWidth: CGFloat = 0
+  @IBInspectable public var borderWidth: CGFloat = CGFloat.NaN
   @IBInspectable public var borderSide: String?
   
   // MARK: - ShadowDesignable
