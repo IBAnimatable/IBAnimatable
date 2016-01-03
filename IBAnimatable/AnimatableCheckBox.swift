@@ -40,7 +40,7 @@ import UIKit
     }
   }
   
-  @IBInspectable public var opacity: CGFloat = 1 {
+  @IBInspectable public var opacity: CGFloat = CGFloat.NaN {
     didSet {
       configOpacity()
     }

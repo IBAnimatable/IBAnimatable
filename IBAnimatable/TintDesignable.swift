@@ -33,16 +33,15 @@ public extension TintDesignable where Self: UIView {
    configTintedColor method, should be called in layoutSubviews() method
    */
   public func configTintedColor() {
-    if (tintOpacity > 0 && tintOpacity <= 1) {
+    if tintOpacity >= 0 && tintOpacity <= 1 {
       addColorView(UIColor.whiteColor(), opacity: tintOpacity)
     }
     
-    if (shadeOpacity > 0 && shadeOpacity <= 1) {
+    if shadeOpacity >= 0 && shadeOpacity <= 1 {
       addColorView(UIColor.blackColor(), opacity: shadeOpacity)
     }
     
-    if (toneColor != UIColor.clearColor()
-      && toneOpacity > 0 && toneOpacity <= 1) {
+    if toneColor != UIColor.clearColor() && toneOpacity >= 0 && toneOpacity <= 1 {
       addColorView(toneColor, opacity: toneOpacity)
     }
   }
@@ -51,7 +50,7 @@ public extension TintDesignable where Self: UIView {
     let subview = UIView(frame: self.bounds)
     subview.backgroundColor = color
     subview.alpha = opacity
-    if (layer.cornerRadius > 0) {
+    if layer.cornerRadius > 0 {
       subview.layer.cornerRadius = layer.cornerRadius
     }
     subview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
