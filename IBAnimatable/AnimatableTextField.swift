@@ -64,19 +64,19 @@ import UIKit
   }
   
   // MARK: - PaddingDesignable
-  @IBInspectable public var paddingLeft: CGFloat = 0 {
+  @IBInspectable public var paddingLeft: CGFloat = CGFloat.NaN {
     didSet {
       configPaddingLeft()
     }
   }
   
-  @IBInspectable public var paddingRight: CGFloat = 0 {
+  @IBInspectable public var paddingRight: CGFloat = CGFloat.NaN {
     didSet {
       configPaddingRight()
     }
   }
 
-  @IBInspectable public var paddingSide: CGFloat = 0 {
+  @IBInspectable public var paddingSide: CGFloat = CGFloat.NaN {
     didSet {
       configPaddingSide()
     }
