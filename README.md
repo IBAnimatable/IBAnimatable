@@ -120,7 +120,7 @@ Because of the bueaty of protocol oriented programming in Swift, We don't have t
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
 | blurEffectStyle | Optional&lt;String> | Support three different blur effects: `ExtraLight`, `Light` and `Dark` defined in `BlurEffectStyle`. The look of blur effect in Interface Builder is different from Simulator or device. |
-| blurOpacity | CGFloat | Opacity of the blur effect specified above. Default value is `CGFloat.NaN`, value is from 0.0 to 1.0. |
+| blurOpacity | CGFloat | Opacity of the blur effect specified above. Default value is `CGFloat.NaN`, the value is from 0.0 to 1.0. |
 
 
 #### `BorderDesignable`
@@ -144,6 +144,11 @@ Because of the bueaty of protocol oriented programming in Swift, We don't have t
 | cornerRadius | CGFloat | rounded corner radius. Default value is `CGFloat.NaN` |
 
 #### `FillDesignable`
+| Property name | Data type | Remark |
+| ------------- |:-------------:| ----- |
+| fillColor | Optional&lt;UIColor> | fill color of the UI Element |
+| opacity | CGFloat | opacity, alpha of the UI Element, Dafault value is `CGFloat.NaN`, the value is from 0.0 to 1.0 |
+
 #### `GradientDesignable`
 #### `NavigationBarDesignable`
 #### `MaskDesignable`
