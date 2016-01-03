@@ -167,6 +167,14 @@ Because of the bueaty of protocol oriented programming in Swift, We don't have t
 | maskType | Optional&lt;String> | maks type, eg. `Circle` |
 
 #### `PaddingDesignable`
+It is used in `AnimatableTextField` to add padding on either or both sides.
+
+| Property name | Data type | Remark |
+| ------------- |:-------------:| ----- |
+| paddingLeft | CGFloat | padding on left-hand side. Default value is `CGFloat.NaN` |
+| paddingRight | CGFloat | padding on right-hand side. Default value is `CGFloat.NaN` |
+| paddingSide | CGFloat | padding on both sides. Default value is `CGFloat.NaN` |
+
 
 #### `PlaceholderDesignable`
 
