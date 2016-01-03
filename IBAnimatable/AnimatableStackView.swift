@@ -87,7 +87,7 @@ import UIKit
   @IBInspectable public var startPoint: String?
   
   // MARK: - MaksDesignable
-  @IBInspectable public var maskType: String = "" {
+  @IBInspectable public var maskType: String? {
     didSet {
       configMask()
     }

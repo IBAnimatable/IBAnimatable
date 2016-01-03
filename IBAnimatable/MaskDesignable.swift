@@ -6,16 +6,16 @@
 import UIKit
 
 public protocol MaskDesignable {
-  var maskType: String { get set }
+  var maskType: String? { get set }
 }
 
 public extension MaskDesignable where Self: UIView {
   public func configMask() {
-    guard let maskType = MaskType(rawValue: maskType) else {
+    guard let unwrappedMaskType = maskType, rawMaskType = MaskType(rawValue: unwrappedMaskType) else {
       return
     }
     
-    switch(maskType) {
+    switch(rawMaskType) {
     case .Circle:
       maskCircle()
     }
