@@ -156,8 +156,11 @@ Because of the bueaty of protocol oriented programming in Swift, We don't have t
 | endColor | Optional&lt;UIColor> | end gradient color |
 | startPoint | Optional&lt;String> | start direction point, can find in `GradientStartPoint` |
 
-
 #### `NavigationBarDesignable`
+| Property name | Data type | Remark |
+| ------------- |:-------------:| ----- |
+| solidColor | Bool | display solid color only. Default value is `false`. Need to manually untick translucent in Interface Builder, otherwise, it will have constrait issue in IB although it is correct in run time. |
+
 #### `MaskDesignable`
 #### `PaddingDesignable`
 #### `PlaceholderDesignable`
