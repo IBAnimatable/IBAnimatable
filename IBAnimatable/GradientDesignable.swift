@@ -14,14 +14,14 @@ public protocol GradientDesignable {
 public extension GradientDesignable where Self: UIView {
   public func configGradent() {
     // Return if both colors are unset.
-    guard let unwrappedStartColor = startColor, unwrappedEndColor = endColor, unwrappedStartPoint = startPoint else {
+    guard let unwrappedStartColor = startColor, unwrappedEndColor = endColor else {
       return
     }
     
     // Default value is `.Top`
-    var startPointString = unwrappedStartPoint
-    if GradientStartPoint(rawValue: unwrappedStartPoint) == nil {
-      startPointString = "Top"
+    var startPointString = "Top"
+    if let unwrappedStartPoint = startPoint, _ = GradientStartPoint(rawValue: unwrappedStartPoint) {
+      startPointString = unwrappedStartPoint
     }
     
     let gradientView = DesignableGradientView(frame: self.bounds)
