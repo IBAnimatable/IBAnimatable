@@ -6,13 +6,15 @@
 import UIKit
 
 public protocol FillDesignable {
-  var fillColor: UIColor { get set }
+  var fillColor: UIColor? { get set }
   var opacity: CGFloat { get set }
 }
 
 public extension FillDesignable where Self: UIView {
   public func configFillColor() {
-    backgroundColor = fillColor
+    if let unwrappedFillColor = fillColor {
+      backgroundColor = unwrappedFillColor
+    }
   }
 
   public func configOpacity() {
@@ -29,7 +31,9 @@ public extension FillDesignable where Self: UIView {
 
 public extension FillDesignable where Self: UITableViewCell {
   public func configFillColor() {
-    backgroundColor = fillColor
-    contentView.backgroundColor = fillColor
+    if let unwrappedFillColor = fillColor {
+      backgroundColor = unwrappedFillColor
+      contentView.backgroundColor = unwrappedFillColor
+    }
   }
 }

@@ -15,7 +15,7 @@ import UIKit
   }
   
   // MARK: - FillDesignable
-  @IBInspectable public var fillColor: UIColor = UIColor.whiteColor() {
+  @IBInspectable public var fillColor: UIColor? {
     didSet {
       configFillColor()
     }

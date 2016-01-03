@@ -8,7 +8,7 @@ import UIKit
 @IBDesignable public class AnimatableTableView: UITableView, FillDesignable, BorderDesignable, Animatable {
   
   // MARK: - FillDesignable
-  @IBInspectable public var fillColor: UIColor = UIColor.whiteColor()
+  @IBInspectable public var fillColor: UIColor?
   @IBInspectable public var opacity: CGFloat = 1
   
   // MARK: - BorderDesignable
