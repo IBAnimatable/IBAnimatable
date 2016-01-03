@@ -162,15 +162,28 @@ Because of the bueaty of protocol oriented programming in Swift, We don't have t
 | solidColor | Bool | display solid color only. Default value is `false`. Need to manually untick translucent in Interface Builder, otherwise, it will have constrait issue in IB although it is correct in run time. |
 
 #### `MaskDesignable`
+| Property name | Data type | Remark |
+| ------------- |:-------------:| ----- |
+| maskType | Optional&lt;String> | maks type, eg. `Circle` |
+
 #### `PaddingDesignable`
+
 #### `PlaceholderDesignable`
+
 #### `RootWindowDesignable`
+
 #### `RotationDesignable`
+
 #### `ShadowDesignable`
+
 #### `SideImageDesignable`
+
 #### `StatusBarDesignable`
+
 #### `TableViewCellDesignable`
+
 #### `TintDesignable`
+
 #### `ViewControllerDesignable`
 
 ## How to contribute
