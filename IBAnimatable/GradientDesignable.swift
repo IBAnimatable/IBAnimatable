@@ -6,27 +6,30 @@
 import UIKit
 
 public protocol GradientDesignable {
-  var startColor: UIColor { get set }
-  var endColor: UIColor { get set }
-  var startPoint: String { get set }
+  var startColor: UIColor? { get set }
+  var endColor: UIColor? { get set }
+  var startPoint: String? { get set }
 }
 
 public extension GradientDesignable where Self: UIView {
   public func configGradent() {
     // Return if both colors are unset.
-    if (startColor == UIColor.clearColor() && endColor == UIColor.clearColor()) {
+    guard let unwrappedStartColor = startColor, unwrappedEndColor = endColor, unwrappedStartPoint = startPoint else {
       return
     }
     
-    guard let _ = GradientStartPoint(rawValue: startPoint) else {
-      return
+    // Default value is `.Top`
+    var startPointString = unwrappedStartPoint
+    if GradientStartPoint(rawValue: unwrappedStartPoint) == nil {
+      startPointString = "Top"
     }
     
     let gradientView = DesignableGradientView(frame: self.bounds)
-    gradientView.startColor = startColor
-    gradientView.endColor = endColor
-    gradientView.startPoint = startPoint
-    if (layer.cornerRadius > 0) {
+    gradientView.startColor = unwrappedStartColor
+    gradientView.endColor = unwrappedEndColor
+    gradientView.startPoint = startPointString
+    
+    if layer.cornerRadius > 0 {
       gradientView.cornerRadius = layer.cornerRadius
     }
     

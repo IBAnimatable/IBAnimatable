@@ -82,9 +82,9 @@ import UIKit
   @IBInspectable public var toneOpacity: CGFloat = 0
   
   // MARK: - GradientDesignable
-  @IBInspectable public var startColor: UIColor = UIColor.clearColor()
-  @IBInspectable public var endColor: UIColor = UIColor.clearColor()
-  @IBInspectable public var startPoint: String = "Top"
+  @IBInspectable public var startColor: UIColor?
+  @IBInspectable public var endColor: UIColor?
+  @IBInspectable public var startPoint: String?
   
   // MARK: - MaksDesignable
   @IBInspectable public var maskType: String = "" {

@@ -150,6 +150,8 @@ Because of the bueaty of protocol oriented programming in Swift, We don't have t
 | opacity | CGFloat | opacity, alpha of the UI Element, Dafault value is `CGFloat.NaN`, the value is from 0.0 to 1.0 |
 
 #### `GradientDesignable`
+
+
 #### `NavigationBarDesignable`
 #### `MaskDesignable`
 #### `PaddingDesignable`
