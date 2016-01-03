@@ -150,6 +150,11 @@ Because of the bueaty of protocol oriented programming in Swift, We don't have t
 | opacity | CGFloat | opacity, alpha of the UI Element, Dafault value is `CGFloat.NaN`, the value is from 0.0 to 1.0 |
 
 #### `GradientDesignable`
+| Property name | Data type | Remark |
+| ------------- |:-------------:| ----- |
+| startColor | Optional&lt;UIColor> | start gradient color |
+| endColor | Optional&lt;UIColor> | end gradient color |
+| startPoint | Optional&lt;String> | start direction point, can find in `GradientStartPoint` |
 
 
 #### `NavigationBarDesignable`
