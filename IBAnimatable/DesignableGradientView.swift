@@ -6,10 +6,10 @@
 import UIKit
 
 @IBDesignable public class DesignableGradientView: UIView {
-  @IBInspectable var startColor: UIColor = UIColor.clearColor()
-  @IBInspectable var endColor: UIColor = UIColor.clearColor()
-  @IBInspectable var startPoint: String = "Top"
-  @IBInspectable var cornerRadius: CGFloat = 0.0
+  @IBInspectable var startColor: UIColor?
+  @IBInspectable var endColor: UIColor?
+  @IBInspectable var startPoint: String?
+  @IBInspectable var cornerRadius: CGFloat = CGFloat.NaN
   
   var gradientLayer: CAGradientLayer {
     return layer as! CAGradientLayer
@@ -34,17 +34,22 @@ import UIKit
   // MARK: - Internal
   func configGradient() {
     // Return if both colors are unset.
-    if (startColor == UIColor.clearColor() && endColor == UIColor.clearColor()) {
+    guard let unwrappedStartColor = startColor, unwrappedEndColor = endColor else {
       return
     }
     
-    guard let gradientStartPoint = GradientStartPoint(rawValue: startPoint) else {
-      return
+    // Default value is `.Top`
+    var gradientStartPoint: GradientStartPoint = .Top
+    if let unwrappedStartPoint = startPoint, resolvedGradientStartPoint = GradientStartPoint(rawValue: unwrappedStartPoint) {
+      gradientStartPoint = resolvedGradientStartPoint
     }
     
-    gradientLayer.colors = [startColor.CGColor, endColor.CGColor]
-    gradientLayer.cornerRadius = cornerRadius
-    switch (gradientStartPoint) {
+    gradientLayer.colors = [unwrappedStartColor.CGColor, unwrappedEndColor.CGColor]
+    if !cornerRadius.isNaN {
+      gradientLayer.cornerRadius = cornerRadius
+    }
+    
+    switch gradientStartPoint {
     case .Top:
       gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
       gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
