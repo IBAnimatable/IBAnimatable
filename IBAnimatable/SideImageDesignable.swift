@@ -12,12 +12,12 @@ public protocol SideImageDesignable {
   var leftImage: UIImage? { get set }
   
   /**
-   * Left padding of the left image, default value is 0
+   * Left padding of the left image, default value is CGFloat.NaN
    */
   var leftImageLeftPadding: CGFloat { get set }
   
   /**
-   * Right padding of the left image, default value is 0
+   * Right padding of the left image, default value is CGFloat.NaN
    */
   var leftImageRightPadding: CGFloat { get set }
   
@@ -35,21 +35,31 @@ public extension SideImageDesignable where Self: UITextField {
     
     let imageView = UIImageView(image: wrappedLeftImage)
     
-    // If does not specify `leftImageTopPadding`, then center it in the middle
-    if leftImageTopPadding.isNaN {
-      imageView.frame.origin = CGPointMake(leftImageLeftPadding, (bounds.height - imageView.bounds.height)/2)
-    }
-    else {
-      imageView.frame.origin = CGPointMake(leftImageLeftPadding, leftImageTopPadding)
+    // If not set, use 0 as default value
+    var leftImageLeftPaddingValue: CGFloat = 0.0
+    if !leftImageLeftPadding.isNaN {
+      leftImageLeftPaddingValue = leftImageLeftPadding
     }
     
-    let padding = leftImageLeftPadding + imageView.bounds.size.width + leftImageRightPadding
+    // If not set, use 0 as default value
+    var leftImageRightPaddingValue: CGFloat = 0.0
+    if !leftImageRightPadding.isNaN {
+      leftImageRightPaddingValue = leftImageRightPadding
+    }
+    
+    // If does not specify `leftImageTopPadding`, then center it in the middle
+    if leftImageTopPadding.isNaN {
+      imageView.frame.origin = CGPointMake(leftImageLeftPaddingValue, (bounds.height - imageView.bounds.height)/2)
+    }
+    else {
+      imageView.frame.origin = CGPointMake(leftImageLeftPaddingValue, leftImageTopPadding)
+    }
+    
+    let padding = leftImageLeftPaddingValue + imageView.bounds.size.width + leftImageRightPaddingValue
     let sideView = UIView(frame: CGRectMake(0, 0, padding, bounds.height))
     sideView.addSubview(imageView)
     
     leftViewMode = .Always
     leftView = sideView
   }
-  
 }
-
