@@ -9,11 +9,13 @@ public protocol PlaceholderDesignable {
   /**
    `color` within `::-webkit-input-placeholder`, `::-moz-placeholder` or `:-ms-input-placeholder`
    */
-  var placeholderColor: UIColor { get set }
+  var placeholderColor: UIColor? { get set }
 }
 
 public extension PlaceholderDesignable where Self: UITextField {
   public func configPlaceholderColor() {
-    attributedPlaceholder = NSAttributedString(string: placeholder!, attributes: [NSForegroundColorAttributeName: placeholderColor])
+    if let unwrappedPlaceholderColor = placeholderColor {
+      attributedPlaceholder = NSAttributedString(string: placeholder!, attributes: [NSForegroundColorAttributeName: unwrappedPlaceholderColor])
+    }
   }
 }

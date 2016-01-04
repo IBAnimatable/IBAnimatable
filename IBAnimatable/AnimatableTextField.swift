@@ -90,7 +90,7 @@ import UIKit
 
   
   // MARK: - CSSPlaceholderable
-  @IBInspectable public var placeholderColor: UIColor = UIColor.clearColor() {
+  @IBInspectable public var placeholderColor: UIColor? {
     didSet {
       configPlaceholderColor()
     }
