@@ -186,6 +186,9 @@ It is used in `AnimatableTextField` to add padding on either or both sides.
 | rootWindowBackgroundColor | Optional&lt;UIColor> | root window background color. Can be seen when we use flip transition. |
 
 #### `RotationDesignable`
+| Property name | Data type | Remark |
+| ------------- |:-------------:| ----- |
+| rotate | CGFloat | rotation of the UI element in degrees. Default value is `CGFloat.NaN`, value is from 0 to 360 |
 
 #### `ShadowDesignable`
 
