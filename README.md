@@ -191,7 +191,7 @@ It is used in `AnimatableTextField` to add padding on either or both sides.
 | rotate | CGFloat | rotation of the UI element in degrees. Default value is `CGFloat.NaN`, value is from 0 to 360 |
 
 #### `ShadowDesignable`
-Drop shadow of the UI element, it is popular in Material Design
+Drop shadow of the UI element, it is popular in Material Design. These properties are not able to render in IB correctly, it maybe a bug of IB.
 
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
@@ -201,6 +201,14 @@ Drop shadow of the UI element, it is popular in Material Design
 | shadowOffset | CGPoint | `x` is horizontal offset and `y` is vertical offset |
 
 #### `SideImageDesignable`
+Display a side hint image in `AnimatableTextField`
+
+| Property name | Data type | Remark |
+| ------------- |:-------------:| ----- |
+| leftImage | Optional&lt;UIImage> | the image to display on the left-hand side |
+| leftImageLeftPadding | CGFloat | left padding of hint image. Default value is `CGFloat.NaN` |
+| leftImageRightPadding | CGFloat | right padding of hint image. Default value is `CGFloat.NaN` |
+| leftImageTopPadding | CGFloat | top padding of hint image. Default value is `CGFloat.NaN`. If not specified, the image will center vertically |
 
 #### `StatusBarDesignable`
 
