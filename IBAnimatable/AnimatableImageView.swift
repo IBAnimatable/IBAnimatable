@@ -33,7 +33,7 @@ import UIKit
   @IBInspectable public var borderSide: String?
   
   // MARK: - RotationDesignable
-  @IBInspectable public var rotate: CGFloat = 0 {
+  @IBInspectable public var rotate: CGFloat = CGFloat.NaN {
     didSet {
       configRotate()
     }
