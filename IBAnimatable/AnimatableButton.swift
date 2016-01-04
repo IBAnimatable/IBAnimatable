@@ -33,7 +33,7 @@ import UIKit
   @IBInspectable public var borderSide: String?
 
   // MARK: - ShadowDesignable
-  @IBInspectable public var shadowColor: UIColor = UIColor.clearColor() {
+  @IBInspectable public var shadowColor: UIColor? {
     didSet {
       configShadowColor()
     }

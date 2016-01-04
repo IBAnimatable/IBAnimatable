@@ -14,7 +14,7 @@ public protocol ShadowDesignable {
   /**
    `color` when using with `box-shadow`
   */
-  var shadowColor: UIColor { get set }
+  var shadowColor: UIColor? { get set }
 
   /**
     Radius in `box-shadow`
@@ -41,8 +41,10 @@ public extension ShadowDesignable where Self: UIView {
   
   // if `layer.masksToBounds == true` then shadow doesn't work any more.
   public func configShadowColor() {
-    layer.shadowColor = shadowColor.CGColor
-    layer.masksToBounds = false
+    if let unwrappedShadowColor = shadowColor {
+      layer.shadowColor = unwrappedShadowColor.CGColor
+      layer.masksToBounds = false
+    }
   }
 
   public func configShadowRadius() {

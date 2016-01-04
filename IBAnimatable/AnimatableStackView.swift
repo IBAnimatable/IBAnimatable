@@ -41,7 +41,7 @@ import UIKit
   }
   
   // MARK: - ShadowDesignable
-  @IBInspectable public var shadowColor: UIColor = UIColor.clearColor() {
+  @IBInspectable public var shadowColor: UIColor? {
     didSet {
       configShadowColor()
     }
