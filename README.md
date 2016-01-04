@@ -159,7 +159,7 @@ Because of the bueaty of protocol oriented programming in Swift, We don't have t
 #### `NavigationBarDesignable`
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
-| solidColor | Bool | display solid color only. Default value is `false`. Need to manually untick translucent in Interface Builder, otherwise, it will have constrait issue in IB although it is correct in run time. |
+| solidColor | Bool | whether display solid color only. Default value is `false`. Need to manually untick translucent in Interface Builder, otherwise, it will have constrait issue in IB although it is correct in run time. |
 
 #### `MaskDesignable`
 | Property name | Data type | Remark |
@@ -211,6 +211,7 @@ Display a side hint image in `AnimatableTextField`
 | leftImageTopPadding | CGFloat | top padding of hint image. Default value is `CGFloat.NaN`. If not specified, the image will center vertically |
 
 #### `StatusBarDesignable`
+| lightStatusBar | Bool | display white or black text status bar. Default value is `false` to display black text |
 
 #### `TableViewCellDesignable`
 
