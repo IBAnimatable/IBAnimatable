@@ -28,10 +28,9 @@ import UIKit
   }
   
   public override func preferredStatusBarStyle() -> UIStatusBarStyle {
-    if (lightStatusBar) {
+    if lightStatusBar {
       return .LightContent
     }
-    
     return .Default
   }
 }
