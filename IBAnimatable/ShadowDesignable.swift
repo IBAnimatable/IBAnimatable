@@ -43,14 +43,14 @@ public extension ShadowDesignable where Self: UIView {
   }
 
   public func configShadowRadius() {
-    if !shadowRadius.isNaN {
+    if !shadowRadius.isNaN && shadowRadius > 0 {
       layer.shadowRadius = shadowRadius
       layer.masksToBounds = false
     }
   }
 
   public func configShadowOpacity() {
-    if !shadowOpacity.isNaN {
+    if !shadowOpacity.isNaN && shadowOpacity >= 0 && shadowOpacity <= 1 {
       layer.shadowOpacity = Float(shadowOpacity)
       layer.masksToBounds = false
     }
