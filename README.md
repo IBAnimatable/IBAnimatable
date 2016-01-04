@@ -181,6 +181,9 @@ It is used in `AnimatableTextField` to add padding on either or both sides.
 | placeholderColor | Optional&lt;UIColor> | placeholder text color in `AnimatableTextField` |
 
 #### `RootWindowDesignable`
+| Property name | Data type | Remark |
+| ------------- |:-------------:| ----- |
+| rootWindowBackgroundColor | Optional&lt;UIColor> | root window background color. Can be seen when we use flip transition. |
 
 #### `RotationDesignable`
 
