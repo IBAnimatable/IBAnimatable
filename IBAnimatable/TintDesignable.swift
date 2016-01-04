@@ -20,7 +20,7 @@ public protocol TintDesignable {
   /**
    tone color
    */
-  var toneColor: UIColor { get set }
+  var toneColor: UIColor? { get set }
   
   /**
    Opacity in tone color: from 0 to 1
@@ -34,19 +34,21 @@ public extension TintDesignable where Self: UIView {
    */
   public func configTintedColor() {
     if tintOpacity >= 0 && tintOpacity <= 1 {
-      addColorView(UIColor.whiteColor(), opacity: tintOpacity)
+      addColorSubview(UIColor.whiteColor(), opacity: tintOpacity)
     }
     
     if shadeOpacity >= 0 && shadeOpacity <= 1 {
-      addColorView(UIColor.blackColor(), opacity: shadeOpacity)
+      addColorSubview(UIColor.blackColor(), opacity: shadeOpacity)
     }
     
-    if toneColor != UIColor.clearColor() && toneOpacity >= 0 && toneOpacity <= 1 {
-      addColorView(toneColor, opacity: toneOpacity)
+    if let unwrappedToneColor = toneColor {
+      if toneOpacity >= 0 && toneOpacity <= 1 {
+        addColorSubview(unwrappedToneColor, opacity: toneOpacity)
+      }
     }
   }
   
-  private func addColorView(color: UIColor, opacity: CGFloat) {
+  private func addColorSubview(color: UIColor, opacity: CGFloat) {
     let subview = UIView(frame: self.bounds)
     subview.backgroundColor = color
     subview.alpha = opacity

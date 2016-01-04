@@ -71,7 +71,7 @@ import UIKit
   // MARK: - TintDesignable
   @IBInspectable public var tintOpacity: CGFloat = 0
   @IBInspectable public var shadeOpacity: CGFloat = 0
-  @IBInspectable public var toneColor: UIColor = UIColor.clearColor()
+  @IBInspectable public var toneColor: UIColor?
   @IBInspectable public var toneOpacity: CGFloat = 0
   
   // MARK: - GradientDesignable
