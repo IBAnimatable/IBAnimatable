@@ -51,15 +51,9 @@ import UIKit
     }
   }
   
-  @IBInspectable public var shadowOffsetX: CGFloat = 0 {
+  @IBInspectable public var shadowOffset: CGPoint = CGPoint(x: CGFloat.NaN, y: CGFloat.NaN) {
     didSet {
-      configShadowOffsetX()
-    }
-  }
-  
-  @IBInspectable public var shadowOffsetY: CGFloat = 0 {
-    didSet {
-      configShadowOffsetY()
+      configShadowOffset()
     }
   }
   

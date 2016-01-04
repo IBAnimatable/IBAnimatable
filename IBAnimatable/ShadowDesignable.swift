@@ -27,14 +27,9 @@ public protocol ShadowDesignable {
   var shadowOpacity: CGFloat { get set }
 
   /**
-   Horizontal offset in `box-shadow`
+   Offset in `box-shadow`. `x` is horizontal offset and `y` is vertical offset
   */
-  var shadowOffsetX: CGFloat { get set }
-
-  /**
-   Vertical offset in `box-shadow`
-  */
-  var shadowOffsetY: CGFloat { get set }
+  var shadowOffset: CGPoint { get set }
 }
 
 public extension ShadowDesignable where Self: UIView {
@@ -61,13 +56,15 @@ public extension ShadowDesignable where Self: UIView {
     }
   }
 
-  public func configShadowOffsetX() {
-    layer.shadowOffset.width = shadowOffsetX
-    layer.masksToBounds = false
-  }
-
-  public func configShadowOffsetY() {
-    layer.shadowOffset.height = shadowOffsetY
-    layer.masksToBounds = false
+  public func configShadowOffset() {
+    if !shadowOffset.x.isNaN {
+      layer.shadowOffset.width = shadowOffset.x
+      layer.masksToBounds = false
+    }
+    
+    if !shadowOffset.y.isNaN {
+      layer.shadowOffset.height = shadowOffset.y
+      layer.masksToBounds = false
+    }
   }
 }
