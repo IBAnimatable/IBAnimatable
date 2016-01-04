@@ -6,7 +6,7 @@
 import UIKit
 
 /**
-  These properties are not able to render in IB, it maybe a bug of IB.
+  These properties are not able to render in IB correctly, it maybe a bug of IB.
  
   To use them, `UIView`'s `clipsToBounds` and `CALayer`'s `masksToBounds` (`Clip Subviews` in IB) must be `false`,
 */
@@ -48,13 +48,17 @@ public extension ShadowDesignable where Self: UIView {
   }
 
   public func configShadowRadius() {
-    layer.shadowRadius = shadowRadius
-    layer.masksToBounds = false
+    if !shadowRadius.isNaN {
+      layer.shadowRadius = shadowRadius
+      layer.masksToBounds = false
+    }
   }
 
   public func configShadowOpacity() {
-    layer.shadowOpacity = Float(shadowOpacity)
-    layer.masksToBounds = false
+    if !shadowOpacity.isNaN {
+      layer.shadowOpacity = Float(shadowOpacity)
+      layer.masksToBounds = false
+    }
   }
 
   public func configShadowOffsetX() {

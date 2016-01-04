@@ -47,13 +47,13 @@ import UIKit
     }
   }
   
-  @IBInspectable public var shadowRadius: CGFloat = 0 {
+  @IBInspectable public var shadowRadius: CGFloat = CGFloat.NaN {
     didSet {
       configShadowRadius()
     }
   }
   
-  @IBInspectable public var shadowOpacity: CGFloat = 0 {
+  @IBInspectable public var shadowOpacity: CGFloat = CGFloat.NaN {
     didSet {
       configShadowOpacity()
     }
