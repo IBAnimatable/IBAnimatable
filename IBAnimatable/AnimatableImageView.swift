@@ -69,10 +69,10 @@ import UIKit
   @IBInspectable public var blurOpacity: CGFloat = CGFloat.NaN
   
   // MARK: - TintDesignable
-  @IBInspectable public var tintOpacity: CGFloat = 0
-  @IBInspectable public var shadeOpacity: CGFloat = 0
+  @IBInspectable public var tintOpacity: CGFloat = CGFloat.NaN
+  @IBInspectable public var shadeOpacity: CGFloat = CGFloat.NaN
   @IBInspectable public var toneColor: UIColor?
-  @IBInspectable public var toneOpacity: CGFloat = 0
+  @IBInspectable public var toneOpacity: CGFloat = CGFloat.NaN
   
   // MARK: - GradientDesignable
   @IBInspectable public var startColor: UIColor?

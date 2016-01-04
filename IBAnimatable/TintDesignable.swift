@@ -33,16 +33,16 @@ public extension TintDesignable where Self: UIView {
    configTintedColor method, should be called in layoutSubviews() method
    */
   public func configTintedColor() {
-    if tintOpacity >= 0 && tintOpacity <= 1 {
+    if !tintOpacity.isNaN && tintOpacity >= 0 && tintOpacity <= 1 {
       addColorSubview(UIColor.whiteColor(), opacity: tintOpacity)
     }
     
-    if shadeOpacity >= 0 && shadeOpacity <= 1 {
+    if !shadeOpacity.isNaN && shadeOpacity >= 0 && shadeOpacity <= 1 {
       addColorSubview(UIColor.blackColor(), opacity: shadeOpacity)
     }
     
     if let unwrappedToneColor = toneColor {
-      if toneOpacity >= 0 && toneOpacity <= 1 {
+      if !toneOpacity.isNaN && toneOpacity >= 0 && toneOpacity <= 1 {
         addColorSubview(unwrappedToneColor, opacity: toneOpacity)
       }
     }
