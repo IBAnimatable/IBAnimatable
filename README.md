@@ -127,7 +127,7 @@ Because of the bueaty of protocol oriented programming in Swift, We don't have t
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
 | borderColor | Optional&lt;UIColor> | border color |
-| borderWidth | CGFloat | border width. Default value is `CGFloat.NaN`, value is greater than 0 |
+| borderWidth | CGFloat | border width. Default value is `CGFloat.NaN`, the value is greater than 0 |
 | borderSide | Optional&lt;String> | border side, `Top`, `Right`, `Bottom` or `Left`. If not specify, then display four sides |
 
 
@@ -141,7 +141,7 @@ Because of the bueaty of protocol oriented programming in Swift, We don't have t
 #### `CornerDesignable`
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
-| cornerRadius | CGFloat | rounded corner radius. Default value is `CGFloat.NaN` |
+| cornerRadius | CGFloat | rounded corner radius. Default value is `CGFloat.NaN`, the value is greater than 0 |
 
 #### `FillDesignable`
 | Property name | Data type | Remark |
@@ -191,6 +191,14 @@ It is used in `AnimatableTextField` to add padding on either or both sides.
 | rotate | CGFloat | rotation of the UI element in degrees. Default value is `CGFloat.NaN`, value is from 0 to 360 |
 
 #### `ShadowDesignable`
+Drop shadow of the UI element, it is popular in Material Design
+
+| Property name | Data type | Remark |
+| ------------- |:-------------:| ----- |
+| shadowColor | Optional&lt;UIColor> | shadow color |
+| shadowRadius | CGFloat | shadow corner radius. Default value is `CGFloat.NaN`, the value is greater than 0 |
+| shadowOpacity | CGFloat | shadow opacity. Default value is `CGFloat.NaN`, the value is from 0.0 to 1.0 |
+| shadowOffset | CGPoint | `x` is horizontal offset and `y` is vertical offset |
 
 #### `SideImageDesignable`
 
