@@ -214,6 +214,7 @@ Display a side hint image in `AnimatableTextField`
 | lightStatusBar | Bool | display white or black text status bar. Default value is `false` to display black text |
 
 #### `TableViewCellDesignable`
+| removeSeparatorMargins | Bool | whether remove separator margins in `AnimatableTableViewCell`. Default value is `false`. There maybe a bug of Interface Builder when setting "Separator Insert" to 0 doesn't work |
 
 #### `TintDesignable`
 
