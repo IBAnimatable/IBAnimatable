@@ -175,8 +175,10 @@ It is used in `AnimatableTextField` to add padding on either or both sides.
 | paddingRight | CGFloat | padding on right-hand side. Default value is `CGFloat.NaN` |
 | paddingSide | CGFloat | padding on both sides. Default value is `CGFloat.NaN` |
 
-
 #### `PlaceholderDesignable`
+| Property name | Data type | Remark |
+| ------------- |:-------------:| ----- |
+| placeholderColor | Optional&lt;UIColor> | placeholder text color in `AnimatableTextField` |
 
 #### `RootWindowDesignable`
 
