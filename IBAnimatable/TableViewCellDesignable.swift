@@ -1,7 +1,4 @@
 //
-//  TableViewCellDesignable.swift
-//  IBAnimatableApp
-//
 //  Created by Jake Lin on 12/19/15.
 //  Copyright © 2015 Jake Lin. All rights reserved.
 //
@@ -26,7 +23,6 @@ public extension TableViewCellDesignable where Self: UITableViewCell {
       if respondsToSelector("setLayoutMargins:") {
         layoutMargins = UIEdgeInsetsZero
       }
-
     }
   }
 }
