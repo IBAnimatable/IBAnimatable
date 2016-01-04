@@ -221,6 +221,14 @@ Display a side hint image in `AnimatableTextField`
 | removeSeparatorMargins | Bool | whether to remove separator margins in `AnimatableTableViewCell`. Default value is `false`. There maybe a bug of Interface Builder when setting "Separator Insert" to 0 doesn't work |
 
 #### `TintDesignable`
+Easily add color layer on top of the UI element especially `AnimatableImageView`.
+
+| Property name | Data type | Remark |
+| ------------- |:-------------:| ----- |
+| tintOpacity | CGFloat | opacity of tint color (white color). Default value is `CGFloat.NaN`. |
+| shadeOpacity | CGFloat | opacity of shade color (black color). Default value is `CGFloat.NaN`. |
+| toneColor | Optional&lt;UIColor> | tone color|
+| toneOpacity | CGFloat | opacity of tone color. Default value is `CGFloat.NaN`. |
 
 #### `ViewControllerDesignable`
 | Property name | Data type | Remark |
