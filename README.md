@@ -159,7 +159,7 @@ Because of the bueaty of protocol oriented programming in Swift, We don't have t
 #### `NavigationBarDesignable`
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
-| solidColor | Bool | whether display solid color only. Default value is `false`. Need to manually untick translucent in Interface Builder, otherwise, it will have constrait issue in IB although it is correct in run time. |
+| solidColor | Bool | whether to display solid color only. Default value is `false`. Need to manually untick translucent in Interface Builder, otherwise, it will have constrait issue in IB although it is correct in run time. |
 
 #### `MaskDesignable`
 | Property name | Data type | Remark |
@@ -211,14 +211,21 @@ Display a side hint image in `AnimatableTextField`
 | leftImageTopPadding | CGFloat | top padding of hint image. Default value is `CGFloat.NaN`. If not specified, the image will center vertically |
 
 #### `StatusBarDesignable`
-| lightStatusBar | Bool | display white or black text status bar. Default value is `false` to display black text |
+| Property name | Data type | Remark |
+| ------------- |:-------------:| ----- |
+| lightStatusBar | Bool | to display white or black text status bar. Default value is `false` to display black text |
 
 #### `TableViewCellDesignable`
-| removeSeparatorMargins | Bool | whether remove separator margins in `AnimatableTableViewCell`. Default value is `false`. There maybe a bug of Interface Builder when setting "Separator Insert" to 0 doesn't work |
+| Property name | Data type | Remark |
+| ------------- |:-------------:| ----- |
+| removeSeparatorMargins | Bool | whether to remove separator margins in `AnimatableTableViewCell`. Default value is `false`. There maybe a bug of Interface Builder when setting "Separator Insert" to 0 doesn't work |
 
 #### `TintDesignable`
 
 #### `ViewControllerDesignable`
+| Property name | Data type | Remark |
+| ------------- |:-------------:| ----- |
+| hideNavigationBar | Bool | whether to hide navigation bar. Default value is `false`. |
 
 ## How to contribute
 All of us can contribute to this project. Fewer overheads mean less time to build quality Apps and more time to enjoy coffee ☕️.
