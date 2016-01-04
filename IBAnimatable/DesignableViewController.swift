@@ -13,7 +13,7 @@ import UIKit
   @IBInspectable public var lightStatusBar: Bool = false
   
   // MARK: - RootWindowDesignable
-  @IBInspectable public var rootWindowBackgroundColor: UIColor = UIColor.clearColor()
+  @IBInspectable public var rootWindowBackgroundColor: UIColor?
   
   // MARK: - Lifecylce
   public override func viewWillAppear(animated: Bool) {
