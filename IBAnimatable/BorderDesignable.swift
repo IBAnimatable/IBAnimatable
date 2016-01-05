@@ -33,12 +33,8 @@ public extension BorderDesignable where Self: UIView {
       return
     }
     
-    guard let unwrappedBorderSide = borderSide else {
-      return
-    }
-    
     // if borderSide has been specified, only display one side
-    if let side = BorderSide(rawValue: unwrappedBorderSide) {
+    if let unwrappedBorderSide = borderSide , side = BorderSide(rawValue: unwrappedBorderSide) {
       let border = CALayer()
       
       border.backgroundColor = unwrappedBorderColor.CGColor
