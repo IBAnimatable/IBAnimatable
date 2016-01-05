@@ -21,7 +21,7 @@ public protocol Animatable: class {
   var autoRun: Bool { get set }
   
   /**
-   Animation duration (seconds)
+   Animation duration (in seconds)
    */
   var duration: Double { get set }
   

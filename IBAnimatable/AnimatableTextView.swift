@@ -45,12 +45,12 @@ import UIKit
   // MARK: - Lifecycle
   public override func prepareForInterfaceBuilder() {
     super.prepareForInterfaceBuilder()
-    configDesignableProperties()
+    configInspectableProperties()
   }
   
   public override func awakeFromNib() {
     super.awakeFromNib()
-    configDesignableProperties()
+    configInspectableProperties()
   }
   
   public override func layoutSubviews() {
@@ -60,7 +60,7 @@ import UIKit
   }
   
   // MARK: - Private
-  private func configDesignableProperties() {
+  private func configInspectableProperties() {
     configBorder()
   }
 }

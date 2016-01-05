@@ -12,12 +12,12 @@ import UIKit
   // MARK: - Lifecycle
   public override func prepareForInterfaceBuilder() {
     super.prepareForInterfaceBuilder()
-    configDesignableProperties()
+    configInspectableProperties()
   }
   
   public override func awakeFromNib() {
     super.awakeFromNib()
-    configDesignableProperties()
+    configInspectableProperties()
   }
 
   // TODO: animations
@@ -38,7 +38,7 @@ import UIKit
   @IBInspectable public var repeatCount: Float = 1
   
   // MARK: - Private
-  private func configDesignableProperties() {
+  private func configInspectableProperties() {
     confingBarButtonItemImage()
   }
 }

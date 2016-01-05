@@ -97,13 +97,13 @@ import UIKit
   public override func prepareForInterfaceBuilder() {
     super.prepareForInterfaceBuilder()
     setup()
-    configDesignableProperties()
+    configInspectableProperties()
   }
   
   public override func awakeFromNib() {
     super.awakeFromNib()
     setup()
-    configDesignableProperties()
+    configInspectableProperties()
   }
   
   public override func layoutSubviews() {
@@ -127,7 +127,7 @@ import UIKit
     tintColor = UIColor.clearColor()
   }
   
-  private func configDesignableProperties() {
+  private func configInspectableProperties() {
     configBorder()
   }
 }
