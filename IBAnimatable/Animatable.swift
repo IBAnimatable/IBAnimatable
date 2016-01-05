@@ -52,6 +52,28 @@ public protocol Animatable: class {
 }
 
 public extension Animatable where Self: UIView {
+  public func configAnimatableProperites() {
+    // Apply default values
+    if duration.isNaN {
+      duration = 0.7
+    }
+    if delay.isNaN {
+      delay = 0
+    }
+    if damping.isNaN {
+      damping = 0.7
+    }
+    if velocity.isNaN {
+      velocity = 0.7
+    }
+    if force.isNaN {
+      force = 1
+    }
+    if repeatCount.isNaN {
+      repeatCount = 1
+    }
+  }
+  
   public func animate(completion: AnimatableCompletion? = nil) {
     guard let unwrappedAnimationTypeString = animationType, animationType = AnimationType(rawValue: unwrappedAnimationTypeString) else {
       return
