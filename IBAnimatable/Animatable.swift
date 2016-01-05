@@ -13,7 +13,7 @@ public protocol Animatable: class {
   /**
     String value of `AnimationType` enum
   */
-  var animationType: String { get set }
+  var animationType: String? { get set }
   
   /**
    Auto run flag, if `true` it will automatically start animation when `layoutSubviews`. Default should be `true`
@@ -53,7 +53,7 @@ public protocol Animatable: class {
 
 public extension Animatable where Self: UIView {
   public func animate(completion: AnimatableCompletion? = nil) {
-    guard let animationType = AnimationType(rawValue: animationType) else {
+    guard let unwrappedAnimationTypeString = animationType, animationType = AnimationType(rawValue: unwrappedAnimationTypeString) else {
       return
     }
     

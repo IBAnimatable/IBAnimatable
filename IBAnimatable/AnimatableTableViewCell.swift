@@ -19,7 +19,7 @@ import UIKit
   @IBInspectable public var removeSeparatorMargins: Bool = false
   
   // MARK: - Animatable
-  @IBInspectable public var animationType: String = ""
+  @IBInspectable public var animationType: String?
   @IBInspectable public var autoRun: Bool = true
   @IBInspectable public var duration: Double = 0.7
   @IBInspectable public var delay: Double = 0
