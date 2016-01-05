@@ -1,20 +1,20 @@
 # IBAnimatable
-IBAnimatable helps designers and developers design UI, navigations, interactions and animations in Interface Builder.
+Design and prototype App Store ready App's UI, interaction, navigation, transition and animation in Interface Builder with IBAnimatable.
 
-As a designer, we love Sketch, which is a simple but yet super powerful tool to design UI. However, Sketch doesn't support navigations, interactions and animations, we may need another tool like Framer to design them. Also, to make a shippable App, we need to use Xcode and Interface Builder to redo the UI and animations. To smooth the process and minimise the waste, we create `IBAnimatable` to make Interface Builder designable and animatable.   
+As a designer, we love Sketch, which is a simple but yet super powerful tool to design UI. However, Sketch doesn't support interaction, navigation, transition and animation design, we may need another tool like Framer to design them. Also, to make an App Store read App, we need to use Xcode and Interface Builder to redesign and program the UI and animations. To speed up the process and minimise the waste, we create `IBAnimatable` to make Interface Builder designable and animatable.   
 
 ## Features
-* From design to shippable App - What you design in Interface Builder is what the App exactly looks like. 
-* Designer friendly - Sketch-ish configuration panel on Attributes Inspector to lower the learning curve to use Interface Builder.   
-* Animation desigin support in Swift playground - Design animations on Swift playground to save time for runing on simulator or actual iOS devices.
-* Built-in Auto Layout support - We can use Auto Layout and Size Classes with `IBAnimatable` to support multiple iOS devices. 
+* From prototype to shippable App Store ready App - What you design in Interface Builder is what the App exactly looks like. 
+* Designer friendly - Sketch style configuration panel on Attributes Inspector to lower the learning curve to use Interface Builder.   
+* Animation desigin support in Swift playground - Similar to Framer Studio. Design animations in Swift playground to save time for runing on simulator or actual iOS devices. 
+* Built-in Auto Layout support - We can use Auto Layout and Size Classes with `IBAnimatable` to support orientations and multiple iOS devices. 
 * Navigation support - We can use default navigation pattern in the App and `IBAnimatable` also adds unwind segues to unwind or dismiss scene without any code.
-* Protocol oriented programming - `IBAnimatable` used protocol oriented programming paradigm. Thanks to Swift protocol extension, it is very easy to support more designable or animatable features. We can even use protocol extension create own set of AnimatableViews instead of using the default ones from `IBAnimatable`.  
+* Protocol oriented programming - `IBAnimatable` used protocol oriented programming paradigm. Thanks to Swift protocol extension, it is easy to support more designable or animatable features. We can even use protocol extension create own set of custom UI elements instead of using the default ones from `IBAnimatable`.  
 
 ## How to run sample project
 
 
-## Design in Interface Builder
+## How to design in Interface Builder
 ![](https://raw.githubusercontent.com/JakeLin/IBAnimatable/master/Screenshots/DesignInInterfaceBuilder.png)
 
 To use `IBAnimatable` to design the UI and animations in Interface Builder, just follow few steps as below:
@@ -25,7 +25,7 @@ To use `IBAnimatable` to design the UI and animations in Interface Builder, just
 4. Configure the UI and animations in Attribute Inspector.
 
 
-## Animate in Swift playground
+## How to animate in Swift playground
 ![](https://github.com/JakeLin/IBAnimatable/blob/master/Screenshots/AnimateInSwiftPlayground.gif)
 
 We can configure the animation settings in Attribute Inspector. However, Interface Builder doesn't support preview Animations, but we can still prototype animations in Swift playgournd. There are three sample pages to demostrate how to animate in Swift playground. You can find them in [IBAnimatable.playground](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground)
