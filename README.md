@@ -239,9 +239,14 @@ Easily add color layer on top of the UI element especially `AnimatableImageView`
 #### Properties
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
-| animationType | Optional&lt;String> | All supported predefined animations is in enum `AnimationType` |
-| autoRun | Bool | Default value is `true`, if true, the animation will automatically run when the view is loaded. Should set to `false` if want to manually start the animation. |
-
+| animationType | Optional&lt;String> | Supported animations. All supported predefined animations are in enum `AnimationType` |
+| autoRun | Bool | Whether to automatically start the animation. Default value is `true`. if it is true, the animation will automatically run when the view is loaded. If want to manually start the animation should set it to `false`. |
+| duration | CGFloat | Animation duration in seconds. Default value is 0.7. |
+| delay | Double | Delay to start the animation in seconds. Default value is 0. |
+| damping | CGFloat | Used in UIView Spring animation (0 ~ 1 seconds). To smoothly decelerate the animation without oscillation, use a value of 1. Employ a damping ratio closer to zero to increase oscillation. Default value is 0.7. Notice: FadeOutIn, FadeInOut, Shake, Pop, Morph, Squeeze, Flash, Wobble and Swing animations do not use damping. |
+| velocity | CGFloat | used in UIView Spring animation. A value of 1 corresponds to the total animation distance traversed in one second. For example, if the total animation distance is 200 points and you want the start of the animation to match a view velocity of 100 pt/s, use a value of 0.5. Default is 0.7. Notice: FadeOutIn, FadeInOut, Shake, Pop, Morph, Squeeze, Flash, Wobble and Swing animations do not use damping. |
+| force | CGFloat | used to apply force to the animation. The number is higher, the animation property has more changes. eg. for Pop animation, higher force causes the view poping bigger. Default value is 1. |
+| repeatCount | Float | Used to sepecify the count to repeat the animation. Can noly used in Shake, Pop, Morph, Squeeze, Flash, Wobble and Swing animations. Default value is 1.  |
 
 ## How to contribute
 All of us can contribute to this project. Fewer overheads mean less time to build quality Apps and more time to enjoy coffee ☕️.
