@@ -13,8 +13,23 @@ As a designer, we love Sketch, which is a simple but yet super powerful tool to 
 * Navigation support - We can use default navigation pattern in the App and `IBAnimatable` also adds unwind segues to unwind or dismiss scene without any code.
 * Protocol oriented programming - `IBAnimatable` used protocol oriented programming paradigm. Thanks to Swift protocol extension, it is easy to support more designable or animatable features. We can even use protocol extension create own set of custom UI elements instead of using the default ones from `IBAnimatable`.  
 
-## How to run sample project
+## How to run example App
+One way to learn and understand how powerful of `IBAnimatable` is to run the example App and play around the settings in Interface Builder. 
 
+1) Clone the repository
+
+```
+$ git clone https://github.com/JakeLin/IBAnimatable.git
+$ cd IBAnimatable
+```
+
+2) Open the workspace in Xcode
+
+```
+$ open "IBAnimatable.xcworkspace"
+```
+
+3) Compile and run the app in your simulator
 
 ## How to design in Interface Builder
 ![](https://raw.githubusercontent.com/JakeLin/IBAnimatable/master/Screenshots/DesignInInterfaceBuilder.png)
@@ -30,7 +45,7 @@ To use `IBAnimatable` to design the UI and animations in Interface Builder, just
 ## How to animate in Swift playground
 ![](https://github.com/JakeLin/IBAnimatable/blob/master/Screenshots/AnimateInSwiftPlayground.gif)
 
-We can configure the animation settings in Attribute Inspector. However, Interface Builder doesn't support preview Animations, but we can still prototype animations in Swift playgournd. There are three sample pages to demostrate how to animate in Swift playground. You can find them in [IBAnimatable.playground](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground)
+We can configure the animation settings in Attribute Inspector. However, Interface Builder doesn't support preview Animations, but we can still prototype animations in Swift playgournd. There are three sample pages to demostrate how to design animation in Swift playground. You can find them in [IBAnimatable.playground](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground)
 
 ## How to animate programmatically
 As you saw above, we can prototype an App fully in Interface Builder withouth single line of code, but `IBAnimatable` also provides APIs to let us fully control the UI and animations. `IBAnimatable` provides simple APIs like `pop()`. We can simplly call them in one line.
