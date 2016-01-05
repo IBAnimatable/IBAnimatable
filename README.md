@@ -1,6 +1,8 @@
 # IBAnimatable
 Design and prototype UI, interaction, navigation, transition and animation for App Store ready Apps in Interface Builder with IBAnimatable.
 
+With `IBAnimatable`, we can design UI in Interface Builder like Sketch, and we can design animation in Swift playground like Framer Studio. And we can use the output of the design directly in finaly App.
+
 As a designer, we love Sketch, which is a simple but yet super powerful tool to design UI. However, Sketch doesn't support interaction, navigation, transition and animation design, we may need another tool like Framer to design them. Also, to make an App Store read App, we need to use Xcode and Interface Builder to redesign and program the UI and animations. To speed up the process and minimise the waste, we create `IBAnimatable` to make Interface Builder designable and animatable.   
 
 ## Features
@@ -31,7 +33,7 @@ To use `IBAnimatable` to design the UI and animations in Interface Builder, just
 We can configure the animation settings in Attribute Inspector. However, Interface Builder doesn't support preview Animations, but we can still prototype animations in Swift playgournd. There are three sample pages to demostrate how to animate in Swift playground. You can find them in [IBAnimatable.playground](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground)
 
 ## How to animate programmatically
-As you saw above, we can prototype an App fully in Interface Builder withouth single line of code, but if `IBAnimatable` also provides programmable APIs to let us fully control the UI and animations. `IBAnimatable` provides simple APIs like `pop()`. We can simplly call them in one line.
+As you saw above, we can prototype an App fully in Interface Builder withouth single line of code, but `IBAnimatable` also provides APIs to let us fully control the UI and animations. `IBAnimatable` provides simple APIs like `pop()`. We can simplly call them in one line.
 
 ```
 view.pop() // pop animation for the view
