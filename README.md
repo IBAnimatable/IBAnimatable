@@ -108,7 +108,7 @@ The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and con
 | UIViewController | DesignableViewController | |
 
 ### Designable protocols
-Because of the bueaty of protocol oriented programming in Swift, We don't have to use Animatable UI elements to unlocked the power of `IBAnimatable`. We can create our own custom UI elements and conform to `IBAnimatable` protocols to use the default implementation in protocol extension. Here are supported Designable protocols
+Because of the bueaty of protocol oriented programming in Swift, We don't have to use Animatable UI elements to unlocked the power of `IBAnimatable`. We can create our own custom UI elements and conform to `IBAnimatable` protocols to use the default implementation in protocol extension. Here are supported Designable protocols:
 
 #### `BarButtonItemDesignable`
 | Property name | Data type | Remark |
@@ -127,34 +127,34 @@ Because of the bueaty of protocol oriented programming in Swift, We don't have t
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
 | borderColor | Optional&lt;UIColor> | border color |
-| borderWidth | CGFloat | border width. Default value is `CGFloat.NaN`, the value is greater than 0 |
-| borderSide | Optional&lt;String> | border side, `Top`, `Right`, `Bottom` or `Left`. If not specify, then display four sides |
+| borderWidth | CGFloat | border width. Default value is `CGFloat.NaN`, the value is greater than 0. |
+| borderSide | Optional&lt;String> | border side, `Top`, `Right`, `Bottom` or `Left`. If not specify, then display four sides. |
 
 
 #### `CheckBoxDesignable`
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
 | checked | Bool | Default value is `false` |
-| checkedImage | Optional&lt;UIImage> | The image to display when CheckBox is checked |
-| uncheckedImage | Optional&lt;UIImage> | The image to display when CheckBox is unchecked |
+| checkedImage | Optional&lt;UIImage> | The image to display when CheckBox is checked. |
+| uncheckedImage | Optional&lt;UIImage> | The image to display when CheckBox is unchecked. |
 
 #### `CornerDesignable`
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
-| cornerRadius | CGFloat | rounded corner radius. Default value is `CGFloat.NaN`, the value is greater than 0 |
+| cornerRadius | CGFloat | rounded corner radius. Default value is `CGFloat.NaN`, the value is greater than 0. |
 
 #### `FillDesignable`
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
 | fillColor | Optional&lt;UIColor> | fill color of the UI Element |
-| opacity | CGFloat | opacity, alpha of the UI Element, Dafault value is `CGFloat.NaN`, the value is from 0.0 to 1.0 |
+| opacity | CGFloat | opacity, alpha of the UI Element, Dafault value is `CGFloat.NaN`, the value is from 0.0 to 1.0. |
 
 #### `GradientDesignable`
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
 | startColor | Optional&lt;UIColor> | start gradient color |
 | endColor | Optional&lt;UIColor> | end gradient color |
-| startPoint | Optional&lt;String> | start direction point, can find in `GradientStartPoint` |
+| startPoint | Optional&lt;String> | start direction point, can find in `GradientStartPoint`. |
 
 #### `NavigationBarDesignable`
 | Property name | Data type | Remark |
@@ -164,21 +164,21 @@ Because of the bueaty of protocol oriented programming in Swift, We don't have t
 #### `MaskDesignable`
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
-| maskType | Optional&lt;String> | maks type, eg. `Circle` |
+| maskType | Optional&lt;String> | maks type, eg. `Circle`. |
 
 #### `PaddingDesignable`
 It is used in `AnimatableTextField` to add padding on either or both sides.
 
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
-| paddingLeft | CGFloat | padding on left-hand side. Default value is `CGFloat.NaN` |
-| paddingRight | CGFloat | padding on right-hand side. Default value is `CGFloat.NaN` |
-| paddingSide | CGFloat | padding on both sides. Default value is `CGFloat.NaN` |
+| paddingLeft | CGFloat | padding on left-hand side. Default value is `CGFloat.NaN`. |
+| paddingRight | CGFloat | padding on right-hand side. Default value is `CGFloat.NaN`. |
+| paddingSide | CGFloat | padding on both sides. Default value is `CGFloat.NaN`. |
 
 #### `PlaceholderDesignable`
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
-| placeholderColor | Optional&lt;UIColor> | placeholder text color in `AnimatableTextField` |
+| placeholderColor | Optional&lt;UIColor> | placeholder text color in `AnimatableTextField`. |
 
 #### `RootWindowDesignable`
 | Property name | Data type | Remark |
@@ -188,37 +188,37 @@ It is used in `AnimatableTextField` to add padding on either or both sides.
 #### `RotationDesignable`
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
-| rotate | CGFloat | rotation of the UI element in degrees. Default value is `CGFloat.NaN`, value is from 0 to 360 |
+| rotate | CGFloat | rotation of the UI element in degrees. Default value is `CGFloat.NaN`, value is from 0 to 360. |
 
 #### `ShadowDesignable`
-Drop shadow of the UI element, it is popular in Material Design. These properties are not able to render in IB correctly, it maybe a bug of IB.
+Drop shadow of the UI element, it is popular in Material Design. These properties are not able to render in IB correctly, it maybe an Interface Builder's bug.
 
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
 | shadowColor | Optional&lt;UIColor> | shadow color |
-| shadowRadius | CGFloat | shadow corner radius. Default value is `CGFloat.NaN`, the value is greater than 0 |
-| shadowOpacity | CGFloat | shadow opacity. Default value is `CGFloat.NaN`, the value is from 0.0 to 1.0 |
-| shadowOffset | CGPoint | `x` is horizontal offset and `y` is vertical offset |
+| shadowRadius | CGFloat | shadow corner radius. Default value is `CGFloat.NaN`, the value is greater than 0. |
+| shadowOpacity | CGFloat | shadow opacity. Default value is `CGFloat.NaN`, the value is from 0.0 to 1.0. |
+| shadowOffset | CGPoint | `x` is horizontal offset and `y` is vertical offset. |
 
 #### `SideImageDesignable`
 Display a side hint image in `AnimatableTextField`
 
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
-| leftImage | Optional&lt;UIImage> | the image to display on the left-hand side |
-| leftImageLeftPadding | CGFloat | left padding of hint image. Default value is `CGFloat.NaN` |
-| leftImageRightPadding | CGFloat | right padding of hint image. Default value is `CGFloat.NaN` |
-| leftImageTopPadding | CGFloat | top padding of hint image. Default value is `CGFloat.NaN`. If not specified, the image will center vertically |
+| leftImage | Optional&lt;UIImage> | the image to display on the left-hand side. |
+| leftImageLeftPadding | CGFloat | left padding of hint image. Default value is `CGFloat.NaN`. |
+| leftImageRightPadding | CGFloat | right padding of hint image. Default value is `CGFloat.NaN`. |
+| leftImageTopPadding | CGFloat | top padding of hint image. Default value is `CGFloat.NaN`. If not specified, the image will center vertically. |
 
 #### `StatusBarDesignable`
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
-| lightStatusBar | Bool | to display white or black text status bar. Default value is `false` to display black text |
+| lightStatusBar | Bool | to display white or black text status bar. Default value is `false` to display black text. |
 
 #### `TableViewCellDesignable`
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
-| removeSeparatorMargins | Bool | whether to remove separator margins in `AnimatableTableViewCell`. Default value is `false`. There maybe a bug of Interface Builder when setting "Separator Insert" to 0 doesn't work |
+| removeSeparatorMargins | Bool | whether to remove separator margins in `AnimatableTableViewCell`. Default value is `false`. There maybe a bug of Interface Builder when setting "Separator Insert" to 0 doesn't work. |
 
 #### `TintDesignable`
 Easily add color layer on top of the UI element especially `AnimatableImageView`.
@@ -234,6 +234,14 @@ Easily add color layer on top of the UI element especially `AnimatableImageView`
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
 | hideNavigationBar | Bool | whether to hide navigation bar. Default value is `false`. |
+
+### Animatable protocol
+#### Properties
+| Property name | Data type | Remark |
+| ------------- |:-------------:| ----- |
+| animationType | Optional&lt;String> | All supported predefined animations is in enum `AnimationType` |
+| autoRun | Bool | Default value is `true`, if true, the animation will automatically run when the view is loaded. Should set to `false` if want to manually start the animation. |
+
 
 ## How to contribute
 All of us can contribute to this project. Fewer overheads mean less time to build quality Apps and more time to enjoy coffee ☕️.
