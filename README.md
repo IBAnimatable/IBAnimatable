@@ -1,5 +1,5 @@
 # IBAnimatable
-Design and prototype App Store ready App's UI, interaction, navigation, transition and animation in Interface Builder with IBAnimatable.
+Design and prototype UI, interaction, navigation, transition and animation for App Store ready Apps in Interface Builder with IBAnimatable.
 
 As a designer, we love Sketch, which is a simple but yet super powerful tool to design UI. However, Sketch doesn't support interaction, navigation, transition and animation design, we may need another tool like Framer to design them. Also, to make an App Store read App, we need to use Xcode and Interface Builder to redesign and program the UI and animations. To speed up the process and minimise the waste, we create `IBAnimatable` to make Interface Builder designable and animatable.   
 
