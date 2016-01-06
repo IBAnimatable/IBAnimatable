@@ -1,9 +1,9 @@
 # IBAnimatable
 Design and prototype UI, interaction, navigation, transition and animation for App Store ready Apps in Interface Builder with IBAnimatable.
 
-With `IBAnimatable`, we can design UI in Interface Builder like Sketch, and we can design animation in Swift playground like Framer Studio. And we can use the output of the design directly in finaly App.
+With `IBAnimatable`, we can design UI in Interface Builder like Sketch, and design animation in Swift playground like Framer Studio. Also we can use the output of the design directly in the final App.
 
-As a designer, we love Sketch, which is a simple but yet super powerful tool to design UI. However, Sketch doesn't support interaction, navigation, transition and animation design, we may need another tool like Framer to design them. Also, to make an App Store read App, we need to use Xcode and Interface Builder to redesign and program the UI and animations. To speed up the process and minimise the waste, we create `IBAnimatable` to make Interface Builder designable and animatable.   
+As a designer, we love Sketch, which is a simple but yet super powerful tool to design UI. However, Sketch doesn't support interaction, navigation, transition and animation design, we may need another tool like Framer Studio to design them. Also, to make an App Store read App, we need to use Xcode and Interface Builder to redesign and program the UI and animations. To speed up the process and minimise the waste, we create `IBAnimatable` to make Interface Builder designable and animatable.   
 
 ## Features
 * From prototype to shippable App Store ready App - What you design in Interface Builder is what the App exactly looks like. 
@@ -12,6 +12,11 @@ As a designer, we love Sketch, which is a simple but yet super powerful tool to 
 * Built-in Auto Layout support - We can use Auto Layout and Size Classes with `IBAnimatable` to support orientations and multiple iOS devices. 
 * Navigation support - We can use default navigation pattern in the App and `IBAnimatable` also adds unwind segues to unwind or dismiss scene without any code.
 * Protocol oriented programming - `IBAnimatable` used protocol oriented programming paradigm. Thanks to Swift protocol extension, it is easy to support more designable or animatable features. We can even use protocol extension create own set of custom UI elements instead of using the default ones from `IBAnimatable`.  
+
+## Use cases
+* Prototyping - Create interactive proptotype to validate the idea quickly.
+* Redesigning in Interface Builder - Redesign UI from Sketch and animation from Framer Studio without writing any code.
+* Making custom UI elements - Use `IBAnimatable` protocols to make custom UI elements. eg. Buttons with default color palette.
 
 ## How to run example App
 One way to learn and understand how powerful of `IBAnimatable` is to run the example App and play around the settings in Interface Builder. 
