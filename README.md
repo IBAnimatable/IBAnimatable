@@ -5,6 +5,9 @@ With `IBAnimatable`, we can design UI in Interface Builder like Sketch, and desi
 
 As a designer, we love Sketch, which is a simple but yet super powerful tool to design UI. However, Sketch doesn't support interaction, navigation, transition and animation design, we may need another tool like Framer Studio to design them. Also, to make an App Store read App, we need to use Xcode and Interface Builder to redesign and program the UI and animations. To speed up the process and minimise the waste, we create `IBAnimatable` to make Interface Builder designable and animatable.   
 
+## Languages
+[中文](https://github.com/JakeLin/IBAnimatable/blob/master/Documentation/README.zh.md)
+
 ## Features
 * From prototype to shippable App Store ready App - What you design in Interface Builder is what the App exactly looks like. 
 * Designer friendly - Sketch style configuration panel on Attributes Inspector to lower the learning curve to use Interface Builder.   
