@@ -13,7 +13,7 @@ As a designer, we love Sketch, which is a simple but yet super powerful tool to 
 * Designer friendly - Sketch style configuration panel on Attributes Inspector to lower the learning curve to use Interface Builder.   
 * Animation desigin support in Swift playground - Similar to Framer Studio. Design animations in Swift playground to save time for runing on simulator or actual iOS devices. 
 * Built-in Auto Layout support - We can use Auto Layout and Size Classes with `IBAnimatable` to support orientations and multiple iOS devices. 
-* Navigation support - We can use default navigation pattern in the App and `IBAnimatable` also adds unwind segues to unwind or dismiss scene without any code.
+* Navigation and transition support - We can use default navigation pattern in the App and `IBAnimatable` also adds unwind segues to unwind or dismiss scene without any code.
 * Protocol oriented programming - `IBAnimatable` used protocol oriented programming paradigm. Thanks to Swift protocol extension, it is easy to support more designable or animatable features. We can even use protocol extension create own set of custom UI elements instead of using the default ones from `IBAnimatable`.  
 
 ## Use cases

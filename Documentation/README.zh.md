@@ -3,13 +3,13 @@
 
 2015年Designer News热卖文章中，前20篇里面有一半左右的文章是讨论如何快速制作可交换的原型，例如Adobe公司在开发Project Comet原型工具来补救日益被Sketch迅速占领的市场。这些工具都有一个特点：“快”。“快”成为移动开发领域为不可破的法宝，因为无论那个App都需要在不断的迭代中逐步完善和发展。但是目前这些工具都没法提供一个端到端的解决方案，很多工具生成的原型没办法直接使用在最终的App中，或者需要在Xcode和Interface Builder里重做原型中的设计，交换以及动画。这是一个很大的痛点，`IBAnimatable`的诞生是为了解决这个痛点。`IBAnimatable`提供从想法到最终App产品的设计工具，帮助我们在Interface Builder和Swift playground里面设计UI, 交互, 导航模式, 换场和动画。   
 
-## Features
-* From prototype to shippable App Store ready App - What you design in Interface Builder is what the App exactly looks like. 
-* Designer friendly - Sketch style configuration panel on Attributes Inspector to lower the learning curve to use Interface Builder.   
-* Animation desigin support in Swift playground - Similar to Framer Studio. Design animations in Swift playground to save time for runing on simulator or actual iOS devices. 
-* Built-in Auto Layout support - We can use Auto Layout and Size Classes with `IBAnimatable` to support orientations and multiple iOS devices. 
-* Navigation support - We can use default navigation pattern in the App and `IBAnimatable` also adds unwind segues to unwind or dismiss scene without any code.
-* Protocol oriented programming - `IBAnimatable` used protocol oriented programming paradigm. Thanks to Swift protocol extension, it is easy to support more designable or animatable features. We can even use protocol extension create own set of custom UI elements instead of using the default ones from `IBAnimatable`.  
+## 功能
+* 一个工具覆盖原型到可提交到App Store的App - 支持所见即所得的设计功能。
+* 对设计师友好 - 在Interface Builder的Attributes Inspector里提供类似Sketch配置功能。   
+* 在Swift playground上设计动画 - 提供类似Framer Studio的左边编写代码，右边现实动画的功能。 
+* 内置Auto Layout支持 - 使用Auto Layout和Size Classes支持翻屏和多设备。 
+* 导航和换场动画支持 - 可以使用内置的导航模式，`IBAnimatable`同时提供Unwind Segue来返回前一个页面，可以省去编写代码的步骤。
+* Protocol oriented编程模式 - `IBAnimatable`使用了protocol oriented编程模式，是的项目非常容易扩张，并且可以方便的制作出自己的自定义控件。  
 
 ## 怎样运行例子App
 要了解和学习`IBAnimatable`，我们可运行例子App，并在Interface Builder中修改相关的配置来查看设计的结果。 
@@ -29,7 +29,7 @@ $ open "IBAnimatable.xcworkspace"
 
 3) 编译并运行
 
-## 如何在Interface Builder中设计
+## 如何在Interface Builder中设计UI和动画
 ![](https://raw.githubusercontent.com/JakeLin/IBAnimatable/master/Screenshots/DesignInInterfaceBuilder.png)
 
 To use `IBAnimatable` to design the UI and animations in Interface Builder, just follow few steps as below:
