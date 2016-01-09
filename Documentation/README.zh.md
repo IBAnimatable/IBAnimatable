@@ -6,7 +6,7 @@
 ## 功能
 * 一个工具覆盖原型到可提交到App Store的App - 支持所见即所得的设计功能。
 * 对设计师友好 - 在Interface Builder的Attributes Inspector里提供类似Sketch配置功能。   
-* 在Swift playground上设计动画 - 提供类似Framer Studio的左边编写代码，右边现实动画的功能。 
+* 在Swift playground上设计动画 - 提供类似Framer Studio的左边编写代码，右边预览动画的功能。 
 * 内置Auto Layout支持 - 使用Auto Layout和Size Classes支持翻屏和多设备。 
 * 导航和换场动画支持 - 可以使用内置的导航模式，`IBAnimatable`同时提供Unwind Segue来返回前一个页面，可以省去编写代码的步骤。
 * Protocol oriented编程模式 - `IBAnimatable`使用了protocol oriented编程模式，是的项目非常容易扩张，并且可以方便的制作出自己的自定义控件。  
@@ -40,10 +40,10 @@ To use `IBAnimatable` to design the UI and animations in Interface Builder, just
 4. Configure the UI and animations in Attribute Inspector.
 
 
-## How to animate in Swift playground
+## 如何在Swift playground里设计动画
 ![](https://github.com/JakeLin/IBAnimatable/blob/master/Screenshots/AnimateInSwiftPlayground.gif)
 
-We can configure the animation settings in Attribute Inspector. However, Interface Builder doesn't support preview Animations, but we can still prototype animations in Swift playgournd. There are three sample pages to demostrate how to design animation in Swift playground. You can find them in [IBAnimatable.playground](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground)
+尽管我们可以在Attribute Inspector里配置动画，但是Interface Builder还不支持预览动画。但幸运的是我们可以在Swift playgournd里设计和预览动画。你可以在[IBAnimatable.playground](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground)看到如何设计和预览动画。
 
 ## How to animate programmatically
 As you saw above, we can prototype an App fully in Interface Builder withouth single line of code, but `IBAnimatable` also provides APIs to let us fully control the UI and animations. `IBAnimatable` provides simple APIs like `pop()`. We can simplly call them in one line.
