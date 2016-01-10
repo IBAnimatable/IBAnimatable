@@ -36,8 +36,8 @@ $ open "IBAnimatable.xcworkspace"
 
 1. 打开storyboard或者Xib。
 2. 把UIview或其他UI控件拖放到ViewController里面。
-3. 在Identity Inspector里关联相应的View或者`Animatable` classes, you can find all `Animatable` classes in APIs section.
-4. Configure the UI and animations in Attribute Inspector.
+3. 在Identity Inspector里把相应的UI控件关联到`Animatable`的UI控件类，`Animatable`的文档可以在(APIs section)[https://github.com/JakeLin/IBAnimatable#apis]找到。
+4. 在Attribute Inspector里配置UI和动画。
 
 
 ## 如何在Swift playground里设计动画
