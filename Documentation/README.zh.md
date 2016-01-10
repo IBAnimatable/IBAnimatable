@@ -45,15 +45,15 @@ $ open "IBAnimatable.xcworkspace"
 
 尽管我们可以在Attribute Inspector里配置动画，但是Interface Builder还不支持预览动画。但幸运的是我们可以在Swift playgournd里设计和预览动画。你可以在[IBAnimatable.playground](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground)看到如何设计和预览动画。
 
-## How to animate programmatically
-As you saw above, we can prototype an App fully in Interface Builder withouth single line of code, but `IBAnimatable` also provides APIs to let us fully control the UI and animations. `IBAnimatable` provides simple APIs like `pop()`. We can simplly call them in one line.
+## 手工运行动画
+在上面我们已经看到，我们可以不需要任何代码就能在Interface Builder进行设计，但是`IBAnimatable`还提供编程接口来让我们完全控制UI和动画。`IBAnimatable`提供了例如`pop()`那样简单的API，我们只需要一行代码就能执行动画。
 
 ```
 view.pop() // pop animation for the view
 view.squeezeFadeInLeft() // squeeze and fade in from left animation
 ```  
 
-You can play around all these animations in [Swift playgournd Page - Predefined Animations](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground/Pages/Predefined%20Animations.xcplaygroundpage)
+在[Swift playgournd Page - Predefined Animations](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground/Pages/Predefined%20Animations.xcplaygroundpage)里面我们可以尝试不同的动画。
 
 ### Animation properties
 There are some properties we can change to customise the animation. What we need to do is to set the properties and call `animate()` method to start the animation.
@@ -83,25 +83,24 @@ view.squeezeInDown{ view.pop() }
 view.squeezeInDown{ view.pop { view.shake{ view.squeeze{ view.wobble{ view.flipX { view.flash{ view.flipY { view.fadeOutDown() } } } } } } } }
 ```
 
-## How to install
-### Manually install
-Copy and paste `IBAnimatable` folder in your Xcode project.
+## 怎样安装
+### 手工安装
+把`IBAnimatable`文件夹拷贝到你的Xcode项目中
 
 ### Git submodule
-TBD [Issue #22 - Swift package manager support](https://github.com/JakeLin/IBAnimatable/issues/22)
+在开发中，请看[Issue #22 - Swift package manager support](https://github.com/JakeLin/IBAnimatable/issues/22)
 
 ### Swift package manager
-TBD [Issue #5 - Swift package manager support](https://github.com/JakeLin/IBAnimatable/issues/5)
+在开发中，请看[Issue #5 - Swift package manager support](https://github.com/JakeLin/IBAnimatable/issues/5)
 
 ### CocoaPods
-TBD [Issue #7 - CocoaPods support](https://github.com/JakeLin/IBAnimatable/issues/7)
+在开发中，请看[Issue #7 - CocoaPods support](https://github.com/JakeLin/IBAnimatable/issues/7)
 
 ### Carthage 
-TBD [Issue #6 - Carthage support ](https://github.com/JakeLin/IBAnimatable/issues/6)
-
+在开发中，请看[Issue #6 - Carthage support ](https://github.com/JakeLin/IBAnimatable/issues/6)
 
 ## APIs
-参考[IBAnimatable APIs](https://github.com/JakeLin/IBAnimatable#apis)
+完整的API文档请参考[IBAnimatable APIs](https://github.com/JakeLin/IBAnimatable#apis)
 
 ## How to contribute
 All of us can contribute to this project. Fewer overheads mean less time to build quality Apps and more time to enjoy coffee ☕️.
