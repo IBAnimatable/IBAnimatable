@@ -32,11 +32,11 @@ $ open "IBAnimatable.xcworkspace"
 ## 如何在Interface Builder中设计UI和动画
 ![](https://raw.githubusercontent.com/JakeLin/IBAnimatable/master/Screenshots/DesignInInterfaceBuilder.png)
 
-To use `IBAnimatable` to design the UI and animations in Interface Builder, just follow few steps as below:
+使用`IBAnimatable`在Interface Builder里设计UI和动，只需要下面简单的几步：
 
-1. Open a storyboard or Xib file.
-2. Drag and drop a view or controller to a ViewController.
-3. In Identity Inspector, connect the view or controller to `Animatable` classes, you can find all `Animatable` classes in APIs section.
+1. 打开storyboard或者Xib。
+2. 把UIview或其他UI控件拖放到ViewController里面。
+3. 在Identity Inspector里关联相应的View或者`Animatable` classes, you can find all `Animatable` classes in APIs section.
 4. Configure the UI and animations in Attribute Inspector.
 
 
