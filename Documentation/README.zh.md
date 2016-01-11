@@ -43,7 +43,8 @@ $ open "IBAnimatable.xcworkspace"
 ## 如何在Swift playground里设计动画
 ![](https://github.com/JakeLin/IBAnimatable/blob/master/Screenshots/AnimateInSwiftPlayground.gif)
 
-尽管我们可以在Attribute Inspector里配置动画，但是Interface Builder还不支持预览动画。但幸运的是我们可以在Swift playgournd里设计和预览动画。你可以在[IBAnimatable.playground](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground)看到如何设计和预览动画。
+尽管我们可以在Attribute Inspector里配置动画，但是Interface Builder还不支持预览动画。但幸运的是我们可以在Swift playgournd里设计和预览动画。你可以在[IBAnimatable.playground](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground)看到如何设计和预览动画。首先选择一个playground的页，然后点击"Assistant editor"按钮来呈现右边的预览页。接着选择右上角的"Timeline"来预览动画。我们可以使用Xcode的"Editor" -> "Execute"菜单来重新执行Playground的动画。
+
 
 ## 手工运行动画
 在上面我们已经看到，我们可以不需要任何代码就能在Interface Builder进行设计，但是`IBAnimatable`还提供编程接口来让我们完全控制UI和动画。`IBAnimatable`提供了例如`pop()`那样简单的API，我们只需要一行代码就能执行动画。
@@ -55,7 +56,7 @@ view.squeezeFadeInLeft() // squeeze and fade in from left animation
 
 在[Swift playgournd Page - Predefined Animations](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground/Pages/Predefined%20Animations.xcplaygroundpage)里面我们可以尝试不同的动画。
 
-### Animation properties
+### 动画的属性
 There are some properties we can change to customise the animation. What we need to do is to set the properties and call `animate()` method to start the animation.
 
 ```
