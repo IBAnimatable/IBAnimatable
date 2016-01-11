@@ -28,7 +28,10 @@ view.maskType = "Circle"
 //: animationType: all supported predefined animations can be found in `enum AnimationType`
 view.animationType = "SqueezeInLeft"
 
-//: delay: used to delay the animation in seconds. Default is 0
+//: duration: used to specify the duration of animation. Default value is 0.7
+view.duration = 0.8
+
+//: delay: used to delay the animation in seconds. Default value is 0
 view.delay = 0.5
 
 //: damping: used in UIView Spring animation (0 ~ 1). To smoothly decelerate the animation without oscillation, use a value of 1. Employ a damping ratio closer to zero to increase oscillation. Default is 0.7. Notice: FadeOutIn, FadeInOut, Shake, Pop, Morph, Squeeze, Flash, Wobble and Swing animations do not use damping.
