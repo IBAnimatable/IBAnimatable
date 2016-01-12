@@ -9,20 +9,20 @@ Design and prototype UI, interaction, navigation, transition and animation for A
 
 Here is the design in Interface Builder (Storyboard).
 
-With `IBAnimatable`, we can design UI in Interface Builder like Sketch, and design animation in Swift playground like Framer Studio. Also we can use the output of the design directly in the final App.
+With `IBAnimatable`, we can design UI in Interface Builder like Sketch, and prototype animations in Swift playground like Framer Studio. Also we can use the output of the design directly in the production ready App.
 
-As a designer, we love Sketch, which is a simple but yet super powerful tool to design UI. However, Sketch doesn't support interaction, navigation, transition and animation design, we may need another tool like Framer Studio to design them. Also, to make an App Store read App, we need to use Xcode and Interface Builder to redesign and program the UI and animations. To speed up the process and minimise the waste, we create `IBAnimatable` to make Interface Builder designable and animatable.   
+As a designer, we love Sketch, which is a simple but yet super powerful tool to design UI. However, Sketch can't design interaction, navigation, transition and animation, we may need another tool like Framer Studio to design some of them. Moreover, to make an App Store ready App, we need to use Xcode and Interface Builder to implement the UI and animations. To speed up the process and minimise the waste, we create `IBAnimatable` to make Interface Builder designable and animatable.   
 
 ## Languages
 [中文](https://github.com/JakeLin/IBAnimatable/blob/master/Documentation/README.zh.md)
 
 ## Features
 * From prototype to shippable App Store ready App - What you design in Interface Builder is what the App exactly looks like. 
-* Designer friendly - Sketch style configuration panel on Attributes Inspector to lower the learning curve to use Interface Builder.   
-* Animation desigin support in Swift playground - Similar to Framer Studio. Design animations in Swift playground to save time for runing on simulator or actual iOS devices. 
+* Designer friendly - Sketch style setting panel on Attributes Inspector to lower the learning curve for using Interface Builder.   
+* Animation desigin support in Swift playground - Similar to Framer Studio, we can prototype animations in Swift playground to save time for runing on simulator or actual iOS devices. 
 * Built-in Auto Layout support - We can use Auto Layout and Size Classes with `IBAnimatable` to support orientations and multiple iOS devices. 
-* Navigation and transition support - We can use default navigation pattern in the App and `IBAnimatable` also adds unwind segues to unwind or dismiss scene without any code.
-* Protocol oriented programming - `IBAnimatable` used protocol oriented programming paradigm. Thanks to Swift protocol extension, it is easy to support more designable or animatable features. We can even use protocol extension create own set of custom UI elements instead of using the default ones from `IBAnimatable`.  
+* Navigation and transition support - We can use default navigation pattern in the App and `IBAnimatable` also adds unwind segues to navigate back or dismiss scene without any code. More transitions will be added soon.
+* Protocol oriented programming - `IBAnimatable` used protocol oriented programming paradigm. With Swift protocol extension, it is easy to support more designable or animatable features. We can even use these protocol extensions to create other custom UI elements instead of using the default ones from `IBAnimatable`.  
 
 ## Use cases
 * Prototyping - Create interactive proptotype to validate the idea quickly.
@@ -30,22 +30,22 @@ As a designer, we love Sketch, which is a simple but yet super powerful tool to 
 * Making custom UI elements - Use `IBAnimatable` protocols to make custom UI elements. eg. Buttons with default color palette.
 
 ## How to run example App
-One way to learn and understand how powerful of `IBAnimatable` is to run the example App and play around the settings in Interface Builder. 
+The easy way to learn and understand how powerful of `IBAnimatable`is to run the example App and play around the settings in Interface Builder. Just few steps we can run the App as below:
 
 1) Clone the repository
 
 ```
 $ git clone https://github.com/JakeLin/IBAnimatable.git
-$ cd IBAnimatable
 ```
 
 2) Open the workspace in Xcode
 
 ```
+$ cd IBAnimatable
 $ open "IBAnimatable.xcworkspace"
 ```
 
-3) Compile and run the app in your simulator
+3) Compile and run the app in your simulator or iOS device
 
 ## How to design in Interface Builder
 ![](https://raw.githubusercontent.com/JakeLin/IBAnimatable/master/Screenshots/DesignInInterfaceBuilder.png)
@@ -53,15 +53,15 @@ $ open "IBAnimatable.xcworkspace"
 To use `IBAnimatable` to design the UI and animations in Interface Builder, just follow few steps as below:
 
 1. Open a storyboard or Xib file.
-2. Drag and drop a UI element eg. UIView to a ViewController.
-3. In Identity Inspector, connect the UI element to `Animatable` custom UI class, you can find all `Animatable` classes in [APIs section](https://github.com/JakeLin/IBAnimatable#apis).
+2. Drag and drop a UIKit element eg. UIView to a ViewController.
+3. In Identity Inspector, connect the UI element to `Animatable` custom UI class eg. `AnimatableView`, you can find all `Animatable` classes in [APIs section](https://github.com/JakeLin/IBAnimatable#apis).
 4. Configure the UI and animations in Attribute Inspector.
 
 
 ## How to animate in Swift playground
 ![](https://github.com/JakeLin/IBAnimatable/blob/master/Screenshots/AnimateInSwiftPlayground.gif)
 
-We can configure the animation settings in Attribute Inspector. However, Interface Builder doesn't support preview Animations, but we can still prototype animations in Swift playgournd. There are three sample pages to demostrate how to design animation in Swift playground. You can find them in [IBAnimatable.playground](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground). Firstly, select one page in Swift playground, then click on "Assistant editor" button to split the playground. After that, select "Timeline" on the top of right-hand side to preview the animation. We can use Xcode menu "Editor" -> "Execute" to re-run Playground.
+We can configure the animation settings in Attribute Inspector. However, Interface Builder doesn't support previewing Animations, but we can still prototype animations in Swift playgournd. There are three sample pages to demostrate how to design animation in Swift playground. You can find them in [IBAnimatable.playground](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground). Firstly, select one page in Swift playground, then click on "Assistant editor" button to split the playground. After that, select "Timeline" on the top of right-hand side to preview the animation. We can use Xcode menu "Editor" -> "Execute" to re-run the playground.
 
 ## How to animate programmatically
 As you saw above, we can prototype an App fully in Interface Builder withouth single line of code, but `IBAnimatable` also provides APIs to let us fully control the UI and animations. `IBAnimatable` provides simple APIs like `pop()`. We can simplly call them in one line.
@@ -71,7 +71,7 @@ view.pop() // pop animation for the view
 view.squeezeFadeInLeft() // squeeze and fade in from left animation
 ```  
 
-You can play around all these animations in [Swift playgournd Page - Predefined Animations](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground/Pages/Predefined%20Animations.xcplaygroundpage)
+You can play around all these predefined animations in [Swift playgournd Page - Predefined Animations](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground/Pages/Predefined%20Animations.xcplaygroundpage)
 
 ### Animation properties
 There are some properties we can change to customise the animation. What we need to do is to set the properties and call `animate()` method to start the animation.
@@ -88,16 +88,16 @@ view.force = 1
 view.animate()
 ```
 
-You can play around all animations with properties in [Swift playgournd Page - Animation Properties](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground/Pages/Animation%20Properties.xcplaygroundpage)
+You can play around all animations with different properties in [Swift playgournd Page - Animation Properties](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground/Pages/Animation%20Properties.xcplaygroundpage)
 
 ### Chaining animations
-Sometimes, we need to run one animation after another one. With `IBAnimatble`, we can easily chain animations together to provide sleek user experience.
+Sometimes, we need to run another animation after the previous one. With `IBAnimatble`, we can easily chain animations together to provide sleek user experience.
 
 ```
-// Simplly put the next animation in `{}` closure like below. It is an example to pop the view after squeeze in from the top.
+// Simplly put the next animation within `{}` closure as below. It is an example to pop the view after squeeze in from the top.
 view.squeezeInDown{ view.pop() }
 
-// Heaps of animations have been chained togehter, it is source code of gif in "Animate in Swift playground" section
+// Heaps of animations have been chained togehter, it is the source code of animated Gif in "Animate in Swift playground" section
 view.squeezeInDown{ view.pop { view.shake{ view.squeeze{ view.wobble{ view.flipX { view.flash{ view.flipY { view.fadeOutDown() } } } } } } } }
 ```
 
@@ -120,7 +120,7 @@ TBD, more details on [Issue #6 - Carthage support ](https://github.com/JakeLin/I
 ## APIs
 
 ### Animatable UI elements 
-The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and connect with `Animatable` UI elements in Identity Inspector.
+The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and connect with `Animatable` UI elements in Identity Inspector. Here are the supported `Animatable` UI elements to map UIKit elements.
 
 | UIKit elements | Animatable UI elements | Remark |
 | ------------- |:-------------:| ----- |
@@ -140,18 +140,18 @@ The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and con
 | UIViewController | DesignableViewController | |
 
 ### Designable protocols
-Because of the bueaty of protocol oriented programming in Swift, We don't have to use Animatable UI elements to unlocked the power of `IBAnimatable`. We can create our own custom UI elements and conform to `IBAnimatable` protocols to use the default implementation in protocol extension. Here are supported Designable protocols:
+`IBAnimatable` provides a set of Designable protocols as below. Because of the power of protocol oriented programming in Swift, we don't even have to use Animatable default UI elements eg. `AnimatableView` to unlocked the power of `IBAnimatable`. We can conform to `IBAnimatable` protocols to use the default implementation in protocol extension to create other custom UI elements.
 
 #### `BarButtonItemDesignable`
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
-| roundedImage | Optional&lt;UIImage> | By default, Interface Builder can only support outline images for Bar Button Item. We can set this property to display a rounded image. The image can not be previewed in Interface Builder. |
+| roundedImage | Optional&lt;UIImage> | By default, Interface Builder can only support outline images for Bar Button Item. With `roundedImage`, we can display a rounded image. The image can not be previewed in Interface Builder. |
 
 
 #### `BlurDesignable`
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
-| blurEffectStyle | Optional&lt;String> | Support three different blur effects: `ExtraLight`, `Light` and `Dark` defined in `BlurEffectStyle`. The look of blur effect in Interface Builder is different from Simulator or device. |
+| blurEffectStyle | Optional&lt;String> | Support three different blur effects: `ExtraLight`, `Light` and `Dark`. They ard defined in `BlurEffectStyle` enum. The look of blur effect in Interface Builder is different from Simulator or device. |
 | blurOpacity | CGFloat | Opacity of the blur effect specified above. Default value is `CGFloat.NaN`, the value is from 0.0 to 1.0. |
 
 

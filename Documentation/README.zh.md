@@ -11,13 +11,19 @@
 
 2015年Designer News热门文章中，前20篇里面有一半左右的文章是讨论如何快速制作可交换的原型，例如Adobe公司在开发Project Comet原型工具来补救日益被Sketch迅速占领的市场。这些工具都有一个特点：“快”。“快”成为移动开发领域为不可破的法宝，因为无论那个App都需要在不断的迭代中逐步完善和发展。但是目前这些工具都没法提供一个端到端的解决方案，很多工具生成的原型没办法直接使用在最终的App中，或者需要在Xcode和Interface Builder里重做原型中的设计，交换以及动画。这是一个很大的痛点，`IBAnimatable`的诞生是为了解决这个痛点。`IBAnimatable`提供从想法到最终App产品的设计工具，帮助我们在Interface Builder和Swift playground里面设计UI, 交互, 导航模式, 换场和动画。   
 
-## 功能
+## 主要功能
 * 一个工具覆盖原型到可提交到App Store的App - 支持所见即所得的设计功能。
 * 对设计师友好 - 在Interface Builder的Attributes Inspector里提供类似Sketch配置功能。   
 * 在Swift playground上设计动画 - 提供类似Framer Studio的左边编写代码，右边预览动画的功能。 
 * 内置Auto Layout支持 - 使用Auto Layout和Size Classes支持翻屏和多设备。 
 * 导航和换场动画支持 - 可以使用内置的导航模式，`IBAnimatable`同时提供Unwind Segue来返回前一个页面，可以省去编写代码的步骤。
 * Protocol oriented编程模式 - `IBAnimatable`使用了protocol oriented编程模式，是的项目非常容易扩张，并且可以方便的制作出自己的自定义控件。  
+
+## 使用场景
+* 制作原型 － 使用`IBAnimatable`快速地执行可交互的原型。
+* 在Interface Builder里面快速实现 － 把Sketch的UI或者Framer Studio的原型在Interface Builder快速实现，不需要编写任何代码。
+* 制作客户化控件 － 使用`IBAnimatable`的extension制作另外的控件库，例如Material控件等。
+
 
 ## 怎样运行例子App
 要了解和学习`IBAnimatable`，我们可运行例子App，并在Interface Builder中修改相关的配置来查看设计的结果。 
