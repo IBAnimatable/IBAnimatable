@@ -3,13 +3,13 @@
 
 ![](https://github.com/JakeLin/IBAnimatable/blob/master/Screenshots/IBAnimatable.gif)
 
-**整个App都是通过`IBAnimatable`在Interface Builder设计完成，没有任何一行代码**。由于Gif文件大小的限制，这中演示了部分功能，完整功能可以在[YouTube](https://www.youtube.com/watch?v=dvD8X6J1YLM)或者[MP4 on Github]()上看到。
+**整个App都是通过`IBAnimatable`在Interface Builder设计完成，没有任何一行代码**。由于Gif文件大小的限制，这只演示了部分功能，完整功能可以在[YouTube](https://www.youtube.com/watch?v=dvD8X6J1YLM)或者[MP4 on Github]()上看到。
 
 ![](https://github.com/JakeLin/IBAnimatable/blob/master/Screenshots/Storyboard.png)
 
 这是整个App都是在Interface Builder的Storyboard中的设计。
 
-2015年Designer News热卖文章中，前20篇里面有一半左右的文章是讨论如何快速制作可交换的原型，例如Adobe公司在开发Project Comet原型工具来补救日益被Sketch迅速占领的市场。这些工具都有一个特点：“快”。“快”成为移动开发领域为不可破的法宝，因为无论那个App都需要在不断的迭代中逐步完善和发展。但是目前这些工具都没法提供一个端到端的解决方案，很多工具生成的原型没办法直接使用在最终的App中，或者需要在Xcode和Interface Builder里重做原型中的设计，交换以及动画。这是一个很大的痛点，`IBAnimatable`的诞生是为了解决这个痛点。`IBAnimatable`提供从想法到最终App产品的设计工具，帮助我们在Interface Builder和Swift playground里面设计UI, 交互, 导航模式, 换场和动画。   
+2015年Designer News热门文章中，前20篇里面有一半左右的文章是讨论如何快速制作可交换的原型，例如Adobe公司在开发Project Comet原型工具来补救日益被Sketch迅速占领的市场。这些工具都有一个特点：“快”。“快”成为移动开发领域为不可破的法宝，因为无论那个App都需要在不断的迭代中逐步完善和发展。但是目前这些工具都没法提供一个端到端的解决方案，很多工具生成的原型没办法直接使用在最终的App中，或者需要在Xcode和Interface Builder里重做原型中的设计，交换以及动画。这是一个很大的痛点，`IBAnimatable`的诞生是为了解决这个痛点。`IBAnimatable`提供从想法到最终App产品的设计工具，帮助我们在Interface Builder和Swift playground里面设计UI, 交互, 导航模式, 换场和动画。   
 
 ## 功能
 * 一个工具覆盖原型到可提交到App Store的App - 支持所见即所得的设计功能。
@@ -44,7 +44,7 @@ $ open "IBAnimatable.xcworkspace"
 
 1. 打开storyboard或者Xib。
 2. 把UIview或其他UI控件拖放到ViewController里面。
-3. 在Identity Inspector里把相应的UI控件关联到`Animatable`的UI控件类，`Animatable`的文档可以在(APIs section)[https://github.com/JakeLin/IBAnimatable#apis]找到。
+3. 在Identity Inspector里把相应的UI控件关联到`Animatable`的UI控件类，`Animatable`的文档可以在 [APIs section](https://github.com/JakeLin/IBAnimatable#apis) 找到。
 4. 在Attribute Inspector里配置UI和动画。
 
 
