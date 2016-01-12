@@ -103,24 +103,20 @@ view.squeezeInDown{ view.pop { view.shake{ view.squeeze{ view.wobble{ view.flipX
 ## APIs
 完整的API文档请参考[IBAnimatable APIs](https://github.com/JakeLin/IBAnimatable#apis)
 
-## How to contribute
-All of us can contribute to this project. Fewer overheads mean less time to build quality Apps and more time to enjoy coffee ☕️.
+## 怎样贡献
+我们每个人都可以为这个项目进行贡献。高效的工具使得我们有更多的时间来开发高质量的App，当然也有更多的时间享受生活🍻。
 
-If you are a design, you can design in Interface Builder with `IBAnimatable` or redo your existing design from Sketch or Photoshop. You should be able to do <del>all</del> most of design work in Interface Builder. If you have any feature request, please [create a GitHub Issue](https://github.com/JakeLin/IBAnimatable/issues/new) and we will put it in the backlog. If you have done any design with `IBAnimatable`, please let us know via creating Pull Request or GitHub Issue. We will add it to Readme file.
+* 如果是你一名设计师，你可以使用`IBAnimatable`在Interface Builder里进行设计，甚至不需要任何像Sketch这样设计工具，或者把现有的Sketch或Photoshop在Interface Builder快速实现。有了`IBAnimatable`，绝大部分的功能都可以Interface Builder里面完成。如果你需要新功能，请[提交一个GitHub Issue](https://github.com/JakeLin/IBAnimatable/issues/new)。如果你使用`IBAnimatable`进行设计，请通过Pull Request或者GitHub Issue来通知我们，我们可以把它放在Readme文件里面。
 
-If you are a developer, you can work on features or fix bugs, please check out [GitHub Issues](https://github.com/JakeLin/IBAnimatable/issues) to find out the backlog. If you have used `IBAnimatable` in you App, please let us know via creating Pull Request or GitHub Issue. We will add it to Readme file.
+* 如果你是一名开发者，你可以实现功能或者修改Bug，Backlog可以在[GitHub Issues](https://github.com/JakeLin/IBAnimatable/issues)找到。如果你在你的App里面使用了`IBAnimatable`，请通过Pull Request或者GitHub Issue来通知我们，我们可以把它放在Readme文件里面。
 
-If you are good at English, please correct my English 😁. If you are good at other languages, please create a Readme file in those languages.
+* 如果你英语不错，来改一下我的英语吧😁。如果你还会其他语言，创建或者修改其他语言的Readme文件吧。
 
-If you like the project, please share it with the other designers and developers, and star 🌟 the project. 🤗
+* 如果你喜欢这个项目，请告诉其他设计师和开发者，记住Star🌟这个项目哦。 🤗
 
 
 ## Inspirations
-* `IBDesignable` and `IBInspectable` - The entire project is based on that.
-* Sketch -  Interface Builder should be as easy as Sketch to use
-* Framer
-* [Spring by Meng To](https://github.com/MengTo/Spring) - steal a lot of animation parameters from this project.
-* [Invision ToDo App UI Kit](http://www.invisionapp.com/do), The demo App's original design is from this UI Kit and redone in Interface Builder. We also added interaction, navigation and animations.
+请查看[IBAnimatable Inspirations](https://github.com/JakeLin/IBAnimatable#inspirations)
 
 ## License
 `IBAnimatable` is released under the MIT license. See [LICENSE](https://github.com/JakeLin/IBAnimatable/blob/master/LICENSE) for details.
