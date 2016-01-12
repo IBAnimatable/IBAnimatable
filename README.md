@@ -286,8 +286,8 @@ If you like the project, please share it with the other designers and developers
 
 ## Inspirations
 * `IBDesignable` and `IBInspectable` - The entire project is based on that.
-* Sketch -  Interface Builder should be as easy as Sketch to use
-* Framer
+* Sketch -  Interface Builder should be as easy as Sketch to use.
+* Framer Studio - Design and preview animations in one place.
 * [Spring by Meng To](https://github.com/MengTo/Spring) - steal a lot of animation parameters from this project.
 * [Invision ToDo App UI Kit](http://www.invisionapp.com/do), The demo App's original design is from this UI Kit and redone in Interface Builder. We also added interaction, navigation and animations.
 
