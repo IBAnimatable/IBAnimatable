@@ -7,7 +7,7 @@ Design and prototype UI, interaction, navigation, transition and animation for A
 
 ![](https://github.com/JakeLin/IBAnimatable/blob/master/Screenshots/Storyboard.png)
 
-The entire example App is done in Interface Builder (Storyboard) without single line of code.
+Here is the design in Interface Builder (Storyboard).
 
 With `IBAnimatable`, we can design UI in Interface Builder like Sketch, and design animation in Swift playground like Framer Studio. Also we can use the output of the design directly in the final App.
 
