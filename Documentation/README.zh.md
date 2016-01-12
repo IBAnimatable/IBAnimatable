@@ -57,7 +57,7 @@ view.squeezeFadeInLeft() // squeeze and fade in from left animation
 在[Swift playgournd Page - Predefined Animations](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground/Pages/Predefined%20Animations.xcplaygroundpage)里面我们可以尝试不同的动画。
 
 ### 动画的属性
-There are some properties we can change to customise the animation. What we need to do is to set the properties and call `animate()` method to start the animation.
+我们可以通过修改动画的属性来进一步个性化我们的动画。我们只需要修改这项属性，然后调用`animate()`方法来运行动画。
 
 ```
 // Setup the animation
@@ -71,16 +71,16 @@ view.force = 1
 view.animate()
 ```
 
-You can play around all animations with properties in [Swift playgournd Page - Animation Properties](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground/Pages/Animation%20Properties.xcplaygroundpage)
+我们可以在[Swift playgournd Page - Animation Properties](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground/Pages/Animation%20Properties.xcplaygroundpage)里面尝试不同的动画属性。
 
-### Chaining animations
-Sometimes, we need to run one animation after another one. With `IBAnimatble`, we can easily chain animations together to provide sleek user experience.
+### 串联动画
+有时候我们需要把多个动画串联起来执行，`IBAnimatble`提供非常简易的方式来把动画串联起来。
 
 ```
-// Simplly put the next animation in `{}` closure like below. It is an example to pop the view after squeeze in from the top.
+// 只要把下一个动画放在 `{}` closure就可以了，下面的例子是当执行完从上而下的滑动后Pop的动画。
 view.squeezeInDown{ view.pop() }
 
-// Heaps of animations have been chained togehter, it is source code of gif in "Animate in Swift playground" section
+// 这是"Animate in Swift playground"Gif动画的源代码，把好几个动画串联起来执行。
 view.squeezeInDown{ view.pop { view.shake{ view.squeeze{ view.wobble{ view.flipX { view.flash{ view.flipY { view.fadeOutDown() } } } } } } } }
 ```
 

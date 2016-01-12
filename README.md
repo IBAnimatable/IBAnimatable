@@ -3,7 +3,7 @@ Design and prototype UI, interaction, navigation, transition and animation for A
 
 ![](https://github.com/JakeLin/IBAnimatable/blob/master/Screenshots/IBAnimatable.gif)
 
-The app is made by Interface Builder with `IBAnimatable` without single line of code. Due to the size of the Gif file, it is not the full version of the demo. We can also find the full HD version on [YouTube](https://www.youtube.com/watch?v=dvD8X6J1YLM) or [MP4 on Github]()
+**The app is made by Interface Builder with `IBAnimatable` without single line of code**. Due to the size of the Gif file, it only demonstrates a subset of features. We can also find the full HD version on [YouTube](https://www.youtube.com/watch?v=dvD8X6J1YLM) or [MP4 on Github]()
 
 With `IBAnimatable`, we can design UI in Interface Builder like Sketch, and design animation in Swift playground like Framer Studio. Also we can use the output of the design directly in the final App.
 
