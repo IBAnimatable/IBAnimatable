@@ -3,7 +3,7 @@
 
 ![](https://github.com/JakeLin/IBAnimatable/blob/master/Screenshots/IBAnimatable.gif)
 
-**整个App都是通过`IBAnimatable`在Interface Builder设计完成，没有任何一行代码**。由于[Dribbble Gif文件](https://dribbble.com/shots/2453933-IBAnimatable-Design-App-Store-ready-Apps-in-Interface-Builder)大小的限制，这只演示了部分功能，完整功能可以在[YouTube](https://www.youtube.com/watch?v=dvD8X6J1YLM)或者[MP4 on Github]()上看到。
+**整个App都是通过`IBAnimatable`在Interface Builder设计完成，没有任何一行代码**。由于[Dribbble GIF文件](https://dribbble.com/shots/2453933-IBAnimatable-Design-App-Store-ready-Apps-in-Interface-Builder)大小的限制，这只演示了部分功能，完整功能可以在[YouTube](https://www.youtube.com/watch?v=dvD8X6J1YLM)或者[MP4 on Github](https://github.com/JakeLin/IBAnimatable-Misc/blob/master/Videos/IBAnimatable.mp4?raw=true)上看到。
 
 ![](https://github.com/JakeLin/IBAnimatable/blob/master/Screenshots/Storyboard.png)
 
