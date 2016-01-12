@@ -276,6 +276,16 @@ Easily add color layer on top of the UI element especially `AnimatableImageView`
 | force | CGFloat | used to apply force to the animation. The number is higher, the animation property has more changes. eg. for Pop animation, higher force causes the view poping bigger. Default value is 1. |
 | repeatCount | Float | Used to sepecify the count to repeat the animation. Can noly used in Shake, Pop, Morph, Squeeze, Flash, Wobble and Swing animations. Default value is 1.  |
 
+### Extension
+#### UIViewController
+With these methods, we can navigate back or dismiss current ViewController with any code in Interface Builder.
+
+| Method name | Remark |
+| ------------- | ----- |
+| func unwindToViewController(sender: UIStoryboardSegue) | Used in Interface Builder to uswind from Naviagation Controller |
+| func dismissCurrentViewController(sender: UIStoryboardSegue) | Used in Interface Builder to dismiss current ViewController |
+
+
 ## How to contribute
 All of us can contribute to this project. Fewer overheads mean less time to build quality Apps and more time to enjoy coffee ☕️.
 
