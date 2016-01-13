@@ -33,37 +33,43 @@ public protocol ShadowDesignable {
 }
 
 public extension ShadowDesignable where Self: UIView {
-  
-  // if `layer.masksToBounds == true` then shadow doesn't work any more.
   public func configShadowColor() {
     if let unwrappedShadowColor = shadowColor {
+      commonSetup()
       layer.shadowColor = unwrappedShadowColor.CGColor
-      layer.masksToBounds = false
     }
   }
 
   public func configShadowRadius() {
     if !shadowRadius.isNaN && shadowRadius > 0 {
+      commonSetup()
       layer.shadowRadius = shadowRadius
-      layer.masksToBounds = false
     }
   }
 
   public func configShadowOpacity() {
     if !shadowOpacity.isNaN && shadowOpacity >= 0 && shadowOpacity <= 1 {
+      commonSetup()
       layer.shadowOpacity = Float(shadowOpacity)
-      layer.masksToBounds = false
     }
   }
 
   public func configShadowOffset() {
     if !shadowOffset.x.isNaN {
+      commonSetup()
       layer.shadowOffset.width = shadowOffset.x
-      layer.masksToBounds = false
     }
     
     if !shadowOffset.y.isNaN {
+      commonSetup()
       layer.shadowOffset.height = shadowOffset.y
+    }
+  }
+  
+  private func commonSetup() {
+    // Need to set `layer.masksToBounds` to `false`. 
+    // If `layer.masksToBounds == true` then shadow doesn't work any more.
+    if layer.masksToBounds {
       layer.masksToBounds = false
     }
   }
