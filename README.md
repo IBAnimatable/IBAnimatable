@@ -3,13 +3,13 @@ Design and prototype UI, interaction, navigation, transition and animation for A
 
 ![](https://d13yacurqjgara.cloudfront.net/users/332358/screenshots/2453933/ibanimatable.gif)
 
-**The app is made in Interface Builder with `IBAnimatable` without single line of code**. Due to the size of [the GIF file on Dribbble](https://dribbble.com/shots/2453933-IBAnimatable-Design-App-Store-ready-Apps-in-Interface-Builder), it only demonstrates a subset of features. We can also find the full HD version on [YouTube](https://www.youtube.com/watch?v=dvD8X6J1YLM) or [MP4 on Github](https://github.com/JakeLin/IBAnimatable-Misc/blob/master/Videos/IBAnimatable.mp4?raw=true)
+**The app was made in Interface Builder with `IBAnimatable` without a single line of code**. Due to the size of [the GIF file on Dribbble](https://dribbble.com/shots/2453933-IBAnimatable-Design-App-Store-ready-Apps-in-Interface-Builder), it only demonstrates a subset of features. We can also find the full HD version on [YouTube](https://www.youtube.com/watch?v=dvD8X6J1YLM) or [MP4 on Github](https://github.com/JakeLin/IBAnimatable-Misc/blob/master/Videos/IBAnimatable.mp4?raw=true)
 
 ![](https://github.com/JakeLin/IBAnimatable/blob/master/Screenshots/Storyboard.png)
 
 Here is the design in Interface Builder (Storyboard).
 
-With `IBAnimatable`, we can design UI in Interface Builder like Sketch, and prototype animations in Swift playground like Framer Studio. Also we can use the output of the design directly in the production ready App.
+With `IBAnimatable`, we can design a UI in an Interface Builder like Sketch, and prototype animations in a Swift playground like Framer Studio. Also we can use the output of the design directly in the production ready App.
 
 As a designer, we love Sketch, which is a simple but yet super powerful tool to design UI. However, Sketch can't design interaction, navigation, transition and animation, we may need another tool like Framer Studio to design some of them. Moreover, to make an App Store ready App, we need to use Xcode and Interface Builder to implement the UI and animations. To speed up the process and minimise the waste, we create `IBAnimatable` to make Interface Builder designable and animatable.   
 
@@ -22,14 +22,14 @@ As a designer, we love Sketch, which is a simple but yet super powerful tool to 
 * Animation desigin support in Swift playground - Similar to Framer Studio, we can prototype animations in Swift playground to save time for runing on simulator or actual iOS devices. 
 * Built-in Auto Layout support - We can use Auto Layout and Size Classes with `IBAnimatable` to support orientations and multiple iOS devices. 
 * Navigation and transition support - We can use default navigation pattern in the App and `IBAnimatable` also adds unwind segues to navigate back or dismiss scene without any code. More transitions will be added soon.
-* Protocol oriented programming - `IBAnimatable` used protocol oriented programming paradigm. With Swift protocol extension, it is easy to support more designable or animatable features. We can even use these protocol extensions to create other custom UI elements instead of using the default ones from `IBAnimatable`.  
+* Protocol oriented programming - `IBAnimatable` uses a protocol oriented programming paradigm. With Swift protocol extension, it is easy to support more designable or animatable features. We can even use these protocol extensions to create other custom UI elements instead of using the default ones from `IBAnimatable`.  
 
 ## Use cases
-* Prototyping - Create interactive proptotype to validate the idea quickly.
+* Prototyping - Create interactive proptotypes to validate ideas quickly.
 * Redesigning in Interface Builder - Redesign UI from Sketch and animation from Framer Studio without writing any code.
-* Making custom UI elements - Use `IBAnimatable` protocols to make custom UI elements. eg. Buttons with default color palette.
+* Making custom UI elements - Use `IBAnimatable` protocols to make custom UI elements. e.g. Buttons with a default color palette.
 
-## How to run example App
+## How to run the example App
 The easy way to learn and understand how powerful of `IBAnimatable`is to run the example App and play around the settings in Interface Builder. Just few steps we can run the App as below:
 
 1) Clone the repository
@@ -71,7 +71,7 @@ view.pop() // pop animation for the view
 view.squeezeFadeInLeft() // squeeze and fade in from left animation
 ```  
 
-You can play around all these predefined animations in [Swift playgournd Page - Predefined Animations](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground/Pages/Predefined%20Animations.xcplaygroundpage)
+You can play around with all these predefined animations in the [Swift playground Page - Predefined Animations](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground/Pages/Predefined%20Animations.xcplaygroundpage)
 
 ### Animation properties
 There are some properties we can change to customise the animation. What we need to do is to set the properties and call `animate()` method to start the animation.
@@ -88,10 +88,10 @@ view.force = 1
 view.animate()
 ```
 
-You can play around all animations with different properties in [Swift playgournd Page - Animation Properties](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground/Pages/Animation%20Properties.xcplaygroundpage)
+You can play around with all animations with different properties in the [Swift playground Page - Animation Properties](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground/Pages/Animation%20Properties.xcplaygroundpage)
 
 ### Chaining animations
-Sometimes, we need to run another animation after the previous one. With `IBAnimatble`, we can easily chain animations together to provide sleek user experience.
+Sometimes, we need to run another animation after the previous one. With `IBAnimatble`, we can easily chain animations together to provide a sleek user experience.
 
 ```
 // Simplly put the next animation within `{}` closure as below. It is an example to pop the view after squeeze in from the top.
