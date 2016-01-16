@@ -3,6 +3,8 @@ Design and prototype UI, interaction, navigation, transition and animation for A
 
 ![](https://d13yacurqjgara.cloudfront.net/users/332358/screenshots/2453933/ibanimatable.gif)
 
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
 **The app was made in Interface Builder with `IBAnimatable` without a single line of code**. Due to the size of [the GIF file on Dribbble](https://dribbble.com/shots/2453933-IBAnimatable-Design-App-Store-ready-Apps-in-Interface-Builder), it only demonstrates a subset of features. We can also find the full HD version on [YouTube](https://www.youtube.com/watch?v=dvD8X6J1YLM) or [MP4 on Github](https://github.com/JakeLin/IBAnimatable-Misc/blob/master/Videos/IBAnimatable.mp4?raw=true)
 
 ![](https://github.com/JakeLin/IBAnimatable/blob/master/Screenshots/Storyboard.png)
@@ -115,7 +117,23 @@ TBD, more details on [Issue #5 - Swift package manager support](https://github.c
 TBD, more details on [Issue #7 - CocoaPods support](https://github.com/JakeLin/IBAnimatable/issues/7)
 
 ### Carthage 
-TBD, more details on [Issue #6 - Carthage support ](https://github.com/JakeLin/IBAnimatable/issues/6)
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate IBAnimatable into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "JakeLin/IBAnimatable" ~> 1.0
+```
+
+Run `carthage update` to build the framework and drag the built `IBAnimatable.framework` into your Xcode project.
 
 ## APIs
 
