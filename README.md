@@ -133,7 +133,7 @@ To integrate IBAnimatable into your Xcode project using Carthage, specify it in 
 github "JakeLin/IBAnimatable" ~> 1.0
 ```
 
-Run `carthage update` to build the framework and drag the built `IBAnimatable.framework` into your Xcode project.
+Run `carthage update` to build the framework and drag the built `IBAnimatable.framework` (in Carthage/Build/iOS folder) into your Xcode project.
 
 ## APIs
 
