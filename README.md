@@ -19,13 +19,13 @@ As a designer, we love Sketch, which is a simple but yet super powerful tool to 
 ## Features
 * From prototype to shippable App Store ready App - What you design in Interface Builder is what the App exactly looks like. 
 * Designer friendly - Sketch style setting panel on Attributes Inspector to lower the learning curve for using Interface Builder.   
-* Animation desigin support in Swift playground - Similar to Framer Studio, we can prototype animations in Swift playground to save time for runing on simulator or actual iOS devices. 
+* Animation design support in Swift playground - Similar to Framer Studio, we can prototype animations in Swift playground to save time for running on simulator or actual iOS devices. 
 * Built-in Auto Layout support - We can use Auto Layout and Size Classes with `IBAnimatable` to support orientations and multiple iOS devices. 
 * Navigation and transition support - We can use default navigation pattern in the App and `IBAnimatable` also adds unwind segues to navigate back or dismiss scene without any code. More transitions will be added soon.
 * Protocol oriented programming - `IBAnimatable` uses a protocol oriented programming paradigm. With Swift protocol extension, it is easy to support more designable or animatable features. We can even use these protocol extensions to create other custom UI elements instead of using the default ones from `IBAnimatable`.  
 
 ## Use cases
-* Prototyping - Create interactive proptotypes to validate ideas quickly.
+* Prototyping - Create interactive prototypes to validate ideas quickly.
 * Redesigning in Interface Builder - Redesign UI from Sketch and animation from Framer Studio without writing any code.
 * Making custom UI elements - Use `IBAnimatable` protocols to make custom UI elements. e.g. Buttons with a default color palette.
 
@@ -53,18 +53,18 @@ $ open "IBAnimatable.xcworkspace"
 To use `IBAnimatable` to design the UI and animations in Interface Builder, just follow few steps as below:
 
 1. Open a storyboard or Xib file.
-2. Drag and drop a UIKit element eg. UIView to a ViewController.
-3. In Identity Inspector, connect the UI element to `Animatable` custom UI class eg. `AnimatableView`, you can find all `Animatable` classes in [APIs section](https://github.com/JakeLin/IBAnimatable#apis).
+2. Drag and drop a UIKit element e.g.. UIView to a ViewController.
+3. In Identity Inspector, connect the UI element to `Animatable` custom UI class e.g.. `AnimatableView`, you can find all `Animatable` classes in [APIs section](https://github.com/JakeLin/IBAnimatable#apis).
 4. Configure the UI and animations in Attribute Inspector.
 
 
 ## How to animate in Swift playground
 ![](https://github.com/JakeLin/IBAnimatable/blob/master/Screenshots/AnimateInSwiftPlayground.gif)
 
-We can configure the animation settings in Attribute Inspector. However, Interface Builder doesn't support previewing Animations, but we can still prototype animations in Swift playgournd. There are three sample pages to demostrate how to design animation in Swift playground. You can find them in [IBAnimatable.playground](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground). Firstly, select one page in Swift playground, then click on "Assistant editor" button to split the playground. After that, select "Timeline" on the top of right-hand side to preview the animation. We can use Xcode menu "Editor" -> "Execute" to re-run the playground.
+We can configure the animation settings in Attribute Inspector. However, Interface Builder doesn't support previewing Animations, but we can still prototype animations in Swift playground. There are three sample pages to demonstrate how to design animation in Swift playground. You can find them in [IBAnimatable.playground](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground). Firstly, select one page in Swift playground, then click on "Assistant editor" button to split the playground. After that, select "Timeline" on the top of right-hand side to preview the animation. We can use Xcode menu "Editor" -> "Execute" to re-run the playground.
 
 ## How to animate programmatically
-As you saw above, we can prototype an App fully in Interface Builder withouth single line of code, but `IBAnimatable` also provides APIs to let us fully control the UI and animations. `IBAnimatable` provides simple APIs like `pop()`. We can simplly call them in one line.
+As you saw above, we can prototype an App fully in Interface Builder without single line of code, but `IBAnimatable` also provides APIs to let us fully control the UI and animations. `IBAnimatable` provides simple APIs like `pop()`. We can simply call them in one line.
 
 ```
 view.pop() // pop animation for the view
@@ -91,13 +91,13 @@ view.animate()
 You can play around with all animations with different properties in the [Swift playground Page - Animation Properties](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground/Pages/Animation%20Properties.xcplaygroundpage)
 
 ### Chaining animations
-Sometimes, we need to run another animation after the previous one. With `IBAnimatble`, we can easily chain animations together to provide a sleek user experience.
+Sometimes, we need to run another animation after the previous one. With `IBAnimatable`, we can easily chain animations together to provide a sleek user experience.
 
 ```
-// Simplly put the next animation within `{}` closure as below. It is an example to pop the view after squeeze in from the top.
+// Simply put the next animation within `{}` closure as below. It is an example to pop the view after squeeze in from the top.
 view.squeezeInDown{ view.pop() }
 
-// Heaps of animations have been chained togehter, it is the source code of animated Gif in "Animate in Swift playground" section
+// Heaps of animations have been chained together, it is the source code of animated Gif in "Animate in Swift playground" section
 view.squeezeInDown{ view.pop { view.shake{ view.squeeze{ view.wobble{ view.flipX { view.flash{ view.flipY { view.fadeOutDown() } } } } } } } }
 ```
 
@@ -140,7 +140,7 @@ The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and con
 | UIViewController | DesignableViewController | |
 
 ### Designable protocols
-`IBAnimatable` provides a set of Designable protocols as below. Because of the power of protocol oriented programming in Swift, we don't even have to use Animatable default UI elements eg. `AnimatableView` to unlocked the power of `IBAnimatable`. We can conform to `IBAnimatable` protocols to use the default implementation in protocol extension to create other custom UI elements.
+`IBAnimatable` provides a set of Designable protocols as below. Because of the power of protocol oriented programming in Swift, we don't even have to use Animatable default UI elements e.g.. `AnimatableView` to unlocked the power of `IBAnimatable`. We can conform to `IBAnimatable` protocols to use the default implementation in protocol extension to create other custom UI elements.
 
 #### `BarButtonItemDesignable`
 | Property name | Data type | Remark |
@@ -151,7 +151,7 @@ The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and con
 #### `BlurDesignable`
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
-| blurEffectStyle | Optional&lt;String> | Support three different blur effects: `ExtraLight`, `Light` and `Dark`. They ard defined in `BlurEffectStyle` enum. The look of blur effect in Interface Builder is different from Simulator or device. |
+| blurEffectStyle | Optional&lt;String> | Support three different blur effects: `ExtraLight`, `Light` and `Dark`. They are defined in `BlurEffectStyle` enum. The look of blur effect in Interface Builder is different from Simulator or device. |
 | blurOpacity | CGFloat | Opacity of the blur effect specified above. Default value is `CGFloat.NaN`, the value is from 0.0 to 1.0. |
 
 
@@ -179,7 +179,7 @@ The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and con
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
 | fillColor | Optional&lt;UIColor> | fill color of the UI Element |
-| opacity | CGFloat | opacity, alpha of the UI Element, Dafault value is `CGFloat.NaN`, the value is from 0.0 to 1.0. |
+| opacity | CGFloat | opacity, alpha of the UI Element, Default value is `CGFloat.NaN`, the value is from 0.0 to 1.0. |
 
 #### `GradientDesignable`
 | Property name | Data type | Remark |
@@ -191,7 +191,7 @@ The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and con
 #### `NavigationBarDesignable`
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
-| solidColor | Bool | whether to display solid color only. Default value is `false`. Need to manually untick translucent in Interface Builder, otherwise, it will have constrait issue in IB although it is correct in run time. |
+| solidColor | Bool | whether to display solid color only. Default value is `false`. Need to manually unpick translucent in Interface Builder, otherwise, it will have constraint issue in IB although it is correct in run time. |
 
 #### `MaskDesignable`
 | Property name | Data type | Remark |
@@ -277,8 +277,8 @@ Easily add color layer on top of the UI element especially `AnimatableImageView`
 | delay | Double | Delay to start the animation in seconds. Default value is 0. |
 | damping | CGFloat | Used in UIView Spring animation (0 ~ 1 seconds). To smoothly decelerate the animation without oscillation, use a value of 1. Employ a damping ratio closer to zero to increase oscillation. Default value is 0.7. Notice: FadeOutIn, FadeInOut, Shake, Pop, Morph, Squeeze, Flash, Wobble and Swing animations do not use damping. |
 | velocity | CGFloat | used in UIView Spring animation. A value of 1 corresponds to the total animation distance traversed in one second. For example, if the total animation distance is 200 points and you want the start of the animation to match a view velocity of 100 pt/s, use a value of 0.5. Default is 0.7. Notice: FadeOutIn, FadeInOut, Shake, Pop, Morph, Squeeze, Flash, Wobble and Swing animations do not use damping. |
-| force | CGFloat | used to apply force to the animation. The number is higher, the animation property has more changes. eg. for Pop animation, higher force causes the view poping bigger. Default value is 1. |
-| repeatCount | Float | Used to sepecify the count to repeat the animation. Can noly used in Shake, Pop, Morph, Squeeze, Flash, Wobble and Swing animations. Default value is 1.  |
+| force | CGFloat | used to apply force to the animation. The number is higher, the animation property has more changes. e.g.. for Pop animation, higher force causes the view popping bigger. Default value is 1. |
+| repeatCount | Float | Used to specify the count to repeat the animation. Can only used in Shake, Pop, Morph, Squeeze, Flash, Wobble and Swing animations. Default value is 1.  |
 
 ### Extension
 #### UIViewController
@@ -286,18 +286,18 @@ With these methods, we can navigate back or dismiss current ViewController with 
 
 | Method name | Remark |
 | ------------- | ----- |
-| func unwindToViewController(sender: UIStoryboardSegue) | Used in Interface Builder to uswind from Naviagation Controller |
+| func unwindToViewController(sender: UIStoryboardSegue) | Used in Interface Builder to unwind from Navigation Controller |
 | func dismissCurrentViewController(sender: UIStoryboardSegue) | Used in Interface Builder to dismiss current ViewController |
 
 
 ## How to contribute
 All of us can contribute to this project. Fewer overheads mean less time to build quality Apps and more time to enjoy coffee ☕️.
 
-* If you are a designer, you can design in Interface Builder with `IBAnimatable` without designing tool like Sketch, or implement your existing design from Sketch or Photoshop in Interface Builder rapidly. With `IBAnimatable`, you should be able to do <del>all</del> most of design work in Interface Builder. If you have any feature request, please [create a GitHub Issue](https://github.com/JakeLin/IBAnimatable/issues/new) and we will put it in the backlog. If you have done any design with `IBAnimatable`, please let us know via creating Pull Request or GitHub Issue. We will add it to Readme file.
+* If you are a designer, you can design in Interface Builder with `IBAnimatable` without designing tool like Sketch, or implement your existing design from Sketch or Photoshop in Interface Builder rapidly. With `IBAnimatable`, you should be able to do <del>all</del> most of design work in Interface Builder. If you have any feature request, please [create a GitHub Issue](https://github.com/JakeLin/IBAnimatable/issues/new) and we will put it in the backlog. If you have done any design with `IBAnimatable`, please let us know via creating Pull Request or GitHub Issue. We will add it to README file.
 
-* If you are a developer, you can work on features or fix bugs, please check out [GitHub Issues](https://github.com/JakeLin/IBAnimatable/issues) to find out the backlog. If you have used `IBAnimatable` in your App, please let us know via creating Pull Request or GitHub Issue. We will add it to Readme file.
+* If you are a developer, you can work on features or fix bugs, please check out [GitHub Issues](https://github.com/JakeLin/IBAnimatable/issues) to find out the backlog. If you have used `IBAnimatable` in your App, please let us know via creating Pull Request or GitHub Issue. We will add it to README file.
 
-* If you are good at English, please correct my English 😁. If you are good at other languages, please create a Readme file in those languages.
+* If you are good at English, please correct my English 😁. If you are good at other languages, please create a README file in those languages.
 
 * If you like the project, please share it with the other designers and developers, and star 🌟 the project. 🤗
 
