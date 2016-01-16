@@ -57,7 +57,7 @@ $ open "IBAnimatable.xcworkspace"
 ## 如何在 Swift Playground 里设计动画
 ![](https://github.com/JakeLin/IBAnimatable/blob/master/Screenshots/AnimateInSwiftPlayground.gif)
 
-尽管我们可以在 Attribute Inspector 里配置动画，但是 Interface Builder 还不支持预览动画。但幸运的是我们可以在 Swift Playgournd 里设计和预览动画。你可以在 [IBAnimatable.playground](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground) 看到如何设计和预览动画。首先选择一个Playground 的页，然后点击 "Assistant editor" 按钮来呈现右边的预览页。接着选择右上角的 "Timeline" 来预览动画。我们可以使用 Xcode 的 "Editor" -> "Execute" 菜单来重新执行 Playground 的动画。
+尽管我们可以在 Attribute Inspector 里配置动画，但是 Interface Builder 还不支持预览动画。但幸运的是我们可以在 Swift Playground 里设计和预览动画。你可以在 [IBAnimatable.playground](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground) 看到如何设计和预览动画。首先选择一个Playground 的页，然后点击 "Assistant editor" 按钮来呈现右边的预览页。接着选择右上角的 "Timeline" 来预览动画。我们可以使用 Xcode 的 "Editor" -> "Execute" 菜单来重新执行 Playground 的动画。
 
 
 ## 手工运行动画
@@ -68,7 +68,7 @@ view.pop() // pop animation for the view
 view.squeezeFadeInLeft() // squeeze and fade in from left animation
 ```  
 
-在 [Swift Playgournd Page - Predefined Animations](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground/Pages/Predefined%20Animations.xcplaygroundpage) 里面我们可以尝试不同的动画。
+在 [Swift Playground Page - Predefined Animations](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground/Pages/Predefined%20Animations.xcplaygroundpage) 里面我们可以尝试不同的动画。
 
 ### 动画的属性
 我们可以通过修改动画的属性来进一步个性化我们的动画。我们只需要修改这项属性，然后调用 `animate()` 方法来运行动画。
@@ -85,7 +85,7 @@ view.force = 1
 view.animate()
 ```
 
-我们可以在 [Swift Playgournd Page - Animation Properties](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground/Pages/Animation%20Properties.xcplaygroundpage) 里面尝试不同的动画属性。
+我们可以在 [Swift Playgrourd Page - Animation Properties](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground/Pages/Animation%20Properties.xcplaygroundpage) 里面尝试不同的动画属性。
 
 ### 串联动画
 有时候我们需要把多个动画串联起来执行，`IBAnimatble` 提供非常简易的方式来把动画串联起来。
