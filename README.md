@@ -114,7 +114,7 @@ TBD, more details on [Issue #22 - Swift package manager support](https://github.
 TBD, more details on [Issue #5 - Swift package manager support](https://github.com/JakeLin/IBAnimatable/issues/5)
 
 ### CocoaPods
-TBD, more details on [Issue #7 - CocoaPods support](https://github.com/JakeLin/IBAnimatable/issues/7)
+Add `pod 'IBAnimatable'` to your Podfile.
 
 ### Carthage 
 
