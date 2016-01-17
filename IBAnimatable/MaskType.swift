@@ -7,4 +7,9 @@ import Foundation
 
 public enum MaskType: String {
   case Circle
+  case Star
+  case Star4
+  case Star6
+  case Star8
+  case Star10
 }
