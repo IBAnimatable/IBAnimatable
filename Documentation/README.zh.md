@@ -30,15 +30,15 @@
 
 1) 克隆代码库
 
-```
+```bash
 $ git clone https://github.com/JakeLin/IBAnimatable.git
 ```
 
 2) 在 Xcode 打开 .xcworkspace 文件
 
-```
+```bash
 $ cd IBAnimatable
-$ open "IBAnimatable.xcworkspace"
+$ open IBAnimatableApp.xcodeproj
 ```
 
 3) 编译并运行

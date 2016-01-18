@@ -36,13 +36,13 @@ The easy way to learn and understand how powerful of `IBAnimatable`is to run the
 
 1) Clone the repository
 
-```
+```bash
 $ git clone https://github.com/JakeLin/IBAnimatable.git
 ```
 
 2) Open the workspace in Xcode
 
-```
+```bash
 $ cd IBAnimatable
 $ open IBAnimatableApp.xcodeproj
 ```
