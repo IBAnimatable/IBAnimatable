@@ -7,26 +7,26 @@
 
 ![](https://github.com/JakeLin/IBAnimatable/blob/master/Screenshots/Storyboard.png)
 
-这是整个 App 都是在 Interface Builder 的 Storyboard 中的设计。
+上面是该 App 在 Interface Builder 的 Storyboard 中的设计。
 
-2015 年 Designer News 热门文章中，前 20 篇里面有一半左右的文章是讨论如何快速制作可交换的原型，例如 Adobe 公司在开发 Project Comet 原型工具来补救日益被 Sketch 迅速占领的市场。这些工具都有一个特点：“快”。“快”成为移动开发领域为不可破的法宝，因为无论那个 App 都需要在不断的迭代中逐步完善和发展。但是目前这些工具都没法提供一个端到端的解决方案，很多工具生成的原型没办法直接使用在最终的 App 中，或者需要在 Xcode 和 Interface Builder 里重做原型中的设计，交换以及动画。这是一个很大的痛点，`IBAnimatable` 的诞生是为了解决这个痛点。`IBAnimatable` 提供从想法到最终 App 产品的设计工具，帮助我们在 Interface Builder 和 Swift Playground 里面设计 UI, 交互, 导航模式, 换场和动画。   
+2015 年 Designer News 热门文章中，前 20 篇里面有一半左右的文章是讨论如何快速制作可交换的原型，例如 Adobe 公司在开发 Project Comet 原型工具来补救日益被 Sketch 迅速占领的市场。这些工具都有一个特点：“快”。“快”成为移动开发领域唯不可破的法宝，因为无论那个 App 都需要在不断的迭代中逐步完善和发展。但是目前这些工具都没法提供一个端到端的解决方案，很多工具生成的原型没办法直接使用在最终的 App 中，或者需要在 Xcode 和 Interface Builder 里重做原型中的设计，交换以及动画。这是一个很大的痛点，`IBAnimatable` 的诞生是为了解决这个痛点。`IBAnimatable` 提供从想法到最终 App 产品的设计工具，帮助我们在 Interface Builder 和 Swift Playground 里面设计 UI, 交互, 导航模式, 换场和动画。
 
 ## 主要功能
 * 一个工具覆盖原型到可提交到 App Store 的 App - 支持所见即所得的设计功能。
-* 对设计师友好 - 在 Interface Builder 的 Attributes Inspector 里提供类似 Sketch 配置功能。   
-* 在 Swift Playground 上设计动画 - 提供类似 Framer Studio 的左边编写代码，右边预览动画的功能。 
-* 内置 Auto Layout 支持 - 使用 Auto Layout 和 Size Classes 支持翻屏和多设备。 
+* 对设计师友好 - 在 Interface Builder 的 Attributes Inspector 里提供类似 Sketch 配置功能。
+* 在 Swift Playground 上设计动画 - 提供类似 Framer Studio 的左边编写代码，右边预览动画的功能。
+* 内置 Auto Layout 支持 - 使用 Auto Layout 和 Size Classes 支持翻屏和多设备。
 * 导航和换场动画支持 - 可以使用内置的导航模式，`IBAnimatable` 同时提供 Unwind Segue 来返回前一个页面，可以省去编写代码的步骤。
-* Protocol-Oriented 编程模式 - `IBAnimatable` 使用了 protocol-oriented 编程模式，是的项目非常容易扩张，并且可以方便的制作出自己的自定义控件。  
+* Protocol-Oriented 编程模式 - `IBAnimatable` 使用了 protocol-oriented 编程模式，使得项目非常容易扩张，并且可以方便的制作出自己的自定义控件。
 
 ## 使用场景
 * 制作原型 － 使用 `IBAnimatable` 快速地执行可交互的原型。
 * 在 Interface Builder 里面快速实现 － 把 Sketch 的 UI 或者 Framer Studio 的原型在 Interface Builder 快速实现，不需要编写任何代码。
-* 制作客户化控件 － 使用 `IBAnimatable` 的 extension 制作另外的控件库，例如 Material 控件等。
+* 制作自定义控件 － 使用 `IBAnimatable` 的 extension 制作另外的控件库，例如 Material 控件等。
 
 
 ## 怎样运行例子App
-要了解和学习 `IBAnimatable`，我们可运行例子 App，并在 Interface Builder 中修改相关的配置来查看设计的结果。 
+要了解和学习 `IBAnimatable`，我们可运行示例 App，并在 Interface Builder 中修改相关的配置来查看设计的结果。
 
 1) 克隆代码库
 
@@ -43,10 +43,10 @@ $ open "IBAnimatable.xcworkspace"
 
 3) 编译并运行
 
-## 如何在 Interface Builder 中设计UI和动画
+## 如何在 Interface Builder 中设计 UI 和动画
 ![](https://raw.githubusercontent.com/JakeLin/IBAnimatable/master/Screenshots/DesignInInterfaceBuilder.png)
 
-使用 `IBAnimatable` 在 Interface Builder 里设计 UI 和动，只需要下面简单的几步：
+使用 `IBAnimatable` 在 Interface Builder 里设计 UI 和动画，只需要下面简单的几步：
 
 1. 打开 storyboard 或者 Xib。
 2. 把 UIView 或其他 UI 控件拖放到 ViewController 里面。
@@ -66,7 +66,7 @@ $ open "IBAnimatable.xcworkspace"
 ```
 view.pop() // pop animation for the view
 view.squeezeFadeInLeft() // squeeze and fade in from left animation
-```  
+```
 
 在 [Swift Playground Page - Predefined Animations](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground/Pages/Predefined%20Animations.xcplaygroundpage) 里面我们可以尝试不同的动画。
 
@@ -109,18 +109,26 @@ view.squeezeInDown{ view.pop { view.shake{ view.squeeze{ view.wobble{ view.flipX
 在开发中，请看 [Issue #5 - Swift package manager support](https://github.com/JakeLin/IBAnimatable/issues/5)
 
 ### CocoaPods
-在开发中，请看 [Issue #7 - CocoaPods support](https://github.com/JakeLin/IBAnimatable/issues/7)
 
-### Carthage 
-在开发中，请看 [Issue #6 - Carthage support ](https://github.com/JakeLin/IBAnimatable/issues/6)
+在 `Podfile` 中添加 `pod 'IBAnimatable'`。
+
+### Carthage
+
+在 `Cartfile` 中添加：
+
+```
+github "JakeLin/IBAnimatable" ~> 1.0
+```
+
+然后按 `Carthage` 的使用说明配置项目。
 
 ## APIs
-完整的 API 文档请参考 [IBAnimatable APIs](https://github.com/JakeLin/IBAnimatable#apis)
+完整的 API 文档请参考 [IBAnimatable APIs](https://github.com/JakeLin/IBAnimatable#apis)。
 
 ## 怎样贡献
 我们每个人都可以为这个项目进行贡献。高效的工具使得我们有更多的时间来开发高质量的App，当然也有更多的时间享受生活🍻。
 
-* 如果是你一名设计师，你可以使用 `IBAnimatable` 在 Interface Builder 里进行设计，甚至不需要任何像 Sketch 这样设计工具，或者把现有的 Sketch 或 Photoshop 在 Interface Builder 快速实现。有了 `IBAnimatable`，绝大部分的功能都可以 Interface Builder 里面完成。如果你需要新功能，请[提交一个 GitHub Issue](https://github.com/JakeLin/IBAnimatable/issues/new)。如果你使用 `IBAnimatable` 进行设计，请通过 Pull Request 或者 GitHub Issue 来通知我们，我们可以把它放在 Readme 文件里面。
+* 如果你是一名设计师，你可以使用 `IBAnimatable` 在 Interface Builder 里进行设计，甚至不需要任何像 Sketch 这样设计工具，或者把现有的 Sketch 或 Photoshop 在 Interface Builder 快速实现。有了 `IBAnimatable`，绝大部分的功能都可以 Interface Builder 里面完成。如果你需要新功能，请[提交一个 GitHub Issue](https://github.com/JakeLin/IBAnimatable/issues/new)。如果你使用 `IBAnimatable` 进行设计，请通过 Pull Request 或者 GitHub Issue 来通知我们，我们可以把它放在 Readme 文件里面。
 
 * 如果你是一名开发者，你可以实现功能或者修改 Bug，Backlog 可以在[GitHub Issues](https://github.com/JakeLin/IBAnimatable/issues) 找到。如果你在你的 App 里面使用了 `IBAnimatable`，请通过 Pull Request 或者 GitHub Issue 来通知我们，我们可以把它放在 Readme 文件里面。
 
