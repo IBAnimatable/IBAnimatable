@@ -289,7 +289,7 @@ Easily add color layer on top of the UI element especially `AnimatableImageView`
 #### Properties
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
-| animationType | Optional&lt;String> | Supported animations. All supported predefined animations are in enum `AnimationType` |
+| animationType | Optional&lt;String> | Supported animations. All supported predefined animations are in enum [`AnimationType`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/AnimationType.swift) |
 | autoRun | Bool | Whether to automatically start the animation. Default value is `true`. if it is true, the animation will automatically run when the view is loaded. If want to manually start the animation should set it to `false`. |
 | duration | CGFloat | Animation duration in seconds. Default value is 0.7. |
 | delay | Double | Delay to start the animation in seconds. Default value is 0. |
