@@ -222,7 +222,9 @@
 				AE6C67011BFBF93500134A35 /* IBAnimatableApp */,
 				AE6C67001BFBF93500134A35 /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		AE6C67001BFBF93500134A35 /* Products */ = {
 			isa = PBXGroup;
