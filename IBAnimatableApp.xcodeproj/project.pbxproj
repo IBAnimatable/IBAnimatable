@@ -170,6 +170,7 @@
 		AEEE200A1C18CFD200AD033B /* NavigationBarDesginable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarDesginable.swift; sourceTree = "<group>"; };
 		AEEE200C1C18D10C00AD033B /* DesignableNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableNavigationBar.swift; sourceTree = "<group>"; };
 		CAB562E75DABEED7FCE0F309 /* FillDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillDesignable.swift; sourceTree = "<group>"; };
+		D7E765671C4C8961008C3116 /* IBAnimatable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = IBAnimatable.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +219,7 @@
 		AE6C66F61BFBF93500134A35 = {
 			isa = PBXGroup;
 			children = (
+				D7E765671C4C8961008C3116 /* IBAnimatable.playground */,
 				AE6C67141BFBF9BD00134A35 /* IBAnimatable */,
 				AE6C67011BFBF93500134A35 /* IBAnimatableApp */,
 				AE6C67001BFBF93500134A35 /* Products */,
