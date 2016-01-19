@@ -11,26 +11,23 @@ public protocol MaskDesignable {
 
 public extension MaskDesignable where Self: UIView {
   public func configMask() {
-    guard let unwrappedMaskType = maskType, rawMaskType = MaskType(rawValue: unwrappedMaskType) else {
+    guard let unwrappedMaskType = maskType else {
       return
     }
     
-    switch(rawMaskType) {
-    case .Circle:
-      maskCircle()
-    case .Star:
-      maskStar()
-    case .Star4:
-      maskStar(4)
-    case .Star6:
-      maskStar(6)
-    case .Star8:
-      maskStar(8)
-    case .Star10:
-      maskStar(10)
+    if let rawMaskType = MaskType(rawValue: unwrappedMaskType) {
+      switch(rawMaskType) {
+      case .Circle:
+        maskCircle()
+      case .Star:
+        maskStar()
+      }
+      return
     }
+    
+    // Mask Star with parameter
   }
-  
+    
   // MARK: - Private
   private func maskCircle() {
     layer.cornerRadius = ceil(min(bounds.width, bounds.height))/2
