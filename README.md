@@ -3,7 +3,11 @@ Design and prototype UI, interaction, navigation, transition and animation for A
 
 ![](https://d13yacurqjgara.cloudfront.net/users/332358/screenshots/2453933/ibanimatable.gif)
 
+[![Travis](https://img.shields.io/travis/JakeLin/IBAnimatable.svg)](https://travis-ci.org/JakeLin/IBAnimatable)
+![Language](https://img.shields.io/badge/language-Swift%202-orange.svg)
+[![CocoaPods](https://img.shields.io/cocoapods/v/IBAnimatable.svg?style=flat)](https://github.com/JakeLin/IBAnimatable)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+![License](https://img.shields.io/github/license/JakeLin/IBAnimatable.svg?style=flat)
 
 **The app was made in Interface Builder with `IBAnimatable` without a single line of code**. Due to the size of [the GIF file on Dribbble](https://dribbble.com/shots/2453933-IBAnimatable-Design-App-Store-ready-Apps-in-Interface-Builder), it only demonstrates a subset of features. We can also find the full HD version on [YouTube](https://www.youtube.com/watch?v=dvD8X6J1YLM) or [MP4 on Github](https://github.com/JakeLin/IBAnimatable-Misc/blob/master/Videos/IBAnimatable.mp4?raw=true)
 
