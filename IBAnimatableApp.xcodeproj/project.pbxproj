@@ -97,16 +97,6 @@
 		CAB569B1A6DDC08165BE389A /* FillDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB562E75DABEED7FCE0F309 /* FillDesignable.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		AE6B015A1C2A082300950BB2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AE6C66F71BFBF93500134A35 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AE6B01541C2A082300950BB2;
-			remoteInfo = IBAnimatable;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		AE6B01611C2A082300950BB2 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -380,7 +370,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				AE6B015B1C2A082300950BB2 /* PBXTargetDependency */,
 			);
 			name = IBAnimatableApp;
 			productName = IBAnimatableApp;
@@ -543,14 +532,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		AE6B015B1C2A082300950BB2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AE6B01541C2A082300950BB2 /* IBAnimatable */;
-			targetProxy = AE6B015A1C2A082300950BB2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AED1A0FD1BFE9820001346FA /* LaunchScreen.storyboard */ = {
