@@ -21,6 +21,14 @@ import UIKit
     @IBInspectable public var animationType: String?
   #else
     public var animationType: AnimationType?
+    public var animationTypeRaw: String? {
+      get {
+        return self.animationType.debugDescription
+      }
+      set {
+        self.animationType = AnimationType(rawValue: newValue ?? "")
+      }
+    }
   #endif
   @IBInspectable public var autoRun: Bool = true
   @IBInspectable public var duration: Double = Double.NaN

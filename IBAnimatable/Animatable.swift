@@ -19,6 +19,7 @@ public protocol Animatable: class {
    Predefined Animation Type, all supported types are in `AnimationType` enum
    */
   var animationType: AnimationType? { get set }
+  var animationTypeRaw: String? { get set }
 #endif
   
   /**

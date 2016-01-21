@@ -29,9 +29,17 @@ import UIKit
   
   // MARK: - Animatable
   #if TARGET_INTERFACE_BUILDER
-  @IBInspectable public var animationType: String?
+    @IBInspectable public var animationType: String?
   #else
-  public var animationType: AnimationType?
+    public var animationType: AnimationType?
+    public var animationTypeRaw: String? {
+      get {
+        return self.animationType.debugDescription
+      }
+      set {
+        self.animationType = AnimationType(rawValue: newValue ?? "")
+      }
+    }
   #endif
   @IBInspectable public var autoRun: Bool = true
   @IBInspectable public var duration: Double = Double.NaN
