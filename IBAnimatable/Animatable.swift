@@ -9,11 +9,17 @@ public typealias AnimatableCompletion = () -> Void
 public typealias AnimatableExecution = () -> Void
 
 public protocol Animatable: class {
-  
+#if TARGET_INTERFACE_BUILDER
   /**
-    String value of `AnimationType` enum
+    String value of predefined Animation Type, all supported types are in `AnimationType` enum
   */
   var animationType: String? { get set }
+#else
+  /**
+   Predefined Animation Type, all supported types are in `AnimationType` enum
+   */
+  var animationType: AnimationType? { get set }
+#endif
   
   /**
    Auto run flag, if `true` it will automatically start animation when `layoutSubviews`. Default should be `true`
@@ -75,9 +81,15 @@ public extension Animatable where Self: UIView {
   }
   
   public func animate(completion: AnimatableCompletion? = nil) {
-    guard let unwrappedAnimationTypeString = animationType, animationType = AnimationType(rawValue: unwrappedAnimationTypeString) else {
-      return
-    }
+    #if TARGET_INTERFACE_BUILDER
+      guard let unwrappedAnimationTypeString = animationType, animationType = AnimationType(rawValue: unwrappedAnimationTypeString) else {
+        return
+      }
+    #else
+      guard let animationType = animationType else {
+        return
+      }
+    #endif
     
     switch(animationType) {
     case .SlideInLeft:

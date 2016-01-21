@@ -19,7 +19,11 @@ import UIKit
   @IBInspectable public var removeSeparatorMargins: Bool = false
   
   // MARK: - Animatable
-  @IBInspectable public var animationType: String?
+  #if TARGET_INTERFACE_BUILDER
+    @IBInspectable public var animationType: String?
+  #else
+    public var animationType: AnimationType?
+  #endif
   @IBInspectable public var autoRun: Bool = true
   @IBInspectable public var duration: Double = Double.NaN
   @IBInspectable public var delay: Double = Double.NaN
