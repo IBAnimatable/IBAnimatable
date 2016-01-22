@@ -76,7 +76,7 @@ import UIKit
     }
   }
   
-  // MARK: - MaksDesignable
+  // MARK: - MaskDesignable
   @IBInspectable public var maskType: String? {
     didSet {
       configMask()

@@ -79,7 +79,7 @@ import UIKit
   @IBInspectable public var endColor: UIColor?
   @IBInspectable public var startPoint: String?
   
-  // MARK: - MaksDesignable
+  // MARK: - MaskDesignable
   @IBInspectable public var maskType: String? {
     didSet {
       configMask()
