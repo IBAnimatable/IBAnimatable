@@ -5,7 +5,7 @@ Design and prototype UI, interaction, navigation, transition and animation for A
 
 [![Travis](https://img.shields.io/travis/JakeLin/IBAnimatable.svg)](https://travis-ci.org/JakeLin/IBAnimatable)
 ![Language](https://img.shields.io/badge/language-Swift%202-orange.svg)
-[![CocoaPods](https://img.shields.io/cocoapods/v/IBAnimatable.svg?style=flat)](https://github.com/JakeLin/IBAnimatable)
+[![CocoaPods](https://img.shields.io/cocoapods/v/IBAnimatable.svg?style=flat)](http://cocoadocs.org/docsets/IBAnimatable/)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![License](https://img.shields.io/github/license/JakeLin/IBAnimatable.svg?style=flat)
 
