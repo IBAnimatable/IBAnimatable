@@ -20,7 +20,7 @@ XCPlaygroundPage.currentPage.liveView = iPhoneView
 
 //: Set up the animatable View
 let view = AnimatableView(frame: CGRect(x: animatableViewX, y: animatableViewY, width: animatableViewWidth, height: animatableViewWidth))
-view.configAnimatableProperites()
+view.configAnimatableProperties()
 iPhoneView.addSubview(view)
 
 view.fillColor = UIColor(red: 0xba/0xff, green: 0x77/0xff, blue: 1, alpha: 1)
