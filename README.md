@@ -17,7 +17,7 @@ Here is the design in Interface Builder (Storyboard).
 
 With `IBAnimatable`, we can design a UI in an Interface Builder like Sketch, and prototype animations in a Swift playground like Framer Studio. Also we can use the output of the design directly in the production ready App.
 
-As a designer, we love Sketch, which is a simple but yet super powerful tool to design UI. However, Sketch can't design interaction, navigation, transition and animation, we may need another tool like Framer Studio to design some of them. Moreover, to make an App Store ready App, we need to use Xcode and Interface Builder to implement the UI and animations. To speed up the process and minimise the waste, we create `IBAnimatable` to make Interface Builder designable and animatable.   
+As a designer, we love Sketch, which is a simple but yet super powerful tool to design UI. However, Sketch can't design interaction, navigation, transition and animation, we may need another tool like Framer Studio to design some of them. Moreover, to make an App Store ready App, we need to use Xcode and Interface Builder to implement the UI and animations. To speed up the process and minimize the waste, we create `IBAnimatable` to make Interface Builder designable and animatable.   
 
 ## Languages
 [中文](https://github.com/JakeLin/IBAnimatable/blob/master/Documentation/README.zh.md)
@@ -80,7 +80,7 @@ view.squeezeFadeInLeft() // squeeze and fade in from left animation
 You can play around with all these predefined animations in the [Swift playground Page - Predefined Animations](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground/Pages/Predefined%20Animations.xcplaygroundpage)
 
 ### Animation properties
-There are some properties we can change to customise the animation. What we need to do is to set the properties and call `animate()` method to start the animation.
+There are some properties we can change to customize the animation. What we need to do is to set the properties and call `animate()` method to start the animation.
 
 ```
 // Setup the animation
@@ -103,7 +103,7 @@ Sometimes, we need to run another animation after the previous one. With `IBAnim
 // Simply put the next animation within `{}` closure as below. It is an example to pop the view after squeeze in from the top.
 view.squeezeInDown{ view.pop() }
 
-// Heaps of animations have been chained together, it is the source code of animated Gif in "Animate in Swift playground" section
+// Heaps of animations have been chained together, it is the source code of animated GIF in "Animate in Swift playground" section
 view.squeezeInDown{ view.pop { view.shake{ view.squeeze{ view.wobble{ view.flipX { view.flash{ view.flipY { view.fadeOutDown() } } } } } } } }
 ```
 
