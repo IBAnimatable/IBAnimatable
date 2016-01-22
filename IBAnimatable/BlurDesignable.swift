@@ -42,7 +42,7 @@ public extension BlurDesignable where Self: UIView {
     blurEffectView.frame = bounds
     let opacity = blurOpacity.isNaN ? 1.0 : blurOpacity // Default is 1.0
     blurEffectView.alpha = opacity
-    if (layer.cornerRadius > 0) {
+    if layer.cornerRadius > 0 {
       blurEffectView.layer.cornerRadius = layer.cornerRadius
       blurEffectView.clipsToBounds = true
     }

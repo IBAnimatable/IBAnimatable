@@ -14,15 +14,14 @@ public protocol NavigationBarDesignable {
 
 public extension NavigationBarDesignable where Self: UINavigationBar {
   public func configNavigationBar() {
-    if (solidColor) {
+    if solidColor {
       let emptyImage = UIImage()
       setBackgroundImage(emptyImage, forBarPosition: .Any, barMetrics: .Default)
       shadowImage = emptyImage
       // Need to manually untick translucent in Interface Builder, 
       // otherwise, it will have constrait issue in IB although it is correct in run time.
       // translucent = false
-    }
-    else {
+    } else {
       setBackgroundImage(nil, forBarPosition: .Any, barMetrics: .Default)
       shadowImage = nil
     }

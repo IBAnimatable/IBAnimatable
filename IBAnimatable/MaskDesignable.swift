@@ -16,7 +16,7 @@ public extension MaskDesignable where Self: UIView {
     }
     
     if let rawMaskType = MaskType(rawValue: unwrappedMaskType) {
-      switch(rawMaskType) {
+      switch rawMaskType {
       case .Circle:
         maskCircle()
       case .Star:
@@ -47,7 +47,7 @@ public extension MaskDesignable where Self: UIView {
     let path = starPath(sides)
     
     let maskLayer = CAShapeLayer()
-    maskLayer.frame = CGRect(origin: CGPointZero, size: bounds.size)
+    maskLayer.frame = CGRect(origin: CGPoint.zero, size: bounds.size)
     maskLayer.path = path.CGPath
     layer.mask = maskLayer
     
@@ -82,13 +82,13 @@ public extension MaskDesignable where Self: UIView {
   }
   
   private func pointFrom(angle: CGFloat, radius: CGFloat, offset: CGPoint) -> CGPoint {
-    return CGPointMake(radius * cos(angle) + offset.x, radius * sin(angle) + offset.y)
+    return CGPoint(x: radius * cos(angle) + offset.x, y: radius * sin(angle) + offset.y)
   }
   
   private func starPath(points: Int, borderWidth: CGFloat = 0) -> UIBezierPath {
     let path = UIBezierPath()
     let radius = min(layer.bounds.size.width, layer.bounds.size.height) / 2 - borderWidth
-    let starCenter = CGPointMake(radius, radius)
+    let starCenter = CGPoint(x: radius, y: radius)
     let starExtrusion = radius / 2
     
     let angleIncrement = CGFloat(M_PI * 2.0 / Double(points))

@@ -49,14 +49,13 @@ public extension SideImageDesignable where Self: UITextField {
     
     // If does not specify `leftImageTopPadding`, then center it in the middle
     if leftImageTopPadding.isNaN {
-      imageView.frame.origin = CGPointMake(leftImageLeftPaddingValue, (bounds.height - imageView.bounds.height)/2)
-    }
-    else {
-      imageView.frame.origin = CGPointMake(leftImageLeftPaddingValue, leftImageTopPadding)
+      imageView.frame.origin = CGPoint(x: leftImageLeftPaddingValue, y: (bounds.height - imageView.bounds.height) / 2)
+    } else {
+      imageView.frame.origin = CGPoint(x: leftImageLeftPaddingValue, y: leftImageTopPadding)
     }
     
     let padding = leftImageLeftPaddingValue + imageView.bounds.size.width + leftImageRightPaddingValue
-    let sideView = UIView(frame: CGRectMake(0, 0, padding, bounds.height))
+    let sideView = UIView(frame: CGRect(x: 0, y: 0, width: padding, height: bounds.height))
     sideView.addSubview(imageView)
     
     leftViewMode = .Always

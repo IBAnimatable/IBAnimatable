@@ -15,4 +15,3 @@ public enum GradientStartPoint: String {
   case Left
   case TopLeft
 }
- 

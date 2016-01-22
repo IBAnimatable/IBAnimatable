@@ -124,4 +124,3 @@ import UIKit
     configLeftImage()
   }
 }
-

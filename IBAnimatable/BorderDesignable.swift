@@ -34,7 +34,7 @@ public extension BorderDesignable where Self: UIView {
     }
     
     // if borderSide has been specified, only display one side
-    if let unwrappedBorderSide = borderSide , side = BorderSide(rawValue: unwrappedBorderSide) {
+    if let unwrappedBorderSide = borderSide, side = BorderSide(rawValue: unwrappedBorderSide) {
       let border = CALayer()
       border.name = "borderSideLayer"
       
@@ -42,18 +42,17 @@ public extension BorderDesignable where Self: UIView {
       
       switch side {
       case .Top:
-        border.frame = CGRectMake(0, 0, bounds.size.width, borderWidth)
+        border.frame = CGRect(x: 0, y: 0, width: bounds.size.width, height: borderWidth)
       case .Right:
-        border.frame = CGRectMake(bounds.size.width - borderWidth, 0, borderWidth, bounds.size.height)
+        border.frame = CGRect(x: bounds.size.width - borderWidth, y: 0, width: borderWidth, height: bounds.size.height)
       case .Bottom:
-        border.frame = CGRectMake(0, bounds.size.height - borderWidth, bounds.size.width, borderWidth)
+        border.frame = CGRect(x: 0, y: bounds.size.height - borderWidth, width: bounds.size.width, height: borderWidth)
       case .Left:
-        border.frame = CGRectMake(0, 0, borderWidth, bounds.size.height)
+        border.frame = CGRect(x: 0, y: 0, width: borderWidth, height: bounds.size.height)
       }
       
-      self.layer.addSublayer(border)
-    }
-    else {
+      layer.addSublayer(border)
+    } else {
       // Otherwise, display all border sides
       layer.borderColor = unwrappedBorderColor.CGColor
       layer.borderWidth = borderWidth
