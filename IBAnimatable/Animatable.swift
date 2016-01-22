@@ -41,7 +41,7 @@ public protocol Animatable: class {
   var velocity: CGFloat { get set }
   
   /**
-   Animation farece (default value should be 1)
+   Animation force (default value should be 1)
    */
   var force: CGFloat  { get set }
   
