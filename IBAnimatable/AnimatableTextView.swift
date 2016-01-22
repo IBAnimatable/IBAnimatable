@@ -61,7 +61,7 @@ import UIKit
   
   // MARK: - Private
   private func configInspectableProperties() {
-    configAnimatableProperites()
+    configAnimatableProperties()
     configBorder()
   }
 }
