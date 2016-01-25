@@ -174,6 +174,8 @@ public extension Animatable where Self: UIView {
       wobble(completion)
     case .Swing:
       swing(completion)
+    case .Rotate:
+      rotate(completion)
     }
   }
   
@@ -546,6 +548,19 @@ public extension Animatable where Self: UIView {
       }, completion: completion)
   }
 
+  public func rotate(completion: AnimatableCompletion? = nil) {
+    animateLayer({
+      let animation = CABasicAnimation(keyPath: "transform.rotation")
+      animation.fromValue = 0
+      animation.toValue = ((360 * M_PI) / 180)
+      animation.duration = CFTimeInterval(self.duration)
+      animation.repeatCount = self.repeatCount
+      animation.autoreverses = false
+      animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
+      self.layer.addAnimation(animation, forKey: "rotate")
+      }, completion: completion)
+  }
+  
   // MARK: - Private
   private func animateLayer(animation: AnimatableExecution, completion: AnimatableCompletion? = nil) {
     CATransaction.begin()
