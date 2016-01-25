@@ -72,7 +72,7 @@ We can configure the animation settings in Attribute Inspector. However, Interfa
 ## How to animate programmatically
 As you saw above, we can prototype an App fully in Interface Builder without single line of code, but `IBAnimatable` also provides APIs to let us fully control the UI and animations. `IBAnimatable` provides simple APIs like `pop()`. We can simply call them in one line.
 
-```
+```swift
 view.pop() // pop animation for the view
 view.squeezeFadeInLeft() // squeeze and fade in from left animation
 ```  
@@ -82,7 +82,7 @@ You can play around with all these predefined animations in the [Swift playgroun
 ### Animation properties
 There are some properties we can change to customize the animation. What we need to do is to set the properties and call `animate()` method to start the animation.
 
-```
+```swift
 // Setup the animation
 view.animationType = "SqueezeInLeft"
 view.delay = 0.5
@@ -99,7 +99,7 @@ You can play around with all animations with different properties in the [Swift 
 ### Chaining animations
 Sometimes, we need to run another animation after the previous one. With `IBAnimatable`, we can easily chain animations together to provide a sleek user experience.
 
-```
+```swift
 // Simply put the next animation within `{}` closure as below. It is an example to pop the view after squeeze in from the top.
 view.squeezeInDown{ view.pop() }
 
