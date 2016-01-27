@@ -70,7 +70,7 @@ import UIKit
       gradientLayer.endPoint = CGPoint(x: 1, y: 0)
     case .Left:
       gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
-      gradientLayer.endPoint = CGPoint(x: 0, y: 0.5)
+      gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
     case .TopLeft:
       gradientLayer.startPoint = CGPoint(x: 0, y: 0)
       gradientLayer.endPoint = CGPoint(x: 1, y: 1)
