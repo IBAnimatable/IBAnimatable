@@ -1,4 +1,4 @@
-# IBAnimatable - Vision, Technical Considerations and Roadmap
+# Vision, Technical Considerations and Roadmap
 
 ## Vision
 IBAnimatable is an Open Source library to help designers and developers design and prototype UI, interaction, navigation, transition and animation for App Store ready Apps in Interface Builder.
@@ -17,16 +17,16 @@ IBAnimatable is an Open Source library to help designers and developers design a
 		* Creating another layout system. e.g. flexbox.
 		* Creating custom navigation pattern. 
 	
-* **`@IBDesginable` and `@IBInspectable`** - To design in Interface Builder, all properties should be `@IBDesginable`. Some properties can not render properly in Interface Builder, e.g. `rotate`. And animations are not able to previewed in Interface Builder. But once Interface Builder supports, those features will work properly in Interface Builder.
+* **`@IBDesginable` and `@IBInspectable`** - To design in Interface Builder, all properties should be `@IBDesginable`. Some properties cannot render properly in Interface Builder, e.g. `rotate`. And animations are not able to previewed in Interface Builder. But once Interface Builder supports, those features will work properly in Interface Builder.
 
-* **Platform - iOS** - Currently, `IBAnimatable` focus on iOS only. Once iOS support is matural, we can implement more protocol extensions to support other platforms like MacOS, WatchOS and tvOS.
+* **Platform - iOS** - Currently, `IBAnimatable` focus on iOS only. Once iOS support is mature, we can implement more protocol extensions to support other platforms like MacOS, WatchOS and tvOS.
 
 	
 * **iOS version** - Currently, `IBAnimatable` supports iOS 8 and above. 
     * **Dos**
 		* Supporting latest version first and disabling them in previous version if required.
 	* **Don'ts**
-		* Sacrificing features for backfowrd compitibilities.
+		* Sacrificing features for backward compatibilities.
 
 * **Swift** - Currently, `IBAnimatable` supports Swift only. 
 	* **Dos**
@@ -35,7 +35,7 @@ IBAnimatable is an Open Source library to help designers and developers design a
 		* Avoiding Swift features to support Objective C.
 
 ## Roadmap
-### Designable elememts
+### Designable elements
 * Bar Button Item: 
 	* <del>roundedImage</del> 
 	
@@ -131,7 +131,7 @@ IBAnimatable is an Open Source library to help designers and developers design a
 * Flat colors
 * Motion effect, parallax effect
 
-### Animatable elememts
+### Animatable elements
 * Animations types:
 	* <del>SlideInLeft</del>
 	* <del>SlideInRight</del>
@@ -212,15 +212,15 @@ IBAnimatable is an Open Source library to help designers and developers design a
 
 * Automatically scrolling the view to follow the keyboard's focus.
  	
-### Navigation and Transitioning animators
+### Navigation and transitioning animators
 * Navigation animators to replace `navigationController.delage`. e.g. swip-up to pushViewController
 * Meaningful transition like https://www.google.com/design/spec/animation/meaningful-transitions.html
 * More transition like https://github.com/ColinEberhardt/VCTransitionsLibrary and http://transitiontreasury.com/
 * 
 
-### Misc
+### Misc.
 * Importing Sketch to Swift playground
 * Importing Sketch to Storyboard? Maybe too hard.
-* Sketch plugin to export `IBAnimatable` styles from Sketch, e.g. generating `Opacity=0.5; fillColor=#336699;` from Sketck and easily apply in Interface Builder.
+* Sketch plugin to export `IBAnimatable` styles from Sketch, e.g. generating `Opacity=0.5; fillColor=#336699;` from Sketch and easily apply in Interface Builder.
 
-**Any suggestions toward to the vision are welcom**, please modify the Roadmap.md file and create PR.
+**Any suggestions toward to the vision are welcome**, please modify the Roadmap.md file and create PR.
