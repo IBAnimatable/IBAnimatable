@@ -35,6 +35,9 @@ As a designer, we love Sketch, which is a simple but yet super powerful tool to 
 * Redesigning in Interface Builder - Redesign UI from Sketch and animation from Framer Studio without writing any code.
 * Making custom UI elements - Use `IBAnimatable` protocols to make custom UI elements. e.g. Buttons with a default color palette.
 
+## Roadmap
+[Vision, Technical Considerations and Roadmap](https://github.com/JakeLin/IBAnimatable/blob/master/Documentation/Roadmap.md)
+
 ## How to run the example App
 The easy way to learn and understand how powerful of `IBAnimatable`is to run the example App and play around the settings in Interface Builder. Just few steps we can run the App as below:
 
@@ -317,7 +320,7 @@ All of us can contribute to this project. Fewer overheads mean less time to buil
 
 * If you are a designer, you can design in Interface Builder with `IBAnimatable` without designing tool like Sketch, or implement your existing design from Sketch or Photoshop in Interface Builder rapidly. With `IBAnimatable`, you should be able to do <del>all</del> most of design work in Interface Builder. If you have any feature request, please [create a GitHub Issue](https://github.com/JakeLin/IBAnimatable/issues/new) and we will put it in the backlog. If you have done any design with `IBAnimatable`, please let us know via creating Pull Request or GitHub Issue. We will add it to README file.
 
-* If you are a developer, you can work on features or fix bugs, please check out [GitHub Issues](https://github.com/JakeLin/IBAnimatable/issues) to find out the backlog. If you have used `IBAnimatable` in your App, please let us know via creating Pull Request or GitHub Issue. We will add it to README file.
+* If you are a developer, you can work on features or fix bugs, please check out [Vision, Technical Considerations and Roadmap](https://github.com/JakeLin/IBAnimatable/blob/master/Documentation/Roadmap.md) and [GitHub Issues](https://github.com/JakeLin/IBAnimatable/issues) to find out the backlogs. If you have used `IBAnimatable` in your App, please let us know via creating Pull Request or GitHub Issue. We will add it to README file.
 
 * If you are good at English, please correct my English 😁. If you are good at other languages, please create a README file in those languages.
 
