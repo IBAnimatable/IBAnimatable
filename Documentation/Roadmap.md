@@ -130,6 +130,8 @@ IBAnimatable is an Open Source library to help designers and developers design a
 * Material Design elements	
 * Flat colors
 * Motion effect, parallax effect
+* Segmented Control
+* Custom dynamic type (text style)
 
 ### Animatable elements
 * Animations types:
@@ -199,6 +201,8 @@ IBAnimatable is an Open Source library to help designers and developers design a
 	* timing: linear and easing
 	
 ### Interaction elements
+* <del>Unwind Segue</del>
+* <del>Dismiss current ViewController Segue</del>
 * AnimatablePopupController: 
 	* gestureToDismiss (UIDynamics)
 	
@@ -206,7 +210,7 @@ IBAnimatable is an Open Source library to help designers and developers design a
 	* Standard Alert
 	* Action Sheet
 	
-* Ripple effect for taps
+* Ripple effect for user interaction like https://www.google.com/design/spec/animation/responsive-interaction.html#responsive-interaction-user-input
 
 * Dismissing keyboard automatically when tap outside of the `AnimatableTextField`
 
