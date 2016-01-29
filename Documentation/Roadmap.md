@@ -216,11 +216,11 @@ IBAnimatable is an Open Source library to help designers and developers design a
 
 * Automatically scrolling the view to follow the keyboard's focus.
  	
-### Navigation and transitioning animators
+### Navigation, transitioning animators and custom Segues
 * Navigation animators to replace `navigationController.delage`. e.g. swip-up to pushViewController
 * Meaningful transition like https://www.google.com/design/spec/animation/meaningful-transitions.html
 * More transition like https://github.com/ColinEberhardt/VCTransitionsLibrary and http://transitiontreasury.com/
-* 
+
 
 ### Misc.
 * Importing Sketch to Swift playground
