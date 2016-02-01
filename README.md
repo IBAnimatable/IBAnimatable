@@ -245,7 +245,7 @@ It is used in `AnimatableTextField` to add padding on either or both sides.
 #### `RotationDesignable`
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
-| rotate | CGFloat | rotation of the UI element in degrees. Default value is `CGFloat.NaN`, value is from 0 to 360. |
+| rotate | CGFloat | rotation of the UI element in degrees. Default value is `CGFloat.NaN`, value is from -360 to 360, if the value is negative, it rotates reverse. |
 
 #### `ShadowDesignable`
 Drop shadow of the UI element, it is popular in Material Design. These properties are not able to render in IB correctly, it maybe an Interface Builder's bug.
