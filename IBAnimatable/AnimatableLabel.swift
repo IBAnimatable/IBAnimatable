@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableLabel: UILabel, Animatable {
+@IBDesignable public class AnimatableLabel: UILabel, Animatable, RotationDesignable {
   
   // MARK: - Animatable
   @IBInspectable public var animationType: String?
@@ -16,6 +16,13 @@ import UIKit
   @IBInspectable public var velocity: CGFloat = CGFloat.NaN
   @IBInspectable public var force: CGFloat = CGFloat.NaN
   @IBInspectable public var repeatCount: Float = Float.NaN
+  
+  // MARK: - RotationDesignable
+  @IBInspectable public var rotate: CGFloat = CGFloat.NaN {
+    didSet {
+      configRotate()
+    }
+  }
   
   // MARK: - Lifecycle
   public override func prepareForInterfaceBuilder() {
