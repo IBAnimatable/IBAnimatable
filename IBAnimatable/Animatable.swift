@@ -191,89 +191,89 @@ public extension Animatable where Self: UIView {
   
   // MARK: - Animation methods
   public func slideInLeft(completion: AnimatableCompletion? = nil) {
-    let x = -300 * force
+    let x = -screenSize().width * force
     animateInWithX(x, completion: completion)
   }
 
   public func slideInRight(completion: AnimatableCompletion? = nil) {
-    let x = 300 * force
+    let x = screenSize().width * force
     animateInWithX(x, completion: completion)
   }
 
   public func slideInDown(completion: AnimatableCompletion? = nil) {
-    let y = -300 * force
+    let y = -screenSize().height * force
     animateInWithY(y, completion: completion)
   }
 
   public func slideInUp(completion: AnimatableCompletion? = nil) {
-    let y = 300 * force
+    let y = screenSize().height * force
     animateInWithY(y, completion: completion)
   }
   
   public func slideOutLeft(completion: AnimatableCompletion? = nil) {
-    let x = -300 * force
+    let x = -screenSize().width * force
     animateOutWithX(x, alpha: 1, completion: completion)
   }
 
   public func slideOutRight(completion: AnimatableCompletion? = nil) {
-    let x = 300 * force
+    let x = screenSize().width * force
     animateOutWithX(x, alpha: 1, completion: completion)
   }
   
   public func slideOutDown(completion: AnimatableCompletion? = nil) {
-    let y = 300 * force
+    let y = screenSize().height * force
     animateOutWithY(y, alpha: 1, completion: completion)
   }
   
   public func slideOutUp(completion: AnimatableCompletion? = nil) {
-    let y = -300 * force
+    let y = -screenSize().height * force
     animateOutWithY(y, alpha: 1, completion: completion)
   }
   
   public func squeezeInLeft(completion: AnimatableCompletion? = nil) {
-    let x = -300 * force
+    let x = -screenSize().width * force
     let scaleX = 3 * force
     animateInWithX(x, scaleX: scaleX, completion: completion)
   }
   
   public func squeezeInRight(completion: AnimatableCompletion? = nil) {
-    let x = 300 * force
+    let x = screenSize().width * force
     let scaleX = 3 * force
     animateInWithX(x, scaleX: scaleX, completion: completion)
   }
   
   public func squeezeInDown(completion: AnimatableCompletion? = nil) {
-    let y = -300 * force
+    let y = -screenSize().height * force
     let scaleY = 3 * force
     animateInWithY(y, scaleY: scaleY, completion: completion)
   }
   
   public func squeezeInUp(completion: AnimatableCompletion? = nil) {
-    let y = 300 * force
+    let y = screenSize().height * force
     let scaleY = 3 * force
     animateInWithY(y, scaleY: scaleY, completion: completion)
   }
   
   public func squeezeOutLeft(completion: AnimatableCompletion? = nil) {
-    let x = -300 * force
+    let x = -screenSize().width * force
     let scaleX = 3 * force
     animateOutWithX(x, scaleX: scaleX, alpha: 1, completion: completion)
   }
   
   public func squeezeOutRight(completion: AnimatableCompletion? = nil) {
-    let x = 300 * force
+    let x = screenSize().width * force
     let scaleX = 3 * force
     animateOutWithX(x, scaleX: scaleX, alpha: 1, completion: completion)
   }
   
   public func squeezeOutDown(completion: AnimatableCompletion? = nil) {
-    let y = 300 * force
+    let y = screenSize().height * force
     let scaleY = 3 * force
     animateOutWithY(y, scaleY: scaleY, alpha: 1, completion: completion)
   }
   
   public func squeezeOutUp(completion: AnimatableCompletion? = nil) {
-    let y = -300 * force
+    let y = -screenSize().height * force
     let scaleY = 3 * force
     animateOutWithY(y, scaleY: scaleY, alpha: 1, completion: completion)
   }
@@ -299,22 +299,22 @@ public extension Animatable where Self: UIView {
   }
   
   public func fadeOutLeft(completion: AnimatableCompletion? = nil) {
-    let x = -300 * force
+    let x = -screenSize().width * force
     animateOutWithX(x, alpha: 0, completion: completion)
   }
   
   public func fadeOutRight(completion: AnimatableCompletion? = nil) {
-    let x = 300 * force
+    let x = screenSize().width * force
     animateOutWithX(x, alpha: 0, completion: completion)
   }
   
   public func fadeOutDown(completion: AnimatableCompletion? = nil) {
-    let y = 300 * force
+    let y = screenSize().height * force
     animateOutWithY(y, alpha: 0, completion: completion)
   }
   
   public func fadeOutUp(completion: AnimatableCompletion? = nil) {
-    let y = -300 * force
+    let y = -screenSize().height * force
     animateOutWithY(y, alpha: 0, completion: completion)
   }
 
@@ -339,25 +339,25 @@ public extension Animatable where Self: UIView {
   }
 
   public func squeezeFadeOutLeft(completion: AnimatableCompletion? = nil) {
-    let x = -300 * force
+    let x = -screenSize().width * force
     let scaleX = 3 * force
     animateOutWithX(x, scaleX: scaleX, alpha: 0, completion: completion)
   }
 
   public func squeezeFadeOutRight(completion: AnimatableCompletion? = nil) {
-    let x = 300 * force
+    let x = screenSize().width * force
     let scaleX = 3 * force
     animateOutWithX(x, scaleX: scaleX, alpha: 0, completion: completion)
   }
   
   public func squeezeFadeOutDown(completion: AnimatableCompletion? = nil) {
-    let y = 300 * force
+    let y = screenSize().height * force
     let scaleY = 3 * force
     animateOutWithY(y, scaleY: scaleY, alpha: 0, completion: completion)
   }
   
   public func squeezeFadeOutUp(completion: AnimatableCompletion? = nil) {
-    let y = -300 * force
+    let y = -screenSize().height * force
     let scaleY = 3 * force
     animateOutWithY(y, scaleY: scaleY, alpha: 0, completion: completion)
   }
@@ -643,6 +643,13 @@ public extension Animatable where Self: UIView {
         completion?()
       })
   }
+  
+  // MARK: Private helper
+  
+  private func screenSize() -> CGSize {
+    return UIScreen.mainScreen().bounds.size
+  }
+  
 }
 
 public extension Animatable where Self: UIBarItem {
