@@ -105,10 +105,10 @@ IBAnimatable is an Open Source library to help designers and developers design a
 	* <del>leftImageLeftPadding</del>
 	* <del>leftImageRightPadding</del>
 	* <del>leftImageTopPadding</del>
-	* rightImage?
-	* RightImageLeftPadding?
-	* RightImageRightPadding?
-	* RightImageTopPadding?
+	* <del>rightImage?</del>
+	* <del>RightImageLeftPadding?</del>
+	* <del>RightImageRightPadding?</del>
+	* <del>RightImageTopPadding?</del>
 	
 * Status Bar: 
 	* <del>lightStatusBar</del>
