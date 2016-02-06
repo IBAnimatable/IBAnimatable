@@ -8,5 +8,6 @@ import Foundation
 public enum MaskType: String {
   case Circle
   case Star
+  case Triangle
   case Wave
 }

@@ -21,6 +21,8 @@ public extension MaskDesignable where Self: UIView {
         maskCircle()
       case .Star:
         maskStar()
+      case .Triangle:
+        maskTriangle()
       case .Wave:
         maskWave()
       }
@@ -51,6 +53,11 @@ public extension MaskDesignable where Self: UIView {
     drawPath(path)
   }
   
+  public func maskTriangle() {
+    let trianglePath = maskTriangleBezierPath()
+    drawPath(trianglePath)
+  }
+    
   public func maskWave(waveUp: Bool = true, waveWidth: CGFloat = 40.0, waveOffset: CGFloat = 0.0) {
     let wavePath = maskWaveBezierPath(waveUp, waveWidth: waveWidth, waveOffset: waveOffset)
     drawPath(wavePath)
@@ -132,7 +139,18 @@ public extension MaskDesignable where Self: UIView {
     return path
   }
   
-  // MARK: MaskWave
+  // MARK: Triangle
+  
+  func maskTriangleBezierPath() -> UIBezierPath {
+    let path = UIBezierPath()
+    path.moveToPoint(CGPoint(x: bounds.width / 2.0, y: bounds.origin.y))
+    path.addLineToPoint(CGPoint(x: bounds.width, y: bounds.height))
+    path.addLineToPoint(CGPoint(x: bounds.origin.x, y: bounds.height))
+    path.closePath()
+    return path
+  }
+  
+  // MARK: Wave
   
   private func maskWaveBezierPath(waveUp: Bool, waveWidth: CGFloat, waveOffset: CGFloat) -> UIBezierPath {
     let originY = waveUp ? bounds.maxY : bounds.minY
