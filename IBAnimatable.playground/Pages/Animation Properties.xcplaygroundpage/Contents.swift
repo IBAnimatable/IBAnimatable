@@ -44,7 +44,7 @@ view.velocity = 2
 //: force: used to apply force to the animation. The number is higher, the animation property has more changes. eg. for Pop animation, higher force causes the view poping bigger. Default is 1
 view.force = 1
 
-//: repeatCount: used to sepecify the count to repeat the animation. Can noly used in Shake, Pop, Morph, Squeeze, Flash, Wobble and Swing animations
+//: repeatCount: used to sepecify the count to repeat the animation. Can noly used in Shake, Pop, Morph, Squeeze, Flash, Wobble, Swing and Rotate animations
 view.repeatCount = 5
 
 view.animate()
