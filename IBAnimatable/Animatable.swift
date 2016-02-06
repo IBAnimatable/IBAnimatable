@@ -564,7 +564,9 @@ public extension Animatable where Self: UIView {
   // MARK: - Private
   private func animateLayer(animation: AnimatableExecution, completion: AnimatableCompletion? = nil) {
     CATransaction.begin()
-    CATransaction.setCompletionBlock { completion?() }
+    if let completion = completion {
+      CATransaction.setCompletionBlock { completion() }
+    }
     animation()
     CATransaction.commit()
   }
