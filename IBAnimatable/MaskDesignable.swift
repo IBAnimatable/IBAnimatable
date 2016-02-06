@@ -48,9 +48,7 @@ public extension MaskDesignable where Self: UIView {
       .forEach { $0.removeFromSuperlayer() }
     
     let path = starPath(sides)
-    let borderPath = starPath(sides, borderWidth: layer.borderWidth).bezierPathByReversingPath()
     drawPath(path)
-    drawBorderPath(borderPath, path: path)
   }
   
   public func maskWave(waveUp: Bool = true, waveWidth: CGFloat = 40.0, waveOffset: CGFloat = 0.0) {
