@@ -141,7 +141,7 @@ public extension MaskDesignable where Self: UIView {
   
   // MARK: Triangle
   
-  func maskTriangleBezierPath() -> UIBezierPath {
+  private func maskTriangleBezierPath() -> UIBezierPath {
     let path = UIBezierPath()
     path.moveToPoint(CGPoint(x: bounds.width / 2.0, y: bounds.origin.y))
     path.addLineToPoint(CGPoint(x: bounds.width, y: bounds.height))
