@@ -82,6 +82,10 @@ import UIKit
   @IBInspectable public var leftImageRightPadding: CGFloat = CGFloat.NaN
   @IBInspectable public var leftImageTopPadding: CGFloat = CGFloat.NaN
 
+  @IBInspectable public var rightImage: UIImage? = nil
+  @IBInspectable public var rightImageLeftPadding: CGFloat = CGFloat.NaN
+  @IBInspectable public var rightImageRightPadding: CGFloat = CGFloat.NaN
+  @IBInspectable public var rightImageTopPadding: CGFloat = CGFloat.NaN
   
   // MARK: - CSSPlaceholderable
   @IBInspectable public var placeholderColor: UIColor? {
