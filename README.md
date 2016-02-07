@@ -266,6 +266,10 @@ Display a side hint image in `AnimatableTextField`
 | leftImageLeftPadding | CGFloat | left padding of hint image. Default value is `CGFloat.NaN`. |
 | leftImageRightPadding | CGFloat | right padding of hint image. Default value is `CGFloat.NaN`. |
 | leftImageTopPadding | CGFloat | top padding of hint image. Default value is `CGFloat.NaN`. If not specified, the image will center vertically. |
+| rightImage | Optional&lt;UIImage> | the image to display on the right-hand side. |
+| rightImageLeftPadding | CGFloat | left padding of hint image. Default value is `CGFloat.NaN`. |
+| rightImageRightPadding | CGFloat | right padding of hint image. Default value is `CGFloat.NaN`. |
+| rightImageTopPadding | CGFloat | top padding of hint image. Default value is `CGFloat.NaN`. If not specified, the image will center vertically. |
 
 #### `StatusBarDesignable`
 | Property name | Data type | Remark |
