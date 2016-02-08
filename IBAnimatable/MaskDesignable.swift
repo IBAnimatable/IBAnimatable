@@ -42,7 +42,7 @@ public extension MaskDesignable where Self: UIView {
   }
   
   public func maskPolygon() {
-    let polygonPath = maskPolygonBezierPath(Int(arc4random() % 10 + 3))
+    let polygonPath = maskPolygonBezierPath(Int(arc4random_uniform(10) + 3))
     drawPath(polygonPath)
   }
   
