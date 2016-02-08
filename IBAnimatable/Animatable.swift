@@ -174,8 +174,8 @@ public extension Animatable where Self: UIView {
       wobble(completion)
     case .Swing:
       swing(completion)
-    case .RotateCW:
-      rotate(clockwise: true, completion: completion)
+    case .Rotate:
+      rotate(completion: completion)
     case .RotateCCW:
       rotate(clockwise: false, completion: completion)
     }
@@ -550,7 +550,7 @@ public extension Animatable where Self: UIView {
       }, completion: completion)
   }
 
-  public func rotate(clockwise clockwise: Bool, completion: AnimatableCompletion? = nil) {
+  public func rotate(clockwise clockwise: Bool = true, completion: AnimatableCompletion? = nil) {
     animateLayer({
       let animation = CABasicAnimation(keyPath: "transform.rotation")
       animation.fromValue = clockwise ? 0 : ((360 * M_PI) / 180)

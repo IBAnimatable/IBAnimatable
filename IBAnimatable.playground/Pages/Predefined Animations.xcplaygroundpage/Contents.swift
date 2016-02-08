@@ -75,6 +75,6 @@ view.maskType = "Circle"
 //view.flash()
 //view.wobble()
 //view.swing()
-//view.rotate(clockwise: true)
+view.rotate()
 
 //: [Next](@next)
