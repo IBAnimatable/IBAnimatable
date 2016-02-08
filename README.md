@@ -221,8 +221,7 @@ The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and con
 #### `MaskDesignable`
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
-| maskType | Optional&lt;String> | maks type, eg. `Circle`, `Star`, `Star10`, `Wave`, `Triangle`. |
-| maskType | Optional&lt;String> | maks type, eg. `Circle`, `Polygon`, `Star`, `Star10`, `Wave`. |
+| maskType | Optional&lt;String> | maks type, eg. `Circle`, `Polygon`, `Star`, `Star10`, `Triangle`, `Wave`.
 
 #### `PaddingDesignable`
 It is used in `AnimatableTextField` to add padding on either or both sides.
