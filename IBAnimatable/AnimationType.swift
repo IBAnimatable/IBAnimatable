@@ -56,5 +56,6 @@ public enum AnimationType: String {
   case Flash
   case Wobble
   case Swing
-  case Rotate  
+  case Rotate
+  case RotateCCW
 }
