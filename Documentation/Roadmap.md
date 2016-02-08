@@ -8,27 +8,26 @@ IBAnimatable is an Open Source library to help designers and developers design a
 * Providing predefined UI elements and animations. e.g. Flat UI colors, Gradient colors and pop animation.
 * Extending existing behaviours, e.g. More transition animations than "Cover Vertical", "Flip Horizontal" and "Cross Dissolve".
 
-
 ## Technical Considerations
 * **UIKit** - All `IBAnimatable` UI elements are based on UIkit.
  	* **Dos**
 		* All UI elements should support Auto Layout.
 	* **Don'ts**
-		* Creating another layout system. e.g. flexbox.
-		* Creating custom navigation pattern. 
-	
+		* Creating another layout system. e.g. CSS Flexbox.
+		* Creating custom navigation pattern.
+
 * **`@IBDesginable` and `@IBInspectable`** - To design in Interface Builder, all properties should be `@IBDesginable`. Some properties cannot render properly in Interface Builder, e.g. `rotate`. And animations are not able to previewed in Interface Builder. But once Interface Builder supports, those features will work properly in Interface Builder.
 
 * **Platform - iOS** - Currently, `IBAnimatable` focus on iOS only. Once iOS support is mature, we can implement more protocol extensions to support other platforms like MacOS, WatchOS and tvOS.
 
-	
-* **iOS version** - Currently, `IBAnimatable` supports iOS 8 and above. 
+
+* **iOS version** - Currently, `IBAnimatable` supports iOS 8 and above.
     * **Dos**
 		* Supporting latest version first and disabling them in previous version if required.
 	* **Don'ts**
 		* Sacrificing features for backward compatibilities.
 
-* **Swift** - Currently, `IBAnimatable` supports Swift only. 
+* **Swift** - Currently, `IBAnimatable` supports Swift only.
 	* **Dos**
 		* Using Swift features and best practice like protocol extensions and optional.
 	* **Don'ts**
@@ -36,71 +35,71 @@ IBAnimatable is an Open Source library to help designers and developers design a
 
 ## Roadmap
 ### Designable elements
-* Bar Button Item: 
-	* <del>roundedImage</del> 
-	
-* Blur: 
+* Bar Button Item:
+	* <del>roundedImage</del>
+
+* Blur:
 	* <del>blurEffectStyle</del>
 	* <del>blurOpacity</del>
-	* Motion Blur
-	
-* Border: 
+	* Motion Blur - https://github.com/JakeLin/IBAnimatable/issues/65
+
+* Border:
 	* <del>borderColor</del>
 	* <del>borderWidth</del>
 	* <del>borderSide</del>
-	* Border with more than one side and less than 4 sides
-	
-* Check Box: 
+	* Border with more than one side and less than 4 sides - https://github.com/JakeLin/IBAnimatable/issues/66
+
+* Checkbox:
 	* <del>checked</del>
 	* <del>checkedImage</del>
 	* <del>uncheckedImage</del>
-	* Animations for state changes
-	* Default checked and unchecked icon (path to avoid image assets?)
-	* Checked color
-	
-* Corner: 
-	* <del>cornerRadius</del>	
-	
-* Fill: 
+	* Animations for state changes - https://github.com/JakeLin/IBAnimatable/issues/67
+	* Default checked and unchecked icon (Using path to avoid image assets?) - https://github.com/JakeLin/IBAnimatable/issues/68
+	* Checked color - https://github.com/JakeLin/IBAnimatable/issues/69
+
+* Corner:
+	* <del>cornerRadius</del>
+
+* Fill:
 	* <del>fillColor</del>
 	* <del>opacity</del>
-	
-* Gradient: 
+
+* Gradient:
 	* <del>startColor</del>
 	* <del>endColor</del>
 	* <del>startPoint</del>
-	* Default gradient colors
-	
-* Navigation Bar: 
+	* Default gradient colors - https://github.com/JakeLin/IBAnimatable/issues/24
+
+* Navigation Bar:
 	* <del>solidColor</del>
-	
-* Mask: 
+
+* Mask:
 	* <del>Circle</del>
 	* <del>Star</del>
-	* Polygon
+	* Polygon - https://github.com/JakeLin/IBAnimatable/pull/63
 	* <del>Triangle</del>
-	
-* Padding: 
+
+* Padding:
 	* <del>paddingLeft</del>
 	* <del>paddingRight</del>
 	* <del>paddingSide</del>
-	
-* Placeholder: 
+
+* Placeholder:
 	* <del>placeholderColor</del>
-	
-* Root Window: 
+
+* Root Window:
 	* <del>rootWindowBackgroundColor</del>
-	
-* Rotation: 
+
+* Rotation:
 	* <del>rotate</del>
-	
-* Shadow: 
+
+* Shadow:
 	* <del>shadowColor</del>
 	* <del>shadowRadius</del>
 	* <del>shadowOpacity</del>
 	* <del>shadowOffset</del>
-	
-* SideImage: 
+
+* SideImage:
 	* <del>leftImage</del>
 	* <del>leftImageLeftPadding</del>
 	* <del>leftImageRightPadding</del>
@@ -109,29 +108,29 @@ IBAnimatable is an Open Source library to help designers and developers design a
 	* <del>RightImageLeftPadding?</del>
 	* <del>RightImageRightPadding?</del>
 	* <del>RightImageTopPadding?</del>
-	
-* Status Bar: 
+
+* Status Bar:
 	* <del>lightStatusBar</del>
-	
-* Table View Cell: 
+
+* Table View Cell:
 	* <del>removeSeparatorMargins</del>
-	
-* Tint: 
+
+* Tint:
 	* <del>tintOpacity</del>
 	* <del>shadeOpacity</del>
 	* <del>toneColor</del>
 	* <del>toneOpacity</del>
-	
-* View Controller: 
+
+* View Controller:
 	* <del>hideNavigationBar</del>
 
-* Collection View and Collection View Cell
-* Slider
-* Material Design elements	
-* Flat colors
-* Motion effect, parallax effect
-* Segmented Control
-* Custom dynamic type (text style)
+* Collection View and Collection View Cell - https://github.com/JakeLin/IBAnimatable/issues/53
+* Animatable Slider - https://github.com/JakeLin/IBAnimatable/issues/70
+* Material Design elements - and https://github.com/JakeLin/IBAnimatable/issues/16 and  https://github.com/JakeLin/IBAnimatable/issues/55
+* Flat colors - https://github.com/JakeLin/IBAnimatable/issues/71
+* Motion effect, parallax effect - https://github.com/JakeLin/IBAnimatable/issues/18
+* Segmented Control - https://github.com/JakeLin/IBAnimatable/issues/72
+* Custom dynamic type (text style) - https://github.com/JakeLin/IBAnimatable/issues/73
 
 ### Animatable elements
 * Animations types:
@@ -183,12 +182,12 @@ IBAnimatable is an Open Source library to help designers and developers design a
 	* <del>Wobble</del>
 	* <del>Swing</del>
 	* <del>Rotate</del>
-	* MoveX
-	* MoveY
-	* MoveXY
-	* Jump
-	
-* Animation properties: 
+	* MoveX - https://github.com/JakeLin/IBAnimatable/issues/74
+	* MoveY - https://github.com/JakeLin/IBAnimatable/issues/74
+	* MoveXY - https://github.com/JakeLin/IBAnimatable/issues/74
+	* Jump - https://github.com/JakeLin/IBAnimatable/issues/75
+
+* Animation properties:
 	* <del>animationType</del>
 	* <del>autoRun</del>
 	* <del>duration</del>
@@ -197,25 +196,25 @@ IBAnimatable is an Open Source library to help designers and developers design a
 	* <del>velocity</del>
 	* <del>force</del>
 	* <del>repeatCount</del>
-	* Animating forever? `repeatCount = Float.Infinit`
+	* Animating forever? `repeatCount = Float.Infinit` 
 	* timing: linear and easing
-	
+
 ### Interaction elements
 * <del>Unwind Segue</del>
 * <del>Dismiss current ViewController Segue</del>
-* AnimatablePopupController: 
+* AnimatablePopupController:
 	* gestureToDismiss (UIDynamics)
-	
+
 * AnimatableAlert​Controller or DesignableAlert​Controller: - `UIAlert​Controller`
 	* Standard Alert
 	* Action Sheet
-	
+
 * Ripple effect for user interaction like https://www.google.com/design/spec/animation/responsive-interaction.html#responsive-interaction-user-input
 
 * Dismissing keyboard automatically when tap outside of the `AnimatableTextField`
 
 * Automatically scrolling the view to follow the keyboard's focus.
- 	
+
 ### Navigation, transitioning animators and custom Segues
 * Navigation animators to replace `navigationController.delage`. e.g. swip-up to pushViewController
 * Meaningful transition like https://www.google.com/design/spec/animation/meaningful-transitions.html
@@ -223,6 +222,7 @@ IBAnimatable is an Open Source library to help designers and developers design a
 
 
 ### Misc.
+* Mock data generator
 * Importing Sketch to Swift playground
 * Importing Sketch to Storyboard? Maybe too hard.
 * Sketch plugin to export `IBAnimatable` styles from Sketch, e.g. generating `Opacity=0.5; fillColor=#336699;` from Sketch and easily apply in Interface Builder.
