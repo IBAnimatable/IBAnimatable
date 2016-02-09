@@ -31,6 +31,9 @@ view.maskType = "Circle"
 
 // Uncomment one line to play the animation
 
+//view.moveX()
+//view.moveY()
+//view.moveXY()
 //view.slideInLeft()
 //view.slideInRight()
 //view.slideInDown()

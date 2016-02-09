@@ -49,6 +49,17 @@ public protocol Animatable: class {
    Repeat count for Shake, Pop, Morph, Squeeze, Flash, Wobble and Swing animations
    */
   var repeatCount: Float { get set }
+
+  /**
+   x destination for MoveX, MoveXY animations
+   */
+  var xDest: CGFloat { get set }
+  
+  /**
+   y destination for MoveY, MoveXY animations
+   */
+  var yDest: CGFloat { get set }
+  
 }
 
 public extension Animatable where Self: UIView {
@@ -80,6 +91,12 @@ public extension Animatable where Self: UIView {
     }
     
     switch animationType {
+    case .MoveX:
+        moveX(completion)
+    case .MoveY:
+      moveY(completion)
+    case .MoveXY:
+      moveXY(completion)
     case .SlideInLeft:
       slideInLeft(completion)
     case .SlideInRight:
@@ -192,6 +209,19 @@ public extension Animatable where Self: UIView {
   }
   
   // MARK: - Animation methods
+  
+  public func moveX(completion: AnimatableCompletion? = nil) {
+    animateToWithX(xDest)
+  }
+
+  public func moveY(completion: AnimatableCompletion? = nil) {
+    animateToWithY(yDest)
+  }
+  
+  public func moveXY(completion: AnimatableCompletion? = nil) {
+    animateToWithXY(xDest, y: yDest)
+  }
+  
   public func slideInLeft(completion: AnimatableCompletion? = nil) {
     let x = -screenSize().width * force
     animateInWithX(x, completion: completion)
@@ -572,6 +602,18 @@ public extension Animatable where Self: UIView {
     animation()
     CATransaction.commit()
   }
+
+  private func animateToWithX(x: CGFloat, completion: AnimatableCompletion? = nil) {
+    animateTo(x, frame.origin.y, completion)
+  }
+
+  private func animateToWithY(y: CGFloat, completion: AnimatableCompletion? = nil) {
+    animateTo(frame.origin.x, y, completion)
+  }
+  
+  private func animateToWithXY(x: CGFloat, y: CGFloat, completion: AnimatableCompletion? = nil) {
+    animateTo(x, y, completion)
+  }
   
   private func animateInWithX(x: CGFloat, completion: AnimatableCompletion? = nil) {
     animateIn(x, 0, 1, 1, 1, completion)
@@ -616,6 +658,15 @@ public extension Animatable where Self: UIView {
   private func animateWithAlpha(alpha: CGFloat, completion: AnimatableCompletion? = nil) {
     UIView.animateWithDuration(duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [], animations: { () -> Void in
       self.alpha = alpha
+      }, completion: { (completed) -> Void in
+        completion?()
+    })
+  }
+
+  private func animateTo(x: CGFloat, _ y: CGFloat, _ completion: AnimatableCompletion? = nil) {
+    UIView.animateWithDuration(duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [], animations: { () -> Void in
+        self.frame.origin.x = x
+        self.frame.origin.y = y
       }, completion: { (completed) -> Void in
         completion?()
     })

@@ -61,6 +61,8 @@ import UIKit
   @IBInspectable public var velocity: CGFloat = CGFloat.NaN
   @IBInspectable public var force: CGFloat = CGFloat.NaN
   @IBInspectable public var repeatCount: Float = Float.NaN
+  @IBInspectable public var xDest: CGFloat = CGFloat.NaN
+  @IBInspectable public var yDest: CGFloat = CGFloat.NaN
   
   // MARK: - Lifecycle
   public override func prepareForInterfaceBuilder() {
