@@ -22,30 +22,29 @@ func parseJSON(JSONData: NSData) -> [[String: AnyObject]]? {
 // Generator constants
 let enumCase = "\tcase %@\n"
 let switchCase = "case .%@:\n"
-let paramStartColor = "\tstartColor = UIColor(\"%@\")\n"
-let paramEndColor =  "\tendColor = UIColor(\"%@\")\n"
+let colors =  "\treturn (UIColor(hexString: \"%@\"), UIColor(hexString: \"%@\"))\n"
 let endEnumOrSwitch = "}"
 
 // Finale string
 var enumGradientType = "public enum GradientType: String {\n"
-var switchPredefinedGradientType = "switch predefinedGradient {\n"
+var switchPredefinedGradientType = "switch gradientType {\n"
 
 // Enum generator
 let gradientsType = parseJSON(JSONFromURL(gradientTypeURL))
 for gradient in gradientsType! {
     if  var name = gradient["name"] as? String,
-        let colors = gradient["colors"] as? [String],
-        let startColor = colors.first,
-        let endColor = colors.last {
+        let unwrappedColors = gradient["colors"] as? [String],
+        let startColor = unwrappedColors.first,
+        let endColor = unwrappedColors.last {
             name = name.stringByReplacingOccurrencesOfString(" ", withString: "")
             enumGradientType += String(format: enumCase, name)
             switchPredefinedGradientType += String(format: switchCase, name)
-            switchPredefinedGradientType += String(format: paramStartColor, startColor)
-            switchPredefinedGradientType += String(format: paramEndColor, endColor)
+            switchPredefinedGradientType += String(format: colors, startColor, endColor)
     }
 }
 
 enumGradientType += endEnumOrSwitch
 switchPredefinedGradientType += endEnumOrSwitch
 print(enumGradientType)
+print("\n")
 print(switchPredefinedGradientType)
