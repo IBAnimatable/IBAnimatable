@@ -76,6 +76,10 @@ IBAnimatable is an Open Source library to help designers and developers design a
 * Mask:
 	* <del>Circle</del>
 	* <del>Star</del>
+	* <del>Polygon</del>
+	* <del>Triangle</del>
+	
+* Padding: 
 	* Polygon - https://github.com/JakeLin/IBAnimatable/pull/63
 	* <del>Triangle</del>
 

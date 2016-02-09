@@ -21,6 +21,8 @@ public extension MaskDesignable where Self: UIView {
         maskCircle()
       case .Star:
         maskStar()
+      case .Polygon:
+        maskPolygon()
       case .Triangle:
         maskTriangle()
       case .Wave:
@@ -37,6 +39,11 @@ public extension MaskDesignable where Self: UIView {
   
   public func maskCircle() {
     layer.cornerRadius = ceil(min(bounds.width, bounds.height))/2
+  }
+  
+  public func maskPolygon() {
+    let polygonPath = maskPolygonBezierPath(Int(arc4random_uniform(10) + 3))
+    drawPath(polygonPath)
   }
   
   // See https://www.weheartswift.com/bezier-paths-gesture-recognizers/
@@ -102,6 +109,24 @@ public extension MaskDesignable where Self: UIView {
   
   private func pointFrom(angle: CGFloat, radius: CGFloat, offset: CGPoint) -> CGPoint {
     return CGPoint(x: radius * cos(angle) + offset.x, y: radius * sin(angle) + offset.y)
+  }
+  
+  // MARK: Polygon
+  
+  private func maskPolygonBezierPath(degree: Int) -> UIBezierPath {
+    let path = UIBezierPath()
+    let center = CGPoint(x: bounds.width / 2.0, y: bounds.height / 2.0)
+    var angle: CGFloat = -CGFloat(M_PI / 2.0)
+    let angleIncrement = CGFloat(M_PI * 2.0 / Double(degree))
+    let radius = bounds.width / 2.0
+    
+    path.moveToPoint(pointFrom(angle, radius: radius, offset: center))
+    for _ in 1...degree - 1 {
+      angle += angleIncrement
+      path.addLineToPoint(pointFrom(angle, radius: radius, offset: center))
+    }
+    path.closePath()
+    return path
   }
   
   // MARK: Star

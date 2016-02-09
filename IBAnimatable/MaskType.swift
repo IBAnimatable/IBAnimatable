@@ -7,6 +7,7 @@ import Foundation
 
 public enum MaskType: String {
   case Circle
+  case Polygon  
   case Star
   case Triangle
   case Wave
