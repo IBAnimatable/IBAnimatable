@@ -95,6 +95,10 @@
 		AEEE200B1C18CFD200AD033B /* NavigationBarDesginable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEE200A1C18CFD200AD033B /* NavigationBarDesginable.swift */; };
 		AEEE200D1C18D10C00AD033B /* DesignableNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEE200C1C18D10C00AD033B /* DesignableNavigationBar.swift */; };
 		CAB569B1A6DDC08165BE389A /* FillDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB562E75DABEED7FCE0F309 /* FillDesignable.swift */; };
+		E2E28E6B1C6A6C30003F3852 /* GradientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6A1C6A6C30003F3852 /* GradientType.swift */; };
+		E2E28E6C1C6A6C30003F3852 /* GradientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6A1C6A6C30003F3852 /* GradientType.swift */; };
+		E2E28E6E1C6A6D22003F3852 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */; };
+		E2E28E6F1C6A6D22003F3852 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -161,6 +165,9 @@
 		AEEE200C1C18D10C00AD033B /* DesignableNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableNavigationBar.swift; sourceTree = "<group>"; };
 		CAB562E75DABEED7FCE0F309 /* FillDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillDesignable.swift; sourceTree = "<group>"; };
 		D7E765671C4C8961008C3116 /* IBAnimatable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = IBAnimatable.playground; sourceTree = "<group>"; };
+		E2E28E6A1C6A6C30003F3852 /* GradientType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientType.swift; sourceTree = "<group>"; };
+		E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		E2E28E711C6A6E70003F3852 /* GradientsTypeScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GradientsTypeScript.swift; path = Scripts/GradientsTypeScript.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				AE0FAD3A1C1ECA4200B5289B /* UIViewController+UnwindSegue.swift */,
+				E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */,
 			);
 			name = extension;
 			sourceTree = "<group>";
@@ -248,6 +256,7 @@
 				AE0FAD3F1C1ED2BD00B5289B /* viewController */,
 				AE0FAD391C1ECA2900B5289B /* extension */,
 				AE0FAD3E1C1ED26A00B5289B /* segue */,
+				E2E28E701C6A6E5E003F3852 /* scripts */,
 			);
 			path = IBAnimatable;
 			sourceTree = SOURCE_ROOT;
@@ -288,6 +297,7 @@
 				AE81DB4D1C11DF00000AEB20 /* BlurEffectStyle.swift */,
 				AED97B851C1710A900D2B0B8 /* BorderSide.swift */,
 				AE8C53AF1C0F1C0400A775AF /* GradientStartPoint.swift */,
+				E2E28E6A1C6A6C30003F3852 /* GradientType.swift */,
 				AE18787D1C1D980D00300246 /* MaskType.swift */,
 			);
 			name = enum;
@@ -325,6 +335,14 @@
 				AED1A10A1BFE983A001346FA /* Animatable.swift */,
 			);
 			name = Animatable;
+			sourceTree = "<group>";
+		};
+		E2E28E701C6A6E5E003F3852 /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				E2E28E711C6A6E70003F3852 /* GradientsTypeScript.swift */,
+			);
+			name = scripts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,10 +475,12 @@
 				AE6B016A1C2A444900950BB2 /* CheckBoxDesignable.swift in Sources */,
 				AE6B017B1C2A445100950BB2 /* AnimatableBarButtonItem.swift in Sources */,
 				AE6B017D1C2A445100950BB2 /* AnimatableCheckBox.swift in Sources */,
+				E2E28E6F1C6A6D22003F3852 /* UIColorExtension.swift in Sources */,
 				AE6B01681C2A444900950BB2 /* BlurDesignable.swift in Sources */,
 				AE6B01711C2A444900950BB2 /* PlaceholderDesignable.swift in Sources */,
 				AE6B01821C2A445100950BB2 /* AnimatableTableViewCell.swift in Sources */,
 				AE6B01691C2A444900950BB2 /* BorderDesignable.swift in Sources */,
+				E2E28E6C1C6A6C30003F3852 /* GradientType.swift in Sources */,
 				AE6B016C1C2A444900950BB2 /* FillDesignable.swift in Sources */,
 				AE6B01701C2A444900950BB2 /* PaddingDesignable.swift in Sources */,
 				AE6B01841C2A445100950BB2 /* AnimatableTextView.swift in Sources */,
@@ -488,6 +508,7 @@
 			files = (
 				AE0B0FEE1C263A1900E36B78 /* CheckBoxDesignable.swift in Sources */,
 				AED1A11A1BFE983A001346FA /* AnimatableView.swift in Sources */,
+				E2E28E6B1C6A6C30003F3852 /* GradientType.swift in Sources */,
 				AE81DAEE1C10F14C000AEB20 /* GradientDesignable.swift in Sources */,
 				AE299BDA1C0338C70018CCDC /* BlurDesignable.swift in Sources */,
 				AE81DB501C12E060000AEB20 /* RotationDesignable.swift in Sources */,
@@ -504,6 +525,7 @@
 				AE18787E1C1D980D00300246 /* MaskType.swift in Sources */,
 				AED1A1191BFE983A001346FA /* AnimatableTextView.swift in Sources */,
 				AE8964DC1C2CC2E000D3E9F0 /* RootWindowDesignable.swift in Sources */,
+				E2E28E6E1C6A6D22003F3852 /* UIColorExtension.swift in Sources */,
 				AED1A1161BFE983A001346FA /* Animatable.swift in Sources */,
 				AE8C53B01C0F1C0400A775AF /* GradientStartPoint.swift in Sources */,
 				AE0B0FF01C26655000E36B78 /* AnimatableLabel.swift in Sources */,

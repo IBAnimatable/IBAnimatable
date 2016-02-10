@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableTableViewCell: UITableViewCell, FillDesignable, BorderDesignable, TableViewCellDesignable, Animatable {
+@IBDesignable public class AnimatableTableViewCell: UITableViewCell, FillDesignable, BorderDesignable, TableViewCellDesignable, GradientDesignable, Animatable {
   
   // MARK: - FillDesignable
   @IBInspectable public var fillColor: UIColor?
@@ -16,7 +16,14 @@ import UIKit
   @IBInspectable public var borderWidth: CGFloat = CGFloat.NaN
   @IBInspectable public var borderSide: String?
   
+  // MARK: - TableViewCellDesignable
   @IBInspectable public var removeSeparatorMargins: Bool = false
+  
+  // MARK: - GradientDesignable
+  @IBInspectable public var startColor: UIColor?
+  @IBInspectable public var endColor: UIColor?
+  @IBInspectable public var predefinedGradient: String?
+  @IBInspectable public var startPoint: String?
   
   // MARK: - Animatable
   @IBInspectable public var animationType: String?
@@ -52,5 +59,6 @@ import UIKit
     configOpacity()
     configBorder()
     configSeparatorMargins()
+    configGradient()
   }
 }

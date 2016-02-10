@@ -68,7 +68,7 @@ IBAnimatable is an Open Source library to help designers and developers design a
 	* <del>startColor</del>
 	* <del>endColor</del>
 	* <del>startPoint</del>
-	* Default gradient colors - https://github.com/JakeLin/IBAnimatable/issues/24
+	* <del>Default gradient colors - https://github.com/JakeLin/IBAnimatable/issues/24</del>
 
 * Navigation Bar:
 	* <del>solidColor</del>
