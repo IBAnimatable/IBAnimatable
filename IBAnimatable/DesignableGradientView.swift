@@ -5,14 +5,30 @@
 
 import UIKit
 
-@IBDesignable public class DesignableGradientView: UIView {
-  @IBInspectable var startColor: UIColor?
-  @IBInspectable var endColor: UIColor?
-  @IBInspectable var startPoint: String?
-  @IBInspectable var cornerRadius: CGFloat = CGFloat.NaN
+@IBDesignable public class DesignableGradientView: UIView, GradientDesignable, CornerDesignable {
+
+  // MARK: - GradientDesignable
+  @IBInspectable public var startColor: UIColor?
+  @IBInspectable public var endColor: UIColor?
+  @IBInspectable public var predefinedGradient: String?
+  @IBInspectable public var startPoint: String?
   
-  var gradientLayer: CAGradientLayer {
-    return layer as! CAGradientLayer
+  // MARK: - CornerDesignable
+  @IBInspectable public var cornerRadius: CGFloat = CGFloat.NaN {
+    didSet {
+      configCornerRadius()
+    }
+  }
+  
+  // MARK: - Lifecycle
+  public override func prepareForInterfaceBuilder() {
+    super.prepareForInterfaceBuilder()
+    configInspectableProperties()
+  }
+  
+  public override func awakeFromNib() {
+    super.awakeFromNib()
+    configInspectableProperties()
   }
   
   // MARK: - CALayer
@@ -20,60 +36,13 @@ import UIKit
     return CAGradientLayer.self
   }
   
-  // MARK: - Lifecycle
-  public override func prepareForInterfaceBuilder() {
-    super.prepareForInterfaceBuilder()
-    configGradient()
+  var gradientLayer: CAGradientLayer {
+    return layer as! CAGradientLayer
   }
   
-  public override func awakeFromNib() {
-    super.awakeFromNib()
-    configGradient()
+  // MARK: - Private
+  private func configInspectableProperties() {
+    configGradientWithLayer(gradientLayer)
   }
-  
-  // MARK: - Internal
-  func configGradient() {
-    // Return if both colors are unset.
-    guard let unwrappedStartColor = startColor, unwrappedEndColor = endColor else {
-      return
-    }
-    
-    // Default value is `.Top`
-    var gradientStartPoint: GradientStartPoint = .Top
-    if let unwrappedStartPoint = startPoint, resolvedGradientStartPoint = GradientStartPoint(rawValue: unwrappedStartPoint) {
-      gradientStartPoint = resolvedGradientStartPoint
-    }
-    
-    gradientLayer.colors = [unwrappedStartColor.CGColor, unwrappedEndColor.CGColor]
-    if !cornerRadius.isNaN {
-      gradientLayer.cornerRadius = cornerRadius
-    }
-    
-    switch gradientStartPoint {
-    case .Top:
-      gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
-      gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
-    case .TopRight:
-      gradientLayer.startPoint = CGPoint(x: 1, y: 0)
-      gradientLayer.endPoint = CGPoint(x: 0, y: 1)
-    case .Right:
-      gradientLayer.startPoint = CGPoint(x: 1, y: 0.5)
-      gradientLayer.endPoint = CGPoint(x: 0, y: 0.5)
-    case .BottomRight:
-      gradientLayer.startPoint = CGPoint(x: 1, y: 1)
-      gradientLayer.endPoint = CGPoint(x: 0, y: 0)
-    case .Bottom:
-      gradientLayer.startPoint = CGPoint(x: 0.5, y: 1)
-      gradientLayer.endPoint = CGPoint(x: 0.5, y: 0)
-    case .BottomLeft:
-      gradientLayer.startPoint = CGPoint(x: 0, y: 1)
-      gradientLayer.endPoint = CGPoint(x: 1, y: 0)
-    case .Left:
-      gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
-      gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
-    case .TopLeft:
-      gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-      gradientLayer.endPoint = CGPoint(x: 1, y: 1)
-    }
-  }
+
 }
