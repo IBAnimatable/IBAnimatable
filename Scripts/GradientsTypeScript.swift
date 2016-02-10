@@ -14,7 +14,7 @@ func parseJSON(JSONData: NSData) -> [[String: AnyObject]]? {
         json = try NSJSONSerialization.JSONObjectWithData(JSONData, options: .MutableContainers) as? [[String: AnyObject]]
         return json
     } catch {
-        print("JSON serialization did failed")
+        print("JSON serialization did fail")
         return nil
     }
 }
