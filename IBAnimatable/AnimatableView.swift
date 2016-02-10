@@ -110,8 +110,16 @@ import UIKit
   
   public override func layoutSubviews() {
     super.layoutSubviews()
-    
     autoRunAnimation()
+  }
+  
+  // MARK: - CALayer
+  public override class func layerClass() -> AnyClass {
+    return CAGradientLayer.self
+  }
+  
+  var gradientLayer: CAGradientLayer {
+    return layer as! CAGradientLayer
   }
   
   // MARK: - Private
@@ -120,6 +128,6 @@ import UIKit
     configBorder()
     configTintedColor()
     configBlurEffectStyle()
-    configGradient()
+    configGradientWithLayer(gradientLayer)
   }
 }
