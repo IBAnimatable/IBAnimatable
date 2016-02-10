@@ -16,8 +16,7 @@ import UIKit
   @IBInspectable public var velocity: CGFloat = CGFloat.NaN
   @IBInspectable public var force: CGFloat = CGFloat.NaN
   @IBInspectable public var repeatCount: Float = Float.NaN
-  @IBInspectable public var xDest: CGFloat = CGFloat.NaN
-  @IBInspectable public var yDest: CGFloat = CGFloat.NaN
+  @IBInspectable public var originDest: CGPoint = CGPoint(x: CGFloat.NaN, y: CGFloat.NaN)
   
   // MARK: - RotationDesignable
   @IBInspectable public var rotate: CGFloat = CGFloat.NaN {

@@ -296,7 +296,8 @@ Easily add color layer on top of the UI element especially `AnimatableImageView`
 | damping | CGFloat | Used in UIView Spring animation (0 ~ 1 seconds). To smoothly decelerate the animation without oscillation, use a value of 1. Employ a damping ratio closer to zero to increase oscillation. Default value is 0.7. Notice: FadeOutIn, FadeInOut, Shake, Pop, Morph, Squeeze, Flash, Wobble and Swing animations do not use damping. |
 | velocity | CGFloat | used in UIView Spring animation. A value of 1 corresponds to the total animation distance traversed in one second. For example, if the total animation distance is 200 points and you want the start of the animation to match a view velocity of 100 pt/s, use a value of 0.5. Default is 0.7. Notice: FadeOutIn, FadeInOut, Shake, Pop, Morph, Squeeze, Flash, Wobble and Swing animations do not use damping. |
 | force | CGFloat | used to apply force to the animation. The number is higher, the animation property has more changes. e.g.. for Pop animation, higher force causes the view popping bigger. Default value is 1. |
-| repeatCount | Float | Used to specify the count to repeat the animation. Can only used in Shake, Pop, Morph, Squeeze, Flash, Wobble, Swing, Rotate and RotateCCW (rotate counterclockwise) animations. Default value is 1.  |
+| repeatCount | Float | Used to specify the count to repeat the animation. Can only be used in Shake, Pop, Morph, Squeeze, Flash, Wobble, Swing, Rotate and RotateCCW (roate counterclockwise) animations. Default value is 1.  |
+| originDest | CGPoint | Used to specify the x and/or y destination. Can only be used in MoveX, MoveY, MoveXY. |
 
 ### Extension
 #### UIViewController

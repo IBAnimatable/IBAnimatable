@@ -53,12 +53,7 @@ public protocol Animatable: class {
   /**
    x destination for MoveX, MoveXY animations
    */
-  var xDest: CGFloat { get set }
-  
-  /**
-   y destination for MoveY, MoveXY animations
-   */
-  var yDest: CGFloat { get set }
+  var originDest: CGPoint { get set }
   
 }
 
@@ -211,15 +206,15 @@ public extension Animatable where Self: UIView {
   // MARK: - Animation methods
   
   public func moveX(completion: AnimatableCompletion? = nil) {
-    animateToWithX(xDest)
+    animateToWithX(originDest.x)
   }
 
   public func moveY(completion: AnimatableCompletion? = nil) {
-    animateToWithY(yDest)
+    animateToWithY(originDest.y)
   }
   
   public func moveXY(completion: AnimatableCompletion? = nil) {
-    animateToWithXY(xDest, y: yDest)
+    animateToWithXY(originDest.x, y: originDest.y)
   }
   
   public func slideInLeft(completion: AnimatableCompletion? = nil) {
