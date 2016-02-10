@@ -55,5 +55,6 @@ import UIKit
     configFillColor()
     configOpacity()
     configBorder()
+    configGradient()
   }
 }
