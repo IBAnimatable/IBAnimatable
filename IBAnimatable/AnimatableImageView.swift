@@ -110,7 +110,6 @@ import UIKit
   
   public override func layoutSubviews() {
     super.layoutSubviews()
-    
     autoRunAnimation()
   }
   

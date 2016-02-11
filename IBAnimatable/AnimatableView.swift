@@ -110,10 +110,9 @@ import UIKit
   
   public override func layoutSubviews() {
     super.layoutSubviews()
-    
     autoRunAnimation()
   }
-  
+
   // MARK: - Private
   private func configInspectableProperties() {
     configAnimatableProperties()
