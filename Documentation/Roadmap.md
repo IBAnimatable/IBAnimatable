@@ -78,10 +78,7 @@ IBAnimatable is an Open Source library to help designers and developers design a
 	* <del>Star</del>
 	* <del>Polygon</del>
 	* <del>Triangle</del>
-	
-* Padding: 
-	* Polygon - https://github.com/JakeLin/IBAnimatable/pull/63
-	* <del>Triangle</del>
+	* <del>Wave</del>
 
 * Padding:
 	* <del>paddingLeft</del>
@@ -108,10 +105,10 @@ IBAnimatable is an Open Source library to help designers and developers design a
 	* <del>leftImageLeftPadding</del>
 	* <del>leftImageRightPadding</del>
 	* <del>leftImageTopPadding</del>
-	* <del>rightImage?</del>
-	* <del>RightImageLeftPadding?</del>
-	* <del>RightImageRightPadding?</del>
-	* <del>RightImageTopPadding?</del>
+	* <del>rightImage</del>
+	* <del>RightImageLeftPadding</del>
+	* <del>RightImageRightPadding</del>
+	* <del>RightImageTopPadding</del>
 
 * Status Bar:
 	* <del>lightStatusBar</del>
