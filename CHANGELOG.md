@@ -1,6 +1,7 @@
 # Next
 
 ### API breaking changes
+- Remove `DesignableGradientView`, use `AnimatableView` to configure gradient. [#81](https://github.com/JakeLin/IBAnimatable/issues/81) and [#86](https://github.com/JakeLin/IBAnimatable/issues/86)
 
 ### Enhancements
 
