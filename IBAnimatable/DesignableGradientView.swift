@@ -31,18 +31,10 @@ import UIKit
     configInspectableProperties()
   }
   
-  // MARK: - CALayer
-  public override class func layerClass() -> AnyClass {
-    return CAGradientLayer.self
-  }
-  
-  var gradientLayer: CAGradientLayer {
-    return layer as! CAGradientLayer
-  }
-  
   // MARK: - Private
   private func configInspectableProperties() {
-    configGradientWithLayer(gradientLayer)
+    configGradient()
+//    configGradientWithLayer(gradientLayer)
   }
 
 }

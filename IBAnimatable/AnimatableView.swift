@@ -112,22 +112,13 @@ import UIKit
     super.layoutSubviews()
     autoRunAnimation()
   }
-  
-  // MARK: - CALayer
-  public override class func layerClass() -> AnyClass {
-    return CAGradientLayer.self
-  }
-  
-  var gradientLayer: CAGradientLayer {
-    return layer as! CAGradientLayer
-  }
-  
+
   // MARK: - Private
   private func configInspectableProperties() {
     configAnimatableProperties()
     configBorder()
     configTintedColor()
     configBlurEffectStyle()
-    configGradientWithLayer(gradientLayer)
+    configGradient()
   }
 }

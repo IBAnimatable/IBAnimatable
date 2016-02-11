@@ -14,22 +14,23 @@ public protocol GradientDesignable {
 
 public extension GradientDesignable where Self: UIView {
 
-  public func configGradientWithLayer(gradientLayer: CAGradientLayer) {
+  public func configGradient() {
     let predefinedGradient = configPredefinedGradient()
     if let unwrappedStartColor = startColor, unwrappedEndColor = endColor {
-        configGradientWithStartColor(unwrappedStartColor, endColor: unwrappedEndColor, gradientLayer: gradientLayer)
+      configGradientWithStartColor(unwrappedStartColor, endColor: unwrappedEndColor)
     } else if let unwrappedStartColor = predefinedGradient?.0, unwrappedEndColor = predefinedGradient?.1 {
-        configGradientWithStartColor(unwrappedStartColor, endColor: unwrappedEndColor, gradientLayer: gradientLayer)
+      configGradientWithStartColor(unwrappedStartColor, endColor: unwrappedEndColor)
     }
   }
-  
-  private func configGradientWithStartColor(startColor: UIColor, endColor: UIColor, gradientLayer: CAGradientLayer) {
+
+  private func configGradientWithStartColor(startColor: UIColor, endColor: UIColor) {
     // Default value is `.Top`
     var gradientStartPoint: GradientStartPoint = .Top
     if let unwrappedStartPoint = startPoint, resolvedGradientStartPoint = GradientStartPoint(rawValue: unwrappedStartPoint) {
       gradientStartPoint = resolvedGradientStartPoint
     }
     
+    let gradientLayer = createGradientLayer()
     gradientLayer.colors = [startColor.CGColor, endColor.CGColor]    
     switch gradientStartPoint {
     case .Top:
@@ -57,6 +58,13 @@ public extension GradientDesignable where Self: UIView {
       gradientLayer.startPoint = CGPoint(x: 0, y: 0)
       gradientLayer.endPoint = CGPoint(x: 1, y: 1)
     }
+  }
+  
+  private func createGradientLayer() -> CAGradientLayer {
+    let gradientLayer: CAGradientLayer = CAGradientLayer()
+    gradientLayer.frame = self.bounds
+    self.layer.insertSublayer(gradientLayer, atIndex: 0)
+    return gradientLayer
   }
   
   private func configPredefinedGradient() -> (UIColor, UIColor)? {

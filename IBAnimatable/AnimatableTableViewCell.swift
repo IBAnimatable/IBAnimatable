@@ -51,15 +51,6 @@ import UIKit
     autoRunAnimation()
   }
   
-  // MARK: - CALayer
-  public override class func layerClass() -> AnyClass {
-    return CAGradientLayer.self
-  }
-  
-  var gradientLayer: CAGradientLayer {
-    return layer as! CAGradientLayer
-  }
-  
   // MARK: - Private
   private func configInspectableProperties() {
     configAnimatableProperties()
@@ -67,6 +58,6 @@ import UIKit
     configOpacity()
     configBorder()
     configSeparatorMargins()
-    configGradientWithLayer(gradientLayer)
+    configGradient()
   }
 }
