@@ -67,7 +67,7 @@ view.maskType = "Circle"
 //view.zoomIn()
 //view.zoomOut()
 //view.shake()
-//view.pop()
+view.pop()
 //view.flipX()
 //view.flipY()
 //view.morph()
@@ -76,5 +76,6 @@ view.maskType = "Circle"
 //view.wobble()
 //view.swing()
 //view.rotate()
+//view.rotate(clockwise: false)
 
 //: [Next](@next)
