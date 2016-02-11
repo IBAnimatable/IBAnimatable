@@ -160,7 +160,6 @@ The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and con
 | UITableViewCell | AnimatableTableViewCell | |
 | UITextField | AnimatableTextField | |
 | UITextView | AnimatableTextView | |
-| UIView | DesignableGradientView | |
 | UINavigationBar | DesignableNavigationBar | |
 | UIViewController | DesignableViewController | |
 
