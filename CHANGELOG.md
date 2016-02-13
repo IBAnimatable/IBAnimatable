@@ -13,7 +13,8 @@ TBD
 TBD
 
 #### Bugfixes
-TBD
+
+- Fixed `GradientDesignable` rotation. #86
 
 ### [1.1](https://github.com/JakeLin/IBAnimatable/releases/tag/V1.1)
 
