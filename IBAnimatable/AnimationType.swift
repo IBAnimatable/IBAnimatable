@@ -9,9 +9,6 @@ import Foundation
  Predefined Animation Type
  */
 public enum AnimationType: String {
-  case MoveX
-  case MoveY
-  case MoveXY
   case SlideInLeft
   case SlideInRight
   case SlideInDown
@@ -61,4 +58,5 @@ public enum AnimationType: String {
   case Swing
   case Rotate
   case RotateCCW
+  case MoveTo
 }

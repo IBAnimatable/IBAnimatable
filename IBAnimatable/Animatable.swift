@@ -51,9 +51,9 @@ public protocol Animatable: class {
   var repeatCount: Float { get set }
 
   /**
-   x destination for MoveX, MoveXY animations
+   Position (x, y) for MoveTo animation
    */
-  var originDest: CGPoint { get set }
+  var position: CGPoint { get set }
   
 }
 
@@ -86,12 +86,6 @@ public extension Animatable where Self: UIView {
     }
     
     switch animationType {
-    case .MoveX:
-        moveX(completion)
-    case .MoveY:
-      moveY(completion)
-    case .MoveXY:
-      moveXY(completion)
     case .SlideInLeft:
       slideInLeft(completion)
     case .SlideInRight:
@@ -190,6 +184,8 @@ public extension Animatable where Self: UIView {
       rotate(completion: completion)
     case .RotateCCW:
       rotate(clockwise: false, completion: completion)
+    case .MoveTo:
+      moveTo(completion)
     }
   }
   
@@ -204,18 +200,6 @@ public extension Animatable where Self: UIView {
   }
   
   // MARK: - Animation methods
-  
-  public func moveX(completion: AnimatableCompletion? = nil) {
-    animateToWithX(originDest.x)
-  }
-
-  public func moveY(completion: AnimatableCompletion? = nil) {
-    animateToWithY(originDest.y)
-  }
-  
-  public func moveXY(completion: AnimatableCompletion? = nil) {
-    animateToWithXY(originDest.x, y: originDest.y)
-  }
   
   public func slideInLeft(completion: AnimatableCompletion? = nil) {
     let x = -screenSize().width * force
@@ -588,6 +572,11 @@ public extension Animatable where Self: UIView {
       }, completion: completion)
   }
   
+  public func moveTo(completion: AnimatableCompletion? = nil) {
+    animateToWithPosition(position, completion: completion)
+  }
+  
+  
   // MARK: - Private
   private func animateLayer(animation: AnimatableExecution, completion: AnimatableCompletion? = nil) {
     CATransaction.begin()
@@ -596,18 +585,6 @@ public extension Animatable where Self: UIView {
     }
     animation()
     CATransaction.commit()
-  }
-
-  private func animateToWithX(x: CGFloat, completion: AnimatableCompletion? = nil) {
-    animateTo(x, frame.origin.y, completion)
-  }
-
-  private func animateToWithY(y: CGFloat, completion: AnimatableCompletion? = nil) {
-    animateTo(frame.origin.x, y, completion)
-  }
-  
-  private func animateToWithXY(x: CGFloat, y: CGFloat, completion: AnimatableCompletion? = nil) {
-    animateTo(x, y, completion)
   }
   
   private func animateInWithX(x: CGFloat, completion: AnimatableCompletion? = nil) {
@@ -658,10 +635,22 @@ public extension Animatable where Self: UIView {
     })
   }
 
+  private func animateToWithPosition(position: CGPoint, completion: AnimatableCompletion? = nil) {
+    if position.x.isNaN && position.y.isNaN {
+      return
+    }
+    
+    animateTo(position.x, position.y, completion)
+  }
+
   private func animateTo(x: CGFloat, _ y: CGFloat, _ completion: AnimatableCompletion? = nil) {
     UIView.animateWithDuration(duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [], animations: { () -> Void in
+      if !x.isNaN {
         self.frame.origin.x = x
+      }
+      if !y.isNaN {
         self.frame.origin.y = y
+      }
       }, completion: { (completed) -> Void in
         completion?()
     })
