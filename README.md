@@ -338,6 +338,9 @@ All of us can contribute to this project. Fewer overheads mean less time to buil
 * [Spring by Meng To](https://github.com/MengTo/Spring) - steal a lot of animation parameters from this project.
 * [Invision ToDo App UI Kit](http://www.invisionapp.com/do), The demo App's original design is from this UI Kit and redone in Interface Builder. We also added interaction, navigation and animations.
 
+## Change Log
+Please see [CHANGELOG.md](https://github.com/JakeLin/IBAnimatable/blob/master/CHANGELOG.md)
+
 ## License
 `IBAnimatable` is released under the MIT license. See [LICENSE](https://github.com/JakeLin/IBAnimatable/blob/master/LICENSE) for details.
 
