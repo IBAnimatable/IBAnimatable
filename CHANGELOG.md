@@ -10,7 +10,8 @@ All notable changes to this project will be documented in this file.
 TBD
 
 #### Enhancements
-TBD
+
+-  Swift Package Manager support. [#5](https://github.com/JakeLin/IBAnimatable/issues/5)
 
 #### Bugfixes
 
