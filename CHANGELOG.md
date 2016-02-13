@@ -14,7 +14,8 @@ TBD
 -  Swift Package Manager support. [#5](https://github.com/JakeLin/IBAnimatable/issues/5)
 
 #### Bugfixes
-TBD
+
+- Fixed `GradientDesignable` rotation. [#86](https://github.com/JakeLin/IBAnimatable/issues/86)
 
 ### [1.1](https://github.com/JakeLin/IBAnimatable/releases/tag/V1.1)
 

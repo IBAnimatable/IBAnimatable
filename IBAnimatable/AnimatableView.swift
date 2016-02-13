@@ -112,7 +112,7 @@ import UIKit
     super.layoutSubviews()
     autoRunAnimation()
   }
-
+  
   // MARK: - Private
   private func configInspectableProperties() {
     configAnimatableProperties()
