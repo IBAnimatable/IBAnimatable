@@ -27,6 +27,7 @@ TBD
 - New masks: Star, Triangle, Polygon, Wave
 - SidebarImage now support right images 
 - Predefined gradients [#24](https://github.com/JakeLin/IBAnimatable/issues/24)
+- iOS8 support [#89](https://github.com/JakeLin/IBAnimatable/issues/89)
 
 #### Bugfixes
 
