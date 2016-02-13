@@ -9,6 +9,7 @@ import UIKit
   
   // MARK: - FillDesignable
   @IBInspectable public var fillColor: UIColor?
+  @IBInspectable public var predefinedColor: String?
   @IBInspectable public var opacity: CGFloat = CGFloat.NaN
   
   // MARK: - BorderDesignable

@@ -20,7 +20,13 @@ import UIKit
       configFillColor()
     }
   }
-
+  
+  @IBInspectable public var predefinedColor: String? {
+    didSet {
+      configFillColor()
+    }
+  }
+  
   @IBInspectable public var opacity: CGFloat = CGFloat.NaN {
     didSet {
       configOpacity()
