@@ -118,29 +118,16 @@ Copy and paste `IBAnimatable` folder in your Xcode project.
 TBD, more details on [Issue #22 - Swift package manager support](https://github.com/JakeLin/IBAnimatable/issues/22)
 
 ### Swift package manager
-TBD, more details on [Issue #5 - Swift package manager support](https://github.com/JakeLin/IBAnimatable/issues/5)
 
-### CocoaPods
+Add `.Package(url: "https://github.com/JakeLin/IBanimatable.git", majorVersion: 1)` to your `Package.swift`
+
+### [CocoaPods](https://cocoapods.org)
+
 Add `pod 'IBAnimatable'` to your Podfile.
 
-### Carthage 
+### [Carthage](https://github.com/Carthage/Carthage)
 
-[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
-
-You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
-
-```bash
-$ brew update
-$ brew install carthage
-```
-
-To integrate IBAnimatable into your Xcode project using Carthage, specify it in your `Cartfile`:
-
-```ogdl
-github "JakeLin/IBAnimatable" ~> 1.0
-```
-
-Run `carthage update` to build the framework and drag the built `IBAnimatable.framework` (in Carthage/Build/iOS folder) into your Xcode project (Linked Frameworks and Libraries in Target).
+Add `github "JakeLin/IBAnimatable" ~> 1.1` to your Cartfile.
 
 ## APIs
 
