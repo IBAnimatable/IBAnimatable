@@ -12,6 +12,7 @@ TBD
 #### Enhancements
 
 -  Swift Package Manager support. [#5](https://github.com/JakeLin/IBAnimatable/issues/5)
+- Predefined color. [#71](https://github.com/JakeLin/IBAnimatable/issues/71)
 
 #### Bugfixes
 TBD
