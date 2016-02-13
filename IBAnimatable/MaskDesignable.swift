@@ -20,19 +20,15 @@ public extension MaskDesignable where Self: UIView {
       case .Circle:
         maskCircle()
       case .Star:
-        maskStar()
+        maskStarFromString(unwrappedMaskType)
       case .Polygon:
         maskPolygon()
       case .Triangle:
         maskTriangle()
       case .Wave:
-        maskWave()
+        maskWaveFromString(unwrappedMaskType);
       }
-      return
     }
-    
-    // Mask Star with parameter
-    // Mask Wave with parameter
   }
   
   // MARK: - Mask
@@ -70,16 +66,16 @@ public extension MaskDesignable where Self: UIView {
     drawPath(wavePath)
   }
   
-  // MARK: Private
+  // MARK: - Private helper
   
-  func drawPath(path: UIBezierPath) {
+  private func drawPath(path: UIBezierPath) {
     let maskLayer = CAShapeLayer()
     maskLayer.frame = CGRect(origin: CGPoint.zero, size: bounds.size)
     maskLayer.path = path.CGPath
     layer.mask = maskLayer
   }
   
-  func drawBorderPath(borderPath: UIBezierPath, path: UIBezierPath) {
+  private func drawBorderPath(borderPath: UIBezierPath, path: UIBezierPath) {
     // FIXME: borderWidth is always set after mask, so the following code will never be excuted.
     if layer.borderWidth == 0 {
       return
@@ -111,7 +107,14 @@ public extension MaskDesignable where Self: UIView {
     return CGPoint(x: radius * cos(angle) + offset.x, y: radius * sin(angle) + offset.y)
   }
   
-  // MARK: Polygon
+  private func cleanMaskString(mask: String, maskName: String) -> String {
+    var cleanMask = mask.stringByReplacingOccurrencesOfString(maskName, withString: "")
+    cleanMask = cleanMask.stringByReplacingOccurrencesOfString("(", withString: "")
+    cleanMask = cleanMask.stringByReplacingOccurrencesOfString(")", withString: "")
+    return cleanMask
+  }
+  
+  // MARK: - Polygon
   
   private func maskPolygonBezierPath(degree: Int) -> UIBezierPath {
     let path = UIBezierPath()
@@ -129,7 +132,16 @@ public extension MaskDesignable where Self: UIView {
     return path
   }
   
-  // MARK: Star
+  // MARK: - Star
+  
+  private func maskStarFromString(mask: String) {
+    let sides = Int(cleanMaskString(mask, maskName: "Star"))
+    if let unwrappedSides = sides {
+      maskStar(unwrappedSides)
+    } else {
+      maskStar()
+    }
+  }
   
   private func starPath(points: Int, borderWidth: CGFloat = 0) -> UIBezierPath {
     let path = UIBezierPath()
@@ -158,13 +170,11 @@ public extension MaskDesignable where Self: UIView {
     }
     
     path.closePath()
-    
-    
     return path
   }
   
-  // MARK: Triangle
-  
+  // MARK: - Triangle
+
   private func maskTriangleBezierPath() -> UIBezierPath {
     let path = UIBezierPath()
     path.moveToPoint(CGPoint(x: bounds.width / 2.0, y: bounds.origin.y))
@@ -174,7 +184,17 @@ public extension MaskDesignable where Self: UIView {
     return path
   }
   
-  // MARK: Wave
+  // MARK: - Wave
+  
+  private func maskWaveFromString(mask: String) {
+    let params = cleanMaskString(mask, maskName: "Wave").componentsSeparatedByString(",")
+    if params.count == 3, let unwrappedWidth = Float(params[1]), unwrappedOffset = Float(params[2]) {
+        let up = params[0] == "up"
+        maskWave(up, waveWidth: CGFloat(unwrappedWidth), waveOffset: CGFloat(unwrappedOffset))
+    } else {
+        maskWave()
+    }
+  }
   
   private func maskWaveBezierPath(waveUp: Bool, waveWidth: CGFloat, waveOffset: CGFloat) -> UIBezierPath {
     let originY = waveUp ? bounds.maxY : bounds.minY
