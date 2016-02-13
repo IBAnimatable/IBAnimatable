@@ -58,12 +58,14 @@ public extension GradientDesignable where Self: UIView {
       gradientLayer.startPoint = CGPoint(x: 0, y: 0)
       gradientLayer.endPoint = CGPoint(x: 1, y: 1)
     }
+    
+    let gradientView = GradientView(frame: self.bounds, layer: gradientLayer)
+    self.insertSubview(gradientView, atIndex: 0)
   }
   
   private func createGradientLayer() -> CAGradientLayer {
     let gradientLayer: CAGradientLayer = CAGradientLayer()
     gradientLayer.frame = self.bounds
-    self.layer.insertSublayer(gradientLayer, atIndex: 0)
     return gradientLayer
   }
   
@@ -353,4 +355,24 @@ public extension GradientDesignable where Self: UIView {
       return (UIColor(hexString: "#4B79A1"), UIColor(hexString: "#283E51"))
     }
   }
+}
+
+private class GradientView: UIView {
+
+  // MARK: - Life cycle
+  
+  init(frame: CGRect, layer: CAGradientLayer) {
+    super.init(frame: frame)
+    self.layer.insertSublayer(layer, atIndex: 0)
+    self.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
+  override class func layerClass() -> AnyClass {
+    return CAGradientLayer.self
+  }
+  
 }
