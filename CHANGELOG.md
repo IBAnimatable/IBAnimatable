@@ -12,18 +12,14 @@ TBD
 #### Enhancements
 
 -  Swift Package Manager support. [#5](https://github.com/JakeLin/IBAnimatable/issues/5)
-- Predefined color. [#71](https://github.com/JakeLin/IBAnimatable/issues/71)
 - Customise mask draw from interface builder [#50](https://github.com/JakeLin/IBAnimatable/issues/50) [#59](https://github.com/JakeLin/IBAnimatable/issues/59) [#76](https://github.com/JakeLin/IBAnimatable/issues/76):
   - Star(6) -> draw star mask with 6 sides.
   - Wave(up,50,100) -> draw a wave up mask with 50 as width, and 100 as offset.
 
 #### Bugfixes
+TBD
 
-- Fixed `GradientDesignable` rotation. [#86](https://github.com/JakeLin/IBAnimatable/issues/86)
-- Fixed mask star drawing bug. [#95](https://github.com/JakeLin/IBAnimatable/issues/95)
-
-
-### [1.1](https://github.com/JakeLin/IBAnimatable/releases/tag/1.1)
+### [1.1](https://github.com/JakeLin/IBAnimatable/releases/tag/V1.1)
 
 #### API breaking changes
 
@@ -42,12 +38,12 @@ TBD
 - Fixed left gradient
 - Fixed slideOut / slideIn animations [#46](https://github.com/JakeLin/IBAnimatable/issues/46)
 
-### [1.0.1](https://github.com/JakeLin/IBAnimatable/releases/tag/1.0.1)
+### [1.0.1](https://github.com/JakeLin/IBAnimatable/releases/tag/V1.0.1)
 
 #### Enhancements
 
 - Carthage support - [#6](https://github.com/JakeLin/IBAnimatable/issues/6)
 
-### [1.0](https://github.com/JakeLin/IBAnimatable/releases/tag/1.0)
+### [1.0](https://github.com/JakeLin/IBAnimatable/releases/tag/V1.0)
 
 - Initial release
