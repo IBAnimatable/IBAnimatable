@@ -6,6 +6,6 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "Jake Lin" => "JakeLinAu@gmail.com" }
   s.platform     = :ios, '8.0'
-  s.source       = { :git => "https://github.com/JakeLin/IBAnimatable.git", tag: "V#{s.version}" }
+  s.source       = { :git => "https://github.com/JakeLin/IBAnimatable.git", tag: "#{s.version}" }
   s.source_files  = "IBAnimatable/*.swift"
 end
