@@ -34,9 +34,23 @@ import UIKit
   }
   
   // MARK: - BorderDesignable
-  @IBInspectable public var borderColor: UIColor?
-  @IBInspectable public var borderWidth: CGFloat = CGFloat.NaN
-  @IBInspectable public var borderSide: String?
+  @IBInspectable public var borderColor: UIColor? {
+    didSet {
+      configBorder()
+    }
+  }
+  
+  @IBInspectable public var borderWidth: CGFloat = CGFloat.NaN {
+    didSet {
+      configBorder()
+    }
+  }
+  
+  @IBInspectable public var borderSide: String? {
+    didSet {
+      configBorder()
+    }
+  }
 
   // MARK: - ShadowDesignable
   @IBInspectable public var shadowColor: UIColor? {
@@ -101,7 +115,6 @@ import UIKit
   // MARK: - Private
   private func configInspectableProperties() {
     configAnimatableProperties()
-    configBorder()
   }
   
   private func configAfterLayoutSubviews() {

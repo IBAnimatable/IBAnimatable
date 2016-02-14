@@ -36,9 +36,23 @@ import UIKit
   }
   
   // MARK: - BorderDesignable
-  @IBInspectable public var borderColor: UIColor?
-  @IBInspectable public var borderWidth: CGFloat = CGFloat.NaN
-  @IBInspectable public var borderSide: String?
+  @IBInspectable public var borderColor: UIColor? {
+    didSet {
+      configBorder()
+    }
+  }
+  
+  @IBInspectable public var borderWidth: CGFloat = CGFloat.NaN {
+    didSet {
+      configBorder()
+    }
+  }
+  
+  @IBInspectable public var borderSide: String? {
+    didSet {
+      configBorder()
+    }
+  }
   
   // MARK: - RotationDesignable
   @IBInspectable public var rotate: CGFloat = CGFloat.NaN {
@@ -126,7 +140,6 @@ import UIKit
   // MARK: - Private
   private func configInspectableProperties() {
     configAnimatableProperties()
-    configBorder()
     configTintedColor()
     configBlurEffectStyle()
     configGradient()
