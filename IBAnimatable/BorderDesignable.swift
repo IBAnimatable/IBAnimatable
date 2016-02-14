@@ -36,7 +36,8 @@ public extension BorderDesignable where Self: UIView {
     // if borderSide has been specified, only display one side
     if let unwrappedBorderSide = borderSide, side = BorderSide(rawValue: unwrappedBorderSide) {
       let layerName = "borderSideLayer"
-      layer.removeSublayerWithName(layerName)
+      layer.sublayers?.filter  { $0.name == layerName }
+                      .forEach { $0.removeFromSuperlayer() }
       
       let border = CALayer()
       border.name = layerName
