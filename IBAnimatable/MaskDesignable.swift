@@ -53,13 +53,17 @@ public extension MaskDesignable where Self: UIView {
   public func maskStar(points: Int = 5) {
     // FIXME: Do not mask the shadow.
     
-    assert(points >= 2, "Stars must has at least 2 points.")
+    // Stars must has at least 3 points.
+    var starPoints = points
+    if points <= 2 {
+      starPoints = 5
+    }
     layer.mask?.removeFromSuperlayer()
     layer.sublayers?
       .filter  { $0.name == "borderSideLayer" || $0.name == "borderLayer" }
       .forEach { $0.removeFromSuperlayer() }
     
-    let path = starPath(points)
+    let path = starPath(starPoints)
     drawPath(path)
   }
   
