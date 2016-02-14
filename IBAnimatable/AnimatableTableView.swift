@@ -66,7 +66,6 @@ import UIKit
   // MARK: - Private
   private func configInspectableProperties() {
     configAnimatableProperties()
-    configFillColor()
     configOpacity()
     configBorder()
     configGradient()
