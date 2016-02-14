@@ -28,11 +28,15 @@ public extension MaskDesignable where Self: UIView {
       case .Wave:
         maskWave()
       }
-      return
+    } else {
+      // Star with parameter
+      if unwrappedMaskType.hasPrefix(MaskType.Star.rawValue) {
+        maskStarFromString(unwrappedMaskType)
+      } else if unwrappedMaskType.hasPrefix(MaskType.Wave.rawValue) {
+        // Wave with parameters
+        maskWaveFromString(unwrappedMaskType)
+      }
     }
-    
-    // Mask Star with parameter
-    // Mask Wave with parameter
   }
   
   // MARK: - Mask
@@ -47,16 +51,20 @@ public extension MaskDesignable where Self: UIView {
   }
   
   // See https://www.weheartswift.com/bezier-paths-gesture-recognizers/
-  public func maskStar(sides: Int = 5) {
+  public func maskStar(points: Int = 5) {
     // FIXME: Do not mask the shadow.
     
-    assert(sides >= 2, "Stars must has at least 2 sides.")
+    // Stars must has at least 3 points.
+    var starPoints = points
+    if points <= 2 {
+      starPoints = 5
+    }
     layer.mask?.removeFromSuperlayer()
     layer.sublayers?
       .filter  { $0.name == "borderSideLayer" || $0.name == "borderLayer" }
       .forEach { $0.removeFromSuperlayer() }
     
-    let path = starPath(sides)
+    let path = starPath(starPoints)
     drawPath(path)
   }
   
@@ -70,16 +78,16 @@ public extension MaskDesignable where Self: UIView {
     drawPath(wavePath)
   }
   
-  // MARK: Private
+  // MARK: - Private helper
   
-  func drawPath(path: UIBezierPath) {
+  private func drawPath(path: UIBezierPath) {
     let maskLayer = CAShapeLayer()
     maskLayer.frame = CGRect(origin: CGPoint.zero, size: bounds.size)
     maskLayer.path = path.CGPath
     layer.mask = maskLayer
   }
   
-  func drawBorderPath(borderPath: UIBezierPath, path: UIBezierPath) {
+  private func drawBorderPath(borderPath: UIBezierPath, path: UIBezierPath) {
     // FIXME: borderWidth is always set after mask, so the following code will never be excuted.
     if layer.borderWidth == 0 {
       return
@@ -111,7 +119,15 @@ public extension MaskDesignable where Self: UIView {
     return CGPoint(x: radius * cos(angle) + offset.x, y: radius * sin(angle) + offset.y)
   }
   
-  // MARK: Polygon
+  private func retrieveMaskParameters(mask: String, maskName: String) -> String {
+    var params = mask.stringByReplacingOccurrencesOfString(" ", withString: "")
+    params = params.stringByReplacingOccurrencesOfString(maskName, withString: "")
+    params = params.stringByReplacingOccurrencesOfString("(", withString: "")
+    params = params.stringByReplacingOccurrencesOfString(")", withString: "")
+    return params
+  }
+  
+  // MARK: - Polygon
   
   private func maskPolygonBezierPath(degree: Int) -> UIBezierPath {
     let path = UIBezierPath()
@@ -129,7 +145,16 @@ public extension MaskDesignable where Self: UIView {
     return path
   }
   
-  // MARK: Star
+  // MARK: - Star
+  
+  private func maskStarFromString(mask: String) {
+    let points = Int(retrieveMaskParameters(mask, maskName: MaskType.Star.rawValue))
+    if let unwrappedPoints = points {
+      maskStar(unwrappedPoints)
+    } else {
+      maskStar()
+    }
+  }
   
   private func starPath(points: Int, borderWidth: CGFloat = 0) -> UIBezierPath {
     let path = UIBezierPath()
@@ -158,13 +183,11 @@ public extension MaskDesignable where Self: UIView {
     }
     
     path.closePath()
-    
-    
     return path
   }
   
-  // MARK: Triangle
-  
+  // MARK: - Triangle
+
   private func maskTriangleBezierPath() -> UIBezierPath {
     let path = UIBezierPath()
     path.moveToPoint(CGPoint(x: bounds.width / 2.0, y: bounds.origin.y))
@@ -174,7 +197,17 @@ public extension MaskDesignable where Self: UIView {
     return path
   }
   
-  // MARK: Wave
+  // MARK: - Wave
+  
+  private func maskWaveFromString(mask: String) {
+    let params = retrieveMaskParameters(mask, maskName: MaskType.Wave.rawValue).componentsSeparatedByString(",")
+    if let unwrappedWidth = Float(params[1]), unwrappedOffset = Float(params[2]) where params.count == 3 {
+      let up = params[0] == "up"
+      maskWave(up, waveWidth: CGFloat(unwrappedWidth), waveOffset: CGFloat(unwrappedOffset))
+    } else {
+      maskWave()
+    }
+  }
   
   private func maskWaveBezierPath(waveUp: Bool, waveWidth: CGFloat, waveOffset: CGFloat) -> UIBezierPath {
     let originY = waveUp ? bounds.maxY : bounds.minY
