@@ -191,13 +191,15 @@ The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and con
 | ------------- |:-------------:| ----- |
 | fillColor | Optional&lt;UIColor> | fill color of the UI Element |
 | opacity | CGFloat | opacity, alpha of the UI Element, Default value is `CGFloat.NaN`, the value is from 0.0 to 1.0. |
+| predefinedColor | Optional&lt;String> | Predefined color. All supported predefined colors are in enum [`ColorType`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/ColorType.swift)  |
+
 
 #### `GradientDesignable`
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
 | startColor | Optional&lt;UIColor> | start gradient color |
 | endColor | Optional&lt;UIColor> | end gradient color |
-| predefinedColor | Optional&lt;String> | Predefined gradients. All supported predefined gradients are in enum [`GradientType`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/GradientType.swift)  |
+| predefinedGradient | Optional&lt;String> | Predefined gradients. All supported predefined gradients are in enum [`GradientType`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/GradientType.swift)  |
 | startPoint | Optional&lt;String> | start direction point, can find in `GradientStartPoint`. |
 
 #### `NavigationBarDesignable`

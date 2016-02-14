@@ -93,6 +93,8 @@
 		AEEE200B1C18CFD200AD033B /* NavigationBarDesginable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEE200A1C18CFD200AD033B /* NavigationBarDesginable.swift */; };
 		AEEE200D1C18D10C00AD033B /* DesignableNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEE200C1C18D10C00AD033B /* DesignableNavigationBar.swift */; };
 		CAB569B1A6DDC08165BE389A /* FillDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB562E75DABEED7FCE0F309 /* FillDesignable.swift */; };
+		E2472EA41C6F97F800A20E27 /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2472EA31C6F97F800A20E27 /* ColorType.swift */; };
+		E2472EA51C6F97F800A20E27 /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2472EA31C6F97F800A20E27 /* ColorType.swift */; };
 		E2E28E6B1C6A6C30003F3852 /* GradientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6A1C6A6C30003F3852 /* GradientType.swift */; };
 		E2E28E6C1C6A6C30003F3852 /* GradientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6A1C6A6C30003F3852 /* GradientType.swift */; };
 		E2E28E6E1C6A6D22003F3852 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */; };
@@ -162,6 +164,8 @@
 		AEEE200C1C18D10C00AD033B /* DesignableNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableNavigationBar.swift; sourceTree = "<group>"; };
 		CAB562E75DABEED7FCE0F309 /* FillDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillDesignable.swift; sourceTree = "<group>"; };
 		D7E765671C4C8961008C3116 /* IBAnimatable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = IBAnimatable.playground; sourceTree = "<group>"; };
+		E2472EA31C6F97F800A20E27 /* ColorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorType.swift; sourceTree = "<group>"; };
+		E2472EA61C6F980C00A20E27 /* FlatColorsTypeScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlatColorsTypeScript.swift; path = Scripts/FlatColorsTypeScript.swift; sourceTree = SOURCE_ROOT; };
 		E2E28E6A1C6A6C30003F3852 /* GradientType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientType.swift; sourceTree = "<group>"; };
 		E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		E2E28E711C6A6E70003F3852 /* GradientsTypeScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GradientsTypeScript.swift; path = Scripts/GradientsTypeScript.swift; sourceTree = SOURCE_ROOT; };
@@ -294,6 +298,7 @@
 				AED97B851C1710A900D2B0B8 /* BorderSide.swift */,
 				AE8C53AF1C0F1C0400A775AF /* GradientStartPoint.swift */,
 				E2E28E6A1C6A6C30003F3852 /* GradientType.swift */,
+				E2472EA31C6F97F800A20E27 /* ColorType.swift */,
 				AE18787D1C1D980D00300246 /* MaskType.swift */,
 			);
 			name = enum;
@@ -337,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				E2E28E711C6A6E70003F3852 /* GradientsTypeScript.swift */,
+				E2472EA61C6F980C00A20E27 /* FlatColorsTypeScript.swift */,
 			);
 			name = scripts;
 			sourceTree = "<group>";
@@ -463,6 +469,7 @@
 				AE6B01731C2A444900950BB2 /* ShadowDesignable.swift in Sources */,
 				AE6B01621C2A444000950BB2 /* AnimationType.swift in Sources */,
 				AE6B01871C2A445400950BB2 /* DesignableViewController.swift in Sources */,
+				E2472EA51C6F97F800A20E27 /* ColorType.swift in Sources */,
 				AE6B016D1C2A444900950BB2 /* GradientDesignable.swift in Sources */,
 				AE8964DB1C2CC0D100D3E9F0 /* RootWindowDesignable.swift in Sources */,
 				AE6B01651C2A444000950BB2 /* GradientStartPoint.swift in Sources */,
@@ -504,6 +511,7 @@
 				AE0B0FEE1C263A1900E36B78 /* CheckBoxDesignable.swift in Sources */,
 				AED1A11A1BFE983A001346FA /* AnimatableView.swift in Sources */,
 				E2E28E6B1C6A6C30003F3852 /* GradientType.swift in Sources */,
+				E2472EA41C6F97F800A20E27 /* ColorType.swift in Sources */,
 				AE81DAEE1C10F14C000AEB20 /* GradientDesignable.swift in Sources */,
 				AE299BDA1C0338C70018CCDC /* BlurDesignable.swift in Sources */,
 				AE81DB501C12E060000AEB20 /* RotationDesignable.swift in Sources */,

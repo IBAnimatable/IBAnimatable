@@ -8,9 +8,24 @@ import UIKit
 @IBDesignable public class AnimatableTableViewCell: UITableViewCell, FillDesignable, BorderDesignable, TableViewCellDesignable, GradientDesignable, Animatable {
   
   // MARK: - FillDesignable
-  @IBInspectable public var fillColor: UIColor?
-  @IBInspectable public var opacity: CGFloat = CGFloat.NaN
+  @IBInspectable public var fillColor: UIColor? {
+    didSet {
+      configFillColor()
+    }
+  }
   
+  @IBInspectable public var predefinedColor: String? {
+    didSet {
+      configFillColor()
+    }
+  }
+  
+  @IBInspectable public var opacity: CGFloat = CGFloat.NaN {
+    didSet {
+      configOpacity()
+    }
+  }
+
   // MARK: - BorderDesignable
   @IBInspectable public var borderColor: UIColor?
   @IBInspectable public var borderWidth: CGFloat = CGFloat.NaN
@@ -54,7 +69,6 @@ import UIKit
   // MARK: - Private
   private func configInspectableProperties() {
     configAnimatableProperties()
-    configFillColor()
     configOpacity()
     configBorder()
     configSeparatorMargins()
