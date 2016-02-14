@@ -20,14 +20,21 @@ public extension MaskDesignable where Self: UIView {
       case .Circle:
         maskCircle()
       case .Star:
-        maskStarFromString(unwrappedMaskType)
+        maskStar()
       case .Polygon:
         maskPolygon()
       case .Triangle:
         maskTriangle()
       case .Wave:
-        maskWaveFromString(unwrappedMaskType);
+        maskWave()
       }
+      return
+    }
+    
+    // Star with parameter
+    if unwrappedMaskType.hasPrefix(MaskType.Star.rawValue) {
+      maskStarFromString(unwrappedMaskType)
+      return
     }
   }
   
@@ -107,11 +114,12 @@ public extension MaskDesignable where Self: UIView {
     return CGPoint(x: radius * cos(angle) + offset.x, y: radius * sin(angle) + offset.y)
   }
   
-  private func cleanMaskString(mask: String, maskName: String) -> String {
-    var cleanMask = mask.stringByReplacingOccurrencesOfString(maskName, withString: "")
-    cleanMask = cleanMask.stringByReplacingOccurrencesOfString("(", withString: "")
-    cleanMask = cleanMask.stringByReplacingOccurrencesOfString(")", withString: "")
-    return cleanMask
+  private func retrieveMaskParameters(mask: String, maskName: String) -> String {
+    var params = mask.stringByReplacingOccurrencesOfString(" ", withString: "")
+    params = params.stringByReplacingOccurrencesOfString(maskName, withString: "")
+    params = params.stringByReplacingOccurrencesOfString("(", withString: "")
+    params = params.stringByReplacingOccurrencesOfString(")", withString: "")
+    return params
   }
   
   // MARK: - Polygon
@@ -135,7 +143,7 @@ public extension MaskDesignable where Self: UIView {
   // MARK: - Star
   
   private func maskStarFromString(mask: String) {
-    let points = Int(cleanMaskString(mask, maskName: "Star"))
+    let points = Int(retrieveMaskParameters(mask, maskName: MaskType.Star.rawValue))
     if let unwrappedPoints = points {
       maskStar(unwrappedPoints)
     } else {
@@ -187,7 +195,7 @@ public extension MaskDesignable where Self: UIView {
   // MARK: - Wave
   
   private func maskWaveFromString(mask: String) {
-    let params = cleanMaskString(mask, maskName: "Wave").componentsSeparatedByString(",")
+    let params = retrieveMaskParameters(mask, maskName: MaskType.Wave.rawValue).componentsSeparatedByString(",")
     if params.count == 3, let unwrappedWidth = Float(params[1]), unwrappedOffset = Float(params[2]) {
         let up = params[0] == "up"
         maskWave(up, waveWidth: CGFloat(unwrappedWidth), waveOffset: CGFloat(unwrappedOffset))
