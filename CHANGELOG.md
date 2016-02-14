@@ -17,7 +17,9 @@ TBD
   - Wave(up,50,100) -> draw a wave up mask with 50 as width, and 100 as offset.
 
 #### Bugfixes
-TBD
+
+- Fixed `GradientDesignable` rotation. [#86](https://github.com/JakeLin/IBAnimatable/issues/86)
+- Fixed mask star drawing bug. [#95](https://github.com/JakeLin/IBAnimatable/issues/95)
 
 ### [1.1](https://github.com/JakeLin/IBAnimatable/releases/tag/V1.1)
 
