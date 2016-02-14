@@ -61,6 +61,7 @@ import UIKit
   public override func layoutSubviews() {
     super.layoutSubviews()
     autoRunAnimation()
+    configAfterLayoutSubviews()
   }
   
   // MARK: - Private
@@ -69,5 +70,9 @@ import UIKit
     configOpacity()
     configBorder()
     configGradient()
+  }
+  
+  private func configAfterLayoutSubviews() {
+    configBorder()
   }
 }

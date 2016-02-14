@@ -95,6 +95,8 @@
 		CAB569B1A6DDC08165BE389A /* FillDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB562E75DABEED7FCE0F309 /* FillDesignable.swift */; };
 		E2472EA41C6F97F800A20E27 /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2472EA31C6F97F800A20E27 /* ColorType.swift */; };
 		E2472EA51C6F97F800A20E27 /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2472EA31C6F97F800A20E27 /* ColorType.swift */; };
+		E24FDFD31C70B3A000ED4F37 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24FDFD21C70B3A000ED4F37 /* CALayerExtension.swift */; };
+		E24FDFD41C70B3A000ED4F37 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24FDFD21C70B3A000ED4F37 /* CALayerExtension.swift */; };
 		E2E28E6B1C6A6C30003F3852 /* GradientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6A1C6A6C30003F3852 /* GradientType.swift */; };
 		E2E28E6C1C6A6C30003F3852 /* GradientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6A1C6A6C30003F3852 /* GradientType.swift */; };
 		E2E28E6E1C6A6D22003F3852 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */; };
@@ -166,6 +168,7 @@
 		D7E765671C4C8961008C3116 /* IBAnimatable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = IBAnimatable.playground; sourceTree = "<group>"; };
 		E2472EA31C6F97F800A20E27 /* ColorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorType.swift; sourceTree = "<group>"; };
 		E2472EA61C6F980C00A20E27 /* FlatColorsTypeScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlatColorsTypeScript.swift; path = Scripts/FlatColorsTypeScript.swift; sourceTree = SOURCE_ROOT; };
+		E24FDFD21C70B3A000ED4F37 /* CALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		E2E28E6A1C6A6C30003F3852 /* GradientType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientType.swift; sourceTree = "<group>"; };
 		E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		E2E28E711C6A6E70003F3852 /* GradientsTypeScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GradientsTypeScript.swift; path = Scripts/GradientsTypeScript.swift; sourceTree = SOURCE_ROOT; };
@@ -195,6 +198,7 @@
 			children = (
 				AE0FAD3A1C1ECA4200B5289B /* UIViewController+UnwindSegue.swift */,
 				E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */,
+				E24FDFD21C70B3A000ED4F37 /* CALayerExtension.swift */,
 			);
 			name = extension;
 			sourceTree = "<group>";
@@ -501,6 +505,7 @@
 				AE6B01741C2A444900950BB2 /* SideImageDesignable.swift in Sources */,
 				AE6B017E1C2A445100950BB2 /* AnimatableImageView.swift in Sources */,
 				AE6B01761C2A444900950BB2 /* TableViewCellDesignable.swift in Sources */,
+				E24FDFD41C70B3A000ED4F37 /* CALayerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +528,7 @@
 				AED1A11E1BFE983A001346FA /* PaddingDesignable.swift in Sources */,
 				AED1A1171BFE983A001346FA /* AnimatableImageView.swift in Sources */,
 				AE3C54471C217F7F00829B10 /* BarButtonItemDesignable.swift in Sources */,
+				E24FDFD31C70B3A000ED4F37 /* CALayerExtension.swift in Sources */,
 				AE0B0FEA1C25372200E36B78 /* TableViewCellDesignable.swift in Sources */,
 				AE18787E1C1D980D00300246 /* MaskType.swift in Sources */,
 				AED1A1191BFE983A001346FA /* AnimatableTextView.swift in Sources */,

@@ -61,13 +61,17 @@ import UIKit
   
   public override func layoutSubviews() {
     super.layoutSubviews()
-    
+    configAfterLayoutSubviews()
     autoRunAnimation()
   }
   
   // MARK: - Private
   private func configInspectableProperties() {
     configAnimatableProperties()
+    configBorder()
+  }
+  
+  private func configAfterLayoutSubviews() {
     configBorder()
   }
 }

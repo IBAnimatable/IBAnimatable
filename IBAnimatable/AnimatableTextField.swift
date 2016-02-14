@@ -123,7 +123,7 @@ import UIKit
   
   public override func layoutSubviews() {
     super.layoutSubviews()
-    
+    configAfterLayoutSubviews()
     autoRunAnimation()
   }
   
@@ -132,5 +132,9 @@ import UIKit
     configAnimatableProperties()
     configBorder()
     configLeftImage()
+  }
+  
+  private func configAfterLayoutSubviews() {
+    configBorder()
   }
 }

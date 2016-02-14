@@ -63,6 +63,7 @@ import UIKit
   
   public override func layoutSubviews() {
     super.layoutSubviews()
+    configAfterLayoutSubviews()
     autoRunAnimation()
   }
   
@@ -73,5 +74,9 @@ import UIKit
     configBorder()
     configSeparatorMargins()
     configGradient()
+  }
+  
+  private func configAfterLayoutSubviews() {
+    configBorder()
   }
 }
