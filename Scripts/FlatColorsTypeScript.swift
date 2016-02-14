@@ -38,6 +38,7 @@ if let uwnrappedColorsType = colorsType {
     if var unwrappedRGBColors = uwnrappedColorsType[colorName] {
       var finalName = colorName.capitalizedStringWithLocale(NSLocale.currentLocale())
       finalName = finalName.stringByReplacingOccurrencesOfString("-", withString: "")
+      finalName = "Flat" + finalName
       enumColorType += String(format: enumCase, finalName)
       switchColorType += String(format: switchCase, finalName)
       
