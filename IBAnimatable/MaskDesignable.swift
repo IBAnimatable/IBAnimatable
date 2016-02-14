@@ -28,13 +28,11 @@ public extension MaskDesignable where Self: UIView {
       case .Wave:
         maskWave()
       }
-    }
-    else {
+    } else {
       // Star with parameter
       if unwrappedMaskType.hasPrefix(MaskType.Star.rawValue) {
         maskStarFromString(unwrappedMaskType)
-      }
-      else if unwrappedMaskType.hasPrefix(MaskType.Wave.rawValue) {
+      } else if unwrappedMaskType.hasPrefix(MaskType.Wave.rawValue) {
         // Wave with parameters
         maskWaveFromString(unwrappedMaskType)
       }
