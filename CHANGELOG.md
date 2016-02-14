@@ -13,7 +13,7 @@ TBD
 
 -  Swift Package Manager support. [#5](https://github.com/JakeLin/IBAnimatable/issues/5)
 - Predefined flat colors. [#71](https://github.com/JakeLin/IBAnimatable/issues/71)
-- Customise mask draw from interface builder [#50](https://github.com/JakeLin/IBAnimatable/issues/50) [#59](https://github.com/JakeLin/IBAnimatable/issues/59) [#76](https://github.com/JakeLin/IBAnimatable/issues/76):
+- Customise mask draw from interface builder [#50](https://github.com/JakeLin/IBAnimatable/issues/50) [#8](https://github.com/JakeLin/IBAnimatable/issues/8) [#76](https://github.com/JakeLin/IBAnimatable/issues/76):
   - Star(6) -> draw star mask with 6 sides.
   - Wave(up,50,100) -> draw a wave up mask with 50 as width, and 100 as offset.
 
