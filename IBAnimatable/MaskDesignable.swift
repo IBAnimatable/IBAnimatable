@@ -28,13 +28,16 @@ public extension MaskDesignable where Self: UIView {
       case .Wave:
         maskWave()
       }
-      return
     }
-    
-    // Star with parameter
-    if unwrappedMaskType.hasPrefix(MaskType.Star.rawValue) {
-      maskStarFromString(unwrappedMaskType)
-      return
+    else {
+      // Star with parameter
+      if unwrappedMaskType.hasPrefix(MaskType.Star.rawValue) {
+        maskStarFromString(unwrappedMaskType)
+      }
+      else if unwrappedMaskType.hasPrefix(MaskType.Wave.rawValue) {
+        // Wave with parameters
+        maskWaveFromString(unwrappedMaskType)
+      }
     }
   }
   
@@ -200,11 +203,11 @@ public extension MaskDesignable where Self: UIView {
   
   private func maskWaveFromString(mask: String) {
     let params = retrieveMaskParameters(mask, maskName: MaskType.Wave.rawValue).componentsSeparatedByString(",")
-    if params.count == 3, let unwrappedWidth = Float(params[1]), unwrappedOffset = Float(params[2]) {
-        let up = params[0] == "up"
-        maskWave(up, waveWidth: CGFloat(unwrappedWidth), waveOffset: CGFloat(unwrappedOffset))
+    if let unwrappedWidth = Float(params[1]), unwrappedOffset = Float(params[2]) where params.count == 3 {
+      let up = params[0] == "up"
+      maskWave(up, waveWidth: CGFloat(unwrappedWidth), waveOffset: CGFloat(unwrappedOffset))
     } else {
-        maskWave()
+      maskWave()
     }
   }
   
