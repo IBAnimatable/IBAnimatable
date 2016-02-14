@@ -134,7 +134,6 @@ public extension MaskDesignable where Self: UIView {
   private func starPath(points: Int, borderWidth: CGFloat = 0) -> UIBezierPath {
     let path = UIBezierPath()
     let radius = min(layer.bounds.size.width, layer.bounds.size.height) / 2 - borderWidth
-    let starCenter = CGPoint(x: radius, y: radius)
     let starExtrusion = radius / 2
     
     let angleIncrement = CGFloat(M_PI * 2.0 / Double(points))
@@ -144,8 +143,8 @@ public extension MaskDesignable where Self: UIView {
     
     for _ in 1...points {
       let point = pointFrom(angle, radius: radius, offset: center)
-      let nextPoint = pointFrom(angle + angleIncrement, radius: radius, offset: starCenter)
-      let midPoint = pointFrom(angle + angleIncrement / 2.0, radius: starExtrusion, offset: starCenter)
+      let nextPoint = pointFrom(angle + angleIncrement, radius: radius, offset: center)
+      let midPoint = pointFrom(angle + angleIncrement / 2.0, radius: starExtrusion, offset: center)
       
       if firstPoint {
         firstPoint = false
