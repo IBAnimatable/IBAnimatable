@@ -8,9 +8,23 @@ import UIKit
 @IBDesignable public class AnimatableTableView: UITableView, FillDesignable, BorderDesignable, GradientDesignable, Animatable {
   
   // MARK: - FillDesignable
-  @IBInspectable public var fillColor: UIColor?
-  @IBInspectable public var predefinedColor: String?
-  @IBInspectable public var opacity: CGFloat = CGFloat.NaN
+  @IBInspectable public var fillColor: UIColor? {
+    didSet {
+      configFillColor()
+    }
+  }
+  
+  @IBInspectable public var predefinedColor: String? {
+    didSet {
+      configFillColor()
+    }
+  }
+  
+  @IBInspectable public var opacity: CGFloat = CGFloat.NaN {
+    didSet {
+      configOpacity()
+    }
+  }
   
   // MARK: - BorderDesignable
   @IBInspectable public var borderColor: UIColor?
