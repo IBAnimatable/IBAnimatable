@@ -67,6 +67,7 @@ import UIKit
   @IBInspectable public var maskType: String? {
     didSet {
       configMask()
+      configBorder()
     }
   }
   
