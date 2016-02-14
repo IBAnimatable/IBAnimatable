@@ -20,7 +20,7 @@ TBD
 - Fixed mask star drawing bug. [#95](https://github.com/JakeLin/IBAnimatable/issues/95)
 
 
-### [1.1](https://github.com/JakeLin/IBAnimatable/releases/tag/V1.1)
+### [1.1](https://github.com/JakeLin/IBAnimatable/releases/tag/1.1)
 
 #### API breaking changes
 
@@ -39,12 +39,12 @@ TBD
 - Fixed left gradient
 - Fixed slideOut / slideIn animations [#46](https://github.com/JakeLin/IBAnimatable/issues/46)
 
-### [1.0.1](https://github.com/JakeLin/IBAnimatable/releases/tag/V1.0.1)
+### [1.0.1](https://github.com/JakeLin/IBAnimatable/releases/tag/1.0.1)
 
 #### Enhancements
 
 - Carthage support - [#6](https://github.com/JakeLin/IBAnimatable/issues/6)
 
-### [1.0](https://github.com/JakeLin/IBAnimatable/releases/tag/V1.0)
+### [1.0](https://github.com/JakeLin/IBAnimatable/releases/tag/1.0)
 
 - Initial release
