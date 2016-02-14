@@ -43,16 +43,16 @@ public extension MaskDesignable where Self: UIView {
   }
   
   // See https://www.weheartswift.com/bezier-paths-gesture-recognizers/
-  public func maskStar(sides: Int = 5) {
+  public func maskStar(points: Int = 5) {
     // FIXME: Do not mask the shadow.
     
-    assert(sides >= 2, "Stars must has at least 2 sides.")
+    assert(points >= 2, "Stars must has at least 2 points.")
     layer.mask?.removeFromSuperlayer()
     layer.sublayers?
       .filter  { $0.name == "borderSideLayer" || $0.name == "borderLayer" }
       .forEach { $0.removeFromSuperlayer() }
     
-    let path = starPath(sides)
+    let path = starPath(points)
     drawPath(path)
   }
   
@@ -135,9 +135,9 @@ public extension MaskDesignable where Self: UIView {
   // MARK: - Star
   
   private func maskStarFromString(mask: String) {
-    let sides = Int(cleanMaskString(mask, maskName: "Star"))
-    if let unwrappedSides = sides {
-      maskStar(unwrappedSides)
+    let points = Int(cleanMaskString(mask, maskName: "Star"))
+    if let unwrappedPoints = points {
+      maskStar(unwrappedPoints)
     } else {
       maskStar()
     }
