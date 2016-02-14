@@ -20,6 +20,7 @@ TBD
 #### Bugfixes
 
 - Fixed `GradientDesignable` rotation. [#86](https://github.com/JakeLin/IBAnimatable/issues/86)
+- Fixed `BorderDesignable` after rotation.
 - Fixed mask star drawing bug. [#95](https://github.com/JakeLin/IBAnimatable/issues/95)
 
 ### [1.1](https://github.com/JakeLin/IBAnimatable/releases/tag/V1.1)
