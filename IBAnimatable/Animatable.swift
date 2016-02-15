@@ -190,6 +190,8 @@ public extension Animatable where Self: UIView {
       rotate(clockwise: false, completion: completion)
     case .MoveTo:
       moveTo(completion)
+    case .MoveBy:
+      moveBy(completion)
     }
   }
   
@@ -577,7 +579,37 @@ public extension Animatable where Self: UIView {
   }
   
   public func moveTo(completion: AnimatableCompletion? = nil) {
-    animateToWithX(x, y: y, completion: completion)
+    if x.isNaN && y.isNaN {
+      return
+    }
+    
+    // Get the absolute position
+    let absolutePosition = convertPoint(frame.origin, toView: nil)
+    var xOffsetToMove: CGFloat
+    if x.isNaN {
+      xOffsetToMove = 0
+    } else {
+      xOffsetToMove = x - absolutePosition.x
+    }
+    
+    var yOffsetToMove: CGFloat
+    if y.isNaN {
+      yOffsetToMove = 0
+    } else {
+      yOffsetToMove = y - absolutePosition.y
+    }
+
+    animateToWithX(xOffsetToMove, y: yOffsetToMove, completion: completion)
+  }
+  
+  public func moveBy(completion: AnimatableCompletion? = nil) {
+    if x.isNaN && y.isNaN {
+      return
+    }
+    
+    let xOffsetToMove = x.isNaN ? 0: x
+    let yOffsetToMove = y.isNaN ? 0: y
+    animateToWithX(xOffsetToMove, y: yOffsetToMove, completion: completion)
   }
   
   // MARK: - Private
@@ -639,25 +671,7 @@ public extension Animatable where Self: UIView {
   }
 
   private func animateToWithX(x: CGFloat, y: CGFloat, completion: AnimatableCompletion? = nil) {
-    if x.isNaN && y.isNaN {
-      return
-    }
-    
-    var xOffsetToMove: CGFloat
-    if x.isNaN {
-      xOffsetToMove = 0
-    } else {
-      xOffsetToMove = x - self.frame.origin.x
-    }
-    
-    var yOffsetToMove: CGFloat
-    if y.isNaN {
-      yOffsetToMove = 0
-    } else {
-      yOffsetToMove = y - self.frame.origin.y
-    }
-    
-    animateTo(xOffsetToMove, yOffsetToMove, completion)
+    animateTo(x, y, completion)
   }
 
   private func animateTo(x: CGFloat, _ y: CGFloat, _ completion: AnimatableCompletion? = nil) {
