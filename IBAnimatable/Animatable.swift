@@ -640,17 +640,27 @@ public extension Animatable where Self: UIView {
       return
     }
     
-    animateTo(position.x, position.y, completion)
+    var xOffsetToMove: CGFloat
+    if position.x.isNaN {
+      xOffsetToMove = 0
+    } else {
+      xOffsetToMove = position.x - self.frame.origin.x
+    }
+    
+    var yOffsetToMove: CGFloat
+    if position.y.isNaN {
+      yOffsetToMove = 0
+    } else {
+      yOffsetToMove = position.y - self.frame.origin.y
+    }
+    
+    animateTo(xOffsetToMove, yOffsetToMove, completion)
   }
 
   private func animateTo(x: CGFloat, _ y: CGFloat, _ completion: AnimatableCompletion? = nil) {
-    UIView.animateWithDuration(duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [], animations: { () -> Void in
-      if !x.isNaN {
-        self.frame.origin.x = x
-      }
-      if !y.isNaN {
-        self.frame.origin.y = y
-      }
+    let translate = CGAffineTransformMakeTranslation(x, y)
+    UIView.animateWithDuration(duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [], animations: { () -> Void in
+      self.transform = translate
       }, completion: { (completed) -> Void in
         completion?()
     })
@@ -688,7 +698,6 @@ public extension Animatable where Self: UIView {
   private func screenSize() -> CGSize {
     return UIScreen.mainScreen().bounds.size
   }
-  
 }
 
 public extension Animatable where Self: UIBarItem {
