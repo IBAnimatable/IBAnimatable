@@ -49,6 +49,16 @@ public protocol Animatable: class {
    Repeat count for Shake, Pop, Morph, Squeeze, Flash, Wobble and Swing animations
    */
   var repeatCount: Float { get set }
+
+  /**
+   x position for MoveTo animation
+   */
+  var x: CGFloat { get set }
+  
+  /**
+   y position for MoveTo animation
+   */
+  var y: CGFloat { get set }
 }
 
 public extension Animatable where Self: UIView {
@@ -178,6 +188,10 @@ public extension Animatable where Self: UIView {
       rotate(completion: completion)
     case .RotateCCW:
       rotate(clockwise: false, completion: completion)
+    case .MoveTo:
+      moveTo(completion)
+    case .MoveBy:
+      moveBy(completion)
     }
   }
   
@@ -192,6 +206,7 @@ public extension Animatable where Self: UIView {
   }
   
   // MARK: - Animation methods
+  
   public func slideInLeft(completion: AnimatableCompletion? = nil) {
     let x = -screenSize().width * force
     animateInWithX(x, completion: completion)
@@ -563,6 +578,40 @@ public extension Animatable where Self: UIView {
       }, completion: completion)
   }
   
+  public func moveTo(completion: AnimatableCompletion? = nil) {
+    if x.isNaN && y.isNaN {
+      return
+    }
+    
+    // Get the absolute position
+    let absolutePosition = convertPoint(frame.origin, toView: nil)
+    var xOffsetToMove: CGFloat
+    if x.isNaN {
+      xOffsetToMove = 0
+    } else {
+      xOffsetToMove = x - absolutePosition.x
+    }
+    
+    var yOffsetToMove: CGFloat
+    if y.isNaN {
+      yOffsetToMove = 0
+    } else {
+      yOffsetToMove = y - absolutePosition.y
+    }
+
+    animateToWithX(xOffsetToMove, y: yOffsetToMove, completion: completion)
+  }
+  
+  public func moveBy(completion: AnimatableCompletion? = nil) {
+    if x.isNaN && y.isNaN {
+      return
+    }
+    
+    let xOffsetToMove = x.isNaN ? 0: x
+    let yOffsetToMove = y.isNaN ? 0: y
+    animateToWithX(xOffsetToMove, y: yOffsetToMove, completion: completion)
+  }
+  
   // MARK: - Private
   private func animateLayer(animation: AnimatableExecution, completion: AnimatableCompletion? = nil) {
     CATransaction.begin()
@@ -621,6 +670,19 @@ public extension Animatable where Self: UIView {
     })
   }
 
+  private func animateToWithX(x: CGFloat, y: CGFloat, completion: AnimatableCompletion? = nil) {
+    animateTo(x, y, completion)
+  }
+
+  private func animateTo(x: CGFloat, _ y: CGFloat, _ completion: AnimatableCompletion? = nil) {
+    let translate = CGAffineTransformMakeTranslation(x, y)
+    UIView.animateWithDuration(duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [], animations: { () -> Void in
+      self.transform = translate
+      }, completion: { (completed) -> Void in
+        completion?()
+    })
+  }
+
   private func animateIn(x: CGFloat, _ y: CGFloat, _ scaleX: CGFloat, _ scaleY: CGFloat, _ alpha: CGFloat, _ completion: AnimatableCompletion? = nil) {
     let translate = CGAffineTransformMakeTranslation(x, y)
     let scale = CGAffineTransformMakeScale(scaleX, scaleY)
@@ -653,7 +715,6 @@ public extension Animatable where Self: UIView {
   private func screenSize() -> CGSize {
     return UIScreen.mainScreen().bounds.size
   }
-  
 }
 
 public extension Animatable where Self: UIBarItem {

@@ -183,9 +183,8 @@ IBAnimatable is an Open Source library to help designers and developers design a
 	* <del>Wobble</del>
 	* <del>Swing</del>
 	* <del>Rotate</del>
-	* MoveX - https://github.com/JakeLin/IBAnimatable/issues/74
-	* MoveY - https://github.com/JakeLin/IBAnimatable/issues/74
-	* MoveXY - https://github.com/JakeLin/IBAnimatable/issues/74
+	* <del>MoveTo</del>
+	* <del>MoveBy</del>
 	* Jump - https://github.com/JakeLin/IBAnimatable/issues/75
 
 * Animation properties:

@@ -58,4 +58,6 @@ public enum AnimationType: String {
   case Swing
   case Rotate
   case RotateCCW
+  case MoveTo
+  case MoveBy
 }
