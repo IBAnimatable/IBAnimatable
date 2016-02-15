@@ -70,7 +70,11 @@ To use `IBAnimatable` to design the UI and animations in Interface Builder, just
 ## How to animate in Swift playground
 ![](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/AnimateInSwiftPlayground.gif)
 
-We can configure the animation settings in Attribute Inspector. However, Interface Builder doesn't support previewing Animations, but we can still prototype animations in Swift playground. There are three sample pages to demonstrate how to design animation in Swift playground. You can find them in [IBAnimatable.playground](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground). Firstly, select one page in Swift playground, then click on "Assistant editor" button to split the playground. After that, select "Timeline" on the top of right-hand side to preview the animation. We can use Xcode menu "Editor" -> "Execute" to re-run the playground.
+We can configure the animation settings in Attribute Inspector. However, Interface Builder doesn't support previewing Animations, but we can still prototype animations in Swift playground. There are three sample pages to demonstrate how to design animation in Swift playground. You can find them in [IBAnimatable.playground](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground). 
+
+1. Open IBAnimatableApp.xcodeproj
+2. Select IBAnimatable Framework scheme and build it with `Command + b`
+3. Select IBAnimatable.playground, select one page in Swift playground, then click on "Assistant editor" button to split the playground. After that, select "Timeline" on the top of right-hand side to preview the animation. We can use Xcode menu "Editor" -> "Execute" to re-run the playground.
 
 ## How to animate programmatically
 As you saw above, we can prototype an App fully in Interface Builder without single line of code, but `IBAnimatable` also provides APIs to let us fully control the UI and animations. `IBAnimatable` provides simple APIs like `pop()`. We can simply call them in one line.
