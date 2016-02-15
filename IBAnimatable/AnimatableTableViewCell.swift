@@ -27,9 +27,23 @@ import UIKit
   }
 
   // MARK: - BorderDesignable
-  @IBInspectable public var borderColor: UIColor?
-  @IBInspectable public var borderWidth: CGFloat = CGFloat.NaN
-  @IBInspectable public var borderSide: String?
+  @IBInspectable public var borderColor: UIColor? {
+    didSet {
+      configBorder()
+    }
+  }
+  
+  @IBInspectable public var borderWidth: CGFloat = CGFloat.NaN {
+    didSet {
+      configBorder()
+    }
+  }
+  
+  @IBInspectable public var borderSide: String? {
+    didSet {
+      configBorder()
+    }
+  }
   
   // MARK: - TableViewCellDesignable
   @IBInspectable public var removeSeparatorMargins: Bool = false
@@ -63,6 +77,7 @@ import UIKit
   
   public override func layoutSubviews() {
     super.layoutSubviews()
+    configAfterLayoutSubviews()
     autoRunAnimation()
   }
   
@@ -70,8 +85,11 @@ import UIKit
   private func configInspectableProperties() {
     configAnimatableProperties()
     configOpacity()
-    configBorder()
     configSeparatorMargins()
     configGradient()
+  }
+  
+  private func configAfterLayoutSubviews() {
+    configBorder()
   }
 }

@@ -27,9 +27,23 @@ import UIKit
   }
   
   // MARK: - BorderDesignable
-  @IBInspectable public var borderColor: UIColor?
-  @IBInspectable public var borderWidth: CGFloat = CGFloat.NaN
-  @IBInspectable public var borderSide: String?
+  @IBInspectable public var borderColor: UIColor? {
+    didSet {
+      configBorder()
+    }
+  }
+  
+  @IBInspectable public var borderWidth: CGFloat = CGFloat.NaN {
+    didSet {
+      configBorder()
+    }
+  }
+  
+  @IBInspectable public var borderSide: String? {
+    didSet {
+      configBorder()
+    }
+  }
   
   // MARK: - GradientDesignable
   @IBInspectable public var startColor: UIColor?
@@ -61,13 +75,17 @@ import UIKit
   public override func layoutSubviews() {
     super.layoutSubviews()
     autoRunAnimation()
+    configAfterLayoutSubviews()
   }
   
   // MARK: - Private
   private func configInspectableProperties() {
     configAnimatableProperties()
     configOpacity()
-    configBorder()
     configGradient()
+  }
+  
+  private func configAfterLayoutSubviews() {
+    configBorder()
   }
 }

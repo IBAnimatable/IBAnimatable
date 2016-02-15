@@ -36,9 +36,23 @@ import UIKit
   }
   
   // MARK: - BorderDesignable
-  @IBInspectable public var borderColor: UIColor?
-  @IBInspectable public var borderWidth: CGFloat = CGFloat.NaN
-  @IBInspectable public var borderSide: String?
+  @IBInspectable public var borderColor: UIColor? {
+    didSet {
+      configBorder()
+    }
+  }
+  
+  @IBInspectable public var borderWidth: CGFloat = CGFloat.NaN {
+    didSet {
+      configBorder()
+    }
+  }
+  
+  @IBInspectable public var borderSide: String? {
+    didSet {
+      configBorder()
+    }
+  }
   
   // MARK: - RotationDesignable
   @IBInspectable public var rotate: CGFloat = CGFloat.NaN {
@@ -92,6 +106,7 @@ import UIKit
   @IBInspectable public var maskType: String? {
     didSet {
       configMask()
+      configBorder()      
     }
   }
   
@@ -118,15 +133,19 @@ import UIKit
   
   public override func layoutSubviews() {
     super.layoutSubviews()
+    configAfterLayoutSubviews()
     autoRunAnimation()
   }
   
   // MARK: - Private
   private func configInspectableProperties() {
     configAnimatableProperties()
-    configBorder()
     configTintedColor()
     configBlurEffectStyle()
     configGradient()
+  }
+  
+  private func configAfterLayoutSubviews() {
+    configBorder()
   }
 }

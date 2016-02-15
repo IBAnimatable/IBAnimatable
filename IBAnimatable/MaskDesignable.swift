@@ -59,10 +59,6 @@ public extension MaskDesignable where Self: UIView {
     if points <= 2 {
       starPoints = 5
     }
-    layer.mask?.removeFromSuperlayer()
-    layer.sublayers?
-      .filter  { $0.name == "borderSideLayer" || $0.name == "borderLayer" }
-      .forEach { $0.removeFromSuperlayer() }
     
     let path = starPath(starPoints)
     drawPath(path)
@@ -81,35 +77,14 @@ public extension MaskDesignable where Self: UIView {
   // MARK: - Private helper
   
   private func drawPath(path: UIBezierPath) {
+    layer.mask?.removeFromSuperlayer()
+    
     let maskLayer = CAShapeLayer()
     maskLayer.frame = CGRect(origin: CGPoint.zero, size: bounds.size)
     maskLayer.path = path.CGPath
     layer.mask = maskLayer
   }
-  
-  private func drawBorderPath(borderPath: UIBezierPath, path: UIBezierPath) {
-    // FIXME: borderWidth is always set after mask, so the following code will never be excuted.
-    if layer.borderWidth == 0 {
-      return
-    }
     
-    // NOTE: Lex: In order to draw the original border, we need to add a new sublayer.
-    borderPath.appendPath(path)
-    
-    let borderMaskLayer = CAShapeLayer()
-    borderMaskLayer.path = borderPath.CGPath
-    
-    let borderLayer = CALayer()
-    borderLayer.name = "borderLayer"
-    borderLayer.bounds = layer.bounds
-    borderLayer.mask = borderMaskLayer
-    layer.addSublayer(borderLayer)
-    borderLayer.backgroundColor = layer.borderColor
-    
-    // NOTE: Lex: Dismiss the original border of layer.
-    layer.borderWidth = 0
-  }
-  
   private func degree2radian(degree: CGFloat) -> CGFloat {
     let radian = CGFloat(M_PI) * degree / 180
     return radian

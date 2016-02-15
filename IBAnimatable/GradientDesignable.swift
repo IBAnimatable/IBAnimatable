@@ -60,6 +60,8 @@ public extension GradientDesignable where Self: UIView {
     }
     
     let gradientView = GradientView(frame: self.bounds, layer: gradientLayer)
+    let oldGradientView = viewWithTag(gradientView.tag)
+    oldGradientView?.removeFromSuperview()
     self.insertSubview(gradientView, atIndex: 0)
   }
   
@@ -359,12 +361,15 @@ public extension GradientDesignable where Self: UIView {
 
 private class GradientView: UIView {
 
+  let viewTag = 999
+  
   // MARK: - Life cycle
   
   init(frame: CGRect, layer: CAGradientLayer) {
     super.init(frame: frame)
-    self.layer.insertSublayer(layer, atIndex: 0)
-    self.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+    tag = viewTag
+    layer.insertSublayer(layer, atIndex: 0)
+    autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
   }
   
   required init?(coder aDecoder: NSCoder) {
