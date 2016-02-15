@@ -51,10 +51,14 @@ public protocol Animatable: class {
   var repeatCount: Float { get set }
 
   /**
-   Position (x, y) for MoveTo animation
+   x position for MoveTo animation
    */
-  var position: CGPoint { get set }
+  var x: CGFloat { get set }
   
+  /**
+   y position for MoveTo animation
+   */
+  var y: CGFloat { get set }
 }
 
 public extension Animatable where Self: UIView {
@@ -573,9 +577,8 @@ public extension Animatable where Self: UIView {
   }
   
   public func moveTo(completion: AnimatableCompletion? = nil) {
-    animateToWithPosition(position, completion: completion)
+    animateToWithX(x, y: y, completion: completion)
   }
-  
   
   // MARK: - Private
   private func animateLayer(animation: AnimatableExecution, completion: AnimatableCompletion? = nil) {
@@ -635,23 +638,23 @@ public extension Animatable where Self: UIView {
     })
   }
 
-  private func animateToWithPosition(position: CGPoint, completion: AnimatableCompletion? = nil) {
-    if position.x.isNaN && position.y.isNaN {
+  private func animateToWithX(x: CGFloat, y: CGFloat, completion: AnimatableCompletion? = nil) {
+    if x.isNaN && y.isNaN {
       return
     }
     
     var xOffsetToMove: CGFloat
-    if position.x.isNaN {
+    if x.isNaN {
       xOffsetToMove = 0
     } else {
-      xOffsetToMove = position.x - self.frame.origin.x
+      xOffsetToMove = x - self.frame.origin.x
     }
     
     var yOffsetToMove: CGFloat
-    if position.y.isNaN {
+    if y.isNaN {
       yOffsetToMove = 0
     } else {
-      yOffsetToMove = position.y - self.frame.origin.y
+      yOffsetToMove = y - self.frame.origin.y
     }
     
     animateTo(xOffsetToMove, yOffsetToMove, completion)

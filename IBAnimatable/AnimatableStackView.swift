@@ -119,7 +119,8 @@ import UIKit
   @IBInspectable public var velocity: CGFloat = CGFloat.NaN
   @IBInspectable public var force: CGFloat = CGFloat.NaN
   @IBInspectable public var repeatCount: Float = Float.NaN
-  @IBInspectable public var position: CGPoint = CGPoint(x: CGFloat.NaN, y: CGFloat.NaN)
+  @IBInspectable public var x: CGFloat = CGFloat.NaN
+  @IBInspectable public var y: CGFloat = CGFloat.NaN
   
   // MARK: - Lifecycle
   public override func prepareForInterfaceBuilder() {
