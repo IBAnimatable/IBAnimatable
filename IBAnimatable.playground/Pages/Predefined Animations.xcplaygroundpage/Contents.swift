@@ -26,6 +26,9 @@ view.borderWidth = 2
 view.borderColor = UIColor.purpleColor()
 view.maskType = "Circle"
 
+// For moveTo or moveBy animation
+view.x = -100
+view.y = 200
 
 //: Animations, all supported predefined animations can be found in `enum AnimationType`  
 
@@ -83,5 +86,7 @@ view.maskType = "Circle"
 //view.swing()
 //view.rotate()
 //view.rotate(clockwise: false)
-view.moveTo()
+//view.moveTo()
+view.moveBy()
+
 //: [Next](@next)
