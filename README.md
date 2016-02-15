@@ -11,7 +11,7 @@ Design and prototype UI, interaction, navigation, transition and animation for A
 
 **The app was made in Interface Builder with `IBAnimatable` without a single line of code**. Due to the size of [the GIF file on Dribbble](https://dribbble.com/shots/2453933-IBAnimatable-Design-App-Store-ready-Apps-in-Interface-Builder), it only demonstrates a subset of features. We can also find the full HD version on [YouTube](https://www.youtube.com/watch?v=dvD8X6J1YLM) or [MP4 on Github](https://github.com/JakeLin/IBAnimatable-Misc/blob/master/Videos/IBAnimatable.mp4?raw=true)
 
-![](https://github.com/JakeLin/IBAnimatable/blob/master/Screenshots/Storyboard.png)
+![](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/Storyboard.png)
 
 Here is the design in Interface Builder (Storyboard).
 
@@ -57,7 +57,7 @@ $ open IBAnimatableApp.xcodeproj
 3) Compile and run the app in your simulator or iOS device
 
 ## How to design in Interface Builder
-![](https://raw.githubusercontent.com/JakeLin/IBAnimatable/master/Screenshots/DesignInInterfaceBuilder.png)
+![](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/DesignInInterfaceBuilder.png)
 
 To use `IBAnimatable` to design the UI and animations in Interface Builder, just follow few steps as below:
 
@@ -68,7 +68,7 @@ To use `IBAnimatable` to design the UI and animations in Interface Builder, just
 
 
 ## How to animate in Swift playground
-![](https://github.com/JakeLin/IBAnimatable/blob/master/Screenshots/AnimateInSwiftPlayground.gif)
+![](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/AnimateInSwiftPlayground.gif)
 
 We can configure the animation settings in Attribute Inspector. However, Interface Builder doesn't support previewing Animations, but we can still prototype animations in Swift playground. There are three sample pages to demonstrate how to design animation in Swift playground. You can find them in [IBAnimatable.playground](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground). Firstly, select one page in Swift playground, then click on "Assistant editor" button to split the playground. After that, select "Timeline" on the top of right-hand side to preview the animation. We can use Xcode menu "Editor" -> "Execute" to re-run the playground.
 
