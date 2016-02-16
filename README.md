@@ -127,11 +127,11 @@ Add `.Package(url: "https://github.com/JakeLin/IBanimatable.git", majorVersion: 
 
 ### [CocoaPods](https://cocoapods.org)
 
-Add `pod 'IBAnimatable'` to your Podfile.
+Add `pod 'IBAnimatable', '~> 1.2'` to your Podfile.
 
 ### [Carthage](https://github.com/Carthage/Carthage)
 
-Add `github "JakeLin/IBAnimatable" ~> 1.1` to your Cartfile.
+Add `github "JakeLin/IBAnimatable" ~> 1.2` to your Cartfile.
 
 ## APIs
 
