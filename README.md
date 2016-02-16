@@ -1,4 +1,4 @@
-![IBAnimatable](https://cloud.githubusercontent.com/assets/219689/13078157/44053540-d4f8-11e5-86d8-05dbc527e85f.png)
+![IBAnimatable](https://cloud.githubusercontent.com/assets/219689/13078609/27491a86-d4fb-11e5-9f6c-2dbc2be61e14.png)
 
 Design and prototype UI, interaction, navigation, transition and animation for App Store ready Apps in Interface Builder with IBAnimatable.
 
