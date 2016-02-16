@@ -368,7 +368,7 @@ private class GradientView: UIView {
   init(frame: CGRect, layer: CAGradientLayer) {
     super.init(frame: frame)
     tag = viewTag
-    layer.insertSublayer(layer, atIndex: 0)
+    self.layer.insertSublayer(layer, atIndex: 0)
     autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
   }
   
