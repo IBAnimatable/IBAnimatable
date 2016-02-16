@@ -137,7 +137,7 @@ public extension MaskDesignable where Self: UIView {
     let starExtrusion = radius / 2
     let angleIncrement = CGFloat(M_PI * 2.0 / Double(points))
     let center = CGPointMake(bounds.width / 2.0, bounds.height / 2.0)
-    var angle: CGFloat = -CGFloat(M_PI / 2.0)
+    var angle = -CGFloat(M_PI / 2.0)
     var firstPoint = true
     for _ in 1...points {
       let point = pointFrom(angle, radius: radius, offset: center)
