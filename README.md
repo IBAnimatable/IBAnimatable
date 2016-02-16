@@ -166,7 +166,7 @@ The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and con
 #### `BlurDesignable`
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
-| blurEffectStyle | Optional&lt;String> | Support three different blur effects: `ExtraLight`, `Light` and `Dark`. They are defined in `BlurEffectStyle` enum. The look of blur effect in Interface Builder is different from Simulator or device. |
+| blurEffectStyle | Optional&lt;String> | Support three different blur effects: `ExtraLight`, `Light` and `Dark`, also can be found in emum [`BlurEffectStyle `](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/BlurEffectStyle). The look of blur effect in Interface Builder is different from Simulator or device. |
 | blurOpacity | CGFloat | Opacity of the blur effect specified above. Default value is `CGFloat.NaN`, the value is from 0.0 to 1.0. |
 
 
@@ -175,7 +175,7 @@ The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and con
 | ------------- |:-------------:| ----- |
 | borderColor | Optional&lt;UIColor> | border color |
 | borderWidth | CGFloat | border width. Default value is `CGFloat.NaN`, the value is greater than 0. |
-| borderSide | Optional&lt;String> | border side, `Top`, `Right`, `Bottom` or `Left`. If not specify, then display four sides. |
+| borderSide | Optional&lt;String> | border side: `Top`, `Right`, `Bottom` or `Left`, also can be found in emum [`BorderSide`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/BorderSide.swift). If not specified, then display four sides. |
 
 
 #### `CheckBoxDesignable`
@@ -195,7 +195,7 @@ The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and con
 | ------------- |:-------------:| ----- |
 | fillColor | Optional&lt;UIColor> | fill color of the UI Element |
 | opacity | CGFloat | opacity, alpha of the UI Element, Default value is `CGFloat.NaN`, the value is from 0.0 to 1.0. |
-| predefinedColor | Optional&lt;String> | Predefined color. All supported predefined colors are in enum [`ColorType`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/ColorType.swift). To find the predefined flat colors, you can use [flatuicolors.com](https://flatuicolors.com), all flat color start with `Flat`, e.g. `PETER RIVER` on the website maps to `FlatPeterRiver` in the enum. |
+| predefinedColor | Optional&lt;String> | Predefined color. All predefined colors are in enum [`ColorType`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/ColorType.swift). To find the predefined flat colors, you can use [flatuicolors.com](https://flatuicolors.com), all flat color start with `Flat`, e.g. `PETER RIVER` on the website maps to `FlatPeterRiver` in the enum. |
 
 
 #### `GradientDesignable`
@@ -203,8 +203,8 @@ The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and con
 | ------------- |:-------------:| ----- |
 | startColor | Optional&lt;UIColor> | start gradient color |
 | endColor | Optional&lt;UIColor> | end gradient color |
-| predefinedGradient | Optional&lt;String> | Predefined gradients. All supported predefined gradients are in enum [`GradientType`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/GradientType.swift), To find the predefined gradients, you can use [uigradients.com](http://uigradients.com), e.g. `Juicy Orange` on the website maps to `JuicyOrange` in the enum. |
-| startPoint | Optional&lt;String> | start direction point, can find in `GradientStartPoint`. |
+| predefinedGradient | Optional&lt;String> | Predefined gradients. All predefined gradients are in enum [`GradientType`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/GradientType.swift), To find the predefined gradients, you can use [uigradients.com](http://uigradients.com), e.g. `Juicy Orange` on the website maps to `JuicyOrange` in the enum. |
+| startPoint | Optional&lt;String> | start direction point, can find in enum [`GradientStartPoint `](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/GradientStartPoint.swift). |
 
 #### `NavigationBarDesignable`
 | Property name | Data type | Remark |
@@ -214,7 +214,16 @@ The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and con
 #### `MaskDesignable`
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
-| maskType | Optional&lt;String> | maks type, eg. `Circle`, `Polygon`, `Star`, `Star10`, `Triangle`, `Wave`.
+| maskType | Optional&lt;String> | Supported maks type: All predefined animations are in enum [`MaskType`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/MaskType.swift) |
+
+**Supported MaskType:**
+
+* `Circle`
+* `Polygon`
+* `Triangle`
+* `Star`: Can alse specify the points of the Star, e.g. use `Star(6)` to have a star with 6 points. If not specified, default is 5 points. 
+* `Wave`: Can use pramaters to cumstomize the `Wave` shape like `maskWave(waveUp: Bool, waveWidth: CGFloat, waveOffset: CGFloat)`. `Wave(down, 20, 5)` means the Wave faces down, width is 20 and offset is 5. If not specified, default value is `Wave(up, 40, 0)`. 
+ 
 
 #### `PaddingDesignable`
 It is used in `AnimatableTextField` to add padding on either or both sides.
@@ -293,7 +302,7 @@ Easily add color layer on top of the UI element especially `AnimatableImageView`
 #### Properties
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
-| animationType | Optional&lt;String> | Supported animations. All supported predefined animations are in enum [`AnimationType`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/AnimationType.swift) |
+| animationType | Optional&lt;String> | Supported animations. All predefined animations are in enum [`AnimationType`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/AnimationType.swift) |
 | autoRun | Bool | Whether to automatically start the animation. Default value is `true`. if it is true, the animation will automatically run when the view is loaded. If want to manually start the animation should set it to `false`. |
 | duration | CGFloat | Animation duration in seconds. Default value is 0.7. |
 | delay | Double | Delay to start the animation in seconds. Default value is 0. |
@@ -324,6 +333,8 @@ All of us can contribute to this project. Fewer overheads mean less time to buil
 * If you are good at English, please correct my English 😁. If you are good at other languages, please create a README file in those languages.
 
 * If you like the project, please share it with the other designers and developers, and star 🌟 the project. 🤗
+
+Many thanks to [all contributors](https://github.com/JakeLin/IBAnimatable/graphs/contributors) 🤗
 
 
 ## Inspirations
