@@ -10,7 +10,8 @@ All notable changes to this project will be documented in this file.
 TBD
 
 #### Enhancements
-TBD
+
+- New IBAnimatable icon 🎊
 
 #### Bugfixes
 
