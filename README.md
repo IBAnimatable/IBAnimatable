@@ -1,4 +1,5 @@
-# IBAnimatable
+![IBAnimatable](https://cloud.githubusercontent.com/assets/219689/13078609/27491a86-d4fb-11e5-9f6c-2dbc2be61e14.png)
+
 Design and prototype UI, interaction, navigation, transition and animation for App Store ready Apps in Interface Builder with IBAnimatable.
 
 ![](https://d13yacurqjgara.cloudfront.net/users/332358/screenshots/2453933/ibanimatable.gif)
@@ -11,7 +12,7 @@ Design and prototype UI, interaction, navigation, transition and animation for A
 
 **The app was made in Interface Builder with `IBAnimatable` without a single line of code**. Due to the size of [the GIF file on Dribbble](https://dribbble.com/shots/2453933-IBAnimatable-Design-App-Store-ready-Apps-in-Interface-Builder), it only demonstrates a subset of features. We can also find the full HD version on [YouTube](https://www.youtube.com/watch?v=dvD8X6J1YLM) or [MP4 on Github](https://github.com/JakeLin/IBAnimatable-Misc/blob/master/Videos/IBAnimatable.mp4?raw=true)
 
-![](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/Storyboard.png)
+![StoryboardPreview](https://cloud.githubusercontent.com/assets/219689/13078965/bf4a7fcc-d4fc-11e5-986b-e2ef85ea3a34.jpg)
 
 Here is the design in Interface Builder (Storyboard).
 
