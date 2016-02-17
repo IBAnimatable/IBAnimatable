@@ -13,7 +13,8 @@ TBD
 TBD
 
 #### Bugfixes
-TBD
+
+- Fix potential crash when using `GradientDesignable`
 
 ### [1.2](https://github.com/JakeLin/IBAnimatable/releases/tag/1.2)
 
