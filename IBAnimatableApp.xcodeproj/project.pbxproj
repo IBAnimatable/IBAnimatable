@@ -21,6 +21,7 @@
 		AE154B081C7880520093C05B /* FadeInAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B071C7880520093C05B /* FadeInAnimator.swift */; };
 		AE154B091C78805A0093C05B /* AnimatableNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B051C787DDE0093C05B /* AnimatableNavigationController.swift */; };
 		AE154B0A1C78805C0093C05B /* FadeInAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B071C7880520093C05B /* FadeInAnimator.swift */; };
+		AE154B101C788A560093C05B /* Transitions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE154B0E1C788A560093C05B /* Transitions.storyboard */; };
 		AE18787A1C1A25C100300246 /* AnimatableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1878791C1A25C100300246 /* AnimatableStackView.swift */; };
 		AE18787C1C1D97F500300246 /* MaskDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE18787B1C1D97F500300246 /* MaskDesignable.swift */; };
 		AE18787E1C1D980D00300246 /* MaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE18787D1C1D980D00300246 /* MaskType.swift */; };
@@ -132,6 +133,7 @@
 		AE0FADAE1C203F9A00B5289B /* AnimatableTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableTableView.swift; sourceTree = "<group>"; };
 		AE154B051C787DDE0093C05B /* AnimatableNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableNavigationController.swift; sourceTree = "<group>"; };
 		AE154B071C7880520093C05B /* FadeInAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeInAnimator.swift; sourceTree = "<group>"; };
+		AE154B0F1C788A560093C05B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Transitions.storyboard; sourceTree = "<group>"; };
 		AE1878791C1A25C100300246 /* AnimatableStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableStackView.swift; sourceTree = "<group>"; };
 		AE18787B1C1D97F500300246 /* MaskDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskDesignable.swift; sourceTree = "<group>"; };
 		AE18787D1C1D980D00300246 /* MaskType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskType.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				AED1A0FB1BFE9820001346FA /* Assets.xcassets */,
 				AED1A0FD1BFE9820001346FA /* LaunchScreen.storyboard */,
 				AED1A0FF1BFE9820001346FA /* Main.storyboard */,
+				AE154B0E1C788A560093C05B /* Transitions.storyboard */,
 				AED1A1011BFE9820001346FA /* Info.plist */,
 			);
 			path = IBAnimatableApp;
@@ -464,6 +467,7 @@
 				AED1A1061BFE9820001346FA /* Main.storyboard in Resources */,
 				AED1A1041BFE9820001346FA /* Assets.xcassets in Resources */,
 				AED1A1051BFE9820001346FA /* LaunchScreen.storyboard in Resources */,
+				AE154B101C788A560093C05B /* Transitions.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,6 +582,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		AE154B0E1C788A560093C05B /* Transitions.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE154B0F1C788A560093C05B /* Base */,
+			);
+			name = Transitions.storyboard;
+			sourceTree = "<group>";
+		};
 		AED1A0FD1BFE9820001346FA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
