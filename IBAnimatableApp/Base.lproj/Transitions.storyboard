@@ -145,10 +145,10 @@
             </objects>
             <point key="canvasLocation" x="4451.5" y="-255.5"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Animatable Navigation Controller-->
         <scene sceneID="Ryf-4p-TtM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6OX-wo-iCM" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6OX-wo-iCM" customClass="AnimatableNavigationController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="p1j-Ei-YPr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

@@ -11,13 +11,15 @@ public class FadeInAnimator: NSObject, UIViewControllerAnimatedTransitioning {
   }
   
   public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-//    guard let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey),
-//      toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey),
-//      containerView = transitionContext.containerView() else {
-//        transitionContext.completeTransition(true)
-//        return
-//    }
-    
-    
+    guard let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey),
+      toView = transitionContext.viewForKey(UITransitionContextToViewKey),
+      _ = transitionContext.containerView() else {
+        transitionContext.completeTransition(true)
+        return
+    }
+
+    UIView.transitionFromView(fromView, toView: toView, duration: transitionDuration(transitionContext), options: .TransitionFlipFromLeft) { (completed) -> Void in
+      transitionContext.completeTransition(completed)
+    }
   }
 }

@@ -5,6 +5,20 @@
 
 import UIKit
 
-class AnimatableNavigationController: UINavigationController {
+public class AnimatableNavigationController: UINavigationController {
+  class Navigator: NSObject, UINavigationControllerDelegate {
+    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+      if operation == .Pop {
+        return FadeInAnimator()
+      }
+      return nil
+    }
+  }
   
+  let navigator = Navigator()
+  
+  public override func viewDidLoad() {
+    super.viewDidLoad()
+    delegate = navigator
+  }
 }
