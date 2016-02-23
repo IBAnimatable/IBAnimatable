@@ -9,7 +9,9 @@ public class AnimatableNavigationController: UINavigationController {
   class Navigator: NSObject, UINavigationControllerDelegate {
     func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
       if operation == .Push {
-        return FadeInAnimator()
+        return CubeFromLeftAnimator()
+      } else if operation == .Pop {
+        return CubeFromRightAnimator()
       }
       return nil
     }

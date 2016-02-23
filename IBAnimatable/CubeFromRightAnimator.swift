@@ -1,12 +1,12 @@
 //
-//  Created by Jake Lin on 2/20/16.
+//  Created by Jake Lin on 2/24/16.
 //  Copyright © 2016 Jake Lin. All rights reserved.
 //
 
 import UIKit
 
-public class FadeInAnimator: NSObject, UIViewControllerAnimatedTransitioning {
-  let transitionDuration = 3.0
+public class CubeFromRightAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+  let transitionDuration = 0.5
   
   public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
     return transitionDuration
@@ -23,8 +23,8 @@ public class FadeInAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     containerView.addSubview(toView)
     CALayer.animate({
       let transition = CATransition()
-      transition.type = "flip" // kCATransitionReveal
-      transition.subtype = kCATransitionFromTop
+      transition.type = "cube"
+      transition.subtype = kCATransitionFromRight
       transition.duration = self.transitionDuration(transitionContext)
       
       containerView.layer.addAnimation(transition, forKey: kCATransition)
@@ -32,4 +32,5 @@ public class FadeInAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
     }
   }
+
 }
