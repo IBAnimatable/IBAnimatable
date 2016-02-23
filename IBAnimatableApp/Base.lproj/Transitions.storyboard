@@ -65,7 +65,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ShH-Bu-pJr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3102.5" y="-255.5"/>
+            <point key="canvasLocation" x="3205.5" y="-289.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="j4X-Oe-hEs">
@@ -79,12 +79,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFy-ex-CKY" userLabel="Sign In" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
-                                <rect key="frame" x="24" y="304" width="327" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFy-ex-CKY" userLabel="pop" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="32" y="303" width="311" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="cES-w9-kDF"/>
                                 </constraints>
-                                <state key="normal" title="Tap to pop">
+                                <state key="normal" title="Tap to push">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -99,9 +99,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="kFy-ex-CKY" firstAttribute="leading" secondItem="OnE-aw-cD0" secondAttribute="leadingMargin" constant="8" id="Ox2-G5-mwd"/>
+                            <constraint firstItem="kFy-ex-CKY" firstAttribute="leading" secondItem="OnE-aw-cD0" secondAttribute="leadingMargin" constant="16" id="Ox2-G5-mwd"/>
                             <constraint firstItem="kFy-ex-CKY" firstAttribute="centerY" secondItem="OnE-aw-cD0" secondAttribute="centerY" id="efA-dj-Cqd"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="kFy-ex-CKY" secondAttribute="trailing" constant="8" id="gg1-8p-S2q"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kFy-ex-CKY" secondAttribute="trailing" constant="16" id="gg1-8p-S2q"/>
                             <constraint firstItem="kFy-ex-CKY" firstAttribute="centerX" secondItem="OnE-aw-cD0" secondAttribute="centerX" id="npG-Gg-l7a"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -122,7 +122,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iNw-ov-HSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="mGz-2k-KHz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3998.5" y="-255.5"/>
+            <point key="canvasLocation" x="4074" y="-289"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="emT-DW-liW">
@@ -135,15 +135,41 @@
                     <view key="view" contentMode="scaleToFill" id="2wE-60-Psz" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nmd-hI-p2R" userLabel="pop" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="32" y="303.5" width="311" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="AFk-rh-3sU"/>
+                                </constraints>
+                                <state key="normal" title="Tap to push">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Jr9-M0-K6n" kind="show" id="f4g-PY-43d"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Nmd-hI-p2R" secondAttribute="trailing" constant="16" id="0xX-Z6-Lvy"/>
+                            <constraint firstItem="Nmd-hI-p2R" firstAttribute="centerY" secondItem="2wE-60-Psz" secondAttribute="centerY" id="N5j-CT-ZiW"/>
+                            <constraint firstItem="Nmd-hI-p2R" firstAttribute="centerX" secondItem="2wE-60-Psz" secondAttribute="centerX" id="fJg-LH-uHT"/>
+                            <constraint firstItem="Nmd-hI-p2R" firstAttribute="leading" secondItem="2wE-60-Psz" secondAttribute="leadingMargin" constant="16" id="wdh-vR-qjO"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="predefinedColor" value="FlatBelizeHole"/>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MwU-bg-SAk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4451.5" y="-255.5"/>
+            <point key="canvasLocation" x="4507.5" y="-289.5"/>
         </scene>
         <!--Animatable Navigation Controller-->
         <scene sceneID="Ryf-4p-TtM">
@@ -161,7 +187,57 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aut-7u-fEr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3548.5" y="-255.5"/>
+            <point key="canvasLocation" x="3638.5" y="-289.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="w9j-KN-ZrE">
+            <objects>
+                <viewController id="Jr9-M0-K6n" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tdz-Jv-EtD"/>
+                        <viewControllerLayoutGuide type="bottom" id="GgG-Mi-ld8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LRM-UA-5Be" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kms-5b-dKQ" userLabel="pop" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="32" y="303.5" width="311" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="O0s-Uh-Y1N"/>
+                                </constraints>
+                                <state key="normal" title="Tap to push">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="jDB-Ur-y9F" kind="show" id="jmq-xh-2yp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Kms-5b-dKQ" firstAttribute="centerX" secondItem="LRM-UA-5Be" secondAttribute="centerX" id="KiJ-TS-CKA"/>
+                            <constraint firstItem="Kms-5b-dKQ" firstAttribute="leading" secondItem="LRM-UA-5Be" secondAttribute="leadingMargin" constant="16" id="gKn-ol-Dct"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kms-5b-dKQ" secondAttribute="trailing" constant="16" id="qXh-0W-F7v"/>
+                            <constraint firstItem="Kms-5b-dKQ" firstAttribute="centerY" secondItem="LRM-UA-5Be" secondAttribute="centerY" id="yNn-wo-FFX"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="predefinedColor" value="FlatClouds"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Td-V3-Teq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4938.5" y="-289.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ftd-QI-Jx6"/>
+    </inferredMetricsTieBreakers>
 </document>
