@@ -24,7 +24,7 @@ view.configAnimatableProperties()
 iPhoneView.addSubview(view)
 
 view.fillColor = UIColor(red: 0xba/0xff, green: 0x77/0xff, blue: 1, alpha: 1)
-view.maskType = "Circle"
+view.maskType = MaskType.Circle.rawValue
 
 //: Start another animation in completion closure
 view.squeezeInDown{ view.pop { view.shake{ view.squeeze{ view.wobble{ view.flipX { view.flash{ view.flipY { view.fadeOutDown() } } } } } } } }

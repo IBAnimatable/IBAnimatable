@@ -24,7 +24,7 @@ iPhoneView.addSubview(view)
 view.fillColor = UIColor(red: 0xba/0xff, green: 0x77/0xff, blue: 1, alpha: 1)
 view.borderWidth = 2
 view.borderColor = UIColor.purpleColor()
-view.maskType = "Circle"
+view.maskType = MaskType.Circle.rawValue
 
 // For moveTo or moveBy animation
 view.x = -100
