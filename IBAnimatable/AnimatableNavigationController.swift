@@ -8,7 +8,7 @@ import UIKit
 public class AnimatableNavigationController: UINavigationController {
   class Navigator: NSObject, UINavigationControllerDelegate {
     func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-      if operation == .Pop {
+      if operation == .Push {
         return FadeInAnimator()
       }
       return nil
