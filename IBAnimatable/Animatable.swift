@@ -5,9 +5,6 @@
 
 import UIKit
 
-public typealias AnimatableCompletion = () -> Void
-public typealias AnimatableExecution = () -> Void
-
 public protocol Animatable: class {
   
   /**
@@ -390,7 +387,7 @@ public extension Animatable where Self: UIView {
   }
   
   public func fadeOutIn(completion: AnimatableCompletion? = nil) {
-    animateLayer({
+    CALayer.animate({
       let animation = CABasicAnimation(keyPath: "opacity")
       animation.fromValue = 1
       animation.toValue = 0
@@ -403,7 +400,7 @@ public extension Animatable where Self: UIView {
   }
   
   public func fadeInOut(completion: AnimatableCompletion? = nil) {
-    animateLayer({
+    CALayer.animate({
       let animation = CABasicAnimation(keyPath: "opacity")
       animation.fromValue = 0
       animation.toValue = 1
@@ -436,7 +433,7 @@ public extension Animatable where Self: UIView {
   }
   
   public func shake(completion: AnimatableCompletion? = nil) {
-    animateLayer({
+    CALayer.animate({
       let animation = CAKeyframeAnimation(keyPath: "position.x")
       animation.values = [0, 30 * self.force, -30 * self.force, 30 * self.force, 0]
       animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
@@ -450,7 +447,7 @@ public extension Animatable where Self: UIView {
   }
   
   public func pop(completion: AnimatableCompletion? = nil) {
-    animateLayer({
+    CALayer.animate({
       let animation = CAKeyframeAnimation(keyPath: "transform.scale")
       animation.values = [0, 0.2 * self.force, -0.2 * self.force, 0.2 * self.force, 0]
       animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
@@ -464,7 +461,7 @@ public extension Animatable where Self: UIView {
   }
   
   public func morph(completion: AnimatableCompletion? = nil) {
-    animateLayer({
+    CALayer.animate({
       let morphX = CAKeyframeAnimation(keyPath: "transform.scale.x")
       morphX.values = [1, 1.3 * self.force, 0.7, 1.3 * self.force, 1]
       morphX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
@@ -485,7 +482,7 @@ public extension Animatable where Self: UIView {
   }
 
   public func squeeze(completion: AnimatableCompletion? = nil) {
-    animateLayer({
+    CALayer.animate({
       let squeezeX = CAKeyframeAnimation(keyPath: "transform.scale.x")
       squeezeX.values = [1, 1.5 * self.force, 0.5, 1.5 * self.force, 1]
       squeezeX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
@@ -518,7 +515,7 @@ public extension Animatable where Self: UIView {
   }
   
   public func flash(completion: AnimatableCompletion? = nil) {
-    animateLayer({
+    CALayer.animate({
       let animation = CABasicAnimation(keyPath: "opacity")
       animation.fromValue = 1
       animation.toValue = 0
@@ -531,7 +528,7 @@ public extension Animatable where Self: UIView {
   }
   
   public func wobble(completion: AnimatableCompletion? = nil) {
-    animateLayer({
+    CALayer.animate({
       let rotation = CAKeyframeAnimation(keyPath: "transform.rotation")
       rotation.values = [0, 0.3 * self.force, -0.3 * self.force, 0.3 * self.force, 0]
       rotation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
@@ -553,7 +550,7 @@ public extension Animatable where Self: UIView {
   }
   
   public func swing(completion: AnimatableCompletion? = nil) {
-    animateLayer({
+    CALayer.animate({
       let animation = CAKeyframeAnimation(keyPath: "transform.rotation")
       animation.values = [0, 0.3 * self.force, -0.3 * self.force, 0.3 * self.force, 0]
       animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
@@ -566,7 +563,7 @@ public extension Animatable where Self: UIView {
   }
 
   public func rotate(clockwise clockwise: Bool = true, completion: AnimatableCompletion? = nil) {
-    animateLayer({
+    CALayer.animate({
       let animation = CABasicAnimation(keyPath: "transform.rotation")
       animation.fromValue = clockwise ? 0 : ((360 * M_PI) / 180)
       animation.toValue = clockwise ? ((360 * M_PI) / 180) : 0
@@ -613,15 +610,6 @@ public extension Animatable where Self: UIView {
   }
   
   // MARK: - Private
-  private func animateLayer(animation: AnimatableExecution, completion: AnimatableCompletion? = nil) {
-    CATransaction.begin()
-    if let completion = completion {
-      CATransaction.setCompletionBlock { completion() }
-    }
-    animation()
-    CATransaction.commit()
-  }
-  
   private func animateInWithX(x: CGFloat, completion: AnimatableCompletion? = nil) {
     animateIn(x, 0, 1, 1, 1, completion)
   }

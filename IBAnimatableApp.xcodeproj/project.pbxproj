@@ -22,6 +22,10 @@
 		AE154B091C78805A0093C05B /* AnimatableNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B051C787DDE0093C05B /* AnimatableNavigationController.swift */; };
 		AE154B0A1C78805C0093C05B /* FadeInAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B071C7880520093C05B /* FadeInAnimator.swift */; };
 		AE154B101C788A560093C05B /* Transitions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE154B0E1C788A560093C05B /* Transitions.storyboard */; };
+		AE154B281C7BB52E0093C05B /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B271C7BB52E0093C05B /* Typealias.swift */; };
+		AE154B291C7BB52E0093C05B /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B271C7BB52E0093C05B /* Typealias.swift */; };
+		AE154B2C1C7BB5760093C05B /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B2B1C7BB5760093C05B /* CALayerExtension.swift */; };
+		AE154B2D1C7BB5760093C05B /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B2B1C7BB5760093C05B /* CALayerExtension.swift */; };
 		AE18787A1C1A25C100300246 /* AnimatableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1878791C1A25C100300246 /* AnimatableStackView.swift */; };
 		AE18787C1C1D97F500300246 /* MaskDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE18787B1C1D97F500300246 /* MaskDesignable.swift */; };
 		AE18787E1C1D980D00300246 /* MaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE18787D1C1D980D00300246 /* MaskType.swift */; };
@@ -134,6 +138,8 @@
 		AE154B051C787DDE0093C05B /* AnimatableNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableNavigationController.swift; sourceTree = "<group>"; };
 		AE154B071C7880520093C05B /* FadeInAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeInAnimator.swift; sourceTree = "<group>"; };
 		AE154B0F1C788A560093C05B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Transitions.storyboard; sourceTree = "<group>"; };
+		AE154B271C7BB52E0093C05B /* Typealias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
+		AE154B2B1C7BB5760093C05B /* CALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		AE1878791C1A25C100300246 /* AnimatableStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableStackView.swift; sourceTree = "<group>"; };
 		AE18787B1C1D97F500300246 /* MaskDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskDesignable.swift; sourceTree = "<group>"; };
 		AE18787D1C1D980D00300246 /* MaskType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskType.swift; sourceTree = "<group>"; };
@@ -203,6 +209,7 @@
 			children = (
 				AE0FAD3A1C1ECA4200B5289B /* UIViewController+UnwindSegue.swift */,
 				E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */,
+				AE154B2B1C7BB5760093C05B /* CALayerExtension.swift */,
 			);
 			name = extension;
 			sourceTree = "<group>";
@@ -230,6 +237,14 @@
 				AE154B071C7880520093C05B /* FadeInAnimator.swift */,
 			);
 			name = animator;
+			sourceTree = "<group>";
+		};
+		AE154B2A1C7BB5370093C05B /* typealias */ = {
+			isa = PBXGroup;
+			children = (
+				AE154B271C7BB52E0093C05B /* Typealias.swift */,
+			);
+			name = typealias;
 			sourceTree = "<group>";
 		};
 		AE6C66F61BFBF93500134A35 = {
@@ -276,6 +291,7 @@
 				AE154B0B1C7880680093C05B /* animator */,
 				AE0FAD391C1ECA2900B5289B /* extension */,
 				AE0FAD3E1C1ED26A00B5289B /* segue */,
+				AE154B2A1C7BB5370093C05B /* typealias */,
 				E2E28E701C6A6E5E003F3852 /* scripts */,
 			);
 			path = IBAnimatable;
@@ -488,6 +504,7 @@
 				AE6B01831C2A445100950BB2 /* AnimatableTextField.swift in Sources */,
 				AE6B01731C2A444900950BB2 /* ShadowDesignable.swift in Sources */,
 				AE6B01621C2A444000950BB2 /* AnimationType.swift in Sources */,
+				AE154B291C7BB52E0093C05B /* Typealias.swift in Sources */,
 				AE6B01871C2A445400950BB2 /* DesignableViewController.swift in Sources */,
 				E2472EA51C6F97F800A20E27 /* ColorType.swift in Sources */,
 				AE6B016D1C2A444900950BB2 /* GradientDesignable.swift in Sources */,
@@ -499,6 +516,7 @@
 				AE6B016A1C2A444900950BB2 /* CheckBoxDesignable.swift in Sources */,
 				AE6B017B1C2A445100950BB2 /* AnimatableBarButtonItem.swift in Sources */,
 				AE6B017D1C2A445100950BB2 /* AnimatableCheckBox.swift in Sources */,
+				AE154B2D1C7BB5760093C05B /* CALayerExtension.swift in Sources */,
 				E2E28E6F1C6A6D22003F3852 /* UIColorExtension.swift in Sources */,
 				AE6B01681C2A444900950BB2 /* BlurDesignable.swift in Sources */,
 				AE6B01711C2A444900950BB2 /* PlaceholderDesignable.swift in Sources */,
@@ -534,6 +552,7 @@
 				AED1A11A1BFE983A001346FA /* AnimatableView.swift in Sources */,
 				E2E28E6B1C6A6C30003F3852 /* GradientType.swift in Sources */,
 				E2472EA41C6F97F800A20E27 /* ColorType.swift in Sources */,
+				AE154B281C7BB52E0093C05B /* Typealias.swift in Sources */,
 				AE81DAEE1C10F14C000AEB20 /* GradientDesignable.swift in Sources */,
 				AE299BDA1C0338C70018CCDC /* BlurDesignable.swift in Sources */,
 				AE81DB501C12E060000AEB20 /* RotationDesignable.swift in Sources */,
@@ -544,6 +563,7 @@
 				AE0FAD3B1C1ECA4200B5289B /* UIViewController+UnwindSegue.swift in Sources */,
 				AED1A11B1BFE983A001346FA /* AnimationType.swift in Sources */,
 				AED1A11E1BFE983A001346FA /* PaddingDesignable.swift in Sources */,
+				AE154B2C1C7BB5760093C05B /* CALayerExtension.swift in Sources */,
 				AED1A1171BFE983A001346FA /* AnimatableImageView.swift in Sources */,
 				AE3C54471C217F7F00829B10 /* BarButtonItemDesignable.swift in Sources */,
 				AE0B0FEA1C25372200E36B78 /* TableViewCellDesignable.swift in Sources */,
