@@ -56,7 +56,7 @@ import UIKit
     if transitionDuration.isNaN {
       duration = 0.5
     }
-    presenter = Presenter()
+    presenter = Presenter(transitionAnimationType: transitionAnimationType, transitionDuration: duration)
     transitioningDelegate = presenter
   }
 }

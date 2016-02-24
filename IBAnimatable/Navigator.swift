@@ -8,15 +8,18 @@ import UIKit
 /**
  Navigator for `UINavigationController` to support custom transition animation for Push and Pop
  */
-public class Navigator: NSObject, UINavigationControllerDelegate {
+public class Navigator: NSObject {
   var transitionAnimationType: String?
   var transitionDuration: Duration
 
   public init(transitionAnimationType: String?, transitionDuration: Duration) {
     self.transitionAnimationType = transitionAnimationType
     self.transitionDuration = transitionDuration
+    super.init()
   }
+}
 
+extension Navigator: UINavigationControllerDelegate {
   public func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     guard let unwrappedTransitionAnimationType = transitionAnimationType, transitionAnimationType = TransitionAnimationType(rawValue: unwrappedTransitionAnimationType) else {
       return nil
@@ -34,3 +37,4 @@ public class Navigator: NSObject, UINavigationControllerDelegate {
     return nil
   }
 }
+
