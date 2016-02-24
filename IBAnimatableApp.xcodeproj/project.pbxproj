@@ -111,9 +111,13 @@
 		AED97B861C1710A900D2B0B8 /* BorderSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED97B851C1710A900D2B0B8 /* BorderSide.swift */; };
 		AEEE200B1C18CFD200AD033B /* NavigationBarDesginable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEE200A1C18CFD200AD033B /* NavigationBarDesginable.swift */; };
 		AEEE200D1C18D10C00AD033B /* DesignableNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEE200C1C18D10C00AD033B /* DesignableNavigationBar.swift */; };
+		CAB560F132D516C1D6DC6ADE /* CubeFromTopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5682099C97D6B9AA87341 /* CubeFromTopAnimator.swift */; };
 		CAB5610BC7B5D20C927AAB87 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5692C91C9ECC8018DE83E /* Navigator.swift */; };
 		CAB56443CD667F41413A560F /* CATransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56645FCD11BEC66200818 /* CATransitionType.swift */; };
+		CAB565CD69E3F398329E926E /* CubeFromBottomAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB561BC1F7391FCD516BA65 /* CubeFromBottomAnimator.swift */; };
+		CAB5670EF177CDF085D2FDCB /* CubeFromBottomAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB561BC1F7391FCD516BA65 /* CubeFromBottomAnimator.swift */; };
 		CAB569B1A6DDC08165BE389A /* FillDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB562E75DABEED7FCE0F309 /* FillDesignable.swift */; };
+		CAB56B67A133B40140DCFD8E /* CubeFromTopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5682099C97D6B9AA87341 /* CubeFromTopAnimator.swift */; };
 		CAB56CB79477DEE19E7B0420 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5692C91C9ECC8018DE83E /* Navigator.swift */; };
 		CAB56E8FA0F35057290D67C4 /* CATransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56645FCD11BEC66200818 /* CATransitionType.swift */; };
 		E2472EA41C6F97F800A20E27 /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2472EA31C6F97F800A20E27 /* ColorType.swift */; };
@@ -195,8 +199,10 @@
 		AED97B851C1710A900D2B0B8 /* BorderSide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderSide.swift; sourceTree = "<group>"; };
 		AEEE200A1C18CFD200AD033B /* NavigationBarDesginable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarDesginable.swift; sourceTree = "<group>"; };
 		AEEE200C1C18D10C00AD033B /* DesignableNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableNavigationBar.swift; sourceTree = "<group>"; };
+		CAB561BC1F7391FCD516BA65 /* CubeFromBottomAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubeFromBottomAnimator.swift; sourceTree = "<group>"; };
 		CAB562E75DABEED7FCE0F309 /* FillDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillDesignable.swift; sourceTree = "<group>"; };
 		CAB56645FCD11BEC66200818 /* CATransitionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CATransitionType.swift; sourceTree = "<group>"; };
+		CAB5682099C97D6B9AA87341 /* CubeFromTopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubeFromTopAnimator.swift; sourceTree = "<group>"; };
 		CAB5692C91C9ECC8018DE83E /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		D7E765671C4C8961008C3116 /* IBAnimatable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = IBAnimatable.playground; sourceTree = "<group>"; };
 		E2472EA31C6F97F800A20E27 /* ColorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorType.swift; sourceTree = "<group>"; };
@@ -255,10 +261,12 @@
 		AE154B0B1C7880680093C05B /* animator */ = {
 			isa = PBXGroup;
 			children = (
-				AE154B071C7880520093C05B /* CubeFromLeftAnimator.swift */,
-				AE154B801C7D08B30093C05B /* CubeFromRightAnimator.swift */,
 				CAB5692C91C9ECC8018DE83E /* Navigator.swift */,
 				AE154B8A1C7D59EE0093C05B /* AnimatorFactory.swift */,
+				AE154B071C7880520093C05B /* CubeFromLeftAnimator.swift */,
+				AE154B801C7D08B30093C05B /* CubeFromRightAnimator.swift */,
+				CAB5682099C97D6B9AA87341 /* CubeFromTopAnimator.swift */,
+				CAB561BC1F7391FCD516BA65 /* CubeFromBottomAnimator.swift */,
 			);
 			name = animator;
 			sourceTree = "<group>";
@@ -584,6 +592,8 @@
 				AE6B01761C2A444900950BB2 /* TableViewCellDesignable.swift in Sources */,
 				CAB5610BC7B5D20C927AAB87 /* Navigator.swift in Sources */,
 				CAB56443CD667F41413A560F /* CATransitionType.swift in Sources */,
+				CAB56B67A133B40140DCFD8E /* CubeFromTopAnimator.swift in Sources */,
+				CAB565CD69E3F398329E926E /* CubeFromBottomAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,6 +656,8 @@
 				AEEE200B1C18CFD200AD033B /* NavigationBarDesginable.swift in Sources */,
 				CAB56CB79477DEE19E7B0420 /* Navigator.swift in Sources */,
 				CAB56E8FA0F35057290D67C4 /* CATransitionType.swift in Sources */,
+				CAB560F132D516C1D6DC6ADE /* CubeFromTopAnimator.swift in Sources */,
+				CAB5670EF177CDF085D2FDCB /* CubeFromBottomAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
