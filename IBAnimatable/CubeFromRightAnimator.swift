@@ -24,6 +24,6 @@ public class CubeFromRightAnimator: NSObject, UIViewControllerAnimatedTransition
   }
   
   public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-    animateWithCATransition(transitionContext, type: "cube", subtype: kCATransitionFromRight)
+    animateWithCATransition(transitionContext, type: CATransitionType.cube, subtype: kCATransitionFromRight)
   }
 }
