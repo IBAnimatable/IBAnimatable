@@ -5,22 +5,30 @@
 
 import UIKit
 
-public class AnimatableNavigationController: UINavigationController {
-  class Navigator: NSObject, UINavigationControllerDelegate {
-    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-      if operation == .Push {
-        return CubeFromLeftAnimator()
-      } else if operation == .Pop {
-        return CubeFromRightAnimator()
-      }
-      return nil
-    }
-  }
+public class AnimatableNavigationController: UINavigationController, TransitionAnimatable {
   
-  let navigator = Navigator()
-  
+  // MARK: - TransitionAnimatable
+  @IBInspectable public var transitionAnimationType: String?
+  @IBInspectable public var transitionDuration: Double = .NaN
+
   public override func viewDidLoad() {
     super.viewDidLoad()
+    configureNavigationControllerDelegate(transitionAnimationType, transitionDuration: transitionDuration)
+  }
+
+  // Must have a property to keep the reference alive because `UINavigationController.delegate` is `weak`
+  private var navigator: Navigator?
+
+  private func configureNavigationControllerDelegate(transitionAnimationType: String?, transitionDuration: Duration) {
+    guard let transitionAnimationType = transitionAnimationType else {
+      return
+    }
+    var duration = transitionDuration
+    // Set the default duration for transition
+    if transitionDuration.isNaN {
+      duration = 0.5
+    }
+    navigator = Navigator(transitionAnimationType: transitionAnimationType, transitionDuration: duration)
     delegate = navigator
   }
 }

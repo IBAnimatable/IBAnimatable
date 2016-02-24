@@ -9,8 +9,8 @@ import Foundation
  Predefined Transition Animation Type
  */
 public enum TransitionAnimationType: String {
-  case cubeFromLeft
-  case cubeFromRight
-  case cubeFromTop
-  case cubeFromBottom
+  case CubeFromLeft
+  case CubeFromRight
+  case CubeFromTop
+  case CubeFromBottom
 }

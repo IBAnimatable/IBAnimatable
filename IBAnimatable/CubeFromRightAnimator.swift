@@ -5,9 +5,16 @@
 
 import UIKit
 
-public class CubeFromRightAnimator: NSObject, UIViewControllerAnimatedTransitioning {
-  let transitionDuration = 0.5
-  
+public class CubeFromRightAnimator: NSObject, UIViewControllerAnimatedTransitioning, AnimatorProtocol {
+  // MARK: - AnimatorProtocol
+  var transitionAnimationType = String(TransitionAnimationType.CubeFromRight)
+  var transitionDuration = Duration.NaN
+
+  init(transitionDuration: Duration) {
+    self.transitionDuration = transitionDuration
+    super.init()
+  }
+
   public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
     return transitionDuration
   }
