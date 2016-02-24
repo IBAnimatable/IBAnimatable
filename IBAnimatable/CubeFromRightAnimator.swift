@@ -10,9 +10,9 @@ import UIKit
  */
 public class CubeFromRightAnimator: NSObject, UIViewControllerAnimatedTransitioning, AnimatedTransitioning {
   // MARK: - AnimatorProtocol
-  var transitionAnimationType = String(TransitionAnimationType.CubeFromRight)
-  var transitionDuration: Duration = .NaN
-  var reverseAnimationType: String? = String(TransitionAnimationType.CubeFromLeft)
+  public var transitionAnimationType = String(TransitionAnimationType.CubeFromRight)
+  public var transitionDuration: Duration = .NaN
+  public var reverseAnimationType: String? = String(TransitionAnimationType.CubeFromLeft)
 
   init(transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
@@ -24,24 +24,6 @@ public class CubeFromRightAnimator: NSObject, UIViewControllerAnimatedTransition
   }
   
   public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-    guard let _ = transitionContext.viewForKey(UITransitionContextFromViewKey),
-      toView = transitionContext.viewForKey(UITransitionContextToViewKey),
-      containerView = transitionContext.containerView() else {
-        transitionContext.completeTransition(true)
-        return
-    }
-    
-    containerView.addSubview(toView)
-    CALayer.animate({
-      let transition = CATransition()
-      transition.type = "cube"
-      transition.subtype = kCATransitionFromRight
-      transition.duration = self.transitionDuration(transitionContext)
-      
-      containerView.layer.addAnimation(transition, forKey: kCATransition)
-      }) {
-        transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
-    }
+    animateWithCATransition(transitionContext, type: "cube", subtype: kCATransitionFromRight)
   }
-
 }
