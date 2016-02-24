@@ -15,10 +15,14 @@ public class Navigator: NSObject, UINavigationControllerDelegate {
   }
 
   public func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    guard let unwrappedTransitionAnimationType = transitionAnimationType, transitionAnimationType = TransitionAnimationType(rawValue: unwrappedTransitionAnimationType) else {
+      return nil
+    }
+
     if operation == .Push {
-      return CubeFromLeftAnimator(transitionDuration: transitionDuration)
+      return AnimatorFactory.generateAnimator(transitionAnimationType, transitionDuration: transitionDuration)
     } else if operation == .Pop {
-      return CubeFromRightAnimator(transitionDuration: transitionDuration)
+      return AnimatorFactory.generateAnimator(transitionAnimationType, transitionDuration: transitionDuration)
     }
     return nil
   }

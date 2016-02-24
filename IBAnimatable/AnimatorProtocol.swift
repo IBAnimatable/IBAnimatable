@@ -3,9 +3,9 @@
 //  Copyright © 2016 Jake Lin. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-protocol AnimatorProtocol: class {
+protocol AnimatorProtocol: UIViewControllerAnimatedTransitioning {
   
   /**
    String value of `TransitionAnimationType` enum

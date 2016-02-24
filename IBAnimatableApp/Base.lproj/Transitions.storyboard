@@ -183,9 +183,6 @@
                     <nil name="viewControllers"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="transitionAnimationType" value="CubeFromLeft"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="transitionDuration">
-                            <real key="value" value="3"/>
-                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="NTx-bf-G81" kind="relationship" relationship="rootViewController" id="3Ez-j6-isk"/>

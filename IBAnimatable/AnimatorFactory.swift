@@ -11,7 +11,7 @@ struct AnimatorFactory {
     case .CubeFromLeft:
       return CubeFromLeftAnimator(transitionDuration: transitionDuration)
     case .CubeFromRight:
-      return CubeFromLeftAnimator(transitionDuration: transitionDuration)
+      return CubeFromRightAnimator(transitionDuration: transitionDuration)
     case .CubeFromTop:
       return CubeFromLeftAnimator(transitionDuration: transitionDuration)
     case .CubeFromBottom:
