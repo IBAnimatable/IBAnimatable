@@ -14,14 +14,14 @@ public class AnimatableNavigationController: UINavigationController, TransitionA
   // MARK: - Lifecylce
   public override func viewDidLoad() {
     super.viewDidLoad()
-    configureNavigationControllerDelegate(transitionAnimationType, transitionDuration: transitionDuration)
+    configureNavigationControllerDelegate()
   }
 
   // MARK: - Private
   // Must have a property to keep the reference alive because `UINavigationController.delegate` is `weak`
   private var navigator: Navigator?
 
-  private func configureNavigationControllerDelegate(transitionAnimationType: String?, transitionDuration: Duration) {
+  private func configureNavigationControllerDelegate() {
     guard let transitionAnimationType = transitionAnimationType else {
       return
     }
