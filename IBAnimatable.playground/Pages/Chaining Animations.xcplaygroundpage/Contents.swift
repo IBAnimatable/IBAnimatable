@@ -24,16 +24,16 @@ view.configAnimatableProperties()
 iPhoneView.addSubview(view)
 
 view.fillColor = UIColor(red: 0xba/0xff, green: 0x77/0xff, blue: 1, alpha: 1)
-view.maskType = "Circle"
+view.maskType = String(MaskType.Circle)
 
 //: Start another animation in completion closure
 view.squeezeInDown{ view.pop { view.shake{ view.squeeze{ view.wobble{ view.flipX { view.flash{ view.flipY { view.fadeOutDown() } } } } } } } }
 
 //: To apply delay, we can specify the animationType and delay
-//view.animationType = "Pop"
+//view.animationType = String(AnimationType.Pop)
 //view.animate{
 //  view.delay = 0.3
-//  view.animationType = "Shake"
+//  view.animationType = String(AnimationType.Shake)
 //  view.animate()
 //}
 

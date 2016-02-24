@@ -24,10 +24,10 @@ view.configAnimatableProperties()
 iPhoneView.addSubview(view)
 
 view.fillColor = UIColor(red: 0xba/0xff, green: 0x77/0xff, blue: 1, alpha: 1)
-view.maskType = "Circle"
+view.maskType = String(MaskType.Circle)
 
 //: animationType: all supported predefined animations can be found in `enum AnimationType`
-view.animationType = "SqueezeInLeft"
+view.animationType = String(AnimationType.SqueezeInLeft)
 
 //: duration: used to specify the duration of animation. Default value is 0.7
 view.duration = 0.8
