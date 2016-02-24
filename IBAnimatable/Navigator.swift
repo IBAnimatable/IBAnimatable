@@ -22,10 +22,14 @@ public class Navigator: NSObject, UINavigationControllerDelegate {
       return nil
     }
 
+    let animator = AnimatorFactory.generateAnimator(transitionAnimationType, transitionDuration: transitionDuration)
     if operation == .Push {
-      return AnimatorFactory.generateAnimator(transitionAnimationType, transitionDuration: transitionDuration)
+      return animator
     } else if operation == .Pop {
-      return AnimatorFactory.generateAnimator(transitionAnimationType, transitionDuration: transitionDuration)
+      // Use the reverse animation
+      if let reverseAnimationType = animator.reverseAnimationType, reverseTransitionAnimationType = TransitionAnimationType(rawValue: reverseAnimationType) {
+        return AnimatorFactory.generateAnimator(reverseTransitionAnimationType, transitionDuration: transitionDuration)
+      }
     }
     return nil
   }

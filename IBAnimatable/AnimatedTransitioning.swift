@@ -18,4 +18,9 @@ protocol AnimatedTransitioning: UIViewControllerAnimatedTransitioning {
    Transition duration
    */
   var transitionDuration: Duration { get set }
+
+  /**
+   Reverse animation type: used to specify the revers animation for pop or dismiss.
+   */
+  var reverseAnimationType: String? { get set }
 }

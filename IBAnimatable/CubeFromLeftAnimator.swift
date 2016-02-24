@@ -11,7 +11,8 @@ import UIKit
 public class CubeFromLeftAnimator: NSObject, UIViewControllerAnimatedTransitioning, AnimatedTransitioning {
   // MARK: - AnimatorProtocol
   var transitionAnimationType = String(TransitionAnimationType.CubeFromLeft)
-  var transitionDuration = Duration.NaN
+  var transitionDuration: Duration = .NaN
+  var reverseAnimationType: String? = String(TransitionAnimationType.CubeFromRight)
 
   init(transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
