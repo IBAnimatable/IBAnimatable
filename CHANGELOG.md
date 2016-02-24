@@ -7,7 +7,8 @@ All notable changes to this project will be documented in this file.
 ### Next
 
 #### API breaking changes
-TBD
+
+- Remove `DesignableViewController`, use `AnimatableViewController` instead.
 
 #### Enhancements
 

@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Designable View Controller-->
+        <!--Animatable View Controller-->
         <scene sceneID="8Rd-3V-pdH">
             <objects>
-                <viewController id="7ne-VT-Tkk" customClass="DesignableViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7ne-VT-Tkk" customClass="AnimatableViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gSc-Fb-cEP"/>
                         <viewControllerLayoutGuide type="bottom" id="p9q-ym-dQp"/>
@@ -157,10 +157,10 @@
             </objects>
             <point key="canvasLocation" x="3521.5" y="-255.5"/>
         </scene>
-        <!--Designable View Controller-->
+        <!--Animatable View Controller-->
         <scene sceneID="ehL-9E-b6y">
             <objects>
-                <viewController modalTransitionStyle="flipHorizontal" id="Ya1-vA-pSE" customClass="DesignableViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="Ya1-vA-pSE" customClass="AnimatableViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UPX-ER-qv3"/>
                         <viewControllerLayoutGuide type="bottom" id="aKz-Oq-qpJ"/>
@@ -444,10 +444,10 @@
             </objects>
             <point key="canvasLocation" x="4755.5" y="-255.5"/>
         </scene>
-        <!--Designable View Controller-->
+        <!--Animatable View Controller-->
         <scene sceneID="XnI-Ym-alh">
             <objects>
-                <viewController id="sUc-K8-vaF" customClass="DesignableViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sUc-K8-vaF" customClass="AnimatableViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4KK-9l-azn"/>
                         <viewControllerLayoutGuide type="bottom" id="tfe-FS-ZKP"/>
