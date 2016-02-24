@@ -123,30 +123,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFy-ex-CKY" userLabel="pop" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
-                                <rect key="frame" x="32" y="303" width="311" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="hNr-ng-iZE">
+                                <rect key="frame" x="32" y="259" width="311" height="150"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFy-ex-CKY" userLabel="pop" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="cES-w9-kDF"/>
+                                        </constraints>
+                                        <state key="normal" title="Tap to push">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="jDB-Ur-y9F" kind="show" id="ftd-QI-Jx6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59W-58-R6i" userLabel="present" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="90" width="311" height="60"/>
+                                        <state key="normal" title="Tap to present">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="9Qt-ed-0ZI" kind="presentation" id="WyK-21-zHP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="cES-w9-kDF"/>
+                                    <constraint firstItem="59W-58-R6i" firstAttribute="height" secondItem="kFy-ex-CKY" secondAttribute="height" id="jRi-4f-xnw"/>
                                 </constraints>
-                                <state key="normal" title="Tap to push">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                        <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="jDB-Ur-y9F" kind="show" id="ftd-QI-Jx6"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="kFy-ex-CKY" firstAttribute="leading" secondItem="OnE-aw-cD0" secondAttribute="leadingMargin" constant="16" id="Ox2-G5-mwd"/>
-                            <constraint firstItem="kFy-ex-CKY" firstAttribute="centerY" secondItem="OnE-aw-cD0" secondAttribute="centerY" id="efA-dj-Cqd"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="kFy-ex-CKY" secondAttribute="trailing" constant="16" id="gg1-8p-S2q"/>
-                            <constraint firstItem="kFy-ex-CKY" firstAttribute="centerX" secondItem="OnE-aw-cD0" secondAttribute="centerX" id="npG-Gg-l7a"/>
+                            <constraint firstItem="hNr-ng-iZE" firstAttribute="leading" secondItem="OnE-aw-cD0" secondAttribute="leadingMargin" constant="16" id="LgM-hi-J3o"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hNr-ng-iZE" secondAttribute="trailing" constant="16" id="g7U-SE-x4o"/>
+                            <constraint firstItem="hNr-ng-iZE" firstAttribute="centerX" secondItem="OnE-aw-cD0" secondAttribute="centerX" id="xGY-p8-VNT"/>
+                            <constraint firstItem="hNr-ng-iZE" firstAttribute="centerY" secondItem="OnE-aw-cD0" secondAttribute="centerY" id="ySh-2Q-cWM"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="predefinedColor" value="FlatGreenSea"/>
@@ -181,7 +203,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nmd-hI-p2R" userLabel="pop" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
-                                <rect key="frame" x="32" y="303.5" width="311" height="60"/>
+                                <rect key="frame" x="32" y="304" width="311" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="AFk-rh-3sU"/>
                                 </constraints>
@@ -249,7 +271,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kms-5b-dKQ" userLabel="pop" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
-                                <rect key="frame" x="32" y="303.5" width="311" height="60"/>
+                                <rect key="frame" x="32" y="304" width="311" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="O0s-Uh-Y1N"/>
                                 </constraints>
@@ -296,7 +318,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6uK-2O-45G" userLabel="pop" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
-                                <rect key="frame" x="32" y="303.5" width="311" height="60"/>
+                                <rect key="frame" x="32" y="304" width="311" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="i6z-CI-E1w"/>
                                 </constraints>
@@ -340,7 +362,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yFb-gB-tom" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="8wB-pd-gpg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4073.5" y="456.5"/>
+            <point key="canvasLocation" x="4073.5" y="467.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="RTy-q8-Qlx">
@@ -389,7 +411,54 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tN5-lJ-KuM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4507.5" y="455.5"/>
+            <point key="canvasLocation" x="4507.5" y="466.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="D7y-Bi-dz5">
+            <objects>
+                <viewController id="9Qt-ed-0ZI" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3M5-bf-nzE"/>
+                        <viewControllerLayoutGuide type="bottom" id="zRb-Me-7Vv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ya9-02-nKR" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lU-N7-UdB" userLabel="present" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="40" y="304" width="295" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Gu3-mh-kVd"/>
+                                </constraints>
+                                <state key="normal" title="Tap to dismiss">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="emc-Jl-Ob8" kind="unwind" unwindAction="dismissCurrentViewController:" id="AfY-nS-1QC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4lU-N7-UdB" firstAttribute="centerY" secondItem="Ya9-02-nKR" secondAttribute="centerY" id="9FV-qJ-9QK"/>
+                            <constraint firstItem="4lU-N7-UdB" firstAttribute="centerX" secondItem="Ya9-02-nKR" secondAttribute="centerX" id="F22-2D-A01"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4lU-N7-UdB" secondAttribute="trailing" constant="24" id="PVV-9q-gyy"/>
+                            <constraint firstItem="4lU-N7-UdB" firstAttribute="leading" secondItem="Ya9-02-nKR" secondAttribute="leadingMargin" constant="24" id="nPT-4A-Gs1"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="predefinedGradient" value="Candy"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L8b-q3-z0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="emc-Jl-Ob8" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3219.5" y="467.5"/>
         </scene>
         <!--Animatable Navigation Controller-->
         <scene sceneID="qOL-WV-HTi">
@@ -410,7 +479,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R4N-oZ-Bvn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3637.5" y="455.5"/>
+            <point key="canvasLocation" x="3637.5" y="466.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="MOI-ky-v9m">
@@ -459,7 +528,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wdp-9w-M8M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4938.5" y="456.5"/>
+            <point key="canvasLocation" x="4938.5" y="467.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="BSR-YF-MqV">
@@ -474,7 +543,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olh-AF-frb" userLabel="pop" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
-                                <rect key="frame" x="32" y="303.5" width="311" height="60"/>
+                                <rect key="frame" x="32" y="304" width="311" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="clH-0e-Hx1"/>
                                 </constraints>
@@ -652,7 +721,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsr-Of-sFh" userLabel="pop" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
-                                <rect key="frame" x="32" y="303.5" width="311" height="60"/>
+                                <rect key="frame" x="32" y="304" width="311" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="vHk-Ll-xew"/>
                                 </constraints>
@@ -820,8 +889,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="j7j-cv-Wcs"/>
+        <segue reference="ftd-QI-Jx6"/>
         <segue reference="aTe-dj-ZDJ"/>
-        <segue reference="0zV-vG-a8x"/>
-        <segue reference="jmq-xh-2yp"/>
+        <segue reference="eEs-IF-sK1"/>
     </inferredMetricsTieBreakers>
 </document>
