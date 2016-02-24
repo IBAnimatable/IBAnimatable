@@ -5,7 +5,10 @@
 
 import UIKit
 
-public class CubeFromLeftAnimator: NSObject, UIViewControllerAnimatedTransitioning, AnimatorProtocol {
+/**
+ Cube Animator, starts from left
+ */
+public class CubeFromLeftAnimator: NSObject, UIViewControllerAnimatedTransitioning, AnimatedTransitioning {
   // MARK: - AnimatorProtocol
   var transitionAnimationType = String(TransitionAnimationType.CubeFromLeft)
   var transitionDuration = Duration.NaN

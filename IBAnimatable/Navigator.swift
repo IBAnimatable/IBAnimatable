@@ -5,6 +5,9 @@
 
 import UIKit
 
+/**
+ Custom navigator for `UINavigationController`
+ */
 public class Navigator: NSObject, UINavigationControllerDelegate {
   var transitionAnimationType: String?
   var transitionDuration: Duration

@@ -32,8 +32,8 @@
 		AE154B7F1C7D061A0093C05B /* TransitionAnimatableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B7D1C7D061A0093C05B /* TransitionAnimatableType.swift */; };
 		AE154B811C7D08B30093C05B /* CubeFromRightAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B801C7D08B30093C05B /* CubeFromRightAnimator.swift */; };
 		AE154B821C7D08B30093C05B /* CubeFromRightAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B801C7D08B30093C05B /* CubeFromRightAnimator.swift */; };
-		AE154B841C7D1A740093C05B /* AnimatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B831C7D1A740093C05B /* AnimatorProtocol.swift */; };
-		AE154B851C7D1A740093C05B /* AnimatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B831C7D1A740093C05B /* AnimatorProtocol.swift */; };
+		AE154B841C7D1A740093C05B /* AnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B831C7D1A740093C05B /* AnimatedTransitioning.swift */; };
+		AE154B851C7D1A740093C05B /* AnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B831C7D1A740093C05B /* AnimatedTransitioning.swift */; };
 		AE154B8B1C7D59EE0093C05B /* AnimatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B8A1C7D59EE0093C05B /* AnimatorFactory.swift */; };
 		AE154B8C1C7D59EE0093C05B /* AnimatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B8A1C7D59EE0093C05B /* AnimatorFactory.swift */; };
 		AE18787A1C1A25C100300246 /* AnimatableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1878791C1A25C100300246 /* AnimatableStackView.swift */; };
@@ -155,7 +155,7 @@
 		AE154B7A1C7D04A40093C05B /* TransitionAnimatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionAnimatable.swift; sourceTree = "<group>"; };
 		AE154B7D1C7D061A0093C05B /* TransitionAnimatableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionAnimatableType.swift; sourceTree = "<group>"; };
 		AE154B801C7D08B30093C05B /* CubeFromRightAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubeFromRightAnimator.swift; sourceTree = "<group>"; };
-		AE154B831C7D1A740093C05B /* AnimatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatorProtocol.swift; sourceTree = "<group>"; };
+		AE154B831C7D1A740093C05B /* AnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedTransitioning.swift; sourceTree = "<group>"; };
 		AE154B8A1C7D59EE0093C05B /* AnimatorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatorFactory.swift; sourceTree = "<group>"; };
 		AE1878791C1A25C100300246 /* AnimatableStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableStackView.swift; sourceTree = "<group>"; };
 		AE18787B1C1D97F500300246 /* MaskDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskDesignable.swift; sourceTree = "<group>"; };
@@ -272,7 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				AE154B7A1C7D04A40093C05B /* TransitionAnimatable.swift */,
-				AE154B831C7D1A740093C05B /* AnimatorProtocol.swift */,
+				AE154B831C7D1A740093C05B /* AnimatedTransitioning.swift */,
 			);
 			name = TransitionAnimatable;
 			sourceTree = "<group>";
@@ -547,7 +547,7 @@
 				AE6B017A1C2A445100950BB2 /* AnimatableView.swift in Sources */,
 				AE6B01751C2A444900950BB2 /* StatusBarDesignable.swift in Sources */,
 				AE6B016A1C2A444900950BB2 /* CheckBoxDesignable.swift in Sources */,
-				AE154B851C7D1A740093C05B /* AnimatorProtocol.swift in Sources */,
+				AE154B851C7D1A740093C05B /* AnimatedTransitioning.swift in Sources */,
 				AE6B017B1C2A445100950BB2 /* AnimatableBarButtonItem.swift in Sources */,
 				AE6B017D1C2A445100950BB2 /* AnimatableCheckBox.swift in Sources */,
 				AE154B2D1C7BB5760093C05B /* CALayerExtension.swift in Sources */,
@@ -633,7 +633,7 @@
 				AE0B0FEC1C26397700E36B78 /* AnimatableCheckBox.swift in Sources */,
 				AE0FAD3D1C1ED1EC00B5289B /* DismissSegue.swift in Sources */,
 				AE81DB4E1C11DF00000AEB20 /* BlurEffectStyle.swift in Sources */,
-				AE154B841C7D1A740093C05B /* AnimatorProtocol.swift in Sources */,
+				AE154B841C7D1A740093C05B /* AnimatedTransitioning.swift in Sources */,
 				AED1A1151BFE983A001346FA /* AnimatableButton.swift in Sources */,
 				AE0FADAF1C203F9A00B5289B /* AnimatableTableView.swift in Sources */,
 				AED97B861C1710A900D2B0B8 /* BorderSide.swift in Sources */,

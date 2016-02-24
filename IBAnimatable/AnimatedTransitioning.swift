@@ -4,8 +4,10 @@
 //
 
 import UIKit
-
-protocol AnimatorProtocol: UIViewControllerAnimatedTransitioning {
+/**
+ AnimatedTransitioning is the protocol of all Animator subclasses
+ */
+protocol AnimatedTransitioning: UIViewControllerAnimatedTransitioning {
   
   /**
    String value of `TransitionAnimationType` enum

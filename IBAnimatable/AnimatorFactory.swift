@@ -4,9 +4,11 @@
 //
 
 import Foundation
-
+/**
+ Animator Factory
+ */
 struct AnimatorFactory {
-  static func generateAnimator(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration) -> AnimatorProtocol {
+  static func generateAnimator(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration) -> AnimatedTransitioning {
     switch transitionAnimationType {
     case .CubeFromLeft:
       return CubeFromLeftAnimator(transitionDuration: transitionDuration)
