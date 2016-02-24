@@ -36,6 +36,8 @@
 		AE154B851C7D1A740093C05B /* AnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B831C7D1A740093C05B /* AnimatedTransitioning.swift */; };
 		AE154B8B1C7D59EE0093C05B /* AnimatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B8A1C7D59EE0093C05B /* AnimatorFactory.swift */; };
 		AE154B8C1C7D59EE0093C05B /* AnimatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B8A1C7D59EE0093C05B /* AnimatorFactory.swift */; };
+		AE154B8E1C7D89CB0093C05B /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B8D1C7D89CB0093C05B /* Presenter.swift */; };
+		AE154B8F1C7D89CB0093C05B /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B8D1C7D89CB0093C05B /* Presenter.swift */; };
 		AE18787A1C1A25C100300246 /* AnimatableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1878791C1A25C100300246 /* AnimatableStackView.swift */; };
 		AE18787C1C1D97F500300246 /* MaskDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE18787B1C1D97F500300246 /* MaskDesignable.swift */; };
 		AE18787E1C1D980D00300246 /* MaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE18787D1C1D980D00300246 /* MaskType.swift */; };
@@ -163,6 +165,7 @@
 		AE154B801C7D08B30093C05B /* CubeFromRightAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubeFromRightAnimator.swift; sourceTree = "<group>"; };
 		AE154B831C7D1A740093C05B /* AnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedTransitioning.swift; sourceTree = "<group>"; };
 		AE154B8A1C7D59EE0093C05B /* AnimatorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatorFactory.swift; sourceTree = "<group>"; };
+		AE154B8D1C7D89CB0093C05B /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		AE1878791C1A25C100300246 /* AnimatableStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableStackView.swift; sourceTree = "<group>"; };
 		AE18787B1C1D97F500300246 /* MaskDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskDesignable.swift; sourceTree = "<group>"; };
 		AE18787D1C1D980D00300246 /* MaskType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskType.swift; sourceTree = "<group>"; };
@@ -262,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				CAB5692C91C9ECC8018DE83E /* Navigator.swift */,
+				AE154B8D1C7D89CB0093C05B /* Presenter.swift */,
 				AE154B8A1C7D59EE0093C05B /* AnimatorFactory.swift */,
 				AE154B071C7880520093C05B /* CubeFromLeftAnimator.swift */,
 				AE154B801C7D08B30093C05B /* CubeFromRightAnimator.swift */,
@@ -577,6 +581,7 @@
 				AE6B01891C2A445C00950BB2 /* DismissSegue.swift in Sources */,
 				AE6B01881C2A445800950BB2 /* UIViewControllerExtension.swift in Sources */,
 				AE6B01771C2A444900950BB2 /* TintDesignable.swift in Sources */,
+				AE154B8F1C7D89CB0093C05B /* Presenter.swift in Sources */,
 				AE6B01781C2A444900950BB2 /* BarButtonItemDesignable.swift in Sources */,
 				AE154B7C1C7D04A40093C05B /* TransitionAnimatable.swift in Sources */,
 				AE154B081C7880520093C05B /* CubeFromLeftAnimator.swift in Sources */,
@@ -607,6 +612,7 @@
 				E2472EA41C6F97F800A20E27 /* ColorType.swift in Sources */,
 				AE154B281C7BB52E0093C05B /* Typealias.swift in Sources */,
 				AE81DAEE1C10F14C000AEB20 /* GradientDesignable.swift in Sources */,
+				AE154B8E1C7D89CB0093C05B /* Presenter.swift in Sources */,
 				AE154B7E1C7D061A0093C05B /* TransitionAnimatableType.swift in Sources */,
 				AE299BDA1C0338C70018CCDC /* BlurDesignable.swift in Sources */,
 				AE81DB501C12E060000AEB20 /* RotationDesignable.swift in Sources */,

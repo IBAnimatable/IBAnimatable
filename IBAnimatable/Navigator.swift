@@ -6,7 +6,7 @@
 import UIKit
 
 /**
- Custom navigator for `UINavigationController`
+ Navigator for `UINavigationController` to support custom transition animation for Push and Pop
  */
 public class Navigator: NSObject, UINavigationControllerDelegate {
   var transitionAnimationType: String?

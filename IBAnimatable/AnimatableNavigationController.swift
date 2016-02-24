@@ -11,11 +11,13 @@ public class AnimatableNavigationController: UINavigationController, TransitionA
   @IBInspectable public var transitionAnimationType: String?
   @IBInspectable public var transitionDuration: Double = .NaN
 
+  // MARK: - Lifecylce
   public override func viewDidLoad() {
     super.viewDidLoad()
     configureNavigationControllerDelegate(transitionAnimationType, transitionDuration: transitionDuration)
   }
 
+  // MARK: - Private
   // Must have a property to keep the reference alive because `UINavigationController.delegate` is `weak`
   private var navigator: Navigator?
 
