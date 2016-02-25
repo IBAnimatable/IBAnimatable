@@ -7,7 +7,7 @@ import UIKit
 /**
  Cube Animator - To support 3D animation (Four rotation directions supported: left, right, top, bottom)
  */
-public class CubeAnimator: NSObject, UIViewControllerAnimatedTransitioning, AnimatedTransitioning {
+public class CubeAnimator: NSObject, AnimatedTransitioning {
   // MARK: - AnimatorProtocol
   public var transitionAnimationType: String
   public var transitionDuration: Duration = .NaN
@@ -17,13 +17,29 @@ public class CubeAnimator: NSObject, UIViewControllerAnimatedTransitioning, Anim
   private var fromDirection: TransitionFromDirection
   
   init(fromDirection: TransitionFromDirection, transitionDuration: Duration) {
-    self.transitionDuration = transitionDuration
     self.fromDirection = fromDirection
-    self.transitionAnimationType = String(fromDirection.animationType)
-    self.reverseAnimationType = String(fromDirection.reverseAnimationType)
+    self.transitionDuration = transitionDuration
+    
+    switch fromDirection {
+    case .FromLeft:
+      self.transitionAnimationType = String(TransitionAnimationType.CubeFromLeft)
+      self.reverseAnimationType = String(TransitionAnimationType.CubeFromRight)
+    case .FromRight:
+      self.transitionAnimationType = String(TransitionAnimationType.CubeFromRight)
+      self.reverseAnimationType = String(TransitionAnimationType.CubeFromRight)
+    case .FromTop:
+      self.transitionAnimationType = String(TransitionAnimationType.CubeFromTop)
+      self.reverseAnimationType = String(TransitionAnimationType.CubeFromRight)
+    case .FromBottom:
+      self.transitionAnimationType = String(TransitionAnimationType.CubeFromBottom)
+      self.reverseAnimationType = String(TransitionAnimationType.CubeFromRight)
+    }
+    
     super.init()
   }
-  
+}
+
+extension CubeAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
     return transitionDuration
   }

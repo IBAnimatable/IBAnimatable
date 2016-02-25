@@ -25,30 +25,4 @@ public enum TransitionFromDirection {
       return kCATransitionFromBottom
     }
   }
-  
-  var animationType: TransitionAnimationType {
-    switch self {
-    case .FromLeft:
-      return .CubeFromLeft
-    case .FromRight:
-      return .CubeFromRight
-    case .FromTop:
-      return .CubeFromTop
-    case .FromBottom:
-      return .CubeFromBottom
-    }
-  }
-  
-  var reverseAnimationType: TransitionAnimationType {
-    switch self {
-    case .FromLeft:
-      return .CubeFromRight
-    case .FromRight:
-      return .CubeFromLeft
-    case .FromTop:
-      return .CubeFromBottom
-    case .FromBottom:
-      return .CubeFromTop
-    }
-  }
 }

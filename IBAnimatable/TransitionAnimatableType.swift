@@ -13,4 +13,8 @@ public enum TransitionAnimationType: String {
   case CubeFromRight
   case CubeFromTop
   case CubeFromBottom
+  case FlipFromLeft
+  case FlipFromRight
+  case FlipFromTop
+  case FlipFromBottom
 }

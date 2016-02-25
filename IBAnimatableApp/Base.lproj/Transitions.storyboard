@@ -33,7 +33,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="6OX-wo-iCM" kind="show" action="showDetailViewController:sender:" id="HOm-gh-tlN"/>
+                                            <segue destination="6OX-wo-iCM" kind="showDetail" id="HOm-gh-tlN"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="qgE-dG-LF9" style="IBUITableViewCellStyleDefault" id="nj5-cf-pNc">
@@ -120,7 +120,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ShH-Bu-pJr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Zt3-2n-Jal" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4017.5" y="-289.5"/>
+            <point key="canvasLocation" x="3205.5" y="-281.5"/>
         </scene>
         <!--Animatable View Controller-->
         <scene sceneID="j4X-Oe-hEs">
@@ -165,7 +165,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="9Qt-ed-0ZI" kind="modal" id="WyK-21-zHP"/>
+                                            <segue destination="9Qt-ed-0ZI" kind="presentation" id="WyK-21-zHP"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -202,7 +202,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iNw-ov-HSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="mGz-2k-KHz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4885.5" y="-289.5"/>
+            <point key="canvasLocation" x="4073.5" y="-281.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="emT-DW-liW">
@@ -249,7 +249,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MwU-bg-SAk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5319.5" y="-289.5"/>
+            <point key="canvasLocation" x="4507.5" y="-281.5"/>
         </scene>
         <!--Animatable Navigation Controller-->
         <scene sceneID="Ryf-4p-TtM">
@@ -270,7 +270,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aut-7u-fEr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4450.5" y="-289.5"/>
+            <point key="canvasLocation" x="3638.5" y="-281.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="w9j-KN-ZrE">
@@ -317,7 +317,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Td-V3-Teq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5750.5" y="-289.5"/>
+            <point key="canvasLocation" x="4938.5" y="-281.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="zkz-0D-pHw">
@@ -472,7 +472,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L8b-q3-z0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="emc-Jl-Ob8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3219.5" y="467.5"/>
+            <point key="canvasLocation" x="5411.5" y="-268.5"/>
         </scene>
         <!--Animatable Navigation Controller-->
         <scene sceneID="qOL-WV-HTi">
@@ -917,12 +917,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xig-Zd-fJP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3587.5" y="-289.5"/>
+            <point key="canvasLocation" x="2775.5" y="-281.5"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aTe-dj-ZDJ"/>
         <segue reference="ftd-QI-Jx6"/>
+        <segue reference="aTe-dj-ZDJ"/>
         <segue reference="j7j-cv-Wcs"/>
         <segue reference="eEs-IF-sK1"/>
     </inferredMetricsTieBreakers>

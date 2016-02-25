@@ -18,6 +18,14 @@ struct AnimatorFactory {
       return CubeAnimator(fromDirection: .FromTop, transitionDuration: transitionDuration)
     case .CubeFromBottom:
       return CubeAnimator(fromDirection: .FromBottom, transitionDuration: transitionDuration)
+    case .FlipFromLeft:
+      return FlipAnimator(fromDirection: .FromLeft, transitionDuration: transitionDuration)
+    case .FlipFromRight:
+      return FlipAnimator(fromDirection: .FromRight, transitionDuration: transitionDuration)
+    case .FlipFromTop:
+      return FlipAnimator(fromDirection: .FromTop, transitionDuration: transitionDuration)
+    case .FlipFromBottom:
+      return FlipAnimator(fromDirection: .FromBottom, transitionDuration: transitionDuration)
     }
   }
 }
