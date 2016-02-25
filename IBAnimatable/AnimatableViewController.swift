@@ -43,6 +43,14 @@ import UIKit
     return .Default
   }
 
+  public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    let toViewController = segue.destinationViewController;
+    toViewController.transitioningDelegate = presenter;
+
+    super.prepareForSegue(segue, sender: sender)
+  }
+
+
   // MARK: - Private
   // Must have a property to keep the reference alive because `UIViewController.transitioningDelegate` is `weak`
   private var presenter: Presenter?
@@ -51,12 +59,12 @@ import UIKit
     guard let transitionAnimationType = transitionAnimationType else {
       return
     }
+    
     var duration = transitionDuration
     // Set the default duration for transition
     if transitionDuration.isNaN {
       duration = 0.5
     }
     presenter = Presenter(transitionAnimationType: transitionAnimationType, transitionDuration: duration)
-    transitioningDelegate = presenter
   }
 }
