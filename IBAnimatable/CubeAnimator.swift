@@ -14,13 +14,13 @@ public class CubeAnimator: NSObject, UIViewControllerAnimatedTransitioning, Anim
   public var reverseAnimationType: String?
   
   // MARK: - private
-  private var fromDirection: TransitionFromDirection?
+  private var fromDirection: TransitionFromDirection
   
-  init(fromDirection: TransitionFromDirection?, transitionDuration: Duration) {
+  init(fromDirection: TransitionFromDirection, transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
     self.fromDirection = fromDirection
-    self.transitionAnimationType = String(fromDirection?.animationType)
-    self.reverseAnimationType = String(fromDirection?.reverseAnimationType)
+    self.transitionAnimationType = String(fromDirection.animationType)
+    self.reverseAnimationType = String(fromDirection.reverseAnimationType)
     super.init()
   }
   
@@ -29,6 +29,6 @@ public class CubeAnimator: NSObject, UIViewControllerAnimatedTransitioning, Anim
   }
   
   public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-    animateWithCATransition(transitionContext, type: CATransitionType.cube, subtype: fromDirection?.stringValue)
+    animateWithCATransition(transitionContext, type: CATransitionType.cube, subtype: fromDirection.stringValue)
   }
 }
