@@ -20,11 +20,11 @@
                                         <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d16-xz-tg5" id="EOb-bR-emF">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="CubeFromLeft" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="No1-bE-wbP">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -33,18 +33,18 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="6OX-wo-iCM" kind="show" id="HOm-gh-tlN"/>
+                                            <segue destination="6OX-wo-iCM" kind="show" action="showDetailViewController:sender:" id="HOm-gh-tlN"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="qgE-dG-LF9" style="IBUITableViewCellStyleDefault" id="nj5-cf-pNc">
                                         <rect key="frame" x="0.0" y="108" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nj5-cf-pNc" id="8Su-qC-Aml">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="CubeFromRight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qgE-dG-LF9">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -60,11 +60,11 @@
                                         <rect key="frame" x="0.0" y="152" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qwH-na-sDL" id="jed-Wd-EXL">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="CubeFromTop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9ls-iI-4fp">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -80,11 +80,11 @@
                                         <rect key="frame" x="0.0" y="196" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zIp-1C-FRq" id="Iia-28-Snv">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="CubeFromBottom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xgd-rs-g1J">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -109,7 +109,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="CMq-NF-6JB">
                             <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="Zt3-2n-Jal" kind="unwind" unwindAction="dismissCurrentViewController:" id="OPS-3j-E5J"/>
+                                <segue destination="Zt3-2n-Jal" kind="unwind" unwindAction="dismissCurrentViewController:" id="uyu-tt-unL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -165,7 +165,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="9Qt-ed-0ZI" kind="presentation" id="WyK-21-zHP"/>
+                                            <segue destination="9Qt-ed-0ZI" kind="modal" id="WyK-21-zHP"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -190,7 +190,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="4AM-Wn-dMe">
                             <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="mGz-2k-KHz" kind="unwind" unwindAction="dismissCurrentViewController:" id="hFN-Rv-Lnf"/>
+                                <segue destination="mGz-2k-KHz" kind="unwind" unwindAction="dismissCurrentViewController:" id="V4K-I6-9iN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -453,7 +453,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="emc-Jl-Ob8" kind="unwind" unwindAction="dismissCurrentViewController:" id="AfY-nS-1QC"/>
+                                    <segue destination="emc-Jl-Ob8" kind="unwind" unwindAction="dismissCurrentViewController:" id="Caz-tQ-xr5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -921,9 +921,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="j7j-cv-Wcs"/>
-        <segue reference="ftd-QI-Jx6"/>
         <segue reference="aTe-dj-ZDJ"/>
+        <segue reference="ftd-QI-Jx6"/>
+        <segue reference="j7j-cv-Wcs"/>
         <segue reference="eEs-IF-sK1"/>
     </inferredMetricsTieBreakers>
 </document>

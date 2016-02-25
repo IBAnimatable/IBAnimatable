@@ -11,6 +11,6 @@ public extension UIViewController {
   }
   
   @IBAction public func dismissCurrentViewController(sender: UIStoryboardSegue) {
-    sender.sourceViewController.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    sender.destinationViewController.dismissViewControllerAnimated(true, completion: nil)
   }
 }

@@ -44,8 +44,8 @@ import UIKit
   }
 
   public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    let toViewController = segue.destinationViewController;
-    toViewController.transitioningDelegate = presenter;
+    let toViewController = segue.destinationViewController
+    toViewController.transitioningDelegate = presenter
 
     super.prepareForSegue(segue, sender: sender)
   }
