@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oAB-Bz-TaE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tFh-B7-Fcy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Transitions-->
         <scene sceneID="q1o-VY-0TT">
             <objects>
                 <tableViewController id="oAB-Bz-TaE" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                             <tableViewSection id="Brh-KC-NRg">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="No1-bE-wbP" style="IBUITableViewCellStyleDefault" id="d16-xz-tg5">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d16-xz-tg5" id="EOb-bR-emF">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -37,7 +37,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="qgE-dG-LF9" style="IBUITableViewCellStyleDefault" id="nj5-cf-pNc">
-                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="108" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nj5-cf-pNc" id="8Su-qC-Aml">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -57,7 +57,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="9ls-iI-4fp" style="IBUITableViewCellStyleDefault" id="qwH-na-sDL">
-                                        <rect key="frame" x="0.0" y="88" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="152" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qwH-na-sDL" id="jed-Wd-EXL">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -77,7 +77,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Xgd-rs-g1J" style="IBUITableViewCellStyleDefault" id="zIp-1C-FRq">
-                                        <rect key="frame" x="0.0" y="132" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="196" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zIp-1C-FRq" id="Iia-28-Snv">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -104,17 +104,28 @@
                             <outlet property="delegate" destination="oAB-Bz-TaE" id="Kgq-Zw-1ML"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Transitions" id="T1j-T2-BL7">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="CMq-NF-6JB">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="Zt3-2n-Jal" kind="unwind" unwindAction="dismissCurrentViewController:" id="OPS-3j-E5J"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ShH-Bu-pJr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Zt3-2n-Jal" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3205.5" y="-289.5"/>
+            <point key="canvasLocation" x="4017.5" y="-289.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Animatable View Controller-->
         <scene sceneID="j4X-Oe-hEs">
             <objects>
-                <viewController id="NTx-bf-G81" sceneMemberID="viewController">
+                <viewController id="NTx-bf-G81" customClass="AnimatableViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="G7z-Tg-1Gv"/>
                         <viewControllerLayoutGuide type="bottom" id="Kjd-MK-vGJ"/>
@@ -184,11 +195,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="transitionAnimationType" value="CubeFromLeft"/>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iNw-ov-HSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="mGz-2k-KHz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4074" y="-289"/>
+            <point key="canvasLocation" x="4885.5" y="-289.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="emT-DW-liW">
@@ -235,7 +249,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MwU-bg-SAk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4507.5" y="-289.5"/>
+            <point key="canvasLocation" x="5319.5" y="-289.5"/>
         </scene>
         <!--Animatable Navigation Controller-->
         <scene sceneID="Ryf-4p-TtM">
@@ -256,7 +270,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aut-7u-fEr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3638.5" y="-289.5"/>
+            <point key="canvasLocation" x="4450.5" y="-289.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="w9j-KN-ZrE">
@@ -303,7 +317,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Td-V3-Teq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4938.5" y="-289.5"/>
+            <point key="canvasLocation" x="5750.5" y="-289.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="zkz-0D-pHw">
@@ -885,6 +899,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2qt-PY-eRd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4938.5" y="1926.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1gA-sk-a4Q">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tFh-B7-Fcy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DwN-gW-PPt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oAB-Bz-TaE" kind="relationship" relationship="rootViewController" id="kCt-Re-gCQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xig-Zd-fJP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3587.5" y="-289.5"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
