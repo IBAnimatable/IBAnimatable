@@ -453,7 +453,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="emc-Jl-Ob8" kind="unwind" unwindAction="dismissCurrentViewController:" id="Caz-tQ-xr5"/>
+                                    <segue destination="emc-Jl-Ob8" kind="unwind" unwindAction="unwindToViewController:" id="OXb-L3-H56"/>
                                 </connections>
                             </button>
                         </subviews>
