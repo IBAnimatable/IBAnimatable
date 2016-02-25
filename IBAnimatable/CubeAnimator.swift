@@ -26,13 +26,13 @@ public class CubeAnimator: NSObject, AnimatedTransitioning {
       self.reverseAnimationType = String(TransitionAnimationType.CubeFromRight)
     case .FromRight:
       self.transitionAnimationType = String(TransitionAnimationType.CubeFromRight)
-      self.reverseAnimationType = String(TransitionAnimationType.CubeFromRight)
+      self.reverseAnimationType = String(TransitionAnimationType.CubeFromLeft)
     case .FromTop:
       self.transitionAnimationType = String(TransitionAnimationType.CubeFromTop)
-      self.reverseAnimationType = String(TransitionAnimationType.CubeFromRight)
+      self.reverseAnimationType = String(TransitionAnimationType.CubeFromBottom)
     case .FromBottom:
       self.transitionAnimationType = String(TransitionAnimationType.CubeFromBottom)
-      self.reverseAnimationType = String(TransitionAnimationType.CubeFromRight)
+      self.reverseAnimationType = String(TransitionAnimationType.CubeFromTop)
     }
     
     super.init()
