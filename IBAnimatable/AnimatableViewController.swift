@@ -63,7 +63,7 @@ import UIKit
     var duration = transitionDuration
     // Set the default duration for transition
     if transitionDuration.isNaN {
-      duration = 0.5
+      duration = 0.35 
     }
     presenter = Presenter(transitionAnimationType: transitionAnimationType, transitionDuration: duration)
   }
