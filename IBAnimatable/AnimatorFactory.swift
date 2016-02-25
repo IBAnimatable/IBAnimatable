@@ -3,7 +3,7 @@
 //  Copyright © 2016 Jake Lin. All rights reserved.
 //
 
-import Foundation
+import UIKit
 /**
  Animator Factory
  */
@@ -11,13 +11,13 @@ struct AnimatorFactory {
   static func generateAnimator(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration) -> AnimatedTransitioning {
     switch transitionAnimationType {
     case .CubeFromLeft:
-      return CubeFromLeftAnimator(transitionDuration: transitionDuration)
+      return CubeAnimator(fromDirection: .FromLeft, transitionDuration: transitionDuration)
     case .CubeFromRight:
-      return CubeFromRightAnimator(transitionDuration: transitionDuration)
+      return CubeAnimator(fromDirection: .FromRight, transitionDuration: transitionDuration)
     case .CubeFromTop:
-      return CubeFromTopAnimator(transitionDuration: transitionDuration)
+      return CubeAnimator(fromDirection: .FromTop, transitionDuration: transitionDuration)
     case .CubeFromBottom:
-      return CubeFromBottomAnimator(transitionDuration: transitionDuration)
+      return CubeAnimator(fromDirection: .FromBottom, transitionDuration: transitionDuration)
     }
   }
 }
