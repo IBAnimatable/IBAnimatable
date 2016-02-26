@@ -41,10 +41,7 @@ public class CubeAnimator: NSObject, AnimatedTransitioning {
 
 extension CubeAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-    if let transitionContext = transitionContext {
-      return transitionContext.isAnimated() ? transitionDuration : 0
-    }
-    return 0
+    return retrieveTransitionDuration(transitionContext)
   }
   
   public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {

@@ -33,7 +33,14 @@ public extension AnimatedTransitioning {
   public func retrieveViewControllers(transitionContext: UIViewControllerContextTransitioning) -> (UIViewController?, UIViewController?, UIView?) {
     return (transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey), transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey), transitionContext.containerView())
   }
-
+  
+  public func retrieveTransitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+    if let transitionContext = transitionContext {
+      return transitionContext.isAnimated() ? transitionDuration : 0
+    }
+    return 0
+  }
+  
   public func animateWithCATransition(transitionContext: UIViewControllerContextTransitioning, type: CATransitionType, subtype: String?) {
     let (_, tempToView, tempContainerView) = retrieveViews(transitionContext)
     guard let toView = tempToView, containerView = tempContainerView else {
