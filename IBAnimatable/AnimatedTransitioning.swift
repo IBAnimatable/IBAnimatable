@@ -29,6 +29,10 @@ public extension AnimatedTransitioning {
   public func retrieveViews(transitionContext: UIViewControllerContextTransitioning) -> (UIView?, UIView?, UIView?) {
     return (transitionContext.viewForKey(UITransitionContextFromViewKey), transitionContext.viewForKey(UITransitionContextToViewKey), transitionContext.containerView())
   }
+  
+  public func retrieveViewControllers(transitionContext: UIViewControllerContextTransitioning) -> (UIViewController?, UIViewController?, UIView?) {
+    return (transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey), transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey), transitionContext.containerView())
+  }
 
   public func animateWithCATransition(transitionContext: UIViewControllerContextTransitioning, type: CATransitionType, subtype: String?) {
     let (_, tempToView, tempContainerView) = retrieveViews(transitionContext)

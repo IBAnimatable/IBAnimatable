@@ -50,7 +50,6 @@ import UIKit
     super.prepareForSegue(segue, sender: sender)
   }
 
-
   // MARK: - Private
   // Must have a property to keep the reference alive because `UIViewController.transitioningDelegate` is `weak`
   private var presenter: Presenter?
