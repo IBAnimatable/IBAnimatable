@@ -10,7 +10,7 @@ import UIKit
 public class CubeAnimator: NSObject, AnimatedTransitioning {
   // MARK: - AnimatorProtocol
   public var transitionAnimationType: String
-  public var transitionDuration: Duration = .NaN
+  public var transitionDuration: Duration = 0.35
   public var reverseAnimationType: String?
   
   // MARK: - private
@@ -41,7 +41,10 @@ public class CubeAnimator: NSObject, AnimatedTransitioning {
 
 extension CubeAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-    return transitionDuration
+    if let transitionContext = transitionContext {
+      return transitionContext.isAnimated() ? transitionDuration : 0
+    }
+    return 0
   }
   
   public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {

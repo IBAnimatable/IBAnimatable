@@ -11,7 +11,7 @@ import UIKit
 public class FlipAnimator: NSObject, AnimatedTransitioning {
   // MARK: - AnimatorProtocol
   public var transitionAnimationType: String
-  public var transitionDuration: Duration = .NaN
+  public var transitionDuration: Duration = 0.35
   public var reverseAnimationType: String?
   
   // MARK: - private
@@ -47,7 +47,11 @@ public class FlipAnimator: NSObject, AnimatedTransitioning {
 
 extension FlipAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-    return transitionDuration
+    if let transitionContext = transitionContext {
+      return transitionContext.isAnimated() ? transitionDuration : 0
+    }
+    
+    return 0
   }
   
   public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
@@ -57,7 +61,7 @@ extension FlipAnimator: UIViewControllerAnimatedTransitioning {
       return
     }
     
-    UIView.transitionFromView(fromView, toView: toView, duration: 0.5, options: animationOption) { _ -> Void in
+    UIView.transitionFromView(fromView, toView: toView, duration: transitionDuration(transitionContext), options: animationOption) { _ -> Void in
       transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
     }
   }
