@@ -9,10 +9,10 @@ import UIKit
  Navigator for `UINavigationController` to support custom transition animation for Push and Pop
  */
 public class Navigator: NSObject {
-  var transitionAnimationType: String?
+  var transitionAnimationType: TransitionAnimationType
   var transitionDuration: Duration
 
-  public init(transitionAnimationType: String?, transitionDuration: Duration) {
+  public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration) {
     self.transitionAnimationType = transitionAnimationType
     self.transitionDuration = transitionDuration
     super.init()
@@ -21,16 +21,12 @@ public class Navigator: NSObject {
 
 extension Navigator: UINavigationControllerDelegate {
   public func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    guard let unwrappedTransitionAnimationType = transitionAnimationType, transitionAnimationType = TransitionAnimationType(rawValue: unwrappedTransitionAnimationType) else {
-      return nil
-    }
-
     let animator = AnimatorFactory.generateAnimator(transitionAnimationType, transitionDuration: transitionDuration)
     if operation == .Push {
       return animator
     } else if operation == .Pop {
       // Use the reverse animation
-      if let reverseAnimationType = animator.reverseAnimationType, reverseTransitionAnimationType = TransitionAnimationType(rawValue: reverseAnimationType) {
+      if let reverseTransitionAnimationType = animator.reverseAnimationType {
         return AnimatorFactory.generateAnimator(reverseTransitionAnimationType, transitionDuration: transitionDuration)
       }
     }

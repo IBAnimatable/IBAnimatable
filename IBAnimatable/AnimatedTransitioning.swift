@@ -10,9 +10,9 @@ import UIKit
 public protocol AnimatedTransitioning: UIViewControllerAnimatedTransitioning {
   
   /**
-   String value of `TransitionAnimationType` enum
+   Value of `TransitionAnimationType` enum
    */
-  var transitionAnimationType: String { get set }
+  var transitionAnimationType: TransitionAnimationType { get set }
   
   /**
    Transition duration
@@ -22,7 +22,7 @@ public protocol AnimatedTransitioning: UIViewControllerAnimatedTransitioning {
   /**
    Reverse animation type: used to specify the revers animation for pop or dismiss.
    */
-  var reverseAnimationType: String? { get set }
+  var reverseAnimationType: TransitionAnimationType? { get set }
 }
 
 public extension AnimatedTransitioning {

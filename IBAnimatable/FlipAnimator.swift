@@ -10,9 +10,9 @@ import UIKit
  */
 public class FlipAnimator: NSObject, AnimatedTransitioning {
   // MARK: - AnimatorProtocol
-  public var transitionAnimationType: String
+  public var transitionAnimationType: TransitionAnimationType
   public var transitionDuration: Duration = 0.35
-  public var reverseAnimationType: String?
+  public var reverseAnimationType: TransitionAnimationType?
   
   // MARK: - private
   private var fromDirection: TransitionFromDirection
@@ -24,20 +24,20 @@ public class FlipAnimator: NSObject, AnimatedTransitioning {
     
     switch fromDirection {
     case .FromLeft:
-      self.transitionAnimationType = String(TransitionAnimationType.FlipFromLeft)
-      self.reverseAnimationType = String(TransitionAnimationType.FlipFromRight)
+      self.transitionAnimationType = TransitionAnimationType.FlipFromLeft
+      self.reverseAnimationType = TransitionAnimationType.FlipFromRight
       self.animationOption = .TransitionFlipFromLeft
     case .FromRight:
-      self.transitionAnimationType = String(TransitionAnimationType.FlipFromRight)
-      self.reverseAnimationType = String(TransitionAnimationType.FlipFromRight)
+      self.transitionAnimationType = TransitionAnimationType.FlipFromRight
+      self.reverseAnimationType = TransitionAnimationType.FlipFromRight
       self.animationOption = .TransitionFlipFromRight
     case .FromTop:
-      self.transitionAnimationType = String(TransitionAnimationType.FlipFromTop)
-      self.reverseAnimationType = String(TransitionAnimationType.FlipFromRight)
+      self.transitionAnimationType = TransitionAnimationType.FlipFromTop
+      self.reverseAnimationType = TransitionAnimationType.FlipFromRight
       self.animationOption = .TransitionFlipFromTop
     case .FromBottom:
-      self.transitionAnimationType = String(TransitionAnimationType.FlipFromBottom)
-      self.reverseAnimationType = String(TransitionAnimationType.FlipFromRight)
+      self.transitionAnimationType = TransitionAnimationType.FlipFromBottom
+      self.reverseAnimationType = TransitionAnimationType.FlipFromRight
       self.animationOption = .TransitionFlipFromBottom
     }
     

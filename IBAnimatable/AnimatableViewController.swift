@@ -55,7 +55,7 @@ import UIKit
   private var presenter: Presenter?
 
   private func configureTransitioningDelegate() {
-    guard let transitionAnimationType = transitionAnimationType else {
+    guard let transitionAnimationType = transitionAnimationType, animationType = TransitionAnimationType(rawValue: transitionAnimationType) else {
       return
     }
     
@@ -64,6 +64,6 @@ import UIKit
     if transitionDuration.isNaN {
       duration = 0.35 
     }
-    presenter = Presenter(transitionAnimationType: transitionAnimationType, transitionDuration: duration)
+    presenter = Presenter(transitionAnimationType: animationType, transitionDuration: duration)
   }
 }

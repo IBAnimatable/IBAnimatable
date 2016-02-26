@@ -22,7 +22,7 @@ public class AnimatableNavigationController: UINavigationController, TransitionA
   private var navigator: Navigator?
 
   private func configureNavigationControllerDelegate() {
-    guard let transitionAnimationType = transitionAnimationType else {
+    guard let transitionAnimationType = transitionAnimationType, animationType = TransitionAnimationType(rawValue: transitionAnimationType) else {
       return
     }
     var duration = transitionDuration
@@ -30,7 +30,7 @@ public class AnimatableNavigationController: UINavigationController, TransitionA
     if transitionDuration.isNaN {
       duration = 0.35
     }
-    navigator = Navigator(transitionAnimationType: transitionAnimationType, transitionDuration: duration)
+    navigator = Navigator(transitionAnimationType: animationType, transitionDuration: duration)
     delegate = navigator
   }
 }

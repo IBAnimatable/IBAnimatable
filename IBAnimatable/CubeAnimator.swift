@@ -9,9 +9,9 @@ import UIKit
  */
 public class CubeAnimator: NSObject, AnimatedTransitioning {
   // MARK: - AnimatorProtocol
-  public var transitionAnimationType: String
+  public var transitionAnimationType: TransitionAnimationType
   public var transitionDuration: Duration = 0.35
-  public var reverseAnimationType: String?
+  public var reverseAnimationType: TransitionAnimationType?
   
   // MARK: - private
   private var fromDirection: TransitionFromDirection
@@ -22,17 +22,17 @@ public class CubeAnimator: NSObject, AnimatedTransitioning {
     
     switch fromDirection {
     case .FromLeft:
-      self.transitionAnimationType = String(TransitionAnimationType.CubeFromLeft)
-      self.reverseAnimationType = String(TransitionAnimationType.CubeFromRight)
+      self.transitionAnimationType = TransitionAnimationType.CubeFromLeft
+      self.reverseAnimationType = TransitionAnimationType.CubeFromRight
     case .FromRight:
-      self.transitionAnimationType = String(TransitionAnimationType.CubeFromRight)
-      self.reverseAnimationType = String(TransitionAnimationType.CubeFromLeft)
+      self.transitionAnimationType = TransitionAnimationType.CubeFromRight
+      self.reverseAnimationType = TransitionAnimationType.CubeFromLeft
     case .FromTop:
-      self.transitionAnimationType = String(TransitionAnimationType.CubeFromTop)
-      self.reverseAnimationType = String(TransitionAnimationType.CubeFromBottom)
+      self.transitionAnimationType = TransitionAnimationType.CubeFromTop
+      self.reverseAnimationType = TransitionAnimationType.CubeFromBottom
     case .FromBottom:
-      self.transitionAnimationType = String(TransitionAnimationType.CubeFromBottom)
-      self.reverseAnimationType = String(TransitionAnimationType.CubeFromTop)
+      self.transitionAnimationType = TransitionAnimationType.CubeFromBottom
+      self.reverseAnimationType = TransitionAnimationType.CubeFromTop
     }
     
     super.init()
