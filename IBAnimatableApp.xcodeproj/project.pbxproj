@@ -116,10 +116,10 @@
 		AEEE200B1C18CFD200AD033B /* NavigationBarDesginable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEE200A1C18CFD200AD033B /* NavigationBarDesginable.swift */; };
 		AEEE200D1C18D10C00AD033B /* DesignableNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEE200C1C18D10C00AD033B /* DesignableNavigationBar.swift */; };
 		CAB5610BC7B5D20C927AAB87 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5692C91C9ECC8018DE83E /* Navigator.swift */; };
-		CAB56443CD667F41413A560F /* CATransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56645FCD11BEC66200818 /* CATransitionType.swift */; };
+		CAB56443CD667F41413A560F /* SystemTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56645FCD11BEC66200818 /* SystemTransitionType.swift */; };
 		CAB569B1A6DDC08165BE389A /* FillDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB562E75DABEED7FCE0F309 /* FillDesignable.swift */; };
 		CAB56CB79477DEE19E7B0420 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5692C91C9ECC8018DE83E /* Navigator.swift */; };
-		CAB56E8FA0F35057290D67C4 /* CATransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56645FCD11BEC66200818 /* CATransitionType.swift */; };
+		CAB56E8FA0F35057290D67C4 /* SystemTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56645FCD11BEC66200818 /* SystemTransitionType.swift */; };
 		E2472EA41C6F97F800A20E27 /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2472EA31C6F97F800A20E27 /* ColorType.swift */; };
 		E2472EA51C6F97F800A20E27 /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2472EA31C6F97F800A20E27 /* ColorType.swift */; };
 		E2E28E6B1C6A6C30003F3852 /* GradientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6A1C6A6C30003F3852 /* GradientType.swift */; };
@@ -202,7 +202,7 @@
 		AEEE200A1C18CFD200AD033B /* NavigationBarDesginable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarDesginable.swift; sourceTree = "<group>"; };
 		AEEE200C1C18D10C00AD033B /* DesignableNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableNavigationBar.swift; sourceTree = "<group>"; };
 		CAB562E75DABEED7FCE0F309 /* FillDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillDesignable.swift; sourceTree = "<group>"; };
-		CAB56645FCD11BEC66200818 /* CATransitionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CATransitionType.swift; sourceTree = "<group>"; };
+		CAB56645FCD11BEC66200818 /* SystemTransitionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemTransitionType.swift; sourceTree = "<group>"; };
 		CAB5692C91C9ECC8018DE83E /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		D7E765671C4C8961008C3116 /* IBAnimatable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = IBAnimatable.playground; sourceTree = "<group>"; };
 		E2472EA31C6F97F800A20E27 /* ColorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorType.swift; sourceTree = "<group>"; };
@@ -374,7 +374,7 @@
 				AED97B851C1710A900D2B0B8 /* BorderSide.swift */,
 				AE8C53AF1C0F1C0400A775AF /* GradientStartPoint.swift */,
 				E2E28E6A1C6A6C30003F3852 /* GradientType.swift */,
-				CAB56645FCD11BEC66200818 /* CATransitionType.swift */,
+				CAB56645FCD11BEC66200818 /* SystemTransitionType.swift */,
 				E2472EA31C6F97F800A20E27 /* ColorType.swift */,
 				AE18787D1C1D980D00300246 /* MaskType.swift */,
 				AE154B7D1C7D061A0093C05B /* TransitionAnimatableType.swift */,
@@ -593,7 +593,7 @@
 				AE6B017E1C2A445100950BB2 /* AnimatableImageView.swift in Sources */,
 				AE6B01761C2A444900950BB2 /* TableViewCellDesignable.swift in Sources */,
 				CAB5610BC7B5D20C927AAB87 /* Navigator.swift in Sources */,
-				CAB56443CD667F41413A560F /* CATransitionType.swift in Sources */,
+				CAB56443CD667F41413A560F /* SystemTransitionType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,7 +657,7 @@
 				AEEE200B1C18CFD200AD033B /* NavigationBarDesginable.swift in Sources */,
 				33A8B9EF1C7E7A4C00082529 /* TransitionFromDirection.swift in Sources */,
 				CAB56CB79477DEE19E7B0420 /* Navigator.swift in Sources */,
-				CAB56E8FA0F35057290D67C4 /* CATransitionType.swift in Sources */,
+				CAB56E8FA0F35057290D67C4 /* SystemTransitionType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

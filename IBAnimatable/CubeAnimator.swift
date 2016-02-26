@@ -45,6 +45,6 @@ extension CubeAnimator: UIViewControllerAnimatedTransitioning {
   }
   
   public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-    animateWithCATransition(transitionContext, type: CATransitionType.cube, subtype: fromDirection.stringValue)
+    animateWithCATransition(transitionContext, type: SystemTransitionType.Cube, subtype: fromDirection.stringValue)
   }
 }
