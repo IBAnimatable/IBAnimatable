@@ -396,7 +396,7 @@ public extension Animatable where Self: UIView {
       animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       animation.autoreverses = true
       self.layer.addAnimation(animation, forKey: "fade")
-      }, completion: completion)
+    }, completion: completion)
   }
   
   public func fadeInOut(completion: AnimatableCompletion? = nil) {
@@ -410,7 +410,8 @@ public extension Animatable where Self: UIView {
       animation.autoreverses = true
       animation.removedOnCompletion = false
       self.layer.addAnimation(animation, forKey: "fade")
-      }, completion: {
+    },
+    completion: {
       self.alpha = 0
       completion?()
     })
@@ -443,7 +444,7 @@ public extension Animatable where Self: UIView {
       animation.repeatCount = self.repeatCount
       animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       self.layer.addAnimation(animation, forKey: "shake")
-      }, completion: completion)
+    }, completion: completion)
   }
   
   public func pop(completion: AnimatableCompletion? = nil) {
@@ -457,7 +458,7 @@ public extension Animatable where Self: UIView {
       animation.repeatCount = self.repeatCount
       animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       self.layer.addAnimation(animation, forKey: "pop")
-      }, completion: completion)
+    }, completion: completion)
   }
   
   public func morph(completion: AnimatableCompletion? = nil) {
@@ -478,7 +479,7 @@ public extension Animatable where Self: UIView {
       animationGroup.repeatCount = self.repeatCount
       animationGroup.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       self.layer.addAnimation(animationGroup, forKey: "morph")
-      }, completion: completion)
+    }, completion: completion)
   }
 
   public func squeeze(completion: AnimatableCompletion? = nil) {
@@ -499,7 +500,7 @@ public extension Animatable where Self: UIView {
       animationGroup.repeatCount = self.repeatCount
       animationGroup.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       self.layer.addAnimation(animationGroup, forKey: "squeeze")
-      }, completion: completion)
+    }, completion: completion)
   }
   
   public func flipX(completion: AnimatableCompletion? = nil) {
@@ -524,7 +525,7 @@ public extension Animatable where Self: UIView {
       animation.autoreverses = true
       animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       self.layer.addAnimation(animation, forKey: "flash")
-      }, completion: completion)
+    }, completion: completion)
   }
   
   public func wobble(completion: AnimatableCompletion? = nil) {
@@ -546,7 +547,7 @@ public extension Animatable where Self: UIView {
       animationGroup.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       animationGroup.repeatCount = self.repeatCount
       self.layer.addAnimation(animationGroup, forKey: "wobble")
-      }, completion: completion)
+    }, completion: completion)
   }
   
   public func swing(completion: AnimatableCompletion? = nil) {
@@ -559,7 +560,7 @@ public extension Animatable where Self: UIView {
       animation.repeatCount = self.repeatCount
       animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       self.layer.addAnimation(animation, forKey: "swing")
-      }, completion: completion)
+    }, completion: completion)
   }
 
   public func rotate(clockwise clockwise: Bool = true, completion: AnimatableCompletion? = nil) {
@@ -572,7 +573,7 @@ public extension Animatable where Self: UIView {
       animation.autoreverses = false
       animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       self.layer.addAnimation(animation, forKey: "rotate")
-      }, completion: completion)
+    }, completion: completion)
   }
   
   public func moveTo(completion: AnimatableCompletion? = nil) {
@@ -651,11 +652,16 @@ public extension Animatable where Self: UIView {
   }
   
   private func animateWithAlpha(alpha: CGFloat, completion: AnimatableCompletion? = nil) {
-    UIView.animateWithDuration(duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [], animations: { () -> Void in
-      self.alpha = alpha
-      }, completion: { (completed) -> Void in
-        completion?()
-    })
+    UIView.animateWithDuration(duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [],
+      animations: {
+        self.alpha = alpha
+      },
+      completion: { completed in
+        if completed {
+          completion?()
+        }
+      }
+    )
   }
 
   private func animateToWithX(x: CGFloat, y: CGFloat, completion: AnimatableCompletion? = nil) {
@@ -664,11 +670,16 @@ public extension Animatable where Self: UIView {
 
   private func animateTo(x: CGFloat, _ y: CGFloat, _ completion: AnimatableCompletion? = nil) {
     let translate = CGAffineTransformMakeTranslation(x, y)
-    UIView.animateWithDuration(duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [], animations: { () -> Void in
-      self.transform = translate
-      }, completion: { (completed) -> Void in
-        completion?()
-    })
+    UIView.animateWithDuration(duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [],
+      animations: {
+        self.transform = translate
+      },
+      completion: { completed in
+        if completed {
+          completion?()
+        }
+      }
+    )
   }
 
   private func animateIn(x: CGFloat, _ y: CGFloat, _ scaleX: CGFloat, _ scaleY: CGFloat, _ alpha: CGFloat, _ completion: AnimatableCompletion? = nil) {
@@ -677,12 +688,17 @@ public extension Animatable where Self: UIView {
     let translateAndScale = CGAffineTransformConcat(translate, scale)
     transform = translateAndScale
 
-    UIView.animateWithDuration(duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [], animations: { () -> Void in
-      self.transform = CGAffineTransformIdentity
-      self.alpha = alpha
-      }, completion: { (completed) -> Void in
-        completion?()
-    })
+    UIView.animateWithDuration(duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [],
+      animations: {
+        self.transform = CGAffineTransformIdentity
+        self.alpha = alpha
+      },
+      completion: { completed in
+        if completed {
+          completion?()
+        }
+      }
+    )
   }
 
   private func animateOut(x: CGFloat, _ y: CGFloat, _ scaleX: CGFloat, _ scaleY: CGFloat, _ alpha: CGFloat, _ completion: AnimatableCompletion? = nil) {
@@ -690,16 +706,20 @@ public extension Animatable where Self: UIView {
     let scale = CGAffineTransformMakeScale(scaleX, scaleY)
     let translateAndScale = CGAffineTransformConcat(translate, scale)
 
-    UIView.animateWithDuration(duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [], animations: { () -> Void in
-      self.transform = translateAndScale
-      self.alpha = alpha
-      }, completion: { (completed) -> Void in
-        completion?()
-      })
+    UIView.animateWithDuration(duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [],
+      animations: {
+        self.transform = translateAndScale
+        self.alpha = alpha
+      },
+      completion: { completed in
+        if completed {
+          completion?()
+        }
+      }
+    )
   }
   
   // MARK: Private helper
-  
   private func screenSize() -> CGSize {
     return UIScreen.mainScreen().bounds.size
   }

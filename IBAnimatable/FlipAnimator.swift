@@ -57,7 +57,7 @@ extension FlipAnimator: UIViewControllerAnimatedTransitioning {
       return
     }
     
-    UIView.transitionFromView(fromView, toView: toView, duration: transitionDuration(transitionContext), options: animationOption) { _ -> Void in
+    UIView.transitionFromView(fromView, toView: toView, duration: transitionDuration(transitionContext), options: animationOption) { _ in
       transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
     }
   }
