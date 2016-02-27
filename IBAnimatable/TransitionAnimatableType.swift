@@ -12,12 +12,12 @@ public enum TransitionAnimationType: String {
   case Fade             // ToView fades in and FromeView fades out
   case FadeIn           // ToView fades in
   case FadeOut          // FromView Fades out
-  case CubeFromLeft
-  case CubeFromRight
-  case CubeFromTop
-  case CubeFromBottom
-  case FlipFromLeft
-  case FlipFromRight
-  case FlipFromTop
-  case FlipFromBottom
+  case SystemCubeFromLeft
+  case SystemCubeFromRight
+  case SystemCubeFromTop
+  case SystemCubeFromBottom
+  case SystemFlipFromLeft
+  case SystemFlipFromRight
+  case SystemFlipFromTop
+  case SystemFlipFromBottom
 }

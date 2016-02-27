@@ -22,17 +22,17 @@ public class SystemCubeAnimator: NSObject, AnimatedTransitioning {
     
     switch fromDirection {
     case .FromLeft:
-      self.transitionAnimationType = TransitionAnimationType.CubeFromLeft
-      self.reverseAnimationType = TransitionAnimationType.CubeFromRight
+      self.transitionAnimationType = .SystemCubeFromLeft
+      self.reverseAnimationType = .SystemCubeFromRight
     case .FromRight:
-      self.transitionAnimationType = TransitionAnimationType.CubeFromRight
-      self.reverseAnimationType = TransitionAnimationType.CubeFromLeft
+      self.transitionAnimationType = .SystemCubeFromRight
+      self.reverseAnimationType = .SystemCubeFromLeft
     case .FromTop:
-      self.transitionAnimationType = TransitionAnimationType.CubeFromTop
-      self.reverseAnimationType = TransitionAnimationType.CubeFromBottom
+      self.transitionAnimationType = .SystemCubeFromTop
+      self.reverseAnimationType = .SystemCubeFromBottom
     case .FromBottom:
-      self.transitionAnimationType = TransitionAnimationType.CubeFromBottom
-      self.reverseAnimationType = TransitionAnimationType.CubeFromTop
+      self.transitionAnimationType = .SystemCubeFromBottom
+      self.reverseAnimationType = .SystemCubeFromTop
     }
     
     super.init()

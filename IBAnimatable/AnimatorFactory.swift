@@ -16,21 +16,21 @@ struct AnimatorFactory {
       return FadeAnimator(fadeType: .FadeIn, transitionDuration: transitionDuration)
     case .FadeOut:
       return FadeAnimator(fadeType: .FadeOut, transitionDuration: transitionDuration)
-    case .CubeFromLeft:
+    case .SystemCubeFromLeft:
       return SystemCubeAnimator(fromDirection: .FromLeft, transitionDuration: transitionDuration)
-    case .CubeFromRight:
+    case .SystemCubeFromRight:
       return SystemCubeAnimator(fromDirection: .FromRight, transitionDuration: transitionDuration)
-    case .CubeFromTop:
+    case .SystemCubeFromTop:
       return SystemCubeAnimator(fromDirection: .FromTop, transitionDuration: transitionDuration)
-    case .CubeFromBottom:
+    case .SystemCubeFromBottom:
       return SystemCubeAnimator(fromDirection: .FromBottom, transitionDuration: transitionDuration)
-    case .FlipFromLeft:
+    case .SystemFlipFromLeft:
       return SystemFlipAnimator(fromDirection: .FromLeft, transitionDuration: transitionDuration)
-    case .FlipFromRight:
+    case .SystemFlipFromRight:
       return SystemFlipAnimator(fromDirection: .FromRight, transitionDuration: transitionDuration)
-    case .FlipFromTop:
+    case .SystemFlipFromTop:
       return SystemFlipAnimator(fromDirection: .FromTop, transitionDuration: transitionDuration)
-    case .FlipFromBottom:
+    case .SystemFlipFromBottom:
       return SystemFlipAnimator(fromDirection: .FromBottom, transitionDuration: transitionDuration)
     }
   }

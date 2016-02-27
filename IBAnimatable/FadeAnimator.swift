@@ -20,14 +20,14 @@ public class FadeAnimator: NSObject , AnimatedTransitioning {
     
     switch fadeType {
     case .Fade:
-      self.transitionAnimationType = TransitionAnimationType.Fade
-      self.reverseAnimationType = TransitionAnimationType.Fade
+      self.transitionAnimationType = .Fade
+      self.reverseAnimationType = .Fade
     case .FadeIn:
-      self.transitionAnimationType = TransitionAnimationType.FadeIn
-      self.reverseAnimationType = TransitionAnimationType.FadeOut
+      self.transitionAnimationType = .FadeIn
+      self.reverseAnimationType = .FadeOut
     case .FadeOut:
-      self.transitionAnimationType = TransitionAnimationType.FadeOut
-      self.reverseAnimationType = TransitionAnimationType.FadeIn
+      self.transitionAnimationType = .FadeOut
+      self.reverseAnimationType = .FadeIn
     }
     
     super.init()
