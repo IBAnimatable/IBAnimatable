@@ -5,9 +5,9 @@
 import UIKit
 
 /**
- Cube Animator - To support 3D animation (Four rotation directions supported: left, right, top, bottom)
+ System Cube Animator - To support 3D animation (Four rotation directions supported: left, right, top, bottom)
  */
-public class CubeAnimator: NSObject, AnimatedTransitioning {
+public class SystemCubeAnimator: NSObject, AnimatedTransitioning {
   // MARK: - AnimatorProtocol
   public var transitionAnimationType: TransitionAnimationType
   public var transitionDuration: Duration = 0.35
@@ -39,7 +39,7 @@ public class CubeAnimator: NSObject, AnimatedTransitioning {
   }
 }
 
-extension CubeAnimator: UIViewControllerAnimatedTransitioning {
+extension SystemCubeAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
     return retrieveTransitionDuration(transitionContext)
   }

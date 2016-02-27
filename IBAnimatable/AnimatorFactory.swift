@@ -10,22 +10,28 @@ import UIKit
 struct AnimatorFactory {
   static func generateAnimator(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration) -> AnimatedTransitioning {
     switch transitionAnimationType {
+    case .Fade:
+      return FadeAnimator(fadeType: .Fade, transitionDuration: transitionDuration)
+    case .FadeIn:
+      return FadeAnimator(fadeType: .FadeIn, transitionDuration: transitionDuration)
+    case .FadeOut:
+      return FadeAnimator(fadeType: .FadeOut, transitionDuration: transitionDuration)
     case .CubeFromLeft:
-      return CubeAnimator(fromDirection: .FromLeft, transitionDuration: transitionDuration)
+      return SystemCubeAnimator(fromDirection: .FromLeft, transitionDuration: transitionDuration)
     case .CubeFromRight:
-      return CubeAnimator(fromDirection: .FromRight, transitionDuration: transitionDuration)
+      return SystemCubeAnimator(fromDirection: .FromRight, transitionDuration: transitionDuration)
     case .CubeFromTop:
-      return CubeAnimator(fromDirection: .FromTop, transitionDuration: transitionDuration)
+      return SystemCubeAnimator(fromDirection: .FromTop, transitionDuration: transitionDuration)
     case .CubeFromBottom:
-      return CubeAnimator(fromDirection: .FromBottom, transitionDuration: transitionDuration)
+      return SystemCubeAnimator(fromDirection: .FromBottom, transitionDuration: transitionDuration)
     case .FlipFromLeft:
-      return FlipAnimator(fromDirection: .FromLeft, transitionDuration: transitionDuration)
+      return SystemFlipAnimator(fromDirection: .FromLeft, transitionDuration: transitionDuration)
     case .FlipFromRight:
-      return FlipAnimator(fromDirection: .FromRight, transitionDuration: transitionDuration)
+      return SystemFlipAnimator(fromDirection: .FromRight, transitionDuration: transitionDuration)
     case .FlipFromTop:
-      return FlipAnimator(fromDirection: .FromTop, transitionDuration: transitionDuration)
+      return SystemFlipAnimator(fromDirection: .FromTop, transitionDuration: transitionDuration)
     case .FlipFromBottom:
-      return FlipAnimator(fromDirection: .FromBottom, transitionDuration: transitionDuration)
+      return SystemFlipAnimator(fromDirection: .FromBottom, transitionDuration: transitionDuration)
     }
   }
 }

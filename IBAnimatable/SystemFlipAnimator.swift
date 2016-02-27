@@ -6,9 +6,9 @@
 import UIKit
 
 /**
- Cube Animator - To support Flip animation (Four flip directions supported: left, right, top, bottom)
+ System Flip Animator - To support Flip animation (Four flip directions supported: left, right, top, bottom)
  */
-public class FlipAnimator: NSObject, AnimatedTransitioning {
+public class SystemFlipAnimator: NSObject, AnimatedTransitioning {
   // MARK: - AnimatorProtocol
   public var transitionAnimationType: TransitionAnimationType
   public var transitionDuration: Duration = 0.35
@@ -45,7 +45,7 @@ public class FlipAnimator: NSObject, AnimatedTransitioning {
   }
 }
 
-extension FlipAnimator: UIViewControllerAnimatedTransitioning {
+extension SystemFlipAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
     return retrieveTransitionDuration(transitionContext)
   }

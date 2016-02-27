@@ -9,6 +9,9 @@ import Foundation
  Predefined Transition Animation Type
  */
 public enum TransitionAnimationType: String {
+  case Fade             // ToView fades in and FromeView fades out
+  case FadeIn           // ToView fades in
+  case FadeOut          // FromView Fades out
   case CubeFromLeft
   case CubeFromRight
   case CubeFromTop
