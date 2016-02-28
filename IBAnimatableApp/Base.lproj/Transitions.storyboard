@@ -165,7 +165,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="9Qt-ed-0ZI" kind="presentation" id="WyK-21-zHP"/>
+                                            <segue destination="9Qt-ed-0ZI" kind="presentation" customClass="PresentFadeSegue" customModule="IBAnimatableApp" customModuleProvider="target" id="WyK-21-zHP"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -195,9 +195,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="transitionAnimationType" value="Fade"/>
-                    </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iNw-ov-HSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="mGz-2k-KHz" userLabel="Exit" sceneMemberID="exit"/>
@@ -440,7 +437,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lU-N7-UdB" userLabel="present" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
-                                <rect key="frame" x="40" y="304" width="295" height="60"/>
+                                <rect key="frame" x="40" y="303" width="295" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Gu3-mh-kVd"/>
                                 </constraints>
