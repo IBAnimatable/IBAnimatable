@@ -8,7 +8,7 @@ import UIKit
 var fade: Presenter?
 public class PresentFadeSegue: UIStoryboardSegue {
   public override func perform() {
-    fade = Presenter(transitionAnimationType: .Fade, transitionDuration: 0.35)
+    fade = Presenter(transitionAnimationType: .Fade, transitionDuration: defaultTransitionDuration)
     destinationViewController.transitioningDelegate = fade
     sourceViewController.presentViewController(destinationViewController, animated: true, completion: nil)
   }
