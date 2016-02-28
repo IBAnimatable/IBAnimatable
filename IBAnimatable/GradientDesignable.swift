@@ -59,7 +59,7 @@ public extension GradientDesignable where Self: UIView {
       gradientLayer.endPoint = CGPoint(x: 1, y: 1)
     }
     
-    let gradientView = GradientView(frame: self.bounds, layer: gradientLayer)
+    let gradientView = GradientView(frame: bounds, layer: gradientLayer)
     let oldGradientView = viewWithTag(gradientView.tag)
     oldGradientView?.removeFromSuperview()
     self.insertSubview(gradientView, atIndex: 0)

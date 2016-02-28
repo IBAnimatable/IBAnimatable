@@ -9,8 +9,15 @@ import Foundation
  Predefined Transition Animation Type
  */
 public enum TransitionAnimationType: String {
-  case CubeFromLeft
-  case CubeFromRight
-  case CubeFromTop
-  case CubeFromBottom
+  case Fade             // ToView fades in and FromeView fades out
+  case FadeIn           // ToView fades in
+  case FadeOut          // FromView Fades out
+  case SystemCubeFromLeft
+  case SystemCubeFromRight
+  case SystemCubeFromTop
+  case SystemCubeFromBottom
+  case SystemFlipFromLeft
+  case SystemFlipFromRight
+  case SystemFlipFromTop
+  case SystemFlipFromBottom
 }

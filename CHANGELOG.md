@@ -7,11 +7,18 @@ All notable changes to this project will be documented in this file.
 ### Next
 
 #### API breaking changes
-TBD
+
+- Remove `DesignableViewController`, use `AnimatableViewController` instead.
 
 #### Enhancements
 
 - New IBAnimatable icon 🎊
+- Add `AnimatableNavigationController` to support custom Push and Pop transition animations
+- Add `AnimatableViewController` to support custom Present and Dismiss transition animations
+- Add `SystemCubeAnimator` to support `SystemCubeFromLeft`, `SystemCubeFromRight`, `SystemCubeFromTop` and `SystemCubeFromBottom` transition animations
+- Add `SystemFlipAnimator` to support `SystemFlipFromLeft`, `SystemFlipFromRight`, `SystemFlipFromTop` and `SystemFlipFromBottom` transition animations
+- Add `FadeAnimator` to support `Fade`, `FadeIn` and `FadeOut` transition animations
+- Add `CALayerExtension` to simplify CALayer animations with completion closure.
 
 #### Bugfixes
 

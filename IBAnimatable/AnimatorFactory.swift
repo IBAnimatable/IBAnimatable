@@ -3,21 +3,35 @@
 //  Copyright © 2016 Jake Lin. All rights reserved.
 //
 
-import Foundation
+import UIKit
 /**
  Animator Factory
  */
 struct AnimatorFactory {
   static func generateAnimator(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration) -> AnimatedTransitioning {
     switch transitionAnimationType {
-    case .CubeFromLeft:
-      return CubeFromLeftAnimator(transitionDuration: transitionDuration)
-    case .CubeFromRight:
-      return CubeFromRightAnimator(transitionDuration: transitionDuration)
-    case .CubeFromTop:
-      return CubeFromTopAnimator(transitionDuration: transitionDuration)
-    case .CubeFromBottom:
-      return CubeFromBottomAnimator(transitionDuration: transitionDuration)
+    case .Fade:
+      return FadeAnimator(fadeType: .Fade, transitionDuration: transitionDuration)
+    case .FadeIn:
+      return FadeAnimator(fadeType: .FadeIn, transitionDuration: transitionDuration)
+    case .FadeOut:
+      return FadeAnimator(fadeType: .FadeOut, transitionDuration: transitionDuration)
+    case .SystemCubeFromLeft:
+      return SystemCubeAnimator(fromDirection: .FromLeft, transitionDuration: transitionDuration)
+    case .SystemCubeFromRight:
+      return SystemCubeAnimator(fromDirection: .FromRight, transitionDuration: transitionDuration)
+    case .SystemCubeFromTop:
+      return SystemCubeAnimator(fromDirection: .FromTop, transitionDuration: transitionDuration)
+    case .SystemCubeFromBottom:
+      return SystemCubeAnimator(fromDirection: .FromBottom, transitionDuration: transitionDuration)
+    case .SystemFlipFromLeft:
+      return SystemFlipAnimator(fromDirection: .FromLeft, transitionDuration: transitionDuration)
+    case .SystemFlipFromRight:
+      return SystemFlipAnimator(fromDirection: .FromRight, transitionDuration: transitionDuration)
+    case .SystemFlipFromTop:
+      return SystemFlipAnimator(fromDirection: .FromTop, transitionDuration: transitionDuration)
+    case .SystemFlipFromBottom:
+      return SystemFlipAnimator(fromDirection: .FromBottom, transitionDuration: transitionDuration)
     }
   }
 }
