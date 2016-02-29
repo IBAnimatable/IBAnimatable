@@ -88,6 +88,7 @@
 		AE6B01871C2A445400950BB2 /* AnimatableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FAD401C1ED41D00B5289B /* AnimatableViewController.swift */; };
 		AE6B01881C2A445800950BB2 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FAD3A1C1ECA4200B5289B /* UIViewControllerExtension.swift */; };
 		AE6B01891C2A445C00950BB2 /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FAD3C1C1ED1EC00B5289B /* DismissSegue.swift */; };
+		AE6C21061C842A0F00DB6892 /* TransitionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6C21051C842A0F00DB6892 /* TransitionTableViewController.swift */; };
 		AE74D6D71C166FB100718E0E /* SideImageDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE74D6D61C166FB100718E0E /* SideImageDesignable.swift */; };
 		AE81DAEE1C10F14C000AEB20 /* GradientDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE81DAED1C10F14C000AEB20 /* GradientDesignable.swift */; };
 		AE81DB4E1C11DF00000AEB20 /* BlurEffectStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE81DB4D1C11DF00000AEB20 /* BlurEffectStyle.swift */; };
@@ -188,6 +189,7 @@
 		AE3C54461C217F7F00829B10 /* BarButtonItemDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarButtonItemDesignable.swift; sourceTree = "<group>"; };
 		AE3C54481C2180D500829B10 /* AnimatableBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableBarButtonItem.swift; sourceTree = "<group>"; };
 		AE6B01551C2A082300950BB2 /* IBAnimatable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IBAnimatable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE6C21051C842A0F00DB6892 /* TransitionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionTableViewController.swift; sourceTree = "<group>"; };
 		AE6C66FF1BFBF93500134A35 /* IBAnimatableApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBAnimatableApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE74D6D61C166FB100718E0E /* SideImageDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideImageDesignable.swift; sourceTree = "<group>"; };
 		AE81DAED1C10F14C000AEB20 /* GradientDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientDesignable.swift; path = IBAnimatable/GradientDesignable.swift; sourceTree = SOURCE_ROOT; };
@@ -314,6 +316,14 @@
 			name = TransitionAnimatable;
 			sourceTree = "<group>";
 		};
+		AE6C21071C842A1500DB6892 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				AE6C21051C842A0F00DB6892 /* TransitionTableViewController.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
 		AE6C66F61BFBF93500134A35 = {
 			isa = PBXGroup;
 			children = (
@@ -344,6 +354,7 @@
 				AED1A0FF1BFE9820001346FA /* Main.storyboard */,
 				AE154B0E1C788A560093C05B /* Transitions.storyboard */,
 				AED1A1011BFE9820001346FA /* Info.plist */,
+				AE6C21071C842A1500DB6892 /* controller */,
 			);
 			path = IBAnimatableApp;
 			sourceTree = "<group>";
@@ -662,6 +673,7 @@
 				AE18787E1C1D980D00300246 /* MaskType.swift in Sources */,
 				AED1A1191BFE983A001346FA /* AnimatableTextView.swift in Sources */,
 				AE8964DC1C2CC2E000D3E9F0 /* RootWindowDesignable.swift in Sources */,
+				AE6C21061C842A0F00DB6892 /* TransitionTableViewController.swift in Sources */,
 				E2E28E6E1C6A6D22003F3852 /* UIColorExtension.swift in Sources */,
 				AED1A1161BFE983A001346FA /* Animatable.swift in Sources */,
 				AE8C53B01C0F1C0400A775AF /* GradientStartPoint.swift in Sources */,
