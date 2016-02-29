@@ -8,7 +8,7 @@ import Foundation
 /**
  Presenter Manager: Used to cache the Presenters for Present and Dismiss transitions
  */
-struct PresenterManager {
+class PresenterManager {
   // MARK: - Singleton Constructor
   private init() {}
   private struct Shared {
@@ -19,20 +19,19 @@ struct PresenterManager {
   }
   
   // MARK: - Private
-  private let cache = NSCache()
+  private var cache = [TransitionAnimationType: Presenter]()
   
   // MARK: Inertnal Interface
   func retrievePresenter(transitionAnimationType: TransitionAnimationType) -> Presenter {
     // Get the cached presenter
-    let presenter = cache.objectForKey(transitionAnimationType.rawValue) as? Presenter
+    let presenter = cache[transitionAnimationType]
     if let presenter = presenter {
       return presenter
     }
     
     // Create a new if cache doesn't exist
     let newPresenter = Presenter(transitionAnimationType: transitionAnimationType)
-    cache.setObject(newPresenter, forKey: transitionAnimationType.rawValue)
+    cache[transitionAnimationType] = newPresenter
     return newPresenter
   }
-  
 }
