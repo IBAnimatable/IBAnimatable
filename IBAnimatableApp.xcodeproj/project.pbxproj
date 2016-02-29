@@ -110,6 +110,10 @@
 		AED1A11D1BFE983A001346FA /* ShadowDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1111BFE983A001346FA /* ShadowDesignable.swift */; };
 		AED1A11E1BFE983A001346FA /* PaddingDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1121BFE983A001346FA /* PaddingDesignable.swift */; };
 		AED1A11F1BFE983A001346FA /* PlaceholderDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A1131BFE983A001346FA /* PlaceholderDesignable.swift */; };
+		AED5F6911C83E9B60052E57B /* PresentFadeInSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED5F6901C83E9B60052E57B /* PresentFadeInSegue.swift */; };
+		AED5F6921C83E9B60052E57B /* PresentFadeInSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED5F6901C83E9B60052E57B /* PresentFadeInSegue.swift */; };
+		AED5F6941C83E9C20052E57B /* PresentFadeOutSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED5F6931C83E9C20052E57B /* PresentFadeOutSegue.swift */; };
+		AED5F6951C83E9C20052E57B /* PresentFadeOutSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED5F6931C83E9C20052E57B /* PresentFadeOutSegue.swift */; };
 		AED97B861C1710A900D2B0B8 /* BorderSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED97B851C1710A900D2B0B8 /* BorderSide.swift */; };
 		AEDD8A311C7EDAE30033175A /* SystemFlipAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDD8A301C7EDAE30033175A /* SystemFlipAnimator.swift */; };
 		AEDD8A321C7EDAE30033175A /* SystemFlipAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDD8A301C7EDAE30033175A /* SystemFlipAnimator.swift */; };
@@ -207,6 +211,8 @@
 		AED1A1111BFE983A001346FA /* ShadowDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShadowDesignable.swift; path = IBAnimatable/ShadowDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AED1A1121BFE983A001346FA /* PaddingDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaddingDesignable.swift; path = IBAnimatable/PaddingDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AED1A1131BFE983A001346FA /* PlaceholderDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceholderDesignable.swift; path = IBAnimatable/PlaceholderDesignable.swift; sourceTree = SOURCE_ROOT; };
+		AED5F6901C83E9B60052E57B /* PresentFadeInSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentFadeInSegue.swift; sourceTree = "<group>"; };
+		AED5F6931C83E9C20052E57B /* PresentFadeOutSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentFadeOutSegue.swift; sourceTree = "<group>"; };
 		AED97B851C1710A900D2B0B8 /* BorderSide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderSide.swift; sourceTree = "<group>"; };
 		AEDD8A301C7EDAE30033175A /* SystemFlipAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemFlipAnimator.swift; sourceTree = "<group>"; };
 		AEE552A61C815AC5009CF623 /* FadeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeAnimator.swift; sourceTree = "<group>"; };
@@ -261,6 +267,8 @@
 			children = (
 				AE0FAD3C1C1ED1EC00B5289B /* DismissSegue.swift */,
 				AEE552AC1C82D1E1009CF623 /* PresentFadeSegue.swift */,
+				AED5F6901C83E9B60052E57B /* PresentFadeInSegue.swift */,
+				AED5F6931C83E9C20052E57B /* PresentFadeOutSegue.swift */,
 			);
 			name = segue;
 			sourceTree = "<group>";
@@ -560,6 +568,7 @@
 			files = (
 				AE6B017C1C2A445100950BB2 /* AnimatableButton.swift in Sources */,
 				AEE552B11C839EB7009CF623 /* PresenterManager.swift in Sources */,
+				AED5F6921C83E9B60052E57B /* PresentFadeInSegue.swift in Sources */,
 				AE6B01721C2A444900950BB2 /* RotationDesignable.swift in Sources */,
 				AEE552A81C815AC5009CF623 /* FadeAnimator.swift in Sources */,
 				AE6B017F1C2A445100950BB2 /* AnimatableLabel.swift in Sources */,
@@ -603,6 +612,7 @@
 				AE6B01881C2A445800950BB2 /* UIViewControllerExtension.swift in Sources */,
 				AE6B01771C2A444900950BB2 /* TintDesignable.swift in Sources */,
 				AE154B8F1C7D89CB0093C05B /* Presenter.swift in Sources */,
+				AED5F6951C83E9C20052E57B /* PresentFadeOutSegue.swift in Sources */,
 				AE6B01781C2A444900950BB2 /* BarButtonItemDesignable.swift in Sources */,
 				AE154B7C1C7D04A40093C05B /* TransitionAnimatable.swift in Sources */,
 				AE6B01641C2A444000950BB2 /* BorderSide.swift in Sources */,
@@ -647,6 +657,7 @@
 				AE154B2C1C7BB5760093C05B /* CALayerExtension.swift in Sources */,
 				AED1A1171BFE983A001346FA /* AnimatableImageView.swift in Sources */,
 				AE3C54471C217F7F00829B10 /* BarButtonItemDesignable.swift in Sources */,
+				AED5F6911C83E9B60052E57B /* PresentFadeInSegue.swift in Sources */,
 				AE0B0FEA1C25372200E36B78 /* TableViewCellDesignable.swift in Sources */,
 				AE18787E1C1D980D00300246 /* MaskType.swift in Sources */,
 				AED1A1191BFE983A001346FA /* AnimatableTextView.swift in Sources */,
@@ -679,6 +690,7 @@
 				AE154B841C7D1A740093C05B /* AnimatedTransitioning.swift in Sources */,
 				AED1A1151BFE983A001346FA /* AnimatableButton.swift in Sources */,
 				AE0FADAF1C203F9A00B5289B /* AnimatableTableView.swift in Sources */,
+				AED5F6941C83E9C20052E57B /* PresentFadeOutSegue.swift in Sources */,
 				AED97B861C1710A900D2B0B8 /* BorderSide.swift in Sources */,
 				AEE552B01C839EB7009CF623 /* PresenterManager.swift in Sources */,
 				AEE552A71C815AC5009CF623 /* FadeAnimator.swift in Sources */,
