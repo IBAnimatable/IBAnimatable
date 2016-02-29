@@ -436,37 +436,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lU-N7-UdB" userLabel="present" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
-                                <rect key="frame" x="40" y="304" width="295" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="0Gp-E2-vhb">
+                                <rect key="frame" x="40" y="259" width="295" height="150"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lU-N7-UdB" userLabel="present" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Gu3-mh-kVd"/>
+                                        </constraints>
+                                        <state key="normal" title="Tap to dismiss">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="emc-Jl-Ob8" kind="unwind" unwindAction="unwindToViewController:" id="9Y9-p6-lA4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06m-hU-WYa" userLabel="present" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="90" width="295" height="60"/>
+                                        <state key="normal" title="Tap to present another">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="J3N-gN-3lD" kind="custom" customClass="PresentFadeOutSegue" customModule="IBAnimatableApp" customModuleProvider="target" id="pEU-RW-fT6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Gu3-mh-kVd"/>
+                                    <constraint firstItem="06m-hU-WYa" firstAttribute="height" secondItem="4lU-N7-UdB" secondAttribute="height" id="u0C-se-1HM"/>
                                 </constraints>
-                                <state key="normal" title="Tap to dismiss">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                        <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="emc-Jl-Ob8" kind="unwind" unwindAction="unwindToViewController:" id="9Y9-p6-lA4"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRw-lc-RKk">
-                                <rect key="frame" x="158" y="389" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="J3N-gN-3lD" kind="custom" customClass="PresentFadeInSegue" customModule="IBAnimatableApp" customModuleProvider="target" id="cWZ-Ht-hKk"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4lU-N7-UdB" firstAttribute="centerY" secondItem="Ya9-02-nKR" secondAttribute="centerY" id="9FV-qJ-9QK"/>
-                            <constraint firstItem="4lU-N7-UdB" firstAttribute="centerX" secondItem="Ya9-02-nKR" secondAttribute="centerX" id="F22-2D-A01"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4lU-N7-UdB" secondAttribute="trailing" constant="24" id="PVV-9q-gyy"/>
-                            <constraint firstItem="4lU-N7-UdB" firstAttribute="leading" secondItem="Ya9-02-nKR" secondAttribute="leadingMargin" constant="24" id="nPT-4A-Gs1"/>
+                            <constraint firstItem="0Gp-E2-vhb" firstAttribute="centerX" secondItem="Ya9-02-nKR" secondAttribute="centerX" id="JJG-AU-4gO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0Gp-E2-vhb" secondAttribute="trailing" constant="24" id="aKF-X8-ai6"/>
+                            <constraint firstItem="0Gp-E2-vhb" firstAttribute="centerY" secondItem="Ya9-02-nKR" secondAttribute="centerY" id="gh7-6I-bXi"/>
+                            <constraint firstItem="0Gp-E2-vhb" firstAttribute="leading" secondItem="Ya9-02-nKR" secondAttribute="leadingMargin" constant="24" id="yDl-7D-bYX"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="predefinedGradient" value="Candy"/>
