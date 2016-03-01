@@ -8,7 +8,7 @@ import UIKit
 public class FadeAnimator: NSObject , AnimatedTransitioning {
   // MARK: - AnimatorProtocol
   public var transitionAnimationType: TransitionAnimationType
-  public var transitionDuration: Duration = 0.35
+  public var transitionDuration: Duration = defaultTransitionDuration
   public var reverseAnimationType: TransitionAnimationType?
 
   // MARK: - private

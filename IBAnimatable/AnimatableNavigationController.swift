@@ -28,7 +28,7 @@ public class AnimatableNavigationController: UINavigationController, TransitionA
     var duration = transitionDuration
     // Set the default duration for transition
     if transitionDuration.isNaN {
-      duration = 0.35
+      duration = defaultTransitionDuration
     }
     navigator = Navigator(transitionAnimationType: animationType, transitionDuration: duration)
     delegate = navigator

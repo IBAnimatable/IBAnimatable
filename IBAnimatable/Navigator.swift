@@ -10,9 +10,9 @@ import UIKit
  */
 public class Navigator: NSObject {
   var transitionAnimationType: TransitionAnimationType
-  var transitionDuration: Duration
+  var transitionDuration: Duration = defaultTransitionDuration
 
-  public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration) {
+  public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration) {
     self.transitionAnimationType = transitionAnimationType
     self.transitionDuration = transitionDuration
     super.init()
