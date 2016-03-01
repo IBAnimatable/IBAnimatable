@@ -40,6 +40,7 @@ import UIKit
 
   public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     guard let transitionAnimationType = transitionAnimationType, animationType = TransitionAnimationType(rawValue: transitionAnimationType) else {
+      super.prepareForSegue(segue, sender: sender)
       return
     }
     

@@ -59,10 +59,10 @@
             </objects>
             <point key="canvasLocation" x="3205.5" y="-281.5"/>
         </scene>
-        <!--Animatable View Controller-->
+        <!--Transition View Controller-->
         <scene sceneID="j4X-Oe-hEs">
             <objects>
-                <viewController id="NTx-bf-G81" customClass="AnimatableViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NTx-bf-G81" customClass="TransitionViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="G7z-Tg-1Gv"/>
                         <viewControllerLayoutGuide type="bottom" id="Kjd-MK-vGJ"/>
@@ -102,7 +102,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="9Qt-ed-0ZI" kind="custom" customClass="PresentFadeInSegue" customModule="IBAnimatableApp" customModuleProvider="target" id="WyK-21-zHP"/>
+                                            <action selector="presentButtonDidTap:" destination="NTx-bf-G81" eventType="touchUpInside" id="cwO-1N-TwF"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -252,10 +252,10 @@
             </objects>
             <point key="canvasLocation" x="5034.5" y="-667.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Animatable View Controller-->
         <scene sceneID="D7y-Bi-dz5">
             <objects>
-                <viewController id="9Qt-ed-0ZI" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PresentedFirstViewController" id="9Qt-ed-0ZI" customClass="AnimatableViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3M5-bf-nzE"/>
                         <viewControllerLayoutGuide type="bottom" id="zRb-Me-7Vv"/>
@@ -295,7 +295,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="J3N-gN-3lD" kind="custom" customClass="PresentFadeOutSegue" customModule="IBAnimatableApp" customModuleProvider="target" id="pEU-RW-fT6"/>
+                                            <segue destination="J3N-gN-3lD" kind="presentation" id="vKc-OD-kQz"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -341,10 +341,10 @@
             </objects>
             <point key="canvasLocation" x="2775.5" y="-281.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Animatable View Controller-->
         <scene sceneID="bf7-Dg-a9m">
             <objects>
-                <viewController id="J3N-gN-3lD" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PresentedSecondViewController" id="J3N-gN-3lD" customClass="AnimatableViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OjE-jf-D7p"/>
                         <viewControllerLayoutGuide type="bottom" id="Dxn-mh-kw0"/>
