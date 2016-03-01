@@ -38,6 +38,11 @@ class TransitionTableViewController: UITableViewController {
       return
     }
   
-    toViewController.transitionAnimationType = String(transitionAnimations[path.row])
+    let transitionAnimationType = String(transitionAnimations[path.row])
+    toViewController.transitionAnimationType = transitionAnimationType
+    
+    if let transitionViewController = toViewController.topViewController as? TransitionViewController{
+      transitionViewController.animationType = transitionAnimationType
+    }
   }
 }

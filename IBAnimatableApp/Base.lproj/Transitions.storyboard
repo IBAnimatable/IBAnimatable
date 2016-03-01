@@ -341,10 +341,10 @@
             </objects>
             <point key="canvasLocation" x="2775.5" y="-281.5"/>
         </scene>
-        <!--Animatable View Controller-->
+        <!--View Controller-->
         <scene sceneID="bf7-Dg-a9m">
             <objects>
-                <viewController storyboardIdentifier="PresentedSecondViewController" id="J3N-gN-3lD" customClass="AnimatableViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="J3N-gN-3lD" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OjE-jf-D7p"/>
                         <viewControllerLayoutGuide type="bottom" id="Dxn-mh-kw0"/>
