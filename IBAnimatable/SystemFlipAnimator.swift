@@ -29,15 +29,15 @@ public class SystemFlipAnimator: NSObject, AnimatedTransitioning {
       self.animationOption = .TransitionFlipFromLeft
     case .FromRight:
       self.transitionAnimationType = .SystemFlipFromRight
-      self.reverseAnimationType = .SystemFlipFromRight
+      self.reverseAnimationType = .SystemFlipFromLeft
       self.animationOption = .TransitionFlipFromRight
     case .FromTop:
       self.transitionAnimationType = .SystemFlipFromTop
-      self.reverseAnimationType = .SystemFlipFromRight
+      self.reverseAnimationType = .SystemFlipFromBottom
       self.animationOption = .TransitionFlipFromTop
     case .FromBottom:
       self.transitionAnimationType = .SystemFlipFromBottom
-      self.reverseAnimationType = .SystemFlipFromRight
+      self.reverseAnimationType = .SystemFlipFromTop
       self.animationOption = .TransitionFlipFromBottom
     }
     
