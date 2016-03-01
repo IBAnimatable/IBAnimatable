@@ -133,6 +133,9 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="presentButton" destination="59W-58-R6i" id="k5T-Fs-g03"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iNw-ov-HSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="mGz-2k-KHz" userLabel="Exit" sceneMemberID="exit"/>
