@@ -7,13 +7,15 @@ import UIKit
 
 class TransitionTableViewController: UITableViewController {
 
-  private var transitionAnimations = [TransitionAnimationType.Fade, .FadeIn, .FadeOut, .SystemCubeFromLeft]
+  private var transitionAnimations = [TransitionAnimationType]()
 
   // MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // TODO: Loop through `TransitionAnimationType` enum to generate the table dynamically.
+    for type in iterateEnum(TransitionAnimationType) {
+      transitionAnimations.append(type)
+    }
   }
 
   // MARK: - UITableViewDataSource
