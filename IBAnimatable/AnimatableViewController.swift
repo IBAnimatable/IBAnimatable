@@ -20,11 +20,6 @@ import UIKit
   @IBInspectable public var transitionDuration: Double = .NaN
 
   // MARK: - Lifecylce
-  public override func viewDidLoad() {
-    super.viewDidLoad()
-    configureTransitioningDelegate()
-  }
-
   public override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
     confingHideNavigationBar()
@@ -44,26 +39,15 @@ import UIKit
   }
 
   public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    let toViewController = segue.destinationViewController
-    toViewController.transitioningDelegate = presenter
-
-    super.prepareForSegue(segue, sender: sender)
-  }
-
-  // MARK: - Private
-  // Must have a property to keep the reference alive because `UIViewController.transitioningDelegate` is `weak`
-  private var presenter: Presenter?
-
-  private func configureTransitioningDelegate() {
+    // Configure custom transition animation
     guard let transitionAnimationType = transitionAnimationType, animationType = TransitionAnimationType(rawValue: transitionAnimationType) else {
+      super.prepareForSegue(segue, sender: sender)
       return
     }
     
-    var duration = transitionDuration
-    // Set the default duration for transition
-    if transitionDuration.isNaN {
-      duration = defaultTransitionDuration
-    }
-    presenter = Presenter(transitionAnimationType: animationType, transitionDuration: duration)
+    let toViewController = segue.destinationViewController
+    toViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration)
+
+    super.prepareForSegue(segue, sender: sender)
   }
 }
