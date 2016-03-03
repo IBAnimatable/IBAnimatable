@@ -102,25 +102,19 @@ view.squeezeInDown{ view.pop { view.shake{ view.squeeze{ view.wobble{ view.flipX
 ### 手工安装
 把 `IBAnimatable` 文件夹拷贝到你的 Xcode 项目中
 
-### Git submodule
-在开发中，请看 [Issue #22 - Swift package manager support](https://github.com/JakeLin/IBAnimatable/issues/22)
-
 ### Swift package manager
-在开发中，请看 [Issue #5 - Swift package manager support](https://github.com/JakeLin/IBAnimatable/issues/5)
+在 `Package.swift` 中添加 `.Package(url: "https://github.com/JakeLin/IBanimatable.git", majorVersion: 1)` 。
 
 ### CocoaPods
 
-在 `Podfile` 中添加 `pod 'IBAnimatable'`。
+在 `Podfile` 中添加 `pod 'IBAnimatable'` 。
 
 ### Carthage
 
-在 `Cartfile` 中添加：
+在 `Cartfile` 中添加 `github "JakeLin/IBAnimatable" ~> 1.2` 。
 
-```
-github "JakeLin/IBAnimatable" ~> 1.0
-```
-
-然后按 `Carthage` 的使用说明配置项目。
+### Git submodule
+你一定很熟悉 Git，应该不用我多说了，把这个 Repo 作为一个 submodule ，并把项目文件加到你的 workspace 里面，然后把 `IBAnimatable.framework` 放到你的应用程序的 Target 里面。
 
 ## APIs
 完整的 API 文档请参考 [IBAnimatable APIs](https://github.com/JakeLin/IBAnimatable#apis)。

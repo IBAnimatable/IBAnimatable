@@ -134,7 +134,7 @@ Add `github "JakeLin/IBAnimatable" ~> 1.2` to your Cartfile.
 
 ### Git submodule
 
-Add this repo as a submodule, and add the project file to your workspace. You can then link against IBAnimatable.framework for your application target. 
+Add this repo as a submodule, and add the project file to your workspace. You can then link against `IBAnimatable.framework` for your application target. 
 
 ## APIs
 
