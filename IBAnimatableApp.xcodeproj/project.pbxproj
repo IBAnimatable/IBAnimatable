@@ -297,10 +297,7 @@
 		AE154B0B1C7880680093C05B /* animator */ = {
 			isa = PBXGroup;
 			children = (
-				CAB5692C91C9ECC8018DE83E /* Navigator.swift */,
-				AE154B8D1C7D89CB0093C05B /* Presenter.swift */,
-				AE154B8A1C7D59EE0093C05B /* AnimatorFactory.swift */,
-				AEE552AF1C839EB7009CF623 /* PresenterManager.swift */,
+				AE4C53F81C886431007C9EFA /* common */,
 				AE4C53EF1C883DEC007C9EFA /* transition animator */,
 				AE4C53F01C883E14007C9EFA /* interactive animator */,
 			);
@@ -341,6 +338,17 @@
 				AE4C53F11C883F80007C9EFA /* PanInteractiveAnimator.swift */,
 			);
 			name = "interactive animator";
+			sourceTree = "<group>";
+		};
+		AE4C53F81C886431007C9EFA /* common */ = {
+			isa = PBXGroup;
+			children = (
+				CAB5692C91C9ECC8018DE83E /* Navigator.swift */,
+				AE154B8D1C7D89CB0093C05B /* Presenter.swift */,
+				AE154B8A1C7D59EE0093C05B /* AnimatorFactory.swift */,
+				AEE552AF1C839EB7009CF623 /* PresenterManager.swift */,
+			);
+			name = common;
 			sourceTree = "<group>";
 		};
 		AE6C21071C842A1500DB6892 /* code */ = {

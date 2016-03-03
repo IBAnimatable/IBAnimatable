@@ -16,7 +16,14 @@ public class PanInteractiveAnimator: UIPercentDrivenInteractiveTransition {
     self.gestureFromDirection = gestureFromDirection
     super.init()
     
+    prepareGestureRecognizer()
+  }
+  
+  private func prepareGestureRecognizer() {
     gestureRecognizer = UIPanGestureRecognizer(target: self, action: "handleGesture:")
+    if let gestureRecognizer = gestureRecognizer {
+      viewController.view.addGestureRecognizer(gestureRecognizer)
+    }
   }
   
   func handleGesture(gestureRecognizer: UIPanGestureRecognizer) {
@@ -42,6 +49,9 @@ public class PanInteractiveAnimator: UIPercentDrivenInteractiveTransition {
     progress = min(max(progress, 0.01), 0.99)
     
     switch gestureRecognizer.state {
+    case .Began:
+      // TODO: only for pop now
+      viewController.navigationController?.popViewControllerAnimated(true)
     case .Changed:
       updateInteractiveTransition(progress)
       

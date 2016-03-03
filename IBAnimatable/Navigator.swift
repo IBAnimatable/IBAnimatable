@@ -11,7 +11,10 @@ import UIKit
 public class Navigator: NSObject {
   var transitionAnimationType: TransitionAnimationType
   var transitionDuration: Duration = defaultTransitionDuration
-
+  
+  // Used for interactionController
+  private var interactiveAnimator: PanInteractiveAnimator?
+  
   public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration) {
     self.transitionAnimationType = transitionAnimationType
     self.transitionDuration = transitionDuration
@@ -23,8 +26,11 @@ extension Navigator: UINavigationControllerDelegate {
   public func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     let animator = AnimatorFactory.generateAnimator(transitionAnimationType, transitionDuration: transitionDuration)
     if operation == .Push {
+      interactiveAnimator = PanInteractiveAnimator(viewController: toVC, gestureFromDirection: .FromLeft)
       return animator
     } else if operation == .Pop {
+      interactiveAnimator = nil
+      
       // Use the reverse animation
       if let reverseTransitionAnimationType = animator.reverseAnimationType {
         return AnimatorFactory.generateAnimator(reverseTransitionAnimationType, transitionDuration: transitionDuration)
@@ -32,5 +38,10 @@ extension Navigator: UINavigationControllerDelegate {
     }
     return nil
   }
+  
+  public func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+    return interactiveAnimator
+//    return nil // working
+//    return UIPercentDrivenInteractiveTransition() // doesn't work
+  }
 }
-
