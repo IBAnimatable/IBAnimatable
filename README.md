@@ -117,12 +117,10 @@ view.squeezeInDown{ view.pop { view.shake{ view.squeeze{ view.wobble{ view.flipX
 
 ## How to install
 ### Manually install
+
 Copy and paste `IBAnimatable` folder in your Xcode project.
 
-### Git submodule
-TBD, more details on [Issue #22 - Swift package manager support](https://github.com/JakeLin/IBAnimatable/issues/22)
-
-### Swift package manager
+### [Swift package manager](https://swift.org/package-manager)
 
 Add `.Package(url: "https://github.com/JakeLin/IBanimatable.git", majorVersion: 1)` to your `Package.swift`
 
@@ -133,6 +131,10 @@ Add `pod 'IBAnimatable', '~> 1.2'` to your Podfile.
 ### [Carthage](https://github.com/Carthage/Carthage)
 
 Add `github "JakeLin/IBAnimatable" ~> 1.2` to your Cartfile.
+
+### Git submodule
+
+Add this repo as a submodule, and add the project file to your workspace. You can then link against IBAnimatable.framework for your application target. 
 
 ## APIs
 
