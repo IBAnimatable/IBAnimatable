@@ -20,7 +20,7 @@ public class PanInteractiveAnimator: UIPercentDrivenInteractiveTransition {
   }
   
   private func prepareGestureRecognizer() {
-    gestureRecognizer = UIPanGestureRecognizer(target: self, action: "handleGesture:")
+    gestureRecognizer = UIPanGestureRecognizer(target: self, action: Selector("handleGesture:"))
     if let gestureRecognizer = gestureRecognizer {
       viewController.view.addGestureRecognizer(gestureRecognizer)
     }
