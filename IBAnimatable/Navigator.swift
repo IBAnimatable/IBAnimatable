@@ -13,7 +13,7 @@ public class Navigator: NSObject {
   var transitionDuration: Duration = defaultTransitionDuration
   
   // Used for interactionController
-  private var interactiveAnimator: PanInteractiveAnimator?
+  private var interactiveAnimator: PanInteractiveAnimator = PanInteractiveAnimator(gestureFromDirection: .FromLeft)
   
   public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration) {
     self.transitionAnimationType = transitionAnimationType
@@ -26,11 +26,10 @@ extension Navigator: UINavigationControllerDelegate {
   public func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     let animator = AnimatorFactory.generateAnimator(transitionAnimationType, transitionDuration: transitionDuration)
     if operation == .Push {
-      interactiveAnimator = PanInteractiveAnimator(viewController: toVC, gestureFromDirection: .FromLeft)
+      interactiveAnimator.connectGestureRecognizer(toVC)
       return animator
     } else if operation == .Pop {
-      interactiveAnimator?.interacting = true
-      
+      interactiveAnimator.connectGestureRecognizer(toVC)
       // Use the reverse animation
       if let reverseTransitionAnimationType = animator.reverseAnimationType {
         return AnimatorFactory.generateAnimator(reverseTransitionAnimationType, transitionDuration: transitionDuration)
@@ -40,7 +39,7 @@ extension Navigator: UINavigationControllerDelegate {
   }
   
   public func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-    if let interactiveAnimator = interactiveAnimator where interactiveAnimator.interacting {
+    if interactiveAnimator.interacting {
       return interactiveAnimator
     } else {
       return nil

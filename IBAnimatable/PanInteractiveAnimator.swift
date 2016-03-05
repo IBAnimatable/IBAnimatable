@@ -6,25 +6,22 @@
 import UIKit
 
 public class PanInteractiveAnimator: UIPercentDrivenInteractiveTransition {
-  public var interacting = false
+  private(set) public var interacting = false
   
-  private let viewController: UIViewController
   private let gestureFromDirection: GestureFromDirection
-  
+  private var viewController: UIViewController?
   private var gestureRecognizer: UIPanGestureRecognizer?
   
-  init(viewController: UIViewController, gestureFromDirection: GestureFromDirection) {
-    self.viewController = viewController
+  init(gestureFromDirection: GestureFromDirection) {
     self.gestureFromDirection = gestureFromDirection
     super.init()
-    
-    prepareGestureRecognizer()
+    gestureRecognizer = UIPanGestureRecognizer(target: self, action: Selector("handleGesture:"))
   }
   
-  private func prepareGestureRecognizer() {
-    gestureRecognizer = UIPanGestureRecognizer(target: self, action: Selector("handleGesture:"))
+  func connectGestureRecognizer(viewController: UIViewController) {
+    self.viewController = viewController
     if let gestureRecognizer = gestureRecognizer {
-      viewController.view.addGestureRecognizer(gestureRecognizer)
+      self.viewController?.view.addGestureRecognizer(gestureRecognizer)
     }
   }
   
@@ -52,12 +49,13 @@ public class PanInteractiveAnimator: UIPercentDrivenInteractiveTransition {
     
     switch gestureRecognizer.state {
     case .Began:
+      interacting = true
       // TODO: only for pop now
-      viewController.navigationController?.popViewControllerAnimated(true)
+      viewController?.navigationController?.popViewControllerAnimated(true)
     case .Changed:
       updateInteractiveTransition(progress)
-      
     case .Cancelled, .Ended:
+      interacting = false
       if progress < 0.5 {
         cancelInteractiveTransition()
       } else {
