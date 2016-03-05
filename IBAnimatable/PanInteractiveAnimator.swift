@@ -6,6 +6,8 @@
 import UIKit
 
 public class PanInteractiveAnimator: UIPercentDrivenInteractiveTransition {
+  public var interacting = false
+  
   private let viewController: UIViewController
   private let gestureFromDirection: GestureFromDirection
   

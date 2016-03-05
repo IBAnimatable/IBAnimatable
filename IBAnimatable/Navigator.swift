@@ -29,7 +29,7 @@ extension Navigator: UINavigationControllerDelegate {
       interactiveAnimator = PanInteractiveAnimator(viewController: toVC, gestureFromDirection: .FromLeft)
       return animator
     } else if operation == .Pop {
-      interactiveAnimator = nil
+      interactiveAnimator?.interacting = true
       
       // Use the reverse animation
       if let reverseTransitionAnimationType = animator.reverseAnimationType {
@@ -40,8 +40,10 @@ extension Navigator: UINavigationControllerDelegate {
   }
   
   public func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-    return interactiveAnimator
-//    return nil // working
-//    return UIPercentDrivenInteractiveTransition() // doesn't work
+    if let interactiveAnimator = interactiveAnimator where interactiveAnimator.interacting {
+      return interactiveAnimator
+    } else {
+      return nil
+    }
   }
 }
