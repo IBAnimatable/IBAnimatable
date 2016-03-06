@@ -13,7 +13,7 @@ public class Navigator: NSObject {
   var transitionDuration: Duration = defaultTransitionDuration
   
   // Used for interactionController
-  private var interactiveAnimator: PanInteractiveAnimator = PanInteractiveAnimator(gestureFromDirection: .FromLeft)
+  private var interactiveAnimator: PanInteractiveAnimator = PanInteractiveAnimator(interactiveGestureType: .PanFromLeft)
   
   public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration) {
     self.transitionAnimationType = transitionAnimationType

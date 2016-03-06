@@ -8,12 +8,12 @@ import UIKit
 public class PanInteractiveAnimator: UIPercentDrivenInteractiveTransition {
   private(set) public var interacting = false
   
-  private let gestureFromDirection: GestureFromDirection
+  private let interactiveGestureType: InteractiveGestureType
   private var viewController: UIViewController?
   private var gestureRecognizer: UIPanGestureRecognizer?
   
-  init(gestureFromDirection: GestureFromDirection) {
-    self.gestureFromDirection = gestureFromDirection
+  init(interactiveGestureType: InteractiveGestureType) {
+    self.interactiveGestureType = interactiveGestureType
     super.init()
     gestureRecognizer = UIPanGestureRecognizer(target: self, action: Selector("handleGesture:"))
   }
@@ -33,15 +33,17 @@ public class PanInteractiveAnimator: UIPercentDrivenInteractiveTransition {
     
     // width or heigth depends on the gesture direction
     let distance: CGFloat
-    switch gestureFromDirection {
-    case .FromLeft:
+    if interactiveGestureType == .PanHorizontally ||
+      interactiveGestureType == .PanFromLeft ||
+      interactiveGestureType == .PanFromRight {
       distance = superview.frame.width
-    case .FromRight:
-      distance = superview.frame.width
-    case .FromTop:
-      distance = superview.frame.height
-    case .FromBottom:
-      distance = superview.frame.height
+    } else if interactiveGestureType == .PanVertically ||
+      interactiveGestureType == .PanFromTop ||
+      interactiveGestureType == .PanFromBottom {
+        distance = superview.frame.height
+    }
+    else {
+      return
     }
     
     var progress: CGFloat = abs(translation.x / distance)

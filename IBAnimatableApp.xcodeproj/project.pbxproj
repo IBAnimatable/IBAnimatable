@@ -49,8 +49,8 @@
 		AE3C54491C2180D500829B10 /* AnimatableBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3C54481C2180D500829B10 /* AnimatableBarButtonItem.swift */; };
 		AE4C53F21C883F80007C9EFA /* PanInteractiveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4C53F11C883F80007C9EFA /* PanInteractiveAnimator.swift */; };
 		AE4C53F31C883F80007C9EFA /* PanInteractiveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4C53F11C883F80007C9EFA /* PanInteractiveAnimator.swift */; };
-		AE4C53F51C8843AB007C9EFA /* GestureFromDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4C53F41C8843AB007C9EFA /* GestureFromDirection.swift */; };
-		AE4C53F61C8843AB007C9EFA /* GestureFromDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4C53F41C8843AB007C9EFA /* GestureFromDirection.swift */; };
+		AE4C53F51C8843AB007C9EFA /* InteractiveGestureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4C53F41C8843AB007C9EFA /* InteractiveGestureType.swift */; };
+		AE4C53F61C8843AB007C9EFA /* InteractiveGestureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4C53F41C8843AB007C9EFA /* InteractiveGestureType.swift */; };
 		AE6B015C1C2A082300950BB2 /* IBAnimatable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE6B01551C2A082300950BB2 /* IBAnimatable.framework */; };
 		AE6B015D1C2A082300950BB2 /* IBAnimatable.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE6B01551C2A082300950BB2 /* IBAnimatable.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE6B01621C2A444000950BB2 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A10F1BFE983A001346FA /* AnimationType.swift */; };
@@ -195,7 +195,7 @@
 		AE3C54461C217F7F00829B10 /* BarButtonItemDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarButtonItemDesignable.swift; sourceTree = "<group>"; };
 		AE3C54481C2180D500829B10 /* AnimatableBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableBarButtonItem.swift; sourceTree = "<group>"; };
 		AE4C53F11C883F80007C9EFA /* PanInteractiveAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanInteractiveAnimator.swift; sourceTree = "<group>"; };
-		AE4C53F41C8843AB007C9EFA /* GestureFromDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureFromDirection.swift; sourceTree = "<group>"; };
+		AE4C53F41C8843AB007C9EFA /* InteractiveGestureType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveGestureType.swift; sourceTree = "<group>"; };
 		AE6B01551C2A082300950BB2 /* IBAnimatable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IBAnimatable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE6C21051C842A0F00DB6892 /* TransitionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionTableViewController.swift; sourceTree = "<group>"; };
 		AE6C66FF1BFBF93500134A35 /* IBAnimatableApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBAnimatableApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -455,7 +455,7 @@
 				AE154B7D1C7D061A0093C05B /* TransitionAnimatableType.swift */,
 				AEE552A91C816233009CF623 /* TransitionFadeType.swift */,
 				33A8B9EE1C7E7A4C00082529 /* TransitionFromDirection.swift */,
-				AE4C53F41C8843AB007C9EFA /* GestureFromDirection.swift */,
+				AE4C53F41C8843AB007C9EFA /* InteractiveGestureType.swift */,
 			);
 			name = enum;
 			sourceTree = "<group>";
@@ -677,7 +677,7 @@
 				AE6B017E1C2A445100950BB2 /* AnimatableImageView.swift in Sources */,
 				AE6B01761C2A444900950BB2 /* TableViewCellDesignable.swift in Sources */,
 				CAB5610BC7B5D20C927AAB87 /* Navigator.swift in Sources */,
-				AE4C53F61C8843AB007C9EFA /* GestureFromDirection.swift in Sources */,
+				AE4C53F61C8843AB007C9EFA /* InteractiveGestureType.swift in Sources */,
 				CAB56443CD667F41413A560F /* SystemTransitionType.swift in Sources */,
 				CAB566CA933963DAA0C7E074 /* Constants.swift in Sources */,
 			);
@@ -734,7 +734,7 @@
 				AE154B8B1C7D59EE0093C05B /* AnimatorFactory.swift in Sources */,
 				AE0FAD431C1ED52800B5289B /* ViewControllerDesignable.swift in Sources */,
 				AED1A1031BFE9820001346FA /* AppDelegate.swift in Sources */,
-				AE4C53F51C8843AB007C9EFA /* GestureFromDirection.swift in Sources */,
+				AE4C53F51C8843AB007C9EFA /* InteractiveGestureType.swift in Sources */,
 				AE154B7B1C7D04A40093C05B /* TransitionAnimatable.swift in Sources */,
 				AE216FDD1C0DBC5D00BC6366 /* CornerDesignable.swift in Sources */,
 				AED1A11F1BFE983A001346FA /* PlaceholderDesignable.swift in Sources */,
