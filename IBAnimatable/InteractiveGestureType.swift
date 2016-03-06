@@ -8,7 +8,7 @@ import Foundation
 /**
  The interactive gesture type
  */
-public enum InteractiveGestureType {
+public enum InteractiveGestureType: String {
   case PanHorizontally
   case PanVertically
   case PanFromLeft

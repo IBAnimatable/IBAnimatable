@@ -13,11 +13,14 @@ public class Navigator: NSObject {
   var transitionDuration: Duration = defaultTransitionDuration
   
   // Used for interactionController
-  private var interactiveAnimator: PanInteractiveAnimator = PanInteractiveAnimator(interactiveGestureType: .PanFromLeft)
+  private var interactiveAnimator: PanInteractiveAnimator?
   
-  public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration) {
+  public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) {
     self.transitionAnimationType = transitionAnimationType
     self.transitionDuration = transitionDuration
+    if let interactiveGestureType = interactiveGestureType {
+      interactiveAnimator = PanInteractiveAnimator(interactiveGestureType: interactiveGestureType)
+    }
     super.init()
   }
 }
@@ -26,10 +29,10 @@ extension Navigator: UINavigationControllerDelegate {
   public func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     let animator = AnimatorFactory.generateAnimator(transitionAnimationType, transitionDuration: transitionDuration)
     if operation == .Push {
-      interactiveAnimator.connectGestureRecognizer(toVC)
+      interactiveAnimator?.connectGestureRecognizer(toVC)
       return animator
     } else if operation == .Pop {
-      interactiveAnimator.connectGestureRecognizer(toVC)
+      interactiveAnimator?.connectGestureRecognizer(toVC)
       // Use the reverse animation
       if let reverseTransitionAnimationType = animator.reverseAnimationType {
         return AnimatorFactory.generateAnimator(reverseTransitionAnimationType, transitionDuration: transitionDuration)
@@ -39,7 +42,7 @@ extension Navigator: UINavigationControllerDelegate {
   }
   
   public func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-    if interactiveAnimator.interacting {
+    if let interactiveAnimator = interactiveAnimator where interactiveAnimator.interacting {
       return interactiveAnimator
     } else {
       return nil

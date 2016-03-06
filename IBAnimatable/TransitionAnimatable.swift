@@ -7,7 +7,7 @@ import UIKit
 
 public protocol TransitionAnimatable: class {
   /**
-   String value of `TransitionAnimationType` enum
+   String value of `TransitionAnimationType` enum, used to specify the transition animations
    */
   var transitionAnimationType: String? { get set }
   
@@ -15,4 +15,9 @@ public protocol TransitionAnimatable: class {
    Transition duration: default value should be `Double.NaN`. Need to use `Double` instead of `NSTimeInterval` because IB doesn't support `NSTimeInterval`
    */
   var transitionDuration: Double { get set }
+  
+  /**
+   String value of `InteractiveTransitionType` enum, used to specify the gesture to dismiss/pop current scence
+   */
+  var interactiveGestureType: String? { get set }
 }

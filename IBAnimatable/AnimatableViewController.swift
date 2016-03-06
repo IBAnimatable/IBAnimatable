@@ -18,6 +18,7 @@ import UIKit
   // MARK: - TransitionAnimatable
   @IBInspectable public var transitionAnimationType: String?
   @IBInspectable public var transitionDuration: Double = .NaN
+  @IBInspectable public var interactiveGestureType: String?
 
   // MARK: - Lifecylce
   public override func viewWillAppear(animated: Bool) {
