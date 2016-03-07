@@ -201,7 +201,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="interactiveGestureType" value="PanHorizontally"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="interactiveGestureType" value="Default"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="NTx-bf-G81" kind="relationship" relationship="rootViewController" id="3Ez-j6-isk"/>

@@ -23,6 +23,11 @@ public protocol AnimatedTransitioning: UIViewControllerAnimatedTransitioning {
    Reverse animation type: used to specify the revers animation for pop or dismiss.
    */
   var reverseAnimationType: TransitionAnimationType? { get set }
+  
+  /**
+   Interactive gesture type: used to specify the gesture type to pop or dismiss.
+   */
+  var interactiveGestureType: InteractiveGestureType? { get set }
 }
 
 public extension AnimatedTransitioning {

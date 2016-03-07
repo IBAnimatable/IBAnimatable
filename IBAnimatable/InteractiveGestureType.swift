@@ -9,6 +9,7 @@ import Foundation
  The interactive gesture type
  */
 public enum InteractiveGestureType: String {
+  case Default          // Will use the default interactive gesture type from `AnimatedTransitioning`
   case PanHorizontally
   case PanVertically
   case PanFromLeft

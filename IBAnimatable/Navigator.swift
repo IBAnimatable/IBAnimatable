@@ -19,7 +19,15 @@ public class Navigator: NSObject {
     self.transitionAnimationType = transitionAnimationType
     self.transitionDuration = transitionDuration
     if let interactiveGestureType = interactiveGestureType {
-      interactiveAnimator = PanInteractiveAnimator(interactiveGestureType: interactiveGestureType)
+      // If configured as `.Default` then use the default interactive gesture type from the Animator
+      if interactiveGestureType == .Default {
+        let animator = AnimatorFactory.generateAnimator(transitionAnimationType, transitionDuration: transitionDuration)
+        if let interactiveGestureType = animator.interactiveGestureType {
+          interactiveAnimator = PanInteractiveAnimator(interactiveGestureType: interactiveGestureType)
+        }
+      } else {
+        interactiveAnimator = PanInteractiveAnimator(interactiveGestureType: interactiveGestureType)
+      }
     }
     super.init()
   }

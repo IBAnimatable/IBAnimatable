@@ -12,7 +12,8 @@ public class SystemCubeAnimator: NSObject, AnimatedTransitioning {
   public var transitionAnimationType: TransitionAnimationType
   public var transitionDuration: Duration = defaultTransitionDuration
   public var reverseAnimationType: TransitionAnimationType?
-  
+  public var interactiveGestureType: InteractiveGestureType?
+
   // MARK: - private
   private var fromDirection: TransitionFromDirection
   
@@ -24,15 +25,19 @@ public class SystemCubeAnimator: NSObject, AnimatedTransitioning {
     case .FromLeft:
       self.transitionAnimationType = .SystemCubeFromLeft
       self.reverseAnimationType = .SystemCubeFromRight
+      self.interactiveGestureType = .PanFromLeft
     case .FromRight:
       self.transitionAnimationType = .SystemCubeFromRight
       self.reverseAnimationType = .SystemCubeFromLeft
+      self.interactiveGestureType = .PanFromRight
     case .FromTop:
       self.transitionAnimationType = .SystemCubeFromTop
       self.reverseAnimationType = .SystemCubeFromBottom
+      self.interactiveGestureType = .PanFromTop
     case .FromBottom:
       self.transitionAnimationType = .SystemCubeFromBottom
       self.reverseAnimationType = .SystemCubeFromTop
+      self.interactiveGestureType = .PanFromBottom
     }
     
     super.init()
