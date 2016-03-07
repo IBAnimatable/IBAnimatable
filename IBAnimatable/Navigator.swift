@@ -12,37 +12,43 @@ public class Navigator: NSObject {
   var transitionAnimationType: TransitionAnimationType
   var transitionDuration: Duration = defaultTransitionDuration
   
+  private var animator: AnimatedTransitioning?
   // Used for interactionController
   private var interactiveAnimator: PanInteractiveAnimator?
+  
   
   public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) {
     self.transitionAnimationType = transitionAnimationType
     self.transitionDuration = transitionDuration
+    
+    super.init()
+    
+    animator = AnimatorFactory.generateAnimator(transitionAnimationType, transitionDuration: transitionDuration)
+    
+    // If interactiveGestureType has been set
     if let interactiveGestureType = interactiveGestureType {
       // If configured as `.Default` then use the default interactive gesture type from the Animator
       if interactiveGestureType == .Default {
-        let animator = AnimatorFactory.generateAnimator(transitionAnimationType, transitionDuration: transitionDuration)
-        if let interactiveGestureType = animator.interactiveGestureType {
+        if let interactiveGestureType = animator?.interactiveGestureType {
           interactiveAnimator = PanInteractiveAnimator(interactiveGestureType: interactiveGestureType)
         }
       } else {
         interactiveAnimator = PanInteractiveAnimator(interactiveGestureType: interactiveGestureType)
       }
     }
-    super.init()
   }
 }
 
 extension Navigator: UINavigationControllerDelegate {
   public func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    let animator = AnimatorFactory.generateAnimator(transitionAnimationType, transitionDuration: transitionDuration)
+    interactiveAnimator?.connectGestureRecognizer(toVC)
+    
     if operation == .Push {
-      interactiveAnimator?.connectGestureRecognizer(toVC)
+      animator?.transitionDuration = transitionDuration
       return animator
     } else if operation == .Pop {
-      interactiveAnimator?.connectGestureRecognizer(toVC)
       // Use the reverse animation
-      if let reverseTransitionAnimationType = animator.reverseAnimationType {
+      if let reverseTransitionAnimationType = animator?.reverseAnimationType {
         return AnimatorFactory.generateAnimator(reverseTransitionAnimationType, transitionDuration: transitionDuration)
       }
     }
