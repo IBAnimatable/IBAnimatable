@@ -15,11 +15,11 @@ public class PanInteractiveAnimator: UIPercentDrivenInteractiveTransition {
   init(interactiveGestureType: InteractiveGestureType) {
     self.interactiveGestureType = interactiveGestureType
     super.init()
-    gestureRecognizer = UIPanGestureRecognizer(target: self, action: Selector("handleGesture:"))
   }
   
   func connectGestureRecognizer(viewController: UIViewController) {
     self.viewController = viewController
+    gestureRecognizer = UIPanGestureRecognizer(target: self, action: Selector("handleGesture:"))
     if let gestureRecognizer = gestureRecognizer {
       self.viewController?.view.addGestureRecognizer(gestureRecognizer)
     }
@@ -33,22 +33,18 @@ public class PanInteractiveAnimator: UIPercentDrivenInteractiveTransition {
     
     // width or heigth depends on the gesture direction
     let distance: CGFloat
-    if interactiveGestureType == .PanHorizontally ||
-      interactiveGestureType == .PanFromLeft ||
-      interactiveGestureType == .PanFromRight {
+    switch interactiveGestureType {
+    case .PanHorizontally, .PanFromLeft, .PanFromRight:
       distance = superview.frame.width
-    } else if interactiveGestureType == .PanVertically ||
-      interactiveGestureType == .PanFromTop ||
-      interactiveGestureType == .PanFromBottom {
-        distance = superview.frame.height
-    }
-    else {
+    case .PanVertically, .PanFromTop, .PanFromBottom:
+      distance = superview.frame.height
+    default:
       return
     }
     
     var progress: CGFloat = abs(translation.x / distance)
     progress = min(max(progress, 0.01), 0.99)
-    
+
     switch gestureRecognizer.state {
     case .Began:
       interacting = true
@@ -58,7 +54,7 @@ public class PanInteractiveAnimator: UIPercentDrivenInteractiveTransition {
       updateInteractiveTransition(progress)
     case .Cancelled, .Ended:
       interacting = false
-      if progress < 0.5 {
+      if progress < 0.5 || gestureRecognizer.state == .Cancelled {
         cancelInteractiveTransition()
       } else {
         finishInteractiveTransition()
