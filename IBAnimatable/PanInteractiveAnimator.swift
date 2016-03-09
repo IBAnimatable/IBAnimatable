@@ -17,6 +17,10 @@ public class PanInteractiveAnimator: UIPercentDrivenInteractiveTransition {
     super.init()
   }
   
+  deinit {
+    gestureRecognizer?.removeTarget(self, action: Selector("handleGesture:"))
+  }
+  
   func connectGestureRecognizer(viewController: UIViewController) {
     self.viewController = viewController
     gestureRecognizer = UIPanGestureRecognizer(target: self, action: Selector("handleGesture:"))
@@ -30,20 +34,25 @@ public class PanInteractiveAnimator: UIPercentDrivenInteractiveTransition {
       return
     }
     let translation = gestureRecognizer.translationInView(superview)
+    let velocity = gestureRecognizer.velocityInView(superview)
     
-    // width or heigth depends on the gesture direction
+    var progress: CGFloat
     let distance: CGFloat
-    switch interactiveGestureType {
-    case .PanHorizontally, .PanFromLeft, .PanFromRight:
+    if interactiveGestureType == .PanHorizontally {
       distance = superview.frame.width
-    case .PanVertically, .PanFromTop, .PanFromBottom:
-      distance = superview.frame.height
-    default:
+      progress = abs(translation.x / distance)
+    } else if interactiveGestureType == .PanFromLeft {
+      distance = superview.frame.width
+      progress = translation.x / distance
+    } else if (velocity.y > 0 && interactiveGestureType == .PanFromTop) ||
+      (velocity.y < 0 && interactiveGestureType == .PanFromBottom) ||
+      interactiveGestureType == .PanVertically {
+        distance = superview.frame.height
+        progress = abs(translation.y / distance)
+    } else {
       return
     }
-    
-    var progress: CGFloat = abs(translation.x / distance)
-    progress = min(max(progress, 0.01), 0.99)
+    progress = min(max(progress, 0), 0.99)
 
     switch gestureRecognizer.state {
     case .Began:
@@ -60,6 +69,8 @@ public class PanInteractiveAnimator: UIPercentDrivenInteractiveTransition {
         finishInteractiveTransition()
       }
     default:
+      // Something happened. cancel the transition.
+      cancelInteractiveTransition()
       break
     }
   }
