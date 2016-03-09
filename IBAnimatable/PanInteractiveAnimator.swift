@@ -30,7 +30,7 @@ public class PanInteractiveAnimator: UIPercentDrivenInteractiveTransition {
   }
   
   func handleGesture(gestureRecognizer: UIPanGestureRecognizer) {
-    guard let view = gestureRecognizer.view, superview = view.superview else {
+    guard let superview = gestureRecognizer.view?.superview else {
       return
     }
     let translation = gestureRecognizer.translationInView(superview)
