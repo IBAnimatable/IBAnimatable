@@ -28,22 +28,18 @@ public class SystemFlipAnimator: NSObject, AnimatedTransitioning {
       self.transitionAnimationType = .SystemFlipFromLeft
       self.reverseAnimationType = .SystemFlipFromRight
       self.animationOption = .TransitionFlipFromLeft
-      self.interactiveGestureType = .PanFromLeft
     case .FromRight:
       self.transitionAnimationType = .SystemFlipFromRight
       self.reverseAnimationType = .SystemFlipFromLeft
       self.animationOption = .TransitionFlipFromRight
-      self.interactiveGestureType = .PanFromRight
     case .FromTop:
       self.transitionAnimationType = .SystemFlipFromTop
       self.reverseAnimationType = .SystemFlipFromBottom
       self.animationOption = .TransitionFlipFromTop
-      self.interactiveGestureType = .PanFromTop
     case .FromBottom:
       self.transitionAnimationType = .SystemFlipFromBottom
       self.reverseAnimationType = .SystemFlipFromTop
       self.animationOption = .TransitionFlipFromBottom
-      self.interactiveGestureType = .PanFromBottom
     }
     
     super.init()
@@ -62,8 +58,11 @@ extension SystemFlipAnimator: UIViewControllerAnimatedTransitioning {
       return
     }
     
-    UIView.transitionFromView(fromView, toView: toView, duration: transitionDuration(transitionContext), options: animationOption) { _ in
-      transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
-    }
+    UIView.transitionFromView(fromView, toView: toView,
+      duration: transitionDuration(transitionContext), options: animationOption,
+      completion: { _ in
+        transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+      }
+    )
   }
 }

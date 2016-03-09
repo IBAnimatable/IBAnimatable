@@ -68,7 +68,6 @@ public class PanInteractiveAnimator: UIPercentDrivenInteractiveTransition {
       return
     }
     
-//    print("progress: \(progress), speed: \(speed)")
     progress = min(max(progress, 0), 0.99)
 
     switch gestureRecognizer.state {
@@ -80,7 +79,7 @@ public class PanInteractiveAnimator: UIPercentDrivenInteractiveTransition {
       updateInteractiveTransition(progress)
     case .Cancelled, .Ended:
       interacting = false
-      // Finish the transition when pass the threathold 
+      // Finish the transition when pass the threathold
       if progress > 0.5 || speed > 1000 {
         finishInteractiveTransition()
       } else {
