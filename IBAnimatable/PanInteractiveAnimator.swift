@@ -44,6 +44,9 @@ public class PanInteractiveAnimator: UIPercentDrivenInteractiveTransition {
     } else if interactiveGestureType == .PanFromLeft {
       distance = superview.frame.width
       progress = translation.x / distance
+    } else if interactiveGestureType == .PanFromRight {
+      distance = superview.frame.width
+      progress = -(translation.x / distance)
     } else if (velocity.y > 0 && interactiveGestureType == .PanFromTop) ||
       (velocity.y < 0 && interactiveGestureType == .PanFromBottom) ||
       interactiveGestureType == .PanVertically {
