@@ -34,27 +34,34 @@ public class PanInteractiveAnimator: UIPercentDrivenInteractiveTransition {
       return
     }
     let translation = gestureRecognizer.translationInView(superview)
-    let velocity = gestureRecognizer.velocityInView(superview)
+//    let velocity = gestureRecognizer.velocityInView(superview)
     
     var progress: CGFloat
     let distance: CGFloat
-    if interactiveGestureType == .PanHorizontally {
+    switch interactiveGestureType {
+    case .PanHorizontally:
       distance = superview.frame.width
       progress = abs(translation.x / distance)
-    } else if interactiveGestureType == .PanFromLeft {
+    case .PanFromLeft:
       distance = superview.frame.width
       progress = translation.x / distance
-    } else if interactiveGestureType == .PanFromRight {
+    case .PanFromRight:
       distance = superview.frame.width
       progress = -(translation.x / distance)
-    } else if (velocity.y > 0 && interactiveGestureType == .PanFromTop) ||
-      (velocity.y < 0 && interactiveGestureType == .PanFromBottom) ||
-      interactiveGestureType == .PanVertically {
-        distance = superview.frame.height
-        progress = abs(translation.y / distance)
-    } else {
+    case .PanVertically:
+      distance = superview.frame.height
+      progress = abs(translation.y / distance)
+    case .PanFromTop:
+      distance = superview.frame.height
+      progress = translation.y / distance
+    case .PanFromBottom:
+      distance = superview.frame.height
+      progress = -translation.y / distance
+    default:
       return
     }
+    
+//    print(progress)
     progress = min(max(progress, 0), 0.99)
 
     switch gestureRecognizer.state {
