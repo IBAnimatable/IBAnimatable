@@ -88,7 +88,7 @@ view.animate()
 我们可以在 [Swift Playgrourd Page - Animation Properties](https://github.com/JakeLin/IBAnimatable/tree/master/IBAnimatable.playground/Pages/Animation%20Properties.xcplaygroundpage) 里面尝试不同的动画属性。
 
 ### 串联动画
-有时候我们需要把多个动画串联起来执行，`IBAnimatble` 提供非常简易的方式来把动画串联起来。
+有时候我们需要把多个动画串联起来执行，`IBAnimatable` 提供非常简易的方式来把动画串联起来。
 
 ```
 // 只要把下一个动画放在 `{}` closure 就可以了，下面的例子是当执行完从上而下的滑动后 Pop 的动画。
