@@ -8,20 +8,20 @@ import UIKit
 TransitionFromDirection: convert from direction to CATransition Subtype used in `CATransition`
 */
 public enum TransitionFromDirection {
-  case FromLeft
-  case FromRight
-  case FromTop
-  case FromBottom
+  case Left
+  case Right
+  case Top
+  case Bottom
   
   var stringValue: String {
     switch self {
-    case .FromLeft:
+    case .Left:
       return kCATransitionFromLeft
-    case .FromRight:
+    case .Right:
       return kCATransitionFromRight
-    case .FromTop:
+    case .Top:
       return kCATransitionFromTop
-    case .FromBottom:
+    case .Bottom:
       return kCATransitionFromBottom
     }
   }

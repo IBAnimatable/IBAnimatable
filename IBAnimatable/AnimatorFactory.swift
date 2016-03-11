@@ -21,21 +21,21 @@ struct AnimatorFactory {
     case .FadeOut:
       return FadeAnimator(fadeType: .FadeOut, transitionDuration: transitionDuration)
     case .SystemCubeFromLeft:
-      return SystemCubeAnimator(fromDirection: .FromLeft, transitionDuration: transitionDuration)
+      return SystemCubeAnimator(fromDirection: .Left, transitionDuration: transitionDuration)
     case .SystemCubeFromRight:
-      return SystemCubeAnimator(fromDirection: .FromRight, transitionDuration: transitionDuration)
+      return SystemCubeAnimator(fromDirection: .Right, transitionDuration: transitionDuration)
     case .SystemCubeFromTop:
-      return SystemCubeAnimator(fromDirection: .FromTop, transitionDuration: transitionDuration)
+      return SystemCubeAnimator(fromDirection: .Top, transitionDuration: transitionDuration)
     case .SystemCubeFromBottom:
-      return SystemCubeAnimator(fromDirection: .FromBottom, transitionDuration: transitionDuration)
+      return SystemCubeAnimator(fromDirection: .Bottom, transitionDuration: transitionDuration)
     case .SystemFlipFromLeft:
-      return SystemFlipAnimator(fromDirection: .FromLeft, transitionDuration: transitionDuration)
+      return SystemFlipAnimator(fromDirection: .Left, transitionDuration: transitionDuration)
     case .SystemFlipFromRight:
-      return SystemFlipAnimator(fromDirection: .FromRight, transitionDuration: transitionDuration)
+      return SystemFlipAnimator(fromDirection: .Right, transitionDuration: transitionDuration)
     case .SystemFlipFromTop:
-      return SystemFlipAnimator(fromDirection: .FromTop, transitionDuration: transitionDuration)
+      return SystemFlipAnimator(fromDirection: .Top, transitionDuration: transitionDuration)
     case .SystemFlipFromBottom:
-      return SystemFlipAnimator(fromDirection: .FromBottom, transitionDuration: transitionDuration)
+      return SystemFlipAnimator(fromDirection: .Bottom, transitionDuration: transitionDuration)
     }
   }
 }

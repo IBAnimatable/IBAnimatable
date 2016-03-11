@@ -10,6 +10,7 @@ public class AnimatableNavigationController: UINavigationController, TransitionA
   // MARK: - TransitionAnimatable
   @IBInspectable public var transitionAnimationType: String?
   @IBInspectable public var transitionDuration: Double = .NaN
+  @IBInspectable public var interactiveGestureType: String?
 
   // MARK: - Lifecylce
   public override func viewDidLoad() {
@@ -30,7 +31,11 @@ public class AnimatableNavigationController: UINavigationController, TransitionA
     if transitionDuration.isNaN {
       duration = defaultTransitionDuration
     }
-    navigator = Navigator(transitionAnimationType: animationType, transitionDuration: duration)
+    if let interactiveGestureType = interactiveGestureType, gestureType = InteractiveGestureType(rawValue: interactiveGestureType) {
+      navigator = Navigator(transitionAnimationType: animationType, transitionDuration: duration, interactiveGestureType: gestureType)
+    } else {
+      navigator = Navigator(transitionAnimationType: animationType, transitionDuration: duration)
+    }
     delegate = navigator
   }
 }

@@ -23,6 +23,11 @@ public protocol AnimatedTransitioning: UIViewControllerAnimatedTransitioning {
    Reverse animation type: used to specify the revers animation for pop or dismiss.
    */
   var reverseAnimationType: TransitionAnimationType? { get set }
+  
+  /**
+   Interactive gesture type: used to specify the gesture type to pop or dismiss.
+   */
+  var interactiveGestureType: InteractiveGestureType? { get set }
 }
 
 public extension AnimatedTransitioning {
@@ -56,7 +61,8 @@ public extension AnimatedTransitioning {
         transition.subtype = subtype
       }
       transition.duration = self.transitionDuration(transitionContext)
-      
+      // Use `EaseOutQubic` for system built-in transition animations. Thanks to @lexrus
+      transition.timingFunction = CAMediaTimingFunction(controlPoints: 0.215, 0.61, 0.355, 1)
       containerView.layer.addAnimation(transition, forKey: kCATransition)
     },
     completion: {

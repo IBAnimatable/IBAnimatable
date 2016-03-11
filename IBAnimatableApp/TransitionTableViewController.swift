@@ -20,9 +20,7 @@ class TransitionTableViewController: UITableViewController {
 
   // MARK: - UITableViewDataSource
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCellWithIdentifier("transitionCell") else {
-      return UITableViewCell()
-    }
+    let cell = tableView.dequeueReusableCellWithIdentifier("transitionCell", forIndexPath: indexPath) as UITableViewCell
     cell.textLabel?.text = transitionAnimations[indexPath.row].rawValue
     return cell
   }

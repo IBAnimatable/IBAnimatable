@@ -13,7 +13,8 @@ public class SystemFlipAnimator: NSObject, AnimatedTransitioning {
   public var transitionAnimationType: TransitionAnimationType
   public var transitionDuration: Duration = defaultTransitionDuration
   public var reverseAnimationType: TransitionAnimationType?
-  
+  public var interactiveGestureType: InteractiveGestureType?
+
   // MARK: - private
   private var fromDirection: TransitionFromDirection
   private var animationOption: UIViewAnimationOptions
@@ -23,19 +24,19 @@ public class SystemFlipAnimator: NSObject, AnimatedTransitioning {
     self.transitionDuration = transitionDuration
     
     switch fromDirection {
-    case .FromLeft:
+    case .Left:
       self.transitionAnimationType = .SystemFlipFromLeft
       self.reverseAnimationType = .SystemFlipFromRight
       self.animationOption = .TransitionFlipFromLeft
-    case .FromRight:
+    case .Right:
       self.transitionAnimationType = .SystemFlipFromRight
       self.reverseAnimationType = .SystemFlipFromLeft
       self.animationOption = .TransitionFlipFromRight
-    case .FromTop:
+    case .Top:
       self.transitionAnimationType = .SystemFlipFromTop
       self.reverseAnimationType = .SystemFlipFromBottom
       self.animationOption = .TransitionFlipFromTop
-    case .FromBottom:
+    case .Bottom:
       self.transitionAnimationType = .SystemFlipFromBottom
       self.reverseAnimationType = .SystemFlipFromTop
       self.animationOption = .TransitionFlipFromBottom
@@ -57,8 +58,11 @@ extension SystemFlipAnimator: UIViewControllerAnimatedTransitioning {
       return
     }
     
-    UIView.transitionFromView(fromView, toView: toView, duration: transitionDuration(transitionContext), options: animationOption) { _ in
-      transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
-    }
+    UIView.transitionFromView(fromView, toView: toView,
+      duration: transitionDuration(transitionContext), options: animationOption,
+      completion: { _ in
+        transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+      }
+    )
   }
 }
