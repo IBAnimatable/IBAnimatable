@@ -152,7 +152,6 @@
                             <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="transitionAnimationType" value="Fade"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="interactiveGestureType" value="Default"/>
                     </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oMr-Kw-Kza" userLabel="First Responder" sceneMemberID="firstResponder"/>
