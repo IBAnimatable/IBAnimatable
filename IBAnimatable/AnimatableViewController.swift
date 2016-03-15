@@ -46,8 +46,17 @@ import UIKit
       return
     }
     
+    let presenter: Presenter
+    // If interactiveGestureType has been set
+    if let interactiveGestureType = interactiveGestureType, interactiveGestureTypeValue = InteractiveGestureType(rawValue: interactiveGestureType) {
+      presenter = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration, interactiveGestureType: interactiveGestureTypeValue)
+    }
+    else {
+      presenter = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration)
+    }
+  
     let toViewController = segue.destinationViewController
-    toViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration)
+    toViewController.transitioningDelegate = presenter
 
     super.prepareForSegue(segue, sender: sender)
   }

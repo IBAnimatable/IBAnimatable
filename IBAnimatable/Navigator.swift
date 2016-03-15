@@ -39,6 +39,7 @@ public class Navigator: NSObject {
 }
 
 extension Navigator: UINavigationControllerDelegate {
+  // MARK: - animation controller
   public func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     interactiveAnimator?.connectGestureRecognizer(toVC)
     
@@ -54,6 +55,7 @@ extension Navigator: UINavigationControllerDelegate {
     return nil
   }
   
+  // MARK: - interaction controller
   public func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
     if let interactiveAnimator = interactiveAnimator where interactiveAnimator.interacting {
       return interactiveAnimator
