@@ -25,7 +25,7 @@ class TransitionViewController: AnimatableViewController {
     }
     
     toViewController.transitionAnimationType = animationType
-    let segueName = "IBAnimatable.Present" + animationType + "WithDismissInteractionSegue"
+    let segueName = "IBAnimatable.Present" + animationType + "Segue"
     guard let segueClass = NSClassFromString(segueName) as? UIStoryboardSegue.Type else {
       return
     }
