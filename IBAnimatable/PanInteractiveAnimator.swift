@@ -8,12 +8,18 @@ import UIKit
 public class PanInteractiveAnimator: UIPercentDrivenInteractiveTransition {
   private(set) public var interacting = false
   
+  // transitionType: Used to deteminate pop or dismiss
+  private let transitionType: TransitionType
+  // interactiveGestureType: Used to deteminate gesture type (direction)
   private let interactiveGestureType: InteractiveGestureType
+  // viewController: the viewController will connect to the gestureRecognizer
   private var viewController: UIViewController?
+  // gestureRecognizer: the gesture recognizer to handle gesture
   private var gestureRecognizer: UIPanGestureRecognizer?
   
-  init(interactiveGestureType: InteractiveGestureType) {
+  init(interactiveGestureType: InteractiveGestureType, transitionType: TransitionType) {
     self.interactiveGestureType = interactiveGestureType
+    self.transitionType = transitionType
     super.init()
   }
   
@@ -69,12 +75,18 @@ public class PanInteractiveAnimator: UIPercentDrivenInteractiveTransition {
     }
     
     progress = min(max(progress, 0), 0.99)
-
+//    print(progress)
     switch gestureRecognizer.state {
     case .Began:
       interacting = true
-      // TODO: only for pop now
-      viewController?.navigationController?.popViewControllerAnimated(true)
+      switch transitionType {
+      case .NavigationTransition(.Pop):
+        viewController?.navigationController?.popViewControllerAnimated(true)
+      case .PresentationTransition(.Dismissal):
+        viewController?.dismissViewControllerAnimated(true, completion: nil)
+      default:
+        break
+      }
     case .Changed:
       updateInteractiveTransition(progress)
     case .Cancelled, .Ended:
