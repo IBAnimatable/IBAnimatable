@@ -75,7 +75,6 @@ public class PanInteractiveAnimator: UIPercentDrivenInteractiveTransition {
     }
     
     progress = min(max(progress, 0), 0.99)
-//    print(progress)
     switch gestureRecognizer.state {
     case .Began:
       interacting = true

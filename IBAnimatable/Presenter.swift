@@ -10,7 +10,13 @@ import UIKit
  */
 public class Presenter: NSObject {
   private var transitionAnimationType: TransitionAnimationType
-  var transitionDuration: Duration = defaultTransitionDuration
+  var transitionDuration: Duration {
+    didSet {
+      if oldValue != transitionDuration {
+        updateTransitionDuration()
+      }
+    }
+  }
   
   var interactiveGestureType: InteractiveGestureType? {
     // Update `interactiveAnimator` if needed
@@ -25,12 +31,14 @@ public class Presenter: NSObject {
   private var animator: AnimatedTransitioning?
   
   // interaction controller
-  var interactiveAnimator: PanInteractiveAnimator?
+  private var interactiveAnimator: PanInteractiveAnimator?
   
   public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) {
     self.transitionAnimationType = transitionAnimationType
     self.transitionDuration = transitionDuration
     super.init()
+    
+    updateTransitionDuration()
     
     animator = AnimatorFactory.generateAnimator(transitionAnimationType, transitionDuration: transitionDuration)
     
@@ -39,6 +47,12 @@ public class Presenter: NSObject {
   }
   
   // MARK: - Private
+  private func updateTransitionDuration() {
+    if transitionDuration.isNaN {
+      transitionDuration = defaultTransitionDuration
+    }
+  }
+  
   private func updateInteractiveAnimator() {
     // If interactiveGestureType has been set
     if let interactiveGestureType = interactiveGestureType {
