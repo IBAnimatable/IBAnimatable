@@ -721,7 +721,7 @@ public extension Animatable where Self: UIView {
   
   // MARK: Private helper
   private var screenSize: CGSize {
-    return UIScreen.mainScreen().bounds.size
+    return self.window?.screen.bounds.size ?? CGSize.zero
   }
 }
 

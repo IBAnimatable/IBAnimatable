@@ -23,6 +23,7 @@ All notable changes to this project will be documented in this file.
 #### Bugfixes
 
 - Fix potential crash when using `GradientDesignable`
+- Fix slideIn/Out animations on second screens
 
 ### [1.2](https://github.com/JakeLin/IBAnimatable/releases/tag/1.2)
 
