@@ -32,14 +32,14 @@ class TransitionTableViewController: UITableViewController {
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     super.prepareForSegue(segue, sender: sender)
     
-    guard let toViewController = segue.destinationViewController as? AnimatableNavigationController, path = tableView.indexPathForSelectedRow else {
+    guard let toNavigationController = segue.destinationViewController as? AnimatableNavigationController, path = tableView.indexPathForSelectedRow else {
       return
     }
   
     let transitionAnimationType = String(transitionAnimations[path.row])
-    toViewController.transitionAnimationType = transitionAnimationType
+    toNavigationController.transitionAnimationType = transitionAnimationType
     
-    if let transitionViewController = toViewController.topViewController as? TransitionViewController{
+    if let transitionViewController = toNavigationController.topViewController as? TransitionViewController{
       transitionViewController.animationType = transitionAnimationType
     }
   }

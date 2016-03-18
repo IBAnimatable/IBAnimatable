@@ -30,7 +30,7 @@ class TransitionViewController: AnimatableViewController {
       return
     }
     
-    let segue = segueClass.init(identifier: String(PresentFadeSegue), source: self, destination: toViewController)
+    let segue = segueClass.init(identifier: segueName, source: self, destination: toViewController)
     prepareForSegue(segue, sender: self)
     segue.perform()
   }

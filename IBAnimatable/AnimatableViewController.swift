@@ -40,6 +40,8 @@ import UIKit
   }
 
   public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    super.prepareForSegue(segue, sender: sender)
+    
     // Configure custom transition animation
     guard let transitionAnimationType = transitionAnimationType, animationType = TransitionAnimationType(rawValue: transitionAnimationType) else {
       super.prepareForSegue(segue, sender: sender)
@@ -47,8 +49,12 @@ import UIKit
     }
     
     let toViewController = segue.destinationViewController
-    toViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration)
-
-    super.prepareForSegue(segue, sender: sender)
+    // If interactiveGestureType has been set
+    if let interactiveGestureType = interactiveGestureType, interactiveGestureTypeValue = InteractiveGestureType(rawValue: interactiveGestureType) {
+      toViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration, interactiveGestureType: interactiveGestureTypeValue)
+    }
+    else {
+      toViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration)
+    }
   }
 }
