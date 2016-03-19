@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Animatable View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="8Rd-3V-pdH">
             <objects>
-                <viewController id="7ne-VT-Tkk" customClass="AnimatableViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7ne-VT-Tkk" userLabel="Login View Controller" customClass="AnimatableViewController" customModule="IBAnimatable" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gSc-Fb-cEP"/>
                         <viewControllerLayoutGuide type="bottom" id="p9q-ym-dQp"/>
@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="login-bg" translatesAutoresizingMaskIntoConstraints="NO" id="0VW-he-GSd" customClass="AnimatableImageView" customModule="IBAnimatableApp" customModuleProvider="target">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="login-bg" translatesAutoresizingMaskIntoConstraints="NO" id="0VW-he-GSd" userLabel="Login Background Image View" customClass="AnimatableImageView" customModule="IBAnimatable">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadeOpacity">
@@ -31,10 +31,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="kMX-KN-rVM" customClass="AnimatableImageView" customModule="IBAnimatableApp" customModuleProvider="target">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="kMX-KN-rVM" userLabel="Logo Image View" customClass="AnimatableImageView" customModule="IBAnimatable">
                                 <rect key="frame" x="112" y="150" width="150" height="116"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8m-bE-oxM">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8m-bE-oxM" userLabel="Create Account Button">
                                 <rect key="frame" x="16" y="620" width="88" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="Create Account">
@@ -44,7 +44,7 @@
                                     <segue destination="Ya1-vA-pSE" kind="show" id="YMZ-FL-mTb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xH8-G7-l9G">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xH8-G7-l9G" userLabel="Forgot Password Button">
                                 <rect key="frame" x="264" y="620" width="95" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="Forgot Password">
@@ -54,10 +54,10 @@
                                     <segue destination="2i8-5x-idC" kind="show" id="pRb-pt-haD"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wBb-ns-Bw1" customClass="AnimatableStackView" customModule="IBAnimatableApp" customModuleProvider="target">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wBb-ns-Bw1" customClass="AnimatableStackView" customModule="IBAnimatable">
                                 <rect key="frame" x="16" y="387" width="343" height="180"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G6K-68-JlC" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G6K-68-JlC" userLabel="Username Text Field" customClass="AnimatableTextField" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Rn5-qb-vBe"/>
@@ -84,7 +84,7 @@
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="username"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="00x-ai-icw" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="00x-ai-icw" userLabel="Password Text Field" customClass="AnimatableTextField" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="60" width="343" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="DGj-Jg-RSw"/>
@@ -104,7 +104,7 @@
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="password"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHw-QK-EpD" userLabel="Sign In" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHw-QK-EpD" userLabel="Sign In Button" customClass="AnimatableButton" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="120" width="343" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="2q7-zb-5Oq"/>
@@ -158,10 +158,10 @@
             </objects>
             <point key="canvasLocation" x="3521.5" y="-255.5"/>
         </scene>
-        <!--Animatable View Controller-->
+        <!--Create Account View Controller-->
         <scene sceneID="ehL-9E-b6y">
             <objects>
-                <viewController modalTransitionStyle="flipHorizontal" id="Ya1-vA-pSE" customClass="AnimatableViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="Ya1-vA-pSE" userLabel="Create Account View Controller" customClass="AnimatableViewController" customModule="IBAnimatable" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UPX-ER-qv3"/>
                         <viewControllerLayoutGuide type="bottom" id="aKz-Oq-qpJ"/>
@@ -170,17 +170,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1R-AZ-zAq" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1R-AZ-zAq" customClass="AnimatableView" customModule="IBAnimatable">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="255"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8FW-si-qqJ" userLabel="Back" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8FW-si-qqJ" userLabel="Back Button" customClass="AnimatableButton" customModule="IBAnimatable">
                                         <rect key="frame" x="15" y="21" width="21" height="22"/>
                                         <state key="normal" image="back"/>
                                         <connections>
                                             <segue destination="5KN-5i-Hxc" kind="unwind" unwindAction="unwindToViewController:" id="Pio-6E-S3U"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5V6-mq-vby" userLabel="Add photo" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5V6-mq-vby" userLabel="Add Photo Button" customClass="AnimatableButton" customModule="IBAnimatable">
                                         <rect key="frame" x="162" y="124" width="50" height="51"/>
                                         <state key="normal" image="add-photo"/>
                                         <userDefinedRuntimeAttributes>
@@ -190,7 +190,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMA-fb-DK0" userLabel="Done" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMA-fb-DK0" userLabel="Done Button" customClass="AnimatableButton" customModule="IBAnimatable">
                                         <rect key="frame" x="332" y="21" width="23" height="22"/>
                                         <state key="normal" image="done"/>
                                         <connections>
@@ -217,7 +217,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="erI-aB-QSr">
                                 <rect key="frame" x="20" y="255" width="335" height="290"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xNI-La-5Tj" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xNI-La-5Tj" userLabel="Name Text Field" customClass="AnimatableTextField" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Tk0-dp-yeS"/>
@@ -248,7 +248,7 @@
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="username"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z51-4n-TE1" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z51-4n-TE1" userLabel="Email Text Field" customClass="AnimatableTextField" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="60" width="335" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="a5E-kL-8Wd"/>
@@ -279,7 +279,7 @@
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="email"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xLI-LO-iOO" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xLI-LO-iOO" userLabel="Password Text Field" customClass="AnimatableTextField" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="120" width="335" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="KUS-Xj-q7b"/>
@@ -310,7 +310,7 @@
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="password"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Birthday" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eYa-ff-J33" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Birthday" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eYa-ff-J33" userLabel="Birthday Text Field" customClass="AnimatableTextField" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="180" width="335" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="gEC-5V-LVZ"/>
@@ -341,7 +341,7 @@
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="birthday"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xdT-JQ-oZF" customClass="AnimatableTextField" customModule="IBAnimatableApp" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xdT-JQ-oZF" userLabel="Gender Text Field" customClass="AnimatableTextField" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="240" width="335" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Jwe-VU-ZY0"/>
@@ -424,7 +424,7 @@
                 <navigationController id="H7o-ac-7B2" sceneMemberID="viewController">
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="wga-Zk-Pz9" customClass="DesignableNavigationBar" customModule="IBAnimatableApp" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="wga-Zk-Pz9" customClass="DesignableNavigationBar" customModule="IBAnimatable">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -4541,7 +4541,7 @@
         <image name="work-bg" width="375" height="179"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4ed-KQ-MWR"/>
+        <segue reference="7Cl-bu-Udh"/>
         <segue reference="Lu7-se-tU1"/>
     </inferredMetricsTieBreakers>
 </document>
