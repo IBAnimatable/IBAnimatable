@@ -3,8 +3,21 @@ All notable changes to this project will be documented in this file.
 `IBAnimatable` adheres to [Semantic Versioning](http://semver.org/).
 
 ## Versions
-
 ### Next
+
+#### API breaking changes
+
+TBD
+
+#### Enhancements
+
+TBD
+
+#### Bugfixes
+
+TBD
+
+### [2.0](https://github.com/JakeLin/IBAnimatable/releases/tag/2.0)
 
 #### API breaking changes
 
@@ -19,11 +32,17 @@ All notable changes to this project will be documented in this file.
 - Add `SystemFlipAnimator` to support `SystemFlipFromLeft`, `SystemFlipFromRight`, `SystemFlipFromTop` and `SystemFlipFromBottom` transition animations
 - Add `FadeAnimator` to support `Fade`, `FadeIn` and `FadeOut` transition animations
 - Add `CALayerExtension` to simplify CALayer animations with completion closure.
+- Add `Navigator` to manage Push and Pop transition animations
+- Add `Presenter` to manage Present and Dismiss transition animations
+- Add `PresentFadeSegue`, `PresentFadeInSegue` and `PresentFadeOutSegue` for Present transition with Fade animations
+- Add `PresentFadeWithDismissInteractionSegue`, `PresentFadeInWithDismissInteractionSegue` and `PresentFadeOutWithDismissInteractionSegue` for Present transition with Fade animations and getsture interactions.
+- Add `PanInteractiveAnimator` to handle Pan interaction for Dismiss and Pop
+- Demo App can experiment all transition animations (tap on "Forget Password" button to see) 
 
 #### Bugfixes
 
 - Fix potential crash when using `GradientDesignable`
-- Fix slideIn/Out animations on second screens
+- Fix slideIn/Out animations on second screens (e.g. AirPlay)
 
 ### [1.2](https://github.com/JakeLin/IBAnimatable/releases/tag/1.2)
 
