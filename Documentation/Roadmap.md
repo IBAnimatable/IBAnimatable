@@ -5,13 +5,14 @@ IBAnimatable is an Open Source library to help designers and developers design a
 
 ## Approaches
 * Adding convenient `@IBInspectable` properties to reduce numerous amount of manual code. e.g.`fillColor`, `cornerRadius`, `shadowColor` and `shadowOffset`.
-* Providing predefined UI elements and animations. e.g. Flat UI colors, Gradient colors and pop animation.
+* Providing predefined UI elements and animations. e.g. Flat UI colors, Gradient colors and animations.
 * Extending existing behaviours, e.g. More transition animations than "Cover Vertical", "Flip Horizontal" and "Cross Dissolve".
 
 ## Technical Considerations
 * **UIKit** - All `IBAnimatable` UI elements are based on UIkit.
  	* **Dos**
 		* All UI elements should support Auto Layout.
+		* Support existing navigation pattern like present, dismiss, push and pop.
 	* **Don'ts**
 		* Creating another layout system. e.g. CSS Flexbox.
 		* Creating custom navigation pattern.
@@ -216,7 +217,9 @@ IBAnimatable is an Open Source library to help designers and developers design a
 * Automatically scrolling the view to follow the keyboard's focus.
 
 ### Navigation, transitioning animators and custom Segues
-* Navigation animators to replace `navigationController.delage`. e.g. swip-up to pushViewController
+* <del>Configurable custom transition animations for Push and Pop. </del> 
+* <del>Configurable custom transition animations for Present and Dismiss. </del> 
+* <del>Configurable gesture interactions for Dismiss and Pop. </del> 
 * Meaningful transition like https://www.google.com/design/spec/animation/meaningful-transitions.html
 * More transition like https://github.com/ColinEberhardt/VCTransitionsLibrary and http://transitiontreasury.com/
 
@@ -227,4 +230,4 @@ IBAnimatable is an Open Source library to help designers and developers design a
 * Importing Sketch to Storyboard? Maybe too hard.
 * Sketch plugin to export `IBAnimatable` styles from Sketch, e.g. generating `Opacity=0.5; fillColor=#336699;` from Sketch and easily apply in Interface Builder.
 
-**Any suggestions toward to the vision are welcome**, please modify the Roadmap.md file and create PR.
+**Any suggestions toward to the vision are welcome**, please modify the Roadmap.md file and create a PR.
