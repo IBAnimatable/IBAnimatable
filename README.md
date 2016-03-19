@@ -155,7 +155,8 @@ The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and con
 | UITextField | AnimatableTextField | |
 | UITextView | AnimatableTextView | |
 | UINavigationBar | DesignableNavigationBar | |
-| UIViewController | DesignableViewController | |
+| UIViewController | AnimatableViewController | |
+| UINavigationController | AnimatableNavigationController | |
 
 ### Designable protocols
 `IBAnimatable` provides a set of Designable protocols as below. Because of the power of protocol oriented programming in Swift, we don't even have to use Animatable default UI elements e.g.. `AnimatableView` to unlocked the power of `IBAnimatable`. We can conform to `IBAnimatable` protocols to use the default implementation in protocol extension to create other custom UI elements.
@@ -315,6 +316,14 @@ Easily add color layer on top of the UI element especially `AnimatableImageView`
 | repeatCount | Float | Used to specify the count to repeat the animation. Can only be used in Shake, Pop, Morph, Squeeze, Flash, Wobble, Swing, Rotate and RotateCCW (roate counterclockwise) animations. Default value is 1.  |
 | x | CGFloat | Used to specify the absolute x to move in `MoveTo` animation and x offset in `MoveBy`. When used in `MoveBy`, negative means moving left and positive means moving right. Default values is `CGFloat.NaN` |
 | y | CGFloat | Used to specify the absolute y to move in `MoveTo` animation and y offset in `MoveBy`. When used in `MoveBy`, negative means moving up and positive means moving down. Default values is `CGFloat.NaN`|
+
+### TransitionAnimatable protocol
+| Property name | Data type | Remark |
+| ------------- |:-------------:| ----- |
+| transitionAnimationType | Optional&lt;String> | Supported transition animations. All predefined transition animations are in enum [`TransitionAnimationType`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/TransitionAnimationType.swift), the type starts with `System` can only use in Push/Pop transitions, not Present/Dismiss transitions |
+| transitionDuration | Double | transition duration. Default value is defined in [`Constants`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/Constants.swift) (0.5 seconds) |
+| interactiveGestureType | Optional&lt;String> | interactive gesture type. used to specify the gesture to dismiss/pop current scence. All supported interactive gesture types are in [`InteractiveGestureType`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/InteractiveGestureType.swift) |
+
 
 ### Extension
 #### UIViewController
