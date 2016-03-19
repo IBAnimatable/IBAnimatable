@@ -318,12 +318,29 @@ Easily add color layer on top of the UI element especially `AnimatableImageView`
 
 ### Extension
 #### UIViewController
-With these methods, we can navigate back or dismiss current ViewController with any code in Interface Builder.
+With these methods, we can navigate back or dismiss current ViewController without any code in Interface Builder.
 
 | Method name | Remark |
 | ------------- | ----- |
 | func unwindToViewController(sender: UIStoryboardSegue) | Used in Interface Builder to unwind from Navigation Controller |
 | func dismissCurrentViewController(sender: UIStoryboardSegue) | Used in Interface Builder to dismiss current ViewController |
+
+#### CALayer
+| Method name | Remark |
+| ------------- | ----- |
+| class func animate(animation: AnimatableExecution, completion: AnimatableCompletion? = nil) | Simplify CALayer animations with completion closure |
+
+### Segue
+| Segue name | Remark |
+| ------------- | ----- |
+| DismissSegue | Used to dismiss current ViewController, use `unwindToViewController` or `dismissCurrentViewController` methods in `UIViewController` extension if possible first |
+| PresentFadeSegue | Used to present ViewController with Fade transition animation |
+| PresentFadeInSegue | Used to present ViewController with FadeIn transition animation |
+| PresentFadeOutSegue | Used to present ViewController with FadeOut transition animation |
+| PresentFadeWithDismissInteractionSegue | Used to present ViewController with Fade transition animation and dismiss interaction |
+| PresentFadeInWithDismissInteractionSegue | Used to present ViewController with FadeIn transition animation and dismiss interaction |
+| PresentFadeOutWithDismissInteractionSegue | Used to present ViewController with FadeOut transition animation and dismiss interaction |
+
 
 
 ## How to contribute
