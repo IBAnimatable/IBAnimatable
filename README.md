@@ -169,7 +169,7 @@ The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and con
 #### `BlurDesignable`
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
-| blurEffectStyle | Optional&lt;String> | Support three different blur effects: `ExtraLight`, `Light` and `Dark`, also can be found in emum [`BlurEffectStyle `](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/BlurEffectStyle). The look of blur effect in Interface Builder is different from Simulator or device. |
+| blurEffectStyle | Optional&lt;String> | Support three different blur effects: `ExtraLight`, `Light` and `Dark`, also can be found in emum [`BlurEffectStyle `](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/BlurEffectStyle.swift). The look of blur effect in Interface Builder is different from Simulator or device. |
 | blurOpacity | CGFloat | Opacity of the blur effect specified above. Default value is `CGFloat.NaN`, the value is from 0.0 to 1.0. |
 
 
