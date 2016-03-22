@@ -5,7 +5,7 @@
 
 import UIKit
 
-public class FadeAnimator: NSObject , AnimatedTransitioning {
+public class FadeAnimator: NSObject, AnimatedTransitioning {
   // MARK: - AnimatorProtocol
   public var transitionAnimationType: TransitionAnimationType
   public var transitionDuration: Duration = defaultTransitionDuration
