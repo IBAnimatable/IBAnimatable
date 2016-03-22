@@ -11,7 +11,7 @@ TBD
 
 #### Enhancements
 
-TBD
+Support Xcode 7.3 and Swift 2.2
 
 #### Bugfixes
 
