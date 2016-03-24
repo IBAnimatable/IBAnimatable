@@ -35,6 +35,16 @@ IBAnimatable is an Open Source library to help designers and developers design a
 		* Avoiding Swift features to support Objective C.
 
 ## Roadmap
+### Versions
+* Version 1: designable and animatable elements
+* Version 2: tansition animations
+* Version 3: Sketch plugin
+* Version 4: more designable and animatable elements
+* Version 5: more animations
+* Version 6: Xcode plugin
+
+You can find more details in https://github.com/JakeLin/IBAnimatable/milestones
+
 ### Designable elements
 * Bar Button Item:
 	* <del>roundedImage</del>
