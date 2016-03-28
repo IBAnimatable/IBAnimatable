@@ -36,6 +36,10 @@ struct AnimatorFactory {
       return SystemFlipAnimator(fromDirection: .Top, transitionDuration: transitionDuration)
     case .SystemFlipFromBottom:
       return SystemFlipAnimator(fromDirection: .Bottom, transitionDuration: transitionDuration)
+    case .SystemCurlFromTop:
+      return SystemCurlAnimator(fromDirection: .Top, transitionDuration: transitionDuration)
+    case .SystemCurlFromBottom:
+      return SystemCurlAnimator(fromDirection: .Bottom, transitionDuration: transitionDuration)
     }
   }
 }
