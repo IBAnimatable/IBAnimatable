@@ -8,7 +8,7 @@ import UIKit
 /**
  System Page Curl Animator - To support Page Curl animation (Four page curl directions supported: left, right, top, bottom)
  */
-public class SystemCurlAnimator: NSObject, AnimatedTransitioning {
+public class SystemPageCurlAnimator: NSObject, AnimatedTransitioning {
   // MARK: - AnimatorProtocol
   public var transitionAnimationType: TransitionAnimationType
   public var transitionDuration: Duration = defaultTransitionDuration
@@ -25,12 +25,12 @@ public class SystemCurlAnimator: NSObject, AnimatedTransitioning {
     
     switch fromDirection {
     case .Top, .Left:
-      self.transitionAnimationType = .SystemCurlFromTop
-      self.reverseAnimationType = .SystemCurlFromBottom
+      self.transitionAnimationType = .SystemPageCurlFromTop
+      self.reverseAnimationType = .SystemPageCurlFromBottom
       self.animationOption = .TransitionCurlUp
     case .Bottom, .Right:
-      self.transitionAnimationType = .SystemCurlFromBottom
-      self.reverseAnimationType = .SystemCurlFromTop
+      self.transitionAnimationType = .SystemPageCurlFromBottom
+      self.reverseAnimationType = .SystemPageCurlFromTop
       self.animationOption = .TransitionCurlDown
     }
     
@@ -38,24 +38,13 @@ public class SystemCurlAnimator: NSObject, AnimatedTransitioning {
   }
 }
 
-extension SystemCurlAnimator: UIViewControllerAnimatedTransitioning {
+extension SystemPageCurlAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
     return retrieveTransitionDuration(transitionContext)
   }
   
   public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-    let (tempFromView, tempToView, tempContainerView) = retrieveViews(transitionContext)
-    guard let fromView = tempFromView, toView = tempToView, _ = tempContainerView else {
-      transitionContext.completeTransition(true)
-      return
-    }
-    
-    UIView.transitionFromView(fromView, toView: toView,
-                              duration: transitionDuration(transitionContext), options: animationOption,
-                              completion: { _ in
-                                transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
-      }
-    )
+    animateWithCATransition(transitionContext, type: SystemTransitionType.PageCurl, subtype: fromDirection.stringValue)
   }
 }
 
