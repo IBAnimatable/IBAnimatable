@@ -145,7 +145,7 @@ import UIKit
   }
   
   private func configAfterLayoutSubviews() {
-    configGradient()
     configBorder()
+    configGradient()
   }
 }
