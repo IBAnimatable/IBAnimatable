@@ -11,7 +11,8 @@ TBD
 
 #### Enhancements
 
-Support Xcode 7.3 and Swift 2.2
+- Support Xcode 7.3 and Swift 2.2
+- Configurable mask polygon (sides)
 
 #### Bugfixes
 
