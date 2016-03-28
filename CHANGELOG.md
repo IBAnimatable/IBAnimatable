@@ -7,7 +7,7 @@ All notable changes to this project will be documented in this file.
 
 #### API breaking changes
 
-- Removing `MaskDesignable` public methods:
+- Removing `MaskDesignable` public methods ([#101](https://github.com/JakeLin/IBAnimatable/issues/101)): 
    - `maskCircle()`, use instead: `view.maskType = String(MaskType.Circle)`
    - `maskStar(_:)`, use instead: `view.maskType = `Star(6)`
    - `maskPolygon()`, use instead: `view.maskType = `String(MaskType.Polygon)`
@@ -18,12 +18,12 @@ All notable changes to this project will be documented in this file.
 #### Enhancements
 
 - Support Xcode 7.3 and Swift 2.2
-- Configurable mask polygon (sides)
-- Add `SystemPageCurlAnimator` to support `SystemPageCurlFromTop` and `SystemPageCurlFromBottom` transition animations
+- Configurable mask polygon (sides) [#112](https://github.com/JakeLin/IBAnimatable/issues/112)
+- Add `SystemPageCurlAnimator` to support `SystemPageCurlFromTop` and `SystemPageCurlFromBottom` transition animations [#126](https://github.com/JakeLin/IBAnimatable/issues/126)
 
 #### Bugfixes
 
-- Fixed a bug that was making `GradientDesignable` not filling the dedicated frame
+- Fixed a bug that was making `GradientDesignable` not filling the dedicated frame [#129](https://github.com/JakeLin/IBAnimatable/issues/129)
 
 ### [2.0](https://github.com/JakeLin/IBAnimatable/releases/tag/2.0)
 
