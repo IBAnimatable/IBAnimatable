@@ -7,7 +7,13 @@ All notable changes to this project will be documented in this file.
 
 #### API breaking changes
 
-TBD
+- Removing `MaskDesignable` public methods:
+   - `maskCircle()`, use instead: `view.maskType = String(MaskType.Circle)`
+   - `maskStar(_:)`, use instead: `view.maskType = `Star(6)`
+   - `maskPolygon()`, use instead: `view.maskType = `String(MaskType.Polygon)`
+   - `maskTriangle()`, use instead: `view.maskType = `String(MaskType.Triangle)`
+   - `maskWave(_:_:_:)`, use instead: `view.maskType = `Wave(up, 16, 40)`
+
 
 #### Enhancements
 
