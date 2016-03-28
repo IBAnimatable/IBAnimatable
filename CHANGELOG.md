@@ -23,7 +23,7 @@ All notable changes to this project will be documented in this file.
 
 #### Bugfixes
 
-TBD
+- Fixed a bug that was making `GradientDesignable` not filling the dedicated frame
 
 ### [2.0](https://github.com/JakeLin/IBAnimatable/releases/tag/2.0)
 
