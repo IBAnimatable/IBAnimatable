@@ -25,12 +25,12 @@ public class SystemPageCurlAnimator: NSObject, AnimatedTransitioning {
     
     switch fromDirection {
     case .Top, .Left:
-      self.transitionAnimationType = .SystemPageCurlFromTop
-      self.reverseAnimationType = .SystemPageCurlFromBottom
+      self.transitionAnimationType = .SystemPageCurl(direction: .Top)
+      self.reverseAnimationType = .SystemPageCurl(direction: .Bottom)
       self.animationOption = .TransitionCurlUp
     case .Bottom, .Right:
-      self.transitionAnimationType = .SystemPageCurlFromBottom
-      self.reverseAnimationType = .SystemPageCurlFromTop
+      self.transitionAnimationType = .SystemPageCurl(direction: .Bottom)
+      self.reverseAnimationType = .SystemPageCurl(direction: .Top)
       self.animationOption = .TransitionCurlDown
     }
     

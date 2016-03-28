@@ -8,18 +8,25 @@ import Foundation
 /**
  Predefined Transition Animation Type
  */
-public enum TransitionAnimationType: String {
+public enum TransitionAnimationType {
   case Fade             // ToView fades in and FromeView fades out
   case FadeIn           // ToView fades in
   case FadeOut          // FromView Fades out
-  case SystemCubeFromLeft
-  case SystemCubeFromRight
-  case SystemCubeFromTop
-  case SystemCubeFromBottom
-  case SystemFlipFromLeft
-  case SystemFlipFromRight
-  case SystemFlipFromTop
-  case SystemFlipFromBottom
-  case SystemPageCurlFromTop
-  case SystemPageCurlFromBottom
+  case SystemCube(direction: TransitionFromDirection)
+  case SystemFlip(direction: TransitionFromDirection)
+  case SystemPageCurl(direction: TransitionFromDirection)
+
+  var stringValue: String {
+    return String(self)
+  }
+
+  static func fromString(string: String) -> TransitionAnimationType? {
+    if String(TransitionAnimationType.Fade) == string {
+      return .Fade
+    } else if String(TransitionAnimationType.SystemCube(direction: .Left)) == string {
+      return .SystemCube(direction: .Left)
+    }
+    return nil
+  }
+
 }
