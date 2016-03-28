@@ -20,4 +20,6 @@ public enum TransitionAnimationType: String {
   case SystemFlipFromRight
   case SystemFlipFromTop
   case SystemFlipFromBottom
+  case SystemPageCurlFromTop
+  case SystemPageCurlFromBottom
 }
