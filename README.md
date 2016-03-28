@@ -223,10 +223,10 @@ The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and con
 **Supported MaskType:**
 
 * `Circle`
-* `Polygon`
+* `Polygon`: Can also specify the number of sides of the polygon, e.g. use `Polygon(6)` to have a polygon with 6 sides. If not specified, default is 6 sides. 
 * `Triangle`
-* `Star`: Can alse specify the points of the Star, e.g. use `Star(6)` to have a star with 6 points. If not specified, default is 5 points. 
-* `Wave`: Can use pramaters to cumstomize the `Wave` shape like `maskWave(waveUp: Bool, waveWidth: CGFloat, waveOffset: CGFloat)`. `Wave(down, 20, 5)` means the Wave faces down, width is 20 and offset is 5. If not specified, default value is `Wave(up, 40, 0)`. 
+* `Star`: Can also specify the points of the Star, e.g. use `Star(6)` to have a star with 6 points. If not specified, default is 5 points. 
+* `Wave`: Can use parameters to cumstomize the `Wave` shape like `maskWave(waveUp: Bool, waveWidth: CGFloat, waveOffset: CGFloat)`. `Wave(down, 20, 5)` means the Wave faces down, width is 20 and offset is 5. If not specified, default value is `Wave(up, 40, 0)`. 
  
 
 #### `PaddingDesignable`
