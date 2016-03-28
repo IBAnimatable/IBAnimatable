@@ -11,7 +11,8 @@ TBD
 
 #### Enhancements
 
-Support Xcode 7.3 and Swift 2.2
+- Support Xcode 7.3 and Swift 2.2
+- Add `SystemCurlAnimator` to support `SystemCurlFromTop` and `SystemCurlFromBottom` transition animations
 
 #### Bugfixes
 
