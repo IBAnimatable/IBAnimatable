@@ -29,12 +29,12 @@ public extension MaskDesignable where Self: UIView {
         maskWave()
       }
     } else {
-      // Star with parameter
       if unwrappedMaskType.hasPrefix(MaskType.Star.rawValue) {
         maskStarFromString(unwrappedMaskType)
       } else if unwrappedMaskType.hasPrefix(MaskType.Wave.rawValue) {
-        // Wave with parameters
         maskWaveFromString(unwrappedMaskType)
+      } else if unwrappedMaskType.hasPrefix(MaskType.Polygon.rawValue) {
+        maskPolygonFromString(unwrappedMaskType)
       }
     }
   }
@@ -45,8 +45,8 @@ public extension MaskDesignable where Self: UIView {
     layer.cornerRadius = ceil(min(bounds.width, bounds.height))/2
   }
   
-  public func maskPolygon() {
-    let polygonPath = maskPolygonBezierPath(Int(arc4random_uniform(10) + 3))
+  public func maskPolygon(sides: Int = 6) {
+    let polygonPath = maskPolygonBezierPath(sides)
     drawPath(polygonPath)
   }
   
@@ -104,15 +104,24 @@ public extension MaskDesignable where Self: UIView {
   
   // MARK: - Polygon
   
-  private func maskPolygonBezierPath(degree: Int) -> UIBezierPath {
+  private func maskPolygonFromString(mask: String) {
+    let sides = Int(retrieveMaskParameters(mask, maskName: MaskType.Polygon.rawValue))
+    if let unwrappedSides = sides {
+      maskPolygon(unwrappedSides)
+    } else {
+      maskPolygon()
+    }
+  }
+
+  private func maskPolygonBezierPath(sides: Int) -> UIBezierPath {
     let path = UIBezierPath()
     let center = CGPoint(x: bounds.width / 2.0, y: bounds.height / 2.0)
     var angle: CGFloat = -CGFloat(M_PI / 2.0)
-    let angleIncrement = CGFloat(M_PI * 2.0 / Double(degree))
+    let angleIncrement = CGFloat(M_PI * 2.0 / Double(sides))
     let radius = bounds.width / 2.0
     
     path.moveToPoint(pointFrom(angle, radius: radius, offset: center))
-    for _ in 1...degree - 1 {
+    for _ in 1...sides - 1 {
       angle += angleIncrement
       path.addLineToPoint(pointFrom(angle, radius: radius, offset: center))
     }
