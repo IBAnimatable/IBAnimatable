@@ -44,7 +44,18 @@ extension SystemPageCurlAnimator: UIViewControllerAnimatedTransitioning {
   }
   
   public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-    animateWithCATransition(transitionContext, type: SystemTransitionType.PageCurl, subtype: fromDirection.stringValue)
+    let (tempFromView, tempToView, tempContainerView) = retrieveViews(transitionContext)
+    guard let fromView = tempFromView, toView = tempToView, _ = tempContainerView else {
+      transitionContext.completeTransition(true)
+      return
+    }
+    
+    UIView.transitionFromView(fromView, toView: toView,
+                              duration: transitionDuration(transitionContext), options: animationOption,
+                              completion: { _ in
+                                transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+      }
+    )
   }
 }
 
