@@ -7,13 +7,13 @@ import UIKit
 
 class TransitionTableViewController: UITableViewController {
 
-  private var transitionAnimations = [TransitionAnimationType]()
+  private var transitionAnimations = [String]()
 
   // MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    transitionAnimations.append(.Fade)
-    transitionAnimations.append(.SystemCube(direction: .Left))
+    transitionAnimations.append("Fade")
+    transitionAnimations.append("SystemCube(Left)")
 //    for type in iterateEnum(TransitionAnimationType) {
 //      transitionAnimations.append(type)
 //    }
@@ -22,7 +22,7 @@ class TransitionTableViewController: UITableViewController {
   // MARK: - UITableViewDataSource
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("transitionCell", forIndexPath: indexPath) as UITableViewCell
-    cell.textLabel?.text = transitionAnimations[indexPath.row].stringValue
+    cell.textLabel?.text = transitionAnimations[indexPath.row]
     return cell
   }
 
