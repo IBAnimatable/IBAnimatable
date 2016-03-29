@@ -5,7 +5,14 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableLabel: UILabel, Animatable, RotationDesignable {
+@IBDesignable public class AnimatableLabel: UILabel, CornerDesignable, Animatable, RotationDesignable {
+  
+  // MARK: - CornerDesignable
+  @IBInspectable public var cornerRadius: CGFloat = CGFloat.NaN {
+    didSet {
+      configCornerRadius()
+    }
+  }
   
   // MARK: - Animatable
   @IBInspectable public var animationType: String?
