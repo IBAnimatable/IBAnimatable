@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableLabel: UILabel, CornerDesignable, Animatable, RotationDesignable {
+@IBDesignable public class AnimatableLabel: UILabel, CornerDesignable, FillDesignable, Animatable, RotationDesignable {
   
   // MARK: - CornerDesignable
   @IBInspectable public var cornerRadius: CGFloat = CGFloat.NaN {
@@ -14,6 +14,25 @@ import UIKit
     }
   }
   
+  // MARK: - FillDesignable
+  @IBInspectable public var fillColor: UIColor? {
+    didSet {
+      configFillColor()
+    }
+  }
+  
+  @IBInspectable public var predefinedColor: String? {
+    didSet {
+      configFillColor()
+    }
+  }
+  
+  @IBInspectable public var opacity: CGFloat = CGFloat.NaN {
+    didSet {
+      configOpacity()
+    }
+  }
+
   // MARK: - Animatable
   @IBInspectable public var animationType: String?
   @IBInspectable public var autoRun: Bool = true
