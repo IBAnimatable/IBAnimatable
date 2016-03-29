@@ -144,10 +144,10 @@ import UIKit
     configAnimatableProperties()
     configTintedColor()
     configBlurEffectStyle()
-    configGradient()
   }
   
   private func configAfterLayoutSubviews() {
     configBorder()
+    configGradient()
   }
 }

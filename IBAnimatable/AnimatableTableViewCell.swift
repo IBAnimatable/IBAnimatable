@@ -88,10 +88,10 @@ import UIKit
     configAnimatableProperties()
     configOpacity()
     configSeparatorMargins()
-    configGradient()
   }
   
   private func configAfterLayoutSubviews() {
     configBorder()
+    configGradient()
   }
 }
