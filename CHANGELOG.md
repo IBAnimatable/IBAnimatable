@@ -24,6 +24,7 @@ All notable changes to this project will be documented in this file.
 #### Bugfixes
 
 - Fixed a bug that was making `GradientDesignable` not filling the dedicated frame [#129](https://github.com/JakeLin/IBAnimatable/issues/129)
+- Fixed a bug that was making `MaskDesignable` not filling the dedicated frame
 
 ### [2.0](https://github.com/JakeLin/IBAnimatable/releases/tag/2.0)
 
