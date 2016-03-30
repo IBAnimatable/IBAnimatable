@@ -15,6 +15,7 @@ public enum TransitionAnimationType {
   case SystemCube(direction: TransitionFromDirection)
   case SystemFlip(direction: TransitionFromDirection)
   case SystemPageCurl(direction: TransitionFromDirection)
+  case SystemRippleEffect
 
   var stringValue: String {
     return String(self)
@@ -23,6 +24,8 @@ public enum TransitionAnimationType {
   static func fromString(transitionType: String) -> TransitionAnimationType? {
     if transitionType.hasPrefix("Fade") {
       return fadeTransitionAnmationType(transitionType)
+    } else if transitionType.hasPrefix("SystemRippleEffect") {
+      return .SystemRippleEffect
     } else  {
       return fromStringWithDirection(transitionType)
     }
