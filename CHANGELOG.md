@@ -9,6 +9,8 @@ All notable changes to this project will be documented in this file.
 
 #### Enhancements
 
+- Add `SystemCameraIrisAnimator` to support `SystemCameraIrisAnimator(Open)` and `SystemCameraIrisAnimator(Close)` transition animations [#126](https://github.com/JakeLin/IBAnimatable/issues/126)
+
 #### Bugfixes
 
 ### [2.1](https://github.com/JakeLin/IBAnimatable/releases/tag/2.1)
