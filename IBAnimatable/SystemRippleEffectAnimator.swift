@@ -1,16 +1,10 @@
 //
-//  ViewController.swift
-//  IBAnimatableApp
-//
 //  Created by Tom Baranes on 30/03/16.
 //  Copyright © 2016 Jake Lin. All rights reserved.
 //
 
 import UIKit
 
-/**
- System Ripple Animator - To support 3D animation (Four rotation directions supported: left, right, top, bottom)
- */
 public class SystemRippleEffectAnimator: NSObject, AnimatedTransitioning {
   // MARK: - AnimatorProtocol
   public var transitionAnimationType: TransitionAnimationType
