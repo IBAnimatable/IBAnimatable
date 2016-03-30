@@ -47,6 +47,8 @@ private extension TransitionTableViewController {
     transitionAnimations.append(transitionTypeWithDirections(forName: "SystemFlip"))
     transitionAnimationsHeaders.append("SystemPageCurl")
     transitionAnimations.append(["SystemPageCurl(Top)", "SystemPageCurl(Bottom)"])
+    transitionAnimationsHeaders.append("Suck Effect")
+    transitionAnimations.append(["SystemSuckEffect"])
   }
   
   func transitionTypeWithDirections(forName prefixName: String) -> [String] {
