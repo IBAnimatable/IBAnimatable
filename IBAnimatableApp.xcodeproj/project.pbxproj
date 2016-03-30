@@ -149,6 +149,10 @@
 		CAB56CB79477DEE19E7B0420 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5692C91C9ECC8018DE83E /* Navigator.swift */; };
 		CAB56E8FA0F35057290D67C4 /* SystemTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56645FCD11BEC66200818 /* SystemTransitionType.swift */; };
 		CAB56F164EE0CC8E0510FEC6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56A8BA4FB110D501DC1DC /* Constants.swift */; };
+		E20E911C1CAC421E00625094 /* TransitionHollowState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20E911B1CAC421E00625094 /* TransitionHollowState.swift */; };
+		E20E911E1CAC432400625094 /* SystemCameraIrisAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20E911D1CAC432400625094 /* SystemCameraIrisAnimator.swift */; };
+		E20E911F1CAC443F00625094 /* TransitionHollowState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20E911B1CAC421E00625094 /* TransitionHollowState.swift */; };
+		E20E91201CAC444100625094 /* SystemCameraIrisAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20E911D1CAC432400625094 /* SystemCameraIrisAnimator.swift */; };
 		E23D08B81CA9336500440E7C /* SystemPageCurlAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D08B71CA9336500440E7C /* SystemPageCurlAnimator.swift */; };
 		E23D08B91CA9358000440E7C /* SystemPageCurlAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D08B71CA9336500440E7C /* SystemPageCurlAnimator.swift */; };
 		E2472EA41C6F97F800A20E27 /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2472EA31C6F97F800A20E27 /* ColorType.swift */; };
@@ -253,6 +257,8 @@
 		CAB5692C91C9ECC8018DE83E /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		CAB56A8BA4FB110D501DC1DC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D7E765671C4C8961008C3116 /* IBAnimatable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = IBAnimatable.playground; sourceTree = "<group>"; };
+		E20E911B1CAC421E00625094 /* TransitionHollowState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionHollowState.swift; sourceTree = "<group>"; };
+		E20E911D1CAC432400625094 /* SystemCameraIrisAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemCameraIrisAnimator.swift; sourceTree = "<group>"; };
 		E23D08B71CA9336500440E7C /* SystemPageCurlAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPageCurlAnimator.swift; sourceTree = "<group>"; };
 		E2472EA31C6F97F800A20E27 /* ColorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorType.swift; sourceTree = "<group>"; };
 		E2472EA61C6F980C00A20E27 /* FlatColorsTypeScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlatColorsTypeScript.swift; path = Scripts/FlatColorsTypeScript.swift; sourceTree = SOURCE_ROOT; };
@@ -348,6 +354,7 @@
 				33A8B9EB1C7E790800082529 /* SystemCubeAnimator.swift */,
 				AEDD8A301C7EDAE30033175A /* SystemFlipAnimator.swift */,
 				E23D08B71CA9336500440E7C /* SystemPageCurlAnimator.swift */,
+				E20E911D1CAC432400625094 /* SystemCameraIrisAnimator.swift */,
 			);
 			name = "transition animator";
 			sourceTree = "<group>";
@@ -478,6 +485,7 @@
 				AEE552A91C816233009CF623 /* TransitionFadeType.swift */,
 				33A8B9EE1C7E7A4C00082529 /* TransitionFromDirection.swift */,
 				AE6D430B1C98B658006E2F67 /* TransitionType.swift */,
+				E20E911B1CAC421E00625094 /* TransitionHollowState.swift */,
 			);
 			name = enum;
 			sourceTree = "<group>";
@@ -644,6 +652,7 @@
 				AEE552A81C815AC5009CF623 /* FadeAnimator.swift in Sources */,
 				AE6B017F1C2A445100950BB2 /* AnimatableLabel.swift in Sources */,
 				AE6B01801C2A445100950BB2 /* AnimatableStackView.swift in Sources */,
+				E20E911E1CAC432400625094 /* SystemCameraIrisAnimator.swift in Sources */,
 				AE6B01661C2A444000950BB2 /* MaskType.swift in Sources */,
 				AE6B01811C2A445100950BB2 /* AnimatableTableView.swift in Sources */,
 				AE6B01671C2A444500950BB2 /* Animatable.swift in Sources */,
@@ -699,6 +708,7 @@
 				AE6B01861C2A445100950BB2 /* DesignableNavigationBar.swift in Sources */,
 				AEE552AB1C816233009CF623 /* TransitionFadeType.swift in Sources */,
 				AE154B7F1C7D061A0093C05B /* TransitionAnimationType.swift in Sources */,
+				E20E911C1CAC421E00625094 /* TransitionHollowState.swift in Sources */,
 				AE6B016F1C2A444900950BB2 /* MaskDesignable.swift in Sources */,
 				AE6B01741C2A444900950BB2 /* SideImageDesignable.swift in Sources */,
 				AE6B017E1C2A445100950BB2 /* AnimatableImageView.swift in Sources */,
@@ -722,12 +732,14 @@
 				AE154B281C7BB52E0093C05B /* Typealias.swift in Sources */,
 				AE8A4FFA1C856EEC00E9E368 /* TransitionViewController.swift in Sources */,
 				AE81DAEE1C10F14C000AEB20 /* GradientDesignable.swift in Sources */,
+				E20E911F1CAC443F00625094 /* TransitionHollowState.swift in Sources */,
 				AE4C53F21C883F80007C9EFA /* PanInteractiveAnimator.swift in Sources */,
 				AE154B8E1C7D89CB0093C05B /* Presenter.swift in Sources */,
 				AE154B7E1C7D061A0093C05B /* TransitionAnimationType.swift in Sources */,
 				AE299BDA1C0338C70018CCDC /* BlurDesignable.swift in Sources */,
 				AE81DB501C12E060000AEB20 /* RotationDesignable.swift in Sources */,
 				AE74D6D71C166FB100718E0E /* SideImageDesignable.swift in Sources */,
+				E20E91201CAC444100625094 /* SystemCameraIrisAnimator.swift in Sources */,
 				AE154B091C78805A0093C05B /* AnimatableNavigationController.swift in Sources */,
 				AE0FAD411C1ED41D00B5289B /* AnimatableViewController.swift in Sources */,
 				AEDD8A311C7EDAE30033175A /* SystemFlipAnimator.swift in Sources */,
