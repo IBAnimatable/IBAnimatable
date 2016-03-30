@@ -130,7 +130,7 @@ Add `pod 'IBAnimatable'` to your Podfile.
 
 ### [Carthage](https://github.com/Carthage/Carthage)
 
-Add `github "JakeLin/IBAnimatable" ~> 2.0` to your Cartfile.
+Add `github "JakeLin/IBAnimatable" ~> 2.1` to your Cartfile.
 
 ### Git submodule
 
@@ -320,7 +320,7 @@ Easily add color layer on top of the UI element especially `AnimatableImageView`
 ### TransitionAnimatable protocol
 | Property name | Data type | Remark |
 | ------------- |:-------------:| ----- |
-| transitionAnimationType | Optional&lt;String> | Supported transition animations. All predefined transition animations are in enum [`TransitionAnimationType`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/TransitionAnimationType.swift), the type starts with `System` can only use in Push/Pop transitions, not Present/Dismiss transitions |
+| transitionAnimationType | Optional&lt;String> | Supported transition animations. Tap on "Forgot Password" button to see all predefined transition animations, e.g. `Fade`, `SystemCube(Left)` and `SystemPageCurl(Bottom)`. The transition type starts with `System` can only use in Push/Pop transitions, not Present/Dismiss transitions |
 | transitionDuration | Double | transition duration. Default value is defined in [`Constants`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/Constants.swift) (0.5 seconds) |
 | interactiveGestureType | Optional&lt;String> | interactive gesture type. used to specify the gesture to dismiss/pop current scence. All supported interactive gesture types are in [`InteractiveGestureType`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/InteractiveGestureType.swift) |
 

@@ -111,7 +111,7 @@ view.squeezeInDown{ view.pop { view.shake{ view.squeeze{ view.wobble{ view.flipX
 
 ### Carthage
 
-在 `Cartfile` 中添加 `github "JakeLin/IBAnimatable" ~> 1.2` 。
+在 `Cartfile` 中添加 `github "JakeLin/IBAnimatable" ~> 2.1` 。
 
 ### Git submodule
 你一定很熟悉 Git，应该不用我多说了，把这个 Repo 作为一个 submodule ，并把项目文件加到你的 workspace 里面，然后把 `IBAnimatable.framework` 放到你的应用程序的 Target 里面。

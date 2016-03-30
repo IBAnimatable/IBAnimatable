@@ -7,13 +7,29 @@ All notable changes to this project will be documented in this file.
 
 #### API breaking changes
 
-- Removing `MaskDesignable` public methods ([#101](https://github.com/JakeLin/IBAnimatable/issues/101)): 
-   - `maskCircle()`, use instead: `view.maskType = String(MaskType.Circle)`
-   - `maskStar(_:)`, use instead: `view.maskType = `Star(6)`
-   - `maskPolygon()`, use instead: `view.maskType = `String(MaskType.Polygon)`
-   - `maskTriangle()`, use instead: `view.maskType = `String(MaskType.Triangle)`
-   - `maskWave(_:_:_:)`, use instead: `view.maskType = `Wave(up, 16, 40)`
+#### Enhancements
 
+#### Bugfixes
+
+### [2.1](https://github.com/JakeLin/IBAnimatable/releases/tag/2.1)
+
+#### API breaking changes
+
+- Remove `MaskDesignable` public methods ([#101](https://github.com/JakeLin/IBAnimatable/issues/101)): 
+   	- Remove `maskCircle()`, use `view.maskType = String(MaskType.Circle)` instead
+   	- Remove `maskStar(_:)`, use `view.maskType = "Star(6)"` instead
+   	- Remove `maskPolygon()`, use `view.maskType = String(MaskType.Polygon)` instead
+   	- Remove `maskTriangle()`, use `view.maskType = String(MaskType.Triangle)` instead
+   	- Remove `maskWave(_:_:_:)`, use `view.maskType = "Wave(up, 16, 40)"` instead
+- Improve the options in `TransitionAnimationType` enum. ([#137](https://github.com/JakeLin/IBAnimatable/pull/137))
+   	- Remove `SystemCubeFromLeft`, use `SystemCube(Left)` 
+   	- Remove `SystemCubeFromRight`, use `SystemCube(Right)` 
+   	- Remove `SystemCubeFromTop`, use `SystemCube(Top)` 
+   	- Remove `SystemCubeFromBottom`, use `SystemCube(Bottom)` 
+   	- Remove `SystemFlipFromLeft`, use `SystemFlip(Left)` 
+   	- Remove `SystemFlipFromRight`, use `SystemFlip(Right)` 
+   	- Remove `SystemFlipFromTop`, use `SystemFlip(Top)` 
+   	- Remove `SystemFlipFromBottom`, use `SystemFlip(Bottom)` 
 
 #### Enhancements
 
@@ -21,6 +37,7 @@ All notable changes to this project will be documented in this file.
 - Configurable mask polygon (sides) [#112](https://github.com/JakeLin/IBAnimatable/issues/112)
 - Add `SystemPageCurlAnimator` to support `SystemPageCurlFromTop` and `SystemPageCurlFromBottom` transition animations [#126](https://github.com/JakeLin/IBAnimatable/issues/126)
 - `AnimatableLabel` now conforms `BorderDesignable` and `FillDesignable`
+- Support Carthage 0.15.2 [#131](https://github.com/JakeLin/IBAnimatable/issues/131)
 
 #### Bugfixes
 
