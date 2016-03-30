@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableLabel: UILabel, CornerDesignable, FillDesignable, Animatable, RotationDesignable {
+@IBDesignable public class AnimatableLabel: UILabel, CornerDesignable, FillDesignable, Animatable, RotationDesignable, BorderDesignable {
   
   // MARK: - CornerDesignable
   @IBInspectable public var cornerRadius: CGFloat = CGFloat.NaN {
@@ -30,6 +30,25 @@ import UIKit
   @IBInspectable public var opacity: CGFloat = CGFloat.NaN {
     didSet {
       configOpacity()
+    }
+  }
+  
+  // MARK: - BorderDesignable
+  @IBInspectable public var borderColor: UIColor? {
+    didSet {
+      configBorder()
+    }
+  }
+  
+  @IBInspectable public var borderWidth: CGFloat = CGFloat.NaN {
+    didSet {
+      configBorder()
+    }
+  }
+  
+  @IBInspectable public var borderSide: String? {
+    didSet {
+      configBorder()
     }
   }
 
@@ -65,12 +84,17 @@ import UIKit
   
   public override func layoutSubviews() {
     super.layoutSubviews()
-    
+    configAfterLayoutSubviews()
     autoRunAnimation()
   }
   
   // MARK: - Private
   private func configInspectableProperties() {
     configAnimatableProperties()
+    configBorder()
+  }
+  
+  private func configAfterLayoutSubviews() {
+    configBorder()
   }
 }
