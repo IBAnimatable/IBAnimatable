@@ -9,6 +9,8 @@ All notable changes to this project will be documented in this file.
 
 #### Enhancements
 
+- `AnimatableLabel` now conforms `BorderDesignable`
+
 #### Bugfixes
 
 ### [2.1](https://github.com/JakeLin/IBAnimatable/releases/tag/2.1)
@@ -36,7 +38,7 @@ All notable changes to this project will be documented in this file.
 - Support Xcode 7.3 and Swift 2.2
 - Configurable mask polygon (sides) [#112](https://github.com/JakeLin/IBAnimatable/issues/112)
 - Add `SystemPageCurlAnimator` to support `SystemPageCurlFromTop` and `SystemPageCurlFromBottom` transition animations [#126](https://github.com/JakeLin/IBAnimatable/issues/126)
-- `AnimatableLabel` now conforms `BorderDesignable` and `FillDesignable`
+- `AnimatableLabel` now conforms `CornerDesignable` and `FillDesignable`
 - Support Carthage 0.15.2 [#131](https://github.com/JakeLin/IBAnimatable/issues/131)
 
 #### Bugfixes
