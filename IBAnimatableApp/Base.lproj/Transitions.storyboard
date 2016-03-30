@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tFh-B7-Fcy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tFh-B7-Fcy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -67,14 +67,14 @@
                         <viewControllerLayoutGuide type="top" id="G7z-Tg-1Gv"/>
                         <viewControllerLayoutGuide type="bottom" id="Kjd-MK-vGJ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="OnE-aw-cD0" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="OnE-aw-cD0" customClass="AnimatableView" customModule="IBAnimatable">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="hNr-ng-iZE">
                                 <rect key="frame" x="32" y="259" width="311" height="150"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFy-ex-CKY" userLabel="pop" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFy-ex-CKY" userLabel="Push button" customClass="AnimatableButton" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="cES-w9-kDF"/>
@@ -91,7 +91,7 @@
                                             <segue destination="jDB-Ur-y9F" kind="show" id="ftd-QI-Jx6"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59W-58-R6i" userLabel="present" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59W-58-R6i" userLabel="Present button" customClass="AnimatableButton" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="90" width="311" height="60"/>
                                         <state key="normal" title="Tap to present">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -150,11 +150,11 @@
                         <viewControllerLayoutGuide type="top" id="llV-0i-zPQ"/>
                         <viewControllerLayoutGuide type="bottom" id="ztb-jM-jZh"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2wE-60-Psz" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="2wE-60-Psz" customClass="AnimatableView" customModule="IBAnimatable">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nmd-hI-p2R" userLabel="pop" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nmd-hI-p2R" userLabel="Push button" customClass="AnimatableButton" customModule="IBAnimatable">
                                 <rect key="frame" x="32" y="304" width="311" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="AFk-rh-3sU"/>
@@ -192,7 +192,7 @@
         <!--Animatable Navigation Controller-->
         <scene sceneID="Ryf-4p-TtM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6OX-wo-iCM" customClass="AnimatableNavigationController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6OX-wo-iCM" customClass="AnimatableNavigationController" customModule="IBAnimatable" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="p1j-Ei-YPr">
@@ -219,11 +219,11 @@
                         <viewControllerLayoutGuide type="top" id="tdz-Jv-EtD"/>
                         <viewControllerLayoutGuide type="bottom" id="GgG-Mi-ld8"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="LRM-UA-5Be" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="LRM-UA-5Be" customClass="AnimatableView" customModule="IBAnimatable">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kms-5b-dKQ" userLabel="pop" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kms-5b-dKQ" userLabel="Push button" customClass="AnimatableButton" customModule="IBAnimatable">
                                 <rect key="frame" x="32" y="304" width="311" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="O0s-Uh-Y1N"/>
@@ -261,19 +261,19 @@
         <!--Animatable View Controller-->
         <scene sceneID="D7y-Bi-dz5">
             <objects>
-                <viewController storyboardIdentifier="PresentedFirstViewController" id="9Qt-ed-0ZI" customClass="AnimatableViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PresentedFirstViewController" id="9Qt-ed-0ZI" customClass="AnimatableViewController" customModule="IBAnimatable" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3M5-bf-nzE"/>
                         <viewControllerLayoutGuide type="bottom" id="zRb-Me-7Vv"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ya9-02-nKR" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="Ya9-02-nKR" customClass="AnimatableView" customModule="IBAnimatable">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="0Gp-E2-vhb">
                                 <rect key="frame" x="40" y="259" width="295" height="150"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lU-N7-UdB" userLabel="dismiss" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lU-N7-UdB" userLabel="Dismiss button" customClass="AnimatableButton" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Gu3-mh-kVd"/>
@@ -290,7 +290,7 @@
                                             <segue destination="emc-Jl-Ob8" kind="unwind" unwindAction="unwindToViewController:" id="9Y9-p6-lA4"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06m-hU-WYa" userLabel="present" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06m-hU-WYa" userLabel="Present button" customClass="AnimatableButton" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="90" width="295" height="60"/>
                                         <state key="normal" title="Tap to present another">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -358,14 +358,14 @@
                         <viewControllerLayoutGuide type="top" id="OjE-jf-D7p"/>
                         <viewControllerLayoutGuide type="bottom" id="Dxn-mh-kw0"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="wii-JR-fVE" customClass="AnimatableView" customModule="IBAnimatableApp" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="wii-JR-fVE" customClass="AnimatableView" customModule="IBAnimatable">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pxF-zQ-t9P">
                                 <rect key="frame" x="32" y="283.5" width="311" height="100.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M39-se-qo0" userLabel="dismiss" customClass="AnimatableButton" customModule="IBAnimatableApp" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M39-se-qo0" userLabel="Dismiss button" customClass="AnimatableButton" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="kLq-6u-aZW"/>
@@ -382,7 +382,7 @@
                                             <segue destination="nWz-fC-GLe" kind="unwind" unwindAction="unwindToViewController:" id="3Sw-tX-AL6"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or use a gesture to dismiss" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4T-Sf-0vS" customClass="AnimatableLabel" customModule="IBAnimatableApp" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or use a gesture to dismiss" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4T-Sf-0vS" userLabel="Message label" customClass="AnimatableLabel" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="80" width="311" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
