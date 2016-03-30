@@ -43,7 +43,7 @@ import UIKit
     super.prepareForSegue(segue, sender: sender)
     
     // Configure custom transition animation
-    guard let transitionAnimationType = transitionAnimationType, animationType = TransitionAnimationType(rawValue: transitionAnimationType) else {
+    guard let transitionAnimationType = transitionAnimationType, animationType = TransitionAnimationType.fromString(transitionAnimationType) else {
       super.prepareForSegue(segue, sender: sender)
       return
     }

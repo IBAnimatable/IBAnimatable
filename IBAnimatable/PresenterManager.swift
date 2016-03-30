@@ -19,12 +19,12 @@ class PresenterManager {
   }
   
   // MARK: - Private
-  private var cache = [TransitionAnimationType: Presenter]()
+  private var cache = [String: Presenter]()
   
   // MARK: Inertnal Interface
   func retrievePresenter(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) -> Presenter {
     // Get the cached presenter
-    let presenter = cache[transitionAnimationType]
+    let presenter = cache[transitionAnimationType.stringValue]
     if let presenter = presenter {
       // Update the `transitionDuration` and `interactiveGestureType` every time to reuse the same presenter with the same type
       presenter.transitionDuration = transitionDuration
@@ -34,7 +34,7 @@ class PresenterManager {
     
     // Create a new if cache doesn't exist
     let newPresenter = Presenter(transitionAnimationType: transitionAnimationType, transitionDuration: transitionDuration, interactiveGestureType: interactiveGestureType)
-    cache[transitionAnimationType] = newPresenter
+    cache[transitionAnimationType.stringValue] = newPresenter
     return newPresenter
   }
 }

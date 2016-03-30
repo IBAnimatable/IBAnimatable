@@ -23,7 +23,7 @@ public class AnimatableNavigationController: UINavigationController, TransitionA
   private var navigator: Navigator?
 
   private func configureNavigationControllerDelegate() {
-    guard let transitionAnimationType = transitionAnimationType, animationType = TransitionAnimationType(rawValue: transitionAnimationType) else {
+    guard let transitionAnimationType = transitionAnimationType, animationType = TransitionAnimationType.fromString(transitionAnimationType) else {
       return
     }
     var duration = transitionDuration

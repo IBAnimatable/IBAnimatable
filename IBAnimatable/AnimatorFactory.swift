@@ -20,26 +20,13 @@ struct AnimatorFactory {
       return FadeAnimator(fadeType: .FadeIn, transitionDuration: transitionDuration)
     case .FadeOut:
       return FadeAnimator(fadeType: .FadeOut, transitionDuration: transitionDuration)
-    case .SystemCubeFromLeft:
-      return SystemCubeAnimator(fromDirection: .Left, transitionDuration: transitionDuration)
-    case .SystemCubeFromRight:
-      return SystemCubeAnimator(fromDirection: .Right, transitionDuration: transitionDuration)
-    case .SystemCubeFromTop:
-      return SystemCubeAnimator(fromDirection: .Top, transitionDuration: transitionDuration)
-    case .SystemCubeFromBottom:
-      return SystemCubeAnimator(fromDirection: .Bottom, transitionDuration: transitionDuration)
-    case .SystemFlipFromLeft:
-      return SystemFlipAnimator(fromDirection: .Left, transitionDuration: transitionDuration)
-    case .SystemFlipFromRight:
-      return SystemFlipAnimator(fromDirection: .Right, transitionDuration: transitionDuration)
-    case .SystemFlipFromTop:
-      return SystemFlipAnimator(fromDirection: .Top, transitionDuration: transitionDuration)
-    case .SystemFlipFromBottom:
-      return SystemFlipAnimator(fromDirection: .Bottom, transitionDuration: transitionDuration)
-    case .SystemPageCurlFromTop:
-      return SystemPageCurlAnimator(fromDirection: .Top, transitionDuration: transitionDuration)
-    case .SystemPageCurlFromBottom:
-      return SystemPageCurlAnimator(fromDirection: .Bottom, transitionDuration: transitionDuration)
+    case .SystemCube(let direction):
+      return SystemCubeAnimator(fromDirection: direction, transitionDuration: transitionDuration)
+    case .SystemFlip(let direction):
+      return SystemFlipAnimator(fromDirection: direction, transitionDuration: transitionDuration)
+    case .SystemPageCurl(let direction):
+      return SystemPageCurlAnimator(fromDirection: direction, transitionDuration: transitionDuration)
     }
   }
+  
 }
