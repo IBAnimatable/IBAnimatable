@@ -51,6 +51,8 @@ private extension TransitionTableViewController {
     transitionAnimations.append(["SystemSuckEffect"])
     transitionAnimationsHeaders.append("Camera Iris")
     transitionAnimations.append(["SystemCameraIris(Open)", "SystemCameraIris(Close)"])
+    transitionAnimationsHeaders.append("Ripple Effect")
+    transitionAnimations.append(["SystemRippleEffect"])
   }
   
   func transitionTypeWithDirections(forName prefixName: String) -> [String] {

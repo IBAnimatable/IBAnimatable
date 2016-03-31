@@ -12,21 +12,24 @@ public enum TransitionAnimationType {
   case Fade             // ToView fades in and FromeView fades out
   case FadeIn           // ToView fades in
   case FadeOut          // FromView Fades out
+  case SystemSuckEffect
+  case SystemRippleEffect
   case SystemCube(direction: TransitionFromDirection)
   case SystemFlip(direction: TransitionFromDirection)
   case SystemPageCurl(direction: TransitionFromDirection)
-  case SystemSuckEffect
   case SystemCameraIris(hollowState: TransitionHollowState)
-
+    
   var stringValue: String {
     return String(self)
   }
 
   static func fromString(transitionType: String) -> TransitionAnimationType? {
-    if transitionType.hasPrefix("Fade") {
-      return fadeTransitionAnimationType(transitionType)
+    if transitionType.hasPrefix("SystemRippleEffect") {
+      return .SystemRippleEffect
     } else if transitionType.hasPrefix("SystemSuckEffect") {
         return .SystemSuckEffect
+    } else if transitionType.hasPrefix("Fade") {
+      return fadeTransitionAnimationType(transitionType)
     } else if transitionType.hasPrefix("SystemCameraIris") {
         return cameraIrisTransitionAnimationType(transitionType)
     } else  {
@@ -39,29 +42,6 @@ public enum TransitionAnimationType {
 // MARK: - TransitionAnimationType from string
 
 private extension TransitionAnimationType {
-  
-  static func cleanTransitionType(transitionType: String) -> String {
-    let range = transitionType.rangeOfString("(")
-    let transitionType = transitionType.stringByReplacingOccurrencesOfString(" ", withString: "")
-      .lowercaseString
-      .substringFromIndex(range?.startIndex ?? transitionType.endIndex)
-    return transitionType
-  }
-  
-  static func transitionDirection(forTransitionType transitionType: String) -> TransitionFromDirection? {
-    let transitionType = cleanTransitionType(transitionType)
-    if transitionType.containsString("left") {
-      return .Left
-    } else if transitionType.containsString("right") {
-      return .Right
-    } else if transitionType.containsString("top") {
-      return .Top
-    } else if transitionType.containsString("bottom") {
-      return .Bottom
-    }
-    return nil
-  }
-  
   
   static func fadeTransitionAnimationType(transitionType: String) -> TransitionAnimationType {
     if transitionType.hasSuffix("In") {
@@ -93,6 +73,34 @@ private extension TransitionAnimationType {
       return .SystemFlip(direction: direction)
     } else if transitionType.hasPrefix("SystemPageCurl") {
       return .SystemPageCurl(direction: direction)
+    }
+    return nil
+  }
+  
+}
+
+// MARK: - Helpers
+
+private extension TransitionAnimationType {
+  
+  static func cleanTransitionType(transitionType: String) -> String {
+    let range = transitionType.rangeOfString("(")
+    let transitionType = transitionType.stringByReplacingOccurrencesOfString(" ", withString: "")
+      .lowercaseString
+      .substringFromIndex(range?.startIndex ?? transitionType.endIndex)
+    return transitionType
+  }
+  
+  static func transitionDirection(forTransitionType transitionType: String) -> TransitionFromDirection? {
+    let transitionType = cleanTransitionType(transitionType)
+    if transitionType.containsString("left") {
+      return .Left
+    } else if transitionType.containsString("right") {
+      return .Right
+    } else if transitionType.containsString("top") {
+      return .Top
+    } else if transitionType.containsString("bottom") {
+      return .Bottom
     }
     return nil
   }

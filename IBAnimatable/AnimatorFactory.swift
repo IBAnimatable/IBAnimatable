@@ -30,7 +30,9 @@ struct AnimatorFactory {
       return SystemSuckEffectAnimator(transitionDuration: transitionDuration)
     case .SystemCameraIris(let hollowState):
       return SystemCameraIrisAnimator(hollowState: hollowState, transitionDuration: transitionDuration)
-  }
+    case .SystemRippleEffect:
+      return SystemRippleEffectAnimator(transitionDuration: transitionDuration)
+    }
   }
   
 }

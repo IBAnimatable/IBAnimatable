@@ -155,6 +155,8 @@
 		E20E911E1CAC432400625094 /* SystemCameraIrisAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20E911D1CAC432400625094 /* SystemCameraIrisAnimator.swift */; };
 		E20E911F1CAC443F00625094 /* TransitionHollowState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20E911B1CAC421E00625094 /* TransitionHollowState.swift */; };
 		E20E91201CAC444100625094 /* SystemCameraIrisAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20E911D1CAC432400625094 /* SystemCameraIrisAnimator.swift */; };
+		E20E91131CAC374200625094 /* SystemRippleEffectAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20E91121CAC374200625094 /* SystemRippleEffectAnimator.swift */; };
+		E20E91141CAC374200625094 /* SystemRippleEffectAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20E91121CAC374200625094 /* SystemRippleEffectAnimator.swift */; };
 		E23D08B81CA9336500440E7C /* SystemPageCurlAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D08B71CA9336500440E7C /* SystemPageCurlAnimator.swift */; };
 		E23D08B91CA9358000440E7C /* SystemPageCurlAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D08B71CA9336500440E7C /* SystemPageCurlAnimator.swift */; };
 		E2472EA41C6F97F800A20E27 /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2472EA31C6F97F800A20E27 /* ColorType.swift */; };
@@ -262,6 +264,7 @@
 		E20E91211CAC465A00625094 /* SystemSuckEffectAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemSuckEffectAnimator.swift; sourceTree = "<group>"; };
 		E20E911B1CAC421E00625094 /* TransitionHollowState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionHollowState.swift; sourceTree = "<group>"; };
 		E20E911D1CAC432400625094 /* SystemCameraIrisAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemCameraIrisAnimator.swift; sourceTree = "<group>"; };
+		E20E91121CAC374200625094 /* SystemRippleEffectAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemRippleEffectAnimator.swift; sourceTree = "<group>"; };
 		E23D08B71CA9336500440E7C /* SystemPageCurlAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPageCurlAnimator.swift; sourceTree = "<group>"; };
 		E2472EA31C6F97F800A20E27 /* ColorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorType.swift; sourceTree = "<group>"; };
 		E2472EA61C6F980C00A20E27 /* FlatColorsTypeScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlatColorsTypeScript.swift; path = Scripts/FlatColorsTypeScript.swift; sourceTree = SOURCE_ROOT; };
@@ -359,6 +362,7 @@
 				E23D08B71CA9336500440E7C /* SystemPageCurlAnimator.swift */,
 				E20E91211CAC465A00625094 /* SystemSuckEffectAnimator.swift */,
 				E20E911D1CAC432400625094 /* SystemCameraIrisAnimator.swift */,
+				E20E91121CAC374200625094 /* SystemRippleEffectAnimator.swift */,
 			);
 			name = "transition animator";
 			sourceTree = "<group>";
@@ -712,6 +716,7 @@
 				AE6B016E1C2A444900950BB2 /* NavigationBarDesginable.swift in Sources */,
 				AE6B01861C2A445100950BB2 /* DesignableNavigationBar.swift in Sources */,
 				AEE552AB1C816233009CF623 /* TransitionFadeType.swift in Sources */,
+				E20E91141CAC374200625094 /* SystemRippleEffectAnimator.swift in Sources */,
 				AE154B7F1C7D061A0093C05B /* TransitionAnimationType.swift in Sources */,
 				E20E911C1CAC421E00625094 /* TransitionHollowState.swift in Sources */,
 				AE6B016F1C2A444900950BB2 /* MaskDesignable.swift in Sources */,
@@ -729,6 +734,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E20E91131CAC374200625094 /* SystemRippleEffectAnimator.swift in Sources */,
 				AE0B0FEE1C263A1900E36B78 /* CheckBoxDesignable.swift in Sources */,
 				AE6D430C1C98B658006E2F67 /* TransitionType.swift in Sources */,
 				AED1A11A1BFE983A001346FA /* AnimatableView.swift in Sources */,
