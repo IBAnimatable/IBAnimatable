@@ -41,12 +41,16 @@ private extension TransitionTableViewController {
   func generateTransitionTypeData() {
     transitionAnimationsHeaders.append("Fade")
     transitionAnimations.append(["Fade", "FadeIn", "FadeOut"])
-    transitionAnimationsHeaders.append("SystemCube")
+    transitionAnimationsHeaders.append("Cube")
     transitionAnimations.append(transitionTypeWithDirections(forName: "SystemCube"))
-    transitionAnimationsHeaders.append("SystemFlip")
+    transitionAnimationsHeaders.append("Flip")
     transitionAnimations.append(transitionTypeWithDirections(forName: "SystemFlip"))
-    transitionAnimationsHeaders.append("SystemPageCurl")
+    transitionAnimationsHeaders.append("Page Curl")
     transitionAnimations.append(["SystemPageCurl(Top)", "SystemPageCurl(Bottom)"])
+    transitionAnimationsHeaders.append("Suck Effect")
+    transitionAnimations.append(["SystemSuckEffect"])
+    transitionAnimationsHeaders.append("Camera Iris")
+    transitionAnimations.append(["SystemCameraIris(Open)", "SystemCameraIris(Close)"])
   }
   
   func transitionTypeWithDirections(forName prefixName: String) -> [String] {
