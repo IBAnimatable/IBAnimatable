@@ -29,6 +29,9 @@ public class SystemCameraIrisAnimator: NSObject, AnimatedTransitioning {
     case .Close:
       self.transitionAnimationType = .SystemCameraIris(hollowState: .Close)
       self.reverseAnimationType = .SystemCameraIris(hollowState: .Open)
+    case .None:
+      self.transitionAnimationType = .SystemCameraIris(hollowState: .None)
+      self.reverseAnimationType = .SystemCameraIris(hollowState: .None)
     }
     
     super.init()
@@ -44,8 +47,11 @@ extension SystemCameraIrisAnimator: UIViewControllerAnimatedTransitioning {
     switch self.hollowState {
     case .Open:
       animateWithCATransition(transitionContext, type: SystemTransitionType.CameraIrisHollowOpen, subtype: nil)
-    case.Close:
+    case .Close:
       animateWithCATransition(transitionContext, type: SystemTransitionType.CameraIrisHollowClose, subtype: nil)
+    case .None:
+      animateWithCATransition(transitionContext, type: SystemTransitionType.CameraIris, subtype: nil)
+
     }
   }
 }

@@ -12,6 +12,7 @@ import Foundation
  Transition Hollow State
  */
 public enum TransitionHollowState {
+  case None
   case Open
   case Close
 }
