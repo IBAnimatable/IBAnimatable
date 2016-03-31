@@ -47,6 +47,10 @@ private extension TransitionTableViewController {
     transitionAnimations.append(transitionTypeWithDirections(forName: "SystemFlip"))
     transitionAnimationsHeaders.append("Page Curl")
     transitionAnimations.append(["SystemPageCurl(Top)", "SystemPageCurl(Bottom)"])
+    transitionAnimationsHeaders.append("Suck Effect")
+    transitionAnimations.append(["SystemSuckEffect"])
+    transitionAnimationsHeaders.append("Camera Iris")
+    transitionAnimations.append(["SystemCameraIris(Open)", "SystemCameraIris(Close)"])
     transitionAnimationsHeaders.append("Ripple Effect")
     transitionAnimations.append(["SystemRippleEffect"])
   }
