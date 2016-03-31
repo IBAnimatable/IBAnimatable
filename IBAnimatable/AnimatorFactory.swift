@@ -28,7 +28,9 @@ struct AnimatorFactory {
       return SystemPageCurlAnimator(fromDirection: direction, transitionDuration: transitionDuration)
     case .SystemSuckEffect:
       return SystemSuckEffectAnimator(transitionDuration: transitionDuration)
-    }
+    case .SystemCameraIris(let hollowState):
+      return SystemCameraIrisAnimator(hollowState: hollowState, transitionDuration: transitionDuration)
+  }
   }
   
 }

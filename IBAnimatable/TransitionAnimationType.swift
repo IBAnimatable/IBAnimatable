@@ -15,7 +15,8 @@ public enum TransitionAnimationType {
   case SystemCube(direction: TransitionFromDirection)
   case SystemFlip(direction: TransitionFromDirection)
   case SystemPageCurl(direction: TransitionFromDirection)
-  case SystemSuckEffect
+  case SystemCameraIris(hollowState: TransitionHollowState)
+
   var stringValue: String {
     return String(self)
   }
@@ -25,6 +26,9 @@ public enum TransitionAnimationType {
       return fadeTransitionAnmationType(transitionType)
     } else if transitionType.hasPrefix("SystemSuckEffect") {
         return .SystemSuckEffect
+      return fadeTransitionAnimationType(transitionType)
+    } else if transitionType.hasPrefix("SystemCameraIris") {
+        return cameraIrisTransitionAnimationType(transitionType)
     } else  {
       return fromStringWithDirection(transitionType)
     }
@@ -36,11 +40,16 @@ public enum TransitionAnimationType {
 
 private extension TransitionAnimationType {
   
-  static func transitionDirection(forTransitionType transitionType: String) -> TransitionFromDirection? {
+  static func cleanTransitionType(transitionType: String) -> String {
     let range = transitionType.rangeOfString("(")
     let transitionType = transitionType.stringByReplacingOccurrencesOfString(" ", withString: "")
-                                        .lowercaseString
-                                        .substringFromIndex(range?.startIndex ?? transitionType.endIndex)
+      .lowercaseString
+      .substringFromIndex(range?.startIndex ?? transitionType.endIndex)
+    return transitionType
+  }
+  
+  static func transitionDirection(forTransitionType transitionType: String) -> TransitionFromDirection? {
+    let transitionType = cleanTransitionType(transitionType)
     if transitionType.containsString("left") {
       return .Left
     } else if transitionType.containsString("right") {
@@ -54,7 +63,7 @@ private extension TransitionAnimationType {
   }
   
   
-  static func fadeTransitionAnmationType(transitionType: String) -> TransitionAnimationType {
+  static func fadeTransitionAnimationType(transitionType: String) -> TransitionAnimationType {
     if transitionType.hasSuffix("In") {
       return .FadeIn
     } else if transitionType.hasSuffix("Out") {
@@ -63,6 +72,16 @@ private extension TransitionAnimationType {
     return .Fade
   }
  
+  static func cameraIrisTransitionAnimationType(transitionType: String) -> TransitionAnimationType? {
+    let transitionType = cleanTransitionType(transitionType)
+    if transitionType.containsString("open") {
+      return .SystemCameraIris(hollowState: .Open)
+    } else if transitionType.containsString("close") {
+      return .SystemCameraIris(hollowState: .Close)
+    }
+    return nil
+  }
+  
   static func fromStringWithDirection(transitionType: String) -> TransitionAnimationType? {
     guard let direction = transitionDirection(forTransitionType: transitionType) else {
       return nil
