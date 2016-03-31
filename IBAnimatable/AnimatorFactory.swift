@@ -26,7 +26,9 @@ struct AnimatorFactory {
       return SystemFlipAnimator(fromDirection: direction, transitionDuration: transitionDuration)
     case .SystemPageCurl(let direction):
       return SystemPageCurlAnimator(fromDirection: direction, transitionDuration: transitionDuration)
-    }
+    case .SystemCameraIris(let hollowState):
+      return SystemCameraIrisAnimator(hollowState: hollowState, transitionDuration: transitionDuration)
+  }
   }
   
 }
