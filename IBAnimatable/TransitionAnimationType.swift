@@ -15,6 +15,7 @@ public enum TransitionAnimationType {
   case SystemCube(direction: TransitionFromDirection)
   case SystemFlip(direction: TransitionFromDirection)
   case SystemPageCurl(direction: TransitionFromDirection)
+  case SystemSuckEffect
   case SystemCameraIris(hollowState: TransitionHollowState)
 
   var stringValue: String {
@@ -23,10 +24,9 @@ public enum TransitionAnimationType {
 
   static func fromString(transitionType: String) -> TransitionAnimationType? {
     if transitionType.hasPrefix("Fade") {
-      return fadeTransitionAnmationType(transitionType)
+      return fadeTransitionAnimationType(transitionType)
     } else if transitionType.hasPrefix("SystemSuckEffect") {
         return .SystemSuckEffect
-      return fadeTransitionAnimationType(transitionType)
     } else if transitionType.hasPrefix("SystemCameraIris") {
         return cameraIrisTransitionAnimationType(transitionType)
     } else  {
