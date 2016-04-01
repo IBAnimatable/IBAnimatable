@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file.
 ### Next
 
 #### API breaking changes
+- Change `SystemPageCurlAnimator` to `SystemPageAnimator` to support `SystemPage(Curl)` and `SystemPage(UnCurl)` transition animations.
+
 
 #### Enhancements
 
