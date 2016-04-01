@@ -50,7 +50,7 @@ private extension TransitionTableViewController {
     transitionAnimationsHeaders.append("Suck Effect")
     transitionAnimations.append(["SystemSuckEffect"])
     transitionAnimationsHeaders.append("Camera Iris")
-    transitionAnimations.append(["SystemCameraIris(Open)", "SystemCameraIris(Close)"])
+    transitionAnimations.append(["SystemCameraIris", "SystemCameraIris(HollowOpen)", "SystemCameraIris(HollowClose)"])
     transitionAnimationsHeaders.append("Ripple Effect")
     transitionAnimations.append(["SystemRippleEffect"])
   }

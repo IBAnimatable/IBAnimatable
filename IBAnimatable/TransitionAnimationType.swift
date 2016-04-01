@@ -56,12 +56,12 @@ private extension TransitionAnimationType {
  
   static func cameraIrisTransitionAnimationType(transitionType: String) -> TransitionAnimationType? {
     let transitionType = cleanTransitionType(transitionType)
-    if transitionType.containsString("open") {
+    if transitionType.containsString("hollowopen") {
       return .SystemCameraIris(hollowState: .Open)
-    } else if transitionType.containsString("close") {
+    } else if transitionType.containsString("hollowclose") {
       return .SystemCameraIris(hollowState: .Close)
     }
-    return nil
+    return .SystemCameraIris(hollowState: .None)
   }
   
   static func pageTransitionAnimationType(transitionType: String) -> TransitionAnimationType? {
