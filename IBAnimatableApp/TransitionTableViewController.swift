@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import IBAnimatable
 
 class TransitionTableViewController: UITableViewController {
 

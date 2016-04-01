@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import IBAnimatable
 
 class TransitionViewController: AnimatableViewController {
   var animationType: String?
