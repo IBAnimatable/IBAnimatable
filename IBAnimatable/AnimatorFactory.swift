@@ -24,8 +24,8 @@ struct AnimatorFactory {
       return SystemCubeAnimator(fromDirection: direction, transitionDuration: transitionDuration)
     case .SystemFlip(let direction):
       return SystemFlipAnimator(fromDirection: direction, transitionDuration: transitionDuration)
-    case .SystemPageCurl(let direction):
-      return SystemPageCurlAnimator(fromDirection: direction, transitionDuration: transitionDuration)
+    case .SystemPage(let type):
+      return SystemPageAnimator(type: type, transitionDuration: transitionDuration)
     case .SystemSuckEffect:
       return SystemSuckEffectAnimator(transitionDuration: transitionDuration)
     case .SystemCameraIris(let hollowState):

@@ -16,7 +16,7 @@ public enum TransitionAnimationType {
   case SystemRippleEffect
   case SystemCube(direction: TransitionFromDirection)
   case SystemFlip(direction: TransitionFromDirection)
-  case SystemPageCurl(direction: TransitionFromDirection)
+  case SystemPage(type: TransitionPageType)
   case SystemCameraIris(hollowState: TransitionHollowState)
     
   var stringValue: String {
@@ -32,6 +32,8 @@ public enum TransitionAnimationType {
       return fadeTransitionAnimationType(transitionType)
     } else if transitionType.hasPrefix("SystemCameraIris") {
         return cameraIrisTransitionAnimationType(transitionType)
+    } else if transitionType.hasPrefix("SystemPage") {
+      return pageTransitionAnimationType(transitionType)
     } else  {
       return fromStringWithDirection(transitionType)
     }
@@ -62,6 +64,16 @@ private extension TransitionAnimationType {
     return nil
   }
   
+  static func pageTransitionAnimationType(transitionType: String) -> TransitionAnimationType? {
+    let transitionType = cleanTransitionType(transitionType)
+    if transitionType.containsString("uncurl") {
+      return .SystemPage(type: .UnCurl)
+    } else if transitionType.containsString("curl") {
+      return .SystemPage(type: .Curl)      
+    }
+    return nil
+  }
+  
   static func fromStringWithDirection(transitionType: String) -> TransitionAnimationType? {
     guard let direction = transitionDirection(forTransitionType: transitionType) else {
       return nil
@@ -71,8 +83,6 @@ private extension TransitionAnimationType {
       return .SystemCube(direction: direction)
     } else if transitionType.hasPrefix("SystemFlip") {
       return .SystemFlip(direction: direction)
-    } else if transitionType.hasPrefix("SystemPageCurl") {
-      return .SystemPageCurl(direction: direction)
     }
     return nil
   }
