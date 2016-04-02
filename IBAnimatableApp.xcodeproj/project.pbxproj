@@ -90,6 +90,7 @@
 		CAB56443CD667F41413A560F /* SystemTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56645FCD11BEC66200818 /* SystemTransitionType.swift */; };
 		CAB566CA933963DAA0C7E074 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56A8BA4FB110D501DC1DC /* Constants.swift */; };
 		E2472EA51C6F97F800A20E27 /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2472EA31C6F97F800A20E27 /* ColorType.swift */; };
+		E27691E91CAFC72C004A725C /* SystemMoveInAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691E81CAFC72C004A725C /* SystemMoveInAnimator.swift */; };
 		E2E28E6C1C6A6C30003F3852 /* GradientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6A1C6A6C30003F3852 /* GradientType.swift */; };
 		E2E28E6F1C6A6D22003F3852 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
@@ -196,6 +197,7 @@
 		E23D08B71CA9336500440E7C /* SystemPageAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPageAnimator.swift; sourceTree = "<group>"; };
 		E2472EA31C6F97F800A20E27 /* ColorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorType.swift; sourceTree = "<group>"; };
 		E2472EA61C6F980C00A20E27 /* FlatColorsTypeScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlatColorsTypeScript.swift; path = Scripts/FlatColorsTypeScript.swift; sourceTree = SOURCE_ROOT; };
+		E27691E81CAFC72C004A725C /* SystemMoveInAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemMoveInAnimator.swift; sourceTree = "<group>"; };
 		E2E28E6A1C6A6C30003F3852 /* GradientType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientType.swift; sourceTree = "<group>"; };
 		E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		E2E28E711C6A6E70003F3852 /* GradientsTypeScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GradientsTypeScript.swift; path = Scripts/GradientsTypeScript.swift; sourceTree = SOURCE_ROOT; };
@@ -285,12 +287,13 @@
 			isa = PBXGroup;
 			children = (
 				AEE552A61C815AC5009CF623 /* FadeAnimator.swift */,
-				E20E911D1CAC432400625094 /* SystemCameraIrisAnimator.swift */,
 				33A8B9EB1C7E790800082529 /* SystemCubeAnimator.swift */,
 				AEDD8A301C7EDAE30033175A /* SystemFlipAnimator.swift */,
+				E27691E81CAFC72C004A725C /* SystemMoveInAnimator.swift */,
 				E23D08B71CA9336500440E7C /* SystemPageAnimator.swift */,
 				E20E91121CAC374200625094 /* SystemRippleEffectAnimator.swift */,
 				E20E91211CAC465A00625094 /* SystemSuckEffectAnimator.swift */,
+				E20E911D1CAC432400625094 /* SystemCameraIrisAnimator.swift */,
 			);
 			name = "transition animator";
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 				AE6B016A1C2A444900950BB2 /* CheckBoxDesignable.swift in Sources */,
 				AE154B851C7D1A740093C05B /* AnimatedTransitioning.swift in Sources */,
 				AE6B017B1C2A445100950BB2 /* AnimatableBarButtonItem.swift in Sources */,
+				E27691E91CAFC72C004A725C /* SystemMoveInAnimator.swift in Sources */,
 				33A8B9ED1C7E790800082529 /* SystemCubeAnimator.swift in Sources */,
 				AE6B017D1C2A445100950BB2 /* AnimatableCheckBox.swift in Sources */,
 				AE154B2D1C7BB5760093C05B /* CALayerExtension.swift in Sources */,

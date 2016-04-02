@@ -18,6 +18,7 @@ public enum TransitionAnimationType {
   case SystemFlip(direction: TransitionFromDirection)
   case SystemPage(type: TransitionPageType)
   case SystemCameraIris(hollowState: TransitionHollowState)
+  case SystemMoveIn(direction: TransitionFromDirection)
     
   var stringValue: String {
     return String(self)
@@ -83,6 +84,8 @@ private extension TransitionAnimationType {
       return .SystemCube(direction: direction)
     } else if transitionType.hasPrefix("SystemFlip") {
       return .SystemFlip(direction: direction)
+    } else if transitionType.hasPrefix("SystemMoveIn") {
+      return .SystemMoveIn(direction: direction)
     }
     return nil
   }

@@ -20,18 +20,20 @@ struct AnimatorFactory {
       return FadeAnimator(fadeType: .FadeIn, transitionDuration: transitionDuration)
     case .FadeOut:
       return FadeAnimator(fadeType: .FadeOut, transitionDuration: transitionDuration)
+    case .SystemSuckEffect:
+      return SystemSuckEffectAnimator(transitionDuration: transitionDuration)
+    case .SystemRippleEffect:
+      return SystemRippleEffectAnimator(transitionDuration: transitionDuration)
     case .SystemCube(let direction):
       return SystemCubeAnimator(fromDirection: direction, transitionDuration: transitionDuration)
     case .SystemFlip(let direction):
       return SystemFlipAnimator(fromDirection: direction, transitionDuration: transitionDuration)
+    case .SystemMoveIn(let direction):
+      return SystemMoveInAnimator(fromDirection: direction, transitionDuration: transitionDuration)
     case .SystemPage(let type):
       return SystemPageAnimator(type: type, transitionDuration: transitionDuration)
-    case .SystemSuckEffect:
-      return SystemSuckEffectAnimator(transitionDuration: transitionDuration)
     case .SystemCameraIris(let hollowState):
       return SystemCameraIrisAnimator(hollowState: hollowState, transitionDuration: transitionDuration)
-    case .SystemRippleEffect:
-      return SystemRippleEffectAnimator(transitionDuration: transitionDuration)
     }
   }
   
