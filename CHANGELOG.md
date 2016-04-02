@@ -14,11 +14,15 @@ All notable changes to this project will be documented in this file.
 - `AnimatableLabel` now conforms `BorderDesignable`
 - More transition animations [#126](https://github.com/JakeLin/IBAnimatable/issues/126):
     - `SystemSuckEffect`
-    - Add `SystemCameraIrisAnimator` to support:
+    - `SystemRippleEffect`
+    - `SystemMoveIn`
+    - `SystemPush`
+    - `SystemReveal`
+    - `SystemCameraIrisAnimator` to support:
          - `SystemCameraIris`
          - `SystemCameraIris(HollowOpen)`
          - `SystemCameraIris(HollowClose)`
-    - Add `SystemRippleEffect`
+
 
 #### Bugfixes
 
