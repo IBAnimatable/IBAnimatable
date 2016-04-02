@@ -18,6 +18,12 @@ All notable changes to this project will be documented in this file.
     - `SystemMoveIn`
     - `SystemPush`
     - `SystemReveal`
+    - `Rotate` to support:
+         - `Rotate(90)`
+         - `Rotate(90ccw)`
+         - `Rotate(180)`
+         - `Rotate(180ccw)`
+         - => Note: It seems that only `Rotate(90)` is working as expected. `CATransition` issues?
     - `SystemCameraIrisAnimator` to support:
          - `SystemCameraIris`
          - `SystemCameraIris(HollowOpen)`
