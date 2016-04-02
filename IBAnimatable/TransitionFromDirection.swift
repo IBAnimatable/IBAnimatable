@@ -20,9 +20,11 @@ public enum TransitionFromDirection {
     case .Right:
       return kCATransitionFromRight
     case .Top:
-      return kCATransitionFromTop
-    case .Bottom:
+      // The actual transition direction is oposite, need to reverse
       return kCATransitionFromBottom
+    case .Bottom:
+      // The actual transition direction is oposite, need to reverse
+      return kCATransitionFromTop
     }
   }
 }

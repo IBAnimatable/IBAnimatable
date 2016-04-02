@@ -31,11 +31,11 @@ public class SystemRevealAnimator: NSObject, AnimatedTransitioning {
     case .Top:
       self.transitionAnimationType = .SystemReveal(direction: .Top)
       self.reverseAnimationType = .SystemReveal(direction: .Bottom)
-      self.interactiveGestureType = .PanFromTop
+      self.interactiveGestureType = .PanFromBottom
     case .Bottom:
       self.transitionAnimationType = .SystemReveal(direction: .Bottom)
       self.reverseAnimationType = .SystemReveal(direction: .Top)
-      self.interactiveGestureType = .PanFromBottom
+      self.interactiveGestureType = .PanFromTop
     }
     
     super.init()

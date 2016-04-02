@@ -34,11 +34,11 @@ public class SystemPushAnimator: NSObject, AnimatedTransitioning {
     case .Top:
       self.transitionAnimationType = .SystemPush(direction: .Top)
       self.reverseAnimationType = .SystemPush(direction: .Bottom)
-      self.interactiveGestureType = .PanFromTop
+      self.interactiveGestureType = .PanFromBottom
     case .Bottom:
       self.transitionAnimationType = .SystemPush(direction: .Bottom)
       self.reverseAnimationType = .SystemPush(direction: .Top)
-      self.interactiveGestureType = .PanFromBottom
+      self.interactiveGestureType = .PanFromTop
     }
     
     super.init()
