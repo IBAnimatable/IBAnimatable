@@ -38,6 +38,8 @@ struct AnimatorFactory {
       return SystemPageAnimator(type: type, transitionDuration: transitionDuration)
     case .SystemCameraIris(let hollowState):
       return SystemCameraIrisAnimator(hollowState: hollowState, transitionDuration: transitionDuration)
+    case .SystemRotate(let degree):
+      return SystemRotateAnimator(withDegree: degree, transitionDuration: transitionDuration)
     }
   }
   

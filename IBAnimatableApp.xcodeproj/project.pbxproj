@@ -93,6 +93,8 @@
 		E27691E91CAFC72C004A725C /* SystemMoveInAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691E81CAFC72C004A725C /* SystemMoveInAnimator.swift */; };
 		E27691EB1CAFC91A004A725C /* SystemPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691EA1CAFC91A004A725C /* SystemPushAnimator.swift */; };
 		E27691EF1CAFCA29004A725C /* SystemRevealAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691EE1CAFCA29004A725C /* SystemRevealAnimator.swift */; };
+		E27691F11CAFCBCF004A725C /* TransitionRotateDegree.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691F01CAFCBCF004A725C /* TransitionRotateDegree.swift */; };
+		E27691F31CAFCD67004A725C /* SystemRotateAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691F21CAFCD67004A725C /* SystemRotateAnimator.swift */; };
 		E2E28E6C1C6A6C30003F3852 /* GradientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6A1C6A6C30003F3852 /* GradientType.swift */; };
 		E2E28E6F1C6A6D22003F3852 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
@@ -202,6 +204,8 @@
 		E27691E81CAFC72C004A725C /* SystemMoveInAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemMoveInAnimator.swift; sourceTree = "<group>"; };
 		E27691EA1CAFC91A004A725C /* SystemPushAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPushAnimator.swift; sourceTree = "<group>"; };
 		E27691EE1CAFCA29004A725C /* SystemRevealAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemRevealAnimator.swift; sourceTree = "<group>"; };
+		E27691F01CAFCBCF004A725C /* TransitionRotateDegree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionRotateDegree.swift; sourceTree = "<group>"; };
+		E27691F21CAFCD67004A725C /* SystemRotateAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemRotateAnimator.swift; sourceTree = "<group>"; };
 		E2E28E6A1C6A6C30003F3852 /* GradientType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientType.swift; sourceTree = "<group>"; };
 		E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		E2E28E711C6A6E70003F3852 /* GradientsTypeScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GradientsTypeScript.swift; path = Scripts/GradientsTypeScript.swift; sourceTree = SOURCE_ROOT; };
@@ -297,6 +301,7 @@
 				E27691EA1CAFC91A004A725C /* SystemPushAnimator.swift */,
 				E27691EE1CAFCA29004A725C /* SystemRevealAnimator.swift */,
 				E23D08B71CA9336500440E7C /* SystemPageAnimator.swift */,
+				E27691F21CAFCD67004A725C /* SystemRotateAnimator.swift */,
 				E20E91121CAC374200625094 /* SystemRippleEffectAnimator.swift */,
 				E20E91211CAC465A00625094 /* SystemSuckEffectAnimator.swift */,
 				E20E911D1CAC432400625094 /* SystemCameraIrisAnimator.swift */,
@@ -431,6 +436,7 @@
 				33A8B9EE1C7E7A4C00082529 /* TransitionFromDirection.swift */,
 				E20E911B1CAC421E00625094 /* TransitionHollowState.swift */,
 				AE9407881CAE871C0084BCB8 /* TransitionPageType.swift */,
+				E27691F01CAFCBCF004A725C /* TransitionRotateDegree.swift */,
 				AE6D430B1C98B658006E2F67 /* TransitionType.swift */,
 			);
 			name = enum;
@@ -606,6 +612,7 @@
 				AE6B01731C2A444900950BB2 /* ShadowDesignable.swift in Sources */,
 				AE6B01621C2A444000950BB2 /* AnimationType.swift in Sources */,
 				AE154B8C1C7D59EE0093C05B /* AnimatorFactory.swift in Sources */,
+				E27691F31CAFCD67004A725C /* SystemRotateAnimator.swift in Sources */,
 				AE154B291C7BB52E0093C05B /* Typealias.swift in Sources */,
 				AE4C53F31C883F80007C9EFA /* PanInteractiveAnimator.swift in Sources */,
 				AE6B01871C2A445400950BB2 /* AnimatableViewController.swift in Sources */,
@@ -661,6 +668,7 @@
 				AEE552AB1C816233009CF623 /* TransitionFadeType.swift in Sources */,
 				AE154B7F1C7D061A0093C05B /* TransitionAnimationType.swift in Sources */,
 				AE677B991CADCF6500D62273 /* SystemCameraIrisAnimator.swift in Sources */,
+				E27691F11CAFCBCF004A725C /* TransitionRotateDegree.swift in Sources */,
 				AE6B016F1C2A444900950BB2 /* MaskDesignable.swift in Sources */,
 				AE6B01741C2A444900950BB2 /* SideImageDesignable.swift in Sources */,
 				AE6B017E1C2A445100950BB2 /* AnimatableImageView.swift in Sources */,

@@ -21,6 +21,7 @@ public enum TransitionAnimationType {
   case SystemReveal(direction: TransitionFromDirection)
   case SystemPage(type: TransitionPageType)
   case SystemCameraIris(hollowState: TransitionHollowState)
+  case SystemRotate(degree: TransitionRotateDegree)
     
   var stringValue: String {
     return String(self)
@@ -37,6 +38,8 @@ public enum TransitionAnimationType {
         return cameraIrisTransitionAnimationType(transitionType)
     } else if transitionType.hasPrefix("SystemPage") {
       return pageTransitionAnimationType(transitionType)
+    } else if transitionType.hasPrefix("SystemRotate") {
+      return rotateTransitionAnimationType(transitionType)
     } else  {
       return fromStringWithDirection(transitionType)
     }
@@ -73,6 +76,20 @@ private extension TransitionAnimationType {
       return .SystemPage(type: .UnCurl)
     } else if transitionType.containsString("curl") {
       return .SystemPage(type: .Curl)      
+    }
+    return nil
+  }
+  
+  static func rotateTransitionAnimationType(transitionType: String) -> TransitionAnimationType? {
+    let transitionType = cleanTransitionType(transitionType)
+    if transitionType.containsString("90ccw") || transitionType.containsString("ninetyccw") {
+      return .SystemRotate(degree: .NinetyCCW)
+    } else if transitionType.containsString("90") || transitionType.containsString("ninety") {
+      return .SystemRotate(degree: .Ninety)
+    } else if transitionType.containsString("180ccw") || transitionType.containsString("OneHundredHeightyccw") {
+      return .SystemRotate(degree: .OneHundredHeightyCCW)
+    } else if transitionType.containsString("180") || transitionType.containsString("OneHundredHeighty") {
+      return .SystemRotate(degree: .OneHundredHeighty)
     }
     return nil
   }

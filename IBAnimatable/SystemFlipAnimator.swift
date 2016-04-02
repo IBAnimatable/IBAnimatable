@@ -52,17 +52,6 @@ extension SystemFlipAnimator: UIViewControllerAnimatedTransitioning {
   }
   
   public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-    let (tempFromView, tempToView, tempContainerView) = retrieveViews(transitionContext)
-    guard let fromView = tempFromView, toView = tempToView, _ = tempContainerView else {
-      transitionContext.completeTransition(true)
-      return
-    }
-    
-    UIView.transitionFromView(fromView, toView: toView,
-      duration: transitionDuration(transitionContext), options: animationOption,
-      completion: { _ in
-        transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
-      }
-    )
+    animateWithCATransition(transitionContext, type: SystemTransitionType.Flip, subtype: fromDirection.stringValue)
   }
 }
