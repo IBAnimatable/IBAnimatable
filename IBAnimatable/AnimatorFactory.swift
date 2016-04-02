@@ -30,6 +30,8 @@ struct AnimatorFactory {
       return SystemFlipAnimator(fromDirection: direction, transitionDuration: transitionDuration)
     case .SystemMoveIn(let direction):
       return SystemMoveInAnimator(fromDirection: direction, transitionDuration: transitionDuration)
+    case .SystemPush(let direction):
+      return SystemPushAnimator(fromDirection: direction, transitionDuration: transitionDuration)
     case .SystemPage(let type):
       return SystemPageAnimator(type: type, transitionDuration: transitionDuration)
     case .SystemCameraIris(let hollowState):
