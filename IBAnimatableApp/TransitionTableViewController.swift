@@ -54,6 +54,8 @@ private extension TransitionTableViewController {
     transitionAnimations.append(["SystemCameraIris", "SystemCameraIris(HollowOpen)", "SystemCameraIris(HollowClose)"])
     transitionAnimationsHeaders.append("Ripple Effect")
     transitionAnimations.append(["SystemRippleEffect"])
+    transitionAnimationsHeaders.append("Rotate")
+    transitionAnimations.append(["SystemRotate(90)", "SystemRotate(90ccw)", "SystemRotate(180)", "SystemRotate(180ccw)"])
   }
   
   func transitionTypeWithDirections(forName prefixName: String) -> [String] {
