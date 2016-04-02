@@ -18,6 +18,7 @@ public enum TransitionAnimationType {
   case SystemFlip(direction: TransitionFromDirection)
   case SystemMoveIn(direction: TransitionFromDirection)
   case SystemPush(direction: TransitionFromDirection)
+  case SystemReveal(direction: TransitionFromDirection)
   case SystemPage(type: TransitionPageType)
   case SystemCameraIris(hollowState: TransitionHollowState)
     
@@ -89,6 +90,8 @@ private extension TransitionAnimationType {
       return .SystemMoveIn(direction: direction)
     } else if transitionType.hasPrefix("SystemPush") {
       return .SystemPush(direction: direction)
+    } else if transitionType.hasPrefix("SystemReveal") {
+      return .SystemReveal(direction: direction)
     }
     return nil
   }

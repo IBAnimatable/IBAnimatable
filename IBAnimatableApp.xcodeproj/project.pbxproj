@@ -92,6 +92,7 @@
 		E2472EA51C6F97F800A20E27 /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2472EA31C6F97F800A20E27 /* ColorType.swift */; };
 		E27691E91CAFC72C004A725C /* SystemMoveInAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691E81CAFC72C004A725C /* SystemMoveInAnimator.swift */; };
 		E27691EB1CAFC91A004A725C /* SystemPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691EA1CAFC91A004A725C /* SystemPushAnimator.swift */; };
+		E27691EF1CAFCA29004A725C /* SystemRevealAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691EE1CAFCA29004A725C /* SystemRevealAnimator.swift */; };
 		E2E28E6C1C6A6C30003F3852 /* GradientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6A1C6A6C30003F3852 /* GradientType.swift */; };
 		E2E28E6F1C6A6D22003F3852 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
@@ -200,6 +201,7 @@
 		E2472EA61C6F980C00A20E27 /* FlatColorsTypeScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlatColorsTypeScript.swift; path = Scripts/FlatColorsTypeScript.swift; sourceTree = SOURCE_ROOT; };
 		E27691E81CAFC72C004A725C /* SystemMoveInAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemMoveInAnimator.swift; sourceTree = "<group>"; };
 		E27691EA1CAFC91A004A725C /* SystemPushAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPushAnimator.swift; sourceTree = "<group>"; };
+		E27691EE1CAFCA29004A725C /* SystemRevealAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemRevealAnimator.swift; sourceTree = "<group>"; };
 		E2E28E6A1C6A6C30003F3852 /* GradientType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientType.swift; sourceTree = "<group>"; };
 		E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		E2E28E711C6A6E70003F3852 /* GradientsTypeScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GradientsTypeScript.swift; path = Scripts/GradientsTypeScript.swift; sourceTree = SOURCE_ROOT; };
@@ -293,6 +295,7 @@
 				AEDD8A301C7EDAE30033175A /* SystemFlipAnimator.swift */,
 				E27691E81CAFC72C004A725C /* SystemMoveInAnimator.swift */,
 				E27691EA1CAFC91A004A725C /* SystemPushAnimator.swift */,
+				E27691EE1CAFCA29004A725C /* SystemRevealAnimator.swift */,
 				E23D08B71CA9336500440E7C /* SystemPageAnimator.swift */,
 				E20E91121CAC374200625094 /* SystemRippleEffectAnimator.swift */,
 				E20E91211CAC465A00625094 /* SystemSuckEffectAnimator.swift */,
@@ -624,6 +627,7 @@
 				AE6B017D1C2A445100950BB2 /* AnimatableCheckBox.swift in Sources */,
 				AE154B2D1C7BB5760093C05B /* CALayerExtension.swift in Sources */,
 				AEE552AE1C82D1E1009CF623 /* PresentFadeSegue.swift in Sources */,
+				E27691EF1CAFCA29004A725C /* SystemRevealAnimator.swift in Sources */,
 				E2E28E6F1C6A6D22003F3852 /* UIColorExtension.swift in Sources */,
 				AE0635F91C9837DC003F9815 /* PresentFadeInWithDismissInteractionSegue.swift in Sources */,
 				AEDD8A321C7EDAE30033175A /* SystemFlipAnimator.swift in Sources */,

@@ -50,6 +50,8 @@ private extension TransitionTableViewController {
     transitionAnimations.append(transitionTypeWithDirections(forName: "SystemMoveIn"))
     transitionAnimationsHeaders.append("Push")
     transitionAnimations.append(transitionTypeWithDirections(forName: "SystemPush"))
+    transitionAnimationsHeaders.append("Reveal")
+    transitionAnimations.append(transitionTypeWithDirections(forName: "SystemReveal"))
     transitionAnimationsHeaders.append("Page")
     transitionAnimations.append(["SystemPage(Curl)", "SystemPage(UnCurl)"])
     transitionAnimationsHeaders.append("Suck Effect")
