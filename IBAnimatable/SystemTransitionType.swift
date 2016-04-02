@@ -15,8 +15,6 @@ public enum SystemTransitionType: String {
   case Push = "push"
   case Reveal = "reveal"
   case Flip = "flip"
-  case AlignedFlip = "alignedFlip"
-  case OglFlip = "oglFlip"
   case Cube = "cube"
   case AlignedCube = "alignedCube"
   case PageCurl = "pageCurl"
