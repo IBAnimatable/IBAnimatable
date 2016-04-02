@@ -31,11 +31,11 @@ public class SystemMoveInAnimator: NSObject, AnimatedTransitioning {
     case .Top:
       self.transitionAnimationType = .SystemMoveIn(direction: .Top)
       self.reverseAnimationType = .SystemMoveIn(direction: .Bottom)
-      self.interactiveGestureType = .PanFromTop
+      self.interactiveGestureType = .PanFromBottom
     case .Bottom:
       self.transitionAnimationType = .SystemMoveIn(direction: .Bottom)
       self.reverseAnimationType = .SystemMoveIn(direction: .Top)
-      self.interactiveGestureType = .PanFromBottom
+      self.interactiveGestureType = .PanFromTop
     }
     
     super.init()

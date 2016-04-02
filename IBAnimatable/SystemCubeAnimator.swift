@@ -33,11 +33,11 @@ public class SystemCubeAnimator: NSObject, AnimatedTransitioning {
     case .Top:
       self.transitionAnimationType = .SystemCube(direction: .Top)
       self.reverseAnimationType = .SystemCube(direction: .Bottom)
-      self.interactiveGestureType = .PanFromTop
+      self.interactiveGestureType = .PanFromBottom
     case .Bottom:
       self.transitionAnimationType = .SystemCube(direction: .Bottom)
       self.reverseAnimationType = .SystemCube(direction: .Top)
-      self.interactiveGestureType = .PanFromBottom
+      self.interactiveGestureType = .PanFromTop
     }
     
     super.init()
