@@ -16,6 +16,9 @@ public enum TransitionAnimationType {
   case SystemRippleEffect
   case SystemCube(direction: TransitionFromDirection)
   case SystemFlip(direction: TransitionFromDirection)
+  case SystemMoveIn(direction: TransitionFromDirection)
+  case SystemPush(direction: TransitionFromDirection)
+  case SystemReveal(direction: TransitionFromDirection)
   case SystemPage(type: TransitionPageType)
   case SystemCameraIris(hollowState: TransitionHollowState)
   case SystemRotate(degree: TransitionRotateDegree)
@@ -100,6 +103,12 @@ private extension TransitionAnimationType {
       return .SystemCube(direction: direction)
     } else if transitionType.hasPrefix("SystemFlip") {
       return .SystemFlip(direction: direction)
+    } else if transitionType.hasPrefix("SystemMoveIn") {
+      return .SystemMoveIn(direction: direction)
+    } else if transitionType.hasPrefix("SystemPush") {
+      return .SystemPush(direction: direction)
+    } else if transitionType.hasPrefix("SystemReveal") {
+      return .SystemReveal(direction: direction)
     }
     return nil
   }
