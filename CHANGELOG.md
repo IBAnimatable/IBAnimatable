@@ -12,17 +12,17 @@ All notable changes to this project will be documented in this file.
 #### Enhancements
 
 - `AnimatableLabel` now conforms `BorderDesignable`
-- More transition animations [#126](https://github.com/JakeLin/IBAnimatable/issues/126):
+- New transition animations [#126](https://github.com/JakeLin/IBAnimatable/issues/126):
     - `SystemSuckEffect`
     - `SystemRippleEffect`
     - `SystemMoveIn`
     - `SystemPush`
     - `SystemReveal`
-    - `Rotate` to support:
-         - `Rotate(90)`
-         - `Rotate(90ccw)`
-         - `Rotate(180)`
-         - `Rotate(180ccw)`
+    - `SystemRotate` to support:
+         - `SystemRotate(90)`
+         - `SystemRotate(90ccw)`
+         - `SystemRotate(180)`
+         - `SystemRotate(180ccw)`
          - => Note: It seems that only `Rotate(90)` is working as expected. `CATransition` issues?
     - `SystemCameraIrisAnimator` to support:
          - `SystemCameraIris`
