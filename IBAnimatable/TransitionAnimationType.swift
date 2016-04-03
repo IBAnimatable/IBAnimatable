@@ -14,6 +14,7 @@ public enum TransitionAnimationType {
   case FadeOut          // FromView Fades out
   case SystemSuckEffect
   case SystemRippleEffect
+  case Explode
   case SystemCube(direction: TransitionFromDirection)
   case SystemFlip(direction: TransitionFromDirection)
   case SystemMoveIn(direction: TransitionFromDirection)
@@ -32,6 +33,8 @@ public enum TransitionAnimationType {
       return .SystemRippleEffect
     } else if transitionType.hasPrefix("SystemSuckEffect") {
         return .SystemSuckEffect
+    } else if transitionType.hasPrefix("Explode") {
+      return .Explode
     } else if transitionType.hasPrefix("Fade") {
       return fadeTransitionAnimationType(transitionType)
     } else if transitionType.hasPrefix("SystemCameraIris") {

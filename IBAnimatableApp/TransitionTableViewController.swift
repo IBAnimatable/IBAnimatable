@@ -54,14 +54,13 @@ private extension TransitionTableViewController {
     transitionAnimations.append(transitionTypeWithDirections(forName: "SystemReveal"))
     transitionAnimationsHeaders.append("Page")
     transitionAnimations.append(["SystemPage(Curl)", "SystemPage(UnCurl)"])
-    transitionAnimationsHeaders.append("Suck Effect")
-    transitionAnimations.append(["SystemSuckEffect"])
     transitionAnimationsHeaders.append("Camera Iris")
     transitionAnimations.append(["SystemCameraIris", "SystemCameraIris(HollowOpen)", "SystemCameraIris(HollowClose)"])
-    transitionAnimationsHeaders.append("Ripple Effect")
-    transitionAnimations.append(["SystemRippleEffect"])
     transitionAnimationsHeaders.append("Rotate")
     transitionAnimations.append(["SystemRotate(90)", "SystemRotate(90ccw)", "SystemRotate(180)", "SystemRotate(180ccw)"])
+    transitionAnimationsHeaders.append("Others")
+    transitionAnimations.append(["SystemRippleEffect", "SystemSuckEffect", "Explode"])
+
   }
   
   func transitionTypeWithDirections(forName prefixName: String) -> [String] {
