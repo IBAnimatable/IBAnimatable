@@ -25,16 +25,23 @@ public protocol BorderDesignable {
 
 public extension BorderDesignable where Self: UIView {
   public func configBorder() {
+    func clearBorders() {
+      layer.sublayers?.filter  { $0.name == "borderSideLayer" || $0.name == "borderAllSides" }
+        .forEach { $0.removeFromSuperlayer() }      
+    }
+    
     guard let unwrappedBorderColor = borderColor else {
+      clearBorders()
       return
     }
     
     if borderWidth.isNaN || borderWidth <= 0 {
+      clearBorders()
       return
     }
     
-    layer.sublayers?.filter  { $0.name == "borderSideLayer" }
-                    .forEach { $0.removeFromSuperlayer() }
+    clearBorders()
+    
     if let unwrappedBorderSide = borderSide, side = BorderSide(rawValue: unwrappedBorderSide) {
       configBorderWithSide(side, borderColor: unwrappedBorderColor)
     } else {
@@ -63,6 +70,7 @@ public extension BorderDesignable where Self: UIView {
   private func configBorderForAllSides(borderColor: UIColor) {
     if let mask = layer.mask as? CAShapeLayer {
       let borderLayer = CAShapeLayer()
+      borderLayer.name = "borderAllSides"
       borderLayer.path = mask.path
       borderLayer.fillColor = UIColor.clearColor().CGColor
       borderLayer.strokeColor = borderColor.CGColor
