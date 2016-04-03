@@ -38,11 +38,23 @@ extension ExplodeAnimator: UIViewControllerAnimatedTransitioning {
     containerView.addSubview(toView)
     containerView.sendSubviewToBack(toView)
     
+    let snapshots = createSnapshots(toView: toView, fromView: fromView, containerView: containerView)
+    containerView.sendSubviewToBack(fromView)
+    animateSnapshotsExplode(snapshots) {
+      transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+    }
+  }
+  
+}
+
+private extension ExplodeAnimator {
+  
+  func createSnapshots(toView toView: UIView, fromView: UIView, containerView: UIView) -> [UIView] {
     let size = toView.frame.size
     var snapshots = [UIView]()
     let xFactor: CGFloat = 10.0
     let yFactor = xFactor * size.height / size.width
-
+    
     let fromViewSnapshot = fromView.snapshotViewAfterScreenUpdates(false)
     for x in 0.stride(to: Int(size.width), by: Int(size.width / xFactor)) {
       for y in 0.stride(to: Int(size.height), by: Int(size.width / yFactor)) {
@@ -53,8 +65,10 @@ extension ExplodeAnimator: UIViewControllerAnimatedTransitioning {
         snapshots.append(snapshot)
       }
     }
-
-    containerView.sendSubviewToBack(fromView)
+    return snapshots
+  }
+  
+  func animateSnapshotsExplode(snapshots: [UIView], completion: () -> Void) {
     UIView.animateWithDuration(transitionDuration, animations: {
       for view in snapshots {
         let xOffset = self.randomFloatBetween(lower: -100.0, upper: 100.0)
@@ -65,16 +79,16 @@ extension ExplodeAnimator: UIViewControllerAnimatedTransitioning {
         let angle = self.randomFloatBetween(lower: -10.0, upper: 10.0)
         view.transform = CGAffineTransformScale(CGAffineTransformMakeRotation(angle), 1.0, 1.0)
       }
-      }) { _ in
-        for view in snapshots {
-          view.removeFromSuperview()
-        }
-        transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+    }) { _ in
+      for view in snapshots {
+        view.removeFromSuperview()
+      }
+      completion()
     }
   }
   
-  private func randomFloatBetween(lower lower: CGFloat, upper: CGFloat) -> CGFloat {
+  func randomFloatBetween(lower lower: CGFloat, upper: CGFloat) -> CGFloat {
     return CGFloat(arc4random_uniform(UInt32(upper - lower))) + lower
-  }
   
+  }
 }
