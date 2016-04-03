@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file.
 ### Next
 
 #### API breaking changes
+
+#### Enhancements
+
+#### Bugfixes
+
+
+### [2.2](https://github.com/JakeLin/IBAnimatable/releases/tag/2.2)
+
+#### API breaking changes
+
 - Change `SystemPageCurlAnimator` to `SystemPageAnimator` to support `SystemPage(Curl)` and `SystemPage(UnCurl)` transition animations.
 
 
@@ -28,10 +38,13 @@ All notable changes to this project will be documented in this file.
          - `SystemCameraIris`
          - `SystemCameraIris(HollowOpen)`
          - `SystemCameraIris(HollowClose)`
-
+- Use framework in demo app [#149](https://github.com/JakeLin/IBAnimatable/pull/149)
 
 #### Bugfixes
 
+- Fix the sided borders issue [#150](https://github.com/JakeLin/IBAnimatable/pull/150)
+- Fix the `FromTop` and `FromBottom` directions in system built-in animations [#156](https://github.com/JakeLin/IBAnimatable/pull/156)
+ 
 ### [2.1](https://github.com/JakeLin/IBAnimatable/releases/tag/2.1)
 
 #### API breaking changes
