@@ -33,7 +33,7 @@ All notable changes to this project will be documented in this file.
          - `SystemRotate(90ccw)`
          - `SystemRotate(180)`
          - `SystemRotate(180ccw)`
-         - => Note: It seems that only `Rotate(90)` is working as expected. `CATransition` issues?
+         - => Note: It seems that only `SystemRotate(90)` is working as expected. `CATransition` issues?
     - `SystemCameraIrisAnimator` to support:
          - `SystemCameraIris`
          - `SystemCameraIris(HollowOpen)`
