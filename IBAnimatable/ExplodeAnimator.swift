@@ -69,7 +69,7 @@ private extension ExplodeAnimator {
   }
   
   func animateSnapshotsExplode(snapshots: [UIView], completion: () -> Void) {
-    UIView.animateWithDuration(transitionDuration, animations: {
+    UIView.animateWithDuration(2, animations: {
       for view in snapshots {
         let xOffset = self.randomFloatBetween(lower: -100.0, upper: 100.0)
         let yOffset = self.randomFloatBetween(lower: -100.0, upper: 100.0)
@@ -77,7 +77,7 @@ private extension ExplodeAnimator {
         view.alpha = 0.0
         
         let angle = self.randomFloatBetween(lower: -10.0, upper: 10.0)
-        view.transform = CGAffineTransformScale(CGAffineTransformMakeRotation(angle), 1.0, 1.0)
+        view.transform = CGAffineTransformScale(CGAffineTransformMakeRotation(angle), 0.1, 0.1)
       }
     }) { _ in
       for view in snapshots {
