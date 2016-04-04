@@ -46,30 +46,33 @@ public class PanInteractiveAnimator: UIPercentDrivenInteractiveTransition {
     let distance: CGFloat
     let speed: CGFloat
     switch interactiveGestureType {
-    case .PanHorizontally:
-      distance = superview.frame.width
-      progress = abs(translation.x / distance)
-      speed = abs(velocity.x)
-    case .PanFromLeft:
-      distance = superview.frame.width
-      progress = translation.x / distance
-      speed = velocity.x
-    case .PanFromRight:
-      distance = superview.frame.width
-      progress = -(translation.x / distance)
-      speed = -velocity.x
-    case .PanVertically:
-      distance = superview.frame.height
-      progress = abs(translation.y / distance)
-      speed = abs(velocity.y)
-    case .PanFromTop:
-      distance = superview.frame.height
-      progress = translation.y / distance
-      speed = velocity.y
-    case .PanFromBottom:
-      distance = superview.frame.height
-      progress = -translation.y / distance
-      speed = -velocity.y
+    case .Pan(let direction):
+      switch direction {
+      case .Horizontal:
+        distance = superview.frame.width
+        progress = abs(translation.x / distance)
+        speed = abs(velocity.x)
+      case .Left:
+        distance = superview.frame.width
+        progress = translation.x / distance
+        speed = velocity.x
+      case .Right:
+        distance = superview.frame.width
+        progress = -(translation.x / distance)
+        speed = -velocity.x
+      case .Vertical:
+        distance = superview.frame.height
+        progress = abs(translation.y / distance)
+        speed = abs(velocity.y)
+      case .Top:
+        distance = superview.frame.height
+        progress = translation.y / distance
+        speed = velocity.y
+      case .Bottom:
+        distance = superview.frame.height
+        progress = -translation.y / distance
+        speed = -velocity.y
+      }
     default:
       return
     }

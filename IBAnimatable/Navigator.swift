@@ -27,11 +27,12 @@ public class Navigator: NSObject {
     // If interactiveGestureType has been set
     if let interactiveGestureType = interactiveGestureType {
       // If configured as `.Default` then use the default interactive gesture type from the Animator
-      if interactiveGestureType == .Default {
+      switch interactiveGestureType {
+      case .Default:
         if let interactiveGestureType = animator?.interactiveGestureType {
           interactiveAnimator = PanInteractiveAnimator(interactiveGestureType: interactiveGestureType, transitionType: .NavigationTransition(.Pop))
         }
-      } else {
+      default:
         interactiveAnimator = PanInteractiveAnimator(interactiveGestureType: interactiveGestureType, transitionType: .NavigationTransition(.Pop))
       }
     }

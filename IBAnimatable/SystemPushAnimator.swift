@@ -26,19 +26,19 @@ public class SystemPushAnimator: NSObject, AnimatedTransitioning {
     case .Left:
       self.transitionAnimationType = .SystemPush(direction: .Left)
       self.reverseAnimationType = .SystemPush(direction: .Right)
-      self.interactiveGestureType = .PanFromRight
+      self.interactiveGestureType = .Pan(direction: .Right)
     case .Right:
       self.transitionAnimationType = .SystemPush(direction: .Right)
       self.reverseAnimationType = .SystemPush(direction: .Left)
-      self.interactiveGestureType = .PanFromLeft
+      self.interactiveGestureType = .Pan(direction: .Left)
     case .Top:
       self.transitionAnimationType = .SystemPush(direction: .Top)
       self.reverseAnimationType = .SystemPush(direction: .Bottom)
-      self.interactiveGestureType = .PanFromBottom
+      self.interactiveGestureType = .Pan(direction: .Bottom)
     case .Bottom:
       self.transitionAnimationType = .SystemPush(direction: .Bottom)
       self.reverseAnimationType = .SystemPush(direction: .Top)
-      self.interactiveGestureType = .PanFromTop
+      self.interactiveGestureType = .Pan(direction: .Top)
     }
     
     super.init()

@@ -75,6 +75,7 @@
 		AE9407871CAE86DE0084BCB8 /* TransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D430B1C98B658006E2F67 /* TransitionType.swift */; };
 		AE9407891CAE871C0084BCB8 /* TransitionPageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9407881CAE871C0084BCB8 /* TransitionPageType.swift */; };
 		AE94078A1CAE87860084BCB8 /* SystemPageAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D08B71CA9336500440E7C /* SystemPageAnimator.swift */; };
+		AEC9F60E1CB31DCB00C82D16 /* GestureDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9F60D1CB31DCB00C82D16 /* GestureDirection.swift */; };
 		AED1A1031BFE9820001346FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A0FA1BFE9820001346FA /* AppDelegate.swift */; };
 		AED1A1041BFE9820001346FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AED1A0FB1BFE9820001346FA /* Assets.xcassets */; };
 		AED1A1051BFE9820001346FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AED1A0FD1BFE9820001346FA /* LaunchScreen.storyboard */; };
@@ -162,6 +163,7 @@
 		AE8C53AF1C0F1C0400A775AF /* GradientStartPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientStartPoint.swift; path = IBAnimatable/GradientStartPoint.swift; sourceTree = SOURCE_ROOT; };
 		AE8FBAA81C853C7A00EB8AEA /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		AE9407881CAE871C0084BCB8 /* TransitionPageType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionPageType.swift; sourceTree = "<group>"; };
+		AEC9F60D1CB31DCB00C82D16 /* GestureDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureDirection.swift; sourceTree = "<group>"; };
 		AED1A0FA1BFE9820001346FA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = IBAnimatableApp/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		AED1A0FB1BFE9820001346FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = IBAnimatableApp/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		AED1A0FE1BFE9820001346FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -426,6 +428,7 @@
 				AE81DB4D1C11DF00000AEB20 /* BlurEffectStyle.swift */,
 				AED97B851C1710A900D2B0B8 /* BorderSide.swift */,
 				E2472EA31C6F97F800A20E27 /* ColorType.swift */,
+				AEC9F60D1CB31DCB00C82D16 /* GestureDirection.swift */,
 				AE8C53AF1C0F1C0400A775AF /* GradientStartPoint.swift */,
 				E2E28E6A1C6A6C30003F3852 /* GradientType.swift */,
 				AE4C53F41C8843AB007C9EFA /* InteractiveGestureType.swift */,
@@ -663,6 +666,7 @@
 				AE6B016B1C2A444900950BB2 /* CornerDesignable.swift in Sources */,
 				AE6B01631C2A444000950BB2 /* BlurEffectStyle.swift in Sources */,
 				AE6B016E1C2A444900950BB2 /* NavigationBarDesginable.swift in Sources */,
+				AEC9F60E1CB31DCB00C82D16 /* GestureDirection.swift in Sources */,
 				AE6B01861C2A445100950BB2 /* DesignableNavigationBar.swift in Sources */,
 				AE677B9A1CADCF6700D62273 /* SystemRippleEffectAnimator.swift in Sources */,
 				AEE552AB1C816233009CF623 /* TransitionFadeType.swift in Sources */,
