@@ -21,10 +21,9 @@ public class Presenter: NSObject {
   var interactiveGestureType: InteractiveGestureType? {
     // Update `interactiveAnimator` if needed
     didSet {
-      // TODO: 
-//      if oldValue != interactiveGestureType {
+      if oldValue?.stringValue != interactiveGestureType?.stringValue {
         updateInteractiveAnimator()
-//      }
+      }
     }
   }
   
