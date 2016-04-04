@@ -55,7 +55,7 @@ private extension ExplodeAnimator {
     let yFactor = xFactor * size.height / size.width
     
     let fromViewSnapshot = fromView.snapshotViewAfterScreenUpdates(false)
-    for x in 0.stride(to: Int(size.width), by: Int(size.width / xFactor)) {
+    for x in 0.0.stride(to: Double(size.width), by: Double(size.width / xFactor)) {
       for y in 0.0.stride(to: Double(size.height), by: Double(size.width / yFactor)) {
         let snapshotRegion = CGRect(x: CGFloat(x), y: CGFloat(y), width: size.width / xFactor, height: size.height / yFactor)
         let snapshot = fromViewSnapshot.resizableSnapshotViewFromRect(snapshotRegion, afterScreenUpdates: false, withCapInsets: UIEdgeInsetsZero)
@@ -67,9 +67,9 @@ private extension ExplodeAnimator {
     return snapshots
   }
   
-  func animateSnapshotsExplode(snapshots: [UIView], completion: () -> Void) {
+  func animateSnapshotsExplode(snapshots: [UIView], completion: AnimatableCompletion) {
     UIView.animateWithDuration(transitionDuration, animations: {
-      snapshots.forEach({
+      snapshots.forEach{
         let xOffset = self.randomFloatBetween(lower: -100.0, upper: 100.0)
         let yOffset = self.randomFloatBetween(lower: -100.0, upper: 100.0)
         $0.frame = CGRectOffset($0.frame, xOffset, yOffset)
@@ -77,17 +77,16 @@ private extension ExplodeAnimator {
         
         let angle = self.randomFloatBetween(lower: -10.0, upper: 10.0)
         $0.transform = CGAffineTransformScale(CGAffineTransformMakeRotation(angle), 0.01, 0.01)
-      })
-    }) { _ in
-      for view in snapshots {
-        view.removeFromSuperview()
       }
+    },
+    completion: { _ in
+      snapshots.forEach{ $0.removeFromSuperview() }
       completion()
-    }
+    })
   }
   
   func randomFloatBetween(lower lower: CGFloat, upper: CGFloat) -> CGFloat {
     return CGFloat(arc4random_uniform(UInt32(upper - lower))) + lower
-  
   }
+  
 }
