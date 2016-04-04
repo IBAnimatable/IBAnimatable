@@ -10,7 +10,7 @@ import UIKit
 
 public class PresentExplodeWithDismissInteractionSegue: UIStoryboardSegue {
   public override func perform() {
-    destinationViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(.Explode)
+    destinationViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(.Explode, interactiveGestureType: .Default)
     sourceViewController.presentViewController(destinationViewController, animated: true, completion: nil)
   }
 }
