@@ -72,11 +72,14 @@ private extension ExplodeAnimator {
       snapshots.forEach{
         let xOffset = self.randomFloatBetween(lower: -100.0, upper: 100.0)
         let yOffset = self.randomFloatBetween(lower: -100.0, upper: 100.0)
-        $0.frame = CGRectOffset($0.frame, xOffset, yOffset)
-        $0.alpha = 0.0
-        
         let angle = self.randomFloatBetween(lower: -10.0, upper: 10.0)
-        $0.transform = CGAffineTransformScale(CGAffineTransformMakeRotation(angle), 0.01, 0.01)
+
+        let translateTransform = CGAffineTransformMakeTranslation($0.frame.origin.x - xOffset, $0.frame.origin.y - yOffset)
+        let angleTransform = CGAffineTransformRotate(translateTransform, angle)
+        let scaleTransform = CGAffineTransformScale(angleTransform, 0.1, 0.1)
+
+        $0.transform = scaleTransform
+        $0.alpha = 0.0
       }
     },
     completion: { _ in
