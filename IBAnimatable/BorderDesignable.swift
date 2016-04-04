@@ -29,11 +29,7 @@ public extension BorderDesignable where Self: UIView {
     layer.sublayers?.filter  { $0.name == "borderSideLayer" || $0.name == "borderAllSides" }
         .forEach { $0.removeFromSuperlayer() }      
 
-    guard let unwrappedBorderColor = borderColor else {
-      return
-    }
-    
-    if borderWidth.isNaN || borderWidth <= 0 {
+    guard let unwrappedBorderColor = borderColor where borderWidth > 0 else {
       return
     }
     
