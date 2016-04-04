@@ -35,8 +35,7 @@ extension ExplodeAnimator: UIViewControllerAnimatedTransitioning {
       return
     }
     
-    containerView.addSubview(toView)
-    containerView.sendSubviewToBack(toView)
+    containerView.insertSubview(toView, atIndex: 0)
     
     let snapshots = createSnapshots(toView: toView, fromView: fromView, containerView: containerView)
     containerView.sendSubviewToBack(fromView)
@@ -57,7 +56,7 @@ private extension ExplodeAnimator {
     
     let fromViewSnapshot = fromView.snapshotViewAfterScreenUpdates(false)
     for x in 0.stride(to: Int(size.width), by: Int(size.width / xFactor)) {
-      for y in 0.stride(to: Int(size.height), by: Int(size.width / yFactor)) {
+      for y in 0.0.stride(to: Double(size.height), by: Double(size.width / yFactor)) {
         let snapshotRegion = CGRect(x: CGFloat(x), y: CGFloat(y), width: size.width / xFactor, height: size.height / yFactor)
         let snapshot = fromViewSnapshot.resizableSnapshotViewFromRect(snapshotRegion, afterScreenUpdates: false, withCapInsets: UIEdgeInsetsZero)
         snapshot.frame = snapshotRegion
@@ -69,16 +68,16 @@ private extension ExplodeAnimator {
   }
   
   func animateSnapshotsExplode(snapshots: [UIView], completion: () -> Void) {
-    UIView.animateWithDuration(2, animations: {
-      for view in snapshots {
+    UIView.animateWithDuration(transitionDuration, animations: {
+      snapshots.forEach({
         let xOffset = self.randomFloatBetween(lower: -100.0, upper: 100.0)
         let yOffset = self.randomFloatBetween(lower: -100.0, upper: 100.0)
-        view.frame = CGRectOffset(view.frame, xOffset, yOffset)
-        view.alpha = 0.0
+        $0.frame = CGRectOffset($0.frame, xOffset, yOffset)
+        $0.alpha = 0.0
         
         let angle = self.randomFloatBetween(lower: -10.0, upper: 10.0)
-        view.transform = CGAffineTransformScale(CGAffineTransformMakeRotation(angle), 0.1, 0.1)
-      }
+        $0.transform = CGAffineTransformScale(CGAffineTransformMakeRotation(angle), 0.01, 0.01)
+      })
     }) { _ in
       for view in snapshots {
         view.removeFromSuperview()
