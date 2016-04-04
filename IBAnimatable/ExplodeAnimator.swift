@@ -15,10 +15,25 @@ public class ExplodeAnimator: NSObject, AnimatedTransitioning {
   public var reverseAnimationType: TransitionAnimationType?
   public var interactiveGestureType: InteractiveGestureType?
   
-  init(transitionDuration: Duration) {
+  // MARK: - private
+  private var xFactor: CGFloat = 10.0
+  private var minAngle: CGFloat = -10.0
+  private var maxAngle: CGFloat = 10.0
+  
+  init(params: String, transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
-    self.transitionAnimationType = .Explode
-    self.reverseAnimationType = .Explode
+    self.transitionAnimationType = .Explode(params: params)
+    self.reverseAnimationType = .Explode(params: params)
+    
+    let params = params.componentsSeparatedByString(",")
+    if  let unwrappedXFactor = Double(params[0]),
+            unwrappedMinAngle = Double(params[1]),
+            unwrappedMaxAngle = Double(params[2])
+      where params.count == 3 {
+        self.xFactor = CGFloat(unwrappedXFactor)
+        self.minAngle = CGFloat(unwrappedMinAngle)
+        self.maxAngle = CGFloat(unwrappedMaxAngle)
+    }
     super.init()
   }
 }
@@ -51,7 +66,6 @@ private extension ExplodeAnimator {
   func createSnapshots(toView toView: UIView, fromView: UIView, containerView: UIView) -> [UIView] {
     let size = toView.frame.size
     var snapshots = [UIView]()
-    let xFactor: CGFloat = 10.0
     let yFactor = xFactor * size.height / size.width
     
     let fromViewSnapshot = fromView.snapshotViewAfterScreenUpdates(false)
@@ -72,12 +86,12 @@ private extension ExplodeAnimator {
       snapshots.forEach{
         let xOffset = self.randomFloatBetween(lower: -100.0, upper: 100.0)
         let yOffset = self.randomFloatBetween(lower: -100.0, upper: 100.0)
-        let angle = self.randomFloatBetween(lower: -10.0, upper: 10.0)
+        let angle = self.randomFloatBetween(lower: self.minAngle, upper: self.maxAngle)
 
         let translateTransform = CGAffineTransformMakeTranslation($0.frame.origin.x - xOffset, $0.frame.origin.y - yOffset)
         let angleTransform = CGAffineTransformRotate(translateTransform, angle)
-        let scaleTransform = CGAffineTransformScale(angleTransform, 0.1, 0.1)
-
+        let scaleTransform = CGAffineTransformScale(angleTransform, 0.01, 0.01)
+        
         $0.transform = scaleTransform
         $0.alpha = 0.0
       }
