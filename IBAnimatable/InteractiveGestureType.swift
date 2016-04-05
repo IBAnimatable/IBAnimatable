@@ -37,22 +37,10 @@ private extension InteractiveGestureType {
     return interactiveGestureType
   }
   
-  static func interactiveGestureDirection(forInteractiveGestureType interactiveGestureType: String) -> GestureDirection? {
-    let interactiveGestureType = cleanInteractiveGestureType(interactiveGestureType)
-    if interactiveGestureType.containsString("left") {
-      return .Left
-    } else if interactiveGestureType.containsString("right") {
-      return .Right
-    } else if interactiveGestureType.containsString("top") {
-      return .Top
-    } else if interactiveGestureType.containsString("bottom") {
-      return .Bottom
-    }
-    return nil
-  }
-
   static func fromStringWithDirection(interactiveGestureType: String) -> InteractiveGestureType? {
-    guard let direction = interactiveGestureDirection(forInteractiveGestureType: interactiveGestureType) else {
+    let gestureDirectionString = cleanInteractiveGestureType(interactiveGestureType).capitalizedString
+    
+    guard let direction = GestureDirection(rawValue: gestureDirectionString) else {
       return nil
     }
     

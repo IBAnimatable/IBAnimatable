@@ -8,7 +8,7 @@ import Foundation
 /**
  GestureDirection: Used to specify the direction in `InteractiveGestureType`
  */
-public enum GestureDirection {
+public enum GestureDirection: String {
   case Horizontal
   case Vertical
   case Left
