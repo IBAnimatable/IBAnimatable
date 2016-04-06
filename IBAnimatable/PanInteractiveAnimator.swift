@@ -56,32 +56,10 @@ public class PanInteractiveAnimator: InteractiveAnimator {
     }
     
     progress = min(max(progress, 0), 0.99)
-    switch gestureRecognizer.state {
-    case .Began:
-      interacting = true
-      switch transitionType {
-      case .NavigationTransition(.Pop):
-        viewController?.navigationController?.popViewControllerAnimated(true)
-      case .PresentationTransition(.Dismissal):
-        viewController?.dismissViewControllerAnimated(true, completion: nil)
-      default:
-        break
-      }
-    case .Changed:
-      updateInteractiveTransition(progress)
-    case .Cancelled, .Ended:
-      interacting = false
-      // Finish the transition when pass the threathold
-      if progress > 0.5 || speed > 1000 {
-        finishInteractiveTransition()
-      } else {
-        cancelInteractiveTransition()
-      }
-    default:
-      // Something happened. cancel the transition.
-      cancelInteractiveTransition()
-      break
-    }
+    
+    // Finish the transition when pass the threathold
+    let shouldFinishInteractiveTransition =  progress > 0.5 || speed > 1000
+    
+    handleInteractiveTransitionProgress(progress, shouldFinishInteractiveTransition: shouldFinishInteractiveTransition, gestureRecognizer: gestureRecognizer)
   }
-  
 }

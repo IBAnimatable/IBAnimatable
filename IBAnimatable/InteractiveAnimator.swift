@@ -5,7 +5,7 @@
 
 import UIKit
 
-// Super class for all interactive animators
+// Super abstract class for all interactive animator subclasses
 public class InteractiveAnimator: UIPercentDrivenInteractiveTransition {
   internal(set) public var interacting = false
   
@@ -37,6 +37,37 @@ public class InteractiveAnimator: UIPercentDrivenInteractiveTransition {
     }
   }
   
+  func handleInteractiveTransitionProgress(progress: CGFloat, shouldFinishInteractiveTransition: Bool, gestureRecognizer: UIGestureRecognizer) {
+    
+    switch gestureRecognizer.state {
+    case .Began:
+      interacting = true
+      switch transitionType {
+      case .NavigationTransition(.Pop):
+        viewController?.navigationController?.popViewControllerAnimated(true)
+      case .PresentationTransition(.Dismissal):
+        viewController?.dismissViewControllerAnimated(true, completion: nil)
+      default:
+        break
+      }
+    case .Changed:
+      updateInteractiveTransition(progress)
+    case .Cancelled, .Ended:
+      interacting = false
+      if shouldFinishInteractiveTransition {
+        finishInteractiveTransition()
+      } else {
+        cancelInteractiveTransition()
+      }
+    default:
+      // Something happened. cancel the transition.
+      interacting = false
+      cancelInteractiveTransition()
+      break
+    }
+  }
+  
+  // Because Swift doesn't support pure virtual method, need to throw error
   func createGestureRecognizer() -> UIGestureRecognizer {
     preconditionFailure("This method must be overridden")
   }
