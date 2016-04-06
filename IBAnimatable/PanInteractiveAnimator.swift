@@ -5,38 +5,16 @@
 
 import UIKit
 
-public class PanInteractiveAnimator: UIPercentDrivenInteractiveTransition {
-  private(set) public var interacting = false
+// Pan interactive animator: pan gesture transition controller
+public class PanInteractiveAnimator: PercentDrivenInteractiveTransition {
   
-  // transitionType: Used to deteminate pop or dismiss
-  private let transitionType: TransitionType
-  // interactiveGestureType: Used to deteminate gesture type (direction)
-  private let interactiveGestureType: InteractiveGestureType
-  // viewController: the viewController will connect to the gestureRecognizer
-  private var viewController: UIViewController?
-  // gestureRecognizer: the gesture recognizer to handle gesture
-  private var gestureRecognizer: UIPanGestureRecognizer?
-  
-  init(interactiveGestureType: InteractiveGestureType, transitionType: TransitionType) {
-    self.interactiveGestureType = interactiveGestureType
-    self.transitionType = transitionType
-    super.init()
+  override func getGestureRecognizerType() -> UIGestureRecognizer.Type {
+    return UIPanGestureRecognizer.self
   }
   
-  deinit {
-    gestureRecognizer?.removeTarget(self, action: #selector(handleGesture(_:)))
-  }
-  
-  func connectGestureRecognizer(viewController: UIViewController) {
-    self.viewController = viewController
-    gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
-    if let gestureRecognizer = gestureRecognizer {
-      self.viewController?.view.addGestureRecognizer(gestureRecognizer)
-    }
-  }
-  
-  func handleGesture(gestureRecognizer: UIPanGestureRecognizer) {
-    guard let superview = gestureRecognizer.view?.superview else {
+  override func handleGesture(gestureRecognizer: UIGestureRecognizer) {
+    guard let  gestureRecognizer = gestureRecognizer as? UIPanGestureRecognizer,
+      superview = gestureRecognizer.view?.superview else {
       return
     }
     let translation = gestureRecognizer.translationInView(superview)
@@ -105,4 +83,5 @@ public class PanInteractiveAnimator: UIPercentDrivenInteractiveTransition {
       break
     }
   }
+  
 }

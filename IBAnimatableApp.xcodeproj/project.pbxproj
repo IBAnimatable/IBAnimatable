@@ -75,6 +75,8 @@
 		AE9407871CAE86DE0084BCB8 /* TransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D430B1C98B658006E2F67 /* TransitionType.swift */; };
 		AE9407891CAE871C0084BCB8 /* TransitionPageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9407881CAE871C0084BCB8 /* TransitionPageType.swift */; };
 		AE94078A1CAE87860084BCB8 /* SystemPageAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D08B71CA9336500440E7C /* SystemPageAnimator.swift */; };
+		AEC23FC01CB3DC4800E42D99 /* ScreenEdgePanInteractiveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC23FBF1CB3DC4800E42D99 /* ScreenEdgePanInteractiveAnimator.swift */; };
+		AEC23FC21CB3DE0900E42D99 /* PercentDrivenInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC23FC11CB3DE0900E42D99 /* PercentDrivenInteractiveTransition.swift */; };
 		AEC9F60E1CB31DCB00C82D16 /* GestureDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9F60D1CB31DCB00C82D16 /* GestureDirection.swift */; };
 		AED1A1031BFE9820001346FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A0FA1BFE9820001346FA /* AppDelegate.swift */; };
 		AED1A1041BFE9820001346FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AED1A0FB1BFE9820001346FA /* Assets.xcassets */; };
@@ -163,6 +165,8 @@
 		AE8C53AF1C0F1C0400A775AF /* GradientStartPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientStartPoint.swift; path = IBAnimatable/GradientStartPoint.swift; sourceTree = SOURCE_ROOT; };
 		AE8FBAA81C853C7A00EB8AEA /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		AE9407881CAE871C0084BCB8 /* TransitionPageType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionPageType.swift; sourceTree = "<group>"; };
+		AEC23FBF1CB3DC4800E42D99 /* ScreenEdgePanInteractiveAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenEdgePanInteractiveAnimator.swift; sourceTree = "<group>"; };
+		AEC23FC11CB3DE0900E42D99 /* PercentDrivenInteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentDrivenInteractiveTransition.swift; sourceTree = "<group>"; };
 		AEC9F60D1CB31DCB00C82D16 /* GestureDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureDirection.swift; sourceTree = "<group>"; };
 		AED1A0FA1BFE9820001346FA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = IBAnimatableApp/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		AED1A0FB1BFE9820001346FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = IBAnimatableApp/Assets.xcassets; sourceTree = SOURCE_ROOT; };
@@ -315,6 +319,8 @@
 			isa = PBXGroup;
 			children = (
 				AE4C53F11C883F80007C9EFA /* PanInteractiveAnimator.swift */,
+				AEC23FC11CB3DE0900E42D99 /* PercentDrivenInteractiveTransition.swift */,
+				AEC23FBF1CB3DC4800E42D99 /* ScreenEdgePanInteractiveAnimator.swift */,
 			);
 			name = "interactive animator";
 			sourceTree = "<group>";
@@ -615,6 +621,7 @@
 				AE6B01731C2A444900950BB2 /* ShadowDesignable.swift in Sources */,
 				AE6B01621C2A444000950BB2 /* AnimationType.swift in Sources */,
 				AE154B8C1C7D59EE0093C05B /* AnimatorFactory.swift in Sources */,
+				AEC23FC21CB3DE0900E42D99 /* PercentDrivenInteractiveTransition.swift in Sources */,
 				E27691F31CAFCD67004A725C /* SystemRotateAnimator.swift in Sources */,
 				AE154B291C7BB52E0093C05B /* Typealias.swift in Sources */,
 				AE4C53F31C883F80007C9EFA /* PanInteractiveAnimator.swift in Sources */,
@@ -666,6 +673,7 @@
 				AE6B016B1C2A444900950BB2 /* CornerDesignable.swift in Sources */,
 				AE6B01631C2A444000950BB2 /* BlurEffectStyle.swift in Sources */,
 				AE6B016E1C2A444900950BB2 /* NavigationBarDesginable.swift in Sources */,
+				AEC23FC01CB3DC4800E42D99 /* ScreenEdgePanInteractiveAnimator.swift in Sources */,
 				AEC9F60E1CB31DCB00C82D16 /* GestureDirection.swift in Sources */,
 				AE6B01861C2A445100950BB2 /* DesignableNavigationBar.swift in Sources */,
 				AE677B9A1CADCF6700D62273 /* SystemRippleEffectAnimator.swift in Sources */,
