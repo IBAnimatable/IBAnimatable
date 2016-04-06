@@ -15,7 +15,7 @@ public class Navigator: NSObject {
   // animation controller
   private var animator: AnimatedTransitioning?
   // interaction controller
-  private var interactiveAnimator: PanInteractiveAnimator?
+  private var interactiveAnimator: InteractiveAnimator?
   
   public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) {
     self.transitionAnimationType = transitionAnimationType
@@ -30,10 +30,10 @@ public class Navigator: NSObject {
       switch interactiveGestureType {
       case .Default:
         if let interactiveGestureType = animator?.interactiveGestureType {
-          interactiveAnimator = PanInteractiveAnimator(interactiveGestureType: interactiveGestureType, transitionType: .NavigationTransition(.Pop))
+          interactiveAnimator = InteractiveAnimatorFactory.generateInteractiveAnimator(interactiveGestureType, transitionType: .NavigationTransition(.Pop))
         }
       default:
-        interactiveAnimator = PanInteractiveAnimator(interactiveGestureType: interactiveGestureType, transitionType: .NavigationTransition(.Pop))
+        interactiveAnimator = InteractiveAnimatorFactory.generateInteractiveAnimator(interactiveGestureType, transitionType: .NavigationTransition(.Pop))
       }
     }
   }

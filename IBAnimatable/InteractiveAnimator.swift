@@ -6,7 +6,7 @@
 import UIKit
 
 // Super class for all interactive animators
-public class PercentDrivenInteractiveTransition: UIPercentDrivenInteractiveTransition {
+public class InteractiveAnimator: UIPercentDrivenInteractiveTransition {
   internal(set) public var interacting = false
   
   // transitionType: Used to deteminate pop or dismiss
@@ -30,14 +30,14 @@ public class PercentDrivenInteractiveTransition: UIPercentDrivenInteractiveTrans
   
   func connectGestureRecognizer(viewController: UIViewController) {
     self.viewController = viewController
-    let gestureRecognizerType = getGestureRecognizerType()
-    gestureRecognizer = gestureRecognizerType.init(target: self, action: #selector(handleGesture(_:)))
+    let gestureRecognizerType = createGestureRecognizer()
+    gestureRecognizer = gestureRecognizerType
     if let gestureRecognizer = gestureRecognizer {
       self.viewController?.view.addGestureRecognizer(gestureRecognizer)
     }
   }
   
-  func getGestureRecognizerType() -> UIGestureRecognizer.Type {
+  func createGestureRecognizer() -> UIGestureRecognizer {
     preconditionFailure("This method must be overridden")
   }
   

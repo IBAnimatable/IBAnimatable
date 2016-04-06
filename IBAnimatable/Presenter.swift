@@ -31,7 +31,7 @@ public class Presenter: NSObject {
   private var animator: AnimatedTransitioning?
   
   // interaction controller
-  private var interactiveAnimator: PanInteractiveAnimator?
+  private var interactiveAnimator: InteractiveAnimator?
   
   public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) {
     self.transitionAnimationType = transitionAnimationType
@@ -60,10 +60,10 @@ public class Presenter: NSObject {
       switch interactiveGestureType {
       case .Default:
         if let interactiveGestureType = animator?.interactiveGestureType {
-          interactiveAnimator = PanInteractiveAnimator(interactiveGestureType: interactiveGestureType, transitionType: .PresentationTransition(.Dismissal))
+          interactiveAnimator = InteractiveAnimatorFactory.generateInteractiveAnimator(interactiveGestureType, transitionType: .PresentationTransition(.Dismissal))
         }
       default:
-        interactiveAnimator = PanInteractiveAnimator(interactiveGestureType: interactiveGestureType, transitionType: .PresentationTransition(.Dismissal))
+        interactiveAnimator = InteractiveAnimatorFactory.generateInteractiveAnimator(interactiveGestureType, transitionType: .PresentationTransition(.Dismissal))
       }
     }
     else {

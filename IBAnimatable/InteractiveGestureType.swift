@@ -11,6 +11,7 @@ import Foundation
 public enum InteractiveGestureType {
   case Default          // Will use the default interactive gesture type from `AnimatedTransitioning`
   case Pan(direction: GestureDirection)
+  case ScreenEdgePan(direction: GestureDirection)
 
   var stringValue: String {
     return String(self)
@@ -19,7 +20,7 @@ public enum InteractiveGestureType {
   static func fromString(interactiveGestureType: String) -> InteractiveGestureType? {
     if interactiveGestureType.hasPrefix("Default") {
       return .Default
-    } else if interactiveGestureType.hasPrefix("Pan") {
+    } else if interactiveGestureType.hasPrefix("Pan") || interactiveGestureType.hasPrefix("ScreenEdgePan") {
       return fromStringWithDirection(interactiveGestureType)
     }
     return nil
@@ -46,6 +47,9 @@ private extension InteractiveGestureType {
     
     if interactiveGestureType.hasPrefix("Pan") {
       return .Pan(direction: direction)
+    }
+    else if interactiveGestureType.hasPrefix("ScreenEdgePan") {
+      return .ScreenEdgePan(direction: direction)
     }
     return nil
   }
