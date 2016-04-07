@@ -37,7 +37,8 @@ public class InteractiveAnimator: UIPercentDrivenInteractiveTransition {
     }
   }
   
-  func handleInteractiveTransitionProgress(progress: CGFloat, shouldFinishInteractiveTransition: Bool, gestureRecognizer: UIGestureRecognizer) {
+  func handleGesture(gestureRecognizer: UIGestureRecognizer) {
+    let (progress, shouldFinishInteractiveTransition) = calculateProgress(gestureRecognizer)
     
     switch gestureRecognizer.state {
     case .Began:
@@ -72,8 +73,8 @@ public class InteractiveAnimator: UIPercentDrivenInteractiveTransition {
     preconditionFailure("This method must be overridden")
   }
   
-  func handleGesture(gestureRecognizer: UIGestureRecognizer) {
-    preconditionFailure("This method must be overridden") 
+  func calculateProgress(gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
+    preconditionFailure("This method must be overridden")
   }
-  
+
 }

@@ -12,10 +12,10 @@ public class PanInteractiveAnimator: InteractiveAnimator {
     return UIPanGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
   }
   
-  override func handleGesture(gestureRecognizer: UIGestureRecognizer) {
+  override func calculateProgress(gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
     guard let  gestureRecognizer = gestureRecognizer as? UIPanGestureRecognizer,
       superview = gestureRecognizer.view?.superview else {
-      return
+      return (0, false)
     }
     let translation = gestureRecognizer.translationInView(superview)
     let velocity = gestureRecognizer.velocityInView(superview)
@@ -52,14 +52,13 @@ public class PanInteractiveAnimator: InteractiveAnimator {
         speed = -velocity.y
       }
     default:
-      return
+      return (0, false)
     }
     
     progress = min(max(progress, 0), 0.99)
     
     // Finish the transition when pass the threathold
     let shouldFinishInteractiveTransition =  progress > 0.5 || speed > 1000
-    
-    handleInteractiveTransitionProgress(progress, shouldFinishInteractiveTransition: shouldFinishInteractiveTransition, gestureRecognizer: gestureRecognizer)
+    return (progress, shouldFinishInteractiveTransition)
   }
 }
