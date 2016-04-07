@@ -24,6 +24,8 @@ struct AnimatorFactory {
       return SystemSuckEffectAnimator(transitionDuration: transitionDuration)
     case .SystemRippleEffect:
       return SystemRippleEffectAnimator(transitionDuration: transitionDuration)
+    case .Explode(let params):
+      return ExplodeAnimator(params: params, transitionDuration: transitionDuration)
     case .SystemCube(let direction):
       return SystemCubeAnimator(fromDirection: direction, transitionDuration: transitionDuration)
     case .SystemFlip(let direction):
