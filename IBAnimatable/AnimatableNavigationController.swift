@@ -31,7 +31,7 @@ public class AnimatableNavigationController: UINavigationController, TransitionA
     if transitionDuration.isNaN {
       duration = defaultTransitionDuration
     }
-    if let interactiveGestureType = interactiveGestureType, gestureType = InteractiveGestureType(rawValue: interactiveGestureType) {
+    if let interactiveGestureType = interactiveGestureType, gestureType = InteractiveGestureType.fromString(interactiveGestureType) {
       navigator = Navigator(transitionAnimationType: animationType, transitionDuration: duration, interactiveGestureType: gestureType)
     } else {
       navigator = Navigator(transitionAnimationType: animationType, transitionDuration: duration)

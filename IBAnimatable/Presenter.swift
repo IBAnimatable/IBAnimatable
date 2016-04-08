@@ -21,7 +21,7 @@ public class Presenter: NSObject {
   var interactiveGestureType: InteractiveGestureType? {
     // Update `interactiveAnimator` if needed
     didSet {
-      if oldValue != interactiveGestureType {
+      if oldValue?.stringValue != interactiveGestureType?.stringValue {
         updateInteractiveAnimator()
       }
     }
@@ -31,7 +31,7 @@ public class Presenter: NSObject {
   private var animator: AnimatedTransitioning?
   
   // interaction controller
-  private var interactiveAnimator: PanInteractiveAnimator?
+  private var interactiveAnimator: InteractiveAnimator?
   
   public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) {
     self.transitionAnimationType = transitionAnimationType
@@ -57,12 +57,13 @@ public class Presenter: NSObject {
     // If interactiveGestureType has been set
     if let interactiveGestureType = interactiveGestureType {
       // If configured as `.Default` then use the default interactive gesture type from the Animator
-      if interactiveGestureType == .Default {
+      switch interactiveGestureType {
+      case .Default:
         if let interactiveGestureType = animator?.interactiveGestureType {
-          interactiveAnimator = PanInteractiveAnimator(interactiveGestureType: interactiveGestureType, transitionType: .PresentationTransition(.Dismissal))
+          interactiveAnimator = InteractiveAnimatorFactory.generateInteractiveAnimator(interactiveGestureType, transitionType: .PresentationTransition(.Dismissal))
         }
-      } else {
-        interactiveAnimator = PanInteractiveAnimator(interactiveGestureType: interactiveGestureType, transitionType: .PresentationTransition(.Dismissal))
+      default:
+        interactiveAnimator = InteractiveAnimatorFactory.generateInteractiveAnimator(interactiveGestureType, transitionType: .PresentationTransition(.Dismissal))
       }
     }
     else {

@@ -23,19 +23,19 @@ public class SystemMoveInAnimator: NSObject, AnimatedTransitioning {
     case .Left:
       self.transitionAnimationType = .SystemMoveIn(direction: .Left)
       self.reverseAnimationType = .SystemMoveIn(direction: .Right)
-      self.interactiveGestureType = .PanFromRight
+      self.interactiveGestureType = .Pan(direction: .Right)
     case .Right:
       self.transitionAnimationType = .SystemMoveIn(direction: .Right)
       self.reverseAnimationType = .SystemMoveIn(direction: .Left)
-      self.interactiveGestureType = .PanFromLeft
+      self.interactiveGestureType = .Pan(direction: .Left)
     case .Top:
       self.transitionAnimationType = .SystemMoveIn(direction: .Top)
       self.reverseAnimationType = .SystemMoveIn(direction: .Bottom)
-      self.interactiveGestureType = .PanFromBottom
+      self.interactiveGestureType = .Pan(direction: .Bottom)
     case .Bottom:
       self.transitionAnimationType = .SystemMoveIn(direction: .Bottom)
       self.reverseAnimationType = .SystemMoveIn(direction: .Top)
-      self.interactiveGestureType = .PanFromTop
+      self.interactiveGestureType = .Pan(direction: .Top)
     }
     
     super.init()

@@ -1,21 +1,42 @@
 //
-//  Created by Jake Lin on 3/3/16.
+//  Created by Jake Lin on 4/5/16.
 //  Copyright © 2016 Jake Lin. All rights reserved.
 //
 
 import UIKit
 
-// Pan interactive animator: pan gesture transition controller
-public class PanInteractiveAnimator: InteractiveAnimator {
+public class ScreenEdgePanInteractiveAnimator: InteractiveAnimator {
   
   override func createGestureRecognizer() -> UIGestureRecognizer {
-    return UIPanGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
+    let gestureRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
+    switch interactiveGestureType {
+    case .ScreenEdgePan(let direction):
+      switch direction {
+      case .Left:
+        gestureRecognizer.edges = .Left
+      case .Right:
+        gestureRecognizer.edges = .Right
+      case .Horizontal:
+        gestureRecognizer.edges = [.Left, .Right]
+      case .Top:
+        gestureRecognizer.edges = .Top
+      case .Bottom:
+        gestureRecognizer.edges = .Bottom
+      case .Vertical:
+        gestureRecognizer.edges = [.Top, .Bottom]
+      default:
+        gestureRecognizer.edges = .Left
+      }
+    default:
+      break
+    }
+    return gestureRecognizer
   }
   
   override func calculateProgress(gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
-    guard let  gestureRecognizer = gestureRecognizer as? UIPanGestureRecognizer,
+    guard let  gestureRecognizer = gestureRecognizer as? UIScreenEdgePanGestureRecognizer,
       superview = gestureRecognizer.view?.superview else {
-      return (0, false)
+        return (0, false)
     }
     let translation = gestureRecognizer.translationInView(superview)
     let velocity = gestureRecognizer.velocityInView(superview)
@@ -24,7 +45,7 @@ public class PanInteractiveAnimator: InteractiveAnimator {
     let distance: CGFloat
     let speed: CGFloat
     switch interactiveGestureType {
-    case .Pan(let direction):
+    case .ScreenEdgePan(let direction):
       switch direction {
       case .Horizontal:
         distance = superview.frame.width
@@ -56,9 +77,10 @@ public class PanInteractiveAnimator: InteractiveAnimator {
     }
     
     progress = min(max(progress, 0), 0.99)
-    
+  
     // Finish the transition when pass the threathold
     let shouldFinishInteractiveTransition =  progress > 0.5 || speed > 1000
+    
     return (progress, shouldFinishInteractiveTransition)
   }
 }

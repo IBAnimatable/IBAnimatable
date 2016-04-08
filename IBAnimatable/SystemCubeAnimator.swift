@@ -25,19 +25,19 @@ public class SystemCubeAnimator: NSObject, AnimatedTransitioning {
     case .Left:
       self.transitionAnimationType = .SystemCube(direction: .Left)
       self.reverseAnimationType = .SystemCube(direction: .Right)
-      self.interactiveGestureType = .PanFromRight
+      self.interactiveGestureType = .ScreenEdgePan(direction: .Right)
     case .Right:
       self.transitionAnimationType = .SystemCube(direction: .Right)
       self.reverseAnimationType = .SystemCube(direction: .Left)
-      self.interactiveGestureType = .PanFromLeft
+      self.interactiveGestureType = .ScreenEdgePan(direction: .Left)
     case .Top:
       self.transitionAnimationType = .SystemCube(direction: .Top)
       self.reverseAnimationType = .SystemCube(direction: .Bottom)
-      self.interactiveGestureType = .PanFromBottom
+      self.interactiveGestureType = .ScreenEdgePan(direction: .Bottom)
     case .Bottom:
       self.transitionAnimationType = .SystemCube(direction: .Bottom)
       self.reverseAnimationType = .SystemCube(direction: .Top)
-      self.interactiveGestureType = .PanFromTop
+      self.interactiveGestureType = .ScreenEdgePan(direction: .Top)
     }
     
     super.init()
