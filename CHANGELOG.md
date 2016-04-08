@@ -6,22 +6,49 @@ All notable changes to this project will be documented in this file.
 ### Next
 
 #### API breaking changes
+
+- Change `PanFromLeft`, `PanFromRight`, `PanFromTop`, `PanFromBottom`, `PanHorizontally` and `PanVertically` to `Pan(Left)`, `Pan(Right)`, `Pan(Top)`, `Pan(Bottom)`, `Pan(Horizontal)` and `Pan(Vertical)` for `Pan` gesture transition controller.
+ 
+#### Enhancements
+
+- Add `ScreenEdgePanInteractiveAnimator` to support `PanFromRight`, `PanFromTop`, `PanFromBottom`, `PanHorizontally` and `PanVertically` to `ScreenEdgePan(Left)`, `ScreenEdgePan(Right)`, `ScreenEdgePan(Top)`, `ScreenEdgePan(Bottom)`, `ScreenEdgePan(Horizontal)` and `ScreenEdgePan(Vertical)` for `ScreenEdgePan` gesture transition controller.
+
+#### Bugfixes
+
+
+### [2.2](https://github.com/JakeLin/IBAnimatable/releases/tag/2.2)
+
+#### API breaking changes
+
 - Change `SystemPageCurlAnimator` to `SystemPageAnimator` to support `SystemPage(Curl)` and `SystemPage(UnCurl)` transition animations.
 
 
 #### Enhancements
 
 - `AnimatableLabel` now conforms `BorderDesignable`
-- More transition animations [#126](https://github.com/JakeLin/IBAnimatable/issues/126):
+- New transition animations [#126](https://github.com/JakeLin/IBAnimatable/issues/126):
     - `SystemSuckEffect`
-    - Add `SystemCameraIrisAnimator` to support:
+    - `SystemRippleEffect`
+    - `SystemMoveIn`
+    - `SystemPush`
+    - `SystemReveal`
+    - `SystemRotate` to support:
+         - `SystemRotate(90)`
+         - `SystemRotate(90ccw)`
+         - `SystemRotate(180)`
+         - `SystemRotate(180ccw)`
+         - => Note: It seems that only `SystemRotate(90)` is working as expected. `CATransition` issues?
+    - `SystemCameraIrisAnimator` to support:
          - `SystemCameraIris`
          - `SystemCameraIris(HollowOpen)`
          - `SystemCameraIris(HollowClose)`
-    - Add `SystemRippleEffect`
+- Use framework in demo app [#149](https://github.com/JakeLin/IBAnimatable/pull/149)
 
 #### Bugfixes
 
+- Fix the sided borders issue [#150](https://github.com/JakeLin/IBAnimatable/pull/150)
+- Fix the `FromTop` and `FromBottom` directions in system built-in animations [#156](https://github.com/JakeLin/IBAnimatable/pull/156)
+ 
 ### [2.1](https://github.com/JakeLin/IBAnimatable/releases/tag/2.1)
 
 #### API breaking changes
