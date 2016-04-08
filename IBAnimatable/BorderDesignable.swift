@@ -25,39 +25,69 @@ public protocol BorderDesignable {
 
 public extension BorderDesignable where Self: UIView {
   public func configBorder() {
-    // Clear borders
-    layer.sublayers?.filter  { $0.name == "borderSideLayer" || $0.name == "borderAllSides" }
+    func clearBorders() {
+      layer.borderColor = nil
+      layer.borderWidth = 0
+      layer.sublayers?.filter  { $0.name == "borderSideLayer" || $0.name == "borderAllSides" }
         .forEach { $0.removeFromSuperlayer() }      
-
-    guard let unwrappedBorderColor = borderColor where borderWidth > 0 else {
+    }
+    
+    guard let unwrappedBorderColor = borderColor else {
+      clearBorders()
       return
     }
     
-    if let unwrappedBorderSide = borderSide, side = BorderSide(rawValue: unwrappedBorderSide) {
-      configBorderWithSide(side, borderColor: unwrappedBorderColor)
-    } else {
-      configBorderForAllSides(unwrappedBorderColor)
+    if borderWidth.isNaN || borderWidth <= 0 {
+      clearBorders()
+      return
     }
+    
+    clearBorders()
+    
+    guard let unwrappedBorderSide = borderSide else {
+      configBorderForAllSides(unwrappedBorderColor)
+      return
+    }
+    
+    let sides = BorderSides(rawValue: unwrappedBorderSide)
+    guard sides != .None else { return }
+    
+    configBorderWithSides(sides, borderColor: unwrappedBorderColor)
   }
   
-  private func configBorderWithSide(side: BorderSide, borderColor: UIColor) {
-    let border = CALayer()
+  private func configBorderWithSides(sides: BorderSides, borderColor: UIColor) {
+    let border = CAShapeLayer()
     border.name = "borderSideLayer"
     border.backgroundColor = borderColor.CGColor
     
-    switch side {
-    case .Top:
-      border.frame = CGRect(x: 0, y: 0, width: bounds.size.width, height: borderWidth)
-    case .Right:
-      border.frame = CGRect(x: bounds.size.width - borderWidth, y: 0, width: borderWidth, height: bounds.size.height)
-    case .Bottom:
-      border.frame = CGRect(x: 0, y: bounds.size.height - borderWidth, width: bounds.size.width, height: borderWidth)
-    case .Left:
-      border.frame = CGRect(x: 0, y: 0, width: borderWidth, height: bounds.size.height)
+    let borderPath = CGPathCreateMutable()
+    var transform = self.transform
+    if sides.contains(.Top) {
+      CGPathMoveToPoint(borderPath, &transform, 0, 0)
+      CGPathAddLineToPoint(borderPath, &transform, bounds.size.width, 0)
     }
-    layer.addSublayer(border)
+    if sides.contains(.Right) {
+      CGPathMoveToPoint(borderPath, &transform, bounds.size.width, 0)
+      CGPathAddLineToPoint(borderPath, &transform, bounds.size.width, bounds.size.height)
+    }
+    if sides.contains(.Bottom) {
+      CGPathMoveToPoint(borderPath, &transform, 0, bounds.size.height)
+      CGPathAddLineToPoint(borderPath, &transform, bounds.size.width, bounds.size.height)
+    }
+    if sides.contains(.Left) {
+      CGPathMoveToPoint(borderPath, &transform, 0, 0)
+      CGPathAddLineToPoint(borderPath, &transform, 0, bounds.size.height)
+    }
+    
+    border.path = borderPath;
+    border.fillColor = UIColor.clearColor().CGColor
+    border.strokeColor = borderColor.CGColor
+    border.lineWidth = borderWidth
+    border.frame = bounds
+    layer.insertSublayer(border, atIndex: 0)
+    layer.borderWidth = 0
   }
-
+  
   private func configBorderForAllSides(borderColor: UIColor) {
     if let mask = layer.mask as? CAShapeLayer {
       let borderLayer = CAShapeLayer()
