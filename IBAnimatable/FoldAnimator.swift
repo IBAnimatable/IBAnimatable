@@ -17,13 +17,11 @@ public class FoldAnimator: NSObject, AnimatedTransitioning {
   private var folds: Int = 2
   
   // MARK: - Private fold transition
-  
   private var transform: CATransform3D = CATransform3DIdentity
   private var size: CGSize = CGSize.zero
   private var foldWidth: CGFloat = 0.0
   
   // MARK: - Life cycle
-  
   init(params: String, transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
     self.transitionAnimationType = .Fold(params: params)
