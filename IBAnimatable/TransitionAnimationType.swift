@@ -12,9 +12,9 @@ public enum TransitionAnimationType {
   case Fade             // ToView fades in and FromeView fades out
   case FadeIn           // ToView fades in
   case FadeOut          // FromView Fades out
-  case Fold
   case SystemSuckEffect
   case SystemRippleEffect
+  case Fold(params: String)
   case Explode(params: String)
   case SystemCube(direction: TransitionFromDirection)
   case SystemFlip(direction: TransitionFromDirection)
@@ -35,7 +35,7 @@ public enum TransitionAnimationType {
     } else if transitionType.hasPrefix("SystemSuckEffect") {
         return .SystemSuckEffect
     } else if transitionType.hasPrefix("Fold") {
-      return .Fold
+      return .Fold(params: params(forTransitionType: transitionType))
     } else if transitionType.hasPrefix("Explode") {
       return .Explode(params: params(forTransitionType: transitionType))
     } else if transitionType.hasPrefix("Fade") {

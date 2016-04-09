@@ -12,9 +12,11 @@ public class FoldAnimator: NSObject, AnimatedTransitioning {
   public var reverseAnimationType: TransitionAnimationType?
   public var interactiveGestureType: InteractiveGestureType? = .Default
   
-  // MARK: - Private
+  // MARK: - Private params
   private var reverse: Bool = false
   private var folds: Int = 2
+  
+  // MARK: - Private fold transition
   
   private var transform: CATransform3D = CATransform3DIdentity
   private var size: CGSize = CGSize.zero
@@ -22,10 +24,15 @@ public class FoldAnimator: NSObject, AnimatedTransitioning {
   
   // MARK: - Life cycle
   
-  init(transitionDuration: Duration) {
+  init(params: String, transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
-    self.transitionAnimationType = .Fold
-    self.reverseAnimationType = .Fold
+    self.transitionAnimationType = .Fold(params: params)
+    self.reverseAnimationType = .Fold(params: params)
+    
+    let params = params.componentsSeparatedByString(",")
+    if let unwrappedFolds = Int(params[0]) where params.count == 1 {
+      self.folds = unwrappedFolds
+    }
     super.init()
   }
 }
@@ -93,18 +100,17 @@ private extension FoldAnimator {
     return [toViewFolds, fromViewFolds]
   }
   
-  func createSnapshot(fromView view: UIView, afterUpdates: Bool, offset: CGFloat, left: Bool) -> UIView{
+  func createSnapshot(fromView view: UIView, afterUpdates: Bool, offset: CGFloat, left: Bool) -> UIView {
     let containerView = view.superview
     var snapshotView: UIView
+    let snapshotRegion = CGRect(x: offset, y: 0.0, width: foldWidth, height: size.height)
     if !afterUpdates {
-      let snapshotRegion = CGRect(x: offset, y: 0.0, width: foldWidth, height: size.height)
       snapshotView = view.resizableSnapshotViewFromRect(snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: UIEdgeInsetsZero)
     } else {
       snapshotView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: foldWidth, height: size.height))
       snapshotView.backgroundColor = view.backgroundColor;
-      let snapshotRegion = CGRect(x: offset, y: 0.0, width: foldWidth, height: size.height)
-      let snapshotView2 = view.resizableSnapshotViewFromRect(snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: UIEdgeInsetsZero)
-      snapshotView.addSubview(snapshotView2)
+      let subSnapshotView = view.resizableSnapshotViewFromRect(snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: UIEdgeInsetsZero)
+      snapshotView.addSubview(subSnapshotView)
     }
     
     let snapshotWithShadowView = addShadow(toView: snapshotView, reverse: left)
@@ -171,7 +177,6 @@ private extension FoldAnimator {
       }
       
       completion()
-
     })
   }
   
