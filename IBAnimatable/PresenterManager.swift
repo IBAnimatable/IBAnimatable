@@ -21,7 +21,7 @@ class PresenterManager {
   // MARK: - Private
   private var cache = [String: Presenter]()
   
-  // MARK: Inertnal Interface
+  // MARK: Internal Interface
   func retrievePresenter(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) -> Presenter {
     // Get the cached presenter
     let presenter = cache[transitionAnimationType.stringValue]
