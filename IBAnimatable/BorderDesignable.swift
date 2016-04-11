@@ -147,38 +147,4 @@ public extension BorderDesignable where Self: UIView {
     layer.borderWidth = 0
   }
   
-  private func configBorderWithSide(side: BorderSide, borderColor: UIColor) {
-    let border = CALayer()
-    border.name = "borderSideLayer"
-    border.backgroundColor = borderColor.CGColor
-    
-    switch side {
-    case .Top:
-      border.frame = CGRect(x: 0, y: 0, width: bounds.size.width, height: borderWidth)
-    case .Right:
-      border.frame = CGRect(x: bounds.size.width - borderWidth, y: 0, width: borderWidth, height: bounds.size.height)
-    case .Bottom:
-      border.frame = CGRect(x: 0, y: bounds.size.height - borderWidth, width: bounds.size.width, height: borderWidth)
-    case .Left:
-      border.frame = CGRect(x: 0, y: 0, width: borderWidth, height: bounds.size.height)
-    }
-    layer.addSublayer(border)
-  }
-
-  private func configBorderForAllSides(borderColor: UIColor) {
-    if let mask = layer.mask as? CAShapeLayer {
-      let borderLayer = CAShapeLayer()
-      borderLayer.name = "borderAllSides"
-      borderLayer.path = mask.path
-      borderLayer.fillColor = UIColor.clearColor().CGColor
-      borderLayer.strokeColor = borderColor.CGColor
-      borderLayer.lineWidth = borderWidth
-      borderLayer.frame = bounds
-      layer.insertSublayer(borderLayer, atIndex: 0)
-      layer.borderWidth = 0
-    } else {
-      layer.borderColor = borderColor.CGColor
-      layer.borderWidth = borderWidth
-    }
-  }
 }
