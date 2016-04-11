@@ -10,12 +10,12 @@ import Foundation
 public func iterateEnum<T: Hashable>(_: T.Type) -> AnyGenerator<T> {
   var x = 0
   return AnyGenerator {
-    let y = withUnsafePointer(&x) {
+    let next = withUnsafePointer(&x) {
       UnsafePointer<T>($0).memory
     }
     defer {
       x += 1
     }
-    return next.hashValue == x ? y : nil
+    return next.hashValue == x ? next : nil
   }
 }
