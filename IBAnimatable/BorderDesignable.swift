@@ -26,6 +26,8 @@ public protocol BorderDesignable {
 public extension BorderDesignable where Self: UIView {
   public func configBorder() {
     // Clear borders
+    layer.borderColor = nil
+    layer.borderWidth = 0
     layer.sublayers?.filter  { $0.name == "borderSideLayer" || $0.name == "borderAllSides" }
         .forEach { $0.removeFromSuperlayer() }      
 
