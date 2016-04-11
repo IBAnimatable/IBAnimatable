@@ -14,7 +14,8 @@ All notable changes to this project will be documented in this file.
  
 #### Enhancements
 
-- Add `ScreenEdgePanInteractiveAnimator` to support `PanFromRight`, `PanFromTop`, `PanFromBottom`, `PanHorizontally` and `PanVertically` to `ScreenEdgePan(Left)`, `ScreenEdgePan(Right)`, `ScreenEdgePan(Top)`, `ScreenEdgePan(Bottom)`, `ScreenEdgePan(Horizontal)` and `ScreenEdgePan(Vertical)` for `ScreenEdgePan` gesture transition controller.
+- Add `ScreenEdgePanInteractiveAnimator` to support `PanFromRight`, `PanFromTop`, `PanFromBottom`, `PanHorizontally` and `PanVertically` to `ScreenEdgePan(Left)`, `ScreenEdgePan(Right)`, `ScreenEdgePan(Top)`, `ScreenEdgePan(Bottom)`, `ScreenEdgePan(Horizontal)` and `ScreenEdgePan(Vertical)` for `ScreenEdgePan` gesture transition controller. [125](https://github.com/JakeLin/IBAnimatable/issues/125)
+- Support multiple sides for border [168](https://github.com/JakeLin/IBAnimatable/pull/168)
 
 #### Bugfixes
 
