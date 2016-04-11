@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 
 #### API breaking changes
 
+- Add `AnimatableCollectionViewCell`
 - Change `PanFromLeft`, `PanFromRight`, `PanFromTop`, `PanFromBottom`, `PanHorizontally` and `PanVertically` to `Pan(Left)`, `Pan(Right)`, `Pan(Top)`, `Pan(Bottom)`, `Pan(Horizontal)` and `Pan(Vertical)` for `Pan` gesture transition controller. [#125](https://github.com/JakeLin/IBAnimatable/issues/125)
 
 - Add `ExplodeAnimator` to support Explode transition animation. It supports parmaters `Explode(xFactor, minAngle, maxAngle)`, if no specified, the default values are Explode(10, -10, 10). [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
