@@ -24,23 +24,23 @@ struct AnimatorFactory {
       return SystemSuckEffectAnimator(transitionDuration: transitionDuration)
     case .SystemRippleEffect:
       return SystemRippleEffectAnimator(transitionDuration: transitionDuration)
-    case .Explode(let params):
+    case let .Explode(params):
       return ExplodeAnimator(params: params, transitionDuration: transitionDuration)
-    case .SystemCube(let direction):
+    case let .SystemCube(direction):
       return SystemCubeAnimator(fromDirection: direction, transitionDuration: transitionDuration)
-    case .SystemFlip(let direction):
+    case let .SystemFlip(direction):
       return SystemFlipAnimator(fromDirection: direction, transitionDuration: transitionDuration)
-    case .SystemMoveIn(let direction):
+    case let .SystemMoveIn(direction):
       return SystemMoveInAnimator(fromDirection: direction, transitionDuration: transitionDuration)
-    case .SystemPush(let direction):
+    case let .SystemPush(direction):
       return SystemPushAnimator(fromDirection: direction, transitionDuration: transitionDuration)
-    case .SystemReveal(let direction):
+    case let .SystemReveal(direction):
       return SystemRevealAnimator(fromDirection: direction, transitionDuration: transitionDuration)
-    case .SystemPage(let type):
+    case let .SystemPage(type):
       return SystemPageAnimator(type: type, transitionDuration: transitionDuration)
-    case .SystemCameraIris(let hollowState):
+    case let .SystemCameraIris(hollowState):
       return SystemCameraIrisAnimator(hollowState: hollowState, transitionDuration: transitionDuration)
-    case .SystemRotate(let degree):
+    case let .SystemRotate(degree):
       return SystemRotateAnimator(withDegree: degree, transitionDuration: transitionDuration)
     }
   }

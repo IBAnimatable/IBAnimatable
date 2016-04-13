@@ -10,7 +10,7 @@ public class ScreenEdgePanInteractiveAnimator: InteractiveAnimator {
   override func createGestureRecognizer() -> UIGestureRecognizer {
     let gestureRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
     switch interactiveGestureType {
-    case .ScreenEdgePan(let direction):
+    case let .ScreenEdgePan(direction):
       switch direction {
       case .Left:
         gestureRecognizer.edges = .Left
@@ -45,7 +45,7 @@ public class ScreenEdgePanInteractiveAnimator: InteractiveAnimator {
     let distance: CGFloat
     let speed: CGFloat
     switch interactiveGestureType {
-    case .ScreenEdgePan(let direction):
+    case let .ScreenEdgePan(direction):
       switch direction {
       case .Horizontal:
         distance = superview.frame.width
