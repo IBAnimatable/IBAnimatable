@@ -14,7 +14,7 @@ public class InteractiveAnimator: UIPercentDrivenInteractiveTransition {
   // interactiveGestureType: Used to deteminate gesture type (direction)
   let interactiveGestureType: InteractiveGestureType
   // viewController: the viewController will connect to the gestureRecognizer
-  var viewController: UIViewController?
+  weak var viewController: UIViewController?
   // gestureRecognizer: the gesture recognizer to handle gesture
   var gestureRecognizer: UIGestureRecognizer?
   
