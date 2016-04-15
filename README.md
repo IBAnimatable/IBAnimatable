@@ -122,7 +122,7 @@ Copy and paste `IBAnimatable` folder in your Xcode project.
 
 ### [Swift package manager](https://swift.org/package-manager)
 
-Add `.Package(url: "https://github.com/JakeLin/IBanimatable.git", majorVersion: 1)` to your `Package.swift`
+Add `.Package(url: "https://github.com/JakeLin/IBanimatable.git", majorVersion: 2)` to your `Package.swift`
 
 ### [CocoaPods](https://cocoapods.org)
 
