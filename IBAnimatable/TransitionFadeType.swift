@@ -9,7 +9,7 @@ import Foundation
  Transition Fade Type
  */
 public enum TransitionFadeType {
-  case Fade     // ToView fades in and FromeView fades out
+  case Fade     // ToView fades in and FromView fades out
   case FadeIn   // ToView fades in
   case FadeOut  // FromView Fades out
 }
