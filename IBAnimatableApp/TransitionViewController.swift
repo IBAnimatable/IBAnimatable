@@ -16,7 +16,8 @@ class TransitionViewController: AnimatableViewController {
     
     // Transition animations start with `System` do not support Present transition, so hide it
     if let animationType = animationType where animationType.hasPrefix("System") {
-        presentButton.alpha = 0
+      // Cannot use `hidden` here because of `UIStackView`
+      presentButton.alpha = 0
     }
   }
   
@@ -26,7 +27,7 @@ class TransitionViewController: AnimatableViewController {
     }
     
     toViewController.transitionAnimationType = animationType
-    let segueName = "IBAnimatable.Present" + animationType + "Segue"
+    let segueName = "IBAnimatable.Present" + extractAnimationType(animationType) + "Segue"
     guard let segueClass = NSClassFromString(segueName) as? UIStoryboardSegue.Type else {
       return
     }
@@ -34,5 +35,13 @@ class TransitionViewController: AnimatableViewController {
     let segue = segueClass.init(identifier: segueName, source: self, destination: toViewController)
     prepareForSegue(segue, sender: self)
     segue.perform()
+  }
+  
+  // To extract the type without parameters
+  private func extractAnimationType(animationType: String) -> String {
+    if let range = animationType.rangeOfString("(") {
+      return animationType.substringToIndex(range.startIndex)
+    }
+    return animationType
   }
 }

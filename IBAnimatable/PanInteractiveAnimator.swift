@@ -24,7 +24,7 @@ public class PanInteractiveAnimator: InteractiveAnimator {
     let distance: CGFloat
     let speed: CGFloat
     switch interactiveGestureType {
-    case .Pan(let direction):
+    case let .Pan(direction):
       switch direction {
       case .Horizontal:
         distance = superview.frame.width

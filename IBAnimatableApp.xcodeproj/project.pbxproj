@@ -93,6 +93,7 @@
 		CAB5610BC7B5D20C927AAB87 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5692C91C9ECC8018DE83E /* Navigator.swift */; };
 		CAB56443CD667F41413A560F /* SystemTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56645FCD11BEC66200818 /* SystemTransitionType.swift */; };
 		CAB566CA933963DAA0C7E074 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56A8BA4FB110D501DC1DC /* Constants.swift */; };
+		E2192F5D1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2192F5C1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift */; };
 		E20078A11CB8FB94002B2C16 /* FoldAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20078A01CB8FB94002B2C16 /* FoldAnimator.swift */; };
 		E20078A31CB912E1002B2C16 /* PresentFoldSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20078A21CB912E1002B2C16 /* PresentFoldSegue.swift */; };
 		E20078A51CB91307002B2C16 /* PresentFoldWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20078A41CB91307002B2C16 /* PresentFoldWithDismissInteractionSegue.swift */; };
@@ -215,6 +216,7 @@
 		E20E911B1CAC421E00625094 /* TransitionHollowState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionHollowState.swift; sourceTree = "<group>"; };
 		E20E911D1CAC432400625094 /* SystemCameraIrisAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemCameraIrisAnimator.swift; sourceTree = "<group>"; };
 		E20E91211CAC465A00625094 /* SystemSuckEffectAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemSuckEffectAnimator.swift; sourceTree = "<group>"; };
+		E2192F5C1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableCollectionViewCell.swift; sourceTree = "<group>"; };
 		E23D08B71CA9336500440E7C /* SystemPageAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPageAnimator.swift; sourceTree = "<group>"; };
 		E2472EA31C6F97F800A20E27 /* ColorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorType.swift; sourceTree = "<group>"; };
 		E2472EA61C6F980C00A20E27 /* FlatColorsTypeScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlatColorsTypeScript.swift; path = Scripts/FlatColorsTypeScript.swift; sourceTree = SOURCE_ROOT; };
@@ -441,6 +443,7 @@
 				AE1878791C1A25C100300246 /* AnimatableStackView.swift */,
 				AE0FADAE1C203F9A00B5289B /* AnimatableTableView.swift */,
 				AE3C54441C21439100829B10 /* AnimatableTableViewCell.swift */,
+				E2192F5C1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift */,
 				AED1A10C1BFE983A001346FA /* AnimatableTextField.swift */,
 				AED1A10D1BFE983A001346FA /* AnimatableTextView.swift */,
 				AEEE200C1C18D10C00AD033B /* DesignableNavigationBar.swift */,
@@ -688,6 +691,7 @@
 				AE94078A1CAE87860084BCB8 /* SystemPageAnimator.swift in Sources */,
 				AE6B01791C2A444900950BB2 /* ViewControllerDesignable.swift in Sources */,
 				AE6B01891C2A445C00950BB2 /* DismissSegue.swift in Sources */,
+				E2192F5D1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift in Sources */,
 				AE6B01881C2A445800950BB2 /* UIViewControllerExtension.swift in Sources */,
 				AE6B01771C2A444900950BB2 /* TintDesignable.swift in Sources */,
 				AE0635FC1C9837E9003F9815 /* PresentFadeOutWithDismissInteractionSegue.swift in Sources */,

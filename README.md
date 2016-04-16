@@ -122,7 +122,7 @@ Copy and paste `IBAnimatable` folder in your Xcode project.
 
 ### [Swift package manager](https://swift.org/package-manager)
 
-Add `.Package(url: "https://github.com/JakeLin/IBanimatable.git", majorVersion: 1)` to your `Package.swift`
+Add `.Package(url: "https://github.com/JakeLin/IBanimatable.git", majorVersion: 2)` to your `Package.swift`
 
 ### [CocoaPods](https://cocoapods.org)
 
@@ -179,7 +179,7 @@ The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and con
 | ------------- |:-------------:| ----- |
 | borderColor | Optional&lt;UIColor> | border color |
 | borderWidth | CGFloat | border width. Default value is `CGFloat.NaN`, the value is greater than 0. |
-| borderSide | Optional&lt;String> | border side: `Top`, `Right`, `Bottom` or `Left`, also can be found in emum [`BorderSide`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/BorderSide.swift). If not specified, then display four sides. |
+| borderSide | Optional&lt;String> | border side: `Top`, `Right`, `Bottom` or `Left`, also can be found in emum [`BorderSide`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/BorderSide.swift). Multiple sides can be configured with a comma separated list of sides (e.g. `Top,Bottom`). If not specified, then display four sides. |
 
 
 #### `CheckBoxDesignable`
