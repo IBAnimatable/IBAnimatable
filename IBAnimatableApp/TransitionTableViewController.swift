@@ -58,8 +58,10 @@ private extension TransitionTableViewController {
     transitionAnimations.append(["SystemCameraIris", "SystemCameraIris(HollowOpen)", "SystemCameraIris(HollowClose)"])
     transitionAnimationsHeaders.append("Rotate")
     transitionAnimations.append(["SystemRotate(90)", "SystemRotate(90ccw)", "SystemRotate(180)", "SystemRotate(180ccw)"])
+    transitionAnimationsHeaders.append("Fold")
+    transitionAnimations.append(transitionTypeWithDirections(forName: "Fold"))
     transitionAnimationsHeaders.append("Others")
-    transitionAnimations.append(["SystemRippleEffect", "SystemSuckEffect", "Explode(10,-10,10)", "Fold"])
+    transitionAnimations.append(["SystemRippleEffect", "SystemSuckEffect", "Explode(10,-10,10)"])
 
   }
   
