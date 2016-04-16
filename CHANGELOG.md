@@ -11,7 +11,7 @@ All notable changes to this project will be documented in this file.
 - Change `PanFromLeft`, `PanFromRight`, `PanFromTop`, `PanFromBottom`, `PanHorizontally` and `PanVertically` to `Pan(Left)`, `Pan(Right)`, `Pan(Top)`, `Pan(Bottom)`, `Pan(Horizontal)` and `Pan(Vertical)` for `Pan` gesture transition controller. [#125](https://github.com/JakeLin/IBAnimatable/issues/125)
 
 - Add `ExplodeAnimator` to support Explode transition animation. It supports parameters `Explode(xFactor, minAngle, maxAngle)`, if no specified, the default values are `Explode(10, -10, 10)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
-- Add `FoldAnimator` to support Fold transition animation. It supports parameters `Explode(nbFolds)`, if no specified, the default values are `Fold(2)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
+- Add `FoldAnimator` to support Fold transition animation. It supports parameters `Explode(direction, nbFolds)`, if no specified, the default values are `Fold(Left, 2)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
  
 #### Enhancements
 
