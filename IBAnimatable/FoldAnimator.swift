@@ -13,6 +13,7 @@ public class FoldAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType? = .Default
   
   // MARK: - Private params
+  private var fromDirection: TransitionFromDirection
   private var reverse: Bool = false
   private var folds: Int = 2
   
@@ -22,15 +23,15 @@ public class FoldAnimator: NSObject, AnimatedTransitioning {
   private var foldWidth: CGFloat = 0.0
   
   // MARK: - Life cycle
-  init(params: String, transitionDuration: Duration) {
+  init(fromDirection: TransitionFromDirection, params: [String], transitionDuration: Duration) {
+    self.fromDirection = fromDirection
     self.transitionDuration = transitionDuration
-    self.transitionAnimationType = .Fold(params: params)
-    self.reverseAnimationType = .Fold(params: params)
-    
-    let params = params.componentsSeparatedByString(",")
-    if let unwrappedFolds = Int(params[0]) where params.count == 1 {
-      self.folds = unwrappedFolds
-    }
+    self.transitionAnimationType = .Fold(direction: fromDirection, params: params)
+    self.reverseAnimationType = .Fold(direction: fromDirection, params: params)
+        
+//    if let unwrappedFolds = Int(params[0]) where params.count == 1 {
+//      self.folds = unwrappedFolds
+//    }
     super.init()
   }
 }
