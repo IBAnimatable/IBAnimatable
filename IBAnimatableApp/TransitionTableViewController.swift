@@ -60,6 +60,8 @@ private extension TransitionTableViewController {
     transitionAnimations.append(["SystemRotate(90)", "SystemRotate(90ccw)", "SystemRotate(180)", "SystemRotate(180ccw)"])
     transitionAnimationsHeaders.append("Fold")
     transitionAnimations.append(transitionTypeWithDirections(forName: "Fold"))
+    transitionAnimationsHeaders.append("Portal")
+    transitionAnimations.append(["Portal(Forward,0.3)", "Portal(Backward)"])
     transitionAnimationsHeaders.append("Others")
     transitionAnimations.append(["SystemRippleEffect", "SystemSuckEffect", "Explode(10,-10,10)"])
 

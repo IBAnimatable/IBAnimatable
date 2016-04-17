@@ -16,6 +16,7 @@ public enum TransitionAnimationType {
   case SystemRippleEffect
   case Explode(params: [String])
   case Fold(direction: TransitionFromDirection, params: [String])
+  case Portal(direction: TransitionFromDirection, params: [String])
   case SystemCube(direction: TransitionFromDirection)
   case SystemFlip(direction: TransitionFromDirection)
   case SystemMoveIn(direction: TransitionFromDirection)
@@ -121,6 +122,8 @@ private extension TransitionAnimationType {
     params.removeFirst()
     if transitionType.hasPrefix("Fold") {
       return .Fold(direction: direction, params: params)
+    } else if transitionType.hasPrefix("Portal") {
+      return .Portal(direction: direction, params: params)
     }
     return nil
   }
@@ -149,6 +152,10 @@ private extension TransitionAnimationType {
       return .Top
     } else if params.contains("bottom") {
       return .Bottom
+    } else if params.contains("forward") {
+      return .Forward
+    } else if params.contains("backward") {
+      return .Backward
     }
     return nil
   }
