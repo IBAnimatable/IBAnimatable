@@ -134,6 +134,7 @@ private extension PortalAnimator {
         } else {
           self.removeOtherViews(toView)
           toView.frame = containerView.bounds
+          fromView.layer.transform = CATransform3DIdentity
         }
         transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
     })
