@@ -23,10 +23,6 @@ public class SystemPushAnimator: NSObject, AnimatedTransitioning {
     self.transitionDuration = transitionDuration
     
     switch fromDirection {
-    case .Left:
-      self.transitionAnimationType = .SystemPush(direction: .Left)
-      self.reverseAnimationType = .SystemPush(direction: .Right)
-      self.interactiveGestureType = .Pan(direction: .Right)
     case .Right:
       self.transitionAnimationType = .SystemPush(direction: .Right)
       self.reverseAnimationType = .SystemPush(direction: .Left)
@@ -39,6 +35,10 @@ public class SystemPushAnimator: NSObject, AnimatedTransitioning {
       self.transitionAnimationType = .SystemPush(direction: .Bottom)
       self.reverseAnimationType = .SystemPush(direction: .Top)
       self.interactiveGestureType = .Pan(direction: .Top)
+    default:
+      self.transitionAnimationType = .SystemPush(direction: .Left)
+      self.reverseAnimationType = .SystemPush(direction: .Right)
+      self.interactiveGestureType = .Pan(direction: .Right)
     }
     
     super.init()
