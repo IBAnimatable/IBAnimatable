@@ -94,6 +94,9 @@
 		CAB56443CD667F41413A560F /* SystemTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56645FCD11BEC66200818 /* SystemTransitionType.swift */; };
 		CAB566CA933963DAA0C7E074 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56A8BA4FB110D501DC1DC /* Constants.swift */; };
 		E2192F5D1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2192F5C1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift */; };
+		E20078A11CB8FB94002B2C16 /* FoldAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20078A01CB8FB94002B2C16 /* FoldAnimator.swift */; };
+		E20078A31CB912E1002B2C16 /* PresentFoldSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20078A21CB912E1002B2C16 /* PresentFoldSegue.swift */; };
+		E20078A51CB91307002B2C16 /* PresentFoldWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20078A41CB91307002B2C16 /* PresentFoldWithDismissInteractionSegue.swift */; };
 		E2472EA51C6F97F800A20E27 /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2472EA31C6F97F800A20E27 /* ColorType.swift */; };
 		E27691E91CAFC72C004A725C /* SystemMoveInAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691E81CAFC72C004A725C /* SystemMoveInAnimator.swift */; };
 		E27691EB1CAFC91A004A725C /* SystemPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691EA1CAFC91A004A725C /* SystemPushAnimator.swift */; };
@@ -206,6 +209,9 @@
 		CAB5692C91C9ECC8018DE83E /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		CAB56A8BA4FB110D501DC1DC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D7E765671C4C8961008C3116 /* IBAnimatable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = IBAnimatable.playground; sourceTree = "<group>"; };
+		E20078A01CB8FB94002B2C16 /* FoldAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldAnimator.swift; sourceTree = "<group>"; };
+		E20078A21CB912E1002B2C16 /* PresentFoldSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentFoldSegue.swift; sourceTree = "<group>"; };
+		E20078A41CB91307002B2C16 /* PresentFoldWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentFoldWithDismissInteractionSegue.swift; sourceTree = "<group>"; };
 		E20E91121CAC374200625094 /* SystemRippleEffectAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemRippleEffectAnimator.swift; sourceTree = "<group>"; };
 		E20E911B1CAC421E00625094 /* TransitionHollowState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionHollowState.swift; sourceTree = "<group>"; };
 		E20E911D1CAC432400625094 /* SystemCameraIrisAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemCameraIrisAnimator.swift; sourceTree = "<group>"; };
@@ -268,6 +274,8 @@
 				AE0635FA1C9837E9003F9815 /* PresentFadeOutWithDismissInteractionSegue.swift */,
 				E2A062B41CB1A60E00C54B40 /* PresentExplodeSegue.swift */,
 				E2A062B61CB1A65600C54B40 /* PresentExplodeWithDismissInteractionSegue.swift */,
+				E20078A21CB912E1002B2C16 /* PresentFoldSegue.swift */,
+				E20078A41CB91307002B2C16 /* PresentFoldWithDismissInteractionSegue.swift */,
 			);
 			name = segue;
 			sourceTree = "<group>";
@@ -324,6 +332,7 @@
 				E20E91211CAC465A00625094 /* SystemSuckEffectAnimator.swift */,
 				E20E911D1CAC432400625094 /* SystemCameraIrisAnimator.swift */,
 				E2A062B21CB19BB900C54B40 /* ExplodeAnimator.swift */,
+				E20078A01CB8FB94002B2C16 /* FoldAnimator.swift */,
 			);
 			name = "transition animator";
 			sourceTree = "<group>";
@@ -626,6 +635,8 @@
 				AEE552B11C839EB7009CF623 /* PresenterManager.swift in Sources */,
 				AED5F6921C83E9B60052E57B /* PresentFadeInSegue.swift in Sources */,
 				AE6B01721C2A444900950BB2 /* RotationDesignable.swift in Sources */,
+				E20078A11CB8FB94002B2C16 /* FoldAnimator.swift in Sources */,
+				E20078A31CB912E1002B2C16 /* PresentFoldSegue.swift in Sources */,
 				AEE552A81C815AC5009CF623 /* FadeAnimator.swift in Sources */,
 				AE6B017F1C2A445100950BB2 /* AnimatableLabel.swift in Sources */,
 				AE6B01801C2A445100950BB2 /* AnimatableStackView.swift in Sources */,
@@ -644,6 +655,7 @@
 				E2472EA51C6F97F800A20E27 /* ColorType.swift in Sources */,
 				AE6B016D1C2A444900950BB2 /* GradientDesignable.swift in Sources */,
 				AE677B9B1CADCFA800D62273 /* TransitionHollowState.swift in Sources */,
+				E20078A51CB91307002B2C16 /* PresentFoldWithDismissInteractionSegue.swift in Sources */,
 				E2A062B31CB19BB900C54B40 /* ExplodeAnimator.swift in Sources */,
 				AE65CF931C96E35600A723F8 /* PresentFadeWithDismissInteractionSegue.swift in Sources */,
 				AE677B981CADCF5900D62273 /* SystemSuckEffectAnimator.swift in Sources */,

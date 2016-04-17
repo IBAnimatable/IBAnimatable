@@ -10,12 +10,14 @@ All notable changes to this project will be documented in this file.
 - Add `AnimatableCollectionViewCell`
 - Change `PanFromLeft`, `PanFromRight`, `PanFromTop`, `PanFromBottom`, `PanHorizontally` and `PanVertically` to `Pan(Left)`, `Pan(Right)`, `Pan(Top)`, `Pan(Bottom)`, `Pan(Horizontal)` and `Pan(Vertical)` for `Pan` gesture transition controller. [#125](https://github.com/JakeLin/IBAnimatable/issues/125)
 
-- Add `ExplodeAnimator` to support Explode transition animation. It supports parmaters `Explode(xFactor, minAngle, maxAngle)`, if no specified, the default values are Explode(10, -10, 10). [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
+- Add `ExplodeAnimator` to support Explode transition animation. It supports parameters `Explode(xFactor, minAngle, maxAngle)`, if no specified, the default values are `Explode(10, -10, 10)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
  
 #### Enhancements
 
 - Add `ScreenEdgePanInteractiveAnimator` to support `PanFromRight`, `PanFromTop`, `PanFromBottom`, `PanHorizontally` and `PanVertically` to `ScreenEdgePan(Left)`, `ScreenEdgePan(Right)`, `ScreenEdgePan(Top)`, `ScreenEdgePan(Bottom)`, `ScreenEdgePan(Horizontal)` and `ScreenEdgePan(Vertical)` for `ScreenEdgePan` gesture transition controller. [125](https://github.com/JakeLin/IBAnimatable/issues/125)
 - Support multiple sides for border [#168](https://github.com/JakeLin/IBAnimatable/pull/168)
+- Add `FoldAnimator` to support Fold transition animation. It supports parameters `Explode(direction, nbFolds)`, if no specified, the default values are `Fold(Left, 2)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
+
 
 #### Bugfixes
 
