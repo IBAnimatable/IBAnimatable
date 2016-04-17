@@ -22,6 +22,12 @@ public class FoldAnimator: NSObject, AnimatedTransitioning {
   private var horizontal: Bool = false
   private var size: CGSize = CGSize.zero
   private var foldSize: CGFloat = 0.0
+  private var width: CGFloat {
+      return horizontal ? size.width : size.height
+  }
+  private var height: CGFloat {
+    return horizontal ? size.height : size.width
+  }
   
   // MARK: - Life cycle
   init(fromDirection: TransitionFromDirection, params: [String], transitionDuration: Duration) {
@@ -84,7 +90,7 @@ extension FoldAnimator: UIViewControllerAnimatedTransitioning {
     containerView.layer.sublayerTransform = transform
     
     size = toView.frame.size
-    foldSize = width() * 0.5 / CGFloat(folds)
+    foldSize = width * 0.5 / CGFloat(folds)
 
     let viewFolds = createSnapshots(toView: toView, fromView: fromView, containerView: containerView)
     animateFoldTransition(fromView: fromView, toViewFolds: viewFolds[0], fromViewFolds: viewFolds[1]) {
@@ -106,26 +112,26 @@ private extension FoldAnimator {
     for i in 0..<folds {
       let offset = CGFloat(i) * foldSize * 2
       let leftFromViewFold = createSnapshot(fromView: fromView, afterUpdates: false, offset: offset, left: true)
-      var axesValues = valuesForAxe(offset, reverseValue: height() / 2)
+      var axesValues = valuesForAxe(offset, reverseValue: height / 2)
       leftFromViewFold.layer.position = CGPoint(x: axesValues.0, y: axesValues.1)
       fromViewFolds.append(leftFromViewFold)
       leftFromViewFold.subviews[1].alpha = 0.0
 
       let rightFromViewFold = createSnapshot(fromView: fromView, afterUpdates: false, offset: offset + foldSize, left: false)
-      axesValues = valuesForAxe(offset + foldSize * 2, reverseValue: height() / 2)
+      axesValues = valuesForAxe(offset + foldSize * 2, reverseValue: height / 2)
       rightFromViewFold.layer.position = CGPoint(x: axesValues.0, y: axesValues.1);
       fromViewFolds.append(rightFromViewFold)
       rightFromViewFold.subviews[1].alpha = 0.0
 
       let leftToViewFold = createSnapshot(fromView: toView, afterUpdates: true, offset: offset, left: true)
-      axesValues = valuesForAxe(self.reverse ? width() : 0.0, reverseValue: height() / 2)
+      axesValues = valuesForAxe(self.reverse ? width : 0.0, reverseValue: height / 2)
       leftToViewFold.layer.position = CGPointMake(axesValues.0, axesValues.1)
       axesValues = valuesForAxe(0.0, reverseValue: 1.0)
       leftToViewFold.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI_2), axesValues.0, axesValues.1, 0.0)
       toViewFolds.append(leftToViewFold)
 
       let rightToViewFold = createSnapshot(fromView: toView, afterUpdates: true, offset: offset + foldSize, left: false)
-      axesValues = valuesForAxe(self.reverse ? width() : 0.0, reverseValue: height() / 2)
+      axesValues = valuesForAxe(self.reverse ? width : 0.0, reverseValue: height / 2)
       rightToViewFold.layer.position = CGPointMake(axesValues.0, axesValues.1)
       axesValues = valuesForAxe(0.0, reverseValue: 1.0)
       rightToViewFold.layer.transform = CATransform3DMakeRotation(CGFloat(-M_PI_2), axesValues.0, axesValues.1, 0.0)
@@ -138,12 +144,12 @@ private extension FoldAnimator {
     let containerView = view.superview
     var snapshotView: UIView
     var axesValues = valuesForAxe(offset, reverseValue: 0.0)
-    var axesValues2 = valuesForAxe(foldSize, reverseValue: height())
+    var axesValues2 = valuesForAxe(foldSize, reverseValue: height)
     let snapshotRegion = CGRect(x: axesValues.0, y: axesValues.1, width: axesValues2.0, height: axesValues2.1)
     if !afterUpdates {
       snapshotView = view.resizableSnapshotViewFromRect(snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: UIEdgeInsetsZero)
     } else {
-      axesValues = valuesForAxe(foldSize, reverseValue: height())
+      axesValues = valuesForAxe(foldSize, reverseValue: height)
       snapshotView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: axesValues.0, height: axesValues.1))
       snapshotView.backgroundColor = view.backgroundColor;
       let subSnapshotView = view.resizableSnapshotViewFromRect(snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: UIEdgeInsetsZero)
@@ -194,27 +200,27 @@ private extension FoldAnimator {
       for i in 0..<self.folds {
         let offset = CGFloat(i) * self.foldSize * 2
         let leftFromView = fromViewFolds[i * 2]
-        var axesValues = self.valuesForAxe(self.reverse ? 0.0 : self.width(), reverseValue: self.height() / 2)
+        var axesValues = self.valuesForAxe(self.reverse ? 0.0 : self.width, reverseValue: self.height / 2)
         leftFromView.layer.position = CGPoint(x: axesValues.0, y: axesValues.1)
         axesValues = self.valuesForAxe(0.0, reverseValue: 1.0)
         leftFromView.layer.transform = CATransform3DRotate(self.transform, CGFloat(M_PI_2), axesValues.0, axesValues.1, 0)
         leftFromView.subviews[1].alpha = 1.0
         
         let rightFromView = fromViewFolds[i * 2 + 1]
-        axesValues = self.valuesForAxe(self.reverse ? 0.0 : self.width(), reverseValue: self.height() / 2)
+        axesValues = self.valuesForAxe(self.reverse ? 0.0 : self.width, reverseValue: self.height / 2)
         rightFromView.layer.position = CGPoint(x: axesValues.0, y: axesValues.1)
         axesValues = self.valuesForAxe(0.0, reverseValue: 1.0)
         rightFromView.layer.transform = CATransform3DRotate(self.transform, CGFloat(-M_PI_2), axesValues.0, axesValues.1, 0)
         rightFromView.subviews[1].alpha = 1.0
         
         let leftToView = toViewFolds[i * 2]
-        axesValues = self.valuesForAxe(offset, reverseValue: self.height() / 2)
+        axesValues = self.valuesForAxe(offset, reverseValue: self.height / 2)
         leftToView.layer.position = CGPoint(x: axesValues.0, y: axesValues.1)
         leftToView.layer.transform = CATransform3DIdentity
         leftToView.subviews[1].alpha = 0.0
 
         let rightToView = toViewFolds[i * 2 + 1]
-        axesValues = self.valuesForAxe(offset + self.foldSize * 2, reverseValue: self.height() / 2)
+        axesValues = self.valuesForAxe(offset + self.foldSize * 2, reverseValue: self.height / 2)
         rightToView.layer.position = CGPoint(x: axesValues.0, y: axesValues.1)
         rightToView.layer.transform = CATransform3DIdentity
         rightToView.subviews[1].alpha = 0.0
@@ -241,14 +247,6 @@ private extension FoldAnimator {
   
   func valuesForAxe(initialValue: CGFloat, reverseValue: CGFloat) -> (CGFloat, CGFloat) {
     return horizontal ? (initialValue, reverseValue) : (reverseValue, initialValue)
-  }
-  
-  func width() -> CGFloat {
-    return horizontal ? size.width : size.height
-  }
-  
-  func height() -> CGFloat {
-    return horizontal ? size.height : size.width
   }
   
 }
