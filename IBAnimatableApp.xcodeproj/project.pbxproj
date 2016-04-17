@@ -98,6 +98,8 @@
 		E20078A51CB91307002B2C16 /* PresentFoldWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20078A41CB91307002B2C16 /* PresentFoldWithDismissInteractionSegue.swift */; };
 		E2192F5D1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2192F5C1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift */; };
 		E222CDC61CC3EA7400684CA0 /* PortalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E222CDC51CC3EA7400684CA0 /* PortalAnimator.swift */; };
+		E222CDC81CC400FD00684CA0 /* PresentPortalSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E222CDC71CC400FD00684CA0 /* PresentPortalSegue.swift */; };
+		E222CDCA1CC4010800684CA0 /* PresentPortalWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E222CDC91CC4010800684CA0 /* PresentPortalWithDismissInteractionSegue.swift */; };
 		E2472EA51C6F97F800A20E27 /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2472EA31C6F97F800A20E27 /* ColorType.swift */; };
 		E27691E91CAFC72C004A725C /* SystemMoveInAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691E81CAFC72C004A725C /* SystemMoveInAnimator.swift */; };
 		E27691EB1CAFC91A004A725C /* SystemPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691EA1CAFC91A004A725C /* SystemPushAnimator.swift */; };
@@ -219,6 +221,8 @@
 		E20E91211CAC465A00625094 /* SystemSuckEffectAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemSuckEffectAnimator.swift; sourceTree = "<group>"; };
 		E2192F5C1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableCollectionViewCell.swift; sourceTree = "<group>"; };
 		E222CDC51CC3EA7400684CA0 /* PortalAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortalAnimator.swift; sourceTree = "<group>"; };
+		E222CDC71CC400FD00684CA0 /* PresentPortalSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentPortalSegue.swift; sourceTree = "<group>"; };
+		E222CDC91CC4010800684CA0 /* PresentPortalWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentPortalWithDismissInteractionSegue.swift; sourceTree = "<group>"; };
 		E23D08B71CA9336500440E7C /* SystemPageAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPageAnimator.swift; sourceTree = "<group>"; };
 		E2472EA31C6F97F800A20E27 /* ColorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorType.swift; sourceTree = "<group>"; };
 		E2472EA61C6F980C00A20E27 /* FlatColorsTypeScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlatColorsTypeScript.swift; path = Scripts/FlatColorsTypeScript.swift; sourceTree = SOURCE_ROOT; };
@@ -278,6 +282,8 @@
 				E2A062B61CB1A65600C54B40 /* PresentExplodeWithDismissInteractionSegue.swift */,
 				E20078A21CB912E1002B2C16 /* PresentFoldSegue.swift */,
 				E20078A41CB91307002B2C16 /* PresentFoldWithDismissInteractionSegue.swift */,
+				E222CDC71CC400FD00684CA0 /* PresentPortalSegue.swift */,
+				E222CDC91CC4010800684CA0 /* PresentPortalWithDismissInteractionSegue.swift */,
 			);
 			name = segue;
 			sourceTree = "<group>";
@@ -658,6 +664,7 @@
 				E2472EA51C6F97F800A20E27 /* ColorType.swift in Sources */,
 				AE6B016D1C2A444900950BB2 /* GradientDesignable.swift in Sources */,
 				AE677B9B1CADCFA800D62273 /* TransitionHollowState.swift in Sources */,
+				E222CDCA1CC4010800684CA0 /* PresentPortalWithDismissInteractionSegue.swift in Sources */,
 				E20078A51CB91307002B2C16 /* PresentFoldWithDismissInteractionSegue.swift in Sources */,
 				E2A062B31CB19BB900C54B40 /* ExplodeAnimator.swift in Sources */,
 				AE65CF931C96E35600A723F8 /* PresentFadeWithDismissInteractionSegue.swift in Sources */,
@@ -694,6 +701,7 @@
 				AE94078A1CAE87860084BCB8 /* SystemPageAnimator.swift in Sources */,
 				AE6B01791C2A444900950BB2 /* ViewControllerDesignable.swift in Sources */,
 				AE6B01891C2A445C00950BB2 /* DismissSegue.swift in Sources */,
+				E222CDC81CC400FD00684CA0 /* PresentPortalSegue.swift in Sources */,
 				E2192F5D1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift in Sources */,
 				AE6B01881C2A445800950BB2 /* UIViewControllerExtension.swift in Sources */,
 				AE6B01771C2A444900950BB2 /* TintDesignable.swift in Sources */,
