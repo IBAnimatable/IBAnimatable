@@ -86,12 +86,13 @@ private extension PortalAnimator {
       leftHandView.frame = CGRectOffset(leftHandView.frame, -leftHandView.frame.width, 0.0)
       rightHandView.frame = CGRectOffset(rightHandView.frame, rightHandView.frame.width, 0.0)
       toViewSnapshot.center = toView.center
-      toViewSnapshot.frame = toView.frame
+      toViewSnapshot.frame = containerView.frame
     }, completion: { _ in
       if transitionContext.transitionWasCancelled() {
         containerView.addSubview(fromView)
         self.removeOtherViews(fromView)
       } else {
+        toView.frame = containerView.frame
         containerView.addSubview(toView)
         self.removeOtherViews(toView)
       }
