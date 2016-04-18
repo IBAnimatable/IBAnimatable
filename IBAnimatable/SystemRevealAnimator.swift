@@ -20,10 +20,6 @@ public class SystemRevealAnimator: NSObject, AnimatedTransitioning {
     self.transitionDuration = transitionDuration
     
     switch fromDirection {
-    case .Left:
-      self.transitionAnimationType = .SystemReveal(direction: .Left)
-      self.reverseAnimationType = .SystemReveal(direction: .Right)
-      self.interactiveGestureType = .Pan(direction: .Right)
     case .Right:
       self.transitionAnimationType = .SystemReveal(direction: .Right)
       self.reverseAnimationType = .SystemReveal(direction: .Left)
@@ -36,6 +32,10 @@ public class SystemRevealAnimator: NSObject, AnimatedTransitioning {
       self.transitionAnimationType = .SystemReveal(direction: .Bottom)
       self.reverseAnimationType = .SystemReveal(direction: .Top)
       self.interactiveGestureType = .Pan(direction: .Top)
+    default:
+      self.transitionAnimationType = .SystemPush(direction: .Left)
+      self.reverseAnimationType = .SystemPush(direction: .Right)
+      self.interactiveGestureType = .Pan(direction: .Right)
     }
     
     super.init()

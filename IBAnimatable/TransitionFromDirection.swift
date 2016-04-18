@@ -12,6 +12,8 @@ public enum TransitionFromDirection {
   case Right
   case Top
   case Bottom
+  case Forward
+  case Backward
   
   var stringValue: String {
     switch self {
@@ -25,6 +27,8 @@ public enum TransitionFromDirection {
     case .Bottom:
       // The actual transition direction is oposite, need to reverse
       return kCATransitionFromTop
+    default:
+      return ""
     }
   }
 }

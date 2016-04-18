@@ -24,10 +24,6 @@ public class SystemFlipAnimator: NSObject, AnimatedTransitioning {
     self.transitionDuration = transitionDuration
     
     switch fromDirection {
-    case .Left:
-      self.transitionAnimationType = .SystemFlip(direction: .Left)
-      self.reverseAnimationType = .SystemFlip(direction: .Right)
-      self.animationOption = .TransitionFlipFromLeft
     case .Right:
       self.transitionAnimationType = .SystemFlip(direction: .Right)
       self.reverseAnimationType = .SystemFlip(direction: .Left)
@@ -40,6 +36,10 @@ public class SystemFlipAnimator: NSObject, AnimatedTransitioning {
       self.transitionAnimationType = .SystemFlip(direction: .Bottom)
       self.reverseAnimationType = .SystemFlip(direction: .Top)
       self.animationOption = .TransitionFlipFromBottom
+    default:
+      self.transitionAnimationType = .SystemFlip(direction: .Left)
+      self.reverseAnimationType = .SystemFlip(direction: .Right)
+      self.animationOption = .TransitionFlipFromLeft
     }
     
     super.init()

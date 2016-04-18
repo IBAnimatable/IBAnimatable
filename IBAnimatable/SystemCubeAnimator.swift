@@ -22,10 +22,6 @@ public class SystemCubeAnimator: NSObject, AnimatedTransitioning {
     self.transitionDuration = transitionDuration
     
     switch fromDirection {
-    case .Left:
-      self.transitionAnimationType = .SystemCube(direction: .Left)
-      self.reverseAnimationType = .SystemCube(direction: .Right)
-      self.interactiveGestureType = .ScreenEdgePan(direction: .Right)
     case .Right:
       self.transitionAnimationType = .SystemCube(direction: .Right)
       self.reverseAnimationType = .SystemCube(direction: .Left)
@@ -38,6 +34,10 @@ public class SystemCubeAnimator: NSObject, AnimatedTransitioning {
       self.transitionAnimationType = .SystemCube(direction: .Bottom)
       self.reverseAnimationType = .SystemCube(direction: .Top)
       self.interactiveGestureType = .ScreenEdgePan(direction: .Top)
+    default:
+      self.transitionAnimationType = .SystemPush(direction: .Left)
+      self.reverseAnimationType = .SystemPush(direction: .Right)
+      self.interactiveGestureType = .Pan(direction: .Right)
     }
     
     super.init()
