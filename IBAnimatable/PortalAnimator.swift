@@ -108,13 +108,13 @@ private extension PortalAnimator {
   
   func executeBackwardAnimations(transitionContext: UIViewControllerContextTransitioning, containerView containerView: UIView, fromView: UIView, toView: UIView) {
     containerView.addSubview(fromView)
-    toView.frame = CGRectOffset(toView.frame, toView.frame.width, 0);
+    toView.frame = CGRectOffset(toView.frame, toView.frame.width, 0)
     containerView.addSubview(toView)
 
     let leftSnapshotRegion = CGRect(x: 0, y: 0, width: toView.frame.width / 2, height: toView.bounds.height)
     let leftHandView = toView.resizableSnapshotViewFromRect(leftSnapshotRegion, afterScreenUpdates: true, withCapInsets: UIEdgeInsetsZero)
     leftHandView.frame = leftSnapshotRegion
-    leftHandView.frame = CGRectOffset(leftHandView.frame, -leftHandView.frame.width, 0);
+    leftHandView.frame = CGRectOffset(leftHandView.frame, -leftHandView.frame.width, 0)
     containerView.addSubview(leftHandView)
 
     let rightSnapshotRegion = CGRect(x: toView.frame.width / 2, y: 0, width: toView.frame.width / 2, height: fromView.frame.height)
@@ -127,16 +127,17 @@ private extension PortalAnimator {
       leftHandView.frame = CGRectOffset(leftHandView.frame, leftHandView.frame.size.width, 0)
       rightHandView.frame = CGRectOffset(rightHandView.frame, -rightHandView.frame.size.width, 0)
       let scale = CATransform3DIdentity
-      fromView.layer.transform = CATransform3DScale(scale, self.zoomScale, self.zoomScale, 1);
+      fromView.layer.transform = CATransform3DScale(scale, self.zoomScale, self.zoomScale, 1)
     }, completion: { _ in
-        if transitionContext.transitionWasCancelled() {
-          self.removeOtherViews(fromView)
-        } else {
-          self.removeOtherViews(toView)
-          toView.frame = containerView.bounds
-          fromView.layer.transform = CATransform3DIdentity
-        }
-        transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+      
+      if transitionContext.transitionWasCancelled() {
+        self.removeOtherViews(fromView)
+      } else {
+        self.removeOtherViews(toView)
+        toView.frame = containerView.bounds
+        fromView.layer.transform = CATransform3DIdentity
+      }
+      transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
     })
   }
   

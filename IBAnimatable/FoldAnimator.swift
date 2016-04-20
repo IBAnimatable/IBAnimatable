@@ -10,7 +10,7 @@ public class FoldAnimator: NSObject, AnimatedTransitioning {
   public var transitionAnimationType: TransitionAnimationType
   public var transitionDuration: Duration = defaultTransitionDuration
   public var reverseAnimationType: TransitionAnimationType?
-  public var interactiveGestureType: InteractiveGestureType? = .Default
+  public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - Private params
   private var fromDirection: TransitionFromDirection
@@ -94,8 +94,8 @@ extension FoldAnimator: UIViewControllerAnimatedTransitioning {
 
     let viewFolds = createSnapshots(toView: toView, fromView: fromView, containerView: containerView)
     animateFoldTransition(fromView: fromView, toViewFolds: viewFolds[0], fromViewFolds: viewFolds[1]) {
-      toView.frame = containerView.bounds;
-      fromView.frame = containerView.bounds;
+      toView.frame = containerView.bounds
+      fromView.frame = containerView.bounds
       transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
     }
   }
@@ -119,7 +119,7 @@ private extension FoldAnimator {
 
       let rightFromViewFold = createSnapshot(fromView: fromView, afterUpdates: false, offset: offset + foldSize, left: false)
       axesValues = valuesForAxe(offset + foldSize * 2, reverseValue: height / 2)
-      rightFromViewFold.layer.position = CGPoint(x: axesValues.0, y: axesValues.1);
+      rightFromViewFold.layer.position = CGPoint(x: axesValues.0, y: axesValues.1)
       fromViewFolds.append(rightFromViewFold)
       rightFromViewFold.subviews[1].alpha = 0.0
 
@@ -151,7 +151,7 @@ private extension FoldAnimator {
     } else {
       axesValues = valuesForAxe(foldSize, reverseValue: height)
       snapshotView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: axesValues.0, height: axesValues.1))
-      snapshotView.backgroundColor = view.backgroundColor;
+      snapshotView.backgroundColor = view.backgroundColor
       let subSnapshotView = view.resizableSnapshotViewFromRect(snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: UIEdgeInsetsZero)
       snapshotView.addSubview(subSnapshotView)
     }
