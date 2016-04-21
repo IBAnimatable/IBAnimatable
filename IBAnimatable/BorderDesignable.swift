@@ -138,7 +138,7 @@ public extension BorderDesignable where Self: UIView {
       borderPath.addLineToPoint(linePoints.end)
     }
     
-    border.path = borderPath.CGPath;
+    border.path = borderPath.CGPath
     border.fillColor = UIColor.clearColor().CGColor
     border.strokeColor = unwrappedBorderColor.CGColor
     border.lineWidth = borderWidth
