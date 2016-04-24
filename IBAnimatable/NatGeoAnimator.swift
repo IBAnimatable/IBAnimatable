@@ -68,7 +68,7 @@ extension NatGeoAnimator: UIViewControllerAnimatedTransitioning {
   
 }
 
-// MARK: - Forward
+// MARK: - Left
 
 private extension NatGeoAnimator {
   
@@ -76,7 +76,6 @@ private extension NatGeoAnimator {
     fromView.userInteractionEnabled = false
     var fromLayer = fromView.layer
     var toLayer = toView.layer
-
     
     let oldFrame = fromLayer.frame
     fromLayer.anchorPoint = CGPoint(x: 0.0, y: 0.5)
@@ -104,7 +103,7 @@ private extension NatGeoAnimator {
   
 }
 
-// MARK: - Reverse
+// MARK: - Right
 
 private extension NatGeoAnimator {
   
@@ -113,8 +112,12 @@ private extension NatGeoAnimator {
     toView.userInteractionEnabled = true
     var fromLayer = toView.layer
     var toLayer = fromView.layer
+
+    let oldFrame = fromLayer.frame
+    fromLayer.anchorPoint = CGPoint(x: 0.0, y: 0.5)
+    fromLayer.frame = oldFrame    
     sourceLastTransform(&fromLayer)
-    destinationLastTransform(&toLayer);
+    destinationLastTransform(&toLayer)
     
     UIView.animateKeyframesWithDuration(transitionDuration, delay: 0.0, options: .CalculationModeCubic, animations: {
       UIView.addKeyframeWithRelativeStartTime(0.0, relativeDuration: self.firstPartRatio) {
@@ -160,7 +163,7 @@ private extension NatGeoAnimator {
     var transform = CATransform3DIdentity
     transform.m34 = 1.0 / -500.0
     transform = CATransform3DRotate(transform, radianFromDegree(5.0), 0.0, 0.0, 1.0)
-    transform = CATransform3DTranslate(transform, 320.0, -40.0, 150.0);
+    transform = CATransform3DTranslate(transform, 320.0, -40.0, 150.0)
     transform = CATransform3DRotate(transform, radianFromDegree(-45), 0.0, 1.0, 0.0)
     transform = CATransform3DRotate(transform, radianFromDegree(10), 1.0, 0.0, 0.0)
     layer.transform = transform
@@ -175,7 +178,6 @@ private extension NatGeoAnimator {
     transform = CATransform3DRotate(transform, radianFromDegree(0), 1.0, 0.0, 0.0)
     layer.transform = transform
   }
-
 
   func radianFromDegree(degrees: Double) -> CGFloat {
     return CGFloat((degrees / 180) * M_PI)
