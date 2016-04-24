@@ -22,6 +22,7 @@ All notable changes to this project will be documented in this file.
 #### Bugfixes
 
 - Use `weak` for the `viewController` in `InteractiveAnimator` to avoid retain cycle.
+- Fixed the right image of `SideImageDesignable` [#176](https://github.com/JakeLin/IBAnimatable/issues/176)
 
 
 ### [2.2](https://github.com/JakeLin/IBAnimatable/releases/tag/2.2)
