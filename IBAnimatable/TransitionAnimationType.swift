@@ -17,6 +17,7 @@ public enum TransitionAnimationType {
   case Explode(params: [String])
   case Fold(direction: TransitionFromDirection, params: [String])
   case Portal(direction: TransitionFromDirection, params: [String])
+  case NatGeo(direction: TransitionFromDirection)
   case SystemCube(direction: TransitionFromDirection)
   case SystemFlip(direction: TransitionFromDirection)
   case SystemMoveIn(direction: TransitionFromDirection)
@@ -112,6 +113,8 @@ private extension TransitionAnimationType {
       return .SystemPush(direction: direction)
     } else if transitionType.hasPrefix("SystemReveal") {
       return .SystemReveal(direction: direction)
+    } else if transitionType.hasPrefix("NatGeo") {
+        return .NatGeo(direction: direction)
     } else {
       return fromStringWithDirectionAndParams(transitionType, direction: direction, params: transitionParams)
     }

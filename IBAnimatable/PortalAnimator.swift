@@ -64,7 +64,7 @@ extension PortalAnimator: UIViewControllerAnimatedTransitioning {
 
 private extension PortalAnimator {
 
-  func executeForwardAnimation(transitionContext: UIViewControllerContextTransitioning, containerView containerView: UIView, fromView: UIView, toView: UIView) {
+  func executeForwardAnimation(transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
     let toViewSnapshot = toView.resizableSnapshotViewFromRect(toView.frame, afterScreenUpdates: true, withCapInsets: UIEdgeInsetsZero)
     let scale = CATransform3DIdentity
     toViewSnapshot.layer.transform = CATransform3DScale(scale, zoomScale, zoomScale, 1)
@@ -106,7 +106,7 @@ private extension PortalAnimator {
 
 private extension PortalAnimator {
   
-  func executeBackwardAnimations(transitionContext: UIViewControllerContextTransitioning, containerView containerView: UIView, fromView: UIView, toView: UIView) {
+  func executeBackwardAnimations(transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
     containerView.addSubview(fromView)
     toView.frame = CGRectOffset(toView.frame, toView.frame.width, 0)
     containerView.addSubview(toView)
