@@ -62,6 +62,8 @@ private extension TransitionTableViewController {
     transitionAnimations.append(transitionTypeWithDirections(forName: "Fold"))
     transitionAnimationsHeaders.append("Portal")
     transitionAnimations.append(["Portal(Forward,0.3)", "Portal(Backward)"])
+    transitionAnimationsHeaders.append("NatGeo")
+    transitionAnimations.append(["NatGeo(Left)", "NatGeo(Right)"])
     transitionAnimationsHeaders.append("Others")
     transitionAnimations.append(["SystemRippleEffect", "SystemSuckEffect", "Explode(10,-10,10)"])
 
