@@ -6,6 +6,8 @@
 import UIKit
 
 public class PinchInteractiveAnimator: InteractiveAnimator {
+  private var startScale: CGFloat = 0
+  
   override func createGestureRecognizer() -> UIGestureRecognizer {
     let gestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
     return gestureRecognizer
@@ -16,7 +18,10 @@ public class PinchInteractiveAnimator: InteractiveAnimator {
       superview = gestureRecognizer.view?.superview else {
         return (0, false)
     }
-    let scale = gestureRecognizer.scale
+    
+    if gestureRecognizer.state == .Began {
+      startScale = gestureRecognizer.scale
+    }
     
     var progress: CGFloat
     let distance: CGFloat
@@ -24,9 +29,13 @@ public class PinchInteractiveAnimator: InteractiveAnimator {
     case let .Pinch(direction):
       switch direction {
         // TODO:
-//      case .In:
+      case .In:
+        progress = 1.0 - gestureRecognizer.scale / startScale
+        print(progress)
 //      case .Out:
       default:
+        // TODO:
+        // For both Pinch In and Pinch Out
         return (0, false)
     }
     default:

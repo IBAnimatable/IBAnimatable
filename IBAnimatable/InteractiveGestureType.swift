@@ -21,7 +21,8 @@ public enum InteractiveGestureType {
   static func fromString(interactiveGestureType: String) -> InteractiveGestureType? {
     if interactiveGestureType.hasPrefix("Default") {
       return .Default
-    } else if interactiveGestureType.hasPrefix("Pan") || interactiveGestureType.hasPrefix("ScreenEdgePan") {
+    } else if interactiveGestureType.hasPrefix("Pan") || interactiveGestureType.hasPrefix("ScreenEdgePan") ||
+      interactiveGestureType.hasPrefix("Pinch") {
       return fromStringWithDirection(interactiveGestureType)
     }
     return nil
@@ -48,10 +49,12 @@ private extension InteractiveGestureType {
     
     if interactiveGestureType.hasPrefix("Pan") {
       return .Pan(direction: direction)
-    }
-    else if interactiveGestureType.hasPrefix("ScreenEdgePan") {
+    } else if interactiveGestureType.hasPrefix("ScreenEdgePan") {
       return .ScreenEdgePan(direction: direction)
+    } else if interactiveGestureType.hasPrefix("Pinch") {
+      return .Pinch(direction: direction)
     }
+    
     return nil
   }
 
