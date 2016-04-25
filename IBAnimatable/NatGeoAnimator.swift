@@ -59,13 +59,6 @@ extension NatGeoAnimator: UIViewControllerAnimatedTransitioning {
     }
   }
   
-  private func animationDidFinish(transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
-    fromView.layer.transform = CATransform3DIdentity
-    toView.layer.transform = CATransform3DIdentity
-    containerView.layer.transform = CATransform3DIdentity
-    transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
-  }
-  
 }
 
 // MARK: - Left
@@ -139,7 +132,7 @@ private extension NatGeoAnimator {
   
 }
 
-// MARK: - Helper
+// MARK: - Helpers
 
 private extension NatGeoAnimator {
 
@@ -183,4 +176,11 @@ private extension NatGeoAnimator {
     return CGFloat((degrees / 180) * M_PI)
   }
 
+  func animationDidFinish(transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
+    fromView.layer.transform = CATransform3DIdentity
+    toView.layer.transform = CATransform3DIdentity
+    containerView.layer.transform = CATransform3DIdentity
+    transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+  }
+  
 }

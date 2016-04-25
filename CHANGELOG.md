@@ -17,7 +17,7 @@ All notable changes to this project will be documented in this file.
 - Add `ExplodeAnimator` to support Explode transition animation. It supports parameters `Explode(xFactor, minAngle, maxAngle)`, if no specified, the default values are `Explode(10, -10, 10)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
 - Add `FoldAnimator` to support Fold transition animation. It supports parameters `Explode(direction, nbFolds)`, if no specified, the default values are `Fold(Left, 2)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
 - Add `PortalAnimator` to support Portal transition animation. It supports parameters `Portal(direction, zoomScale)`, if no specified, the default values are `Portal(Forward, 0.8)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
-- Add `NatGeoAnimator` to support NatGeo transition animation. It supports only a direction `Portal(direction)`, if no specified, the default values are `Portal(Left)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
+- Add `NatGeoAnimator` to support NatGeo transition animation. It supports only a direction `NatGeo(direction)`, if no specified, the default values are `NatGeo(Left)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
 
 
 #### Bugfixes

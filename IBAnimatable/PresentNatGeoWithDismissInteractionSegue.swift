@@ -7,7 +7,7 @@ import UIKit
 
 public class PresentNatGeoWithDismissInteractionSegue: UIStoryboardSegue {
   public override func perform() {
-    destinationViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(.NatGeo(direction: .Forward), interactiveGestureType: .Default)
+    destinationViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(.NatGeo(direction: .Left), interactiveGestureType: .Default)
     sourceViewController.presentViewController(destinationViewController, animated: true, completion: nil)
   }
 }
