@@ -15,4 +15,6 @@ public enum GestureDirection: String {
   case Right
   case Top
   case Bottom
+  case In
+  case Out
 }

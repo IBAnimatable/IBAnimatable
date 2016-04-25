@@ -12,7 +12,8 @@ public enum InteractiveGestureType {
   case Default          // Will use the default interactive gesture type from `AnimatedTransitioning`
   case Pan(direction: GestureDirection)
   case ScreenEdgePan(direction: GestureDirection)
-
+  case Pinch(direction: GestureDirection)
+  
   var stringValue: String {
     return String(self)
   }
