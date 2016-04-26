@@ -79,14 +79,28 @@ struct BorderSides: OptionSetType {
   }
 }
 
+public extension BorderDesignable where Self: UITextField {
+  public func configBorder() {
+    // set the borderSytle to `.None` to support single side of border
+    borderStyle = .None
+    commonConfigBorder()
+  }
+}
+
 public extension BorderDesignable where Self: UIView {
   public func configBorder() {
+    commonConfigBorder()
+  }
+}
+
+private extension BorderDesignable where Self: UIView {
+  func commonConfigBorder() {
     // Clear borders
     layer.borderColor = nil
     layer.borderWidth = 0
     layer.sublayers?.filter  { $0.name == "borderSideLayer" || $0.name == "borderAllSides" }
-        .forEach { $0.removeFromSuperlayer() }      
-
+      .forEach { $0.removeFromSuperlayer() }
+    
     guard let unwrappedBorderColor = borderColor where borderWidth > 0 else {
       return
     }
@@ -146,5 +160,4 @@ public extension BorderDesignable where Self: UIView {
     layer.insertSublayer(border, atIndex: 0)
     layer.borderWidth = 0
   }
-  
 }
