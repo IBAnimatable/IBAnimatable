@@ -95,15 +95,15 @@ public extension BorderDesignable where Self: UIView {
 
 private extension BorderDesignable where Self: UIView {
   func commonConfigBorder() {
-    // Clear borders
-    layer.borderColor = nil
-    layer.borderWidth = 0
-    layer.sublayers?.filter  { $0.name == "borderSideLayer" || $0.name == "borderAllSides" }
-      .forEach { $0.removeFromSuperlayer() }
-    
     guard let unwrappedBorderColor = borderColor where borderWidth > 0 else {
       return
     }
+    
+    // Clear borders
+    layer.borderColor = nil
+    layer.borderWidth = 0
+    layer.sublayers?.filter { $0.name == "borderSideLayer" || $0.name == "borderAllSides" }
+      .forEach { $0.removeFromSuperlayer() }
     
     // if a layer mask is specified, only border the mask
     if let mask = layer.mask as? CAShapeLayer {
@@ -115,7 +115,6 @@ private extension BorderDesignable where Self: UIView {
       borderLayer.lineWidth = borderWidth
       borderLayer.frame = bounds
       layer.insertSublayer(borderLayer, atIndex: 0)
-      layer.borderWidth = 0
       return
     }
     
@@ -135,7 +134,7 @@ private extension BorderDesignable where Self: UIView {
     
     var lines:[(start: CGPoint, end: CGPoint)] = []
     if sides.contains(.Top) {
-      lines.append((start: CGPoint(x: 0, y: 0), end: CGPoint(x: bounds.size.width, y: 0)))
+      lines.append((start: .zero, end: CGPoint(x: bounds.size.width, y: 0)))
     }
     if sides.contains(.Right) {
       lines.append((start: CGPoint(x: bounds.size.width, y: 0), end: CGPoint(x: bounds.size.width, y: bounds.size.height)))
@@ -144,7 +143,7 @@ private extension BorderDesignable where Self: UIView {
       lines.append((start:CGPoint(x: 0, y: bounds.size.height), end: CGPoint(x: bounds.size.width, y: bounds.size.height)))
     }
     if sides.contains(.Left) {
-      lines.append((start: CGPoint(x: 0, y: 0), end: CGPoint(x: 0, y: bounds.size.height)))
+      lines.append((start: .zero, end: CGPoint(x: 0, y: bounds.size.height)))
     }
     
     for linePoints in lines {
@@ -158,6 +157,5 @@ private extension BorderDesignable where Self: UIView {
     border.lineWidth = borderWidth
     border.frame = bounds
     layer.insertSublayer(border, atIndex: 0)
-    layer.borderWidth = 0
   }
 }
