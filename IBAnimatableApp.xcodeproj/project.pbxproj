@@ -112,6 +112,9 @@
 		E299DF541CD5F8C300EC30D4 /* TurnAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E299DF531CD5F8C300EC30D4 /* TurnAnimator.swift */; };
 		E299DF561CD5FFE300EC30D4 /* PresentTurnSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E299DF551CD5FFE300EC30D4 /* PresentTurnSegue.swift */; };
 		E299DF581CD6003000EC30D4 /* PresentTurnWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E299DF571CD6003000EC30D4 /* PresentTurnWithDismissInteractionSegue.swift */; };
+		E299DF5A1CD6025200EC30D4 /* CardsAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E299DF591CD6025200EC30D4 /* CardsAnimator.swift */; };
+		E299DF5C1CD6067C00EC30D4 /* PresentCardsSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E299DF5B1CD6067C00EC30D4 /* PresentCardsSegue.swift */; };
+		E299DF5E1CD606B500EC30D4 /* PresentCardsWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E299DF5D1CD606B500EC30D4 /* PresentCardsWithDismissInteractionSegue.swift */; };
 		E2A062B31CB19BB900C54B40 /* ExplodeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A062B21CB19BB900C54B40 /* ExplodeAnimator.swift */; };
 		E2A062B51CB1A60E00C54B40 /* PresentExplodeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A062B41CB1A60E00C54B40 /* PresentExplodeSegue.swift */; };
 		E2A062B71CB1A65600C54B40 /* PresentExplodeWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A062B61CB1A65600C54B40 /* PresentExplodeWithDismissInteractionSegue.swift */; };
@@ -243,6 +246,9 @@
 		E299DF531CD5F8C300EC30D4 /* TurnAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurnAnimator.swift; sourceTree = "<group>"; };
 		E299DF551CD5FFE300EC30D4 /* PresentTurnSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentTurnSegue.swift; sourceTree = "<group>"; };
 		E299DF571CD6003000EC30D4 /* PresentTurnWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentTurnWithDismissInteractionSegue.swift; sourceTree = "<group>"; };
+		E299DF591CD6025200EC30D4 /* CardsAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsAnimator.swift; sourceTree = "<group>"; };
+		E299DF5B1CD6067C00EC30D4 /* PresentCardsSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentCardsSegue.swift; sourceTree = "<group>"; };
+		E299DF5D1CD606B500EC30D4 /* PresentCardsWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentCardsWithDismissInteractionSegue.swift; sourceTree = "<group>"; };
 		E2A062B21CB19BB900C54B40 /* ExplodeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExplodeAnimator.swift; sourceTree = "<group>"; };
 		E2A062B41CB1A60E00C54B40 /* PresentExplodeSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentExplodeSegue.swift; sourceTree = "<group>"; };
 		E2A062B61CB1A65600C54B40 /* PresentExplodeWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentExplodeWithDismissInteractionSegue.swift; sourceTree = "<group>"; };
@@ -300,6 +306,8 @@
 				E26B3EDD1CCD57BF00BFD0AB /* PresentNatGeoWithDismissInteractionSegue.swift */,
 				E299DF551CD5FFE300EC30D4 /* PresentTurnSegue.swift */,
 				E299DF571CD6003000EC30D4 /* PresentTurnWithDismissInteractionSegue.swift */,
+				E299DF5B1CD6067C00EC30D4 /* PresentCardsSegue.swift */,
+				E299DF5D1CD606B500EC30D4 /* PresentCardsWithDismissInteractionSegue.swift */,
 			);
 			name = segue;
 			sourceTree = "<group>";
@@ -360,6 +368,7 @@
 				E222CDC51CC3EA7400684CA0 /* PortalAnimator.swift */,
 				E26B3ED91CCD4C1D00BFD0AB /* NatGeoAnimator.swift */,
 				E299DF531CD5F8C300EC30D4 /* TurnAnimator.swift */,
+				E299DF591CD6025200EC30D4 /* CardsAnimator.swift */,
 			);
 			name = "transition animator";
 			sourceTree = "<group>";
@@ -672,6 +681,7 @@
 				AE6B01811C2A445100950BB2 /* AnimatableTableView.swift in Sources */,
 				AE6B01671C2A444500950BB2 /* Animatable.swift in Sources */,
 				AE6B01831C2A445100950BB2 /* AnimatableTextField.swift in Sources */,
+				E299DF5E1CD606B500EC30D4 /* PresentCardsWithDismissInteractionSegue.swift in Sources */,
 				AE6B01731C2A444900950BB2 /* ShadowDesignable.swift in Sources */,
 				AE6B01621C2A444000950BB2 /* AnimationType.swift in Sources */,
 				AE154B8C1C7D59EE0093C05B /* AnimatorFactory.swift in Sources */,
@@ -683,6 +693,7 @@
 				E2472EA51C6F97F800A20E27 /* ColorType.swift in Sources */,
 				AE6B016D1C2A444900950BB2 /* GradientDesignable.swift in Sources */,
 				AE677B9B1CADCFA800D62273 /* TransitionHollowState.swift in Sources */,
+				E299DF5A1CD6025200EC30D4 /* CardsAnimator.swift in Sources */,
 				E222CDCA1CC4010800684CA0 /* PresentPortalWithDismissInteractionSegue.swift in Sources */,
 				E299DF561CD5FFE300EC30D4 /* PresentTurnSegue.swift in Sources */,
 				E20078A51CB91307002B2C16 /* PresentFoldWithDismissInteractionSegue.swift in Sources */,
@@ -747,6 +758,7 @@
 				AE154B7F1C7D061A0093C05B /* TransitionAnimationType.swift in Sources */,
 				AE677B991CADCF6500D62273 /* SystemCameraIrisAnimator.swift in Sources */,
 				E27691F11CAFCBCF004A725C /* TransitionRotateDegree.swift in Sources */,
+				E299DF5C1CD6067C00EC30D4 /* PresentCardsSegue.swift in Sources */,
 				AE6B016F1C2A444900950BB2 /* MaskDesignable.swift in Sources */,
 				AE6B01741C2A444900950BB2 /* SideImageDesignable.swift in Sources */,
 				E222CDC61CC3EA7400684CA0 /* PortalAnimator.swift in Sources */,
