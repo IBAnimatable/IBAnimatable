@@ -19,7 +19,7 @@ All notable changes to this project will be documented in this file.
 - Add `PortalAnimator` to support Portal transition animation. It supports parameters `Portal(direction, zoomScale)`, if no specified, the default values are `Portal(Forward, 0.8)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
 - Add `NatGeoAnimator` to support NatGeo transition animation. It supports only a direction `NatGeo(direction)`, if no specified, the default values are `NatGeo(Left)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
 - Add `Turn` to support Turn transition animation. It supports only a direction `Turn(direction)`, if no specified, the default values are `Turn(Left)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
-
+- Add `CardsAnimator` to support Cards transition animation. It supports parameters `Cards(direction)`, if no specified, the default values are `Cards(Forward)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
 
 #### Bugfixes
 
