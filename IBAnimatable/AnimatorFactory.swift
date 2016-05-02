@@ -34,6 +34,8 @@ struct AnimatorFactory {
       return NatGeoAnimator(fromDirection: direction, transitionDuration: transitionDuration)
     case let .Turn(direction):
       return TurnAnimator(fromDirection: direction, transitionDuration: transitionDuration)
+    case let .Cards(direction):
+      return CardsAnimator(fromDirection: direction, transitionDuration: transitionDuration)
     case let .SystemCube(direction):
       return SystemCubeAnimator(fromDirection: direction, transitionDuration: transitionDuration)
     case let .SystemFlip(direction):
