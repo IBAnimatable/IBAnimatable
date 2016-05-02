@@ -32,6 +32,8 @@ struct AnimatorFactory {
       return PortalAnimator(fromDirection: direction, params: params, transitionDuration: transitionDuration)
     case let .NatGeo(direction):
       return NatGeoAnimator(fromDirection: direction, transitionDuration: transitionDuration)
+    case let .Turn(direction):
+      return TurnAnimator(fromDirection: direction, transitionDuration: transitionDuration)
     case let .SystemCube(direction):
       return SystemCubeAnimator(fromDirection: direction, transitionDuration: transitionDuration)
     case let .SystemFlip(direction):

@@ -33,8 +33,6 @@ public class FoldAnimator: NSObject, AnimatedTransitioning {
   init(fromDirection: TransitionFromDirection, params: [String], transitionDuration: Duration) {
     self.fromDirection = fromDirection
     self.transitionDuration = transitionDuration
-    self.transitionAnimationType = .Fold(direction: fromDirection, params: params)
-    self.reverseAnimationType = .Fold(direction: fromDirection, params: params)
     
     if let firstParam = params.first,
            unwrappedFolds = Int(firstParam) {
@@ -151,7 +149,7 @@ private extension FoldAnimator {
     let containerView = view.superview
     var snapshotView: UIView
     var axesValues = valuesForAxe(offset, reverseValue: 0.0)
-    var axesValues2 = valuesForAxe(foldSize, reverseValue: height)
+    let axesValues2 = valuesForAxe(foldSize, reverseValue: height)
     let snapshotRegion = CGRect(x: axesValues.0, y: axesValues.1, width: axesValues2.0, height: axesValues2.1)
     if !afterUpdates {
       snapshotView = view.resizableSnapshotViewFromRect(snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: UIEdgeInsetsZero)
