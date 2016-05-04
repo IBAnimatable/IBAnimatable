@@ -5,10 +5,11 @@ Design and prototype UI, interaction, navigation, transition and animation for A
 ![](https://d13yacurqjgara.cloudfront.net/users/332358/screenshots/2453933/ibanimatable.gif)
 
 [![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=56abf6d42c882e010057b182&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/56abf6d42c882e010057b182/build/latest)
-![Language](https://img.shields.io/badge/language-Swift%202.2-orange.svg)
+[![Build Status](https://travis-ci.org/JakeLin/IBAnimatable.svg?branch=master)](https://travis-ci.org/JakeLin/IBAnimatable)
+[![Language](https://img.shields.io/badge/language-Swift%202.2-orange.svg)](https://swift.org)
 [![CocoaPods](https://img.shields.io/cocoapods/v/IBAnimatable.svg?style=flat)](http://cocoadocs.org/docsets/IBAnimatable/)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-![License](https://img.shields.io/github/license/JakeLin/IBAnimatable.svg?style=flat)
+[![License](https://img.shields.io/github/license/JakeLin/IBAnimatable.svg?style=flat)](https://github.com/JakeLin/IBAnimatable/blob/master/LICENSE)
 
 **The app was made in Interface Builder with `IBAnimatable` without a single line of code**. Due to the size of [the GIF file on Dribbble](https://dribbble.com/shots/2453933-IBAnimatable-Design-App-Store-ready-Apps-in-Interface-Builder), it only demonstrates a subset of features. We can also find the full HD version on [YouTube](https://www.youtube.com/watch?v=dvD8X6J1YLM) or [MP4 on Github](https://github.com/JakeLin/IBAnimatable-Misc/blob/master/Videos/IBAnimatable.mp4?raw=true)
 
@@ -379,4 +380,3 @@ Please see [CHANGELOG.md](https://github.com/JakeLin/IBAnimatable/blob/master/CH
 
 ## License
 `IBAnimatable` is released under the MIT license. See [LICENSE](https://github.com/JakeLin/IBAnimatable/blob/master/LICENSE) for details.
-
