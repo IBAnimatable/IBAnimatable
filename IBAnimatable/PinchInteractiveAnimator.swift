@@ -53,7 +53,8 @@ public class PinchInteractiveAnimator: InteractiveAnimator {
       case .Close:
         progress = 1.0 - gestureRecognizer.scale / startScale
       case .Open:
-        progress = gestureRecognizer.scale / startScale - 1.0
+        let scaleFator: CGFloat = 1.2 // To make the pinch open gesture more natural 😓
+        progress = gestureRecognizer.scale / scaleFator - 1.0
       default:
         // For both `.Close` and `.Open`
         progress = abs(1.0 - gestureRecognizer.scale / startScale)

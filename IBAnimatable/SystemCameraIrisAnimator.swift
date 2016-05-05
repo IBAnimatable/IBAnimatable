@@ -1,7 +1,4 @@
 //
-//  SystemCameraIrisAnmator.swift
-//  IBAnimatableApp
-//
 //  Created by Tom Baranes on 30/03/16.
 //  Copyright © 2016 Jake Lin. All rights reserved.
 //
@@ -26,12 +23,15 @@ public class SystemCameraIrisAnimator: NSObject, AnimatedTransitioning {
     case .Open:
       self.transitionAnimationType = .SystemCameraIris(hollowState: .Open)
       self.reverseAnimationType = .SystemCameraIris(hollowState: .Close)
+      self.interactiveGestureType = .Pinch(direction: .Close)
     case .Close:
       self.transitionAnimationType = .SystemCameraIris(hollowState: .Close)
       self.reverseAnimationType = .SystemCameraIris(hollowState: .Open)
+      self.interactiveGestureType = .Pinch(direction: .Open)
     case .None:
       self.transitionAnimationType = .SystemCameraIris(hollowState: .None)
       self.reverseAnimationType = .SystemCameraIris(hollowState: .None)
+      self.interactiveGestureType = .Pinch(direction: .Close)
     }
     
     super.init()
