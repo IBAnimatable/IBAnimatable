@@ -120,6 +120,7 @@
 		E2A062B71CB1A65600C54B40 /* PresentExplodeWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A062B61CB1A65600C54B40 /* PresentExplodeWithDismissInteractionSegue.swift */; };
 		E2E28E6C1C6A6C30003F3852 /* GradientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6A1C6A6C30003F3852 /* GradientType.swift */; };
 		E2E28E6F1C6A6D22003F3852 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */; };
+		E2F45B571CDB845F001D2E37 /* FlipAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F45B561CDB845F001D2E37 /* FlipAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -255,6 +256,7 @@
 		E2E28E6A1C6A6C30003F3852 /* GradientType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientType.swift; sourceTree = "<group>"; };
 		E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		E2E28E711C6A6E70003F3852 /* GradientsTypeScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GradientsTypeScript.swift; path = Scripts/GradientsTypeScript.swift; sourceTree = SOURCE_ROOT; };
+		E2F45B561CDB845F001D2E37 /* FlipAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlipAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -369,6 +371,7 @@
 				E26B3ED91CCD4C1D00BFD0AB /* NatGeoAnimator.swift */,
 				E299DF531CD5F8C300EC30D4 /* TurnAnimator.swift */,
 				E299DF591CD6025200EC30D4 /* CardsAnimator.swift */,
+				E2F45B561CDB845F001D2E37 /* FlipAnimator.swift */,
 			);
 			name = "transition animator";
 			sourceTree = "<group>";
@@ -733,6 +736,7 @@
 				E299DF581CD6003000EC30D4 /* PresentTurnWithDismissInteractionSegue.swift in Sources */,
 				E2A062B71CB1A65600C54B40 /* PresentExplodeWithDismissInteractionSegue.swift in Sources */,
 				AE94078A1CAE87860084BCB8 /* SystemPageAnimator.swift in Sources */,
+				E2F45B571CDB845F001D2E37 /* FlipAnimator.swift in Sources */,
 				AE6B01791C2A444900950BB2 /* ViewControllerDesignable.swift in Sources */,
 				AE6B01891C2A445C00950BB2 /* DismissSegue.swift in Sources */,
 				E222CDC81CC400FD00684CA0 /* PresentPortalSegue.swift in Sources */,
