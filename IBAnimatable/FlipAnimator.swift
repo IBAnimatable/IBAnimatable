@@ -74,7 +74,7 @@ extension FlipAnimator: UIViewControllerAnimatedTransitioning {
     toView.frame = fromView.frame
     
     let flipViews = createSnapshots(toView: toView, fromView: fromView, containerView: containerView)
-    animateFoldTransition(flipViews.0, flippedSectionOfToView: flipViews.1) {
+    animateFlipTransition(flipViews.0, flippedSectionOfToView: flipViews.1) {
       if transitionContext.transitionWasCancelled() {
         self.removeOtherViews(fromView)
       } else {
@@ -96,7 +96,7 @@ private extension FlipAnimator {
     var flippedSectionOfToView = toViewSnapshots[reverse ? 0 : 1]
 
     let fromViewSnapshots = createSnapshot(fromView: fromView, afterUpdates: false)
-    var flippedSectionOfFromView = fromViewSnapshots[self.reverse ? 1 : 0]
+    var flippedSectionOfFromView = fromViewSnapshots[reverse ? 1 : 0]
 
     flippedSectionOfFromView = addShadow(toView: flippedSectionOfFromView, reverse: !reverse)
     let flippedSectionOfFromViewShadow = flippedSectionOfFromView.subviews[1]
@@ -187,7 +187,7 @@ private extension FlipAnimator {
 
 private extension FlipAnimator {
   
-  func animateFoldTransition(flippedSectionOfFromView: (UIView, UIView), flippedSectionOfToView: (UIView, UIView), completion: AnimatableCompletion) {
+  func animateFlipTransition(flippedSectionOfFromView: (UIView, UIView), flippedSectionOfToView: (UIView, UIView), completion: AnimatableCompletion) {
     UIView.animateKeyframesWithDuration(transitionDuration, delay: 0, options: .LayoutSubviews, animations: {
       UIView.addKeyframeWithRelativeStartTime(0.0, relativeDuration: 0.5, animations: { 
         flippedSectionOfFromView.0.layer.transform = self.rotate(self.reverse ? -M_PI_2 : M_PI_2)
