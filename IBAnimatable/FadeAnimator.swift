@@ -15,7 +15,7 @@ public class FadeAnimator: NSObject, AnimatedTransitioning {
   // MARK: - private
   private var fadeType: TransitionFadeType
   
-  init(fadeType: TransitionFadeType, transitionDuration: Duration) {
+  public init(fadeType: TransitionFadeType, transitionDuration: Duration) {
     self.fadeType = fadeType
     self.transitionDuration = transitionDuration
     

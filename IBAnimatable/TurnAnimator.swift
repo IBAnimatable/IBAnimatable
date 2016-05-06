@@ -20,7 +20,7 @@ public class TurnAnimator: NSObject, AnimatedTransitioning {
   private var reverse: Bool = false
   
   // MARK: - Life cycle
-  init(fromDirection: TransitionFromDirection, transitionDuration: Duration) {
+  public init(fromDirection: TransitionFromDirection, transitionDuration: Duration) {
     self.fromDirection = fromDirection
     self.transitionDuration = transitionDuration
     

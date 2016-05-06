@@ -19,7 +19,7 @@ public class NatGeoAnimator: NSObject, AnimatedTransitioning {
   
   // MARK: - Life cycle
   
-  init(fromDirection: TransitionFromDirection, transitionDuration: Duration) {
+  public init(fromDirection: TransitionFromDirection, transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
     self.fromDirection = fromDirection
     
