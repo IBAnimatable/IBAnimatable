@@ -74,7 +74,7 @@ public class Presenter: NSObject {
 
 extension Presenter: UIViewControllerTransitioningDelegate {
   // MARK: - animation controller
-  public func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+  public func animationControllerForPresentedController(presented: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     animator?.transitionDuration = transitionDuration
     interactiveAnimator?.connectGestureRecognizer(presented)
     return animator
