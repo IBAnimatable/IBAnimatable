@@ -20,7 +20,7 @@ public class ExplodeAnimator: NSObject, AnimatedTransitioning {
   private var minAngle: CGFloat = -10.0
   private var maxAngle: CGFloat = 10.0
   
-  init(params: [String], transitionDuration: Duration) {
+  public init(params: [String], transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
     self.transitionAnimationType = .Explode(params: params)
     self.reverseAnimationType = .Explode(params: params)

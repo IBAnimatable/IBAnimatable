@@ -17,7 +17,7 @@ public class PortalAnimator: NSObject, AnimatedTransitioning {
   private var fromDirection: TransitionFromDirection
   private var zoomScale: CGFloat = 0.8
   
-  init(fromDirection: TransitionFromDirection, params: [String], transitionDuration: Duration) {
+  public init(fromDirection: TransitionFromDirection, params: [String], transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
     self.fromDirection = fromDirection
     

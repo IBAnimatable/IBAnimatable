@@ -21,7 +21,7 @@ public class FlipAnimator: NSObject, AnimatedTransitioning {
   private var horizontal: Bool = false
   
   // MARK: - Life cycle
-  init(fromDirection: TransitionFromDirection, transitionDuration: Duration) {
+  public init(fromDirection: TransitionFromDirection, transitionDuration: Duration) {
     self.fromDirection = fromDirection
     self.transitionDuration = transitionDuration
     

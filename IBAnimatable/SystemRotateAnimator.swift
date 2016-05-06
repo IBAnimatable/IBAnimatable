@@ -15,7 +15,7 @@ public class SystemRotateAnimator: NSObject, AnimatedTransitioning {
   // MARK: - private
   private var degree: TransitionRotateDegree
   
-  init(withDegree degree: TransitionRotateDegree, transitionDuration: Duration) {
+  public init(withDegree degree: TransitionRotateDegree, transitionDuration: Duration) {
     self.degree = degree
     self.transitionDuration = transitionDuration
     

@@ -19,7 +19,7 @@ public class SystemFlipAnimator: NSObject, AnimatedTransitioning {
   private var fromDirection: TransitionFromDirection
   private var animationOption: UIViewAnimationOptions
   
-  init(fromDirection: TransitionFromDirection, transitionDuration: Duration) {
+  public init(fromDirection: TransitionFromDirection, transitionDuration: Duration) {
     self.fromDirection = fromDirection
     self.transitionDuration = transitionDuration
     

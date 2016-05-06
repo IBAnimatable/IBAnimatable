@@ -16,7 +16,7 @@ public class CardsAnimator: NSObject, AnimatedTransitioning {
   // MARK: - private
   private var fromDirection: TransitionFromDirection
   
-  init(fromDirection: TransitionFromDirection, transitionDuration: Duration) {
+  public init(fromDirection: TransitionFromDirection, transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
     self.fromDirection = fromDirection
     

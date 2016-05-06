@@ -12,7 +12,7 @@ public class SystemSuckEffectAnimator: NSObject, AnimatedTransitioning {
   public var reverseAnimationType: TransitionAnimationType?
   public var interactiveGestureType: InteractiveGestureType?
   
-  init(transitionDuration: Duration) {
+  public init(transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
     self.transitionAnimationType = .SystemSuckEffect
     self.reverseAnimationType = .SystemSuckEffect
