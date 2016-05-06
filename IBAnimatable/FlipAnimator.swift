@@ -118,8 +118,8 @@ private extension FlipAnimator {
   func createSnapshot(fromView view: UIView, afterUpdates: Bool) -> [UIView] {
     let containerView = view.superview
 
-    var width = valuesForAxe(view.frame.size.width / 2, reverseValue: view.frame.size.width)
-    var height = valuesForAxe(view.frame.size.height, reverseValue: view.frame.size.height / 2)
+    let width = valuesForAxe(view.frame.size.width / 2, reverseValue: view.frame.size.width)
+    let height = valuesForAxe(view.frame.size.height, reverseValue: view.frame.size.height / 2)
     var snapshotRegion = CGRect(x: 0, y: 0, width: width.0, height: height.0)
     let leftHandView = view.resizableSnapshotViewFromRect(snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: UIEdgeInsetsZero)
     leftHandView.frame = snapshotRegion
