@@ -119,8 +119,7 @@ private extension TransitionAnimationType {
     } else if transitionType.hasPrefix("NatGeo") {
       return .NatGeo(direction: direction)
     } else if transitionType.hasPrefix("Turn") {
-      return .Turn(direction: direction)
-        return .Turn(direction: direction)
+      return .Turn(direction: direction)      
     } else if transitionType.hasPrefix("Cards") {
       return .Cards(direction: direction)
     } else if transitionType.hasPrefix("Flip") {

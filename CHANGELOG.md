@@ -28,6 +28,7 @@ All notable changes to this project will be documented in this file.
 - Use `weak` for the `viewController` in `InteractiveAnimator` to avoid retain cycle.
 - Fixed the right image of `SideImageDesignable` [#176](https://github.com/JakeLin/IBAnimatable/issues/176)
 - Fix a bug to support single side of border for AnimatableTextField [#179](https://github.com/JakeLin/IBAnimatable/issues/179)
+- `AnimatorFactory` and all the `***Animators` can now be used / instantiate outside of `IBAnimatable`
 
 ### [2.2](https://github.com/JakeLin/IBAnimatable/releases/tag/2.2)
 

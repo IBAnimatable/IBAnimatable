@@ -7,12 +7,12 @@ import UIKit
 /**
  Animator Factory
  */
-struct AnimatorFactory {
-  static func generateAnimator(transitionAnimationType: TransitionAnimationType) -> AnimatedTransitioning {
+public struct AnimatorFactory {
+  public static func generateAnimator(transitionAnimationType: TransitionAnimationType) -> AnimatedTransitioning {
     return generateAnimator(transitionAnimationType, transitionDuration: defaultTransitionDuration)
   }
 
-  static func generateAnimator(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration) -> AnimatedTransitioning {
+  public static func generateAnimator(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration) -> AnimatedTransitioning {
     switch transitionAnimationType {
     case .Fade:
       return FadeAnimator(fadeType: .Fade, transitionDuration: transitionDuration)
