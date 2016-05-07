@@ -43,8 +43,6 @@ public class PinchInteractiveAnimator: InteractiveAnimator {
       startScale = gestureRecognizer.scale
     }
     
-    print("startScale: \(startScale) - scale: \(gestureRecognizer.scale)")
-    
     var progress: CGFloat
     let distance: CGFloat
     switch interactiveGestureType {

@@ -83,7 +83,7 @@ private extension PortalAnimator {
     rightHandView.frame = rightSnapshotRegion
     containerView.addSubview(rightHandView)
     
-    fromView.removeFromSuperview()
+    fromView.hidden = true
 
     UIView.animateWithDuration(transitionDuration, delay: 0.0, options: .CurveEaseOut,
       animations: {
@@ -93,8 +93,8 @@ private extension PortalAnimator {
         toViewSnapshot.frame = containerView.frame
       },
       completion: { _ in
+        fromView.hidden = false
         if transitionContext.transitionWasCancelled() {
-          containerView.addSubview(fromView)
           self.removeOtherViews(fromView)
         } else {
           toView.frame = containerView.frame
@@ -129,22 +129,24 @@ private extension PortalAnimator {
     rightHandView.frame = CGRectOffset(rightHandView.frame, rightHandView.frame.width, 0)
     containerView.addSubview(rightHandView)
 
-    UIView.animateWithDuration(transitionDuration, delay: 0.0, options: .CurveEaseOut, animations: {
-      leftHandView.frame = CGRectOffset(leftHandView.frame, leftHandView.frame.size.width, 0)
-      rightHandView.frame = CGRectOffset(rightHandView.frame, -rightHandView.frame.size.width, 0)
-      let scale = CATransform3DIdentity
-      fromView.layer.transform = CATransform3DScale(scale, self.zoomScale, self.zoomScale, 1)
-    }, completion: { _ in
-      
-      if transitionContext.transitionWasCancelled() {
-        self.removeOtherViews(fromView)
-      } else {
-        self.removeOtherViews(toView)
-        toView.frame = containerView.bounds
-        fromView.layer.transform = CATransform3DIdentity
+    UIView.animateWithDuration(transitionDuration, delay: 0.0, options: .CurveEaseOut,
+      animations: {
+        leftHandView.frame = CGRectOffset(leftHandView.frame, leftHandView.frame.size.width, 0)
+        rightHandView.frame = CGRectOffset(rightHandView.frame, -rightHandView.frame.size.width, 0)
+        let scale = CATransform3DIdentity
+        fromView.layer.transform = CATransform3DScale(scale, self.zoomScale, self.zoomScale, 1)
+      },
+      completion: { _ in
+        if transitionContext.transitionWasCancelled() {
+          self.removeOtherViews(fromView)
+        } else {
+          self.removeOtherViews(toView)
+          toView.frame = containerView.bounds
+          fromView.layer.transform = CATransform3DIdentity
+        }
+        transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
       }
-      transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
-    })
+    )
   }
   
 }

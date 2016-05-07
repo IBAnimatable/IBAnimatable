@@ -68,7 +68,7 @@ public class InteractiveAnimator: UIPercentDrivenInteractiveTransition {
         cancelInteractiveTransition()
       }
     default:
-      // Something happened. cancel the transition.
+      // Something happened then cancel the transition.
       interacting = false
       cancelInteractiveTransition()
       break
