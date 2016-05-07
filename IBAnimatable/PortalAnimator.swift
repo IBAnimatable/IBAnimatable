@@ -53,10 +53,11 @@ extension PortalAnimator: UIViewControllerAnimatedTransitioning {
       return
     }
     
-    if fromDirection == .Forward {
-      executeForwardAnimation(transitionContext, containerView: containerView, fromView: fromView, toView: toView)
-    } else {
+    switch fromDirection {
+    case .Backward:
       executeBackwardAnimations(transitionContext, containerView: containerView, fromView: fromView, toView: toView)
+    default:
+      executeForwardAnimation(transitionContext, containerView: containerView, fromView: fromView, toView: toView)
     }
   }
   
