@@ -5,9 +5,9 @@
 
 import UIKit
 
-class ContainerTransition: NSObject, UIViewControllerContextTransitioning {
+public class ContainerTransition: NSObject {
   
-  typealias ContainerTransitionCompletion = () -> Void
+  public typealias ContainerTransitionCompletion = () -> Void
   
   // MARK: Properties
   
@@ -24,10 +24,10 @@ class ContainerTransition: NSObject, UIViewControllerContextTransitioning {
   
   // MARK: Life cycle
   
-  init(animationType: TransitionAnimationType,
-       container: UIView, parentViewController: UIViewController,
-       fromViewController: UIViewController?, toViewController: UIViewController,
-       completion: ContainerTransitionCompletion? = nil) {
+  public init(animationType: TransitionAnimationType,
+              container: UIView, parentViewController: UIViewController,
+              fromViewController: UIViewController?, toViewController: UIViewController,
+              completion: ContainerTransitionCompletion? = nil) {
     
     self.completion = completion
     self.animationType = animationType
@@ -55,7 +55,7 @@ class ContainerTransition: NSObject, UIViewControllerContextTransitioning {
              UITransitionContextToViewKey: toViewController.view]
   }
   
-  func animate() {
+  public func animate() {
     guard let unwrappedAnimationType = animationType else {
       return
     }
@@ -68,25 +68,25 @@ class ContainerTransition: NSObject, UIViewControllerContextTransitioning {
 
 // MARK: - UIViewControllerContextTransitioning
 
-extension ContainerTransition {
+extension ContainerTransition: UIViewControllerContextTransitioning {
   
-  func containerView() -> UIView? {
+  public func containerView() -> UIView? {
     return container
   }
   
-  func viewControllerForKey(key: String) -> UIViewController? {
+  public func viewControllerForKey(key: String) -> UIViewController? {
     return viewControllers?[key]
   }
   
-  func viewForKey(key: String) -> UIView? {
+  public func viewForKey(key: String) -> UIView? {
     return views?[key]
   }
   
-  func transitionWasCancelled() -> Bool {
+  public func transitionWasCancelled() -> Bool {
     return false
   }
   
-  func completeTransition(didComplete: Bool) {
+  public func completeTransition(didComplete: Bool) {
     viewControllers?[UITransitionContextFromViewControllerKey]?.view.removeFromSuperview()
     viewControllers?[UITransitionContextFromViewControllerKey]?.removeFromParentViewController()
     viewControllers?[UITransitionContextToViewControllerKey]?.didMoveToParentViewController(parentViewController)
@@ -97,14 +97,14 @@ extension ContainerTransition {
   
   // MARK: Mandatory protocol
   
-  func initialFrameForViewController(vc: UIViewController) -> CGRect { return CGRect.zero }
-  func finalFrameForViewController(vc: UIViewController) -> CGRect { return CGRect.zero}
-  func isAnimated() -> Bool { return false }
-  func isInteractive() -> Bool { return false }
-  func presentationStyle() -> UIModalPresentationStyle { return .None }
-  func targetTransform() -> CGAffineTransform { return CGAffineTransformIdentity }
-  func updateInteractiveTransition(percentComplete: CGFloat) {}
-  func finishInteractiveTransition() {}
-  func cancelInteractiveTransition() {}
+  public func initialFrameForViewController(vc: UIViewController) -> CGRect { return CGRect.zero }
+  public func finalFrameForViewController(vc: UIViewController) -> CGRect { return CGRect.zero}
+  public func isAnimated() -> Bool { return false }
+  public func isInteractive() -> Bool { return false }
+  public func presentationStyle() -> UIModalPresentationStyle { return .None }
+  public func targetTransform() -> CGAffineTransform { return CGAffineTransformIdentity }
+  public func updateInteractiveTransition(percentComplete: CGFloat) {}
+  public func finishInteractiveTransition() {}
+  public func cancelInteractiveTransition() {}
   
 }
