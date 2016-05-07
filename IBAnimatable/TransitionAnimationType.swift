@@ -30,11 +30,11 @@ public enum TransitionAnimationType {
   case SystemCameraIris(hollowState: TransitionHollowState)
   case SystemRotate(degree: TransitionRotateDegree)
     
-  var stringValue: String {
+  public var stringValue: String {
     return String(self)
   }
 
-  static func fromString(transitionType: String) -> TransitionAnimationType? {
+  public static func fromString(transitionType: String) -> TransitionAnimationType? {
     if transitionType.hasPrefix("SystemRippleEffect") {
       return .SystemRippleEffect
     } else if transitionType.hasPrefix("SystemSuckEffect") {

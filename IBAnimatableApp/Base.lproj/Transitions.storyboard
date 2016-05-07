@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tFh-B7-Fcy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tFh-B7-Fcy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -12,7 +12,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="NP4-Ex-cLZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="transitionCell" textLabel="mDV-Ii-W8m" style="IBUITableViewCellStyleDefault" id="gTl-GY-SNY">
                                 <rect key="frame" x="0.0" y="113.5" width="375" height="44"/>
@@ -30,9 +30,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="6OX-wo-iCM" kind="show" id="JfO-bv-zah"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -53,11 +50,66 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="6FH-YS-0XK" kind="show" identifier="ContainerTransitionDemo" id="dFq-cj-e7N"/>
+                        <segue destination="6OX-wo-iCM" kind="show" identifier="TransitionDemo" id="NPn-W0-B39"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ShH-Bu-pJr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Zt3-2n-Jal" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3205.5" y="-281.5"/>
+        </scene>
+        <!--Container Transition View Controller-->
+        <scene sceneID="vbg-7z-IGm">
+            <objects>
+                <viewController id="6FH-YS-0XK" customClass="ContainerTransitionViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XGv-O1-ajl"/>
+                        <viewControllerLayoutGuide type="bottom" id="5gn-r1-haV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DO7-iz-lhW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="grZ-Yd-hek">
+                                <rect key="frame" x="0.0" y="574" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem systemItem="favorites" id="UDi-aS-ctJ"/>
+                                    <tabBarItem tag="1" systemItem="recents" id="OIa-lR-VVM"/>
+                                    <tabBarItem tag="2" systemItem="bookmarks" id="O9c-6e-mnI"/>
+                                    <tabBarItem tag="3" systemItem="more" id="72s-Ju-a6i"/>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="6FH-YS-0XK" id="vhG-sd-ok2"/>
+                                </connections>
+                            </tabBar>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Owa-pq-ybG">
+                                <rect key="frame" x="0.0" y="64" width="375" height="510"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="grZ-Yd-hek" secondAttribute="trailing" id="IDK-Y6-c5M"/>
+                            <constraint firstItem="grZ-Yd-hek" firstAttribute="leading" secondItem="DO7-iz-lhW" secondAttribute="leading" id="Ksd-Yv-yuH"/>
+                            <constraint firstItem="5gn-r1-haV" firstAttribute="top" secondItem="grZ-Yd-hek" secondAttribute="bottom" id="gT0-le-26s"/>
+                            <constraint firstAttribute="trailing" secondItem="Owa-pq-ybG" secondAttribute="trailing" id="lv1-0C-7RX"/>
+                            <constraint firstItem="Owa-pq-ybG" firstAttribute="top" secondItem="XGv-O1-ajl" secondAttribute="bottom" id="nCB-N4-Yfs"/>
+                            <constraint firstItem="Owa-pq-ybG" firstAttribute="leading" secondItem="DO7-iz-lhW" secondAttribute="leading" id="rWe-eW-kVp"/>
+                            <constraint firstItem="grZ-Yd-hek" firstAttribute="top" secondItem="Owa-pq-ybG" secondAttribute="bottom" id="zIN-35-6dy"/>
+                        </constraints>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="containerView" destination="Owa-pq-ybG" id="tda-6t-S0N"/>
+                        <outlet property="tabBar" destination="grZ-Yd-hek" id="8P9-hQ-yGH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zML-id-2Cn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3205.5" y="521.5"/>
         </scene>
         <!--Transition View Controller-->
         <scene sceneID="j4X-Oe-hEs">
