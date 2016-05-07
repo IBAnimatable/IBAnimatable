@@ -27,14 +27,14 @@ public class PortalAnimator: NSObject, AnimatedTransitioning {
     }
     
     switch fromDirection {
-    case .Backward:
-      self.transitionAnimationType = .Portal(direction: .Backward, params: params)
-      self.reverseAnimationType = .Portal(direction: .Forward, params: params)
-      self.interactiveGestureType = .Pinch(direction: .Open)
-    default:
+    case .Forward:
       self.transitionAnimationType = .Portal(direction: .Forward, params: params)
       self.reverseAnimationType = .Portal(direction: .Backward, params: params)
       self.interactiveGestureType = .Pinch(direction: .Close)
+    default:
+      self.transitionAnimationType = .Portal(direction: .Backward, params: params)
+      self.reverseAnimationType = .Portal(direction: .Forward, params: params)
+      self.interactiveGestureType = .Pinch(direction: .Open)
     }
 
     super.init()
@@ -54,10 +54,10 @@ extension PortalAnimator: UIViewControllerAnimatedTransitioning {
     }
     
     switch fromDirection {
-    case .Backward:
-      executeBackwardAnimations(transitionContext, containerView: containerView, fromView: fromView, toView: toView)
-    default:
+    case .Forward:
       executeForwardAnimation(transitionContext, containerView: containerView, fromView: fromView, toView: toView)
+    default:
+      executeBackwardAnimation(transitionContext, containerView: containerView, fromView: fromView, toView: toView)
     }
   }
   
@@ -112,7 +112,7 @@ private extension PortalAnimator {
 
 private extension PortalAnimator {
   
-  func executeBackwardAnimations(transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
+  func executeBackwardAnimation(transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
     containerView.addSubview(fromView)
     toView.frame = CGRectOffset(toView.frame, toView.frame.width, 0)
     containerView.addSubview(toView)
