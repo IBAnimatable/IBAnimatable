@@ -102,6 +102,7 @@
 		E222CDC81CC400FD00684CA0 /* PresentPortalSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E222CDC71CC400FD00684CA0 /* PresentPortalSegue.swift */; };
 		E222CDCA1CC4010800684CA0 /* PresentPortalWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E222CDC91CC4010800684CA0 /* PresentPortalWithDismissInteractionSegue.swift */; };
 		E2472EA51C6F97F800A20E27 /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2472EA31C6F97F800A20E27 /* ColorType.swift */; };
+		E24848AC1CDF65F7003DB9C2 /* SlideAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24848AB1CDF65F7003DB9C2 /* SlideAnimator.swift */; };
 		E25EC6E71CDE034300743DB8 /* ContainerTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25EC6E61CDE034300743DB8 /* ContainerTransitionViewController.swift */; };
 		E26B3EDA1CCD4C1D00BFD0AB /* NatGeoAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B3ED91CCD4C1D00BFD0AB /* NatGeoAnimator.swift */; };
 		E26B3EDC1CCD579200BFD0AB /* PresentNatGeoSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B3EDB1CCD579200BFD0AB /* PresentNatGeoSegue.swift */; };
@@ -242,6 +243,7 @@
 		E23D08B71CA9336500440E7C /* SystemPageAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPageAnimator.swift; sourceTree = "<group>"; };
 		E2472EA31C6F97F800A20E27 /* ColorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorType.swift; sourceTree = "<group>"; };
 		E2472EA61C6F980C00A20E27 /* FlatColorsTypeScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlatColorsTypeScript.swift; path = Scripts/FlatColorsTypeScript.swift; sourceTree = SOURCE_ROOT; };
+		E24848AB1CDF65F7003DB9C2 /* SlideAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideAnimator.swift; sourceTree = "<group>"; };
 		E25EC6E61CDE034300743DB8 /* ContainerTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerTransitionViewController.swift; sourceTree = "<group>"; };
 		E26B3ED91CCD4C1D00BFD0AB /* NatGeoAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NatGeoAnimator.swift; sourceTree = "<group>"; };
 		E26B3EDB1CCD579200BFD0AB /* PresentNatGeoSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentNatGeoSegue.swift; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 				E299DF531CD5F8C300EC30D4 /* TurnAnimator.swift */,
 				E299DF591CD6025200EC30D4 /* CardsAnimator.swift */,
 				E2F45B561CDB845F001D2E37 /* FlipAnimator.swift */,
+				E24848AB1CDF65F7003DB9C2 /* SlideAnimator.swift */,
 			);
 			name = "transition animator";
 			sourceTree = "<group>";
@@ -779,6 +782,7 @@
 				E222CDC81CC400FD00684CA0 /* PresentPortalSegue.swift in Sources */,
 				E2192F5D1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift in Sources */,
 				AE6B01881C2A445800950BB2 /* UIViewControllerExtension.swift in Sources */,
+				E24848AC1CDF65F7003DB9C2 /* SlideAnimator.swift in Sources */,
 				AE6B01771C2A444900950BB2 /* TintDesignable.swift in Sources */,
 				AE0635FC1C9837E9003F9815 /* PresentFadeOutWithDismissInteractionSegue.swift in Sources */,
 				AE154B8F1C7D89CB0093C05B /* Presenter.swift in Sources */,

@@ -38,6 +38,8 @@ public struct AnimatorFactory {
       return CardsAnimator(fromDirection: direction, transitionDuration: transitionDuration)
     case let .Flip(direction):
       return FlipAnimator(fromDirection: direction, transitionDuration: transitionDuration)
+    case let .Slide(direction, params):
+      return SlideAnimator(fromDirection: direction, params: params, transitionDuration: transitionDuration)
     case let .SystemCube(direction):
       return SystemCubeAnimator(fromDirection: direction, transitionDuration: transitionDuration)
     case let .SystemFlip(direction):
