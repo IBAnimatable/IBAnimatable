@@ -1,4 +1,3 @@
-
 //
 //  Created by Tom Baranes on 05/05/16.
 //  Copyright © 2016 Jake Lin. All rights reserved.
@@ -12,5 +11,3 @@ public class PresentFlipWithDismissInteractionSegue: UIStoryboardSegue {
     sourceViewController.presentViewController(destinationViewController, animated: true, completion: nil)
   }
 }
-
-

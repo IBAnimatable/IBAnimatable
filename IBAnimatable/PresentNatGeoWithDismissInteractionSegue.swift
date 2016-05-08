@@ -11,4 +11,3 @@ public class PresentNatGeoWithDismissInteractionSegue: UIStoryboardSegue {
     sourceViewController.presentViewController(destinationViewController, animated: true, completion: nil)
   }
 }
-

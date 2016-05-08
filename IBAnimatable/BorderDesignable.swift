@@ -35,7 +35,7 @@ struct BorderSides: OptionSetType {
   
   static let AllSides: BorderSides = [.Top, .Right, .Bottom, .Left]
   
-  init(rawValue:Int) {
+  init(rawValue: Int) {
     self.rawValue = rawValue
   }
   

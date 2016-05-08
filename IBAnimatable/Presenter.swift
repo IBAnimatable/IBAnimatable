@@ -65,8 +65,7 @@ public class Presenter: NSObject {
       default:
         interactiveAnimator = InteractiveAnimatorFactory.generateInteractiveAnimator(interactiveGestureType, transitionType: .PresentationTransition(.Dismissal))
       }
-    }
-    else {
+    } else {
       interactiveAnimator = nil
     }
   }

@@ -1,0 +1,9 @@
+disabled_rules:
+  - trailing_whitespace
+  - todo
+  - variable_name
+  - line_length
+  - file_length
+  - function_body_length
+  - cyclomatic_complexity
+  - type_name

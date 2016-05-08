@@ -47,8 +47,7 @@ private extension InteractiveGestureType {
     
     if interactiveGestureType.hasPrefix("Pan") {
       return .Pan(direction: direction)
-    }
-    else if interactiveGestureType.hasPrefix("ScreenEdgePan") {
+    } else if interactiveGestureType.hasPrefix("ScreenEdgePan") {
       return .ScreenEdgePan(direction: direction)
     }
     return nil

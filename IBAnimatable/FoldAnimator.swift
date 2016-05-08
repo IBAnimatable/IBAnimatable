@@ -81,7 +81,7 @@ extension FoldAnimator: UIViewControllerAnimatedTransitioning {
       return
     }
     
-    toView.frame = CGRectOffset(toView.frame, toView.frame.size.width, 0)
+    toView.frame = toView.frame.offsetBy(dx: toView.frame.size.width, dy: 0)
     containerView.addSubview(toView)
     
     transform.m34 = -0.005
@@ -95,8 +95,7 @@ extension FoldAnimator: UIViewControllerAnimatedTransitioning {
       if !transitionContext.transitionWasCancelled() {
         toView.frame = containerView.bounds
         fromView.frame = containerView.bounds
-      }
-      else {
+      } else {
         fromView.frame = containerView.bounds
       }
       
@@ -130,14 +129,14 @@ private extension FoldAnimator {
 
       let leftToViewFold = createSnapshot(fromView: toView, afterUpdates: true, offset: offset, left: true)
       axesValues = valuesForAxe(self.reverse ? width : 0.0, reverseValue: height / 2)
-      leftToViewFold.layer.position = CGPointMake(axesValues.0, axesValues.1)
+      leftToViewFold.layer.position = CGPoint(x: axesValues.0, y: axesValues.1)
       axesValues = valuesForAxe(0.0, reverseValue: 1.0)
       leftToViewFold.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI_2), axesValues.0, axesValues.1, 0.0)
       toViewFolds.append(leftToViewFold)
 
       let rightToViewFold = createSnapshot(fromView: toView, afterUpdates: true, offset: offset + foldSize, left: false)
       axesValues = valuesForAxe(self.reverse ? width : 0.0, reverseValue: height / 2)
-      rightToViewFold.layer.position = CGPointMake(axesValues.0, axesValues.1)
+      rightToViewFold.layer.position = CGPoint(x: axesValues.0, y: axesValues.1)
       axesValues = valuesForAxe(0.0, reverseValue: 1.0)
       rightToViewFold.layer.transform = CATransform3DMakeRotation(CGFloat(-M_PI_2), axesValues.0, axesValues.1, 0.0)
       toViewFolds.append(rightToViewFold)
@@ -200,7 +199,7 @@ private extension FoldAnimator {
 private extension FoldAnimator {
 
   func animateFoldTransition(fromView view: UIView, toViewFolds: [UIView], fromViewFolds: [UIView], completion: AnimatableCompletion) {
-    view.frame = CGRectOffset(view.frame, view.frame.width, 0)
+    view.frame = view.frame.offsetBy(dx: view.frame.width, dy: 0)
     UIView.animateWithDuration(transitionDuration, animations: {
       for i in 0..<self.folds {
         let offset = CGFloat(i) * self.foldSize * 2

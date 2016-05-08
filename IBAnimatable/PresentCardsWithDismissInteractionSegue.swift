@@ -11,4 +11,3 @@ public class PresentCardsWithDismissInteractionSegue: UIStoryboardSegue {
     sourceViewController.presentViewController(destinationViewController, animated: true, completion: nil)
   }
 }
-
