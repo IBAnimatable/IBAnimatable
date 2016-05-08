@@ -90,9 +90,10 @@ private extension SlideAnimator {
         fromView.alpha = 0
         toView.alpha = 1
       }
-    }) { _ in
-        completion()
-    }
+    },
+    completion: { _ in
+      completion()
+    })
   }
   
 }
