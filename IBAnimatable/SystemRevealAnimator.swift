@@ -23,19 +23,19 @@ public class SystemRevealAnimator: NSObject, AnimatedTransitioning {
     case .Right:
       self.transitionAnimationType = .SystemReveal(direction: .Right)
       self.reverseAnimationType = .SystemReveal(direction: .Left)
-      self.interactiveGestureType = .Pan(direction: .Left)
+      self.interactiveGestureType = .Pan(fromDirection: .Left)
     case .Top:
       self.transitionAnimationType = .SystemReveal(direction: .Top)
       self.reverseAnimationType = .SystemReveal(direction: .Bottom)
-      self.interactiveGestureType = .Pan(direction: .Bottom)
+      self.interactiveGestureType = .Pan(fromDirection: .Bottom)
     case .Bottom:
       self.transitionAnimationType = .SystemReveal(direction: .Bottom)
       self.reverseAnimationType = .SystemReveal(direction: .Top)
-      self.interactiveGestureType = .Pan(direction: .Top)
+      self.interactiveGestureType = .Pan(fromDirection: .Top)
     default:
       self.transitionAnimationType = .SystemPush(direction: .Left)
       self.reverseAnimationType = .SystemPush(direction: .Right)
-      self.interactiveGestureType = .Pan(direction: .Right)
+      self.interactiveGestureType = .Pan(fromDirection: .Right)
     }
     
     super.init()
