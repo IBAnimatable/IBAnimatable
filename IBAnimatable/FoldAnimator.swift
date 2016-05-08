@@ -33,6 +33,7 @@ public class FoldAnimator: NSObject, AnimatedTransitioning {
   public init(fromDirection: TransitionFromDirection, params: [String], transitionDuration: Duration) {
     self.fromDirection = fromDirection
     self.transitionDuration = transitionDuration
+    horizontal = fromDirection.isHorizontal
     
     if let firstParam = params.first,
            unwrappedFolds = Int(firstParam) {
@@ -45,25 +46,21 @@ public class FoldAnimator: NSObject, AnimatedTransitioning {
       self.reverseAnimationType = .Fold(direction: .Left, params: params)
       self.interactiveGestureType = .Pan(direction: .Left)
       reverse = true
-      horizontal = true
     case .Top:
       self.transitionAnimationType = .Fold(direction: .Top, params: params)
       self.reverseAnimationType = .Fold(direction: .Bottom, params: params)
       self.interactiveGestureType = .Pan(direction: .Bottom)
       reverse = false
-      horizontal = false
     case .Bottom:
       self.transitionAnimationType = .Fold(direction: .Bottom, params: params)
       self.reverseAnimationType = .Fold(direction: .Top, params: params)
       self.interactiveGestureType = .Pan(direction: .Top)
       reverse = true
-      horizontal = false
     default:
       self.transitionAnimationType = .Fold(direction: .Left, params: params)
       self.reverseAnimationType = .Fold(direction: .Right, params: params)
       self.interactiveGestureType = .Pan(direction: .Right)
-      reverse = false
-      horizontal = true
+      reverse = false      
     }
     super.init()
   }

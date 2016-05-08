@@ -21,33 +21,30 @@ public class SlideAnimator: NSObject, AnimatedTransitioning {
   public init(fromDirection: TransitionFromDirection, params: [String], transitionDuration: Duration) {
     self.fromDirection = fromDirection
     self.transitionDuration = transitionDuration
-    self.fade = params.contains("fade")
+    fade = params.contains("fade")
+    horizontal = fromDirection.isHorizontal
     
     switch fromDirection {
     case .Right:
       self.transitionAnimationType = .Slide(direction: .Right, params: params)
       self.reverseAnimationType = .Slide(direction: .Left, params: params)
       self.interactiveGestureType = .Pan(direction: .Left)
-      self.horizontal = true
-      self.reverse = true
+      reverse = true
     case .Top:
       self.transitionAnimationType = .Slide(direction: .Top, params: params)
       self.reverseAnimationType = .Slide(direction: .Bottom, params: params)
       self.interactiveGestureType = .Pan(direction: .Bottom)
-      self.horizontal = false
-      self.reverse = false
+      reverse = false
     case .Bottom:
       self.transitionAnimationType = .Slide(direction: .Bottom, params: params)
       self.reverseAnimationType = .Slide(direction: .Top, params: params)
       self.interactiveGestureType = .Pan(direction: .Top)
-      self.horizontal = false
-      self.reverse = true
+      reverse = true
     default:
       self.transitionAnimationType = .Slide(direction: .Left, params: params)
       self.reverseAnimationType = .Slide(direction: .Right, params: params)
       self.interactiveGestureType = .Pan(direction: .Right)
-      self.horizontal = true
-      self.reverse = false
+      reverse = false
     }
     super.init()
   }
