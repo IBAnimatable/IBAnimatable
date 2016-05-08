@@ -7,21 +7,23 @@ All notable changes to this project will be documented in this file.
 
 #### API breaking changes
 
-- Add `AnimatableCollectionViewCell`
 - Change `PanFromLeft`, `PanFromRight`, `PanFromTop`, `PanFromBottom`, `PanHorizontally` and `PanVertically` to `Pan(Left)`, `Pan(Right)`, `Pan(Top)`, `Pan(Bottom)`, `Pan(Horizontal)` and `Pan(Vertical)` for `Pan` gesture transition controller. [#125](https://github.com/JakeLin/IBAnimatable/issues/125)
 
 #### Enhancements
 
-- Add `ScreenEdgePanInteractiveAnimator` to support `PanFromRight`, `PanFromTop`, `PanFromBottom`, `PanHorizontally` and `PanVertically` to `ScreenEdgePan(Left)`, `ScreenEdgePan(Right)`, `ScreenEdgePan(Top)`, `ScreenEdgePan(Bottom)`, `ScreenEdgePan(Horizontal)` and `ScreenEdgePan(Vertical)` for `ScreenEdgePan` gesture transition controller. [125](https://github.com/JakeLin/IBAnimatable/issues/125)
+- Add `ScreenEdgePanInteractiveAnimator` to support `ScreenEdgePan(Left)`, `ScreenEdgePan(Right)`, `ScreenEdgePan(Top)`, `ScreenEdgePan(Bottom)`, `ScreenEdgePan(Horizontal)` and `ScreenEdgePan(Vertical)` for `ScreenEdgePan` gesture transition controller. [#125](https://github.com/JakeLin/IBAnimatable/issues/125)
 - Support multiple sides for border [#168](https://github.com/JakeLin/IBAnimatable/pull/168)
 - Add `ExplodeAnimator` to support Explode transition animation. It supports parameters `Explode(xFactor, minAngle, maxAngle)`, if no specified, the default values are `Explode(10, -10, 10)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
 - Add `FoldAnimator` to support Fold transition animation. It supports parameters `Explode(direction, nbFolds)`, if no specified, the default values are `Fold(Left, 2)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
-- Add `PortalAnimator` to support Portal transition animation. It supports parameters `Portal(direction, zoomScale)`, if no specified, the default values are `Portal(Forward, 0.8)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
+- Add `PortalAnimator` to support Portal transition animation. It supports parameters `Portal(direction, zoomScale)`, if no specified, the default values are `Portal(Backward, 0.8)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
 - Add `NatGeoAnimator` to support NatGeo transition animation. It supports only a direction `NatGeo(direction)`, if no specified, the default values are `NatGeo(Left)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
 - Add `Turn` to support Turn transition animation. It supports only a direction `Turn(direction)`, if no specified, the default values are `Turn(Left)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
 - Add `CardsAnimator` to support Cards transition animation. It supports parameters `Cards(direction)`, if no specified, the default values are `Cards(Forward)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
 - Add `FlipAnimator` to support Flip transition animation. It supports parameters `Flip(direction)`, if no specified, the default values are `Flip(Left)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
 - Add `ContainerTransition` to manage transition animations between two UIViewController in a container
+- Add `AnimatableCollectionViewCell` [#167](https://github.com/JakeLin/IBAnimatable/pull/167)
+- Add `PinchInteractiveAnimator` to support `Pinch(Close)`, `Pinch(Open)` for `Pinch` gesture transition controller. [#125](https://github.com/JakeLin/IBAnimatable/issues/125)
+
 
 #### Bugfixes
 

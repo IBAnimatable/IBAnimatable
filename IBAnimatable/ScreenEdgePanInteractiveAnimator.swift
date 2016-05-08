@@ -24,6 +24,8 @@ public class ScreenEdgePanInteractiveAnimator: InteractiveAnimator {
         gestureRecognizer.edges = .Bottom
       case .Vertical:
         gestureRecognizer.edges = [.Top, .Bottom]
+      default:
+        break
       }
     default:
       break
@@ -69,6 +71,8 @@ public class ScreenEdgePanInteractiveAnimator: InteractiveAnimator {
         distance = superview.frame.height
         progress = -translation.y / distance
         speed = -velocity.y
+      default:
+        return (0, false)
       }
     default:
       return (0, false)

@@ -45,6 +45,10 @@ public class InteractiveAnimator: UIPercentDrivenInteractiveTransition {
     
     switch gestureRecognizer.state {
     case .Began:
+      guard shouldBeginProgress(gestureRecognizer) else {
+        return
+      }
+      
       interacting = true
       switch transitionType {
       case .NavigationTransition(.Pop):
@@ -64,7 +68,7 @@ public class InteractiveAnimator: UIPercentDrivenInteractiveTransition {
         cancelInteractiveTransition()
       }
     default:
-      // Something happened. cancel the transition.
+      // Something happened then cancel the transition.
       interacting = false
       cancelInteractiveTransition()
       break
@@ -74,6 +78,11 @@ public class InteractiveAnimator: UIPercentDrivenInteractiveTransition {
   // Because Swift doesn't support pure virtual method, need to throw error
   func createGestureRecognizer() -> UIGestureRecognizer {
     preconditionFailure("This method must be overridden")
+  }
+  
+  func shouldBeginProgress(gestureRecognizer: UIGestureRecognizer) -> Bool {
+    // return true by default
+    return true
   }
   
   func calculateProgress(gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {

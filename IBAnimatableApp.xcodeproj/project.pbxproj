@@ -86,6 +86,7 @@
 		AED5F6921C83E9B60052E57B /* PresentFadeInSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED5F6901C83E9B60052E57B /* PresentFadeInSegue.swift */; };
 		AED5F6951C83E9C20052E57B /* PresentFadeOutSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED5F6931C83E9C20052E57B /* PresentFadeOutSegue.swift */; };
 		AEDD8A321C7EDAE30033175A /* SystemFlipAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDD8A301C7EDAE30033175A /* SystemFlipAnimator.swift */; };
+		AEDE6E6B1CCECE8A000DECF0 /* PinchInteractiveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDE6E6A1CCECE8A000DECF0 /* PinchInteractiveAnimator.swift */; };
 		AEE552A81C815AC5009CF623 /* FadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE552A61C815AC5009CF623 /* FadeAnimator.swift */; };
 		AEE552AB1C816233009CF623 /* TransitionFadeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE552A91C816233009CF623 /* TransitionFadeType.swift */; };
 		AEE552AE1C82D1E1009CF623 /* PresentFadeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE552AC1C82D1E1009CF623 /* PresentFadeSegue.swift */; };
@@ -214,6 +215,7 @@
 		AED5F6931C83E9C20052E57B /* PresentFadeOutSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentFadeOutSegue.swift; sourceTree = "<group>"; };
 		AED97B851C1710A900D2B0B8 /* BorderSide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderSide.swift; sourceTree = "<group>"; };
 		AEDD8A301C7EDAE30033175A /* SystemFlipAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemFlipAnimator.swift; sourceTree = "<group>"; };
+		AEDE6E6A1CCECE8A000DECF0 /* PinchInteractiveAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinchInteractiveAnimator.swift; sourceTree = "<group>"; };
 		AEE552A61C815AC5009CF623 /* FadeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeAnimator.swift; sourceTree = "<group>"; };
 		AEE552A91C816233009CF623 /* TransitionFadeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionFadeType.swift; sourceTree = "<group>"; };
 		AEE552AC1C82D1E1009CF623 /* PresentFadeSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentFadeSegue.swift; sourceTree = "<group>"; };
@@ -392,6 +394,7 @@
 				AEC23FC11CB3DE0900E42D99 /* InteractiveAnimator.swift */,
 				AE4C53F11C883F80007C9EFA /* PanInteractiveAnimator.swift */,
 				AEC23FBF1CB3DC4800E42D99 /* ScreenEdgePanInteractiveAnimator.swift */,
+				AEDE6E6A1CCECE8A000DECF0 /* PinchInteractiveAnimator.swift */,
 			);
 			name = "interactive animator";
 			sourceTree = "<group>";
@@ -705,6 +708,7 @@
 				AED5F6921C83E9B60052E57B /* PresentFadeInSegue.swift in Sources */,
 				AE6B01721C2A444900950BB2 /* RotationDesignable.swift in Sources */,
 				E20078A11CB8FB94002B2C16 /* FoldAnimator.swift in Sources */,
+				AEDE6E6B1CCECE8A000DECF0 /* PinchInteractiveAnimator.swift in Sources */,
 				E20078A31CB912E1002B2C16 /* PresentFoldSegue.swift in Sources */,
 				AEE552A81C815AC5009CF623 /* FadeAnimator.swift in Sources */,
 				AE6B017F1C2A445100950BB2 /* AnimatableLabel.swift in Sources */,
