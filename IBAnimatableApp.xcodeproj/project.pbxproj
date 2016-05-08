@@ -118,6 +118,8 @@
 		E299DF5A1CD6025200EC30D4 /* CardsAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E299DF591CD6025200EC30D4 /* CardsAnimator.swift */; };
 		E299DF5C1CD6067C00EC30D4 /* PresentCardsSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E299DF5B1CD6067C00EC30D4 /* PresentCardsSegue.swift */; };
 		E299DF5E1CD606B500EC30D4 /* PresentCardsWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E299DF5D1CD606B500EC30D4 /* PresentCardsWithDismissInteractionSegue.swift */; };
+		E29F350E1CDF6C4900312FD4 /* PresentSlideSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F350D1CDF6C4900312FD4 /* PresentSlideSegue.swift */; };
+		E29F35101CDF6C5400312FD4 /* PresentSlideWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F350F1CDF6C5400312FD4 /* PresentSlideWithDismissInteractionSegue.swift */; };
 		E2A062B31CB19BB900C54B40 /* ExplodeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A062B21CB19BB900C54B40 /* ExplodeAnimator.swift */; };
 		E2A062B51CB1A60E00C54B40 /* PresentExplodeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A062B41CB1A60E00C54B40 /* PresentExplodeSegue.swift */; };
 		E2A062B71CB1A65600C54B40 /* PresentExplodeWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A062B61CB1A65600C54B40 /* PresentExplodeWithDismissInteractionSegue.swift */; };
@@ -259,6 +261,8 @@
 		E299DF591CD6025200EC30D4 /* CardsAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsAnimator.swift; sourceTree = "<group>"; };
 		E299DF5B1CD6067C00EC30D4 /* PresentCardsSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentCardsSegue.swift; sourceTree = "<group>"; };
 		E299DF5D1CD606B500EC30D4 /* PresentCardsWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentCardsWithDismissInteractionSegue.swift; sourceTree = "<group>"; };
+		E29F350D1CDF6C4900312FD4 /* PresentSlideSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentSlideSegue.swift; sourceTree = "<group>"; };
+		E29F350F1CDF6C5400312FD4 /* PresentSlideWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentSlideWithDismissInteractionSegue.swift; sourceTree = "<group>"; };
 		E2A062B21CB19BB900C54B40 /* ExplodeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExplodeAnimator.swift; sourceTree = "<group>"; };
 		E2A062B41CB1A60E00C54B40 /* PresentExplodeSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentExplodeSegue.swift; sourceTree = "<group>"; };
 		E2A062B61CB1A65600C54B40 /* PresentExplodeWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentExplodeWithDismissInteractionSegue.swift; sourceTree = "<group>"; };
@@ -324,6 +328,8 @@
 				E299DF5D1CD606B500EC30D4 /* PresentCardsWithDismissInteractionSegue.swift */,
 				E2F45B581CDBAF39001D2E37 /* PresentFlipSegue.swift */,
 				E2F45B5A1CDBAF5C001D2E37 /* PresentFlipWithDismissInteractionSegue.swift */,
+				E29F350D1CDF6C4900312FD4 /* PresentSlideSegue.swift */,
+				E29F350F1CDF6C5400312FD4 /* PresentSlideWithDismissInteractionSegue.swift */,
 			);
 			name = segue;
 			sourceTree = "<group>";
@@ -748,6 +754,7 @@
 				AE6B01651C2A444000950BB2 /* GradientStartPoint.swift in Sources */,
 				AE6B017A1C2A445100950BB2 /* AnimatableView.swift in Sources */,
 				AE6B01751C2A444900950BB2 /* StatusBarDesignable.swift in Sources */,
+				E29F350E1CDF6C4900312FD4 /* PresentSlideSegue.swift in Sources */,
 				AE6B016A1C2A444900950BB2 /* CheckBoxDesignable.swift in Sources */,
 				AE154B851C7D1A740093C05B /* AnimatedTransitioning.swift in Sources */,
 				AE6B017B1C2A445100950BB2 /* AnimatableBarButtonItem.swift in Sources */,
@@ -791,6 +798,7 @@
 				AE6B01781C2A444900950BB2 /* BarButtonItemDesignable.swift in Sources */,
 				AE154B7C1C7D04A40093C05B /* TransitionAnimatable.swift in Sources */,
 				AE6B01641C2A444000950BB2 /* BorderSide.swift in Sources */,
+				E29F35101CDF6C5400312FD4 /* PresentSlideWithDismissInteractionSegue.swift in Sources */,
 				AE6B016B1C2A444900950BB2 /* CornerDesignable.swift in Sources */,
 				AE6B01631C2A444000950BB2 /* BlurEffectStyle.swift in Sources */,
 				AE6B016E1C2A444900950BB2 /* NavigationBarDesginable.swift in Sources */,
