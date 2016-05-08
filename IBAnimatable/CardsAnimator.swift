@@ -76,8 +76,8 @@ private extension CardsAnimator {
         fromView.layer.transform = t2
       }
 
-      UIView.addKeyframeWithRelativeStartTime(0.6, relativeDuration: 0.2) {
-        toView.frame = CGRectOffset(toView.frame, 0.0, -30.0)
+      UIView.addKeyframeWithRelativeStartTime(0.6, relativeDuration: 0.2) {        
+        toView.frame = toView.frame.offsetBy(dx: 0.0, dy: -30.0)
       }
       
       UIView.addKeyframeWithRelativeStartTime(0.8, relativeDuration: 0.2) {

@@ -35,7 +35,7 @@ public class PinchInteractiveAnimator: InteractiveAnimator {
   
   override func calculateProgress(gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
     guard let  gestureRecognizer = gestureRecognizer as? UIPinchGestureRecognizer,
-      superview = gestureRecognizer.view?.superview else {
+      _ = gestureRecognizer.view?.superview else {
         return (0, false)
     }
     
@@ -44,7 +44,7 @@ public class PinchInteractiveAnimator: InteractiveAnimator {
     }
     
     var progress: CGFloat
-    let distance: CGFloat
+    let _: CGFloat
     switch interactiveGestureType {
     case let .Pinch(direction):
       switch direction {

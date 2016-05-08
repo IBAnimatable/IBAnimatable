@@ -100,7 +100,7 @@ private extension FlipAnimator {
 
     flippedSectionOfFromView = addShadow(toView: flippedSectionOfFromView, reverse: !reverse)
     let flippedSectionOfFromViewShadow = flippedSectionOfFromView.subviews[1]
-    flippedSectionOfFromViewShadow.alpha = 0.0;
+    flippedSectionOfFromViewShadow.alpha = 0.0
 
     flippedSectionOfToView = addShadow(toView: flippedSectionOfToView, reverse:reverse)
     let flippedSectionOfToViewShadow = flippedSectionOfToView.subviews[1]
@@ -169,10 +169,10 @@ private extension FlipAnimator {
     view.layer.anchorPoint = anchorPoint
     if horizontal {
       let xOffset =  anchorPoint.x - 0.5
-      view.frame = CGRectOffset(view.frame, xOffset * view.frame.size.width, 0)
+      view.frame = view.frame.offsetBy(dx: xOffset * view.frame.size.width, dy: 0)
     } else {
       let yOffset =  anchorPoint.y - 0.5
-      view.frame = CGRectOffset(view.frame, 0, yOffset * view.frame.size.height)
+      view.frame = view.frame.offsetBy(dx: 0, dy: yOffset * view.frame.size.height)
     }
   }
 

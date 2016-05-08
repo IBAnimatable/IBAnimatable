@@ -49,7 +49,7 @@ public enum TransitionAnimationType {
       return pageTransitionAnimationType(transitionType)
     } else if transitionType.hasPrefix("SystemRotate") {
       return rotateTransitionAnimationType(transitionType)
-    } else  {
+    } else {
       return fromStringWithDirection(transitionType)
     }
   }

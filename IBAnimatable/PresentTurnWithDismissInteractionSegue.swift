@@ -11,4 +11,3 @@ public class PresentTurnWithDismissInteractionSegue: UIStoryboardSegue {
     sourceViewController.presentViewController(destinationViewController, animated: true, completion: nil)
   }
 }
-

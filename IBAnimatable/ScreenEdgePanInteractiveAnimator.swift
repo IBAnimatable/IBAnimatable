@@ -25,7 +25,7 @@ public class ScreenEdgePanInteractiveAnimator: InteractiveAnimator {
       case .Vertical:
         gestureRecognizer.edges = [.Top, .Bottom]
       default:
-        gestureRecognizer.edges = .Left
+        break
       }
     default:
       break

@@ -83,7 +83,7 @@ private extension ExplodeAnimator {
   
   func animateSnapshotsExplode(snapshots: [UIView], completion: AnimatableCompletion) {
     UIView.animateWithDuration(transitionDuration, animations: {
-      snapshots.forEach{
+      snapshots.forEach {
         let xOffset = self.randomFloatBetween(lower: -100.0, upper: 100.0)
         let yOffset = self.randomFloatBetween(lower: -100.0, upper: 100.0)
         let angle = self.randomFloatBetween(lower: self.minAngle, upper: self.maxAngle)
@@ -97,7 +97,7 @@ private extension ExplodeAnimator {
       }
     },
     completion: { _ in
-      snapshots.forEach{ $0.removeFromSuperview() }
+      snapshots.forEach { $0.removeFromSuperview() }
       completion()
     })
   }

@@ -87,8 +87,8 @@ private extension PortalAnimator {
 
     UIView.animateWithDuration(transitionDuration, delay: 0.0, options: .CurveEaseOut,
       animations: {
-        leftHandView.frame = CGRectOffset(leftHandView.frame, -leftHandView.frame.width, 0.0)
-        rightHandView.frame = CGRectOffset(rightHandView.frame, rightHandView.frame.width, 0.0)
+        leftHandView.frame = leftHandView.frame.offsetBy(dx: -leftHandView.frame.width, dy: 0.0)
+        rightHandView.frame = rightHandView.frame.offsetBy(dx: rightHandView.frame.width, dy: 0.0)
         toViewSnapshot.center = toView.center
         toViewSnapshot.frame = containerView.frame
       },
@@ -114,25 +114,25 @@ private extension PortalAnimator {
   
   func executeBackwardAnimation(transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
     containerView.addSubview(fromView)
-    toView.frame = CGRectOffset(toView.frame, toView.frame.width, 0)
+    toView.frame = toView.frame.offsetBy(dx: toView.frame.width, dy: 0)
     containerView.addSubview(toView)
 
     let leftSnapshotRegion = CGRect(x: 0, y: 0, width: toView.frame.width / 2, height: toView.bounds.height)
     let leftHandView = toView.resizableSnapshotViewFromRect(leftSnapshotRegion, afterScreenUpdates: true, withCapInsets: UIEdgeInsetsZero)
     leftHandView.frame = leftSnapshotRegion
-    leftHandView.frame = CGRectOffset(leftHandView.frame, -leftHandView.frame.width, 0)
+    leftHandView.frame = leftHandView.frame.offsetBy(dx: -leftHandView.frame.width, dy: 0)
     containerView.addSubview(leftHandView)
 
     let rightSnapshotRegion = CGRect(x: toView.frame.width / 2, y: 0, width: toView.frame.width / 2, height: fromView.frame.height)
     let rightHandView = toView.resizableSnapshotViewFromRect(rightSnapshotRegion, afterScreenUpdates: true, withCapInsets: UIEdgeInsetsZero)
     rightHandView.frame = rightSnapshotRegion
-    rightHandView.frame = CGRectOffset(rightHandView.frame, rightHandView.frame.width, 0)
+    rightHandView.frame = rightHandView.frame.offsetBy(dx: rightHandView.frame.width, dy: 0)
     containerView.addSubview(rightHandView)
 
     UIView.animateWithDuration(transitionDuration, delay: 0.0, options: .CurveEaseOut,
       animations: {
-        leftHandView.frame = CGRectOffset(leftHandView.frame, leftHandView.frame.size.width, 0)
-        rightHandView.frame = CGRectOffset(rightHandView.frame, -rightHandView.frame.size.width, 0)
+        leftHandView.frame = leftHandView.frame.offsetBy(dx: leftHandView.frame.size.width, dy: 0)
+        rightHandView.frame = rightHandView.frame.offsetBy(dx: -rightHandView.frame.size.width, dy: 0)
         let scale = CATransform3DIdentity
         fromView.layer.transform = CATransform3DScale(scale, self.zoomScale, self.zoomScale, 1)
       },
