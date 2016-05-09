@@ -11,8 +11,8 @@ public class ContainerTransition: NSObject {
   
   // MARK: Properties
   
-  var animationType: TransitionAnimationType?
-  var transitionDuration: Duration = defaultTransitionDuration
+  public var animationType: TransitionAnimationType?
+  public var transitionDuration: Duration = defaultTransitionDuration
   
   // MARK: Private
   
@@ -62,6 +62,7 @@ public class ContainerTransition: NSObject {
     
     parentViewController?.view.userInteractionEnabled = false
     let animator = AnimatorFactory.generateAnimator(unwrappedAnimationType)
+    animator.transitionDuration = transitionDuration
     animator.animateTransition(self)
   }
 }
