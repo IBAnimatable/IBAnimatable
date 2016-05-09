@@ -10,7 +10,7 @@ public class TurnAnimator: NSObject, AnimatedTransitioning {
   public var transitionAnimationType: TransitionAnimationType
   public var transitionDuration: Duration = defaultTransitionDuration
   public var reverseAnimationType: TransitionAnimationType?
-  public var interactiveGestureType: InteractiveGestureType? = .Pan(direction: .Horizontal)
+  public var interactiveGestureType: InteractiveGestureType? = .Pan(fromDirection: .Horizontal)
   
   // MARK: - Private params
   private var fromDirection: TransitionFromDirection
@@ -28,22 +28,22 @@ public class TurnAnimator: NSObject, AnimatedTransitioning {
     case .Right:
       self.transitionAnimationType = .Turn(direction: .Right)
       self.reverseAnimationType = .Turn(direction: .Left)
-      self.interactiveGestureType = .Pan(direction: .Left)
+      self.interactiveGestureType = .Pan(fromDirection: .Left)
       reverse = true
     case .Top:
       self.transitionAnimationType = .Turn(direction: .Top)
       self.reverseAnimationType = .Turn(direction: .Bottom)
-      self.interactiveGestureType = .Pan(direction: .Bottom)
+      self.interactiveGestureType = .Pan(fromDirection: .Bottom)
       reverse = false
     case .Bottom:
       self.transitionAnimationType = .Turn(direction: .Bottom)
       self.reverseAnimationType = .Turn(direction: .Top)
-      self.interactiveGestureType = .Pan(direction: .Top)
+      self.interactiveGestureType = .Pan(fromDirection: .Top)
       reverse = true
     default:
       self.transitionAnimationType = .Turn(direction: .Left)
       self.reverseAnimationType = .Turn(direction: .Right)
-      self.interactiveGestureType = .Pan(direction: .Right)
+      self.interactiveGestureType = .Pan(fromDirection: .Right)
       reverse = false      
     }
     super.init()

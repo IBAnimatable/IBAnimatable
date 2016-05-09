@@ -10,8 +10,8 @@ import Foundation
  */
 public enum InteractiveGestureType {
   case Default          // Will use the default interactive gesture type from `AnimatedTransitioning`
-  case Pan(direction: GestureDirection)
-  case ScreenEdgePan(direction: GestureDirection)
+  case Pan(fromDirection: GestureDirection)
+  case ScreenEdgePan(fromDirection: GestureDirection)
   case Pinch(direction: GestureDirection)
   
   var stringValue: String {
@@ -48,9 +48,9 @@ private extension InteractiveGestureType {
     }
     
     if interactiveGestureType.hasPrefix("Pan") {
-      return .Pan(direction: direction)
+      return .Pan(fromDirection: direction)
     } else if interactiveGestureType.hasPrefix("ScreenEdgePan") {
-      return .ScreenEdgePan(direction: direction)
+      return .ScreenEdgePan(fromDirection: direction)
     } else if interactiveGestureType.hasPrefix("Pinch") {
       return .Pinch(direction: direction)
     }

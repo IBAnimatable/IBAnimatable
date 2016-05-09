@@ -31,4 +31,8 @@ public enum TransitionFromDirection {
       return ""
     }
   }
+  
+  var isHorizontal: Bool {
+    return self == .Left || self == .Right
+  }
 }

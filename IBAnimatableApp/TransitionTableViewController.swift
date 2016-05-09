@@ -72,6 +72,8 @@ private extension TransitionTableViewController {
     transitionAnimations.append(transitionTypeWithDirections(forName: "Cards"))
     transitionAnimationsHeaders.append("Flip")
     transitionAnimations.append(transitionTypeWithDirections(forName: "Flip"))
+    transitionAnimationsHeaders.append("Slide")
+    transitionAnimations.append(["Slide(Left, fade)", "Slide(Right)", "Slide(Top, fade)", "Slide(Bottom)"])
     transitionAnimationsHeaders.append("Others")
     transitionAnimations.append(["SystemRippleEffect", "SystemSuckEffect", "Explode(10,-10,10)"])
 
