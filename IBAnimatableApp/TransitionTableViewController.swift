@@ -40,8 +40,6 @@ class TransitionTableViewController: UITableViewController {
 private extension TransitionTableViewController {
   
   func generateTransitionTypeData() {
-    transitionAnimationsHeaders.append("ContainerTransition")
-    transitionAnimations.append(["TabBar example"])
     transitionAnimationsHeaders.append("Fade")
     transitionAnimations.append(["Fade", "FadeIn", "FadeOut"])
     transitionAnimationsHeaders.append("SystemCube")
@@ -105,15 +103,6 @@ extension TransitionTableViewController {
     let cell = tableView.dequeueReusableCellWithIdentifier("transitionCell", forIndexPath: indexPath) as UITableViewCell
     cell.textLabel?.text = transitionAnimations[indexPath.section][indexPath.row]
     return cell
-  }
- 
-  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//    tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    if indexPath.section == 0 && indexPath.row == 0 {
-      performSegueWithIdentifier("ContainerTransitionDemo", sender: self)
-    } else {
-      performSegueWithIdentifier("TransitionDemo", sender: self)
-    }
   }
   
   // MARK: - reset the group heander font color and size
