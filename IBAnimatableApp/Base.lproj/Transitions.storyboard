@@ -54,64 +54,12 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="6FH-YS-0XK" kind="show" identifier="ContainerTransitionDemo" id="dFq-cj-e7N"/>
                         <segue destination="6OX-wo-iCM" kind="show" identifier="TransitionDemo" id="NPn-W0-B39"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ShH-Bu-pJr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3205.5" y="-281.5"/>
-        </scene>
-        <!--Container Transition View Controller-->
-        <scene sceneID="vbg-7z-IGm">
-            <objects>
-                <viewController id="6FH-YS-0XK" customClass="ContainerTransitionViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="XGv-O1-ajl"/>
-                        <viewControllerLayoutGuide type="bottom" id="5gn-r1-haV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DO7-iz-lhW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="grZ-Yd-hek">
-                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <tabBarItem systemItem="favorites" id="UDi-aS-ctJ"/>
-                                    <tabBarItem tag="1" systemItem="recents" id="OIa-lR-VVM"/>
-                                    <tabBarItem tag="2" systemItem="bookmarks" id="O9c-6e-mnI"/>
-                                    <tabBarItem tag="3" systemItem="more" id="72s-Ju-a6i"/>
-                                </items>
-                                <connections>
-                                    <outlet property="delegate" destination="6FH-YS-0XK" id="vhG-sd-ok2"/>
-                                </connections>
-                            </tabBar>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Owa-pq-ybG">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
-                            </containerView>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="grZ-Yd-hek" secondAttribute="trailing" id="IDK-Y6-c5M"/>
-                            <constraint firstItem="grZ-Yd-hek" firstAttribute="leading" secondItem="DO7-iz-lhW" secondAttribute="leading" id="Ksd-Yv-yuH"/>
-                            <constraint firstItem="5gn-r1-haV" firstAttribute="top" secondItem="grZ-Yd-hek" secondAttribute="bottom" id="gT0-le-26s"/>
-                            <constraint firstAttribute="trailing" secondItem="Owa-pq-ybG" secondAttribute="trailing" id="lv1-0C-7RX"/>
-                            <constraint firstItem="Owa-pq-ybG" firstAttribute="top" secondItem="XGv-O1-ajl" secondAttribute="bottom" id="nCB-N4-Yfs"/>
-                            <constraint firstItem="Owa-pq-ybG" firstAttribute="leading" secondItem="DO7-iz-lhW" secondAttribute="leading" id="rWe-eW-kVp"/>
-                            <constraint firstItem="grZ-Yd-hek" firstAttribute="top" secondItem="Owa-pq-ybG" secondAttribute="bottom" id="zIN-35-6dy"/>
-                        </constraints>
-                    </view>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="containerView" destination="Owa-pq-ybG" id="tda-6t-S0N"/>
-                        <outlet property="tabBar" destination="grZ-Yd-hek" id="8P9-hQ-yGH"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zML-id-2Cn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3205.5" y="521.5"/>
         </scene>
         <!--Transition View Controller-->
         <scene sceneID="j4X-Oe-hEs">

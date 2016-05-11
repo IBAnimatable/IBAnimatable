@@ -145,6 +145,9 @@
                                                 <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="rei-S7-RFR" kind="show" id="QyP-lA-3Dd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -181,7 +184,7 @@
                 <viewControllerPlaceholder storyboardName="UserInterface" id="VGT-SK-HRG" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dpn-Wz-hk3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6308" y="-363"/>
+            <point key="canvasLocation" x="6307" y="-331"/>
         </scene>
         <!--Animations-->
         <scene sceneID="IlU-Wj-CPN">
@@ -189,7 +192,7 @@
                 <viewControllerPlaceholder storyboardName="Animations" id="YMk-Jn-KUW" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLW-Ww-QM4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6300.5" y="-318"/>
+            <point key="canvasLocation" x="6299.5" y="-279"/>
         </scene>
         <!--Transitions-->
         <scene sceneID="rFV-yH-sSh">
@@ -197,7 +200,15 @@
                 <viewControllerPlaceholder storyboardName="Transitions" id="Yrg-NP-dYZ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PSX-rh-CnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6300" y="-269"/>
+            <point key="canvasLocation" x="6299" y="-228"/>
+        </scene>
+        <!--Interactions-->
+        <scene sceneID="LKK-ky-A7J">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Interactions" id="rei-S7-RFR" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RB5-Hg-lBY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6301.5" y="-181"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VjR-mb-m73">

@@ -24,6 +24,8 @@
 		AE154B851C7D1A740093C05B /* AnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B831C7D1A740093C05B /* AnimatedTransitioning.swift */; };
 		AE154B8C1C7D59EE0093C05B /* AnimatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B8A1C7D59EE0093C05B /* AnimatorFactory.swift */; };
 		AE154B8F1C7D89CB0093C05B /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B8D1C7D89CB0093C05B /* Presenter.swift */; };
+		AE1B9A641CE3EA590098D962 /* Interactions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE1B9A631CE3EA590098D962 /* Interactions.storyboard */; };
+		AE1B9A661CE3EB100098D962 /* InteractionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1B9A651CE3EB100098D962 /* InteractionTableViewController.swift */; };
 		AE4C53F31C883F80007C9EFA /* PanInteractiveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4C53F11C883F80007C9EFA /* PanInteractiveAnimator.swift */; };
 		AE4C53F61C8843AB007C9EFA /* InteractiveGestureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4C53F41C8843AB007C9EFA /* InteractiveGestureType.swift */; };
 		AE65CF931C96E35600A723F8 /* PresentFadeWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE65CF911C96E35600A723F8 /* PresentFadeWithDismissInteractionSegue.swift */; };
@@ -177,6 +179,8 @@
 		AE1878791C1A25C100300246 /* AnimatableStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableStackView.swift; sourceTree = "<group>"; };
 		AE18787B1C1D97F500300246 /* MaskDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskDesignable.swift; sourceTree = "<group>"; };
 		AE18787D1C1D980D00300246 /* MaskType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskType.swift; sourceTree = "<group>"; };
+		AE1B9A631CE3EA590098D962 /* Interactions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interactions.storyboard; sourceTree = "<group>"; };
+		AE1B9A651CE3EB100098D962 /* InteractionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractionTableViewController.swift; sourceTree = "<group>"; };
 		AE216FDC1C0DBC5D00BC6366 /* CornerDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerDesignable.swift; sourceTree = "<group>"; };
 		AE28D0541CDFF4470043273C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AE299BD91C0338C70018CCDC /* BlurDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlurDesignable.swift; path = IBAnimatable/BlurDesignable.swift; sourceTree = SOURCE_ROOT; };
@@ -445,6 +449,7 @@
 				AE0D30991CE149150093B578 /* UserInterface.storyboard */,
 				AE0D309B1CE14A170093B578 /* Animations.storyboard */,
 				AE154B0E1C788A560093C05B /* Transitions.storyboard */,
+				AE1B9A631CE3EA590098D962 /* Interactions.storyboard */,
 			);
 			name = storyboards;
 			sourceTree = "<group>";
@@ -455,6 +460,7 @@
 				AE8FBAA81C853C7A00EB8AEA /* Functions.swift */,
 				AE6C21051C842A0F00DB6892 /* TransitionTableViewController.swift */,
 				AE8A4FF91C856EEC00E9E368 /* TransitionViewController.swift */,
+				AE1B9A651CE3EB100098D962 /* InteractionTableViewController.swift */,
 				E25EC6E61CDE034300743DB8 /* ContainerTransitionViewController.swift */,
 			);
 			name = code;
@@ -708,6 +714,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AED1A1061BFE9820001346FA /* Main.storyboard in Resources */,
+				AE1B9A641CE3EA590098D962 /* Interactions.storyboard in Resources */,
 				AED1A1041BFE9820001346FA /* Assets.xcassets in Resources */,
 				AED1A1051BFE9820001346FA /* LaunchScreen.storyboard in Resources */,
 				AE0D309C1CE14A170093B578 /* Animations.storyboard in Resources */,
@@ -859,6 +866,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE1B9A661CE3EB100098D962 /* InteractionTableViewController.swift in Sources */,
 				AE8A4FFA1C856EEC00E9E368 /* TransitionViewController.swift in Sources */,
 				AE6C21061C842A0F00DB6892 /* TransitionTableViewController.swift in Sources */,
 				AE8FBAA91C853C7A00EB8AEA /* Functions.swift in Sources */,
