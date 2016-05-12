@@ -133,6 +133,8 @@ Add `pod 'IBAnimatable'` to your Podfile.
 
 Add `github "JakeLin/IBAnimatable" ~> 2.2` to your Cartfile.
 
+Please Notice, there is [a limitation of a built framework for `@IBDesignable` and `@IBInspectable`](https://github.com/Carthage/Carthage/issues/335), that will impact on `IBAnimatable` when you use Carthage.
+
 ### Git submodule
 
 Add this repo as a submodule, and add the project file to your workspace. You can then link against `IBAnimatable.framework` for your application target. 
