@@ -36,9 +36,12 @@ class TransitionViewController: AnimatableViewController {
     prepareForSegue(segue, sender: self)
     segue.perform()
   }
+}
+
+private extension TransitionViewController {
   
   // To extract the type without parameters
-  private func extractAnimationType(animationType: String) -> String {
+  func extractAnimationType(animationType: String) -> String {
     if let range = animationType.rangeOfString("(") {
       return animationType.substringToIndex(range.startIndex)
     }

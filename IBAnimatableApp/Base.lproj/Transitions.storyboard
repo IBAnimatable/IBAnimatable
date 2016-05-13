@@ -143,7 +143,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="presentButton" destination="59W-58-R6i" id="k5T-Fs-g03"/>
@@ -154,10 +154,10 @@
             </objects>
             <point key="canvasLocation" x="4906.5" y="-281.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Transition Pushed View Controller-->
         <scene sceneID="emT-DW-liW">
             <objects>
-                <viewController id="jDB-Ur-y9F" sceneMemberID="viewController">
+                <viewController id="jDB-Ur-y9F" customClass="TransitionPushedViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="llV-0i-zPQ"/>
                         <viewControllerLayoutGuide type="bottom" id="ztb-jM-jZh"/>
@@ -227,10 +227,10 @@
             </objects>
             <point key="canvasLocation" x="4460.5" y="-281.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Transition Pushed View Controller-->
         <scene sceneID="w9j-KN-ZrE">
             <objects>
-                <viewController id="Jr9-M0-K6n" sceneMemberID="viewController">
+                <viewController id="Jr9-M0-K6n" customClass="TransitionPushedViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tdz-Jv-EtD"/>
                         <viewControllerLayoutGuide type="bottom" id="GgG-Mi-ld8"/>
