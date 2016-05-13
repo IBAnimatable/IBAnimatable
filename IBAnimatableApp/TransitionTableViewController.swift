@@ -27,7 +27,8 @@ class TransitionTableViewController: UITableViewController {
     
     let transitionAnimationType = String(transitionAnimations[indexPath.section][indexPath.row])
     toNavigationController.transitionAnimationType = transitionAnimationType
-    
+    toNavigationController.navigationBar.topItem?.title = transitionAnimationType
+   
     if let transitionViewController = toNavigationController.topViewController as? TransitionViewController {
       transitionViewController.animationType = transitionAnimationType
     }

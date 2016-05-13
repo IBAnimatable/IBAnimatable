@@ -210,6 +210,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="p1j-Ei-YPr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <userDefinedRuntimeAttributes>
@@ -406,6 +410,6 @@
         <image name="back" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ftd-QI-Jx6"/>
+        <segue reference="jmq-xh-2yp"/>
     </inferredMetricsTieBreakers>
 </document>
