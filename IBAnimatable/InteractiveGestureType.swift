@@ -18,7 +18,7 @@ public enum InteractiveGestureType {
     return String(self)
   }
   
-  static func fromString(interactiveGestureType: String) -> InteractiveGestureType? {
+  public static func fromString(interactiveGestureType: String) -> InteractiveGestureType? {
     if interactiveGestureType.hasPrefix("Default") {
       return .Default
     } else if interactiveGestureType.hasPrefix("Pan") || interactiveGestureType.hasPrefix("ScreenEdgePan") ||
