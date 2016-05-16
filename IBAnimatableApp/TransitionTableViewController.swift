@@ -32,8 +32,8 @@ class TransitionTableViewController: UITableViewController {
     toNavigationController.navigationBar.topItem?.title = transitionAnimationType
    
     // Set the transition animation type for `AnimatableViewController`, used for Present/Dismiss transitions
-    if let transitionViewController = toNavigationController.topViewController as? TransitionViewController {
-      transitionViewController.transitionAnimationType = transitionAnimationType
+    if let toViewController = toNavigationController.topViewController as? TransitionViewController {
+      toViewController.transitionAnimationType = transitionAnimationType
     }
   }
 

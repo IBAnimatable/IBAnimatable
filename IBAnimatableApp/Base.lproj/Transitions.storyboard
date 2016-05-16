@@ -333,7 +333,7 @@
         <!--Transition Presented View Controller-->
         <scene sceneID="D7y-Bi-dz5">
             <objects>
-                <viewController id="9Qt-ed-0ZI" customClass="TransitionPresentedViewController" customModule="IBAnimatable" sceneMemberID="viewController">
+                <viewController id="9Qt-ed-0ZI" customClass="TransitionPresentedViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3M5-bf-nzE"/>
                         <viewControllerLayoutGuide type="bottom" id="zRb-Me-7Vv"/>
@@ -355,6 +355,9 @@
                                                 <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="J3N-gN-3lD" kind="presentation" id="YCN-iA-2n1"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyR-JP-8SO" userLabel="Present button" customClass="AnimatableButton" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="90" width="319" height="60"/>
@@ -420,10 +423,10 @@
             </objects>
             <point key="canvasLocation" x="5379.5" y="114.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Transition Presented View Controller-->
         <scene sceneID="bf7-Dg-a9m">
             <objects>
-                <viewController id="J3N-gN-3lD" sceneMemberID="viewController">
+                <viewController id="J3N-gN-3lD" customClass="TransitionPresentedViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OjE-jf-D7p"/>
                         <viewControllerLayoutGuide type="bottom" id="Dxn-mh-kw0"/>
@@ -432,13 +435,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pxF-zQ-t9P">
-                                <rect key="frame" x="28" y="283" width="319" height="100"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="vlY-8I-KHB">
+                                <rect key="frame" x="28" y="188" width="319" height="291"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M39-se-qo0" userLabel="Dismiss button" customClass="AnimatableButton" customModule="IBAnimatable">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z23-uE-CtW" userLabel="Present button" customClass="AnimatableButton" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="0.0" width="319" height="60"/>
+                                        <state key="normal" title="Tap to present">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="9Qt-ed-0ZI" kind="presentation" id="HbQ-Kq-gSf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6k-vD-Lgw" userLabel="Present button" customClass="AnimatableButton" customModule="IBAnimatable">
+                                        <rect key="frame" x="0.0" y="90" width="319" height="60"/>
+                                        <state key="normal" title="Tap to present via segue">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCk-iM-bd8" userLabel="Dismiss button" customClass="AnimatableButton" customModule="IBAnimatable">
+                                        <rect key="frame" x="0.0" y="180" width="319" height="60"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="kLq-6u-aZW"/>
+                                            <constraint firstAttribute="height" constant="60" id="EIH-h6-qBp"/>
                                         </constraints>
                                         <state key="normal" title="Tap to dismiss">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -449,26 +477,30 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="nWz-fC-GLe" kind="unwind" unwindAction="unwindToViewController:" id="3Sw-tX-AL6"/>
+                                            <segue destination="nWz-fC-GLe" kind="unwind" unwindAction="unwindToViewController:" id="yeJ-YN-F5u"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or use gesture to dismiss" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4T-Sf-0vS" userLabel="Message label" customClass="AnimatableLabel" customModule="IBAnimatable">
-                                        <rect key="frame" x="0.0" y="70" width="319" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or use gesture to pop" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGv-85-NaI">
+                                        <rect key="frame" x="0.0" y="270" width="319" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="T81-Nf-o5j"/>
+                                            <constraint firstAttribute="height" constant="21" id="jQ1-lx-YvF"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="Z23-uE-CtW" firstAttribute="height" secondItem="jCk-iM-bd8" secondAttribute="height" id="2jI-2c-gxP"/>
+                                    <constraint firstItem="i6k-vD-Lgw" firstAttribute="height" secondItem="jCk-iM-bd8" secondAttribute="height" id="bh4-F4-TAW"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="pxF-zQ-t9P" firstAttribute="centerY" secondItem="wii-JR-fVE" secondAttribute="centerY" id="VzQ-Uv-Cv8"/>
-                            <constraint firstItem="pxF-zQ-t9P" firstAttribute="leading" secondItem="wii-JR-fVE" secondAttribute="leadingMargin" constant="12" id="XCe-jN-2hj"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pxF-zQ-t9P" secondAttribute="trailing" constant="12" id="b7U-P8-LHe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vlY-8I-KHB" secondAttribute="trailing" constant="12" id="0Sg-Qh-Xb1"/>
+                            <constraint firstItem="vlY-8I-KHB" firstAttribute="centerY" secondItem="wii-JR-fVE" secondAttribute="centerY" id="Jyt-aO-wjY"/>
+                            <constraint firstItem="vlY-8I-KHB" firstAttribute="leading" secondItem="wii-JR-fVE" secondAttribute="leadingMargin" constant="12" id="rY5-jL-F0A"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="predefinedGradient" value="Moss"/>
@@ -487,5 +519,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ftd-QI-Jx6"/>
+        <segue reference="HbQ-Kq-gSf"/>
     </inferredMetricsTieBreakers>
 </document>
