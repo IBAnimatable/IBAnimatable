@@ -36,7 +36,7 @@ private extension TransitionPushedViewController {
   
   func configureGestureLabel() {
     // Shows nothing by default
-    gestureLabel.text = ""
+    gestureLabel.text = "to pop"
     
     guard let navigationController = self.navigationController as? AnimatableNavigationController else {
       return

@@ -43,11 +43,14 @@ private extension InteractiveGestureType {
     let interactiveGestureType = interactiveGestureType.stringByReplacingOccurrencesOfString(" ", withString: "")
       .lowercaseString
       .substringFromIndex(range?.startIndex ?? interactiveGestureType.endIndex)
+      .stringByReplacingOccurrencesOfString("(", withString: "")
+      .stringByReplacingOccurrencesOfString(")", withString: "")
+      .capitalizedString
     return interactiveGestureType
   }
   
   static func fromStringWithDirection(interactiveGestureType: String) -> InteractiveGestureType? {
-    let gestureDirectionString = cleanInteractiveGestureType(interactiveGestureType).capitalizedString
+    let gestureDirectionString = cleanInteractiveGestureType(interactiveGestureType)
     
     guard let direction = GestureDirection(rawValue: gestureDirectionString) else {
       return nil
