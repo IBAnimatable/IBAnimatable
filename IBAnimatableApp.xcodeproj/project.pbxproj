@@ -90,6 +90,8 @@
 		AED57AE51CE5C0CB00C359E3 /* TransitionPushedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED57AE41CE5C0CB00C359E3 /* TransitionPushedViewController.swift */; };
 		AED5F6921C83E9B60052E57B /* PresentFadeInSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED5F6901C83E9B60052E57B /* PresentFadeInSegue.swift */; };
 		AED5F6951C83E9C20052E57B /* PresentFadeOutSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED5F6931C83E9C20052E57B /* PresentFadeOutSegue.swift */; };
+		AEDB24D11CE9EC0F0086612C /* TransitionPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDB24D01CE9EC0F0086612C /* TransitionPresentedViewController.swift */; };
+		AEDB24D31CE9EEB30086612C /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDB24D21CE9EEB30086612C /* UIViewControllerExtension.swift */; };
 		AEDD8A321C7EDAE30033175A /* SystemFlipAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDD8A301C7EDAE30033175A /* SystemFlipAnimator.swift */; };
 		AEDE6E6B1CCECE8A000DECF0 /* PinchInteractiveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDE6E6A1CCECE8A000DECF0 /* PinchInteractiveAnimator.swift */; };
 		AEE552A81C815AC5009CF623 /* FadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE552A61C815AC5009CF623 /* FadeAnimator.swift */; };
@@ -229,6 +231,8 @@
 		AED5F6901C83E9B60052E57B /* PresentFadeInSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentFadeInSegue.swift; sourceTree = "<group>"; };
 		AED5F6931C83E9C20052E57B /* PresentFadeOutSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentFadeOutSegue.swift; sourceTree = "<group>"; };
 		AED97B851C1710A900D2B0B8 /* BorderSide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderSide.swift; sourceTree = "<group>"; };
+		AEDB24D01CE9EC0F0086612C /* TransitionPresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionPresentedViewController.swift; sourceTree = "<group>"; };
+		AEDB24D21CE9EEB30086612C /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		AEDD8A301C7EDAE30033175A /* SystemFlipAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemFlipAnimator.swift; sourceTree = "<group>"; };
 		AEDE6E6A1CCECE8A000DECF0 /* PinchInteractiveAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinchInteractiveAnimator.swift; sourceTree = "<group>"; };
 		AEE552A61C815AC5009CF623 /* FadeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeAnimator.swift; sourceTree = "<group>"; };
@@ -462,7 +466,9 @@
 				AE8FBAA81C853C7A00EB8AEA /* Functions.swift */,
 				AE6C21051C842A0F00DB6892 /* TransitionTableViewController.swift */,
 				AE8A4FF91C856EEC00E9E368 /* TransitionViewController.swift */,
+				AEDB24D21CE9EEB30086612C /* UIViewControllerExtension.swift */,
 				AED57AE41CE5C0CB00C359E3 /* TransitionPushedViewController.swift */,
+				AEDB24D01CE9EC0F0086612C /* TransitionPresentedViewController.swift */,
 				AE1B9A651CE3EB100098D962 /* InteractionTableViewController.swift */,
 				E25EC6E61CDE034300743DB8 /* ContainerTransitionViewController.swift */,
 			);
@@ -871,10 +877,12 @@
 			files = (
 				AE1B9A661CE3EB100098D962 /* InteractionTableViewController.swift in Sources */,
 				AE8A4FFA1C856EEC00E9E368 /* TransitionViewController.swift in Sources */,
+				AEDB24D31CE9EEB30086612C /* UIViewControllerExtension.swift in Sources */,
 				AED57AE51CE5C0CB00C359E3 /* TransitionPushedViewController.swift in Sources */,
 				AE6C21061C842A0F00DB6892 /* TransitionTableViewController.swift in Sources */,
 				AE8FBAA91C853C7A00EB8AEA /* Functions.swift in Sources */,
 				E25EC6E71CDE034300743DB8 /* ContainerTransitionViewController.swift in Sources */,
+				AEDB24D11CE9EC0F0086612C /* TransitionPresentedViewController.swift in Sources */,
 				AED1A1031BFE9820001346FA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,29 +10,18 @@ class TransitionPushedViewController: UIViewController {
 
   @IBOutlet var gestureLabel: UILabel!
   
-  private var predefinedGradients = [String]()
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    configureRandomBackgroundColor()
+    if let animatableView = view as? AnimatableView {
+      animatableView.predefinedGradient = String(generateRandomGradient())
+    }
     configureGestureLabel()
   }
 
 }
 
 private extension TransitionPushedViewController {
-  
-  func configureRandomBackgroundColor() {
-    iterateEnum(GradientType).forEach {
-      predefinedGradients.append(String($0))
-    }
-    
-    if let animatableView = view as? AnimatableView {
-      let randomIndex: Int = Int(arc4random_uniform(UInt32(predefinedGradients.count)))
-      animatableView.predefinedGradient = predefinedGradients[randomIndex]
-    }
-  }
   
   func configureGestureLabel() {
     // Shows nothing by default
@@ -50,17 +39,7 @@ private extension TransitionPushedViewController {
       return
     }
     
-    switch interactiveGestureType {
-    case .Default:
-      // Default gesture
-      let transitionAnimator = AnimatorFactory.generateAnimator(transitionAnimationType)
-      if let interactiveGestureType = transitionAnimator.interactiveGestureType {
-        gestureLabel.text = String("or use \(interactiveGestureType.toString()) gesture to pop")
-      }
-    default:
-      // Specified gesture
-      gestureLabel.text = String("or use \(interactiveGestureType.toString()) gesture to pop")
-    }
+    gestureLabel.text = retrieveGestureText(interactiveGestureType, transitionAnimationType: transitionAnimationType, exit: "pop")
   }
   
 }
