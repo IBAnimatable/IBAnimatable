@@ -145,6 +145,9 @@
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="interactiveGestureType" value="Default"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="presentButton" destination="59W-58-R6i" id="k5T-Fs-g03"/>
                     </connections>
@@ -525,6 +528,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ftd-QI-Jx6"/>
-        <segue reference="HbQ-Kq-gSf"/>
+        <segue reference="DNB-vZ-0SS"/>
     </inferredMetricsTieBreakers>
 </document>
