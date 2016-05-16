@@ -417,6 +417,9 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="interactiveGestureType" value="Default"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="gestureLabel" destination="DKI-ey-VLL" id="BXy-mk-UyR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L8b-q3-z0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="emc-Jl-Ob8" userLabel="Exit" sceneMemberID="exit"/>
@@ -507,6 +510,9 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="gestureLabel" destination="AGv-85-NaI" id="gjj-UO-4mP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yqc-zm-1iX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="nWz-fC-GLe" userLabel="Exit" sceneMemberID="exit"/>

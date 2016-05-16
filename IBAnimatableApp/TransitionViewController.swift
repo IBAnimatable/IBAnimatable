@@ -26,6 +26,7 @@ class TransitionViewController: AnimatableViewController {
     // Set the transition animation type for `AnimatableViewController`, used for Present/Dismiss transitions
     if let toViewController = segue.destinationViewController as? AnimatableViewController {
       toViewController.transitionAnimationType = transitionAnimationType
+      toViewController.interactiveGestureType = InteractiveGestureType.Default.toString()
     }
   }
 }
