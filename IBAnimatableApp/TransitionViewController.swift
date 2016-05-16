@@ -30,14 +30,3 @@ class TransitionViewController: AnimatableViewController {
     }
   }
 }
-
-private extension TransitionViewController {
-  
-  // To extract the type without parameters
-  func extractAnimationType(animationType: String) -> String {
-    if let range = animationType.rangeOfString("(") {
-      return animationType.substringToIndex(range.startIndex)
-    }
-    return animationType
-  }
-}
