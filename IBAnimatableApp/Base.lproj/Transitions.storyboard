@@ -221,6 +221,9 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="gestureLabel" destination="G4y-eg-gD1" id="G1N-gg-ZmJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MwU-bg-SAk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -319,6 +322,9 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="gestureLabel" destination="cmp-P2-WvF" id="YuJ-vE-N67"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Td-V3-Teq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
