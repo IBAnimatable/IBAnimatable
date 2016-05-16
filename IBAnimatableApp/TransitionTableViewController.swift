@@ -26,11 +26,14 @@ class TransitionTableViewController: UITableViewController {
     }
     
     let transitionAnimationType = String(transitionAnimations[indexPath.section][indexPath.row])
+    
+    // Set the transition animation type for `AnimatableNavigationController`, used for Push/Pop transitions
     toNavigationController.transitionAnimationType = transitionAnimationType
     toNavigationController.navigationBar.topItem?.title = transitionAnimationType
    
+    // Set the transition animation type for `AnimatableViewController`, used for Present/Dismiss transitions
     if let transitionViewController = toNavigationController.topViewController as? TransitionViewController {
-      transitionViewController.animationType = transitionAnimationType
+      transitionViewController.transitionAnimationType = transitionAnimationType
     }
   }
 

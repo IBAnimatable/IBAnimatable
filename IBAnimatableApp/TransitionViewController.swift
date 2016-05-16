@@ -7,7 +7,6 @@ import UIKit
 import IBAnimatable
 
 class TransitionViewController: AnimatableViewController {
-  var animationType: String?
   
   @IBOutlet var presentButton: AnimatableButton!
     
@@ -15,27 +14,12 @@ class TransitionViewController: AnimatableViewController {
     super.viewDidLoad()
     
     // Transition animations start with `System` do not support Present transition, so hide it
-    if let animationType = animationType where animationType.hasPrefix("System") {
+    if let animationType = transitionAnimationType where animationType.hasPrefix("System") {
       // Cannot use `hidden` here because of `UIStackView`
       presentButton.alpha = 0
     }
   }
   
-  @IBAction func presentButtonDidTap(sender: AnyObject) {
-    guard let toViewController = storyboard?.instantiateViewControllerWithIdentifier("PresentedFirstViewController") as? AnimatableViewController, animationType = animationType else {
-      return
-    }
-    
-    toViewController.transitionAnimationType = animationType
-    let segueName = "IBAnimatable.Present" + extractAnimationType(animationType) + "Segue"
-    guard let segueClass = NSClassFromString(segueName) as? UIStoryboardSegue.Type else {
-      return
-    }
-    
-    let segue = segueClass.init(identifier: segueName, source: self, destination: toViewController)
-    prepareForSegue(segue, sender: self)
-    segue.perform()
-  }
 }
 
 private extension TransitionViewController {
