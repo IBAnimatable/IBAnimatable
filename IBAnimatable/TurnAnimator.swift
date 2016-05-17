@@ -13,14 +13,14 @@ public class TurnAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType? = .Pan(fromDirection: .Horizontal)
   
   // MARK: - Private params
-  private var fromDirection: TransitionFromDirection
+  private var fromDirection: TransitionDirection
   
   // MARK: - Private fold transition
   private var transform: CATransform3D = CATransform3DIdentity
   private var reverse: Bool = false
   
   // MARK: - Life cycle
-  public init(fromDirection: TransitionFromDirection, transitionDuration: Duration) {
+  public init(fromDirection: TransitionDirection, transitionDuration: Duration) {
     self.fromDirection = fromDirection
     self.transitionDuration = transitionDuration
     

@@ -13,12 +13,12 @@ public class SlideAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
-  private var fromDirection: TransitionFromDirection
+  private var fromDirection: TransitionDirection
   private var horizontal = false
   private var reverse = false
   private var fade = false
   
-  public init(fromDirection: TransitionFromDirection, params: [String], transitionDuration: Duration) {
+  public init(fromDirection: TransitionDirection, params: [String], transitionDuration: Duration) {
     self.fromDirection = fromDirection
     self.transitionDuration = transitionDuration
     fade = params.contains("fade")
