@@ -26,10 +26,14 @@ class TransitionTableViewController: UITableViewController {
     }
     
     let transitionAnimationType = String(transitionAnimations[indexPath.section][indexPath.row])
-    toNavigationController.transitionAnimationType = transitionAnimationType
     
-    if let transitionViewController = toNavigationController.topViewController as? TransitionViewController {
-      transitionViewController.animationType = transitionAnimationType
+    // Set the transition animation type for `AnimatableNavigationController`, used for Push/Pop transitions
+    toNavigationController.transitionAnimationType = transitionAnimationType
+    toNavigationController.navigationBar.topItem?.title = transitionAnimationType
+   
+    // Set the transition animation type for `AnimatableViewController`, used for Present/Dismiss transitions
+    if let toViewController = toNavigationController.topViewController as? TransitionViewController {
+      toViewController.transitionAnimationType = transitionAnimationType
     }
   }
 
@@ -40,8 +44,6 @@ class TransitionTableViewController: UITableViewController {
 private extension TransitionTableViewController {
   
   func generateTransitionTypeData() {
-    transitionAnimationsHeaders.append("ContainerTransition")
-    transitionAnimations.append(["TabBar example"])
     transitionAnimationsHeaders.append("Fade")
     transitionAnimations.append(["Fade", "FadeIn", "FadeOut"])
     transitionAnimationsHeaders.append("SystemCube")
@@ -106,13 +108,12 @@ extension TransitionTableViewController {
     cell.textLabel?.text = transitionAnimations[indexPath.section][indexPath.row]
     return cell
   }
- 
-  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//    tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    if indexPath.section == 0 && indexPath.row == 0 {
-      performSegueWithIdentifier("ContainerTransitionDemo", sender: self)
-    } else {
-      performSegueWithIdentifier("TransitionDemo", sender: self)
+  
+  // MARK: - reset the group heander font color and size
+  override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    if let header = view as? UITableViewHeaderFooterView {
+      header.textLabel?.textColor = UIColor.whiteColor()
+      header.textLabel?.font = UIFont.systemFontOfSize(16, weight: UIFontWeightLight)
     }
   }
 }
