@@ -26,12 +26,13 @@ extension UIViewController {
       if let interactiveGestureType = transitionAnimator.interactiveGestureType {
         return String("or use \(interactiveGestureType.toString()) gesture to \(exit)")
       }
+      
+      // The transition animator doesn't have default `interactiveGestureType`
+      return ""
     default:
-      break
+      // Specified gesture
+      return String("or use \(interactiveGestureType.toString()) gesture to \(exit)")
     }
-    
-    // Specified gesture
-    return String("or use \(interactiveGestureType.toString()) gesture to \(exit)")
   }
   
 }
