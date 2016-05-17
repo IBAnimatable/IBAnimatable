@@ -9,9 +9,14 @@ import IBAnimatable
 class TransitionPresentedViewController: AnimatableViewController {
 
   @IBOutlet var gestureLabel: UILabel!
+  @IBOutlet var presentViaSegueButton: AnimatableButton!
+  @IBOutlet var presentViaDismissInteractionSegueButton: AnimatableButton!
+  
+  var presentingSegueClass: UIStoryboardSegue.Type?
+  var presentingWithDismissInteractionSegueClass: UIStoryboardSegue.Type?
   
   // Intenal use for demo only
-  var useDismissInteraction: Bool = false
+  var useDismissInteraction: Bool = true
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -19,7 +24,10 @@ class TransitionPresentedViewController: AnimatableViewController {
     if let animatableView = view as? AnimatableView {
       animatableView.predefinedGradient = String(generateRandomGradient())
     }
+    
     configureGestureLabel()
+    prepareSegues()
+    hideButtonsIfNeeded()
   }
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -33,11 +41,11 @@ class TransitionPresentedViewController: AnimatableViewController {
   }
 
   @IBAction func presentViaSegueDidTap(sender: AnyObject) {
-    presentViaSegue(false)
+    presentViaSegue(presentingSegueClass, useDismissInteraction: false)
   }
   
   @IBAction func presentViaDismissInteractionSegueDidTap(sender: AnyObject) {
-    presentViaSegue(true)
+    presentViaSegue(presentingWithDismissInteractionSegueClass, useDismissInteraction: true)
   }
 }
 
@@ -63,6 +71,37 @@ private extension TransitionPresentedViewController {
     gestureLabel.text = retrieveGestureText(interactiveGestureType, transitionAnimationType: transitionAnimationType, exit: "dismiss")
   }
   
+  func prepareSegues() {
+    guard let transitionAnimationType = transitionAnimationType else {
+      return
+    }
+    
+    // Set up the segues without dismiss interaction
+    var segueName = "IBAnimatable.Present" + extractAnimationType(transitionAnimationType) + "Segue"
+    
+    if let segueClass = NSClassFromString(segueName) as? UIStoryboardSegue.Type {
+      presentingSegueClass = segueClass
+    }
+    
+    // Set up the segues with dismiss interaction
+    segueName = "IBAnimatable.Present" + extractAnimationType(transitionAnimationType) + "WithDismissInteractionSegue"
+    
+    if let segueClass = NSClassFromString(segueName) as? UIStoryboardSegue.Type {
+      presentingWithDismissInteractionSegueClass = segueClass
+    }
+  }
+  
+  func hideButtonsIfNeeded() {
+    // Hide them if the segue(s) don't exist
+    if presentingSegueClass == nil {
+      presentViaSegueButton.alpha = 0
+    }
+    
+    if presentingWithDismissInteractionSegueClass == nil {
+      presentViaDismissInteractionSegueButton.alpha = 0
+    }
+  }
+  
   // To extract the type without parameters
   func extractAnimationType(animationType: String) -> String {
     if let range = animationType.rangeOfString("(") {
@@ -71,21 +110,13 @@ private extension TransitionPresentedViewController {
     return animationType
   }
   
-  func presentViaSegue(useDismissInteraction: Bool) {
-    guard let toViewController = storyboard?.instantiateViewControllerWithIdentifier("TransitionPresentedViewController") as? TransitionPresentedViewController, transitionAnimationType = transitionAnimationType else {
-      return
+  func presentViaSegue(segueClass: UIStoryboardSegue.Type?, useDismissInteraction: Bool) {
+    if let segueClass = segueClass, toViewController = storyboard?.instantiateViewControllerWithIdentifier("TransitionPresentedViewController") as? TransitionPresentedViewController {
+      toViewController.useDismissInteraction = useDismissInteraction
+      let segue = segueClass.init(identifier: String(segueClass), source: self, destination: toViewController)
+      prepareForSegue(segue, sender: self)
+      segue.perform()
     }
-    
-    toViewController.useDismissInteraction = useDismissInteraction
-    let seguePostfix = useDismissInteraction ? "WithDismissInteractionSegue": "Segue"
-    let segueName = "IBAnimatable.Present" + extractAnimationType(transitionAnimationType) + seguePostfix
-    guard let segueClass = NSClassFromString(segueName) as? UIStoryboardSegue.Type else {
-      return
-    }
-    
-    let segue = segueClass.init(identifier: segueName, source: self, destination: toViewController)
-    prepareForSegue(segue, sender: self)
-    segue.perform()
   }
-  
+ 
 }

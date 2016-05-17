@@ -16,7 +16,7 @@
                         <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="transitionCell" textLabel="mDV-Ii-W8m" style="IBUITableViewCellStyleDefault" id="gTl-GY-SNY" customClass="AnimatableTableViewCell" customModule="IBAnimatable">
-                                <rect key="frame" x="0.0" y="113.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="114" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gTl-GY-SNY" id="qhN-8T-xDf">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -170,7 +170,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FgP-UH-Os8">
-                                <rect key="frame" x="28" y="263.5" width="319" height="140"/>
+                                <rect key="frame" x="28" y="264" width="319" height="140"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nmd-hI-p2R" userLabel="Push button" customClass="AnimatableButton" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="0.0" width="319" height="60"/>
@@ -440,6 +440,8 @@
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="gestureLabel" destination="DKI-ey-VLL" id="BXy-mk-UyR"/>
+                        <outlet property="presentViaDismissInteractionSegueButton" destination="K7x-bO-Sgb" id="Z14-iO-zwl"/>
+                        <outlet property="presentViaSegueButton" destination="eyR-JP-8SO" id="lCn-eY-mcW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L8b-q3-z0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -552,6 +554,8 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="gestureLabel" destination="AGv-85-NaI" id="gjj-UO-4mP"/>
+                        <outlet property="presentViaDismissInteractionSegueButton" destination="FPQ-uH-T7I" id="Hlt-Sl-V4l"/>
+                        <outlet property="presentViaSegueButton" destination="i6k-vD-Lgw" id="5Rw-EH-1Vq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yqc-zm-1iX" userLabel="First Responder" sceneMemberID="firstResponder"/>
