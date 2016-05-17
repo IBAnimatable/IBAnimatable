@@ -22,11 +22,11 @@ public enum TransitionAnimationType {
   case Turn(direction: TransitionFromDirection)
   case Cards(direction: TransitionFromDirection)
   case Flip(direction: TransitionFromDirection)
-  case SystemCube(direction: TransitionFromDirection)
-  case SystemFlip(direction: TransitionFromDirection)
-  case SystemMoveIn(direction: TransitionFromDirection)
-  case SystemPush(direction: TransitionFromDirection)
-  case SystemReveal(direction: TransitionFromDirection)
+  case SystemCube(fromDirection: TransitionFromDirection)
+  case SystemFlip(fromDirection: TransitionFromDirection)
+  case SystemMoveIn(fromDirection: TransitionFromDirection)
+  case SystemPush(fromDirection: TransitionFromDirection)
+  case SystemReveal(fromDirection: TransitionFromDirection)
   case SystemPage(type: TransitionPageType)
   case SystemCameraIris(hollowState: TransitionHollowState)
   case SystemRotate(degree: TransitionRotateDegree)
@@ -108,15 +108,15 @@ private extension TransitionAnimationType {
     let transitionParams = params(forTransitionType: transitionType)
     let direction = transitionDirection(forParams: transitionParams) ?? .Left
     if transitionType.hasPrefix("SystemCube") {
-      return .SystemCube(direction: direction)
+      return .SystemCube(fromDirection: direction)
     } else if transitionType.hasPrefix("SystemFlip") {
-      return .SystemFlip(direction: direction)
+      return .SystemFlip(fromDirection: direction)
     } else if transitionType.hasPrefix("SystemMoveIn") {
-      return .SystemMoveIn(direction: direction)
+      return .SystemMoveIn(fromDirection: direction)
     } else if transitionType.hasPrefix("SystemPush") {
-      return .SystemPush(direction: direction)
+      return .SystemPush(fromDirection: direction)
     } else if transitionType.hasPrefix("SystemReveal") {
-      return .SystemReveal(direction: direction)
+      return .SystemReveal(fromDirection: direction)
     } else if transitionType.hasPrefix("NatGeo") {
       return .NatGeo(direction: direction)
     } else if transitionType.hasPrefix("Turn") {

@@ -23,20 +23,20 @@ public class SystemCubeAnimator: NSObject, AnimatedTransitioning {
     
     switch fromDirection {
     case .Right:
-      self.transitionAnimationType = .SystemCube(direction: .Right)
-      self.reverseAnimationType = .SystemCube(direction: .Left)
+      self.transitionAnimationType = .SystemCube(fromDirection: .Right)
+      self.reverseAnimationType = .SystemCube(fromDirection: .Left)
       self.interactiveGestureType = .ScreenEdgePan(fromDirection: .Left)
     case .Top:
-      self.transitionAnimationType = .SystemCube(direction: .Top)
-      self.reverseAnimationType = .SystemCube(direction: .Bottom)
+      self.transitionAnimationType = .SystemCube(fromDirection: .Top)
+      self.reverseAnimationType = .SystemCube(fromDirection: .Bottom)
       self.interactiveGestureType = .ScreenEdgePan(fromDirection: .Bottom)
     case .Bottom:
-      self.transitionAnimationType = .SystemCube(direction: .Bottom)
-      self.reverseAnimationType = .SystemCube(direction: .Top)
+      self.transitionAnimationType = .SystemCube(fromDirection: .Bottom)
+      self.reverseAnimationType = .SystemCube(fromDirection: .Top)
       self.interactiveGestureType = .ScreenEdgePan(fromDirection: .Top)
     default:
-      self.transitionAnimationType = .SystemPush(direction: .Left)
-      self.reverseAnimationType = .SystemPush(direction: .Right)
+      self.transitionAnimationType = .SystemPush(fromDirection: .Left)
+      self.reverseAnimationType = .SystemPush(fromDirection: .Right)
       self.interactiveGestureType = .Pan(fromDirection: .Right)
     }
     

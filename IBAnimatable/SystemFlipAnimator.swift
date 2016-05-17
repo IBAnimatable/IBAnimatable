@@ -25,20 +25,20 @@ public class SystemFlipAnimator: NSObject, AnimatedTransitioning {
     
     switch fromDirection {
     case .Right:
-      self.transitionAnimationType = .SystemFlip(direction: .Right)
-      self.reverseAnimationType = .SystemFlip(direction: .Left)
+      self.transitionAnimationType = .SystemFlip(fromDirection: .Right)
+      self.reverseAnimationType = .SystemFlip(fromDirection: .Left)
       self.animationOption = .TransitionFlipFromRight
     case .Top:
-      self.transitionAnimationType = .SystemFlip(direction: .Top)
-      self.reverseAnimationType = .SystemFlip(direction: .Bottom)
+      self.transitionAnimationType = .SystemFlip(fromDirection: .Top)
+      self.reverseAnimationType = .SystemFlip(fromDirection: .Bottom)
       self.animationOption = .TransitionFlipFromTop
     case .Bottom:
-      self.transitionAnimationType = .SystemFlip(direction: .Bottom)
-      self.reverseAnimationType = .SystemFlip(direction: .Top)
+      self.transitionAnimationType = .SystemFlip(fromDirection: .Bottom)
+      self.reverseAnimationType = .SystemFlip(fromDirection: .Top)
       self.animationOption = .TransitionFlipFromBottom
     default:
-      self.transitionAnimationType = .SystemFlip(direction: .Left)
-      self.reverseAnimationType = .SystemFlip(direction: .Right)
+      self.transitionAnimationType = .SystemFlip(fromDirection: .Left)
+      self.reverseAnimationType = .SystemFlip(fromDirection: .Right)
       self.animationOption = .TransitionFlipFromLeft
     }
     
