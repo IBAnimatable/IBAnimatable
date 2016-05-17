@@ -24,7 +24,7 @@ All notable changes to this project will be documented in this file.
 - Add `AnimatableCollectionViewCell` [#167](https://github.com/JakeLin/IBAnimatable/pull/167)
 - Add `PinchInteractiveAnimator` to support `Pinch(Close)`, `Pinch(Open)` for `Pinch` gesture transition controller. [#125](https://github.com/JakeLin/IBAnimatable/issues/125)
 - Add `SlideAnimator` to support Slide transition animation. It supports parameters `Slide(direction, fade)`, if no specified, the default values are `Flip(Left)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
-
+- Add IBAnimatable Playground to demonstrate transitions and interactions. [#204](https://github.com/JakeLin/IBAnimatable/pull/204)
 
 #### Bugfixes
 
