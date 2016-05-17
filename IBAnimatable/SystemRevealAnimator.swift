@@ -48,6 +48,6 @@ extension SystemRevealAnimator: UIViewControllerAnimatedTransitioning {
   }
   
   public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-    animateWithCATransition(transitionContext, type: SystemTransitionType.Reveal, subtype: fromDirection.stringValue)
+    animateWithCATransition(transitionContext, type: SystemTransitionType.Reveal, subtype: fromDirection.CATransitionSubtype)
   }
 }

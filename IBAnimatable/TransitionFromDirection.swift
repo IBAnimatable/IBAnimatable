@@ -16,7 +16,7 @@ public enum TransitionDirection {
   case Backward
 
   // Convert from direction to CATransition Subtype used in `CATransition`
-  var stringValue: String {
+  var CATransitionSubtype: String {
     switch self {
     case .Left:
       return kCATransitionFromLeft
