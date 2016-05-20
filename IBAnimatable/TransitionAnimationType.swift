@@ -19,7 +19,7 @@ public enum TransitionAnimationType {
   case Portal(direction: TransitionDirection, params: [String])
   case Slide(direction: TransitionDirection, params: [String])
   case NatGeo(toDirection: TransitionDirection)
-  case Turn(direction: TransitionDirection)
+  case Turn(fromDirection: TransitionDirection)
   case Cards(direction: TransitionDirection)
   case Flip(direction: TransitionDirection)
   case SystemCube(fromDirection: TransitionDirection)
@@ -120,7 +120,7 @@ private extension TransitionAnimationType {
     } else if transitionType.hasPrefix("NatGeo") {
       return .NatGeo(toDirection: direction)
     } else if transitionType.hasPrefix("Turn") {
-      return .Turn(direction: direction)      
+      return .Turn(fromDirection: direction)      
     } else if transitionType.hasPrefix("Cards") {
       return .Cards(direction: direction)
     } else if transitionType.hasPrefix("Flip") {
