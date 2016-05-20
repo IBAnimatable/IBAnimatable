@@ -17,7 +17,7 @@ public enum TransitionAnimationType {
   case Explode(params: [String])
   case Fold(fromDirection: TransitionDirection, params: [String])
   case Portal(direction: TransitionDirection, params: [String])
-  case Slide(direction: TransitionDirection, params: [String])
+  case Slide(toDirection: TransitionDirection, params: [String])
   case NatGeo(toDirection: TransitionDirection)
   case Turn(fromDirection: TransitionDirection)
   case Cards(direction: TransitionDirection)
@@ -138,7 +138,7 @@ private extension TransitionAnimationType {
     } else if transitionType.hasPrefix("Portal") {
       return .Portal(direction: direction, params: params)
     } else if transitionType.hasPrefix("Slide") {
-      return .Slide(direction: direction, params: params)
+      return .Slide(toDirection: direction, params: params)
     }
     return nil
   }
