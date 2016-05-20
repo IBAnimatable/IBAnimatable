@@ -21,7 +21,7 @@ public enum TransitionAnimationType {
   case NatGeo(toDirection: TransitionDirection)
   case Turn(fromDirection: TransitionDirection)
   case Cards(direction: TransitionDirection)
-  case Flip(direction: TransitionDirection)
+  case Flip(fromDirection: TransitionDirection)
   case SystemCube(fromDirection: TransitionDirection)
   case SystemFlip(fromDirection: TransitionDirection)
   case SystemMoveIn(fromDirection: TransitionDirection)
@@ -124,7 +124,7 @@ private extension TransitionAnimationType {
     } else if transitionType.hasPrefix("Cards") {
       return .Cards(direction: direction)
     } else if transitionType.hasPrefix("Flip") {
-      return .Flip(direction: direction)
+      return .Flip(fromDirection: direction)
     } else {
       return fromStringWithDirectionAndParams(transitionType, direction: direction, params: transitionParams)
     }
