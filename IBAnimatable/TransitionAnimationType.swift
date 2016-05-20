@@ -15,7 +15,7 @@ public enum TransitionAnimationType {
   case SystemSuckEffect
   case SystemRippleEffect
   case Explode(params: [String])
-  case Fold(direction: TransitionDirection, params: [String])
+  case Fold(fromDirection: TransitionDirection, params: [String])
   case Portal(direction: TransitionDirection, params: [String])
   case Slide(direction: TransitionDirection, params: [String])
   case NatGeo(direction: TransitionDirection)
@@ -134,7 +134,7 @@ private extension TransitionAnimationType {
     var params = params
     params.removeFirst()
     if transitionType.hasPrefix("Fold") {
-      return .Fold(direction: direction, params: params)
+      return .Fold(fromDirection: direction, params: params)
     } else if transitionType.hasPrefix("Portal") {
       return .Portal(direction: direction, params: params)
     } else if transitionType.hasPrefix("Slide") {

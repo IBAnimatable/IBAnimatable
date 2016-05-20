@@ -42,23 +42,23 @@ public class FoldAnimator: NSObject, AnimatedTransitioning {
     
     switch fromDirection {
     case .Right:
-      self.transitionAnimationType = .Fold(direction: .Right, params: params)
-      self.reverseAnimationType = .Fold(direction: .Left, params: params)
+      self.transitionAnimationType = .Fold(fromDirection: .Right, params: params)
+      self.reverseAnimationType = .Fold(fromDirection: .Left, params: params)
       self.interactiveGestureType = .Pan(fromDirection: .Left)
       reverse = true
     case .Top:
-      self.transitionAnimationType = .Fold(direction: .Top, params: params)
-      self.reverseAnimationType = .Fold(direction: .Bottom, params: params)
+      self.transitionAnimationType = .Fold(fromDirection: .Top, params: params)
+      self.reverseAnimationType = .Fold(fromDirection: .Bottom, params: params)
       self.interactiveGestureType = .Pan(fromDirection: .Bottom)
       reverse = false
     case .Bottom:
-      self.transitionAnimationType = .Fold(direction: .Bottom, params: params)
-      self.reverseAnimationType = .Fold(direction: .Top, params: params)
+      self.transitionAnimationType = .Fold(fromDirection: .Bottom, params: params)
+      self.reverseAnimationType = .Fold(fromDirection: .Top, params: params)
       self.interactiveGestureType = .Pan(fromDirection: .Top)
       reverse = true
     default:
-      self.transitionAnimationType = .Fold(direction: .Left, params: params)
-      self.reverseAnimationType = .Fold(direction: .Right, params: params)
+      self.transitionAnimationType = .Fold(fromDirection: .Left, params: params)
+      self.reverseAnimationType = .Fold(fromDirection: .Right, params: params)
       self.interactiveGestureType = .Pan(fromDirection: .Right)
       reverse = false      
     }
