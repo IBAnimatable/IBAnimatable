@@ -230,6 +230,7 @@ The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and con
 * `Triangle`
 * `Star`: Can also specify the points of the Star, e.g. use `Star(6)` to have a star with 6 points. If not specified, default is 5 points. 
 * `Wave`: Can use parameters to customize the `Wave`. `Wave(down, 20, 5)` means the Wave faces down, width is 20 and offset is 5. If not specified, default value is `Wave(up, 40, 0)`. 
+* `Parallelogram`: Can use parameters to customize the `Parallelogram`. `Parallelogram(60)` means the top left angle of the Parallelogram will have an angle of 60 degrees. Default value is `Parallelogram(60)`. if angle == 90 it will be a rectangular Mask. if angle < 90 the parallelogram will be oriented to left. 
  
 
 #### `PaddingDesignable`
