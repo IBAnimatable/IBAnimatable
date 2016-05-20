@@ -15,18 +15,18 @@ public enum TransitionAnimationType {
   case SystemSuckEffect
   case SystemRippleEffect
   case Explode(params: [String])
-  case Fold(direction: TransitionFromDirection, params: [String])
-  case Portal(direction: TransitionFromDirection, params: [String])
-  case Slide(direction: TransitionFromDirection, params: [String])
-  case NatGeo(direction: TransitionFromDirection)
-  case Turn(direction: TransitionFromDirection)
-  case Cards(direction: TransitionFromDirection)
-  case Flip(direction: TransitionFromDirection)
-  case SystemCube(direction: TransitionFromDirection)
-  case SystemFlip(direction: TransitionFromDirection)
-  case SystemMoveIn(direction: TransitionFromDirection)
-  case SystemPush(direction: TransitionFromDirection)
-  case SystemReveal(direction: TransitionFromDirection)
+  case Fold(fromDirection: TransitionDirection, params: [String])
+  case Portal(direction: TransitionDirection, params: [String])
+  case Slide(toDirection: TransitionDirection, params: [String])
+  case NatGeo(toDirection: TransitionDirection)
+  case Turn(fromDirection: TransitionDirection)
+  case Cards(direction: TransitionDirection)
+  case Flip(fromDirection: TransitionDirection)
+  case SystemCube(fromDirection: TransitionDirection)
+  case SystemFlip(fromDirection: TransitionDirection)
+  case SystemMoveIn(fromDirection: TransitionDirection)
+  case SystemPush(fromDirection: TransitionDirection)
+  case SystemReveal(fromDirection: TransitionDirection)
   case SystemPage(type: TransitionPageType)
   case SystemCameraIris(hollowState: TransitionHollowState)
   case SystemRotate(degree: TransitionRotateDegree)
@@ -108,37 +108,37 @@ private extension TransitionAnimationType {
     let transitionParams = params(forTransitionType: transitionType)
     let direction = transitionDirection(forParams: transitionParams) ?? .Left
     if transitionType.hasPrefix("SystemCube") {
-      return .SystemCube(direction: direction)
+      return .SystemCube(fromDirection: direction)
     } else if transitionType.hasPrefix("SystemFlip") {
-      return .SystemFlip(direction: direction)
+      return .SystemFlip(fromDirection: direction)
     } else if transitionType.hasPrefix("SystemMoveIn") {
-      return .SystemMoveIn(direction: direction)
+      return .SystemMoveIn(fromDirection: direction)
     } else if transitionType.hasPrefix("SystemPush") {
-      return .SystemPush(direction: direction)
+      return .SystemPush(fromDirection: direction)
     } else if transitionType.hasPrefix("SystemReveal") {
-      return .SystemReveal(direction: direction)
+      return .SystemReveal(fromDirection: direction)
     } else if transitionType.hasPrefix("NatGeo") {
-      return .NatGeo(direction: direction)
+      return .NatGeo(toDirection: direction)
     } else if transitionType.hasPrefix("Turn") {
-      return .Turn(direction: direction)      
+      return .Turn(fromDirection: direction)      
     } else if transitionType.hasPrefix("Cards") {
       return .Cards(direction: direction)
     } else if transitionType.hasPrefix("Flip") {
-      return .Flip(direction: direction)
+      return .Flip(fromDirection: direction)
     } else {
       return fromStringWithDirectionAndParams(transitionType, direction: direction, params: transitionParams)
     }
   }
   
-  static func fromStringWithDirectionAndParams(transitionType: String, direction: TransitionFromDirection, params: [String]) -> TransitionAnimationType? {
+  static func fromStringWithDirectionAndParams(transitionType: String, direction: TransitionDirection, params: [String]) -> TransitionAnimationType? {
     var params = params
     params.removeFirst()
     if transitionType.hasPrefix("Fold") {
-      return .Fold(direction: direction, params: params)
+      return .Fold(fromDirection: direction, params: params)
     } else if transitionType.hasPrefix("Portal") {
       return .Portal(direction: direction, params: params)
     } else if transitionType.hasPrefix("Slide") {
-      return .Slide(direction: direction, params: params)
+      return .Slide(toDirection: direction, params: params)
     }
     return nil
   }
@@ -158,7 +158,7 @@ private extension TransitionAnimationType {
     return transitionType.componentsSeparatedByString(",")
   }
   
-  static func transitionDirection(forParams params: [String]) -> TransitionFromDirection? {
+  static func transitionDirection(forParams params: [String]) -> TransitionDirection? {
     if params.contains("left") {
       return .Left
     } else if params.contains("right") {

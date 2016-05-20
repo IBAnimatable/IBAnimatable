@@ -14,10 +14,10 @@ public class PortalAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
-  private var fromDirection: TransitionFromDirection
+  private var fromDirection: TransitionDirection
   private var zoomScale: CGFloat = 0.8
   
-  public init(fromDirection: TransitionFromDirection, params: [String], transitionDuration: Duration) {
+  public init(fromDirection: TransitionDirection, params: [String], transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
     self.fromDirection = fromDirection
     

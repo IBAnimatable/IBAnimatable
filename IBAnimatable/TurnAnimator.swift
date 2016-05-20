@@ -13,36 +13,36 @@ public class TurnAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType? = .Pan(fromDirection: .Horizontal)
   
   // MARK: - Private params
-  private var fromDirection: TransitionFromDirection
+  private var fromDirection: TransitionDirection
   
   // MARK: - Private fold transition
   private var transform: CATransform3D = CATransform3DIdentity
   private var reverse: Bool = false
   
   // MARK: - Life cycle
-  public init(fromDirection: TransitionFromDirection, transitionDuration: Duration) {
+  public init(fromDirection: TransitionDirection, transitionDuration: Duration) {
     self.fromDirection = fromDirection
     self.transitionDuration = transitionDuration
     
     switch fromDirection {
     case .Right:
-      self.transitionAnimationType = .Turn(direction: .Right)
-      self.reverseAnimationType = .Turn(direction: .Left)
+      self.transitionAnimationType = .Turn(fromDirection: .Right)
+      self.reverseAnimationType = .Turn(fromDirection: .Left)
       self.interactiveGestureType = .Pan(fromDirection: .Left)
       reverse = true
     case .Top:
-      self.transitionAnimationType = .Turn(direction: .Top)
-      self.reverseAnimationType = .Turn(direction: .Bottom)
+      self.transitionAnimationType = .Turn(fromDirection: .Top)
+      self.reverseAnimationType = .Turn(fromDirection: .Bottom)
       self.interactiveGestureType = .Pan(fromDirection: .Bottom)
       reverse = false
     case .Bottom:
-      self.transitionAnimationType = .Turn(direction: .Bottom)
-      self.reverseAnimationType = .Turn(direction: .Top)
+      self.transitionAnimationType = .Turn(fromDirection: .Bottom)
+      self.reverseAnimationType = .Turn(fromDirection: .Top)
       self.interactiveGestureType = .Pan(fromDirection: .Top)
       reverse = true
     default:
-      self.transitionAnimationType = .Turn(direction: .Left)
-      self.reverseAnimationType = .Turn(direction: .Right)
+      self.transitionAnimationType = .Turn(fromDirection: .Left)
+      self.reverseAnimationType = .Turn(fromDirection: .Right)
       self.interactiveGestureType = .Pan(fromDirection: .Right)
       reverse = false      
     }

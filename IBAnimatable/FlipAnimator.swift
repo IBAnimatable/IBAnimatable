@@ -13,7 +13,7 @@ public class FlipAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - Private params
-  private var fromDirection: TransitionFromDirection
+  private var fromDirection: TransitionDirection
   
   // MARK: - Private fold transition
   private var transform: CATransform3D = CATransform3DIdentity
@@ -21,30 +21,30 @@ public class FlipAnimator: NSObject, AnimatedTransitioning {
   private var horizontal: Bool = false
   
   // MARK: - Life cycle
-  public init(fromDirection: TransitionFromDirection, transitionDuration: Duration) {
+  public init(fromDirection: TransitionDirection, transitionDuration: Duration) {
     self.fromDirection = fromDirection
     self.transitionDuration = transitionDuration
     horizontal = fromDirection.isHorizontal
     
     switch fromDirection {
     case .Right:
-      self.transitionAnimationType = .Flip(direction: .Right)
-      self.reverseAnimationType = .Flip(direction: .Left)
+      self.transitionAnimationType = .Flip(fromDirection: .Right)
+      self.reverseAnimationType = .Flip(fromDirection: .Left)
       self.interactiveGestureType = .Pan(fromDirection: .Left)
       reverse = true
     case .Top:
-      self.transitionAnimationType = .Flip(direction: .Top)
-      self.reverseAnimationType = .Flip(direction: .Bottom)
+      self.transitionAnimationType = .Flip(fromDirection: .Top)
+      self.reverseAnimationType = .Flip(fromDirection: .Bottom)
       self.interactiveGestureType = .Pan(fromDirection: .Bottom)
       reverse = false
     case .Bottom:
-      self.transitionAnimationType = .Flip(direction: .Bottom)
-      self.reverseAnimationType = .Flip(direction: .Top)
+      self.transitionAnimationType = .Flip(fromDirection: .Bottom)
+      self.reverseAnimationType = .Flip(fromDirection: .Top)
       self.interactiveGestureType = .Pan(fromDirection: .Top)
       reverse = true
     default:
-      self.transitionAnimationType = .Flip(direction: .Left)
-      self.reverseAnimationType = .Flip(direction: .Right)
+      self.transitionAnimationType = .Flip(fromDirection: .Left)
+      self.reverseAnimationType = .Flip(fromDirection: .Right)
       self.interactiveGestureType = .Pan(fromDirection: .Right)
       reverse = false      
     }

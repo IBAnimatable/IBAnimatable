@@ -13,28 +13,28 @@ public class SystemMoveInAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
-  private var fromDirection: TransitionFromDirection
+  private var fromDirection: TransitionDirection
   
-  public init(fromDirection: TransitionFromDirection, transitionDuration: Duration) {
+  public init(fromDirection: TransitionDirection, transitionDuration: Duration) {
     self.fromDirection = fromDirection
     self.transitionDuration = transitionDuration
     
     switch fromDirection {
     case .Right:
-      self.transitionAnimationType = .SystemMoveIn(direction: .Right)
-      self.reverseAnimationType = .SystemMoveIn(direction: .Left)
+      self.transitionAnimationType = .SystemMoveIn(fromDirection: .Right)
+      self.reverseAnimationType = .SystemMoveIn(fromDirection: .Left)
       self.interactiveGestureType = .Pan(fromDirection: .Left)
     case .Top:
-      self.transitionAnimationType = .SystemMoveIn(direction: .Top)
-      self.reverseAnimationType = .SystemMoveIn(direction: .Bottom)
+      self.transitionAnimationType = .SystemMoveIn(fromDirection: .Top)
+      self.reverseAnimationType = .SystemMoveIn(fromDirection: .Bottom)
       self.interactiveGestureType = .Pan(fromDirection: .Bottom)
     case .Bottom:
-      self.transitionAnimationType = .SystemMoveIn(direction: .Bottom)
-      self.reverseAnimationType = .SystemMoveIn(direction: .Top)
+      self.transitionAnimationType = .SystemMoveIn(fromDirection: .Bottom)
+      self.reverseAnimationType = .SystemMoveIn(fromDirection: .Top)
       self.interactiveGestureType = .Pan(fromDirection: .Top)
     default:
-      self.transitionAnimationType = .SystemMoveIn(direction: .Left)
-      self.reverseAnimationType = .SystemMoveIn(direction: .Right)
+      self.transitionAnimationType = .SystemMoveIn(fromDirection: .Left)
+      self.reverseAnimationType = .SystemMoveIn(fromDirection: .Right)
       self.interactiveGestureType = .Pan(fromDirection: .Right)
     }
     
@@ -48,6 +48,6 @@ extension SystemMoveInAnimator: UIViewControllerAnimatedTransitioning {
   }
   
   public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-    animateWithCATransition(transitionContext, type: SystemTransitionType.MoveIn, subtype: fromDirection.stringValue)
+    animateWithCATransition(transitionContext, type: SystemTransitionType.MoveIn, subtype: fromDirection.CATransitionSubtype)
   }
 }

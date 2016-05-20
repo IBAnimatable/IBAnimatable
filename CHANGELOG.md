@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 #### API breaking changes
 
 - Change `PanFromLeft`, `PanFromRight`, `PanFromTop`, `PanFromBottom`, `PanHorizontally` and `PanVertically` to `Pan(Left)`, `Pan(Right)`, `Pan(Top)`, `Pan(Bottom)`, `Pan(Horizontal)` and `Pan(Vertical)` for `Pan` gesture transition controller. [#125](https://github.com/JakeLin/IBAnimatable/issues/125)
+- Refactor `direction` to `fromDirection` for system transition animators.  Refactor `TransitionFromDirection` to `TransitionDirection`. [#206](https://github.com/JakeLin/IBAnimatable/pull/206)
 
 #### Enhancements
 

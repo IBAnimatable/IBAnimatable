@@ -14,9 +14,9 @@ public class CardsAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
-  private var fromDirection: TransitionFromDirection
+  private var fromDirection: TransitionDirection
   
-  public init(fromDirection: TransitionFromDirection, transitionDuration: Duration) {
+  public init(fromDirection: TransitionDirection, transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
     self.fromDirection = fromDirection
     
@@ -48,7 +48,7 @@ extension CardsAnimator: UIViewControllerAnimatedTransitioning {
     if fromDirection == .Forward {
       executeForwardAnimation(transitionContext, containerView: containerView, fromView: fromView, toView: toView)
     } else {
-      executeBackwardAnimations(transitionContext, containerView: containerView, fromView: fromView, toView: toView)
+      executeBackwardAnimation(transitionContext, containerView: containerView, fromView: fromView, toView: toView)
     }
   }
   
@@ -58,7 +58,7 @@ extension CardsAnimator: UIViewControllerAnimatedTransitioning {
 
 private extension CardsAnimator {
   
-  func executeForwardAnimation(transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
+  func executeBackwardAnimation(transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
     let frame = fromView.frame
     var offScreenFrame = frame
     offScreenFrame.origin.y = offScreenFrame.height
@@ -95,7 +95,7 @@ private extension CardsAnimator {
 
 private extension CardsAnimator {
   
-  func executeBackwardAnimations(transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
+  func executeForwardAnimation(transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
     let frame = fromView.frame
     toView.frame = frame
     let scale = CATransform3DIdentity

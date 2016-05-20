@@ -13,12 +13,12 @@ public class SlideAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
-  private var fromDirection: TransitionFromDirection
+  private var fromDirection: TransitionDirection
   private var horizontal = false
   private var reverse = false
   private var fade = false
   
-  public init(fromDirection: TransitionFromDirection, params: [String], transitionDuration: Duration) {
+  public init(fromDirection: TransitionDirection, params: [String], transitionDuration: Duration) {
     self.fromDirection = fromDirection
     self.transitionDuration = transitionDuration
     fade = params.contains("fade")
@@ -26,23 +26,23 @@ public class SlideAnimator: NSObject, AnimatedTransitioning {
     
     switch fromDirection {
     case .Right:
-      self.transitionAnimationType = .Slide(direction: .Right, params: params)
-      self.reverseAnimationType = .Slide(direction: .Left, params: params)
+      self.transitionAnimationType = .Slide(toDirection: .Right, params: params)
+      self.reverseAnimationType = .Slide(toDirection: .Left, params: params)
       self.interactiveGestureType = .Pan(fromDirection: .Right)
       reverse = true
     case .Top:
-      self.transitionAnimationType = .Slide(direction: .Top, params: params)
-      self.reverseAnimationType = .Slide(direction: .Bottom, params: params)
+      self.transitionAnimationType = .Slide(toDirection: .Top, params: params)
+      self.reverseAnimationType = .Slide(toDirection: .Bottom, params: params)
       self.interactiveGestureType = .Pan(fromDirection: .Top)
       reverse = false
     case .Bottom:
-      self.transitionAnimationType = .Slide(direction: .Bottom, params: params)
-      self.reverseAnimationType = .Slide(direction: .Top, params: params)
+      self.transitionAnimationType = .Slide(toDirection: .Bottom, params: params)
+      self.reverseAnimationType = .Slide(toDirection: .Top, params: params)
       self.interactiveGestureType = .Pan(fromDirection: .Bottom)
       reverse = true
     default:
-      self.transitionAnimationType = .Slide(direction: .Left, params: params)
-      self.reverseAnimationType = .Slide(direction: .Right, params: params)
+      self.transitionAnimationType = .Slide(toDirection: .Left, params: params)
+      self.reverseAnimationType = .Slide(toDirection: .Right, params: params)
       self.interactiveGestureType = .Pan(fromDirection: .Left)
       reverse = false
     }

@@ -14,22 +14,22 @@ public class NatGeoAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
-  private var fromDirection: TransitionFromDirection
+  private var fromDirection: TransitionDirection
   private let firstPartRatio: Double = 0.8
   
   // MARK: - Life cycle
   
-  public init(fromDirection: TransitionFromDirection, transitionDuration: Duration) {
+  public init(fromDirection: TransitionDirection, transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
     self.fromDirection = fromDirection
     
     switch fromDirection {
     case .Right:
-      self.transitionAnimationType = .NatGeo(direction: .Right)
-      self.reverseAnimationType = .NatGeo(direction: .Left)
+      self.transitionAnimationType = .NatGeo(toDirection: .Right)
+      self.reverseAnimationType = .NatGeo(toDirection: .Left)
     default:
-      self.transitionAnimationType = .NatGeo(direction: .Left)
-      self.reverseAnimationType = .NatGeo(direction: .Right)
+      self.transitionAnimationType = .NatGeo(toDirection: .Left)
+      self.reverseAnimationType = .NatGeo(toDirection: .Right)
     }
     
     super.init()
