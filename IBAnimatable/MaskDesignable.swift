@@ -136,9 +136,7 @@ public extension MaskDesignable where Self: UIView {
   }
   
   // MARK: - Parallelogram
-  // angle du triangle = 180 - topLeftAngle
-  // formule - 90
-  //  formule : offset = tan(angle) * hauteur
+    
   private func maskParallelogramFromString(mask:String) {
     if let angle = Double(retrieveMaskParameters(mask, maskName: MaskType.Parallelogram.rawValue)) {
       maskParallelogram(angle)
