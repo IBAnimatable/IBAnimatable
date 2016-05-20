@@ -27,6 +27,8 @@ public extension MaskDesignable where Self: UIView {
         maskTriangle()
       case .Wave:
         maskWave()
+      case .Parallelogram:
+        maskParallelogram()
       }
     } else {
       if unwrappedMaskType.hasPrefix(MaskType.Star.rawValue) {
@@ -35,8 +37,12 @@ public extension MaskDesignable where Self: UIView {
         maskWaveFromString(unwrappedMaskType)
       } else if unwrappedMaskType.hasPrefix(MaskType.Polygon.rawValue) {
         maskPolygonFromString(unwrappedMaskType)
+      } else if unwrappedMaskType.hasPrefix(MaskType.Parallelogram.rawValue) {
+        maskParallelogramFromString(unwrappedMaskType)
       }
+      
     }
+    
   }
   
   // MARK: - Circle
@@ -60,7 +66,7 @@ public extension MaskDesignable where Self: UIView {
     let polygonPath = maskPolygonBezierPath(sides)
     drawPath(polygonPath)
   }
-
+  
   private func maskPolygonBezierPath(sides: Int) -> UIBezierPath {
     let path = UIBezierPath()
     let center = CGPoint(x: bounds.width / 2.0, y: bounds.height / 2.0)
@@ -129,8 +135,44 @@ public extension MaskDesignable where Self: UIView {
     return path
   }
   
+  // MARK: - Parallelogram
+  // angle du triangle = 180 - topLeftAngle
+  // formule - 90
+  //  formule : offset = tan(angle) * hauteur
+  private func maskParallelogramFromString(mask:String) {
+    if let angle = Double(retrieveMaskParameters(mask, maskName: MaskType.Parallelogram.rawValue)) {
+      maskParallelogram(angle)
+    } else {
+      maskParallelogram()
+    }
+  }
+  private func maskParallelogram(topLeftAngle:Double = 90) {
+    let parallelogramPath = maskParallelogramBezierPath(topLeftAngle);
+    drawPath(parallelogramPath)
+  }
+  private func maskParallelogramBezierPath(topLeftAngle:Double) -> UIBezierPath {
+    let topLeftAngleRad  =  Double(topLeftAngle) * M_PI / 180;
+    let path = UIBezierPath();
+    let offset = abs(CGFloat(tan(topLeftAngleRad - M_PI / 2)) * bounds.height);
+    
+    if  topLeftAngle <= 90 {
+      path.moveToPoint(CGPoint(x:0, y:0));
+      path.addLineToPoint(CGPoint(x: bounds.width - offset, y: 0))
+      path.addLineToPoint(CGPoint(x:bounds.width, y:bounds.height))
+      path.addLineToPoint(CGPoint(x: offset, y: bounds.height))
+    }
+    else {
+        path.moveToPoint(CGPoint(x:offset, y:0))
+        path.addLineToPoint(CGPoint(x:bounds.width, y:0))
+        path.addLineToPoint(CGPoint(x:bounds.width - offset, y:bounds.height));
+        path.addLineToPoint(CGPoint(x:0, y:bounds.height));
+        path.closePath()
+    }
+    path.closePath()
+    return path;
+  }
   // MARK: - Triangle
-
+  
   private func maskTriangle() {
     let trianglePath = maskTriangleBezierPath()
     drawPath(trianglePath)
@@ -138,6 +180,7 @@ public extension MaskDesignable where Self: UIView {
   
   private func maskTriangleBezierPath() -> UIBezierPath {
     let path = UIBezierPath()
+    
     path.moveToPoint(CGPoint(x: bounds.width / 2.0, y: bounds.origin.y))
     path.addLineToPoint(CGPoint(x: bounds.width, y: bounds.height))
     path.addLineToPoint(CGPoint(x: bounds.origin.x, y: bounds.height))
@@ -188,10 +231,10 @@ public extension MaskDesignable where Self: UIView {
       up = !up
     } while startX < bounds.maxX
     
-    path.addLineToPoint(CGPoint(x: path.currentPoint.x, y: originY))    
+    path.addLineToPoint(CGPoint(x: path.currentPoint.x, y: originY))
     return path
   }
-
+  
   
   // MARK: - Private helper
   
