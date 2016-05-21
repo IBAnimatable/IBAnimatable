@@ -6,7 +6,7 @@ IBAnimatable is an open source library to help designers and developers design a
 ## Approaches
 * Adding convenient `@IBInspectable` properties to reduce numerous amount of manual code. e.g.`fillColor`, `cornerRadius`, `shadowColor` and `shadowOffset`.
 * Providing predefined UI elements and animations. e.g. Flat UI colors, Gradient colors and animations.
-* Extending existing behaviours, e.g. More transition animations like "Fade", "Exp1lode", "Fold" and "Portal".
+* Extending existing behaviours, e.g. More transition animations like "Fade", "Explode", "Fold" and "Portal".
 
 ## Technical Considerations
 * **UIKit** - All `IBAnimatable` UI elements are based on `UIkit`.
