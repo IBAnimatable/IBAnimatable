@@ -144,7 +144,7 @@ public extension MaskDesignable where Self: UIView {
       maskParallelogram()
     }
   }
-  private func maskParallelogram(topLeftAngle:Double = 90) {
+  private func maskParallelogram(topLeftAngle:Double = 60) {
     let parallelogramPath = maskParallelogramBezierPath(topLeftAngle);
     drawPath(parallelogramPath)
   }
