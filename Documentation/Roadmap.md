@@ -6,7 +6,7 @@ IBAnimatable is an open source library to help designers and developers design a
 ## Approaches
 * Adding convenient `@IBInspectable` properties to reduce numerous amount of manual code. e.g.`fillColor`, `cornerRadius`, `shadowColor` and `shadowOffset`.
 * Providing predefined UI elements and animations. e.g. Flat UI colors, Gradient colors and animations.
-* Extending existing behaviours, e.g. More transition animations like "Fade", "Explode", "Fold" and "Portal".
+* Extending existing behaviours, e.g. More transition animations like "Fade", "Exp1lode", "Fold" and "Portal".
 
 ## Technical Considerations
 * **UIKit** - All `IBAnimatable` UI elements are based on `UIkit`.
@@ -214,7 +214,7 @@ You can find more details in https://github.com/JakeLin/IBAnimatable/milestones
 ### Interaction elements
 * <del>Unwind Segue</del>
 * <del>Dismiss current ViewController Segue</del>
-* `AnimatablePresentationController`: #198
+* `AnimatablePresentationController`: [#198](https://github.com/JakeLin/IBAnimatable/issues/198)
 	* gestureToDismiss (UIDynamics)
 
 * `AnimatableAlertController` for `UIAlertController`
