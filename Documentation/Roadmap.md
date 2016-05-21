@@ -1,43 +1,43 @@
 # Vision, Technical Considerations and Roadmap
 
 ## Vision
-IBAnimatable is an Open Source library to help designers and developers design and prototype UI, interaction, navigation, transition and animation for App Store ready Apps in Interface Builder.
+IBAnimatable is an open source library to help designers and developers design and prototype UI, interaction, navigation, transition and animation for App Store ready Apps in Interface Builder.
 
 ## Approaches
 * Adding convenient `@IBInspectable` properties to reduce numerous amount of manual code. e.g.`fillColor`, `cornerRadius`, `shadowColor` and `shadowOffset`.
 * Providing predefined UI elements and animations. e.g. Flat UI colors, Gradient colors and animations.
-* Extending existing behaviours, e.g. More transition animations than "Cover Vertical", "Flip Horizontal" and "Cross Dissolve".
+* Extending existing behaviours, e.g. More transition animations like "Fade", "Explode", "Fold" and "Portal".
 
 ## Technical Considerations
-* **UIKit** - All `IBAnimatable` UI elements are based on UIkit.
+* **UIKit** - All `IBAnimatable` UI elements are based on `UIkit`.
  	* **Dos**
 		* All UI elements should support Auto Layout.
-		* Support existing navigation pattern like present, dismiss, push and pop.
+		* Support existing navigation pattern like present/dismiss, push/pop.
 	* **Don'ts**
 		* Creating another layout system. e.g. CSS Flexbox.
-		* Creating custom navigation pattern.
+		* Creating new custom navigation pattern.
 
 * **`@IBDesginable` and `@IBInspectable`** - To design in Interface Builder, all properties should be `@IBDesginable`. Some properties cannot render properly in Interface Builder, e.g. `rotate`. And animations are not able to previewed in Interface Builder. But once Interface Builder supports, those features will work properly in Interface Builder.
 
-* **Platform - iOS** - Currently, `IBAnimatable` focus on iOS only. Once iOS support is mature, we can implement more protocol extensions to support other platforms like MacOS, WatchOS and tvOS.
+* **Platform - iOS** - Currently, we focus on iOS. Once iOS support is mature, we can implement more protocol extensions to support other platforms like MacOS, WatchOS and tvOS.
 
 
 * **iOS version** - Currently, `IBAnimatable` supports iOS 8 and above.
-    * **Dos**
+    	* **Dos**
 		* Supporting latest version first and disabling them in previous version if required.
-	* **Don'ts**
+    	* **Don'ts**
 		* Sacrificing features for backward compatibilities.
 
 * **Swift** - Currently, `IBAnimatable` supports Swift only.
 	* **Dos**
-		* Using Swift features and best practice like protocol extensions and optional.
+		* Using Swift features and best practice like protocol extensions, enum and optional.
 	* **Don'ts**
 		* Avoiding Swift features to support Objective C.
 
 ## Roadmap
 ### Versions
-* Version 1: designable and animatable elements
-* Version 2: tansition animations
+* <del>Version 1: designable and animatable elements</del>
+* <del>Version 2: custom tansition animations</del>
 * Version 3: Sketch plugin
 * Version 4: more designable and animatable elements
 * Version 5: more animations
@@ -58,7 +58,7 @@ You can find more details in https://github.com/JakeLin/IBAnimatable/milestones
 	* <del>borderColor</del>
 	* <del>borderWidth</del>
 	* <del>borderSide</del>
-	* Border with more than one side and less than 4 sides - https://github.com/JakeLin/IBAnimatable/issues/66
+	* <del>Border with more than one side and less than 4 sides</del>
 
 * Checkbox:
 	* <del>checked</del>
@@ -79,7 +79,7 @@ You can find more details in https://github.com/JakeLin/IBAnimatable/milestones
 	* <del>startColor</del>
 	* <del>endColor</del>
 	* <del>startPoint</del>
-	* <del>Default gradient colors - https://github.com/JakeLin/IBAnimatable/issues/24</del>
+	* <del>Default gradient colors</del>
 
 * Navigation Bar:
 	* <del>solidColor</del>
@@ -90,6 +90,7 @@ You can find more details in https://github.com/JakeLin/IBAnimatable/milestones
 	* <del>Polygon</del>
 	* <del>Triangle</del>
 	* <del>Wave</del>
+	* <del>Parallelogram</del>
 
 * Padding:
 	* <del>paddingLeft</del>
@@ -139,7 +140,7 @@ You can find more details in https://github.com/JakeLin/IBAnimatable/milestones
 * Collection View and Collection View Cell - https://github.com/JakeLin/IBAnimatable/issues/53
 * Animatable Slider - https://github.com/JakeLin/IBAnimatable/issues/70
 * Material Design elements - and https://github.com/JakeLin/IBAnimatable/issues/16 and  https://github.com/JakeLin/IBAnimatable/issues/55
-* Flat colors - https://github.com/JakeLin/IBAnimatable/issues/71
+* <del>Flat colors</del>
 * Motion effect, parallax effect - https://github.com/JakeLin/IBAnimatable/issues/18
 * Segmented Control - https://github.com/JakeLin/IBAnimatable/issues/72
 * Custom dynamic type (text style) - https://github.com/JakeLin/IBAnimatable/issues/73
@@ -213,10 +214,10 @@ You can find more details in https://github.com/JakeLin/IBAnimatable/milestones
 ### Interaction elements
 * <del>Unwind Segue</del>
 * <del>Dismiss current ViewController Segue</del>
-* AnimatablePopupController:
+* `AnimatablePresentationController`: #198
 	* gestureToDismiss (UIDynamics)
 
-* AnimatableAlert​Controller or DesignableAlert​Controller: - `UIAlert​Controller`
+* `AnimatableAlertController` for `UIAlertController`
 	* Standard Alert
 	* Action Sheet
 
@@ -231,7 +232,7 @@ You can find more details in https://github.com/JakeLin/IBAnimatable/milestones
 * <del>Configurable custom transition animations for Present and Dismiss. </del> 
 * <del>Configurable gesture interactions for Dismiss and Pop. </del> 
 * Meaningful transition like https://www.google.com/design/spec/animation/meaningful-transitions.html
-* More transition like https://github.com/ColinEberhardt/VCTransitionsLibrary and http://transitiontreasury.com/
+* More transition like <del>https://github.com/ColinEberhardt/VCTransitionsLibrary</del> and http://transitiontreasury.com/
 
 
 ### Misc.
@@ -240,4 +241,4 @@ You can find more details in https://github.com/JakeLin/IBAnimatable/milestones
 * Importing Sketch to Storyboard? Maybe too hard.
 * Sketch plugin to export `IBAnimatable` styles from Sketch, e.g. generating `Opacity=0.5; fillColor=#336699;` from Sketch and easily apply in Interface Builder.
 
-**Any suggestions toward to the vision are welcome**, please modify the Roadmap.md file and create a PR.
+**Any suggestions for the vision are welcome**, please modify the Roadmap.md file and create a PR. BTW: you can modify it on Github online and create a PR without manually forking the project now.
