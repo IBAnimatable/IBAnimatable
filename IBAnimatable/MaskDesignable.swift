@@ -158,17 +158,16 @@ public extension MaskDesignable where Self: UIView {
       path.addLineToPoint(CGPoint(x: bounds.width - offset, y: 0))
       path.addLineToPoint(CGPoint(x:bounds.width, y:bounds.height))
       path.addLineToPoint(CGPoint(x: offset, y: bounds.height))
-    }
-    else {
-        path.moveToPoint(CGPoint(x:offset, y:0))
-        path.addLineToPoint(CGPoint(x:bounds.width, y:0))
-        path.addLineToPoint(CGPoint(x:bounds.width - offset, y:bounds.height));
-        path.addLineToPoint(CGPoint(x:0, y:bounds.height));
-        path.closePath()
+    } else {
+      path.moveToPoint(CGPoint(x:offset, y:0))
+       path.addLineToPoint(CGPoint(x:bounds.width, y:0))
+       path.addLineToPoint(CGPoint(x:bounds.width - offset, y:bounds.height));
+       path.addLineToPoint(CGPoint(x:0, y:bounds.height));
     }
     path.closePath()
     return path;
   }
+  
   // MARK: - Triangle
   
   private func maskTriangle() {
