@@ -15,11 +15,11 @@ public struct AnimatorFactory {
   public static func generateAnimator(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration) -> AnimatedTransitioning {
     switch transitionAnimationType {
     case .Fade:
-      return FadeAnimator(fadeType: .Fade, transitionDuration: transitionDuration)
+      return FadeAnimator(direction: .None, transitionDuration: transitionDuration)
     case .FadeIn:
-      return FadeAnimator(fadeType: .FadeIn, transitionDuration: transitionDuration)
+      return FadeAnimator(direction: .In, transitionDuration: transitionDuration)
     case .FadeOut:
-      return FadeAnimator(fadeType: .FadeOut, transitionDuration: transitionDuration)
+      return FadeAnimator(direction: .Out, transitionDuration: transitionDuration)
     case .SystemRotate:
       return SystemRotateAnimator(transitionDuration: transitionDuration)
     case .SystemSuckEffect:

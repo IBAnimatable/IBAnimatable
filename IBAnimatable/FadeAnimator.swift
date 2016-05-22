@@ -13,22 +13,22 @@ public class FadeAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType? = .Pan(fromDirection: .Horizontal)
 
   // MARK: - private
-  private var fadeType: TransitionFadeType
+  private var direction: TransitionDirection
   
-  public init(fadeType: TransitionFadeType, transitionDuration: Duration) {
-    self.fadeType = fadeType
+  public init(direction: TransitionDirection, transitionDuration: Duration) {
+    self.direction = direction
     self.transitionDuration = transitionDuration
     
-    switch fadeType {
-    case .Fade:
-      self.transitionAnimationType = .Fade
-      self.reverseAnimationType = .Fade
-    case .FadeIn:
+    switch direction {
+    case .In:
       self.transitionAnimationType = .FadeIn
       self.reverseAnimationType = .FadeOut
-    case .FadeOut:
+    case .Out:
       self.transitionAnimationType = .FadeOut
       self.reverseAnimationType = .FadeIn
+    default:
+      self.transitionAnimationType = .Fade
+      self.reverseAnimationType = .Fade
     }
     
     super.init()
@@ -47,7 +47,7 @@ extension FadeAnimator: UIViewControllerAnimatedTransitioning {
       return
     }
     
-    switch fadeType {
+    switch transitionAnimationType {
     case .Fade:
       toView.alpha = 0
       containerView.addSubview(toView)
@@ -56,11 +56,14 @@ extension FadeAnimator: UIViewControllerAnimatedTransitioning {
       containerView.addSubview(toView)
     case .FadeOut:
       containerView.insertSubview(toView, belowSubview: fromView)
+    default:
+      transitionContext.completeTransition(true)
+      return
     }
     
     UIView.animateWithDuration(transitionDuration(transitionContext),
       animations: {
-        switch self.fadeType {
+        switch self.transitionAnimationType {
         case .Fade:
           fromView.alpha = 0
           toView.alpha = 1
@@ -68,6 +71,9 @@ extension FadeAnimator: UIViewControllerAnimatedTransitioning {
           toView.alpha = 1
         case .FadeOut:
           fromView.alpha = 0
+        default:
+          transitionContext.completeTransition(true)
+          return
         }
       },
       completion: { _ in

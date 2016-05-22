@@ -95,7 +95,6 @@
 		AEDD8A321C7EDAE30033175A /* SystemFlipAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDD8A301C7EDAE30033175A /* SystemFlipAnimator.swift */; };
 		AEDE6E6B1CCECE8A000DECF0 /* PinchInteractiveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDE6E6A1CCECE8A000DECF0 /* PinchInteractiveAnimator.swift */; };
 		AEE552A81C815AC5009CF623 /* FadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE552A61C815AC5009CF623 /* FadeAnimator.swift */; };
-		AEE552AB1C816233009CF623 /* TransitionFadeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE552A91C816233009CF623 /* TransitionFadeType.swift */; };
 		AEE552AE1C82D1E1009CF623 /* PresentFadeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE552AC1C82D1E1009CF623 /* PresentFadeSegue.swift */; };
 		AEE552B11C839EB7009CF623 /* PresenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE552AF1C839EB7009CF623 /* PresenterManager.swift */; };
 		AEF4938D1CE0161C00B76FD6 /* Playground.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEF4938C1CE0161C00B76FD6 /* Playground.storyboard */; };
@@ -233,7 +232,6 @@
 		AEDD8A301C7EDAE30033175A /* SystemFlipAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemFlipAnimator.swift; sourceTree = "<group>"; };
 		AEDE6E6A1CCECE8A000DECF0 /* PinchInteractiveAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinchInteractiveAnimator.swift; sourceTree = "<group>"; };
 		AEE552A61C815AC5009CF623 /* FadeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeAnimator.swift; sourceTree = "<group>"; };
-		AEE552A91C816233009CF623 /* TransitionFadeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionFadeType.swift; sourceTree = "<group>"; };
 		AEE552AC1C82D1E1009CF623 /* PresentFadeSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentFadeSegue.swift; sourceTree = "<group>"; };
 		AEE552AF1C839EB7009CF623 /* PresenterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterManager.swift; sourceTree = "<group>"; };
 		AEEE200A1C18CFD200AD033B /* NavigationBarDesginable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarDesginable.swift; sourceTree = "<group>"; };
@@ -562,7 +560,6 @@
 				AE18787D1C1D980D00300246 /* MaskType.swift */,
 				CAB56645FCD11BEC66200818 /* SystemTransitionType.swift */,
 				AE154B7D1C7D061A0093C05B /* TransitionAnimationType.swift */,
-				AEE552A91C816233009CF623 /* TransitionFadeType.swift */,
 				33A8B9EE1C7E7A4C00082529 /* TransitionFromDirection.swift */,
 				E20E911B1CAC421E00625094 /* TransitionHollowState.swift */,
 				AE9407881CAE871C0084BCB8 /* TransitionPageType.swift */,
@@ -842,7 +839,6 @@
 				E299DF541CD5F8C300EC30D4 /* TurnAnimator.swift in Sources */,
 				AE6B01861C2A445100950BB2 /* DesignableNavigationBar.swift in Sources */,
 				AE677B9A1CADCF6700D62273 /* SystemRippleEffectAnimator.swift in Sources */,
-				AEE552AB1C816233009CF623 /* TransitionFadeType.swift in Sources */,
 				AE154B7F1C7D061A0093C05B /* TransitionAnimationType.swift in Sources */,
 				AE677B991CADCF6500D62273 /* SystemCameraIrisAnimator.swift in Sources */,
 				E299DF5C1CD6067C00EC30D4 /* PresentCardsSegue.swift in Sources */,
