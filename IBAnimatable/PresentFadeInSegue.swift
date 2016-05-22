@@ -7,7 +7,7 @@ import UIKit
 
 public class PresentFadeInSegue: UIStoryboardSegue {
   public override func perform() {
-    destinationViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(.FadeIn)
+    destinationViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(.Fade(direction:.In))
     sourceViewController.presentViewController(destinationViewController, animated: true, completion: nil)
   }
 }

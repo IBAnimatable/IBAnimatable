@@ -8,7 +8,6 @@ import UIKit
 TransitionDirection: used to specify the direction for the transition
 */
 public enum TransitionDirection {
-  case None
   case Left
   case Right
   case Top
@@ -17,7 +16,8 @@ public enum TransitionDirection {
   case Backward
   case In
   case Out
-
+  case Cross
+  
   // Convert from direction to CATransition Subtype used in `CATransition`
   var CATransitionSubtype: String {
     switch self {

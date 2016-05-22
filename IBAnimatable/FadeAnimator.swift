@@ -21,14 +21,14 @@ public class FadeAnimator: NSObject, AnimatedTransitioning {
     
     switch direction {
     case .In:
-      self.transitionAnimationType = .FadeIn
-      self.reverseAnimationType = .FadeOut
+      self.transitionAnimationType = .Fade(direction: .In)
+      self.reverseAnimationType = .Fade(direction: .Out)
     case .Out:
-      self.transitionAnimationType = .FadeOut
-      self.reverseAnimationType = .FadeIn
+      self.transitionAnimationType = .Fade(direction: .Out)
+      self.reverseAnimationType = .Fade(direction: .In)
     default:
-      self.transitionAnimationType = .Fade
-      self.reverseAnimationType = .Fade
+      self.transitionAnimationType = .Fade(direction: .Cross)
+      self.reverseAnimationType = .Fade(direction: .Cross)
     }
     
     super.init()
@@ -47,33 +47,27 @@ extension FadeAnimator: UIViewControllerAnimatedTransitioning {
       return
     }
     
-    switch transitionAnimationType {
-    case .Fade:
+    switch direction {
+    case .In:
       toView.alpha = 0
       containerView.addSubview(toView)
-    case .FadeIn:
-      toView.alpha = 0
-      containerView.addSubview(toView)
-    case .FadeOut:
+    case .Out:
       containerView.insertSubview(toView, belowSubview: fromView)
     default:
-      transitionContext.completeTransition(true)
-      return
+      toView.alpha = 0
+      containerView.addSubview(toView)
     }
     
     UIView.animateWithDuration(transitionDuration(transitionContext),
       animations: {
-        switch self.transitionAnimationType {
-        case .Fade:
-          fromView.alpha = 0
+        switch self.direction {
+        case .In:
           toView.alpha = 1
-        case .FadeIn:
-          toView.alpha = 1
-        case .FadeOut:
+        case .Out:
           fromView.alpha = 0
         default:
-          transitionContext.completeTransition(true)
-          return
+          fromView.alpha = 0
+          toView.alpha = 1
         }
       },
       completion: { _ in
