@@ -20,6 +20,8 @@ public struct AnimatorFactory {
       return FadeAnimator(fadeType: .FadeIn, transitionDuration: transitionDuration)
     case .FadeOut:
       return FadeAnimator(fadeType: .FadeOut, transitionDuration: transitionDuration)
+    case .SystemRotate:
+      return SystemRotateAnimator(transitionDuration: transitionDuration)
     case .SystemSuckEffect:
       return SystemSuckEffectAnimator(transitionDuration: transitionDuration)
     case .SystemRippleEffect:
@@ -54,8 +56,6 @@ public struct AnimatorFactory {
       return SystemPageAnimator(type: type, transitionDuration: transitionDuration)
     case let .SystemCameraIris(hollowState):
       return SystemCameraIrisAnimator(hollowState: hollowState, transitionDuration: transitionDuration)
-    case let .SystemRotate(degree):
-      return SystemRotateAnimator(withDegree: degree, transitionDuration: transitionDuration)
     }
   }
   

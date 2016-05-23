@@ -118,7 +118,6 @@
 		E27691E91CAFC72C004A725C /* SystemMoveInAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691E81CAFC72C004A725C /* SystemMoveInAnimator.swift */; };
 		E27691EB1CAFC91A004A725C /* SystemPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691EA1CAFC91A004A725C /* SystemPushAnimator.swift */; };
 		E27691EF1CAFCA29004A725C /* SystemRevealAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691EE1CAFCA29004A725C /* SystemRevealAnimator.swift */; };
-		E27691F11CAFCBCF004A725C /* TransitionRotateDegree.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691F01CAFCBCF004A725C /* TransitionRotateDegree.swift */; };
 		E27691F31CAFCD67004A725C /* SystemRotateAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691F21CAFCD67004A725C /* SystemRotateAnimator.swift */; };
 		E299DF541CD5F8C300EC30D4 /* TurnAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E299DF531CD5F8C300EC30D4 /* TurnAnimator.swift */; };
 		E299DF561CD5FFE300EC30D4 /* PresentTurnSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E299DF551CD5FFE300EC30D4 /* PresentTurnSegue.swift */; };
@@ -270,7 +269,6 @@
 		E27691E81CAFC72C004A725C /* SystemMoveInAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemMoveInAnimator.swift; sourceTree = "<group>"; };
 		E27691EA1CAFC91A004A725C /* SystemPushAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPushAnimator.swift; sourceTree = "<group>"; };
 		E27691EE1CAFCA29004A725C /* SystemRevealAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemRevealAnimator.swift; sourceTree = "<group>"; };
-		E27691F01CAFCBCF004A725C /* TransitionRotateDegree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionRotateDegree.swift; sourceTree = "<group>"; };
 		E27691F21CAFCD67004A725C /* SystemRotateAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemRotateAnimator.swift; sourceTree = "<group>"; };
 		E299DF531CD5F8C300EC30D4 /* TurnAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurnAnimator.swift; sourceTree = "<group>"; };
 		E299DF551CD5FFE300EC30D4 /* PresentTurnSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentTurnSegue.swift; sourceTree = "<group>"; };
@@ -574,7 +572,6 @@
 				33A8B9EE1C7E7A4C00082529 /* TransitionFromDirection.swift */,
 				E20E911B1CAC421E00625094 /* TransitionHollowState.swift */,
 				AE9407881CAE871C0084BCB8 /* TransitionPageType.swift */,
-				E27691F01CAFCBCF004A725C /* TransitionRotateDegree.swift */,
 				AE6D430B1C98B658006E2F67 /* TransitionType.swift */,
 			);
 			name = enum;
@@ -856,7 +853,6 @@
 				AEE552AB1C816233009CF623 /* TransitionFadeType.swift in Sources */,
 				AE154B7F1C7D061A0093C05B /* TransitionAnimationType.swift in Sources */,
 				AE677B991CADCF6500D62273 /* SystemCameraIrisAnimator.swift in Sources */,
-				E27691F11CAFCBCF004A725C /* TransitionRotateDegree.swift in Sources */,
 				E299DF5C1CD6067C00EC30D4 /* PresentCardsSegue.swift in Sources */,
 				AE6B016F1C2A444900950BB2 /* MaskDesignable.swift in Sources */,
 				AE6B01741C2A444900950BB2 /* SideImageDesignable.swift in Sources */,

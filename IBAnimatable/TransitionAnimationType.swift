@@ -12,6 +12,7 @@ public enum TransitionAnimationType {
   case Fade             // ToView fades in and FromView fades out
   case FadeIn           // ToView fades in
   case FadeOut          // FromView Fades out
+  case SystemRotate
   case SystemSuckEffect
   case SystemRippleEffect
   case Explode(params: [String])
@@ -29,8 +30,7 @@ public enum TransitionAnimationType {
   case SystemReveal(fromDirection: TransitionDirection)
   case SystemPage(type: TransitionPageType)
   case SystemCameraIris(hollowState: TransitionHollowState)
-  case SystemRotate(degree: TransitionRotateDegree)
-    
+  
   public var stringValue: String {
     return String(self)
   }
@@ -49,7 +49,7 @@ public enum TransitionAnimationType {
     } else if transitionType.hasPrefix("SystemPage") {
       return pageTransitionAnimationType(transitionType)
     } else if transitionType.hasPrefix("SystemRotate") {
-      return rotateTransitionAnimationType(transitionType)
+      return .SystemRotate
     } else {
       return fromStringWithDirection(transitionType)
     }
@@ -86,20 +86,6 @@ private extension TransitionAnimationType {
       return .SystemPage(type: .UnCurl)
     } else if transitionParams.contains("curl") {
       return .SystemPage(type: .Curl)      
-    }
-    return nil
-  }
-  
-  static func rotateTransitionAnimationType(transitionType: String) -> TransitionAnimationType? {
-    let transitionParams = params(forTransitionType: transitionType)
-    if transitionParams.contains("90ccw") || transitionParams.contains("ninetyccw") {
-      return .SystemRotate(degree: .NinetyCCW)
-    } else if transitionParams.contains("90") || transitionParams.contains("ninety") {
-      return .SystemRotate(degree: .Ninety)
-    } else if transitionParams.contains("180ccw") || transitionParams.contains("onehundredheightyccw") {
-      return .SystemRotate(degree: .OneHundredHeightyCCW)
-    } else if transitionParams.contains("180") || transitionParams.contains("onehundredheighty") {
-      return .SystemRotate(degree: .OneHundredHeighty)
     }
     return nil
   }
