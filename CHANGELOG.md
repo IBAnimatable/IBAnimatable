@@ -9,6 +9,8 @@ All notable changes to this project will be documented in this file.
 
 - Change `PanFromLeft`, `PanFromRight`, `PanFromTop`, `PanFromBottom`, `PanHorizontally` and `PanVertically` to `Pan(Left)`, `Pan(Right)`, `Pan(Top)`, `Pan(Bottom)`, `Pan(Horizontal)` and `Pan(Vertical)` for `Pan` gesture transition controller. [#125](https://github.com/JakeLin/IBAnimatable/issues/125)
 - Refactor `direction` to `fromDirection` for system transition animators.  Refactor `TransitionFromDirection` to `TransitionDirection`. [#206](https://github.com/JakeLin/IBAnimatable/pull/206)
+- Refactor `Fade`, `FadeIn` and `FadeOut` to `Fade(direction: TransitionDirection)` in `TransitionAnimationType`. Use `Fade(In)` to replace `FadeIn` and use `Fade(Out) to replace `FadeOut`.[#209](https://github.com/JakeLin/IBAnimatable/pull/209)
+- Remove `PresentFadeInSegue`, `PresentFadeInWithDismissInteractionSegue`, `PresentFadeOutSegue` and `PresentFadeOutWithDismissInteractionSegue`, use  `PresentFadeSegue` and `PresentFadeWithDismissInteractionSegue` instead. [#209](https://github.com/JakeLin/IBAnimatable/pull/209)
 
 #### Enhancements
 
