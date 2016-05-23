@@ -26,15 +26,19 @@ public class SystemFlipAnimator: NSObject, AnimatedTransitioning {
     case .Right:
       self.transitionAnimationType = .SystemFlip(fromDirection: .Right)
       self.reverseAnimationType = .SystemFlip(fromDirection: .Left)
+      self.interactiveGestureType = .Pan(fromDirection: .Left)
     case .Top:
       self.transitionAnimationType = .SystemFlip(fromDirection: .Top)
       self.reverseAnimationType = .SystemFlip(fromDirection: .Bottom)
+      self.interactiveGestureType = .Pan(fromDirection: .Bottom)
     case .Bottom:
       self.transitionAnimationType = .SystemFlip(fromDirection: .Bottom)
       self.reverseAnimationType = .SystemFlip(fromDirection: .Top)
+      self.interactiveGestureType = .Pan(fromDirection: .Top)
     default:
       self.transitionAnimationType = .SystemFlip(fromDirection: .Left)
       self.reverseAnimationType = .SystemFlip(fromDirection: .Right)
+      self.interactiveGestureType = .Pan(fromDirection: .Right)
     }
     
     super.init()
