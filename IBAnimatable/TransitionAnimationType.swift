@@ -9,13 +9,11 @@ import Foundation
  Predefined Transition Animation Type
  */
 public enum TransitionAnimationType {
-  case Fade             // ToView fades in and FromView fades out
-  case FadeIn           // ToView fades in
-  case FadeOut          // FromView Fades out
   case SystemRotate
   case SystemSuckEffect
   case SystemRippleEffect
   case Explode(params: [String])
+  case Fade(direction: TransitionDirection)
   case Fold(fromDirection: TransitionDirection, params: [String])
   case Portal(direction: TransitionDirection, params: [String])
   case Slide(toDirection: TransitionDirection, params: [String])
@@ -62,12 +60,13 @@ public enum TransitionAnimationType {
 private extension TransitionAnimationType {
   
   static func fadeTransitionAnimationType(transitionType: String) -> TransitionAnimationType {
-    if transitionType.hasSuffix("In") {
-      return .FadeIn
-    } else if transitionType.hasSuffix("Out") {
-      return .FadeOut
+    let transitionParams = params(forTransitionType: transitionType)
+    if transitionParams.contains("in") {
+      return .Fade(direction: .In)
+    } else if transitionParams.contains("out") {
+      return .Fade(direction: .Out)
     }
-    return .Fade
+    return .Fade(direction: .Cross)
   }
  
   static func cameraIrisTransitionAnimationType(transitionType: String) -> TransitionAnimationType? {

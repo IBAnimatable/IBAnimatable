@@ -14,12 +14,6 @@ public struct AnimatorFactory {
 
   public static func generateAnimator(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration) -> AnimatedTransitioning {
     switch transitionAnimationType {
-    case .Fade:
-      return FadeAnimator(fadeType: .Fade, transitionDuration: transitionDuration)
-    case .FadeIn:
-      return FadeAnimator(fadeType: .FadeIn, transitionDuration: transitionDuration)
-    case .FadeOut:
-      return FadeAnimator(fadeType: .FadeOut, transitionDuration: transitionDuration)
     case .SystemRotate:
       return SystemRotateAnimator(transitionDuration: transitionDuration)
     case .SystemSuckEffect:
@@ -28,6 +22,8 @@ public struct AnimatorFactory {
       return SystemRippleEffectAnimator(transitionDuration: transitionDuration)
     case let .Explode(params):
       return ExplodeAnimator(params: params, transitionDuration: transitionDuration)
+    case let .Fade(direction):
+      return FadeAnimator(direction: direction, transitionDuration: transitionDuration)
     case let .Fold(direction, params):
       return FoldAnimator(fromDirection: direction, params: params, transitionDuration: transitionDuration)
     case let .Portal(direction, params):

@@ -14,7 +14,10 @@ public enum TransitionDirection {
   case Bottom
   case Forward
   case Backward
-
+  case In
+  case Out
+  case Cross
+  
   // Convert from direction to CATransition Subtype used in `CATransition`
   var CATransitionSubtype: String {
     switch self {

@@ -45,7 +45,7 @@ private extension TransitionTableViewController {
   
   func generateTransitionTypeData() {
     transitionAnimationsHeaders.append("Fade")
-    transitionAnimations.append(["Fade", "FadeIn", "FadeOut"])
+    transitionAnimations.append(["Fade", "Fade(In)", "Fade(Out)"])
     transitionAnimationsHeaders.append("SystemCube")
     transitionAnimations.append(transitionTypeWithDirections(forName: "SystemCube"))
     transitionAnimationsHeaders.append("SystemFlip")
