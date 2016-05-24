@@ -14,6 +14,8 @@ public struct AnimatorFactory {
 
   public static func generateAnimator(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration) -> AnimatedTransitioning {
     switch transitionAnimationType {
+    case .SystemRotate:
+      return SystemRotateAnimator(transitionDuration: transitionDuration)
     case .SystemSuckEffect:
       return SystemSuckEffectAnimator(transitionDuration: transitionDuration)
     case .SystemRippleEffect:
