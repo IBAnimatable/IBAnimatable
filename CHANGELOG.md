@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
 - Refactor `direction` to `fromDirection` for system transition animators.  Refactor `TransitionFromDirection` to `TransitionDirection`. [#206](https://github.com/JakeLin/IBAnimatable/pull/206)
 - Refactor `Fade`, `FadeIn` and `FadeOut` to `Fade(direction: TransitionDirection)` in `TransitionAnimationType`. Use `Fade(In)` to replace `FadeIn` and use `Fade(Out) to replace `FadeOut`.[#209](https://github.com/JakeLin/IBAnimatable/pull/209)
 - Remove `PresentFadeInSegue`, `PresentFadeInWithDismissInteractionSegue`, `PresentFadeOutSegue` and `PresentFadeOutWithDismissInteractionSegue`, use  `PresentFadeSegue` and `PresentFadeWithDismissInteractionSegue` instead. [#209](https://github.com/JakeLin/IBAnimatable/pull/209)
+- Remove `degree` for `SystemRotate` since it only supports 90 degrees. 
 
 #### Enhancements
 
@@ -22,7 +23,7 @@ All notable changes to this project will be documented in this file.
 - Add `NatGeoAnimator` to support NatGeo transition animation. It supports only a direction `NatGeo(direction)`, if no specified, the default values are `NatGeo(Left)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
 - Add `Turn` to support Turn transition animation. It supports only a direction `Turn(direction)`, if no specified, the default values are `Turn(Left)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
 - Add `CardsAnimator` to support Cards transition animation. It supports parameters `Cards(direction)`, if no specified, the default values are `Cards(Forward)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
-- Add `FlipAnimator` to support Flip transition animation. It supports parameters `Flip(direction)`, if no specified, the default values are `Flip(Left)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
+- Add `FlipAnimator` to support Flip transition animation. It supports parameters `Flip(direction)`, if no specified, the default values are `Flip(Left)`. Currently only support `Flip(Left)` and `Flip(Right)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
 - Add `ContainerTransition` to manage transition animations between two UIViewController in a container
 - Add `AnimatableCollectionViewCell` [#167](https://github.com/JakeLin/IBAnimatable/pull/167)
 - Add `PinchInteractiveAnimator` to support `Pinch(Close)`, `Pinch(Open)` for `Pinch` gesture transition controller. [#125](https://github.com/JakeLin/IBAnimatable/issues/125)
