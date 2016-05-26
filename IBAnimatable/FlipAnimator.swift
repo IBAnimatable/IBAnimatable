@@ -32,16 +32,6 @@ public class FlipAnimator: NSObject, AnimatedTransitioning {
       self.reverseAnimationType = .Flip(fromDirection: .Left)
       self.interactiveGestureType = .Pan(fromDirection: .Left)
       reverse = true
-    case .Top:
-      self.transitionAnimationType = .Flip(fromDirection: .Top)
-      self.reverseAnimationType = .Flip(fromDirection: .Bottom)
-      self.interactiveGestureType = .Pan(fromDirection: .Bottom)
-      reverse = false
-    case .Bottom:
-      self.transitionAnimationType = .Flip(fromDirection: .Bottom)
-      self.reverseAnimationType = .Flip(fromDirection: .Top)
-      self.interactiveGestureType = .Pan(fromDirection: .Top)
-      reverse = true
     default:
       self.transitionAnimationType = .Flip(fromDirection: .Left)
       self.reverseAnimationType = .Flip(fromDirection: .Right)
