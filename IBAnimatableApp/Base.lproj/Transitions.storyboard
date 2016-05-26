@@ -16,7 +16,7 @@
                         <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="transitionCell" textLabel="mDV-Ii-W8m" style="IBUITableViewCellStyleDefault" id="gTl-GY-SNY" customClass="AnimatableTableViewCell" customModule="IBAnimatable">
-                                <rect key="frame" x="0.0" y="114" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="113.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gTl-GY-SNY" id="qhN-8T-xDf">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -59,6 +59,11 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="MCs-iu-UVL" kind="unwind" unwindAction="unwindToViewController:" id="j1e-QU-kec"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="IB" id="2K1-iW-B9P">
+                            <connections>
+                                <segue destination="6pB-Ve-5ey" kind="show" id="NTk-JN-vNJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -231,6 +236,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MwU-bg-SAk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5379.5" y="-667.5"/>
+        </scene>
+        <!--TransitionsInInterfaceBuilder-->
+        <scene sceneID="CHb-Zv-Krd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TransitionsInInterfaceBuilder" id="6pB-Ve-5ey" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pkR-2n-XUY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4017.5" y="151"/>
         </scene>
         <!--Animatable Navigation Controller-->
         <scene sceneID="Ryf-4p-TtM">
@@ -568,7 +581,7 @@
         <image name="back" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="DNB-vZ-0SS"/>
         <segue reference="ftd-QI-Jx6"/>
-        <segue reference="HbQ-Kq-gSf"/>
     </inferredMetricsTieBreakers>
 </document>
