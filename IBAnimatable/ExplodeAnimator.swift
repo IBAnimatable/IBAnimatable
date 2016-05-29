@@ -52,6 +52,10 @@ extension ExplodeAnimator: UIViewControllerAnimatedTransitioning {
     let snapshots = createSnapshots(toView: toView, fromView: fromView, containerView: containerView)
     containerView.sendSubviewToBack(fromView)
     animateSnapshotsExplode(snapshots) {
+      if transitionContext.transitionWasCancelled() {
+        containerView.bringSubviewToFront(fromView)
+      }
+      
       transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
     }
   }
