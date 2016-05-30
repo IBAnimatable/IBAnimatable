@@ -30,7 +30,7 @@ All notable changes to this project will be documented in this file.
 - Add `SlideAnimator` to support Slide transition animation. It supports parameters `Slide(direction, fade)`, if no specified, the default values are `Flip(Left)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
 - Add IBAnimatable Playground to demonstrate transitions and interactions. [#204](https://github.com/JakeLin/IBAnimatable/pull/204)
 - Add `Parallelogram` mask. [#207 - Parallelogram Mask support in Maskdesignable](https://github.com/JakeLin/IBAnimatable/pull/207)
-- Add `popToRootViewController` segue for poping to root ViewController of the NavigationController. [#211](https://github.com/JakeLin/IBAnimatable/pull/211)
+- Add `popToRootViewController` segue for poping to root ViewController of the NavigationController. [#212](https://github.com/JakeLin/IBAnimatable/pull/212)
 
 #### Bugfixes
 
