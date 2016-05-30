@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oAB-Bz-TaE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oAB-Bz-TaE">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -16,7 +16,7 @@
                         <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="transitionCell" textLabel="mDV-Ii-W8m" style="IBUITableViewCellStyleDefault" id="gTl-GY-SNY" customClass="AnimatableTableViewCell" customModule="IBAnimatable">
-                                <rect key="frame" x="0.0" y="114" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="113.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gTl-GY-SNY" id="qhN-8T-xDf">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -59,6 +59,11 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="MCs-iu-UVL" kind="unwind" unwindAction="unwindToViewController:" id="j1e-QU-kec"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="IB" id="2K1-iW-B9P">
+                            <connections>
+                                <segue destination="6pB-Ve-5ey" kind="show" id="NTk-JN-vNJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -170,7 +175,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FgP-UH-Os8">
-                                <rect key="frame" x="28" y="264" width="319" height="140"/>
+                                <rect key="frame" x="28" y="229" width="319" height="210"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nmd-hI-p2R" userLabel="Push button" customClass="AnimatableButton" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="0.0" width="319" height="60"/>
@@ -189,8 +194,22 @@
                                             <segue destination="Jr9-M0-K6n" kind="show" id="f4g-PY-43d"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgi-jr-aua" userLabel="Pop button" customClass="AnimatableButton" customModule="IBAnimatable">
+                                        <rect key="frame" x="0.0" y="70" width="319" height="60"/>
+                                        <state key="normal" title="Pop to root ViewController">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="Eer-hg-kVs" kind="unwind" unwindAction="popToRootViewController:" id="fUh-p9-Gm0"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap &quot;Back&quot; button on Navigation bar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOa-4w-tZy">
-                                        <rect key="frame" x="0.0" y="70" width="319" height="30"/>
+                                        <rect key="frame" x="0.0" y="140" width="319" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="PAh-aU-Ots"/>
                                         </constraints>
@@ -199,7 +218,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or use gesture to pop" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4y-eg-gD1">
-                                        <rect key="frame" x="0.0" y="110" width="319" height="30"/>
+                                        <rect key="frame" x="0.0" y="180" width="319" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -208,7 +227,9 @@
                                 <constraints>
                                     <constraint firstItem="MOa-4w-tZy" firstAttribute="centerX" secondItem="FgP-UH-Os8" secondAttribute="centerX" id="KPV-8M-Cvb"/>
                                     <constraint firstItem="G4y-eg-gD1" firstAttribute="height" secondItem="MOa-4w-tZy" secondAttribute="height" id="pC6-TP-z6N"/>
+                                    <constraint firstItem="Sgi-jr-aua" firstAttribute="width" secondItem="FgP-UH-Os8" secondAttribute="width" id="x3P-7c-YQG"/>
                                     <constraint firstItem="G4y-eg-gD1" firstAttribute="centerX" secondItem="FgP-UH-Os8" secondAttribute="centerX" id="x5w-79-xX0"/>
+                                    <constraint firstItem="Sgi-jr-aua" firstAttribute="height" secondItem="Nmd-hI-p2R" secondAttribute="height" id="yDP-bi-Ey0"/>
                                     <constraint firstItem="Nmd-hI-p2R" firstAttribute="width" secondItem="FgP-UH-Os8" secondAttribute="width" id="zhD-z5-xNp"/>
                                 </constraints>
                             </stackView>
@@ -229,8 +250,17 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MwU-bg-SAk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Eer-hg-kVs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5379.5" y="-667.5"/>
+        </scene>
+        <!--TransitionsInInterfaceBuilder-->
+        <scene sceneID="CHb-Zv-Krd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TransitionsInInterfaceBuilder" id="6pB-Ve-5ey" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pkR-2n-XUY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4017.5" y="151"/>
         </scene>
         <!--Animatable Navigation Controller-->
         <scene sceneID="Ryf-4p-TtM">
@@ -271,7 +301,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="63B-zV-SiK">
-                                <rect key="frame" x="28" y="264" width="319" height="140"/>
+                                <rect key="frame" x="28" y="228.5" width="319" height="210"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIT-M5-Efk" userLabel="Push button" customClass="AnimatableButton" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="0.0" width="319" height="60"/>
@@ -290,8 +320,22 @@
                                             <segue destination="jDB-Ur-y9F" kind="show" id="DUR-wR-gOd"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anp-zN-poS" userLabel="Pop button" customClass="AnimatableButton" customModule="IBAnimatable">
+                                        <rect key="frame" x="0.0" y="70" width="319" height="60"/>
+                                        <state key="normal" title="Pop to root ViewController">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="WRQ-WI-sbz" kind="unwind" unwindAction="popToRootViewController:" id="vSV-Hj-dIJ"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap &quot;Back&quot; button on Navigation bar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fn-Db-caB">
-                                        <rect key="frame" x="0.0" y="70" width="319" height="30"/>
+                                        <rect key="frame" x="0.0" y="140" width="319" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="8Ts-z6-31z"/>
                                         </constraints>
@@ -300,7 +344,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or use gesture to pop" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmp-P2-WvF">
-                                        <rect key="frame" x="0.0" y="110" width="319" height="30"/>
+                                        <rect key="frame" x="0.0" y="180" width="319" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -309,6 +353,8 @@
                                 <constraints>
                                     <constraint firstItem="DIT-M5-Efk" firstAttribute="width" secondItem="63B-zV-SiK" secondAttribute="width" id="6qd-oU-ze6"/>
                                     <constraint firstItem="1fn-Db-caB" firstAttribute="centerX" secondItem="63B-zV-SiK" secondAttribute="centerX" id="McH-I6-Pii"/>
+                                    <constraint firstItem="anp-zN-poS" firstAttribute="width" secondItem="63B-zV-SiK" secondAttribute="width" id="TSt-c4-RvZ"/>
+                                    <constraint firstItem="anp-zN-poS" firstAttribute="height" secondItem="DIT-M5-Efk" secondAttribute="height" id="gkY-9D-mhy"/>
                                     <constraint firstItem="cmp-P2-WvF" firstAttribute="height" secondItem="1fn-Db-caB" secondAttribute="height" id="jdk-AW-Ytd"/>
                                     <constraint firstItem="cmp-P2-WvF" firstAttribute="centerX" secondItem="63B-zV-SiK" secondAttribute="centerX" id="oGH-0l-fqG"/>
                                 </constraints>
@@ -330,6 +376,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Td-V3-Teq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="WRQ-WI-sbz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5846.5" y="-667.5"/>
         </scene>
@@ -568,7 +615,7 @@
         <image name="back" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ftd-QI-Jx6"/>
         <segue reference="HbQ-Kq-gSf"/>
+        <segue reference="DUR-wR-gOd"/>
     </inferredMetricsTieBreakers>
 </document>

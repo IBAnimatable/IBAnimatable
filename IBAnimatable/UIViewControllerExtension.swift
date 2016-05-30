@@ -13,4 +13,9 @@ public extension UIViewController {
   @IBAction public func dismissCurrentViewController(sender: UIStoryboardSegue) {
     sender.sourceViewController.dismissViewControllerAnimated(true, completion: nil)
   }
+  
+  @IBAction public func popToRootViewController(sender: UIStoryboardSegue) {
+    sender.sourceViewController.navigationController?.popToRootViewControllerAnimated(true)
+  }
+  
 }
