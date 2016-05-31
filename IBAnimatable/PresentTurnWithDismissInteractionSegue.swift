@@ -11,7 +11,7 @@ public class PresentTurnWithDismissInteractionSegue: UIStoryboardSegue {
     destinationViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(.Turn(fromDirection: .Left), interactiveGestureType: .Default)
     sourceViewController.presentViewController(destinationViewController, animated: true, completion: nil)
   }
-  public func perform(completion: OptionalAnimatableCompletion {
+  public func perform(completion: OptionalAnimatableCompletion) {
     destinationViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(.NatGeo(direction: .Left), interactiveGestureType: .Default)
     sourceViewController.presentViewController(destinationViewController, animated: true, completion: completion)
   }
