@@ -12,7 +12,7 @@ public class PresentFadeWithDismissInteractionSegue: UIStoryboardSegue {
     sourceViewController.presentViewController(destinationViewController, animated: true, completion: nil)
   }
   public func perform(completion: OptionalAnimatableCompletion) {
-    destinationViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(.Fade, interactiveGestureType: .Default)
+    destinationViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(.Fade(direction: .Cross), interactiveGestureType: .Default)
     sourceViewController.presentViewController(destinationViewController, animated: true, completion: completion)
   }
 }
