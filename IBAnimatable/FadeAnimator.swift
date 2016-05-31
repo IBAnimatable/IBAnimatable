@@ -10,25 +10,25 @@ public class FadeAnimator: NSObject, AnimatedTransitioning {
   public var transitionAnimationType: TransitionAnimationType
   public var transitionDuration: Duration = defaultTransitionDuration
   public var reverseAnimationType: TransitionAnimationType?
-  public var interactiveGestureType: InteractiveGestureType? = .Pan(direction: .Horizontal)
+  public var interactiveGestureType: InteractiveGestureType? = .Pan(fromDirection: .Horizontal)
 
   // MARK: - private
-  private var fadeType: TransitionFadeType
+  private var direction: TransitionDirection
   
-  init(fadeType: TransitionFadeType, transitionDuration: Duration) {
-    self.fadeType = fadeType
+  public init(direction: TransitionDirection, transitionDuration: Duration) {
+    self.direction = direction
     self.transitionDuration = transitionDuration
     
-    switch fadeType {
-    case .Fade:
-      self.transitionAnimationType = .Fade
-      self.reverseAnimationType = .Fade
-    case .FadeIn:
-      self.transitionAnimationType = .FadeIn
-      self.reverseAnimationType = .FadeOut
-    case .FadeOut:
-      self.transitionAnimationType = .FadeOut
-      self.reverseAnimationType = .FadeIn
+    switch direction {
+    case .In:
+      self.transitionAnimationType = .Fade(direction: .In)
+      self.reverseAnimationType = .Fade(direction: .Out)
+    case .Out:
+      self.transitionAnimationType = .Fade(direction: .Out)
+      self.reverseAnimationType = .Fade(direction: .In)
+    default:
+      self.transitionAnimationType = .Fade(direction: .Cross)
+      self.reverseAnimationType = .Fade(direction: .Cross)
     }
     
     super.init()
@@ -47,27 +47,27 @@ extension FadeAnimator: UIViewControllerAnimatedTransitioning {
       return
     }
     
-    switch fadeType {
-    case .Fade:
+    switch direction {
+    case .In:
       toView.alpha = 0
       containerView.addSubview(toView)
-    case .FadeIn:
-      toView.alpha = 0
-      containerView.addSubview(toView)
-    case .FadeOut:
+    case .Out:
       containerView.insertSubview(toView, belowSubview: fromView)
+    default:
+      toView.alpha = 0
+      containerView.addSubview(toView)
     }
     
     UIView.animateWithDuration(transitionDuration(transitionContext),
       animations: {
-        switch self.fadeType {
-        case .Fade:
+        switch self.direction {
+        case .In:
+          toView.alpha = 1
+        case .Out:
+          fromView.alpha = 0
+        default:
           fromView.alpha = 0
           toView.alpha = 1
-        case .FadeIn:
-          toView.alpha = 1
-        case .FadeOut:
-          fromView.alpha = 0
         }
       },
       completion: { _ in

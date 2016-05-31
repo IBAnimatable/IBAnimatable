@@ -1,7 +1,4 @@
 //
-//  ExplodeAnimator.swift
-//  IBAnimatableApp
-//
 //  Created by Tom Baranes on 03/04/16.
 //  Copyright © 2016 Jake Lin. All rights reserved.
 //
@@ -20,19 +17,19 @@ public class ExplodeAnimator: NSObject, AnimatedTransitioning {
   private var minAngle: CGFloat = -10.0
   private var maxAngle: CGFloat = 10.0
   
-  init(params: String, transitionDuration: Duration) {
+  public init(params: [String], transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
     self.transitionAnimationType = .Explode(params: params)
     self.reverseAnimationType = .Explode(params: params)
     
-    let params = params.componentsSeparatedByString(",")
-    if  let unwrappedXFactor = Double(params[0]),
-            unwrappedMinAngle = Double(params[1]),
-            unwrappedMaxAngle = Double(params[2])
-      where params.count == 3 {
+    if params.count == 3 {
+      if let unwrappedXFactor = Double(params[0]),
+             unwrappedMinAngle = Double(params[1]),
+             unwrappedMaxAngle = Double(params[2]) {
         self.xFactor = CGFloat(unwrappedXFactor)
         self.minAngle = CGFloat(unwrappedMinAngle)
         self.maxAngle = CGFloat(unwrappedMaxAngle)
+      }
     }
     super.init()
   }
@@ -55,6 +52,10 @@ extension ExplodeAnimator: UIViewControllerAnimatedTransitioning {
     let snapshots = createSnapshots(toView: toView, fromView: fromView, containerView: containerView)
     containerView.sendSubviewToBack(fromView)
     animateSnapshotsExplode(snapshots) {
+      if transitionContext.transitionWasCancelled() {
+        containerView.bringSubviewToFront(fromView)
+      }
+      
       transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
     }
   }
@@ -83,7 +84,7 @@ private extension ExplodeAnimator {
   
   func animateSnapshotsExplode(snapshots: [UIView], completion: AnimatableCompletion) {
     UIView.animateWithDuration(transitionDuration, animations: {
-      snapshots.forEach{
+      snapshots.forEach {
         let xOffset = self.randomFloatBetween(lower: -100.0, upper: 100.0)
         let yOffset = self.randomFloatBetween(lower: -100.0, upper: 100.0)
         let angle = self.randomFloatBetween(lower: self.minAngle, upper: self.maxAngle)
@@ -97,7 +98,7 @@ private extension ExplodeAnimator {
       }
     },
     completion: { _ in
-      snapshots.forEach{ $0.removeFromSuperview() }
+      snapshots.forEach { $0.removeFromSuperview() }
       completion()
     })
   }

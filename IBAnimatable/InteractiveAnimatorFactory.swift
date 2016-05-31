@@ -14,6 +14,8 @@ struct InteractiveAnimatorFactory {
       return PanInteractiveAnimator(interactiveGestureType: interactiveGestureType, transitionType: transitionType)
     case .ScreenEdgePan:
       return ScreenEdgePanInteractiveAnimator(interactiveGestureType: interactiveGestureType, transitionType: transitionType)
+    case .Pinch:
+      return PinchInteractiveAnimator(interactiveGestureType: interactiveGestureType, transitionType: transitionType)
     default:
       return nil
     }

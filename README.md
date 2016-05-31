@@ -5,10 +5,11 @@ Design and prototype UI, interaction, navigation, transition and animation for A
 ![](https://d13yacurqjgara.cloudfront.net/users/332358/screenshots/2453933/ibanimatable.gif)
 
 [![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=56abf6d42c882e010057b182&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/56abf6d42c882e010057b182/build/latest)
-![Language](https://img.shields.io/badge/language-Swift%202.2-orange.svg)
+[![Build Status](https://travis-ci.org/JakeLin/IBAnimatable.svg?branch=master)](https://travis-ci.org/JakeLin/IBAnimatable)
+[![Language](https://img.shields.io/badge/language-Swift%202.2-orange.svg)](https://swift.org)
 [![CocoaPods](https://img.shields.io/cocoapods/v/IBAnimatable.svg?style=flat)](http://cocoadocs.org/docsets/IBAnimatable/)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-![License](https://img.shields.io/github/license/JakeLin/IBAnimatable.svg?style=flat)
+[![License](https://img.shields.io/github/license/JakeLin/IBAnimatable.svg?style=flat)](https://github.com/JakeLin/IBAnimatable/blob/master/LICENSE)
 
 **The app was made in Interface Builder with `IBAnimatable` without a single line of code**. Due to the size of [the GIF file on Dribbble](https://dribbble.com/shots/2453933-IBAnimatable-Design-App-Store-ready-Apps-in-Interface-Builder), it only demonstrates a subset of features. We can also find the full HD version on [YouTube](https://www.youtube.com/watch?v=dvD8X6J1YLM) or [MP4 on Github](https://github.com/JakeLin/IBAnimatable-Misc/blob/master/Videos/IBAnimatable.mp4?raw=true)
 
@@ -122,7 +123,7 @@ Copy and paste `IBAnimatable` folder in your Xcode project.
 
 ### [Swift package manager](https://swift.org/package-manager)
 
-Add `.Package(url: "https://github.com/JakeLin/IBanimatable.git", majorVersion: 1)` to your `Package.swift`
+Add `.Package(url: "https://github.com/JakeLin/IBanimatable.git", majorVersion: 2)` to your `Package.swift`
 
 ### [CocoaPods](https://cocoapods.org)
 
@@ -131,6 +132,8 @@ Add `pod 'IBAnimatable'` to your Podfile.
 ### [Carthage](https://github.com/Carthage/Carthage)
 
 Add `github "JakeLin/IBAnimatable" ~> 2.2` to your Cartfile.
+
+Please Notice, there is [a limitation of a built framework for `@IBDesignable` and `@IBInspectable`](https://github.com/Carthage/Carthage/issues/335), that will impact on `IBAnimatable` when you use Carthage.
 
 ### Git submodule
 
@@ -179,7 +182,7 @@ The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and con
 | ------------- |:-------------:| ----- |
 | borderColor | Optional&lt;UIColor> | border color |
 | borderWidth | CGFloat | border width. Default value is `CGFloat.NaN`, the value is greater than 0. |
-| borderSide | Optional&lt;String> | border side: `Top`, `Right`, `Bottom` or `Left`, also can be found in emum [`BorderSide`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/BorderSide.swift). If not specified, then display four sides. |
+| borderSide | Optional&lt;String> | border side: `Top`, `Right`, `Bottom` or `Left`, also can be found in emum [`BorderSide`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/BorderSide.swift). Multiple sides can be configured with a comma separated list of sides (e.g. `Top,Bottom`). If not specified, then display four sides. |
 
 
 #### `CheckBoxDesignable`
@@ -227,6 +230,7 @@ The easiest way to use `IBAnimatable` is to drag and drop UIKit elements and con
 * `Triangle`
 * `Star`: Can also specify the points of the Star, e.g. use `Star(6)` to have a star with 6 points. If not specified, default is 5 points. 
 * `Wave`: Can use parameters to customize the `Wave`. `Wave(down, 20, 5)` means the Wave faces down, width is 20 and offset is 5. If not specified, default value is `Wave(up, 40, 0)`. 
+* `Parallelogram`: Can use parameters to customize the `Parallelogram`. `Parallelogram(60)` means the top left angle of the Parallelogram will have an angle of 60 degrees. Default value is `Parallelogram(60)`. if angle == 90 it will be a rectangular Mask. if angle < 90 the parallelogram will be oriented to left. 
  
 
 #### `PaddingDesignable`
@@ -366,11 +370,12 @@ All of us can contribute to this project. Fewer overheads mean less time to buil
 Many thanks to [all contributors](https://github.com/JakeLin/IBAnimatable/graphs/contributors) 🤗
 
 
-## Inspirations
+## Inspirations / Credits
 * `IBDesignable` and `IBInspectable` - The entire project is based on that.
 * Sketch -  Interface Builder should be as easy as Sketch to use.
 * Framer Studio - Design and preview animations in one place.
 * [Spring by Meng To](https://github.com/MengTo/Spring) - steal a lot of animation parameters from this project.
+* [VCTransitionsLibrary by Colin Eberhardt](https://github.com/ColinEberhardt/VCTransitionsLibrary) - port some transition animations from this project.
 * [Invision ToDo App UI Kit](http://www.invisionapp.com/do), The demo App's original design is from this UI Kit and redone in Interface Builder. We also added interaction, navigation and animations.
 
 ## Change Log
@@ -378,4 +383,3 @@ Please see [CHANGELOG.md](https://github.com/JakeLin/IBAnimatable/blob/master/CH
 
 ## License
 `IBAnimatable` is released under the MIT license. See [LICENSE](https://github.com/JakeLin/IBAnimatable/blob/master/LICENSE) for details.
-

@@ -146,7 +146,7 @@ import UIKit
   // MARK: - Private
   private func configInspectableProperties() {
     configAnimatableProperties()
-    configLeftImage()
+    configImages()
   }
   
   private func configAfterLayoutSubviews() {

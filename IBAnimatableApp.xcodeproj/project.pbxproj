@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		33A8B9ED1C7E790800082529 /* SystemCubeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8B9EB1C7E790800082529 /* SystemCubeAnimator.swift */; };
 		33A8B9F01C7E7A4C00082529 /* TransitionFromDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8B9EE1C7E7A4C00082529 /* TransitionFromDirection.swift */; };
-		AE0635F91C9837DC003F9815 /* PresentFadeInWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0635F71C9837DC003F9815 /* PresentFadeInWithDismissInteractionSegue.swift */; };
-		AE0635FC1C9837E9003F9815 /* PresentFadeOutWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0635FA1C9837E9003F9815 /* PresentFadeOutWithDismissInteractionSegue.swift */; };
+		AE0D309A1CE149150093B578 /* UserInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE0D30991CE149150093B578 /* UserInterface.storyboard */; };
+		AE0D309C1CE14A170093B578 /* Animations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE0D309B1CE14A170093B578 /* Animations.storyboard */; };
 		AE148F321C9C2C3800E8126F /* IBAnimatable.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE6B01551C2A082300950BB2 /* IBAnimatable.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE148F331C9C2C3D00E8126F /* IBAnimatable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE6B01551C2A082300950BB2 /* IBAnimatable.framework */; };
 		AE154B061C787DDE0093C05B /* AnimatableNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B051C787DDE0093C05B /* AnimatableNavigationController.swift */; };
@@ -22,6 +22,8 @@
 		AE154B851C7D1A740093C05B /* AnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B831C7D1A740093C05B /* AnimatedTransitioning.swift */; };
 		AE154B8C1C7D59EE0093C05B /* AnimatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B8A1C7D59EE0093C05B /* AnimatorFactory.swift */; };
 		AE154B8F1C7D89CB0093C05B /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE154B8D1C7D89CB0093C05B /* Presenter.swift */; };
+		AE1B9A641CE3EA590098D962 /* Interactions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE1B9A631CE3EA590098D962 /* Interactions.storyboard */; };
+		AE1B9A661CE3EB100098D962 /* InteractionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1B9A651CE3EB100098D962 /* InteractionTableViewController.swift */; };
 		AE4C53F31C883F80007C9EFA /* PanInteractiveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4C53F11C883F80007C9EFA /* PanInteractiveAnimator.swift */; };
 		AE4C53F61C8843AB007C9EFA /* InteractiveGestureType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4C53F41C8843AB007C9EFA /* InteractiveGestureType.swift */; };
 		AE65CF931C96E35600A723F8 /* PresentFadeWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE65CF911C96E35600A723F8 /* PresentFadeWithDismissInteractionSegue.swift */; };
@@ -78,32 +80,56 @@
 		AE94078A1CAE87860084BCB8 /* SystemPageAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D08B71CA9336500440E7C /* SystemPageAnimator.swift */; };
 		AEC23FC01CB3DC4800E42D99 /* ScreenEdgePanInteractiveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC23FBF1CB3DC4800E42D99 /* ScreenEdgePanInteractiveAnimator.swift */; };
 		AEC23FC21CB3DE0900E42D99 /* InteractiveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC23FC11CB3DE0900E42D99 /* InteractiveAnimator.swift */; };
+		AEC5F9CE1CF660A000F20354 /* TransitionsInInterfaceBuilder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEC5F9CD1CF660A000F20354 /* TransitionsInInterfaceBuilder.storyboard */; };
 		AEC9F60E1CB31DCB00C82D16 /* GestureDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9F60D1CB31DCB00C82D16 /* GestureDirection.swift */; };
 		AED1A1031BFE9820001346FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A0FA1BFE9820001346FA /* AppDelegate.swift */; };
 		AED1A1041BFE9820001346FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AED1A0FB1BFE9820001346FA /* Assets.xcassets */; };
 		AED1A1051BFE9820001346FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AED1A0FD1BFE9820001346FA /* LaunchScreen.storyboard */; };
 		AED1A1061BFE9820001346FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AED1A0FF1BFE9820001346FA /* Main.storyboard */; };
-		AED5F6921C83E9B60052E57B /* PresentFadeInSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED5F6901C83E9B60052E57B /* PresentFadeInSegue.swift */; };
-		AED5F6951C83E9C20052E57B /* PresentFadeOutSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED5F6931C83E9C20052E57B /* PresentFadeOutSegue.swift */; };
+		AED57AE51CE5C0CB00C359E3 /* TransitionPushedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED57AE41CE5C0CB00C359E3 /* TransitionPushedViewController.swift */; };
+		AEDB24D11CE9EC0F0086612C /* TransitionPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDB24D01CE9EC0F0086612C /* TransitionPresentedViewController.swift */; };
+		AEDB24D31CE9EEB30086612C /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDB24D21CE9EEB30086612C /* UIViewControllerExtension.swift */; };
 		AEDD8A321C7EDAE30033175A /* SystemFlipAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDD8A301C7EDAE30033175A /* SystemFlipAnimator.swift */; };
+		AEDE6E6B1CCECE8A000DECF0 /* PinchInteractiveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDE6E6A1CCECE8A000DECF0 /* PinchInteractiveAnimator.swift */; };
 		AEE552A81C815AC5009CF623 /* FadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE552A61C815AC5009CF623 /* FadeAnimator.swift */; };
-		AEE552AB1C816233009CF623 /* TransitionFadeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE552A91C816233009CF623 /* TransitionFadeType.swift */; };
 		AEE552AE1C82D1E1009CF623 /* PresentFadeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE552AC1C82D1E1009CF623 /* PresentFadeSegue.swift */; };
 		AEE552B11C839EB7009CF623 /* PresenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE552AF1C839EB7009CF623 /* PresenterManager.swift */; };
+		AEF4938D1CE0161C00B76FD6 /* Playground.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEF4938C1CE0161C00B76FD6 /* Playground.storyboard */; };
 		CAB5610BC7B5D20C927AAB87 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5692C91C9ECC8018DE83E /* Navigator.swift */; };
 		CAB56443CD667F41413A560F /* SystemTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56645FCD11BEC66200818 /* SystemTransitionType.swift */; };
 		CAB566CA933963DAA0C7E074 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56A8BA4FB110D501DC1DC /* Constants.swift */; };
+		E20078A11CB8FB94002B2C16 /* FoldAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20078A01CB8FB94002B2C16 /* FoldAnimator.swift */; };
+		E20078A31CB912E1002B2C16 /* PresentFoldSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20078A21CB912E1002B2C16 /* PresentFoldSegue.swift */; };
+		E20078A51CB91307002B2C16 /* PresentFoldWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20078A41CB91307002B2C16 /* PresentFoldWithDismissInteractionSegue.swift */; };
+		E2192F5D1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2192F5C1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift */; };
+		E222CDC61CC3EA7400684CA0 /* PortalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E222CDC51CC3EA7400684CA0 /* PortalAnimator.swift */; };
+		E222CDC81CC400FD00684CA0 /* PresentPortalSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E222CDC71CC400FD00684CA0 /* PresentPortalSegue.swift */; };
+		E222CDCA1CC4010800684CA0 /* PresentPortalWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E222CDC91CC4010800684CA0 /* PresentPortalWithDismissInteractionSegue.swift */; };
 		E2472EA51C6F97F800A20E27 /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2472EA31C6F97F800A20E27 /* ColorType.swift */; };
+		E24848AC1CDF65F7003DB9C2 /* SlideAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24848AB1CDF65F7003DB9C2 /* SlideAnimator.swift */; };
+		E25EC6E71CDE034300743DB8 /* ContainerTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25EC6E61CDE034300743DB8 /* ContainerTransitionViewController.swift */; };
+		E26B3EDA1CCD4C1D00BFD0AB /* NatGeoAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B3ED91CCD4C1D00BFD0AB /* NatGeoAnimator.swift */; };
+		E26B3EDC1CCD579200BFD0AB /* PresentNatGeoSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B3EDB1CCD579200BFD0AB /* PresentNatGeoSegue.swift */; };
+		E26B3EDE1CCD57BF00BFD0AB /* PresentNatGeoWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B3EDD1CCD57BF00BFD0AB /* PresentNatGeoWithDismissInteractionSegue.swift */; };
 		E27691E91CAFC72C004A725C /* SystemMoveInAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691E81CAFC72C004A725C /* SystemMoveInAnimator.swift */; };
 		E27691EB1CAFC91A004A725C /* SystemPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691EA1CAFC91A004A725C /* SystemPushAnimator.swift */; };
 		E27691EF1CAFCA29004A725C /* SystemRevealAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691EE1CAFCA29004A725C /* SystemRevealAnimator.swift */; };
-		E27691F11CAFCBCF004A725C /* TransitionRotateDegree.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691F01CAFCBCF004A725C /* TransitionRotateDegree.swift */; };
 		E27691F31CAFCD67004A725C /* SystemRotateAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691F21CAFCD67004A725C /* SystemRotateAnimator.swift */; };
+		E299DF541CD5F8C300EC30D4 /* TurnAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E299DF531CD5F8C300EC30D4 /* TurnAnimator.swift */; };
+		E299DF561CD5FFE300EC30D4 /* PresentTurnSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E299DF551CD5FFE300EC30D4 /* PresentTurnSegue.swift */; };
+		E299DF581CD6003000EC30D4 /* PresentTurnWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E299DF571CD6003000EC30D4 /* PresentTurnWithDismissInteractionSegue.swift */; };
+		E299DF5A1CD6025200EC30D4 /* CardsAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E299DF591CD6025200EC30D4 /* CardsAnimator.swift */; };
+		E299DF5C1CD6067C00EC30D4 /* PresentCardsSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E299DF5B1CD6067C00EC30D4 /* PresentCardsSegue.swift */; };
+		E29F350E1CDF6C4900312FD4 /* PresentSlideSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F350D1CDF6C4900312FD4 /* PresentSlideSegue.swift */; };
+		E29F35101CDF6C5400312FD4 /* PresentSlideWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F350F1CDF6C5400312FD4 /* PresentSlideWithDismissInteractionSegue.swift */; };
 		E2A062B31CB19BB900C54B40 /* ExplodeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A062B21CB19BB900C54B40 /* ExplodeAnimator.swift */; };
 		E2A062B51CB1A60E00C54B40 /* PresentExplodeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A062B41CB1A60E00C54B40 /* PresentExplodeSegue.swift */; };
-		E2A062B71CB1A65600C54B40 /* PresentExplodeWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A062B61CB1A65600C54B40 /* PresentExplodeWithDismissInteractionSegue.swift */; };
+		E2BCCD381CDCA15D00431DA0 /* ContainerTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BCCD371CDCA15D00431DA0 /* ContainerTransition.swift */; };
 		E2E28E6C1C6A6C30003F3852 /* GradientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6A1C6A6C30003F3852 /* GradientType.swift */; };
 		E2E28E6F1C6A6D22003F3852 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */; };
+		E2F45B571CDB845F001D2E37 /* FlipAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F45B561CDB845F001D2E37 /* FlipAnimator.swift */; };
+		E2F45B591CDBAF39001D2E37 /* PresentFlipSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F45B581CDBAF39001D2E37 /* PresentFlipSegue.swift */; };
+		E2F45B5B1CDBAF5C001D2E37 /* PresentFlipWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F45B5A1CDBAF5C001D2E37 /* PresentFlipWithDismissInteractionSegue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -123,12 +149,12 @@
 /* Begin PBXFileReference section */
 		33A8B9EB1C7E790800082529 /* SystemCubeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemCubeAnimator.swift; sourceTree = "<group>"; };
 		33A8B9EE1C7E7A4C00082529 /* TransitionFromDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionFromDirection.swift; sourceTree = "<group>"; };
-		AE0635F71C9837DC003F9815 /* PresentFadeInWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentFadeInWithDismissInteractionSegue.swift; sourceTree = "<group>"; };
-		AE0635FA1C9837E9003F9815 /* PresentFadeOutWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentFadeOutWithDismissInteractionSegue.swift; sourceTree = "<group>"; };
 		AE0B0FE91C25372200E36B78 /* TableViewCellDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellDesignable.swift; sourceTree = "<group>"; };
 		AE0B0FEB1C26397700E36B78 /* AnimatableCheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableCheckBox.swift; sourceTree = "<group>"; };
 		AE0B0FED1C263A1900E36B78 /* CheckBoxDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBoxDesignable.swift; sourceTree = "<group>"; };
 		AE0B0FEF1C26655000E36B78 /* AnimatableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableLabel.swift; sourceTree = "<group>"; };
+		AE0D30991CE149150093B578 /* UserInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserInterface.storyboard; sourceTree = "<group>"; };
+		AE0D309B1CE14A170093B578 /* Animations.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Animations.storyboard; sourceTree = "<group>"; };
 		AE0FAD3A1C1ECA4200B5289B /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		AE0FAD3C1C1ED1EC00B5289B /* DismissSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
 		AE0FAD401C1ED41D00B5289B /* AnimatableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableViewController.swift; sourceTree = "<group>"; };
@@ -147,7 +173,10 @@
 		AE1878791C1A25C100300246 /* AnimatableStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableStackView.swift; sourceTree = "<group>"; };
 		AE18787B1C1D97F500300246 /* MaskDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskDesignable.swift; sourceTree = "<group>"; };
 		AE18787D1C1D980D00300246 /* MaskType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskType.swift; sourceTree = "<group>"; };
+		AE1B9A631CE3EA590098D962 /* Interactions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interactions.storyboard; sourceTree = "<group>"; };
+		AE1B9A651CE3EB100098D962 /* InteractionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractionTableViewController.swift; sourceTree = "<group>"; };
 		AE216FDC1C0DBC5D00BC6366 /* CornerDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerDesignable.swift; sourceTree = "<group>"; };
+		AE28D0541CDFF4470043273C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AE299BD91C0338C70018CCDC /* BlurDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlurDesignable.swift; path = IBAnimatable/BlurDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AE299BDB1C03BB670018CCDC /* TintDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TintDesignable.swift; path = IBAnimatable/TintDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AE3C54441C21439100829B10 /* AnimatableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableTableViewCell.swift; sourceTree = "<group>"; };
@@ -172,6 +201,7 @@
 		AE9407881CAE871C0084BCB8 /* TransitionPageType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionPageType.swift; sourceTree = "<group>"; };
 		AEC23FBF1CB3DC4800E42D99 /* ScreenEdgePanInteractiveAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenEdgePanInteractiveAnimator.swift; sourceTree = "<group>"; };
 		AEC23FC11CB3DE0900E42D99 /* InteractiveAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveAnimator.swift; sourceTree = "<group>"; };
+		AEC5F9CD1CF660A000F20354 /* TransitionsInInterfaceBuilder.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TransitionsInInterfaceBuilder.storyboard; sourceTree = "<group>"; };
 		AEC9F60D1CB31DCB00C82D16 /* GestureDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureDirection.swift; sourceTree = "<group>"; };
 		AED1A0FA1BFE9820001346FA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = IBAnimatableApp/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		AED1A0FB1BFE9820001346FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = IBAnimatableApp/Assets.xcassets; sourceTree = SOURCE_ROOT; };
@@ -189,40 +219,63 @@
 		AED1A1111BFE983A001346FA /* ShadowDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShadowDesignable.swift; path = IBAnimatable/ShadowDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AED1A1121BFE983A001346FA /* PaddingDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaddingDesignable.swift; path = IBAnimatable/PaddingDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AED1A1131BFE983A001346FA /* PlaceholderDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceholderDesignable.swift; path = IBAnimatable/PlaceholderDesignable.swift; sourceTree = SOURCE_ROOT; };
-		AED5F6901C83E9B60052E57B /* PresentFadeInSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentFadeInSegue.swift; sourceTree = "<group>"; };
-		AED5F6931C83E9C20052E57B /* PresentFadeOutSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentFadeOutSegue.swift; sourceTree = "<group>"; };
+		AED57AE41CE5C0CB00C359E3 /* TransitionPushedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionPushedViewController.swift; sourceTree = "<group>"; };
 		AED97B851C1710A900D2B0B8 /* BorderSide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderSide.swift; sourceTree = "<group>"; };
+		AEDB24D01CE9EC0F0086612C /* TransitionPresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionPresentedViewController.swift; sourceTree = "<group>"; };
+		AEDB24D21CE9EEB30086612C /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		AEDD8A301C7EDAE30033175A /* SystemFlipAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemFlipAnimator.swift; sourceTree = "<group>"; };
+		AEDE6E6A1CCECE8A000DECF0 /* PinchInteractiveAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinchInteractiveAnimator.swift; sourceTree = "<group>"; };
 		AEE552A61C815AC5009CF623 /* FadeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeAnimator.swift; sourceTree = "<group>"; };
-		AEE552A91C816233009CF623 /* TransitionFadeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionFadeType.swift; sourceTree = "<group>"; };
 		AEE552AC1C82D1E1009CF623 /* PresentFadeSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentFadeSegue.swift; sourceTree = "<group>"; };
 		AEE552AF1C839EB7009CF623 /* PresenterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterManager.swift; sourceTree = "<group>"; };
 		AEEE200A1C18CFD200AD033B /* NavigationBarDesginable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarDesginable.swift; sourceTree = "<group>"; };
 		AEEE200C1C18D10C00AD033B /* DesignableNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableNavigationBar.swift; sourceTree = "<group>"; };
 		AEEF86BD1CA8E9E200899AAB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEF4938C1CE0161C00B76FD6 /* Playground.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Playground.storyboard; sourceTree = "<group>"; };
 		CAB562E75DABEED7FCE0F309 /* FillDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillDesignable.swift; sourceTree = "<group>"; };
 		CAB56645FCD11BEC66200818 /* SystemTransitionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemTransitionType.swift; sourceTree = "<group>"; };
 		CAB5692C91C9ECC8018DE83E /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		CAB56A8BA4FB110D501DC1DC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D7E765671C4C8961008C3116 /* IBAnimatable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = IBAnimatable.playground; sourceTree = "<group>"; };
+		E20078A01CB8FB94002B2C16 /* FoldAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldAnimator.swift; sourceTree = "<group>"; };
+		E20078A21CB912E1002B2C16 /* PresentFoldSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentFoldSegue.swift; sourceTree = "<group>"; };
+		E20078A41CB91307002B2C16 /* PresentFoldWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentFoldWithDismissInteractionSegue.swift; sourceTree = "<group>"; };
 		E20E91121CAC374200625094 /* SystemRippleEffectAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemRippleEffectAnimator.swift; sourceTree = "<group>"; };
 		E20E911B1CAC421E00625094 /* TransitionHollowState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionHollowState.swift; sourceTree = "<group>"; };
 		E20E911D1CAC432400625094 /* SystemCameraIrisAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemCameraIrisAnimator.swift; sourceTree = "<group>"; };
 		E20E91211CAC465A00625094 /* SystemSuckEffectAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemSuckEffectAnimator.swift; sourceTree = "<group>"; };
+		E2192F5C1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableCollectionViewCell.swift; sourceTree = "<group>"; };
+		E222CDC51CC3EA7400684CA0 /* PortalAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortalAnimator.swift; sourceTree = "<group>"; };
+		E222CDC71CC400FD00684CA0 /* PresentPortalSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentPortalSegue.swift; sourceTree = "<group>"; };
+		E222CDC91CC4010800684CA0 /* PresentPortalWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentPortalWithDismissInteractionSegue.swift; sourceTree = "<group>"; };
 		E23D08B71CA9336500440E7C /* SystemPageAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPageAnimator.swift; sourceTree = "<group>"; };
 		E2472EA31C6F97F800A20E27 /* ColorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorType.swift; sourceTree = "<group>"; };
 		E2472EA61C6F980C00A20E27 /* FlatColorsTypeScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlatColorsTypeScript.swift; path = Scripts/FlatColorsTypeScript.swift; sourceTree = SOURCE_ROOT; };
+		E24848AB1CDF65F7003DB9C2 /* SlideAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideAnimator.swift; sourceTree = "<group>"; };
+		E25EC6E61CDE034300743DB8 /* ContainerTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerTransitionViewController.swift; sourceTree = "<group>"; };
+		E26B3ED91CCD4C1D00BFD0AB /* NatGeoAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NatGeoAnimator.swift; sourceTree = "<group>"; };
+		E26B3EDB1CCD579200BFD0AB /* PresentNatGeoSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentNatGeoSegue.swift; sourceTree = "<group>"; };
+		E26B3EDD1CCD57BF00BFD0AB /* PresentNatGeoWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentNatGeoWithDismissInteractionSegue.swift; sourceTree = "<group>"; };
 		E27691E81CAFC72C004A725C /* SystemMoveInAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemMoveInAnimator.swift; sourceTree = "<group>"; };
 		E27691EA1CAFC91A004A725C /* SystemPushAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPushAnimator.swift; sourceTree = "<group>"; };
 		E27691EE1CAFCA29004A725C /* SystemRevealAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemRevealAnimator.swift; sourceTree = "<group>"; };
-		E27691F01CAFCBCF004A725C /* TransitionRotateDegree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionRotateDegree.swift; sourceTree = "<group>"; };
 		E27691F21CAFCD67004A725C /* SystemRotateAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemRotateAnimator.swift; sourceTree = "<group>"; };
+		E299DF531CD5F8C300EC30D4 /* TurnAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurnAnimator.swift; sourceTree = "<group>"; };
+		E299DF551CD5FFE300EC30D4 /* PresentTurnSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentTurnSegue.swift; sourceTree = "<group>"; };
+		E299DF571CD6003000EC30D4 /* PresentTurnWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentTurnWithDismissInteractionSegue.swift; sourceTree = "<group>"; };
+		E299DF591CD6025200EC30D4 /* CardsAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsAnimator.swift; sourceTree = "<group>"; };
+		E299DF5B1CD6067C00EC30D4 /* PresentCardsSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentCardsSegue.swift; sourceTree = "<group>"; };
+		E29F350D1CDF6C4900312FD4 /* PresentSlideSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentSlideSegue.swift; sourceTree = "<group>"; };
+		E29F350F1CDF6C5400312FD4 /* PresentSlideWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentSlideWithDismissInteractionSegue.swift; sourceTree = "<group>"; };
 		E2A062B21CB19BB900C54B40 /* ExplodeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExplodeAnimator.swift; sourceTree = "<group>"; };
 		E2A062B41CB1A60E00C54B40 /* PresentExplodeSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentExplodeSegue.swift; sourceTree = "<group>"; };
-		E2A062B61CB1A65600C54B40 /* PresentExplodeWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentExplodeWithDismissInteractionSegue.swift; sourceTree = "<group>"; };
+		E2BCCD371CDCA15D00431DA0 /* ContainerTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerTransition.swift; sourceTree = "<group>"; };
 		E2E28E6A1C6A6C30003F3852 /* GradientType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientType.swift; sourceTree = "<group>"; };
 		E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		E2E28E711C6A6E70003F3852 /* GradientsTypeScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GradientsTypeScript.swift; path = Scripts/GradientsTypeScript.swift; sourceTree = SOURCE_ROOT; };
+		E2F45B561CDB845F001D2E37 /* FlipAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlipAnimator.swift; sourceTree = "<group>"; };
+		E2F45B581CDBAF39001D2E37 /* PresentFlipSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentFlipSegue.swift; sourceTree = "<group>"; };
+		E2F45B5A1CDBAF5C001D2E37 /* PresentFlipWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentFlipWithDismissInteractionSegue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,13 +312,21 @@
 			children = (
 				AE0FAD3C1C1ED1EC00B5289B /* DismissSegue.swift */,
 				AEE552AC1C82D1E1009CF623 /* PresentFadeSegue.swift */,
-				AED5F6901C83E9B60052E57B /* PresentFadeInSegue.swift */,
-				AED5F6931C83E9C20052E57B /* PresentFadeOutSegue.swift */,
 				AE65CF911C96E35600A723F8 /* PresentFadeWithDismissInteractionSegue.swift */,
-				AE0635F71C9837DC003F9815 /* PresentFadeInWithDismissInteractionSegue.swift */,
-				AE0635FA1C9837E9003F9815 /* PresentFadeOutWithDismissInteractionSegue.swift */,
 				E2A062B41CB1A60E00C54B40 /* PresentExplodeSegue.swift */,
-				E2A062B61CB1A65600C54B40 /* PresentExplodeWithDismissInteractionSegue.swift */,
+				E20078A21CB912E1002B2C16 /* PresentFoldSegue.swift */,
+				E20078A41CB91307002B2C16 /* PresentFoldWithDismissInteractionSegue.swift */,
+				E222CDC71CC400FD00684CA0 /* PresentPortalSegue.swift */,
+				E222CDC91CC4010800684CA0 /* PresentPortalWithDismissInteractionSegue.swift */,
+				E26B3EDB1CCD579200BFD0AB /* PresentNatGeoSegue.swift */,
+				E26B3EDD1CCD57BF00BFD0AB /* PresentNatGeoWithDismissInteractionSegue.swift */,
+				E299DF551CD5FFE300EC30D4 /* PresentTurnSegue.swift */,
+				E299DF571CD6003000EC30D4 /* PresentTurnWithDismissInteractionSegue.swift */,
+				E299DF5B1CD6067C00EC30D4 /* PresentCardsSegue.swift */,
+				E2F45B581CDBAF39001D2E37 /* PresentFlipSegue.swift */,
+				E2F45B5A1CDBAF5C001D2E37 /* PresentFlipWithDismissInteractionSegue.swift */,
+				E29F350D1CDF6C4900312FD4 /* PresentSlideSegue.swift */,
+				E29F350F1CDF6C5400312FD4 /* PresentSlideWithDismissInteractionSegue.swift */,
 			);
 			name = segue;
 			sourceTree = "<group>";
@@ -307,6 +368,16 @@
 			name = TransitionAnimatable;
 			sourceTree = "<group>";
 		};
+		AE28D0551CDFF7D50043273C /* IBAnimatable Playground */ = {
+			isa = PBXGroup;
+			children = (
+				AE28D0541CDFF4470043273C /* README.md */,
+				AE6C21071C842A1500DB6892 /* code */,
+				AE54334D1CE0757500C0D15D /* storyboards */,
+			);
+			name = "IBAnimatable Playground";
+			sourceTree = "<group>";
+		};
 		AE4C53EF1C883DEC007C9EFA /* transition animator */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +393,13 @@
 				E20E91211CAC465A00625094 /* SystemSuckEffectAnimator.swift */,
 				E20E911D1CAC432400625094 /* SystemCameraIrisAnimator.swift */,
 				E2A062B21CB19BB900C54B40 /* ExplodeAnimator.swift */,
+				E20078A01CB8FB94002B2C16 /* FoldAnimator.swift */,
+				E222CDC51CC3EA7400684CA0 /* PortalAnimator.swift */,
+				E26B3ED91CCD4C1D00BFD0AB /* NatGeoAnimator.swift */,
+				E299DF531CD5F8C300EC30D4 /* TurnAnimator.swift */,
+				E299DF591CD6025200EC30D4 /* CardsAnimator.swift */,
+				E2F45B561CDB845F001D2E37 /* FlipAnimator.swift */,
+				E24848AB1CDF65F7003DB9C2 /* SlideAnimator.swift */,
 			);
 			name = "transition animator";
 			sourceTree = "<group>";
@@ -332,6 +410,7 @@
 				AEC23FC11CB3DE0900E42D99 /* InteractiveAnimator.swift */,
 				AE4C53F11C883F80007C9EFA /* PanInteractiveAnimator.swift */,
 				AEC23FBF1CB3DC4800E42D99 /* ScreenEdgePanInteractiveAnimator.swift */,
+				AEDE6E6A1CCECE8A000DECF0 /* PinchInteractiveAnimator.swift */,
 			);
 			name = "interactive animator";
 			sourceTree = "<group>";
@@ -342,10 +421,24 @@
 				AE154B8A1C7D59EE0093C05B /* AnimatorFactory.swift */,
 				AE7C26101CB4F680002CF125 /* InteractiveAnimatorFactory.swift */,
 				CAB5692C91C9ECC8018DE83E /* Navigator.swift */,
+				E2BCCD371CDCA15D00431DA0 /* ContainerTransition.swift */,
 				AE154B8D1C7D89CB0093C05B /* Presenter.swift */,
 				AEE552AF1C839EB7009CF623 /* PresenterManager.swift */,
 			);
 			name = common;
+			sourceTree = "<group>";
+		};
+		AE54334D1CE0757500C0D15D /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AEF4938C1CE0161C00B76FD6 /* Playground.storyboard */,
+				AE0D30991CE149150093B578 /* UserInterface.storyboard */,
+				AE0D309B1CE14A170093B578 /* Animations.storyboard */,
+				AE154B0E1C788A560093C05B /* Transitions.storyboard */,
+				AEC5F9CD1CF660A000F20354 /* TransitionsInInterfaceBuilder.storyboard */,
+				AE1B9A631CE3EA590098D962 /* Interactions.storyboard */,
+			);
+			name = storyboards;
 			sourceTree = "<group>";
 		};
 		AE6C21071C842A1500DB6892 /* code */ = {
@@ -354,6 +447,11 @@
 				AE8FBAA81C853C7A00EB8AEA /* Functions.swift */,
 				AE6C21051C842A0F00DB6892 /* TransitionTableViewController.swift */,
 				AE8A4FF91C856EEC00E9E368 /* TransitionViewController.swift */,
+				AEDB24D21CE9EEB30086612C /* UIViewControllerExtension.swift */,
+				AED57AE41CE5C0CB00C359E3 /* TransitionPushedViewController.swift */,
+				AEDB24D01CE9EC0F0086612C /* TransitionPresentedViewController.swift */,
+				AE1B9A651CE3EB100098D962 /* InteractionTableViewController.swift */,
+				E25EC6E61CDE034300743DB8 /* ContainerTransitionViewController.swift */,
 			);
 			name = code;
 			sourceTree = "<group>";
@@ -386,9 +484,8 @@
 				AED1A0FB1BFE9820001346FA /* Assets.xcassets */,
 				AED1A0FD1BFE9820001346FA /* LaunchScreen.storyboard */,
 				AED1A0FF1BFE9820001346FA /* Main.storyboard */,
-				AE154B0E1C788A560093C05B /* Transitions.storyboard */,
+				AE28D0551CDFF7D50043273C /* IBAnimatable Playground */,
 				AED1A1011BFE9820001346FA /* Info.plist */,
-				AE6C21071C842A1500DB6892 /* code */,
 			);
 			path = IBAnimatableApp;
 			sourceTree = "<group>";
@@ -432,6 +529,7 @@
 				AE1878791C1A25C100300246 /* AnimatableStackView.swift */,
 				AE0FADAE1C203F9A00B5289B /* AnimatableTableView.swift */,
 				AE3C54441C21439100829B10 /* AnimatableTableViewCell.swift */,
+				E2192F5C1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift */,
 				AED1A10C1BFE983A001346FA /* AnimatableTextField.swift */,
 				AED1A10D1BFE983A001346FA /* AnimatableTextView.swift */,
 				AEEE200C1C18D10C00AD033B /* DesignableNavigationBar.swift */,
@@ -453,11 +551,9 @@
 				AE18787D1C1D980D00300246 /* MaskType.swift */,
 				CAB56645FCD11BEC66200818 /* SystemTransitionType.swift */,
 				AE154B7D1C7D061A0093C05B /* TransitionAnimationType.swift */,
-				AEE552A91C816233009CF623 /* TransitionFadeType.swift */,
 				33A8B9EE1C7E7A4C00082529 /* TransitionFromDirection.swift */,
 				E20E911B1CAC421E00625094 /* TransitionHollowState.swift */,
 				AE9407881CAE871C0084BCB8 /* TransitionPageType.swift */,
-				E27691F01CAFCBCF004A725C /* TransitionRotateDegree.swift */,
 				AE6D430B1C98B658006E2F67 /* TransitionType.swift */,
 			);
 			name = enum;
@@ -527,6 +623,7 @@
 				AE6B01511C2A082300950BB2 /* Frameworks */,
 				AE6B01521C2A082300950BB2 /* Headers */,
 				AE6B01531C2A082300950BB2 /* Resources */,
+				E24848AA1CDF5AFC003DB9C2 /* Run Script - SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -604,14 +701,36 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEC5F9CE1CF660A000F20354 /* TransitionsInInterfaceBuilder.storyboard in Resources */,
 				AED1A1061BFE9820001346FA /* Main.storyboard in Resources */,
+				AE1B9A641CE3EA590098D962 /* Interactions.storyboard in Resources */,
 				AED1A1041BFE9820001346FA /* Assets.xcassets in Resources */,
 				AED1A1051BFE9820001346FA /* LaunchScreen.storyboard in Resources */,
+				AE0D309C1CE14A170093B578 /* Animations.storyboard in Resources */,
 				AE154B101C788A560093C05B /* Transitions.storyboard in Resources */,
+				AEF4938D1CE0161C00B76FD6 /* Playground.storyboard in Resources */,
+				AE0D309A1CE149150093B578 /* UserInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E24848AA1CDF5AFC003DB9C2 /* Run Script - SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script - SwiftLint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AE6B01501C2A082300950BB2 /* Sources */ = {
@@ -621,12 +740,16 @@
 				AE6B017C1C2A445100950BB2 /* AnimatableButton.swift in Sources */,
 				AE9407871CAE86DE0084BCB8 /* TransitionType.swift in Sources */,
 				AEE552B11C839EB7009CF623 /* PresenterManager.swift in Sources */,
-				AED5F6921C83E9B60052E57B /* PresentFadeInSegue.swift in Sources */,
 				AE6B01721C2A444900950BB2 /* RotationDesignable.swift in Sources */,
+				E20078A11CB8FB94002B2C16 /* FoldAnimator.swift in Sources */,
+				AEDE6E6B1CCECE8A000DECF0 /* PinchInteractiveAnimator.swift in Sources */,
+				E20078A31CB912E1002B2C16 /* PresentFoldSegue.swift in Sources */,
 				AEE552A81C815AC5009CF623 /* FadeAnimator.swift in Sources */,
 				AE6B017F1C2A445100950BB2 /* AnimatableLabel.swift in Sources */,
+				E2BCCD381CDCA15D00431DA0 /* ContainerTransition.swift in Sources */,
 				AE6B01801C2A445100950BB2 /* AnimatableStackView.swift in Sources */,
 				AE6B01661C2A444000950BB2 /* MaskType.swift in Sources */,
+				E26B3EDC1CCD579200BFD0AB /* PresentNatGeoSegue.swift in Sources */,
 				AE6B01811C2A445100950BB2 /* AnimatableTableView.swift in Sources */,
 				AE6B01671C2A444500950BB2 /* Animatable.swift in Sources */,
 				AE6B01831C2A445100950BB2 /* AnimatableTextField.swift in Sources */,
@@ -641,7 +764,13 @@
 				E2472EA51C6F97F800A20E27 /* ColorType.swift in Sources */,
 				AE6B016D1C2A444900950BB2 /* GradientDesignable.swift in Sources */,
 				AE677B9B1CADCFA800D62273 /* TransitionHollowState.swift in Sources */,
+				E299DF5A1CD6025200EC30D4 /* CardsAnimator.swift in Sources */,
+				E222CDCA1CC4010800684CA0 /* PresentPortalWithDismissInteractionSegue.swift in Sources */,
+				E299DF561CD5FFE300EC30D4 /* PresentTurnSegue.swift in Sources */,
+				E2F45B5B1CDBAF5C001D2E37 /* PresentFlipWithDismissInteractionSegue.swift in Sources */,
+				E20078A51CB91307002B2C16 /* PresentFoldWithDismissInteractionSegue.swift in Sources */,
 				E2A062B31CB19BB900C54B40 /* ExplodeAnimator.swift in Sources */,
+				E26B3EDE1CCD57BF00BFD0AB /* PresentNatGeoWithDismissInteractionSegue.swift in Sources */,
 				AE65CF931C96E35600A723F8 /* PresentFadeWithDismissInteractionSegue.swift in Sources */,
 				AE677B981CADCF5900D62273 /* SystemSuckEffectAnimator.swift in Sources */,
 				AE154B061C787DDE0093C05B /* AnimatableNavigationController.swift in Sources */,
@@ -649,17 +778,18 @@
 				AE6B01651C2A444000950BB2 /* GradientStartPoint.swift in Sources */,
 				AE6B017A1C2A445100950BB2 /* AnimatableView.swift in Sources */,
 				AE6B01751C2A444900950BB2 /* StatusBarDesignable.swift in Sources */,
+				E29F350E1CDF6C4900312FD4 /* PresentSlideSegue.swift in Sources */,
 				AE6B016A1C2A444900950BB2 /* CheckBoxDesignable.swift in Sources */,
 				AE154B851C7D1A740093C05B /* AnimatedTransitioning.swift in Sources */,
 				AE6B017B1C2A445100950BB2 /* AnimatableBarButtonItem.swift in Sources */,
 				E27691E91CAFC72C004A725C /* SystemMoveInAnimator.swift in Sources */,
 				33A8B9ED1C7E790800082529 /* SystemCubeAnimator.swift in Sources */,
+				E2F45B591CDBAF39001D2E37 /* PresentFlipSegue.swift in Sources */,
 				AE6B017D1C2A445100950BB2 /* AnimatableCheckBox.swift in Sources */,
 				AE154B2D1C7BB5760093C05B /* CALayerExtension.swift in Sources */,
 				AEE552AE1C82D1E1009CF623 /* PresentFadeSegue.swift in Sources */,
 				E27691EF1CAFCA29004A725C /* SystemRevealAnimator.swift in Sources */,
 				E2E28E6F1C6A6D22003F3852 /* UIColorExtension.swift in Sources */,
-				AE0635F91C9837DC003F9815 /* PresentFadeInWithDismissInteractionSegue.swift in Sources */,
 				E2A062B51CB1A60E00C54B40 /* PresentExplodeSegue.swift in Sources */,
 				AEDD8A321C7EDAE30033175A /* SystemFlipAnimator.swift in Sources */,
 				AE6B01681C2A444900950BB2 /* BlurDesignable.swift in Sources */,
@@ -667,37 +797,42 @@
 				AE6B01711C2A444900950BB2 /* PlaceholderDesignable.swift in Sources */,
 				AE6B01821C2A445100950BB2 /* AnimatableTableViewCell.swift in Sources */,
 				AE6B01691C2A444900950BB2 /* BorderDesignable.swift in Sources */,
+				E26B3EDA1CCD4C1D00BFD0AB /* NatGeoAnimator.swift in Sources */,
 				E2E28E6C1C6A6C30003F3852 /* GradientType.swift in Sources */,
 				AE6B016C1C2A444900950BB2 /* FillDesignable.swift in Sources */,
 				AE6B01701C2A444900950BB2 /* PaddingDesignable.swift in Sources */,
 				AE6B01841C2A445100950BB2 /* AnimatableTextView.swift in Sources */,
 				33A8B9F01C7E7A4C00082529 /* TransitionFromDirection.swift in Sources */,
-				E2A062B71CB1A65600C54B40 /* PresentExplodeWithDismissInteractionSegue.swift in Sources */,
+				E299DF581CD6003000EC30D4 /* PresentTurnWithDismissInteractionSegue.swift in Sources */,
 				AE94078A1CAE87860084BCB8 /* SystemPageAnimator.swift in Sources */,
+				E2F45B571CDB845F001D2E37 /* FlipAnimator.swift in Sources */,
 				AE6B01791C2A444900950BB2 /* ViewControllerDesignable.swift in Sources */,
 				AE6B01891C2A445C00950BB2 /* DismissSegue.swift in Sources */,
+				E222CDC81CC400FD00684CA0 /* PresentPortalSegue.swift in Sources */,
+				E2192F5D1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift in Sources */,
 				AE6B01881C2A445800950BB2 /* UIViewControllerExtension.swift in Sources */,
+				E24848AC1CDF65F7003DB9C2 /* SlideAnimator.swift in Sources */,
 				AE6B01771C2A444900950BB2 /* TintDesignable.swift in Sources */,
-				AE0635FC1C9837E9003F9815 /* PresentFadeOutWithDismissInteractionSegue.swift in Sources */,
 				AE154B8F1C7D89CB0093C05B /* Presenter.swift in Sources */,
-				AED5F6951C83E9C20052E57B /* PresentFadeOutSegue.swift in Sources */,
 				E27691EB1CAFC91A004A725C /* SystemPushAnimator.swift in Sources */,
 				AE6B01781C2A444900950BB2 /* BarButtonItemDesignable.swift in Sources */,
 				AE154B7C1C7D04A40093C05B /* TransitionAnimatable.swift in Sources */,
 				AE6B01641C2A444000950BB2 /* BorderSide.swift in Sources */,
+				E29F35101CDF6C5400312FD4 /* PresentSlideWithDismissInteractionSegue.swift in Sources */,
 				AE6B016B1C2A444900950BB2 /* CornerDesignable.swift in Sources */,
 				AE6B01631C2A444000950BB2 /* BlurEffectStyle.swift in Sources */,
 				AE6B016E1C2A444900950BB2 /* NavigationBarDesginable.swift in Sources */,
 				AEC23FC01CB3DC4800E42D99 /* ScreenEdgePanInteractiveAnimator.swift in Sources */,
 				AEC9F60E1CB31DCB00C82D16 /* GestureDirection.swift in Sources */,
+				E299DF541CD5F8C300EC30D4 /* TurnAnimator.swift in Sources */,
 				AE6B01861C2A445100950BB2 /* DesignableNavigationBar.swift in Sources */,
 				AE677B9A1CADCF6700D62273 /* SystemRippleEffectAnimator.swift in Sources */,
-				AEE552AB1C816233009CF623 /* TransitionFadeType.swift in Sources */,
 				AE154B7F1C7D061A0093C05B /* TransitionAnimationType.swift in Sources */,
 				AE677B991CADCF6500D62273 /* SystemCameraIrisAnimator.swift in Sources */,
-				E27691F11CAFCBCF004A725C /* TransitionRotateDegree.swift in Sources */,
+				E299DF5C1CD6067C00EC30D4 /* PresentCardsSegue.swift in Sources */,
 				AE6B016F1C2A444900950BB2 /* MaskDesignable.swift in Sources */,
 				AE6B01741C2A444900950BB2 /* SideImageDesignable.swift in Sources */,
+				E222CDC61CC3EA7400684CA0 /* PortalAnimator.swift in Sources */,
 				AE6B017E1C2A445100950BB2 /* AnimatableImageView.swift in Sources */,
 				AE6B01761C2A444900950BB2 /* TableViewCellDesignable.swift in Sources */,
 				CAB5610BC7B5D20C927AAB87 /* Navigator.swift in Sources */,
@@ -712,9 +847,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE1B9A661CE3EB100098D962 /* InteractionTableViewController.swift in Sources */,
 				AE8A4FFA1C856EEC00E9E368 /* TransitionViewController.swift in Sources */,
+				AEDB24D31CE9EEB30086612C /* UIViewControllerExtension.swift in Sources */,
+				AED57AE51CE5C0CB00C359E3 /* TransitionPushedViewController.swift in Sources */,
 				AE6C21061C842A0F00DB6892 /* TransitionTableViewController.swift in Sources */,
 				AE8FBAA91C853C7A00EB8AEA /* Functions.swift in Sources */,
+				E25EC6E71CDE034300743DB8 /* ContainerTransitionViewController.swift in Sources */,
+				AEDB24D11CE9EC0F0086612C /* TransitionPresentedViewController.swift in Sources */,
 				AED1A1031BFE9820001346FA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

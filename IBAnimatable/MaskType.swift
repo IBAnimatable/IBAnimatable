@@ -11,4 +11,5 @@ public enum MaskType: String {
   case Star
   case Triangle
   case Wave
+  case Parallelogram
 }

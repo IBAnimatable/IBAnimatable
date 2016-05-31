@@ -10,20 +10,28 @@ import Foundation
  */
 public enum InteractiveGestureType {
   case Default          // Will use the default interactive gesture type from `AnimatedTransitioning`
-  case Pan(direction: GestureDirection)
-  case ScreenEdgePan(direction: GestureDirection)
-
+  case Pan(fromDirection: GestureDirection)
+  case ScreenEdgePan(fromDirection: GestureDirection)
+  case Pinch(direction: GestureDirection)
+  
   var stringValue: String {
     return String(self)
   }
   
-  static func fromString(interactiveGestureType: String) -> InteractiveGestureType? {
+  public static func fromString(interactiveGestureType: String) -> InteractiveGestureType? {
     if interactiveGestureType.hasPrefix("Default") {
       return .Default
-    } else if interactiveGestureType.hasPrefix("Pan") || interactiveGestureType.hasPrefix("ScreenEdgePan") {
+    } else if interactiveGestureType.hasPrefix("Pan") || interactiveGestureType.hasPrefix("ScreenEdgePan") ||
+      interactiveGestureType.hasPrefix("Pinch") {
       return fromStringWithDirection(interactiveGestureType)
     }
     return nil
+  }
+  
+  // Return the `String` without qualification
+  public func toString() -> String {
+    let namespace = "IBAnimatable." + String(GestureDirection) + "."
+    return String(self).stringByReplacingOccurrencesOfString(namespace, withString: "")
   }
 }
 
@@ -35,22 +43,27 @@ private extension InteractiveGestureType {
     let interactiveGestureType = interactiveGestureType.stringByReplacingOccurrencesOfString(" ", withString: "")
       .lowercaseString
       .substringFromIndex(range?.startIndex ?? interactiveGestureType.endIndex)
+      .stringByReplacingOccurrencesOfString("(", withString: "")
+      .stringByReplacingOccurrencesOfString(")", withString: "")
+      .capitalizedString
     return interactiveGestureType
   }
   
   static func fromStringWithDirection(interactiveGestureType: String) -> InteractiveGestureType? {
-    let gestureDirectionString = cleanInteractiveGestureType(interactiveGestureType).capitalizedString
+    let gestureDirectionString = cleanInteractiveGestureType(interactiveGestureType)
     
     guard let direction = GestureDirection(rawValue: gestureDirectionString) else {
       return nil
     }
     
     if interactiveGestureType.hasPrefix("Pan") {
-      return .Pan(direction: direction)
+      return .Pan(fromDirection: direction)
+    } else if interactiveGestureType.hasPrefix("ScreenEdgePan") {
+      return .ScreenEdgePan(fromDirection: direction)
+    } else if interactiveGestureType.hasPrefix("Pinch") {
+      return .Pinch(direction: direction)
     }
-    else if interactiveGestureType.hasPrefix("ScreenEdgePan") {
-      return .ScreenEdgePan(direction: direction)
-    }
+    
     return nil
   }
 

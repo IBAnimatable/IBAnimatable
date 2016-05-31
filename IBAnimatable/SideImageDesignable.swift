@@ -49,7 +49,12 @@ public protocol SideImageDesignable {
 
 public extension SideImageDesignable where Self: UITextField {
 
-  public func configLeftImage() {
+  public func configImages() {
+    configLeftImage()
+    configRightImage()
+  }
+  
+  private func configLeftImage() {
     guard let wrappedLeftImage = leftImage else {
       return
     }
@@ -59,7 +64,7 @@ public extension SideImageDesignable where Self: UITextField {
     leftView = sideView
   }
   
-  public func configRightImage() {
+  private func configRightImage() {
     guard let wrappedRightImage = rightImage else {
       return
     }

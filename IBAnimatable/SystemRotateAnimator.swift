@@ -12,27 +12,10 @@ public class SystemRotateAnimator: NSObject, AnimatedTransitioning {
   public var reverseAnimationType: TransitionAnimationType?
   public var interactiveGestureType: InteractiveGestureType?
   
-  // MARK: - private
-  private var degree: TransitionRotateDegree
-  
-  init(withDegree degree: TransitionRotateDegree, transitionDuration: Duration) {
-    self.degree = degree
+  public init(transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
-    
-    switch degree {
-    case .Ninety:
-      self.transitionAnimationType = .SystemRotate(degree: .Ninety)
-      self.reverseAnimationType = .SystemRotate(degree: .NinetyCCW)
-    case .NinetyCCW:
-      self.transitionAnimationType = .SystemRotate(degree: .NinetyCCW)
-      self.reverseAnimationType = .SystemRotate(degree: .Ninety)
-    case .OneHundredHeighty:
-      self.transitionAnimationType = .SystemRotate(degree: .OneHundredHeighty)
-      self.reverseAnimationType = .SystemRotate(degree: .OneHundredHeightyCCW)
-    case .OneHundredHeightyCCW:
-      self.transitionAnimationType = .SystemRotate(degree: .OneHundredHeightyCCW)
-      self.reverseAnimationType = .SystemRotate(degree: .OneHundredHeighty)
-    }
+    self.transitionAnimationType = .SystemRotate
+    self.reverseAnimationType = .SystemRotate
     
     super.init()
   }
@@ -44,6 +27,6 @@ extension SystemRotateAnimator: UIViewControllerAnimatedTransitioning {
   }
   
   public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-    animateWithCATransition(transitionContext, type: SystemTransitionType.Rotate, subtype: degree.stringValue)
+    animateWithCATransition(transitionContext, type: SystemTransitionType.Rotate, subtype: "90")
   }
 }

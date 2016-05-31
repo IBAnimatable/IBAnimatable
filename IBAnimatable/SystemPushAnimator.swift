@@ -16,29 +16,29 @@ public class SystemPushAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
-  private var fromDirection: TransitionFromDirection
+  private var fromDirection: TransitionDirection
   
-  init(fromDirection: TransitionFromDirection, transitionDuration: Duration) {
+  public init(fromDirection: TransitionDirection, transitionDuration: Duration) {
     self.fromDirection = fromDirection
     self.transitionDuration = transitionDuration
     
     switch fromDirection {
-    case .Left:
-      self.transitionAnimationType = .SystemPush(direction: .Left)
-      self.reverseAnimationType = .SystemPush(direction: .Right)
-      self.interactiveGestureType = .Pan(direction: .Right)
     case .Right:
-      self.transitionAnimationType = .SystemPush(direction: .Right)
-      self.reverseAnimationType = .SystemPush(direction: .Left)
-      self.interactiveGestureType = .Pan(direction: .Left)
+      self.transitionAnimationType = .SystemPush(fromDirection: .Right)
+      self.reverseAnimationType = .SystemPush(fromDirection: .Left)
+      self.interactiveGestureType = .Pan(fromDirection: .Left)
     case .Top:
-      self.transitionAnimationType = .SystemPush(direction: .Top)
-      self.reverseAnimationType = .SystemPush(direction: .Bottom)
-      self.interactiveGestureType = .Pan(direction: .Bottom)
+      self.transitionAnimationType = .SystemPush(fromDirection: .Top)
+      self.reverseAnimationType = .SystemPush(fromDirection: .Bottom)
+      self.interactiveGestureType = .Pan(fromDirection: .Bottom)
     case .Bottom:
-      self.transitionAnimationType = .SystemPush(direction: .Bottom)
-      self.reverseAnimationType = .SystemPush(direction: .Top)
-      self.interactiveGestureType = .Pan(direction: .Top)
+      self.transitionAnimationType = .SystemPush(fromDirection: .Bottom)
+      self.reverseAnimationType = .SystemPush(fromDirection: .Top)
+      self.interactiveGestureType = .Pan(fromDirection: .Top)
+    default:
+      self.transitionAnimationType = .SystemPush(fromDirection: .Left)
+      self.reverseAnimationType = .SystemPush(fromDirection: .Right)
+      self.interactiveGestureType = .Pan(fromDirection: .Right)
     }
     
     super.init()
@@ -51,6 +51,6 @@ extension SystemPushAnimator: UIViewControllerAnimatedTransitioning {
   }
   
   public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-    animateWithCATransition(transitionContext, type: SystemTransitionType.Push, subtype: fromDirection.stringValue)
+    animateWithCATransition(transitionContext, type: SystemTransitionType.Push, subtype: fromDirection.CATransitionSubtype)
   }
 }

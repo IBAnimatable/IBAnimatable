@@ -15,7 +15,7 @@ public class SystemPageAnimator: NSObject, AnimatedTransitioning {
   // MARK: - private
   private var type: TransitionPageType
   
-  init(type: TransitionPageType, transitionDuration: Duration) {
+  public init(type: TransitionPageType, transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
     self.type = type
     

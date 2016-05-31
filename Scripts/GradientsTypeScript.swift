@@ -32,10 +32,10 @@ var switchPredefinedGradientType = "switch gradientType {\n"
 // Enum generator
 let gradientsType = parseJSON(JSONFromURL(gradientTypeURL))
 for gradient in gradientsType! {
-    if  var name = gradient["name"] as? String,
-        let unwrappedColors = gradient["colors"] as? [String],
-        let startColor = unwrappedColors.first,
-        let endColor = unwrappedColors.last {
+    if var name = gradient["name"] as? String,
+      unwrappedColors = gradient["colors"] as? [String],
+      startColor = unwrappedColors.first,
+      endColor = unwrappedColors.last {
             name = name.stringByReplacingOccurrencesOfString(" ", withString: "")
             enumGradientType += String(format: enumCase, name)
             switchPredefinedGradientType += String(format: switchCase, name)
