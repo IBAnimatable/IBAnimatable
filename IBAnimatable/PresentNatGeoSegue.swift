@@ -1,6 +1,5 @@
 //
 //  Created by Tom Baranes on 24/04/16.
-//  Updated by Mark Hamilton on 5/30/16
 //  Copyright © 2016 Jake Lin. All rights reserved.
 //
 
