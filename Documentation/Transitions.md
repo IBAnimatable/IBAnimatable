@@ -18,10 +18,13 @@ Then we can configure **Transition Animation**, **Transition Duration** and **In
 | Transition Duration | The duration of the transiion animation in seconds. The default value is `0.7` | `0.5` means half a second, `2` means two seconds |
 | Interactive Gusture | The gusture to *Dismiss* the `ViewController`, you can find all supported interactive gustures in [Interactive Animators]() section. There is not guesture for *Dismiss* if it is unset (nil). Some **Transition Animator** has a default gesture, you can set this property to `Default` to use the default gesture. You can find all default gesture in [Transition Animators]()  | `Default` for `FadeAnimator` means `Pan(Horizontal)` gesture. `Pinch(Close)` means pinch close gesture. |
 
-Once we configure these propertis, all **Present Transition** for this `ViewController` will use the configured animation effect. If you want to have separate animation effect for different **Present Transition**, see the section below.
+![Transition - Present Transition](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/PresentTransitionSettings.png)
+
+Once we configure these propertis, all (please notice it is all, including Exit Segue 😉) **Present Transition** for this `ViewController` will use the configured animation effect. The transition animation will look like this based on the settings above. 
 
 ![Transition - Present Transition](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/PresentTransition.gif)
 
+If you want to have separate animation effect for different **Present Transition**, see the section below.
 
 ## Configuring Present transition in Interface Builder via Segue
 In some case, we may want to have different animation effect for different **Present Transition**. `IBAnimatable` provides a set of custom Segues to support that. You can find all supported Segues in [Segues]() section.
@@ -33,6 +36,19 @@ To use custom Segue, we can **control drag** from one `ViewController` to anothe
 After we select "present portal with dismiss interaction", we need to check the **Module** in Attributes inspector (![](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/AttributesInspector.png)). The App may crash if the field is empty. It probably is a bug of Interface Builder. To fix it just simply click on the **Module** field and hit enter, it should show **IBAnimatable**. If everything is ready, we can see the transition animation like this 😘. We can have more than one Segue within the same ViewController. They will have different transition animation based on the selected Segue.
 
 ![Transition - Present Transition via Segue](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/PresentTransitionViaSegue.gif)
+
+## Configuring Push transition in Interface Builder
+To use Push transition, we need to have a `UINavigationController`. Firstly, select a `UINavigationController ` then configure the constom class to `AnimatableNavigationController` in Identity inspector (![](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/IdentityInspector.png))
+
+![Transition - AnimatableViewController](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/TransitionUsingAnimatableNavigationController.png)
+
+Then we can configure **Transition Animation**, **Transition Duration** and **Interactive Gusture** in Attributes inspector (![](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/AttributesInspector.png)). Those properties are same as in [Configuring Present transition in Interface Builder]() section. There difference are we can use `System***Animator`s in **Transition Animation**, e.g. `SystemCube(Left)`
+
+![Transition - Present Transition](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/PushTransitionSettings.png)
+
+Once we configure these propertis, all **Push Transition** inside the `NavigationController` will use the configured animation effect. By propose, we usually don't have different effect inside the same `NavigationController`, and we don't provide Push Segues to support different transition animations. If you still want to have different transition animations, we can use Apple default API to acheive that. Please check out `UINavigationControllerDelegate`.
+
+![Transition - Present Transition](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/PushTransition.gif)
 
 ## Transition Animators
 
