@@ -10,4 +10,8 @@ public class PresentFadeSegue: UIStoryboardSegue {
     destinationViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(.Fade(direction: .Cross))
     sourceViewController.presentViewController(destinationViewController, animated: true, completion: nil)
   }
+  public func perform(completion: OptionalAnimatableCompletion) {
+    destinationViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(.Fade(direction: .Cross))
+    sourceViewController.presentViewController(destinationViewController, animated: true, completion: completion)
+  }
 }
