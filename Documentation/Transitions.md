@@ -25,6 +25,8 @@ Once we configure those properties, **ALL Transition** (please notice it is all,
 
 ![Transition - Present Transition](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/PresentTransition.gif)
 
+You can see the example in "TransitionsInInterfaceBuilder.storyboard" and play around different configurations. Then open the App and tap on "Forget Passowrd" button, and tap on "transitions" cell to navigate to Transitions Scene. Tap on "IB" button to see the configurations you made in "TransitionsInInterfaceBuilder.storyboard".
+
 If you want to have separate animation effect for different **Present Transition**, see the section [Configuring Present transition in Interface Builder via Segue](configuring-present-transition-in-interface-builder-via-segue).
 
 ## Configuring Present transition in Interface Builder via Segue
@@ -38,6 +40,8 @@ To use custom Segue, we can **control drag** from one `ViewController` to anothe
 After we select "present portal with dismiss interaction", we need to check the **Module** in Attributes inspector (![Attributes inspector](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/AttributesInspector.png)). The App may crash if the field is empty. It probably is a bug of Interface Builder. To fix it just simply click on the **Module** field and hit enter, it should show **IBAnimatable**. If everything is ready, we can see the transition animation like this as below . We can have more than one Segue within the same ViewController. They will have different transition animation based on the selected Segue.
 
 ![Transition - Present Transition via Segue](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/PresentTransitionViaSegue.gif)
+
+You can see the example in "TransitionsInInterfaceBuilder.storyboard" and play around different configurations.
 
 ## Configuring Push transition in Interface Builder
 
@@ -53,9 +57,13 @@ Once we configure those properties, all **Push Transitions** inside the `Navigat
 
 ![Transition - Push Transition](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/PushTransition.gif)
 
+You can see the example in "TransitionsInInterfaceBuilder.storyboard" and play around different configurations.
+
 ## Transition Animators
 
 `IBAnimatable` provide a large set of Transition Animators / Controllers. They can be used in Interface Builder as **Transition Animation** as described in [Configuring Present transition in Interface Builder](configuring-present-transition-in-interface-builder) and [Configuring Push transition in Interface Builder](configuring-push-transition-in-interface-builder), or programmatically in code. They all standard Transition Animators / Controllers conform to `UIViewControllerAnimatedTransitioning`.
+
+You can see all supported Transition Animators in the demo App, open the App and tap on "Forget Passowrd" button, then tap on "transitions" cell to see all transitions.
 
 ### FadeAnimator
 
@@ -348,6 +356,8 @@ Please notice, `ScreenEdgePan(Vertical)`, `ScreenEdgePan(Top)` and `ScreenEdgePa
 | `Pinch` | Pinch open or close |
 | `Pinch(Close)` | Pinch close |
 | `Pinch(Open)` | Pinch open |
+
+You can play around the configurations in "TransitionsInInterfaceBuilder.storyboard".
 
 ## Segues
 
