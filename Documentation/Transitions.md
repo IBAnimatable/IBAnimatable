@@ -4,6 +4,7 @@ For any non-trival apps, they may have more than one Scene (ViewController). In 
 
 
 ## Configuring Present transition in Interface Builder
+
 There are two ways to configure Present transition in Interface Builder with `IBAnimatable`. The first one is to use `AnimatableViewController`
 
 Firstly, select a `UIViewController` then configure the constom class to `AnimatableViewController` in Identity inspector (![](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/IdentityInspector.png))
@@ -27,6 +28,7 @@ Once we configure these propertis, all (please notice it is all, including Exit 
 If you want to have separate animation effect for different **Present Transition**, see the section below.
 
 ## Configuring Present transition in Interface Builder via Segue
+
 In some case, we may want to have different animation effect for different **Present Transition**. `IBAnimatable` provides a set of custom Segues to support that. You can find all supported Segues in [Segues]() section.
 
 To use custom Segue, we can **control drag** from one `ViewController` to another `ViewController`, then select a custom Segue e.g. "present portal with dismiss interaction". Because Interface Builder doesn't support `@IBInspectable` for Segue, we are not able to change the transition direction, duration and dismissal gesture. There are one or two Segues for each **Transition Animator**. One is without dismiss interaction and one's with(if this transition animator has interactive dismissal gesture). For example, for `PortalAnimator`, we have "present portal" for **Portal aniamtion** without dismiss interaction, and have "present portal with dismiss interaction" for **Portal aniamtion** with default dismiss interaction, which is `Pinch(Close)`. 
@@ -38,6 +40,7 @@ After we select "present portal with dismiss interaction", we need to check the 
 ![Transition - Present Transition via Segue](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/PresentTransitionViaSegue.gif)
 
 ## Configuring Push transition in Interface Builder
+
 To use Push transition, we need to have a `UINavigationController`. Firstly, select a `UINavigationController ` then configure the constom class to `AnimatableNavigationController` in Identity inspector (![](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/IdentityInspector.png))
 
 ![Transition - AnimatableViewController](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/TransitionUsingAnimatableNavigationController.png)
@@ -51,6 +54,7 @@ Once we configure these propertis, all **Push Transition** inside the `Navigatio
 ![Transition - Present Transition](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/PushTransition.gif)
 
 ## Transition Animators
+
 `IBAnimatable` provide a set of Transition Animators. They can be used in Interface Builder as **Transition Animation** as described above, or programmatically in code. They all standard Transition Animators / Controllers conform to `UIViewControllerAnimatedTransitioning`.
 
 ### FadeAnimator
@@ -164,7 +168,7 @@ Using in **Transition Animation**
 | `Flod(Top)` | Flod from top | Pan(Bottom) |
 | `Flod(Bottom)` | Flod from bottom | Pan(Top) |
 
-`PortalAnimator` also supports second parameter `folds`, which sets the number of folds. The default value is `2`. We can use it like `Flod(Left,5)`.
+`FlodAnimator` also supports second parameter `folds`, which sets the number of folds. The default value is `2`. We can use it like `Flod(Left,5)`.
 
 ![Transition - Present Transition](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/FlodTransition.gif)
 
@@ -288,9 +292,43 @@ Using in **Transition Animation**
 
 We can use them like `Explode(20,-5,5)
 
-![Transition - Present Transition](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/ExpoldeTransition.gif)
+![Transition - Present Transition](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/ExplodeTransition.gif)
 
 ## Interactive Animators
+
+We can use Interactive Animators / Controllers to configure gesture for Dismiss or Pop transition.
+
+### PanInteractiveAnimator
+
+| Value | Gesture |
+| ------------- | ------------- |
+| `Pan(Horizontal)` | Pan horizontal |
+| `Pan(Vertical)` | Pan vertical |
+| `Pan(Left)` | Pan from left |
+| `Pan(Right)` | Pan from right |
+| `Pan(Top)` | Pan from top |
+| `Pan(Bottom)` | Pan from bottom |
+
+### ScreenEdgePanInteractiveAnimator
+
+| Value | Gesture |
+| ------------- | ------------- |
+| `ScreenEdgePan(Horizontal)` | ScreenEdgePan horizontal |
+| `ScreenEdgePan(Vertical)` | ScreenEdgePan vertical |
+| `ScreenEdgePan(Left)` | ScreenEdgePan from left |
+| `ScreenEdgePan(Right)` | ScreenEdgePan from right |
+| `ScreenEdgePan(Top)` | ScreenEdgePan from top |
+| `ScreenEdgePan(Bottom)` | ScreenEdgePan from bottom |
+
+Please notice, `ScreenEdgePan(Vertical)`, `ScreenEdgePan(Top)` and `ScreenEdgePan(Bottom)` are reserved by iOS system. In most of cases, we should not use them.
+
+### PinchInteractiveAnimator
+
+| Value | Gesture |
+| ------------- | ------------- |
+| `Pinch` | Pinch open or close |
+| `Pinch(Close)` | Pinch close |
+| `Pinch(Open)` | Pinch open |
 
 ## Segues
 
