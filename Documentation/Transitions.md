@@ -332,8 +332,45 @@ Please notice, `ScreenEdgePan(Vertical)`, `ScreenEdgePan(Top)` and `ScreenEdgePa
 
 ## Segues
 
+To support different animation effect for different Prsent transition, `IBAnimatable` provides a set of Present Segues.
+
+### Present Segues
+
+| Value | Description |
+| ------------- | ------------- |
+| `PresentFadeSegue` | Present segue with fade transition |
+| `PresentFadeWithDismissInteractionSegue` | Present segue with fade transition, using `Pan(Horizontal)` gesture to dismiss |
+| `PresentFoldSegue` | Present segue with fold from left transition |
+| `PresentFoldWithDismissInteractionSegue` | Present segue with Fold from left transition, using `Pan(Right)` gesture to dismiss |
+| `PresentPortalSegue` | Present segue with portal forward transition |
+| `PresentPortalWithDismissInteractionSegue` | Present segue with portal forward transition, using `Pinch(Close)` gesture to dismiss |
+| `PresentTurnSegue` | Present segue with turn from left transition |
+| `PresentTurnWithDismissInteractionSegue` | Present segue with turn from left transition, using `Pan(Right)` gesture to dismiss |
+| `PresentFlipSegue` | Present segue with flip from left transition |
+| `PresentFlipWithDismissInteractionSegue` | Present segue with flip from left transition, using `Pan(Right)` gesture to dismiss |
+| `PresentSlideSegue` | Present segue with slide to left transition |
+| `PresentSlideWithDismissInteractionSegue` | Present segue with slide transition, using `Pan(Left)` gesture to dismiss |
+| `PresentCardsSegue` | Present segue with cards effect transition |
+| `PresentNatGeoSegue` | Present segue with nat geo effect transition |
+| `PresentExplodeSegue` | Present segue with expolde effect transition |
+
+### Exit Segues
+
+`IBAnimatale` provide some Exit Segues to help user configure Exit / Unwind actions. To do that, we can "control drag" from a button to "Exit" icon (on top of the ViewController), then select the Segue.
+
+![Transition - Exit Segue](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/ExitSegue.png)
+
+| Value | Description |
+| ------------- | ------------- |
+| `dismissCurrentViewController` | dismiss current ViewController, it is an exit action for Present transition |
+| `popToRootViewController` | pop to root ViewController, it can pop to root of the NavigationController |
+| `unwindToViewController` | unwind to previous ViewController |
 
 
+## Contribution
+Great thanks to @tbaranes who ported all transition from [VCTransitionsLibrary](https://github.com/ColinEberhardt/VCTransitionsLibrary)
+
+If you'd like to add more transition animations to `IBAnimatable`, it is super easy, please have a look at [How to develop an animator (animation controller)](https://github.com/JakeLin/IBAnimatable/wiki/How-to-develop-an-animator-(animation-controller)). Let's have some fun 😉. You can also discuss that in [Issue 155 - Custom transition animators (animation controllers)](https://github.com/JakeLin/IBAnimatable/issues/155). If you have any question, please contact @JakeLin. 
 
 
 
