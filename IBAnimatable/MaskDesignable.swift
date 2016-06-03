@@ -137,35 +137,37 @@ public extension MaskDesignable where Self: UIView {
   
   // MARK: - Parallelogram
     
-  private func maskParallelogramFromString(mask:String) {
+  private func maskParallelogramFromString(mask: String) {
     if let angle = Double(retrieveMaskParameters(mask, maskName: MaskType.Parallelogram.rawValue)) {
       maskParallelogram(angle)
     } else {
       maskParallelogram()
     }
   }
-  private func maskParallelogram(topLeftAngle:Double = 60) {
-    let parallelogramPath = maskParallelogramBezierPath(topLeftAngle);
+  
+  private func maskParallelogram(topLeftAngle: Double = 60) {
+    let parallelogramPath = maskParallelogramBezierPath(topLeftAngle)
     drawPath(parallelogramPath)
   }
-  private func maskParallelogramBezierPath(topLeftAngle:Double) -> UIBezierPath {
-    let topLeftAngleRad  =  Double(topLeftAngle) * M_PI / 180;
-    let path = UIBezierPath();
-    let offset = abs(CGFloat(tan(topLeftAngleRad - M_PI / 2)) * bounds.height);
+  
+  private func maskParallelogramBezierPath(topLeftAngle: Double) -> UIBezierPath {
+    let topLeftAngleRad = Double(topLeftAngle) * M_PI / 180
+    let path = UIBezierPath()
+    let offset = abs(CGFloat(tan(topLeftAngleRad - M_PI / 2)) * bounds.height)
     
-    if  topLeftAngle <= 90 {
-      path.moveToPoint(CGPoint(x:0, y:0));
+    if topLeftAngle <= 90 {
+      path.moveToPoint(CGPoint(x: 0, y: 0))
       path.addLineToPoint(CGPoint(x: bounds.width - offset, y: 0))
-      path.addLineToPoint(CGPoint(x:bounds.width, y:bounds.height))
+      path.addLineToPoint(CGPoint(x: bounds.width, y: bounds.height))
       path.addLineToPoint(CGPoint(x: offset, y: bounds.height))
     } else {
-      path.moveToPoint(CGPoint(x:offset, y:0))
-       path.addLineToPoint(CGPoint(x:bounds.width, y:0))
-       path.addLineToPoint(CGPoint(x:bounds.width - offset, y:bounds.height));
-       path.addLineToPoint(CGPoint(x:0, y:bounds.height));
+      path.moveToPoint(CGPoint(x: offset, y: 0))
+       path.addLineToPoint(CGPoint(x: bounds.width, y: 0))
+       path.addLineToPoint(CGPoint(x: bounds.width - offset, y: bounds.height))
+       path.addLineToPoint(CGPoint(x: 0, y: bounds.height))
     }
     path.closePath()
-    return path;
+    return path
   }
   
   // MARK: - Triangle

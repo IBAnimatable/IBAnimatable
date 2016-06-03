@@ -21,4 +21,3 @@ extension InteractionTableViewController {
     }
   }
 }
-
