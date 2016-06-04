@@ -1,6 +1,6 @@
 ![IBAnimatable](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/Hero.png)
 
-Design and prototype UI, interaction, navigation, transition and animation for App Store ready Apps in Interface Builder with IBAnimatable.
+Design and prototype customized UI, interaction, navigation, transition and animation for App Store ready Apps in Interface Builder with IBAnimatable.
 
 ![](https://d13yacurqjgara.cloudfront.net/users/332358/screenshots/2453933/ibanimatable.gif)
 

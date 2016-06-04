@@ -110,7 +110,6 @@
 		E25EC6E71CDE034300743DB8 /* ContainerTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25EC6E61CDE034300743DB8 /* ContainerTransitionViewController.swift */; };
 		E26B3EDA1CCD4C1D00BFD0AB /* NatGeoAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B3ED91CCD4C1D00BFD0AB /* NatGeoAnimator.swift */; };
 		E26B3EDC1CCD579200BFD0AB /* PresentNatGeoSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B3EDB1CCD579200BFD0AB /* PresentNatGeoSegue.swift */; };
-		E26B3EDE1CCD57BF00BFD0AB /* PresentNatGeoWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B3EDD1CCD57BF00BFD0AB /* PresentNatGeoWithDismissInteractionSegue.swift */; };
 		E27691E91CAFC72C004A725C /* SystemMoveInAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691E81CAFC72C004A725C /* SystemMoveInAnimator.swift */; };
 		E27691EB1CAFC91A004A725C /* SystemPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691EA1CAFC91A004A725C /* SystemPushAnimator.swift */; };
 		E27691EF1CAFCA29004A725C /* SystemRevealAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691EE1CAFCA29004A725C /* SystemRevealAnimator.swift */; };
@@ -255,7 +254,6 @@
 		E25EC6E61CDE034300743DB8 /* ContainerTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerTransitionViewController.swift; sourceTree = "<group>"; };
 		E26B3ED91CCD4C1D00BFD0AB /* NatGeoAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NatGeoAnimator.swift; sourceTree = "<group>"; };
 		E26B3EDB1CCD579200BFD0AB /* PresentNatGeoSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentNatGeoSegue.swift; sourceTree = "<group>"; };
-		E26B3EDD1CCD57BF00BFD0AB /* PresentNatGeoWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentNatGeoWithDismissInteractionSegue.swift; sourceTree = "<group>"; };
 		E27691E81CAFC72C004A725C /* SystemMoveInAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemMoveInAnimator.swift; sourceTree = "<group>"; };
 		E27691EA1CAFC91A004A725C /* SystemPushAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPushAnimator.swift; sourceTree = "<group>"; };
 		E27691EE1CAFCA29004A725C /* SystemRevealAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemRevealAnimator.swift; sourceTree = "<group>"; };
@@ -313,20 +311,19 @@
 				AE0FAD3C1C1ED1EC00B5289B /* DismissSegue.swift */,
 				AEE552AC1C82D1E1009CF623 /* PresentFadeSegue.swift */,
 				AE65CF911C96E35600A723F8 /* PresentFadeWithDismissInteractionSegue.swift */,
-				E2A062B41CB1A60E00C54B40 /* PresentExplodeSegue.swift */,
 				E20078A21CB912E1002B2C16 /* PresentFoldSegue.swift */,
 				E20078A41CB91307002B2C16 /* PresentFoldWithDismissInteractionSegue.swift */,
 				E222CDC71CC400FD00684CA0 /* PresentPortalSegue.swift */,
 				E222CDC91CC4010800684CA0 /* PresentPortalWithDismissInteractionSegue.swift */,
-				E26B3EDB1CCD579200BFD0AB /* PresentNatGeoSegue.swift */,
-				E26B3EDD1CCD57BF00BFD0AB /* PresentNatGeoWithDismissInteractionSegue.swift */,
 				E299DF551CD5FFE300EC30D4 /* PresentTurnSegue.swift */,
 				E299DF571CD6003000EC30D4 /* PresentTurnWithDismissInteractionSegue.swift */,
-				E299DF5B1CD6067C00EC30D4 /* PresentCardsSegue.swift */,
 				E2F45B581CDBAF39001D2E37 /* PresentFlipSegue.swift */,
 				E2F45B5A1CDBAF5C001D2E37 /* PresentFlipWithDismissInteractionSegue.swift */,
 				E29F350D1CDF6C4900312FD4 /* PresentSlideSegue.swift */,
 				E29F350F1CDF6C5400312FD4 /* PresentSlideWithDismissInteractionSegue.swift */,
+				E299DF5B1CD6067C00EC30D4 /* PresentCardsSegue.swift */,
+				E26B3EDB1CCD579200BFD0AB /* PresentNatGeoSegue.swift */,
+				E2A062B41CB1A60E00C54B40 /* PresentExplodeSegue.swift */,
 			);
 			name = segue;
 			sourceTree = "<group>";
@@ -770,7 +767,6 @@
 				E2F45B5B1CDBAF5C001D2E37 /* PresentFlipWithDismissInteractionSegue.swift in Sources */,
 				E20078A51CB91307002B2C16 /* PresentFoldWithDismissInteractionSegue.swift in Sources */,
 				E2A062B31CB19BB900C54B40 /* ExplodeAnimator.swift in Sources */,
-				E26B3EDE1CCD57BF00BFD0AB /* PresentNatGeoWithDismissInteractionSegue.swift in Sources */,
 				AE65CF931C96E35600A723F8 /* PresentFadeWithDismissInteractionSegue.swift in Sources */,
 				AE677B981CADCF5900D62273 /* SystemSuckEffectAnimator.swift in Sources */,
 				AE154B061C787DDE0093C05B /* AnimatableNavigationController.swift in Sources */,
