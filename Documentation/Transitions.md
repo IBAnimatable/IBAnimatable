@@ -7,11 +7,11 @@ For most of the non-trivial apps, they may have more than one Scene (ViewControl
 
 There are two ways to configure Present transition in Interface Builder with `IBAnimatable`. The first one is to use `AnimatableViewController`
 
-Firstly, select a `UIViewController` then configure the constom class to `AnimatableViewController` in Identity inspector (![Identity inspector](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/IdentityInspector.png))
+Firstly, select a `UIViewController` then configure the custom class to `AnimatableViewController` in Identity inspector (![Identity inspector](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/IdentityInspector.png))
 
 ![Transition - AnimatableViewController](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/TransitionUsingAnimatableViewController.png)
 
-Then we can configure **Transition Animation**, **Transition Duration** and **Interactive Gusture** properties in Attributes inspector (![Attributes inspector](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/AttributesInspector.png)). 
+Then we can configure **Transition Animation**, **Transition Duration** and **Interactive Gesture** properties in Attributes inspector (![Attributes inspector](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/AttributesInspector.png)). 
 
 | Property | Description | Example |
 | ------------- | ------------- | ------------- |
@@ -25,7 +25,7 @@ Once we configure those properties, **ALL Transition** (please notice it is all,
 
 ![Transition - Present Transition](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/PresentTransition.gif)
 
-You can see the example in "TransitionsInInterfaceBuilder.storyboard" and play around different configurations. Then open the App and tap on "Forget Passowrd" button, and tap on "transitions" cell to navigate to Transitions Scene. Tap on "IB" button to see the configurations you made in "TransitionsInInterfaceBuilder.storyboard".
+You can see the example in "TransitionsInInterfaceBuilder.storyboard" and play around different configurations. Then open the App and tap on "Forget Password" button, and tap on "transitions" cell to navigate to Transitions Scene. Tap on "IB" button to see the configurations you made in "TransitionsInInterfaceBuilder.storyboard".
 
 If you want to have separate animation effect for different **Present Transition**, see the section [Configuring Present transition in Interface Builder via Segue](configuring-present-transition-in-interface-builder-via-segue).
 
@@ -33,7 +33,7 @@ If you want to have separate animation effect for different **Present Transition
 
 In some case, we may want to have different animation effect for different **Present Transition**. `IBAnimatable` provides a set of custom Segues to support that. You can find all supported Segues in [Segues](#segues) section.
 
-To use custom Segue, we can **control drag** from one `ViewController` to another `ViewController`, then select a custom Segue e.g. "present portal with dismiss interaction". Because Interface Builder doesn't support `@IBInspectable` for Segue, we are not able to change the transition direction, duration and dismissal gesture. There are one or two Segues for each **Transition Animator**. One is without dismissal interaction and one's with(if this transition animator has interactive dismissal gesture). For example, for `PortalAnimator`, we have "present portal" for **Portal animation** without dismissal interaction, and have "present portal with dismiss interaction" for **Portal animation** with default dismissal interaction, which is `Pinch(Close)`. 
+To use custom Segue, we can **control drag** from one `ViewController` to another `ViewController`, then select a custom Segue e.g. "present portal with dismiss interaction". Because Interface Builder doesn't support `@IBInspectable` for Segue, we are not able to change the transition direction, duration and dismissal gesture. There are one or two Segues for each **Transition Animator**. One is without dismissal interaction and one's with (if this transition animator has interactive dismissal gesture). For example, for `PortalAnimator`, we have "present portal" for **Portal animation** without dismissal interaction, and have "present portal with dismiss interaction" for **Portal animation** with default dismissal interaction, which is `Pinch(Close)`. 
 
 ![Transition - Present Transition via Segue](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/PresentTransitionViaSegue.png)
 
@@ -45,15 +45,15 @@ You can see the example in "TransitionsInInterfaceBuilder.storyboard" and play a
 
 ## Configuring Push transition in Interface Builder
 
-To use Push transition, we need to have a `UINavigationController`. Firstly, select a `UINavigationController` then configure the constom class to `AnimatableNavigationController` in Identity inspector (![Identity inspector](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/IdentityInspector.png))
+To use Push transition, we need to have a `UINavigationController`. Firstly, select a `UINavigationController` then configure the Password class to `AnimatableNavigationController` in Identity inspector (![Identity inspector](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/IdentityInspector.png))
 
 ![Transition - Transition using AnimatableNavigationController](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/TransitionUsingAnimatableNavigationController.png)
 
-Then we can configure **Transition Animation**, **Transition Duration** and **Interactive Gusture** properties in Attributes inspector (![Attributes inspector](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/AttributesInspector.png)). Those properties are same as in [Configuring Present transition in Interface Builder](#configuring-present-transition-in-interface-builder) section. The difference are we can use `System***Animator`s in **Transition Animation**, e.g. `SystemCube(Left)` for Push transtions.
+Then we can configure **Transition Animation**, **Transition Duration** and **Interactive Gesture** properties in Attributes inspector (![Attributes inspector](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/AttributesInspector.png)). Those properties are as same as in [Configuring Present transition in Interface Builder](#configuring-present-transition-in-interface-builder) section. The differences are we can use `System***Animator` classes in **Transition Animation**, e.g. `SystemCube(Left)` for System Cube transtion.
 
 ![Transition - Push Transition settings](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/PushTransitionSettings.png)
 
-Once we configure those properties, all **Push Transitions** inside the `NavigationController` will use the configured animation effect. By propose, we usually don't have different effects inside the same `NavigationController`, so we don't provide Push Segues to support different transition animations. If you still want to have different transition animations, we can use Apple default API to achieve that. Please check out `UINavigationControllerDelegate` and `UIViewControllerTransitioningDelegate`.
+Once we configure those properties, all **Push Transitions** inside the `NavigationController` will use the configured animation effect. We usually don't have different effects inside the same `NavigationController`, so we don't provide Push Segues to support different transition animations. If you still want to have different transition animations, we can use Apple default API to achieve that. Please check out `UINavigationControllerDelegate`.
 
 ![Transition - Push Transition](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/PushTransition.gif)
 
@@ -61,9 +61,9 @@ You can see the example in "TransitionsInInterfaceBuilder.storyboard" and play a
 
 ## Transition Animators
 
-`IBAnimatable` provide a large set of Transition Animators / Controllers. They can be used in Interface Builder as **Transition Animation** as described in [Configuring Present transition in Interface Builder](configuring-present-transition-in-interface-builder) and [Configuring Push transition in Interface Builder](configuring-push-transition-in-interface-builder), or programmatically in code. They all standard Transition Animators / Controllers conform to `UIViewControllerAnimatedTransitioning`.
+`IBAnimatable` provide a large set of Transition Animators / Controllers. They can be used in Interface Builder as **Transition Animation** as described in [Configuring Present transition in Interface Builder](configuring-present-transition-in-interface-builder) and [Configuring Push transition in Interface Builder](configuring-push-transition-in-interface-builder), or programmatically in code. They are all standard Transition Animators / Controllers conform to `UIViewControllerAnimatedTransitioning`.
 
-You can see all supported Transition Animators in the demo App, open the App and tap on "Forget Passowrd" button, then tap on "transitions" cell to see all transitions.
+You can see all supported Transition Animators in the demo App, open the App and tap on "Forget Password" button, then tap on "transitions" cell to see all transitions.
 
 ### FadeAnimator
 
@@ -129,7 +129,7 @@ Using in **Transition Animation**
 | Value | Effect | Default Interactive Animator |
 | ------------- | ------------- | ------------- |
 | `SystemPush(Left)` | Push from left | Pan(Right) |
-| `SystemPush(Right)` | Push from Right | Pan(Left) |
+| `SystemPush(Right)` | Push from right | Pan(Left) |
 | `SystemPush(Top)` | Push from top | Pan(Bottom) |
 | `SystemPush(Bottom)` | Push from bottom | Pan(Top) |
 
@@ -179,20 +179,20 @@ Please notice, it doesn't support Present transtion.
 
 ![Transition - System Cameralris Transition](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/SystemCameralrisTransition.gif)
 
-### FlodAnimator
+### FoldAnimator
 
 Using in **Transition Animation**
 
 | Value | Effect | Default Interactive Animator |
 | ------------- | ------------- | ------------- |
-| `Flod(Left)` | Flod from left | Pan(Right) |
-| `Flod(Right)` | Flod from Right | Pan(Left) |
-| `Flod(Top)` | Flod from top | Pan(Bottom) |
-| `Flod(Bottom)` | Flod from bottom | Pan(Top) |
+| `Fold(Left)` | Fold from left | Pan(Right) |
+| `Fold(Right)` | Fold from Right | Pan(Left) |
+| `Fold(Top)` | Fold from top | Pan(Bottom) |
+| `Fold(Bottom)` | Fold from bottom | Pan(Top) |
 
-`FlodAnimator` also supports second parameter `folds`, which sets the number of folds. The default value is `2`. We can use it like `Flod(Left,5)`.
+`FoldAnimator` also supports second parameter `folds`, which sets the number of folds. The default value is `2`. We can use it like `Fold(Left,5)`.
 
-![Transition - Flod Transition](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/FlodTransition.gif)
+![Transition - Fold Transition](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/FoldTransition.gif)
 
 ### PortalAnimator
 
@@ -242,7 +242,7 @@ Using in **Transition Animation**
 
 ![Transition - Cards Transition](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/CardsTransition.gif)
 
-### FlipFlipAnimator
+### FlipAnimator
 
 Using in **Transition Animation**
 
