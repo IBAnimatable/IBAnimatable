@@ -116,8 +116,8 @@ view.squeezeInDown{ view.pop { view.shake{ view.squeeze{ view.wobble{ view.flipX
 ### Git submodule
 你一定很熟悉 Git，应该不用我多说了，把这个 Repo 作为一个 submodule ，并把项目文件加到你的 workspace 里面，然后把 `IBAnimatable.framework` 放到你的应用程序的 Target 里面。
 
-## APIs
-完整的 API 文档请参考 [IBAnimatable APIs](https://github.com/JakeLin/IBAnimatable#apis)。
+## 文档
+完整的文档请参考 [IBAnimatable APIs](https://github.com/JakeLin/IBAnimatable#documentations)。
 
 ## 怎样贡献
 我们每个人都可以为这个项目进行贡献。高效的工具使得我们有更多的时间来开发高质量的App，当然也有更多的时间享受生活🍻。
