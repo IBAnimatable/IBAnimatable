@@ -1,7 +1,7 @@
 # Vision, Technical Considerations and Roadmap
 
 ## Vision
-IBAnimatable is an open source library to help designers and developers design and prototype UI, interaction, navigation, transition and animation for App Store ready Apps in Interface Builder.
+IBAnimatable is an open source library to help designers and developers design and prototype customized UI, interaction, navigation, transition and animation for App Store ready Apps in Interface Builder.
 
 ## Approaches
 * Adding convenient `@IBInspectable` properties to reduce numerous amount of manual code. e.g.`fillColor`, `cornerRadius`, `shadowColor` and `shadowOffset`.
@@ -214,6 +214,7 @@ You can find more details in https://github.com/JakeLin/IBAnimatable/milestones
 ### Interaction elements
 * <del>Unwind Segue</del>
 * <del>Dismiss current ViewController Segue</del>
+* <del>Pop to root ViewController Segue</del>
 * `AnimatablePresentationController`: [#198](https://github.com/JakeLin/IBAnimatable/issues/198)
 	* gestureToDismiss (UIDynamics)
 

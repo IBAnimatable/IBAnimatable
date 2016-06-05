@@ -37,6 +37,10 @@ As a designer, we love Sketch, which is a simple but yet super powerful tool to 
 * Redesigning in Interface Builder - Redesign the UI from Sketch and animations from Framer without writing any code.
 * Making custom UI elements - Use `IBAnimatable` protocols to make custom UI elements. e.g. Buttons with a default color palette.
 
+## Documentations
+* [<del>Fully</del> Mostly documented API Reference](https://github.com/JakeLin/IBAnimatable/blob/master/Documentation/APIs.md) 
+* [How to design and prototype custom transition animation and gesture interaction in Interface Builder with IBAnimatable](https://github.com/JakeLin/IBAnimatable/blob/master/Documentation/Transitions.md)
+
 ## How to run the example App
 The easy way to learn and understand how powerful of `IBAnimatable`is to run the example App and play around the settings in Interface Builder. Just a few steps we can run the App as below, to see more features, we can tap on "Forget Password" button to unlock them. 😉
 
@@ -135,10 +139,6 @@ Please Notice, there is [a limitation of a built framework for `@IBDesignable` a
 ### Git submodule
 
 Add this repo as a submodule, and add the project file to your workspace. You can then link against `IBAnimatable.framework` for your application target. 
-
-## Documentations
-* [APIs](https://github.com/JakeLin/IBAnimatable/blob/master/Documentation/APIs.md) 
-* [How to design and prototype custom transition animation and gesture interaction in Interface Builder with IBAnimatable](https://github.com/JakeLin/IBAnimatable/blob/master/Documentation/Transitions.md)
 
 ## How to contribute
 All of us can contribute to this project. Fewer overheads mean less time to build quality Apps and more time to enjoy coffee ☕️.
