@@ -36,11 +36,11 @@ IBAnimatable is an open source library to help designers and developers design a
 
 ## Roadmap
 ### Versions
-* <del>Version 1: designable and animatable elements</del>
-* <del>Version 2: custom tansition animations</del>
-* Version 3: Sketch plugin
-* Version 4: more designable and animatable elements
-* Version 5: more animations
+* <del>Version 1: Designable and animatable elements</del>
+* <del>Version 2: Custom tansition animations</del>
+* Version 3: More designable and animatable elements
+* Version 4: Sketch plugin
+* Version 5: More animations
 * Version 6: Xcode plugin
 
 You can find more details in https://github.com/JakeLin/IBAnimatable/milestones
