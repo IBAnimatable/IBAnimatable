@@ -19,13 +19,13 @@ Here is the full design in a Storyboard in Interface Builder.
 
 With `IBAnimatable`, we can design a UI in Interface Builder like what we can do in Sketch, and prototype animations in a Swift playground like what we can do in Framer. Also, we can use the output of the design directly in the production ready App.
 
-As a designer, we love Sketch, which is a simple but yet super powerful tool to design UI. However, Sketch can't design interaction, navigation, transition and animation, we may need another tool like Framer to design some of them. Moreover, to make an App Store ready App, we need to use Xcode and Interface Builder to implement the UI and animations. To speed up the process and minimize the waste, we create `IBAnimatable` to make Interface Builder designable and animatable.   
+As a designer, we love Sketch, which is a simple but yet super powerful tool to create UI. However, Sketch can't design interaction, navigation, transition and animation, and we may need another tool like Framer to design some of them. Moreover, to make an App Store ready App, we need to use Xcode and Interface Builder to implement the UI and animations. To speed up the process and minimize the waste, we create `IBAnimatable` to make Interface Builder designable and animatable.   
 
 ## Languages
 [中文](https://github.com/JakeLin/IBAnimatable/blob/master/Documentation/README.zh.md)
 
 ## Features
-* From prototype to shippable App Store ready App - What you design in Interface Builder is what the App exactly looks like. 
+* From prototype to shippable App Store ready App - What you design in Interface Builder is what the App exactly looks. 
 * Designer-friendly - Sketch style configuration panel on Attributes inspector (![Attributes inspector](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/AttributesInspector.png)) to lower the learning curve for using Interface Builder.   
 * Animation design support in Swift playground - Similar to Framer, we can prototype animations in Swift playground to save time for running on a simulator or actual iOS devices. 
 * Built-in Auto Layout support - We can use Auto Layout and Size Classes with `IBAnimatable` to support orientations and multiple iOS devices. 
@@ -57,7 +57,7 @@ $ cd IBAnimatable
 $ open IBAnimatableApp.xcodeproj
 ```
 
-3) Compile and run the app in your simulator or iOS device
+3) Compile and run the app on your simulator or iOS device
 
 ## How to design in Interface Builder
 ![](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/DesignInInterfaceBuilder.png)
@@ -77,10 +77,10 @@ We can configure the animation settings in Attribute inspector. However, Interfa
 
 1. Open IBAnimatableApp.xcodeproj
 2. Select IBAnimatable Framework scheme and build it with `Command + b`
-3. Select IBAnimatable.playground, select one page in Swift playground, then click on "Assistant editor" button to split the playground. After that, select "Timeline" on the top of right-hand side to preview the animation. We can use Xcode menu "Editor" -> "Execute" to re-run the playground.
+3. Select IBAnimatable.playground, choose one page in Swift playground, then click on "Assistant editor" button to split the playground. After that, select "Timeline" on the top of right-hand side to preview the animation. We can use Xcode menu "Editor" -> "Execute" to re-run the playground.
 
 ## How to animate programmatically
-As you saw above, we can prototype an App fully in Interface Builder without a single line of code, but `IBAnimatable` also provides APIs to let us fully control the UI and animations. `IBAnimatable` provides simple APIs like `pop()`. We can simply call them in one line.
+As you saw above, we can prototype an App fully in Interface Builder without a single line of code, but `IBAnimatable` also provides APIs to let us fully control the UI and animations. `IBAnimatable` provides simple APIs like `pop()`. We can easily call them in one line.
 
 ```swift
 view.pop() // pop animation for the view
@@ -143,7 +143,7 @@ Add this repo as a submodule, and add the project file to your workspace. You ca
 ## How to contribute
 All of us can contribute to this project. Fewer overheads mean less time to build quality Apps and more time to enjoy coffee ☕️.
 
-* If you are a designer, you can design in Interface Builder with `IBAnimatable` without designing tool like Sketch, or implement your existing design from Sketch or Photoshop in Interface Builder rapidly. With `IBAnimatable`, you should be able to do <del>all</del> most of the design work in Interface Builder. If you have any feature request, please [create a GitHub Issue](https://github.com/JakeLin/IBAnimatable/issues/new) and we will put it in the backlog. If you have done any design with `IBAnimatable`, please let us know via creating Pull Request or GitHub Issue. We will add it to README file.
+* If you are a designer, you can design in Interface Builder with `IBAnimatable` without a design tool like Sketch, or implement your existing design from Sketch or Photoshop in Interface Builder rapidly. With `IBAnimatable`, you should be able to do <del>all</del> most of the design work in Interface Builder. If you have any feature request, please [create a GitHub Issue](https://github.com/JakeLin/IBAnimatable/issues/new) and we will put it in the backlog. If you have done any design with `IBAnimatable`, please let us know via creating Pull Request or GitHub Issue. We will add it to README file.
 
 * If you are a developer, you can work on features or fix bugs, please check out [Vision, Technical Considerations and Roadmap](https://github.com/JakeLin/IBAnimatable/blob/master/Documentation/Roadmap.md) and [GitHub Issues](https://github.com/JakeLin/IBAnimatable/issues) to find out the backlogs. If you have used `IBAnimatable` in your App, please let us know via creating Pull Request or GitHub Issue. We will add it to README file.
 
