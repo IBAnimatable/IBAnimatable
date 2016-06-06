@@ -1,12 +1,12 @@
 # Vision, Technical Considerations and Roadmap
 
 ## Vision
-IBAnimatable is an open source library to help designers and developers design and prototype UI, interaction, navigation, transition and animation for App Store ready Apps in Interface Builder.
+IBAnimatable is an open source library to help designers and developers design and prototype customized UI, interaction, navigation, transition and animation for App Store ready Apps in Interface Builder.
 
 ## Approaches
-* Adding convenient `@IBInspectable` properties to reduce numerous amount of manual code. e.g.`fillColor`, `cornerRadius`, `shadowColor` and `shadowOffset`.
-* Providing predefined UI elements and animations. e.g. Flat UI colors, Gradient colors and animations.
-* Extending existing behaviours, e.g. More transition animations like "Fade", "Explode", "Fold" and "Portal".
+* Adding convenient `@IBInspectable` properties to reduce numerous amount of code. e.g.`fillColor`, `cornerRadius`, `shadowColor` and `shadowOffset`.
+* Providing predefined UI elements and animations. e.g. Flat UI colors, Gradient colors, and animations.
+* Extending existing behaviors, e.g. More transition animations like "Fade", "Explode", "Fold" and "Portal".
 
 ## Technical Considerations
 * **UIKit** - All `IBAnimatable` UI elements are based on `UIkit`.
@@ -17,14 +17,14 @@ IBAnimatable is an open source library to help designers and developers design a
 		* Creating another layout system. e.g. CSS Flexbox.
 		* Creating new custom navigation pattern.
 
-* **`@IBDesginable` and `@IBInspectable`** - To design in Interface Builder, all properties should be `@IBDesginable`. Some properties cannot render properly in Interface Builder, e.g. `rotate`. And animations are not able to previewed in Interface Builder. But once Interface Builder supports, those features will work properly in Interface Builder.
+* **`@IBDesginable` and `@IBInspectable`** - To design in Interface Builder, all properties should be `@IBDesginable`. Some properties cannot render properly in Interface Builder, e.g. `rotate`. Moreover, animations are not able to preview in Interface Builder. However, once Interface Builder supports, those features works properly in Interface Builder.
 
-* **Platform - iOS** - Currently, we focus on iOS. Once iOS support is mature, we can implement more protocol extensions to support other platforms like MacOS, WatchOS and tvOS.
+* **Platform - iOS** - Currently, we focus on iOS. Once iOS support is mature, we can implement more protocol extensions to support other platforms like MacOS, WatchOS, and tvOS.
 
 
 * **iOS version** - Currently, `IBAnimatable` supports iOS 8 and above.
     	* **Dos**
-		* Supporting latest version first and disabling them in previous version if required.
+		* Supporting latest version first and disabling them in the previous version if required.
     	* **Don'ts**
 		* Sacrificing features for backward compatibilities.
 
@@ -32,7 +32,7 @@ IBAnimatable is an open source library to help designers and developers design a
 	* **Dos**
 		* Using Swift features and best practice like protocol extensions, enum and optional.
 	* **Don'ts**
-		* Avoiding Swift features to support Objective C.
+		* Avoiding Swift features to support Objective-C.
 
 ## Roadmap
 ### Versions
@@ -214,6 +214,7 @@ You can find more details in https://github.com/JakeLin/IBAnimatable/milestones
 ### Interaction elements
 * <del>Unwind Segue</del>
 * <del>Dismiss current ViewController Segue</del>
+* <del>Pop to root ViewController Segue</del>
 * `AnimatablePresentationController`: [#198](https://github.com/JakeLin/IBAnimatable/issues/198)
 	* gestureToDismiss (UIDynamics)
 
@@ -223,7 +224,7 @@ You can find more details in https://github.com/JakeLin/IBAnimatable/milestones
 
 * Ripple effect for user interaction like https://www.google.com/design/spec/animation/responsive-interaction.html#responsive-interaction-user-input
 
-* Dismissing keyboard automatically when tap outside of the `AnimatableTextField`
+* Dismissing keyboard automatically when tap outside of the `AnimatableTextField`.
 
 * Automatically scrolling the view to follow the keyboard's focus.
 
@@ -241,4 +242,4 @@ You can find more details in https://github.com/JakeLin/IBAnimatable/milestones
 * Importing Sketch to Storyboard? Maybe too hard.
 * Sketch plugin to export `IBAnimatable` styles from Sketch, e.g. generating `Opacity=0.5; fillColor=#336699;` from Sketch and easily apply in Interface Builder.
 
-**Any suggestions for the vision are welcome**, please modify the Roadmap.md file and create a PR. BTW: you can modify it on Github online and create a PR without manually forking the project now.
+**Any suggestions for the vision are welcome**, please modify the Roadmap.md file and create a PR. BTW: you can edit it on Github online and create a PR without manually forking the project now.
