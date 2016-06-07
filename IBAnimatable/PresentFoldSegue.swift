@@ -10,8 +10,4 @@ public class PresentFoldSegue: UIStoryboardSegue {
     destinationViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(.Fold(fromDirection: .Left, params: []))
     sourceViewController.presentViewController(destinationViewController, animated: true, completion: nil)
   }
-  public func perform(completion: OptionalAnimatableCompletion) {
-    destinationViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(.Fold(fromDirection: .Left, params: []))
-    sourceViewController.presentViewController(destinationViewController, animated: true, completion: completion)
-  }
 }

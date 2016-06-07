@@ -6,6 +6,5 @@
 import Foundation
 
 public typealias AnimatableCompletion = () -> Void
-public typealias OptionalAnimatableCompletion = (() -> Void)?
 public typealias AnimatableExecution = () -> Void
 public typealias Duration = NSTimeInterval

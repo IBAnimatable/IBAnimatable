@@ -10,8 +10,4 @@ public class PresentNatGeoSegue: UIStoryboardSegue {
     destinationViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(.NatGeo(toDirection: .Left))
     sourceViewController.presentViewController(destinationViewController, animated: true, completion: nil)
   }
-  public func perform(completion: OptionalAnimatableCompletion) {
-    destinationViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(.NatGeo(toDirection: .Left))
-    sourceViewController.presentViewController(destinationViewController, animated: true, completion: completion)
-  }
 }
