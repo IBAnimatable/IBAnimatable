@@ -39,7 +39,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHf-qd-c7a" userLabel="Present button" customClass="AnimatableButton" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="80" width="303" height="60"/>
-                                        <state key="normal" title="Tap to present via sugue">
+                                        <state key="normal" title="Tap to present via segue">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -117,7 +117,21 @@
                     <view key="view" contentMode="scaleToFill" id="Goa-e7-hdb" customClass="AnimatableView" customModule="IBAnimatable">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmG-2t-thM">
+                                <rect key="frame" x="67.5" y="313" width="240.5" height="41"/>
+                                <string key="text">Wondering how to come back? 
+Did you try some gestures?</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vmG-2t-thM" firstAttribute="centerX" secondItem="Goa-e7-hdb" secondAttribute="centerX" id="JEo-eY-iWh"/>
+                            <constraint firstItem="vmG-2t-thM" firstAttribute="centerY" secondItem="Goa-e7-hdb" secondAttribute="centerY" id="wci-8S-MIC"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="predefinedColor" value="FlatAlizarin"/>
                         </userDefinedRuntimeAttributes>
@@ -146,7 +160,21 @@
                     <view key="view" contentMode="scaleToFill" id="Tke-p6-rQ1" customClass="AnimatableView" customModule="IBAnimatable">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4o-9k-Mjd">
+                                <rect key="frame" x="67.5" y="313" width="240.5" height="41"/>
+                                <string key="text">Wondering how to come back? 
+Did you try a pinch?</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="w4o-9k-Mjd" firstAttribute="centerX" secondItem="Tke-p6-rQ1" secondAttribute="centerX" id="VcS-Ov-gcN"/>
+                            <constraint firstItem="w4o-9k-Mjd" firstAttribute="centerY" secondItem="Tke-p6-rQ1" secondAttribute="centerY" id="hgF-NA-KCZ"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="predefinedColor" value="FlatPeterRiver"/>
                         </userDefinedRuntimeAttributes>
