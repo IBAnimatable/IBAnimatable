@@ -34,7 +34,6 @@ view.y = 200
 
 // Uncomment one line to play the animation
 
-//view.moveXY()
 //view.slideInLeft()
 //view.slideInRight()
 //view.slideInDown()
