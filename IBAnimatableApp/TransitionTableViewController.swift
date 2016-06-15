@@ -18,14 +18,14 @@ class TransitionTableViewController: UITableViewController {
   }
 
   // MARK: - Navigation
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    super.prepareForSegue(segue, sender: sender)
+  override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+    super.prepare(for: segue, sender: sender)
     
     guard let toNavigationController = segue.destinationViewController as? AnimatableNavigationController, indexPath = tableView.indexPathForSelectedRow else {
       return
     }
     
-    let transitionAnimationType = String(transitionAnimations[indexPath.section][indexPath.row])
+    let transitionAnimationType = String(transitionAnimations[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row])
     
     // Set the transition animation type for `AnimatableNavigationController`, used for Push/Pop transitions
     toNavigationController.transitionAnimationType = transitionAnimationType
@@ -89,29 +89,29 @@ private extension TransitionTableViewController {
 
 extension TransitionTableViewController {
   
-  override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+  override func numberOfSections(in tableView: UITableView) -> Int {
     return transitionAnimations.count
   }
   
-  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return transitionAnimations[section].count
   }
   
-  override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     return transitionAnimationsHeaders[section]
   }
   
-  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("transitionCell", forIndexPath: indexPath) as UITableViewCell
-    cell.textLabel?.text = transitionAnimations[indexPath.section][indexPath.row]
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "transitionCell", for: indexPath) as UITableViewCell
+    cell.textLabel?.text = transitionAnimations[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
     return cell
   }
   
   // MARK: - reset the group heander font color and size
-  override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+  override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
     if let header = view as? UITableViewHeaderFooterView {
-      header.textLabel?.textColor = UIColor.whiteColor()
-      header.textLabel?.font = UIFont.systemFontOfSize(16, weight: UIFontWeightLight)
+      header.textLabel?.textColor = UIColor.white()
+      header.textLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFontWeightLight)
     }
   }
 }

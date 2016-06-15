@@ -18,9 +18,9 @@ extension UIViewController {
     return predefinedGradients[randomIndex]
   }
   
-  func retrieveGestureText(interactiveGestureType: InteractiveGestureType, transitionAnimationType: TransitionAnimationType, exit: String) -> String {
+  func retrieveGestureText(_ interactiveGestureType: InteractiveGestureType, transitionAnimationType: TransitionAnimationType, exit: String) -> String {
     switch interactiveGestureType {
-    case .Default:
+    case .default:
       // Default gesture
       let transitionAnimator = AnimatorFactory.generateAnimator(transitionAnimationType)
       if let interactiveGestureType = transitionAnimator.interactiveGestureType {

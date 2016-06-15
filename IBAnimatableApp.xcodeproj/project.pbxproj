@@ -680,6 +680,7 @@
 					};
 					AE6C66FE1BFBF93500134A35 = {
 						CreatedOnToolsVersion = 7.1.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -1046,6 +1047,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = JakeLin.IBAnimatableApp;
 				PRODUCT_NAME = IBAnimatableApp;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1059,6 +1061,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = JakeLin.IBAnimatableApp;
 				PRODUCT_NAME = IBAnimatableApp;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

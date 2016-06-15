@@ -20,8 +20,8 @@ class TransitionViewController: AnimatableViewController {
     }
   }
   
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    super.prepareForSegue(segue, sender: sender)
+  override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+    super.prepare(for: segue, sender: sender)
     
     // Set the transition animation type for `AnimatableViewController`, used for Present/Dismiss transitions
     if let toViewController = segue.destinationViewController as? AnimatableViewController {

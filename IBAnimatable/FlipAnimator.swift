@@ -60,7 +60,7 @@ extension FlipAnimator: UIViewControllerAnimatedTransitioning {
     containerView.layer.sublayerTransform = transform
     toView.frame = fromView.frame
     
-    let flipViews = createSnapshots(toView: toView, fromView: fromView, containerView: containerView)
+    let flipViews = createSnapshots(toView, fromView: fromView, containerView: containerView)
     animateFlipTransition(flipViews.0, flippedSectionOfToView: flipViews.1) {
       if transitionContext.transitionWasCancelled() {
         self.removeOtherViews(fromView)
@@ -78,7 +78,7 @@ extension FlipAnimator: UIViewControllerAnimatedTransitioning {
 
 private extension FlipAnimator {
   
-  func createSnapshots(toView: UIView, fromView: UIView, containerView: UIView) -> ((UIView, UIView), (UIView, UIView)) {
+  func createSnapshots(_ toView: UIView, fromView: UIView, containerView: UIView) -> ((UIView, UIView), (UIView, UIView)) {
     let toViewSnapshots = createSnapshot(fromView: toView, afterUpdates: true)
     var flippedSectionOfToView = toViewSnapshots[reverse ? 0 : 1]
 

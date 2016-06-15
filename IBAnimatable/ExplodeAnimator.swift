@@ -49,7 +49,7 @@ extension ExplodeAnimator: UIViewControllerAnimatedTransitioning {
     
     containerView.insertSubview(toView, at: 0)
     
-    let snapshots = createSnapshots(toView: toView, fromView: fromView, containerView: containerView)
+    let snapshots = createSnapshots(toView, fromView: fromView, containerView: containerView)
     containerView.sendSubview(toBack: fromView)
     animateSnapshotsExplode(snapshots) {
       if transitionContext.transitionWasCancelled() {
@@ -64,7 +64,7 @@ extension ExplodeAnimator: UIViewControllerAnimatedTransitioning {
 
 private extension ExplodeAnimator {
   
-  func createSnapshots(toView: UIView, fromView: UIView, containerView: UIView) -> [UIView] {
+  func createSnapshots(_ toView: UIView, fromView: UIView, containerView: UIView) -> [UIView] {
     let size = toView.frame.size
     var snapshots = [UIView]()
     let yFactor = xFactor * size.height / size.width
@@ -85,9 +85,9 @@ private extension ExplodeAnimator {
   func animateSnapshotsExplode(_ snapshots: [UIView], completion: AnimatableCompletion) {
     UIView.animate(withDuration: transitionDuration, animations: {
       snapshots.forEach {
-        let xOffset = self.randomFloatBetween(lower: -100.0, upper: 100.0)
-        let yOffset = self.randomFloatBetween(lower: -100.0, upper: 100.0)
-        let angle = self.randomFloatBetween(lower: self.minAngle, upper: self.maxAngle)
+        let xOffset = self.randomFloatBetween(-100.0, upper: 100.0)
+        let yOffset = self.randomFloatBetween(-100.0, upper: 100.0)
+        let angle = self.randomFloatBetween(self.minAngle, upper: self.maxAngle)
 
         let translateTransform = CGAffineTransform(translationX: $0.frame.origin.x - xOffset, y: $0.frame.origin.y - yOffset)
         let angleTransform = translateTransform.rotate(angle)
@@ -103,7 +103,7 @@ private extension ExplodeAnimator {
     })
   }
   
-  func randomFloatBetween(lower: CGFloat, upper: CGFloat) -> CGFloat {
+  func randomFloatBetween(_ lower: CGFloat, upper: CGFloat) -> CGFloat {
     return CGFloat(arc4random_uniform(UInt32(upper - lower))) + lower
   }
   
