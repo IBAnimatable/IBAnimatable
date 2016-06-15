@@ -31,7 +31,7 @@ public class InteractiveAnimator: UIPercentDrivenInteractiveTransition {
     }
   }
   
-  func connectGestureRecognizer(viewController: UIViewController) {
+  func connectGestureRecognizer(_ viewController: UIViewController) {
     self.viewController = viewController
     let gestureRecognizerType = createGestureRecognizer()
     gestureRecognizer = gestureRecognizerType
@@ -40,37 +40,37 @@ public class InteractiveAnimator: UIPercentDrivenInteractiveTransition {
     }
   }
   
-  func handleGesture(gestureRecognizer: UIGestureRecognizer) {
+  func handleGesture(_ gestureRecognizer: UIGestureRecognizer) {
     let (progress, shouldFinishInteractiveTransition) = calculateProgress(gestureRecognizer)
     
     switch gestureRecognizer.state {
-    case .Began:
+    case .began:
       guard shouldBeginProgress(gestureRecognizer) else {
         return
       }
       
       interacting = true
       switch transitionType {
-      case .NavigationTransition(.Pop):
-        viewController?.navigationController?.popViewControllerAnimated(true)
-      case .PresentationTransition(.Dismissal):
-        viewController?.dismissViewControllerAnimated(true, completion: nil)
+      case .navigationTransition(.pop):
+        viewController?.navigationController?.popViewController(animated: true)
+      case .presentationTransition(.dismissal):
+        viewController?.dismiss(animated: true, completion: nil)
       default:
         break
       }
-    case .Changed:
-      updateInteractiveTransition(progress)
-    case .Cancelled, .Ended:
+    case .changed:
+      update(progress)
+    case .cancelled, .ended:
       interacting = false
       if shouldFinishInteractiveTransition {
-        finishInteractiveTransition()
+        finish()
       } else {
-        cancelInteractiveTransition()
+        cancel()
       }
     default:
       // Something happened then cancel the transition.
       interacting = false
-      cancelInteractiveTransition()
+      cancel()
       break
     }
   }
@@ -80,12 +80,12 @@ public class InteractiveAnimator: UIPercentDrivenInteractiveTransition {
     preconditionFailure("This method must be overridden")
   }
   
-  func shouldBeginProgress(gestureRecognizer: UIGestureRecognizer) -> Bool {
+  func shouldBeginProgress(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
     // return true by default
     return true
   }
   
-  func calculateProgress(gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
+  func calculateProgress(_ gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
     preconditionFailure("This method must be overridden")
   }
 

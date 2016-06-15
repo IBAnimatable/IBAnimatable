@@ -29,7 +29,7 @@ public extension PaddingDesignable where Self: UITextField {
     }
     
     let padding = UIView(frame: CGRect(x: 0, y: 0, width: paddingLeft, height: 0))
-    leftViewMode = .Always
+    leftViewMode = .always
     leftView = padding
   }
   
@@ -39,7 +39,7 @@ public extension PaddingDesignable where Self: UITextField {
     }
     
     let padding = UIView(frame: CGRect(x: 0, y: 0, width: paddingRight, height: 0))
-    rightViewMode = .Always
+    rightViewMode = .always
     rightView = padding
   }
 
@@ -49,10 +49,10 @@ public extension PaddingDesignable where Self: UITextField {
     }
     
     let padding = UIView(frame: CGRect(x: 0, y: 0, width: paddingSide, height: paddingSide))
-    leftViewMode = .Always
+    leftViewMode = .always
     leftView = padding
 
-    rightViewMode = .Always
+    rightViewMode = .always
     rightView = padding
   }
 }

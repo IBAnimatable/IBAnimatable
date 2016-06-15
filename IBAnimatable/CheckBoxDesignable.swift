@@ -13,7 +13,7 @@ public protocol CheckBoxDesignable {
 
 public extension CheckBoxDesignable where Self: UIButton {
   public func configCheckBoxChecked() {
-    selected = checked
+    isSelected = checked
   }
   
   public func configCheckBoxCheckedImage() {
@@ -21,8 +21,8 @@ public extension CheckBoxDesignable where Self: UIButton {
       return
     }
     
-    setBackgroundImage(unwrappedCheckedImage, forState: .Selected)
-    setBackgroundImage(unwrappedCheckedImage, forState: [.Selected, .Highlighted])
+    setBackgroundImage(unwrappedCheckedImage, for: .selected)
+    setBackgroundImage(unwrappedCheckedImage, for: [.selected, .highlighted])
   }
   
   public func configCheckBoxUncheckedImage() {
@@ -30,6 +30,6 @@ public extension CheckBoxDesignable where Self: UIButton {
       return
     }
     
-    setBackgroundImage(unwrappedUncheckedImage, forState: .Normal)
+    setBackgroundImage(unwrappedUncheckedImage, for: UIControlState())
   }
 }

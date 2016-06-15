@@ -15,7 +15,7 @@ public protocol PlaceholderDesignable {
 public extension PlaceholderDesignable where Self: UITextField {
   public func configPlaceholderColor() {
     if let unwrappedPlaceholderColor = placeholderColor {
-      attributedPlaceholder = NSAttributedString(string: placeholder!, attributes: [NSForegroundColorAttributeName: unwrappedPlaceholderColor])
+      attributedPlaceholder = AttributedString(string: placeholder!, attributes: [NSForegroundColorAttributeName: unwrappedPlaceholderColor])
     }
   }
 }

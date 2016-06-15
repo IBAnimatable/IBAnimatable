@@ -25,25 +25,25 @@ public class SlideAnimator: NSObject, AnimatedTransitioning {
     horizontal = fromDirection.isHorizontal
     
     switch fromDirection {
-    case .Right:
-      self.transitionAnimationType = .Slide(toDirection: .Right, params: params)
-      self.reverseAnimationType = .Slide(toDirection: .Left, params: params)
-      self.interactiveGestureType = .Pan(fromDirection: .Right)
+    case .right:
+      self.transitionAnimationType = .slide(toDirection: .right, params: params)
+      self.reverseAnimationType = .slide(toDirection: .left, params: params)
+      self.interactiveGestureType = .pan(fromDirection: .Right)
       reverse = true
-    case .Top:
-      self.transitionAnimationType = .Slide(toDirection: .Top, params: params)
-      self.reverseAnimationType = .Slide(toDirection: .Bottom, params: params)
-      self.interactiveGestureType = .Pan(fromDirection: .Top)
+    case .top:
+      self.transitionAnimationType = .slide(toDirection: .top, params: params)
+      self.reverseAnimationType = .slide(toDirection: .bottom, params: params)
+      self.interactiveGestureType = .pan(fromDirection: .Top)
       reverse = false
-    case .Bottom:
-      self.transitionAnimationType = .Slide(toDirection: .Bottom, params: params)
-      self.reverseAnimationType = .Slide(toDirection: .Top, params: params)
-      self.interactiveGestureType = .Pan(fromDirection: .Bottom)
+    case .bottom:
+      self.transitionAnimationType = .slide(toDirection: .bottom, params: params)
+      self.reverseAnimationType = .slide(toDirection: .top, params: params)
+      self.interactiveGestureType = .pan(fromDirection: .Bottom)
       reverse = true
     default:
-      self.transitionAnimationType = .Slide(toDirection: .Left, params: params)
-      self.reverseAnimationType = .Slide(toDirection: .Right, params: params)
-      self.interactiveGestureType = .Pan(fromDirection: .Left)
+      self.transitionAnimationType = .slide(toDirection: .left, params: params)
+      self.reverseAnimationType = .slide(toDirection: .right, params: params)
+      self.interactiveGestureType = .pan(fromDirection: .Left)
       reverse = false
     }
     super.init()
@@ -51,11 +51,11 @@ public class SlideAnimator: NSObject, AnimatedTransitioning {
 }
 
 extension SlideAnimator: UIViewControllerAnimatedTransitioning {
-  public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+  public func transitionDuration(_ transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
     return retrieveTransitionDuration(transitionContext)
   }
   
-  public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+  public func animateTransition(_ transitionContext: UIViewControllerContextTransitioning) {
     let (tempfromView, tempToView, tempContainerView) = retrieveViews(transitionContext)
     guard let fromView = tempfromView, toView = tempToView, containerView = tempContainerView else {
       transitionContext.completeTransition(true)
@@ -64,14 +64,14 @@ extension SlideAnimator: UIViewControllerAnimatedTransitioning {
     
     
     let travelDistance = horizontal ? containerView.bounds.width : containerView.bounds.height
-    let travel = CGAffineTransformMakeTranslation(horizontal ? (reverse ? travelDistance : -travelDistance) : 0, horizontal ? 0 : (reverse ? travelDistance : -travelDistance))
+    let travel = CGAffineTransform(translationX: horizontal ? (reverse ? travelDistance : -travelDistance) : 0, y: horizontal ? 0 : (reverse ? travelDistance : -travelDistance))
     containerView.addSubview(toView)
     if fade {
       toView.alpha = 0
     }
-    toView.transform = CGAffineTransformInvert(travel)
+    toView.transform = travel.invert()
     animateSlideTransition(toView: toView, fromView: fromView, travel: travel) {
-      fromView.transform = CGAffineTransformIdentity
+      fromView.transform = CGAffineTransform.identity
       transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
     }
   }
@@ -82,10 +82,10 @@ extension SlideAnimator: UIViewControllerAnimatedTransitioning {
 
 private extension SlideAnimator {
   
-  func animateSlideTransition(toView toView: UIView, fromView: UIView, travel: CGAffineTransform, completion: AnimatableCompletion) {
-    UIView.animateWithDuration(transitionDuration, animations: {
+  func animateSlideTransition(toView: UIView, fromView: UIView, travel: CGAffineTransform, completion: AnimatableCompletion) {
+    UIView.animate(withDuration: transitionDuration, animations: {
       fromView.transform = travel
-      toView.transform = CGAffineTransformIdentity
+      toView.transform = CGAffineTransform.identity
       if self.fade {
         fromView.alpha = 0
         toView.alpha = 1

@@ -12,15 +12,15 @@ public protocol TableViewCellDesignable {
 public extension TableViewCellDesignable where Self: UITableViewCell {
   public func configSeparatorMargins() {
     if removeSeparatorMargins {
-      if respondsToSelector(Selector("setSeparatorInset:")) {
+      if responds(to: Selector("setSeparatorInset:")) {
         separatorInset = UIEdgeInsetsZero
       }
       
-      if respondsToSelector(Selector("setPreservesSuperviewLayoutMargins:")) {
+      if responds(to: Selector("setPreservesSuperviewLayoutMargins:")) {
         preservesSuperviewLayoutMargins = false
       }
       
-      if respondsToSelector(Selector("setLayoutMargins:")) {
+      if responds(to: Selector("setLayoutMargins:")) {
         layoutMargins = UIEdgeInsetsZero
       }
     }

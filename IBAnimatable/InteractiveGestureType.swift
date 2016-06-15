@@ -9,18 +9,18 @@ import Foundation
  The interactive gesture type
  */
 public enum InteractiveGestureType {
-  case Default          // Will use the default interactive gesture type from `AnimatedTransitioning`
-  case Pan(fromDirection: GestureDirection)
-  case ScreenEdgePan(fromDirection: GestureDirection)
-  case Pinch(direction: GestureDirection)
+  case `default`          // Will use the default interactive gesture type from `AnimatedTransitioning`
+  case pan(fromDirection: GestureDirection)
+  case screenEdgePan(fromDirection: GestureDirection)
+  case pinch(direction: GestureDirection)
   
   var stringValue: String {
     return String(self)
   }
   
-  public static func fromString(interactiveGestureType: String) -> InteractiveGestureType? {
+  public static func fromString(_ interactiveGestureType: String) -> InteractiveGestureType? {
     if interactiveGestureType.hasPrefix("Default") {
-      return .Default
+      return .default
     } else if interactiveGestureType.hasPrefix("Pan") || interactiveGestureType.hasPrefix("ScreenEdgePan") ||
       interactiveGestureType.hasPrefix("Pinch") {
       return fromStringWithDirection(interactiveGestureType)
@@ -31,25 +31,24 @@ public enum InteractiveGestureType {
   // Return the `String` without qualification
   public func toString() -> String {
     let namespace = "IBAnimatable." + String(GestureDirection) + "."
-    return String(self).stringByReplacingOccurrencesOfString(namespace, withString: "")
+    return String(self).replacingOccurrences(of: namespace, with: "")
   }
 }
 
 // MARK: - InteractiveGestureType from string
 
 private extension InteractiveGestureType {
-  static func cleanInteractiveGestureType(interactiveGestureType: String) -> String {
-    let range = interactiveGestureType.rangeOfString("(")
-    let interactiveGestureType = interactiveGestureType.stringByReplacingOccurrencesOfString(" ", withString: "")
-      .lowercaseString
-      .substringFromIndex(range?.startIndex ?? interactiveGestureType.endIndex)
-      .stringByReplacingOccurrencesOfString("(", withString: "")
-      .stringByReplacingOccurrencesOfString(")", withString: "")
-      .capitalizedString
+  static func cleanInteractiveGestureType(_ interactiveGestureType: String) -> String {
+    let range = interactiveGestureType.range(of: "(")
+    let interactiveGestureType = interactiveGestureType.replacingOccurrences(of: " ", with: "").lowercased()
+      .substring(from: range?.lowerBound ?? interactiveGestureType.endIndex)
+      .replacingOccurrences(of: "(", with: "")
+      .replacingOccurrences(of: ")", with: "")
+      .capitalized
     return interactiveGestureType
   }
   
-  static func fromStringWithDirection(interactiveGestureType: String) -> InteractiveGestureType? {
+  static func fromStringWithDirection(_ interactiveGestureType: String) -> InteractiveGestureType? {
     let gestureDirectionString = cleanInteractiveGestureType(interactiveGestureType)
     
     guard let direction = GestureDirection(rawValue: gestureDirectionString) else {
@@ -57,11 +56,11 @@ private extension InteractiveGestureType {
     }
     
     if interactiveGestureType.hasPrefix("Pan") {
-      return .Pan(fromDirection: direction)
+      return .pan(fromDirection: direction)
     } else if interactiveGestureType.hasPrefix("ScreenEdgePan") {
-      return .ScreenEdgePan(fromDirection: direction)
+      return .screenEdgePan(fromDirection: direction)
     } else if interactiveGestureType.hasPrefix("Pinch") {
-      return .Pinch(direction: direction)
+      return .pinch(direction: direction)
     }
     
     return nil

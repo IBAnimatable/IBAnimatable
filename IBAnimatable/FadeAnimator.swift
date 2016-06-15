@@ -10,7 +10,7 @@ public class FadeAnimator: NSObject, AnimatedTransitioning {
   public var transitionAnimationType: TransitionAnimationType
   public var transitionDuration: Duration = defaultTransitionDuration
   public var reverseAnimationType: TransitionAnimationType?
-  public var interactiveGestureType: InteractiveGestureType? = .Pan(fromDirection: .Horizontal)
+  public var interactiveGestureType: InteractiveGestureType? = .pan(fromDirection: .Horizontal)
 
   // MARK: - private
   private var direction: TransitionDirection
@@ -20,15 +20,15 @@ public class FadeAnimator: NSObject, AnimatedTransitioning {
     self.transitionDuration = transitionDuration
     
     switch direction {
-    case .In:
-      self.transitionAnimationType = .Fade(direction: .In)
-      self.reverseAnimationType = .Fade(direction: .Out)
-    case .Out:
-      self.transitionAnimationType = .Fade(direction: .Out)
-      self.reverseAnimationType = .Fade(direction: .In)
+    case .in:
+      self.transitionAnimationType = .fade(direction: .in)
+      self.reverseAnimationType = .fade(direction: .out)
+    case .out:
+      self.transitionAnimationType = .fade(direction: .out)
+      self.reverseAnimationType = .fade(direction: .in)
     default:
-      self.transitionAnimationType = .Fade(direction: .Cross)
-      self.reverseAnimationType = .Fade(direction: .Cross)
+      self.transitionAnimationType = .fade(direction: .cross)
+      self.reverseAnimationType = .fade(direction: .cross)
     }
     
     super.init()
@@ -36,11 +36,11 @@ public class FadeAnimator: NSObject, AnimatedTransitioning {
 }
 
 extension FadeAnimator: UIViewControllerAnimatedTransitioning {
-  public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+  public func transitionDuration(_ transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
     return retrieveTransitionDuration(transitionContext)
   }
   
-  public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+  public func animateTransition(_ transitionContext: UIViewControllerContextTransitioning) {
     let (tempfromView, tempToView, tempContainerView) = retrieveViews(transitionContext)
     guard let fromView = tempfromView, toView = tempToView, containerView = tempContainerView else {
       transitionContext.completeTransition(true)
@@ -48,22 +48,22 @@ extension FadeAnimator: UIViewControllerAnimatedTransitioning {
     }
     
     switch direction {
-    case .In:
+    case .in:
       toView.alpha = 0
       containerView.addSubview(toView)
-    case .Out:
+    case .out:
       containerView.insertSubview(toView, belowSubview: fromView)
     default:
       toView.alpha = 0
       containerView.addSubview(toView)
     }
     
-    UIView.animateWithDuration(transitionDuration(transitionContext),
+    UIView.animate(withDuration: transitionDuration(transitionContext),
       animations: {
         switch self.direction {
-        case .In:
+        case .in:
           toView.alpha = 1
-        case .Out:
+        case .out:
           fromView.alpha = 0
         default:
           fromView.alpha = 0

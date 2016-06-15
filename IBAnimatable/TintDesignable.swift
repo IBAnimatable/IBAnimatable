@@ -34,11 +34,11 @@ public extension TintDesignable where Self: UIView {
    */
   public func configTintedColor() {
     if !tintOpacity.isNaN && tintOpacity >= 0 && tintOpacity <= 1 {
-      addColorSubview(UIColor.whiteColor(), opacity: tintOpacity)
+      addColorSubview(UIColor.white(), opacity: tintOpacity)
     }
     
     if !shadeOpacity.isNaN && shadeOpacity >= 0 && shadeOpacity <= 1 {
-      addColorSubview(UIColor.blackColor(), opacity: shadeOpacity)
+      addColorSubview(UIColor.black(), opacity: shadeOpacity)
     }
     
     if let unwrappedToneColor = toneColor {
@@ -48,14 +48,14 @@ public extension TintDesignable where Self: UIView {
     }
   }
   
-  private func addColorSubview(color: UIColor, opacity: CGFloat) {
+  private func addColorSubview(_ color: UIColor, opacity: CGFloat) {
     let subview = UIView(frame: self.bounds)
     subview.backgroundColor = color
     subview.alpha = opacity
     if layer.cornerRadius > 0 {
       subview.layer.cornerRadius = layer.cornerRadius
     }
-    subview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-    self.insertSubview(subview, atIndex: 0)
+    subview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    self.insertSubview(subview, at: 0)
   }
 }

@@ -6,7 +6,7 @@
 import UIKit
 
 public extension CALayer {
-  class func animate(animation: AnimatableExecution, completion: AnimatableCompletion? = nil) {
+  class func animate(_ animation: AnimatableExecution, completion: AnimatableCompletion? = nil) {
     CATransaction.begin()
     if let completion = completion {
       CATransaction.setCompletionBlock { completion() }

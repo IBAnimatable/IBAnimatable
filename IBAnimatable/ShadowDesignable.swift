@@ -36,7 +36,7 @@ public extension ShadowDesignable where Self: UIView {
   public func configShadowColor() {
     if let unwrappedShadowColor = shadowColor {
       commonSetup()
-      layer.shadowColor = unwrappedShadowColor.CGColor
+      layer.shadowColor = unwrappedShadowColor.cgColor
     }
   }
 
