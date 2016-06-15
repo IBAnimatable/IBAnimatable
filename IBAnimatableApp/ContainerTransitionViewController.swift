@@ -32,22 +32,22 @@ private extension ContainerTransitionViewController {
   
   func createChildViewControllers() {
     var viewController = AnimatableViewController()
-    viewController.view.backgroundColor = UIColor.blueColor()
+    viewController.view.backgroundColor = UIColor.blue()
     viewController.transitionAnimationType = "Explode"
     viewControllers.append(viewController)
    
     viewController = AnimatableViewController()
-    viewController.view.backgroundColor = UIColor.greenColor()
+    viewController.view.backgroundColor = UIColor.green()
     viewController.transitionAnimationType = "Fold"
     viewControllers.append(viewController)
 
     viewController = AnimatableViewController()
-    viewController.view.backgroundColor = UIColor.yellowColor()
+    viewController.view.backgroundColor = UIColor.yellow()
     viewController.transitionAnimationType = "NatGeo"
     viewControllers.append(viewController)
     
     viewController = AnimatableViewController()
-    viewController.view.backgroundColor = UIColor.redColor()
+    viewController.view.backgroundColor = UIColor.red()
     viewController.transitionAnimationType = "Portal"
     viewControllers.append(viewController)
     
@@ -55,7 +55,7 @@ private extension ContainerTransitionViewController {
 
   }
   
-  func cycleFromViewController(containerView: UIView, fromViewController: AnimatableViewController?, toViewController: AnimatableViewController) {
+  func cycleFromViewController(_ containerView: UIView, fromViewController: AnimatableViewController?, toViewController: AnimatableViewController) {
     guard let animationType = TransitionAnimationType.fromString(toViewController.transitionAnimationType ?? "") else {
       return
     }
@@ -76,7 +76,7 @@ private extension ContainerTransitionViewController {
 
 extension ContainerTransitionViewController {
 
-  func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
+  @objc(tabBar:didSelectItem:) func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
     let toViewController = viewControllers[item.tag]
     cycleFromViewController(containerView, fromViewController: currentViewController, toViewController: toViewController)
   }

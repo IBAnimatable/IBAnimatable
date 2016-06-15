@@ -87,7 +87,7 @@ extension FoldAnimator: UIViewControllerAnimatedTransitioning {
     size = toView.frame.size
     foldSize = width * 0.5 / CGFloat(folds)
 
-    let viewFolds = createSnapshots(toView: toView, fromView: fromView, containerView: containerView)
+    let viewFolds = createSnapshots(toView, fromView: fromView, containerView: containerView)
     animateFoldTransition(fromView: fromView, toViewFolds: viewFolds[0], fromViewFolds: viewFolds[1], completion: {
       if !transitionContext.transitionWasCancelled() {
         toView.frame = containerView.bounds
@@ -107,7 +107,7 @@ extension FoldAnimator: UIViewControllerAnimatedTransitioning {
 
 private extension FoldAnimator {
   
-  func createSnapshots(toView: UIView, fromView: UIView, containerView: UIView) -> [[UIView]] {
+  func createSnapshots(_ toView: UIView, fromView: UIView, containerView: UIView) -> [[UIView]] {
     var fromViewFolds = [UIView]()
     var toViewFolds = [UIView]()
     for i in 0..<folds {

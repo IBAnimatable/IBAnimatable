@@ -184,7 +184,7 @@ public extension Animatable where Self: UIView {
     case .Rotate:
       rotate(completion: completion)
     case .RotateCCW:
-      rotate(clockwise: false, completion: completion)
+      rotate(false, completion: completion)
     case .MoveTo:
       moveTo(completion)
     case .MoveBy:
@@ -563,7 +563,7 @@ public extension Animatable where Self: UIView {
     }, completion: completion)
   }
 
-  public func rotate(clockwise: Bool = true, completion: AnimatableCompletion? = nil) {
+  public func rotate(_ clockwise: Bool = true, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CABasicAnimation(keyPath: "transform.rotation")
       animation.fromValue = clockwise ? 0 : ((360 * M_PI) / 180)

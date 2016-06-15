@@ -66,12 +66,12 @@ extension TurnAnimator: UIViewControllerAnimatedTransitioning {
     transform.m34 = -0.002
     containerView.layer.sublayerTransform = transform
     toView.frame = fromView.frame
-    animateTurnTransition(fromView: fromView, toView: toView) {
+    animateTurnTransition(fromView, toView: toView) {
       transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
     }
   }
 
-  private func animateTurnTransition(fromView: UIView, toView: UIView, completion: AnimatableCompletion) {
+  private func animateTurnTransition(_ fromView: UIView, toView: UIView, completion: AnimatableCompletion) {
     let factor = reverse ? 1.0 : -1.0
     toView.layer.transform = rotate(factor * -M_PI_2)
     UIView.animateKeyframes(withDuration: transitionDuration, delay: 0.0, options: .layoutSubviews, animations: {
