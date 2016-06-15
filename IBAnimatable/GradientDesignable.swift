@@ -23,7 +23,7 @@ public extension GradientDesignable where Self: UIView {
     }
   }
 
-  private func configGradientWithStartColor(startColor: UIColor, endColor: UIColor) {
+  private func configGradientWithStartColor(_ startColor: UIColor, endColor: UIColor) {
     // Default value is `.Top`
     var gradientStartPoint: GradientStartPoint = .Top
     if let unwrappedStartPoint = startPoint, resolvedGradientStartPoint = GradientStartPoint(rawValue: unwrappedStartPoint) {
@@ -31,7 +31,7 @@ public extension GradientDesignable where Self: UIView {
     }
     
     let gradientLayer = createGradientLayer()
-    gradientLayer.colors = [startColor.CGColor, endColor.CGColor]    
+    gradientLayer.colors = [startColor.cgColor, endColor.cgColor]    
     switch gradientStartPoint {
     case .Top:
       gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
@@ -62,7 +62,7 @@ public extension GradientDesignable where Self: UIView {
     let gradientView = GradientView(frame: bounds, layer: gradientLayer)
     let oldGradientView = viewWithTag(gradientView.tag)
     oldGradientView?.removeFromSuperview()
-    self.insertSubview(gradientView, atIndex: 0)
+    self.insertSubview(gradientView, at: 0)
   }
   
   private func createGradientLayer() -> CAGradientLayer {
@@ -368,8 +368,8 @@ private class GradientView: UIView {
   init(frame: CGRect, layer: CAGradientLayer) {
     super.init(frame: frame)
     tag = viewTag
-    self.layer.insertSublayer(layer, atIndex: 0)
-    autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+    self.layer.insertSublayer(layer, at: 0)
+    autoresizingMask = [.flexibleWidth, .flexibleHeight]
   }
   
   required init?(coder aDecoder: NSCoder) {

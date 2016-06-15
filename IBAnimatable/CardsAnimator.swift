@@ -21,12 +21,12 @@ public class CardsAnimator: NSObject, AnimatedTransitioning {
     self.fromDirection = fromDirection
     
     switch fromDirection {
-    case .Backward:
-      self.transitionAnimationType = .Cards(direction: .Backward)
-      self.reverseAnimationType = .Cards(direction: .Forward)
+    case .backward:
+      self.transitionAnimationType = .cards(direction: .backward)
+      self.reverseAnimationType = .cards(direction: .forward)
     default:
-      self.transitionAnimationType = .Cards(direction: .Forward)
-      self.reverseAnimationType = .Cards(direction: .Backward)
+      self.transitionAnimationType = .cards(direction: .forward)
+      self.reverseAnimationType = .cards(direction: .backward)
     }
     
     super.init()
@@ -34,18 +34,18 @@ public class CardsAnimator: NSObject, AnimatedTransitioning {
 }
 
 extension CardsAnimator: UIViewControllerAnimatedTransitioning {
-  public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+  public func transitionDuration(_ transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
     return retrieveTransitionDuration(transitionContext)
   }
   
-  public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+  public func animateTransition(_ transitionContext: UIViewControllerContextTransitioning) {
     let (tempfromView, tempToView, tempContainerView) = retrieveViews(transitionContext)
     guard let fromView = tempfromView, toView = tempToView, containerView = tempContainerView else {
       transitionContext.completeTransition(true)
       return
     }
     
-    if fromDirection == .Forward {
+    if fromDirection == .forward {
       executeForwardAnimation(transitionContext, containerView: containerView, fromView: fromView, toView: toView)
     } else {
       executeBackwardAnimation(transitionContext, containerView: containerView, fromView: fromView, toView: toView)
@@ -58,7 +58,7 @@ extension CardsAnimator: UIViewControllerAnimatedTransitioning {
 
 private extension CardsAnimator {
   
-  func executeBackwardAnimation(transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
+  func executeBackwardAnimation(_ transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
     let frame = fromView.frame
     var offScreenFrame = frame
     offScreenFrame.origin.y = offScreenFrame.height
@@ -66,21 +66,21 @@ private extension CardsAnimator {
     containerView.insertSubview(toView, aboveSubview: fromView)
     let t1 = firstTransform()
     let t2 = secondTransformWithView(fromView)
-    UIView.animateKeyframesWithDuration(transitionDuration, delay: 0.0, options: .CalculationModeCubic, animations: {
-      UIView.addKeyframeWithRelativeStartTime(0.0, relativeDuration: 0.4) {
+    UIView.animateKeyframes(withDuration: transitionDuration, delay: 0.0, options: .calculationModeCubic, animations: {
+      UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.4) {
         fromView.layer.transform = t1
         fromView.alpha = 0.6
       }
 
-      UIView.addKeyframeWithRelativeStartTime(0.2, relativeDuration: 0.4) {
+      UIView.addKeyframe(withRelativeStartTime: 0.2, relativeDuration: 0.4) {
         fromView.layer.transform = t2
       }
 
-      UIView.addKeyframeWithRelativeStartTime(0.6, relativeDuration: 0.2) {        
+      UIView.addKeyframe(withRelativeStartTime: 0.6, relativeDuration: 0.2) {        
         toView.frame = toView.frame.offsetBy(dx: 0.0, dy: -30.0)
       }
       
-      UIView.addKeyframeWithRelativeStartTime(0.8, relativeDuration: 0.2) {
+      UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.2) {
         toView.frame = frame
       }
 
@@ -95,7 +95,7 @@ private extension CardsAnimator {
 
 private extension CardsAnimator {
   
-  func executeForwardAnimation(transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
+  func executeForwardAnimation(_ transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
     let frame = fromView.frame
     toView.frame = frame
     let scale = CATransform3DIdentity
@@ -107,17 +107,17 @@ private extension CardsAnimator {
     frameOffScreen.origin.y = frame.height
     let t1 = firstTransform()
     
-    UIView.animateKeyframesWithDuration(transitionDuration, delay: 0.0, options: .CalculationModeCubic, animations: {
-      UIView.addKeyframeWithRelativeStartTime(0.0, relativeDuration: 0.5) {
+    UIView.animateKeyframes(withDuration: transitionDuration, delay: 0.0, options: .calculationModeCubic, animations: {
+      UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5) {
         fromView.frame = frameOffScreen
       }
       
-      UIView.addKeyframeWithRelativeStartTime(0.35, relativeDuration: 0.35) {
+      UIView.addKeyframe(withRelativeStartTime: 0.35, relativeDuration: 0.35) {
         toView.layer.transform = t1
         toView.alpha = 1.0
       }
       
-      UIView.addKeyframeWithRelativeStartTime(0.75, relativeDuration: 0.25) {
+      UIView.addKeyframe(withRelativeStartTime: 0.75, relativeDuration: 0.25) {
         toView.layer.transform = CATransform3DIdentity
       }
       
@@ -144,7 +144,7 @@ private extension CardsAnimator {
       return t1
   }
 
-  func secondTransformWithView(view: UIView) -> CATransform3D {
+  func secondTransformWithView(_ view: UIView) -> CATransform3D {
     var t2 = CATransform3DIdentity
     t2.m34 = firstTransform().m34
     t2 = CATransform3DTranslate(t2, 0, view.frame.size.height * -0.08, 0)

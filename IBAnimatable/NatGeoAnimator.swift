@@ -24,12 +24,12 @@ public class NatGeoAnimator: NSObject, AnimatedTransitioning {
     self.fromDirection = fromDirection
     
     switch fromDirection {
-    case .Right:
-      self.transitionAnimationType = .NatGeo(toDirection: .Right)
-      self.reverseAnimationType = .NatGeo(toDirection: .Left)
+    case .right:
+      self.transitionAnimationType = .natGeo(toDirection: .right)
+      self.reverseAnimationType = .natGeo(toDirection: .left)
     default:
-      self.transitionAnimationType = .NatGeo(toDirection: .Left)
-      self.reverseAnimationType = .NatGeo(toDirection: .Right)
+      self.transitionAnimationType = .natGeo(toDirection: .left)
+      self.reverseAnimationType = .natGeo(toDirection: .right)
     }
     
     super.init()
@@ -37,11 +37,11 @@ public class NatGeoAnimator: NSObject, AnimatedTransitioning {
 }
 
 extension NatGeoAnimator: UIViewControllerAnimatedTransitioning {
-  public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+  public func transitionDuration(_ transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
     return retrieveTransitionDuration(transitionContext)
   }
   
-  public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+  public func animateTransition(_ transitionContext: UIViewControllerContextTransitioning) {
     let (tempfromView, tempToView, tempContainerView) = retrieveViews(transitionContext)
     guard let fromView = tempfromView,
               toView = tempToView,
@@ -52,7 +52,7 @@ extension NatGeoAnimator: UIViewControllerAnimatedTransitioning {
     
     containerView.addSubview(toView)
     containerView.addSubview(fromView)
-    if fromDirection == .Left {
+    if fromDirection == .left {
       executeLeftAnimation(transitionContext, containerView: containerView, fromView: fromView, toView: toView)
     } else {
       executeRightAnimations(transitionContext, containerView: containerView, fromView: fromView, toView: toView)
@@ -65,8 +65,8 @@ extension NatGeoAnimator: UIViewControllerAnimatedTransitioning {
 
 private extension NatGeoAnimator {
   
-  func executeLeftAnimation(transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
-    fromView.userInteractionEnabled = false
+  func executeLeftAnimation(_ transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
+    fromView.isUserInteractionEnabled = false
     var fromLayer = fromView.layer
     var toLayer = toView.layer
     
@@ -76,18 +76,18 @@ private extension NatGeoAnimator {
     sourceFirstTransform(&fromLayer)
     destinationFirstTransform(&toLayer)
 
-    UIView.animateKeyframesWithDuration(transitionDuration, delay: 0.0, options: .CalculationModeCubic, animations: {
-      UIView.addKeyframeWithRelativeStartTime(0.0, relativeDuration: 1.0) {
+    UIView.animateKeyframes(withDuration: transitionDuration, delay: 0.0, options: .calculationModeCubic, animations: {
+      UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 1.0) {
         self.destinationLastTransform(&toLayer)
       }
       
-      UIView.addKeyframeWithRelativeStartTime(1.0 - self.firstPartRatio, relativeDuration: self.firstPartRatio) {
+      UIView.addKeyframe(withRelativeStartTime: 1.0 - self.firstPartRatio, relativeDuration: self.firstPartRatio) {
         self.sourceLastTransform(&fromLayer)
       }
     }) { _ in
       if transitionContext.transitionWasCancelled() {
-        containerView.bringSubviewToFront(fromView)
-        fromView.userInteractionEnabled = true
+        containerView.bringSubview(toFront: fromView)
+        fromView.isUserInteractionEnabled = true
       }
 
       self.animationDidFinish(transitionContext, containerView: containerView, fromView: fromView, toView: toView)
@@ -100,9 +100,9 @@ private extension NatGeoAnimator {
 
 private extension NatGeoAnimator {
   
-  func executeRightAnimations(transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
+  func executeRightAnimations(_ transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
 
-    toView.userInteractionEnabled = true
+    toView.isUserInteractionEnabled = true
     var fromLayer = toView.layer
     var toLayer = fromView.layer
 
@@ -112,18 +112,18 @@ private extension NatGeoAnimator {
     sourceLastTransform(&fromLayer)
     destinationLastTransform(&toLayer)
     
-    UIView.animateKeyframesWithDuration(transitionDuration, delay: 0.0, options: .CalculationModeCubic, animations: {
-      UIView.addKeyframeWithRelativeStartTime(0.0, relativeDuration: self.firstPartRatio) {
+    UIView.animateKeyframes(withDuration: transitionDuration, delay: 0.0, options: .calculationModeCubic, animations: {
+      UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: self.firstPartRatio) {
         self.sourceFirstTransform(&fromLayer)
       }
 
-      UIView.addKeyframeWithRelativeStartTime(0.0, relativeDuration: 1.0) {
+      UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 1.0) {
         self.destinationFirstTransform(&toLayer)
       }
     }) { _ in
       if transitionContext.transitionWasCancelled() {
-        containerView.bringSubviewToFront(fromView)
-        toView.userInteractionEnabled = false
+        containerView.bringSubview(toFront: fromView)
+        toView.isUserInteractionEnabled = false
       }
 
       self.animationDidFinish(transitionContext, containerView: containerView, fromView: fromView, toView: toView)
@@ -136,14 +136,14 @@ private extension NatGeoAnimator {
 
 private extension NatGeoAnimator {
 
-  func sourceFirstTransform(inout layer: CALayer) {
+  func sourceFirstTransform(_ layer: inout CALayer) {
     var transform = CATransform3DIdentity
     transform.m34 = 1.0 / -500
     transform = CATransform3DTranslate(transform, 0.0, 0.0, 0.0)
     layer.transform = transform
   }
   
-  func sourceLastTransform(inout layer: CALayer) {
+  func sourceLastTransform(_ layer: inout CALayer) {
     var transform = CATransform3DIdentity
     transform.m34 = 1.0 / -500.0
     transform = CATransform3DRotate(transform, radianFromDegree(80), 0.0, 1.0, 0.0)
@@ -152,7 +152,7 @@ private extension NatGeoAnimator {
     layer.transform = transform
   }
 
-  func destinationFirstTransform(inout layer: CALayer) {
+  func destinationFirstTransform(_ layer: inout CALayer) {
     var transform = CATransform3DIdentity
     transform.m34 = 1.0 / -500.0
     transform = CATransform3DRotate(transform, radianFromDegree(5.0), 0.0, 0.0, 1.0)
@@ -162,7 +162,7 @@ private extension NatGeoAnimator {
     layer.transform = transform
   }
 
-  func destinationLastTransform(inout layer: CALayer) {
+  func destinationLastTransform(_ layer: inout CALayer) {
     var transform = CATransform3DIdentity
     transform.m34 = 1.0 / -500
     transform = CATransform3DRotate(transform, radianFromDegree(0), 0.0, 0.0, 1.0)
@@ -172,11 +172,11 @@ private extension NatGeoAnimator {
     layer.transform = transform
   }
 
-  func radianFromDegree(degrees: Double) -> CGFloat {
+  func radianFromDegree(_ degrees: Double) -> CGFloat {
     return CGFloat((degrees / 180) * M_PI)
   }
 
-  func animationDidFinish(transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
+  func animationDidFinish(_ transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
     fromView.layer.transform = CATransform3DIdentity
     toView.layer.transform = CATransform3DIdentity
     containerView.layer.transform = CATransform3DIdentity

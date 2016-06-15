@@ -676,6 +676,7 @@
 				TargetAttributes = {
 					AE6B01541C2A082300950BB2 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 					AE6C66FE1BFBF93500134A35 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -923,6 +924,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = JakeLin.IBAnimatable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -944,6 +946,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = JakeLin.IBAnimatable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};

@@ -12,19 +12,19 @@ public class PanInteractiveAnimator: InteractiveAnimator {
     return UIPanGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
   }
   
-  override func calculateProgress(gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
+  override func calculateProgress(_ gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
     guard let  gestureRecognizer = gestureRecognizer as? UIPanGestureRecognizer,
       superview = gestureRecognizer.view?.superview else {
       return (0, false)
     }
-    let translation = gestureRecognizer.translationInView(superview)
-    let velocity = gestureRecognizer.velocityInView(superview)
+    let translation = gestureRecognizer.translation(in: superview)
+    let velocity = gestureRecognizer.velocity(in: superview)
     
     var progress: CGFloat
     let distance: CGFloat
     let speed: CGFloat
     switch interactiveGestureType {
-    case let .Pan(direction):
+    case let .pan(direction):
       switch direction {
       case .Horizontal:
         distance = superview.frame.width
