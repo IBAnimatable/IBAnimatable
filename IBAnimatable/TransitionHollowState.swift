@@ -6,7 +6,7 @@
 import Foundation
 
 public enum TransitionHollowState {
-  case None
-  case Open
-  case Close
+  case none
+  case open
+  case close
 }

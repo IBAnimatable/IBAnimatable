@@ -20,7 +20,7 @@ import UIKit
     }
   }
   
-  @IBInspectable public var opacity: CGFloat = CGFloat.NaN {
+  @IBInspectable public var opacity: CGFloat = CGFloat.nan {
     didSet {
       configOpacity()
     }
@@ -33,7 +33,7 @@ import UIKit
     }
   }
   
-  @IBInspectable public var borderWidth: CGFloat = CGFloat.NaN {
+  @IBInspectable public var borderWidth: CGFloat = CGFloat.nan {
     didSet {
       configBorder()
     }
@@ -54,14 +54,14 @@ import UIKit
   // MARK: - Animatable
   @IBInspectable public var animationType: String?
   @IBInspectable public var autoRun: Bool = true
-  @IBInspectable public var duration: Double = Double.NaN
-  @IBInspectable public var delay: Double = Double.NaN
-  @IBInspectable public var damping: CGFloat = CGFloat.NaN
-  @IBInspectable public var velocity: CGFloat = CGFloat.NaN
-  @IBInspectable public var force: CGFloat = CGFloat.NaN
-  @IBInspectable public var repeatCount: Float = Float.NaN
-  @IBInspectable public var x: CGFloat = CGFloat.NaN
-  @IBInspectable public var y: CGFloat = CGFloat.NaN
+  @IBInspectable public var duration: Double = Double.nan
+  @IBInspectable public var delay: Double = Double.nan
+  @IBInspectable public var damping: CGFloat = CGFloat.nan
+  @IBInspectable public var velocity: CGFloat = CGFloat.nan
+  @IBInspectable public var force: CGFloat = CGFloat.nan
+  @IBInspectable public var repeatCount: Float = Float.nan
+  @IBInspectable public var x: CGFloat = CGFloat.nan
+  @IBInspectable public var y: CGFloat = CGFloat.nan
   
   // MARK: - Lifecycle
   public override func prepareForInterfaceBuilder() {

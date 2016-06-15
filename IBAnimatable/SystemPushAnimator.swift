@@ -23,22 +23,22 @@ public class SystemPushAnimator: NSObject, AnimatedTransitioning {
     self.transitionDuration = transitionDuration
     
     switch fromDirection {
-    case .Right:
-      self.transitionAnimationType = .SystemPush(fromDirection: .Right)
-      self.reverseAnimationType = .SystemPush(fromDirection: .Left)
-      self.interactiveGestureType = .Pan(fromDirection: .Left)
-    case .Top:
-      self.transitionAnimationType = .SystemPush(fromDirection: .Top)
-      self.reverseAnimationType = .SystemPush(fromDirection: .Bottom)
-      self.interactiveGestureType = .Pan(fromDirection: .Bottom)
-    case .Bottom:
-      self.transitionAnimationType = .SystemPush(fromDirection: .Bottom)
-      self.reverseAnimationType = .SystemPush(fromDirection: .Top)
-      self.interactiveGestureType = .Pan(fromDirection: .Top)
+    case .right:
+      self.transitionAnimationType = .systemPush(fromDirection: .right)
+      self.reverseAnimationType = .systemPush(fromDirection: .left)
+      self.interactiveGestureType = .pan(fromDirection: .Left)
+    case .top:
+      self.transitionAnimationType = .systemPush(fromDirection: .top)
+      self.reverseAnimationType = .systemPush(fromDirection: .bottom)
+      self.interactiveGestureType = .pan(fromDirection: .Bottom)
+    case .bottom:
+      self.transitionAnimationType = .systemPush(fromDirection: .bottom)
+      self.reverseAnimationType = .systemPush(fromDirection: .top)
+      self.interactiveGestureType = .pan(fromDirection: .Top)
     default:
-      self.transitionAnimationType = .SystemPush(fromDirection: .Left)
-      self.reverseAnimationType = .SystemPush(fromDirection: .Right)
-      self.interactiveGestureType = .Pan(fromDirection: .Right)
+      self.transitionAnimationType = .systemPush(fromDirection: .left)
+      self.reverseAnimationType = .systemPush(fromDirection: .right)
+      self.interactiveGestureType = .pan(fromDirection: .Right)
     }
     
     super.init()
@@ -46,11 +46,11 @@ public class SystemPushAnimator: NSObject, AnimatedTransitioning {
 }
 
 extension SystemPushAnimator: UIViewControllerAnimatedTransitioning {
-  public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+  public func transitionDuration(_ transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
     return retrieveTransitionDuration(transitionContext)
   }
   
-  public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+  public func animateTransition(_ transitionContext: UIViewControllerContextTransitioning) {
     animateWithCATransition(transitionContext, type: SystemTransitionType.Push, subtype: fromDirection.CATransitionSubtype)
   }
 }

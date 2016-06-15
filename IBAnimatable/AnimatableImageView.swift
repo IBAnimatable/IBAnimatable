@@ -8,7 +8,7 @@ import UIKit
 @IBDesignable public class AnimatableImageView: UIImageView, CornerDesignable, FillDesignable, BorderDesignable, RotationDesignable, ShadowDesignable, BlurDesignable, TintDesignable, GradientDesignable, MaskDesignable, Animatable {
   
   // MARK: - CornerDesignable
-  @IBInspectable public var cornerRadius: CGFloat = CGFloat.NaN {
+  @IBInspectable public var cornerRadius: CGFloat = CGFloat.nan {
     didSet {
       configCornerRadius()
     }
@@ -27,7 +27,7 @@ import UIKit
     }
   }
 
-  @IBInspectable public var opacity: CGFloat = CGFloat.NaN {
+  @IBInspectable public var opacity: CGFloat = CGFloat.nan {
     didSet {
       configOpacity()
     }
@@ -40,7 +40,7 @@ import UIKit
     }
   }
   
-  @IBInspectable public var borderWidth: CGFloat = CGFloat.NaN {
+  @IBInspectable public var borderWidth: CGFloat = CGFloat.nan {
     didSet {
       configBorder()
     }
@@ -53,7 +53,7 @@ import UIKit
   }
   
   // MARK: - RotationDesignable
-  @IBInspectable public var rotate: CGFloat = CGFloat.NaN {
+  @IBInspectable public var rotate: CGFloat = CGFloat.nan {
     didSet {
       configRotate()
     }
@@ -66,19 +66,19 @@ import UIKit
     }
   }
   
-  @IBInspectable public var shadowRadius: CGFloat = CGFloat.NaN {
+  @IBInspectable public var shadowRadius: CGFloat = CGFloat.nan {
     didSet {
       configShadowRadius()
     }
   }
   
-  @IBInspectable public var shadowOpacity: CGFloat = CGFloat.NaN {
+  @IBInspectable public var shadowOpacity: CGFloat = CGFloat.nan {
     didSet {
       configShadowOpacity()
     }
   }
   
-  @IBInspectable public var shadowOffset: CGPoint = CGPoint(x: CGFloat.NaN, y: CGFloat.NaN) {
+  @IBInspectable public var shadowOffset: CGPoint = CGPoint(x: CGFloat.nan, y: CGFloat.nan) {
     didSet {
       configShadowOffset()
     }
@@ -86,13 +86,13 @@ import UIKit
   
   // MARK: - BlurDesignable
   @IBInspectable public var blurEffectStyle: String?
-  @IBInspectable public var blurOpacity: CGFloat = CGFloat.NaN
+  @IBInspectable public var blurOpacity: CGFloat = CGFloat.nan
   
   // MARK: - TintDesignable
-  @IBInspectable public var tintOpacity: CGFloat = CGFloat.NaN
-  @IBInspectable public var shadeOpacity: CGFloat = CGFloat.NaN
+  @IBInspectable public var tintOpacity: CGFloat = CGFloat.nan
+  @IBInspectable public var shadeOpacity: CGFloat = CGFloat.nan
   @IBInspectable public var toneColor: UIColor?
-  @IBInspectable public var toneOpacity: CGFloat = CGFloat.NaN
+  @IBInspectable public var toneOpacity: CGFloat = CGFloat.nan
   
   // MARK: - GradientDesignable
   @IBInspectable public var startColor: UIColor?
@@ -111,14 +111,14 @@ import UIKit
   // MARK: - Animatable
   @IBInspectable public var animationType: String?
   @IBInspectable public var autoRun: Bool = true
-  @IBInspectable public var duration: Double = Double.NaN
-  @IBInspectable public var delay: Double = Double.NaN
-  @IBInspectable public var damping: CGFloat = CGFloat.NaN
-  @IBInspectable public var velocity: CGFloat = CGFloat.NaN
-  @IBInspectable public var force: CGFloat = CGFloat.NaN
-  @IBInspectable public var repeatCount: Float = Float.NaN
-  @IBInspectable public var x: CGFloat = CGFloat.NaN
-  @IBInspectable public var y: CGFloat = CGFloat.NaN
+  @IBInspectable public var duration: Double = Double.nan
+  @IBInspectable public var delay: Double = Double.nan
+  @IBInspectable public var damping: CGFloat = CGFloat.nan
+  @IBInspectable public var velocity: CGFloat = CGFloat.nan
+  @IBInspectable public var force: CGFloat = CGFloat.nan
+  @IBInspectable public var repeatCount: Float = Float.nan
+  @IBInspectable public var x: CGFloat = CGFloat.nan
+  @IBInspectable public var y: CGFloat = CGFloat.nan
   
   // MARK: - Lifecycle
   public override func prepareForInterfaceBuilder() {

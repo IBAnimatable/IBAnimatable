@@ -23,7 +23,7 @@ public protocol BorderDesignable {
   
 }
 
-struct BorderSides: OptionSetType {
+struct BorderSides: OptionSet {
   let rawValue: Int
   
   static let Unknown = BorderSides(rawValue: 0)
@@ -50,9 +50,9 @@ struct BorderSides: OptionSetType {
       return
     }
     
-    let sideElements = rawValue.characters.split(",")
+    let sideElements = rawValue.characters.split(separator: ",")
       .map(String.init)
-      .map { BorderSide(rawValue: $0.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())) }
+      .map { BorderSide(rawValue: $0.trimmingCharacters(in: CharacterSet.whitespaces)) }
       .map { BorderSides(side:$0) }
     
     guard !sideElements.contains(.Unknown) else {
@@ -82,7 +82,7 @@ struct BorderSides: OptionSetType {
 public extension BorderDesignable where Self: UITextField {
   public func configBorder() {
     // set the borderSytle to `.None` to support single side of border
-    borderStyle = .None
+    borderStyle = .none
     commonConfigBorder()
   }
 }
@@ -110,18 +110,18 @@ private extension BorderDesignable where Self: UIView {
       let borderLayer = CAShapeLayer()
       borderLayer.name = "borderAllSides"
       borderLayer.path = mask.path
-      borderLayer.fillColor = UIColor.clearColor().CGColor
-      borderLayer.strokeColor = unwrappedBorderColor.CGColor
+      borderLayer.fillColor = UIColor.clear().cgColor
+      borderLayer.strokeColor = unwrappedBorderColor.cgColor
       borderLayer.lineWidth = borderWidth
       borderLayer.frame = bounds
-      layer.insertSublayer(borderLayer, atIndex: 0)
+      layer.insertSublayer(borderLayer, at: 0)
       return
     }
     
     let sides = BorderSides(rawValue: borderSide)
     
     if sides == .AllSides {
-      layer.borderColor = unwrappedBorderColor.CGColor
+      layer.borderColor = unwrappedBorderColor.cgColor
       layer.borderWidth = borderWidth
       return
     }
@@ -147,15 +147,15 @@ private extension BorderDesignable where Self: UIView {
     }
     
     for linePoints in lines {
-      borderPath.moveToPoint(linePoints.start)
-      borderPath.addLineToPoint(linePoints.end)
+      borderPath.move(to: linePoints.start)
+      borderPath.addLine(to: linePoints.end)
     }
     
-    border.path = borderPath.CGPath
-    border.fillColor = UIColor.clearColor().CGColor
-    border.strokeColor = unwrappedBorderColor.CGColor
+    border.path = borderPath.cgPath
+    border.fillColor = UIColor.clear().cgColor
+    border.strokeColor = unwrappedBorderColor.cgColor
     border.lineWidth = borderWidth
     border.frame = bounds
-    layer.insertSublayer(border, atIndex: 0)
+    layer.insertSublayer(border, at: 0)
   }
 }

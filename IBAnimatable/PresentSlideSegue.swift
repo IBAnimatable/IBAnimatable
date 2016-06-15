@@ -7,7 +7,7 @@ import UIKit
 
 public class PresentSlideSegue: UIStoryboardSegue {
   public override func perform() {
-    destinationViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(.Slide(toDirection: .Left, params: []))
-    sourceViewController.presentViewController(destinationViewController, animated: true, completion: nil)
+    destinationViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(.slide(toDirection: .left, params: []))
+    sourceViewController.present(destinationViewController, animated: true, completion: nil)
   }
 }
