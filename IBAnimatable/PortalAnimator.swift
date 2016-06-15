@@ -27,14 +27,14 @@ public class PortalAnimator: NSObject, AnimatedTransitioning {
     }
     
     switch fromDirection {
-    case .Forward:
-      self.transitionAnimationType = .Portal(direction: .Forward, params: params)
-      self.reverseAnimationType = .Portal(direction: .Backward, params: params)
-      self.interactiveGestureType = .Pinch(direction: .Close)
+    case .forward:
+      self.transitionAnimationType = .portal(direction: .forward, params: params)
+      self.reverseAnimationType = .portal(direction: .backward, params: params)
+      self.interactiveGestureType = .pinch(direction: .Close)
     default:
-      self.transitionAnimationType = .Portal(direction: .Backward, params: params)
-      self.reverseAnimationType = .Portal(direction: .Forward, params: params)
-      self.interactiveGestureType = .Pinch(direction: .Open)
+      self.transitionAnimationType = .portal(direction: .backward, params: params)
+      self.reverseAnimationType = .portal(direction: .forward, params: params)
+      self.interactiveGestureType = .pinch(direction: .Open)
     }
 
     super.init()
@@ -42,11 +42,11 @@ public class PortalAnimator: NSObject, AnimatedTransitioning {
 }
 
 extension PortalAnimator: UIViewControllerAnimatedTransitioning {
-  public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+  public func transitionDuration(_ transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
     return retrieveTransitionDuration(transitionContext)
   }
   
-  public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+  public func animateTransition(_ transitionContext: UIViewControllerContextTransitioning) {
     let (tempfromView, tempToView, tempContainerView) = retrieveViews(transitionContext)
     guard let fromView = tempfromView, toView = tempToView, containerView = tempContainerView else {
       transitionContext.completeTransition(true)
@@ -54,7 +54,7 @@ extension PortalAnimator: UIViewControllerAnimatedTransitioning {
     }
     
     switch fromDirection {
-    case .Forward:
+    case .forward:
       executeForwardAnimation(transitionContext, containerView: containerView, fromView: fromView, toView: toView)
     default:
       executeBackwardAnimation(transitionContext, containerView: containerView, fromView: fromView, toView: toView)
@@ -67,25 +67,25 @@ extension PortalAnimator: UIViewControllerAnimatedTransitioning {
 
 private extension PortalAnimator {
 
-  func executeForwardAnimation(transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
-    let toViewSnapshot = toView.resizableSnapshotViewFromRect(toView.frame, afterScreenUpdates: true, withCapInsets: UIEdgeInsetsZero)
+  func executeForwardAnimation(_ transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
+    let toViewSnapshot = toView.resizableSnapshotView(from: toView.frame, afterScreenUpdates: true, withCapInsets: UIEdgeInsetsZero)!
     let scale = CATransform3DIdentity
     toViewSnapshot.layer.transform = CATransform3DScale(scale, zoomScale, zoomScale, 1)
-    containerView.insertSubview(toViewSnapshot, atIndex: 0)
+    containerView.insertSubview(toViewSnapshot, at: 0)
 
     let leftSnapshotRegion = CGRect(x: 0, y: 0, width: fromView.frame.width / 2, height: fromView.bounds.height)
-    let leftHandView = fromView.resizableSnapshotViewFromRect(leftSnapshotRegion, afterScreenUpdates: false, withCapInsets: UIEdgeInsetsZero)
+    let leftHandView = fromView.resizableSnapshotView(from: leftSnapshotRegion, afterScreenUpdates: false, withCapInsets: UIEdgeInsetsZero)!
     leftHandView.frame = leftSnapshotRegion
     containerView.addSubview(leftHandView)
 
     let rightSnapshotRegion = CGRect(x: fromView.frame.width / 2, y: 0, width: fromView.frame.width / 2, height: fromView.frame.height)
-    let rightHandView = fromView.resizableSnapshotViewFromRect(rightSnapshotRegion, afterScreenUpdates: false, withCapInsets: UIEdgeInsetsZero)
+    let rightHandView = fromView.resizableSnapshotView(from: rightSnapshotRegion, afterScreenUpdates: false, withCapInsets: UIEdgeInsetsZero)!
     rightHandView.frame = rightSnapshotRegion
     containerView.addSubview(rightHandView)
     
-    fromView.hidden = true
+    fromView.isHidden = true
 
-    UIView.animateWithDuration(transitionDuration, delay: 0.0, options: .CurveEaseOut,
+    UIView.animate(withDuration: transitionDuration, delay: 0.0, options: .curveEaseOut,
       animations: {
         leftHandView.frame = leftHandView.frame.offsetBy(dx: -leftHandView.frame.width, dy: 0.0)
         rightHandView.frame = rightHandView.frame.offsetBy(dx: rightHandView.frame.width, dy: 0.0)
@@ -93,7 +93,7 @@ private extension PortalAnimator {
         toViewSnapshot.frame = containerView.frame
       },
       completion: { _ in
-        fromView.hidden = false
+        fromView.isHidden = false
         if transitionContext.transitionWasCancelled() {
           self.removeOtherViews(fromView)
         } else {
@@ -112,24 +112,24 @@ private extension PortalAnimator {
 
 private extension PortalAnimator {
   
-  func executeBackwardAnimation(transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
+  func executeBackwardAnimation(_ transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
     containerView.addSubview(fromView)
     toView.frame = toView.frame.offsetBy(dx: toView.frame.width, dy: 0)
     containerView.addSubview(toView)
 
     let leftSnapshotRegion = CGRect(x: 0, y: 0, width: toView.frame.width / 2, height: toView.bounds.height)
-    let leftHandView = toView.resizableSnapshotViewFromRect(leftSnapshotRegion, afterScreenUpdates: true, withCapInsets: UIEdgeInsetsZero)
+    let leftHandView = toView.resizableSnapshotView(from: leftSnapshotRegion, afterScreenUpdates: true, withCapInsets: UIEdgeInsetsZero)!
     leftHandView.frame = leftSnapshotRegion
-    leftHandView.frame = leftHandView.frame.offsetBy(dx: -leftHandView.frame.width, dy: 0)
+    leftHandView.frame = (leftHandView.frame.offsetBy(dx: -(leftHandView.frame.width), dy: 0))
     containerView.addSubview(leftHandView)
 
     let rightSnapshotRegion = CGRect(x: toView.frame.width / 2, y: 0, width: toView.frame.width / 2, height: fromView.frame.height)
-    let rightHandView = toView.resizableSnapshotViewFromRect(rightSnapshotRegion, afterScreenUpdates: true, withCapInsets: UIEdgeInsetsZero)
+    let rightHandView = toView.resizableSnapshotView(from: rightSnapshotRegion, afterScreenUpdates: true, withCapInsets: UIEdgeInsetsZero)!
     rightHandView.frame = rightSnapshotRegion
-    rightHandView.frame = rightHandView.frame.offsetBy(dx: rightHandView.frame.width, dy: 0)
+    rightHandView.frame = (rightHandView.frame.offsetBy(dx: (rightHandView.frame.width), dy: 0))
     containerView.addSubview(rightHandView)
 
-    UIView.animateWithDuration(transitionDuration, delay: 0.0, options: .CurveEaseOut,
+    UIView.animate(withDuration: transitionDuration, delay: 0.0, options: .curveEaseOut,
       animations: {
         leftHandView.frame = leftHandView.frame.offsetBy(dx: leftHandView.frame.size.width, dy: 0)
         rightHandView.frame = rightHandView.frame.offsetBy(dx: -rightHandView.frame.size.width, dy: 0)
@@ -155,7 +155,7 @@ private extension PortalAnimator {
 
 private extension PortalAnimator {
   
-  func removeOtherViews(viewToKeep: UIView) {
+  func removeOtherViews(_ viewToKeep: UIView) {
     guard let containerView = viewToKeep.superview else {
       return
     }

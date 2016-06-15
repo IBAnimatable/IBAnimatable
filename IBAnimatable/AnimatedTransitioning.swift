@@ -31,22 +31,22 @@ public protocol AnimatedTransitioning: UIViewControllerAnimatedTransitioning {
 }
 
 public extension AnimatedTransitioning {
-  public func retrieveViews(transitionContext: UIViewControllerContextTransitioning) -> (UIView?, UIView?, UIView?) {
-    return (transitionContext.viewForKey(UITransitionContextFromViewKey), transitionContext.viewForKey(UITransitionContextToViewKey), transitionContext.containerView())
+  public func retrieveViews(_ transitionContext: UIViewControllerContextTransitioning) -> (UIView?, UIView?, UIView?) {
+    return (transitionContext.view(forKey: UITransitionContextFromViewKey), transitionContext.view(forKey: UITransitionContextToViewKey), transitionContext.containerView())
   }
   
-  public func retrieveViewControllers(transitionContext: UIViewControllerContextTransitioning) -> (UIViewController?, UIViewController?, UIView?) {
-    return (transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey), transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey), transitionContext.containerView())
+  public func retrieveViewControllers(_ transitionContext: UIViewControllerContextTransitioning) -> (UIViewController?, UIViewController?, UIView?) {
+    return (transitionContext.viewController(forKey: UITransitionContextFromViewControllerKey), transitionContext.viewController(forKey: UITransitionContextToViewControllerKey), transitionContext.containerView())
   }
   
-  public func retrieveTransitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+  public func retrieveTransitionDuration(_ transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
     if let transitionContext = transitionContext {
       return transitionContext.isAnimated() ? transitionDuration : 0
     }
     return 0
   }
   
-  public func animateWithCATransition(transitionContext: UIViewControllerContextTransitioning, type: SystemTransitionType, subtype: String?) {
+  public func animateWithCATransition(_ transitionContext: UIViewControllerContextTransitioning, type: SystemTransitionType, subtype: String?) {
     let (_, tempToView, tempContainerView) = retrieveViews(transitionContext)
     guard let toView = tempToView, containerView = tempContainerView else {
       transitionContext.completeTransition(true)
@@ -63,7 +63,7 @@ public extension AnimatedTransitioning {
       transition.duration = self.transitionDuration(transitionContext)
       // Use `EaseOutQubic` for system built-in transition animations. Thanks to @lexrus
       transition.timingFunction = CAMediaTimingFunction(controlPoints: 0.215, 0.61, 0.355, 1)
-      containerView.layer.addAnimation(transition, forKey: kCATransition)
+      containerView.layer.add(transition, forKey: kCATransition)
     },
     completion: {
       transitionContext.completeTransition(!transitionContext.transitionWasCancelled())

@@ -13,7 +13,7 @@ public class AnimatableNavigationController: UINavigationController, TransitionA
       configureNavigationControllerDelegate()
     }
   }
-  @IBInspectable public var transitionDuration: Double = .NaN {
+  @IBInspectable public var transitionDuration: Double = .nan {
     didSet {
       configureNavigationControllerDelegate()
     }

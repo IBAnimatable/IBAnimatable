@@ -15,7 +15,7 @@ public extension BarButtonItemDesignable where Self: UIBarButtonItem {
       return
     }
     
-    let originalImage: UIImage? = unwrappedRoundedImage.imageWithRenderingMode(.AlwaysOriginal)
+    let originalImage: UIImage? = unwrappedRoundedImage.withRenderingMode(.alwaysOriginal)
     if let unwrappedImage = originalImage {
       image = unwrappedImage
     }

@@ -16,7 +16,7 @@ public protocol RotationDesignable {
 public extension RotationDesignable where Self: UIView {
   public func configRotate() {
     if !rotate.isNaN && rotate > -360 && rotate < 360 {
-      self.transform = CGAffineTransformMakeRotation(CGFloat(M_PI) * rotate / 180)
+      self.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI) * rotate / 180)
     }
   }
 }

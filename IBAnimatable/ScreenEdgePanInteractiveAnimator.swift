@@ -10,20 +10,20 @@ public class ScreenEdgePanInteractiveAnimator: InteractiveAnimator {
   override func createGestureRecognizer() -> UIGestureRecognizer {
     let gestureRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
     switch interactiveGestureType {
-    case let .ScreenEdgePan(direction):
+    case let .screenEdgePan(direction):
       switch direction {
       case .Left:
-        gestureRecognizer.edges = .Left
+        gestureRecognizer.edges = .left
       case .Right:
-        gestureRecognizer.edges = .Right
+        gestureRecognizer.edges = .right
       case .Horizontal:
-        gestureRecognizer.edges = [.Left, .Right]
+        gestureRecognizer.edges = [.left, .right]
       case .Top:
-        gestureRecognizer.edges = .Top
+        gestureRecognizer.edges = .top
       case .Bottom:
-        gestureRecognizer.edges = .Bottom
+        gestureRecognizer.edges = .bottom
       case .Vertical:
-        gestureRecognizer.edges = [.Top, .Bottom]
+        gestureRecognizer.edges = [.top, .bottom]
       default:
         break
       }
@@ -33,19 +33,19 @@ public class ScreenEdgePanInteractiveAnimator: InteractiveAnimator {
     return gestureRecognizer
   }
   
-  override func calculateProgress(gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
+  override func calculateProgress(_ gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
     guard let  gestureRecognizer = gestureRecognizer as? UIScreenEdgePanGestureRecognizer,
       superview = gestureRecognizer.view?.superview else {
         return (0, false)
     }
-    let translation = gestureRecognizer.translationInView(superview)
-    let velocity = gestureRecognizer.velocityInView(superview)
+    let translation = gestureRecognizer.translation(in: superview)
+    let velocity = gestureRecognizer.velocity(in: superview)
     
     var progress: CGFloat
     let distance: CGFloat
     let speed: CGFloat
     switch interactiveGestureType {
-    case let .ScreenEdgePan(direction):
+    case let .screenEdgePan(direction):
       switch direction {
       case .Horizontal:
         distance = superview.frame.width

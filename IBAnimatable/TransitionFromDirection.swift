@@ -8,27 +8,27 @@ import UIKit
 TransitionDirection: used to specify the direction for the transition
 */
 public enum TransitionDirection {
-  case Left
-  case Right
-  case Top
-  case Bottom
-  case Forward
-  case Backward
-  case In
-  case Out
-  case Cross
+  case left
+  case right
+  case top
+  case bottom
+  case forward
+  case backward
+  case `in`
+  case out
+  case cross
   
   // Convert from direction to CATransition Subtype used in `CATransition`
   var CATransitionSubtype: String {
     switch self {
-    case .Left:
+    case .left:
       return kCATransitionFromLeft
-    case .Right:
+    case .right:
       return kCATransitionFromRight
-    case .Top:
+    case .top:
       // The actual transition direction is oposite, need to reverse
       return kCATransitionFromBottom
-    case .Bottom:
+    case .bottom:
       // The actual transition direction is oposite, need to reverse
       return kCATransitionFromTop
     default:
@@ -37,6 +37,6 @@ public enum TransitionDirection {
   }
   
   var isHorizontal: Bool {
-    return self == .Left || self == .Right
+    return self == .left || self == .right
   }
 }

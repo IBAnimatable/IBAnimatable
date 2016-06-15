@@ -22,22 +22,22 @@ public class SystemCubeAnimator: NSObject, AnimatedTransitioning {
     self.transitionDuration = transitionDuration
     
     switch fromDirection {
-    case .Right:
-      self.transitionAnimationType = .SystemCube(fromDirection: .Right)
-      self.reverseAnimationType = .SystemCube(fromDirection: .Left)
-      self.interactiveGestureType = .Pan(fromDirection: .Left)
-    case .Top:
-      self.transitionAnimationType = .SystemCube(fromDirection: .Top)
-      self.reverseAnimationType = .SystemCube(fromDirection: .Bottom)
-      self.interactiveGestureType = .Pan(fromDirection: .Bottom)
-    case .Bottom:
-      self.transitionAnimationType = .SystemCube(fromDirection: .Bottom)
-      self.reverseAnimationType = .SystemCube(fromDirection: .Top)
-      self.interactiveGestureType = .Pan(fromDirection: .Top)
+    case .right:
+      self.transitionAnimationType = .systemCube(fromDirection: .right)
+      self.reverseAnimationType = .systemCube(fromDirection: .left)
+      self.interactiveGestureType = .pan(fromDirection: .Left)
+    case .top:
+      self.transitionAnimationType = .systemCube(fromDirection: .top)
+      self.reverseAnimationType = .systemCube(fromDirection: .bottom)
+      self.interactiveGestureType = .pan(fromDirection: .Bottom)
+    case .bottom:
+      self.transitionAnimationType = .systemCube(fromDirection: .bottom)
+      self.reverseAnimationType = .systemCube(fromDirection: .top)
+      self.interactiveGestureType = .pan(fromDirection: .Top)
     default:
-      self.transitionAnimationType = .SystemCube(fromDirection: .Left)
-      self.reverseAnimationType = .SystemCube(fromDirection: .Right)
-      self.interactiveGestureType = .Pan(fromDirection: .Right)
+      self.transitionAnimationType = .systemCube(fromDirection: .left)
+      self.reverseAnimationType = .systemCube(fromDirection: .right)
+      self.interactiveGestureType = .pan(fromDirection: .Right)
     }
     
     super.init()
@@ -45,11 +45,11 @@ public class SystemCubeAnimator: NSObject, AnimatedTransitioning {
 }
 
 extension SystemCubeAnimator: UIViewControllerAnimatedTransitioning {
-  public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+  public func transitionDuration(_ transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
     return retrieveTransitionDuration(transitionContext)
   }
   
-  public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+  public func animateTransition(_ transitionContext: UIViewControllerContextTransitioning) {
     animateWithCATransition(transitionContext, type: SystemTransitionType.Cube, subtype: fromDirection.CATransitionSubtype)
   }
 }

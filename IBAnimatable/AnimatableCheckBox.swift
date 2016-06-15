@@ -27,7 +27,7 @@ import UIKit
   }
   
   // MARK: - CornerDesignable
-  @IBInspectable public var cornerRadius: CGFloat = CGFloat.NaN {
+  @IBInspectable public var cornerRadius: CGFloat = CGFloat.nan {
     didSet {
       configCornerRadius()
     }
@@ -46,7 +46,7 @@ import UIKit
     }
   }
   
-  @IBInspectable public var opacity: CGFloat = CGFloat.NaN {
+  @IBInspectable public var opacity: CGFloat = CGFloat.nan {
     didSet {
       configOpacity()
     }
@@ -59,7 +59,7 @@ import UIKit
     }
   }
   
-  @IBInspectable public var borderWidth: CGFloat = CGFloat.NaN {
+  @IBInspectable public var borderWidth: CGFloat = CGFloat.nan {
     didSet {
       configBorder()
     }
@@ -78,19 +78,19 @@ import UIKit
     }
   }
   
-  @IBInspectable public var shadowRadius: CGFloat = CGFloat.NaN {
+  @IBInspectable public var shadowRadius: CGFloat = CGFloat.nan {
     didSet {
       configShadowRadius()
     }
   }
   
-  @IBInspectable public var shadowOpacity: CGFloat = CGFloat.NaN {
+  @IBInspectable public var shadowOpacity: CGFloat = CGFloat.nan {
     didSet {
       configShadowOpacity()
     }
   }
   
-  @IBInspectable public var shadowOffset: CGPoint = CGPoint(x: CGFloat.NaN, y: CGFloat.NaN) {
+  @IBInspectable public var shadowOffset: CGPoint = CGPoint(x: CGFloat.nan, y: CGFloat.nan) {
     didSet {
       configShadowOffset()
     }
@@ -107,14 +107,14 @@ import UIKit
   // MARK: - Animatable
   @IBInspectable public var animationType: String?
   @IBInspectable public var autoRun: Bool = true
-  @IBInspectable public var duration: Double = Double.NaN
-  @IBInspectable public var delay: Double = Double.NaN
-  @IBInspectable public var damping: CGFloat = CGFloat.NaN
-  @IBInspectable public var velocity: CGFloat = CGFloat.NaN
-  @IBInspectable public var force: CGFloat = CGFloat.NaN
-  @IBInspectable public var repeatCount: Float = Float.NaN
-  @IBInspectable public var x: CGFloat = CGFloat.NaN
-  @IBInspectable public var y: CGFloat = CGFloat.NaN
+  @IBInspectable public var duration: Double = Double.nan
+  @IBInspectable public var delay: Double = Double.nan
+  @IBInspectable public var damping: CGFloat = CGFloat.nan
+  @IBInspectable public var velocity: CGFloat = CGFloat.nan
+  @IBInspectable public var force: CGFloat = CGFloat.nan
+  @IBInspectable public var repeatCount: Float = Float.nan
+  @IBInspectable public var x: CGFloat = CGFloat.nan
+  @IBInspectable public var y: CGFloat = CGFloat.nan
   
   // MARK: - Lifecycle
   public override func prepareForInterfaceBuilder() {
@@ -135,19 +135,19 @@ import UIKit
     autoRunAnimation()
   }
   
-  public override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-    if touchInside {
+  public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    if isTouchInside {
       checked = !checked
-      sendActionsForControlEvents(.ValueChanged)
+      sendActions(for: .valueChanged)
     }
-    super.touchesEnded(touches, withEvent: event)
+    super.touchesEnded(touches, with: event)
   }
   
   // MARK: - Private
   private func setup() {
     // No title for CheckBox
-    setTitle("", forState: .Normal)
-    tintColor = UIColor.clearColor()
+    setTitle("", for: UIControlState())
+    tintColor = UIColor.clear()
   }
   
   private func configInspectableProperties() {

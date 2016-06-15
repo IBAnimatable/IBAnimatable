@@ -26,7 +26,7 @@ public extension FillDesignable where Self: UIView {
 
       // Make better performance
       if opacity == 1 {
-        opaque = true
+        isOpaque = true
       }
     }
   }
@@ -46,7 +46,7 @@ public extension FillDesignable where Self: UITableViewCell {
 
 private extension FillDesignable {
   
-  func predefinedColorFromString(predefinedColor: String?) -> UIColor? {
+  func predefinedColorFromString(_ predefinedColor: String?) -> UIColor? {
     guard let unwrappedColorTypeString = predefinedColor, colorType = ColorType(rawValue: unwrappedColorTypeString) else {
       return nil
     }
