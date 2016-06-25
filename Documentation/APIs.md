@@ -102,7 +102,8 @@ It is used in `AnimatableTextField` to add padding on either or both sides.
 #### `PlaceholderDesignable`
 | Property name | Data type | Description |
 | ------------- |:-------------:| ----- |
-| placeholderColor | Optional&lt;UIColor> | placeholder text color in `AnimatableTextField`. |
+| placeholderColor | Optional&lt;UIColor> | placeholder text color in `AnimatableTextField` and `AnimatableTextView`. |
+| placeholderText | Optional&lt;String> | placeholder text in `AnimatableTextView`. |
 
 #### `RootWindowDesignable`
 | Property name | Data type | Description |

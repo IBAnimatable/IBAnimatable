@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.
 None
 
 #### Enhancements
-None
+- New designable properties for `UITextView`: placeholder text and color [#227](https://github.com/JakeLin/IBAnimatable/issues/227)
 
 #### Bugfixes
 None
