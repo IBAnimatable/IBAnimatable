@@ -32,7 +32,7 @@ public extension PlaceholderDesignable where Self: UITextView {
     placeholderLabel.textAlignment = textAlignment
     placeholderLabel.text = placeholderText
     placeholderLabel.numberOfLines = 0
-    placeholderLabel.backgroundColor = UIColor.clearColor()
+    placeholderLabel.backgroundColor = .clearColor()
     placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
     addSubview(placeholderLabel)
     updateConstraintsForPlaceholderLabel(placeholderLabel, placeholderLabelConstraints: &placeholderLabelConstraints)
