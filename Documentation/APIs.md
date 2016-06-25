@@ -17,6 +17,7 @@ To use `IBAnimatable`, we can drag and drop a UIKit element and connect it with 
 | UINavigationBar | DesignableNavigationBar | |
 | UIViewController | AnimatableViewController | |
 | UINavigationController | AnimatableNavigationController | |
+| UISlider | AnimatableSlider | |
 
 ### Designable protocols
 `IBAnimatable` provides a set of Designable protocols as below. Because of the power of protocol-oriented programming in Swift, we don't even have to use Animatable default UI elements e.g. `AnimatableView` to unlocked the power of `IBAnimatable`. We can conform to `IBAnimatable` protocols to use the default implementation in protocol extension to create other custom UI elements.
