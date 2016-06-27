@@ -101,6 +101,7 @@
 		E20078A11CB8FB94002B2C16 /* FoldAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20078A01CB8FB94002B2C16 /* FoldAnimator.swift */; };
 		E20078A31CB912E1002B2C16 /* PresentFoldSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20078A21CB912E1002B2C16 /* PresentFoldSegue.swift */; };
 		E20078A51CB91307002B2C16 /* PresentFoldWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20078A41CB91307002B2C16 /* PresentFoldWithDismissInteractionSegue.swift */; };
+		E20884B51D1ED0F800E4101E /* AnimatableSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20884B41D1ED0F800E4101E /* AnimatableSlider.swift */; };
 		E2192F5D1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2192F5C1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift */; };
 		E222CDC61CC3EA7400684CA0 /* PortalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E222CDC51CC3EA7400684CA0 /* PortalAnimator.swift */; };
 		E222CDC81CC400FD00684CA0 /* PresentPortalSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E222CDC71CC400FD00684CA0 /* PresentPortalSegue.swift */; };
@@ -239,6 +240,7 @@
 		E20078A01CB8FB94002B2C16 /* FoldAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldAnimator.swift; sourceTree = "<group>"; };
 		E20078A21CB912E1002B2C16 /* PresentFoldSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentFoldSegue.swift; sourceTree = "<group>"; };
 		E20078A41CB91307002B2C16 /* PresentFoldWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentFoldWithDismissInteractionSegue.swift; sourceTree = "<group>"; };
+		E20884B41D1ED0F800E4101E /* AnimatableSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableSlider.swift; sourceTree = "<group>"; };
 		E20E91121CAC374200625094 /* SystemRippleEffectAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemRippleEffectAnimator.swift; sourceTree = "<group>"; };
 		E20E911B1CAC421E00625094 /* TransitionHollowState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionHollowState.swift; sourceTree = "<group>"; };
 		E20E911D1CAC432400625094 /* SystemCameraIrisAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemCameraIrisAnimator.swift; sourceTree = "<group>"; };
@@ -529,6 +531,7 @@
 				E2192F5C1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift */,
 				AED1A10C1BFE983A001346FA /* AnimatableTextField.swift */,
 				AED1A10D1BFE983A001346FA /* AnimatableTextView.swift */,
+				E20884B41D1ED0F800E4101E /* AnimatableSlider.swift */,
 				AEEE200C1C18D10C00AD033B /* DesignableNavigationBar.swift */,
 			);
 			name = view;
@@ -793,6 +796,7 @@
 				AE6B01711C2A444900950BB2 /* PlaceholderDesignable.swift in Sources */,
 				AE6B01821C2A445100950BB2 /* AnimatableTableViewCell.swift in Sources */,
 				AE6B01691C2A444900950BB2 /* BorderDesignable.swift in Sources */,
+				E20884B51D1ED0F800E4101E /* AnimatableSlider.swift in Sources */,
 				E26B3EDA1CCD4C1D00BFD0AB /* NatGeoAnimator.swift in Sources */,
 				E2E28E6C1C6A6C30003F3852 /* GradientType.swift in Sources */,
 				AE6B016C1C2A444900950BB2 /* FillDesignable.swift in Sources */,
