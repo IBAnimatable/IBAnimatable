@@ -27,6 +27,6 @@ extension SystemRotateAnimator: UIViewControllerAnimatedTransitioning {
   }
   
   public func animateTransition(_ transitionContext: UIViewControllerContextTransitioning) {
-    animateWithCATransition(transitionContext, type: SystemTransitionType.Rotate, subtype: "90")
+    animateWithCATransition(transitionContext, type: SystemTransitionType.rotate, subtype: "90")
   }
 }

@@ -26,27 +26,27 @@ public class PanInteractiveAnimator: InteractiveAnimator {
     switch interactiveGestureType {
     case let .pan(direction):
       switch direction {
-      case .Horizontal:
+      case .horizontal:
         distance = superview.frame.width
         progress = abs(translation.x / distance)
         speed = abs(velocity.x)
-      case .Left:
+      case .left:
         distance = superview.frame.width
         progress = translation.x / distance
         speed = velocity.x
-      case .Right:
+      case .right:
         distance = superview.frame.width
         progress = -(translation.x / distance)
         speed = -velocity.x
-      case .Vertical:
+      case .vertical:
         distance = superview.frame.height
         progress = abs(translation.y / distance)
         speed = abs(velocity.y)
-      case .Top:
+      case .top:
         distance = superview.frame.height
         progress = translation.y / distance
         speed = velocity.y
-      case .Bottom:
+      case .bottom:
         distance = superview.frame.height
         progress = -translation.y / distance
         speed = -velocity.y

@@ -47,15 +47,15 @@ public protocol Animatable: class {
    */
   var repeatCount: Float { get set }
 
-  /**
-   x position for MoveTo animation
-   */
-  var x: CGFloat { get set }
-  
-  /**
-   y position for MoveTo animation
-   */
-  var y: CGFloat { get set }
+//  /**
+//   x position for MoveTo animation
+//   */
+//  var x: CGFloat { get set }
+//  
+//  /**
+//   y position for MoveTo animation
+//   */
+//  var y: CGFloat { get set }
 }
 
 public extension Animatable where Self: UIView {
@@ -87,107 +87,107 @@ public extension Animatable where Self: UIView {
     }
     
     switch animationType {
-    case .SlideInLeft:
+    case .slideInLeft:
       slideInLeft(completion)
-    case .SlideInRight:
+    case .slideInRight:
       slideInRight(completion)
-    case .SlideInDown:
+    case .slideInDown:
       slideInDown(completion)
-    case .SlideInUp:
+    case .slideInUp:
       slideInUp(completion)
-    case .SlideOutLeft:
+    case .slideOutLeft:
       slideOutLeft(completion)
-    case .SlideOutRight:
+    case .slideOutRight:
       slideOutRight(completion)
-    case .SlideOutDown:
+    case .slideOutDown:
       slideOutDown(completion)
-    case .SlideOutUp:
+    case .slideOutUp:
       slideOutUp(completion)
-    case .SqueezeInLeft:
+    case .squeezeInLeft:
       squeezeInLeft(completion)
-    case .SqueezeInRight:
+    case .squeezeInRight:
       squeezeInRight(completion)
-    case .SqueezeInDown:
+    case .squeezeInDown:
       squeezeInDown(completion)
-    case .SqueezeInUp:
+    case .squeezeInUp:
       squeezeInUp(completion)
-    case .SqueezeOutLeft:
+    case .squeezeOutLeft:
       squeezeOutLeft(completion)
-    case .SqueezeOutRight:
+    case .squeezeOutRight:
       squeezeOutRight(completion)
-    case .SqueezeOutDown:
+    case .squeezeOutDown:
       squeezeOutDown(completion)
-    case .SqueezeOutUp:
+    case .squeezeOutUp:
       squeezeOutUp(completion)
-    case .FadeIn:
+    case .fadeIn:
       fadeIn(completion)
-    case .FadeOut:
+    case .fadeOut:
       fadeOut(completion)
-    case .FadeOutIn:
+    case .fadeOutIn:
       fadeOutIn(completion)
-    case .FadeInOut:
+    case .fadeInOut:
       fadeInOut(completion)
-    case .FadeInLeft:
+    case .fadeInLeft:
       fadeInLeft(completion)
-    case .FadeInRight:
+    case .fadeInRight:
       fadeInRight(completion)
-    case .FadeInDown:
+    case .fadeInDown:
       fadeInDown(completion)
-    case .FadeInUp:
+    case .fadeInUp:
       fadeInUp(completion)
-    case .FadeOutLeft:
+    case .fadeOutLeft:
       fadeOutLeft(completion)
-    case .FadeOutRight:
+    case .fadeOutRight:
       fadeOutRight(completion)
-    case .FadeOutDown:
+    case .fadeOutDown:
       fadeOutDown(completion)
-    case .FadeOutUp:
+    case .fadeOutUp:
       fadeOutUp(completion)
-    case .SqueezeFadeInLeft:
+    case .squeezeFadeInLeft:
       squeezeFadeInLeft()
-    case .SqueezeFadeInRight:
+    case .squeezeFadeInRight:
       squeezeFadeInRight()
-    case .SqueezeFadeInDown:
+    case .squeezeFadeInDown:
       squeezeFadeInDown()
-    case .SqueezeFadeInUp:
+    case .squeezeFadeInUp:
       squeezeFadeInUp()
-    case .SqueezeFadeOutLeft:
+    case .squeezeFadeOutLeft:
       squeezeFadeOutLeft()
-    case .SqueezeFadeOutRight:
+    case .squeezeFadeOutRight:
       squeezeFadeOutRight()
-    case .SqueezeFadeOutDown:
+    case .squeezeFadeOutDown:
       squeezeFadeOutDown()
-    case .SqueezeFadeOutUp:
+    case .squeezeFadeOutUp:
       squeezeFadeOutUp()
-    case .ZoomIn:
+    case .zoomIn:
       zoomIn(completion)
-    case .ZoomOut:
+    case .zoomOut:
       zoomOut(completion)
-    case .Shake:
+    case .shake:
       shake(completion)
-    case .Pop:
+    case .pop:
       pop(completion)
-    case .FlipX:
+    case .flipX:
       flipX(completion)
-    case .FlipY:
+    case .flipY:
       flipY(completion)
-    case .Morph:
+    case .morph:
       morph(completion)
-    case .Squeeze:
+    case .squeeze:
       squeeze(completion)
-    case .Flash:
+    case .flash:
       flash(completion)
-    case .Wobble:
+    case .wobble:
       wobble(completion)
-    case .Swing:
+    case .swing:
       swing(completion)
-    case .Rotate:
+    case .rotate:
       rotate(completion: completion)
-    case .RotateCCW:
+    case .rotateCCW:
       rotate(false, completion: completion)
-    case .MoveTo:
+    case .moveTo:
       moveTo(completion)
-    case .MoveBy:
+    case .moveBy:
       moveBy(completion)
     }
   }

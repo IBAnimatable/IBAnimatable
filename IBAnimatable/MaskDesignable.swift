@@ -17,27 +17,27 @@ public extension MaskDesignable where Self: UIView {
     
     if let rawMaskType = MaskType(rawValue: unwrappedMaskType) {
       switch rawMaskType {
-      case .Circle:
+      case .circle:
         maskCircle()
-      case .Star:
+      case .star:
         maskStar()
-      case .Polygon:
+      case .polygon:
         maskPolygon()
-      case .Triangle:
+      case .triangle:
         maskTriangle()
-      case .Wave:
+      case .wave:
         maskWave()
-      case .Parallelogram:
+      case .parallelogram:
         maskParallelogram()
       }
     } else {
-      if unwrappedMaskType.hasPrefix(MaskType.Star.rawValue) {
+      if unwrappedMaskType.hasPrefix(MaskType.star.rawValue) {
         maskStarFromString(unwrappedMaskType)
-      } else if unwrappedMaskType.hasPrefix(MaskType.Wave.rawValue) {
+      } else if unwrappedMaskType.hasPrefix(MaskType.wave.rawValue) {
         maskWaveFromString(unwrappedMaskType)
-      } else if unwrappedMaskType.hasPrefix(MaskType.Polygon.rawValue) {
+      } else if unwrappedMaskType.hasPrefix(MaskType.polygon.rawValue) {
         maskPolygonFromString(unwrappedMaskType)
-      } else if unwrappedMaskType.hasPrefix(MaskType.Parallelogram.rawValue) {
+      } else if unwrappedMaskType.hasPrefix(MaskType.parallelogram.rawValue) {
         maskParallelogramFromString(unwrappedMaskType)
       }
       
@@ -58,7 +58,7 @@ public extension MaskDesignable where Self: UIView {
   // MARK: - Polygon
   
   private func maskPolygonFromString(_ mask: String) {
-    let sides = Int(retrieveMaskParameters(mask, maskName: MaskType.Polygon.rawValue))
+    let sides = Int(retrieveMaskParameters(mask, maskName: MaskType.polygon.rawValue))
     if let unwrappedSides = sides {
       maskPolygon(unwrappedSides)
     } else {
@@ -91,7 +91,7 @@ public extension MaskDesignable where Self: UIView {
   // MARK: - Star
   
   private func maskStarFromString(_ mask: String) {
-    let points = Int(retrieveMaskParameters(mask, maskName: MaskType.Star.rawValue))
+    let points = Int(retrieveMaskParameters(mask, maskName: MaskType.star.rawValue))
     if let unwrappedPoints = points {
       maskStar(unwrappedPoints)
     } else {
@@ -143,7 +143,7 @@ public extension MaskDesignable where Self: UIView {
   // MARK: - Parallelogram
     
   private func maskParallelogramFromString(_ mask: String) {
-    if let angle = Double(retrieveMaskParameters(mask, maskName: MaskType.Parallelogram.rawValue)) {
+    if let angle = Double(retrieveMaskParameters(mask, maskName: MaskType.parallelogram.rawValue)) {
       maskParallelogram(angle)
     } else {
       maskParallelogram()

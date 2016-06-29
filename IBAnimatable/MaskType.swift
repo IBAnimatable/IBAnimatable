@@ -6,10 +6,10 @@
 import Foundation
 
 public enum MaskType: String {
-  case Circle
-  case Polygon  
-  case Star
-  case Triangle
-  case Wave
-  case Parallelogram
+  case circle
+  case polygon
+  case star
+  case triangle
+  case wave
+  case parallelogram
 }

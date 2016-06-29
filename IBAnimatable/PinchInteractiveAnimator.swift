@@ -21,9 +21,9 @@ public class PinchInteractiveAnimator: InteractiveAnimator {
     switch interactiveGestureType {
     case let .pinch(direction):
       switch direction {
-      case .Close:
+      case .close:
         return gestureRecognizer.velocity < 0
-      case .Open:
+      case .open:
         return gestureRecognizer.velocity > 0
       default:
         return true
@@ -48,9 +48,9 @@ public class PinchInteractiveAnimator: InteractiveAnimator {
     switch interactiveGestureType {
     case let .pinch(direction):
       switch direction {
-      case .Close:
+      case .close:
         progress = 1.0 - gestureRecognizer.scale / startScale
-      case .Open:
+      case .open:
         let scaleFator: CGFloat = 1.2 // To make the pinch open gesture more natural 😓
         progress = gestureRecognizer.scale / scaleFator - 1.0
       default:

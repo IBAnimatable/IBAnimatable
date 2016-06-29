@@ -26,6 +26,6 @@ extension SystemRippleEffectAnimator: UIViewControllerAnimatedTransitioning {
   }
   
   public func animateTransition(_ transitionContext: UIViewControllerContextTransitioning) {
-    animateWithCATransition(transitionContext, type: SystemTransitionType.RippleEffect, subtype: nil)
+    animateWithCATransition(transitionContext, type: SystemTransitionType.rippleEffect, subtype: nil)
   }
 }

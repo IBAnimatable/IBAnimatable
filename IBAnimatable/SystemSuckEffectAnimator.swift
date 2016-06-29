@@ -26,6 +26,6 @@ extension SystemSuckEffectAnimator: UIViewControllerAnimatedTransitioning {
   }
   
   public func animateTransition(_ transitionContext: UIViewControllerContextTransitioning) {
-    animateWithCATransition(transitionContext, type: SystemTransitionType.SuckEffect, subtype: nil)
+    animateWithCATransition(transitionContext, type: SystemTransitionType.suckEffect, subtype: nil)
   }
 }

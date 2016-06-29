@@ -28,12 +28,12 @@ struct BorderSides: OptionSet {
   
   static let Unknown = BorderSides(rawValue: 0)
   
-  static let Top = BorderSides(rawValue: 1)
-  static let Right = BorderSides(rawValue: 1 << 1)
-  static let Bottom = BorderSides(rawValue: 1 << 2)
-  static let Left = BorderSides(rawValue: 1 << 3)
+  static let top = BorderSides(rawValue: 1)
+  static let right = BorderSides(rawValue: 1 << 1)
+  static let bottom = BorderSides(rawValue: 1 << 2)
+  static let left = BorderSides(rawValue: 1 << 3)
   
-  static let AllSides: BorderSides = [.Top, .Right, .Bottom, .Left]
+  static let AllSides: BorderSides = [.top, .right, .bottom, .left]
   
   init(rawValue: Int) {
     self.rawValue = rawValue
@@ -71,10 +71,10 @@ struct BorderSides: OptionSet {
     }
     
     switch side {
-    case .Top: self = .Top
-    case .Right: self = .Right
-    case .Bottom: self = .Bottom
-    case .Left: self = .Left
+    case .top: self = .top
+    case .right: self = .right
+    case .bottom: self = .bottom
+    case .left: self = .left
     }
   }
 }
@@ -133,16 +133,16 @@ private extension BorderDesignable where Self: UIView {
     let borderPath = UIBezierPath()
     
     var lines:[(start: CGPoint, end: CGPoint)] = []
-    if sides.contains(.Top) {
+    if sides.contains(.top) {
       lines.append((start: .zero, end: CGPoint(x: bounds.size.width, y: 0)))
     }
-    if sides.contains(.Right) {
+    if sides.contains(.right) {
       lines.append((start: CGPoint(x: bounds.size.width, y: 0), end: CGPoint(x: bounds.size.width, y: bounds.size.height)))
     }
-    if sides.contains(.Bottom) {
+    if sides.contains(.bottom) {
       lines.append((start:CGPoint(x: 0, y: bounds.size.height), end: CGPoint(x: bounds.size.width, y: bounds.size.height)))
     }
-    if sides.contains(.Left) {
+    if sides.contains(.left) {
       lines.append((start: .zero, end: CGPoint(x: 0, y: bounds.size.height)))
     }
     
