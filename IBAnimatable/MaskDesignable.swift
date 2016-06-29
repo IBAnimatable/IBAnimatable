@@ -48,7 +48,11 @@ public extension MaskDesignable where Self: UIView {
   // MARK: - Circle
   
   private func maskCircle() {
-    layer.cornerRadius = ceil(min(bounds.width, bounds.height))/2
+    let diameter = ceil(min(bounds.width, bounds.height))
+    let origin = CGPoint(x: (bounds.width - diameter) / 2.0, y: (bounds.height - diameter) / 2.0)
+    let size = CGSize(width: diameter, height: diameter)
+    let circlePath = UIBezierPath(ovalInRect: CGRect(origin: origin, size: size))
+    drawPath(circlePath)
   }
   
   // MARK: - Polygon
