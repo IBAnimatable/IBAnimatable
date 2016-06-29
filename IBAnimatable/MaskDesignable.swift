@@ -191,7 +191,13 @@ public extension MaskDesignable where Self: UIView {
   
   private func maskWaveFromString(mask: String) {
     let params = retrieveMaskParameters(mask, maskName: MaskType.Wave.rawValue).componentsSeparatedByString(",")
-    if let unwrappedWidth = Float(params[1]), unwrappedOffset = Float(params[2]) where params.count == 3 {
+    
+    guard params.count == 3 else {
+      maskWave()
+      return
+    }
+    
+    if let unwrappedWidth = Float(params[1]), unwrappedOffset = Float(params[2]) {
       let up = params[0] == "up"
       maskWave(up, waveWidth: CGFloat(unwrappedWidth), waveOffset: CGFloat(unwrappedOffset))
     } else {
