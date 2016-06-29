@@ -4,6 +4,7 @@ To use `IBAnimatable`, we can drag and drop a UIKit element and connect it with 
 | UIKit elements | Animatable UI elements | Description |
 | ------------- |:-------------:| ----- |
 | UIView | AnimatableView | |
+| UIScrollView | AnimatableScrollView | |
 | UIBarButtonItem | AnimatableBarButtonItem | |
 | UIButton | AnimatableButton | |
 | UIButton | AnimatableCheckBox | Connect UIButton as AnimatableCheckBox to make CheckBox control |
