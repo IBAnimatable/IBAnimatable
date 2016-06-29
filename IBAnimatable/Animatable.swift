@@ -47,15 +47,15 @@ public protocol Animatable: class {
    */
   var repeatCount: Float { get set }
 
-//  /**
-//   x position for MoveTo animation
-//   */
-//  var x: CGFloat { get set }
-//  
-//  /**
-//   y position for MoveTo animation
-//   */
-//  var y: CGFloat { get set }
+  /**
+   x position for MoveTo animation
+   */
+  var x: CGFloat { get set }
+  
+  /**
+   y position for MoveTo animation
+   */
+  var y: CGFloat { get set }
 }
 
 public extension Animatable where Self: UIView {
