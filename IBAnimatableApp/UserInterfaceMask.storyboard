@@ -75,27 +75,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SbM-du-jBs" customClass="AnimatableView" customModule="IBAnimatable">
-                                <rect key="frame" x="57" y="154" width="260" height="160"/>
+                                <rect key="frame" x="107" y="94" width="160" height="240"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="260" id="GNT-Kr-zR7"/>
-                                    <constraint firstAttribute="height" constant="160" id="S2U-aT-scq"/>
+                                    <constraint firstAttribute="width" constant="160" id="GNT-Kr-zR7"/>
+                                    <constraint firstAttribute="height" constant="240" id="S2U-aT-scq"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                         <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Polygon(8)"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="auto-bg" translatesAutoresizingMaskIntoConstraints="NO" id="rm0-49-clX" customClass="AnimatableImageView" customModule="IBAnimatable">
-                                <rect key="frame" x="0.0" y="374" width="375" height="179"/>
+                                <rect key="frame" x="0.0" y="394" width="375" height="179"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="SbM-du-jBs" firstAttribute="centerX" secondItem="D7u-3q-ufp" secondAttribute="centerX" id="Mtg-YP-aor"/>
                             <constraint firstItem="rm0-49-clX" firstAttribute="centerX" secondItem="D7u-3q-ufp" secondAttribute="centerX" id="Uod-zy-53h"/>
-                            <constraint firstItem="SbM-du-jBs" firstAttribute="top" secondItem="DOr-BW-1FP" secondAttribute="bottom" constant="90" id="wa4-e1-URw"/>
+                            <constraint firstItem="SbM-du-jBs" firstAttribute="top" secondItem="DOr-BW-1FP" secondAttribute="bottom" constant="30" id="wa4-e1-URw"/>
                             <constraint firstItem="rm0-49-clX" firstAttribute="top" secondItem="SbM-du-jBs" secondAttribute="bottom" constant="60" id="xgn-Oy-AS3"/>
                         </constraints>
                     </view>

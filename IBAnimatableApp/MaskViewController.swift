@@ -11,12 +11,12 @@ class MaskViewController: UIViewController {
   var maskType: String?
   
   @IBOutlet var maskedView: AnimatableView!
-  @IBOutlet var maskedImageView: UIImageView!
+  @IBOutlet var maskedImageView: AnimatableImageView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     maskedView.maskType = maskType
-    maskedView.maskType = maskType
+    maskedImageView.maskType = maskType
   }
   
 }
