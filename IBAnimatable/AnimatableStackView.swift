@@ -103,12 +103,21 @@ import UIKit
   @IBInspectable public var startPoint: String?
   
   // MARK: - MaskDesignable
-  @IBInspectable public var maskType: String? {
+  public var eMaskType:MaskType = .none {
     didSet {
       configMask()
-      configBorder()      
+      configBorder()
     }
   }
+  
+  @IBInspectable private var maskType: String? {
+    didSet {
+      if let maskType = maskType {
+        eMaskType = MaskType(string:maskType);
+      }
+    }
+  }
+  
   
   // MARK: - Animatable
   @IBInspectable public var animationType: String?

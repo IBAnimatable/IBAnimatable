@@ -97,12 +97,22 @@ import UIKit
   }
   
   // MARK: - MaskDesignable
-  @IBInspectable public var maskType: String? {
+  public var eMaskType:MaskType = .none {
     didSet {
       configMask()
       configBorder()
     }
   }
+  
+  @IBInspectable private var maskType: String? {
+    didSet {
+      if let maskType = maskType {
+        eMaskType = MaskType(string:maskType);
+      }
+    }
+  }
+  
+  
   
   // MARK: - Animatable
   @IBInspectable public var animationType: String?

@@ -6,46 +6,35 @@
 import UIKit
 
 public protocol MaskDesignable {
-  var maskType: String? { get set }
+  var eMaskType: MaskType { get set }
+  
 }
 
+
 public extension MaskDesignable where Self: UIView {
+  
   public func configMask() {
-    guard let unwrappedMaskType = maskType else {
-      return
-    }
     
-    if let rawMaskType = MaskType(rawValue: unwrappedMaskType) {
-      switch rawMaskType {
-      case .circle:
-        maskCircle()
-      case .star:
-        maskStar()
-      case .polygon:
-        maskPolygon()
-      case .triangle:
-        maskTriangle()
-      case .wave:
-        maskWave()
-      case .parallelogram:
-        maskParallelogram()
-      }
-    } else {
-      if unwrappedMaskType.hasPrefix(MaskType.star.rawValue) {
-        maskStarFromString(unwrappedMaskType)
-      } else if unwrappedMaskType.hasPrefix(MaskType.wave.rawValue) {
-        maskWaveFromString(unwrappedMaskType)
-      } else if unwrappedMaskType.hasPrefix(MaskType.polygon.rawValue) {
-        maskPolygonFromString(unwrappedMaskType)
-      } else if unwrappedMaskType.hasPrefix(MaskType.parallelogram.rawValue) {
-        maskParallelogramFromString(unwrappedMaskType)
-      }
-      
+    switch eMaskType {
+    case .circle:
+      maskCircle()
+    case .parallelogram(let angle):
+      maskParallelogram(angle ?? 60)
+    case .polygon(let sides):
+      maskPolygon(sides ?? 6)
+    case .star(let points):
+      maskStar(points ?? 5)
+    case .wave(let direction, let width, let offset):
+      maskWave(direction ?? .up, waveWidth: width ?? 40.0, waveOffset:offset ?? 0.0)
+    case .triangle:
+      maskTriangle()
+    case .none:
+      return;
     }
-    
   }
   
   // MARK: - Circle
+  
   
   private func maskCircle() {
     let diameter = ceil(min(bounds.width, bounds.height))
@@ -56,15 +45,6 @@ public extension MaskDesignable where Self: UIView {
   }
   
   // MARK: - Polygon
-  
-  private func maskPolygonFromString(_ mask: String) {
-    let sides = Int(retrieveMaskParameters(mask, maskName: MaskType.polygon.rawValue))
-    if let unwrappedSides = sides {
-      maskPolygon(unwrappedSides)
-    } else {
-      maskPolygon()
-    }
-  }
   
   private func maskPolygon(_ sides: Int = 6) {
     let polygonPath = maskPolygonBezierPath(sides)
@@ -90,14 +70,7 @@ public extension MaskDesignable where Self: UIView {
   
   // MARK: - Star
   
-  private func maskStarFromString(_ mask: String) {
-    let points = Int(retrieveMaskParameters(mask, maskName: MaskType.star.rawValue))
-    if let unwrappedPoints = points {
-      maskStar(unwrappedPoints)
-    } else {
-      maskStar()
-    }
-  }
+  
   
   // See https://www.weheartswift.com/bezier-paths-gesture-recognizers/
   private func maskStar(_ points: Int = 5) {
@@ -141,38 +114,30 @@ public extension MaskDesignable where Self: UIView {
   }
   
   // MARK: - Parallelogram
-    
-  private func maskParallelogramFromString(_ mask: String) {
-    if let angle = Double(retrieveMaskParameters(mask, maskName: MaskType.parallelogram.rawValue)) {
-      maskParallelogram(angle)
-    } else {
-      maskParallelogram()
-    }
-  }
   
-  private func maskParallelogram(_ topLeftAngle: Double = 60) {
-    let parallelogramPath = maskParallelogramBezierPath(topLeftAngle)
+  private func maskParallelogram(_ topLeftAngle:Double = 60) {
+    let parallelogramPath = maskParallelogramBezierPath(topLeftAngle);
     drawPath(parallelogramPath)
   }
   
-  private func maskParallelogramBezierPath(_ topLeftAngle: Double) -> UIBezierPath {
-    let topLeftAngleRad = Double(topLeftAngle) * M_PI / 180
-    let path = UIBezierPath()
-    let offset = abs(CGFloat(tan(topLeftAngleRad - M_PI / 2)) * bounds.height)
+  private func maskParallelogramBezierPath(_ topLeftAngle:Double) -> UIBezierPath {
+    let topLeftAngleRad  =  Double(topLeftAngle) * M_PI / 180;
+    let path = UIBezierPath();
+    let offset = abs(CGFloat(tan(topLeftAngleRad - M_PI / 2)) * bounds.height);
     
-    if topLeftAngle <= 90 {
-      path.move(to: CGPoint(x: 0, y: 0))
+    if  topLeftAngle <= 90 {
+      path.move(to: CGPoint(x:0, y:0));
       path.addLine(to: CGPoint(x: bounds.width - offset, y: 0))
-      path.addLine(to: CGPoint(x: bounds.width, y: bounds.height))
+      path.addLine(to: CGPoint(x:bounds.width, y:bounds.height))
       path.addLine(to: CGPoint(x: offset, y: bounds.height))
     } else {
-      path.move(to: CGPoint(x: offset, y: 0))
-       path.addLine(to: CGPoint(x: bounds.width, y: 0))
-       path.addLine(to: CGPoint(x: bounds.width - offset, y: bounds.height))
-       path.addLine(to: CGPoint(x: 0, y: bounds.height))
+      path.move(to: CGPoint(x:offset, y:0))
+      path.addLine(to: CGPoint(x:bounds.width, y:0))
+      path.addLine(to: CGPoint(x:bounds.width - offset, y:bounds.height));
+      path.addLine(to: CGPoint(x:0, y:bounds.height));
     }
     path.close()
-    return path
+    return path;
   }
   
   // MARK: - Triangle
@@ -194,24 +159,9 @@ public extension MaskDesignable where Self: UIView {
   
   // MARK: - Wave
   
-  private func maskWaveFromString(_ mask: String) {
-    let params = retrieveMaskParameters(mask, maskName: MaskType.wave.rawValue).components(separatedBy: ",")
-    
-    guard params.count == 3 else {
-        maskWave()
-        return
-    }
-    
-    if let unwrappedWidth = Float(params[1]), unwrappedOffset = Float(params[2]) {
-        let up = params[0] == "up"
-        maskWave(up, waveWidth: CGFloat(unwrappedWidth), waveOffset: CGFloat(unwrappedOffset))
-    } else {
-        maskWave()
-    }
-  }
   
-  private func maskWave(_ waveUp: Bool = true, waveWidth: CGFloat = 40.0, waveOffset: CGFloat = 0.0) {
-    let wavePath = maskWaveBezierPath(waveUp, waveWidth: waveWidth, waveOffset: waveOffset)
+  private func maskWave(_ waveDirection:MaskType.WaveDirection, waveWidth: Float = 40.0, waveOffset: Float = 0.0) {
+    let wavePath = maskWaveBezierPath(waveDirection == .up, waveWidth: CGFloat(waveWidth), waveOffset: CGFloat(waveOffset))
     drawPath(wavePath)
   }
   
