@@ -52,7 +52,9 @@ public class InteractiveAnimator: UIPercentDrivenInteractiveTransition {
       interacting = true
       switch transitionType {
       case .navigationTransition(.pop):
-        viewController?.navigationController?.popViewController(animated: true)
+        if let navigationController = viewController?.navigationController {
+          navigationController.popViewController(animated: true)
+        }
       case .presentationTransition(.dismissal):
         viewController?.dismiss(animated: true, completion: nil)
       default:
