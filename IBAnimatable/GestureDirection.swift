@@ -9,12 +9,12 @@ import Foundation
  GestureDirection: Used to specify the direction in `InteractiveGestureType`
  */
 public enum GestureDirection: String {
-  case Horizontal
-  case Vertical
-  case Left
-  case Right
-  case Top
-  case Bottom
-  case Close
-  case Open
+  case horizontal
+  case vertical
+  case left
+  case right
+  case top
+  case bottom
+  case close
+  case open
 }

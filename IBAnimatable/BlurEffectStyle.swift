@@ -6,7 +6,7 @@
 import Foundation
 
 public enum BlurEffectStyle: String {
-  case ExtraLight
-  case Light
-  case Dark
+  case extraLight
+  case light
+  case dark
 }

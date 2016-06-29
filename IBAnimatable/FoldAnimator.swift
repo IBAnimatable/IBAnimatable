@@ -44,22 +44,22 @@ public class FoldAnimator: NSObject, AnimatedTransitioning {
     case .right:
       self.transitionAnimationType = .fold(fromDirection: .right, params: params)
       self.reverseAnimationType = .fold(fromDirection: .left, params: params)
-      self.interactiveGestureType = .pan(fromDirection: .Left)
+      self.interactiveGestureType = .pan(fromDirection: .left)
       reverse = true
     case .top:
       self.transitionAnimationType = .fold(fromDirection: .top, params: params)
       self.reverseAnimationType = .fold(fromDirection: .bottom, params: params)
-      self.interactiveGestureType = .pan(fromDirection: .Bottom)
+      self.interactiveGestureType = .pan(fromDirection: .bottom)
       reverse = false
     case .bottom:
       self.transitionAnimationType = .fold(fromDirection: .bottom, params: params)
       self.reverseAnimationType = .fold(fromDirection: .top, params: params)
-      self.interactiveGestureType = .pan(fromDirection: .Top)
+      self.interactiveGestureType = .pan(fromDirection: .top)
       reverse = true
     default:
       self.transitionAnimationType = .fold(fromDirection: .left, params: params)
       self.reverseAnimationType = .fold(fromDirection: .right, params: params)
-      self.interactiveGestureType = .pan(fromDirection: .Right)
+      self.interactiveGestureType = .pan(fromDirection: .right)
       reverse = false      
     }
     super.init()

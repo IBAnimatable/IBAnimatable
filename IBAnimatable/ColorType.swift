@@ -6,24 +6,24 @@
 import Foundation
 
 public enum ColorType: String {
-  case FlatEmerland
-  case FlatPomegranate
-  case FlatWetAsphalt
-  case FlatTurquoise
-  case FlatConcrete
-  case FlatOrange
-  case FlatAsbestos
-  case FlatPeterRiver
-  case FlatSilver
-  case FlatSunFlower
-  case FlatAmethyst
-  case FlatAlizarin
-  case FlatGreenSea
-  case FlatBelizeHole
-  case FlatNephritis
-  case FlatMidnightBlue
-  case FlatClouds
-  case FlatWisteria
-  case FlatCarrot
-  case FlatPumpkin
+  case flatEmerland
+  case flatPomegranate
+  case flatWetAsphalt
+  case flatTurquoise
+  case flatConcrete
+  case flatOrange
+  case flatAsbestos
+  case flatPeterRiver
+  case flatSilver
+  case flatSunFlower
+  case flatAmethyst
+  case flatAlizarin
+  case flatGreenSea
+  case flatBelizeHole
+  case flatNephritis
+  case flatMidnightBlue
+  case flatClouds
+  case flatWisteria
+  case flatCarrot
+  case flatPumpkin
 }

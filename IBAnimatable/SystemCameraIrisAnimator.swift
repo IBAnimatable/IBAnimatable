@@ -23,15 +23,15 @@ public class SystemCameraIrisAnimator: NSObject, AnimatedTransitioning {
     case .open:
       self.transitionAnimationType = .systemCameraIris(hollowState: .open)
       self.reverseAnimationType = .systemCameraIris(hollowState: .close)
-      self.interactiveGestureType = .pinch(direction: .Close)
+      self.interactiveGestureType = .pinch(direction: .close)
     case .close:
       self.transitionAnimationType = .systemCameraIris(hollowState: .close)
       self.reverseAnimationType = .systemCameraIris(hollowState: .open)
-      self.interactiveGestureType = .pinch(direction: .Open)
+      self.interactiveGestureType = .pinch(direction: .open)
     case .none:
       self.transitionAnimationType = .systemCameraIris(hollowState: .none)
       self.reverseAnimationType = .systemCameraIris(hollowState: .none)
-      self.interactiveGestureType = .pinch(direction: .Close)
+      self.interactiveGestureType = .pinch(direction: .close)
     }
     
     super.init()
@@ -46,11 +46,11 @@ extension SystemCameraIrisAnimator: UIViewControllerAnimatedTransitioning {
   public func animateTransition(_ transitionContext: UIViewControllerContextTransitioning) {
     switch self.hollowState {
     case .open:
-      animateWithCATransition(transitionContext, type: SystemTransitionType.CameraIrisHollowOpen, subtype: nil)
+      animateWithCATransition(transitionContext, type: SystemTransitionType.cameraIrisHollowOpen, subtype: nil)
     case .close:
-      animateWithCATransition(transitionContext, type: SystemTransitionType.CameraIrisHollowClose, subtype: nil)
+      animateWithCATransition(transitionContext, type: SystemTransitionType.cameraIrisHollowClose, subtype: nil)
     case .none:
-      animateWithCATransition(transitionContext, type: SystemTransitionType.CameraIris, subtype: nil)
+      animateWithCATransition(transitionContext, type: SystemTransitionType.cameraIris, subtype: nil)
 
     }
   }

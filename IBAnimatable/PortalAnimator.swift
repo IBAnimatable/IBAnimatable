@@ -30,11 +30,11 @@ public class PortalAnimator: NSObject, AnimatedTransitioning {
     case .forward:
       self.transitionAnimationType = .portal(direction: .forward, params: params)
       self.reverseAnimationType = .portal(direction: .backward, params: params)
-      self.interactiveGestureType = .pinch(direction: .Close)
+      self.interactiveGestureType = .pinch(direction: .close)
     default:
       self.transitionAnimationType = .portal(direction: .backward, params: params)
       self.reverseAnimationType = .portal(direction: .forward, params: params)
-      self.interactiveGestureType = .pinch(direction: .Open)
+      self.interactiveGestureType = .pinch(direction: .open)
     }
 
     super.init()

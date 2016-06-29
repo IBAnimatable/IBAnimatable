@@ -40,9 +40,9 @@ extension SystemPageAnimator: UIViewControllerAnimatedTransitioning {
   public func animateTransition(_ transitionContext: UIViewControllerContextTransitioning) {
     switch self.type {
     case .curl:
-      animateWithCATransition(transitionContext, type: SystemTransitionType.PageCurl, subtype: nil)
+      animateWithCATransition(transitionContext, type: SystemTransitionType.pageCurl, subtype: nil)
     case .unCurl:
-      animateWithCATransition(transitionContext, type: SystemTransitionType.PageUnCurl, subtype: nil)
+      animateWithCATransition(transitionContext, type: SystemTransitionType.pageUnCurl, subtype: nil)
     }
   }
 }

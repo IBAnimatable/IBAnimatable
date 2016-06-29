@@ -12,17 +12,17 @@ public class ScreenEdgePanInteractiveAnimator: InteractiveAnimator {
     switch interactiveGestureType {
     case let .screenEdgePan(direction):
       switch direction {
-      case .Left:
+      case .left:
         gestureRecognizer.edges = .left
-      case .Right:
+      case .right:
         gestureRecognizer.edges = .right
-      case .Horizontal:
+      case .horizontal:
         gestureRecognizer.edges = [.left, .right]
-      case .Top:
+      case .top:
         gestureRecognizer.edges = .top
-      case .Bottom:
+      case .bottom:
         gestureRecognizer.edges = .bottom
-      case .Vertical:
+      case .vertical:
         gestureRecognizer.edges = [.top, .bottom]
       default:
         break
@@ -47,27 +47,27 @@ public class ScreenEdgePanInteractiveAnimator: InteractiveAnimator {
     switch interactiveGestureType {
     case let .screenEdgePan(direction):
       switch direction {
-      case .Horizontal:
+      case .horizontal:
         distance = superview.frame.width
         progress = abs(translation.x / distance)
         speed = abs(velocity.x)
-      case .Left:
+      case .left:
         distance = superview.frame.width
         progress = translation.x / distance
         speed = velocity.x
-      case .Right:
+      case .right:
         distance = superview.frame.width
         progress = -(translation.x / distance)
         speed = -velocity.x
-      case .Vertical:
+      case .vertical:
         distance = superview.frame.height
         progress = abs(translation.y / distance)
         speed = abs(velocity.y)
-      case .Top:
+      case .top:
         distance = superview.frame.height
         progress = translation.y / distance
         speed = velocity.y
-      case .Bottom:
+      case .bottom:
         distance = superview.frame.height
         progress = -translation.y / distance
         speed = -velocity.y

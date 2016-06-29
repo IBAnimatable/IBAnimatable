@@ -28,22 +28,22 @@ public class SlideAnimator: NSObject, AnimatedTransitioning {
     case .right:
       self.transitionAnimationType = .slide(toDirection: .right, params: params)
       self.reverseAnimationType = .slide(toDirection: .left, params: params)
-      self.interactiveGestureType = .pan(fromDirection: .Right)
+      self.interactiveGestureType = .pan(fromDirection: .right)
       reverse = true
     case .top:
       self.transitionAnimationType = .slide(toDirection: .top, params: params)
       self.reverseAnimationType = .slide(toDirection: .bottom, params: params)
-      self.interactiveGestureType = .pan(fromDirection: .Top)
+      self.interactiveGestureType = .pan(fromDirection: .top)
       reverse = false
     case .bottom:
       self.transitionAnimationType = .slide(toDirection: .bottom, params: params)
       self.reverseAnimationType = .slide(toDirection: .top, params: params)
-      self.interactiveGestureType = .pan(fromDirection: .Bottom)
+      self.interactiveGestureType = .pan(fromDirection: .bottom)
       reverse = true
     default:
       self.transitionAnimationType = .slide(toDirection: .left, params: params)
       self.reverseAnimationType = .slide(toDirection: .right, params: params)
-      self.interactiveGestureType = .pan(fromDirection: .Left)
+      self.interactiveGestureType = .pan(fromDirection: .left)
       reverse = false
     }
     super.init()

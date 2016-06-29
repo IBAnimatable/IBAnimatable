@@ -6,8 +6,8 @@
 import Foundation
 
 public enum BorderSide: String {
-  case Top
-  case Right
-  case Bottom
-  case Left
+  case top
+  case right
+  case bottom
+  case left
 }

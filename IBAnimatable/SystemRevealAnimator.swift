@@ -23,19 +23,19 @@ public class SystemRevealAnimator: NSObject, AnimatedTransitioning {
     case .right:
       self.transitionAnimationType = .systemReveal(fromDirection: .right)
       self.reverseAnimationType = .systemReveal(fromDirection: .left)
-      self.interactiveGestureType = .pan(fromDirection: .Left)
+      self.interactiveGestureType = .pan(fromDirection: .left)
     case .top:
       self.transitionAnimationType = .systemReveal(fromDirection: .top)
       self.reverseAnimationType = .systemReveal(fromDirection: .bottom)
-      self.interactiveGestureType = .pan(fromDirection: .Bottom)
+      self.interactiveGestureType = .pan(fromDirection: .bottom)
     case .bottom:
       self.transitionAnimationType = .systemReveal(fromDirection: .bottom)
       self.reverseAnimationType = .systemReveal(fromDirection: .top)
-      self.interactiveGestureType = .pan(fromDirection: .Top)
+      self.interactiveGestureType = .pan(fromDirection: .top)
     default:
       self.transitionAnimationType = .systemPush(fromDirection: .left)
       self.reverseAnimationType = .systemPush(fromDirection: .right)
-      self.interactiveGestureType = .pan(fromDirection: .Right)
+      self.interactiveGestureType = .pan(fromDirection: .right)
     }
     
     super.init()
@@ -48,6 +48,6 @@ extension SystemRevealAnimator: UIViewControllerAnimatedTransitioning {
   }
   
   public func animateTransition(_ transitionContext: UIViewControllerContextTransitioning) {
-    animateWithCATransition(transitionContext, type: SystemTransitionType.Reveal, subtype: fromDirection.CATransitionSubtype)
+    animateWithCATransition(transitionContext, type: SystemTransitionType.reveal, subtype: fromDirection.CATransitionSubtype)
   }
 }

@@ -19,10 +19,10 @@ public enum InteractiveGestureType {
   }
   
   public static func fromString(_ interactiveGestureType: String) -> InteractiveGestureType? {
-    if interactiveGestureType.hasPrefix("Default") {
+    if interactiveGestureType.hasPrefix("default") {
       return .default
-    } else if interactiveGestureType.hasPrefix("Pan") || interactiveGestureType.hasPrefix("ScreenEdgePan") ||
-      interactiveGestureType.hasPrefix("Pinch") {
+    } else if interactiveGestureType.hasPrefix("pan") || interactiveGestureType.hasPrefix("screenEdgePan") ||
+      interactiveGestureType.hasPrefix("pinch") {
       return fromStringWithDirection(interactiveGestureType)
     }
     return nil
@@ -30,7 +30,7 @@ public enum InteractiveGestureType {
   
   // Return the `String` without qualification
   public func toString() -> String {
-    let namespace = "IBAnimatable." + String(GestureDirection) + "."
+    let namespace = "Ahtau." + String(GestureDirection) + "."
     return String(self).replacingOccurrences(of: namespace, with: "")
   }
 }
@@ -55,11 +55,11 @@ private extension InteractiveGestureType {
       return nil
     }
     
-    if interactiveGestureType.hasPrefix("Pan") {
+    if interactiveGestureType.hasPrefix("pan") {
       return .pan(fromDirection: direction)
-    } else if interactiveGestureType.hasPrefix("ScreenEdgePan") {
+    } else if interactiveGestureType.hasPrefix("screenEdgePan") {
       return .screenEdgePan(fromDirection: direction)
-    } else if interactiveGestureType.hasPrefix("Pinch") {
+    } else if interactiveGestureType.hasPrefix("pinch") {
       return .pinch(direction: direction)
     }
     
