@@ -15,7 +15,9 @@ public extension UIViewController {
   }
   
   @IBAction public func popToRootViewController(_ sender: UIStoryboardSegue) {
-    sender.sourceViewController.navigationController?.popToRootViewController(animated: true)
+    if let navigationController = sender.sourceViewController.navigationController {
+      navigationController.popToRootViewController(animated: true)
+    }
   }
   
 }
