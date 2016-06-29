@@ -51,7 +51,7 @@ public extension MaskDesignable where Self: UIView {
     let diameter = ceil(min(bounds.width, bounds.height))
     let origin = CGPoint(x: (bounds.width - diameter) / 2.0, y: (bounds.height - diameter) / 2.0)
     let size = CGSize(width: diameter, height: diameter)
-    let circlePath = UIBezierPath(ovalInRect: CGRect(origin: origin, size: size))
+    let circlePath = UIBezierPath(ovalIn: CGRect(origin: origin, size: size))
     drawPath(circlePath)
   }
   
@@ -194,19 +194,19 @@ public extension MaskDesignable where Self: UIView {
   
   // MARK: - Wave
   
-  private func maskWaveFromString(mask: String) {
-    let params = retrieveMaskParameters(mask, maskName: MaskType.Wave.rawValue).componentsSeparatedByString(",")
+  private func maskWaveFromString(_ mask: String) {
+    let params = retrieveMaskParameters(mask, maskName: MaskType.wave.rawValue).components(separatedBy: ",")
     
     guard params.count == 3 else {
-      maskWave()
-      return
+        maskWave()
+        return
     }
     
     if let unwrappedWidth = Float(params[1]), unwrappedOffset = Float(params[2]) {
-      let up = params[0] == "up"
-      maskWave(up, waveWidth: CGFloat(unwrappedWidth), waveOffset: CGFloat(unwrappedOffset))
+        let up = params[0] == "up"
+        maskWave(up, waveWidth: CGFloat(unwrappedWidth), waveOffset: CGFloat(unwrappedOffset))
     } else {
-      maskWave()
+        maskWave()
     }
   }
   
