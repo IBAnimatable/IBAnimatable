@@ -20,22 +20,22 @@ public class SystemRevealAnimator: NSObject, AnimatedTransitioning {
     self.transitionDuration = transitionDuration
     
     switch fromDirection {
-    case .Right:
-      self.transitionAnimationType = .SystemReveal(fromDirection: .Right)
-      self.reverseAnimationType = .SystemReveal(fromDirection: .Left)
-      self.interactiveGestureType = .Pan(fromDirection: .Left)
-    case .Top:
-      self.transitionAnimationType = .SystemReveal(fromDirection: .Top)
-      self.reverseAnimationType = .SystemReveal(fromDirection: .Bottom)
-      self.interactiveGestureType = .Pan(fromDirection: .Bottom)
-    case .Bottom:
-      self.transitionAnimationType = .SystemReveal(fromDirection: .Bottom)
-      self.reverseAnimationType = .SystemReveal(fromDirection: .Top)
-      self.interactiveGestureType = .Pan(fromDirection: .Top)
+    case .right:
+      self.transitionAnimationType = .systemReveal(fromDirection: .right)
+      self.reverseAnimationType = .systemReveal(fromDirection: .left)
+      self.interactiveGestureType = .pan(fromDirection: .Left)
+    case .top:
+      self.transitionAnimationType = .systemReveal(fromDirection: .top)
+      self.reverseAnimationType = .systemReveal(fromDirection: .bottom)
+      self.interactiveGestureType = .pan(fromDirection: .Bottom)
+    case .bottom:
+      self.transitionAnimationType = .systemReveal(fromDirection: .bottom)
+      self.reverseAnimationType = .systemReveal(fromDirection: .top)
+      self.interactiveGestureType = .pan(fromDirection: .Top)
     default:
-      self.transitionAnimationType = .SystemPush(fromDirection: .Left)
-      self.reverseAnimationType = .SystemPush(fromDirection: .Right)
-      self.interactiveGestureType = .Pan(fromDirection: .Right)
+      self.transitionAnimationType = .systemPush(fromDirection: .left)
+      self.reverseAnimationType = .systemPush(fromDirection: .right)
+      self.interactiveGestureType = .pan(fromDirection: .Right)
     }
     
     super.init()
@@ -43,11 +43,11 @@ public class SystemRevealAnimator: NSObject, AnimatedTransitioning {
 }
 
 extension SystemRevealAnimator: UIViewControllerAnimatedTransitioning {
-  public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+  public func transitionDuration(_ transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
     return retrieveTransitionDuration(transitionContext)
   }
   
-  public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+  public func animateTransition(_ transitionContext: UIViewControllerContextTransitioning) {
     animateWithCATransition(transitionContext, type: SystemTransitionType.Reveal, subtype: fromDirection.CATransitionSubtype)
   }
 }

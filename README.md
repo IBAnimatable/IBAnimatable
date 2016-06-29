@@ -1,3 +1,7 @@
+## Swift 3 branch
+
+We use this branch to support Swift 3. Once Xcode 8 RTM, we will merge it to master. The demo app works fine. But it is WIP, please use it with caution. If you have any idea, please comment on [Issue #211 - Swift 3 support](https://github.com/JakeLin/IBAnimatable/issues/221). 
+
 ![IBAnimatable](https://raw.githubusercontent.com/JakeLin/IBAnimatable-Misc/master/IBAnimatable/Hero.png)
 
 Design and prototype customized UI, interaction, navigation, transition and animation for App Store ready Apps in Interface Builder with IBAnimatable.

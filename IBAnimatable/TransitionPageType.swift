@@ -6,6 +6,6 @@
 import Foundation
 
 public enum TransitionPageType {
-  case Curl
-  case UnCurl
+  case curl
+  case unCurl
 }

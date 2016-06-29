@@ -30,8 +30,8 @@ class TransitionPresentedViewController: AnimatableViewController {
     hideButtonsIfNeeded()
   }
 
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    super.prepareForSegue(segue, sender: sender)
+  override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+    super.prepare(for: segue, sender: sender)
     
     // Set the transition animation type for `AnimatableViewController`, used for Present/Dismiss transitions
     if let toViewController = segue.destinationViewController as? AnimatableViewController {
@@ -40,11 +40,11 @@ class TransitionPresentedViewController: AnimatableViewController {
     }
   }
 
-  @IBAction func presentViaSegueDidTap(sender: AnyObject) {
+  @IBAction func presentViaSegueDidTap(_ sender: AnyObject) {
     presentViaSegue(presentingSegueClass, useDismissInteraction: false)
   }
   
-  @IBAction func presentViaDismissInteractionSegueDidTap(sender: AnyObject) {
+  @IBAction func presentViaDismissInteractionSegueDidTap(_ sender: AnyObject) {
     presentViaSegue(presentingWithDismissInteractionSegueClass, useDismissInteraction: true)
   }
 }
@@ -103,18 +103,18 @@ private extension TransitionPresentedViewController {
   }
   
   // To extract the type without parameters
-  func extractAnimationType(animationType: String) -> String {
-    if let range = animationType.rangeOfString("(") {
-      return animationType.substringToIndex(range.startIndex)
+  func extractAnimationType(_ animationType: String) -> String {
+    if let range = animationType.range(of: "(") {
+      return animationType.substring(to: range.lowerBound)
     }
     return animationType
   }
   
-  func presentViaSegue(segueClass: UIStoryboardSegue.Type?, useDismissInteraction: Bool) {
-    if let segueClass = segueClass, toViewController = storyboard?.instantiateViewControllerWithIdentifier("TransitionPresentedViewController") as? TransitionPresentedViewController {
+  func presentViaSegue(_ segueClass: UIStoryboardSegue.Type?, useDismissInteraction: Bool) {
+    if let segueClass = segueClass, toViewController = storyboard?.instantiateViewController(withIdentifier: "TransitionPresentedViewController") as? TransitionPresentedViewController {
       toViewController.useDismissInteraction = useDismissInteraction
       let segue = segueClass.init(identifier: String(segueClass), source: self, destination: toViewController)
-      prepareForSegue(segue, sender: self)
+      prepare(for: segue, sender: self)
       segue.perform()
     }
   }
