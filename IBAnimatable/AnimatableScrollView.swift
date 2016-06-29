@@ -5,7 +5,6 @@
 
 
 import UIKit
-import IBAnimatable
 
 @IBDesignable public class AnimatableScrollView: UIScrollView, CornerDesignable, FillDesignable, BorderDesignable, RotationDesignable, ShadowDesignable, BlurDesignable, TintDesignable, GradientDesignable, MaskDesignable, Animatable {
 
