@@ -109,6 +109,7 @@
 		E2472EA51C6F97F800A20E27 /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2472EA31C6F97F800A20E27 /* ColorType.swift */; };
 		E24848AC1CDF65F7003DB9C2 /* SlideAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24848AB1CDF65F7003DB9C2 /* SlideAnimator.swift */; };
 		E25EC6E71CDE034300743DB8 /* ContainerTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25EC6E61CDE034300743DB8 /* ContainerTransitionViewController.swift */; };
+		E2614B611D23C94300BBBAFA /* AnimatableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2614B601D23C94300BBBAFA /* AnimatableScrollView.swift */; };
 		E26B3EDA1CCD4C1D00BFD0AB /* NatGeoAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B3ED91CCD4C1D00BFD0AB /* NatGeoAnimator.swift */; };
 		E26B3EDC1CCD579200BFD0AB /* PresentNatGeoSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B3EDB1CCD579200BFD0AB /* PresentNatGeoSegue.swift */; };
 		E27691E91CAFC72C004A725C /* SystemMoveInAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691E81CAFC72C004A725C /* SystemMoveInAnimator.swift */; };
@@ -254,6 +255,7 @@
 		E2472EA61C6F980C00A20E27 /* FlatColorsTypeScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlatColorsTypeScript.swift; path = Scripts/FlatColorsTypeScript.swift; sourceTree = SOURCE_ROOT; };
 		E24848AB1CDF65F7003DB9C2 /* SlideAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideAnimator.swift; sourceTree = "<group>"; };
 		E25EC6E61CDE034300743DB8 /* ContainerTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerTransitionViewController.swift; sourceTree = "<group>"; };
+		E2614B601D23C94300BBBAFA /* AnimatableScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableScrollView.swift; sourceTree = "<group>"; };
 		E26B3ED91CCD4C1D00BFD0AB /* NatGeoAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NatGeoAnimator.swift; sourceTree = "<group>"; };
 		E26B3EDB1CCD579200BFD0AB /* PresentNatGeoSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentNatGeoSegue.swift; sourceTree = "<group>"; };
 		E27691E81CAFC72C004A725C /* SystemMoveInAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemMoveInAnimator.swift; sourceTree = "<group>"; };
@@ -520,6 +522,7 @@
 			isa = PBXGroup;
 			children = (
 				AED1A10E1BFE983A001346FA /* AnimatableView.swift */,
+				E2614B601D23C94300BBBAFA /* AnimatableScrollView.swift */,
 				AE3C54481C2180D500829B10 /* AnimatableBarButtonItem.swift */,
 				AED1A1091BFE983A001346FA /* AnimatableButton.swift */,
 				AE0B0FEB1C26397700E36B78 /* AnimatableCheckBox.swift */,
@@ -766,6 +769,7 @@
 				AE677B9B1CADCFA800D62273 /* TransitionHollowState.swift in Sources */,
 				E299DF5A1CD6025200EC30D4 /* CardsAnimator.swift in Sources */,
 				E222CDCA1CC4010800684CA0 /* PresentPortalWithDismissInteractionSegue.swift in Sources */,
+				E2614B611D23C94300BBBAFA /* AnimatableScrollView.swift in Sources */,
 				E299DF561CD5FFE300EC30D4 /* PresentTurnSegue.swift in Sources */,
 				E2F45B5B1CDBAF5C001D2E37 /* PresentFlipWithDismissInteractionSegue.swift in Sources */,
 				E20078A51CB91307002B2C16 /* PresentFoldWithDismissInteractionSegue.swift in Sources */,
