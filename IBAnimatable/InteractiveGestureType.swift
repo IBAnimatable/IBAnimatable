@@ -30,7 +30,7 @@ public enum InteractiveGestureType {
   
   // Return the `String` without qualification
   public func toString() -> String {
-    let namespace = "Ahtau." + String(GestureDirection) + "."
+    let namespace = "IBAnimatable." + String(GestureDirection) + "."
     return String(self).replacingOccurrences(of: namespace, with: "")
   }
 }
