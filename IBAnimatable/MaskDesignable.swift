@@ -72,7 +72,8 @@ public extension MaskDesignable where Self: UIView {
     let center = CGPoint(x: bounds.width / 2.0, y: bounds.height / 2.0)
     var angle: CGFloat = -CGFloat(M_PI / 2.0)
     let angleIncrement = CGFloat(M_PI * 2.0 / Double(sides))
-    let radius = bounds.width / 2.0
+    let length = min(bounds.width, bounds.height)
+    let radius = length / 2.0
     
     path.moveToPoint(pointFrom(angle, radius: radius, offset: center))
     for _ in 1...sides - 1 {
