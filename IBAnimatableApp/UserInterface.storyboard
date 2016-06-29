@@ -17,7 +17,7 @@
                         <sections>
                             <tableViewSection id="pZQ-Pf-P1v">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="transitionCell" textLabel="Rs1-3k-ac9" style="IBUITableViewCellStyleDefault" id="oZn-rq-6jb" customClass="AnimatableTableViewCell" customModule="IBAnimatable">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="transitionCell" textLabel="Rs1-3k-ac9" style="IBUITableViewCellStyleDefault" id="oZn-rq-6jb" userLabel="uiCell" customClass="AnimatableTableViewCell" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="99" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oZn-rq-6jb" id="MMG-gu-DNX">
@@ -41,6 +41,32 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="EH2-oa-QGQ" kind="show" id="D7h-jh-hfX"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="transitionCell" textLabel="gM0-9A-UM6" style="IBUITableViewCellStyleDefault" id="cVI-On-FQ4" userLabel="uiCell" customClass="AnimatableTableViewCell" customModule="IBAnimatable">
+                                        <rect key="frame" x="0.0" y="143" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cVI-On-FQ4" id="Q2V-hQ-Jdi">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Mask" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gM0-9A-UM6">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="KX0-ct-vLn" kind="show" id="2Xu-GA-n4M"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -144,7 +170,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JdN-Fw-n4f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4469.5" y="-281.5"/>
+            <point key="canvasLocation" x="4465.5" y="-281.5"/>
+        </scene>
+        <!--UserInterfaceMask-->
+        <scene sceneID="jMl-6T-PN8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UserInterfaceMask" id="KX0-ct-vLn" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5o5-kn-ytD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4352" y="147"/>
         </scene>
     </scenes>
     <resources>
