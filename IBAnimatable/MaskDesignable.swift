@@ -48,7 +48,11 @@ public extension MaskDesignable where Self: UIView {
   // MARK: - Circle
   
   private func maskCircle() {
-    layer.cornerRadius = ceil(min(bounds.width, bounds.height))/2
+    let diameter = ceil(min(bounds.width, bounds.height))
+    let origin = CGPoint(x: (bounds.width - diameter) / 2.0, y: (bounds.height - diameter) / 2.0)
+    let size = CGSize(width: diameter, height: diameter)
+    let circlePath = UIBezierPath(ovalInRect: CGRect(origin: origin, size: size))
+    drawPath(circlePath)
   }
   
   // MARK: - Polygon
@@ -72,7 +76,8 @@ public extension MaskDesignable where Self: UIView {
     let center = CGPoint(x: bounds.width / 2.0, y: bounds.height / 2.0)
     var angle: CGFloat = -CGFloat(M_PI / 2.0)
     let angleIncrement = CGFloat(M_PI * 2.0 / Double(sides))
-    let radius = bounds.width / 2.0
+    let length = min(bounds.width, bounds.height)
+    let radius = length / 2.0
     
     path.moveToPoint(pointFrom(angle, radius: radius, offset: center))
     for _ in 1...sides - 1 {
@@ -191,7 +196,13 @@ public extension MaskDesignable where Self: UIView {
   
   private func maskWaveFromString(mask: String) {
     let params = retrieveMaskParameters(mask, maskName: MaskType.Wave.rawValue).componentsSeparatedByString(",")
-    if let unwrappedWidth = Float(params[1]), unwrappedOffset = Float(params[2]) where params.count == 3 {
+    
+    guard params.count == 3 else {
+      maskWave()
+      return
+    }
+    
+    if let unwrappedWidth = Float(params[1]), unwrappedOffset = Float(params[2]) {
       let up = params[0] == "up"
       maskWave(up, waveWidth: CGFloat(unwrappedWidth), waveOffset: CGFloat(unwrappedOffset))
     } else {

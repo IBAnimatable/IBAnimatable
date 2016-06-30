@@ -72,6 +72,9 @@
 		AE6B01891C2A445C00950BB2 /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0FAD3C1C1ED1EC00B5289B /* DismissSegue.swift */; };
 		AE6C21061C842A0F00DB6892 /* TransitionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6C21051C842A0F00DB6892 /* TransitionTableViewController.swift */; };
 		AE7C26111CB4F680002CF125 /* InteractiveAnimatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7C26101CB4F680002CF125 /* InteractiveAnimatorFactory.swift */; };
+		AE87646C1D232F1D0044E0AB /* UserInterfaceMask.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE87646B1D232F1D0044E0AB /* UserInterfaceMask.storyboard */; };
+		AE87646E1D2331010044E0AB /* UserInterfaceMaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE87646D1D2331010044E0AB /* UserInterfaceMaskTableViewController.swift */; };
+		AE8764701D2332F60044E0AB /* MaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE87646F1D2332F60044E0AB /* MaskViewController.swift */; };
 		AE8964DB1C2CC0D100D3E9F0 /* RootWindowDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8964DA1C2CC0D100D3E9F0 /* RootWindowDesignable.swift */; };
 		AE8A4FFA1C856EEC00E9E368 /* TransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8A4FF91C856EEC00E9E368 /* TransitionViewController.swift */; };
 		AE8FBAA91C853C7A00EB8AEA /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8FBAA81C853C7A00EB8AEA /* Functions.swift */; };
@@ -195,6 +198,9 @@
 		AE81DAED1C10F14C000AEB20 /* GradientDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientDesignable.swift; path = IBAnimatable/GradientDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AE81DB4D1C11DF00000AEB20 /* BlurEffectStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlurEffectStyle.swift; path = IBAnimatable/BlurEffectStyle.swift; sourceTree = SOURCE_ROOT; };
 		AE81DB4F1C12E060000AEB20 /* RotationDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RotationDesignable.swift; path = IBAnimatable/RotationDesignable.swift; sourceTree = SOURCE_ROOT; };
+		AE87646B1D232F1D0044E0AB /* UserInterfaceMask.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserInterfaceMask.storyboard; sourceTree = "<group>"; };
+		AE87646D1D2331010044E0AB /* UserInterfaceMaskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInterfaceMaskTableViewController.swift; sourceTree = "<group>"; };
+		AE87646F1D2332F60044E0AB /* MaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskViewController.swift; sourceTree = "<group>"; };
 		AE8964DA1C2CC0D100D3E9F0 /* RootWindowDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootWindowDesignable.swift; path = IBAnimatable/RootWindowDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AE8A4FF91C856EEC00E9E368 /* TransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionViewController.swift; sourceTree = "<group>"; };
 		AE8C53AF1C0F1C0400A775AF /* GradientStartPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientStartPoint.swift; path = IBAnimatable/GradientStartPoint.swift; sourceTree = SOURCE_ROOT; };
@@ -434,6 +440,7 @@
 			children = (
 				AEF4938C1CE0161C00B76FD6 /* Playground.storyboard */,
 				AE0D30991CE149150093B578 /* UserInterface.storyboard */,
+				AE87646B1D232F1D0044E0AB /* UserInterfaceMask.storyboard */,
 				AE0D309B1CE14A170093B578 /* Animations.storyboard */,
 				AE154B0E1C788A560093C05B /* Transitions.storyboard */,
 				AEC5F9CD1CF660A000F20354 /* TransitionsInInterfaceBuilder.storyboard */,
@@ -452,6 +459,8 @@
 				AED57AE41CE5C0CB00C359E3 /* TransitionPushedViewController.swift */,
 				AEDB24D01CE9EC0F0086612C /* TransitionPresentedViewController.swift */,
 				AE1B9A651CE3EB100098D962 /* InteractionTableViewController.swift */,
+				AE87646D1D2331010044E0AB /* UserInterfaceMaskTableViewController.swift */,
+				AE87646F1D2332F60044E0AB /* MaskViewController.swift */,
 				E25EC6E61CDE034300743DB8 /* ContainerTransitionViewController.swift */,
 			);
 			name = code;
@@ -713,6 +722,7 @@
 				AE154B101C788A560093C05B /* Transitions.storyboard in Resources */,
 				AEF4938D1CE0161C00B76FD6 /* Playground.storyboard in Resources */,
 				AE0D309A1CE149150093B578 /* UserInterface.storyboard in Resources */,
+				AE87646C1D232F1D0044E0AB /* UserInterfaceMask.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -852,7 +862,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE1B9A661CE3EB100098D962 /* InteractionTableViewController.swift in Sources */,
+				AE8764701D2332F60044E0AB /* MaskViewController.swift in Sources */,
 				AE8A4FFA1C856EEC00E9E368 /* TransitionViewController.swift in Sources */,
+				AE87646E1D2331010044E0AB /* UserInterfaceMaskTableViewController.swift in Sources */,
 				AEDB24D31CE9EEB30086612C /* UIViewControllerExtension.swift in Sources */,
 				AED57AE51CE5C0CB00C359E3 /* TransitionPushedViewController.swift in Sources */,
 				AE6C21061C842A0F00DB6892 /* TransitionTableViewController.swift in Sources */,
