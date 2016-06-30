@@ -10,18 +10,18 @@ import Foundation
   refer to http://iphonedevwiki.net/index.php/CATransition
 */
 public enum SystemTransitionType: String {
-  case Fade = "fade"      // kCATransitionFade
-  case MoveIn = "moveIn"  // kCATransitionMoveIn
-  case Push = "push"      // kCATransitionPush
-  case Reveal = "reveal"  // kCATransitionReveal
-  case Flip = "flip"
-  case Cube = "cube"
-  case PageCurl = "pageCurl"
-  case PageUnCurl = "pageUnCurl"
-  case RippleEffect = "rippleEffect"
-  case SuckEffect = "suckEffect"
-  case CameraIris = "cameraIris"
-  case CameraIrisHollowOpen = "cameraIrisHollowOpen"
-  case CameraIrisHollowClose = "cameraIrisHollowClose"
-  case Rotate = "rotate"
+  case fade     // kCATransitionFade
+  case moveIn   // kCATransitionMoveIn
+  case push     // kCATransitionPush
+  case reveal   // kCATransitionReveal
+  case flip
+  case cube
+  case pageCurl
+  case pageUnCurl
+  case rippleEffect
+  case suckEffect
+  case cameraIris
+  case cameraIrisHollowOpen
+  case cameraIrisHollowClose
+  case rotate
 }

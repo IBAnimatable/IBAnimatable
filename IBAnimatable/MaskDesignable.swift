@@ -17,27 +17,27 @@ public extension MaskDesignable where Self: UIView {
     
     if let rawMaskType = MaskType(rawValue: unwrappedMaskType) {
       switch rawMaskType {
-      case .Circle:
+      case .circle:
         maskCircle()
-      case .Star:
+      case .star:
         maskStar()
-      case .Polygon:
+      case .polygon:
         maskPolygon()
-      case .Triangle:
+      case .triangle:
         maskTriangle()
-      case .Wave:
+      case .wave:
         maskWave()
-      case .Parallelogram:
+      case .parallelogram:
         maskParallelogram()
       }
     } else {
-      if unwrappedMaskType.hasPrefix(MaskType.Star.rawValue) {
+      if unwrappedMaskType.hasPrefix(MaskType.star.rawValue) {
         maskStarFromString(unwrappedMaskType)
-      } else if unwrappedMaskType.hasPrefix(MaskType.Wave.rawValue) {
+      } else if unwrappedMaskType.hasPrefix(MaskType.wave.rawValue) {
         maskWaveFromString(unwrappedMaskType)
-      } else if unwrappedMaskType.hasPrefix(MaskType.Polygon.rawValue) {
+      } else if unwrappedMaskType.hasPrefix(MaskType.polygon.rawValue) {
         maskPolygonFromString(unwrappedMaskType)
-      } else if unwrappedMaskType.hasPrefix(MaskType.Parallelogram.rawValue) {
+      } else if unwrappedMaskType.hasPrefix(MaskType.parallelogram.rawValue) {
         maskParallelogramFromString(unwrappedMaskType)
       }
       
@@ -48,13 +48,17 @@ public extension MaskDesignable where Self: UIView {
   // MARK: - Circle
   
   private func maskCircle() {
-    layer.cornerRadius = ceil(min(bounds.width, bounds.height))/2
+    let diameter = ceil(min(bounds.width, bounds.height))
+    let origin = CGPoint(x: (bounds.width - diameter) / 2.0, y: (bounds.height - diameter) / 2.0)
+    let size = CGSize(width: diameter, height: diameter)
+    let circlePath = UIBezierPath(ovalIn: CGRect(origin: origin, size: size))
+    drawPath(circlePath)
   }
   
   // MARK: - Polygon
   
   private func maskPolygonFromString(_ mask: String) {
-    let sides = Int(retrieveMaskParameters(mask, maskName: MaskType.Polygon.rawValue))
+    let sides = Int(retrieveMaskParameters(mask, maskName: MaskType.polygon.rawValue))
     if let unwrappedSides = sides {
       maskPolygon(unwrappedSides)
     } else {
@@ -72,7 +76,8 @@ public extension MaskDesignable where Self: UIView {
     let center = CGPoint(x: bounds.width / 2.0, y: bounds.height / 2.0)
     var angle: CGFloat = -CGFloat(M_PI / 2.0)
     let angleIncrement = CGFloat(M_PI * 2.0 / Double(sides))
-    let radius = bounds.width / 2.0
+    let length = min(bounds.width, bounds.height)
+    let radius = length / 2.0
     
     path.move(to: pointFrom(angle, radius: radius, offset: center))
     for _ in 1...sides - 1 {
@@ -86,7 +91,7 @@ public extension MaskDesignable where Self: UIView {
   // MARK: - Star
   
   private func maskStarFromString(_ mask: String) {
-    let points = Int(retrieveMaskParameters(mask, maskName: MaskType.Star.rawValue))
+    let points = Int(retrieveMaskParameters(mask, maskName: MaskType.star.rawValue))
     if let unwrappedPoints = points {
       maskStar(unwrappedPoints)
     } else {
@@ -138,7 +143,7 @@ public extension MaskDesignable where Self: UIView {
   // MARK: - Parallelogram
     
   private func maskParallelogramFromString(_ mask: String) {
-    if let angle = Double(retrieveMaskParameters(mask, maskName: MaskType.Parallelogram.rawValue)) {
+    if let angle = Double(retrieveMaskParameters(mask, maskName: MaskType.parallelogram.rawValue)) {
       maskParallelogram(angle)
     } else {
       maskParallelogram()
@@ -190,12 +195,18 @@ public extension MaskDesignable where Self: UIView {
   // MARK: - Wave
   
   private func maskWaveFromString(_ mask: String) {
-    let params = retrieveMaskParameters(mask, maskName: MaskType.Wave.rawValue).components(separatedBy: ",")
-    if let unwrappedWidth = Float(params[1]), unwrappedOffset = Float(params[2]) where params.count == 3 {
-      let up = params[0] == "up"
-      maskWave(up, waveWidth: CGFloat(unwrappedWidth), waveOffset: CGFloat(unwrappedOffset))
+    let params = retrieveMaskParameters(mask, maskName: MaskType.wave.rawValue).components(separatedBy: ",")
+    
+    guard params.count == 3 else {
+        maskWave()
+        return
+    }
+    
+    if let unwrappedWidth = Float(params[1]), unwrappedOffset = Float(params[2]) {
+        let up = params[0] == "up"
+        maskWave(up, waveWidth: CGFloat(unwrappedWidth), waveOffset: CGFloat(unwrappedOffset))
     } else {
-      maskWave()
+        maskWave()
     }
   }
   

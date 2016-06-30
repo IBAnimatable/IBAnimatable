@@ -29,11 +29,11 @@ public extension BlurDesignable where Self: UIView {
     }
     
     switch blurEffectStyle {
-    case .ExtraLight:
+    case .extraLight:
       style = .extraLight
-    case .Light:
+    case .light:
       style = .light
-    case .Dark:
+    case .dark:
       style = .dark
     }
     
