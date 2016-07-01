@@ -8,7 +8,7 @@ import UIKit
 class UserInterfaceMaskTableViewController: UITableViewController {
   private let masks = ["None", "Circle", "Polygon", "Polygon(12)", "Star", "Star(6)", "Triangle", "Wave", "Wave(up,10,5)", "Wave(down,40,0)", "Parallelogram", "Parallelogram(150)"]
   
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+  override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
     if let maskViewController = segue.destinationViewController as? MaskViewController, indexPath = tableView.indexPathForSelectedRow {
       maskViewController.maskType = masks[indexPath.row]
     }
@@ -17,16 +17,16 @@ class UserInterfaceMaskTableViewController: UITableViewController {
 
 // MARK: - UITableViewDataSource / UITableViewDelegate
 extension UserInterfaceMaskTableViewController {
-  override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+  override func numberOfSections(in tableView: UITableView) -> Int {
     return 1
   }
   
-  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return masks.count
   }
   
-  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("transitionCell", forIndexPath: indexPath) as UITableViewCell
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "transitionCell", for: indexPath as IndexPath) as UITableViewCell
     cell.textLabel?.text = masks[indexPath.row]
     return cell
   }

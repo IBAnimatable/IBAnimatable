@@ -96,7 +96,7 @@ import UIKit
     }
   }
 
-  override public var attributedText: NSAttributedString! {
+  override public var attributedText: AttributedString! {
     didSet {
       textDidChange()
     }
@@ -104,7 +104,7 @@ import UIKit
 
   override public var textContainerInset: UIEdgeInsets {
     didSet {
-      updateConstraintsForPlaceholderLabel(placeholderLabel, placeholderLabelConstraints: &placeholderLabelConstraints)
+      update(constraints: &placeholderLabelConstraints, for: placeholderLabel)
     }
   }
 
@@ -130,18 +130,18 @@ import UIKit
   }
 
   deinit {
-    NSNotificationCenter.defaultCenter().removeObserver(self, name: UITextViewTextDidChangeNotification, object: nil)
+    NotificationCenter.default().removeObserver(self, name: NSNotification.Name.UITextViewTextDidChange, object: nil)
   }
   
   // MARK: - Private
   private func configInspectableProperties() {
     configAnimatableProperties()
-    configPlaceholderLabel(placeholderLabel, placeholderLabelConstraints: &placeholderLabelConstraints)
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(textDidChange), name: UITextViewTextDidChangeNotification, object: nil)
+    config(placeholderLabel: placeholderLabel, placeholderLabelConstraints: &placeholderLabelConstraints)
+    NotificationCenter.default().addObserver(self, selector: #selector(textDidChange), name: NSNotification.Name.UITextViewTextDidChange, object: nil)
   }
 
   @objc private func textDidChange() {
-    placeholderLabel.hidden = !text.isEmpty
+    placeholderLabel.isHidden = !text.isEmpty
   }
 
   private func configAfterLayoutSubviews() {
