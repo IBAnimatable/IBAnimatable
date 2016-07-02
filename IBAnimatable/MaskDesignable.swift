@@ -29,7 +29,7 @@ public extension MaskDesignable where Self: UIView {
     case .triangle:
       maskTriangle()
     case .none:
-      return;
+      return
     }
   }
   
@@ -54,8 +54,8 @@ public extension MaskDesignable where Self: UIView {
   private func maskPolygonBezierPath(_ sides: Int) -> UIBezierPath {
     let path = UIBezierPath()
     let center = CGPoint(x: bounds.width / 2.0, y: bounds.height / 2.0)
-    var angle: CGFloat = -CGFloat(M_PI / 2.0)
-    let angleIncrement = CGFloat(M_PI * 2.0 / Double(sides))
+    var angle: CGFloat = -.pi / 2
+    let angleIncrement = .pi * 2 / CGFloat(sides)
     let length = min(bounds.width, bounds.height)
     let radius = length / 2.0
     
@@ -88,9 +88,9 @@ public extension MaskDesignable where Self: UIView {
     let path = UIBezierPath()
     let radius = min(bounds.size.width, bounds.size.height) / 2 - borderWidth
     let starExtrusion = radius / 2
-    let angleIncrement = CGFloat(M_PI * 2.0 / Double(points))
+    let angleIncrement = .pi * 2 / CGFloat(points)
     let center = CGPoint(x: bounds.width / 2.0, y: bounds.height / 2.0)
-    var angle = -CGFloat(M_PI / 2.0)
+    var angle: CGFloat = -.pi / 2
     var firstPoint = true
     for _ in 1...points {
       let point = pointFrom(angle, radius: radius, offset: center)
@@ -114,28 +114,28 @@ public extension MaskDesignable where Self: UIView {
   // MARK: - Parallelogram
   
   private func maskParallelogram(_ topLeftAngle:Double = 60) {
-    let parallelogramPath = maskParallelogramBezierPath(topLeftAngle);
+    let parallelogramPath = maskParallelogramBezierPath(topLeftAngle)
     drawPath(parallelogramPath)
   }
   
   private func maskParallelogramBezierPath(_ topLeftAngle:Double) -> UIBezierPath {
-    let topLeftAngleRad  =  Double(topLeftAngle) * M_PI / 180;
-    let path = UIBezierPath();
-    let offset = abs(CGFloat(tan(topLeftAngleRad - M_PI / 2)) * bounds.height);
+    let topLeftAngleRad = topLeftAngle * .pi / 180
+    let path = UIBezierPath()
+    let offset = abs(CGFloat(tan(topLeftAngleRad - .pi / 2)) * bounds.height)
     
-    if  topLeftAngle <= 90 {
-      path.move(to: CGPoint(x:0, y:0));
+    if topLeftAngle <= 90 {
+      path.move(to: CGPoint(x:0, y:0))
       path.addLine(to: CGPoint(x: bounds.width - offset, y: 0))
       path.addLine(to: CGPoint(x:bounds.width, y:bounds.height))
       path.addLine(to: CGPoint(x: offset, y: bounds.height))
     } else {
       path.move(to: CGPoint(x:offset, y:0))
       path.addLine(to: CGPoint(x:bounds.width, y:0))
-      path.addLine(to: CGPoint(x:bounds.width - offset, y:bounds.height));
-      path.addLine(to: CGPoint(x:0, y:bounds.height));
+      path.addLine(to: CGPoint(x:bounds.width - offset, y:bounds.height))
+      path.addLine(to: CGPoint(x:0, y:bounds.height))
     }
     path.close()
-    return path;
+    return path
   }
   
   // MARK: - Triangle
@@ -206,7 +206,7 @@ public extension MaskDesignable where Self: UIView {
   }
   
   private func degree2radian(_ degree: CGFloat) -> CGFloat {
-    let radian = CGFloat(M_PI) * degree / 180
+    let radian = .pi * degree / 180
     return radian
   }
   

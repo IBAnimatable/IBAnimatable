@@ -140,7 +140,7 @@ private extension CardsAnimator {
       var t1 = CATransform3DIdentity
       t1.m34 = 1.0 / -900
       t1 = CATransform3DScale(t1, 0.95, 0.95, 1)
-      t1 = CATransform3DRotate(t1, 15.0 * CGFloat(M_PI) / 180.0, 1, 0, 0)
+      t1 = CATransform3DRotate(t1, 15.0 * .pi / 180.0, 1, 0, 0)
       return t1
   }
 

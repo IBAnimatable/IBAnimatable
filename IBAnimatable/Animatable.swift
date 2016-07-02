@@ -566,8 +566,8 @@ public extension Animatable where Self: UIView {
   public func rotate(_ clockwise: Bool = true, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CABasicAnimation(keyPath: "transform.rotation")
-      animation.fromValue = clockwise ? 0 : ((360 * M_PI) / 180)
-      animation.toValue = clockwise ? ((360 * M_PI) / 180) : 0
+      animation.fromValue = clockwise ? 0 : CGFloat.pi * 2
+      animation.toValue = clockwise ? CGFloat.pi * 2 : 0
       animation.duration = CFTimeInterval(self.duration)
       animation.repeatCount = self.repeatCount
       animation.autoreverses = false

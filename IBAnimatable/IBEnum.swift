@@ -25,10 +25,10 @@ public extension IBEnum {
   /// this method will return "wave"
   static func extractNameAndParams(_ string:String) -> (name:String, params:[String]) {
     let tokens = string.components(separatedBy: CharacterSet(charactersIn: "()")).filter({!$0.isEmpty}) // extract params list   self.enumName
-    let maskName = tokens.first ?? "";
-    let paramsString = tokens.count >= 2 ? tokens[1] : "";
-    let params = paramsString.components(separatedBy: ","); // params list
-    return (name:maskName, params:params);
+    let maskName = tokens.first ?? ""
+    let paramsString = tokens.count >= 2 ? tokens[1] : ""
+    let params = paramsString.components(separatedBy: ",") // params list
+    return (name:maskName, params:params)
   }
   
 }

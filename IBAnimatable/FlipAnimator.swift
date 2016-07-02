@@ -98,7 +98,7 @@ private extension FlipAnimator {
     axesValues = valuesForAxe(reverse ? 1.0 : 0.0, reverseValue: 0.5)
     updateAnchorPointAndOffset(CGPoint(x: axesValues.0, y: axesValues.1), view: flippedSectionOfToView)
     
-    flippedSectionOfToView.layer.transform = rotate(reverse ? M_PI_2 : -M_PI_2)
+    flippedSectionOfToView.layer.transform = rotate(reverse ? .pi * 2 : -.pi * 2)
     return ((flippedSectionOfFromView, flippedSectionOfFromViewShadow), (flippedSectionOfToView, flippedSectionOfToViewShadow))
   }
   
@@ -177,7 +177,7 @@ private extension FlipAnimator {
   func animateFlipTransition(_ flippedSectionOfFromView: (UIView, UIView), flippedSectionOfToView: (UIView, UIView), completion: AnimatableCompletion) {
     UIView.animateKeyframes(withDuration: transitionDuration, delay: 0, options: .layoutSubviews, animations: {
       UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5, animations: { 
-        flippedSectionOfFromView.0.layer.transform = self.rotate(self.reverse ? -M_PI_2 : M_PI_2)
+        flippedSectionOfFromView.0.layer.transform = self.rotate(self.reverse ? -.pi * 2 : .pi * 2)
         flippedSectionOfFromView.1.alpha = 1.0
       })
       

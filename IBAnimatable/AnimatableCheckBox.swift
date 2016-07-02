@@ -107,7 +107,7 @@ import UIKit
   @IBInspectable private var maskType: String? {
     didSet {
       if let maskType = maskType {
-        eMaskType = MaskType(string:maskType);
+        eMaskType = MaskType(string:maskType)
       }
     }
   }
