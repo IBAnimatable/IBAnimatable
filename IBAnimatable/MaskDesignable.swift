@@ -70,8 +70,6 @@ public extension MaskDesignable where Self: UIView {
   
   // MARK: - Star
   
-  
-  
   // See https://www.weheartswift.com/bezier-paths-gesture-recognizers/
   private func maskStar(_ points: Int = 5) {
     // FIXME: Do not mask the shadow.
