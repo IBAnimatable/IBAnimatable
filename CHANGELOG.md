@@ -14,6 +14,22 @@ None
 #### Bugfixes
 None
 
+### [2.4](https://github.com/JakeLin/IBAnimatable/releases/tag/2.4)
+
+#### API breaking changes
+None
+
+#### Enhancements
+- New designable properties for `UITextView`: placeholder text and color [#227](https://github.com/JakeLin/IBAnimatable/issues/227)
+- Add `AnimatableSlider` [#228](https://github.com/JakeLin/IBAnimatable/pull/228)
+- Add `AnimatableScrollView` [#232](https://github.com/JakeLin/IBAnimatable/pull/232)
+
+
+#### Bugfixes
+- Use `UIBezierPath` to mask `Circle`, which can fix a bug when uses Circle mask with `borderSide` [#234](https://github.com/JakeLin/IBAnimatable/pull/234)
+- Fix a bug for `Polygon` mask when the `width` is longer than the `height`. [#234](https://github.com/JakeLin/IBAnimatable/pull/234)
+- Fix a crash when the parameters number of `Wave` mask is not 3. [#234](https://github.com/JakeLin/IBAnimatable/pull/234)
+
 ### [2.3](https://github.com/JakeLin/IBAnimatable/releases/tag/2.3)
 #### API breaking changes
 

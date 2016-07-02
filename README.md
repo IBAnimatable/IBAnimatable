@@ -25,6 +25,9 @@ With `IBAnimatable`, we can design a UI in Interface Builder like what we can do
 
 As a designer, we love Sketch, which is a simple but yet super powerful tool to create UI. However, Sketch can't design interaction, navigation, transition and animation, and we may need another tool like Framer to design some of them. Moreover, to make an App Store ready App, we need to use Xcode and Interface Builder to implement the UI and animations. To speed up the process and minimize the waste, we create `IBAnimatable` to make Interface Builder designable and animatable.   
 
+## Interested in Swift 3?
+Please check out [swift3 branch](https://github.com/JakeLin/IBAnimatable/tree/swift3), we are working on cool stuff.
+
 ## Languages
 [中文](https://github.com/JakeLin/IBAnimatable/blob/master/Documentation/README.zh.md)
 
@@ -136,7 +139,7 @@ Add `pod 'IBAnimatable'` to your Podfile.
 
 ### [Carthage](https://github.com/Carthage/Carthage)
 
-Add `github "JakeLin/IBAnimatable" ~> 2.3` to your Cartfile.
+Add `github "JakeLin/IBAnimatable" ~> 2.4` to your Cartfile.
 
 Please Notice, there is [a limitation of a built framework for `@IBDesignable` and `@IBInspectable`](https://github.com/Carthage/Carthage/issues/335), that will impact on `IBAnimatable` when you use Carthage.
 
