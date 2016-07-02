@@ -15,16 +15,21 @@ public enum MaskType: IBEnum {
   case parallelogram(angle:Double?)
   case none
   
-  public enum WaveDirection:String {
+  public enum WaveDirection: String {
     case up
     case down
   }
 }
 
-
 public extension MaskType  {
-  init(string:String) {
-    let paramsAndName = MaskType.extractNameAndParams(string)
+  init(string: String?) {
+    // If the string is nil, return `.none`
+    guard let string = string else {
+      self = .none
+      return
+    }
+    
+    let paramsAndName = MaskType.extractNameAndParams(from: string)
     let name = paramsAndName.name
     let params = paramsAndName.params
     

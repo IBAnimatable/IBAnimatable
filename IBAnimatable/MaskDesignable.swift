@@ -10,7 +10,6 @@ public protocol MaskDesignable {
   
 }
 
-
 public extension MaskDesignable where Self: UIView {
   
   public func configMask() {

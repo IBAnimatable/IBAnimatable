@@ -110,13 +110,9 @@ import UIKit
   
   @IBInspectable private var maskType: String? {
     didSet {
-      if let maskType = maskType {
-        eMaskType = MaskType(string:maskType)
-      }
+      eMaskType = MaskType(string: maskType)
     }
   }
-  
-  
   
   // MARK: - Animatable
   @IBInspectable public var animationType: String?
