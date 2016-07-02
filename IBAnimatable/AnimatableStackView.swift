@@ -103,7 +103,7 @@ import UIKit
   @IBInspectable public var startPoint: String?
   
   // MARK: - MaskDesignable
-  public var eMaskType:MaskType = .none {
+  public var eMaskType: MaskType = .none {
     didSet {
       configMask()
       configBorder()

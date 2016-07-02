@@ -6,7 +6,7 @@
 import Foundation
 
 
-public protocol IBEnum  {
+public protocol IBEnum {
   init(string: String?)
 }
 
@@ -20,7 +20,7 @@ public extension IBEnum {
   /// Since "name(param1,param2,param3)" is the classic IBAnimatable format
   ///
   /// this method will return "wave"
-  static func extractNameAndParams(from string:String) -> (name:String, params:[String]) {
+  static func extractNameAndParams(from string: String) -> (name: String, params: [String]) {
     let tokens = string.components(separatedBy: CharacterSet(charactersIn: "()")).filter({!$0.isEmpty}) // extract params list   self.enumName
     let maskName = tokens.first ?? ""
     let paramsString = tokens.count >= 2 ? tokens[1] : ""

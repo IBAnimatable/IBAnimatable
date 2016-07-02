@@ -21,7 +21,7 @@ public enum MaskType: IBEnum {
   }
 }
 
-public extension MaskType  {
+public extension MaskType {
   init(string: String?) {
     // If the string is nil, return `.none`
     guard let string = string else {

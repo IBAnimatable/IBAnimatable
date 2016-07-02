@@ -97,7 +97,7 @@ import UIKit
   }
   
   // MARK: - MaskDesignable
-  public var eMaskType:MaskType = .none {
+  public var eMaskType: MaskType = .none {
     didSet {
       configMask()
       configBorder()

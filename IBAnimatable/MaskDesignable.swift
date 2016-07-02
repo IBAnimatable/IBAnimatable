@@ -112,12 +112,12 @@ public extension MaskDesignable where Self: UIView {
   
   // MARK: - Parallelogram
   
-  private func maskParallelogram(_ topLeftAngle:Double = 60) {
+  private func maskParallelogram(_ topLeftAngle: Double = 60) {
     let parallelogramPath = maskParallelogramBezierPath(topLeftAngle)
     drawPath(parallelogramPath)
   }
   
-  private func maskParallelogramBezierPath(_ topLeftAngle:Double) -> UIBezierPath {
+  private func maskParallelogramBezierPath(_ topLeftAngle: Double) -> UIBezierPath {
     let topLeftAngleRad = topLeftAngle * .pi / 180
     let path = UIBezierPath()
     let offset = abs(CGFloat(tan(topLeftAngleRad - .pi / 2)) * bounds.height)
@@ -157,7 +157,7 @@ public extension MaskDesignable where Self: UIView {
   // MARK: - Wave
   
   
-  private func maskWave(_ waveDirection:MaskType.WaveDirection, waveWidth: Float = 40.0, waveOffset: Float = 0.0) {
+  private func maskWave(_ waveDirection: MaskType.WaveDirection, waveWidth: Float = 40.0, waveOffset: Float = 0.0) {
     let wavePath = maskWaveBezierPath(waveDirection == .up, waveWidth: CGFloat(waveWidth), waveOffset: CGFloat(waveOffset))
     drawPath(wavePath)
   }
