@@ -65,19 +65,19 @@ import UIKit
       configShadowColor()
     }
   }
-
+  
   @IBInspectable public var shadowRadius: CGFloat = CGFloat.nan {
     didSet {
       configShadowRadius()
     }
   }
-
+  
   @IBInspectable public var shadowOpacity: CGFloat = CGFloat.nan {
     didSet {
       configShadowOpacity()
     }
   }
-
+  
   @IBInspectable public var shadowOffset: CGPoint = CGPoint(x: CGFloat.nan, y: CGFloat.nan) {
     didSet {
       configShadowOffset()
@@ -108,7 +108,7 @@ import UIKit
     }
   }
   
-  @IBInspectable private var maskType: String? {
+  @IBInspectable internal var maskType: String? {
     didSet {
       eMaskType = MaskType(string: maskType)
     }

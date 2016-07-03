@@ -85,7 +85,7 @@ import UIKit
     }
   }
   
-  @IBInspectable private var maskType: String? {
+  @IBInspectable internal var maskType: String? {
     didSet {
       eMaskType = MaskType(string: maskType)
     }
