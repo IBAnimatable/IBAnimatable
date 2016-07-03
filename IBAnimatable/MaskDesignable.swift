@@ -46,7 +46,7 @@ public extension MaskDesignable where Self: UIView {
   // MARK: - Polygon
   
   private func maskPolygon(_ sides: Int = 6) {
-    let polygonPath = maskPolygonBezierPath(sides)
+    let polygonPath = maskPolygonBezierPath(max(sides, 3))
     drawPath(polygonPath)
   }
   
