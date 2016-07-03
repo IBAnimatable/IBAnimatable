@@ -37,15 +37,15 @@ public extension MaskType {
     case "circle":
       self = .circle
     case "polygon":
-      self = .polygon(sides: nil)
+      self = .polygon(sides: Int(params[safe:0] ?? ""))
     case "star":
-      self = .star(points: Int(params[0]))
+      self = .star(points: Int(params[safe:0] ?? ""))
     case "triangle":
       self = .triangle
     case "wave":
-      self = .wave(direction: WaveDirection(rawValue:params[0].lowercased()), width: Float(params[1]), offset:Float(params[2]))
+      self = .wave(direction: WaveDirection(rawValue:(params[safe:0] ?? "").lowercased()), width: Float(params[safe:1] ?? ""), offset:Float(params[safe:2] ?? ""))
     case "parallelogram":
-      self = .parallelogram(angle: Double(params[0]))
+      self = .parallelogram(angle: Double(params[safe:0] ?? ""))
     default:
       self = .none
     }
