@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		33A8B9ED1C7E790800082529 /* SystemCubeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8B9EB1C7E790800082529 /* SystemCubeAnimator.swift */; };
 		33A8B9F01C7E7A4C00082529 /* TransitionFromDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8B9EE1C7E7A4C00082529 /* TransitionFromDirection.swift */; };
+		731205811D28A3830009BCAC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731205801D28A3830009BCAC /* Utils.swift */; };
 		73B7D8861D233FB700DD3F43 /* IBEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B7D8851D233FB700DD3F43 /* IBEnum.swift */; };
 		AE0D309A1CE149150093B578 /* UserInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE0D30991CE149150093B578 /* UserInterface.storyboard */; };
 		AE0D309C1CE14A170093B578 /* Animations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE0D309B1CE14A170093B578 /* Animations.storyboard */; };
@@ -154,6 +155,7 @@
 /* Begin PBXFileReference section */
 		33A8B9EB1C7E790800082529 /* SystemCubeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemCubeAnimator.swift; sourceTree = "<group>"; };
 		33A8B9EE1C7E7A4C00082529 /* TransitionFromDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionFromDirection.swift; sourceTree = "<group>"; };
+		731205801D28A3830009BCAC /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		73B7D8851D233FB700DD3F43 /* IBEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBEnum.swift; sourceTree = "<group>"; };
 		AE0B0FE91C25372200E36B78 /* TableViewCellDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellDesignable.swift; sourceTree = "<group>"; };
 		AE0B0FEB1C26397700E36B78 /* AnimatableCheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableCheckBox.swift; sourceTree = "<group>"; };
@@ -570,6 +572,7 @@
 				E20E911B1CAC421E00625094 /* TransitionHollowState.swift */,
 				AE9407881CAE871C0084BCB8 /* TransitionPageType.swift */,
 				AE6D430B1C98B658006E2F67 /* TransitionType.swift */,
+				731205801D28A3830009BCAC /* Utils.swift */,
 			);
 			name = enum;
 			sourceTree = "<group>";
@@ -850,6 +853,7 @@
 				AE154B7F1C7D061A0093C05B /* TransitionAnimationType.swift in Sources */,
 				AE677B991CADCF6500D62273 /* SystemCameraIrisAnimator.swift in Sources */,
 				E299DF5C1CD6067C00EC30D4 /* PresentCardsSegue.swift in Sources */,
+				731205811D28A3830009BCAC /* Utils.swift in Sources */,
 				AE6B016F1C2A444900950BB2 /* MaskDesignable.swift in Sources */,
 				AE6B01741C2A444900950BB2 /* SideImageDesignable.swift in Sources */,
 				E222CDC61CC3EA7400684CA0 /* PortalAnimator.swift in Sources */,
