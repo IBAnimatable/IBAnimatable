@@ -6,15 +6,14 @@
 import UIKit
 
 public protocol MaskDesignable {
-  var eMaskType: MaskType { get set }
-  
+  var maskType: MaskType { get set }
 }
 
 public extension MaskDesignable where Self: UIView {
   
   public func configMask() {
     
-    switch eMaskType {
+    switch maskType {
     case .circle:
       maskCircle()
     case .parallelogram(let angle):

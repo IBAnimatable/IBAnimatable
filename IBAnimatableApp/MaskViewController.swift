@@ -15,9 +15,9 @@ class MaskViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    let eMaskType = MaskType(string: maskType)
-    maskedView.eMaskType = eMaskType
-    maskedImageView.eMaskType = eMaskType
+    let maskType = MaskType(string: self.maskType)
+    maskedView.maskType = maskType
+    maskedImageView.maskType = maskType
   }
   
 }
