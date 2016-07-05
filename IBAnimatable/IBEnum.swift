@@ -12,7 +12,6 @@ public protocol IBEnum: StringLiteralConvertible {
 
 public extension IBEnum {
   
-  
   /// Helper function that returns a tuple containing the name and params
   ///
   ///
