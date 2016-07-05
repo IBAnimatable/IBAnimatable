@@ -44,7 +44,7 @@ public extension MaskDesignable where Self: UIView {
   
   // MARK: - Polygon
   
-  private func maskPolygon(_ sides: Int = 6) {
+  private func maskPolygon(_ sides: Int) {
     let polygonPath = maskPolygonBezierPath(max(sides, 3))
     drawPath(polygonPath)
   }
@@ -69,7 +69,7 @@ public extension MaskDesignable where Self: UIView {
   // MARK: - Star
   
   // See https://www.weheartswift.com/bezier-paths-gesture-recognizers/
-  private func maskStar(_ points: Int = 5) {
+  private func maskStar(_ points: Int) {
     // FIXME: Do not mask the shadow.
     
     // Stars must has at least 3 points.
@@ -111,7 +111,7 @@ public extension MaskDesignable where Self: UIView {
   
   // MARK: - Parallelogram
   
-  private func maskParallelogram(_ topLeftAngle: Double = 60) {
+  private func maskParallelogram(_ topLeftAngle: Double) {
     let parallelogramPath = maskParallelogramBezierPath(topLeftAngle)
     drawPath(parallelogramPath)
   }
@@ -156,7 +156,7 @@ public extension MaskDesignable where Self: UIView {
   // MARK: - Wave
   
   
-  private func maskWave(_ waveDirection: MaskType.WaveDirection, waveWidth: Float = 40.0, waveOffset: Float = 0.0) {
+  private func maskWave(_ waveDirection: MaskType.WaveDirection, waveWidth: Float , waveOffset: Float) {
     let wavePath = maskWaveBezierPath(waveDirection == .up, waveWidth: CGFloat(waveWidth), waveOffset: CGFloat(waveOffset))
     drawPath(wavePath)
   }
