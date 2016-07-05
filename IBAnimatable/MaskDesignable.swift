@@ -156,7 +156,7 @@ public extension MaskDesignable where Self: UIView {
   // MARK: - Wave
   
   
-  private func maskWave(_ waveDirection: MaskType.WaveDirection, waveWidth: Float , waveOffset: Float) {
+  private func maskWave(_ waveDirection: MaskType.WaveDirection, waveWidth: Float, waveOffset: Float) {
     let wavePath = maskWaveBezierPath(waveDirection == .up, waveWidth: CGFloat(waveWidth), waveOffset: CGFloat(waveOffset))
     drawPath(wavePath)
   }
