@@ -6,7 +6,7 @@
 import Foundation
 
 
-public protocol IBEnum {
+public protocol IBEnum: StringLiteralConvertible {
   init(string: String?)
 }
 
@@ -28,4 +28,21 @@ public extension IBEnum {
     return (name:maskName, params:params)
   }
   
+}
+
+
+ public extension IBEnum {
+  init(stringLiteral value: String) {
+    self.init(string:value)
+  }
+  
+  init(unicodeScalarLiteral value: String) {
+    self.init(string:value)
+
+  }
+  
+  init(extendedGraphemeClusterLiteral value: String) {
+    self.init(string:value)
+  }
+
 }
