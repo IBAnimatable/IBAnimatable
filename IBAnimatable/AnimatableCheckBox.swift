@@ -104,6 +104,7 @@ import UIKit
     }
   }
   
+  /// The mask type used in Interface Builder. **Should not** this property in code.
   @IBInspectable var _maskType: String? {
     didSet {
       maskType = MaskType(string: _maskType)

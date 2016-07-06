@@ -6,33 +6,33 @@
 import Foundation
 import UIKit
 
-/// Add a masking shape.
+/**
+ Mask type for masking an IBAnimatable UI element.
+ 
+ - circle: For circle shape with diameter equals to min(width, height).
+ - polygon: For polygon shape with `n` sides. (min: 3, the default: 6).
+ - star: For star shape with n points (min: 3, default:6)
+ - triangle: For isosceles triangle shape. The triangle's height is equal to the view's frame height. If the view is a square, the triangle is equilateral.
+ - wave: For wave shape with `direction` (up or down, default: up), width (default: 40) and offset (default: 0)
+ - parallelogram: For parallelogram shape with an angle (default: 60). If `angle == 90` then it is a rectangular mask. If `angle < 90` then is a left-oriented parallelogram \\-\\
+ - none: For no mask, if the input `string` of `init` is nil, the value of the neum is `.none`. If the `string` can not be mapped to supported mask type, it will set to default value `.none`.
+ */
+
 public enum MaskType: IBEnum {
-  
-  /// Circle shape with diameter equals to min(width, height)
   case circle
-  
-  ///  Polygon shape with n sides. (min 3, default)
   case polygon(sides:Int?)
-  /// Star shape with n points (min 3, default:6)
-  
   case star(points:Int?)
-  /// Isocele triangle shape. The triangle's height is equal to the view's frame height. If the view is a square, Triangle is equilateral.
   case triangle
-  
-  /// Wave shape, with
-  /// direction (up or down, default : up)
-  /// width (default 40)
-  /// offset (default : 0)
   case wave(direction:WaveDirection?, width:Float?, offset:Float?)
-  
-  /// Parallelogram Mask with angle (defalut : 60) 
-  /// If angle == 90 => Rectangular Mask
-  /// If angle < 90 => left oriented parallelogram \-\
   case parallelogram(angle:Double?)
-  /// No mask.
   case none
   
+  /**
+   Wave direction for `wave` shape.
+   
+   - up: For the wave facing up.
+   - down: For the wave facing down.
+   */
   public enum WaveDirection: String {
     case up
     case down
@@ -41,15 +41,14 @@ public enum MaskType: IBEnum {
 
 public extension MaskType {
   init(string: String?) {
-    // If the string is nil, return `.none`
     guard let string = string else {
       self = .none
       return
     }
     
-    let paramsAndName = MaskType.extractNameAndParams(from: string)
-    let name = paramsAndName.name
-    let params = paramsAndName.params
+    let nameAndParames = MaskType.extractNameAndParams(from: string)
+    let name = nameAndParames.name
+    let params = nameAndParames.params
     
     switch name.lowercased() {
     case "circle":
