@@ -7,7 +7,7 @@ import Foundation
 
 /**
  A protocol provides extension method for converting `String` into `enum`.
- Because `@IBInspectable` property can not support `enum` directly. To provide both programmatical `enum` API and `@IBInspectable` supported type `String`, we use `IBEnum` to bridge Swift `enum` and `String`
+ Because `@IBInspectable` property can not support `enum` directly. To provide both `enum` API in code and `@IBInspectable` supported type `String` in Interface Builder, we use `IBEnum` to bridge Swift `enum` and `String`
  */
 public protocol IBEnum: StringLiteralConvertible {
   /**
