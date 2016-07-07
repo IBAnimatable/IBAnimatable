@@ -46,7 +46,7 @@ public class SystemCubeAnimator: NSObject, AnimatedTransitioning {
 
 extension SystemCubeAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-    return retrieveTransitionDuration(transitionContext)
+    return getTransitionDuration(using: transitionContext)
   }
   
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {

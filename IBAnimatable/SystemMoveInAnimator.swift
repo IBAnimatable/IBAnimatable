@@ -44,7 +44,7 @@ public class SystemMoveInAnimator: NSObject, AnimatedTransitioning {
 
 extension SystemMoveInAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-    return retrieveTransitionDuration(transitionContext)
+    return getTransitionDuration(using: transitionContext)
   }
   
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {

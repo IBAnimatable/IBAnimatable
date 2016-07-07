@@ -52,11 +52,11 @@ public class TurnAnimator: NSObject, AnimatedTransitioning {
 
 extension TurnAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-    return retrieveTransitionDuration(transitionContext)
+    return getTransitionDuration(using: transitionContext)
   }
   
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-    let (tempfromView, tempToView, tempContainerView) = retrieveViews(transitionContext)
+    let (tempfromView, tempToView, tempContainerView) = getViews(using: transitionContext)
     guard let fromView = tempfromView, toView = tempToView, containerView = tempContainerView else {
       transitionContext.completeTransition(true)
       return

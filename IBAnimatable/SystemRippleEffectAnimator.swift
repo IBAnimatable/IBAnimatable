@@ -22,10 +22,10 @@ public class SystemRippleEffectAnimator: NSObject, AnimatedTransitioning {
 
 extension SystemRippleEffectAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-    return retrieveTransitionDuration(transitionContext)
+    return getTransitionDuration(using: transitionContext)
   }
   
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-    animateWithCATransition(transitionContext, type: SystemTransitionType.rippleEffect, subtype: nil)
+    animateWithCATransition(using: transitionContext, type: SystemTransitionType.rippleEffect, subtype: nil)
   }
 }
