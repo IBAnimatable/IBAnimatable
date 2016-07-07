@@ -104,7 +104,7 @@ import UIKit
 
   override public var textContainerInset: UIEdgeInsets {
     didSet {
-      update(&placeholderLabelConstraints, for: placeholderLabel)
+      update(placeholderLabel, using: &placeholderLabelConstraints)
     }
   }
 
@@ -147,6 +147,5 @@ import UIKit
   private func configAfterLayoutSubviews() {
     configBorder()
     placeholderLabel.preferredMaxLayoutWidth = textContainer.size.width - textContainer.lineFragmentPadding * 2.0
-
   }
 }
