@@ -104,7 +104,7 @@ import UIKit
 
   override public var textContainerInset: UIEdgeInsets {
     didSet {
-      update(constraints: &placeholderLabelConstraints, for: placeholderLabel)
+      update(&placeholderLabelConstraints, for: placeholderLabel)
     }
   }
 
@@ -130,14 +130,14 @@ import UIKit
   }
 
   deinit {
-    NotificationCenter.default().removeObserver(self, name: NSNotification.Name.UITextViewTextDidChange, object: nil)
+    NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UITextViewTextDidChange, object: nil)
   }
   
   // MARK: - Private
   private func configInspectableProperties() {
     configAnimatableProperties()
-    config(placeholderLabel: placeholderLabel, placeholderLabelConstraints: &placeholderLabelConstraints)
-    NotificationCenter.default().addObserver(self, selector: #selector(textDidChange), name: NSNotification.Name.UITextViewTextDidChange, object: nil)
+    config(placeholderLabel, placeholderLabelConstraints: &placeholderLabelConstraints)
+    NotificationCenter.default.addObserver(self, selector: #selector(textDidChange), name: NSNotification.Name.UITextViewTextDidChange, object: nil)
   }
 
   @objc private func textDidChange() {

@@ -26,7 +26,7 @@ public extension PlaceholderDesignable where Self: UITextField {
 
 public extension PlaceholderDesignable where Self: UITextView {
 
-  public func config(placeholderLabel: UILabel, placeholderLabelConstraints: inout [NSLayoutConstraint]) {
+  public func config(_ placeholderLabel: UILabel, placeholderLabelConstraints: inout [NSLayoutConstraint]) {
     placeholderLabel.font = font
     placeholderLabel.textColor = placeholderColor
     placeholderLabel.textAlignment = textAlignment
@@ -35,10 +35,10 @@ public extension PlaceholderDesignable where Self: UITextView {
     placeholderLabel.backgroundColor = .clear()
     placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
     addSubview(placeholderLabel)
-    update(constraints: &placeholderLabelConstraints, for: placeholderLabel)
+    update(&placeholderLabelConstraints, for: placeholderLabel)
   }
 
-  public func update(constraints: inout [NSLayoutConstraint], for placeholderLabel: UILabel) {
+  public func update(_ constraints: inout [NSLayoutConstraint], for placeholderLabel: UILabel) {
     var newConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-(\(textContainerInset.left + textContainer.lineFragmentPadding))-[placeholder]",
                                                                         options: [], metrics: nil,
                                                                         views: ["placeholder": placeholderLabel])
