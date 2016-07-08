@@ -1,7 +1,7 @@
 //: ## Predefined Animations
 
 import UIKit
-import XCPlayground
+import PlaygroundSupport
 import IBAnimatable
 
 //: Constants
@@ -13,20 +13,22 @@ let animatableViewY = (iPhoneHeight - animatableViewWidth) / 2
 
 //: Set up the iPhone View
 let iPhoneView = UIView(frame: CGRect(x: 0, y: 0, width: iPhoneWidth, height: iPhoneHeight))
-iPhoneView.backgroundColor = .whiteColor()
-XCPlaygroundPage.currentPage.liveView = iPhoneView
+iPhoneView.backgroundColor = .white()
+PlaygroundPage.current.liveView = iPhoneView
 
-//: Set up the animatable View
+
+////: Set up the animatable View
 let view = AnimatableView(frame: CGRect(x: animatableViewX, y: animatableViewY, width: animatableViewWidth, height: animatableViewWidth))
 view.configAnimatableProperties()
 iPhoneView.addSubview(view)
 
-view.fillColor = UIColor(red: 0xba/0xff, green: 0x77/0xff, blue: 1, alpha: 1)
+view.fillColor = #colorLiteral(red: 0.7098039216, green: 0.4549019608, blue: 0.9607843137, alpha: 1)
 view.borderWidth = 2
-view.borderColor = .purpleColor()
-view.maskType = String(MaskType.Circle)
+view.borderColor = .purple()
+view.maskType = .circle
 
-// For moveTo or moveBy animation
+
+// For `moveTo` or `moveBy` animation
 view.x = -100
 view.y = 200
 
@@ -34,9 +36,6 @@ view.y = 200
 
 // Uncomment one line to play the animation
 
-//view.moveX()
-//view.moveY()
-//view.moveXY()
 //view.slideInLeft()
 //view.slideInRight()
 //view.slideInDown()
@@ -76,7 +75,7 @@ view.y = 200
 //view.zoomIn()
 //view.zoomOut()
 //view.shake()
-//view.pop()
+view.pop()
 //view.flipX()
 //view.flipY()
 //view.morph()
@@ -87,6 +86,6 @@ view.y = 200
 //view.rotate()
 //view.rotate(clockwise: false)
 //view.moveTo()
-view.moveBy()
+//view.moveBy()
 
 //: [Next](@next)
