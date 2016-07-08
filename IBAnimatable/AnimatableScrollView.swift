@@ -102,10 +102,17 @@ import UIKit
   @IBInspectable public var startPoint: String?
   
   // MARK: - MaskDesignable
-  @IBInspectable public var maskType: String? {
+  public var maskType: MaskType = .none {
     didSet {
       configMask()
       configBorder()
+    }
+  }
+  
+  /// The mask type used in Interface Builder. **Should not** use this property in code.
+  @IBInspectable var _maskType: String? {
+    didSet {
+      maskType = MaskType(string: _maskType)
     }
   }
   

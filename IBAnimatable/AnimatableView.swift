@@ -65,19 +65,19 @@ import UIKit
       configShadowColor()
     }
   }
-
+  
   @IBInspectable public var shadowRadius: CGFloat = CGFloat.nan {
     didSet {
       configShadowRadius()
     }
   }
-
+  
   @IBInspectable public var shadowOpacity: CGFloat = CGFloat.nan {
     didSet {
       configShadowOpacity()
     }
   }
-
+  
   @IBInspectable public var shadowOffset: CGPoint = CGPoint(x: CGFloat.nan, y: CGFloat.nan) {
     didSet {
       configShadowOffset()
@@ -101,13 +101,20 @@ import UIKit
   @IBInspectable public var startPoint: String?
   
   // MARK: - MaskDesignable
-  @IBInspectable public var maskType: String? {
+  public var maskType: MaskType = .none {
     didSet {
       configMask()
       configBorder()
     }
   }
   
+  /// The mask type used in Interface Builder. **Should not** use this property in code.
+  @IBInspectable var _maskType: String? {
+    didSet {
+      maskType = MaskType(string: _maskType)
+    }
+  }
+
   // MARK: - Animatable
   @IBInspectable public var animationType: String?
   @IBInspectable public var autoRun: Bool = true

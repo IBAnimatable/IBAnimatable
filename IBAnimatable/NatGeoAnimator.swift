@@ -173,7 +173,7 @@ private extension NatGeoAnimator {
   }
 
   func radianFromDegree(_ degrees: Double) -> CGFloat {
-    return CGFloat((degrees / 180) * M_PI)
+    return CGFloat((degrees / 180) * .pi)
   }
 
   func animationDidFinish(_ transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {

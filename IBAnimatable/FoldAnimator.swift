@@ -128,14 +128,14 @@ private extension FoldAnimator {
       axesValues = valuesForAxe(self.reverse ? width : 0.0, reverseValue: height / 2)
       leftToViewFold.layer.position = CGPoint(x: axesValues.0, y: axesValues.1)
       axesValues = valuesForAxe(0.0, reverseValue: 1.0)
-      leftToViewFold.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI_2), axesValues.0, axesValues.1, 0.0)
+      leftToViewFold.layer.transform = CATransform3DMakeRotation(.pi * 2, axesValues.0, axesValues.1, 0.0)
       toViewFolds.append(leftToViewFold)
 
       let rightToViewFold = createSnapshot(fromView: toView, afterUpdates: true, offset: offset + foldSize, left: false)
       axesValues = valuesForAxe(self.reverse ? width : 0.0, reverseValue: height / 2)
       rightToViewFold.layer.position = CGPoint(x: axesValues.0, y: axesValues.1)
       axesValues = valuesForAxe(0.0, reverseValue: 1.0)
-      rightToViewFold.layer.transform = CATransform3DMakeRotation(CGFloat(-M_PI_2), axesValues.0, axesValues.1, 0.0)
+      rightToViewFold.layer.transform = CATransform3DMakeRotation(-.pi * 2, axesValues.0, axesValues.1, 0.0)
       toViewFolds.append(rightToViewFold)
     }
     return [toViewFolds, fromViewFolds]
@@ -204,14 +204,14 @@ private extension FoldAnimator {
         var axesValues = self.valuesForAxe(self.reverse ? 0.0 : self.width, reverseValue: self.height / 2)
         leftFromView.layer.position = CGPoint(x: axesValues.0, y: axesValues.1)
         axesValues = self.valuesForAxe(0.0, reverseValue: 1.0)
-        leftFromView.layer.transform = CATransform3DRotate(self.transform, CGFloat(M_PI_2), axesValues.0, axesValues.1, 0)
+        leftFromView.layer.transform = CATransform3DRotate(self.transform, .pi * 2, axesValues.0, axesValues.1, 0)
         leftFromView.subviews[1].alpha = 1.0
         
         let rightFromView = fromViewFolds[i * 2 + 1]
         axesValues = self.valuesForAxe(self.reverse ? 0.0 : self.width, reverseValue: self.height / 2)
         rightFromView.layer.position = CGPoint(x: axesValues.0, y: axesValues.1)
         axesValues = self.valuesForAxe(0.0, reverseValue: 1.0)
-        rightFromView.layer.transform = CATransform3DRotate(self.transform, CGFloat(-M_PI_2), axesValues.0, axesValues.1, 0)
+        rightFromView.layer.transform = CATransform3DRotate(self.transform, -.pi * 2, axesValues.0, axesValues.1, 0)
         rightFromView.subviews[1].alpha = 1.0
         
         let leftToView = toViewFolds[i * 2]
