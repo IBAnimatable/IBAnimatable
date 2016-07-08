@@ -28,6 +28,7 @@ public class PhoneView: UIView {
   }
 }
 
+//: Circle View subclassed from `AnimatableView`
 public class CircleView: AnimatableView {
   public init() {
     let frame = CGRect(x: animatableViewX, y: animatableViewY, width: animatableViewWidth, height: animatableViewWidth)

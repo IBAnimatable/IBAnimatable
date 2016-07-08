@@ -7,7 +7,7 @@ import IBAnimatable
 let iPhoneView = PhoneView()
 PlaygroundPage.current.liveView = iPhoneView
 
-//////: Set up the animatable View
+//: Set up the animatable View
 let view = CircleView()
 iPhoneView.addSubview(view)
 
