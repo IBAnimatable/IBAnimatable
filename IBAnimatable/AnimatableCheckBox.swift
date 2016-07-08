@@ -154,7 +154,7 @@ import UIKit
   private func setup() {
     // No title for CheckBox
     setTitle("", for: UIControlState())
-    tintColor = UIColor.clear()
+    tintColor = .clear()
   }
   
   private func configInspectableProperties() {

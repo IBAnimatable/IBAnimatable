@@ -51,6 +51,6 @@ extension SystemFlipAnimator: UIViewControllerAnimatedTransitioning {
   }
   
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-    animateWithCATransition(transitionContext, type: SystemTransitionType.flip, subtype: fromDirection.CATransitionSubtype)
+    animateWithCATransition(using: transitionContext, type: SystemTransitionType.flip, subtype: fromDirection.CATransitionSubtype)
   }
 }

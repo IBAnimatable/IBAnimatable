@@ -48,6 +48,6 @@ extension SystemMoveInAnimator: UIViewControllerAnimatedTransitioning {
   }
   
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-    animateWithCATransition(transitionContext, type: SystemTransitionType.moveIn, subtype: fromDirection.CATransitionSubtype)
+    animateWithCATransition(using: transitionContext, type: SystemTransitionType.moveIn, subtype: fromDirection.CATransitionSubtype)
   }
 }
