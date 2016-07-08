@@ -65,7 +65,7 @@ private extension MaskDesignable where Self: UIView {
     let origin = CGPoint(x: (bounds.width - diameter) / 2.0, y: (bounds.height - diameter) / 2.0)
     let size = CGSize(width: diameter, height: diameter)
     let circlePath = UIBezierPath(ovalIn: CGRect(origin: origin, size: size))
-    draw(path: circlePath)
+    draw(circlePath)
   }
   
   // MARK: - Polygon
@@ -77,7 +77,7 @@ private extension MaskDesignable where Self: UIView {
    */
   func maskPolygon(with sides: Int) {
     let polygonPath = getPolygonBezierPath(with: max(sides, 3))
-    draw(path: polygonPath)
+    draw(polygonPath)
   }
   
   /**
@@ -120,7 +120,7 @@ private extension MaskDesignable where Self: UIView {
     }
     
     let path = getStarPath(with: starPoints)
-    draw(path: path)
+    draw(path)
   }
   
   /**
@@ -163,7 +163,7 @@ private extension MaskDesignable where Self: UIView {
    */
   func maskParallelogram(with topLeftAngle: Double) {
     let parallelogramPath = getParallelogramBezierPath(with: topLeftAngle)
-    draw(path: parallelogramPath)
+    draw(parallelogramPath)
   }
   
   /**
@@ -199,7 +199,7 @@ private extension MaskDesignable where Self: UIView {
    */
   func maskTriangle() {
     let trianglePath = getTriangleBezierPath()
-    draw(path: trianglePath)
+    draw(trianglePath)
   }
   
   /**
@@ -228,7 +228,7 @@ private extension MaskDesignable where Self: UIView {
    */
   func maskWave(with direction: MaskType.WaveDirection, width: Float, offset: Float) {
     let wavePath = getWaveBezierPath(with: direction == .up, width: CGFloat(width), offset: CGFloat(offset))
-    draw(path: wavePath)
+    draw(wavePath)
   }
   
   /**
@@ -278,7 +278,7 @@ private extension MaskDesignable where Self: UIView {
    
    - Parameter path: The Bezier path to draw.
    */
-  func draw(path: UIBezierPath) {
+  func draw(_ path: UIBezierPath) {
     layer.mask?.removeFromSuperlayer()
     
     let maskLayer = CAShapeLayer()

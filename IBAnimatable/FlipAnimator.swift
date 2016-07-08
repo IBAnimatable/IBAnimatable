@@ -43,12 +43,12 @@ public class FlipAnimator: NSObject, AnimatedTransitioning {
 }
 
 extension FlipAnimator: UIViewControllerAnimatedTransitioning {
-  public func transitionDuration(_ transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-    return retrieveTransitionDuration(transitionContext)
+  public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    return getTransitionDuration(using: transitionContext)
   }
   
-  public func animateTransition(_ transitionContext: UIViewControllerContextTransitioning) {
-    let (tempfromView, tempToView, tempContainerView) = retrieveViews(transitionContext)
+  public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+    let (tempfromView, tempToView, tempContainerView) = getViews(using: transitionContext)
     guard let fromView = tempfromView, toView = tempToView, containerView = tempContainerView else {
       transitionContext.completeTransition(true)
       return
