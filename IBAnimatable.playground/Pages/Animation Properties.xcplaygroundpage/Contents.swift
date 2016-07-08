@@ -3,7 +3,7 @@
 //: ## Animation Properties
 
 import UIKit
-import XCPlayground
+import PlaygroundSupport
 import IBAnimatable
 
 //: Constants

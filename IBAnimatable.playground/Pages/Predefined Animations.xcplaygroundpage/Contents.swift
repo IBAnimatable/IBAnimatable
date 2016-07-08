@@ -4,29 +4,12 @@ import UIKit
 import PlaygroundSupport
 import IBAnimatable
 
-//: Constants
-let iPhoneWidth = 375
-let iPhoneHeight = 667
-let animatableViewWidth = 100
-let animatableViewX = (iPhoneWidth - animatableViewWidth) / 2
-let animatableViewY = (iPhoneHeight - animatableViewWidth) / 2
-
-//: Set up the iPhone View
-let iPhoneView = UIView(frame: CGRect(x: 0, y: 0, width: iPhoneWidth, height: iPhoneHeight))
-iPhoneView.backgroundColor = .white()
+let iPhoneView = PhoneView()
 PlaygroundPage.current.liveView = iPhoneView
 
-
-////: Set up the animatable View
-let view = AnimatableView(frame: CGRect(x: animatableViewX, y: animatableViewY, width: animatableViewWidth, height: animatableViewWidth))
-view.configAnimatableProperties()
+//////: Set up the animatable View
+let view = CircleView()
 iPhoneView.addSubview(view)
-
-view.fillColor = #colorLiteral(red: 0.7098039216, green: 0.4549019608, blue: 0.9607843137, alpha: 1)
-view.borderWidth = 2
-view.borderColor = .purple()
-view.maskType = .circle
-
 
 // For `moveTo` or `moveBy` animation
 view.x = -100
@@ -74,8 +57,8 @@ view.y = 200
 //view.squeezeFadeOutUp()
 //view.zoomIn()
 //view.zoomOut()
-//view.shake()
-view.pop()
+view.shake()
+//view.pop()
 //view.flipX()
 //view.flipY()
 //view.morph()
