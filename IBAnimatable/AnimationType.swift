@@ -60,4 +60,16 @@ public enum AnimationType: String {
   case rotateCCW
   case moveTo
   case moveBy
+  case none
+}
+
+extension AnimationType : IBEnum {
+  public init(string: String?) {
+    
+    if let string = string {
+      self = AnimationType(rawValue: string) ?? .none
+    } else {
+      self = .none
+    }
+  }
 }
