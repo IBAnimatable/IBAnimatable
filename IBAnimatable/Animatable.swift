@@ -8,9 +8,9 @@ import UIKit
 public protocol Animatable: class {
   
   /**
-    String value of `AnimationType` enum
+     `AnimationType` enum
   */
-  var animationType: String? { get set }
+  var animationType: AnimationType { get set }
   
   /**
    Auto run flag, if `true` it will automatically start animation when `layoutSubviews`. Default should be `true`
@@ -82,9 +82,7 @@ public extension Animatable where Self: UIView {
   }
   
   public func animate(_ completion: AnimatableCompletion? = nil) {
-    guard let unwrappedAnimationTypeString = animationType, animationType = AnimationType(rawValue: unwrappedAnimationTypeString) else {
-      return
-    }
+
     
     switch animationType {
     case .slideInLeft:
@@ -189,6 +187,8 @@ public extension Animatable where Self: UIView {
       moveTo(completion)
     case .moveBy:
       moveBy(completion)
+    case .none:
+      break
     }
   }
   
