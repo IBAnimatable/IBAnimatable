@@ -18,6 +18,15 @@ public protocol IBEnum: StringLiteralConvertible {
   init(string: String?)
 }
 
+extension RawRepresentable where RawValue == String {
+  init?(raw: String?) {
+    guard let string = raw else {
+      return nil
+    }
+    self.init(rawValue:string)
+  }
+}
+
 public extension IBEnum {
   /**
    Helper function that returns a tuple containing the name and params from a string `string`
