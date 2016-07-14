@@ -31,7 +31,9 @@ public extension BlurDesignable where Self: UIView {
     let blurEffectView = createVisualEffectView(UIBlurEffect(style: style))
     if let unwrappedVibrancyStyle = vibrancyEffectStyle, vibrancyStyle = blurEffectStyle(from: unwrappedVibrancyStyle) {
       let vibrancyEffectView = createVisualEffectView(UIVibrancyEffect(forBlurEffect: UIBlurEffect(style: vibrancyStyle)))
-      vibrancyEffectView.addSubview(UIImageView(image: UIImage(named: "checked")))
+      subviews.forEach {
+        vibrancyEffectView.addSubview($0)
+      }
       blurEffectView.contentView.addSubview(vibrancyEffectView)
     }
     insertSubview(blurEffectView, atIndex: 0)
