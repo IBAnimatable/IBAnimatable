@@ -21,32 +21,32 @@ import UIKit
       configFillColor()
     }
   }
-  
+
   @IBInspectable public var predefinedColor: String? {
     didSet {
       configFillColor()
     }
   }
-  
+
   @IBInspectable public var opacity: CGFloat = CGFloat.nan {
     didSet {
       configOpacity()
     }
   }
-  
+
   // MARK: - BorderDesignable
   @IBInspectable public var borderColor: UIColor? {
     didSet {
       configBorder()
     }
   }
-  
+
   @IBInspectable public var borderWidth: CGFloat = CGFloat.nan {
     didSet {
       configBorder()
     }
   }
-  
+
   @IBInspectable public var borderSide: String? {
     didSet {
       configBorder()
@@ -59,7 +59,7 @@ import UIKit
       configRotate()
     }
   }
-  
+
   // MARK: - ShadowDesignable
   @IBInspectable public var shadowColor: UIColor? {
     didSet {
@@ -86,15 +86,23 @@ import UIKit
   }
   
   // MARK: - BlurDesignable
-  @IBInspectable public var blurEffectStyle: String?
-  @IBInspectable public var blurOpacity: CGFloat = CGFloat.nan
-  
+  @IBInspectable public var blurEffectStyle: String? {
+    didSet {
+      configBlurEffectStyle()
+    }
+  }
+  @IBInspectable public var blurOpacity: CGFloat = CGFloat.nan {
+    didSet {
+      configBlurEffectStyle()
+    }
+  }
+
   // MARK: - TintDesignable
   @IBInspectable public var tintOpacity: CGFloat = CGFloat.nan
   @IBInspectable public var shadeOpacity: CGFloat = CGFloat.nan
   @IBInspectable public var toneColor: UIColor?
   @IBInspectable public var toneOpacity: CGFloat = CGFloat.nan
-  
+
   // MARK: - GradientDesignable
   @IBInspectable public var startColor: UIColor?
   @IBInspectable public var endColor: UIColor?
@@ -133,25 +141,25 @@ import UIKit
     super.prepareForInterfaceBuilder()
     configInspectableProperties()
   }
-  
+
   public override func awakeFromNib() {
     super.awakeFromNib()
     configInspectableProperties()
   }
-  
+
   public override func layoutSubviews() {
     super.layoutSubviews()
     configAfterLayoutSubviews()
     autoRunAnimation()
   }
-  
+
   // MARK: - Private
   private func configInspectableProperties() {
     configAnimatableProperties()
     configTintedColor()
     configBlurEffectStyle()
   }
-  
+
   private func configAfterLayoutSubviews() {
     configMask()
     configBorder()
