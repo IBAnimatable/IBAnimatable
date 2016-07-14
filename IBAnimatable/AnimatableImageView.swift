@@ -91,6 +91,12 @@ import UIKit
     }
   }
 
+  @IBInspectable public var vibrancyEffectStyle: String? {
+    didSet {
+      configBlurEffectStyle()
+    }
+  }
+
   @IBInspectable public var blurOpacity: CGFloat = CGFloat.NaN {
     didSet {
       configBlurEffectStyle()
