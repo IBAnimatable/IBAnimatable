@@ -85,8 +85,17 @@ import UIKit
   }
   
   // MARK: - BlurDesignable
-  @IBInspectable public var blurEffectStyle: String?
-  @IBInspectable public var blurOpacity: CGFloat = CGFloat.NaN
+  @IBInspectable public var blurEffectStyle: String? {
+    didSet {
+      configBlurEffectStyle()
+    }
+  }
+
+  @IBInspectable public var blurOpacity: CGFloat = CGFloat.NaN {
+    didSet {
+      configBlurEffectStyle()
+    }
+  }
   
   // MARK: - TintDesignable
   @IBInspectable public var tintOpacity: CGFloat = CGFloat.NaN
