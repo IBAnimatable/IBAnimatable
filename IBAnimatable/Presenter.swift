@@ -79,7 +79,7 @@ extension Presenter: UIViewControllerTransitioningDelegate {
     return animator
   }
 
-  public func animationController(forDismissedController dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+  public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     // Use the reverse animation
     if let reverseTransitionAnimationType = animator?.reverseAnimationType {
       return AnimatorFactory.generateAnimator(reverseTransitionAnimationType, transitionDuration: transitionDuration)
@@ -88,7 +88,7 @@ extension Presenter: UIViewControllerTransitioningDelegate {
   }
   
   // MARK: - interaction controller
-  public func interactionController(forDismissal animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+  public func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
     if let interactiveAnimator = interactiveAnimator where interactiveAnimator.interacting {
       return interactiveAnimator
     } else {
