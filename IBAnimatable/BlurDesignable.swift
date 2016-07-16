@@ -23,11 +23,11 @@ public extension BlurDesignable where Self: UIView {
       return
     }
     
-    var style: UIBlurEffectStyle?
     guard let blurEffectStyle = BlurEffectStyle(rawValue: unwrappedBlurEffectStyle) else {
       return
     }
     
+    let style: UIBlurEffectStyle
     switch blurEffectStyle {
     case .extraLight:
       style = .extraLight
@@ -37,7 +37,7 @@ public extension BlurDesignable where Self: UIView {
       style = .dark
     }
     
-    let blurEffect = UIBlurEffect(style: style!)
+    let blurEffect = UIBlurEffect(style: style)
     let blurEffectView = UIVisualEffectView(effect: blurEffect)
     blurEffectView.frame = bounds
     let opacity = blurOpacity.isNaN ? 1.0 : blurOpacity // Default is 1.0
