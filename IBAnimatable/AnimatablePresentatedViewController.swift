@@ -1,13 +1,15 @@
 //
-//  AnimatablePresentedViewController.swift
-//  IBAnimatableApp
+//  Created by Tom Baranes on 16/07/16.
+//  Copyright © 2016 Jake Lin. All rights reserved.
 //
 
 import UIKit
 
 public class AnimatablePresentedViewController: UIViewController, PresentationDesignable {
 
-  // MARK: - TransitionAnimatable    
+  // MARK: - TransitionAnimatable
+  @IBInspectable public var transitionAnimationType: String?
+  @IBInspectable public var transitionDuration: Double = .NaN
   @IBInspectable public var roundCorners: Bool = true
   @IBInspectable public var dismissOnTap: Bool = true
   @IBInspectable public var backgroundColor: UIColor = .blackColor()
