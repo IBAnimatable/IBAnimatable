@@ -56,7 +56,9 @@
                             <real key="value" value="4"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="dismissAnimationType" value="Cover(Bottom)"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="blurEffectStyle" value="Dark"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                            <color key="value" red="0.62745098040000002" green="0.82352941180000006" blue="0.42745098040000001" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WWi-iw-WFa" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -33,13 +33,20 @@ public class PresentationAnimatable: UIPresentationController {
       dimmingView.blurEffectStyle = presentedSetup.blurEffectStyle
       dimmingView.blurOpacity = presentedSetup.blurOpacity
     } else {
-      dimmingView.fillColor = presentedSetup.backgroundColor.colorWithAlphaComponent(presentedSetup.opacity)      
+      dimmingView.fillColor = presentedSetup.backgroundColor.colorWithAlphaComponent(presentedSetup.opacity)
     }
   }
 
   private func setupPresentedView() {
     presentedViewController.view.layer.cornerRadius = presentedSetup.cornerRadius
     presentedViewController.view.layer.masksToBounds = true
+    if presentedSetup.shadowRadius > 0 {
+      presentedViewController.view.layer.shadowOffset.width = presentedSetup.shadowOffset.x
+      presentedViewController.view.layer.shadowOffset.height = presentedSetup.shadowOffset.y
+      presentedViewController.view.layer.shadowRadius = presentedSetup.shadowRadius
+      presentedViewController.view.layer.shadowOpacity = Float(presentedSetup.shadowOpacity)
+      presentedViewController.view.layer.masksToBounds = false
+    }
   }
 
   // MARK: Actions
