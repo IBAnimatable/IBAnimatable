@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="MQO-iI-poj">
-                                <rect key="frame" x="28" y="69" width="144" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="MQO-iI-poj">
+                                <rect key="frame" x="28" y="70" width="144" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPG-qM-hNx" userLabel="Dismiss button" customClass="AnimatableButton" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="0.0" width="144" height="60"/>
@@ -51,7 +51,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="200" height="200"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="transitionAnimationType" value="Fade"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="presentationAnimationType" value="Fade"/>
                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
                             <color key="value" red="0.62745098040000002" green="0.82352941180000006" blue="0.42745098040000001" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>

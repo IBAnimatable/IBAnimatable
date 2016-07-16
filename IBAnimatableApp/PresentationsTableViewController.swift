@@ -25,15 +25,11 @@ class PresentationsTableViewController: UITableViewController {
       return
     }
 
-    let transitionAnimationType = String(presentationsAnimations[indexPath.section][indexPath.row])
-
-    // Set the transition animation type for `AnimatableNavigationController`, used for Push/Pop transitions
-    toNavigationController.transitionAnimationType = transitionAnimationType
-    toNavigationController.navigationBar.topItem?.title = transitionAnimationType
-
-    // Set the transition animation type for `AnimatableViewController`, used for Present/Dismiss transitions
-    if let toViewController = toNavigationController.topViewController as? TransitionViewController {
-      toViewController.transitionAnimationType = transitionAnimationType
+    let presentationAnimationType = String(presentationsAnimations[indexPath.section][indexPath.row])
+    toNavigationController.transitionAnimationType = presentationAnimationType
+    toNavigationController.navigationBar.topItem?.title = presentationAnimationType
+    if let toViewController = toNavigationController.topViewController as? PresentationsViewController {
+      toViewController.presentationAnimationType = presentationAnimationType
     }
   }
 
@@ -44,10 +40,17 @@ class PresentationsTableViewController: UITableViewController {
 private extension PresentationsTableViewController {
 
   func generateTransitionTypeData() {
-    presentationsAnimationsHeaders.append("Default")
-    presentationsAnimations.append(["Default"])
+    presentationsAnimationsHeaders.append("CrossDissolve")
+    presentationsAnimations.append(["CrossDissolve"])
+    presentationsAnimationsHeaders.append("Flip")
+    presentationsAnimations.append(["Flip"])
+    presentationsAnimationsHeaders.append("Cover")
+    presentationsAnimations.append(presentationTypeWithDirections(forName: "Cover"))
   }
 
+  func presentationTypeWithDirections(forName prefixName: String) -> [String] {
+    return [prefixName + "(Left)", prefixName + "(Right)", prefixName + "(Top)", prefixName + "(Bottom)"]
+  }
 }
 
 // MARK: - UITableViewDataSource / UITableViewDelegate

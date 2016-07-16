@@ -6,11 +6,10 @@
 import UIKit
 
 /**
- Presenter for `UIViewController` to support custom transition animation for Present and Dismiss
+ TransitionPresenter for `UIViewController` to support custom transition animation for Present and Dismiss
  */
-public class Presenter: NSObject {
-  private var transitionAnimationType: TransitionAnimationType
-  var presentedSetup: PresentedSetup?
+public class TransitionPresenter: NSObject {
+  private var transitionAnimationType: TransitionAnimationType  
   var transitionDuration: Duration {
     didSet {
       if oldValue != transitionDuration {
@@ -71,15 +70,7 @@ public class Presenter: NSObject {
   }
 }
 
-extension Presenter: UIViewControllerTransitioningDelegate {
-
-  // MARK: - presentation
-  public func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
-    guard let unwrappedPresenterSetup = presentedSetup else {
-      return nil
-    }
-    return PresentationAnimatable(presentedViewController: presented, presentingViewController: presenting, presentedSetup: unwrappedPresenterSetup)
-  }
+extension TransitionPresenter: UIViewControllerTransitioningDelegate {
 
   // MARK: - animation controller
   public func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
