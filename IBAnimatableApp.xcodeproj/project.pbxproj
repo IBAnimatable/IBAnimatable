@@ -110,6 +110,7 @@
 		E210ABC61D3A9713001D0362 /* AnimatedPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E210ABC51D3A9713001D0362 /* AnimatedPresenting.swift */; };
 		E210ABCA1D3AAAC4001D0362 /* PresentationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E210ABC91D3AAAC4001D0362 /* PresentationPresenter.swift */; };
 		E210ABCC1D3AAAD0001D0362 /* PresentationPresenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E210ABCB1D3AAAD0001D0362 /* PresentationPresenterManager.swift */; };
+		E216B5AC1D3ADA130049FC8B /* InvertAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E216B5AB1D3ADA130049FC8B /* InvertAnimator.swift */; };
 		E2192F5D1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2192F5C1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift */; };
 		E21E840A1D3A30DF00C742E7 /* AnimatablePresentatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21E84091D3A30DF00C742E7 /* AnimatablePresentatedViewController.swift */; };
 		E21E840E1D3A31A900C742E7 /* PresentationAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21E840D1D3A31A900C742E7 /* PresentationAnimatable.swift */; };
@@ -269,6 +270,7 @@
 		E210ABC51D3A9713001D0362 /* AnimatedPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedPresenting.swift; sourceTree = "<group>"; };
 		E210ABC91D3AAAC4001D0362 /* PresentationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationPresenter.swift; sourceTree = "<group>"; };
 		E210ABCB1D3AAAD0001D0362 /* PresentationPresenterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationPresenterManager.swift; sourceTree = "<group>"; };
+		E216B5AB1D3ADA130049FC8B /* InvertAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvertAnimator.swift; sourceTree = "<group>"; };
 		E2192F5C1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableCollectionViewCell.swift; sourceTree = "<group>"; };
 		E21E84091D3A30DF00C742E7 /* AnimatablePresentatedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatablePresentatedViewController.swift; sourceTree = "<group>"; };
 		E21E840D1D3A31A900C742E7 /* PresentationAnimatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationAnimatable.swift; sourceTree = "<group>"; };
@@ -645,6 +647,7 @@
 			isa = PBXGroup;
 			children = (
 				E210ABC31D3A95F9001D0362 /* CoverAnimator.swift */,
+				E216B5AB1D3ADA130049FC8B /* InvertAnimator.swift */,
 			);
 			name = "presentation animator";
 			sourceTree = "<group>";
@@ -879,6 +882,7 @@
 				E27691EB1CAFC91A004A725C /* SystemPushAnimator.swift in Sources */,
 				AE6B01781C2A444900950BB2 /* BarButtonItemDesignable.swift in Sources */,
 				AE154B7C1C7D04A40093C05B /* TransitionAnimatable.swift in Sources */,
+				E216B5AC1D3ADA130049FC8B /* InvertAnimator.swift in Sources */,
 				AE6B01641C2A444000950BB2 /* BorderSide.swift in Sources */,
 				E29F35101CDF6C5400312FD4 /* PresentSlideWithDismissInteractionSegue.swift in Sources */,
 				AE6B016B1C2A444900950BB2 /* CornerDesignable.swift in Sources */,
