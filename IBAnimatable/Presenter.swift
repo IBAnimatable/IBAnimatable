@@ -9,8 +9,8 @@ import UIKit
  Presenter for `UIViewController` to support custom transition animation for Present and Dismiss
  */
 public class Presenter: NSObject {
-  private var presenterSetup: PresentedSetup?
   private var transitionAnimationType: TransitionAnimationType
+  var presenterSetup: PresentedSetup?
   var transitionDuration: Duration {
     didSet {
       if oldValue != transitionDuration {
