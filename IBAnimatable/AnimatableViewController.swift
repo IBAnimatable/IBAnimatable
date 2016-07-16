@@ -52,7 +52,7 @@ import UIKit
     // If interactiveGestureType has been set
     if let interactiveGestureType = interactiveGestureType, interactiveGestureTypeValue = InteractiveGestureType.fromString(interactiveGestureType) {
       toViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration, interactiveGestureType: interactiveGestureTypeValue)
-    } else if let PresentationDesignable = segue.destinationViewController as? PresentationDesignable {
+    } else if let _ = segue.destinationViewController as? PresentationDesignable {
       setupPresented(toViewController, animationType: animationType)
     } else {
       toViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration)
