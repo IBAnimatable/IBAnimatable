@@ -43,38 +43,19 @@ import UIKit
     super.prepareForSegue(segue, sender: sender)
     
     // Configure custom transition animation
-    guard let transitionAnimationType = transitionAnimationType, animationType = TransitionAnimationType.fromString(transitionAnimationType) else {
-      return
+    guard let transitionAnimationType = transitionAnimationType,
+      animationType = TransitionAnimationType.fromString(transitionAnimationType)
+      where (segue.destinationViewController is PresentationDesignable) == false else {
+        return
     }
 
     let toViewController = segue.destinationViewController
     // If interactiveGestureType has been set
     if let interactiveGestureType = interactiveGestureType, interactiveGestureTypeValue = InteractiveGestureType.fromString(interactiveGestureType) {
       toViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration, interactiveGestureType: interactiveGestureTypeValue)
-    } else if let _ = segue.destinationViewController as? PresentationDesignable {
-      setupPresented(toViewController, animationType: animationType)
     } else {
       toViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration)
     }
   }
 
-  private func setupPresented(presentedVC: UIViewController, animationType: TransitionAnimationType) {
-    guard let presentationDesignable = presentedVC as? PresentationDesignable else {
-      return
-    }
-
-    var presentedSetup = PresentedSetup()
-    presentedSetup.cornerRadius = presentationDesignable.cornerRadius
-    presentedSetup.dismissOnTap = presentationDesignable.dismissOnTap
-    presentedSetup.backgroundColor = presentationDesignable.backgroundColor
-    presentedSetup.opacity = presentationDesignable.opacity
-
-    presentedVC.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration, presentedSetup: presentedSetup)
-    presentedVC.modalPresentationStyle = .Custom
-  }
-
-  public func customPresent(presentedVC presentedVC: AnimatablePresentedViewController) {
-    setupPresented(presentedVC, animationType: .Fade(direction: .In))
-    presentViewController(presentedVC, animated: true, completion: nil)
-  }
 }
