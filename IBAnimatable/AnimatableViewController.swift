@@ -63,13 +63,13 @@ import UIKit
       return
     }
 
-    var presenterSetup = PresentedSetup()
-    presenterSetup.roundCorners = presentationDesignable.roundCorners
-    presenterSetup.dismissOnTap = presentationDesignable.dismissOnTap
-    presenterSetup.backgroundColor = presentationDesignable.backgroundColor
-    presenterSetup.backgroundOpacity = presentationDesignable.backgroundOpacity
+    var presentedSetup = PresentedSetup()
+    presentedSetup.cornerRadius = presentationDesignable.cornerRadius
+    presentedSetup.dismissOnTap = presentationDesignable.dismissOnTap
+    presentedSetup.backgroundColor = presentationDesignable.backgroundColor
+    presentedSetup.opacity = presentationDesignable.opacity
 
-    presentedVC.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration, presenterSetup: presenterSetup)
+    presentedVC.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration, presentedSetup: presentedSetup)
     presentedVC.modalPresentationStyle = .Custom
   }
 

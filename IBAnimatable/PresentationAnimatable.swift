@@ -9,49 +9,33 @@ public class PresentationAnimatable: UIPresentationController {
 
   // MARK: Properties
 
-  private let roundCorners: Bool
-  private let dismissOnTap: Bool
-  private var chromeView = UIView()
+  private let presentedSetup: PresentedSetup
+  private var chromeView = AnimatableView()
 
   // MARK: Init
 
   init(presentedViewController: UIViewController,
        presentingViewController: UIViewController,
-       presenterSetup: PresentedSetup) {
-
-    self.roundCorners = presenterSetup.roundCorners
-    self.dismissOnTap = presenterSetup.dismissOnTap
+       presentedSetup: PresentedSetup) {
+    self.presentedSetup = presentedSetup
     super.init(presentedViewController: presentedViewController, presentingViewController: presentingViewController)
 
-    setupChromeView(presenterSetup.backgroundColor, backgroundOpacity: presenterSetup.backgroundOpacity)
-    if presenterSetup.roundCorners {
-      addCornerRadiusToPresentedView()
-    } else {
-      removeCornerRadiusFromPresentedView()
-    }
+    setupChromeView()
   }
 
   // MARK: Setup
 
-  private func setupChromeView(backgroundColor: UIColor, backgroundOpacity: Float) {
+  private func setupChromeView() {
     let tap = UITapGestureRecognizer(target: self, action: #selector(chromeViewTapped))
     chromeView.addGestureRecognizer(tap)
-    chromeView.backgroundColor = backgroundColor.colorWithAlphaComponent(CGFloat(backgroundOpacity))
-  }
-
-  private func addCornerRadiusToPresentedView() {
-    presentedViewController.view.layer.cornerRadius = 4
-    presentedViewController.view.layer.masksToBounds = true
-  }
-
-  private func removeCornerRadiusFromPresentedView() {
-    presentedViewController.view.layer.cornerRadius = 0
+    chromeView.fillColor = presentedSetup.backgroundColor
+    chromeView.opacity = presentedSetup.opacity
   }
 
   // MARK: Actions
 
   func chromeViewTapped(gesture: UIGestureRecognizer) {
-    if gesture.state == .Ended && dismissOnTap {
+    if gesture.state == .Ended && presentedSetup.dismissOnTap {
       presentingViewController.dismissViewControllerAnimated(true, completion: nil)
     }
   }
