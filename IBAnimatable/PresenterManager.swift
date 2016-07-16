@@ -23,7 +23,7 @@ public class PresenterManager {
   private var cache = [String: Presenter]()
   
   // MARK: Internal Interface
-  public func retrievePresenter(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) -> Presenter {
+  public func retrievePresenter(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil, presenterSetup: PresentedSetup? = nil) -> Presenter {
     // Get the cached presenter
     let presenter = cache[transitionAnimationType.stringValue]
     if let presenter = presenter {
@@ -34,7 +34,7 @@ public class PresenterManager {
     }
     
     // Create a new if cache doesn't exist
-    let newPresenter = Presenter(transitionAnimationType: transitionAnimationType, transitionDuration: transitionDuration, interactiveGestureType: interactiveGestureType)
+    let newPresenter = Presenter(transitionAnimationType: transitionAnimationType, transitionDuration: transitionDuration, interactiveGestureType: interactiveGestureType, presenterSetup: presenterSetup)
     cache[transitionAnimationType.stringValue] = newPresenter
     return newPresenter
   }

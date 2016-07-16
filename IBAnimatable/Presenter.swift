@@ -9,6 +9,7 @@ import UIKit
  Presenter for `UIViewController` to support custom transition animation for Present and Dismiss
  */
 public class Presenter: NSObject {
+  private var presenterSetup: PresentedSetup?
   private var transitionAnimationType: TransitionAnimationType
   var transitionDuration: Duration {
     didSet {
@@ -33,13 +34,13 @@ public class Presenter: NSObject {
   // interaction controller
   private var interactiveAnimator: InteractiveAnimator?
   
-  public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) {
+  public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil, presenterSetup: PresentedSetup? = nil) {
     self.transitionAnimationType = transitionAnimationType
     self.transitionDuration = transitionDuration
+    self.presenterSetup = presenterSetup
     super.init()
     
     updateTransitionDuration()
-    
     animator = AnimatorFactory.generateAnimator(transitionAnimationType, transitionDuration: transitionDuration)
     
     self.interactiveGestureType = interactiveGestureType
@@ -72,6 +73,14 @@ public class Presenter: NSObject {
 }
 
 extension Presenter: UIViewControllerTransitioningDelegate {
+
+  public func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
+    guard let unwrappedPresenterSetup = presenterSetup else {
+      return nil
+    }
+    return PresentationAnimatable(presentedViewController: presented, presentingViewController: presenting, presenterSetup: unwrappedPresenterSetup)
+  }
+
   // MARK: - animation controller
   public func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     animator?.transitionDuration = transitionDuration
