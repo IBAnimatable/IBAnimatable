@@ -58,6 +58,9 @@
                         <userDefinedRuntimeAttribute type="number" keyPath="opacity">
                             <real key="value" value="0.5"/>
                         </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WWi-iw-WFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
