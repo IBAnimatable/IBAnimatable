@@ -30,6 +30,7 @@ public class PresenterManager {
       // Update the `transitionDuration` and `interactiveGestureType` every time to reuse the same presenter with the same type
       presenter.transitionDuration = transitionDuration
       presenter.interactiveGestureType = interactiveGestureType
+      presenter.presenterSetup = presenterSetup
       return presenter
     }
     
