@@ -10,10 +10,11 @@ public class AnimatablePresentedViewController: UIViewController, PresentationDe
   // MARK: - TransitionAnimatable
   @IBInspectable public var transitionAnimationType: String?
   @IBInspectable public var transitionDuration: Double = .NaN
-  @IBInspectable public var roundCorners: Bool = true
+
+  @IBInspectable public var cornerRadius: CGFloat = .NaN
   @IBInspectable public var dismissOnTap: Bool = true
   @IBInspectable public var backgroundColor: UIColor = .blackColor()
-  @IBInspectable public var backgroundOpacity: Float = 0.7
+  @IBInspectable public var opacity: CGFloat = 0.7
 
   // MARK: Life cycle
 

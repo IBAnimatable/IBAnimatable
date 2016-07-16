@@ -10,7 +10,7 @@ import UIKit
  */
 public class Presenter: NSObject {
   private var transitionAnimationType: TransitionAnimationType
-  var presenterSetup: PresentedSetup?
+  var presentedSetup: PresentedSetup?
   var transitionDuration: Duration {
     didSet {
       if oldValue != transitionDuration {
@@ -34,10 +34,10 @@ public class Presenter: NSObject {
   // interaction controller
   private var interactiveAnimator: InteractiveAnimator?
   
-  public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil, presenterSetup: PresentedSetup? = nil) {
+  public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil, presentedSetup: PresentedSetup? = nil) {
     self.transitionAnimationType = transitionAnimationType
     self.transitionDuration = transitionDuration
-    self.presenterSetup = presenterSetup
+    self.presentedSetup = presentedSetup
     super.init()
     
     updateTransitionDuration()
@@ -75,10 +75,10 @@ public class Presenter: NSObject {
 extension Presenter: UIViewControllerTransitioningDelegate {
 
   public func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
-    guard let unwrappedPresenterSetup = presenterSetup else {
+    guard let unwrappedPresenterSetup = presentedSetup else {
       return nil
     }
-    return PresentationAnimatable(presentedViewController: presented, presentingViewController: presenting, presenterSetup: unwrappedPresenterSetup)
+    return PresentationAnimatable(presentedViewController: presented, presentingViewController: presenting, presentedSetup: unwrappedPresenterSetup)
   }
 
   // MARK: - animation controller
