@@ -7,8 +7,7 @@ import UIKit
 
 public class CoverAnimator: NSObject, AnimatedPresenting {
 
-  // MARK: - AnimatedPresenting
-  public var transitionAnimationType: PresentationAnimationType
+  // MARK: - AnimatedPresenting  
   public var transitionDuration: Duration = defaultTransitionDuration
 
   // MARK: - private
@@ -17,17 +16,6 @@ public class CoverAnimator: NSObject, AnimatedPresenting {
   public init(direction: TransitionDirection, transitionDuration: Duration) {
     self.direction = direction
     self.transitionDuration = transitionDuration
-
-    switch direction {
-    case .Left:
-      self.transitionAnimationType = .Cover(fromDirection: .Left)
-    case .Right:
-      self.transitionAnimationType = .Cover(fromDirection: .Right)
-    case .Top:
-      self.transitionAnimationType = .Cover(fromDirection: .Top)
-    default:
-      self.transitionAnimationType = .Cover(fromDirection: .Bottom)
-    }
     super.init()
   }
 }

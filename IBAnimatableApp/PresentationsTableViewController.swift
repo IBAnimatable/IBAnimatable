@@ -44,6 +44,8 @@ private extension PresentationsTableViewController {
     presentationsAnimations.append(["CrossDissolve"])
     presentationsAnimationsHeaders.append("Flip")
     presentationsAnimations.append(["Flip"])
+    presentationsAnimationsHeaders.append("Invert")
+    presentationsAnimations.append(["Invert"])
     presentationsAnimationsHeaders.append("Cover")
     presentationsAnimations.append(presentationTypeWithDirections(forName: "Cover"))
   }

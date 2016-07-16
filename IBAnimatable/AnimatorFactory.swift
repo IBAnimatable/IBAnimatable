@@ -59,7 +59,9 @@ public struct AnimatorFactory {
     switch presentationAnimationType {
     case let .Cover(direction):
       return CoverAnimator(direction: direction, transitionDuration: transitionDuration)
-    case let .Flip, .CrossDissolve: // System animation, will never be executed
+    case .Invert:
+      return InvertAnimator(transitionDuration: transitionDuration)
+    case .Flip, .CrossDissolve: // System animation, will never be executed
       return CoverAnimator(direction: .Top, transitionDuration: transitionDuration)
     }
   }

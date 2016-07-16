@@ -8,8 +8,7 @@ import UIKit
 public typealias FrameTransformer = (finalFrame: CGRect, containerFrame: CGRect) -> CGRect
 
 public protocol AnimatedPresenting: UIViewControllerAnimatedTransitioning {
-
-  var transitionAnimationType: PresentationAnimationType { get set }
+  
   var transitionDuration: Duration { get set }
   
 }
