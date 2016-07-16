@@ -63,6 +63,30 @@ public class AnimatablePresentedViewController: UIViewController, PresentationDe
     }
   }
 
+  @IBInspectable public var shadowColor: UIColor? {
+    didSet {
+      presenter?.presentedSetup?.shadowColor = shadowColor
+    }
+  }
+
+  @IBInspectable public var shadowRadius: CGFloat = CGFloat.NaN {
+    didSet {
+      presenter?.presentedSetup?.shadowRadius = shadowRadius
+    }
+  }
+
+  @IBInspectable public var shadowOpacity: CGFloat = CGFloat.NaN {
+    didSet {
+      presenter?.presentedSetup?.shadowOpacity = shadowOpacity
+    }
+  }
+
+  @IBInspectable public var shadowOffset: CGPoint = CGPoint(x: CGFloat.NaN, y: CGFloat.NaN) {
+    didSet {
+      presenter?.presentedSetup?.shadowOffset = shadowOffset
+    }
+  }
+
   // MARK: Private
 
   private var presenter: PresentationPresenter?
@@ -112,6 +136,10 @@ public class AnimatablePresentedViewController: UIViewController, PresentationDe
     presentedSetup.opacity = opacity
     presentedSetup.blurEffectStyle = blurEffectStyle
     presentedSetup.blurOpacity = blurOpacity
+    presentedSetup.shadowColor = shadowColor
+    presentedSetup.shadowOpacity = shadowOpacity
+    presentedSetup.shadowRadius = shadowRadius
+    presentedSetup.shadowOffset = shadowOffset
     presenter?.presentedSetup = presentedSetup
   }
 
