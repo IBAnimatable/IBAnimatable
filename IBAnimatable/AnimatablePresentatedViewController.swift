@@ -8,35 +8,37 @@ import UIKit
 public class AnimatablePresentedViewController: UIViewController, PresentationDesignable {
 
   // MARK: - PresentationAnimatable
+
   @IBInspectable public var transitionAnimationType: String?
   @IBInspectable public var transitionDuration: Double = .NaN
 
   @IBInspectable public var cornerRadius: CGFloat = .NaN {
     didSet {
-      presentedSetup.cornerRadius = cornerRadius
+      presenter?.presentedSetup?.cornerRadius = cornerRadius
     }
   }
 
   @IBInspectable public var dismissOnTap: Bool = true {
     didSet {
-      presentedSetup.dismissOnTap = dismissOnTap
+      presenter?.presentedSetup?.dismissOnTap = dismissOnTap
     }
   }
 
   @IBInspectable public var backgroundColor: UIColor = .blackColor() {
     didSet {
-      presentedSetup.backgroundColor = backgroundColor
+      presenter?.presentedSetup?.backgroundColor = backgroundColor
     }
   }
 
   @IBInspectable public var opacity: CGFloat = 0.7 {
     didSet {
-      presentedSetup.opacity = opacity
+      presenter?.presentedSetup?.opacity = opacity
     }
   }
 
   // MARK: Private
-  private var presentedSetup = PresentedSetup()
+
+  private var presenter: Presenter?
 
   // MARK: Life cycle
 
@@ -50,21 +52,26 @@ public class AnimatablePresentedViewController: UIViewController, PresentationDe
     commonInit()
   }
 
-  func commonInit() {
-    presentedSetup.cornerRadius = cornerRadius
-    presentedSetup.dismissOnTap = dismissOnTap
-    presentedSetup.backgroundColor = backgroundColor
-    presentedSetup.opacity = opacity
-
-    let animationType = TransitionAnimationType.fromString(transitionAnimationType ?? "") ?? TransitionAnimationType.Fade(direction: .In)
-    transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration, presentedSetup: presentedSetup)
-    modalPresentationStyle = .Custom
-  }
-
   // MARK: Life cycle
 
   override public func viewDidLoad() {
     super.viewDidLoad()
+  }
+
+  // MARK: Helper
+
+  func commonInit() {
+    let animationType = TransitionAnimationType.fromString(transitionAnimationType ?? "") ?? TransitionAnimationType.Fade(direction: .In)
+    presenter = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration)
+    transitioningDelegate = presenter
+    modalPresentationStyle = .Custom
+
+    var presentedSetup = PresentedSetup()
+    presentedSetup.cornerRadius = cornerRadius
+    presentedSetup.dismissOnTap = dismissOnTap
+    presentedSetup.backgroundColor = backgroundColor
+    presentedSetup.opacity = opacity
+    presenter?.presentedSetup = presentedSetup
   }
 
 }

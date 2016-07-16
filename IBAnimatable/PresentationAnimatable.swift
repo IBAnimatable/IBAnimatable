@@ -28,7 +28,7 @@ public class PresentationAnimatable: UIPresentationController {
   private func setupChromeView() {
     let tap = UITapGestureRecognizer(target: self, action: #selector(chromeViewTapped))
     chromeView.addGestureRecognizer(tap)
-    chromeView.fillColor = presentedSetup.backgroundColor.colorWithAlphaComponent(presentedSetup.opacity)    
+    chromeView.fillColor = presentedSetup.backgroundColor.colorWithAlphaComponent(presentedSetup.opacity)
   }
 
   // MARK: Actions
