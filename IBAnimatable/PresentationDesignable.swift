@@ -8,6 +8,7 @@ import UIKit
 public protocol PresentationDesignable: class {
 
   var presentationAnimationType: String? { get set }
+  var dismissAnimationType: String? { get set }
   var transitionDuration: Double { get set }
 
   var cornerRadius: CGFloat { get set }

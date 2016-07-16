@@ -14,6 +14,13 @@ public class AnimatablePresentedViewController: UIViewController, PresentationDe
       setupPresenter()
     }
   }
+
+  @IBInspectable public var dismissAnimationType: String? {
+    didSet {
+      setupPresenter()
+    }
+  }
+
   @IBInspectable public var transitionDuration: Double = .NaN {
     didSet {
       presenter?.transitionDuration = transitionDuration
@@ -66,11 +73,20 @@ public class AnimatablePresentedViewController: UIViewController, PresentationDe
     super.viewDidLoad()
   }
 
+  public override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+    let animationType = PresentationAnimationType.fromString(dismissAnimationType ?? "") ?? PresentationAnimationType.Cover(fromDirection: .Bottom)
+    if let dismissSystemTransition = animationType.systemTransition {
+      modalTransitionStyle = dismissSystemTransition
+    }
+  }
+
   // MARK: Helper
 
   func setupPresenter() {
-    let animationType = PresentationAnimationType.fromString(presentationAnimationType ?? "") ?? PresentationAnimationType.Cover(fromDirection: .Top)
+    let animationType = PresentationAnimationType.fromString(presentationAnimationType ?? "") ?? PresentationAnimationType.Cover(fromDirection: .Bottom)
     presenter = PresentationPresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration)
+    presenter?.dismissAnimationType = PresentationAnimationType.fromString(dismissAnimationType ?? "")
     transitioningDelegate = presenter
     modalPresentationStyle = .Custom
     if let systemTransition = animationType.systemTransition {
