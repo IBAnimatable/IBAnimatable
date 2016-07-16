@@ -29,7 +29,12 @@ public class PresentationAnimatable: UIPresentationController {
   private func setupDimmingView() {
     let tap = UITapGestureRecognizer(target: self, action: #selector(chromeViewTapped))
     dimmingView.addGestureRecognizer(tap)
-    dimmingView.fillColor = presentedSetup.backgroundColor.colorWithAlphaComponent(presentedSetup.opacity)
+    if let blurStyle =  presentedSetup.blurEffectStyle {
+      dimmingView.blurEffectStyle = presentedSetup.blurEffectStyle
+      dimmingView.blurOpacity = presentedSetup.blurOpacity
+    } else {
+      dimmingView.fillColor = presentedSetup.backgroundColor.colorWithAlphaComponent(presentedSetup.opacity)      
+    }
   }
 
   private func setupPresentedView() {

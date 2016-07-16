@@ -15,12 +15,15 @@ public protocol PresentationDesignable: class {
   var dismissOnTap: Bool { get set }
   var backgroundColor: UIColor { get set }
   var opacity: CGFloat { get set }
-
+  var blurEffectStyle: String? { get set }
+  var blurOpacity: CGFloat { get set }
 }
 
 public struct PresentedSetup {
-  var cornerRadius: CGFloat = CGFloat.NaN
+  var cornerRadius: CGFloat = .NaN
   var dismissOnTap: Bool = true
   var backgroundColor: UIColor = .blackColor()
   var opacity: CGFloat = 0.7
+  var blurEffectStyle: String?
+  var blurOpacity: CGFloat = .NaN
 }

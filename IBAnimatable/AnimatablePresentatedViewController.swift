@@ -51,6 +51,18 @@ public class AnimatablePresentedViewController: UIViewController, PresentationDe
     }
   }
 
+  @IBInspectable public var blurEffectStyle: String? {
+    didSet {
+      presenter?.presentedSetup?.blurEffectStyle = blurEffectStyle
+    }
+  }
+
+  @IBInspectable public var blurOpacity: CGFloat = .NaN {
+    didSet {
+      presenter?.presentedSetup?.blurOpacity = blurOpacity
+    }
+  }
+
   // MARK: Private
 
   private var presenter: PresentationPresenter?
@@ -98,6 +110,8 @@ public class AnimatablePresentedViewController: UIViewController, PresentationDe
     presentedSetup.dismissOnTap = dismissOnTap
     presentedSetup.backgroundColor = backgroundColor
     presentedSetup.opacity = opacity
+    presentedSetup.blurEffectStyle = blurEffectStyle
+    presentedSetup.blurOpacity = blurOpacity
     presenter?.presentedSetup = presentedSetup
   }
 
