@@ -21,7 +21,7 @@ public class PresentationPresenter: NSObject {
   // animation controller
   private var animator: AnimatedPresenting?
 
-  public init(presentationAnimationType: PresentationAnimationType, transitionDuration: Duration = defaultTransitionDuration) {
+  public init(presentationAnimationType: PresentationAnimationType, transitionDuration: Duration = defaultPresentationDuration) {
     self.presentationAnimationType = presentationAnimationType
     self.transitionDuration = transitionDuration
     super.init()
@@ -35,7 +35,7 @@ public class PresentationPresenter: NSObject {
   // MARK: - Private
   private func updateTransitionDuration() {
     if transitionDuration.isNaN {
-      transitionDuration = defaultTransitionDuration
+      transitionDuration = defaultPresentationDuration
     }
   }
 }

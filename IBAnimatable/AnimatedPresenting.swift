@@ -11,9 +11,7 @@ public protocol AnimatedPresenting: UIViewControllerAnimatedTransitioning {
 
   var transitionAnimationType: PresentationAnimationType { get set }
   var transitionDuration: Duration { get set }
-
-  func retrieveTransitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval
-  func animate(transitionContext: UIViewControllerContextTransitioning, transform: FrameTransformer)
+  
 }
 
 public extension AnimatedPresenting {
@@ -25,37 +23,17 @@ public extension AnimatedPresenting {
     return 0
   }
 
-  func animate(transitionContext: UIViewControllerContextTransitioning, transform: FrameTransformer) {
-    guard let containerView = transitionContext.containerView() else {
-      return
-    }
+  public func retrieveViews(transitionContext: UIViewControllerContextTransitioning) -> (UIView?, UIView?, UIView?) {
+    return (transitionContext.viewForKey(UITransitionContextFromViewKey), transitionContext.viewForKey(UITransitionContextToViewKey), transitionContext.containerView())
+  }
 
-    let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)
-    let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)
-    let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey)
-    let toView = transitionContext.viewForKey(UITransitionContextToViewKey)
-    let isPresenting: Bool = (toViewController?.presentingViewController == fromViewController)
-    let animatingVC = isPresenting ? toViewController : fromViewController
-    let animatingView = isPresenting ? toView : fromView
-    let finalFrameForVC = transitionContext.finalFrameForViewController(animatingVC!)
-    let initialFrameForVC = transform(finalFrame: finalFrameForVC, containerFrame: containerView.frame)
-    let initialFrame = isPresenting ? initialFrameForVC : finalFrameForVC
-    let finalFrame = isPresenting ? finalFrameForVC : initialFrameForVC
-    let duration = transitionDuration(transitionContext)
-    if isPresenting {
-      containerView.addSubview(toView!)
-    }
+  public func retrieveViewControllers(transitionContext: UIViewControllerContextTransitioning) -> (UIViewController?, UIViewController?, UIView?) {
+    return (transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey), transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey), transitionContext.containerView())
+  }
 
-    animatingView?.frame = initialFrame
-    UIView.animateWithDuration(duration, delay: 0, usingSpringWithDamping: 300.0, initialSpringVelocity: 5.0, options: .AllowUserInteraction, animations: {
-      animatingView?.frame = finalFrame
-    }, completion: { value in
-        if !isPresenting {
-          fromView?.removeFromSuperview()
-        }
-        let wasCancelled = transitionContext.transitionWasCancelled()
-        transitionContext.completeTransition(!wasCancelled)
-    })
+  public func isPresenting(transitionContext: UIViewControllerContextTransitioning) -> Bool {
+    let (fromViewController, toViewController, _) = retrieveViewControllers(transitionContext)
+    return toViewController?.presentingViewController == fromViewController
   }
 
 }
