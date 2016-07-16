@@ -7,7 +7,7 @@ import UIKit
 
 public class PresentFlipSegue: UIStoryboardSegue {
   public override func perform() {
-    destinationViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(.Flip(fromDirection: .Left))
+    destinationViewController.transitioningDelegate = TransitionPresenterManager.sharedManager().retrievePresenter(.Flip(fromDirection: .Left))
     sourceViewController.presentViewController(destinationViewController, animated: true, completion: nil)
   }
 }

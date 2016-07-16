@@ -7,7 +7,7 @@ import UIKit
 
 public class PresentPortalSegue: UIStoryboardSegue {
   public override func perform() {
-    destinationViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(.Portal(direction: .Forward, params: []))
+    destinationViewController.transitioningDelegate = TransitionPresenterManager.sharedManager().retrievePresenter(.Portal(direction: .Forward, params: []))
     sourceViewController.presentViewController(destinationViewController, animated: true, completion: nil)
   }
 }

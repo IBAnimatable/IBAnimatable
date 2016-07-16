@@ -7,7 +7,7 @@ import UIKit
 
 public protocol PresentationDesignable: class {
 
-  var transitionAnimationType: String? { get set }
+  var presentationAnimationType: String? { get set }
   var transitionDuration: Double { get set }
 
   var cornerRadius: CGFloat { get set }

@@ -9,8 +9,16 @@ public class AnimatablePresentedViewController: UIViewController, PresentationDe
 
   // MARK: - PresentationAnimatable
 
-  @IBInspectable public var transitionAnimationType: String?
-  @IBInspectable public var transitionDuration: Double = .NaN
+  @IBInspectable public var presentationAnimationType: String? {
+    didSet {
+      setupPresenter()
+    }
+  }
+  @IBInspectable public var transitionDuration: Double = .NaN {
+    didSet {
+      presenter?.transitionDuration = transitionDuration
+    }
+  }
 
   @IBInspectable public var cornerRadius: CGFloat = .NaN {
     didSet {
@@ -38,18 +46,18 @@ public class AnimatablePresentedViewController: UIViewController, PresentationDe
 
   // MARK: Private
 
-  private var presenter: Presenter?
+  private var presenter: PresentationPresenter?
 
   // MARK: Life cycle
 
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    commonInit()
+    setupPresenter()
   }
 
   public required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-    commonInit()
+    setupPresenter()
   }
 
   // MARK: Life cycle
@@ -60,11 +68,14 @@ public class AnimatablePresentedViewController: UIViewController, PresentationDe
 
   // MARK: Helper
 
-  func commonInit() {
-    let animationType = TransitionAnimationType.fromString(transitionAnimationType ?? "") ?? TransitionAnimationType.Fade(direction: .In)
-    presenter = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration)
+  func setupPresenter() {
+    let animationType = PresentationAnimationType.fromString(presentationAnimationType ?? "") ?? PresentationAnimationType.Cover(fromDirection: .Top)
+    presenter = PresentationPresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration)
     transitioningDelegate = presenter
     modalPresentationStyle = .Custom
+    if let systemTransition = animationType.systemTransition {
+      modalTransitionStyle = systemTransition
+    }
 
     var presentedSetup = PresentedSetup()
     presentedSetup.cornerRadius = cornerRadius
