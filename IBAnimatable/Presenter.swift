@@ -34,10 +34,9 @@ public class Presenter: NSObject {
   // interaction controller
   private var interactiveAnimator: InteractiveAnimator?
   
-  public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil, presentedSetup: PresentedSetup? = nil) {
+  public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) {
     self.transitionAnimationType = transitionAnimationType
-    self.transitionDuration = transitionDuration
-    self.presentedSetup = presentedSetup
+    self.transitionDuration = transitionDuration    
     super.init()
     
     updateTransitionDuration()
