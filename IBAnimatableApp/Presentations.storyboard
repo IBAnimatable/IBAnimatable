@@ -14,14 +14,14 @@
                         <viewControllerLayoutGuide type="bottom" id="a4u-34-R1c"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XpY-33-JS5" customClass="AnimatableView" customModule="IBAnimatable">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="MQO-iI-poj">
-                                <rect key="frame" x="28" y="303.5" width="319" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="MQO-iI-poj">
+                                <rect key="frame" x="28" y="69" width="144" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPG-qM-hNx" userLabel="Dismiss button" customClass="AnimatableButton" customModule="IBAnimatable">
-                                        <rect key="frame" x="0.0" y="0.0" width="319" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="144" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="d5t-pE-Vhr"/>
                                         </constraints>
@@ -40,17 +40,16 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="MQO-iI-poj" firstAttribute="leading" secondItem="XpY-33-JS5" secondAttribute="leadingMargin" constant="12" id="hnB-Oh-cc9"/>
                             <constraint firstItem="MQO-iI-poj" firstAttribute="centerY" secondItem="XpY-33-JS5" secondAttribute="centerY" id="kcL-z3-9lP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MQO-iI-poj" secondAttribute="trailing" constant="12" id="zGS-Dh-uAQ"/>
                         </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="predefinedGradient" value="BloodyMary"/>
-                        </userDefinedRuntimeAttributes>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="200" height="200"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="transitionAnimationType" value="Fade"/>
                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
