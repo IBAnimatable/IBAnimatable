@@ -43,10 +43,9 @@ import UIKit
     super.prepareForSegue(segue, sender: sender)
     
     // Configure custom transition animation
-    let animationType = TransitionAnimationType.fromString(transitionAnimationType ?? "") ?? .Fade(direction: .In)
-//    guard let transitionAnimationType = transitionAnimationType, animationType = TransitionAnimationType.fromString(transitionAnimationType) else {
-//      return
-//    }
+    guard let transitionAnimationType = transitionAnimationType, animationType = TransitionAnimationType.fromString(transitionAnimationType) else {
+      return
+    }
 
     let toViewController = segue.destinationViewController
     // If interactiveGestureType has been set
@@ -70,12 +69,11 @@ import UIKit
     presenterSetup.backgroundColor = presentationDesignable.backgroundColor
     presenterSetup.backgroundOpacity = presentationDesignable.backgroundOpacity
 
-    presentedVC.transitioningDelegate = Presenter(transitionAnimationType: animationType, transitionDuration: transitionDuration, interactiveGestureType: nil, presenterSetup: presenterSetup)
-//      PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration, presenterSetup: presenterSetup)
+    presentedVC.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration, presenterSetup: presenterSetup)
     presentedVC.modalPresentationStyle = .Custom
   }
 
-  public func presentViewController(presentedVC: AnimatablePresentedViewController) {
+  public func customPresent(presentedVC presentedVC: AnimatablePresentedViewController) {
     setupPresented(presentedVC, animationType: .Fade(direction: .In))
     presentViewController(presentedVC, animated: true, completion: nil)
   }

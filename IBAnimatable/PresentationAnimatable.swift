@@ -1,6 +1,6 @@
 //
-//  PresentationAnimatable.swift
-//  IBAnimatableApp
+//  Created by Tom Baranes on 16/07/16.
+//  Copyright © 2016 Jake Lin. All rights reserved.
 //
 
 import UIKit

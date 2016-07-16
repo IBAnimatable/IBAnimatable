@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0Ty-fc-KO8">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Presentation Presented View Controller-->
+        <scene sceneID="DT9-hU-Qiv">
+            <objects>
+                <viewController storyboardIdentifier="PresentationPresentedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gVa-SJ-LtD" customClass="PresentationPresentedViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="owd-oc-o1Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="a4u-34-R1c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XpY-33-JS5" customClass="AnimatableView" customModule="IBAnimatable">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="MQO-iI-poj">
+                                <rect key="frame" x="28" y="303.5" width="319" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPG-qM-hNx" userLabel="Dismiss button" customClass="AnimatableButton" customModule="IBAnimatable">
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="d5t-pE-Vhr"/>
+                                        </constraints>
+                                        <state key="normal" title="Tap to dismiss">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="Y3r-Zl-Guu" kind="unwind" unwindAction="unwindToViewController:" id="WA3-Cn-dCl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MQO-iI-poj" firstAttribute="leading" secondItem="XpY-33-JS5" secondAttribute="leadingMargin" constant="12" id="hnB-Oh-cc9"/>
+                            <constraint firstItem="MQO-iI-poj" firstAttribute="centerY" secondItem="XpY-33-JS5" secondAttribute="centerY" id="kcL-z3-9lP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MQO-iI-poj" secondAttribute="trailing" constant="12" id="zGS-Dh-uAQ"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="predefinedGradient" value="BloodyMary"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="transitionAnimationType" value="Fade"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                            <color key="value" red="0.62745098040000002" green="0.82352941180000006" blue="0.42745098040000001" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WWi-iw-WFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Y3r-Zl-Guu" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="5379.5" y="-281.5"/>
+        </scene>
+        <!--Presentations-->
+        <scene sceneID="zx8-pX-jSG">
+            <objects>
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="0Ty-fc-KO8" customClass="PresentationsTableViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Vkm-fN-Zm0" customClass="AnimatableTableView" customModule="IBAnimatable">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="transitionCell" textLabel="fET-6F-MxL" style="IBUITableViewCellStyleDefault" id="za5-bU-9cC" customClass="AnimatableTableViewCell" customModule="IBAnimatable">
+                                <rect key="frame" x="0.0" y="113.5" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="za5-bU-9cC" id="1vu-mP-S1A">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fET-6F-MxL">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </tableViewCellContentView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="0Yt-Nn-OzD" kind="show" id="SHu-5e-aJt">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="dataSource" destination="0Ty-fc-KO8" id="Wir-la-3Td"/>
+                            <outlet property="delegate" destination="0Ty-fc-KO8" id="ijb-Vr-Eqc"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Presentations" id="4nM-wc-zrx">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="D93-58-KhR">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="0rC-0d-pzw" kind="unwind" unwindAction="unwindToViewController:" id="W2S-kN-WlU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jks-04-uC6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="0rC-0d-pzw" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4037.5" y="-281.5"/>
+        </scene>
+        <!--Presentations View Controller-->
+        <scene sceneID="PlL-YA-NUy">
+            <objects>
+                <viewController id="obJ-z2-xGJ" customClass="PresentationsViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RmZ-fK-YRC"/>
+                        <viewControllerLayoutGuide type="bottom" id="rHH-fm-ck9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BPL-CP-71z" customClass="AnimatableView" customModule="IBAnimatable">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="syB-1d-zWR">
+                                <rect key="frame" x="28" y="259" width="319" height="150"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="noo-wP-ZXp" userLabel="Push button" customClass="AnimatableButton" customModule="IBAnimatable">
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="VEC-ca-Bgf"/>
+                                        </constraints>
+                                        <state key="normal" title="Tap to present programatically">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="presentProgramatically" destination="obJ-z2-xGJ" eventType="touchUpInside" id="8Ma-rd-bH5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7H-nk-2ty" userLabel="Present button" customClass="AnimatableButton" customModule="IBAnimatable">
+                                        <rect key="frame" x="0.0" y="90" width="319" height="60"/>
+                                        <state key="normal" title="Tap to present using segue">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="gVa-SJ-LtD" kind="presentation" id="Sm4-f7-dfI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="c7H-nk-2ty" firstAttribute="height" secondItem="noo-wP-ZXp" secondAttribute="height" id="7qb-Ne-2Xg"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="syB-1d-zWR" firstAttribute="centerY" secondItem="BPL-CP-71z" secondAttribute="centerY" id="7OA-vX-JFF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="syB-1d-zWR" secondAttribute="trailing" constant="12" id="X8O-k8-GQV"/>
+                            <constraint firstItem="syB-1d-zWR" firstAttribute="centerX" secondItem="BPL-CP-71z" secondAttribute="centerX" id="hRs-jf-7QV"/>
+                            <constraint firstItem="syB-1d-zWR" firstAttribute="leading" secondItem="BPL-CP-71z" secondAttribute="leadingMargin" constant="12" id="wMP-G9-BEn"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="predefinedColor" value="FlatCarrot"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="tbn-5V-Gy7">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="cic-Rh-aJC">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="bCg-Mp-eip" kind="unwind" unwindAction="dismissCurrentViewController:" id="sBG-09-oI7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="transitionAnimationType" value="Fade"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="presentButton" destination="noo-wP-ZXp" id="awe-pW-YQf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wbw-J7-IEm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bCg-Mp-eip" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4926.5" y="-281.5"/>
+        </scene>
+        <!--Animatable Navigation Controller-->
+        <scene sceneID="Tqv-wt-Z8f">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Yt-Nn-OzD" customClass="AnimatableNavigationController" customModule="IBAnimatable" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ilp-Dq-lwK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="interactiveGestureType" value="Default"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="obJ-z2-xGJ" kind="relationship" relationship="rootViewController" id="zHA-37-Ns3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MnW-Ck-V9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4480.5" y="-281.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="21" height="21"/>
+    </resources>
+</document>
