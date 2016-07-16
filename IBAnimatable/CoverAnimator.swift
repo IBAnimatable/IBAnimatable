@@ -41,18 +41,56 @@ extension CoverAnimator: UIViewControllerAnimatedTransitioning {
   }
 
   public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-    animate(transitionContext) { finalFrame, containerFrame in
-      var initialFrame = finalFrame
-      switch self.direction {
-      case .Right:
-        initialFrame.origin.x = containerFrame.size.width + initialFrame.size.width
-      case .Left:
-        initialFrame.origin.x = 0 - initialFrame.size.width
-      default: // .Top, .Bottom is handled by the system animation
-        initialFrame.origin.y = 0 - initialFrame.size.height
-      }
-      return initialFrame
+    let (fromView, toView, tempContainerView) = retrieveViews(transitionContext)
+    let presenting = isPresenting(transitionContext)
+    guard let containerView = tempContainerView, animatingView = presenting ? toView : fromView else {
+      transitionContext.completeTransition(true)
+      return
     }
+
+    let newFrame = finalFrame(from: animatingView.frame, containerFrame: containerView.frame)
+    if presenting {
+      containerView.addSubview(animatingView)
+    }
+    animateCover(animatingView: animatingView, finalFrame: newFrame) {
+      if !presenting {
+        fromView?.removeFromSuperview()
+      }
+      transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+    }
+  }
+
+}
+
+// MARK: - Helper
+
+private extension CoverAnimator {
+
+  func finalFrame(from initialFrame: CGRect, containerFrame: CGRect) -> CGRect {
+    var initialFrame = initialFrame
+    switch self.direction {
+    case .Right:
+      initialFrame.origin.x = containerFrame.size.width + initialFrame.size.width
+    case .Left:
+      initialFrame.origin.x = 0 - initialFrame.size.width
+    default: // .Top, .Bottom is handled by the system animation
+      initialFrame.origin.y = 0 - initialFrame.size.height
+    }
+    return initialFrame
+  }
+
+}
+
+// MARK: - Animation
+
+private extension CoverAnimator {
+
+  func animateCover(animatingView animatingView: UIView, finalFrame: CGRect, completion: AnimatableCompletion) {
+    UIView.animateWithDuration(transitionDuration, animations: {
+      animatingView.frame = finalFrame
+    }, completion: { _ in
+        completion()
+    })
   }
 
 }
