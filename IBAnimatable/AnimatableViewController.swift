@@ -43,17 +43,40 @@ import UIKit
     super.prepareForSegue(segue, sender: sender)
     
     // Configure custom transition animation
-    guard let transitionAnimationType = transitionAnimationType, animationType = TransitionAnimationType.fromString(transitionAnimationType) else {
-      super.prepareForSegue(segue, sender: sender)
-      return
-    }
-    
+    let animationType = TransitionAnimationType.fromString(transitionAnimationType ?? "") ?? .Fade(direction: .In)
+//    guard let transitionAnimationType = transitionAnimationType, animationType = TransitionAnimationType.fromString(transitionAnimationType) else {
+//      return
+//    }
+
     let toViewController = segue.destinationViewController
     // If interactiveGestureType has been set
     if let interactiveGestureType = interactiveGestureType, interactiveGestureTypeValue = InteractiveGestureType.fromString(interactiveGestureType) {
       toViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration, interactiveGestureType: interactiveGestureTypeValue)
+    } else if let PresentationDesignable = segue.destinationViewController as? PresentationDesignable {
+      setupPresented(toViewController, animationType: animationType)
     } else {
       toViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration)
     }
+  }
+
+  private func setupPresented(presentedVC: UIViewController, animationType: TransitionAnimationType) {
+    guard let presentationDesignable = presentedVC as? PresentationDesignable else {
+      return
+    }
+
+    var presenterSetup = PresentedSetup()
+    presenterSetup.roundCorners = presentationDesignable.roundCorners
+    presenterSetup.dismissOnTap = presentationDesignable.dismissOnTap
+    presenterSetup.backgroundColor = presentationDesignable.backgroundColor
+    presenterSetup.backgroundOpacity = presentationDesignable.backgroundOpacity
+
+    presentedVC.transitioningDelegate = Presenter(transitionAnimationType: animationType, transitionDuration: transitionDuration, interactiveGestureType: nil, presenterSetup: presenterSetup)
+//      PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration, presenterSetup: presenterSetup)
+    presentedVC.modalPresentationStyle = .Custom
+  }
+
+  public func presentViewController(presentedVC: AnimatablePresentedViewController) {
+    setupPresented(presentedVC, animationType: .Fade(direction: .In))
+    presentViewController(presentedVC, animated: true, completion: nil)
   }
 }
