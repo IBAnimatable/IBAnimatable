@@ -73,6 +73,7 @@ public class Presenter: NSObject {
 
 extension Presenter: UIViewControllerTransitioningDelegate {
 
+  // MARK: - presentation
   public func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
     guard let unwrappedPresenterSetup = presentedSetup else {
       return nil

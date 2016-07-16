@@ -10,7 +10,7 @@ public class PresentationAnimatable: UIPresentationController {
   // MARK: Properties
 
   private let presentedSetup: PresentedSetup
-  private var chromeView = AnimatableView()
+  private var dimmingView = AnimatableView()
 
   // MARK: Init
 
@@ -20,15 +20,21 @@ public class PresentationAnimatable: UIPresentationController {
     self.presentedSetup = presentedSetup
     super.init(presentedViewController: presentedViewController, presentingViewController: presentingViewController)
 
-    setupChromeView()
+    setupDimmingView()
+    setupPresentedView()
   }
 
   // MARK: Setup
 
-  private func setupChromeView() {
+  private func setupDimmingView() {
     let tap = UITapGestureRecognizer(target: self, action: #selector(chromeViewTapped))
-    chromeView.addGestureRecognizer(tap)
-    chromeView.fillColor = presentedSetup.backgroundColor.colorWithAlphaComponent(presentedSetup.opacity)
+    dimmingView.addGestureRecognizer(tap)
+    dimmingView.fillColor = presentedSetup.backgroundColor.colorWithAlphaComponent(presentedSetup.opacity)
+  }
+
+  private func setupPresentedView() {
+    presentedViewController.view.layer.cornerRadius = presentedSetup.cornerRadius
+    presentedViewController.view.layer.masksToBounds = true
   }
 
   // MARK: Actions
@@ -81,33 +87,44 @@ public extension PresentationAnimatable {
   }
 
   override func containerViewWillLayoutSubviews() {
-    chromeView.frame = containerView?.bounds ?? CGRect.zero
+    dimmingView.frame = containerView?.bounds ?? CGRect.zero
     presentedView()?.frame = frameOfPresentedViewInContainerView()
   }
 
   // MARK: Animation
 
   override func presentationTransitionWillBegin() {
-    chromeView.frame = containerView?.bounds ?? CGRect.zero
-    chromeView.alpha = 0.0
-    containerView?.insertSubview(chromeView, atIndex: 0)
+    dimmingView.frame = containerView?.bounds ?? CGRect.zero
+    dimmingView.alpha = 0.0
+    containerView?.insertSubview(dimmingView, atIndex: 0)
     if let coordinator = presentedViewController.transitionCoordinator() {
       coordinator.animateAlongsideTransition({ _ in
-        self.chromeView.alpha = 1.0
+        self.dimmingView.alpha = 1.0
       }, completion: nil)
     } else {
-      chromeView.alpha = 1.0
+      dimmingView.alpha = 1.0
+    }
+  }
+
+  public override func presentationTransitionDidEnd(completed: Bool) {
+    if !completed {
+      dimmingView.removeFromSuperview()
     }
   }
 
   override func dismissalTransitionWillBegin() {
     if let coordinator = presentedViewController.transitionCoordinator() {
       coordinator.animateAlongsideTransition({ _ in
-        self.chromeView.alpha = 0.0
+        self.dimmingView.alpha = 0.0
       }, completion: nil)
     } else {
-      chromeView.alpha = 0.0
+      dimmingView.alpha = 0.0
     }
   }
 
+  public override func dismissalTransitionDidEnd(completed: Bool) {
+    if completed {
+      dimmingView.removeFromSuperview()
+    }
+  }
 }
