@@ -16,9 +16,9 @@ class PresentationPresentedViewController: AnimatablePresentedViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-//    if let animatableView = view as? AnimatableView {
-//      animatableView.predefinedGradient = String(generateRandomGradient())
-//    }
+    if let animatableView = view as? AnimatableView {
+      animatableView.predefinedGradient = String(generateRandomGradient())
+    }
   }
 
 }
