@@ -131,8 +131,6 @@ public var animationType: AnimationType = .none
   @IBInspectable public var velocity: CGFloat = CGFloat.nan
   @IBInspectable public var force: CGFloat = CGFloat.nan
   @IBInspectable public var repeatCount: Float = Float.nan
-  @IBInspectable public var x: CGFloat = CGFloat.nan
-  @IBInspectable public var y: CGFloat = CGFloat.nan
   
   // MARK: - Lifecycle
   public override func prepareForInterfaceBuilder() {
