@@ -64,7 +64,13 @@ public class PresentationAnimatable: UIPresentationController {
 private extension PresentationAnimatable {
 
   private func modalSize() -> CGSize {
-    return CGSize(width: 200, height: 200)
+    guard let containerSize = containerView?.bounds.size else {
+      return CGSize.zero
+    }
+
+    let width = CGFloat(presentedSetup.modalSize.0.width(containerSize))
+    let height = CGFloat(presentedSetup.modalSize.1.height(containerSize))
+    return CGSize(width: width, height: height)
   }
 
   private func modalCenter() -> CGPoint? {
@@ -113,9 +119,7 @@ public extension PresentationAnimatable {
   }
 
   override func sizeForChildContentContainer(container: UIContentContainer, withParentContainerSize parentSize: CGSize) -> CGSize {
-    let width = 200
-    let height = 200
-    return CGSize(width: CGFloat(width), height: CGFloat(height))
+    return modalSize()
   }
 
   override func containerViewWillLayoutSubviews() {

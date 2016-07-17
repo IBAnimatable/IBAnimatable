@@ -11,8 +11,8 @@ public protocol PresentationDesignable: class {
   var dismissAnimationType: String? { get set }
   var transitionDuration: Double { get set }
   var modalPosition: String { get set }
-//  var modalWidth: String { get set }
-//  var modalHeight: String { get set }
+  var modalWidth: String { get set }
+  var modalHeight: String { get set }
 
   var cornerRadius: CGFloat { get set }
   var dismissOnTap: Bool { get set }
