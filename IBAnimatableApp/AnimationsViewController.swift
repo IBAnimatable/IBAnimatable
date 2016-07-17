@@ -27,9 +27,7 @@ enum ParamType {
   case number(min: Double, max: Double, interval: Double)
   case enumeration(values: [String])
   
- // pour 2 - 6 - 2 => 6 - 2 / 2 ceil => 2
-  // pour 4 - 10 - 1.5 => 10 - 4 / 1.5 ceil => 4 5.5 7 8.5 10
-  /// Number of different values to show in the picker row
+   /// Number of different values to show in the picker row
   func count() -> Int {
     switch self {
     case .number(let min, let max, let interval):
@@ -38,7 +36,7 @@ enum ParamType {
       return val.count
     }
   }
-  
+
   func titleAt(index:Int) -> String? {
     switch self {
     case .enumeration(let values):
@@ -66,8 +64,8 @@ class AnimationsViewController: UIViewController {
   // prebuit common params
   let wayParam = ParamType.enumeration(values: ["in", "out"])
   let directionParam = ParamType.enumeration(values: ["left", "right", "up", "down", "none"])
-  let axisParams = ParamType.enumeration(values: ["x", "y"])
-  let rotationDirectionParams = ParamType.enumeration(values: ["cw", "ccw"])
+  let axisParams = ParamType.enumeration(values: ["X", "Y"])
+  let rotationDirectionParams = ParamType.enumeration(values: ["Cw", "CCW"])
   var entries:[Entry]!
   var selectedEntry:Entry!
   let positiveNumberParam = ParamType.number(min: 0, max: 50, interval: 2)
@@ -82,7 +80,7 @@ class AnimationsViewController: UIViewController {
       Entry(params:[wayParam, directionParam], name: "fade"),
       Entry(params:[wayParam, directionParam], name: "squeezeFade"),
       Entry(params:[wayParam], name: "zoom"),
-      Entry(params:[axisParams], name: "Flip"),
+      Entry(params:[axisParams], name: "flip"),
       Entry(params:[], name: "flash"),
       Entry(params:[], name: "wobble"),
       Entry(params:[], name: "swing"),
@@ -155,12 +153,12 @@ extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSourc
     let animType = AnimationType(string: toString());
    // print(animType)
     pickerView.isUserInteractionEnabled = false
-    aView.animate(animType)
     oldAView.animationType = toOldString()
-    oldAView.animate {
+    oldAView.animate()
+    aView.animate(animType) {
       if #available(iOS 10.0, *) {
         if !self.aView.transform.isIdentity  || !self.oldAView.transform.isIdentity {
-        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { timer in
+        Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { timer in
           self.oldAView.alpha = 1;
           self.aView.alpha = 1;
           self.oldAView.transform = CGAffineTransform.identity
