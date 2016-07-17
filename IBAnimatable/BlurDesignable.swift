@@ -10,6 +10,10 @@ public protocol BlurDesignable {
    blur effect style: `ExtraLight`, `Light` or `Dark`
    */
   var blurEffectStyle: String? { get set }
+
+  /**
+   Vibrancy effect style: `ExtraLight`, `Light` or `Dark`. Once specify the Vibrancy effect style, all subviews will apply this vibrancy effect.
+   */
   var vibrancyEffectStyle: String? { get set }
   var blurOpacity: CGFloat { get set }
 }
