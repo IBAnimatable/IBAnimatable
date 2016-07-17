@@ -63,11 +63,20 @@ public class PresentationAnimatable: UIPresentationController {
 
 private extension PresentationAnimatable {
 
-  private func centerPoint() -> CGPoint? {
+  private func modalSize() -> CGSize {
+    return CGSize(width: 200, height: 200)
+  }
+
+  private func modalCenter() -> CGPoint? {
     guard let containerBounds = containerView?.bounds else {
       return nil
     }
-    return CGPoint(x: containerBounds.width / 2, y: containerBounds.height / 2)
+
+    return presentedSetup.modalPosition.calculateCenter(containerBounds, modalSize: modalSize())
+  }
+
+  private func modalOrigin() -> CGPoint? {
+    return presentedSetup.modalPosition.calculateOrigin()
   }
 
   private func calculateOrigin(center: CGPoint, size: CGSize) -> CGPoint {
@@ -85,10 +94,21 @@ public extension PresentationAnimatable {
   // MARK: Presentation
 
   override func frameOfPresentedViewInContainerView() -> CGRect {
+    guard let containerBounds = containerView?.bounds else {
+      return CGRect.zero
+    }
+
     var presentedViewFrame = CGRect.zero
-    let size = sizeForChildContentContainer(presentedViewController, withParentContainerSize: containerView?.bounds.size ?? CGSize.zero)
+    let size = sizeForChildContentContainer(presentedViewController, withParentContainerSize: containerBounds.size)
+    let origin: CGPoint
+    if let center = modalCenter() {
+      origin = calculateOrigin(center, size: size)
+    } else {
+      origin = modalOrigin() ?? CGPoint.zero
+    }
+
     presentedViewFrame.size = size
-    presentedViewFrame.origin = centerPoint() ?? CGPoint.zero
+    presentedViewFrame.origin = origin
     return presentedViewFrame
   }
 
