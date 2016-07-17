@@ -27,6 +27,15 @@ public class AnimatablePresentedViewController: UIViewController, PresentationDe
     }
   }
 
+  @IBInspectable public var modalPosition: String = "Center" {
+    didSet {
+      presenter?.presentedSetup?.modalPosition = PresentationModalPosition.fromString(modalPosition)
+    }
+  }
+
+//  @IBInspectable public var modalWidth: String = "Half"
+//  @IBInspectable public var modalHeight: String = "Half"
+
   @IBInspectable public var cornerRadius: CGFloat = .NaN {
     didSet {
       presenter?.presentedSetup?.cornerRadius = cornerRadius
@@ -130,6 +139,7 @@ public class AnimatablePresentedViewController: UIViewController, PresentationDe
     }
 
     var presentedSetup = PresentedSetup()
+    presentedSetup.modalPosition = PresentationModalPosition.fromString(modalPosition)
     presentedSetup.cornerRadius = cornerRadius
     presentedSetup.dismissOnTap = dismissOnTap
     presentedSetup.backgroundColor = backgroundColor

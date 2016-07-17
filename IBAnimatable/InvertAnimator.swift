@@ -88,7 +88,7 @@ extension InvertAnimator {
       NSValue(CATransform3D: CATransform3DIdentity)
     ]
     bounceAnimation.keyTimes = [0.0, 0.5, 0.75, 1.0]
-    bounceAnimation.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)]
+    bounceAnimation.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut), CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut), CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)]
     bounceAnimation.delegate = self
 
     let completionHandler: AnyObject = unsafeBitCast(completion as @convention(block) () -> Void, AnyObject.self)
@@ -96,7 +96,7 @@ extension InvertAnimator {
     return bounceAnimation
   }
 
-  typealias MyFunBlock = @objc_block () -> Void
+  typealias MyFunBlock = @convention(block) () -> Void
   public override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
     let completion = unsafeBitCast(anim.valueForKey("completion"), MyFunBlock.self) as MyFunBlock
     completion()

@@ -10,6 +10,9 @@ public protocol PresentationDesignable: class {
   var presentationAnimationType: String? { get set }
   var dismissAnimationType: String? { get set }
   var transitionDuration: Double { get set }
+  var modalPosition: String { get set }
+//  var modalWidth: String { get set }
+//  var modalHeight: String { get set }
 
   var cornerRadius: CGFloat { get set }
   var dismissOnTap: Bool { get set }
@@ -37,4 +40,6 @@ public struct PresentedSetup {
   var shadowRadius: CGFloat = .NaN
   var shadowOpacity: CGFloat = .NaN
   var shadowOffset: CGPoint = CGPoint(x: CGFloat.NaN, y: CGFloat.NaN)
+  var modalPosition: PresentationModalPosition = .Center
+  var modalSize: (PresentationModalSize, PresentationModalSize) = (.Half, .Half)
 }
