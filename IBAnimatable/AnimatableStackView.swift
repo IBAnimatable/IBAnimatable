@@ -164,8 +164,7 @@ import UIKit
   // MARK: - Private
   private func configInspectableProperties() {
     configAnimatableProperties()
-    configTintedColor()
-    configBlurEffectStyle()
+    configTintedColor()    
   }
   
   private func configAfterLayoutSubviews() {
