@@ -63,7 +63,8 @@ class AnimationsViewController: UIViewController {
   
   // prebuit common params
   let wayParam = ParamType.enumeration(values: ["in", "out"])
-  let directionParam = ParamType.enumeration(values: ["left", "right", "up", "down", "none"])
+  let directionParam = ParamType.enumeration(values: ["left", "right", "up", "down"])
+  let fadeParams = ParamType.enumeration(values: ["in", "out", "inOut", "outIn"])
   let axisParams = ParamType.enumeration(values: ["X", "Y"])
   let rotationDirectionParams = ParamType.enumeration(values: ["Cw", "CCW"])
   var entries:[Entry]!
@@ -77,7 +78,8 @@ class AnimationsViewController: UIViewController {
      entries = [
       Entry(params:[wayParam, directionParam], name: "slide"),
       Entry(params:[wayParam, directionParam], name: "squeeze"),
-      Entry(params:[wayParam, directionParam], name: "fade"),
+      Entry(params:[fadeParams], name: "fade"),
+      Entry(params:[wayParam, directionParam], name: "slideFade"),
       Entry(params:[wayParam, directionParam], name: "squeezeFade"),
       Entry(params:[wayParam], name: "zoom"),
       Entry(params:[axisParams], name: "flip"),

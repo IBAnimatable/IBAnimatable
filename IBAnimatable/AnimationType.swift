@@ -12,7 +12,8 @@ import UIKit
 public enum AnimationType {
   case slide(way:Way?, direction:Direction?)
   case squeeze(way:Way?, direction:Direction?) // miss squeeze
-  case fade(way:Way?, direction:Direction?) // miss fadeinout, fadeountin
+  case slideFade(way:Way?, direction:Direction?)
+  case fade(way:FadeWay?)
   case squeezeFade(way:Way?, direction:Direction?)
   case zoom(way:Way?)
   case shake
@@ -27,9 +28,11 @@ public enum AnimationType {
   case moveBy(x:Double?, y:Double?)
   case none
  
+  public enum FadeWay: String {
+    case `in`, out, inOut, outIn
+  }
   public enum Way: String {
-    case Out = "out"
-    case In = "in"
+    case out, `in`
   }
   public enum Axis: String {
     case x, y
@@ -63,7 +66,9 @@ extension AnimationType : IBEnum {
       case "squeeze":
         self = .squeeze(way: Way(raw: params[safe:0]), direction: Direction(raw: params[safe:1] ))
       case "fade":
-        self = .fade(way: Way(raw: params[safe:0]), direction: Direction(raw: params[safe:1] ?? ""))
+        self = .fade(way: FadeWay(raw: params[safe:0]))
+    case "slideFade":
+        self = .slideFade(way: Way(raw: params[safe:0]), direction: Direction(raw: params[safe:1] ?? ""))
       case "squeezefade":
         self = .squeezeFade(way: Way(raw: params[safe:0]), direction: Direction(raw: params[safe:1] ?? ""))
       case "zoom":
