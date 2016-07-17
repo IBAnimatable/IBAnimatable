@@ -33,6 +33,7 @@ To use `IBAnimatable`, we can drag and drop a UIKit element and connect it with 
 | Property name | Data type | Description |
 | ------------- |:-------------:| ----- |
 | blurEffectStyle | Optional&lt;String> | Support three different blur effects: `ExtraLight`, `Light` and `Dark`, also can be found in emum [`BlurEffectStyle `](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/BlurEffectStyle.swift). The look of blur effect in Interface Builder is different from Simulator or device. |
+| vibrancyEffectStyle | Optional&lt;String> | Support three different blur effects: `ExtraLight`, `Light` and `Dark`, also can be found in emum [`BlurEffectStyle `](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/BlurEffectStyle.swift). Once specify the Vibrancy effect style, all subviews will apply this vibrancy effect. |
 | blurOpacity | CGFloat | Opacity of the blur effect specified above. the default value is `CGFloat.NaN`, the value range is from 0.0 to 1.0. |
 
 
