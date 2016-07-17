@@ -33,8 +33,17 @@ public class AnimatablePresentedViewController: UIViewController, PresentationDe
     }
   }
 
-//  @IBInspectable public var modalWidth: String = "Half"
-//  @IBInspectable public var modalHeight: String = "Half"
+  @IBInspectable public var modalWidth: String = "Half" {
+    didSet {
+      presenter?.presentedSetup?.modalSize = (PresentationModalSize.fromString(modalWidth), PresentationModalSize.fromString(modalHeight))
+    }
+  }
+
+  @IBInspectable public var modalHeight: String = "Full" {
+    didSet {
+      presenter?.presentedSetup?.modalSize = (PresentationModalSize.fromString(modalWidth), PresentationModalSize.fromString(modalHeight))
+    }
+  }
 
   @IBInspectable public var cornerRadius: CGFloat = .NaN {
     didSet {
@@ -140,6 +149,7 @@ public class AnimatablePresentedViewController: UIViewController, PresentationDe
 
     var presentedSetup = PresentedSetup()
     presentedSetup.modalPosition = PresentationModalPosition.fromString(modalPosition)
+    presentedSetup.modalSize = (PresentationModalSize.fromString(modalWidth), PresentationModalSize.fromString(modalHeight))
     presentedSetup.cornerRadius = cornerRadius
     presentedSetup.dismissOnTap = dismissOnTap
     presentedSetup.backgroundColor = backgroundColor

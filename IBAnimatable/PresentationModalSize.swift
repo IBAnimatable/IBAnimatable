@@ -34,3 +34,43 @@ public enum PresentationModalSize {
   }
 
 }
+
+extension PresentationModalSize {
+
+  public static func fromString(size: String) -> PresentationModalSize {
+    if size.hasPrefix("Half") {
+      return .Half
+    } else if size.hasPrefix("Full") {
+      return .Full
+    }
+    return fromStringWithParameters(size)
+  }
+
+
+  static func fromStringWithParameters(size: String) -> PresentationModalSize {
+    let sizeParams = params(forSize: size)
+    guard let value = Float(sizeParams.first ?? "") else {
+      return .Half
+    }
+
+    if size.hasPrefix("Custom") {
+      return .Custom(size: value)
+    }
+    return .Half
+  }
+
+}
+
+private extension PresentationModalSize {
+
+  static func params(forSize size: String) -> [String] {
+    let range = size.rangeOfString("(")
+    let size = size.stringByReplacingOccurrencesOfString(" ", withString: "")
+      .lowercaseString
+      .substringFromIndex(range?.startIndex ?? size.endIndex)
+      .stringByReplacingOccurrencesOfString("(", withString: "")
+      .stringByReplacingOccurrencesOfString(")", withString: "")
+    return size.componentsSeparatedByString(",")
+  }
+  
+}
