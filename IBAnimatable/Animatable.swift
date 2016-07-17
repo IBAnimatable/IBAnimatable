@@ -5,6 +5,7 @@
 
 import UIKit
 
+private typealias AnimationValues = (x: CGFloat, y: CGFloat, scaleX: CGFloat, scaleY: CGFloat)
 public protocol Animatable: class {
   
   /**
@@ -74,35 +75,35 @@ public extension Animatable where Self: UIView {
   
   public func animate(_ animation: AnimationType? = nil, completion: AnimatableCompletion? = nil) {
     switch animation ?? animationType {
-    case .slide(let way, let direction):
+    case let .slide(way, direction):
       slide(way: way ?? .In, direction: direction ?? .right, completion: completion)
-    case .squeeze(let way, let direction):
+    case let .squeeze(way, direction):
       squeeze(way: way ?? .In, direction: direction ?? .right, completion: completion)
-    case .squeezeFade(let way, let direction):
+    case let .squeezeFade(way, direction):
       squeezeFade(way: way ?? .In, direction: direction ?? .right, completion: completion)
-    case .fade(let way, let direction):
+    case let .fade(way, direction):
       fade(way: way  ?? .In, direction: direction ?? .right, completion: completion)
-      case .zoom(let way):
+    case let .zoom(way):
       zoom(way: way ?? .In, completion: completion)
-    case .shake:
+    case let .shake:
       shake(completion)
-    case .pop:
+    case let .pop:
       pop(completion)
-    case .flip(let axis):
+    case let .flip( axis):
       flip(axis:axis ?? .x, completion: completion)
-    case .morph:
+    case let .morph:
       morph(completion)
-    case .flash:
+    case let .flash:
       flash(completion)
-    case .wobble:
+    case let .wobble:
       wobble(completion)
-    case .swing:
+    case let .swing:
       swing(completion)
-    case .rotate(let direction):
+    case let .rotate(direction):
       rotate(direction: direction ?? .cw, completion: completion)
-    case .moveBy(let x, let y):
+    case let .moveBy(x, y):
       moveBy(x: x ?? 0, y: y ?? 0, completion: completion)
-    case .moveTo(let x, let y):
+    case let .moveTo(x, y):
       moveTo(x: x ?? 0, y: y ?? 0, completion: completion)
     default:break
       
@@ -122,10 +123,12 @@ public extension Animatable where Self: UIView {
   }
   
   // MARK: - Animation methods
-  
-  public func slide(way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
+  private func computeValues(way:AnimationType.Way, direction:AnimationType.Direction, shouldScale:Bool) -> AnimationValues {
     let yDistance = screenSize.height * force
     let xDistance = screenSize.width * force
+    let scale = 3 * force
+    var scaleX: CGFloat = 1
+    var scaleY: CGFloat = 1
     
     var x: CGFloat = 0
     var y: CGFloat = 0
@@ -139,49 +142,44 @@ public extension Animatable where Self: UIView {
     case .up:
       y = yDistance
     }
+    if (shouldScale && direction.isVertical()) {
+      scaleY = scale
+    } else if (shouldScale){
+      scaleX = scale
+    }
     switch way {
     case .In:
-      animateIn(x, y, 1, 1, 1, completion)
+      return (x:x, y:y, scaleX:scaleX, scaleY:scaleY)
+    //  animateIn(x, y, 1, 1, 1, completion)
     case .Out where direction.isVertical():
-      animateOut(x, -y, 1, 1, 1, completion)
+      return (x:x, y:-y, scaleX:scaleX, scaleY:scaleY)
+      
     case .Out:
-      animateOut(x, y, 1, 1, 1, completion)
+      return (x:x, y:y, scaleX:scaleX, scaleY:scaleY)
+    }
+    
+  }
+  
+  public func slide(way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
+
+    let values = computeValues(way: way, direction: direction, shouldScale: false)
+    switch way {
+    case .In:
+      animateIn(values.x, values.y, values.scaleX, values.scaleY, 1, completion)
+    case .Out:
+      animateOut(values.x, values.y, values.scaleX, values.scaleY, 1, completion)
     }
   }
   
   
-  
   public func squeeze( way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
-    let yDistance = screenSize.height * force
-    let xDistance = screenSize.width * force
-    let scale = 3 * force
   
-    var x: CGFloat = 0
-    var y: CGFloat = 0
-    var scaleX: CGFloat = 1
-    var scaleY: CGFloat = 1
-    
-    switch direction {
-    case .left:
-      x = -xDistance
-      scaleX = scale
-    case .right:
-      x = xDistance
-      scaleX = scale
-    case .down:
-      y = -yDistance
-      scaleY = scale
-    case .up:
-      y = yDistance
-      scaleY = scale
-    }
+    let values = computeValues(way: way, direction: direction, shouldScale: true)
     switch way {
     case .In:
-      animateIn(x, y, scaleX, scaleY, 1, completion)
-    case .Out where direction.isVertical():
-      animateOut(x, -y, scaleX, scaleY, 1, completion)
+      animateIn(values.x, values.y, values.scaleX, values.scaleY, 1, completion)
     case .Out:
-      animateOut(x, y, scaleX, scaleY, 1, completion)
+      animateOut(values.x, values.y, values.scaleX, values.scaleY, 1, completion)
     }
   }
   
@@ -222,64 +220,28 @@ public extension Animatable where Self: UIView {
     }
       animateBy(x: xOffsetToMove, y: yOffsetToMove, completion: completion)
   }
-
+  
   public func fade( way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
-    let yDistance = screenSize.height * force
-    let xDistance = screenSize.width * force
     
-    var x: CGFloat = 0
-    var y: CGFloat = 0
-    switch direction {
-    case .left:
-      x = -xDistance
-    case .right:
-      x = xDistance
-    case .down:
-      y = -yDistance
-    case .up:
-      y = yDistance
-    }
+    let values = computeValues(way: way, direction: direction, shouldScale: false)
     switch way {
     case .In:
       alpha = 0
-      slide(way: .In, direction: direction, completion: completion)
-    case .Out where direction.isVertical():
-      animateOut(x, -y, 1, 1, 1, completion)
+      animateIn(values.x, values.y, values.scaleX, values.scaleY, 1, completion)
     case .Out:
-      animateOut(x, y, 1, 1, 1, completion)
+      animateOut(values.x, values.y, values.scaleX, values.scaleY, 0, completion)
     }
   }
   
   public func squeezeFade(way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
-    let yDistance = screenSize.height * force
-    let xDistance = screenSize.width * force
-    let scale = 3 * force
     
-    var x: CGFloat = 0
-    var y: CGFloat = 0
-    var scaleX: CGFloat = 1
-    var scaleY: CGFloat = 1
-    switch direction {
-    case .left:
-      x = -xDistance
-      scaleX = scale
-    case .right:
-      x = xDistance
-      scaleX = scale
-    case .down:
-      y = yDistance
-      scaleY = scale
-    case .up:
-      y = -yDistance
-      scaleY = scale
-    }
+    let values = computeValues(way: way, direction: direction, shouldScale: true)
     switch way {
     case .In:
       alpha = 0
-      squeeze(way: .In, direction: direction, completion:completion)
-      
+      animateIn(values.x, values.y, values.scaleX, values.scaleY, 1, completion)
     case .Out:
-      animateOut(x, y, scaleX, scaleY, 0, completion)
+      animateOut(values.x, values.y, values.scaleX, values.scaleY, 0, completion)
     }
   }
   
@@ -331,7 +293,8 @@ public extension Animatable where Self: UIView {
       self.alpha = 0
       completion?()
     })
-  }  public func flip(axis: AnimationType.Axis, completion: AnimatableCompletion? = nil) {
+  }
+  public func flip(axis: AnimationType.Axis, completion: AnimatableCompletion? = nil) {
      let scaleX: CGFloat
     let scaleY: CGFloat
     switch axis {
@@ -547,8 +510,7 @@ public extension Animatable where Self: UIView {
         if completed {
           completion?()
         }
-      }
-    )
+      })
   }
 
   private func animateOut(_ x: CGFloat, _ y: CGFloat, _ scaleX: CGFloat, _ scaleY: CGFloat, _ alpha: CGFloat, _ completion: AnimatableCompletion? = nil) {
