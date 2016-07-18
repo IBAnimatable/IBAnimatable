@@ -84,6 +84,8 @@ view.y = 200
 //view.rotate()
 //view.rotate(clockwise: false)
 //view.moveTo()
-view.moveBy()
+//view.moveBy()
+view.zoomInvertIn()
+//view.zoomInvertOut()
 
 //: [Next](@next)
