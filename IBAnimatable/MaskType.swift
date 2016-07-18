@@ -58,7 +58,7 @@ public extension MaskType {
     case "triangle":
       self = .triangle
     case "wave":
-      self = .wave(direction: WaveDirection(rawValue: (params[safe: 0] ?? "").lowercased())!, width: params[safe:1]?.toDouble() ?? 40, offset: params[safe:2]?.toDouble() ?? 0)
+      self = .wave(direction:WaveDirection(raw: params[safe:0], defaultValue:.up), width: params[safe:1]?.toDouble() ?? 40, offset: params[safe:2]?.toDouble() ?? 0)
     case "parallelogram":
       self = .parallelogram(angle: params[safe: 0]?.toDouble() ?? 60)
     default:
