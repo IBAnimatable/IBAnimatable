@@ -12,7 +12,7 @@ public enum PresentationAnimationType {
   case Flip
   case CrossDissolve
   case Cover(fromDirection: TransitionDirection)
-  case Invert
+  case Zoom
 
   public var stringValue: String {
     return String(self)
@@ -33,8 +33,8 @@ public enum PresentationAnimationType {
       return .CrossDissolve
     } else if transitionType.hasPrefix("Flip") {
       return .Flip
-    } else if transitionType.hasPrefix("Invert") {
-      return .Invert
+    } else if transitionType.hasPrefix("Zoom") {
+      return .Zoom
     }
     return fromStringWithDirection(transitionType)
   }

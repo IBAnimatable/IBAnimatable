@@ -5,7 +5,7 @@
 
 import UIKit
 
-public class InvertAnimator: NSObject, AnimatedPresenting {
+public class ZoomAnimator: NSObject, AnimatedPresenting {
 
   // MARK: - AnimatedPresenting  
   public var transitionDuration: Duration = defaultTransitionDuration
@@ -20,7 +20,7 @@ public class InvertAnimator: NSObject, AnimatedPresenting {
 
 // MARK: - Animator
 
-extension InvertAnimator: UIViewControllerAnimatedTransitioning {
+extension ZoomAnimator: UIViewControllerAnimatedTransitioning {
 
   public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
     return retrieveTransitionDuration(transitionContext)
@@ -37,7 +37,7 @@ extension InvertAnimator: UIViewControllerAnimatedTransitioning {
     if presenting {
       containerView.addSubview(animatingView)
     }
-    animateInvert(animatingView: animatingView, presenting: presenting) {
+    animateZoom(animatingView: animatingView, presenting: presenting) {
       if !presenting {
         fromView?.removeFromSuperview()
       }
@@ -49,57 +49,32 @@ extension InvertAnimator: UIViewControllerAnimatedTransitioning {
 
 // MARK: - Animation
 
-private extension InvertAnimator {
+private extension ZoomAnimator {
 
-  func animateInvert(animatingView animatingView: UIView, presenting: Bool, completion: AnimatableCompletion) {
+  func animateZoom(animatingView animatingView: UIView, presenting: Bool, completion: AnimatableCompletion) {
     if presenting {
-      animatePresengingInvert(animatingView: animatingView, completion: completion)
+      animatePresengingZoom(animatingView: animatingView, completion: completion)
     } else {
-      animateDismissingInvert(animatingView: animatingView, completion: completion)
+      animateDismissingZoom(animatingView: animatingView, completion: completion)
     }
   }
 
-  func animatePresengingInvert(animatingView animatingView: UIView, completion: AnimatableCompletion) {
-    let bounceAnimation = animation(completion)
-    animatingView.layer.addAnimation(bounceAnimation, forKey: "bounce")
+  func animatePresengingZoom(animatingView animatingView: UIView, completion: AnimatableCompletion) {
+    animatingView.transform = CGAffineTransformMakeScale(0.1, 0.1)
+    UIView.animateWithDuration(transitionDuration, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: [.CurveEaseOut], animations: {
+      animatingView.transform = CGAffineTransformMakeScale(1, 1)
+    }) { _ in
+      completion()
+    }
   }
 
-  func animateDismissingInvert(animatingView animatingView: UIView, completion: AnimatableCompletion) {
-    let bounceAnimation = animation(completion)
-    bounceAnimation.speed = -1
-    animatingView.layer.addAnimation(bounceAnimation, forKey: "bounce")
-  }
-
-}
-
-// MARK: CAAnimation
-
-extension InvertAnimator {
-
-  func animation(completion: AnimatableCompletion) -> CAAnimation {
-    let bounceAnimation = CAKeyframeAnimation(keyPath: "transform")
-    bounceAnimation.fillMode = kCAFillModeBoth
-    bounceAnimation.removedOnCompletion = true
-    bounceAnimation.duration = transitionDuration
-    bounceAnimation.values = [
-      NSValue(CATransform3D: CATransform3DMakeScale(0.01, 0.01, 0.01)),
-      NSValue(CATransform3D: CATransform3DMakeScale(0.9, 0.9, 0.9)),
-      NSValue(CATransform3D: CATransform3DMakeScale(1.1, 1.1, 1.1)),
-      NSValue(CATransform3D: CATransform3DIdentity)
-    ]
-    bounceAnimation.keyTimes = [0.0, 0.5, 0.75, 1.0]
-    bounceAnimation.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut), CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut), CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)]
-    bounceAnimation.delegate = self
-
-    let completionHandler: AnyObject = unsafeBitCast(completion as @convention(block) () -> Void, AnyObject.self)
-    bounceAnimation.setValue(completionHandler, forKey: "completion")
-    return bounceAnimation
-  }
-
-  typealias MyFunBlock = @convention(block) () -> Void
-  public override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
-    let completion = unsafeBitCast(anim.valueForKey("completion"), MyFunBlock.self) as MyFunBlock
-    completion()
+  func animateDismissingZoom(animatingView animatingView: UIView, completion: AnimatableCompletion) {
+    UIView.animateWithDuration(transitionDuration, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: [.CurveEaseIn], animations: {
+      animatingView.transform = CGAffineTransformMakeScale(0.1, 0.1)
+      animatingView.alpha = 0.0
+    }) { _ in
+      completion()
+    }
   }
 
 }
