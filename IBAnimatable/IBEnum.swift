@@ -18,30 +18,24 @@ public protocol IBEnum: StringLiteralConvertible {
   init(string: String?)
 }
 
-extension RawRepresentable where RawValue == String {
-  init?(raw: String?) {
-    guard let string = raw else {
-      return nil
-    }
-    self.init(rawValue:string)
-  }
-}
 
 public extension IBEnum {
   /**
    Helper function that returns a tuple containing the name and params from a string `string`
    
    - Parameter from string: The string to be converted into `enum`.
-    - Discussion: the string format is like "enumName(param1,param2,param3)"
+   - Discussion: the string format is like "enumName(param1,param2,param3)"
    - Returns: A tuple containing the name and an array of parameter string
    */
-   static func extractNameAndParams(from string: String) -> (name: String, params: [String]) {
+  static func extractNameAndParams(from string: String) -> (name: String, params: [String]) {
     let tokens = string.components(separatedBy: CharacterSet(charactersIn: "()")).filter({!$0.isEmpty})
     let name = tokens.first ?? ""
     let paramsString = tokens.count >= 2 ? tokens[1] : ""
     let params = paramsString.components(separatedBy: ",").filter({!$0.isEmpty})
     return (name:name, params:params)
-  }
+    Int("dasdas")
+    Double("dasdas")
+ }
 }
 
 // MARK: - StringLiteralConvertible
@@ -58,3 +52,5 @@ public extension IBEnum {
     self.init(string:value)
   }
 }
+
+
