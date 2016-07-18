@@ -8,33 +8,31 @@ import UIKit
 
 /**
  Mask type for masking an IBAnimatable UI element.
- 
- - circle: For circle shape with diameter equals to min(width, height).
- - polygon: For polygon shape with `n` sides. (min: 3, the default: 6).
- - star: For star shape with n points (min: 3, default:6)
- - triangle: For isosceles triangle shape. The triangle's height is equal to the view's frame height. If the view is a square, the triangle is equilateral.
- - wave: For wave shape with `direction` (up or down, default: up), width (default: 40) and offset (default: 0)
- - parallelogram: For parallelogram shape with an angle (default: 60). If `angle == 90` then it is a rectangular mask. If `angle < 90` then is a left-oriented parallelogram \\-\\
- - none: For no mask, if the input `string` of `init` is nil, the value of the neum is `.none`. If the `string` can not be mapped to supported mask type, it will set to default value `.none`.
- */
+*/
 
 public enum MaskType: IBEnum {
+  /// For circle shape with diameter equals to min(width, height).
   case circle
-  case polygon(sides:Int?)
-  case star(points:Int?)
+  /// For polygon shape with `n` sides. (min: 3, the default: 6).
+  case polygon(sides: Int)
+  /// For star shape with n points (min: 3, default:6)
+  case star(points: Int)
+  /// For isosceles triangle shape. The triangle's height is equal to the view's frame height. If the view is a square, the triangle is equilateral.
   case triangle
-  case wave(direction:WaveDirection?, width:Float?, offset:Float?)
-  case parallelogram(angle:Double?)
+  /// For wave shape with `direction` (up or down, default: up), width (default: 40) and offset (default: 0)
+  case wave(direction: WaveDirection, width: Double, offset: Double)
+  ///  For parallelogram shape with an angle (default: 60). If `angle == 90` then it is a rectangular mask. If `angle < 90` then is a left-oriented parallelogram\-\
+  case parallelogram(angle: Double)
+  
   case none
   
   /**
    Wave direction for `wave` shape.
-   
-   - up: For the wave facing up.
-   - down: For the wave facing down.
    */
   public enum WaveDirection: String {
+    /// For the wave facing up.
     case up
+    /// For the wave facing down.
     case down
   }
 }
@@ -54,15 +52,15 @@ public extension MaskType {
     case "circle":
       self = .circle
     case "polygon":
-      self = .polygon(sides: Int(params[safe:0] ?? ""))
+      self = .polygon(sides: params[safe: 0]?.toInt() ?? 6)
     case "star":
-      self = .star(points: Int(params[safe:0] ?? ""))
+      self = .star(points: params[safe:0]?.toInt() ?? 6)
     case "triangle":
       self = .triangle
     case "wave":
-      self = .wave(direction: WaveDirection(rawValue:(params[safe:0] ?? "").lowercased()), width: Float(params[safe:1] ?? ""), offset:Float(params[safe:2] ?? ""))
+      self = .wave(direction: WaveDirection(rawValue: (params[safe: 0] ?? "").lowercased())!, width: params[safe:1]?.toDouble() ?? 40, offset: params[safe:2]?.toDouble() ?? 0)
     case "parallelogram":
-      self = .parallelogram(angle: Double(params[safe:0] ?? ""))
+      self = .parallelogram(angle: params[safe: 0]?.toDouble() ?? 60)
     default:
       self = .none
     }
