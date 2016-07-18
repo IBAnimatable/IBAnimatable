@@ -280,37 +280,7 @@ public extension Animatable where Self: UIView {
   }
   
   
-  private func fadeOutIn(_ completion: AnimatableCompletion? = nil) {
-    CALayer.animate({
-      let animation = CABasicAnimation(keyPath: "opacity")
-      animation.fromValue = 1
-      animation.toValue = 0
-      animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-      animation.duration = CFTimeInterval(self.duration)
-      animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
-      animation.autoreverses = true
-      self.layer.add(animation, forKey: "fade")
-    }, completion: completion)
-  }
-  
-  private func fadeInOut(_ completion: AnimatableCompletion? = nil) {
-    CALayer.animate({
-      let animation = CABasicAnimation(keyPath: "opacity")
-      animation.fromValue = 0
-      animation.toValue = 1
-      animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-      animation.duration = CFTimeInterval(self.duration)
-      animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
-      animation.autoreverses = true
-      animation.isRemovedOnCompletion = false
-      self.layer.add(animation, forKey: "fade")
-    },
-    completion: {
-      self.alpha = 0
-      completion?()
-    })
-  }
-  public func flip(axis: AnimationType.Axis, completion: AnimatableCompletion? = nil) {
+    public func flip(axis: AnimationType.Axis, completion: AnimatableCompletion? = nil) {
      let scaleX: CGFloat
     let scaleY: CGFloat
     switch axis {
@@ -450,52 +420,40 @@ public extension Animatable where Self: UIView {
     let xOffsetToMove = x.isNaN ? 0: CGFloat(x)
     let yOffsetToMove = y.isNaN ? 0: CGFloat(y)
     animateBy(x: xOffsetToMove, y: yOffsetToMove, completion: completion)
-  //  animateToWithX(xOffsetToMove, y: yOffsetToMove, completion: completion)
   }
   
   // MARK: - Private
-
-/*
-  private func animateIn(with x: CGFloat, y: CGFloat?, scaleX: CGFloat, completion: AnimatableCompletion? = nil) {
-    animateIn(x, y, scaleX, 1, 1, completion)
+  private func fadeOutIn(_ completion: AnimatableCompletion? = nil) {
+    CALayer.animate({
+      let animation = CABasicAnimation(keyPath: "opacity")
+      animation.fromValue = 1
+      animation.toValue = 0
+      animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      animation.duration = CFTimeInterval(self.duration)
+      animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
+      animation.autoreverses = true
+      self.layer.add(animation, forKey: "fade")
+      }, completion: completion)
   }
   
-  private func animateOutWithX(_ x: CGFloat, scaleX: CGFloat, alpha: CGFloat, completion: AnimatableCompletion? = nil) {
-    animateOut(x, 0, scaleX, 1, alpha, completion)
-  }
-  
-  private func animateInWithY(_ y: CGFloat, scaleY: CGFloat, completion: AnimatableCompletion? = nil) {
-    animateIn(0, y, 1, scaleY, 1, completion)
-  }
-  
-  private func animateOutWithY(_ y: CGFloat, scaleY: CGFloat, alpha: CGFloat, completion: AnimatableCompletion? = nil) {
-    animateOut(0, y, 1, scaleY, alpha, completion)
-  }
-  
-  private func animateInWithScaleX(_ scaleX: CGFloat, scaleY: CGFloat, alpha: CGFloat, completion: AnimatableCompletion? = nil) {
-    animateIn(0, 0, scaleX, scaleY, alpha, completion)
-  }
-  
-  private func animateOutWithScaleX(_ scaleX: CGFloat, scaleY: CGFloat, alpha: CGFloat, completion: AnimatableCompletion? = nil) {
-    animateOut(0, 0, scaleX, scaleY, alpha, completion)
-  }
-  private func animateWithAlpha(_ alpha: CGFloat, completion: AnimatableCompletion? = nil) {
-    UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [],
-      animations: {
-        self.alpha = alpha
+  private func fadeInOut(_ completion: AnimatableCompletion? = nil) {
+    CALayer.animate({
+      let animation = CABasicAnimation(keyPath: "opacity")
+      animation.fromValue = 0
+      animation.toValue = 1
+      animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      animation.duration = CFTimeInterval(self.duration)
+      animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
+      animation.autoreverses = true
+      animation.isRemovedOnCompletion = false
+      self.layer.add(animation, forKey: "fade")
       },
-      completion: { completed in
-        if completed {
-          completion?()
-        }
-      }
-    )
+                    completion: {
+                      self.alpha = 0
+                      completion?()
+    })
   }
 
-  private func animateToWithX(_ x: CGFloat, y: CGFloat, completion: AnimatableCompletion? = nil) {
-   animateTo(x, y, completion)
-  }
- */
   private func animateBy(x: CGFloat, y: CGFloat, completion: AnimatableCompletion? = nil) {
     let translate = CGAffineTransform(translationX: x, y: y)
     UIView.animate(withDuration: duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [],
