@@ -14,14 +14,29 @@ internal extension Array {
     return indices.contains(index) ? self[index] : nil  /// Returns the element at the specified index iff it is within bounds, otherwise nil.
   }
 }
-  /*
-internal extension Collection {
-  /// Returns the element at the specified index iff it is within bounds, otherwise nil.
-  subscript (safe index: Index) -> Generator.Element? {
-    let val = self[index];
-    return self.indices ~= index ? self[index] : nil;
-    
-    return indices.contains(index) ? self[index] : nil
+
+internal extension String {
+  func toDouble() -> Double? {
+    return Double(self)
+  }
+  func toInt() -> Int? {
+    return Int(self)
   }
 }
-*/
+
+internal extension RawRepresentable where RawValue == String {
+  init?(raw: String?) {
+    guard let string = raw else {
+      return nil
+    }
+    self.init(rawValue:string)
+  }
+}
+internal extension RawRepresentable {
+  init(raw: RawValue?,  defaultValue:Self) {
+    if let value = raw  {
+      self = Self.init(rawValue:value) ?? defaultValue
+    }
+    self = defaultValue
+  }
+}
