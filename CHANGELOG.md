@@ -9,6 +9,17 @@ All notable changes to this project will be documented in this file.
 None
 
 #### Enhancements
+None
+
+#### Bugfixes
+None
+
+### [2.5](https://github.com/JakeLin/IBAnimatable/releases/tag/2.5)
+
+#### API breaking changes
+None
+
+#### Enhancements
 
 - Add `vibrancyBlurEffect` to `BlurDesignable`. Once specify the Vibrancy effect style, all subviews will apply this vibrancy effect [#245](https://github.com/JakeLin/IBAnimatable/pull/245)
 - New animations: `ZoomInvertIn` and ``ZoomInvertOut` [#249](https://github.com/JakeLin/IBAnimatable/pull/249)
@@ -207,3 +218,5 @@ None
 ### [1.0](https://github.com/JakeLin/IBAnimatable/releases/tag/1.0)
 
 - Initial release
+
+
