@@ -163,6 +163,10 @@ public extension Animatable where Self: UIView {
       zoomIn(completion)
     case .ZoomOut:
       zoomOut(completion)
+    case .ZoomInvertIn:
+      zoomInvertIn(completion)
+    case .ZoomInvertOut:
+      zoomInvertOut(completion)
     case .Shake:
       shake(completion)
     case .Pop:
@@ -428,6 +432,23 @@ public extension Animatable where Self: UIView {
   public func zoomOut(completion: AnimatableCompletion? = nil) {
     let scaleX = 2 * force
     let scaleY = 2 * force
+    alpha = 1
+    let toAlpha: CGFloat = 0
+    animateOutWithScaleX(scaleX, scaleY: scaleY, alpha: toAlpha, completion: completion)
+  }
+
+  public func zoomInvertIn(completion: AnimatableCompletion? = nil) {
+    let scaleX = 1 * force
+    let scaleY = 1 * force
+    alpha = 0
+    let toAlpha: CGFloat = 1
+    transform = CGAffineTransformMakeScale(0.1, 0.1)
+    animateOutWithScaleX(scaleX, scaleY: scaleY, alpha: toAlpha, completion: completion)
+  }
+
+  public func zoomInvertOut(completion: AnimatableCompletion? = nil) {
+    let scaleX = 0.1 * force
+    let scaleY = 0.1 * force
     alpha = 1
     let toAlpha: CGFloat = 0
     animateOutWithScaleX(scaleX, scaleY: scaleY, alpha: toAlpha, completion: completion)
