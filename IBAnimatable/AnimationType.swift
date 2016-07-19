@@ -29,7 +29,7 @@ public enum AnimationType {
   case none
  
   public enum FadeWay: String {
-    case `in`, out, inOut, outIn
+    case `in`, out, inOut = "inout", outIn = "outin"
   }
   public enum Way: String {
     case out, `in`
@@ -56,11 +56,11 @@ extension AnimationType : IBEnum {
       self = .none
       return
     }
-    let nameAndParames = MaskType.extractNameAndParams(from: string)
+    let nameAndParames = MaskType.extractNameAndParams(from: string.lowercased())
     let name = nameAndParames.name
     let params = nameAndParames.params
     
-    switch name.lowercased() {
+    switch name {
       case "slide":
         self = .slide(way: Way(raw: params[safe:0], defaultValue: .in), direction: Direction(raw: params[safe:1], defaultValue:.left))
       case "squeeze":

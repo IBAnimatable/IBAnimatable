@@ -44,11 +44,11 @@ public extension MaskType {
       return
     }
     
-    let nameAndParames = MaskType.extractNameAndParams(from: string)
+    let nameAndParames = MaskType.extractNameAndParams(from: string.lowercased())
     let name = nameAndParames.name
     let params = nameAndParames.params
     
-    switch name.lowercased() {
+    switch name {
     case "circle":
       self = .circle
     case "polygon":
