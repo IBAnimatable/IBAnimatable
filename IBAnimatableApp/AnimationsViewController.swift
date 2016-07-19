@@ -58,7 +58,6 @@ struct Entry {
 class AnimationsViewController: UIViewController {
   
   @IBOutlet weak var aView: AnimatableView!
-  @IBOutlet weak var oldAView: AnimatableOldView!
   @IBOutlet weak var pickerView: UIPickerView!
   
   // prebuit common params
@@ -155,15 +154,11 @@ extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSourc
     let animType = AnimationType(string: toString());
    // print(animType)
     pickerView.isUserInteractionEnabled = false
-    oldAView.animationType = toOldString()
-    oldAView.animate()
     aView.animate(animType) {
       if #available(iOS 10.0, *) {
-        if !self.aView.transform.isIdentity  || !self.oldAView.transform.isIdentity {
+        if !self.aView.transform.isIdentity {
         Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { timer in
-          self.oldAView.alpha = 1;
           self.aView.alpha = 1;
-          self.oldAView.transform = CGAffineTransform.identity
           self.aView.transform = CGAffineTransform.identity
           self.pickerView.isUserInteractionEnabled = true
         }

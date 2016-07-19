@@ -21,39 +21,23 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xyg-QW-Cwt">
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Tdv-7u-ylk">
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dL0-xy-cfb" customClass="AnimatableOldView" customModule="IBAnimatable">
-                                                        <color key="backgroundColor" red="0.57254904510000004" green="0.0" blue="0.23137255009999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="100" id="4cx-8l-NiF"/>
-                                                            <constraint firstAttribute="height" constant="100" id="Wgk-wr-4TK"/>
-                                                        </constraints>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="force">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xh0-cF-cXI" customClass="AnimatableView" customModule="IBAnimatable">
-                                                        <color key="backgroundColor" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="100" id="ELz-Iy-8c5"/>
-                                                            <constraint firstAttribute="width" constant="100" id="ZI3-Zu-2AL"/>
-                                                        </constraints>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="force">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                </subviews>
-                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xh0-cF-cXI" customClass="AnimatableView" customModule="IBAnimatable">
+                                                <color key="backgroundColor" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="ELz-Iy-8c5"/>
+                                                    <constraint firstAttribute="width" constant="100" id="ZI3-Zu-2AL"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="force">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="Tdv-7u-ylk" firstAttribute="centerX" secondItem="xyg-QW-Cwt" secondAttribute="centerX" id="Kzt-pK-17p"/>
-                                            <constraint firstItem="Tdv-7u-ylk" firstAttribute="centerY" secondItem="xyg-QW-Cwt" secondAttribute="centerY" id="hxU-dZ-PlR"/>
+                                            <constraint firstItem="Xh0-cF-cXI" firstAttribute="centerY" secondItem="xyg-QW-Cwt" secondAttribute="centerY" id="hDr-4s-2IU"/>
+                                            <constraint firstItem="Xh0-cF-cXI" firstAttribute="centerX" secondItem="xyg-QW-Cwt" secondAttribute="centerX" id="u6r-cX-b2z"/>
                                         </constraints>
                                     </view>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HGl-88-fhe">
@@ -78,7 +62,6 @@
                     </view>
                     <connections>
                         <outlet property="aView" destination="Xh0-cF-cXI" id="J7B-P5-zGb"/>
-                        <outlet property="oldAView" destination="dL0-xy-cfb" id="dfF-R0-QVH"/>
                         <outlet property="pickerView" destination="HGl-88-fhe" id="9xg-L7-mWu"/>
                     </connections>
                 </viewController>

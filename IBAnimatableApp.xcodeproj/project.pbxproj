@@ -10,10 +10,7 @@
 		33A8B9ED1C7E790800082529 /* SystemCubeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8B9EB1C7E790800082529 /* SystemCubeAnimator.swift */; };
 		33A8B9F01C7E7A4C00082529 /* TransitionFromDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8B9EE1C7E7A4C00082529 /* TransitionFromDirection.swift */; };
 		731205811D28A3830009BCAC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731205801D28A3830009BCAC /* Utils.swift */; };
-		732AE52E1D36322700B7563E /* AnimatableOldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732AE52D1D36322700B7563E /* AnimatableOldView.swift */; };
 		73B7D8861D233FB700DD3F43 /* IBEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B7D8851D233FB700DD3F43 /* IBEnum.swift */; };
-		73DBEB961D3299C2008BDCC3 /* AnimatableOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DBEB951D3299C2008BDCC3 /* AnimatableOld.swift */; };
-		73DBEB981D337B8E008BDCC3 /* AnimationTypeOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DBEB971D337B8E008BDCC3 /* AnimationTypeOld.swift */; };
 		73ED71F81D34CA4700755C9B /* AnimationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED71F71D34CA4700755C9B /* AnimationsViewController.swift */; };
 		AE0D309A1CE149150093B578 /* UserInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE0D30991CE149150093B578 /* UserInterface.storyboard */; };
 		AE0D309C1CE14A170093B578 /* Animations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE0D309B1CE14A170093B578 /* Animations.storyboard */; };
@@ -160,10 +157,7 @@
 		33A8B9EB1C7E790800082529 /* SystemCubeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemCubeAnimator.swift; sourceTree = "<group>"; };
 		33A8B9EE1C7E7A4C00082529 /* TransitionFromDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionFromDirection.swift; sourceTree = "<group>"; };
 		731205801D28A3830009BCAC /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		732AE52D1D36322700B7563E /* AnimatableOldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableOldView.swift; sourceTree = "<group>"; };
 		73B7D8851D233FB700DD3F43 /* IBEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBEnum.swift; sourceTree = "<group>"; };
-		73DBEB951D3299C2008BDCC3 /* AnimatableOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableOld.swift; sourceTree = "<group>"; };
-		73DBEB971D337B8E008BDCC3 /* AnimationTypeOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationTypeOld.swift; sourceTree = "<group>"; };
 		73ED71F71D34CA4700755C9B /* AnimationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationsViewController.swift; sourceTree = "<group>"; };
 		AE0B0FE91C25372200E36B78 /* TableViewCellDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellDesignable.swift; sourceTree = "<group>"; };
 		AE0B0FEB1C26397700E36B78 /* AnimatableCheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableCheckBox.swift; sourceTree = "<group>"; };
@@ -558,7 +552,6 @@
 				AED1A10D1BFE983A001346FA /* AnimatableTextView.swift */,
 				E20884B41D1ED0F800E4101E /* AnimatableSlider.swift */,
 				AEEE200C1C18D10C00AD033B /* DesignableNavigationBar.swift */,
-				732AE52D1D36322700B7563E /* AnimatableOldView.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -583,7 +576,6 @@
 				AE9407881CAE871C0084BCB8 /* TransitionPageType.swift */,
 				AE6D430B1C98B658006E2F67 /* TransitionType.swift */,
 				731205801D28A3830009BCAC /* Utils.swift */,
-				73DBEB971D337B8E008BDCC3 /* AnimationTypeOld.swift */,
 			);
 			name = enum;
 			sourceTree = "<group>";
@@ -617,7 +609,6 @@
 		AED1A1241BFEA328001346FA /* Animatable */ = {
 			isa = PBXGroup;
 			children = (
-				73DBEB951D3299C2008BDCC3 /* AnimatableOld.swift */,
 				AED1A10A1BFE983A001346FA /* Animatable.swift */,
 			);
 			name = Animatable;
@@ -815,7 +806,6 @@
 				AE6B01751C2A444900950BB2 /* StatusBarDesignable.swift in Sources */,
 				E29F350E1CDF6C4900312FD4 /* PresentSlideSegue.swift in Sources */,
 				AE6B016A1C2A444900950BB2 /* CheckBoxDesignable.swift in Sources */,
-				73DBEB961D3299C2008BDCC3 /* AnimatableOld.swift in Sources */,
 				73B7D8861D233FB700DD3F43 /* IBEnum.swift in Sources */,
 				AE154B851C7D1A740093C05B /* AnimatedTransitioning.swift in Sources */,
 				AE6B017B1C2A445100950BB2 /* AnimatableBarButtonItem.swift in Sources */,
@@ -834,7 +824,6 @@
 				AE6B01711C2A444900950BB2 /* PlaceholderDesignable.swift in Sources */,
 				AE6B01821C2A445100950BB2 /* AnimatableTableViewCell.swift in Sources */,
 				AE6B01691C2A444900950BB2 /* BorderDesignable.swift in Sources */,
-				73DBEB981D337B8E008BDCC3 /* AnimationTypeOld.swift in Sources */,
 				E20884B51D1ED0F800E4101E /* AnimatableSlider.swift in Sources */,
 				E26B3EDA1CCD4C1D00BFD0AB /* NatGeoAnimator.swift in Sources */,
 				E2E28E6C1C6A6C30003F3852 /* GradientType.swift in Sources */,
@@ -857,7 +846,6 @@
 				AE6B01781C2A444900950BB2 /* BarButtonItemDesignable.swift in Sources */,
 				AE154B7C1C7D04A40093C05B /* TransitionAnimatable.swift in Sources */,
 				AE6B01641C2A444000950BB2 /* BorderSide.swift in Sources */,
-				732AE52E1D36322700B7563E /* AnimatableOldView.swift in Sources */,
 				E29F35101CDF6C5400312FD4 /* PresentSlideWithDismissInteractionSegue.swift in Sources */,
 				AE6B016B1C2A444900950BB2 /* CornerDesignable.swift in Sources */,
 				AE6B01631C2A444000950BB2 /* BlurEffectStyle.swift in Sources */,
