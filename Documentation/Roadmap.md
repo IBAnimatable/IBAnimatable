@@ -37,11 +37,11 @@ IBAnimatable is an open source library to help designers and developers design a
 ## Roadmap
 ### Versions
 * <del>Version 1: Designable and animatable elements</del>
-* <del>Version 2: Custom tansition animations</del>
-* Version 3: More designable and animatable elements
-* Version 4: Sketch plugin
+* Version 2: Custom transition animations and more animatable elements
+* Version 3: Swift 3
+* Version 4: More designable and animatable elements
 * Version 5: More animations
-* Version 6: Xcode plugin
+* Version 6: Sketch plugin & Xcode plugin
 
 You can find more details in https://github.com/JakeLin/IBAnimatable/milestones
 
@@ -243,3 +243,5 @@ You can find more details in https://github.com/JakeLin/IBAnimatable/milestones
 * Sketch plugin to export `IBAnimatable` styles from Sketch, e.g. generating `Opacity=0.5; fillColor=#336699;` from Sketch and easily apply in Interface Builder.
 
 **Any suggestions for the vision are welcome**, please modify the Roadmap.md file and create a PR. BTW: you can edit it on Github online and create a PR without manually forking the project now.
+
+
