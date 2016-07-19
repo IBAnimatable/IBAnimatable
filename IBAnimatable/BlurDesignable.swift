@@ -5,9 +5,10 @@
 
 import UIKit
 
+/// A protocol provides blur designable feature.
 public protocol BlurDesignable {
   /**
-   blur effect style: `ExtraLight`, `Light` or `Dark`
+   Blur effect style: `ExtraLight`, `Light` or `Dark`
    */
   var blurEffectStyle: String? { get set }
 
@@ -15,6 +16,10 @@ public protocol BlurDesignable {
    Vibrancy effect style: `ExtraLight`, `Light` or `Dark`. Once specify the Vibrancy effect style, all subviews will apply this vibrancy effect.
    */
   var vibrancyEffectStyle: String? { get set }
+  
+  /**
+   Blur opacity: The opacity of UI element using blur effect.
+   */
   var blurOpacity: CGFloat { get set }
 }
 
@@ -23,50 +28,47 @@ public extension BlurDesignable where Self: UIView {
    configBlurEffectStyle method, should be called in layoutSubviews() method
    */
   public func configBlurEffectStyle() {
-    guard let unwrappedBlurEffectStyle = blurEffectStyle, style = blurEffectStyle(from: unwrappedBlurEffectStyle) else {
-      return
-    }
-
-    guard let blurEffectStyle = BlurEffectStyle(rawValue: unwrappedBlurEffectStyle) else {
+    guard let unwrappedBlurEffectStyle = blurEffectStyle, blurStyle = blurEffectStyle(from: unwrappedBlurEffectStyle) else {
       return
     }
     
-    let style: UIBlurEffectStyle
-    let blurEffectView = createVisualEffectView(UIBlurEffect(style: style))
+    let blurEffectView = createVisualEffectView(effect: UIBlurEffect(style: blurStyle))
+    
+    // Apply vibrancy effect to all subviews
     if let unwrappedVibrancyStyle = vibrancyEffectStyle, vibrancyStyle = blurEffectStyle(from: unwrappedVibrancyStyle) {
-      let vibrancyEffectView = createVisualEffectView(UIVibrancyEffect(forBlurEffect: UIBlurEffect(style: vibrancyStyle)))      
+      let vibrancyEffect = UIVibrancyEffect(blurEffect: UIBlurEffect(style: vibrancyStyle))
+      let vibrancyEffectView = createVisualEffectView(effect: vibrancyEffect)
       subviews.forEach {
         vibrancyEffectView.contentView.addSubview($0)
       }
       blurEffectView.contentView.addSubview(vibrancyEffectView)
     }
-    insertSubview(blurEffectView, atIndex: 0)
+    insertSubview(blurEffectView, at: 0)
   }
+}
 
-  private func createVisualEffectView(effect: UIVisualEffect) -> UIVisualEffectView {
+
+private extension BlurDesignable where Self: UIView {
+  
+  func createVisualEffectView(effect: UIVisualEffect) -> UIVisualEffectView {
     let visualEffectView = UIVisualEffectView(effect: effect)
     visualEffectView.alpha = blurOpacity.isNaN ? 1.0 : blurOpacity
     if layer.cornerRadius > 0 {
       visualEffectView.layer.cornerRadius = layer.cornerRadius
       visualEffectView.clipsToBounds = true
     }
-
+    
     visualEffectView.frame = bounds
-    visualEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+    visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     return visualEffectView
   }
 
-}
-
-
-private extension BlurDesignable {
-
   func blurEffectStyle(from blurEffectStyle: String) -> UIBlurEffectStyle? {
-    var style: UIBlurEffectStyle?
     guard let blurEffectStyle = BlurEffectStyle(rawValue: blurEffectStyle) else {
       return nil
     }
 
+    let style: UIBlurEffectStyle
     switch blurEffectStyle {
     case .extraLight:
       style = .extraLight
@@ -76,17 +78,6 @@ private extension BlurDesignable {
       style = .dark
     }
     
-    let blurEffect = UIBlurEffect(style: style)
-    let blurEffectView = UIVisualEffectView(effect: blurEffect)
-    blurEffectView.frame = bounds
-    let opacity = blurOpacity.isNaN ? 1.0 : blurOpacity // Default is 1.0
-    blurEffectView.alpha = opacity
-    if layer.cornerRadius > 0 {
-      blurEffectView.layer.cornerRadius = layer.cornerRadius
-      blurEffectView.clipsToBounds = true
-    }
-    blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-    insertSubview(blurEffectView, at: 0)
     return style
   }
 }

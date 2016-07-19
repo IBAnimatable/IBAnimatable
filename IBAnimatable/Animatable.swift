@@ -437,16 +437,16 @@ public extension Animatable where Self: UIView {
     animateOutWithScaleX(scaleX, scaleY: scaleY, alpha: toAlpha, completion: completion)
   }
 
-  public func zoomInvertIn(completion: AnimatableCompletion? = nil) {
+  public func zoomInvertIn(_ completion: AnimatableCompletion? = nil) {
     let scaleX = 1 * force
     let scaleY = 1 * force
     alpha = 0
     let toAlpha: CGFloat = 1
-    transform = CGAffineTransformMakeScale(0.1, 0.1)
+    transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
     animateOutWithScaleX(scaleX, scaleY: scaleY, alpha: toAlpha, completion: completion)
   }
 
-  public func zoomInvertOut(completion: AnimatableCompletion? = nil) {
+  public func zoomInvertOut(_ completion: AnimatableCompletion? = nil) {
     let scaleX = 0.1 * force
     let scaleY = 0.1 * force
     alpha = 1

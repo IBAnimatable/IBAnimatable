@@ -97,7 +97,7 @@ import UIKit
     }
   }
 
-  @IBInspectable public var blurOpacity: CGFloat = CGFloat.NaN {
+  @IBInspectable public var blurOpacity: CGFloat = CGFloat.nan {
     didSet {
       configBlurEffectStyle()
     }
