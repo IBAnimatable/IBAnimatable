@@ -18,7 +18,7 @@ public protocol BlurDesignable {
   var vibrancyEffectStyle: String? { get set }
   
   /**
-   Blur opacity: The opacity of UI element using blur effect.
+   Blur opacity: The opacity of UI element using blur effect. The default value is 1.0 if not specified. There is some performance penalty when we use this property.
    */
   var blurOpacity: CGFloat { get set }
 }
@@ -28,14 +28,14 @@ public extension BlurDesignable where Self: UIView {
    configBlurEffectStyle method, should be called in layoutSubviews() method
    */
   public func configBlurEffectStyle() {
-    guard let unwrappedBlurEffectStyle = blurEffectStyle, blurStyle = blurEffectStyle(from: unwrappedBlurEffectStyle) else {
+    guard let unwrappedBlurEffectStyle = blurEffectStyle, blurStyle = getBlurEffectStyle(from: unwrappedBlurEffectStyle) else {
       return
     }
     
     let blurEffectView = createVisualEffectView(effect: UIBlurEffect(style: blurStyle))
     
     // Apply vibrancy effect to all subviews
-    if let unwrappedVibrancyStyle = vibrancyEffectStyle, vibrancyStyle = blurEffectStyle(from: unwrappedVibrancyStyle) {
+    if let unwrappedVibrancyStyle = vibrancyEffectStyle, vibrancyStyle = getBlurEffectStyle(from: unwrappedVibrancyStyle) {
       let vibrancyEffect = UIVibrancyEffect(blurEffect: UIBlurEffect(style: vibrancyStyle))
       let vibrancyEffectView = createVisualEffectView(effect: vibrancyEffect)
       subviews.forEach {
@@ -63,7 +63,7 @@ private extension BlurDesignable where Self: UIView {
     return visualEffectView
   }
 
-  func blurEffectStyle(from blurEffectStyle: String) -> UIBlurEffectStyle? {
+  func getBlurEffectStyle(from blurEffectStyle: String) -> UIBlurEffectStyle? {
     guard let blurEffectStyle = BlurEffectStyle(rawValue: blurEffectStyle) else {
       return nil
     }
