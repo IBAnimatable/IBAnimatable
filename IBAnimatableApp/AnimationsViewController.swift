@@ -10,8 +10,8 @@ import UIKit
 import IBAnimatable
 
 internal extension String {
-  func colorize(color:UIColor) -> AttributedString {
-    return AttributedString(string:self, attributes: [NSForegroundColorAttributeName:color])
+  func colorize(color: UIColor) -> AttributedString {
+    return AttributedString(string: self, attributes: [NSForegroundColorAttributeName: color])
   }
 }
 
@@ -37,10 +37,10 @@ enum ParamType {
     }
   }
 
-  func titleAt(index:Int) -> String? {
+  func titleAt(index: Int) -> String? {
     switch self {
     case .enumeration(let values):
-      return values[safe:index]
+      return values[safe: index]
     case .number(let min,  _, let interval):
       return String(min + Double(index) * interval)
     }
@@ -51,7 +51,7 @@ enum ParamType {
 
 struct Entry {
   let params: [ParamType]
-  let name:String
+  let name: String
  
  }
 
@@ -66,8 +66,8 @@ class AnimationsViewController: UIViewController {
   let fadeParams = ParamType.enumeration(values: ["in", "out", "inOut", "outIn"])
   let axisParams = ParamType.enumeration(values: ["X", "Y"])
   let rotationDirectionParams = ParamType.enumeration(values: ["Cw", "CCW"])
-  var entries:[Entry]!
-  var selectedEntry:Entry!
+  var entries: [Entry]!
+  var selectedEntry: Entry!
   let positiveNumberParam = ParamType.number(min: 0, max: 50, interval: 2)
   let numberParam = ParamType.number(min: -50, max: 50, interval: 5)
   
@@ -75,17 +75,17 @@ class AnimationsViewController: UIViewController {
     super.viewDidLoad()
     
      entries = [
-      Entry(params:[wayParam, directionParam], name: "slide"),
-      Entry(params:[wayParam, directionParam], name: "squeeze"),
-      Entry(params:[fadeParams], name: "fade"),
-      Entry(params:[wayParam, directionParam], name: "slideFade"),
-      Entry(params:[wayParam, directionParam], name: "squeezeFade"),
-      Entry(params:[wayParam], name: "zoom"),
-      Entry(params:[axisParams], name: "flip"),
-      Entry(params:[], name: "flash"),
-      Entry(params:[], name: "wobble"),
-      Entry(params:[], name: "swing"),
-      Entry(params:[rotationDirectionParams], name: "rotate"),
+      Entry(params: [wayParam, directionParam], name: "slide"),
+      Entry(params: [wayParam, directionParam], name: "squeeze"),
+      Entry(params: [fadeParams], name: "fade"),
+      Entry(params: [wayParam, directionParam], name: "slideFade"),
+      Entry(params: [wayParam, directionParam], name: "squeezeFade"),
+      Entry(params: [wayParam], name: "zoom"),
+      Entry(params: [axisParams], name: "flip"),
+      Entry(params: [], name: "flash"),
+      Entry(params: [], name: "wobble"),
+      Entry(params: [], name: "swing"),
+      Entry(params: [rotationDirectionParams], name: "rotate"),
       Entry(params: [positiveNumberParam, positiveNumberParam], name: "moveby"),
       Entry(params: [numberParam, numberParam], name: "moveto")
     ]
@@ -96,23 +96,23 @@ class AnimationsViewController: UIViewController {
   func toString() -> String {
     let name = selectedEntry.name.lowercased()
     
-    var paramArray:[String] = [selectedEntry.params[safe:0]?.titleAt(index:pickerView.selectedRow(inComponent: 1)) ?? ""]
-    let secondVal = selectedEntry.params[safe:1]?.titleAt(index:pickerView.selectedRow(inComponent: 2))
+    var paramArray: [String] = [selectedEntry.params[safe: 0]?.titleAt(index: pickerView.selectedRow(inComponent: 1)) ?? ""]
+    let secondVal = selectedEntry.params[safe: 1]?.titleAt(index: pickerView.selectedRow(inComponent: 2))
     if let secondVal = secondVal {
       paramArray.append(secondVal)
     }
-    let paramString:String = paramArray.joined(separator: ",").lowercased()
+    let paramString: String = paramArray.joined(separator: ",").lowercased()
    return "\(name)(\(paramString))"
   }
   func toOldString() -> String {
     let name = selectedEntry.name
     
-    var paramArray:[String] = [selectedEntry.params[safe:0]?.titleAt(index:pickerView.selectedRow(inComponent: 1)) ?? ""]
-    let secondVal = selectedEntry.params[safe:1]?.titleAt(index:pickerView.selectedRow(inComponent: 2))
+    var paramArray: [String] = [selectedEntry.params[safe: 0]?.titleAt(index: pickerView.selectedRow(inComponent: 1)) ?? ""]
+    let secondVal = selectedEntry.params[safe: 1]?.titleAt(index: pickerView.selectedRow(inComponent: 2))
     if let secondVal = secondVal {
       paramArray.append(secondVal)
     }
-    let paramString:String = paramArray.map({ $0.capitalized }).joined(separator: "")
+    let paramString: String = paramArray.map({ $0.capitalized }).joined(separator: "")
     return name.appending(paramString)
     
   }
@@ -124,7 +124,7 @@ extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSourc
     if component == 0 {
       return entries.count
     }
-    return selectedEntry.params[safe:component - 1]?.count() ?? 0
+    return selectedEntry.params[safe: component - 1]?.count() ?? 0
   }
   
   func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -134,9 +134,9 @@ extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSourc
   func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> AttributedString? {
     
     if component == 0 {
-      return entries[safe:row]?.name.colorize(color: .white())
+      return entries[safe: row]?.name.colorize(color: .white())
 }
-    guard let param = selectedEntry.params[safe:component - 1] else {
+    guard let param = selectedEntry.params[safe: component - 1] else {
       return nil
     }
     return param.titleAt(index: row)?.colorize(color: .white())

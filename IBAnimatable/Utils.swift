@@ -29,13 +29,13 @@ internal extension RawRepresentable where RawValue == String {
     guard let string = raw else {
       return nil
     }
-    self.init(rawValue:string)
+    self.init(rawValue: string)
   }
 }
 internal extension RawRepresentable {
-  init(raw: RawValue?,  defaultValue:Self) {
+  init(raw: RawValue?,  defaultValue: Self) {
     if let value = raw  {
-      self = Self.init(rawValue:value) ?? defaultValue
+      self = Self.init(rawValue: value) ?? defaultValue
     }
     self = defaultValue
   }

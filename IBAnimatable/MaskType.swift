@@ -15,7 +15,7 @@ public enum MaskType: IBEnum {
   case circle
   /// For polygon shape with `n` sides. (min: 3, the default: 6).
   case polygon(sides: Int)
-  /// For star shape with n points (min: 3, default:6)
+  /// For star shape with n points (min: 3, default: 6)
   case star(points: Int)
   /// For isosceles triangle shape. The triangle's height is equal to the view's frame height. If the view is a square, the triangle is equilateral.
   case triangle
@@ -54,11 +54,11 @@ public extension MaskType {
     case "polygon":
       self = .polygon(sides: params[safe: 0]?.toInt() ?? 6)
     case "star":
-      self = .star(points: params[safe:0]?.toInt() ?? 6)
+      self = .star(points: params[safe: 0]?.toInt() ?? 6)
     case "triangle":
       self = .triangle
     case "wave":
-      self = .wave(direction:WaveDirection(raw: params[safe:0], defaultValue:.up), width: params[safe:1]?.toDouble() ?? 40, offset: params[safe:2]?.toDouble() ?? 0)
+      self = .wave(direction: WaveDirection(raw: params[safe: 0], defaultValue: .up), width: params[safe: 1]?.toDouble() ?? 40, offset: params[safe: 2]?.toDouble() ?? 0)
     case "parallelogram":
       self = .parallelogram(angle: params[safe: 0]?.toDouble() ?? 60)
     default:
