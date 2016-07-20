@@ -8,14 +8,14 @@
 
 import Foundation
 
-internal extension Array {
+extension Array {
   /// Returns the element at the specified index iff it is within bounds, otherwise nil.
   subscript(safe index: Int ) -> Element? {
     return indices.contains(index) ? self[index] : nil  /// Returns the element at the specified index iff it is within bounds, otherwise nil.
   }
 }
 
-internal extension String {
+extension String {
   func toDouble() -> Double? {
     return Double(self)
   }
@@ -24,15 +24,15 @@ internal extension String {
   }
 }
 
-internal extension RawRepresentable where RawValue == String {
-  init?(raw: String?) {
-    guard let string = raw else {
+internal extension RawRepresentable {
+  
+  init?(raw: RawValue?) {
+    guard let raw = raw else {
       return nil
     }
-    self.init(rawValue: string)
+    self.init(rawValue: raw)
   }
-}
-internal extension RawRepresentable {
+
   init(raw: RawValue?,  defaultValue: Self) {
     guard let value = raw  else {
       self = defaultValue
