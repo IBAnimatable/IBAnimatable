@@ -47,7 +47,7 @@ public extension FillDesignable where Self: UITableViewCell {
 private extension FillDesignable {
   
   func predefinedColorFromString(_ predefinedColor: String?) -> UIColor? {
-    guard let unwrappedColorTypeString = predefinedColor, colorType = ColorType(rawValue: unwrappedColorTypeString) else {
+    guard let unwrappedColorTypeString = predefinedColor, let colorType = ColorType(rawValue: unwrappedColorTypeString) else {
       return nil
     }
     

@@ -48,7 +48,7 @@ public extension AnimatedTransitioning {
   
   public func animateWithCATransition(using transitionContext: UIViewControllerContextTransitioning, type: SystemTransitionType, subtype: String?) {
     let (_, tempToView, tempContainerView) = getViews(using: transitionContext)
-    guard let toView = tempToView, containerView = tempContainerView else {
+    guard let toView = tempToView, let containerView = tempContainerView else {
       transitionContext.completeTransition(true)
       return
     }

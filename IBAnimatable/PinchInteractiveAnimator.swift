@@ -35,7 +35,7 @@ public class PinchInteractiveAnimator: InteractiveAnimator {
   
   override func calculateProgress(_ gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
     guard let  gestureRecognizer = gestureRecognizer as? UIPinchGestureRecognizer,
-      _ = gestureRecognizer.view?.superview else {
+      let _ = gestureRecognizer.view?.superview else {
         return (0, false)
     }
     
