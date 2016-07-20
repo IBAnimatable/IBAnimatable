@@ -40,7 +40,7 @@ extension CardsAnimator: UIViewControllerAnimatedTransitioning {
   
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     let (tempfromView, tempToView, tempContainerView) = getViews(using: transitionContext)
-    guard let fromView = tempfromView, toView = tempToView, containerView = tempContainerView else {
+    guard let fromView = tempfromView, let toView = tempToView, let containerView = tempContainerView else {
       transitionContext.completeTransition(true)
       return
     }

@@ -18,8 +18,8 @@ public extension RootWindowDesignable where Self: UIViewController {
     #if NS_EXTENSION_UNAVAILABLE_IOS
       
       if let wrappedRootWindowBackgroundColor = rootWindowBackgroundColor,
-        delegate = UIApplication.sharedApplication().delegate,
-        rootWindow = delegate.window {
+        let delegate = UIApplication.sharedApplication().delegate,
+        let rootWindow = delegate.window {
           rootWindow?.backgroundColor = wrappedRootWindowBackgroundColor
       }
       

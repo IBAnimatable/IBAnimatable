@@ -35,7 +35,7 @@ public class AnimatableNavigationController: UINavigationController, TransitionA
   private var navigator: Navigator?
   
   private func configureNavigationControllerDelegate() {
-    guard let transitionAnimationType = transitionAnimationType, animationType = TransitionAnimationType.fromString(transitionAnimationType) else {
+    guard let transitionAnimationType = transitionAnimationType, let animationType = TransitionAnimationType.fromString(transitionAnimationType) else {
       navigator = nil
       delegate = nil
       return
@@ -45,7 +45,7 @@ public class AnimatableNavigationController: UINavigationController, TransitionA
     if transitionDuration.isNaN {
       duration = defaultTransitionDuration
     }
-    if let interactiveGestureType = interactiveGestureType, gestureType = InteractiveGestureType.fromString(interactiveGestureType) {
+    if let interactiveGestureType = interactiveGestureType, let gestureType = InteractiveGestureType.fromString(interactiveGestureType) {
       navigator = Navigator(transitionAnimationType: animationType, transitionDuration: duration, interactiveGestureType: gestureType)
     } else {
       navigator = Navigator(transitionAnimationType: animationType, transitionDuration: duration)

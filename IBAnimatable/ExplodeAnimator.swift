@@ -24,8 +24,8 @@ public class ExplodeAnimator: NSObject, AnimatedTransitioning {
     
     if params.count == 3 {
       if let unwrappedXFactor = Double(params[0]),
-             unwrappedMinAngle = Double(params[1]),
-             unwrappedMaxAngle = Double(params[2]) {
+             let unwrappedMinAngle = Double(params[1]),
+             let unwrappedMaxAngle = Double(params[2]) {
         self.xFactor = CGFloat(unwrappedXFactor)
         self.minAngle = CGFloat(unwrappedMinAngle)
         self.maxAngle = CGFloat(unwrappedMaxAngle)
@@ -42,7 +42,7 @@ extension ExplodeAnimator: UIViewControllerAnimatedTransitioning {
   
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     let (tempfromView, tempToView, tempContainerView) = getViews(using: transitionContext)
-    guard let fromView = tempfromView, toView = tempToView, containerView = tempContainerView else {
+    guard let fromView = tempfromView, let toView = tempToView, let containerView = tempContainerView else {
       transitionContext.completeTransition(true)
       return
     }

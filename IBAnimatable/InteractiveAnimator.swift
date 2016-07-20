@@ -25,7 +25,7 @@ public class InteractiveAnimator: UIPercentDrivenInteractiveTransition {
   }
   
   deinit {
-    if let gestureRecognizer = gestureRecognizer, view = viewController?.view {
+    if let gestureRecognizer = gestureRecognizer, let view = viewController?.view {
       gestureRecognizer.removeTarget(self, action: #selector(handleGesture(_:)))
       view.removeGestureRecognizer(gestureRecognizer)
     }

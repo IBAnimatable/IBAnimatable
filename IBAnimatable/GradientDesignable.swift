@@ -16,9 +16,9 @@ public extension GradientDesignable where Self: UIView {
 
   public func configGradient() {
     let predefinedGradient = configPredefinedGradient()
-    if let unwrappedStartColor = startColor, unwrappedEndColor = endColor {
+    if let unwrappedStartColor = startColor, let unwrappedEndColor = endColor {
       configGradientWithStartColor(unwrappedStartColor, endColor: unwrappedEndColor)
-    } else if let unwrappedStartColor = predefinedGradient?.0, unwrappedEndColor = predefinedGradient?.1 {
+    } else if let unwrappedStartColor = predefinedGradient?.0, let unwrappedEndColor = predefinedGradient?.1 {
       configGradientWithStartColor(unwrappedStartColor, endColor: unwrappedEndColor)
     }
   }
@@ -26,7 +26,7 @@ public extension GradientDesignable where Self: UIView {
   private func configGradientWithStartColor(_ startColor: UIColor, endColor: UIColor) {
     // Default value is `.Top`
     var gradientStartPoint: GradientStartPoint = .top
-    if let unwrappedStartPoint = startPoint, resolvedGradientStartPoint = GradientStartPoint(rawValue: unwrappedStartPoint) {
+    if let unwrappedStartPoint = startPoint, let resolvedGradientStartPoint = GradientStartPoint(rawValue: unwrappedStartPoint) {
       gradientStartPoint = resolvedGradientStartPoint
     }
     
@@ -72,7 +72,7 @@ public extension GradientDesignable where Self: UIView {
   }
   
   private func configPredefinedGradient() -> (UIColor, UIColor)? {
-    guard let unwrappedGradientTypeString = predefinedGradient, gradientType = GradientType(rawValue: unwrappedGradientTypeString) else {
+    guard let unwrappedGradientTypeString = predefinedGradient, let gradientType = GradientType(rawValue: unwrappedGradientTypeString) else {
         return nil
     }
     
