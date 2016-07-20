@@ -32,7 +32,7 @@ public extension IBEnum {
     let name = tokens.first ?? ""
     let paramsString = tokens.count >= 2 ? tokens[1] : ""
     let params = paramsString.components(separatedBy: ",").filter({!$0.isEmpty})
-    return (name:name, params:params)
+    return (name: name, params: params)
     Int("dasdas")
     Double("dasdas")
  }
@@ -41,15 +41,15 @@ public extension IBEnum {
 // MARK: - StringLiteralConvertible
 public extension IBEnum {
   init(stringLiteral value: String) {
-    self.init(string:value)
+    self.init(string: value)
   }
   
   init(unicodeScalarLiteral value: String) {
-    self.init(string:value)
+    self.init(string: value)
   }
   
   init(extendedGraphemeClusterLiteral value: String) {
-    self.init(string:value)
+    self.init(string: value)
   }
 }
 

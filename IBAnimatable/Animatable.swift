@@ -92,7 +92,7 @@ public extension Animatable where Self: UIView {
     case let .pop:
       pop(completion)
     case let .flip( axis):
-      flip(axis:axis ?? .x, completion: completion)
+      flip(axis: axis ?? .x, completion: completion)
     case let .morph:
       morph(completion)
     case let .flash:
@@ -125,7 +125,7 @@ public extension Animatable where Self: UIView {
   }
   
   // MARK: - Animation methods
-  private func computeValues(way:AnimationType.Way, direction:AnimationType.Direction, shouldScale:Bool) -> AnimationValues {
+  private func computeValues(way: AnimationType.Way, direction: AnimationType.Direction, shouldScale: Bool) -> AnimationValues {
     let yDistance = screenSize.height * force
     let xDistance = screenSize.width * force
     let scale = 3 * force
@@ -151,13 +151,13 @@ public extension Animatable where Self: UIView {
     }
     switch way {
     case .in:
-      return (x:x, y:y, scaleX:scaleX, scaleY:scaleY)
+      return (x: x, y: y, scaleX: scaleX, scaleY: scaleY)
     //  animateIn(x, y, 1, 1, 1, completion)
     case .out where direction.isVertical():
-      return (x:x, y:-y, scaleX:scaleX, scaleY:scaleY)
+      return (x: x, y: -y, scaleX: scaleX, scaleY: scaleY)
       
     case .out:
-      return (x:x, y:y, scaleX:scaleX, scaleY:scaleY)
+      return (x: x, y: y, scaleX: scaleX, scaleY: scaleY)
     }
     
   }
@@ -234,7 +234,7 @@ public extension Animatable where Self: UIView {
       animateOut(values.x, values.y, values.scaleX, values.scaleY, 0, completion)
     }
   }
-  public func fade(way:AnimationType.FadeWay, completion:AnimatableCompletion? = nil) {
+  public func fade(way: AnimationType.FadeWay, completion: AnimatableCompletion? = nil) {
     switch way {
     case .outIn:
       fadeOutIn(completion)
@@ -456,7 +456,7 @@ public extension Animatable where Self: UIView {
 
   private func animateBy(x: CGFloat, y: CGFloat, completion: AnimatableCompletion? = nil) {
     let translate = CGAffineTransform(translationX: x, y: y)
-    UIView.animate(withDuration: duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [],
+    UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [],
       animations: {
         self.transform = translate
       },
@@ -475,7 +475,7 @@ public extension Animatable where Self: UIView {
     let translateAndScale = translate.concat(scale)
     transform = translateAndScale
 
-    UIView.animate(withDuration: duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [],
+    UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [],
       animations: {
         self.transform = CGAffineTransform.identity
         self.alpha = alpha
@@ -492,7 +492,7 @@ public extension Animatable where Self: UIView {
     let scale = CGAffineTransform(scaleX: scaleX, y: scaleY)
     let translateAndScale = translate.concat(scale)
 
-    UIView.animate(withDuration: duration, delay:delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [],
+    UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [],
       animations: {
         self.transform = translateAndScale
         self.alpha = alpha

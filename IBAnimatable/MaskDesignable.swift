@@ -46,7 +46,7 @@ public extension MaskDesignable where Self: UIView {
     case .star(let points):
       maskStar(with: points )
     case .wave(let direction, let width, let offset):
-      maskWave(with: direction ?? .up, width: width, offset:offset)
+      maskWave(with: direction ?? .up, width: width, offset: offset)
     case .triangle:
       maskTriangle()
     case .none:
@@ -178,15 +178,15 @@ private extension MaskDesignable where Self: UIView {
     let offset = abs(CGFloat(tan(topLeftAngleRad - .pi / 2)) * bounds.height)
     
     if topLeftAngle <= 90 {
-      path.move(to: CGPoint(x:0, y:0))
+      path.move(to: CGPoint(x: 0, y: 0))
       path.addLine(to: CGPoint(x: bounds.width - offset, y: 0))
-      path.addLine(to: CGPoint(x:bounds.width, y:bounds.height))
+      path.addLine(to: CGPoint(x: bounds.width, y: bounds.height))
       path.addLine(to: CGPoint(x: offset, y: bounds.height))
     } else {
-      path.move(to: CGPoint(x:offset, y:0))
-      path.addLine(to: CGPoint(x:bounds.width, y:0))
-      path.addLine(to: CGPoint(x:bounds.width - offset, y:bounds.height))
-      path.addLine(to: CGPoint(x:0, y:bounds.height))
+      path.move(to: CGPoint(x: offset, y: 0))
+      path.addLine(to: CGPoint(x: bounds.width, y: 0))
+      path.addLine(to: CGPoint(x: bounds.width - offset, y: bounds.height))
+      path.addLine(to: CGPoint(x: 0, y: bounds.height))
     }
     path.close()
     return path
