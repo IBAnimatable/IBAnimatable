@@ -27,7 +27,7 @@ public enum AnimationType {
   case moveTo(x: Double, y: Double)
   case moveBy(x: Double, y: Double)
   case none
- 
+  
   public enum FadeWay: String {
     case `in`, out, inOut = "inout", outIn = "outin"
   }
@@ -61,36 +61,36 @@ extension AnimationType : IBEnum {
     let params = nameAndParames.params
     
     switch name {
-      case "slide":
-        self = .slide(way: Way(raw: params[safe: 0], defaultValue: .in), direction: Direction(raw: params[safe: 1], defaultValue: .left))
-      case "squeeze":
-        self = .squeeze(way: Way(raw: params[safe: 0], defaultValue: .in), direction: Direction(raw: params[safe: 1], defaultValue: .left))
-      case "fade":
-        self = .fade(way: FadeWay(raw: params[safe: 0], defaultValue: .in))
-    case "slideFade":
+    case "slide":
+      self = .slide(way: Way(raw: params[safe: 0], defaultValue: .in), direction: Direction(raw: params[safe: 1], defaultValue: .left))
+    case "squeeze":
+      self = .squeeze(way: Way(raw: params[safe: 0], defaultValue: .in), direction: Direction(raw: params[safe: 1], defaultValue: .left))
+    case "fade":
+      self = .fade(way: FadeWay(raw: params[safe: 0], defaultValue: .in))
+    case "slidefade":
       self = .slideFade(way: Way(raw: params[safe: 0], defaultValue: .in), direction: Direction(raw: params[safe: 1], defaultValue: .left))
-      case "squeezefade":
-        self = .squeezeFade(way: Way(raw: params[safe: 0], defaultValue: .in), direction: Direction(raw: params[safe: 1], defaultValue: .left))
-      case "zoom":
-        self = .zoom(way: Way(raw: params[safe: 0], defaultValue: .in))
-      case "shake":
-        self = .shake
-      case "pop":
-        self = .pop
-      case "flip":
-        self = .flip(along: Axis(raw: params[safe: 0], defaultValue: .x))
-      case "morph":
-        self = .morph
-      case "flash":
-        self = .flash
-      case "wobble":
-        self = .wobble
-      case "swing":
-        self = .swing
-      case "rotate":
-        self = .rotate(direction: RotationDirection(raw: params[safe: 0], defaultValue: .cw))
-      case "moveto":
-        self = .moveTo(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
+    case "squeezefade":
+      self = .squeezeFade(way: Way(raw: params[safe: 0], defaultValue: .in), direction: Direction(raw: params[safe: 1], defaultValue: .left))
+    case "zoom":
+      self = .zoom(way: Way(raw: params[safe: 0], defaultValue: .in))
+    case "shake":
+      self = .shake
+    case "pop":
+      self = .pop
+    case "flip":
+      self = .flip(along: Axis(raw: params[safe: 0], defaultValue: .x))
+    case "morph":
+      self = .morph
+    case "flash":
+      self = .flash
+    case "wobble":
+      self = .wobble
+    case "swing":
+      self = .swing
+    case "rotate":
+      self = .rotate(direction: RotationDirection(raw: params[safe: 0], defaultValue: .cw))
+    case "moveto":
+      self = .moveTo(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
     case "moveby":
       self = .moveBy(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
     default:

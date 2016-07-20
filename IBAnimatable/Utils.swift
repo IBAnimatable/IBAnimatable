@@ -34,9 +34,10 @@ internal extension RawRepresentable where RawValue == String {
 }
 internal extension RawRepresentable {
   init(raw: RawValue?,  defaultValue: Self) {
-    if let value = raw  {
-      self = Self.init(rawValue: value) ?? defaultValue
+    guard let value = raw  else {
+      self = defaultValue
+      return
     }
-    self = defaultValue
+    self = Self.init(rawValue: value) ?? defaultValue
   }
 }
