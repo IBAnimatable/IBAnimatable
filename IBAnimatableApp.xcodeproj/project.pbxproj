@@ -685,8 +685,6 @@
 				TargetAttributes = {
 					AE6B01541C2A082300950BB2 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = Q9F6VN8DLM;
-						DevelopmentTeamName = "jason Akakpo";
 						LastSwiftMigration = 0800;
 					};
 					AE6C66FE1BFBF93500134A35 = {
@@ -926,7 +924,7 @@
 		AE6B015F1C2A082300950BB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
