@@ -28,14 +28,12 @@ public extension IBEnum {
    - Returns: A tuple containing the name and an array of parameter string
    */
   static func extractNameAndParams(from string: String) -> (name: String, params: [String]) {
-    let tokens = string.components(separatedBy: CharacterSet(charactersIn: "()")).filter({!$0.isEmpty})
+    let tokens = string.lowercased().components(separatedBy: CharacterSet(charactersIn: "()")).filter({!$0.isEmpty})
     let name = tokens.first ?? ""
     let paramsString = tokens.count >= 2 ? tokens[1] : ""
     let params = paramsString.components(separatedBy: ",").filter({!$0.isEmpty})
     return (name: name, params: params)
-    Int("dasdas")
-    Double("dasdas")
- }
+  }
 }
 
 // MARK: - StringLiteralConvertible

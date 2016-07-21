@@ -56,7 +56,7 @@ extension AnimationType : IBEnum {
       self = .none
       return
     }
-    let nameAndParames = MaskType.extractNameAndParams(from: string.lowercased())
+    let nameAndParames = AnimationType.extractNameAndParams(from: string)
     let name = nameAndParames.name
     let params = nameAndParames.params
     

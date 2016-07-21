@@ -109,8 +109,6 @@ public extension Animatable where Self: UIView {
       moveTo(x: x ?? 0, y: y ?? 0, completion: completion)
     case .none:
       break
-    //case .fade(let way, let direction):
-      
     }
   }
 
@@ -152,10 +150,8 @@ public extension Animatable where Self: UIView {
     switch way {
     case .in:
       return (x: x, y: y, scaleX: scaleX, scaleY: scaleY)
-    //  animateIn(x, y, 1, 1, 1, completion)
     case .out where direction.isVertical():
       return (x: x, y: -y, scaleX: scaleX, scaleY: scaleY)
-      
     case .out:
       return (x: x, y: y, scaleX: scaleX, scaleY: scaleY)
     }

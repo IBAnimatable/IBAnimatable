@@ -46,7 +46,7 @@ public extension MaskDesignable where Self: UIView {
     case .star(let points):
       maskStar(with: points )
     case .wave(let direction, let width, let offset):
-      maskWave(with: direction ?? .up, width: width, offset: offset)
+      maskWave(with: direction, width: width, offset: offset)
     case .triangle:
       maskTriangle()
     case .none:
