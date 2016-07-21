@@ -15,7 +15,7 @@ public enum MaskType: IBEnum {
   case circle
   /// For polygon shape with `n` sides. (min: 3, the default: 6).
   case polygon(sides: Int)
-  /// For star shape with n points (min: 3, default: 6)
+  /// For star shape with n points (min: 3, default: 5)
   case star(points: Int)
   /// For isosceles triangle shape. The triangle's height is equal to the view's frame height. If the view is a square, the triangle is equilateral.
   case triangle
@@ -44,7 +44,7 @@ public extension MaskType {
       return
     }
     
-    let nameAndParames = MaskType.extractNameAndParams(from: string.lowercased())
+    let nameAndParames = MaskType.extractNameAndParams(from: string)
     let name = nameAndParames.name
     let params = nameAndParames.params
     
@@ -54,7 +54,7 @@ public extension MaskType {
     case "polygon":
       self = .polygon(sides: params[safe: 0]?.toInt() ?? 6)
     case "star":
-      self = .star(points: params[safe: 0]?.toInt() ?? 6)
+      self = .star(points: params[safe: 0]?.toInt() ?? 5)
     case "triangle":
       self = .triangle
     case "wave":
