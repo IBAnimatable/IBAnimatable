@@ -28,14 +28,14 @@ public extension BlurDesignable where Self: UIView {
    configBlurEffectStyle method, should be called in layoutSubviews() method
    */
   public func configBlurEffectStyle() {
-    guard let unwrappedBlurEffectStyle = blurEffectStyle, blurStyle = getBlurEffectStyle(from: unwrappedBlurEffectStyle) else {
+    guard let unwrappedBlurEffectStyle = blurEffectStyle, let blurStyle = getBlurEffectStyle(from: unwrappedBlurEffectStyle) else {
       return
     }
     
     let blurEffectView = createVisualEffectView(effect: UIBlurEffect(style: blurStyle))
     
     // Apply vibrancy effect to all subviews
-    if let unwrappedVibrancyStyle = vibrancyEffectStyle, vibrancyStyle = getBlurEffectStyle(from: unwrappedVibrancyStyle) {
+    if let unwrappedVibrancyStyle = vibrancyEffectStyle, let vibrancyStyle = getBlurEffectStyle(from: unwrappedVibrancyStyle) {
       let vibrancyEffect = UIVibrancyEffect(blurEffect: UIBlurEffect(style: vibrancyStyle))
       let vibrancyEffectView = createVisualEffectView(effect: vibrancyEffect)
       subviews.forEach {

@@ -21,7 +21,7 @@ class TransitionTableViewController: UITableViewController {
   override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
     super.prepare(for: segue, sender: sender)
     
-    guard let toNavigationController = segue.destinationViewController as? AnimatableNavigationController, indexPath = tableView.indexPathForSelectedRow else {
+    guard let toNavigationController = segue.destinationViewController as? AnimatableNavigationController, let indexPath = tableView.indexPathForSelectedRow else {
       return
     }
     

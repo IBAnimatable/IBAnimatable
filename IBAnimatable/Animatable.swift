@@ -82,11 +82,11 @@ public extension Animatable where Self: UIView {
   }
   
   public func animate(_ completion: AnimatableCompletion? = nil) {
-    guard let unwrappedAnimationTypeString = animationType, let _animationType = AnimationType(rawValue: unwrappedAnimationTypeString) else {
+    guard let unwrappedAnimationTypeString = self.animationType, let animationType = AnimationType(rawValue: unwrappedAnimationTypeString) else {
       return
     }
     
-    switch _animationType {
+    switch animationType {
     case .slideInLeft:
       slideInLeft(completion)
     case .slideInRight:

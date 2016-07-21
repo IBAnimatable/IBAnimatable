@@ -61,10 +61,10 @@ private extension TransitionPresentedViewController {
     }
     
     // No gesture for this animator
-    guard let interactiveGestureTypeString = interactiveGestureType,
-      interactiveGestureType = InteractiveGestureType.fromString(interactiveGestureTypeString),
-      transitionAnimationTypeString = transitionAnimationType,
-      transitionAnimationType = TransitionAnimationType.fromString(transitionAnimationTypeString) else {
+    guard let interactiveGestureTypeString = self.interactiveGestureType,
+      let interactiveGestureType = InteractiveGestureType.fromString(interactiveGestureTypeString),
+      let transitionAnimationTypeString = self.transitionAnimationType,
+      let transitionAnimationType = TransitionAnimationType.fromString(transitionAnimationTypeString) else {
         return
     }
     
@@ -111,7 +111,7 @@ private extension TransitionPresentedViewController {
   }
   
   func presentViaSegue(_ segueClass: UIStoryboardSegue.Type?, useDismissInteraction: Bool) {
-    if let segueClass = segueClass, toViewController = storyboard?.instantiateViewController(withIdentifier: "TransitionPresentedViewController") as? TransitionPresentedViewController {
+    if let segueClass = segueClass, let toViewController = storyboard?.instantiateViewController(withIdentifier: "TransitionPresentedViewController") as? TransitionPresentedViewController {
       toViewController.useDismissInteraction = useDismissInteraction
       let segue = segueClass.init(identifier: String(segueClass), source: self, destination: toViewController)
       prepare(for: segue, sender: self)
