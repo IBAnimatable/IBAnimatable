@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "IBAnimatable"
-  s.version      = "2.4"
+  s.version      = "2.5"
   s.summary      = "Design and prototype UI, interaction, navigation, transition and animation for App Store ready Apps in Interface Builder with IBAnimatable."
   s.homepage     = "https://github.com/JakeLin/IBAnimatable"
   s.license      = { :type => "MIT", :file => "LICENSE" }

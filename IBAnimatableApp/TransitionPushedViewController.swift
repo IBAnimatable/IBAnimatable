@@ -33,9 +33,9 @@ private extension TransitionPushedViewController {
     
     // No gesture for this animator
     guard let interactiveGestureTypeString = navigationController.interactiveGestureType,
-      interactiveGestureType = InteractiveGestureType.fromString(interactiveGestureTypeString),
-      transitionAnimationTypeString = navigationController.transitionAnimationType,
-      transitionAnimationType = TransitionAnimationType.fromString(transitionAnimationTypeString) else {
+      let interactiveGestureType = InteractiveGestureType.fromString(interactiveGestureTypeString),
+      let transitionAnimationTypeString = navigationController.transitionAnimationType,
+      let transitionAnimationType = TransitionAnimationType.fromString(transitionAnimationTypeString) else {
       return
     }
     

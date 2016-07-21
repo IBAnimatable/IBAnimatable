@@ -82,11 +82,11 @@ public extension Animatable where Self: UIView {
   }
   
   public func animate(_ completion: AnimatableCompletion? = nil) {
-    guard let unwrappedAnimationTypeString = animationType, let _animationType = AnimationType(rawValue: unwrappedAnimationTypeString) else {
+    guard let unwrappedAnimationTypeString = self.animationType, let animationType = AnimationType(rawValue: unwrappedAnimationTypeString) else {
       return
     }
     
-    switch _animationType {
+    switch animationType {
     case .slideInLeft:
       slideInLeft(completion)
     case .slideInRight:
@@ -165,6 +165,10 @@ public extension Animatable where Self: UIView {
       zoomOut(completion)
     case .shake:
       shake(completion)
+    case .zoomInvertIn:
+      zoomInvertIn(completion)
+    case .zoomInvertOut:
+      zoomInvertOut(completion)
     case .pop:
       pop(completion)
     case .flipX:
@@ -428,6 +432,23 @@ public extension Animatable where Self: UIView {
   public func zoomOut(_ completion: AnimatableCompletion? = nil) {
     let scaleX = 2 * force
     let scaleY = 2 * force
+    alpha = 1
+    let toAlpha: CGFloat = 0
+    animateOutWithScaleX(scaleX, scaleY: scaleY, alpha: toAlpha, completion: completion)
+  }
+
+  public func zoomInvertIn(_ completion: AnimatableCompletion? = nil) {
+    let scaleX = 1 * force
+    let scaleY = 1 * force
+    alpha = 0
+    let toAlpha: CGFloat = 1
+    transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+    animateOutWithScaleX(scaleX, scaleY: scaleY, alpha: toAlpha, completion: completion)
+  }
+
+  public func zoomInvertOut(_ completion: AnimatableCompletion? = nil) {
+    let scaleX = 0.1 * force
+    let scaleY = 0.1 * force
     alpha = 1
     let toAlpha: CGFloat = 0
     animateOutWithScaleX(scaleX, scaleY: scaleY, alpha: toAlpha, completion: completion)
