@@ -681,7 +681,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0800;
-				ORGANIZATIONNAME = "IBAnimatable";
+				ORGANIZATIONNAME = IBAnimatable;
 				TargetAttributes = {
 					AE6B01541C2A082300950BB2 = {
 						CreatedOnToolsVersion = 7.2;
@@ -1057,7 +1057,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = IBAnimatableApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JakeLin.IBAnimatableApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_IDENTIFIER_PREFIX)IBAnimatable.IBAnimatable";
 				PRODUCT_NAME = IBAnimatableApp;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -1072,7 +1072,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = IBAnimatableApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JakeLin.IBAnimatableApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_IDENTIFIER_PREFIX)IBAnimatable.IBAnimatable";
 				PRODUCT_NAME = IBAnimatableApp;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
