@@ -14,7 +14,7 @@ public class PanInteractiveAnimator: InteractiveAnimator {
   
   override func calculateProgress(_ gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
     guard let  gestureRecognizer = gestureRecognizer as? UIPanGestureRecognizer,
-      superview = gestureRecognizer.view?.superview else {
+      let superview = gestureRecognizer.view?.superview else {
       return (0, false)
     }
     let translation = gestureRecognizer.translation(in: superview)

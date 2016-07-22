@@ -1,3 +1,4 @@
+
 //
 //  Created by Jake Lin on 11/19/15.
 //  Copyright © 2015 Jake Lin. All rights reserved.
@@ -274,7 +275,6 @@ public extension Animatable where Self: UIView {
     }
     
   }
-  
   
     public func flip(axis: AnimationType.Axis, completion: AnimatableCompletion? = nil) {
      let scaleX: CGFloat

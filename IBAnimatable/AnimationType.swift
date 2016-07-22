@@ -9,6 +9,7 @@ import UIKit
 /**
  Predefined Animation Type
  */
+
 public enum AnimationType {
   case slide(way: Way, direction: Direction)
   case squeeze(way: Way, direction: Direction) // miss squeeze

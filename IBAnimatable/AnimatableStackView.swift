@@ -87,8 +87,23 @@ import UIKit
   }
   
   // MARK: - BlurDesignable
-  @IBInspectable public var blurEffectStyle: String?
-  @IBInspectable public var blurOpacity: CGFloat = CGFloat.nan
+  @IBInspectable public var blurEffectStyle: String? {
+    didSet {
+      configBlurEffectStyle()
+    }
+  }
+
+  @IBInspectable public var vibrancyEffectStyle: String? {
+    didSet {
+      configBlurEffectStyle()
+    }
+  }
+
+  @IBInspectable public var blurOpacity: CGFloat = CGFloat.nan {
+    didSet {
+      configBlurEffectStyle()
+    }
+  }
   
   // MARK: - TintDesignable
   @IBInspectable public var tintOpacity: CGFloat = CGFloat.nan
@@ -152,8 +167,7 @@ public var animationType: AnimationType = .none
   // MARK: - Private
   private func configInspectableProperties() {
     configAnimatableProperties()
-    configTintedColor()
-    configBlurEffectStyle()
+    configTintedColor()    
   }
   
   private func configAfterLayoutSubviews() {

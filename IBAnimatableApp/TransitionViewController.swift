@@ -14,7 +14,7 @@ class TransitionViewController: AnimatableViewController {
     super.viewDidLoad()
     
     // Transition animations start with `System` do not support Present transition, so hide it
-    if let animationType = transitionAnimationType where animationType.hasPrefix("System") {
+    if let animationType = transitionAnimationType, animationType.hasPrefix("System") {
       // Cannot use `hidden` here because of `UIStackView`
       presentButton.alpha = 0
     }
