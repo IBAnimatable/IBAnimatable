@@ -32,8 +32,8 @@ To use `IBAnimatable`, we can drag and drop a UIKit element and connect it with 
 #### `BlurDesignable`
 | Property name | Data type | Description |
 | ------------- |:-------------:| ----- |
-| blurEffectStyle | Optional&lt;String> | Support three different blur effects: `ExtraLight`, `Light` and `Dark`, also can be found in emum [`BlurEffectStyle `](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/BlurEffectStyle.swift). The look of blur effect in Interface Builder is different from Simulator or device. |
-| vibrancyEffectStyle | Optional&lt;String> | Support three different blur effects: `ExtraLight`, `Light` and `Dark`, also can be found in emum [`BlurEffectStyle `](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/BlurEffectStyle.swift). Once specify the Vibrancy effect style, all subviews will apply this vibrancy effect. |
+| blurEffectStyle | Optional&lt;String> | Support three different blur effects: `ExtraLight`, `Light` and `Dark`, also can be found in emum [`BlurEffectStyle `](IBAnimatable/BlurEffectStyle.swift). The look of blur effect in Interface Builder is different from Simulator or device. |
+| vibrancyEffectStyle | Optional&lt;String> | Support three different blur effects: `ExtraLight`, `Light` and `Dark`, also can be found in emum [`BlurEffectStyle `](IBAnimatable/BlurEffectStyle.swift). Once specify the Vibrancy effect style, all subviews will apply this vibrancy effect. |
 | blurOpacity | CGFloat | Opacity of the blur effect specified above. the default value is `CGFloat.NaN`, the value range is from 0.0 to 1.0. |
 
 
@@ -42,7 +42,7 @@ To use `IBAnimatable`, we can drag and drop a UIKit element and connect it with 
 | ------------- |:-------------:| ----- |
 | borderColor | Optional&lt;UIColor> | border color |
 | borderWidth | CGFloat | border width. Default value is `CGFloat.NaN`, the value is greater than 0. |
-| borderSide | Optional&lt;String> | border side: `Top`, `Right`, `Bottom` or `Left`, also can be found in emum [`BorderSide`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/BorderSide.swift). Multiple sides can be configured with a comma separated list of sides (e.g. `Top,Bottom`). If not specified, then display four sides. **Please notice**: If we use `maskType` property then `borderSide` will be ignored. |
+| borderSide | Optional&lt;String> | border side: `Top`, `Right`, `Bottom` or `Left`, also can be found in emum [`BorderSide`](IBAnimatable/BorderSide.swift). Multiple sides can be configured with a comma separated list of sides (e.g. `Top,Bottom`). If not specified, then display four sides. **Please notice**: If we use `maskType` property then `borderSide` will be ignored. |
 
 
 #### `CheckBoxDesignable`
@@ -62,7 +62,7 @@ To use `IBAnimatable`, we can drag and drop a UIKit element and connect it with 
 | ------------- |:-------------:| ----- |
 | fillColor | Optional&lt;UIColor> | fill color of the UI Element |
 | opacity | CGFloat | opacity, alpha of the UI Element, the default value is `CGFloat.NaN`, the value is from 0.0 to 1.0. |
-| predefinedColor | Optional&lt;String> | Predefined color. All predefined colors are in enum [`ColorType`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/ColorType.swift). To find the predefined flat colors, you can use [flatuicolors.com](https://flatuicolors.com), all flat color start with `Flat`, e.g. `PETER RIVER` on the website maps to `FlatPeterRiver` in the enum. |
+| predefinedColor | Optional&lt;String> | Predefined color. All predefined colors are in enum [`ColorType`](IBAnimatable/ColorType.swift). To find the predefined flat colors, you can use [flatuicolors.com](https://flatuicolors.com), all flat color start with `Flat`, e.g. `PETER RIVER` on the website maps to `FlatPeterRiver` in the enum. |
 
 
 #### `GradientDesignable`
@@ -70,8 +70,8 @@ To use `IBAnimatable`, we can drag and drop a UIKit element and connect it with 
 | ------------- |:-------------:| ----- |
 | startColor | Optional&lt;UIColor> | start gradient color |
 | endColor | Optional&lt;UIColor> | end gradient color |
-| predefinedGradient | Optional&lt;String> | Predefined gradients. All predefined gradients are in enum [`GradientType`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/GradientType.swift), To find the predefined gradients, you can use [uigradients.com](http://uigradients.com), e.g. `Juicy Orange` on the website maps to `JuicyOrange` in the enum. |
-| startPoint | Optional&lt;String> | start direction point, can find in enum [`GradientStartPoint `](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/GradientStartPoint.swift). |
+| predefinedGradient | Optional&lt;String> | Predefined gradients. All predefined gradients are in enum [`GradientType`](IBAnimatable/GradientType.swift), To find the predefined gradients, you can use [uigradients.com](http://uigradients.com), e.g. `Juicy Orange` on the website maps to `JuicyOrange` in the enum. |
+| startPoint | Optional&lt;String> | start direction point, can find in enum [`GradientStartPoint `](IBAnimatable/GradientStartPoint.swift). |
 
 #### `NavigationBarDesignable`
 | Property name | Data type | Description |
@@ -81,7 +81,7 @@ To use `IBAnimatable`, we can drag and drop a UIKit element and connect it with 
 #### `MaskDesignable`
 | Property name | Data type | Description |
 | ------------- |:-------------:| ----- |
-| maskType | Optional&lt;String> | Supported maks type: All predefined animations are in enum [`MaskType`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/MaskType.swift) |
+| maskType | Optional&lt;String> | Supported maks type: All predefined animations are in enum [`MaskType`](IBAnimatable/MaskType.swift) |
 
 **Supported MaskType:**
 
@@ -171,7 +171,7 @@ Easily add color layer on top of the UI element especially `AnimatableImageView`
 #### Properties
 | Property name | Data type | Description |
 | ------------- |:-------------:| ----- |
-| animationType | Optional&lt;String> | Supported animations. All predefined animations are in enum [`AnimationType`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/AnimationType.swift) |
+| animationType | Optional&lt;String> | Supported animations. All predefined animations are in enum [`AnimationType`](IBAnimatable/AnimationType.swift) |
 | autoRun | Bool | Whether to automatically start the animation. The default value is `true`. if it is true, the animation will automatically run when the view is loaded. If want to manually start the animation should set it to `false`. |
 | duration | CGFloat | Animation duration in seconds. The default value is 0.7. |
 | delay | Double | Delay to start the animation in seconds. The default value is 0. |
@@ -201,10 +201,12 @@ With these methods, we can navigate back or dismiss current ViewController witho
 | Property name | Data type | Description |
 | ------------- |:-------------:| ----- |
 | transitionAnimationType | Optional&lt;String> | Supported transition animations. Tap on "Forgot Password" button to see all predefined transition animations, e.g. `Fade`, `SystemCube(Left)` and `SystemPageCurl(Bottom)`. The transition type starts with `System` can only use in Push/Pop transitions, not Present/Dismiss transitions. Note: For `SystemRotate` seems that only `SystemRotate(90)` is working. |
-| transitionDuration | Double | transition duration. The default value is defined in [`Constants`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/Constants.swift) (0.7 seconds) |
-| interactiveGestureType | Optional&lt;String> | interactive gesture type. used to specify the gesture to dismiss/pop current scence. All supported interactive gesture types are in [`InteractiveGestureType`](https://github.com/JakeLin/IBAnimatable/blob/master/IBAnimatable/InteractiveGestureType.swift) |
+| transitionDuration | Double | transition duration. The default value is defined in [`Constants`](IBAnimatable/Constants.swift) (0.7 seconds) |
+| interactiveGestureType | Optional&lt;String> | interactive gesture type. used to specify the gesture to dismiss/pop current scence. All supported interactive gesture types are in [`InteractiveGestureType`](IBAnimatable/InteractiveGestureType.swift) |
 
-Also see [Transition Animators](https://github.com/JakeLin/IBAnimatable/blob/master/Documentation/Transitions.md#transition-animators) and [Interactive Animators](https://github.com/JakeLin/IBAnimatable/blob/master/Documentation/Transitions.md#interactive-animators)
+Also see [Transition Animators](Documentation/Transitions.md#transition-animators) and [Interactive Animators](Documentation/Transitions.md#interactive-animators)
 
 ### Segues
-See [Segues](https://github.com/JakeLin/IBAnimatable/blob/master/Documentation/Transitions.md#segues)
+See [Segues](Documentation/Transitions.md#segues)
+
+
