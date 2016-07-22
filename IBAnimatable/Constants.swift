@@ -1,6 +1,6 @@
 //
 // Created by Jake Lin on 2/29/16.
-// Copyright (c) 2016 Jake Lin. All rights reserved.
+// Copyright (c) 2016 IBAnimatable. All rights reserved.
 //
 
 import Foundation

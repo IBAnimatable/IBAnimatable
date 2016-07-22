@@ -1,6 +1,6 @@
 //
 //  Created by Jake Lin on 12/15/15.
-//  Copyright © 2015 Jake Lin. All rights reserved.
+//  Copyright © 2015 IBAnimatable. All rights reserved.
 //
 
 import UIKit

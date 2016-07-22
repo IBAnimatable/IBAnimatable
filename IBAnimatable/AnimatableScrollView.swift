@@ -1,6 +1,6 @@
 //
 //  Created by Tom Baranes on 28/06/16.
-//  Copyright © 2015 Jake Lin. All rights reserved.
+//  Copyright © 2015 IBAnimatable. All rights reserved.
 //
 
 

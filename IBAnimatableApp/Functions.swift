@@ -1,6 +1,6 @@
 //
 //  Created by Mark Hamilton on 4/9/16.
-//  Copyright © 2016 dryverless. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import Foundation
