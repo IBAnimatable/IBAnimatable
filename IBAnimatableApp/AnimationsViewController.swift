@@ -23,7 +23,7 @@ extension Array {
 }
 
 enum ParamType {
-
+  
   case number(min: Double, max: Double, interval: Double)
   case enumeration(values: [String])
   
@@ -36,15 +36,15 @@ enum ParamType {
       return val.count
     }
   }
-
+  
   func titleAt(index: Int) -> String? {
     switch self {
     case .enumeration(let values):
       return values[safe: index]
-    case .number(let min,  _, let interval):
+    case .number(let min, _, let interval):
       return String(min + Double(index) * interval)
     }
-
+    
   }
 }
 
@@ -52,18 +52,18 @@ enum ParamType {
 struct Entry {
   let params: [ParamType]
   let name: String
- }
+}
 
 extension Entry {
   /// Convert the entry to a `AnimationType` string
-  func toString(selectedIndexes indexes:Int?...) -> String {
-  
+  func toString(selectedIndexes indexes: Int?...) -> String {
+    
     let paramString = indexes.enumerated().flatMap({ (i: Int, index: Int?) -> String? in
       return params[safe:i]?.titleAt(index: index ?? 0)
     }).joined(separator: ",")
     
-      return "\(name)(\(paramString))"
-
+    return "\(name)(\(paramString))"
+    
   }
 }
 
@@ -96,7 +96,7 @@ class AnimationsViewController: UIViewController {
     Entry(params: [self.positiveNumberParam, self.positiveNumberParam], name: "moveby"),
     Entry(params: [self.numberParam, self.numberParam], name: "moveto")
     ]
-    }()
+  }()
   
   var selectedEntry: Entry!
   override func viewDidLoad() {
@@ -105,7 +105,7 @@ class AnimationsViewController: UIViewController {
     pickerView.dataSource = self
     pickerView.delegate = self
   }
-
+  
 }
 
 extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSource {
@@ -125,7 +125,7 @@ extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSourc
     
     if component == 0 {
       return entries[safe: row]?.name.colorize(color: .white())
-}
+    }
     guard let param = selectedEntry.params[safe: component - 1] else {
       return nil
     }
@@ -140,18 +140,17 @@ extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSourc
       }
     }
     let animString = selectedEntry.toString(selectedIndexes: pickerView.selectedRow(inComponent: 1), pickerView.selectedRow(inComponent: 2))
-    let animType = AnimationType(string: animString);
+    let animType = AnimationType(string: animString)
     pickerView.isUserInteractionEnabled = false
     aView.animate(animType) {
       if #available(iOS 10.0, *) {
         if !self.aView.transform.isIdentity {
-        Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { timer in
-          self.aView.alpha = 1;
-          self.aView.transform = CGAffineTransform.identity
-          self.pickerView.isUserInteractionEnabled = true
-        }
-        }
-        else {
+          Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { timer in
+            self.aView.alpha = 1
+            self.aView.transform = CGAffineTransform.identity
+            self.pickerView.isUserInteractionEnabled = true
+          }
+        } else {
           self.pickerView.isUserInteractionEnabled = true
         }
       }

@@ -1,4 +1,3 @@
-
 //
 //  Created by Jake Lin on 11/19/15.
 //  Copyright © 2015 Jake Lin. All rights reserved.
@@ -88,19 +87,19 @@ public extension Animatable where Self: UIView {
       fade(way: way ?? .in, completion: completion)
     case let .zoom(way):
       zoom(way: way ?? .in, completion: completion)
-    case let .shake:
+    case .shake:
       shake(completion)
-    case let .pop:
+    case .pop:
       pop(completion)
     case let .flip( axis):
       flip(axis: axis ?? .x, completion: completion)
-    case let .morph:
+    case .morph:
       morph(completion)
-    case let .flash:
+    case .flash:
       flash(completion)
-    case let .wobble:
+    case .wobble:
       wobble(completion)
-    case let .swing:
+    case .swing:
       swing(completion)
     case let .rotate(direction):
       rotate(direction: direction ?? .cw, completion: completion)
@@ -143,9 +142,9 @@ public extension Animatable where Self: UIView {
     case .up:
       y = yDistance
     }
-    if (shouldScale && direction.isVertical()) {
+    if shouldScale && direction.isVertical() {
       scaleY = scale
-    } else if (shouldScale){
+    } else if shouldScale {
       scaleX = scale
     }
     switch way {

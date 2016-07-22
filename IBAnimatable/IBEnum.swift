@@ -50,5 +50,3 @@ public extension IBEnum {
     self.init(string: value)
   }
 }
-
-

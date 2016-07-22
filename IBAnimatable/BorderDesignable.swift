@@ -95,7 +95,7 @@ public extension BorderDesignable where Self: UIView {
 
 private extension BorderDesignable where Self: UIView {
   func commonConfigBorder() {
-    guard let unwrappedBorderColor = borderColor , borderWidth > 0 else {
+    guard let unwrappedBorderColor = borderColor, borderWidth > 0 else {
       return
     }
     

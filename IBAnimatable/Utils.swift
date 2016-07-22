@@ -33,7 +33,7 @@ internal extension RawRepresentable {
     self.init(rawValue: raw)
   }
 
-  init(raw: RawValue?,  defaultValue: Self) {
+  init(raw: RawValue?, defaultValue: Self) {
     guard let value = raw  else {
       self = defaultValue
       return
