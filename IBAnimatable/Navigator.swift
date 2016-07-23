@@ -58,7 +58,7 @@ extension Navigator: UINavigationControllerDelegate {
   
   // MARK: - interaction controller
   public func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-    if let interactiveAnimator = interactiveAnimator , interactiveAnimator.interacting {
+    if let interactiveAnimator = interactiveAnimator, interactiveAnimator.interacting {
       return interactiveAnimator
     } else {
       return nil

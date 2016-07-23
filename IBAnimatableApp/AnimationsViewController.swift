@@ -26,6 +26,12 @@ enum ParamType {
   
   case number(min: Double, max: Double, interval: Double)
   case enumeration(values: [String])
+ 
+  init<T: RawRepresentable where T: Hashable>(fromEnum: T.Type) {
+    let iterator = iterateEnum(fromEnum)
+    let values = iterator.map {  return String($0.rawValue) }
+    self = .enumeration(values: values)
+  }
   
   /// Number of different values to show in the picker
   func count() -> Int {
@@ -67,39 +73,41 @@ extension Entry {
   }
 }
 
+private let wayParam = ParamType(fromEnum: AnimationType.Way.self)
+private let directionParam = ParamType(fromEnum: AnimationType.Direction.self)
+private let fadeWayParams = ParamType(fromEnum: AnimationType.FadeWay.self)
+private let axisParams = ParamType(fromEnum: AnimationType.Axis.self)
+private let rotationDirectionParams = ParamType(fromEnum: AnimationType.RotationDirection.self)
+private let positiveNumberParam = ParamType.number(min: 0, max: 50, interval: 2)
+private let numberParam = ParamType.number(min: -50, max: 50, interval: 5)
+
 class AnimationsViewController: UIViewController {
   
   @IBOutlet weak var aView: AnimatableView!
   @IBOutlet weak var pickerView: UIPickerView!
   
-  let positiveNumberParam = ParamType.number(min: 0, max: 50, interval: 2)
-  let numberParam = ParamType.number(min: -50, max: 50, interval: 5)
   
   // prebuit common params
-  let wayParam = ParamType.enumeration(values: ["in", "out"])
-  let directionParam = ParamType.enumeration(values: ["left", "right", "up", "down"])
-  let fadeParams = ParamType.enumeration(values: ["in", "out", "inOut", "outIn"])
-  let axisParams = ParamType.enumeration(values: ["X", "Y"])
-  let rotationDirectionParams = ParamType.enumeration(values: ["Cw", "CCW"])
-  lazy var entries: [Entry] = {[
-    Entry(params: [self.wayParam, self.directionParam], name: "slide"),
-    Entry(params: [self.wayParam, self.directionParam], name: "squeeze"),
-    Entry(params: [self.fadeParams], name: "fade"),
-    Entry(params: [self.wayParam, self.directionParam], name: "slideFade"),
-    Entry(params: [self.wayParam, self.directionParam], name: "squeezeFade"),
-    Entry(params: [self.wayParam], name: "zoom"),
-    Entry(params: [self.axisParams], name: "flip"),
+  let entries: [Entry] = [
+    Entry(params: [wayParam, directionParam], name: "slide"),
+    Entry(params: [wayParam, directionParam], name: "squeeze"),
+    Entry(params: [fadeWayParams], name: "fade"),
+    Entry(params: [wayParam, directionParam], name: "slideFade"),
+    Entry(params: [wayParam, directionParam], name: "squeezeFade"),
+    Entry(params: [wayParam], name: "zoom"),
+    Entry(params: [axisParams], name: "flip"),
     Entry(params: [], name: "flash"),
     Entry(params: [], name: "wobble"),
     Entry(params: [], name: "swing"),
-    Entry(params: [self.rotationDirectionParams], name: "rotate"),
-    Entry(params: [self.positiveNumberParam, self.positiveNumberParam], name: "moveby"),
-    Entry(params: [self.numberParam, self.numberParam], name: "moveto")
+    Entry(params: [rotationDirectionParams], name: "rotate"),
+    Entry(params: [positiveNumberParam, positiveNumberParam], name: "moveby"),
+    Entry(params: [numberParam, numberParam], name: "moveto")
     ]
-  }()
+  
   
   var selectedEntry: Entry!
   override func viewDidLoad() {
+  
     super.viewDidLoad()
     selectedEntry = entries[0]
     pickerView.dataSource = self
