@@ -87,6 +87,8 @@ public extension Animatable where Self: UIView {
       fade(way: way ?? .in, completion: completion)
     case let .zoom(way):
       zoom(way: way ?? .in, completion: completion)
+    case let .zoomInvert(way):
+      zoom(way: way ?? .in, invert: true, completion: completion)
     case .shake:
       shake(completion)
     case .pop:
@@ -257,25 +259,31 @@ public extension Animatable where Self: UIView {
     }
   }
   
-  public func zoom(way: AnimationType.Way, completion: AnimatableCompletion? = nil) {
-    let scaleX = 2 * force
-    let scaleY = 2 * force
+  public func zoom(way: AnimationType.Way, invert: Bool = false, completion: AnimatableCompletion? = nil) {
     let toAlpha: CGFloat
-    
+
     switch way {
-    case .in:
+    case .in where invert:
+      let scale = force
       alpha = 0
       toAlpha = 1
-      animateIn(0, 0, scaleX, scaleY, toAlpha, completion)
+      transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+      animateIn(0, 0, scale / 2, scale / 2, toAlpha, completion)
+    case .in:
+      let scale = 2 * force
+      alpha = 0
+      toAlpha = 1
+      animateIn(0, 0, scale, scale, toAlpha, completion)
     case .out:
+      let scale = (invert ? 0.1 :  2) * force
       alpha = 1
       toAlpha = 0
-      animateOut(0, 0, scaleX, scaleY, toAlpha, completion)
+      animateOut(0, 0, scale, scale, toAlpha, completion)
     }
     
   }
   
-    public func flip(axis: AnimationType.Axis, completion: AnimatableCompletion? = nil) {
+  public func flip(axis: AnimationType.Axis, completion: AnimatableCompletion? = nil) {
      let scaleX: CGFloat
     let scaleY: CGFloat
     switch axis {

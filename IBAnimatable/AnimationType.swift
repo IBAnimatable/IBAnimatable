@@ -17,6 +17,7 @@ public enum AnimationType {
   case fade(way: FadeWay)
   case squeezeFade(way: Way, direction: Direction)
   case zoom(way: Way)
+  case zoomInvert(way: Way)
   case shake
   case pop
   case flip(along: Axis)
@@ -74,6 +75,8 @@ extension AnimationType : IBEnum {
       self = .squeezeFade(way: Way(raw: params[safe: 0], defaultValue: .in), direction: Direction(raw: params[safe: 1], defaultValue: .left))
     case "zoom":
       self = .zoom(way: Way(raw: params[safe: 0], defaultValue: .in))
+    case "zoominvert":
+      self = .zoomInvert(way: Way(raw: params[safe: 0], defaultValue: .in))
     case "shake":
       self = .shake
     case "pop":

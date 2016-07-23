@@ -95,6 +95,7 @@ class AnimationsViewController: UIViewController {
     Entry(params: [wayParam, directionParam], name: "slideFade"),
     Entry(params: [wayParam, directionParam], name: "squeezeFade"),
     Entry(params: [wayParam], name: "zoom"),
+    Entry(params: [wayParam], name: "zoomInvert"),
     Entry(params: [axisParams], name: "flip"),
     Entry(params: [], name: "flash"),
     Entry(params: [], name: "wobble"),
@@ -128,7 +129,18 @@ extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSourc
   func numberOfComponents(in pickerView: UIPickerView) -> Int {
     return 3
   }
-  
+  func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+    switch component {
+    case 0:
+      return self.view.frame.size.width * 0.5
+    case 1:
+      return self.view.frame.size.width * 0.25
+    case 2:
+      return self.view.frame.size.width * 0.25
+    default:
+      return 0
+    }
+  }
   func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> AttributedString? {
     
     if component == 0 {
