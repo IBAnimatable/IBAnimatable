@@ -11,6 +11,7 @@
 		33A8B9F01C7E7A4C00082529 /* TransitionFromDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8B9EE1C7E7A4C00082529 /* TransitionFromDirection.swift */; };
 		731205811D28A3830009BCAC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731205801D28A3830009BCAC /* Utils.swift */; };
 		73B7D8861D233FB700DD3F43 /* IBEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B7D8851D233FB700DD3F43 /* IBEnum.swift */; };
+		73ED71F81D34CA4700755C9B /* AnimationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED71F71D34CA4700755C9B /* AnimationsViewController.swift */; };
 		AE0D309A1CE149150093B578 /* UserInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE0D30991CE149150093B578 /* UserInterface.storyboard */; };
 		AE0D309C1CE14A170093B578 /* Animations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE0D309B1CE14A170093B578 /* Animations.storyboard */; };
 		AE148F321C9C2C3800E8126F /* IBAnimatable.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE6B01551C2A082300950BB2 /* IBAnimatable.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -157,6 +158,7 @@
 		33A8B9EE1C7E7A4C00082529 /* TransitionFromDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionFromDirection.swift; sourceTree = "<group>"; };
 		731205801D28A3830009BCAC /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		73B7D8851D233FB700DD3F43 /* IBEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBEnum.swift; sourceTree = "<group>"; };
+		73ED71F71D34CA4700755C9B /* AnimationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationsViewController.swift; sourceTree = "<group>"; };
 		AE0B0FE91C25372200E36B78 /* TableViewCellDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellDesignable.swift; sourceTree = "<group>"; };
 		AE0B0FEB1C26397700E36B78 /* AnimatableCheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableCheckBox.swift; sourceTree = "<group>"; };
 		AE0B0FED1C263A1900E36B78 /* CheckBoxDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBoxDesignable.swift; sourceTree = "<group>"; };
@@ -466,6 +468,7 @@
 				AE87646D1D2331010044E0AB /* UserInterfaceMaskTableViewController.swift */,
 				AE87646F1D2332F60044E0AB /* MaskViewController.swift */,
 				E25EC6E61CDE034300743DB8 /* ContainerTransitionViewController.swift */,
+				73ED71F71D34CA4700755C9B /* AnimationsViewController.swift */,
 			);
 			name = code;
 			sourceTree = "<group>";
@@ -874,6 +877,7 @@
 				AE1B9A661CE3EB100098D962 /* InteractionTableViewController.swift in Sources */,
 				AE8764701D2332F60044E0AB /* MaskViewController.swift in Sources */,
 				AE8A4FFA1C856EEC00E9E368 /* TransitionViewController.swift in Sources */,
+				73ED71F81D34CA4700755C9B /* AnimationsViewController.swift in Sources */,
 				AE87646E1D2331010044E0AB /* UserInterfaceMaskTableViewController.swift in Sources */,
 				AEDB24D31CE9EEB30086612C /* UIViewControllerExtension.swift in Sources */,
 				AED57AE51CE5C0CB00C359E3 /* TransitionPushedViewController.swift in Sources */,

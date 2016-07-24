@@ -8,20 +8,36 @@
 
 import Foundation
 
-internal extension Array {
+extension Array {
   /// Returns the element at the specified index iff it is within bounds, otherwise nil.
   subscript(safe index: Int ) -> Element? {
     return indices.contains(index) ? self[index] : nil  /// Returns the element at the specified index iff it is within bounds, otherwise nil.
   }
 }
-  /*
-internal extension Collection {
-  /// Returns the element at the specified index iff it is within bounds, otherwise nil.
-  subscript (safe index: Index) -> Generator.Element? {
-    let val = self[index];
-    return self.indices ~= index ? self[index] : nil;
-    
-    return indices.contains(index) ? self[index] : nil
+
+extension String {
+  func toDouble() -> Double? {
+    return Double(self)
+  }
+  func toInt() -> Int? {
+    return Int(self)
   }
 }
-*/
+
+internal extension RawRepresentable {
+  
+  init?(raw: RawValue?) {
+    guard let raw = raw else {
+      return nil
+    }
+    self.init(rawValue: raw)
+  }
+
+  init(raw: RawValue?, defaultValue: Self) {
+    guard let value = raw  else {
+      self = defaultValue
+      return
+    }
+    self = Self.init(rawValue: value) ?? defaultValue
+  }
+}

@@ -53,7 +53,7 @@ struct BorderSides: OptionSet {
     let sideElements = rawValue.characters.split(separator: ",")
       .map(String.init)
       .map { BorderSide(rawValue: $0.trimmingCharacters(in: CharacterSet.whitespaces)) }
-      .map { BorderSides(side:$0) }
+      .map { BorderSides(side: $0) }
     
     guard !sideElements.contains(.Unknown) else {
       self = .AllSides
@@ -95,7 +95,7 @@ public extension BorderDesignable where Self: UIView {
 
 private extension BorderDesignable where Self: UIView {
   func commonConfigBorder() {
-    guard let unwrappedBorderColor = borderColor , borderWidth > 0 else {
+    guard let unwrappedBorderColor = borderColor, borderWidth > 0 else {
       return
     }
     
@@ -132,7 +132,7 @@ private extension BorderDesignable where Self: UIView {
     
     let borderPath = UIBezierPath()
     
-    var lines:[(start: CGPoint, end: CGPoint)] = []
+    var lines: [(start: CGPoint, end: CGPoint)] = []
     if sides.contains(.top) {
       lines.append((start: .zero, end: CGPoint(x: bounds.size.width, y: 0)))
     }
@@ -140,7 +140,7 @@ private extension BorderDesignable where Self: UIView {
       lines.append((start: CGPoint(x: bounds.size.width, y: 0), end: CGPoint(x: bounds.size.width, y: bounds.size.height)))
     }
     if sides.contains(.bottom) {
-      lines.append((start:CGPoint(x: 0, y: bounds.size.height), end: CGPoint(x: bounds.size.width, y: bounds.size.height)))
+      lines.append((start: CGPoint(x: 0, y: bounds.size.height), end: CGPoint(x: bounds.size.width, y: bounds.size.height)))
     }
     if sides.contains(.left) {
       lines.append((start: .zero, end: CGPoint(x: 0, y: bounds.size.height)))

@@ -28,7 +28,12 @@ import UIKit
 //  }
   
   // MARK: - Animatable
-  @IBInspectable public var animationType: String?
+  public var animationType: AnimationType = .none
+  @IBInspectable  var _animationType: String? {
+    didSet {
+      animationType = AnimationType(string: _animationType)
+    }
+  }
   @IBInspectable public var autoRun: Bool = true
   @IBInspectable public var duration: Double = Double.nan
   @IBInspectable public var delay: Double = Double.nan
@@ -36,8 +41,6 @@ import UIKit
   @IBInspectable public var velocity: CGFloat = CGFloat.nan
   @IBInspectable public var force: CGFloat = CGFloat.nan
   @IBInspectable public var repeatCount: Float = Float.nan
-  @IBInspectable public var x: CGFloat = CGFloat.nan
-  @IBInspectable public var y: CGFloat = CGFloat.nan
   
   // MARK: - Private
   private func configInspectableProperties() {

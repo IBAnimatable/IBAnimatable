@@ -18,34 +18,35 @@ public protocol IBEnum: StringLiteralConvertible {
   init(string: String?)
 }
 
+
 public extension IBEnum {
   /**
    Helper function that returns a tuple containing the name and params from a string `string`
    
    - Parameter from string: The string to be converted into `enum`.
-    - Discussion: the string format is like "enumName(param1,param2,param3)"
+   - Discussion: the string format is like "enumName(param1,param2,param3)"
    - Returns: A tuple containing the name and an array of parameter string
    */
-   static func extractNameAndParams(from string: String) -> (name: String, params: [String]) {
-    let tokens = string.components(separatedBy: CharacterSet(charactersIn: "()")).filter({!$0.isEmpty})
+  static func extractNameAndParams(from string: String) -> (name: String, params: [String]) {
+    let tokens = string.lowercased().components(separatedBy: CharacterSet(charactersIn: "()")).filter({!$0.isEmpty})
     let name = tokens.first ?? ""
     let paramsString = tokens.count >= 2 ? tokens[1] : ""
     let params = paramsString.components(separatedBy: ",").filter({!$0.isEmpty})
-    return (name:name, params:params)
+    return (name: name, params: params)
   }
 }
 
 // MARK: - StringLiteralConvertible
 public extension IBEnum {
   init(stringLiteral value: String) {
-    self.init(string:value)
+    self.init(string: value)
   }
   
   init(unicodeScalarLiteral value: String) {
-    self.init(string:value)
+    self.init(string: value)
   }
   
   init(extendedGraphemeClusterLiteral value: String) {
-    self.init(string:value)
+    self.init(string: value)
   }
 }

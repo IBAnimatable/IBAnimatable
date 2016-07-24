@@ -40,13 +40,13 @@ public extension MaskDesignable where Self: UIView {
     case .circle:
       maskCircle()
     case .parallelogram(let angle):
-      maskParallelogram(with: angle ?? 60)
+      maskParallelogram(with: angle)
     case .polygon(let sides):
-      maskPolygon(with: sides ?? 6)
+      maskPolygon(with: sides)
     case .star(let points):
-      maskStar(with: points ?? 5)
+      maskStar(with: points )
     case .wave(let direction, let width, let offset):
-      maskWave(with: direction ?? .up, width: width ?? 40.0, offset:offset ?? 0.0)
+      maskWave(with: direction, width: width, offset: offset)
     case .triangle:
       maskTriangle()
     case .none:
@@ -178,15 +178,15 @@ private extension MaskDesignable where Self: UIView {
     let offset = abs(CGFloat(tan(topLeftAngleRad - .pi / 2)) * bounds.height)
     
     if topLeftAngle <= 90 {
-      path.move(to: CGPoint(x:0, y:0))
+      path.move(to: CGPoint(x: 0, y: 0))
       path.addLine(to: CGPoint(x: bounds.width - offset, y: 0))
-      path.addLine(to: CGPoint(x:bounds.width, y:bounds.height))
+      path.addLine(to: CGPoint(x: bounds.width, y: bounds.height))
       path.addLine(to: CGPoint(x: offset, y: bounds.height))
     } else {
-      path.move(to: CGPoint(x:offset, y:0))
-      path.addLine(to: CGPoint(x:bounds.width, y:0))
-      path.addLine(to: CGPoint(x:bounds.width - offset, y:bounds.height))
-      path.addLine(to: CGPoint(x:0, y:bounds.height))
+      path.move(to: CGPoint(x: offset, y: 0))
+      path.addLine(to: CGPoint(x: bounds.width, y: 0))
+      path.addLine(to: CGPoint(x: bounds.width - offset, y: bounds.height))
+      path.addLine(to: CGPoint(x: 0, y: bounds.height))
     }
     path.close()
     return path
@@ -226,7 +226,7 @@ private extension MaskDesignable where Self: UIView {
    - Parameter width: The width of the wave shape.
    - Parameter offset: The offset of the wave shape.
    */
-  func maskWave(with direction: MaskType.WaveDirection, width: Float, offset: Float) {
+  func maskWave(with direction: MaskType.WaveDirection, width: Double, offset: Double) {
     let wavePath = getWaveBezierPath(with: direction == .up, width: CGFloat(width), offset: CGFloat(offset))
     draw(wavePath)
   }
