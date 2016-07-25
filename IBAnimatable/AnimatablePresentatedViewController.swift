@@ -147,7 +147,7 @@ public class AnimatablePresentedViewController: UIViewController, PresentationDe
       modalTransitionStyle = systemTransition
     }
 
-    var presentedSetup = PresentedSetup()
+    var presentedSetup = PresentionConfiguration()
     presentedSetup.modalPosition = PresentationModalPosition.fromString(modalPosition)
     presentedSetup.modalSize = (PresentationModalSize.fromString(modalWidth), PresentationModalSize.fromString(modalHeight))
     presentedSetup.cornerRadius = cornerRadius

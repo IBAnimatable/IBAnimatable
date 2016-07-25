@@ -9,7 +9,7 @@ public class PresentationPresenter: NSObject {
   private var presentationAnimationType: PresentationAnimationType
   var dismissalAnimationType: PresentationAnimationType?
 
-  var presentedSetup: PresentedSetup?
+  var presentedSetup: PresentionConfiguration?
   var transitionDuration: Duration {
     didSet {
       if oldValue != transitionDuration {

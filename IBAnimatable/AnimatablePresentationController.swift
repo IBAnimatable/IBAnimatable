@@ -9,14 +9,14 @@ public class AnimatablePresentationController: UIPresentationController {
 
   // MARK: Properties
 
-  private let presentedSetup: PresentedSetup
+  private let presentedSetup: PresentionConfiguration
   private var dimmingView = AnimatableView()
 
   // MARK: Init
 
   init(presentedViewController: UIViewController,
        presentingViewController: UIViewController,
-       presentedSetup: PresentedSetup) {
+       presentedSetup: PresentionConfiguration) {
     self.presentedSetup = presentedSetup
     super.init(presentedViewController: presentedViewController, presentingViewController: presentingViewController)
 

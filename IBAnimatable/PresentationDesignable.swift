@@ -29,7 +29,7 @@ public protocol PresentationDesignable: class {
   var shadowOffset: CGPoint { get set }
 }
 
-public struct PresentedSetup {
+public struct PresentionConfiguration {
   var cornerRadius: CGFloat = .NaN
   var dismissOnTap: Bool = true
   var backgroundColor: UIColor = .blackColor()
