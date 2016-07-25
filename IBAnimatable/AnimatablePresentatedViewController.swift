@@ -39,7 +39,7 @@ public class AnimatablePresentedViewController: UIViewController, PresentationDe
     }
   }
 
-  @IBInspectable public var modalHeight: String = "Full" {
+  @IBInspectable public var modalHeight: String = "Half" {
     didSet {
       presenter?.presentedSetup?.modalSize = (PresentationModalSize.fromString(modalWidth), PresentationModalSize.fromString(modalHeight))
     }
