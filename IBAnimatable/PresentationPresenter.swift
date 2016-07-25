@@ -7,7 +7,7 @@ import UIKit
 
 public class PresentationPresenter: NSObject {
   private var presentationAnimationType: PresentationAnimationType
-  var dismissAnimationType: PresentationAnimationType?
+  var dismissalAnimationType: PresentationAnimationType?
 
   var presentedSetup: PresentedSetup?
   var transitionDuration: Duration {
@@ -57,14 +57,14 @@ extension PresentationPresenter: UIViewControllerTransitioningDelegate {
   }
 
   public func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    guard let dismissAnimationType = dismissAnimationType else {
+    guard let dismissalAnimationType = dismissalAnimationType else {
       return animator
     }
 
-    if dismissAnimationType.systemTransition != nil {
+    if dismissalAnimationType.systemTransition != nil {
       return nil
     }
-    return AnimatorFactory.generateAnimator(dismissAnimationType, transitionDuration: transitionDuration)
+    return AnimatorFactory.generateAnimator(dismissalAnimationType, transitionDuration: transitionDuration)
   }
 
 }

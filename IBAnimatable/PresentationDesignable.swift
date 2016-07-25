@@ -8,7 +8,7 @@ import UIKit
 public protocol PresentationDesignable: class {
 
   var presentationAnimationType: String? { get set }
-  var dismissAnimationType: String? { get set }
+  var dismissalAnimationType: String? { get set }
   var transitionDuration: Double { get set }
   var modalPosition: String { get set }
   var modalWidth: String { get set }
