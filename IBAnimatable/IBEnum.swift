@@ -18,7 +18,9 @@ public protocol IBEnum: StringLiteralConvertible {
   init(string: String?)
 }
 
-
+public protocol IBOptionalEnum {
+  init?(string: String?)
+}
 public extension IBEnum {
   /**
    Helper function that returns a tuple containing the name and params from a string `string`
@@ -32,6 +34,7 @@ public extension IBEnum {
     let name = tokens.first ?? ""
     let paramsString = tokens.count >= 2 ? tokens[1] : ""
     let params = paramsString.components(separatedBy: ",").filter({!$0.isEmpty})
+    
     return (name: name, params: params)
   }
 }

@@ -10,12 +10,12 @@ public protocol BlurDesignable {
   /**
    Blur effect style: `ExtraLight`, `Light` or `Dark`
    */
-  var blurEffectStyle: String? { get set }
+  var blurEffectStyle: UIBlurEffectStyle? { get set }
 
   /**
    Vibrancy effect style: `ExtraLight`, `Light` or `Dark`. Once specify the Vibrancy effect style, all subviews will apply this vibrancy effect.
    */
-  var vibrancyEffectStyle: String? { get set }
+  var vibrancyEffectStyle: UIBlurEffectStyle? { get set }
   
   /**
    Blur opacity: The opacity of UI element using blur effect. The default value is 1.0 if not specified. There is some performance penalty when we use this property.
@@ -28,14 +28,14 @@ public extension BlurDesignable where Self: UIView {
    configBlurEffectStyle method, should be called in layoutSubviews() method
    */
   public func configBlurEffectStyle() {
-    guard let unwrappedBlurEffectStyle = blurEffectStyle, let blurStyle = getBlurEffectStyle(from: unwrappedBlurEffectStyle) else {
+    guard let blurStyle = blurEffectStyle else {
       return
     }
     
     let blurEffectView = createVisualEffectView(effect: UIBlurEffect(style: blurStyle))
     
     // Apply vibrancy effect to all subviews
-    if let unwrappedVibrancyStyle = vibrancyEffectStyle, let vibrancyStyle = getBlurEffectStyle(from: unwrappedVibrancyStyle) {
+    if let vibrancyStyle = vibrancyEffectStyle {
       let vibrancyEffect = UIVibrancyEffect(blurEffect: UIBlurEffect(style: vibrancyStyle))
       let vibrancyEffectView = createVisualEffectView(effect: vibrancyEffect)
       subviews.forEach {
@@ -61,23 +61,5 @@ private extension BlurDesignable where Self: UIView {
     visualEffectView.frame = bounds
     visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     return visualEffectView
-  }
-
-  func getBlurEffectStyle(from blurEffectStyle: String) -> UIBlurEffectStyle? {
-    guard let blurEffectStyle = BlurEffectStyle(rawValue: blurEffectStyle) else {
-      return nil
-    }
-
-    let style: UIBlurEffectStyle
-    switch blurEffectStyle {
-    case .extraLight:
-      style = .extraLight
-    case .light:
-      style = .light
-    case .dark:
-      style = .dark
-    }
-    
-    return style
   }
 }
