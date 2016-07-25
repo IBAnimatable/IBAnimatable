@@ -7,17 +7,11 @@ import UIKit
 /**
  AnimatedTransitioning is the protocol of all Animator subclasses
  */
-public protocol AnimatedTransitioning: UIViewControllerAnimatedTransitioning {
-  
+public protocol AnimatedTransitioning: ViewControllerAnimatedTransitioning {
   /**
    Value of `TransitionAnimationType` enum
    */
   var transitionAnimationType: TransitionAnimationType { get set }
-  
-  /**
-   Transition duration
-   */
-  var transitionDuration: Duration { get set }
 
   /**
    Reverse animation type: used to specify the revers animation for pop or dismiss.
@@ -31,21 +25,6 @@ public protocol AnimatedTransitioning: UIViewControllerAnimatedTransitioning {
 }
 
 public extension AnimatedTransitioning {
-  public func retrieveViews(transitionContext: UIViewControllerContextTransitioning) -> (UIView?, UIView?, UIView?) {
-    return (transitionContext.viewForKey(UITransitionContextFromViewKey), transitionContext.viewForKey(UITransitionContextToViewKey), transitionContext.containerView())
-  }
-  
-  public func retrieveViewControllers(transitionContext: UIViewControllerContextTransitioning) -> (UIViewController?, UIViewController?, UIView?) {
-    return (transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey), transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey), transitionContext.containerView())
-  }
-  
-  public func retrieveTransitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-    if let transitionContext = transitionContext {
-      return transitionContext.isAnimated() ? transitionDuration : 0
-    }
-    return 0
-  }
-  
   public func animateWithCATransition(transitionContext: UIViewControllerContextTransitioning, type: SystemTransitionType, subtype: String?) {
     let (_, tempToView, tempContainerView) = retrieveViews(transitionContext)
     guard let toView = tempToView, containerView = tempContainerView else {
