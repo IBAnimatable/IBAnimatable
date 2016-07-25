@@ -7,7 +7,7 @@ import UIKit
 
 public class AnimatablePresentedViewController: UIViewController, PresentationDesignable {
 
-  // MARK: - PresentationAnimatable
+  // MARK: - AnimatablePresentationController
 
   @IBInspectable public var presentationAnimationType: String? {
     didSet {

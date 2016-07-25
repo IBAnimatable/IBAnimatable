@@ -113,7 +113,7 @@
 		E216B5AC1D3ADA130049FC8B /* ZoomAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E216B5AB1D3ADA130049FC8B /* ZoomAnimator.swift */; };
 		E2192F5D1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2192F5C1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift */; };
 		E21E840A1D3A30DF00C742E7 /* AnimatablePresentatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21E84091D3A30DF00C742E7 /* AnimatablePresentatedViewController.swift */; };
-		E21E840E1D3A31A900C742E7 /* PresentationAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21E840D1D3A31A900C742E7 /* PresentationAnimatable.swift */; };
+		E21E840E1D3A31A900C742E7 /* AnimatablePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21E840D1D3A31A900C742E7 /* AnimatablePresentationController.swift */; };
 		E21E84101D3A36C600C742E7 /* PresentationDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21E840F1D3A36C600C742E7 /* PresentationDesignable.swift */; };
 		E22183BD1D3BD47400866197 /* PresentationModalSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22183BC1D3BD47400866197 /* PresentationModalSize.swift */; };
 		E22183BF1D3BD54B00866197 /* PresentationModalPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22183BE1D3BD54B00866197 /* PresentationModalPosition.swift */; };
@@ -275,7 +275,7 @@
 		E216B5AB1D3ADA130049FC8B /* ZoomAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomAnimator.swift; sourceTree = "<group>"; };
 		E2192F5C1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableCollectionViewCell.swift; sourceTree = "<group>"; };
 		E21E84091D3A30DF00C742E7 /* AnimatablePresentatedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatablePresentatedViewController.swift; sourceTree = "<group>"; };
-		E21E840D1D3A31A900C742E7 /* PresentationAnimatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationAnimatable.swift; sourceTree = "<group>"; };
+		E21E840D1D3A31A900C742E7 /* AnimatablePresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatablePresentationController.swift; sourceTree = "<group>"; };
 		E21E840F1D3A36C600C742E7 /* PresentationDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationDesignable.swift; sourceTree = "<group>"; };
 		E22183BC1D3BD47400866197 /* PresentationModalSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationModalSize.swift; sourceTree = "<group>"; };
 		E22183BE1D3BD54B00866197 /* PresentationModalPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationModalPosition.swift; sourceTree = "<group>"; };
@@ -403,7 +403,7 @@
 			children = (
 				AE154B831C7D1A740093C05B /* AnimatedTransitioning.swift */,
 				AE154B7A1C7D04A40093C05B /* TransitionAnimatable.swift */,
-				E21E840D1D3A31A900C742E7 /* PresentationAnimatable.swift */,
+				E21E840D1D3A31A900C742E7 /* AnimatablePresentationController.swift */,
 				E210ABC51D3A9713001D0362 /* AnimatedPresenting.swift */,
 			);
 			name = TransitionAnimatable;
@@ -917,7 +917,7 @@
 				CAB56443CD667F41413A560F /* SystemTransitionType.swift in Sources */,
 				E210ABCC1D3AAAD0001D0362 /* PresentationPresenterManager.swift in Sources */,
 				CAB566CA933963DAA0C7E074 /* Constants.swift in Sources */,
-				E21E840E1D3A31A900C742E7 /* PresentationAnimatable.swift in Sources */,
+				E21E840E1D3A31A900C742E7 /* AnimatablePresentationController.swift in Sources */,
 				E21E84101D3A36C600C742E7 /* PresentationDesignable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

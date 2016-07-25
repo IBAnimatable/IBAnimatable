@@ -5,7 +5,7 @@
 
 import UIKit
 
-public class PresentationAnimatable: UIPresentationController {
+public class AnimatablePresentationController: UIPresentationController {
 
   // MARK: Properties
 
@@ -61,7 +61,7 @@ public class PresentationAnimatable: UIPresentationController {
 
 // MARK: - Sizing Helper's
 
-private extension PresentationAnimatable {
+private extension AnimatablePresentationController {
 
   private func modalSize() -> CGSize {
     guard let containerSize = containerView?.bounds.size else {
@@ -95,7 +95,7 @@ private extension PresentationAnimatable {
 
 // MARK: - UIPresentationController
 
-public extension PresentationAnimatable {
+public extension AnimatablePresentationController {
 
   // MARK: Presentation
 

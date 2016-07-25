@@ -47,7 +47,7 @@ extension PresentationPresenter: UIViewControllerTransitioningDelegate {
     guard let unwrappedPresenterSetup = presentedSetup else {
       return nil
     }
-    return PresentationAnimatable(presentedViewController: presented, presentingViewController: presenting, presentedSetup: unwrappedPresenterSetup)
+    return AnimatablePresentationController(presentedViewController: presented, presentingViewController: presenting, presentedSetup: unwrappedPresenterSetup)
   }
 
   // MARK: - animation controller
