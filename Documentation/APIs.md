@@ -204,9 +204,9 @@ With these methods, we can navigate back or dismiss current ViewController witho
 | transitionDuration | Double | transition duration. The default value is defined in [`Constants`](../IBAnimatable/Constants.swift) (0.7 seconds) |
 | interactiveGestureType | Optional&lt;String> | interactive gesture type. used to specify the gesture to dismiss/pop current scence. All supported interactive gesture types are in [`InteractiveGestureType`](../IBAnimatable/InteractiveGestureType.swift) |
 
-Also see [Transition Animators](Documentation/Transitions.md#transition-animators) and [Interactive Animators](Documentation/Transitions.md#interactive-animators)
+Also see [Transition Animators](Transitions.md#transition-animators) and [Interactive Animators](Transitions.md#interactive-animators)
 
 ### Segues
-See [Segues](Documentation/Transitions.md#segues)
+See [Segues](Transitions.md#segues)
 
 

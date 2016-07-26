@@ -1,7 +1,7 @@
 ![IBAnimatable](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/Hero.png)
 `IBAnimatable` 是一个帮助我们在 Interface Builder 和 Swift Playground 里面设计 UI, 交互, 导航模式, 换场和动画的开源库。
 
-![](https://d13yacurqjgara.cloudfront.net/users/332358/screenshots/2453933/ibanimatable.gif)
+![IBAnimatable hero image](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/IBAnimatable.gif)
 
 **整个 App 都是通过 `IBAnimatable` 在 Interface Builder 设计完成，没有任何一行代码**。由于 [Dribbble GIF 文件](https://dribbble.com/shots/2453933-IBAnimatable-Design-App-Store-ready-Apps-in-Interface-Builder)大小的限制，这只演示了部分功能，完整功能可以在 [YouTube](https://www.youtube.com/watch?v=dvD8X6J1YLM) 或者 [MP4 on Github](https://github.com/IBAnimatable/IBAnimatable-Misc/blob/master/Videos/IBAnimatable.mp4?raw=true) 上看到。
 
