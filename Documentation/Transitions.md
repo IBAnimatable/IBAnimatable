@@ -399,6 +399,6 @@ To support different animation effect for different Prsent transition, `IBAnimat
 ## Contribution
 Great thanks to [@tbaranes](https://github.com/tbaranes) who ported all transitions from [VCTransitionsLibrary](https://github.com/ColinEberhardt/VCTransitionsLibrary) and added parameters support for some transition animators.
 
-If you'd like to add more transition animations to `IBAnimatable`, it is super easy, please have a look at [How to develop an animator (animation controller)](https://github.com/IBAnimatable/IBAnimatable/wiki/How-to-develop-an-animator-(animation-controller)). Let's have some fun 😉. You can also discuss that in [Issue 155 - Custom transition animators (animation controllers)](https://github.com/IBAnimatable/IBAnimatable/issues/155). If you have any question, please contact [@IBAnimatable](https://github.com/IBAnimatable). 
+If you'd like to add more transition animations to `IBAnimatable`, it is super easy, please have a look at [How to develop an animator (animation controller)](https://github.com/IBAnimatable/IBAnimatable/wiki/How-to-develop-an-animator-(animation-controller)). Let's have some fun 😉. You can also discuss that in [Issue 155 - Custom transition animators (animation controllers)](https://github.com/IBAnimatable/IBAnimatable/issues/155). If you have any question, please contact [@JakeLin](https://github.com/JakeLin). 
 
 

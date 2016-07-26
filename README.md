@@ -2,7 +2,7 @@
 
 Design and prototype customized UI, interaction, navigation, transition and animation for App Store ready Apps in Interface Builder with IBAnimatable.
 
-![IBAnimatable hero image](https://d13yacurqjgara.cloudfront.net/users/332358/screenshots/2453933/ibanimatable.gif)
+![IBAnimatable hero image](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/IBAnimatable.gif)
 
 [![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=56abf6d42c882e010057b182&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/56abf6d42c882e010057b182/build/latest)
 [![Build Status](https://travis-ci.org/IBAnimatable/IBAnimatable.svg?branch=master)](https://travis-ci.org/IBAnimatable/IBAnimatable)
