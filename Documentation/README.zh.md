@@ -131,8 +131,8 @@ view.squeezeInDown{ view.pop { view.shake{ view.squeeze{ view.wobble{ view.flipX
 * 如果你喜欢这个项目，请告诉其他设计师和开发者，记住 Star🌟 这个项目哦。 🤗
 
 
-## Inspirations
-请查看 [IBAnimatable Inspirations](../README.md#inspirations)
+## Inspirations & Credits
+请查看 [IBAnimatable Inspirations](../README.md#inspirations--credits)
 
 ## License
 `IBAnimatable` is released under the MIT license. See [LICENSE](../LICENSE) for details.
