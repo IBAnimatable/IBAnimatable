@@ -113,7 +113,7 @@
 		E210ABCC1D3AAAD0001D0362 /* PresentationPresenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E210ABCB1D3AAAD0001D0362 /* PresentationPresenterManager.swift */; };
 		E216B5AC1D3ADA130049FC8B /* ZoomAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E216B5AB1D3ADA130049FC8B /* ZoomAnimator.swift */; };
 		E2192F5D1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2192F5C1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift */; };
-		E21E840A1D3A30DF00C742E7 /* AnimatablePresentatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21E84091D3A30DF00C742E7 /* AnimatablePresentatedViewController.swift */; };
+		E21E840A1D3A30DF00C742E7 /* AnimatableModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21E84091D3A30DF00C742E7 /* AnimatableModalViewController.swift */; };
 		E21E840E1D3A31A900C742E7 /* AnimatablePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21E840D1D3A31A900C742E7 /* AnimatablePresentationController.swift */; };
 		E21E84101D3A36C600C742E7 /* PresentationDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21E840F1D3A36C600C742E7 /* PresentationDesignable.swift */; };
 		E22183BD1D3BD47400866197 /* PresentationModalSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22183BC1D3BD47400866197 /* PresentationModalSize.swift */; };
@@ -276,7 +276,7 @@
 		E210ABCB1D3AAAD0001D0362 /* PresentationPresenterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationPresenterManager.swift; sourceTree = "<group>"; };
 		E216B5AB1D3ADA130049FC8B /* ZoomAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomAnimator.swift; sourceTree = "<group>"; };
 		E2192F5C1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableCollectionViewCell.swift; sourceTree = "<group>"; };
-		E21E84091D3A30DF00C742E7 /* AnimatablePresentatedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatablePresentatedViewController.swift; sourceTree = "<group>"; };
+		E21E84091D3A30DF00C742E7 /* AnimatableModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableModalViewController.swift; sourceTree = "<group>"; };
 		E21E840D1D3A31A900C742E7 /* AnimatablePresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatablePresentationController.swift; sourceTree = "<group>"; };
 		E21E840F1D3A36C600C742E7 /* PresentationDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationDesignable.swift; sourceTree = "<group>"; };
 		E22183BC1D3BD47400866197 /* PresentationModalSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationModalSize.swift; sourceTree = "<group>"; };
@@ -375,7 +375,7 @@
 			children = (
 				AE154B051C787DDE0093C05B /* AnimatableNavigationController.swift */,
 				AE0FAD401C1ED41D00B5289B /* AnimatableViewController.swift */,
-				E21E84091D3A30DF00C742E7 /* AnimatablePresentatedViewController.swift */,
+				E21E84091D3A30DF00C742E7 /* AnimatableModalViewController.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -881,7 +881,7 @@
 				33A8B9F01C7E7A4C00082529 /* TransitionFromDirection.swift in Sources */,
 				E299DF581CD6003000EC30D4 /* PresentTurnWithDismissInteractionSegue.swift in Sources */,
 				AE94078A1CAE87860084BCB8 /* SystemPageAnimator.swift in Sources */,
-				E21E840A1D3A30DF00C742E7 /* AnimatablePresentatedViewController.swift in Sources */,
+				E21E840A1D3A30DF00C742E7 /* AnimatableModalViewController.swift in Sources */,
 				E2F45B571CDB845F001D2E37 /* FlipAnimator.swift in Sources */,
 				AE6B01791C2A444900950BB2 /* ViewControllerDesignable.swift in Sources */,
 				AE6B01891C2A445C00950BB2 /* DismissSegue.swift in Sources */,

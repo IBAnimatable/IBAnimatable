@@ -5,7 +5,7 @@
 
 import UIKit
 
-public class AnimatablePresentedViewController: UIViewController, PresentationDesignable {
+public class AnimatableModalViewController: UIViewController, PresentationDesignable {
 
   // MARK: - AnimatablePresentationController
 

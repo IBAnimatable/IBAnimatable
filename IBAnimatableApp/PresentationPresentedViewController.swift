@@ -6,7 +6,7 @@
 import UIKit
 import IBAnimatable
 
-class PresentationPresentedViewController: AnimatablePresentedViewController {
+class PresentationPresentedViewController: AnimatableModalViewController {
 
   @IBOutlet var presentViaSegueButton: AnimatableButton!
 

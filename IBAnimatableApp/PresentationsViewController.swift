@@ -17,7 +17,7 @@ class PresentationsViewController: AnimatableViewController {
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     super.prepareForSegue(segue, sender: sender)
-    if let toViewController = segue.destinationViewController as? AnimatablePresentedViewController {
+    if let toViewController = segue.destinationViewController as? AnimatableModalViewController {
       toViewController.presentationAnimationType = presentationAnimationType
     }
   }
