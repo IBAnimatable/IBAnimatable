@@ -10,9 +10,6 @@ class PresentationPresentedViewController: AnimatableModalViewController {
 
   @IBOutlet var presentViaSegueButton: AnimatableButton!
 
-  // Intenal use for demo only
-  var useDismissInteraction: Bool = true
-
   override func viewDidLoad() {
     super.viewDidLoad()
 

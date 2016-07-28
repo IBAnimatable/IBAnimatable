@@ -375,6 +375,7 @@
 			children = (
 				AE154B051C787DDE0093C05B /* AnimatableNavigationController.swift */,
 				AE0FAD401C1ED41D00B5289B /* AnimatableViewController.swift */,
+				E21E840D1D3A31A900C742E7 /* AnimatablePresentationController.swift */,
 				E21E84091D3A30DF00C742E7 /* AnimatableModalViewController.swift */,
 			);
 			name = controller;
@@ -406,7 +407,6 @@
 				E20027161D467E9700FEB28D /* ViewControllerAnimatedTransitioning.swift */,
 				AE154B831C7D1A740093C05B /* AnimatedTransitioning.swift */,
 				AE154B7A1C7D04A40093C05B /* TransitionAnimatable.swift */,
-				E21E840D1D3A31A900C742E7 /* AnimatablePresentationController.swift */,
 				E210ABC51D3A9713001D0362 /* AnimatedPresenting.swift */,
 			);
 			name = TransitionAnimatable;
