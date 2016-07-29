@@ -29,79 +29,79 @@ public class AnimatableModalViewController: UIViewController, PresentationDesign
 
   @IBInspectable public var modalPosition: String = "Center" {
     didSet {
-      presenter?.presentedSetup?.modalPosition = PresentationModalPosition.fromString(modalPosition)
+      presenter?.presentionConfiguration?.modalPosition = PresentationModalPosition.fromString(modalPosition)
     }
   }
 
   @IBInspectable public var modalWidth: String = "Half" {
     didSet {
-      presenter?.presentedSetup?.modalSize = (PresentationModalSize.fromString(modalWidth), PresentationModalSize.fromString(modalHeight))
+      presenter?.presentionConfiguration?.modalSize = (PresentationModalSize.fromString(modalWidth), PresentationModalSize.fromString(modalHeight))
     }
   }
 
   @IBInspectable public var modalHeight: String = "Half" {
     didSet {
-      presenter?.presentedSetup?.modalSize = (PresentationModalSize.fromString(modalWidth), PresentationModalSize.fromString(modalHeight))
+      presenter?.presentionConfiguration?.modalSize = (PresentationModalSize.fromString(modalWidth), PresentationModalSize.fromString(modalHeight))
     }
   }
 
   @IBInspectable public var cornerRadius: CGFloat = .NaN {
     didSet {
-      presenter?.presentedSetup?.cornerRadius = cornerRadius
+      presenter?.presentionConfiguration?.cornerRadius = cornerRadius
     }
   }
 
   @IBInspectable public var dismissOnTap: Bool = true {
     didSet {
-      presenter?.presentedSetup?.dismissOnTap = dismissOnTap
+      presenter?.presentionConfiguration?.dismissOnTap = dismissOnTap
     }
   }
 
   @IBInspectable public var backgroundColor: UIColor = .blackColor() {
     didSet {
-      presenter?.presentedSetup?.backgroundColor = backgroundColor
+      presenter?.presentionConfiguration?.backgroundColor = backgroundColor
     }
   }
 
   @IBInspectable public var opacity: CGFloat = 0.7 {
     didSet {
-      presenter?.presentedSetup?.opacity = opacity
+      presenter?.presentionConfiguration?.opacity = opacity
     }
   }
 
   @IBInspectable public var blurEffectStyle: String? {
     didSet {
-      presenter?.presentedSetup?.blurEffectStyle = blurEffectStyle
+      presenter?.presentionConfiguration?.blurEffectStyle = blurEffectStyle
     }
   }
 
   @IBInspectable public var blurOpacity: CGFloat = .NaN {
     didSet {
-      presenter?.presentedSetup?.blurOpacity = blurOpacity
+      presenter?.presentionConfiguration?.blurOpacity = blurOpacity
     }
   }
 
   @IBInspectable public var shadowColor: UIColor? {
     didSet {
-      presenter?.presentedSetup?.shadowColor = shadowColor
+      presenter?.presentionConfiguration?.shadowColor = shadowColor
     }
   }
 
   @IBInspectable public var shadowRadius: CGFloat = CGFloat.NaN {
     didSet {
-      presenter?.presentedSetup?.shadowRadius = shadowRadius
+      presenter?.presentionConfiguration?.shadowRadius = shadowRadius
     }
   }
 
   @IBInspectable public var shadowOpacity: CGFloat = CGFloat.NaN {
     didSet {
-      presenter?.presentedSetup?.shadowOpacity = shadowOpacity
+      presenter?.presentionConfiguration?.shadowOpacity = shadowOpacity
     }
   }
 
   @IBInspectable public var shadowOffset: CGPoint = CGPoint(x: CGFloat.NaN, y: CGFloat.NaN) {
     didSet {
-      presenter?.presentedSetup?.shadowOffset = shadowOffset
+      presenter?.presentionConfiguration?.shadowOffset = shadowOffset
     }
   }
 
@@ -147,20 +147,20 @@ public class AnimatableModalViewController: UIViewController, PresentationDesign
       modalTransitionStyle = systemTransition
     }
 
-    var presentedSetup = PresentionConfiguration()
-    presentedSetup.modalPosition = PresentationModalPosition.fromString(modalPosition)
-    presentedSetup.modalSize = (PresentationModalSize.fromString(modalWidth), PresentationModalSize.fromString(modalHeight))
-    presentedSetup.cornerRadius = cornerRadius
-    presentedSetup.dismissOnTap = dismissOnTap
-    presentedSetup.backgroundColor = backgroundColor
-    presentedSetup.opacity = opacity
-    presentedSetup.blurEffectStyle = blurEffectStyle
-    presentedSetup.blurOpacity = blurOpacity
-    presentedSetup.shadowColor = shadowColor
-    presentedSetup.shadowOpacity = shadowOpacity
-    presentedSetup.shadowRadius = shadowRadius
-    presentedSetup.shadowOffset = shadowOffset
-    presenter?.presentedSetup = presentedSetup
+    var presentionConfiguration = PresentionConfiguration()
+    presentionConfiguration.modalPosition = PresentationModalPosition.fromString(modalPosition)
+    presentionConfiguration.modalSize = (PresentationModalSize.fromString(modalWidth), PresentationModalSize.fromString(modalHeight))
+    presentionConfiguration.cornerRadius = cornerRadius
+    presentionConfiguration.dismissOnTap = dismissOnTap
+    presentionConfiguration.backgroundColor = backgroundColor
+    presentionConfiguration.opacity = opacity
+    presentionConfiguration.blurEffectStyle = blurEffectStyle
+    presentionConfiguration.blurOpacity = blurOpacity
+    presentionConfiguration.shadowColor = shadowColor
+    presentionConfiguration.shadowOpacity = shadowOpacity
+    presentionConfiguration.shadowRadius = shadowRadius
+    presentionConfiguration.shadowOffset = shadowOffset
+    presenter?.presentionConfiguration = presentionConfiguration
   }
 
 }

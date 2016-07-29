@@ -9,7 +9,7 @@ public class PresentationPresenter: NSObject {
   private var presentationAnimationType: PresentationAnimationType
   var dismissalAnimationType: PresentationAnimationType?
 
-  var presentedSetup: PresentionConfiguration?
+  var presentionConfiguration: PresentionConfiguration?
   var transitionDuration: Duration {
     didSet {
       if oldValue != transitionDuration {
@@ -44,10 +44,10 @@ extension PresentationPresenter: UIViewControllerTransitioningDelegate {
 
   // MARK: - presentation
   public func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
-    guard let unwrappedPresenterSetup = presentedSetup else {
+    guard let unwrappedPresentionConfiguration = presentionConfiguration else {
       return nil
     }
-    return AnimatablePresentationController(presentedViewController: presented, presentingViewController: presenting, presentedSetup: unwrappedPresenterSetup)
+    return AnimatablePresentationController(presentedViewController: presented, presentingViewController: presenting, presentionConfiguration: unwrappedPresentionConfiguration)
   }
 
   // MARK: - animation controller
