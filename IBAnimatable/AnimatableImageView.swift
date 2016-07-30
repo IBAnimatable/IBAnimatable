@@ -99,7 +99,7 @@ import UIKit
       configBlurEffectStyle()
     }
   }
-  @IBInspectable public var _vibrancyEffectStyle: String? {
+  @IBInspectable var _vibrancyEffectStyle: String? {
     didSet {
       vibrancyEffectStyle = UIBlurEffectStyle(string: _vibrancyEffectStyle)
     }
@@ -134,7 +134,7 @@ import UIKit
   /// The mask type used in Interface Builder. **Should not** use this property in code.
   @IBInspectable var _maskType: String? {
     didSet {
-      maskType = MaskType(string: _maskType)
+      maskType = MaskType(string: _maskType) ?? .none
     }
   }
   
