@@ -49,6 +49,7 @@ enum ParamType {
   func valueAt(index: Int) -> String  {
     let formatter = NumberFormatter();
     formatter.minimumFractionDigits = 0;
+    formatter.maximumFractionDigits = 3;
   
     switch self {
     case let .number(min, _, interval, ascending, _) where ascending == true:
