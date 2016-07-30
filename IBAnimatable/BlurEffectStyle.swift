@@ -6,7 +6,7 @@
 import UIKit
 
 
-extension UIBlurEffectStyle : IBOptionalEnum {
+extension UIBlurEffectStyle : IBEnum {
   /** initialize a UIBlurEffectStyle from string. `extraLight`, `light`, `dark`, `prominent` (iOS 10+), `extraLight` (iOS 10+)
     default value is `extraLight`.
    defaultValue is used when the string is nil or not within the above list
