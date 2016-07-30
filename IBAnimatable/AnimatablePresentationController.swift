@@ -38,13 +38,30 @@ public class AnimatablePresentationController: UIPresentationController {
   }
 
   private func setupPresentedView() {
-    presentedViewController.view.layer.cornerRadius = presentionConfiguration.cornerRadius
-    presentedViewController.view.layer.masksToBounds = true
+    if presentionConfiguration.cornerRadius > 0 {
+      presentedViewController.view.layer.cornerRadius = presentionConfiguration.cornerRadius
+      presentedViewController.view.layer.masksToBounds = true
+    }
+    
+    // Set up shadow
     if presentionConfiguration.shadowRadius > 0 {
+      presentedViewController.view.layer.shadowRadius = presentionConfiguration.shadowRadius
+      presentedViewController.view.layer.masksToBounds = false
+    }
+    
+    if !presentionConfiguration.shadowOffset.x.isNaN && !presentionConfiguration.shadowOffset.y.isNaN {
       presentedViewController.view.layer.shadowOffset.width = presentionConfiguration.shadowOffset.x
       presentedViewController.view.layer.shadowOffset.height = presentionConfiguration.shadowOffset.y
-      presentedViewController.view.layer.shadowRadius = presentionConfiguration.shadowRadius
+      presentedViewController.view.layer.masksToBounds = false
+    }
+    
+    if presentionConfiguration.shadowOpacity > 0 {
       presentedViewController.view.layer.shadowOpacity = Float(presentionConfiguration.shadowOpacity)
+      presentedViewController.view.layer.masksToBounds = false
+    }
+
+    if let shadowColor = presentionConfiguration.shadowColor  {
+      presentedViewController.view.layer.shadowColor = shadowColor.CGColor
       presentedViewController.view.layer.masksToBounds = false
     }
   }
