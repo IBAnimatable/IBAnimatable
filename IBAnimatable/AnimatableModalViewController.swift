@@ -34,91 +34,91 @@ public class AnimatableModalViewController: UIViewController, PresentationDesign
   // Modal position, all supported modal position can be found in `PresentationModalPosition`
   @IBInspectable public var modalPosition: String = "Center" {
     didSet {
-      presenter?.presentionConfiguration?.modalPosition = PresentationModalPosition.fromString(modalPosition)
+      presenter?.presentationConfiguration?.modalPosition = PresentationModalPosition.fromString(modalPosition)
     }
   }
 
   // Modal width, all supported modal width can be found in `PresentationModalSize`
   @IBInspectable public var modalWidth: String = "Half" {
     didSet {
-      presenter?.presentionConfiguration?.modalSize = (PresentationModalSize.fromString(modalWidth), PresentationModalSize.fromString(modalHeight))
+      presenter?.presentationConfiguration?.modalSize = (PresentationModalSize.fromString(modalWidth), PresentationModalSize.fromString(modalHeight))
     }
   }
 
   // Modal height, all supported modal width can be found in `PresentationModalSize`
   @IBInspectable public var modalHeight: String = "Half" {
     didSet {
-      presenter?.presentionConfiguration?.modalSize = (PresentationModalSize.fromString(modalWidth), PresentationModalSize.fromString(modalHeight))
+      presenter?.presentationConfiguration?.modalSize = (PresentationModalSize.fromString(modalWidth), PresentationModalSize.fromString(modalHeight))
     }
   }
 
   /// The corner radius of the modal view
   @IBInspectable public var cornerRadius: CGFloat = .NaN {
     didSet {
-      presenter?.presentionConfiguration?.cornerRadius = cornerRadius
+      presenter?.presentationConfiguration?.cornerRadius = cornerRadius
     }
   }
 
   /// If set to `true`, the modal view will dismiss when tap on the dimming view.
   @IBInspectable public var dismissOnTap: Bool = true {
     didSet {
-      presenter?.presentionConfiguration?.dismissOnTap = dismissOnTap
+      presenter?.presentationConfiguration?.dismissOnTap = dismissOnTap
     }
   }
 
   /// The background color of the dimming view. The default value is black color.
   @IBInspectable public var backgroundColor: UIColor = .blackColor() {
     didSet {
-      presenter?.presentionConfiguration?.backgroundColor = backgroundColor
+      presenter?.presentationConfiguration?.backgroundColor = backgroundColor
     }
   }
 
   // The opacity of the dimming view. The default value is `0.7`.
   @IBInspectable public var opacity: CGFloat = 0.7 {
     didSet {
-      presenter?.presentionConfiguration?.opacity = opacity
+      presenter?.presentationConfiguration?.opacity = opacity
     }
   }
 
   // The blur effect style of the dimming view. If use this property, `backgroundColor` and `opacity` are ignored.
   @IBInspectable public var blurEffectStyle: String? {
     didSet {
-      presenter?.presentionConfiguration?.blurEffectStyle = blurEffectStyle
+      presenter?.presentationConfiguration?.blurEffectStyle = blurEffectStyle
     }
   }
 
   // The blur opacity of the dimming view. If use this property, `backgroundColor` and `opacity` are ignored.
   @IBInspectable public var blurOpacity: CGFloat = .NaN {
     didSet {
-      presenter?.presentionConfiguration?.blurOpacity = blurOpacity
+      presenter?.presentationConfiguration?.blurOpacity = blurOpacity
     }
   }
 
   // The shadow color of the modal view. If use this property, `cornerRadius` is ignored.
   @IBInspectable public var shadowColor: UIColor? {
     didSet {
-      presenter?.presentionConfiguration?.shadowColor = shadowColor
+      presenter?.presentationConfiguration?.shadowColor = shadowColor
     }
   }
 
   // The shadow radius of the modal view. If use this property, `cornerRadius` is ignored.
   @IBInspectable public var shadowRadius: CGFloat = CGFloat.NaN {
     didSet {
-      presenter?.presentionConfiguration?.shadowRadius = shadowRadius
+      presenter?.presentationConfiguration?.shadowRadius = shadowRadius
     }
   }
 
   // The shadow opacity of the modal view. If use this property, `cornerRadius` is ignored.
   @IBInspectable public var shadowOpacity: CGFloat = CGFloat.NaN {
     didSet {
-      presenter?.presentionConfiguration?.shadowOpacity = shadowOpacity
+      presenter?.presentationConfiguration?.shadowOpacity = shadowOpacity
     }
   }
 
   // The shadow offset of the modal view. If use this property, `cornerRadius` is ignored.
   @IBInspectable public var shadowOffset: CGPoint = CGPoint(x: CGFloat.NaN, y: CGFloat.NaN) {
     didSet {
-      presenter?.presentionConfiguration?.shadowOffset = shadowOffset
+      presenter?.presentationConfiguration?.shadowOffset = shadowOffset
     }
   }
 
@@ -146,7 +146,7 @@ public class AnimatableModalViewController: UIViewController, PresentationDesign
 
   public override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
-    let animationType = PresentationAnimationType.fromString(dismissalAnimationType ?? "") ?? PresentationAnimationType.Cover(fromDirection: .Bottom)
+    let animationType = PresentationAnimationType.fromString(dismissalAnimationType ?? "") ?? .Cover(fromDirection: .Bottom)
     if let dismissSystemTransition = animationType.systemTransition {
       modalTransitionStyle = dismissSystemTransition
     }
@@ -155,7 +155,7 @@ public class AnimatableModalViewController: UIViewController, PresentationDesign
 
 private extension AnimatableModalViewController {
   func setupPresenter() {
-    let animationType = PresentationAnimationType.fromString(presentationAnimationType ?? "") ?? PresentationAnimationType.Cover(fromDirection: .Bottom)
+    let animationType = PresentationAnimationType.fromString(presentationAnimationType ?? "") ?? .Cover(fromDirection: .Bottom)
     presenter = PresentationPresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration)
     presenter?.dismissalAnimationType = PresentationAnimationType.fromString(dismissalAnimationType ?? "")
     transitioningDelegate = presenter
@@ -164,19 +164,19 @@ private extension AnimatableModalViewController {
       modalTransitionStyle = systemTransition
     }
     
-    var presentionConfiguration = PresentionConfiguration()
-    presentionConfiguration.modalPosition = PresentationModalPosition.fromString(modalPosition)
-    presentionConfiguration.modalSize = (PresentationModalSize.fromString(modalWidth), PresentationModalSize.fromString(modalHeight))
-    presentionConfiguration.cornerRadius = cornerRadius
-    presentionConfiguration.dismissOnTap = dismissOnTap
-    presentionConfiguration.backgroundColor = backgroundColor
-    presentionConfiguration.opacity = opacity
-    presentionConfiguration.blurEffectStyle = blurEffectStyle
-    presentionConfiguration.blurOpacity = blurOpacity
-    presentionConfiguration.shadowColor = shadowColor
-    presentionConfiguration.shadowOpacity = shadowOpacity
-    presentionConfiguration.shadowRadius = shadowRadius
-    presentionConfiguration.shadowOffset = shadowOffset
-    presenter?.presentionConfiguration = presentionConfiguration
+    var presentationConfiguration = PresentationConfiguration()
+    presentationConfiguration.modalPosition = PresentationModalPosition.fromString(modalPosition)
+    presentationConfiguration.modalSize = (PresentationModalSize.fromString(modalWidth), PresentationModalSize.fromString(modalHeight))
+    presentationConfiguration.cornerRadius = cornerRadius
+    presentationConfiguration.dismissOnTap = dismissOnTap
+    presentationConfiguration.backgroundColor = backgroundColor
+    presentationConfiguration.opacity = opacity
+    presentationConfiguration.blurEffectStyle = blurEffectStyle
+    presentationConfiguration.blurOpacity = blurOpacity
+    presentationConfiguration.shadowColor = shadowColor
+    presentationConfiguration.shadowOpacity = shadowOpacity
+    presentationConfiguration.shadowRadius = shadowRadius
+    presentationConfiguration.shadowOffset = shadowOffset
+    presenter?.presentationConfiguration = presentationConfiguration
   }
 }

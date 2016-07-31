@@ -9,15 +9,15 @@ public class AnimatablePresentationController: UIPresentationController {
 
   // MARK: Properties
 
-  private let presentionConfiguration: PresentionConfiguration
+  private let presentationConfiguration: PresentationConfiguration
   private var dimmingView = AnimatableView()
 
   // MARK: Init
 
   init(presentedViewController: UIViewController,
        presentingViewController: UIViewController,
-       presentionConfiguration: PresentionConfiguration) {
-    self.presentionConfiguration = presentionConfiguration
+       presentationConfiguration: PresentationConfiguration) {
+    self.presentationConfiguration = presentationConfiguration
     super.init(presentedViewController: presentedViewController, presentingViewController: presentingViewController)
 
     setupDimmingView()
@@ -29,38 +29,38 @@ public class AnimatablePresentationController: UIPresentationController {
   private func setupDimmingView() {
     let tap = UITapGestureRecognizer(target: self, action: #selector(chromeViewTapped))
     dimmingView.addGestureRecognizer(tap)
-    if let blurEffectStyle =  presentionConfiguration.blurEffectStyle {
+    if let blurEffectStyle =  presentationConfiguration.blurEffectStyle {
       dimmingView.blurEffectStyle = blurEffectStyle
-      dimmingView.blurOpacity = presentionConfiguration.blurOpacity
+      dimmingView.blurOpacity = presentationConfiguration.blurOpacity
     } else {
-      dimmingView.fillColor = presentionConfiguration.backgroundColor.colorWithAlphaComponent(presentionConfiguration.opacity)
+      dimmingView.fillColor = presentationConfiguration.backgroundColor.colorWithAlphaComponent(presentationConfiguration.opacity)
     }
   }
 
   private func setupPresentedView() {
-    if presentionConfiguration.cornerRadius > 0 {
-      presentedViewController.view.layer.cornerRadius = presentionConfiguration.cornerRadius
+    if presentationConfiguration.cornerRadius > 0 {
+      presentedViewController.view.layer.cornerRadius = presentationConfiguration.cornerRadius
       presentedViewController.view.layer.masksToBounds = true
     }
     
     // Set up shadow
-    if presentionConfiguration.shadowRadius > 0 {
-      presentedViewController.view.layer.shadowRadius = presentionConfiguration.shadowRadius
+    if presentationConfiguration.shadowRadius > 0 {
+      presentedViewController.view.layer.shadowRadius = presentationConfiguration.shadowRadius
       presentedViewController.view.layer.masksToBounds = false
     }
     
-    if !presentionConfiguration.shadowOffset.x.isNaN && !presentionConfiguration.shadowOffset.y.isNaN {
-      presentedViewController.view.layer.shadowOffset.width = presentionConfiguration.shadowOffset.x
-      presentedViewController.view.layer.shadowOffset.height = presentionConfiguration.shadowOffset.y
+    if !presentationConfiguration.shadowOffset.x.isNaN && !presentationConfiguration.shadowOffset.y.isNaN {
+      presentedViewController.view.layer.shadowOffset.width = presentationConfiguration.shadowOffset.x
+      presentedViewController.view.layer.shadowOffset.height = presentationConfiguration.shadowOffset.y
       presentedViewController.view.layer.masksToBounds = false
     }
     
-    if presentionConfiguration.shadowOpacity > 0 {
-      presentedViewController.view.layer.shadowOpacity = Float(presentionConfiguration.shadowOpacity)
+    if presentationConfiguration.shadowOpacity > 0 {
+      presentedViewController.view.layer.shadowOpacity = Float(presentationConfiguration.shadowOpacity)
       presentedViewController.view.layer.masksToBounds = false
     }
 
-    if let shadowColor = presentionConfiguration.shadowColor  {
+    if let shadowColor = presentationConfiguration.shadowColor  {
       presentedViewController.view.layer.shadowColor = shadowColor.CGColor
       presentedViewController.view.layer.masksToBounds = false
     }
@@ -69,7 +69,7 @@ public class AnimatablePresentationController: UIPresentationController {
   // MARK: Actions
 
   func chromeViewTapped(gesture: UIGestureRecognizer) {
-    if gesture.state == .Ended && presentionConfiguration.dismissOnTap {
+    if gesture.state == .Ended && presentationConfiguration.dismissOnTap {
       presentingViewController.dismissViewControllerAnimated(true, completion: nil)
     }
   }
@@ -85,8 +85,8 @@ private extension AnimatablePresentationController {
       return CGSize.zero
     }
 
-    let width = CGFloat(presentionConfiguration.modalSize.0.width(containerSize))
-    let height = CGFloat(presentionConfiguration.modalSize.1.height(containerSize))
+    let width = CGFloat(presentationConfiguration.modalSize.0.width(containerSize))
+    let height = CGFloat(presentationConfiguration.modalSize.1.height(containerSize))
     return CGSize(width: width, height: height)
   }
 
@@ -95,11 +95,11 @@ private extension AnimatablePresentationController {
       return nil
     }
 
-    return presentionConfiguration.modalPosition.calculateCenter(containerBounds, modalSize: modalSize())
+    return presentationConfiguration.modalPosition.calculateCenter(containerBounds, modalSize: modalSize())
   }
 
   private func modalOrigin() -> CGPoint? {
-    return presentionConfiguration.modalPosition.calculateOrigin()
+    return presentationConfiguration.modalPosition.calculateOrigin()
   }
 
   private func calculateOrigin(center: CGPoint, size: CGSize) -> CGPoint {
