@@ -5,6 +5,7 @@
 
 import UIKit
 
+/// `AnimatablePresentationController` is a subclass of `UIPresentationController` with `PresentationConfiguration` to specify the dimming view and modal view for presentation.
 public class AnimatablePresentationController: UIPresentationController {
 
   // MARK: Properties
@@ -24,9 +25,24 @@ public class AnimatablePresentationController: UIPresentationController {
     setupPresentedView()
   }
 
-  // MARK: Setup
+  
+  // MARK: Actions
 
-  private func setupDimmingView() {
+  func chromeViewTapped(gesture: UIGestureRecognizer) {
+    if gesture.state == .Ended && presentationConfiguration.dismissOnTap {
+      presentingViewController.dismissViewControllerAnimated(true, completion: nil)
+    }
+  }
+
+}
+
+// MARK: - Sizing Helper's
+
+private extension AnimatablePresentationController {
+
+  // MARK: Setup
+  
+  func setupDimmingView() {
     let tap = UITapGestureRecognizer(target: self, action: #selector(chromeViewTapped))
     dimmingView.addGestureRecognizer(tap)
     if let blurEffectStyle =  presentationConfiguration.blurEffectStyle {
@@ -36,8 +52,8 @@ public class AnimatablePresentationController: UIPresentationController {
       dimmingView.fillColor = presentationConfiguration.backgroundColor.colorWithAlphaComponent(presentationConfiguration.opacity)
     }
   }
-
-  private func setupPresentedView() {
+  
+  func setupPresentedView() {
     if presentationConfiguration.cornerRadius > 0 {
       presentedViewController.view.layer.cornerRadius = presentationConfiguration.cornerRadius
       presentedViewController.view.layer.masksToBounds = true
@@ -59,28 +75,14 @@ public class AnimatablePresentationController: UIPresentationController {
       presentedViewController.view.layer.shadowOpacity = Float(presentationConfiguration.shadowOpacity)
       presentedViewController.view.layer.masksToBounds = false
     }
-
+    
     if let shadowColor = presentationConfiguration.shadowColor  {
       presentedViewController.view.layer.shadowColor = shadowColor.CGColor
       presentedViewController.view.layer.masksToBounds = false
     }
   }
-
-  // MARK: Actions
-
-  func chromeViewTapped(gesture: UIGestureRecognizer) {
-    if gesture.state == .Ended && presentationConfiguration.dismissOnTap {
-      presentingViewController.dismissViewControllerAnimated(true, completion: nil)
-    }
-  }
-
-}
-
-// MARK: - Sizing Helper's
-
-private extension AnimatablePresentationController {
-
-  private func modalSize() -> CGSize {
+  
+  func modalSize() -> CGSize {
     guard let containerSize = containerView?.bounds.size else {
       return CGSize.zero
     }
@@ -90,7 +92,7 @@ private extension AnimatablePresentationController {
     return CGSize(width: width, height: height)
   }
 
-  private func modalCenter() -> CGPoint? {
+  func modalCenter() -> CGPoint? {
     guard let containerBounds = containerView?.bounds else {
       return nil
     }
@@ -98,11 +100,11 @@ private extension AnimatablePresentationController {
     return presentationConfiguration.modalPosition.calculateCenter(containerBounds, modalSize: modalSize())
   }
 
-  private func modalOrigin() -> CGPoint? {
+  func modalOrigin() -> CGPoint? {
     return presentationConfiguration.modalPosition.calculateOrigin()
   }
 
-  private func calculateOrigin(center: CGPoint, size: CGSize) -> CGPoint {
+  func calculateOrigin(center: CGPoint, size: CGSize) -> CGPoint {
     let x: CGFloat = center.x - size.width / 2
     let y: CGFloat = center.y - size.height / 2
     return CGPoint(x: x, y: y)
