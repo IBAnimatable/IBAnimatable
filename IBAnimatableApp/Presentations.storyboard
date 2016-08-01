@@ -57,18 +57,6 @@
                         <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
                             <color key="value" red="0.62745098040000002" green="0.82352941180000006" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                            <real key="value" value="0.80000000000000004"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
-                            <point key="value" x="10" y="10"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                            <real key="value" value="4"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                            <color key="value" red="0.70196078429999997" green="0.14117647059999999" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WWi-iw-WFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
