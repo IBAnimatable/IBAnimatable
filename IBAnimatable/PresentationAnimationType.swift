@@ -23,8 +23,7 @@ public enum PresentationAnimationType {
     case .CrossDissolve: return .CrossDissolve
     case .Flip: return .FlipHorizontal
     case .Cover(fromDirection: .Bottom): return .CoverVertical
-    default:
-      return nil
+    default: return nil
     }
   }
 

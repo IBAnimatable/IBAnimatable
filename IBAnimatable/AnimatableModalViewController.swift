@@ -12,13 +12,17 @@ public class AnimatableModalViewController: UIViewController, PresentationDesign
 
   @IBInspectable public var presentationAnimationType: String? {
     didSet {
-      setupPresenter()
+      if oldValue != presentationAnimationType {
+        setupPresenter()
+      }
     }
   }
 
   @IBInspectable public var dismissalAnimationType: String? {
     didSet {
-      setupPresenter()
+      if oldValue != dismissalAnimationType {
+        setupPresenter()
+      }
     }
   }
 
@@ -139,6 +143,7 @@ public class AnimatableModalViewController: UIViewController, PresentationDesign
 
 private extension AnimatableModalViewController {
   func setupPresenter() {
+    // If not set, use the system default tranistion `.CoverVertical` which maps to `.Cover(fromDirection: .Bottom)`
     let animationType = PresentationAnimationType.fromString(presentationAnimationType ?? "") ?? .Cover(fromDirection: .Bottom)
     presenter = PresentationPresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration)
     presenter?.dismissalAnimationType = PresentationAnimationType.fromString(dismissalAnimationType ?? "")

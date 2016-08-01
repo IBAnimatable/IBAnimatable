@@ -62,7 +62,7 @@ public struct AnimatorFactory {
     case .Zoom:
       return ZoomAnimator(transitionDuration: transitionDuration)
     case .Flip, .CrossDissolve: // System animation, will never be executed
-      return CoverAnimator(direction: .Top, transitionDuration: transitionDuration)
+      fatalError()
     }
   }
 
