@@ -57,4 +57,26 @@ public enum TransitionDirection {
     return nil
   }
 
+  var opposite: TransitionDirection {
+    switch self {
+    case .Left:
+      return .Right
+    case .Right:
+      return .Left
+    case .Top:
+      return .Bottom
+    case .Bottom:
+      return .Top
+    case .In:
+      return .Out
+    case .Out:
+      return .In
+    case .Forward:
+      return .Backward
+    case .Backward:
+      return .Forward
+    case .Cross:
+      return .Cross
+    }
+  }
 }

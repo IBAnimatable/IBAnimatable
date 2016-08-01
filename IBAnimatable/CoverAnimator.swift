@@ -13,7 +13,7 @@ public class CoverAnimator: NSObject, AnimatedPresenting {
   // MARK: - private
   private var direction: TransitionDirection
 
-  public init(direction: TransitionDirection, transitionDuration: Duration) {
+  public init(from direction: TransitionDirection, transitionDuration: Duration) {
     self.direction = direction
     self.transitionDuration = transitionDuration
     super.init()
@@ -36,11 +36,18 @@ extension CoverAnimator: UIViewControllerAnimatedTransitioning {
       return
     }
 
-    let newFrame = finalFrame(from: animatingView.frame, containerFrame: containerView.frame)
+    let finalFrame: CGRect
     if presenting {
+      finalFrame = getFinalFrame(from: direction, initialFrame: animatingView.frame, containerFrame: containerView.frame)
       containerView.addSubview(animatingView)
     }
-    animateCover(animatingView: animatingView, finalFrame: newFrame) {
+    else {
+      // Animate back to origin when dismiss the modal
+      let oppositeDirection = direction.opposite
+      finalFrame = getFinalFrame(from: oppositeDirection, initialFrame: animatingView.frame, containerFrame: containerView.frame)
+    }
+    
+    animateCover(animatingView: animatingView, finalFrame: finalFrame) {
       if !presenting {
         fromView?.removeFromSuperview()
       }
@@ -54,15 +61,19 @@ extension CoverAnimator: UIViewControllerAnimatedTransitioning {
 
 private extension CoverAnimator {
 
-  func finalFrame(from initialFrame: CGRect, containerFrame: CGRect) -> CGRect {
+  func getFinalFrame(from direction: TransitionDirection, initialFrame: CGRect, containerFrame: CGRect) -> CGRect {
     var initialFrame = initialFrame
-    switch self.direction {
+    switch direction {
     case .Right:
-      initialFrame.origin.x = containerFrame.size.width + initialFrame.size.width
-    case .Left:
       initialFrame.origin.x = 0 - initialFrame.size.width
-    default: // .Top, .Bottom is handled by the system animation
+    case .Left:
+      initialFrame.origin.x = containerFrame.size.width + initialFrame.size.width
+    case .Top:
+      initialFrame.origin.y = containerFrame.size.height + initialFrame.size.height
+    case .Bottom:
       initialFrame.origin.y = 0 - initialFrame.size.height
+    default:
+      fatalError()
     }
     return initialFrame
   }
