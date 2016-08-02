@@ -6,24 +6,24 @@
 import Foundation
 
 /**
- Presenter Manager: Used to cache the Presenters for Present and Dismiss transitions
+ TransitionPresenter Manager: Used to cache the Presenters for Present and Dismiss transitions
  */
-public class PresenterManager {
+public class TransitionPresenterManager {
   // MARK: - Singleton Constructor
   private init() {}
   private struct Shared {
-    static let instance = PresenterManager()
+    static let instance = TransitionPresenterManager()
   }
   
-  public static func sharedManager() -> PresenterManager {
+  public static func sharedManager() -> TransitionPresenterManager {
     return Shared.instance
   }
   
   // MARK: - Private
-  private var cache = [String: Presenter]()
+  private var cache = [String: TransitionPresenter]()
   
   // MARK: Internal Interface
-  public func retrievePresenter(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) -> Presenter {
+  public func retrievePresenter(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) -> TransitionPresenter {
     // Get the cached presenter
     let presenter = cache[transitionAnimationType.stringValue]
     if let presenter = presenter {
@@ -34,7 +34,7 @@ public class PresenterManager {
     }
     
     // Create a new if cache doesn't exist
-    let newPresenter = Presenter(transitionAnimationType: transitionAnimationType, transitionDuration: transitionDuration, interactiveGestureType: interactiveGestureType)
+    let newPresenter = TransitionPresenter(transitionAnimationType: transitionAnimationType, transitionDuration: transitionDuration, interactiveGestureType: interactiveGestureType)
     cache[transitionAnimationType.stringValue] = newPresenter
     return newPresenter
   }
