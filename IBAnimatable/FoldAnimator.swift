@@ -148,12 +148,12 @@ private extension FoldAnimator {
     let axesValues2 = valuesForAxe(foldSize, reverseValue: height)
     let snapshotRegion = CGRect(x: axesValues.0, y: axesValues.1, width: axesValues2.0, height: axesValues2.1)
     if !afterUpdates {
-      snapshotView = view.resizableSnapshotView(from: snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: UIEdgeInsets.zero)!
+      snapshotView = view.resizableSnapshotView(from: snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: .zero)!
     } else {
       axesValues = valuesForAxe(foldSize, reverseValue: height)
       snapshotView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: axesValues.0, height: axesValues.1))
       snapshotView.backgroundColor = view.backgroundColor
-      let subSnapshotView = view.resizableSnapshotView(from: snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: UIEdgeInsets.zero)
+      let subSnapshotView = view.resizableSnapshotView(from: snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: .zero)
       snapshotView.addSubview(subSnapshotView!)
     }
     

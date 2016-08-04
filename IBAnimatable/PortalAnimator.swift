@@ -68,18 +68,18 @@ extension PortalAnimator: UIViewControllerAnimatedTransitioning {
 private extension PortalAnimator {
 
   func executeForwardAnimation(_ transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
-    let toViewSnapshot = toView.resizableSnapshotView(from: toView.frame, afterScreenUpdates: true, withCapInsets: UIEdgeInsets.zero)!
+    let toViewSnapshot = toView.resizableSnapshotView(from: toView.frame, afterScreenUpdates: true, withCapInsets: .zero)!
     let scale = CATransform3DIdentity
     toViewSnapshot.layer.transform = CATransform3DScale(scale, zoomScale, zoomScale, 1)
     containerView.insertSubview(toViewSnapshot, at: 0)
 
     let leftSnapshotRegion = CGRect(x: 0, y: 0, width: fromView.frame.width / 2, height: fromView.bounds.height)
-    let leftHandView = fromView.resizableSnapshotView(from: leftSnapshotRegion, afterScreenUpdates: false, withCapInsets: UIEdgeInsets.zero)!
+    let leftHandView = fromView.resizableSnapshotView(from: leftSnapshotRegion, afterScreenUpdates: false, withCapInsets: .zero)!
     leftHandView.frame = leftSnapshotRegion
     containerView.addSubview(leftHandView)
 
     let rightSnapshotRegion = CGRect(x: fromView.frame.width / 2, y: 0, width: fromView.frame.width / 2, height: fromView.frame.height)
-    let rightHandView = fromView.resizableSnapshotView(from: rightSnapshotRegion, afterScreenUpdates: false, withCapInsets: UIEdgeInsets.zero)!
+    let rightHandView = fromView.resizableSnapshotView(from: rightSnapshotRegion, afterScreenUpdates: false, withCapInsets: .zero)!
     rightHandView.frame = rightSnapshotRegion
     containerView.addSubview(rightHandView)
     
@@ -118,13 +118,13 @@ private extension PortalAnimator {
     containerView.addSubview(toView)
 
     let leftSnapshotRegion = CGRect(x: 0, y: 0, width: toView.frame.width / 2, height: toView.bounds.height)
-    let leftHandView = toView.resizableSnapshotView(from: leftSnapshotRegion, afterScreenUpdates: true, withCapInsets: UIEdgeInsets.zero)!
+    let leftHandView = toView.resizableSnapshotView(from: leftSnapshotRegion, afterScreenUpdates: true, withCapInsets: .zero)!
     leftHandView.frame = leftSnapshotRegion
     leftHandView.frame = (leftHandView.frame.offsetBy(dx: -(leftHandView.frame.width), dy: 0))
     containerView.addSubview(leftHandView)
 
     let rightSnapshotRegion = CGRect(x: toView.frame.width / 2, y: 0, width: toView.frame.width / 2, height: fromView.frame.height)
-    let rightHandView = toView.resizableSnapshotView(from: rightSnapshotRegion, afterScreenUpdates: true, withCapInsets: UIEdgeInsets.zero)!
+    let rightHandView = toView.resizableSnapshotView(from: rightSnapshotRegion, afterScreenUpdates: true, withCapInsets: .zero)!
     rightHandView.frame = rightSnapshotRegion
     rightHandView.frame = (rightHandView.frame.offsetBy(dx: (rightHandView.frame.width), dy: 0))
     containerView.addSubview(rightHandView)
