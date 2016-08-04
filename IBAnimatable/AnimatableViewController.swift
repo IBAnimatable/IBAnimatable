@@ -30,15 +30,16 @@ import UIKit
   public override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     resetHideNavigationBar()
+
   }
   
- /* public override func preferredStatusBarStyle() -> UIStatusBarStyle {
+  public override var  preferredStatusBarStyle:UIStatusBarStyle{
     if lightStatusBar {
       return .lightContent
     }
     return .default
   }
-*/
+
   public override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
     super.prepare(for: segue, sender: sender)
     
