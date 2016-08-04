@@ -12,7 +12,8 @@ None
 None
 
 #### Bugfixes
-None
+
+- Fixed `cornerRadius` when used with a gradient
 
 ### [2.6](https://github.com/IBAnimatable/IBAnimatable/releases/tag/2.6)
 
