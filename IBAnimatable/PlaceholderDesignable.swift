@@ -19,7 +19,7 @@ public extension PlaceholderDesignable where Self: UITextField {
 
   public func configPlaceholderColor() {
     if let unwrappedPlaceholderColor = placeholderColor {
-      attributedPlaceholder = AttributedString(string: placeholder!, attributes: [NSForegroundColorAttributeName: unwrappedPlaceholderColor])
+      attributedPlaceholder = NSAttributedString(string: placeholder!, attributes: [NSForegroundColorAttributeName: unwrappedPlaceholderColor])
     }
   }
 }
@@ -32,7 +32,7 @@ public extension PlaceholderDesignable where Self: UITextView {
     placeholderLabel.textAlignment = textAlignment
     placeholderLabel.text = placeholderText
     placeholderLabel.numberOfLines = 0
-    placeholderLabel.backgroundColor = .clear()
+    placeholderLabel.backgroundColor = .clear
     placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
     addSubview(placeholderLabel)
     update(placeholderLabel, using: &placeholderLabelConstraints)

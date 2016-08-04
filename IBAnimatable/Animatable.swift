@@ -475,7 +475,7 @@ public extension Animatable where Self: UIView {
   private func animateIn(_ x: CGFloat, _ y: CGFloat, _ scaleX: CGFloat, _ scaleY: CGFloat, _ alpha: CGFloat, _ completion: AnimatableCompletion? = nil) {
     let translate = CGAffineTransform(translationX: x, y: y)
     let scale = CGAffineTransform(scaleX: scaleX, y: scaleY)
-    let translateAndScale = translate.concat(scale)
+    let translateAndScale = translate.concatenating(scale)
     transform = translateAndScale
 
     UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [],
@@ -493,7 +493,7 @@ public extension Animatable where Self: UIView {
   private func animateOut(_ x: CGFloat, _ y: CGFloat, _ scaleX: CGFloat, _ scaleY: CGFloat, _ alpha: CGFloat, _ completion: AnimatableCompletion? = nil) {
     let translate = CGAffineTransform(translationX: x, y: y)
     let scale = CGAffineTransform(scaleX: scaleX, y: scaleY)
-    let translateAndScale = translate.concat(scale)
+    let translateAndScale = translate.concatenating(scale)
 
     UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [],
       animations: {

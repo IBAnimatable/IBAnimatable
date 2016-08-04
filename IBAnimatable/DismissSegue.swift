@@ -7,6 +7,6 @@ import UIKit
 
 public class DismissSegue: UIStoryboardSegue {
   public override func perform() {
-    sourceViewController.dismiss(animated: true, completion: nil)
+    source.dismiss(animated: true, completion: nil)
   }
 }

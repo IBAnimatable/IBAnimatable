@@ -34,11 +34,11 @@ public extension TintDesignable where Self: UIView {
    */
   public func configTintedColor() {
     if !tintOpacity.isNaN && tintOpacity >= 0 && tintOpacity <= 1 {
-      addColorSubview(.white(), opacity: tintOpacity)
+      addColorSubview(.white, opacity: tintOpacity)
     }
     
     if !shadeOpacity.isNaN && shadeOpacity >= 0 && shadeOpacity <= 1 {
-      addColorSubview(.black(), opacity: shadeOpacity)
+      addColorSubview(.black, opacity: shadeOpacity)
     }
     
     if let unwrappedToneColor = toneColor {

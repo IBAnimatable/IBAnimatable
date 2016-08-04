@@ -10,8 +10,8 @@ import UIKit
 import IBAnimatable
 
 extension String {
-  func colorize(color: UIColor) -> AttributedString {
-    return AttributedString(string: self, attributes: [NSForegroundColorAttributeName: color])
+  func colorize(color: UIColor) -> NSAttributedString {
+    return NSAttributedString(string: self, attributes: [NSForegroundColorAttributeName: color])
   }
 }
 
@@ -141,15 +141,15 @@ extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSourc
       return 0
     }
   }
-  func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> AttributedString? {
+  func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
     
     if component == 0 {
-      return entries[safe: row]?.name.colorize(color: .white())
+      return entries[safe: row]?.name.colorize(color: .white)
     }
     guard let param = selectedEntry.params[safe: component - 1] else {
       return nil
     }
-    return param.titleAt(index: row)?.colorize(color: .white())
+    return param.titleAt(index: row)?.colorize(color: .white)
   }
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     if component == 0 {

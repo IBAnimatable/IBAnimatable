@@ -52,11 +52,11 @@ extension ExplodeAnimator: UIViewControllerAnimatedTransitioning {
     let snapshots = createSnapshots(toView, fromView: fromView, containerView: containerView)
     containerView.sendSubview(toBack: fromView)
     animateSnapshotsExplode(snapshots) {
-      if transitionContext.transitionWasCancelled() {
+      if transitionContext.transitionWasCancelled {
         containerView.bringSubview(toFront: fromView)
       }
       
-      transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+      transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
     }
   }
   
@@ -73,7 +73,7 @@ private extension ExplodeAnimator {
     for x in stride(from: 0.0, to: Double(size.width), by: Double(size.width / xFactor)) {
       for y in stride(from: 0.0, to: Double(size.height), by: Double(size.width / yFactor)) {
         let snapshotRegion = CGRect(x: CGFloat(x), y: CGFloat(y), width: size.width / xFactor, height: size.height / yFactor)
-        let snapshot = fromViewSnapshot?.resizableSnapshotView(from: snapshotRegion, afterScreenUpdates: false, withCapInsets: UIEdgeInsetsZero)
+        let snapshot = fromViewSnapshot?.resizableSnapshotView(from: snapshotRegion, afterScreenUpdates: false, withCapInsets: .zero)
         snapshot?.frame = snapshotRegion
         containerView.addSubview(snapshot!)
         snapshots.append(snapshot!)
@@ -90,8 +90,8 @@ private extension ExplodeAnimator {
         let angle = self.randomFloatBetween(self.minAngle, upper: self.maxAngle)
 
         let translateTransform = CGAffineTransform(translationX: $0.frame.origin.x - xOffset, y: $0.frame.origin.y - yOffset)
-        let angleTransform = translateTransform.rotate(angle)
-        let scaleTransform = angleTransform.scaleBy(x: 0.01, y: 0.01)
+        let angleTransform = translateTransform.rotated(by: angle)
+        let scaleTransform = angleTransform.scaledBy(x: 0.01, y: 0.01)
         
         $0.transform = scaleTransform
         $0.alpha = 0.0

@@ -69,10 +69,10 @@ extension SlideAnimator: UIViewControllerAnimatedTransitioning {
     if fade {
       toView.alpha = 0
     }
-    toView.transform = travel.invert()
+    toView.transform = travel.inverted()
     animateSlideTransition(toView, fromView: fromView, travel: travel) {
       fromView.transform = CGAffineTransform.identity
-      transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+      transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
     }
   }
   

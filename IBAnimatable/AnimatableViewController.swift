@@ -30,9 +30,10 @@ import UIKit
   public override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     resetHideNavigationBar()
+
   }
   
-  public override func preferredStatusBarStyle() -> UIStatusBarStyle {
+  public override var preferredStatusBarStyle:UIStatusBarStyle{
     if lightStatusBar {
       return .lightContent
     }
@@ -48,7 +49,7 @@ import UIKit
       return
     }
     
-    let toViewController = segue.destinationViewController
+    let toViewController = segue.destination
     // If interactiveGestureType has been set
     if let interactiveGestureType = interactiveGestureType, let interactiveGestureTypeValue = InteractiveGestureType.fromString(interactiveGestureType) {
       toViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration, interactiveGestureType: interactiveGestureTypeValue)

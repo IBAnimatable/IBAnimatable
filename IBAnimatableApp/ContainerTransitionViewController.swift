@@ -32,22 +32,22 @@ private extension ContainerTransitionViewController {
   
   func createChildViewControllers() {
     var viewController = AnimatableViewController()
-    viewController.view.backgroundColor = .blue()
+    viewController.view.backgroundColor = .blue
     viewController.transitionAnimationType = "Explode"
     viewControllers.append(viewController)
    
     viewController = AnimatableViewController()
-    viewController.view.backgroundColor = .green()
+    viewController.view.backgroundColor = .green
     viewController.transitionAnimationType = "Fold"
     viewControllers.append(viewController)
 
     viewController = AnimatableViewController()
-    viewController.view.backgroundColor = .yellow()
+    viewController.view.backgroundColor = .yellow
     viewController.transitionAnimationType = "NatGeo"
     viewControllers.append(viewController)
     
     viewController = AnimatableViewController()
-    viewController.view.backgroundColor = .red()
+    viewController.view.backgroundColor = .red
     viewController.transitionAnimationType = "Portal"
     viewControllers.append(viewController)
     
