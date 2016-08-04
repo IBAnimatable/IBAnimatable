@@ -68,6 +68,7 @@ public extension GradientDesignable where Self: UIView {
   private func createGradientLayer() -> CAGradientLayer {
     let gradientLayer: CAGradientLayer = CAGradientLayer()
     gradientLayer.frame = self.bounds
+    gradientLayer.cornerRadius = layer.cornerRadius
     return gradientLayer
   }
   
