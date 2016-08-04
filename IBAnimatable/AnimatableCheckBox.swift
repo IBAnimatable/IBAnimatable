@@ -157,7 +157,7 @@ public var animationType: AnimationType = .none
   private func setup() {
     // No title for CheckBox
     setTitle("", for: UIControlState())
-    tintColor = .clear()
+    tintColor = .clear
   }
   
   private func configInspectableProperties() {

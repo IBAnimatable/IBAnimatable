@@ -13,7 +13,7 @@ public extension TableViewCellDesignable where Self: UITableViewCell {
   public func configSeparatorMargins() {
     if removeSeparatorMargins {
       if responds(to: #selector(setter: UITableViewCell.separatorInset)) {
-        separatorInset = UIEdgeInsetsZero
+        separatorInset = UIEdgeInsets.zero
       }
       
       if responds(to: #selector(setter: UIView.preservesSuperviewLayoutMargins)) {
@@ -21,7 +21,7 @@ public extension TableViewCellDesignable where Self: UITableViewCell {
       }
       
       if responds(to: #selector(setter: UIView.layoutMargins)) {
-        layoutMargins = UIEdgeInsetsZero
+        layoutMargins = UIEdgeInsets.zero
       }
     }
   }

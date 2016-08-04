@@ -85,7 +85,7 @@ private extension CardsAnimator {
       }
 
     }) { _ in
-      transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+      transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
     }
   }
   
@@ -122,11 +122,11 @@ private extension CardsAnimator {
       }
       
     }) { _ in
-      if transitionContext.transitionWasCancelled() {
+      if transitionContext.transitionWasCancelled {
         toView.layer.transform = CATransform3DIdentity
         toView.alpha = 1.0
       }
-      transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+      transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
     }
   }
   

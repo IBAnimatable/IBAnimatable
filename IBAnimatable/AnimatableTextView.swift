@@ -99,7 +99,7 @@ public var animationType: AnimationType = .none
     }
   }
 
-  override public var attributedText: AttributedString! {
+  override public var attributedText: NSAttributedString! {
     didSet {
       textDidChange()
     }

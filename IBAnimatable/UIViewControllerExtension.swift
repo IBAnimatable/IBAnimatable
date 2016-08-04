@@ -11,11 +11,11 @@ public extension UIViewController {
   }
   
   @IBAction public func dismissCurrentViewController(_ sender: UIStoryboardSegue) {
-    sender.sourceViewController.dismiss(animated: true, completion: nil)
+    sender.source.dismiss(animated: true, completion: nil)
   }
   
   @IBAction public func popToRootViewController(_ sender: UIStoryboardSegue) {
-    if let navigationController = sender.sourceViewController.navigationController {
+    if let navigationController = sender.source.navigationController {
       navigationController.popToRootViewController(animated: true)
     }
   }

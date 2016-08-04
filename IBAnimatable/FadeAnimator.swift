@@ -71,7 +71,7 @@ extension FadeAnimator: UIViewControllerAnimatedTransitioning {
         }
       },
       completion: { _ in
-        transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+        transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
       }
     )
   }

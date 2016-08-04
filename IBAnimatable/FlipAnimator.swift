@@ -62,13 +62,13 @@ extension FlipAnimator: UIViewControllerAnimatedTransitioning {
     
     let flipViews = createSnapshots(toView, fromView: fromView, containerView: containerView)
     animateFlipTransition(flipViews.0, flippedSectionOfToView: flipViews.1) {
-      if transitionContext.transitionWasCancelled() {
+      if transitionContext.transitionWasCancelled {
         self.removeOtherViews(fromView)
       } else {
         self.removeOtherViews(toView)
       }
       
-      transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+      transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
     }
   }
   
@@ -108,14 +108,14 @@ private extension FlipAnimator {
     let width = valuesForAxe(view.frame.size.width / 2, reverseValue: view.frame.size.width)
     let height = valuesForAxe(view.frame.size.height, reverseValue: view.frame.size.height / 2)
     var snapshotRegion = CGRect(x: 0, y: 0, width: width.0, height: height.0)
-    let leftHandView = view.resizableSnapshotView(from: snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: UIEdgeInsetsZero)
+    let leftHandView = view.resizableSnapshotView(from: snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: UIEdgeInsets.zero)
     leftHandView?.frame = snapshotRegion
     containerView?.addSubview(leftHandView!)
 
     let x = valuesForAxe(view.frame.size.width / 2, reverseValue: 0)
     let y = valuesForAxe(0, reverseValue: view.frame.size.height / 2)
     snapshotRegion = CGRect(x: x.0, y: y.0, width: width.0, height: height.0)
-    let rightHandView = view.resizableSnapshotView(from: snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: UIEdgeInsetsZero)
+    let rightHandView = view.resizableSnapshotView(from: snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: UIEdgeInsets.zero)
     rightHandView?.frame = snapshotRegion
     containerView?.addSubview(rightHandView!)
 
