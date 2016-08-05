@@ -11,8 +11,8 @@ import UIKit
 
 
 extension String {
-  func colorize(color: UIColor) -> AttributedString {
-    return AttributedString(string: self, attributes: [NSForegroundColorAttributeName: color])
+  func colorize(color: UIColor) -> NSAttributedString {
+    return NSAttributedString(string: self, attributes: [NSForegroundColorAttributeName: color])
   }
 }
 
@@ -63,7 +63,7 @@ enum ParamType {
   
   func titleAt(index: Int) -> String {
     switch self {
-    case enumeration(_):
+    case .enumeration(_):
       return valueAt(index: index)
     case let .number(_, _, _, _, unit):
       return   ("\(valueAt(index: index)) \(unit)").trimmingCharacters(in: CharacterSet.whitespaces)

@@ -57,11 +57,11 @@ extension BlurEffectViewController : UIPickerViewDelegate, UIPickerViewDataSourc
     return 3
   }
   
-  func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> AttributedString? {
+  func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
     if component == 2 {
-      return (opacityValues.titleAt(index: row) ?? "").colorize(color: .white())
+      return (opacityValues.titleAt(index: row) ?? "").colorize(color: .white)
     }
-      return values[safe: row]?.colorize(color: .white())
+      return values[safe: row]?.colorize(color: .white)
   }
 
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

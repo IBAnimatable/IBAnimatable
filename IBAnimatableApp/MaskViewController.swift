@@ -74,7 +74,7 @@ extension MaskViewController : UIPickerViewDelegate, UIPickerViewDataSource {
   
   func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
     let label = UILabel()
-    label.textColor = .white()
+    label.textColor = .white
     if component == 0 {
       label.text = entries[safe: row]?.name
     }
