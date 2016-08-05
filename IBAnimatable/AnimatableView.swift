@@ -120,6 +120,7 @@ import UIKit
     didSet {
       configMask()
       configBorder()
+      configMaskShadow()
     }
   }
   
@@ -161,6 +162,7 @@ import UIKit
   private func configAfterLayoutSubviews() {
     configMask()
     configBorder()
+    configMaskShadow()
     configGradient()
   }
 }

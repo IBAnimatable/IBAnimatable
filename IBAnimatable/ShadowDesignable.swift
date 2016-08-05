@@ -66,6 +66,30 @@ public extension ShadowDesignable where Self: UIView {
     }
   }
   
+  public func configMaskShadow() {
+    commonSetup()
+    // if a layer mask is specified, display the shadow to match the mask
+    if let mask = layer.mask as? CAShapeLayer {
+      mask.masksToBounds = false
+      if let unwrappedShadowColor = shadowColor {
+        mask.shadowColor = unwrappedShadowColor.CGColor
+      }
+      if !shadowRadius.isNaN && shadowRadius > 0 {
+        mask.shadowRadius = shadowRadius
+      }
+      if !shadowOpacity.isNaN && shadowOpacity >= 0 && shadowOpacity <= 1 {
+        mask.shadowOpacity = Float(shadowOpacity)
+      }
+      if !shadowOffset.x.isNaN {
+        mask.shadowOffset.width = shadowOffset.x
+      }
+      if !shadowOffset.y.isNaN {
+        mask.shadowOffset.height = shadowOffset.y
+      }
+      mask.shadowPath = mask.path
+    }
+  }
+  
   private func commonSetup() {
     // Need to set `layer.masksToBounds` to `false`. 
     // If `layer.masksToBounds == true` then shadow doesn't work any more.
