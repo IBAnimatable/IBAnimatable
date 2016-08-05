@@ -33,7 +33,7 @@ import UIKit
 
   }
   
-  public override var preferredStatusBarStyle:UIStatusBarStyle{
+  public override var preferredStatusBarStyle: UIStatusBarStyle {
     if lightStatusBar {
       return .lightContent
     }

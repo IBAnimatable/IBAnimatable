@@ -15,7 +15,7 @@ class BlurEffectViewController: UIViewController {
  
   let opacityValues = ParamType.number(min: 0.0, max: 1.0, interval: 0.1, ascending: false, unit: "")
   lazy var values: [String] = {
-    var values = ["none", "extraLight", "light", "dark"];
+    var values = ["none", "extraLight", "light", "dark"]
     if #available(iOS 10.0, *) {
       values.append(contentsOf: ["prominent", "regular"])
     }
@@ -50,10 +50,9 @@ extension BlurEffectViewController : UIPickerViewDelegate, UIPickerViewDataSourc
 
   func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
     let totalWidth =  self.view.frame.size.width
-    if (component == 2) {
+    if component == 2 {
       return 0.2 * totalWidth
-    }
-    else {
+    } else {
       return 0.4 * totalWidth
     }
   }

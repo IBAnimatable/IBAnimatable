@@ -89,7 +89,7 @@ extension Presenter: UIViewControllerTransitioningDelegate {
   
   // MARK: - interaction controller
   public func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-    if let interactiveAnimator = interactiveAnimator , interactiveAnimator.interacting {
+    if let interactiveAnimator = interactiveAnimator, interactiveAnimator.interacting {
       return interactiveAnimator
     } else {
       return nil

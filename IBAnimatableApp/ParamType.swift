@@ -46,10 +46,10 @@ enum ParamType {
     }
   }
   /// Number at Index, use just for number case.
-  func valueAt(index: Int) -> String  {
-    let formatter = NumberFormatter();
-    formatter.minimumFractionDigits = 0;
-    formatter.maximumFractionDigits = 3;
+  func valueAt(index: Int) -> String {
+    let formatter = NumberFormatter()
+    formatter.minimumFractionDigits = 0
+    formatter.maximumFractionDigits = 3
   
     switch self {
     case let .number(min, _, interval, ascending, _) where ascending == true:
@@ -89,5 +89,4 @@ extension PickerEntry {
     
   }
 }
-
 

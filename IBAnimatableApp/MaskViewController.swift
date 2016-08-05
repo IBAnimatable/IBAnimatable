@@ -13,8 +13,8 @@ class MaskViewController: UIViewController {
   @IBOutlet var maskedView: AnimatableView!
   // @IBOutlet var maskedImageView: AnimatableImageView!
   @IBOutlet weak var pickerView: UIPickerView!
-  var selectedEntry:PickerEntry!
-  lazy var entries:[PickerEntry] = {
+  var selectedEntry: PickerEntry!
+  lazy var entries: [PickerEntry] = {
     let pointsParam = ParamType.number(min: 3, max: 10, interval: 1, ascending: true, unit: "points") // default 5
     let sidesParam = ParamType.number(min: 3, max: 10, interval: 1, ascending: true, unit: "sides") // default 6
     let angleParam = ParamType.number(min: 60, max: 120, interval: 2, ascending: true, unit: "°") // default 6
@@ -77,8 +77,7 @@ extension MaskViewController : UIPickerViewDelegate, UIPickerViewDataSource {
     label.textColor = .white
     if component == 0 {
       label.text = entries[safe: row]?.name
-    }
-    else {
+    } else {
       label.text = selectedEntry.params[safe: component - 1]?.titleAt(index: row)
     }
     return label
