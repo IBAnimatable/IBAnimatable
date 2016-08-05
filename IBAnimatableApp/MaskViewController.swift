@@ -38,7 +38,7 @@ class MaskViewController: UIViewController {
     pickerView.delegate = self
     pickerView.dataSource = self
     let maskString = selectedEntry.toString(selectedIndexes:0)
-    let maskType = MaskType(string: maskString) ?? .none
+    let maskType = MaskType(string: maskString)
     maskedView.maskType = maskType
     //  maskedImageView.maskType = maskType
   }

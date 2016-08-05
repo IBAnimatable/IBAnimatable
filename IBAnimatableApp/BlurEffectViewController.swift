@@ -12,7 +12,7 @@ import IBAnimatable
 class BlurEffectViewController: UIViewController {
   
   @IBOutlet weak var imageView: AnimatableImageView!
-  @IBOutlet weak var pickerView: UIPickerView!
+ 
   let opacityValues = ParamType.number(min: 0.0, max: 1.0, interval: 0.1, ascending: false, unit: "")
   lazy var values: [String] = {
     var values = ["none", "extraLight", "light", "dark"];
@@ -21,28 +21,6 @@ class BlurEffectViewController: UIViewController {
     }
     return values
   }()
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    pickerView.delegate = self
-    pickerView.dataSource = self
-    
-  }
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-  
-  
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
   
 }
 

@@ -136,7 +136,7 @@ public var vibrancyEffectStyle: UIBlurEffectStyle? {
   /// The mask type used in Interface Builder. **Should not** use this property in code.
   @IBInspectable var _maskType: String? {
     didSet {
-      maskType = MaskType(string: _maskType) ?? .none
+      maskType = MaskType(string: _maskType)
     }
   }
 
