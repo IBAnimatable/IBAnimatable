@@ -48,13 +48,13 @@ extension IBEnum {
 
 
 /// IBEnum provide default initializer for RawRepresentable Enum
-public extension IBEnum where Self : protocol<RawRepresentable, Hashable> {
+public extension IBEnum where Self : RawRepresentable & Hashable {
   init?(string: String?) {
     let lowerString = string?.lowercased()
     let iterator = iterateEnum(Self)
     for e in iterator {
       
-      if String(e.rawValue).lowercased() == lowerString  {
+      if String(e.rawValue).lowercased() == lowerString {
         self = e as Self
         return
       }
