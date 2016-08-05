@@ -1,6 +1,6 @@
 //
 //  Created by Tom Baranes on 08/05/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import UIKit
@@ -69,10 +69,10 @@ extension SlideAnimator: UIViewControllerAnimatedTransitioning {
     if fade {
       toView.alpha = 0
     }
-    toView.transform = travel.invert()
+    toView.transform = travel.inverted()
     animateSlideTransition(toView, fromView: fromView, travel: travel) {
       fromView.transform = CGAffineTransform.identity
-      transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+      transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
     }
   }
   

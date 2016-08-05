@@ -1,6 +1,6 @@
 //
 //  Created by Tom Baranes on 24/04/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import UIKit
@@ -85,7 +85,7 @@ private extension NatGeoAnimator {
         self.sourceLastTransform(&fromLayer)
       }
     }) { _ in
-      if transitionContext.transitionWasCancelled() {
+      if transitionContext.transitionWasCancelled {
         containerView.bringSubview(toFront: fromView)
         fromView.isUserInteractionEnabled = true
       }
@@ -121,7 +121,7 @@ private extension NatGeoAnimator {
         self.destinationFirstTransform(&toLayer)
       }
     }) { _ in
-      if transitionContext.transitionWasCancelled() {
+      if transitionContext.transitionWasCancelled {
         containerView.bringSubview(toFront: fromView)
         toView.isUserInteractionEnabled = false
       }
@@ -180,7 +180,7 @@ private extension NatGeoAnimator {
     fromView.layer.transform = CATransform3DIdentity
     toView.layer.transform = CATransform3DIdentity
     containerView.layer.transform = CATransform3DIdentity
-    transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+    transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
   }
   
 }

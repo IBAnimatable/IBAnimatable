@@ -1,6 +1,6 @@
 //
 //  Created by Jake Lin on 11/19/15.
-//  Copyright © 2015 Jake Lin. All rights reserved.
+//  Copyright © 2015 IBAnimatable. All rights reserved.
 //
 
 import UIKit
@@ -99,7 +99,7 @@ public var animationType: AnimationType = .none
     }
   }
 
-  override public var attributedText: AttributedString! {
+  override public var attributedText: NSAttributedString! {
     didSet {
       textDidChange()
     }

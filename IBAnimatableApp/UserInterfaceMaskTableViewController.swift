@@ -1,6 +1,6 @@
 //
 //  Created by Jake Lin on 6/29/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import UIKit
@@ -9,7 +9,7 @@ class UserInterfaceMaskTableViewController: UITableViewController {
   private let masks = ["None", "Circle", "Polygon", "Polygon(12)", "Star", "Star(6)", "Triangle", "Wave", "Wave(up,10,5)", "Wave(down,40,0)", "Parallelogram", "Parallelogram(150)"]
   
   override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
-    if let maskViewController = segue.destinationViewController as? MaskViewController, let indexPath = tableView.indexPathForSelectedRow {
+    if let maskViewController = segue.destination as? MaskViewController, let indexPath = tableView.indexPathForSelectedRow {
       maskViewController.maskType = masks[indexPath.row]
     }
   }

@@ -1,6 +1,6 @@
 //
 //  Created by Jake Lin on 11/18/15.
-//  Copyright © 2015 Jake Lin. All rights reserved.
+//  Copyright © 2015 IBAnimatable. All rights reserved.
 //
 
 import UIKit
@@ -110,7 +110,7 @@ private extension BorderDesignable where Self: UIView {
       let borderLayer = CAShapeLayer()
       borderLayer.name = "borderAllSides"
       borderLayer.path = mask.path
-      borderLayer.fillColor = UIColor.clear().cgColor
+      borderLayer.fillColor = UIColor.clear.cgColor
       borderLayer.strokeColor = unwrappedBorderColor.cgColor
       borderLayer.lineWidth = borderWidth
       borderLayer.frame = bounds
@@ -152,7 +152,7 @@ private extension BorderDesignable where Self: UIView {
     }
     
     border.path = borderPath.cgPath
-    border.fillColor = UIColor.clear().cgColor
+    border.fillColor = UIColor.clear.cgColor
     border.strokeColor = unwrappedBorderColor.cgColor
     border.lineWidth = borderWidth
     border.frame = bounds

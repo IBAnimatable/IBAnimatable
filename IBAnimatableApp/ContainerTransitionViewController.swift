@@ -1,6 +1,6 @@
 //
 //  Created by Tom Baranes on 07/05/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import UIKit
@@ -32,22 +32,22 @@ private extension ContainerTransitionViewController {
   
   func createChildViewControllers() {
     var viewController = AnimatableViewController()
-    viewController.view.backgroundColor = .blue()
+    viewController.view.backgroundColor = .blue
     viewController.transitionAnimationType = "Explode"
     viewControllers.append(viewController)
    
     viewController = AnimatableViewController()
-    viewController.view.backgroundColor = .green()
+    viewController.view.backgroundColor = .green
     viewController.transitionAnimationType = "Fold"
     viewControllers.append(viewController)
 
     viewController = AnimatableViewController()
-    viewController.view.backgroundColor = .yellow()
+    viewController.view.backgroundColor = .yellow
     viewController.transitionAnimationType = "NatGeo"
     viewControllers.append(viewController)
     
     viewController = AnimatableViewController()
-    viewController.view.backgroundColor = .red()
+    viewController.view.backgroundColor = .red
     viewController.transitionAnimationType = "Portal"
     viewControllers.append(viewController)
     

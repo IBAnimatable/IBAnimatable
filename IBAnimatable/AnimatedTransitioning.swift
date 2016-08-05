@@ -1,6 +1,6 @@
 //
 //  Created by Jake Lin on 2/24/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import UIKit
@@ -32,16 +32,16 @@ public protocol AnimatedTransitioning: UIViewControllerAnimatedTransitioning {
 
 public extension AnimatedTransitioning {
   public func getViews(using transitionContext: UIViewControllerContextTransitioning) -> (UIView?, UIView?, UIView?) {
-    return (transitionContext.view(forKey: UITransitionContextFromViewKey), transitionContext.view(forKey: UITransitionContextToViewKey), transitionContext.containerView())
+    return (transitionContext.view(forKey: UITransitionContextFromViewKey), transitionContext.view(forKey: UITransitionContextToViewKey), transitionContext.containerView)
   }
   
   public func getViewControllers(using transitionContext: UIViewControllerContextTransitioning) -> (UIViewController?, UIViewController?, UIView?) {
-    return (transitionContext.viewController(forKey: UITransitionContextFromViewControllerKey), transitionContext.viewController(forKey: UITransitionContextToViewControllerKey), transitionContext.containerView())
+    return (transitionContext.viewController(forKey: UITransitionContextFromViewControllerKey), transitionContext.viewController(forKey: UITransitionContextToViewControllerKey), transitionContext.containerView)
   }
   
   public func getTransitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
     if let transitionContext = transitionContext {
-      return transitionContext.isAnimated() ? transitionDuration : 0
+      return transitionContext.isAnimated ? transitionDuration : 0
     }
     return 0
   }
@@ -66,7 +66,7 @@ public extension AnimatedTransitioning {
       containerView.layer.add(transition, forKey: kCATransition)
     },
     completion: {
-      transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+      transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
     })
   }
 }

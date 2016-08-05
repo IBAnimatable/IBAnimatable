@@ -1,6 +1,6 @@
 //
 //  Created by Tom Baranes on 01/05/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import UIKit
@@ -85,7 +85,7 @@ private extension CardsAnimator {
       }
 
     }) { _ in
-      transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+      transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
     }
   }
   
@@ -122,11 +122,11 @@ private extension CardsAnimator {
       }
       
     }) { _ in
-      if transitionContext.transitionWasCancelled() {
+      if transitionContext.transitionWasCancelled {
         toView.layer.transform = CATransform3DIdentity
         toView.alpha = 1.0
       }
-      transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+      transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
     }
   }
   

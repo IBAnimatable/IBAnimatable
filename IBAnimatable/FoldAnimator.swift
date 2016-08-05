@@ -1,6 +1,6 @@
 //
 //  Created by Tom Baranes on 09/04/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import UIKit
@@ -89,14 +89,14 @@ extension FoldAnimator: UIViewControllerAnimatedTransitioning {
 
     let viewFolds = createSnapshots(toView, fromView: fromView, containerView: containerView)
     animateFoldTransition(fromView: fromView, toViewFolds: viewFolds[0], fromViewFolds: viewFolds[1], completion: {
-      if !transitionContext.transitionWasCancelled() {
+      if !transitionContext.transitionWasCancelled {
         toView.frame = containerView.bounds
         fromView.frame = containerView.bounds
       } else {
         fromView.frame = containerView.bounds
       }
       
-      transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+      transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
       }
     )
   }
@@ -148,12 +148,12 @@ private extension FoldAnimator {
     let axesValues2 = valuesForAxe(foldSize, reverseValue: height)
     let snapshotRegion = CGRect(x: axesValues.0, y: axesValues.1, width: axesValues2.0, height: axesValues2.1)
     if !afterUpdates {
-      snapshotView = view.resizableSnapshotView(from: snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: UIEdgeInsetsZero)!
+      snapshotView = view.resizableSnapshotView(from: snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: .zero)!
     } else {
       axesValues = valuesForAxe(foldSize, reverseValue: height)
       snapshotView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: axesValues.0, height: axesValues.1))
       snapshotView.backgroundColor = view.backgroundColor
-      let subSnapshotView = view.resizableSnapshotView(from: snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: UIEdgeInsetsZero)
+      let subSnapshotView = view.resizableSnapshotView(from: snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: .zero)
       snapshotView.addSubview(subSnapshotView!)
     }
     

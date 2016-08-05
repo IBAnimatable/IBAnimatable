@@ -1,6 +1,6 @@
 //
 //  Created by Jake Lin on 2/27/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import UIKit
@@ -71,7 +71,7 @@ extension FadeAnimator: UIViewControllerAnimatedTransitioning {
         }
       },
       completion: { _ in
-        transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+        transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
       }
     )
   }

@@ -1,6 +1,6 @@
 //
 //  Created by Jake Lin on 2/29/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import UIKit
@@ -21,7 +21,7 @@ class TransitionTableViewController: UITableViewController {
   override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
     super.prepare(for: segue, sender: sender)
     
-    guard let toNavigationController = segue.destinationViewController as? AnimatableNavigationController, let indexPath = tableView.indexPathForSelectedRow else {
+    guard let toNavigationController = segue.destination as? AnimatableNavigationController, let indexPath = tableView.indexPathForSelectedRow else {
       return
     }
     
@@ -110,7 +110,7 @@ extension TransitionTableViewController {
   // MARK: - reset the group heander font color and size
   override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
     if let header = view as? UITableViewHeaderFooterView {
-      header.textLabel?.textColor = .white()
+      header.textLabel?.textColor = .white
       header.textLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFontWeightLight)
     }
   }

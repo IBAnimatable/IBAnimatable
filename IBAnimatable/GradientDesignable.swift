@@ -1,6 +1,6 @@
 //
 //  Created by Jake Lin on 12/4/15.
-//  Copyright © 2015 Jake Lin. All rights reserved.
+//  Copyright © 2015 IBAnimatable. All rights reserved.
 //
 
 import UIKit
@@ -376,7 +376,7 @@ private class GradientView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
   
-  override class func layerClass() -> AnyClass {
+   class func layerClass() -> AnyClass {
     return CAGradientLayer.self
   }
   

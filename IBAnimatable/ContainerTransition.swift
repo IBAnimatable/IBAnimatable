@@ -1,6 +1,6 @@
 //
 //  Created by Tom Baranes on 06/05/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import UIKit
@@ -65,15 +65,19 @@ public class ContainerTransition: NSObject {
     animator.transitionDuration = transitionDuration
     animator.animateTransition(using: self)
   }
+  public var isAnimated : Bool { return false }
+  public var isInteractive: Bool { return false }
+  public var presentationStyle: UIModalPresentationStyle { return .none }
+  public var transitionWasCancelled: Bool { return false }
+  public var targetTransform: CGAffineTransform { return CGAffineTransform.identity }
+  public var containerView:UIView{return container!}
 }
 
 // MARK: - UIViewControllerContextTransitioning
 
 extension ContainerTransition: UIViewControllerContextTransitioning {
   
-  public func containerView() -> UIView {
-    return container!
-  }
+ 
   
   public func viewController(forKey key: String) -> UIViewController? {
     return viewControllers?[key]
@@ -82,10 +86,7 @@ extension ContainerTransition: UIViewControllerContextTransitioning {
   public func view(forKey key: String) -> UIView? {
     return views?[key]
   }
-  
-  public func transitionWasCancelled() -> Bool {
-    return false
-  }
+
   
   public func completeTransition(_ didComplete: Bool) {
     viewControllers?[UITransitionContextFromViewControllerKey]?.view.removeFromSuperview()
@@ -100,10 +101,6 @@ extension ContainerTransition: UIViewControllerContextTransitioning {
   
   public func initialFrame(for vc: UIViewController) -> CGRect { return CGRect.zero }
   public func finalFrame(for vc: UIViewController) -> CGRect { return CGRect.zero}
-  public func isAnimated() -> Bool { return false }
-  public func isInteractive() -> Bool { return false }
-  public func presentationStyle() -> UIModalPresentationStyle { return .none }
-  public func targetTransform() -> CGAffineTransform { return CGAffineTransform.identity }
   public func updateInteractiveTransition(_ percentComplete: CGFloat) {}
   public func finishInteractiveTransition() {}
   public func cancelInteractiveTransition() {}

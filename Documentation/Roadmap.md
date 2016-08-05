@@ -9,7 +9,7 @@ IBAnimatable is an open source library to help designers and developers design a
 * Extending existing behaviors, e.g. More transition animations like "Fade", "Explode", "Fold" and "Portal".
 
 ## Technical Considerations
-* **UIKit** - All `IBAnimatable` UI elements are based on `UIkit`.
+* **UIKit** - All `IBAnimatable` UI elements are based on `UIKit`.
  	* **Dos**
 		* All UI elements should support Auto Layout.
 		* Support existing navigation pattern like present/dismiss, push/pop.
@@ -43,7 +43,7 @@ IBAnimatable is an open source library to help designers and developers design a
 * Version 5: More animations
 * Version 6: Sketch plugin & Xcode plugin
 
-You can find more details in https://github.com/JakeLin/IBAnimatable/milestones
+You can find more details in https://github.com/IBAnimatable/IBAnimatable/milestones
 
 ### Designable elements
 * Bar Button Item:
@@ -52,7 +52,7 @@ You can find more details in https://github.com/JakeLin/IBAnimatable/milestones
 * Blur:
 	* <del>blurEffectStyle</del>
 	* <del>blurOpacity</del>
-	* Motion Blur - https://github.com/JakeLin/IBAnimatable/issues/65
+	* Motion Blur - https://github.com/IBAnimatable/IBAnimatable/issues/65
 
 * Border:
 	* <del>borderColor</del>
@@ -64,9 +64,9 @@ You can find more details in https://github.com/JakeLin/IBAnimatable/milestones
 	* <del>checked</del>
 	* <del>checkedImage</del>
 	* <del>uncheckedImage</del>
-	* Animations for state changes - https://github.com/JakeLin/IBAnimatable/issues/67
-	* Default checked and unchecked icon (Using path to avoid image assets?) - https://github.com/JakeLin/IBAnimatable/issues/68
-	* Checked color - https://github.com/JakeLin/IBAnimatable/issues/69
+	* Animations for state changes - https://github.com/IBAnimatable/IBAnimatable/issues/67
+	* Default checked and unchecked icon (Using path to avoid image assets?) - https://github.com/IBAnimatable/IBAnimatable/issues/68
+	* Checked color - https://github.com/IBAnimatable/IBAnimatable/issues/69
 
 * Corner:
 	* <del>cornerRadius</del>
@@ -137,13 +137,13 @@ You can find more details in https://github.com/JakeLin/IBAnimatable/milestones
 * View Controller:
 	* <del>hideNavigationBar</del>
 
-* Collection View and Collection View Cell - https://github.com/JakeLin/IBAnimatable/issues/53
-* Animatable Slider - https://github.com/JakeLin/IBAnimatable/issues/70
-* Material Design elements - and https://github.com/JakeLin/IBAnimatable/issues/16 and  https://github.com/JakeLin/IBAnimatable/issues/55
+* Collection View and Collection View Cell - https://github.com/IBAnimatable/IBAnimatable/issues/53
+* Animatable Slider - https://github.com/IBAnimatable/IBAnimatable/issues/70
+* Material Design elements - and https://github.com/IBAnimatable/IBAnimatable/issues/16 and  https://github.com/IBAnimatable/IBAnimatable/issues/55
 * <del>Flat colors</del>
-* Motion effect, parallax effect - https://github.com/JakeLin/IBAnimatable/issues/18
-* Segmented Control - https://github.com/JakeLin/IBAnimatable/issues/72
-* Custom dynamic type (text style) - https://github.com/JakeLin/IBAnimatable/issues/73
+* Motion effect, parallax effect - https://github.com/IBAnimatable/IBAnimatable/issues/18
+* Segmented Control - https://github.com/IBAnimatable/IBAnimatable/issues/72
+* Custom dynamic type (text style) - https://github.com/IBAnimatable/IBAnimatable/issues/73
 
 ### Animatable elements
 * Animations types:
@@ -197,7 +197,7 @@ You can find more details in https://github.com/JakeLin/IBAnimatable/milestones
 	* <del>Rotate</del>
 	* <del>MoveTo</del>
 	* <del>MoveBy</del>
-	* Jump - https://github.com/JakeLin/IBAnimatable/issues/75
+	* Jump - https://github.com/IBAnimatable/IBAnimatable/issues/75
 
 * Animation properties:
 	* <del>animationType</del>
@@ -215,7 +215,7 @@ You can find more details in https://github.com/JakeLin/IBAnimatable/milestones
 * <del>Unwind Segue</del>
 * <del>Dismiss current ViewController Segue</del>
 * <del>Pop to root ViewController Segue</del>
-* `AnimatablePresentationController`: [#198](https://github.com/JakeLin/IBAnimatable/issues/198)
+* `AnimatablePresentationController`: [#198](https://github.com/IBAnimatable/IBAnimatable/issues/198)
 	* gestureToDismiss (UIDynamics)
 
 * `AnimatableAlertController` for `UIAlertController`
