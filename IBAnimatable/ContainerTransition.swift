@@ -65,12 +65,12 @@ public class ContainerTransition: NSObject {
     animator.transitionDuration = transitionDuration
     animator.animateTransition(using: self)
   }
-  public var isAnimated : Bool { return false }
+  public var isAnimated: Bool { return false }
   public var isInteractive: Bool { return false }
   public var presentationStyle: UIModalPresentationStyle { return .none }
   public var transitionWasCancelled: Bool { return false }
   public var targetTransform: CGAffineTransform { return CGAffineTransform.identity }
-  public var containerView:UIView{return container!}
+  public var containerView: UIView {return container!}
 }
 
 // MARK: - UIViewControllerContextTransitioning

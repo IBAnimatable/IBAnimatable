@@ -83,17 +83,25 @@ import UIKit
       configShadowOffset()
     }
   }
-  
   // MARK: - BlurDesignable
-  @IBInspectable public var blurEffectStyle: String? {
+  public var blurEffectStyle: UIBlurEffectStyle? {
     didSet {
       configBlurEffectStyle()
     }
   }
-
-  @IBInspectable public var vibrancyEffectStyle: String? {
+  @IBInspectable var _blurEffectStyle: String? {
+    didSet {
+      blurEffectStyle = UIBlurEffectStyle(string: _blurEffectStyle)
+    }
+  }
+  public var vibrancyEffectStyle: UIBlurEffectStyle? {
     didSet {
       configBlurEffectStyle()
+    }
+  }
+  @IBInspectable var _vibrancyEffectStyle: String? {
+    didSet {
+      vibrancyEffectStyle = UIBlurEffectStyle(string: _vibrancyEffectStyle)
     }
   }
 

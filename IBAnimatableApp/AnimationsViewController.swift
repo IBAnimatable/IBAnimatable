@@ -9,77 +9,13 @@
 import UIKit
 import IBAnimatable
 
-extension String {
-  func colorize(color: UIColor) -> NSAttributedString {
-    return NSAttributedString(string: self, attributes: [NSForegroundColorAttributeName: color])
-  }
-}
-
-extension Array {
-  /// Returns the element at the specified index iff it is within bounds, otherwise nil.
-  subscript(safe index: Int ) -> Element? {
-    return indices.contains(index) ? self[index] : nil  /// Returns the element at the specified index iff it is within bounds, otherwise nil.
-  }
-}
-
-enum ParamType {
-  
-  case number(min: Double, max: Double, interval: Double)
-  case enumeration(values: [String])
- 
-  init<T: RawRepresentable where T: Hashable>(fromEnum: T.Type) {
-    let iterator = iterateEnum(fromEnum)
-    let values = iterator.map {  return String($0.rawValue) }
-    self = .enumeration(values: values)
-  }
-  
-  /// Number of different values to show in the picker
-  func count() -> Int {
-    switch self {
-    case .number(let min, let max, let interval):
-      return Int(ceil(max - min / interval) + 1)
-    case .enumeration(let val):
-      return val.count
-    }
-  }
-  
-  func titleAt(index: Int) -> String? {
-    switch self {
-    case .enumeration(let values):
-      return values[safe: index]
-    case .number(let min, _, let interval):
-      return String(min + Double(index) * interval)
-    }
-    
-  }
-}
-
-
-struct Entry {
-  let params: [ParamType]
-  let name: String
-}
-
-extension Entry {
-  /// Convert the entry to a `AnimationType` string
-  func toString(selectedIndexes indexes: Int?...) -> String {
-    
-    let paramString = indexes.enumerated().flatMap({ (i: Int, index: Int?) -> String? in
-      return params[safe:i]?.titleAt(index: index ?? 0)
-    }).joined(separator: ",")
-    
-    return "\(name)(\(paramString))"
-    
-  }
-}
-
-private let wayParam = ParamType(fromEnum: AnimationType.Way.self)
+private let wayParam = 	ParamType(fromEnum: AnimationType.Way.self)
 private let directionParam = ParamType(fromEnum: AnimationType.Direction.self)
 private let fadeWayParams = ParamType(fromEnum: AnimationType.FadeWay.self)
 private let axisParams = ParamType(fromEnum: AnimationType.Axis.self)
 private let rotationDirectionParams = ParamType(fromEnum: AnimationType.RotationDirection.self)
-private let positiveNumberParam = ParamType.number(min: 0, max: 50, interval: 2)
-private let numberParam = ParamType.number(min: -50, max: 50, interval: 5)
+private let positiveNumberParam = ParamType.number(min: 0, max: 50, interval: 2, ascending: true, unit:"")
+private let numberParam = ParamType.number(min: -50, max: 50, interval: 5, ascending: true, unit: "")
 
 class AnimationsViewController: UIViewController {
   
@@ -88,25 +24,25 @@ class AnimationsViewController: UIViewController {
   
   
   // prebuit common params
-  let entries: [Entry] = [
-    Entry(params: [wayParam, directionParam], name: "slide"),
-    Entry(params: [wayParam, directionParam], name: "squeeze"),
-    Entry(params: [fadeWayParams], name: "fade"),
-    Entry(params: [wayParam, directionParam], name: "slideFade"),
-    Entry(params: [wayParam, directionParam], name: "squeezeFade"),
-    Entry(params: [wayParam], name: "zoom"),
-    Entry(params: [wayParam], name: "zoomInvert"),
-    Entry(params: [axisParams], name: "flip"),
-    Entry(params: [], name: "flash"),
-    Entry(params: [], name: "wobble"),
-    Entry(params: [], name: "swing"),
-    Entry(params: [rotationDirectionParams], name: "rotate"),
-    Entry(params: [positiveNumberParam, positiveNumberParam], name: "moveby"),
-    Entry(params: [numberParam, numberParam], name: "moveto")
+  let entries: [PickerEntry] = [
+    PickerEntry(params: [wayParam, directionParam], name: "slide"),
+    PickerEntry(params: [wayParam, directionParam], name: "squeeze"),
+    PickerEntry(params: [fadeWayParams], name: "fade"),
+    PickerEntry(params: [wayParam, directionParam], name: "slideFade"),
+    PickerEntry(params: [wayParam, directionParam], name: "squeezeFade"),
+    PickerEntry(params: [wayParam], name: "zoom"),
+    PickerEntry(params: [wayParam], name: "zoomInvert"),
+    PickerEntry(params: [axisParams], name: "flip"),
+    PickerEntry(params: [], name: "flash"),
+    PickerEntry(params: [], name: "wobble"),
+    PickerEntry(params: [], name: "swing"),
+    PickerEntry(params: [rotationDirectionParams], name: "rotate"),
+    PickerEntry(params: [positiveNumberParam, positiveNumberParam], name: "moveby"),
+    PickerEntry(params: [numberParam, numberParam], name: "moveto")
     ]
   
   
-  var selectedEntry: Entry!
+  var selectedEntry: PickerEntry!
   override func viewDidLoad() {
   
     super.viewDidLoad()
@@ -149,7 +85,7 @@ extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSourc
     guard let param = selectedEntry.params[safe: component - 1] else {
       return nil
     }
-    return param.titleAt(index: row)?.colorize(color: .white)
+    return param.titleAt(index: row).colorize(color: .white)
   }
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     if component == 0 {
