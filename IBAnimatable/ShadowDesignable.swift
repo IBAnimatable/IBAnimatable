@@ -70,9 +70,9 @@ public extension ShadowDesignable where Self: UIView {
     commonSetup()
     // if a layer mask is specified, display the shadow to match the mask
     if let mask = layer.mask as? CAShapeLayer {
-      mask.masksToBounds = false
       if let unwrappedShadowColor = shadowColor {
-        mask.shadowColor = unwrappedShadowColor.CGColor
+//        layer.shadowColor = unwrappedShadowColor.CGColor
+//        mask.shadowColor = unwrappedShadowColor.CGColor
       }
       if !shadowRadius.isNaN && shadowRadius > 0 {
         mask.shadowRadius = shadowRadius

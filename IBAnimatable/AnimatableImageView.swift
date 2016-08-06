@@ -119,7 +119,8 @@ import UIKit
   @IBInspectable public var maskType: String? {
     didSet {
       configMask()
-      configBorder()      
+      configBorder()
+      configMaskShadow()
     }
   }
   
@@ -161,6 +162,7 @@ import UIKit
   private func configAfterLayoutSubviews() {
     configMask()
     configBorder()
+    configMaskShadow()
     configGradient()    
   }
 }
