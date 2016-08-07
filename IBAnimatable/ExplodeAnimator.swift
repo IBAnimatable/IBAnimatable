@@ -74,7 +74,7 @@ private extension ExplodeAnimator {
       for y in 0.0.stride(to: Double(size.height), by: Double(size.width / yFactor)) {
         let snapshotRegion = CGRect(x: CGFloat(x), y: CGFloat(y), width: size.width / xFactor, height: size.height / yFactor)
         let snapshot = fromViewSnapshot!.resizableSnapshotViewFromRect(snapshotRegion, afterScreenUpdates: false, withCapInsets: UIEdgeInsetsZero)
-        snapshot!.frame = snapshotRegion
+        snapshot?.frame = snapshotRegion
         containerView.addSubview(snapshot!)
         snapshots.append(snapshot!)
       }
