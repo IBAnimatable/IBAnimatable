@@ -10,7 +10,7 @@
         <!--User Interface-->
         <scene sceneID="QNm-Wq-94X">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="dM8-H6-op1" sceneMemberID="viewController">
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="dM8-H6-op1" customClass="UserInterfaceTableViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="O3U-8W-uIX" customClass="AnimatableTableView" customModule="IBAnimatable">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,6 +95,58 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="PoL-vc-Mg0" kind="show" id="JAi-ug-V0k"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="transitionCell" textLabel="t5m-Ei-nOr" style="IBUITableViewCellStyleDefault" id="AkO-ey-85U" userLabel="uiCell" customClass="AnimatableTableViewCell" customModule="IBAnimatable">
+                                        <rect key="frame" x="0.0" y="231" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AkO-ey-85U" id="PXI-Fe-iHY">
+                                            <frame key="frameInset" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Predefined gradients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t5m-Ei-nOr">
+                                                    <frame key="frameInset" minX="15" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="YvY-Pr-4LY" kind="show" identifier="predefinedGradients" id="YbK-KU-kwV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="transitionCell" textLabel="i9c-8y-AYA" style="IBUITableViewCellStyleDefault" id="0w5-J3-37R" userLabel="uiCell" customClass="AnimatableTableViewCell" customModule="IBAnimatable">
+                                        <rect key="frame" x="0.0" y="275" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0w5-J3-37R" id="G1s-we-dSo">
+                                            <frame key="frameInset" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Gradients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="i9c-8y-AYA">
+                                                    <frame key="frameInset" minX="15" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="YvY-Pr-4LY" kind="show" identifier="gradients" id="JfQ-7P-WNG"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -202,7 +254,7 @@
                 <viewControllerPlaceholder storyboardName="UserInterfaceMask" id="KX0-ct-vLn" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5o5-kn-ytD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4016" y="139"/>
+            <point key="canvasLocation" x="4016" y="142"/>
         </scene>
         <!--Blur Effect View Controller-->
         <scene sceneID="s8q-i0-Ylo">
@@ -293,9 +345,105 @@ Opacity</string>
             </objects>
             <point key="canvasLocation" x="4826" y="500"/>
         </scene>
+        <!--Gradient View Controller-->
+        <scene sceneID="Mwp-lR-EKb">
+            <objects>
+                <viewController id="YvY-Pr-4LY" customClass="GradientViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ikd-bO-u5R"/>
+                        <viewControllerLayoutGuide type="bottom" id="X5N-ZI-UcX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z40-Jj-Oog">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fw-ra-H6G">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kkv-v8-Cje" customClass="AnimatableView" customModule="IBAnimatable">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="kkv-v8-Cje" firstAttribute="width" secondItem="3fw-ra-H6G" secondAttribute="width" multiplier="0.8" id="GhZ-Ev-dsx"/>
+                                    <constraint firstItem="kkv-v8-Cje" firstAttribute="centerX" secondItem="3fw-ra-H6G" secondAttribute="centerX" id="Ghb-Tf-Ci2"/>
+                                    <constraint firstItem="kkv-v8-Cje" firstAttribute="centerY" secondItem="3fw-ra-H6G" secondAttribute="centerY" id="QBa-hL-oGb"/>
+                                    <constraint firstItem="kkv-v8-Cje" firstAttribute="height" secondItem="3fw-ra-H6G" secondAttribute="height" multiplier="0.8" id="SKy-bS-bGX"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="geM-Xi-OPu">
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Nqu-D0-H8B" userLabel="Picker Stack View" customClass="AnimatableStackView" customModule="IBAnimatable">
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="K1A-Kj-GZy">
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gradient" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0n0-qM-8fb">
+                                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Point" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWx-3V-eg8">
+                                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="oR0-lh-W59"/>
+                                                </constraints>
+                                                <edgeInsets key="layoutMargins" top="0.0" left="10" bottom="0.0" right="10"/>
+                                            </stackView>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8xa-8F-tKb">
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="YvY-Pr-4LY" id="tVO-YO-D7Z"/>
+                                                    <outlet property="delegate" destination="YvY-Pr-4LY" id="0AL-OO-SVm"/>
+                                                </connections>
+                                            </pickerView>
+                                        </subviews>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Nqu-D0-H8B" firstAttribute="leading" secondItem="geM-Xi-OPu" secondAttribute="leading" id="1tc-Bc-rdG"/>
+                                    <constraint firstItem="Nqu-D0-H8B" firstAttribute="top" secondItem="geM-Xi-OPu" secondAttribute="top" id="UaO-Es-EJh"/>
+                                    <constraint firstAttribute="bottom" secondItem="Nqu-D0-H8B" secondAttribute="bottom" id="Xpv-AQ-x3I"/>
+                                    <constraint firstAttribute="trailing" secondItem="Nqu-D0-H8B" secondAttribute="trailing" id="c3a-p0-LUd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="geM-Xi-OPu" firstAttribute="leading" secondItem="Z40-Jj-Oog" secondAttribute="leading" id="9lD-9G-WtV"/>
+                            <constraint firstAttribute="bottom" secondItem="geM-Xi-OPu" secondAttribute="bottom" id="DgI-cd-lft"/>
+                            <constraint firstItem="3fw-ra-H6G" firstAttribute="top" secondItem="Ikd-bO-u5R" secondAttribute="bottom" id="LNq-CG-v8c"/>
+                            <constraint firstAttribute="trailing" secondItem="3fw-ra-H6G" secondAttribute="trailing" id="i8Y-Bx-X33"/>
+                            <constraint firstItem="geM-Xi-OPu" firstAttribute="top" secondItem="3fw-ra-H6G" secondAttribute="bottom" id="t6I-5J-ZXM"/>
+                            <constraint firstAttribute="trailing" secondItem="geM-Xi-OPu" secondAttribute="trailing" id="wIR-7e-Y2R"/>
+                            <constraint firstItem="3fw-ra-H6G" firstAttribute="leading" secondItem="Z40-Jj-Oog" secondAttribute="leading" id="zSP-al-W3V"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gView" destination="kkv-v8-Cje" id="ewH-FI-1fX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vYO-4A-30X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3780" y="591"/>
+        </scene>
     </scenes>
     <resources>
         <image name="back" width="21" height="21"/>
         <image name="login-bg" width="375" height="667"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="JfQ-7P-WNG"/>
+    </inferredMetricsTieBreakers>
 </document>
