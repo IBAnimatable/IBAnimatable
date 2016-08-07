@@ -48,8 +48,18 @@ import UIKit
   // MARK: - GradientDesignable
   @IBInspectable public var startColor: UIColor?
   @IBInspectable public var endColor: UIColor?
-  @IBInspectable public var predefinedGradient: String?
-  @IBInspectable public var startPoint: String?
+  public var predefinedGradient: GradientType?
+  @IBInspectable var _predefinedGradient: String? {
+    didSet {
+      predefinedGradient = GradientType(string: _predefinedGradient)
+    }
+  }
+public var startPoint: GradientStartPoint = .top
+  @IBInspectable var _startPoint: String? {
+    didSet {
+      startPoint = GradientStartPoint(string: _startPoint, default: .top)
+    }
+  }
   
   // MARK: - Animatable
 public var animationType: AnimationType = .none

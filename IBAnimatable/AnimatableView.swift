@@ -13,7 +13,7 @@ import UIKit
       configCornerRadius()
     }
   }
-
+  
   // MARK: - FillDesignable
   @IBInspectable public var fillColor: UIColor? {
     didSet {
@@ -96,7 +96,7 @@ import UIKit
     }
   }
   
-public var vibrancyEffectStyle: UIBlurEffectStyle? {
+  public var vibrancyEffectStyle: UIBlurEffectStyle? {
     didSet {
       configBlurEffectStyle()
     }
@@ -106,7 +106,7 @@ public var vibrancyEffectStyle: UIBlurEffectStyle? {
       vibrancyEffectStyle = UIBlurEffectStyle(string: _vibrancyEffectStyle)
     }
   }
-
+  
   @IBInspectable public var blurOpacity: CGFloat = CGFloat.nan {
     didSet {
       configBlurEffectStyle()
@@ -122,8 +122,18 @@ public var vibrancyEffectStyle: UIBlurEffectStyle? {
   // MARK: - GradientDesignable
   @IBInspectable public var startColor: UIColor?
   @IBInspectable public var endColor: UIColor?
-  @IBInspectable public var predefinedGradient: String?
-  @IBInspectable public var startPoint: String?
+  public var predefinedGradient: GradientType?
+  @IBInspectable var _predefinedGradient: String? {
+    didSet {
+      predefinedGradient = GradientType(string: _predefinedGradient)
+    }
+  }
+  public var startPoint: GradientStartPoint = .top
+  @IBInspectable var _startPoint: String? {
+    didSet {
+      startPoint = GradientStartPoint(string: _startPoint, default: .top)
+    }
+  }
   
   // MARK: - MaskDesignable
   public var maskType: MaskType = .none {
@@ -139,12 +149,12 @@ public var vibrancyEffectStyle: UIBlurEffectStyle? {
       maskType = MaskType(string: _maskType)
     }
   }
-
+  
   // MARK: - Animatable
-public var animationType: AnimationType = .none
-@IBInspectable  var _animationType: String? {
+  public var animationType: AnimationType = .none
+  @IBInspectable  var _animationType: String? {
     didSet {
-     animationType = AnimationType(string: _animationType)
+      animationType = AnimationType(string: _animationType)
     }
   }
   @IBInspectable public var autoRun: Bool = true
@@ -175,7 +185,7 @@ public var animationType: AnimationType = .none
   // MARK: - Private
   private func configInspectableProperties() {
     configAnimatableProperties()
-    configTintedColor()    
+    configTintedColor()
   }
   
   private func configAfterLayoutSubviews() {
