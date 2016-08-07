@@ -71,8 +71,8 @@ public class ContainerTransition: NSObject {
 
 extension ContainerTransition: UIViewControllerContextTransitioning {
   
-  public func containerView() -> UIView? {
-    return container
+  public func containerView() -> UIView {
+    return container!
   }
   
   public func viewControllerForKey(key: String) -> UIViewController? {
@@ -107,5 +107,6 @@ extension ContainerTransition: UIViewControllerContextTransitioning {
   public func updateInteractiveTransition(percentComplete: CGFloat) {}
   public func finishInteractiveTransition() {}
   public func cancelInteractiveTransition() {}
+  public func pauseInteractiveTransition() {}
   
 }
