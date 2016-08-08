@@ -136,14 +136,14 @@ private extension NatGeoAnimator {
 
 private extension NatGeoAnimator {
 
-  func sourceFirstTransform(inout layer: CALayer) {
+  func sourceFirstTransform( inout layer: CALayer) {
     var transform = CATransform3DIdentity
     transform.m34 = 1.0 / -500
     transform = CATransform3DTranslate(transform, 0.0, 0.0, 0.0)
     layer.transform = transform
   }
   
-  func sourceLastTransform(inout layer: CALayer) {
+  func sourceLastTransform( inout layer: CALayer) {
     var transform = CATransform3DIdentity
     transform.m34 = 1.0 / -500.0
     transform = CATransform3DRotate(transform, radianFromDegree(80), 0.0, 1.0, 0.0)

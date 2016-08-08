@@ -108,19 +108,20 @@ private extension FlipAnimator {
     let width = valuesForAxe(view.frame.size.width / 2, reverseValue: view.frame.size.width)
     let height = valuesForAxe(view.frame.size.height, reverseValue: view.frame.size.height / 2)
     var snapshotRegion = CGRect(x: 0, y: 0, width: width.0, height: height.0)
+    
     let leftHandView = view.resizableSnapshotViewFromRect(snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: UIEdgeInsetsZero)
-    leftHandView.frame = snapshotRegion
-    containerView?.addSubview(leftHandView)
+    leftHandView?.frame = snapshotRegion
+    containerView?.addSubview(leftHandView!)
 
     let x = valuesForAxe(view.frame.size.width / 2, reverseValue: 0)
     let y = valuesForAxe(0, reverseValue: view.frame.size.height / 2)
     snapshotRegion = CGRect(x: x.0, y: y.0, width: width.0, height: height.0)
     let rightHandView = view.resizableSnapshotViewFromRect(snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: UIEdgeInsetsZero)
-    rightHandView.frame = snapshotRegion
-    containerView?.addSubview(rightHandView)
+    rightHandView?.frame = snapshotRegion
+    containerView?.addSubview(rightHandView!)
 
     containerView?.sendSubviewToBack(view)
-    return [leftHandView, rightHandView]
+    return [leftHandView!, rightHandView!]
   }
   
   func addShadow(toView view: UIView, reverse: Bool) -> UIView {
