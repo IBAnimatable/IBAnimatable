@@ -24,6 +24,8 @@ As a designer, we love Sketch, which is a simple but yet super powerful tool to 
 ## Interested in Swift 3?
 Please check out [swift3 branch](https://github.com/IBAnimatable/IBAnimatable/tree/swift3), we are working on cool stuff.
 
+You can also check out [swift2.3 branch](https://github.com/IBAnimatable/IBAnimatable/tree/swift2.3) for Swift 2.3 support.
+
 ## Languages
 [中文](Documentation/README.zh.md)
 
