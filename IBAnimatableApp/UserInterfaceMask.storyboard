@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11173.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="k2L-qG-cu1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11185.3" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="k2L-qG-cu1">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11143.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11151.4"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -45,6 +45,11 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </pickerView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="QLL-9P-hHt" firstAttribute="leading" secondItem="Jc6-Cd-Bae" secondAttribute="leading" id="Mcu-Op-5SA"/>
+                                    <constraint firstAttribute="bottom" secondItem="QLL-9P-hHt" secondAttribute="bottom" id="OAD-o3-ljf"/>
+                                    <constraint firstAttribute="trailing" secondItem="QLL-9P-hHt" secondAttribute="trailing" id="sso-pi-DGR"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -67,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wsW-nl-gYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="654" y="227"/>
+            <point key="canvasLocation" x="653.60000000000002" y="226.23688155922042"/>
         </scene>
     </scenes>
 </document>

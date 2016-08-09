@@ -8,7 +8,6 @@ import IBAnimatable
 
 class MaskViewController: UIViewController {
   
-  var maskType: String?
   
   @IBOutlet var maskedView: AnimatableView!
   // @IBOutlet var maskedImageView: AnimatableImageView!

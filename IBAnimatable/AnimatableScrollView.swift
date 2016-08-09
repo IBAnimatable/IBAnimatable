@@ -21,32 +21,32 @@ import UIKit
       configFillColor()
     }
   }
-
+  
   @IBInspectable public var predefinedColor: String? {
     didSet {
       configFillColor()
     }
   }
-
+  
   @IBInspectable public var opacity: CGFloat = CGFloat.nan {
     didSet {
       configOpacity()
     }
   }
-
+  
   // MARK: - BorderDesignable
   @IBInspectable public var borderColor: UIColor? {
     didSet {
       configBorder()
     }
   }
-
+  
   @IBInspectable public var borderWidth: CGFloat = CGFloat.nan {
     didSet {
       configBorder()
     }
   }
-
+  
   @IBInspectable public var borderSide: String? {
     didSet {
       configBorder()
@@ -59,7 +59,7 @@ import UIKit
       configRotate()
     }
   }
-
+  
   // MARK: - ShadowDesignable
   @IBInspectable public var shadowColor: UIColor? {
     didSet {
@@ -95,8 +95,8 @@ import UIKit
       blurEffectStyle = UIBlurEffectStyle(string: _blurEffectStyle)
     }
   }
-
-public var vibrancyEffectStyle: UIBlurEffectStyle? {
+  
+  public var vibrancyEffectStyle: UIBlurEffectStyle? {
     didSet {
       configBlurEffectStyle()
     }
@@ -106,24 +106,34 @@ public var vibrancyEffectStyle: UIBlurEffectStyle? {
       vibrancyEffectStyle = UIBlurEffectStyle(string: _vibrancyEffectStyle)
     }
   }
-
+  
   @IBInspectable public var blurOpacity: CGFloat = CGFloat.nan {
     didSet {
       configBlurEffectStyle()
     }
   }
-
+  
   // MARK: - TintDesignable
   @IBInspectable public var tintOpacity: CGFloat = CGFloat.nan
   @IBInspectable public var shadeOpacity: CGFloat = CGFloat.nan
   @IBInspectable public var toneColor: UIColor?
   @IBInspectable public var toneOpacity: CGFloat = CGFloat.nan
-
+  
   // MARK: - GradientDesignable
   @IBInspectable public var startColor: UIColor?
   @IBInspectable public var endColor: UIColor?
-  @IBInspectable public var predefinedGradient: String?
-  @IBInspectable public var startPoint: String?
+  public var predefinedGradient: GradientType?
+  @IBInspectable var _predefinedGradient: String? {
+    didSet {
+      predefinedGradient = GradientType(string: _predefinedGradient)
+    }
+  }
+  public var startPoint: GradientStartPoint = .top
+  @IBInspectable var _startPoint: String? {
+    didSet {
+      startPoint = GradientStartPoint(string: _startPoint, default: .top)
+    }
+  }
   
   // MARK: - MaskDesignable
   public var maskType: MaskType = .none {
@@ -141,10 +151,10 @@ public var vibrancyEffectStyle: UIBlurEffectStyle? {
   }
   
   // MARK: - Animatable
-public var animationType: AnimationType = .none
-@IBInspectable  var _animationType: String? {
+  public var animationType: AnimationType = .none
+  @IBInspectable var _animationType: String? {
     didSet {
-     animationType = AnimationType(string: _animationType)
+      animationType = AnimationType(string: _animationType)
     }
   }
   @IBInspectable public var autoRun: Bool = true
@@ -160,24 +170,24 @@ public var animationType: AnimationType = .none
     super.prepareForInterfaceBuilder()
     configInspectableProperties()
   }
-
+  
   public override func awakeFromNib() {
     super.awakeFromNib()
     configInspectableProperties()
   }
-
+  
   public override func layoutSubviews() {
     super.layoutSubviews()
     configAfterLayoutSubviews()
     autoRunAnimation()
   }
-
+  
   // MARK: - Private
   private func configInspectableProperties() {
     configAnimatableProperties()
-    configTintedColor()  
+    configTintedColor()
   }
-
+  
   private func configAfterLayoutSubviews() {
     configMask()
     configBorder()

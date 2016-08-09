@@ -29,7 +29,7 @@ import UIKit
   
   // MARK: - Animatable
   public var animationType: AnimationType = .none
-  @IBInspectable  var _animationType: String? {
+  @IBInspectable var _animationType: String? {
     didSet {
       animationType = AnimationType(string: _animationType)
     }

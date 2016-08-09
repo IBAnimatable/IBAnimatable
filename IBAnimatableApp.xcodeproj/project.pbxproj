@@ -11,8 +11,10 @@
 		33A8B9F01C7E7A4C00082529 /* TransitionFromDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8B9EE1C7E7A4C00082529 /* TransitionFromDirection.swift */; };
 		731205811D28A3830009BCAC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731205801D28A3830009BCAC /* Utils.swift */; };
 		732485D71D4902510068FD93 /* ParamType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732485D61D4902510068FD93 /* ParamType.swift */; };
+		733323031D56BCF200B88F6E /* UserInterfaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733323021D56BCF200B88F6E /* UserInterfaceTableViewController.swift */; };
 		734DAFF31D493EB6007E830B /* BlurEffectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734DAFF21D493EB6007E830B /* BlurEffectViewController.swift */; };
 		73B7D8861D233FB700DD3F43 /* IBEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B7D8851D233FB700DD3F43 /* IBEnum.swift */; };
+		73BDE6EC1D5654ED00D19EAE /* GradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BDE6EB1D5654ED00D19EAE /* GradientViewController.swift */; };
 		73CF12281D4828EE0025404E /* SystemTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56645FCD11BEC66200818 /* SystemTransitionType.swift */; };
 		73ED71F81D34CA4700755C9B /* AnimationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED71F71D34CA4700755C9B /* AnimationsViewController.swift */; };
 		AE0D309A1CE149150093B578 /* UserInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE0D30991CE149150093B578 /* UserInterface.storyboard */; };
@@ -79,7 +81,6 @@
 		AE6C21061C842A0F00DB6892 /* TransitionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6C21051C842A0F00DB6892 /* TransitionTableViewController.swift */; };
 		AE7C26111CB4F680002CF125 /* InteractiveAnimatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7C26101CB4F680002CF125 /* InteractiveAnimatorFactory.swift */; };
 		AE87646C1D232F1D0044E0AB /* UserInterfaceMask.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE87646B1D232F1D0044E0AB /* UserInterfaceMask.storyboard */; };
-		AE87646E1D2331010044E0AB /* UserInterfaceMaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE87646D1D2331010044E0AB /* UserInterfaceMaskTableViewController.swift */; };
 		AE8764701D2332F60044E0AB /* MaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE87646F1D2332F60044E0AB /* MaskViewController.swift */; };
 		AE8964DB1C2CC0D100D3E9F0 /* RootWindowDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8964DA1C2CC0D100D3E9F0 /* RootWindowDesignable.swift */; };
 		AE8A4FFA1C856EEC00E9E368 /* TransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8A4FF91C856EEC00E9E368 /* TransitionViewController.swift */; };
@@ -160,8 +161,10 @@
 		33A8B9EE1C7E7A4C00082529 /* TransitionFromDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionFromDirection.swift; sourceTree = "<group>"; };
 		731205801D28A3830009BCAC /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		732485D61D4902510068FD93 /* ParamType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParamType.swift; sourceTree = "<group>"; };
+		733323021D56BCF200B88F6E /* UserInterfaceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInterfaceTableViewController.swift; sourceTree = "<group>"; };
 		734DAFF21D493EB6007E830B /* BlurEffectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurEffectViewController.swift; sourceTree = "<group>"; };
 		73B7D8851D233FB700DD3F43 /* IBEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBEnum.swift; sourceTree = "<group>"; };
+		73BDE6EB1D5654ED00D19EAE /* GradientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientViewController.swift; sourceTree = "<group>"; };
 		73ED71F71D34CA4700755C9B /* AnimationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationsViewController.swift; sourceTree = "<group>"; };
 		AE0B0FE91C25372200E36B78 /* TableViewCellDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellDesignable.swift; sourceTree = "<group>"; };
 		AE0B0FEB1C26397700E36B78 /* AnimatableCheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableCheckBox.swift; sourceTree = "<group>"; };
@@ -209,7 +212,6 @@
 		AE81DB4D1C11DF00000AEB20 /* BlurEffectStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlurEffectStyle.swift; path = IBAnimatable/BlurEffectStyle.swift; sourceTree = SOURCE_ROOT; };
 		AE81DB4F1C12E060000AEB20 /* RotationDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RotationDesignable.swift; path = IBAnimatable/RotationDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AE87646B1D232F1D0044E0AB /* UserInterfaceMask.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserInterfaceMask.storyboard; sourceTree = "<group>"; };
-		AE87646D1D2331010044E0AB /* UserInterfaceMaskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInterfaceMaskTableViewController.swift; sourceTree = "<group>"; };
 		AE87646F1D2332F60044E0AB /* MaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskViewController.swift; sourceTree = "<group>"; };
 		AE8964DA1C2CC0D100D3E9F0 /* RootWindowDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootWindowDesignable.swift; path = IBAnimatable/RootWindowDesignable.swift; sourceTree = SOURCE_ROOT; };
 		AE8A4FF91C856EEC00E9E368 /* TransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionViewController.swift; sourceTree = "<group>"; };
@@ -469,12 +471,13 @@
 				AED57AE41CE5C0CB00C359E3 /* TransitionPushedViewController.swift */,
 				AEDB24D01CE9EC0F0086612C /* TransitionPresentedViewController.swift */,
 				AE1B9A651CE3EB100098D962 /* InteractionTableViewController.swift */,
-				AE87646D1D2331010044E0AB /* UserInterfaceMaskTableViewController.swift */,
 				AE87646F1D2332F60044E0AB /* MaskViewController.swift */,
 				E25EC6E61CDE034300743DB8 /* ContainerTransitionViewController.swift */,
 				73ED71F71D34CA4700755C9B /* AnimationsViewController.swift */,
 				732485D61D4902510068FD93 /* ParamType.swift */,
 				734DAFF21D493EB6007E830B /* BlurEffectViewController.swift */,
+				73BDE6EB1D5654ED00D19EAE /* GradientViewController.swift */,
+				733323021D56BCF200B88F6E /* UserInterfaceTableViewController.swift */,
 			);
 			name = code;
 			sourceTree = "<group>";
@@ -880,11 +883,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				733323031D56BCF200B88F6E /* UserInterfaceTableViewController.swift in Sources */,
 				AE1B9A661CE3EB100098D962 /* InteractionTableViewController.swift in Sources */,
 				AE8764701D2332F60044E0AB /* MaskViewController.swift in Sources */,
+				73BDE6EC1D5654ED00D19EAE /* GradientViewController.swift in Sources */,
 				AE8A4FFA1C856EEC00E9E368 /* TransitionViewController.swift in Sources */,
 				73ED71F81D34CA4700755C9B /* AnimationsViewController.swift in Sources */,
-				AE87646E1D2331010044E0AB /* UserInterfaceMaskTableViewController.swift in Sources */,
 				AEDB24D31CE9EEB30086612C /* UIViewControllerExtension.swift in Sources */,
 				AED57AE51CE5C0CB00C359E3 /* TransitionPushedViewController.swift in Sources */,
 				AE6C21061C842A0F00DB6892 /* TransitionTableViewController.swift in Sources */,
