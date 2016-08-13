@@ -88,7 +88,7 @@
 		AED1A1031BFE9820001346FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED1A0FA1BFE9820001346FA /* AppDelegate.swift */; };
 		AED1A1041BFE9820001346FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AED1A0FB1BFE9820001346FA /* Assets.xcassets */; };
 		AED1A1051BFE9820001346FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AED1A0FD1BFE9820001346FA /* LaunchScreen.storyboard */; };
-		AED1A1061BFE9820001346FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AED1A0FF1BFE9820001346FA /* Main.storyboard */; };
+		AED1A1061BFE9820001346FA /* DemoApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AED1A0FF1BFE9820001346FA /* DemoApp.storyboard */; };
 		AED57AE51CE5C0CB00C359E3 /* TransitionPushedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED57AE41CE5C0CB00C359E3 /* TransitionPushedViewController.swift */; };
 		AEDB24D11CE9EC0F0086612C /* TransitionPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDB24D01CE9EC0F0086612C /* TransitionPresentedViewController.swift */; };
 		AEDB24D31CE9EEB30086612C /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDB24D21CE9EEB30086612C /* UIViewControllerExtension.swift */; };
@@ -146,6 +146,7 @@
 		E2D33E551D3A5557006F2492 /* PresentationPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D33E541D3A5557006F2492 /* PresentationPresentedViewController.swift */; };
 		E2D33E571D3A59B8006F2492 /* PresentationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D33E561D3A59B8006F2492 /* PresentationsTableViewController.swift */; };
 		E2DAD63B1D5F5CC600333ABF /* DropDownAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DAD63A1D5F5CC600333ABF /* DropDownAnimator.swift */; };
+		E2DAD6311D5F141F00333ABF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2DAD6301D5F141F00333ABF /* Main.storyboard */; };
 		E2E28E6C1C6A6C30003F3852 /* GradientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6A1C6A6C30003F3852 /* GradientType.swift */; };
 		E2E28E6F1C6A6D22003F3852 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */; };
 		E2F45B571CDB845F001D2E37 /* FlipAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F45B561CDB845F001D2E37 /* FlipAnimator.swift */; };
@@ -230,7 +231,7 @@
 		AED1A0FA1BFE9820001346FA /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = IBAnimatableApp/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		AED1A0FB1BFE9820001346FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = IBAnimatableApp/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		AED1A0FE1BFE9820001346FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AED1A1001BFE9820001346FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		AED1A1001BFE9820001346FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DemoApp.storyboard; sourceTree = "<group>"; };
 		AED1A1011BFE9820001346FA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = IBAnimatableApp/Info.plist; sourceTree = SOURCE_ROOT; };
 		AED1A1091BFE983A001346FA /* AnimatableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableButton.swift; path = IBAnimatable/AnimatableButton.swift; sourceTree = SOURCE_ROOT; };
 		AED1A10A1BFE983A001346FA /* Animatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Animatable.swift; path = IBAnimatable/Animatable.swift; sourceTree = SOURCE_ROOT; };
@@ -312,6 +313,7 @@
 		E2D33E541D3A5557006F2492 /* PresentationPresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationPresentedViewController.swift; sourceTree = "<group>"; };
 		E2D33E561D3A59B8006F2492 /* PresentationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationsTableViewController.swift; sourceTree = "<group>"; };
 		E2DAD63A1D5F5CC600333ABF /* DropDownAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownAnimator.swift; sourceTree = "<group>"; };
+		E2DAD6301D5F141F00333ABF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E2E28E6A1C6A6C30003F3852 /* GradientType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientType.swift; sourceTree = "<group>"; };
 		E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		E2E28E711C6A6E70003F3852 /* GradientsTypeScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GradientsTypeScript.swift; path = Scripts/GradientsTypeScript.swift; sourceTree = SOURCE_ROOT; };
@@ -538,7 +540,8 @@
 				AED1A0FA1BFE9820001346FA /* AppDelegate.swift */,
 				AED1A0FB1BFE9820001346FA /* Assets.xcassets */,
 				AED1A0FD1BFE9820001346FA /* LaunchScreen.storyboard */,
-				AED1A0FF1BFE9820001346FA /* Main.storyboard */,
+				E2DAD6301D5F141F00333ABF /* Main.storyboard */,
+				AED1A0FF1BFE9820001346FA /* DemoApp.storyboard */,
 				AE28D0551CDFF7D50043273C /* IBAnimatable Playground */,
 				AED1A1011BFE9820001346FA /* Info.plist */,
 			);
@@ -774,7 +777,8 @@
 			files = (
 				AEC5F9CE1CF660A000F20354 /* TransitionsInInterfaceBuilder.storyboard in Resources */,
 				E2D33E511D3A5418006F2492 /* Presentations.storyboard in Resources */,
-				AED1A1061BFE9820001346FA /* Main.storyboard in Resources */,
+				AED1A1061BFE9820001346FA /* DemoApp.storyboard in Resources */,
+				E2DAD6311D5F141F00333ABF /* Main.storyboard in Resources */,
 				AE1B9A641CE3EA590098D962 /* Interactions.storyboard in Resources */,
 				AED1A1041BFE9820001346FA /* Assets.xcassets in Resources */,
 				AED1A1051BFE9820001346FA /* LaunchScreen.storyboard in Resources */,
@@ -971,12 +975,12 @@
 			path = ../IBAnimatableApp/Base.lproj;
 			sourceTree = "<group>";
 		};
-		AED1A0FF1BFE9820001346FA /* Main.storyboard */ = {
+		AED1A0FF1BFE9820001346FA /* DemoApp.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				AED1A1001BFE9820001346FA /* Base */,
 			);
-			name = Main.storyboard;
+			name = DemoApp.storyboard;
 			path = ../IBAnimatableApp/Base.lproj;
 			sourceTree = "<group>";
 		};
