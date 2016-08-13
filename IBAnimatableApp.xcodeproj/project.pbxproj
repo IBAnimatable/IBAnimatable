@@ -482,13 +482,9 @@
 			isa = PBXGroup;
 			children = (
 				AEF4938C1CE0161C00B76FD6 /* Playground.storyboard */,
-				AE0D30991CE149150093B578 /* UserInterface.storyboard */,
-				AE87646B1D232F1D0044E0AB /* UserInterfaceMask.storyboard */,
+				E2DAD6361D5F4B4A00333ABF /* UserInterface */,
+				E2DAD6371D5F4B6100333ABF /* Transitions / Presentations */,
 				AE0D309B1CE14A170093B578 /* Animations.storyboard */,
-				AE154B0E1C788A560093C05B /* Transitions.storyboard */,
-				AEC5F9CD1CF660A000F20354 /* TransitionsInInterfaceBuilder.storyboard */,
-				E2D33E501D3A5418006F2492 /* Presentations.storyboard */,
-				AE1B9A631CE3EA590098D962 /* Interactions.storyboard */,
 			);
 			name = storyboards;
 			sourceTree = "<group>";
@@ -665,6 +661,26 @@
 				E2DAD63A1D5F5CC600333ABF /* DropDownAnimator.swift */,
 			);
 			name = "presentation animator";
+			sourceTree = "<group>";
+		};
+		E2DAD6361D5F4B4A00333ABF /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				AE0D30991CE149150093B578 /* UserInterface.storyboard */,
+				AE87646B1D232F1D0044E0AB /* UserInterfaceMask.storyboard */,
+			);
+			name = UserInterface;
+			sourceTree = "<group>";
+		};
+		E2DAD6371D5F4B6100333ABF /* Transitions / Presentations */ = {
+			isa = PBXGroup;
+			children = (
+				AE154B0E1C788A560093C05B /* Transitions.storyboard */,
+				AEC5F9CD1CF660A000F20354 /* TransitionsInInterfaceBuilder.storyboard */,
+				E2D33E501D3A5418006F2492 /* Presentations.storyboard */,
+				AE1B9A631CE3EA590098D962 /* Interactions.storyboard */,
+			);
+			name = "Transitions / Presentations";
 			sourceTree = "<group>";
 		};
 		E2E28E701C6A6E5E003F3852 /* scripts */ = {
