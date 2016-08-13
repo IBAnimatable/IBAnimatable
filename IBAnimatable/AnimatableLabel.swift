@@ -46,12 +46,17 @@ import UIKit
     }
   }
   
-  @IBInspectable public var borderSide: String? {
+  public var borderSides: BorderSides  = .AllSides {
     didSet {
       configBorder()
     }
   }
-
+  
+  @IBInspectable public var _borderSides: String? {
+    didSet {
+      borderSides = BorderSides(rawValue: _borderSides)
+    }
+  }
   // MARK: - Animatable
 public var animationType: AnimationType = .none
 @IBInspectable  var _animationType: String? {
