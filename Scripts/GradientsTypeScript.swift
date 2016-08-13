@@ -1,39 +1,23 @@
 //#!/usr/bin/swift
 
 import Foundation
+import UIKit
 
-func getColorLiteral(hexString: String) -> String{
-  let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
-  var int = UInt32()
-  Scanner(string: hex).scanHexInt32(&int)
-  let a, r, g, b: UInt32
-  switch hex.characters.count {
-  case 3:
-    (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
-  case 6:
-    (a, r, g, b) = (255, int >> 16, int >> 8 & 0xFF, int & 0xFF)
-  case 8:
-    (a, r, g, b) = (int >> 24, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
-  default:
-    (a, r, g, b) = (1, 1, 1, 0)
-  }
-  
-  return "#colorLiteral(red: \(CGFloat(r) / 255), green: \(CGFloat(g) / 255), blue: \(CGFloat(b) / 255), alpha: \(CGFloat(a) / 255))"
-}
+let colorsTypeURL = "https://gist.githubusercontent.com/tkrugg/a577c32e93eecc6c7991/raw/f7866132e26f9bffcda9caf13dced55e4a99e145/flatuicolors.json"
 
-
-//MARK: - Script
-
-let gradientTypeURL = "https://raw.githubusercontent.com/Ghosh/uiGradients/master/gradients.json"
 
 func JSON(_ urlToRequest: String) -> Data {
-  return (try! Data(contentsOf: URL(string: urlToRequest)!))
+  guard let data = try? Data(contentsOf: URL(string: urlToRequest)!)else{
+    fatalError("URL Request failed")
+  }
+  return data
 }
 
-func parse(_ JSONData: Data) -> [[String: AnyObject]]? {
-  var json: [[String: AnyObject]]?
+
+func parseJSON(JSONData: Data) -> [String: String]? {
+  var json: [String: String]?
   do {
-    json = try JSONSerialization.jsonObject(with: JSONData, options: .mutableContainers) as? [[String: AnyObject]]
+    json = try JSONSerialization.jsonObject(with: JSONData, options: .mutableContainers) as? [String: String]
     return json
   } catch {
     print("JSON serialization did fail")
@@ -41,32 +25,47 @@ func parse(_ JSONData: Data) -> [[String: AnyObject]]? {
   }
 }
 
+
+func colorLiteral(r: Int, g: Int, b: Int, a: Double)->String{
+  return "#colorLiteral(red: \(CGFloat(r) / 255), green: \(CGFloat(g) / 255), blue: \(CGFloat(b) / 255), alpha: \(a))"
+  
+}
+
 // Generator constants
 let enumCase = "\tcase %@\n"
 let switchCase = "case .%@:\n"
-let colors =  "\treturn (%@,%@)\n"
+let color =  "\treturn %@ \n"
 let endEnumOrSwitch = "}"
 
 // Finale string
-var enumGradientType = "public enum GradientType: String {\n"
-var switchPredefinedGradientType = "switch gradientType {\n"
+var enumColorType = "public enum ColorType: String {\n"
+var switchColorType = "switch colorType {\n"
 
 // Enum generator
-let gradientsType = parse(JSON(gradientTypeURL))
-for gradient in gradientsType! {
-  if var name = gradient["name"] as? String,
-    let unwrappedColors = gradient["colors"] as? [String],
-    let startColor = unwrappedColors.first,
-    let endColor = unwrappedColors.last {
-    name = name.replacingOccurrences(of: " ", with: "")
-    enumGradientType += String(format: enumCase, name)
-    switchPredefinedGradientType += String(format: switchCase, name)
-    switchPredefinedGradientType += String(format: colors, getColorLiteral(hexString: startColor), getColorLiteral(hexString: endColor))
-  }
-}
+let colorsType: Dictionary? = parseJSON(JSONData: JSON(colorsTypeURL))
 
-enumGradientType += endEnumOrSwitch
-switchPredefinedGradientType += endEnumOrSwitch
-print(enumGradientType)
-print("\n")
-print(switchPredefinedGradientType)
+// Parsing
+if let uwnrappedColorsType = colorsType {
+  for colorName in uwnrappedColorsType.keys {
+    if var unwrappedRGBColors = uwnrappedColorsType[colorName] {
+      var finalName = colorName.capitalized(with: NSLocale.current)
+      finalName = finalName.replacingOccurrences(of: "-", with: "")
+      finalName = "flat" + finalName
+      enumColorType += String(format: enumCase, finalName)
+      switchColorType += String(format: switchCase, finalName)
+      
+      unwrappedRGBColors = unwrappedRGBColors.replacingOccurrences(of: "rgba(", with: "")
+      unwrappedRGBColors = unwrappedRGBColors.replacingOccurrences(of: ")", with: "")
+      unwrappedRGBColors = unwrappedRGBColors.replacingOccurrences(of: " ", with: "")
+      let colors = unwrappedRGBColors.components(separatedBy: ",")
+      print(colors)
+      switchColorType += String(format: color, colorLiteral(r: Int(colors[0])!, g: Int(colors[1])!, b: Int(colors[2])!, a: Double(colors[3])!))
+    }
+  }
+  
+  enumColorType += endEnumOrSwitch
+  switchColorType += endEnumOrSwitch
+  print(enumColorType)
+  print("\n")
+  print(switchColorType)
+}
