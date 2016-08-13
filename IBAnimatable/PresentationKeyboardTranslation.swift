@@ -5,12 +5,12 @@
 
 import UIKit
 
-public enum PresentationKeyboardTranslation {
+public enum ModalKeyboardTranslation {
   case None
   case MoveUp  
   case AboveKeyboard
 
-  static public func fromString(string: String?) -> PresentationKeyboardTranslation {
+  static public func fromString(string: String?) -> ModalKeyboardTranslation {
     if string == "MoveUp" {
       return .MoveUp
     } else if string == "AboveKeyboard" {

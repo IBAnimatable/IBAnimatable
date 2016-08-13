@@ -112,7 +112,7 @@ public class AnimatableModalViewController: UIViewController, PresentationDesign
 
   @IBInspectable public var keyboardTranslation: String? {
     didSet {
-      presenter?.presentationConfiguration?.keyboardTranslation = PresentationKeyboardTranslation.fromString(keyboardTranslation)
+      presenter?.presentationConfiguration?.keyboardTranslation = ModalKeyboardTranslation.fromString(keyboardTranslation)
     }
   }
 
@@ -172,7 +172,7 @@ private extension AnimatableModalViewController {
     presentationConfiguration.shadowOpacity = shadowOpacity
     presentationConfiguration.shadowRadius = shadowRadius
     presentationConfiguration.shadowOffset = shadowOffset
-    presentationConfiguration.keyboardTranslation = PresentationKeyboardTranslation.fromString(keyboardTranslation)
+    presentationConfiguration.keyboardTranslation = ModalKeyboardTranslation.fromString(keyboardTranslation)
     presenter?.presentationConfiguration = presentationConfiguration
   }
 }
