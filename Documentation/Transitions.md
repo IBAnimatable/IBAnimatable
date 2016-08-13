@@ -25,7 +25,7 @@ Once we configure those properties, **ALL Transition** (please notice it is all,
 
 ![Transition - Present Transition](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentTransition.gif)
 
-You can see the example in "TransitionsInInterfaceBuilder.storyboard" and play around different configurations. Then open the App and tap on "Forget Password" button, and tap on "transitions" cell to navigate to Transitions Scene. Tap on "IB" button to see the configurations you made in "TransitionsInInterfaceBuilder.storyboard".
+You can see the example in "TransitionsInInterfaceBuilder.storyboard" and play around different configurations. Then open the App and tap on "Playground" button, and tap on "transitions" cell to navigate to Transitions Scene. Tap on "IB" button to see the configurations you made in "TransitionsInInterfaceBuilder.storyboard".
 
 If you want to have separate animation effect for different **Present Transition**, see the section [Configuring Present transition in Interface Builder via Segue](#configuring-present-transition-in-interface-builder-via-segue).
 
@@ -63,7 +63,7 @@ You can see the example in "TransitionsInInterfaceBuilder.storyboard" and play a
 
 `IBAnimatable` provide a broad set of Transition Animators / Controllers. We can use them in Interface Builder as **Transition Animation** as described in [Configuring Present transition in Interface Builder](#configuring-present-transition-in-interface-builder) and [Configuring Push transition in Interface Builder](#configuring-push-transition-in-interface-builder), or programmatically in code. They are all standard Transition Animators / Controllers conform to `UIViewControllerAnimatedTransitioning`.
 
-You can see all supported Transition Animators in the demo App, open the App and tap on "Forget Password" button, then tap on "transitions" cell to see all transitions.
+You can see all supported Transition Animators in the demo App, open the App and tap on "Playground" button, then tap on "transitions" cell to see all transitions.
 
 ### FadeAnimator
 
