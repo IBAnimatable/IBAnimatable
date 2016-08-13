@@ -30,7 +30,7 @@ public protocol PresentationDesignable: class {
   /// The corner radius of the modal view
   var cornerRadius: CGFloat { get set }
   
-  
+
   /// If set to `true`, the modal view will dismiss when tap on the dimming view.
   var dismissOnTap: Bool { get set }
 
@@ -60,6 +60,10 @@ public protocol PresentationDesignable: class {
   
   /// The shadow offset of the modal view. If use this property, `cornerRadius` is ignored.
   var shadowOffset: CGPoint { get set }
+
+  /// Modal's translation when the keyboard is opening
+  var keyboardTranslation: String? { get set }
+
 }
 
 /// `PresentationConfiguration` a struct is used for specifying the dimming view and modal view for `AnimatablePresentationController`
@@ -76,4 +80,5 @@ public struct PresentationConfiguration {
   var shadowOffset: CGPoint = CGPoint(x: CGFloat.NaN, y: CGFloat.NaN)
   var modalPosition: PresentationModalPosition = .Center
   var modalSize: (PresentationModalSize, PresentationModalSize) = (.Half, .Half)
+  var keyboardTranslation = PresentationKeyboardTranslation.None
 }

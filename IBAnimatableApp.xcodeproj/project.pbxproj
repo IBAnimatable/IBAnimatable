@@ -147,6 +147,7 @@
 		E2D33E571D3A59B8006F2492 /* PresentationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D33E561D3A59B8006F2492 /* PresentationsTableViewController.swift */; };
 		E2DAD63B1D5F5CC600333ABF /* DropDownAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DAD63A1D5F5CC600333ABF /* DropDownAnimator.swift */; };
 		E2DAD6311D5F141F00333ABF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2DAD6301D5F141F00333ABF /* Main.storyboard */; };
+		E2DAD6391D5F4C2E00333ABF /* PresentationKeyboardTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DAD6381D5F4C2E00333ABF /* PresentationKeyboardTranslation.swift */; };
 		E2E28E6C1C6A6C30003F3852 /* GradientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6A1C6A6C30003F3852 /* GradientType.swift */; };
 		E2E28E6F1C6A6D22003F3852 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */; };
 		E2F45B571CDB845F001D2E37 /* FlipAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F45B561CDB845F001D2E37 /* FlipAnimator.swift */; };
@@ -314,6 +315,7 @@
 		E2D33E561D3A59B8006F2492 /* PresentationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationsTableViewController.swift; sourceTree = "<group>"; };
 		E2DAD63A1D5F5CC600333ABF /* DropDownAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownAnimator.swift; sourceTree = "<group>"; };
 		E2DAD6301D5F141F00333ABF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E2DAD6381D5F4C2E00333ABF /* PresentationKeyboardTranslation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationKeyboardTranslation.swift; sourceTree = "<group>"; };
 		E2E28E6A1C6A6C30003F3852 /* GradientType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientType.swift; sourceTree = "<group>"; };
 		E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		E2E28E711C6A6E70003F3852 /* GradientsTypeScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GradientsTypeScript.swift; path = Scripts/GradientsTypeScript.swift; sourceTree = SOURCE_ROOT; };
@@ -614,6 +616,7 @@
 				E210ABC01D3A9388001D0362 /* PresentationAnimationType.swift */,
 				E22183BC1D3BD47400866197 /* PresentationModalSize.swift */,
 				E22183BE1D3BD54B00866197 /* PresentationModalPosition.swift */,
+				E2DAD6381D5F4C2E00333ABF /* PresentationKeyboardTranslation.swift */,
 			);
 			name = enum;
 			sourceTree = "<group>";
@@ -860,6 +863,7 @@
 				E2472EA51C6F97F800A20E27 /* ColorType.swift in Sources */,
 				AE6B016D1C2A444900950BB2 /* GradientDesignable.swift in Sources */,
 				AE677B9B1CADCFA800D62273 /* TransitionHollowState.swift in Sources */,
+				E2DAD6391D5F4C2E00333ABF /* PresentationKeyboardTranslation.swift in Sources */,
 				E299DF5A1CD6025200EC30D4 /* CardsAnimator.swift in Sources */,
 				E222CDCA1CC4010800684CA0 /* PresentPortalWithDismissInteractionSegue.swift in Sources */,
 				E2614B611D23C94300BBBAFA /* AnimatableScrollView.swift in Sources */,

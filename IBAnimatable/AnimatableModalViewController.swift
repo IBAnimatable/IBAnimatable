@@ -110,6 +110,12 @@ public class AnimatableModalViewController: UIViewController, PresentationDesign
     }
   }
 
+  @IBInspectable public var keyboardTranslation: String? {
+    didSet {
+      presenter?.presentationConfiguration?.keyboardTranslation = PresentationKeyboardTranslation.fromString(keyboardTranslation)
+    }
+  }
+
   // MARK: Private
 
   private var presenter: PresentationPresenter?
@@ -143,7 +149,7 @@ public class AnimatableModalViewController: UIViewController, PresentationDesign
 
 private extension AnimatableModalViewController {
   func setupPresenter() {
-    // If not set, use the system default tranistion `.CoverVertical` which maps to `.Cover(fromDirection: .Bottom)`
+    // If not set, use the system default transition `.CoverVertical` which maps to `.Cover(fromDirection: .Bottom)`
     let animationType = PresentationAnimationType.fromString(presentationAnimationType ?? "") ?? .Cover(fromDirection: .Bottom)
     presenter = PresentationPresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration)
     presenter?.dismissalAnimationType = PresentationAnimationType.fromString(dismissalAnimationType ?? "")
@@ -166,6 +172,7 @@ private extension AnimatableModalViewController {
     presentationConfiguration.shadowOpacity = shadowOpacity
     presentationConfiguration.shadowRadius = shadowRadius
     presentationConfiguration.shadowOffset = shadowOffset
+    presentationConfiguration.keyboardTranslation = PresentationKeyboardTranslation.fromString(keyboardTranslation)
     presenter?.presentationConfiguration = presentationConfiguration
   }
 }
