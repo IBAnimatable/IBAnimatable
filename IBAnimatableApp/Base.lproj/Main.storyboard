@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11185.3" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7ne-VT-Tkk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11191" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7ne-VT-Tkk">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11151.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11156"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -97,7 +97,7 @@
                                     </button>
                                 </subviews>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Shake"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Shake"/>
                                 </userDefinedRuntimeAttributes>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8m-bE-oxM" userLabel="Create account Button">
@@ -142,7 +142,6 @@
                         <userDefinedRuntimeAttribute type="color" keyPath="rootWindowBackgroundColor">
                             <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="string" keyPath="transitionAnimationType" value="Fade"/>
                     </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oMr-Kw-Kza" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -186,7 +185,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5V6-mq-vby" userLabel="Add photo button" customClass="AnimatableButton" customModule="IBAnimatable">
                                         <state key="normal" image="add-photo"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Pop"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                                 <real key="value" value="0.80000000000000004"/>
                                             </userDefinedRuntimeAttribute>
@@ -234,15 +233,12 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.0" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="FadeInRight"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="FadeInRight"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                                 <real key="value" value="0.59999999999999998"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="username"/>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="fade"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="duration">
-                                                <real key="value" value="6"/>
-                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="slideFade(in,right)"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z51-4n-TE1" userLabel="Email text field" customClass="AnimatableTextField" customModule="IBAnimatable">
@@ -268,15 +264,12 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.0" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="FadeInRight"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="FadeInRight"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                                 <real key="value" value="0.65000000000000002"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="email"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="duration">
-                                                <real key="value" value="6"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="fade"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="slideFade(in,right)"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xLI-LO-iOO" userLabel="Password text field" customClass="AnimatableTextField" customModule="IBAnimatable">
@@ -302,15 +295,12 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.0" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="FadeInRight"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="FadeInRight"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                                 <real key="value" value="0.69999999999999996"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="password"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="duration">
-                                                <real key="value" value="6"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="fade"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="slideFade(in,right)"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Birthday" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eYa-ff-J33" userLabel="Birthday text field" customClass="AnimatableTextField" customModule="IBAnimatable">
@@ -336,15 +326,12 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.0" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="FadeInRight"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="FadeInRight"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                                 <real key="value" value="0.75"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="birthday"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="duration">
-                                                <real key="value" value="6"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="fade"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="slideFade(in,right)"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xdT-JQ-oZF" userLabel="Gender text field" customClass="AnimatableTextField" customModule="IBAnimatable">
@@ -370,15 +357,12 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.0" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="FadeInRight"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="FadeInRight"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                                 <real key="value" value="0.80000000000000004"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="gender"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="duration">
-                                                <real key="value" value="6"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="fade"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="slideFade(in,right)"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
@@ -512,8 +496,8 @@
                                                             <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                                                 <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Pop"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                                                 <real key="value" value="0.29999999999999999"/>
                                                             </userDefinedRuntimeAttribute>
@@ -522,7 +506,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                                         <color key="value" red="1" green="1" blue="1" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
@@ -531,7 +515,7 @@
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                                 <color key="value" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
@@ -544,7 +528,7 @@
                                     <constraint firstAttribute="width" constant="205" id="py2-XO-bFo"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                         <color key="value" red="1" green="1" blue="1" alpha="0.050000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
@@ -589,7 +573,7 @@
                         <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="5ZR-r8-RPW" customClass="AnimatableView" customModule="IBAnimatable">
-                            <frame key="frameInset" width="375" height="136"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="136"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="jakelin" translatesAutoresizingMaskIntoConstraints="NO" id="npw-qi-Lcq" userLabel="Jake Lin image view" customClass="AnimatableImageView" customModule="IBAnimatable">
@@ -598,7 +582,7 @@
                                         <constraint firstAttribute="width" constant="70" id="gMc-in-2Up"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                     </userDefinedRuntimeAttributes>
                                 </imageView>
                             </subviews>
@@ -915,8 +899,8 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                         <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Pop"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                         <real key="value" value="0.29999999999999999"/>
                                     </userDefinedRuntimeAttribute>
@@ -1039,8 +1023,8 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                         <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Pop"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                         <real key="value" value="0.29999999999999999"/>
                                     </userDefinedRuntimeAttribute>
@@ -1215,7 +1199,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1T-VM-qxC" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1231,7 +1215,7 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                                         <color key="value" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BXT-o5-GFK" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1244,7 +1228,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwa-HQ-LM1" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1257,7 +1241,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZeF-aS-KtJ" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1273,7 +1257,7 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                                         <color key="value" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjK-jI-GHN" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1289,7 +1273,7 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                                         <color key="value" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQW-jZ-6as" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1302,7 +1286,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                         </subviews>
@@ -1319,7 +1303,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="As3-op-6om" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1332,7 +1316,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIy-Qk-ADb" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1348,7 +1332,7 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                                         <color key="value" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aI-0n-hRK" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1361,7 +1345,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCy-zb-xiR" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1377,7 +1361,7 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                                         <color key="value" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfm-eb-Xcf" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1390,7 +1374,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEd-CN-jyn" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1406,7 +1390,7 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                                         <color key="value" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                         </subviews>
@@ -1423,7 +1407,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQG-4C-0UR" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1439,7 +1423,7 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                                         <color key="value" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fy-go-haN" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1452,7 +1436,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
@@ -1474,7 +1458,7 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                                         <color key="value" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbv-ce-WFh" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1487,7 +1471,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6P-Hl-4Fb" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1503,7 +1487,7 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                                         <color key="value" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7eo-xb-UKr" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1516,7 +1500,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                         </subviews>
@@ -1533,7 +1517,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MgD-6E-Nel" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1549,7 +1533,7 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                                         <color key="value" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GYo-cA-s8R" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1562,7 +1546,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljq-BG-jgx" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1575,7 +1559,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uA8-Z2-7ey" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1591,7 +1575,7 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                                         <color key="value" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VrZ-7i-ePC" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1607,7 +1591,7 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                                         <color key="value" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="olR-P9-qMa" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1620,7 +1604,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                         </subviews>
@@ -1640,7 +1624,7 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                                         <color key="value" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K27-bb-gLQ" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1653,7 +1637,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwQ-iy-vVv" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1666,7 +1650,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1SF-OS-bFZ" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1679,7 +1663,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0r-ih-vdo" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1692,7 +1676,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rmq-NI-jZU" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1705,7 +1689,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ax1-0J-4Be" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -1718,7 +1702,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                         </subviews>
@@ -1735,8 +1719,8 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                         <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Pop"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                         <real key="value" value="0.29999999999999999"/>
                                     </userDefinedRuntimeAttribute>
@@ -1912,7 +1896,7 @@
                                     <constraint firstAttribute="width" constant="210" id="vbD-Xl-0AA"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" red="0.31372549019607843" green="0.82352941176470584" blue="0.76078431372549016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
@@ -1977,7 +1961,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Frf-A3-9f7" userLabel="Snoozed view" customClass="AnimatableView" customModule="IBAnimatable">
@@ -1996,7 +1980,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jYj-Pg-Xf7" userLabel="Overdue view" customClass="AnimatableView" customModule="IBAnimatable">
@@ -2015,7 +1999,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="64" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ElE-Rf-fKE">
@@ -2058,8 +2042,8 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                         <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Pop"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                         <real key="value" value="0.29999999999999999"/>
                                     </userDefinedRuntimeAttribute>
@@ -2220,8 +2204,8 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                         <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Pop"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                         <real key="value" value="0.29999999999999999"/>
                                     </userDefinedRuntimeAttribute>
@@ -2304,7 +2288,7 @@
                                                         <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                                             <color key="value" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6R-ol-N5N">
@@ -2349,7 +2333,7 @@
                                                         <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                                             <color key="value" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hR3-yS-9OR">
@@ -2394,7 +2378,7 @@
                                                         <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                                             <color key="value" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVm-o5-y4z">
@@ -2439,7 +2423,7 @@
                                                         <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                                             <color key="value" red="1" green="1" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBP-ql-6Gq">
@@ -2508,8 +2492,8 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                         <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Pop"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                         <real key="value" value="0.29999999999999999"/>
                                     </userDefinedRuntimeAttribute>
@@ -2576,7 +2560,7 @@
                                             <constraint firstAttribute="height" constant="90" id="rxc-VS-agy"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jake Lin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUa-eb-qXm">
@@ -2630,7 +2614,7 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                         <real key="value" value="2"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMPLETED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="68" translatesAutoresizingMaskIntoConstraints="NO" id="4gi-RG-nkJ">
@@ -2679,7 +2663,7 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                         <real key="value" value="2"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SNOOZED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="68" translatesAutoresizingMaskIntoConstraints="NO" id="tUJ-dI-jeq">
@@ -2728,7 +2712,7 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                         <real key="value" value="2"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OVERDUE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="68" translatesAutoresizingMaskIntoConstraints="NO" id="8Ge-6v-4bf">
@@ -2788,7 +2772,7 @@
                                     <constraint firstItem="TvD-dJ-1aS" firstAttribute="centerX" secondItem="nAv-iq-QvP" secondAttribute="centerX" id="xvX-YC-gLf"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" red="0.31372549020000001" green="0.82352941180000006" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
@@ -2877,8 +2861,8 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                         <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Pop"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                         <real key="value" value="0.29999999999999999"/>
                                     </userDefinedRuntimeAttribute>
@@ -2944,7 +2928,7 @@
                                             <constraint firstAttribute="width" constant="70" id="x5B-wF-MMS"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZwC-ha-hwz">
@@ -3024,7 +3008,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.0" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="SlideInRight"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="slide(in,right)"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                                 <real key="value" value="0.29999999999999999"/>
                                             </userDefinedRuntimeAttribute>
@@ -3054,7 +3038,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.0" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="SlideInRight"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="slide(in,right)"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                                 <real key="value" value="0.34999999999999998"/>
                                             </userDefinedRuntimeAttribute>
@@ -3084,7 +3068,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.0" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="SlideInRight"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="slide(in,right)"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                                 <real key="value" value="0.40000000000000002"/>
                                             </userDefinedRuntimeAttribute>
@@ -3114,7 +3098,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.0" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="SlideInRight"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="slide(in,right)"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                                 <real key="value" value="0.45000000000000001"/>
                                             </userDefinedRuntimeAttribute>
@@ -3144,7 +3128,7 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.0" green="0.1137254902" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="SlideInRight"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="slide(in,right)"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                                 <real key="value" value="0.5"/>
                                             </userDefinedRuntimeAttribute>
@@ -3163,8 +3147,8 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
                                         <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Pop"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="delay">
                                         <real key="value" value="0.29999999999999999"/>
                                     </userDefinedRuntimeAttribute>
@@ -3221,7 +3205,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="iMt-0h-244">
-                            <frame key="frameInset" width="375" height="200"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="timeline-bg" translatesAutoresizingMaskIntoConstraints="NO" id="nix-9Y-ybX" userLabel="Background image view"/>
@@ -3307,7 +3291,7 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                             <real key="value" value="2"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -3384,7 +3368,7 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                             <real key="value" value="2"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -3451,7 +3435,7 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                             <real key="value" value="2"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -3519,7 +3503,7 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                             <real key="value" value="2"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -3589,7 +3573,7 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                             <real key="value" value="2"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="maskType" value="Circle"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="Circle"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -3644,7 +3628,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sqs-ho-F4M" id="O1Z-6u-Ii9">
-                                            <frame key="frameInset" width="375" height="80"/>
+                                            <frame key="frameInset" width="375" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZo-bc-vZ4" customClass="AnimatableCheckBox" customModule="IBAnimatable">
@@ -3655,7 +3639,7 @@
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checked"/>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="unchecked"/>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Pop"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mar 25, 2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3y-sH-hQ7">
@@ -3683,7 +3667,7 @@
                                         <rect key="frame" x="0.0" y="80" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0VB-n4-Rln" id="gO1-lV-Sk3">
-                                            <frame key="frameInset" width="375" height="80"/>
+                                            <frame key="frameInset" width="375" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3LK-p6-yUj" customClass="AnimatableCheckBox" customModule="IBAnimatable">
@@ -3694,7 +3678,7 @@
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checked"/>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="unchecked"/>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Pop"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jan 1, 2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2H-vl-YLH">
@@ -3727,7 +3711,7 @@
                                         <rect key="frame" x="0.0" y="160" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bTp-l0-F96" id="x5z-XZ-Exw">
-                                            <frame key="frameInset" width="375" height="80"/>
+                                            <frame key="frameInset" width="375" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msE-Pu-ATT" customClass="AnimatableCheckBox" customModule="IBAnimatable">
@@ -3738,7 +3722,7 @@
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checked"/>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="unchecked"/>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Pop"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="checked" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
@@ -3767,7 +3751,7 @@
                                         <rect key="frame" x="0.0" y="240" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H0J-je-SkH" id="pdg-kt-HsO">
-                                            <frame key="frameInset" width="375" height="80"/>
+                                            <frame key="frameInset" width="375" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVN-aI-Imt" customClass="AnimatableCheckBox" customModule="IBAnimatable">
@@ -3778,7 +3762,7 @@
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checked"/>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="unchecked"/>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Pop"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aug 10, 2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nib-IC-CMj">
@@ -3806,7 +3790,7 @@
                                         <rect key="frame" x="0.0" y="320" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j0M-8b-hdJ" id="btn-i1-Msg">
-                                            <frame key="frameInset" width="375" height="80"/>
+                                            <frame key="frameInset" width="375" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYq-AW-7CD" customClass="AnimatableCheckBox" customModule="IBAnimatable">
@@ -3817,7 +3801,7 @@
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checked"/>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="unchecked"/>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Pop"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="checked" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
@@ -3846,7 +3830,7 @@
                                         <rect key="frame" x="0.0" y="400" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5tx-0Y-JMT" id="cGp-JG-TSa">
-                                            <frame key="frameInset" width="375" height="80"/>
+                                            <frame key="frameInset" width="375" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t09-ZQ-TY4" customClass="AnimatableCheckBox" customModule="IBAnimatable">
@@ -3857,7 +3841,7 @@
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checked"/>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="unchecked"/>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Pop"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60,000 miles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fi-k6-39H">
@@ -3885,7 +3869,7 @@
                                         <rect key="frame" x="0.0" y="480" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tl6-53-lg6" id="wLs-ta-FkW">
-                                            <frame key="frameInset" width="375" height="80"/>
+                                            <frame key="frameInset" width="375" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0Q-Jt-MeH" customClass="AnimatableCheckBox" customModule="IBAnimatable">
@@ -3896,7 +3880,7 @@
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checked"/>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="unchecked"/>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Pop"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apr 1, 2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbU-Oh-YvC">
@@ -3924,7 +3908,7 @@
                                         <rect key="frame" x="0.0" y="560" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LB3-vA-WtL" id="aFU-tQ-sE4">
-                                            <frame key="frameInset" width="375" height="80"/>
+                                            <frame key="frameInset" width="375" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4d-PH-um5" customClass="AnimatableCheckBox" customModule="IBAnimatable">
@@ -3935,7 +3919,7 @@
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checked"/>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="unchecked"/>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="animationType" value="Pop"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mar 25, 2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o66-5s-ATp">
@@ -4294,7 +4278,7 @@
         <image name="work-bg" width="375" height="179"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="4ed-KQ-MWR"/>
         <segue reference="k6j-5T-Sy8"/>
-        <segue reference="7Cl-bu-Udh"/>
     </inferredMetricsTieBreakers>
 </document>
