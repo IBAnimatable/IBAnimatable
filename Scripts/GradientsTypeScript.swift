@@ -1,8 +1,8 @@
-#!/usr/bin/swift
+//#!/usr/bin/swift
 
 import Foundation
 
-func getColorLiteral(hexString: String)->String{
+func getColorLiteral(hexString: String) -> String{
   let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
   var int = UInt32()
   Scanner(string: hex).scanHexInt32(&int)
@@ -44,10 +44,8 @@ func parse(_ JSONData: Data) -> [[String: AnyObject]]? {
 // Generator constants
 let enumCase = "\tcase %@\n"
 let switchCase = "case .%@:\n"
-let colors =  "\treturn (%@,  %@)\n"
+let colors =  "\treturn (%@,%@)\n"
 let endEnumOrSwitch = "}"
-
-
 
 // Finale string
 var enumGradientType = "public enum GradientType: String {\n"
