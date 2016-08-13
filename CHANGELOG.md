@@ -13,7 +13,8 @@ None
 
 #### Bugfixes
 
-- Fixed `cornerRadius` when used with a gradient
+- Fixed `cornerRadius` when used with a gradient [#268](https://github.com/JakeLin/IBAnimatable/issues/268)
+- Remove previous vibrancy view when adding setting a new vibrancy. Previous bug: all the views was staying in the hierachy [#277](https://github.com/JakeLin/IBAnimatable/issues/277)
 
 ### [2.6](https://github.com/IBAnimatable/IBAnimatable/releases/tag/2.6)
 
