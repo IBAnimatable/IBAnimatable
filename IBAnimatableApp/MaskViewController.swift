@@ -15,6 +15,7 @@ class MaskViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    title = maskType
     maskedView.maskType = maskType
     maskedImageView.maskType = maskType
   }
