@@ -13,6 +13,7 @@ public enum PresentationAnimationType {
   case CrossDissolve
   case Cover(fromDirection: TransitionDirection)
   case Zoom
+  case DropDown
 
   public var stringValue: String {
     return String(self)
@@ -34,6 +35,8 @@ public enum PresentationAnimationType {
       return .Flip
     } else if transitionType.hasPrefix("Zoom") {
       return .Zoom
+    } else if transitionType.hasPrefix("DropDown") {
+      return .DropDown
     }
     return fromStringWithDirection(transitionType)
   }

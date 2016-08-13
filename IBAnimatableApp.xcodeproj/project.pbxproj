@@ -145,6 +145,7 @@
 		E2D33E531D3A5490006F2492 /* PresentationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D33E521D3A5490006F2492 /* PresentationsViewController.swift */; };
 		E2D33E551D3A5557006F2492 /* PresentationPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D33E541D3A5557006F2492 /* PresentationPresentedViewController.swift */; };
 		E2D33E571D3A59B8006F2492 /* PresentationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D33E561D3A59B8006F2492 /* PresentationsTableViewController.swift */; };
+		E2DAD63B1D5F5CC600333ABF /* DropDownAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DAD63A1D5F5CC600333ABF /* DropDownAnimator.swift */; };
 		E2E28E6C1C6A6C30003F3852 /* GradientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6A1C6A6C30003F3852 /* GradientType.swift */; };
 		E2E28E6F1C6A6D22003F3852 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */; };
 		E2F45B571CDB845F001D2E37 /* FlipAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F45B561CDB845F001D2E37 /* FlipAnimator.swift */; };
@@ -310,6 +311,7 @@
 		E2D33E521D3A5490006F2492 /* PresentationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationsViewController.swift; sourceTree = "<group>"; };
 		E2D33E541D3A5557006F2492 /* PresentationPresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationPresentedViewController.swift; sourceTree = "<group>"; };
 		E2D33E561D3A59B8006F2492 /* PresentationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationsTableViewController.swift; sourceTree = "<group>"; };
+		E2DAD63A1D5F5CC600333ABF /* DropDownAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownAnimator.swift; sourceTree = "<group>"; };
 		E2E28E6A1C6A6C30003F3852 /* GradientType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientType.swift; sourceTree = "<group>"; };
 		E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		E2E28E711C6A6E70003F3852 /* GradientsTypeScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GradientsTypeScript.swift; path = Scripts/GradientsTypeScript.swift; sourceTree = SOURCE_ROOT; };
@@ -657,6 +659,7 @@
 			children = (
 				E210ABC31D3A95F9001D0362 /* CoverAnimator.swift */,
 				E216B5AB1D3ADA130049FC8B /* ZoomAnimator.swift */,
+				E2DAD63A1D5F5CC600333ABF /* DropDownAnimator.swift */,
 			);
 			name = "presentation animator";
 			sourceTree = "<group>";
@@ -889,6 +892,7 @@
 				E2192F5D1CBBD0F200E66FFD /* AnimatableCollectionViewCell.swift in Sources */,
 				AE6B01881C2A445800950BB2 /* UIViewControllerExtension.swift in Sources */,
 				E24848AC1CDF65F7003DB9C2 /* SlideAnimator.swift in Sources */,
+				E2DAD63B1D5F5CC600333ABF /* DropDownAnimator.swift in Sources */,
 				AE6B01771C2A444900950BB2 /* TintDesignable.swift in Sources */,
 				AE154B8F1C7D89CB0093C05B /* TransitionPresenter.swift in Sources */,
 				E27691EB1CAFC91A004A725C /* SystemPushAnimator.swift in Sources */,
