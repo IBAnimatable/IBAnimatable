@@ -20,12 +20,17 @@ import UIKit
     }
   }
   
-  @IBInspectable public var borderSide: String? {
+  public var borderSides: BorderSides  = .AllSides {
     didSet {
       configBorder()
     }
   }
   
+  @IBInspectable public var _borderSides: String? {
+    didSet {
+      borderSides = BorderSides(rawValue: _borderSides)
+    }
+  }  
   // MARK: - RotationDesignable
   @IBInspectable public var rotate: CGFloat = CGFloat.nan {
     didSet {

@@ -65,12 +65,17 @@ import UIKit
     }
   }
   
-  @IBInspectable public var borderSide: String? {
+  public var borderSides: BorderSides  = .AllSides {
     didSet {
       configBorder()
     }
   }
   
+  @IBInspectable public var _borderSides: String? {
+    didSet {
+      borderSides = BorderSides(rawValue: _borderSides)
+    }
+  }  
   // MARK: - ShadowDesignable
   @IBInspectable public var shadowColor: UIColor? {
     didSet {
