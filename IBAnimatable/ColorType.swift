@@ -33,46 +33,46 @@ extension ColorType {
   public var color: UIColor {
     get {
       switch self {
-      case .flatEmerland:
-        return UIColor(red: 46 / 255, green:  204 / 255, blue:  113 / 255, alpha: 1.0)
-      case .flatPomegranate:
-        return UIColor(red: 192 / 255, green:  57 / 255, blue:  43 / 255, alpha: 1.0)
-      case .flatWetAsphalt:
-        return UIColor(red: 52 / 255, green:  73 / 255, blue:  94 / 255, alpha: 1.0)
-      case .flatTurquoise:
-        return UIColor(red: 26 / 255, green:  188 / 255, blue:  156 / 255, alpha: 1.0)
-      case .flatConcrete:
-        return UIColor(red: 149 / 255, green:  165 / 255, blue:  166 / 255, alpha: 1.0)
-      case .flatOrange:
-        return UIColor(red: 243 / 255, green:  156 / 255, blue:  18 / 255, alpha: 1.0)
-      case .flatAsbestos:
-        return UIColor(red: 127 / 255, green:  140 / 255, blue:  141 / 255, alpha: 1.0)
-      case .flatPeterRiver:
-        return UIColor(red: 52 / 255, green:  152 / 255, blue:  219 / 255, alpha: 1.0)
-      case .flatSilver:
-        return UIColor(red: 189 / 255, green:  195 / 255, blue:  199 / 255, alpha: 1.0)
-      case .flatSunFlower:
-        return UIColor(red: 241 / 255, green:  196 / 255, blue:  15 / 255, alpha: 1.0)
-      case .flatAmethyst:
-        return UIColor(red: 155 / 255, green:  89 / 255, blue:  182 / 255, alpha: 1.0)
-      case .flatAlizarin:
-        return UIColor(red: 231 / 255, green:  76 / 255, blue:  60 / 255, alpha: 1.0)
-      case .flatGreenSea:
-        return UIColor(red: 22 / 255, green:  160 / 255, blue:  133 / 255, alpha: 1.0)
       case .flatBelizeHole:
-        return UIColor(red: 41 / 255, green:  128 / 255, blue:  185 / 255, alpha: 1.0)
-      case .flatNephritis:
-        return UIColor(red: 39 / 255, green:  174 / 255, blue:  96 / 255, alpha: 1.0)
+        return  #colorLiteral(red: 0.16078431372549, green: 0.501960784313725, blue: 0.725490196078431, alpha: 1.0)
+      case .flatAlizarin:
+        return  #colorLiteral(red: 0.905882352941176, green: 0.298039215686275, blue: 0.235294117647059, alpha: 1.0)
+      case .flatEmerland:
+        return  #colorLiteral(red: 0.180392156862745, green: 0.8, blue: 0.443137254901961, alpha: 1.0)
       case .flatMidnightBlue:
-        return UIColor(red: 44 / 255, green:  62 / 255, blue:  80 / 255, alpha: 1.0)
-      case .flatClouds:
-        return UIColor(red: 236 / 255, green:  240 / 255, blue:  241 / 255, alpha: 1.0)
-      case .flatWisteria:
-        return UIColor(red: 142 / 255, green:  68 / 255, blue:  173 / 255, alpha: 1.0)
-      case .flatCarrot:
-        return UIColor(red: 230 / 255, green:  126 / 255, blue:  34 / 255, alpha: 1.0)
+        return  #colorLiteral(red: 0.172549019607843, green: 0.243137254901961, blue: 0.313725490196078, alpha: 1.0)
       case .flatPumpkin:
-        return UIColor(red: 211 / 255, green:  84 / 255, blue:  0 / 255, alpha: 1.0)
+        return  #colorLiteral(red: 0.827450980392157, green: 0.329411764705882, blue: 0.0, alpha: 1.0)
+      case .flatAmethyst:
+        return  #colorLiteral(red: 0.607843137254902, green: 0.349019607843137, blue: 0.713725490196078, alpha: 1.0)
+      case .flatOrange:
+        return  #colorLiteral(red: 0.952941176470588, green: 0.611764705882353, blue: 0.0705882352941176, alpha: 1.0)
+      case .flatNephritis:
+        return  #colorLiteral(red: 0.152941176470588, green: 0.682352941176471, blue: 0.376470588235294, alpha: 1.0)
+      case .flatGreenSea:
+        return  #colorLiteral(red: 0.0862745098039216, green: 0.627450980392157, blue: 0.52156862745098, alpha: 1.0)
+      case .flatTurquoise:
+        return  #colorLiteral(red: 0.101960784313725, green: 0.737254901960784, blue: 0.611764705882353, alpha: 1.0)
+      case .flatSunFlower:
+        return  #colorLiteral(red: 0.945098039215686, green: 0.768627450980392, blue: 0.0588235294117647, alpha: 1.0)
+      case .flatWetAsphalt:
+        return  #colorLiteral(red: 0.203921568627451, green: 0.286274509803922, blue: 0.368627450980392, alpha: 1.0)
+      case .flatPeterRiver:
+        return  #colorLiteral(red: 0.203921568627451, green: 0.596078431372549, blue: 0.858823529411765, alpha: 1.0)
+      case .flatWisteria:
+        return  #colorLiteral(red: 0.556862745098039, green: 0.266666666666667, blue: 0.67843137254902, alpha: 1.0)
+      case .flatClouds:
+        return  #colorLiteral(red: 0.925490196078431, green: 0.941176470588235, blue: 0.945098039215686, alpha: 1.0)
+      case .flatConcrete:
+        return  #colorLiteral(red: 0.584313725490196, green: 0.647058823529412, blue: 0.650980392156863, alpha: 1.0)
+      case .flatPomegranate:
+        return  #colorLiteral(red: 0.752941176470588, green: 0.223529411764706, blue: 0.168627450980392, alpha: 1.0)
+      case .flatSilver:
+        return  #colorLiteral(red: 0.741176470588235, green: 0.764705882352941, blue: 0.780392156862745, alpha: 1.0)
+      case .flatAsbestos:
+        return  #colorLiteral(red: 0.498039215686275, green: 0.549019607843137, blue: 0.552941176470588, alpha: 1.0) 
+      case .flatCarrot:
+        return  #colorLiteral(red: 0.901960784313726, green: 0.494117647058824, blue: 0.133333333333333, alpha: 1.0)
       }
     }
   }
