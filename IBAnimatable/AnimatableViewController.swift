@@ -16,9 +16,25 @@ import UIKit
   @IBInspectable public var rootWindowBackgroundColor: UIColor?
 
   // MARK: - TransitionAnimatable
-  @IBInspectable public var transitionAnimationType: String?
+  @IBInspectable  var _transitionAnimationType: String? {
+    didSet {
+      if let _transitionAnimationType = _transitionAnimationType {
+        transitionAnimationType = TransitionAnimationType.fromString(_transitionAnimationType)
+      }
+    }
+  }
+  public var transitionAnimationType: TransitionAnimationType?
+  
   @IBInspectable public var transitionDuration: Double = .nan
-  @IBInspectable public var interactiveGestureType: String?
+  
+  public var interactiveGestureType: InteractiveGestureType?
+  @IBInspectable var _interactiveGestureType: String? {
+    didSet {
+      if let _interactiveGestureType = _interactiveGestureType {
+        interactiveGestureType = InteractiveGestureType.fromString(_interactiveGestureType)
+      }
+    }
+  }
 
   // MARK: - Lifecylce
   public override func viewWillAppear(_ animated: Bool) {
@@ -44,15 +60,15 @@ import UIKit
     super.prepare(for: segue, sender: sender)
     
     // Configure custom transition animation
-    guard let transitionAnimationType = transitionAnimationType, let animationType = TransitionAnimationType.fromString(transitionAnimationType) else {
+    guard let animationType = transitionAnimationType else {
       super.prepare(for: segue, sender: sender)
       return
     }
     
     let toViewController = segue.destination
     // If interactiveGestureType has been set
-    if let interactiveGestureType = interactiveGestureType, let interactiveGestureTypeValue = InteractiveGestureType.fromString(interactiveGestureType) {
-      toViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration, interactiveGestureType: interactiveGestureTypeValue)
+    if let interactiveGestureType = interactiveGestureType {
+      toViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration, interactiveGestureType: interactiveGestureType)
     } else {
       toViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration)
     }
