@@ -10,7 +10,7 @@ public typealias GradientColor = (start: UIColor, end: UIColor)
 public enum GradientType: String, IBEnum {
   case coolBrown
   case harmonicEnergy
-  case playingwithReds
+  case playingWithReds
   case sunnyDays
   case greenBeach
   case intuitivePurple
@@ -87,14 +87,14 @@ public enum GradientType: String, IBEnum {
   case redMist
   case tealLove
   case neonLife
-  case manofSteel
+  case manOfSteel
   case amethyst
   case cheerUpEmoKid
   case shore
   case facebookMessenger
-  case soundCloud
+  case soundcloud
   case behongo
-  case servQuick
+  case servquick
   case friday
   case martini
   case metallicToad
@@ -105,24 +105,24 @@ public enum GradientType: String, IBEnum {
   case purpleBliss
   case predawn
   case endlessRiver
-  case pastelOrangeattheSun
+  case pastelOrangeAtTheSun
   case twitch
   case instagram
   case flickr
   case vine
-  case turquoiseflow
+  case turquoiseFlow
   case portrait
   case virginAmerica
   case kokoCaramel
   case freshTurboscent
-  case greentodark
+  case greenToDark
   case ukraine
-  case curiosityblue
+  case curiosityBlue
   case darkKnight
   case piglet
   case lizard
   case sagePersuasion
-  case betweenNightandDay
+  case betweenNightAndDay
   case timber
   case passion
   case clearSky
@@ -132,9 +132,9 @@ public enum GradientType: String, IBEnum {
   case littleLeaf
   case netflix
   case lightOrange
-  case greenandBlue
+  case greenAndBlue
   case poncho
-  case backtotheFuture
+  case backToTheFuture
   case blush
   case inbox
   case purplin
@@ -177,8 +177,8 @@ public enum GradientType: String, IBEnum {
   case firewatch
   case sherbert
   case bloodRed
-  case sunontheHorizon
-  case iIITDelhi
+  case sunOnTheHorizon
+  case iiitDelhi
 }
 
 
@@ -190,7 +190,7 @@ extension GradientType {
         return (#colorLiteral(red: 0.376470588235294, green: 0.219607843137255, blue: 0.0745098039215686, alpha: 1.0),#colorLiteral(red: 0.698039215686274, green: 0.623529411764706, blue: 0.580392156862745, alpha: 1.0))
       case .harmonicEnergy:
         return (#colorLiteral(red: 0.0862745098039216, green: 0.627450980392157, blue: 0.52156862745098, alpha: 1.0),#colorLiteral(red: 0.956862745098039, green: 0.815686274509804, blue: 0.247058823529412, alpha: 1.0))
-      case .playingwithReds:
+      case .playingWithReds:
         return (#colorLiteral(red: 0.827450980392157, green: 0.0627450980392157, blue: 0.152941176470588, alpha: 1.0),#colorLiteral(red: 0.917647058823529, green: 0.219607843137255, blue: 0.301960784313725, alpha: 1.0))
       case .sunnyDays:
         return (#colorLiteral(red: 0.929411764705882, green: 0.898039215686275, blue: 0.454901960784314, alpha: 1.0),#colorLiteral(red: 0.882352941176471, green: 0.96078431372549, blue: 0.768627450980392, alpha: 1.0))
@@ -344,7 +344,7 @@ extension GradientType {
         return (#colorLiteral(red: 0.666666666666667, green: 1.0, blue: 0.662745098039216, alpha: 1.0),#colorLiteral(red: 0.0666666666666667, green: 1.0, blue: 0.741176470588235, alpha: 1.0))
       case .neonLife:
         return (#colorLiteral(red: 0.701960784313725, green: 1.0, blue: 0.670588235294118, alpha: 1.0),#colorLiteral(red: 0.0705882352941176, green: 1.0, blue: 0.968627450980392, alpha: 1.0))
-      case .manofSteel:
+      case .manOfSteel:
         return (#colorLiteral(red: 0.470588235294118, green: 0.00784313725490196, blue: 0.0235294117647059, alpha: 1.0),#colorLiteral(red: 0.0235294117647059, green: 0.0666666666666667, blue: 0.380392156862745, alpha: 1.0))
       case .amethyst:
         return (#colorLiteral(red: 0.615686274509804, green: 0.313725490196078, blue: 0.733333333333333, alpha: 1.0),#colorLiteral(red: 0.431372549019608, green: 0.282352941176471, blue: 0.666666666666667, alpha: 1.0))
@@ -354,11 +354,11 @@ extension GradientType {
         return (#colorLiteral(red: 0.43921568627451, green: 0.882352941176471, blue: 0.96078431372549, alpha: 1.0),#colorLiteral(red: 1.0, green: 0.819607843137255, blue: 0.580392156862745, alpha: 1.0))
       case .facebookMessenger:
         return (#colorLiteral(red: 0.0, green: 0.776470588235294, blue: 1.0, alpha: 1.0),#colorLiteral(red: 0.0, green: 0.447058823529412, blue: 1.0, alpha: 1.0))
-      case .soundCloud:
+      case .soundcloud:
         return (#colorLiteral(red: 0.996078431372549, green: 0.549019607843137, blue: 0.0, alpha: 1.0),#colorLiteral(red: 0.972549019607843, green: 0.211764705882353, blue: 0.0, alpha: 1.0))
       case .behongo:
         return (#colorLiteral(red: 0.32156862745098, green: 0.76078431372549, blue: 0.203921568627451, alpha: 1.0),#colorLiteral(red: 0.0235294117647059, green: 0.0901960784313725, blue: 0.0, alpha: 1.0))
-      case .servQuick:
+      case .servquick:
         return (#colorLiteral(red: 0.282352941176471, green: 0.333333333333333, blue: 0.388235294117647, alpha: 1.0),#colorLiteral(red: 0.16078431372549, green: 0.196078431372549, blue: 0.235294117647059, alpha: 1.0))
       case .friday:
         return (#colorLiteral(red: 0.513725490196078, green: 0.643137254901961, blue: 0.831372549019608, alpha: 1.0),#colorLiteral(red: 0.713725490196078, green: 0.984313725490196, blue: 1.0, alpha: 1.0))
@@ -380,7 +380,7 @@ extension GradientType {
         return (#colorLiteral(red: 1.0, green: 0.631372549019608, blue: 0.498039215686275, alpha: 1.0),#colorLiteral(red: 0.0, green: 0.133333333333333, blue: 0.243137254901961, alpha: 1.0))
       case .endlessRiver:
         return (#colorLiteral(red: 0.262745098039216, green: 0.807843137254902, blue: 0.635294117647059, alpha: 1.0),#colorLiteral(red: 0.0941176470588235, green: 0.352941176470588, blue: 0.615686274509804, alpha: 1.0))
-      case .pastelOrangeattheSun:
+      case .pastelOrangeAtTheSun:
         return (#colorLiteral(red: 1.0, green: 0.701960784313725, blue: 0.27843137254902, alpha: 1.0),#colorLiteral(red: 1.0, green: 0.8, blue: 0.2, alpha: 1.0))
       case .twitch:
         return (#colorLiteral(red: 0.392156862745098, green: 0.254901960784314, blue: 0.647058823529412, alpha: 1.0),#colorLiteral(red: 0.164705882352941, green: 0.0313725490196078, blue: 0.270588235294118, alpha: 1.0))
@@ -390,7 +390,7 @@ extension GradientType {
         return (#colorLiteral(red: 1.0, green: 0.0, blue: 0.517647058823529, alpha: 1.0),#colorLiteral(red: 0.2, green: 0.0, blue: 0.105882352941176, alpha: 1.0))
       case .vine:
         return (#colorLiteral(red: 0.0, green: 0.749019607843137, blue: 0.56078431372549, alpha: 1.0),#colorLiteral(red: 0.0, green: 0.0823529411764706, blue: 0.0627450980392157, alpha: 1.0))
-      case .turquoiseflow:
+      case .turquoiseFlow:
         return (#colorLiteral(red: 0.0745098039215686, green: 0.415686274509804, blue: 0.541176470588235, alpha: 1.0),#colorLiteral(red: 0.149019607843137, green: 0.470588235294118, blue: 0.443137254901961, alpha: 1.0))
       case .portrait:
         return (#colorLiteral(red: 0.556862745098039, green: 0.619607843137255, blue: 0.670588235294118, alpha: 1.0),#colorLiteral(red: 0.933333333333333, green: 0.949019607843137, blue: 0.952941176470588, alpha: 1.0))
@@ -400,11 +400,11 @@ extension GradientType {
         return (#colorLiteral(red: 0.819607843137255, green: 0.568627450980392, blue: 0.235294117647059, alpha: 1.0),#colorLiteral(red: 1.0, green: 0.819607843137255, blue: 0.580392156862745, alpha: 1.0))
       case .freshTurboscent:
         return (#colorLiteral(red: 0.945098039215686, green: 0.949019607843137, blue: 0.709803921568627, alpha: 1.0),#colorLiteral(red: 0.0745098039215686, green: 0.313725490196078, blue: 0.345098039215686, alpha: 1.0))
-      case .greentodark:
+      case .greenToDark:
         return (#colorLiteral(red: 0.415686274509804, green: 0.568627450980392, blue: 0.0745098039215686, alpha: 1.0),#colorLiteral(red: 0.0784313725490196, green: 0.0823529411764706, blue: 0.0901960784313725, alpha: 1.0))
       case .ukraine:
         return (#colorLiteral(red: 0.0, green: 0.309803921568627, blue: 0.976470588235294, alpha: 1.0),#colorLiteral(red: 1.0, green: 0.976470588235294, blue: 0.298039215686275, alpha: 1.0))
-      case .curiosityblue:
+      case .curiosityBlue:
         return (#colorLiteral(red: 0.32156862745098, green: 0.32156862745098, blue: 0.32156862745098, alpha: 1.0),#colorLiteral(red: 0.23921568627451, green: 0.447058823529412, blue: 0.705882352941177, alpha: 1.0))
       case .darkKnight:
         return (#colorLiteral(red: 0.729411764705882, green: 0.545098039215686, blue: 0.00784313725490196, alpha: 1.0),#colorLiteral(red: 0.0941176470588235, green: 0.0941176470588235, blue: 0.0941176470588235, alpha: 1.0))
@@ -414,7 +414,7 @@ extension GradientType {
         return (#colorLiteral(red: 0.188235294117647, green: 0.262745098039216, blue: 0.32156862745098, alpha: 1.0),#colorLiteral(red: 0.843137254901961, green: 0.823529411764706, blue: 0.8, alpha: 1.0))
       case .sagePersuasion:
         return (#colorLiteral(red: 0.8, green: 0.8, blue: 0.698039215686274, alpha: 1.0),#colorLiteral(red: 0.458823529411765, green: 0.458823529411765, blue: 0.0980392156862745, alpha: 1.0))
-      case .betweenNightandDay:
+      case .betweenNightAndDay:
         return (#colorLiteral(red: 0.172549019607843, green: 0.243137254901961, blue: 0.313725490196078, alpha: 1.0),#colorLiteral(red: 0.203921568627451, green: 0.596078431372549, blue: 0.858823529411765, alpha: 1.0))
       case .timber:
         return (#colorLiteral(red: 0.988235294117647, green: 0.0, blue: 1.0, alpha: 1.0),#colorLiteral(red: 0.0, green: 0.858823529411765, blue: 0.870588235294118, alpha: 1.0))
@@ -434,11 +434,11 @@ extension GradientType {
         return (#colorLiteral(red: 0.556862745098039, green: 0.0549019607843137, blue: 0.0, alpha: 1.0),#colorLiteral(red: 0.12156862745098, green: 0.109803921568627, blue: 0.0941176470588235, alpha: 1.0))
       case .lightOrange:
         return (#colorLiteral(red: 1.0, green: 0.717647058823529, blue: 0.368627450980392, alpha: 1.0),#colorLiteral(red: 0.929411764705882, green: 0.56078431372549, blue: 0.0117647058823529, alpha: 1.0))
-      case .greenandBlue:
+      case .greenAndBlue:
         return (#colorLiteral(red: 0.76078431372549, green: 0.898039215686275, blue: 0.611764705882353, alpha: 1.0),#colorLiteral(red: 0.392156862745098, green: 0.701960784313725, blue: 0.956862745098039, alpha: 1.0))
       case .poncho:
         return (#colorLiteral(red: 0.250980392156863, green: 0.227450980392157, blue: 0.243137254901961, alpha: 1.0),#colorLiteral(red: 0.745098039215686, green: 0.345098039215686, blue: 0.411764705882353, alpha: 1.0))
-      case .backtotheFuture:
+      case .backToTheFuture:
         return (#colorLiteral(red: 0.752941176470588, green: 0.141176470588235, blue: 0.145098039215686, alpha: 1.0),#colorLiteral(red: 0.941176470588235, green: 0.796078431372549, blue: 0.207843137254902, alpha: 1.0))
       case .blush:
         return (#colorLiteral(red: 0.698039215686274, green: 0.270588235294118, blue: 0.572549019607843, alpha: 1.0),#colorLiteral(red: 0.945098039215686, green: 0.372549019607843, blue: 0.474509803921569, alpha: 1.0))
@@ -477,7 +477,7 @@ extension GradientType {
       case .colorsOfSky:
         return (#colorLiteral(red: 0.87843137254902, green: 0.917647058823529, blue: 0.988235294117647, alpha: 1.0),#colorLiteral(red: 0.811764705882353, green: 0.870588235294118, blue: 0.952941176470588, alpha: 1.0))
       case .purpleWhite:
-        return (#colorLiteral(red: 0.956862745098039, green: 0.886274509803922, blue: 0.847058823529412, alpha: 1.0),#colorLiteral(red: 0.729411764705882, green: 0.325490196078431, blue: 0.43921568627451, alpha: 1.0))
+        return (#colorLiteral(red: 0.729411764705882, green: 0.325490196078431, blue: 0.43921568627451, alpha: 1.0),#colorLiteral(red: 0.956862745098039, green: 0.886274509803922, blue: 0.847058823529412, alpha: 1.0))
       case .ali:
         return (#colorLiteral(red: 1.0, green: 0.294117647058824, blue: 0.12156862745098, alpha: 1.0),#colorLiteral(red: 0.12156862745098, green: 0.866666666666667, blue: 1.0, alpha: 1.0))
       case .alihossein:
@@ -524,9 +524,9 @@ extension GradientType {
         return (#colorLiteral(red: 0.968627450980392, green: 0.615686274509804, blue: 0.0, alpha: 1.0),#colorLiteral(red: 0.392156862745098, green: 0.952941176470588, blue: 0.549019607843137, alpha: 1.0))
       case .bloodRed:
         return (#colorLiteral(red: 0.972549019607843, green: 0.313725490196078, blue: 0.196078431372549, alpha: 1.0),#colorLiteral(red: 0.905882352941176, green: 0.219607843137255, blue: 0.152941176470588, alpha: 1.0))
-      case .sunontheHorizon:
+      case .sunOnTheHorizon:
         return (#colorLiteral(red: 0.988235294117647, green: 0.917647058823529, blue: 0.733333333333333, alpha: 1.0),#colorLiteral(red: 0.972549019607843, green: 0.709803921568627, blue: 0.0, alpha: 1.0))
-      case .iIITDelhi:
+      case .iiitDelhi:
         return (#colorLiteral(red: 0.501960784313725, green: 0.501960784313725, blue: 0.501960784313725, alpha: 1.0),#colorLiteral(red: 0.247058823529412, green: 0.67843137254902, blue: 0.658823529411765, alpha: 1.0))
       }
     }
