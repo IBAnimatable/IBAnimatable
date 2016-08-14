@@ -26,7 +26,11 @@ public class AnimatablePresentationController: UIPresentationController {
     setupObservers()
   }
 
-  
+  deinit {
+    NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+    NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)    
+  }
+
   // MARK: Actions
 
   func chromeViewTapped(gesture: UIGestureRecognizer) {
