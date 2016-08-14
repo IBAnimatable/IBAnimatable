@@ -23,9 +23,14 @@ public class AnimatablePresentationController: UIPresentationController {
 
     setupDimmingView()
     setupPresentedView()
+    setupObservers()
   }
 
-  
+  deinit {
+    NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+    NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)    
+  }
+
   // MARK: Actions
 
   func chromeViewTapped(gesture: UIGestureRecognizer) {
@@ -36,12 +41,10 @@ public class AnimatablePresentationController: UIPresentationController {
 
 }
 
-// MARK: - Sizing Helper's
+// MARK: - Setup
 
 private extension AnimatablePresentationController {
 
-  // MARK: Setup
-  
   func setupDimmingView() {
     let tap = UITapGestureRecognizer(target: self, action: #selector(chromeViewTapped))
     dimmingView.addGestureRecognizer(tap)
@@ -76,12 +79,54 @@ private extension AnimatablePresentationController {
       presentedViewController.view.layer.masksToBounds = false
     }
     
-    if let shadowColor = presentationConfiguration.shadowColor  {
+    if let shadowColor = presentationConfiguration.shadowColor {
       presentedViewController.view.layer.shadowColor = shadowColor.CGColor
       presentedViewController.view.layer.masksToBounds = false
     }
   }
-  
+
+}
+
+// MARK: - Notifications
+
+extension AnimatablePresentationController {
+
+  private func setupObservers() {
+    guard presentationConfiguration.keyboardTranslation != .None else {
+      return
+    }
+
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AnimatablePresentationController.keyboardWasShown(_:)), name: UIKeyboardWillShowNotification, object: nil)
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AnimatablePresentationController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+  } 
+
+  func keyboardWasShown (notification: NSNotification) {
+    if let keyboardFrame = notification.userInfo?[UIKeyboardFrameEndUserInfoKey]?.CGRectValue() {
+      let presentedFrame = frameOfPresentedViewInContainerView()
+      let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey]?.doubleValue ?? 0.5
+      let translatedFrame = presentationConfiguration.keyboardTranslation.translationFrame(keyboardFrame, presentedFrame: presentedFrame)
+
+      let curve = UIViewAnimationOptions(rawValue: UInt(duration))
+      UIView.animateWithDuration(duration, delay: 0, options: curve, animations: {
+        self.presentedView()?.frame = translatedFrame
+      }, completion: nil)
+    }
+  }
+
+  func keyboardWillHide (notification: NSNotification) {    
+    let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey]?.doubleValue ?? 0.5
+    let curve = UIViewAnimationOptions(rawValue: UInt(duration))
+    UIView.animateWithDuration(duration, delay: 0, options: curve, animations: {
+      self.presentedView()!.frame = self.frameOfPresentedViewInContainerView()
+    }, completion: nil)
+  }
+
+}
+
+// MARK: - Size & origin helpers
+
+private extension AnimatablePresentationController {
+
   func modalSize() -> CGSize {
     guard let containerSize = containerView?.bounds.size else {
       return CGSize.zero

@@ -40,8 +40,7 @@ extension CoverAnimator: UIViewControllerAnimatedTransitioning {
     if presenting {
       finalFrame = getFinalFrame(from: direction, initialFrame: animatingView.frame, containerFrame: containerView.frame)
       containerView.addSubview(animatingView)
-    }
-    else {
+    } else {
       // Animate back to origin when dismiss the modal
       let oppositeDirection = direction.opposite
       finalFrame = getFinalFrame(from: oppositeDirection, initialFrame: animatingView.frame, containerFrame: containerView.frame)
