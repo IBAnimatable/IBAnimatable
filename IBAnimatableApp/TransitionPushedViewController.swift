@@ -18,7 +18,6 @@ class TransitionPushedViewController: UIViewController {
     }
     configureGestureLabel()
   }
-
 }
 
 private extension TransitionPushedViewController {
@@ -32,10 +31,8 @@ private extension TransitionPushedViewController {
     }
     
     // No gesture for this animator
-    guard let interactiveGestureTypeString = navigationController.interactiveGestureType,
-      let interactiveGestureType = InteractiveGestureType.fromString(interactiveGestureTypeString),
-      let transitionAnimationTypeString = navigationController.transitionAnimationType,
-      let transitionAnimationType = TransitionAnimationType.fromString(transitionAnimationTypeString) else {
+    guard let interactiveGestureType = navigationController.interactiveGestureType,
+      let transitionAnimationType = navigationController.transitionAnimationType else {
       return
     }
     

@@ -33,22 +33,22 @@ private extension ContainerTransitionViewController {
   func createChildViewControllers() {
     var viewController = AnimatableViewController()
     viewController.view.backgroundColor = .blue
-    viewController.transitionAnimationType = "Explode"
+    viewController.transitionAnimationType = TransitionAnimationType.fromString("Explode")
     viewControllers.append(viewController)
    
     viewController = AnimatableViewController()
     viewController.view.backgroundColor = .green
-    viewController.transitionAnimationType = "Fold"
+    viewController.transitionAnimationType = TransitionAnimationType.fromString("Fold")
     viewControllers.append(viewController)
 
     viewController = AnimatableViewController()
     viewController.view.backgroundColor = .yellow
-    viewController.transitionAnimationType = "NatGeo"
+    viewController.transitionAnimationType = TransitionAnimationType.fromString("NatGeo")
     viewControllers.append(viewController)
     
     viewController = AnimatableViewController()
     viewController.view.backgroundColor = .red
-    viewController.transitionAnimationType = "Portal"
+    viewController.transitionAnimationType = TransitionAnimationType.fromString("Portal")
     viewControllers.append(viewController)
     
     cycleFromViewController(containerView, fromViewController: nil, toViewController: viewControllers[0])
@@ -56,7 +56,7 @@ private extension ContainerTransitionViewController {
   }
   
   func cycleFromViewController(_ containerView: UIView, fromViewController: AnimatableViewController?, toViewController: AnimatableViewController) {
-    guard let animationType = TransitionAnimationType.fromString(toViewController.transitionAnimationType ?? "") else {
+    guard let animationType = TransitionAnimationType.fromString(toViewController.transitionAnimationType?.stringValue ?? "") else {
       return
     }
     
