@@ -29,7 +29,10 @@ public extension BlurDesignable where Self: UIView {
 
     let blurEffectView = createVisualEffectView(UIBlurEffect(style: style))
     if let unwrappedVibrancyStyle = vibrancyEffectStyle, vibrancyStyle = blurEffectStyle(from: unwrappedVibrancyStyle) {
-      let vibrancyEffectView = createVisualEffectView(UIVibrancyEffect(forBlurEffect: UIBlurEffect(style: vibrancyStyle)))      
+      subviews.flatMap { $0 as? AnimatableVibrancyView }
+        .forEach { $0.removeFromSuperview() }
+
+      let vibrancyEffectView = createVisualEffectView(UIVibrancyEffect(forBlurEffect: UIBlurEffect(style: vibrancyStyle)))
       subviews.forEach {
         vibrancyEffectView.contentView.addSubview($0)
       }
@@ -38,8 +41,13 @@ public extension BlurDesignable where Self: UIView {
     insertSubview(blurEffectView, atIndex: 0)
   }
 
-  private func createVisualEffectView(effect: UIVisualEffect) -> UIVisualEffectView {
-    let visualEffectView = UIVisualEffectView(effect: effect)
+
+}
+
+private extension BlurDesignable where Self: UIView {
+
+  func createVisualEffectView(effect: UIVisualEffect) -> UIVisualEffectView {
+    let visualEffectView = AnimatableVibrancyView(effect: effect)
     visualEffectView.alpha = blurOpacity.isNaN ? 1.0 : blurOpacity
     if layer.cornerRadius > 0 {
       visualEffectView.layer.cornerRadius = layer.cornerRadius
@@ -50,11 +58,6 @@ public extension BlurDesignable where Self: UIView {
     visualEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
     return visualEffectView
   }
-
-}
-
-
-private extension BlurDesignable {
 
   func blurEffectStyle(from blurEffectStyle: String) -> UIBlurEffectStyle? {
     var style: UIBlurEffectStyle?
@@ -72,4 +75,9 @@ private extension BlurDesignable {
     }
     return style
   }
+  
+}
+
+private class AnimatableVibrancyView: UIVisualEffectView {
+
 }
