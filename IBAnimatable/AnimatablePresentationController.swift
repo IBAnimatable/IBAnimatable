@@ -105,17 +105,20 @@ extension AnimatablePresentationController {
       let presentedFrame = frameOfPresentedViewInContainerView()
       let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey]?.doubleValue ?? 0.5
       let translatedFrame = presentationConfiguration.keyboardTranslation.translationFrame(keyboardFrame, presentedFrame: presentedFrame)
-      UIView.animateWithDuration(duration) {
+
+      let curve = UIViewAnimationOptions(rawValue: UInt(duration))
+      UIView.animateWithDuration(duration, delay: 0, options: curve, animations: {
         self.presentedView()?.frame = translatedFrame
-      }
+      }, completion: nil)
     }
   }
 
   func keyboardWillHide (notification: NSNotification) {    
     let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey]?.doubleValue ?? 0.5
-    UIView.animateWithDuration(duration) {
+    let curve = UIViewAnimationOptions(rawValue: UInt(duration))
+    UIView.animateWithDuration(duration, delay: 0, options: curve, animations: {
       self.presentedView()!.frame = self.frameOfPresentedViewInContainerView()
-    }
+    }, completion: nil)
   }
 
 }
