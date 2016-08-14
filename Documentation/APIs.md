@@ -200,7 +200,7 @@ With these methods, we can navigate back or dismiss current ViewController witho
 ### TransitionAnimatable protocol
 | Property name | Data type | Description |
 | ------------- |:-------------:| ----- |
-| transitionAnimationType | Optional&lt;String> | Supported transition animations. Tap on "Forgot Password" button to see all predefined transition animations, e.g. `Fade`, `SystemCube(Left)` and `SystemPageCurl(Bottom)`. The transition type starts with `System` can only use in Push/Pop transitions, not Present/Dismiss transitions. Note: For `SystemRotate` seems that only `SystemRotate(90)` is working. |
+| transitionAnimationType | Optional&lt;String> | Supported transition animations. Tap on "Playground" button to see all predefined transition animations, e.g. `Fade`, `SystemCube(Left)` and `SystemPageCurl(Bottom)`. The transition type starts with `System` can only use in Push/Pop transitions, not Present/Dismiss transitions. Note: For `SystemRotate` seems that only `SystemRotate(90)` is working. |
 | transitionDuration | Double | transition duration. The default value is defined in [`Constants`](../IBAnimatable/Constants.swift) (0.7 seconds) |
 | interactiveGestureType | Optional&lt;String> | interactive gesture type. used to specify the gesture to dismiss/pop current scence. All supported interactive gesture types are in [`InteractiveGestureType`](../IBAnimatable/InteractiveGestureType.swift) |
 

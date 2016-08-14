@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="il8-4c-qod">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="il8-4c-qod">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
@@ -8,14 +8,14 @@
         <scene sceneID="YmD-eu-ZsA">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="il8-4c-qod" customClass="UserInterfaceMaskTableViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="4OC-bH-cUu" customClass="AnimatableTableView" customModule="IBAnimatable">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4OC-bH-cUu" customClass="AnimatableTableView" customModule="IBAnimatable">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="transitionCell" textLabel="QQh-LE-jen" style="IBUITableViewCellStyleDefault" id="3dh-WJ-c8D" userLabel="maskCell" customClass="AnimatableTableViewCell" customModule="IBAnimatable">
-                                <rect key="frame" x="0.0" y="113.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3dh-WJ-c8D" id="U1w-DA-jBA">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -53,12 +53,21 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Mask" id="SRi-uY-fPM"/>
+                    <navigationItem key="navigationItem" title="Mask" id="SRi-uY-fPM">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="bha-iD-yZj">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="dNI-CK-76B" kind="unwind" unwindAction="unwindToViewController:" id="xYe-Ps-i32"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8H-TX-FmW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="dNI-CK-76B" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4465.5" y="459.5"/>
         </scene>
@@ -99,6 +108,14 @@
                             <constraint firstItem="rm0-49-clX" firstAttribute="top" secondItem="SbM-du-jBs" secondAttribute="bottom" constant="60" id="xgn-Oy-AS3"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="r4q-8J-vDr">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="KOq-2I-xvZ">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="ecL-Ec-tjn" kind="unwind" unwindAction="unwindToViewController:" id="ReZ-Gj-zsn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="maskedImageView" destination="rm0-49-clX" id="gXT-sO-eBY"/>
@@ -106,11 +123,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="on5-5B-kLq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ecL-Ec-tjn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4920.5" y="459.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="auto-bg" width="375" height="179"/>
+        <image name="back" width="21" height="21"/>
     </resources>
 </document>
