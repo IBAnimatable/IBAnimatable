@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11185.3" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dM8-H6-op1">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11151.4"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,7 +24,7 @@
                                         <rect key="frame" x="0.0" y="99" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oZn-rq-6jb" id="MMG-gu-DNX">
-                                            <frame key="frameInset" width="375" height="44"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rs1-3k-ac9">
@@ -49,7 +50,7 @@
                                         <rect key="frame" x="0.0" y="143" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cVI-On-FQ4" id="Q2V-hQ-Jdi">
-                                            <frame key="frameInset" width="375" height="44"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Mask" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gM0-9A-UM6">
@@ -75,7 +76,7 @@
                                         <rect key="frame" x="0.0" y="187" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rlw-9O-B7b" id="2fY-RT-49u">
-                                            <frame key="frameInset" width="375" height="44"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Blur effect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dwn-Ja-n4y">
@@ -101,7 +102,7 @@
                                         <rect key="frame" x="0.0" y="231" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AkO-ey-85U" id="PXI-Fe-iHY">
-                                            <frame key="frameInset" width="375" height="44"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Predefined gradients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t5m-Ei-nOr">
@@ -127,7 +128,7 @@
                                         <rect key="frame" x="0.0" y="275" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0w5-J3-37R" id="G1s-we-dSo">
-                                            <frame key="frameInset" width="375" height="44"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Gradients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="i9c-8y-AYA">
@@ -147,6 +148,32 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="YvY-Pr-4LY" kind="show" identifier="gradients" id="JfQ-7P-WNG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="transitionCell" textLabel="Vxg-g9-73G" style="IBUITableViewCellStyleDefault" id="cmI-Lb-6Pc" userLabel="uiCell" customClass="AnimatableTableViewCell" customModule="IBAnimatable">
+                                        <rect key="frame" x="0.0" y="319" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cmI-Lb-6Pc" id="Gs2-Zn-JkG">
+                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Border Sides" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vxg-g9-73G">
+                                                    <frame key="frameInset" minX="15" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="yzd-wU-DRz" kind="show" id="gnx-mE-kud"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -343,7 +370,187 @@ Opacity</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FX3-ux-6qf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4826" y="500"/>
+            <point key="canvasLocation" x="4570" y="591"/>
+        </scene>
+        <!--Border View Controller-->
+        <scene sceneID="8Aq-1E-j6W">
+            <objects>
+                <viewController id="yzd-wU-DRz" customClass="BorderViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6rF-a8-fWx"/>
+                        <viewControllerLayoutGuide type="bottom" id="pNt-lR-6Yk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RXa-AH-gCS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Eb4-7r-Usj">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XfI-vs-Klt" userLabel="Content">
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5YH-3K-Z6I" customClass="AnimatableView" customModule="IBAnimatable">
+                                                <color key="backgroundColor" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="R7j-Se-AUb"/>
+                                                    <constraint firstAttribute="width" constant="200" id="onv-aW-yww"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.82352942228317261" green="0.18823529779911041" blue="0.14509804546833038" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="5YH-3K-Z6I" firstAttribute="centerX" secondItem="XfI-vs-Klt" secondAttribute="centerX" id="SuY-zC-qJd"/>
+                                            <constraint firstItem="5YH-3K-Z6I" firstAttribute="centerY" secondItem="XfI-vs-Klt" secondAttribute="centerY" id="le3-Pq-GtA"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pif-t8-9Jy" userLabel="Bot Panel">
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="75u-pF-Sy6">
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wXB-Ve-Nx8">
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0B-Jv-kmo" customClass="AnimatableCheckBox" customModule="IBAnimatable">
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="G0B-Jv-kmo" secondAttribute="height" id="IXX-5w-Pqc"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checked"/>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="unchecked"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="checked" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="boxChecked:" destination="yzd-wU-DRz" eventType="touchUpInside" id="qYA-tx-78w"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="Top" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qkf-AH-sgw">
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="FcK-Z8-jTw"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WJt-th-N1Y">
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GpR-xE-BpF" customClass="AnimatableCheckBox" customModule="IBAnimatable">
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="GpR-xE-BpF" secondAttribute="height" id="1v5-dx-sXj"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checked"/>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="unchecked"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="checked" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="boxChecked:" destination="yzd-wU-DRz" eventType="touchUpInside" id="DOP-rn-NsG"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="Left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ery-U0-7n4">
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="zE2-v2-aoc"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2Gl-ke-oiy">
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1WE-rk-t4D" customClass="AnimatableCheckBox" customModule="IBAnimatable">
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="1WE-rk-t4D" secondAttribute="height" id="pM7-dI-q5F"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checked"/>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="unchecked"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="checked" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="boxChecked:" destination="yzd-wU-DRz" eventType="touchUpInside" id="fAe-iT-Es4"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="Right" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdN-WX-lYa">
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="aSG-ho-4jm"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ojc-jR-F4A">
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5p-Qm-Tx2" customClass="AnimatableCheckBox" customModule="IBAnimatable">
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="a5p-Qm-Tx2" secondAttribute="height" id="KAM-N8-nt8"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checked"/>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="unchecked"/>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="checked" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="boxChecked:" destination="yzd-wU-DRz" eventType="touchUpInside" id="U0Z-BG-mKq"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="Bottom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCe-5b-zdS">
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="qOq-2s-TIf"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="75u-pF-Sy6" firstAttribute="leading" secondItem="Pif-t8-9Jy" secondAttribute="leading" constant="10" id="cwn-6x-vrp"/>
+                                            <constraint firstAttribute="bottom" secondItem="75u-pF-Sy6" secondAttribute="bottom" constant="10" id="euW-Le-T71"/>
+                                            <constraint firstAttribute="trailing" secondItem="75u-pF-Sy6" secondAttribute="trailing" constant="10" id="ezg-o2-Xj4"/>
+                                            <constraint firstItem="75u-pF-Sy6" firstAttribute="top" secondItem="Pif-t8-9Jy" secondAttribute="top" constant="10" id="kpG-tX-V6P"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Eb4-7r-Usj" firstAttribute="top" secondItem="6rF-a8-fWx" secondAttribute="bottom" id="B2f-gh-XDo"/>
+                            <constraint firstItem="pNt-lR-6Yk" firstAttribute="top" secondItem="Eb4-7r-Usj" secondAttribute="bottom" id="c3f-am-CNW"/>
+                            <constraint firstItem="Eb4-7r-Usj" firstAttribute="leading" secondItem="RXa-AH-gCS" secondAttribute="leading" id="eaG-x6-Ie0"/>
+                            <constraint firstAttribute="trailing" secondItem="Eb4-7r-Usj" secondAttribute="trailing" id="rkI-wL-bHX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="botCheckBox" destination="a5p-Qm-Tx2" id="N3D-gH-7ba"/>
+                        <outlet property="leftCheckBox" destination="GpR-xE-BpF" id="BHt-3E-Toa"/>
+                        <outlet property="rightCheckBox" destination="1WE-rk-t4D" id="AE3-Zw-Bs5"/>
+                        <outlet property="topCheckBox" destination="G0B-Jv-kmo" id="xDx-hv-xxK"/>
+                        <outlet property="viewToBorder" destination="5YH-3K-Z6I" id="I7p-ec-DdY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lrc-NQ-UrS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5198" y="591"/>
         </scene>
         <!--Gradient View Controller-->
         <scene sceneID="Mwp-lR-EKb">
@@ -441,7 +648,9 @@ Opacity</string>
     </scenes>
     <resources>
         <image name="back" width="21" height="21"/>
+        <image name="checked" width="80" height="80"/>
         <image name="login-bg" width="375" height="667"/>
+        <image name="unchecked" width="80" height="81"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="JfQ-7P-WNG"/>

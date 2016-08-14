@@ -39,12 +39,17 @@ import UIKit
     }
   }
   
-  @IBInspectable public var borderSide: String? {
+  public var borderSides: BorderSides  = .AllSides {
     didSet {
       configBorder()
     }
   }
   
+  @IBInspectable var _borderSides: String? {
+    didSet {
+      borderSides = BorderSides(rawValue: _borderSides)
+    }
+  }  
   // MARK: - GradientDesignable
   @IBInspectable public var startColor: UIColor?
   @IBInspectable public var endColor: UIColor?

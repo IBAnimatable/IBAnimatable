@@ -13,6 +13,7 @@
 		732485D71D4902510068FD93 /* ParamType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732485D61D4902510068FD93 /* ParamType.swift */; };
 		733323031D56BCF200B88F6E /* UserInterfaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733323021D56BCF200B88F6E /* UserInterfaceTableViewController.swift */; };
 		734DAFF31D493EB6007E830B /* BlurEffectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734DAFF21D493EB6007E830B /* BlurEffectViewController.swift */; };
+		73A99B671D5FC8650079C7EC /* BorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A99B661D5FC8650079C7EC /* BorderViewController.swift */; };
 		73B7D8861D233FB700DD3F43 /* IBEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B7D8851D233FB700DD3F43 /* IBEnum.swift */; };
 		73BDE6EC1D5654ED00D19EAE /* GradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BDE6EB1D5654ED00D19EAE /* GradientViewController.swift */; };
 		73CF12281D4828EE0025404E /* SystemTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56645FCD11BEC66200818 /* SystemTransitionType.swift */; };
@@ -163,6 +164,7 @@
 		732485D61D4902510068FD93 /* ParamType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParamType.swift; sourceTree = "<group>"; };
 		733323021D56BCF200B88F6E /* UserInterfaceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInterfaceTableViewController.swift; sourceTree = "<group>"; };
 		734DAFF21D493EB6007E830B /* BlurEffectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurEffectViewController.swift; sourceTree = "<group>"; };
+		73A99B661D5FC8650079C7EC /* BorderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderViewController.swift; sourceTree = "<group>"; };
 		73B7D8851D233FB700DD3F43 /* IBEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBEnum.swift; sourceTree = "<group>"; };
 		73BDE6EB1D5654ED00D19EAE /* GradientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientViewController.swift; sourceTree = "<group>"; };
 		73ED71F71D34CA4700755C9B /* AnimationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationsViewController.swift; sourceTree = "<group>"; };
@@ -478,6 +480,7 @@
 				734DAFF21D493EB6007E830B /* BlurEffectViewController.swift */,
 				73BDE6EB1D5654ED00D19EAE /* GradientViewController.swift */,
 				733323021D56BCF200B88F6E /* UserInterfaceTableViewController.swift */,
+				73A99B661D5FC8650079C7EC /* BorderViewController.swift */,
 			);
 			name = code;
 			sourceTree = "<group>";
@@ -885,6 +888,7 @@
 			files = (
 				733323031D56BCF200B88F6E /* UserInterfaceTableViewController.swift in Sources */,
 				AE1B9A661CE3EB100098D962 /* InteractionTableViewController.swift in Sources */,
+				73A99B671D5FC8650079C7EC /* BorderViewController.swift in Sources */,
 				AE8764701D2332F60044E0AB /* MaskViewController.swift in Sources */,
 				73BDE6EC1D5654ED00D19EAE /* GradientViewController.swift in Sources */,
 				AE8A4FFA1C856EEC00E9E368 /* TransitionViewController.swift in Sources */,
