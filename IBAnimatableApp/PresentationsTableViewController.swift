@@ -46,6 +46,8 @@ private extension PresentationsTableViewController {
     presentationsAnimations.append(["Flip"])
     presentationsAnimationsHeaders.append("Zoom")
     presentationsAnimations.append(["Zoom"])
+    presentationsAnimationsHeaders.append("DropDown")
+    presentationsAnimations.append(["DropDown"])
     presentationsAnimationsHeaders.append("Cover")
     presentationsAnimations.append(presentationTypeWithDirections(forName: "Cover"))
   }

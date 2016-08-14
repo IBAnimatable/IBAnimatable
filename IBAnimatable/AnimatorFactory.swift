@@ -61,6 +61,8 @@ public struct AnimatorFactory {
       return CoverAnimator(from: direction, transitionDuration: transitionDuration)
     case .Zoom:
       return ZoomAnimator(transitionDuration: transitionDuration)
+    case .DropDown:
+      return DropDownAnimator(transitionDuration: transitionDuration)
     case .Flip, .CrossDissolve: // System animation, will never be executed
       fatalError()
     }
