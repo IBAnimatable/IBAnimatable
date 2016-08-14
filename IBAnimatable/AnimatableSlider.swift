@@ -26,7 +26,7 @@ import UIKit
     }
   }
   
-  @IBInspectable public var _borderSides: String? {
+  @IBInspectable var _borderSides: String? {
     didSet {
       borderSides = BorderSides(rawValue: _borderSides)
     }

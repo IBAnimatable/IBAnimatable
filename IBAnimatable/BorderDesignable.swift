@@ -75,19 +75,19 @@ private extension BorderDesignable where Self: UIView {
     border.name = "borderSideLayer"
     
     let borderPath = UIBezierPath()
-    
+    let shift = borderWidth / 2
     var lines: [(start: CGPoint, end: CGPoint)] = []
     if borderSides.contains(.top) {
-      lines.append((start: .zero, end: CGPoint(x: bounds.size.width, y: 0)))
+      lines.append((start: CGPoint(x: 0, y: shift), end: CGPoint(x: bounds.size.width, y: shift)))
     }
     if borderSides.contains(.right) {
-      lines.append((start: CGPoint(x: bounds.size.width, y: 0), end: CGPoint(x: bounds.size.width, y: bounds.size.height)))
+      lines.append((start: CGPoint(x: bounds.size.width - shift, y: 0), end: CGPoint(x: bounds.size.width - shift, y: bounds.size.height)))
     }
     if borderSides.contains(.bottom) {
-      lines.append((start: CGPoint(x: 0, y: bounds.size.height), end: CGPoint(x: bounds.size.width, y: bounds.size.height)))
+      lines.append((start: CGPoint(x: 0, y: bounds.size.height - shift), end: CGPoint(x: bounds.size.width, y: bounds.size.height - shift)))
     }
     if borderSides.contains(.left) {
-      lines.append((start: .zero, end: CGPoint(x: 0, y: bounds.size.height)))
+      lines.append((start: CGPoint(x: shift, y: 0), end: CGPoint(x: shift, y: bounds.size.height)))
     }
     
     for linePoints in lines {
