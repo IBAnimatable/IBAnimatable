@@ -27,7 +27,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, enjoy the demo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAS-Ee-lhd">
-                                        <rect key="frame" x="76.5" y="126" width="167.5" height="17"/>
+                                        <rect key="frame" x="76" y="126" width="167.5" height="17"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -46,6 +46,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQ6-br-D2b" customClass="AnimatableButton" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="0.0" width="256" height="50"/>
+                                        <color key="backgroundColor" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="TNq-Lf-9FA"/>
                                         </constraints>
@@ -62,6 +63,9 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="AV2-NQ-rHH" kind="presentation" id="0PJ-Nq-5Lw"/>
@@ -69,6 +73,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mnm-1A-4XS" customClass="AnimatableButton" customModule="IBAnimatable">
                                         <rect key="frame" x="0.0" y="80" width="256" height="50"/>
+                                        <color key="backgroundColor" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Playground">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -81,6 +86,9 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -104,12 +112,13 @@
                             <constraint firstItem="C0f-jh-Uh1" firstAttribute="leading" secondItem="0Zb-ln-vCD" secondAttribute="leading" id="o4k-8g-KDt"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="T7e-mN-iFb"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uTA-82-CQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="124" y="373"/>
+            <point key="canvasLocation" x="936" y="373"/>
         </scene>
         <!--DemoApp-->
         <scene sceneID="Au8-z9-02c">
@@ -117,7 +126,7 @@
                 <viewControllerPlaceholder storyboardName="DemoApp" id="AV2-NQ-rHH" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aZu-nD-fPx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="431.5" y="346"/>
+            <point key="canvasLocation" x="1243.5" y="346"/>
         </scene>
         <!--Playground-->
         <scene sceneID="DcI-pm-Tv7">
@@ -125,7 +134,7 @@
                 <viewControllerPlaceholder storyboardName="Playground" id="ZP4-Ul-hjM" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VdQ-FT-fKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="436.5" y="400"/>
+            <point key="canvasLocation" x="1248.5" y="400"/>
         </scene>
     </scenes>
 </document>

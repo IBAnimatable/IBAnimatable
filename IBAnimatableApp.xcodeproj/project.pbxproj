@@ -482,9 +482,9 @@
 			isa = PBXGroup;
 			children = (
 				AEF4938C1CE0161C00B76FD6 /* Playground.storyboard */,
+				AE0D309B1CE14A170093B578 /* Animations.storyboard */,
 				E2DAD6361D5F4B4A00333ABF /* UserInterface */,
 				E2DAD6371D5F4B6100333ABF /* Transitions / Presentations */,
-				AE0D309B1CE14A170093B578 /* Animations.storyboard */,
 			);
 			name = storyboards;
 			sourceTree = "<group>";
