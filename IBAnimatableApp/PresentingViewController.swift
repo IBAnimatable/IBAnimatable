@@ -6,7 +6,7 @@
 import UIKit
 import IBAnimatable
 
-class PresentingViewController: AnimatableViewController {
+class PresentingViewController: AnimatableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
   // MARK: Properties IB
 
@@ -27,6 +27,9 @@ class PresentingViewController: AnimatableViewController {
   @IBOutlet weak var labelShadowOffsetX: UILabel!
   @IBOutlet weak var labelShadowOffsetY: UILabel!
 
+  @IBOutlet weak var dimmingPickerView: AnimatableView!
+  @IBOutlet weak var containerPickerView: AnimatableView!
+  @IBOutlet weak var pickerView: UIPickerView!
 
   @IBOutlet var sliderCornerRadius: UISlider!
   @IBOutlet var switchDismissOnTap: UISwitch!
@@ -39,22 +42,23 @@ class PresentingViewController: AnimatableViewController {
 
   // MARK: Properties
 
-  let animations = ["Flip", "CrossDissolve", "Cover(Left)", "Cover(Right)", "Cover(Top)", "Cover(Bottom)", "Zoom", "DropDown"]
-  let positions = ["Center", "TopCenter", "BottomCenter", "LeftCenter", "RightCenter", "CustomCenter", "CustomOrigin"]
-  let sizes = ["Half", "Full", "Custom"]
-  let keyboardTranslation = ["MoveUp", "AboveKeyboard"]
-  let blurEffectStyle = ["ExtraLight", "Light", "Dark"]
+  private let animations = ["Flip", "CrossDissolve", "Cover(Left)", "Cover(Right)", "Cover(Top)", "Cover(Bottom)", "Zoom", "DropDown"]
+  private let positions = ["Center", "TopCenter", "BottomCenter", "LeftCenter", "RightCenter", "CustomCenter", "CustomOrigin"]
+  private let sizes = ["Half", "Full", "Custom"]
+  private let keyboardTranslations = ["MoveUp", "AboveKeyboard"]
+  private let blurEffectStyles = ["ExtraLight", "Light", "Dark"]
 
-  var selectedAnimationType: String?
-  var selectedDismissalAnimationType: String?
-  var selectedModalPosition: String?
-  var selectedModalWidth: String?
-  var selectedModalHeight: String?
-  var selectedKeyboardTranslation: String?
-  var selectedBlurEffectStyle: String?
-  var selectedBackgroundColor: UIColor?
-  var selectedShadowColor: UIColor?
+  private var selectedButton: UIButton?
 
+  private var selectedAnimationType: String?
+  private var selectedDismissalAnimationType: String?
+  private var selectedModalPosition: String?
+  private var selectedModalWidth: String?
+  private var selectedModalHeight: String?
+  private var selectedKeyboardTranslation: String?
+  private var selectedBlurEffectStyle: String?
+  private var selectedBackgroundColor: UIColor?
+  private var selectedShadowColor: UIColor?
 
   // MARK: Life cycle
 
@@ -104,35 +108,41 @@ extension PresentingViewController {
   }
 
   @IBAction func animationTypePressed() {
-
+    selectedButton = btnAnimationType
+    showPicker()
   }
 
   @IBAction func dismissalAnimationTypePressed() {
-
+    selectedButton = btnDismissalAnimationType
+    showPicker()
   }
 
   @IBAction func modalPositionPressed() {
-
+    selectedButton = btnModalPosition
+    showPicker()
   }
 
   @IBAction func modalSizePressed() {
-
+    selectedButton = btnModalSize
+    showPicker()
   }
 
   @IBAction func keyboardTranslationPressed() {
-
+    selectedButton = btnKeyboardTranslation
+    showPicker()
   }
 
   @IBAction func backgroundColorPressed() {
-
+    selectedButton = btnBackgroundColor
   }
 
   @IBAction func shadowColorPressed() {
-
+    selectedButton = btnShadowColor
   }
 
   @IBAction func blurEffectStylePressed() {
-
+    selectedButton = btnBlurEffectStyle
+    showPicker()
   }
 
 }
@@ -168,4 +178,76 @@ extension PresentingViewController {
   @IBAction func shadowOffsetYValueChanged(sender: UISlider) {
     labelShadowOffsetY.text = "Shadow offset Y (\(sender.value))"
   }
+}
+
+// MARK: - Picker
+
+extension PresentingViewController {
+
+  func showPicker() {
+    pickerView.reloadAllComponents()
+    dimmingPickerView.fadeIn()
+    containerPickerView.slideInUp()
+    dimmingPickerView.hidden = false
+  }
+
+  @IBAction func hidePicker() {
+    dimmingPickerView.fadeOut({
+      self.dimmingPickerView.hidden = true
+    })
+    containerPickerView.slideOutDown()
+  }
+
+  // MARK: Helpers
+
+  func componentsForSelectedButton() -> [[String]] {
+    if selectedButton == btnAnimationType || selectedButton == btnDismissalAnimationType {
+      return [animations]
+    } else if selectedButton == btnModalPosition {
+      return [positions]
+    } else if selectedButton == btnModalSize {
+      return [sizes]
+    } else if selectedButton == btnKeyboardTranslation {
+      return [keyboardTranslations]
+    }
+    return [blurEffectStyles]
+  }
+
+  // MARK: UIPickerDelegate / DataSource
+
+  func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    return componentsForSelectedButton().count
+  }
+
+  func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    return componentsForSelectedButton()[component].count
+  }
+
+  func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    return componentsForSelectedButton()[component][row]
+  }
+
+  func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    let title = componentsForSelectedButton()[0][row]
+    if selectedButton == btnAnimationType {
+      btnAnimationType.setTitle("Animation type (\(title))", forState: .Normal)
+      selectedAnimationType = title
+    } else if selectedButton == btnDismissalAnimationType {
+      btnDismissalAnimationType.setTitle("Dismissal animation type (\(title))", forState: .Normal)
+      selectedDismissalAnimationType = title
+    } else if selectedButton == btnModalPosition {
+      btnModalPosition.setTitle("Modal Position (\(title))", forState: .Normal)
+      selectedModalPosition = title
+    } else if selectedButton == btnModalSize {
+      btnModalSize.setTitle("Modal size (\(title))", forState: .Normal)
+      selectedModalWidth = title
+    } else if selectedButton == btnKeyboardTranslation {
+      btnKeyboardTranslation.setTitle("Keyboard translation (\(title))", forState: .Normal)
+      selectedKeyboardTranslation = title
+    } else if selectedButton == btnBlurEffectStyle {
+      btnBlurEffectStyle.setTitle("Blur effect style (\(title))", forState: .Normal)
+      selectedBlurEffectStyle = title
+    }
+  }
+  
 }

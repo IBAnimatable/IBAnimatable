@@ -14,29 +14,45 @@
                         <viewControllerLayoutGuide type="bottom" id="a4u-34-R1c"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XpY-33-JS5" customClass="AnimatableView" customModule="IBAnimatable">
-                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="MQO-iI-poj">
-                                <rect key="frame" x="28" y="70" width="144" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="MQO-iI-poj">
+                                <rect key="frame" x="32" y="111" width="336" height="178"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPG-qM-hNx" userLabel="Dismiss button" customClass="AnimatableButton" customModule="IBAnimatable">
-                                        <rect key="frame" x="0.0" y="0.0" width="144" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="d5t-pE-Vhr"/>
-                                        </constraints>
-                                        <state key="normal" title="Tap to dismiss">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="Y3r-Zl-Guu" kind="unwind" unwindAction="unwindToViewController:" id="WA3-Cn-dCl"/>
-                                        </connections>
-                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here it is" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEQ-H8-QWN">
+                                        <rect key="frame" x="0.0" y="0.0" width="336" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uok-zb-hno">
+                                        <rect key="frame" x="0.0" y="68" width="336" height="110"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uCG-fh-RxR">
+                                                <rect key="frame" x="0.0" y="0.0" width="336" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPG-qM-hNx" userLabel="Dismiss button" customClass="AnimatableButton" customModule="IBAnimatable">
+                                                <rect key="frame" x="0.0" y="50" width="336" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="d5t-pE-Vhr"/>
+                                                </constraints>
+                                                <state key="normal" title="Tap to dismiss">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="Y3r-Zl-Guu" kind="unwind" unwindAction="unwindToViewController:" id="WA3-Cn-dCl"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -49,7 +65,7 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="200" height="200"/>
+                    <size key="freeformSize" width="400" height="400"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                             <real key="value" value="10"/>
@@ -62,7 +78,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WWi-iw-WFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Y3r-Zl-Guu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5379.5" y="-281.5"/>
+            <point key="canvasLocation" x="5818" y="-409"/>
         </scene>
         <!--Custom presentation-->
         <scene sceneID="PlL-YA-NUy">
@@ -648,12 +664,73 @@
                                     <constraint firstItem="vLX-Al-x4t" firstAttribute="top" secondItem="pQP-WM-PMb" secondAttribute="top" constant="10" id="p0X-6D-pb2"/>
                                 </constraints>
                             </scrollView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zMo-DB-UiB" userLabel="View - Picker" customClass="AnimatableView" customModule="IBAnimatable">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nKa-KC-J0L" customClass="AnimatableView" customModule="IBAnimatable">
+                                        <rect key="frame" x="0.0" y="343" width="375" height="260"/>
+                                        <subviews>
+                                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FOg-a5-Vlt">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                <items>
+                                                    <barButtonItem style="done" systemItem="done" id="6Ow-cU-dWs">
+                                                        <connections>
+                                                            <action selector="hidePicker" destination="obJ-z2-xGJ" id="j1U-fF-Hhz"/>
+                                                        </connections>
+                                                    </barButtonItem>
+                                                </items>
+                                            </toolbar>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PRB-qS-KKW">
+                                                <rect key="frame" x="0.0" y="44" width="375" height="216"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="obJ-z2-xGJ" id="9m1-1C-hah"/>
+                                                    <outlet property="delegate" destination="obJ-z2-xGJ" id="Juu-sh-AZQ"/>
+                                                </connections>
+                                            </pickerView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="PRB-qS-KKW" secondAttribute="trailing" id="5Rz-DG-fgS"/>
+                                            <constraint firstAttribute="bottom" secondItem="PRB-qS-KKW" secondAttribute="bottom" id="5Yg-se-qYH"/>
+                                            <constraint firstItem="PRB-qS-KKW" firstAttribute="leading" secondItem="nKa-KC-J0L" secondAttribute="leading" id="K7A-Lc-adB"/>
+                                            <constraint firstItem="PRB-qS-KKW" firstAttribute="top" secondItem="FOg-a5-Vlt" secondAttribute="bottom" id="ZI5-XI-JqX"/>
+                                            <constraint firstItem="FOg-a5-Vlt" firstAttribute="leading" secondItem="nKa-KC-J0L" secondAttribute="leading" id="eUt-uZ-c9b"/>
+                                            <constraint firstAttribute="trailing" secondItem="FOg-a5-Vlt" secondAttribute="trailing" id="k4e-Zg-fwe"/>
+                                            <constraint firstItem="FOg-a5-Vlt" firstAttribute="top" secondItem="nKa-KC-J0L" secondAttribute="top" id="uXV-V5-Wea"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="damping">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="nKa-KC-J0L" secondAttribute="trailing" id="GGb-1a-o3e"/>
+                                    <constraint firstItem="nKa-KC-J0L" firstAttribute="leading" secondItem="zMo-DB-UiB" secondAttribute="leading" id="PUk-fE-ajE"/>
+                                    <constraint firstAttribute="bottom" secondItem="nKa-KC-J0L" secondAttribute="bottom" id="W5y-8n-aed"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="U72-BM-KFK" appends="YES" id="QuJ-pO-Auz"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="pQP-WM-PMb" secondAttribute="trailing" id="4wT-mL-6Er"/>
                             <constraint firstItem="pQP-WM-PMb" firstAttribute="top" secondItem="RmZ-fK-YRC" secondAttribute="bottom" id="SsP-Rt-lmx"/>
+                            <constraint firstAttribute="bottom" secondItem="zMo-DB-UiB" secondAttribute="bottom" id="WZ5-na-UHx"/>
+                            <constraint firstItem="zMo-DB-UiB" firstAttribute="top" secondItem="RmZ-fK-YRC" secondAttribute="bottom" id="gas-Nz-05h"/>
                             <constraint firstItem="pQP-WM-PMb" firstAttribute="leading" secondItem="BPL-CP-71z" secondAttribute="leading" id="lh1-db-fAt"/>
+                            <constraint firstAttribute="trailing" secondItem="zMo-DB-UiB" secondAttribute="trailing" id="pli-1V-wJF"/>
+                            <constraint firstItem="zMo-DB-UiB" firstAttribute="leading" secondItem="BPL-CP-71z" secondAttribute="leading" id="ulk-Fs-yAR"/>
                             <constraint firstItem="rHH-fm-ck9" firstAttribute="top" secondItem="pQP-WM-PMb" secondAttribute="bottom" id="w9v-9J-hDz"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -692,6 +769,8 @@
                         <outlet property="btnModalPosition" destination="gxt-Gf-235" id="wa6-1X-FES"/>
                         <outlet property="btnModalSize" destination="0oe-As-5wm" id="ZfU-Zo-Kwv"/>
                         <outlet property="btnShadowColor" destination="WPw-g3-Bz7" id="a4Y-3Y-5R5"/>
+                        <outlet property="containerPickerView" destination="nKa-KC-J0L" id="4Fe-FJ-Pg3"/>
+                        <outlet property="dimmingPickerView" destination="zMo-DB-UiB" id="Uql-Lh-9XZ"/>
                         <outlet property="labelBlurOpacity" destination="l2N-IS-vZk" id="wAe-5C-QJj"/>
                         <outlet property="labelCornerRadius" destination="GZP-t9-T3f" id="if9-XT-mcZ"/>
                         <outlet property="labelOpacity" destination="vga-Oj-eVY" id="0g7-lX-ezK"/>
@@ -699,6 +778,7 @@
                         <outlet property="labelShadowOffsetY" destination="3Ee-Xw-M7t" id="tEC-np-O0G"/>
                         <outlet property="labelShadowOpacity" destination="f7l-9Q-bHd" id="er3-Da-wND"/>
                         <outlet property="labelShadowRadius" destination="gK7-Ly-v1K" id="tRu-rz-Hxm"/>
+                        <outlet property="pickerView" destination="PRB-qS-KKW" id="btb-O3-WV6"/>
                         <outlet property="sliderBlurOpacity" destination="TkB-Ae-UyR" id="ivN-pi-oqs"/>
                         <outlet property="sliderCornerRadius" destination="6lR-UP-Rif" id="N7V-mU-Zd2"/>
                         <outlet property="sliderOpacity" destination="o2d-za-oGW" id="cgx-HV-lOd"/>
@@ -711,6 +791,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbw-J7-IEm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="bCg-Mp-eip" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="U72-BM-KFK">
+                    <connections>
+                        <action selector="hidePicker" destination="obJ-z2-xGJ" id="yHG-gK-NlC"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4926.5" y="-281.5"/>
         </scene>
