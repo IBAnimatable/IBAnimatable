@@ -45,8 +45,8 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
   private let animations = ["Flip", "CrossDissolve", "Cover(Left)", "Cover(Right)", "Cover(Top)", "Cover(Bottom)", "Zoom", "DropDown"]
   private let positions = ["Center", "TopCenter", "BottomCenter", "LeftCenter", "RightCenter", "CustomCenter", "CustomOrigin"]
   private let sizes = ["Half", "Full", "Custom"]
-  private let keyboardTranslations = ["MoveUp", "AboveKeyboard"]
-  private let blurEffectStyles = ["ExtraLight", "Light", "Dark"]
+  private let keyboardTranslations = ["", "MoveUp", "AboveKeyboard"]
+  private let blurEffectStyles = ["", "ExtraLight", "Light", "Dark"]
 
   private var selectedButton: UIButton?
 
@@ -186,6 +186,7 @@ extension PresentingViewController {
 
   func showPicker() {
     pickerView.reloadAllComponents()
+    resetSelectedItemPicker()
     dimmingPickerView.fadeIn()
     containerPickerView.slideInUp()
     dimmingPickerView.hidden = false
@@ -211,6 +212,25 @@ extension PresentingViewController {
       return [keyboardTranslations]
     }
     return [blurEffectStyles]
+  }
+
+  func resetSelectedItemPicker() {
+    var component: Int?
+    var row: Int?
+    if selectedButton == btnAnimationType {
+      row = animations.indexOf(selectedAnimationType ?? "")      
+    } else if selectedButton == btnDismissalAnimationType {
+      row = animations.indexOf(selectedDismissalAnimationType ?? "")
+    } else if selectedButton == btnModalPosition {
+      row = positions.indexOf(selectedModalPosition ?? "")
+    } else if selectedButton == btnModalSize {
+//      row = sizes.indexOf(selectedModalWidth ?? "")
+    } else if selectedButton == btnKeyboardTranslation {
+      row = keyboardTranslations.indexOf(selectedKeyboardTranslation ?? "")
+    } else if selectedButton == btnBlurEffectStyle {
+      row = blurEffectStyles.indexOf(selectedBlurEffectStyle ?? "")
+    }
+    pickerView.selectRow(row ?? 0, inComponent: component ?? 0, animated: false)
   }
 
   // MARK: UIPickerDelegate / DataSource
