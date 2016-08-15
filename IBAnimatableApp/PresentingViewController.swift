@@ -75,6 +75,7 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
     presentedViewController.dismissOnTap = switchDismissOnTap.on
     presentedViewController.keyboardTranslation = selectedKeyboardTranslation
     presentedViewController.cornerRadius = CGFloat(sliderCornerRadius.value)
+    presentedViewController.blurEffectStyle = selectedBlurEffectStyle
     presentedViewController.blurOpacity = CGFloat(sliderBlurOpacity.value)
     presentedViewController.shadowColor = UIColor(hexString: colors[Int(sliderShadowColor.value)])
     presentedViewController.shadowOpacity = CGFloat(sliderShadowOpacity.value)
