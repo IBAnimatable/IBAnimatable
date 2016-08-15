@@ -16,8 +16,6 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
   @IBOutlet weak var btnModalSize: AnimatableButton!
   @IBOutlet weak var btnKeyboardTranslation: AnimatableButton!
   @IBOutlet weak var btnBlurEffectStyle: AnimatableButton!
-  @IBOutlet weak var btnBackgroundColor: AnimatableButton!
-  @IBOutlet weak var btnShadowColor: AnimatableButton!
 
   @IBOutlet weak var labelCornerRadius: UILabel!
   @IBOutlet weak var labelOpacity: UILabel!
@@ -31,10 +29,12 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
   @IBOutlet weak var containerPickerView: AnimatableView!
   @IBOutlet weak var pickerView: UIPickerView!
 
+  @IBOutlet var sliderBackgroundColor: UISlider!
   @IBOutlet var sliderCornerRadius: UISlider!
   @IBOutlet var switchDismissOnTap: UISwitch!
   @IBOutlet var sliderOpacity: UISlider!
   @IBOutlet var sliderBlurOpacity: UISlider!
+  @IBOutlet var sliderShadowColor: UISlider!
   @IBOutlet var sliderShadowOpacity: UISlider!
   @IBOutlet var sliderShadowRadius: UISlider!
   @IBOutlet var sliderShadowOffsetX: UISlider!
@@ -47,18 +47,17 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
   private let sizes = ["Half", "Full"]
   private let keyboardTranslations = ["", "MoveUp", "AboveKeyboard"]
   private let blurEffectStyles = ["", "ExtraLight", "Light", "Dark"]
+  private let colors = ["0x000000", "0xfe0000", "0xff7900", "0xffb900", "0xffde00", "0xfcff00", "0xd2ff00", "0x05c000", "0x00c0a7", "0x0600ff", "0x6700bf", "0x9500c0", "0xbf0199", "0xffffff"]
 
   private var selectedButton: UIButton?
 
   private var selectedAnimationType: String?
   private var selectedDismissalAnimationType: String?
   private var selectedModalPosition: String?
-  private var selectedModalWidth: String?
-  private var selectedModalHeight: String?
+  private var selectedModalWidth: String = "Half"
+  private var selectedModalHeight: String = "Half"
   private var selectedKeyboardTranslation: String?
   private var selectedBlurEffectStyle: String?
-  private var selectedBackgroundColor: UIColor?
-  private var selectedShadowColor: UIColor?
 
   // MARK: Life cycle
 
@@ -72,12 +71,12 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
     presentedViewController.modalPosition = selectedModalPosition ?? "Center"
     presentedViewController.modalWidth = selectedModalWidth ?? "Half"
     presentedViewController.modalHeight = selectedModalHeight ?? "Half"
-    presentedViewController.backgroundColor = selectedBackgroundColor ?? .blackColor()
+    presentedViewController.backgroundColor = UIColor(hexString: colors[Int(sliderBackgroundColor.value)])
     presentedViewController.dismissOnTap = switchDismissOnTap.on
     presentedViewController.keyboardTranslation = selectedKeyboardTranslation
     presentedViewController.cornerRadius = CGFloat(sliderCornerRadius.value)
     presentedViewController.blurOpacity = CGFloat(sliderBlurOpacity.value)
-    presentedViewController.shadowColor = selectedShadowColor
+    presentedViewController.shadowColor = UIColor(hexString: colors[Int(sliderShadowColor.value)])
     presentedViewController.shadowOpacity = CGFloat(sliderShadowOpacity.value)
     presentedViewController.shadowRadius = CGFloat(sliderShadowRadius.value)
     presentedViewController.shadowOffset = CGPoint(x: CGFloat(sliderShadowOffsetX.value), y: CGFloat(sliderShadowOffsetY.value))
@@ -132,14 +131,6 @@ extension PresentingViewController {
     showPicker()
   }
 
-  @IBAction func backgroundColorPressed() {
-    selectedButton = btnBackgroundColor
-  }
-
-  @IBAction func shadowColorPressed() {
-    selectedButton = btnShadowColor
-  }
-
   @IBAction func blurEffectStylePressed() {
     selectedButton = btnBlurEffectStyle
     showPicker()
@@ -151,6 +142,10 @@ extension PresentingViewController {
 
 extension PresentingViewController {
 
+  @IBAction func backgroundColorValueChanged(sender: UISlider) {
+    //    labelShadowOpacity.text = "Shadow opacity (\(sender.value))"
+  }
+
   @IBAction func cornerRadiusValueChanged(sender: UISlider) {
     labelCornerRadius.text = "Corner radius (\(sender.value))"
   }
@@ -161,6 +156,10 @@ extension PresentingViewController {
 
   @IBAction func blurOpacityValueChanged(sender: UISlider) {
     labelBlurOpacity.text = "Blur opacity (\(sender.value))"
+  }
+
+  @IBAction func shadowColorValueChanged(sender: UISlider) {
+//    labelShadowOpacity.text = "Shadow opacity (\(sender.value))"
   }
 
   @IBAction func shadowOpacityValueChanged(sender: UISlider) {
@@ -197,6 +196,7 @@ extension PresentingViewController {
       self.dimmingPickerView.hidden = true
     })
     containerPickerView.slideOutDown()
+    selectedButton = nil
   }
 
   // MARK: Helpers
@@ -249,7 +249,7 @@ extension PresentingViewController {
   }
 
   func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    let title = componentsForSelectedButton()[0][row]
+    let title = componentsForSelectedButton()[component][row]
     if selectedButton == btnAnimationType {
       btnAnimationType.setTitle("Animation type (\(title))", forState: .Normal)
       selectedAnimationType = title
@@ -259,9 +259,12 @@ extension PresentingViewController {
     } else if selectedButton == btnModalPosition {
       btnModalPosition.setTitle("Modal Position (\(title))", forState: .Normal)
       selectedModalPosition = title
-    } else if selectedButton == btnModalSize {
-      btnModalSize.setTitle("Modal size (\(title))", forState: .Normal)
+    } else if selectedButton == btnModalSize && component == 0 {
+      btnModalSize.setTitle("Modal size (\(title) - \(selectedModalHeight))", forState: .Normal)
       selectedModalWidth = title
+    } else if selectedButton == btnModalSize && component == 1 {
+      btnModalSize.setTitle("Modal size (\(selectedModalWidth) - \(title))", forState: .Normal)
+      selectedModalHeight = title
     } else if selectedButton == btnKeyboardTranslation {
       btnKeyboardTranslation.setTitle("Keyboard translation (\(title))", forState: .Normal)
       selectedKeyboardTranslation = title
