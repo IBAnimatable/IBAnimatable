@@ -141,24 +141,31 @@ extension PresentingViewController {
 
 extension PresentingViewController {
 
-  @IBAction func cornerRadiusValueChanged(sender: AnyObject) {
+  @IBAction func cornerRadiusValueChanged(sender: UISlider) {
+    labelCornerRadius.text = "Corner radius (\(sender.value))"
   }
 
-  @IBAction func opacityValueChanged(sender: AnyObject) {
+  @IBAction func opacityValueChanged(sender: UISlider) {
+    labelOpacity.text = "Opacity (\(sender.value))"
   }
 
-  @IBAction func blurOpacityValueChanged(sender: AnyObject) {
+  @IBAction func blurOpacityValueChanged(sender: UISlider) {
+    labelBlurOpacity.text = "Blur opacity (\(sender.value))"
   }
 
-  @IBAction func shadowOpacityValueChanged(sender: AnyObject) {
+  @IBAction func shadowOpacityValueChanged(sender: UISlider) {
+    labelShadowOpacity.text = "Shadow opacity (\(sender.value))"
   }
 
-  @IBAction func shadowRadiusValueChanged(sender: AnyObject) {
+  @IBAction func shadowRadiusValueChanged(sender: UISlider) {
+    labelShadowRadius.text = "Shadow radius (\(sender.value))"
   }
 
-  @IBAction func shadowOffsetXValueChanged(sender: AnyObject) {
+  @IBAction func shadowOffsetXValueChanged(sender: UISlider) {
+    labelShadowOffsetX.text = "Shadow offset X (\(sender.value))"
   }
 
-  @IBAction func shadowOffsetYValueChanged(sender: AnyObject) {
+  @IBAction func shadowOffsetYValueChanged(sender: UISlider) {
+    labelShadowOffsetY.text = "Shadow offset Y (\(sender.value))"
   }
 }
