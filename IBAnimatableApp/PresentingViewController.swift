@@ -42,9 +42,9 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
 
   // MARK: Properties
 
-  private let animations = ["Flip", "CrossDissolve", "Cover(Left)", "Cover(Right)", "Cover(Top)", "Cover(Bottom)", "Zoom", "DropDown"]
-  private let positions = ["Center", "TopCenter", "BottomCenter", "LeftCenter", "RightCenter", "CustomCenter", "CustomOrigin"]
-  private let sizes = ["Half", "Full", "Custom"]
+  private let animations = ["", "Flip", "CrossDissolve", "Cover(Left)", "Cover(Right)", "Cover(Top)", "Cover(Bottom)", "Zoom", "DropDown"]
+  private let positions = ["Center", "TopCenter", "BottomCenter", "LeftCenter", "RightCenter"]
+  private let sizes = ["Half", "Full"]
   private let keyboardTranslations = ["", "MoveUp", "AboveKeyboard"]
   private let blurEffectStyles = ["", "ExtraLight", "Light", "Dark"]
 
@@ -207,7 +207,7 @@ extension PresentingViewController {
     } else if selectedButton == btnModalPosition {
       return [positions]
     } else if selectedButton == btnModalSize {
-      return [sizes]
+      return [sizes, sizes]
     } else if selectedButton == btnKeyboardTranslation {
       return [keyboardTranslations]
     }
@@ -215,7 +215,6 @@ extension PresentingViewController {
   }
 
   func resetSelectedItemPicker() {
-    var component: Int?
     var row: Int?
     if selectedButton == btnAnimationType {
       row = animations.indexOf(selectedAnimationType ?? "")      
@@ -224,13 +223,15 @@ extension PresentingViewController {
     } else if selectedButton == btnModalPosition {
       row = positions.indexOf(selectedModalPosition ?? "")
     } else if selectedButton == btnModalSize {
-//      row = sizes.indexOf(selectedModalWidth ?? "")
+      pickerView.selectRow(sizes.indexOf(selectedModalWidth ?? "") ?? 0, inComponent: 0, animated: false)
+      pickerView.selectRow(sizes.indexOf(selectedModalHeight ?? "") ?? 0, inComponent: 1, animated: false)
+      return
     } else if selectedButton == btnKeyboardTranslation {
       row = keyboardTranslations.indexOf(selectedKeyboardTranslation ?? "")
     } else if selectedButton == btnBlurEffectStyle {
       row = blurEffectStyles.indexOf(selectedBlurEffectStyle ?? "")
     }
-    pickerView.selectRow(row ?? 0, inComponent: component ?? 0, animated: false)
+    pickerView.selectRow(row ?? 0, inComponent: 0, animated: false)
   }
 
   // MARK: UIPickerDelegate / DataSource
