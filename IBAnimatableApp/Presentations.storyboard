@@ -96,7 +96,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vLX-Al-x4t" userLabel="View - ContentView">
-                                        <rect key="frame" x="20" y="10" width="335" height="1176"/>
+                                        <rect key="frame" x="20" y="10" width="335" height="1246"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setup your modal:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JxJ-Hh-Rol">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="21"/>
@@ -634,16 +634,42 @@
                                                     </view>
                                                 </subviews>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTp-2g-Lnt" customClass="AnimatableButton" customModule="IBAnimatable">
+                                                <rect key="frame" x="0.0" y="1196" width="335" height="50"/>
+                                                <state key="normal" title="Present">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                        <color key="value" red="0.96078431369999995" green="0.69019607839999997" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="presentProgramatically" destination="obJ-z2-xGJ" eventType="touchUpInside" id="8DC-mA-t9m"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="6DO-gh-4jc" firstAttribute="top" secondItem="lTp-2g-Lnt" secondAttribute="bottom" constant="213" id="398-Kc-LQ7"/>
                                             <constraint firstItem="6DO-gh-4jc" firstAttribute="top" secondItem="UO4-vG-mVJ" secondAttribute="bottom" constant="20" id="4Vv-qN-zOy"/>
                                             <constraint firstAttribute="trailing" secondItem="GI5-mZ-MEY" secondAttribute="trailing" id="7K0-OY-Vwa"/>
                                             <constraint firstItem="JxJ-Hh-Rol" firstAttribute="top" secondItem="vLX-Al-x4t" secondAttribute="top" id="8Zg-wy-d0W"/>
                                             <constraint firstItem="JxJ-Hh-Rol" firstAttribute="top" secondItem="GI5-mZ-MEY" secondAttribute="bottom" constant="20" id="Aon-La-YKB"/>
                                             <constraint firstItem="JxJ-Hh-Rol" firstAttribute="leading" secondItem="vLX-Al-x4t" secondAttribute="leading" id="C82-cm-d5s"/>
                                             <constraint firstItem="0BY-xg-wUS" firstAttribute="leading" secondItem="vLX-Al-x4t" secondAttribute="leading" id="Cdk-nc-87f"/>
+                                            <constraint firstItem="lTp-2g-Lnt" firstAttribute="height" secondItem="pUB-gC-po6" secondAttribute="height" id="Dc5-co-oYv"/>
                                             <constraint firstAttribute="trailing" secondItem="6DO-gh-4jc" secondAttribute="trailing" id="F5B-6B-P5r"/>
+                                            <constraint firstItem="lTp-2g-Lnt" firstAttribute="leading" secondItem="vLX-Al-x4t" secondAttribute="leading" id="HQ1-Eq-i4a"/>
                                             <constraint firstItem="UO4-vG-mVJ" firstAttribute="top" secondItem="lW2-QB-a6m" secondAttribute="bottom" constant="20" id="JDs-qr-nkP"/>
                                             <constraint firstItem="lW2-QB-a6m" firstAttribute="leading" secondItem="vLX-Al-x4t" secondAttribute="leading" id="JTY-Tj-qWY"/>
                                             <constraint firstAttribute="trailing" secondItem="0BY-xg-wUS" secondAttribute="trailing" id="JkE-vd-mqs"/>
@@ -656,8 +682,12 @@
                                             <constraint firstItem="Dw3-L3-qyf" firstAttribute="height" secondItem="pUB-gC-po6" secondAttribute="height" id="iu9-XS-qNi"/>
                                             <constraint firstItem="GI5-mZ-MEY" firstAttribute="leading" secondItem="vLX-Al-x4t" secondAttribute="leading" id="ixn-AC-Jwn"/>
                                             <constraint firstItem="UO4-vG-mVJ" firstAttribute="top" secondItem="0BY-xg-wUS" secondAttribute="bottom" constant="20" id="nM6-2Q-yff"/>
+                                            <constraint firstAttribute="trailing" secondItem="lTp-2g-Lnt" secondAttribute="trailing" id="net-gK-emc"/>
                                             <constraint firstItem="lW2-QB-a6m" firstAttribute="top" secondItem="0BY-xg-wUS" secondAttribute="bottom" constant="20" id="p1A-JE-lNE"/>
+                                            <constraint firstItem="UO4-vG-mVJ" firstAttribute="top" secondItem="lTp-2g-Lnt" secondAttribute="bottom" id="q1V-TU-IF0"/>
                                             <constraint firstAttribute="bottom" secondItem="6DO-gh-4jc" secondAttribute="bottom" id="rr4-b8-F5L"/>
+                                            <constraint firstAttribute="bottom" secondItem="lTp-2g-Lnt" secondAttribute="bottom" id="tBV-lB-HuB"/>
+                                            <constraint firstItem="lTp-2g-Lnt" firstAttribute="top" secondItem="6DO-gh-4jc" secondAttribute="bottom" constant="20" id="u91-jG-rzi"/>
                                             <constraint firstAttribute="bottom" secondItem="0BY-xg-wUS" secondAttribute="bottom" id="wJu-F0-n8q"/>
                                             <constraint firstAttribute="trailing" secondItem="UO4-vG-mVJ" secondAttribute="trailing" id="x9S-aM-n11"/>
                                             <constraint firstAttribute="bottom" secondItem="GI5-mZ-MEY" secondAttribute="bottom" id="xvb-UR-kQ5"/>
@@ -670,6 +700,9 @@
                                                 <exclude reference="wJu-F0-n8q"/>
                                                 <exclude reference="eCr-Jf-Oif"/>
                                                 <exclude reference="nM6-2Q-yff"/>
+                                                <exclude reference="q1V-TU-IF0"/>
+                                                <exclude reference="398-Kc-LQ7"/>
+                                                <exclude reference="rr4-b8-F5L"/>
                                             </mask>
                                         </variation>
                                     </view>
