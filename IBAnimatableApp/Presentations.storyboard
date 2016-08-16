@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="obJ-z2-xGJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="obJ-z2-xGJ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -263,7 +263,7 @@
                                                 <rect key="frame" x="0.0" y="391" width="335" height="31"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dismiss on tap" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wrk-qd-NJ2">
-                                                        <rect key="frame" x="0.0" y="7" width="286" height="18"/>
+                                                        <rect key="frame" x="0.0" y="6.5" width="286" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -273,11 +273,11 @@
                                                     </switch>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lW2-QB-a6m" userLabel="Stack View - DimmingView">
-                                                <rect key="frame" x="0.0" y="442" width="335" height="238"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lW2-QB-a6m" userLabel="Stack View - DimmingView">
+                                                <rect key="frame" x="0.0" y="442" width="335" height="208"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Bv-o7-kgC" userLabel="View - Background color">
-                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="86"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Bv-o7-kgC" userLabel="View - Background color">
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="56"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Background color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dN0-SL-d1h">
                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="21"/>
@@ -318,8 +318,8 @@
                                                             </mask>
                                                         </variation>
                                                     </view>
-                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ahu-fn-J6H" userLabel="View - Opacity">
-                                                        <rect key="frame" x="0.0" y="106" width="335" height="56"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ahu-fn-J6H" userLabel="View - Opacity">
+                                                        <rect key="frame" x="0.0" y="76" width="335" height="56"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opacity (1)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vga-Oj-eVY">
                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="21"/>
@@ -351,8 +351,8 @@
                                                             </mask>
                                                         </variation>
                                                     </view>
-                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="613-aL-7qy" userLabel="View - CornerRadius">
-                                                        <rect key="frame" x="0.0" y="182" width="335" height="56"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="613-aL-7qy" userLabel="View - CornerRadius">
+                                                        <rect key="frame" x="0.0" y="152" width="335" height="56"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Corner radius (10)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZP-t9-T3f">
                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="21"/>
@@ -455,11 +455,11 @@
                                                     </view>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6DO-gh-4jc" userLabel="Stack View - Shadow">
-                                                <rect key="frame" x="0.0" y="816" width="335" height="390"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6DO-gh-4jc" userLabel="Stack View - Shadow">
+                                                <rect key="frame" x="0.0" y="816" width="335" height="360"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bgk-Yr-EBJ" userLabel="View - Shadow color">
-                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="86"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bgk-Yr-EBJ" userLabel="View - Shadow color">
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="56"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shadow color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fb0-fm-2dF">
                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="21"/>
@@ -500,8 +500,8 @@
                                                             </mask>
                                                         </variation>
                                                     </view>
-                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4fx-Bh-YjK" userLabel="View - Shadow opacity">
-                                                        <rect key="frame" x="0.0" y="106" width="335" height="56"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fx-Bh-YjK" userLabel="View - Shadow opacity">
+                                                        <rect key="frame" x="0.0" y="76" width="335" height="56"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shadow opacity (0)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7l-9Q-bHd" userLabel="Shadow opacity (0,5)">
                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="21"/>
@@ -533,8 +533,8 @@
                                                             </mask>
                                                         </variation>
                                                     </view>
-                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nye-wT-PRS" userLabel="View - Shadow radius">
-                                                        <rect key="frame" x="0.0" y="182" width="335" height="56"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nye-wT-PRS" userLabel="View - Shadow radius">
+                                                        <rect key="frame" x="0.0" y="152" width="335" height="56"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shadow radius (0)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gK7-Ly-v1K">
                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="21"/>
@@ -566,8 +566,8 @@
                                                             </mask>
                                                         </variation>
                                                     </view>
-                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l8y-VH-a0j" userLabel="View - Shadow offset x">
-                                                        <rect key="frame" x="0.0" y="258" width="335" height="56"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8y-VH-a0j" userLabel="View - Shadow offset x">
+                                                        <rect key="frame" x="0.0" y="228" width="335" height="56"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shadow offset X (0)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIq-YS-BKW" userLabel="Shadow opacity (0,5)">
                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="21"/>
@@ -599,8 +599,8 @@
                                                             </mask>
                                                         </variation>
                                                     </view>
-                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oNg-qP-svw" userLabel="View - Shadow offset y">
-                                                        <rect key="frame" x="0.0" y="334" width="335" height="56"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oNg-qP-svw" userLabel="View - Shadow offset y">
+                                                        <rect key="frame" x="0.0" y="304" width="335" height="56"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shadow offset Y (0)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ee-Xw-M7t" userLabel="Shadow opacity (0,5)">
                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="21"/>
@@ -765,7 +765,7 @@
                                 <segue destination="bCg-Mp-eip" kind="unwind" unwindAction="unwindToViewController:" id="dvd-ia-lIh"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="IVZ-PE-JO9">
+                        <barButtonItem key="rightBarButtonItem" title="Present" style="done" id="IVZ-PE-JO9">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="presentProgramatically" destination="obJ-z2-xGJ" id="kny-Lv-Dn6"/>
