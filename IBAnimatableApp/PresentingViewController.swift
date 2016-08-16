@@ -72,6 +72,7 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
     presentedViewController.modalWidth = selectedModalWidth ?? "Half"
     presentedViewController.modalHeight = selectedModalHeight ?? "Half"
     presentedViewController.backgroundColor = UIColor(hexString: colors[Int(sliderBackgroundColor.value)])
+    presentedViewController.opacity = CGFloat(sliderOpacity.value)
     presentedViewController.dismissOnTap = switchDismissOnTap.on
     presentedViewController.keyboardTranslation = selectedKeyboardTranslation
     presentedViewController.cornerRadius = CGFloat(sliderCornerRadius.value)

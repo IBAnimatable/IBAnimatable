@@ -53,6 +53,7 @@ private extension AnimatablePresentationController {
       dimmingView.blurOpacity = presentationConfiguration.blurOpacity
     } else {
       dimmingView.fillColor = presentationConfiguration.backgroundColor.colorWithAlphaComponent(presentationConfiguration.opacity)
+//      dimmingView.opacity = presentationConfiguration.opacity
     }
   }
   
