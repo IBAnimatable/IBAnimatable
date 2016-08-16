@@ -42,11 +42,11 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
 
   // MARK: Properties
 
-  private let animations = ["", "Flip", "CrossDissolve", "Cover(Left)", "Cover(Right)", "Cover(Top)", "Cover(Bottom)", "Zoom", "DropDown"]
+  private let animations = ["None", "Flip", "CrossDissolve", "Cover(Left)", "Cover(Right)", "Cover(Top)", "Cover(Bottom)", "Zoom", "DropDown"]
   private let positions = ["Center", "TopCenter", "BottomCenter", "LeftCenter", "RightCenter"]
   private let sizes = ["Half", "Full"]
-  private let keyboardTranslations = ["", "MoveUp", "AboveKeyboard"]
-  private let blurEffectStyles = ["", "ExtraLight", "Light", "Dark"]
+  private let keyboardTranslations = ["None", "MoveUp", "AboveKeyboard"]
+  private let blurEffectStyles = ["None", "ExtraLight", "Light", "Dark"]
   private let colors = ["0x000000", "0xfe0000", "0xff7900", "0xffb900", "0xffde00", "0xfcff00", "0xd2ff00", "0x05c000", "0x00c0a7", "0x0600ff", "0x6700bf", "0x9500c0", "0xbf0199", "0xffffff"]
 
   private var selectedButton: UIButton?
