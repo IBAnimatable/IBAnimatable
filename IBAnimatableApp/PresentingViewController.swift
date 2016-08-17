@@ -87,6 +87,10 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
   }
 
   private func setDismissalAnimationTypeIfNeeded(viewController: AnimatableModalViewController) {
+    guard selectedDismissalAnimationType == nil else {
+      return
+    }
+    
     // FIXME: Dirty hack to make `Flip` and `CrossDissolve` work properly for dismissal transition.
     // If we don't apply this hack, both the dismissal transitions of `Flip` and `CrossDissolve` will slide down the modal not flip or crossDissolve(fade).
     if viewController.presentationAnimationType == "Flip" {
