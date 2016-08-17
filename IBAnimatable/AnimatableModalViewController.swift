@@ -122,7 +122,7 @@ public class AnimatableModalViewController: UIViewController, PresentationDesign
 
   // MARK: Life cycle
 
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+  public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     setupPresenter()
   }
