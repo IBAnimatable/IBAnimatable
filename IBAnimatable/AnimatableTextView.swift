@@ -5,48 +5,48 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableTextView: UITextView, CornerDesignable, FillDesignable, BorderDesignable, Animatable, PlaceholderDesignable {
+@IBDesignable open class AnimatableTextView: UITextView, CornerDesignable, FillDesignable, BorderDesignable, Animatable, PlaceholderDesignable {
   
   // MARK: - CornerDesignable
-  @IBInspectable public var cornerRadius: CGFloat = CGFloat.nan {
+  @IBInspectable open var cornerRadius: CGFloat = CGFloat.nan {
     didSet {
       configCornerRadius()
     }
   }
   
   // MARK: - FillDesignable
-  @IBInspectable public var fillColor: UIColor? {
+  @IBInspectable open var fillColor: UIColor? {
     didSet {
       configFillColor()
     }
   }
   
-  @IBInspectable public var predefinedColor: String? {
+  @IBInspectable open var predefinedColor: String? {
     didSet {
       configFillColor()
     }
   }
   
-  @IBInspectable public var opacity: CGFloat = CGFloat.nan {
+  @IBInspectable open var opacity: CGFloat = CGFloat.nan {
     didSet {
       configOpacity()
     }
   }
 
   // MARK: - BorderDesignable
-  @IBInspectable public var borderColor: UIColor? {
+  @IBInspectable open var borderColor: UIColor? {
     didSet {
       configBorder()
     }
   }
   
-  @IBInspectable public var borderWidth: CGFloat = CGFloat.nan {
+  @IBInspectable open var borderWidth: CGFloat = CGFloat.nan {
     didSet {
       configBorder()
     }
   }
   
-  public var borderSides: BorderSides  = .AllSides {
+  open var borderSides: BorderSides  = .AllSides {
     didSet {
       configBorder()
     }
@@ -58,80 +58,80 @@ import UIKit
     }
   }
   // MARK: - PlaceholderDesignable
-  @IBInspectable public var placeholderText: String? {
+  @IBInspectable open var placeholderText: String? {
     didSet {
       placeholderLabel.text = placeholderText
     }
   }
 
-  @IBInspectable public var placeholderColor: UIColor? {
+  @IBInspectable open var placeholderColor: UIColor? {
     didSet {
       placeholderLabel.textColor = placeholderColor
     }
   }
 
   // MARK: - Animatable
-public var animationType: AnimationType = .none
+open var animationType: AnimationType = .none
 @IBInspectable  var _animationType: String? {
     didSet {
      animationType = AnimationType(string: _animationType)
     }
   }
-  @IBInspectable public var autoRun: Bool = true
-  @IBInspectable public var duration: Double = Double.nan
-  @IBInspectable public var delay: Double = Double.nan
-  @IBInspectable public var damping: CGFloat = CGFloat.nan
-  @IBInspectable public var velocity: CGFloat = CGFloat.nan
-  @IBInspectable public var force: CGFloat = CGFloat.nan
-  @IBInspectable public var repeatCount: Float = Float.nan
+  @IBInspectable open var autoRun: Bool = true
+  @IBInspectable open var duration: Double = Double.nan
+  @IBInspectable open var delay: Double = Double.nan
+  @IBInspectable open var damping: CGFloat = CGFloat.nan
+  @IBInspectable open var velocity: CGFloat = CGFloat.nan
+  @IBInspectable open var force: CGFloat = CGFloat.nan
+  @IBInspectable open var repeatCount: Float = Float.nan
  
   // MARK: Override properties
-  override public var font: UIFont! {
+  override open var font: UIFont! {
     didSet {
       placeholderLabel.font = font
     }
   }
 
-  override public var textAlignment: NSTextAlignment {
+  override open var textAlignment: NSTextAlignment {
     didSet {
       placeholderLabel.textAlignment = textAlignment
     }
   }
 
-  public override var text: String! {
+  open override var text: String! {
     didSet {
       textDidChange()
     }
   }
 
-  override public var attributedText: NSAttributedString! {
+  override open var attributedText: NSAttributedString! {
     didSet {
       textDidChange()
     }
   }
 
-  override public var textContainerInset: UIEdgeInsets {
+  override open var textContainerInset: UIEdgeInsets {
     didSet {
       update(placeholderLabel, using: &placeholderLabelConstraints)
     }
   }
 
   // MARK: Private properties
-  private let placeholderLabel: UILabel = UILabel()
-  private var placeholderLabelConstraints = [NSLayoutConstraint]()
+  fileprivate let placeholderLabel: UILabel = UILabel()
+  fileprivate var placeholderLabelConstraints = [NSLayoutConstraint]()
 
   // MARK: - Lifecycle
-  public override func prepareForInterfaceBuilder() {
+  open override func prepareForInterfaceBuilder() {
     super.prepareForInterfaceBuilder()
     configInspectableProperties()
   }
   
-  public override func awakeFromNib() {
+  open override func awakeFromNib() {
     super.awakeFromNib()
     configInspectableProperties()
   }
   
-  public override func layoutSubviews() {
+  open override func layoutSubviews() {
     super.layoutSubviews()
     configAfterLayoutSubviews()
     autoRunAnimation()

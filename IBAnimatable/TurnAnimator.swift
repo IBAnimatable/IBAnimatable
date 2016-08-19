@@ -5,19 +5,19 @@
 
 import UIKit
 
-public class TurnAnimator: NSObject, AnimatedTransitioning {
+open class TurnAnimator: NSObject, AnimatedTransitioning {
   // MARK: - AnimatorProtocol
-  public var transitionAnimationType: TransitionAnimationType
-  public var transitionDuration: Duration = defaultTransitionDuration
-  public var reverseAnimationType: TransitionAnimationType?
-  public var interactiveGestureType: InteractiveGestureType? = .pan(fromDirection: .horizontal)
+  open var transitionAnimationType: TransitionAnimationType
+  open var transitionDuration: Duration = defaultTransitionDuration
+  open var reverseAnimationType: TransitionAnimationType?
+  open var interactiveGestureType: InteractiveGestureType? = .pan(fromDirection: .horizontal)
   
   // MARK: - Private params
-  private var fromDirection: TransitionDirection
+  fileprivate var fromDirection: TransitionDirection
   
   // MARK: - Private fold transition
-  private var transform: CATransform3D = CATransform3DIdentity
-  private var reverse: Bool = false
+  fileprivate var transform: CATransform3D = CATransform3DIdentity
+  fileprivate var reverse: Bool = false
   
   // MARK: - Life cycle
   public init(fromDirection: TransitionDirection, transitionDuration: Duration) {
@@ -71,7 +71,7 @@ extension TurnAnimator: UIViewControllerAnimatedTransitioning {
     }
   }
 
-  private func animateTurnTransition(_ fromView: UIView, toView: UIView, completion: AnimatableCompletion) {
+  fileprivate func animateTurnTransition(_ fromView: UIView, toView: UIView, completion: AnimatableCompletion) {
     let factor = reverse ? 1.0 : -1.0
     toView.layer.transform = rotate(factor * -.pi * 2)
     UIView.animateKeyframes(withDuration: transitionDuration, delay: 0.0, options: .layoutSubviews, animations: {

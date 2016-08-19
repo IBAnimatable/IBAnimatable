@@ -54,7 +54,7 @@ public extension SideImageDesignable where Self: UITextField {
     configRightImage()
   }
   
-  private func configLeftImage() {
+  fileprivate func configLeftImage() {
     guard let wrappedLeftImage = leftImage else {
       return
     }
@@ -64,7 +64,7 @@ public extension SideImageDesignable where Self: UITextField {
     leftView = sideView
   }
   
-  private func configRightImage() {
+  fileprivate func configRightImage() {
     guard let wrappedRightImage = rightImage else {
       return
     }
@@ -74,7 +74,7 @@ public extension SideImageDesignable where Self: UITextField {
     rightView = sideView
   }
   
-  private func generateSideViewWithImage(_ image: UIImage, leftPadding: CGFloat, rightPadding: CGFloat, topPadding: CGFloat) -> UIView {
+  fileprivate func generateSideViewWithImage(_ image: UIImage, leftPadding: CGFloat, rightPadding: CGFloat, topPadding: CGFloat) -> UIView {
     let imageView = UIImageView(image: image)
     
     // If not set, use 0 as default value

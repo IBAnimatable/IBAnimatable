@@ -5,8 +5,8 @@
 
 import UIKit
 
-public class PinchInteractiveAnimator: InteractiveAnimator {
-  private var startScale: CGFloat = 0
+open class PinchInteractiveAnimator: InteractiveAnimator {
+  fileprivate var startScale: CGFloat = 0
   
   override func createGestureRecognizer() -> UIGestureRecognizer {
     let gestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(handleGesture(_:)))

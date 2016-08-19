@@ -6,48 +6,48 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableScrollView: UIScrollView, CornerDesignable, FillDesignable, BorderDesignable, RotationDesignable, ShadowDesignable, BlurDesignable, TintDesignable, GradientDesignable, MaskDesignable, Animatable {
+@IBDesignable open class AnimatableScrollView: UIScrollView, CornerDesignable, FillDesignable, BorderDesignable, RotationDesignable, ShadowDesignable, BlurDesignable, TintDesignable, GradientDesignable, MaskDesignable, Animatable {
   
   // MARK: - CornerDesignable
-  @IBInspectable public var cornerRadius: CGFloat = CGFloat.nan {
+  @IBInspectable open var cornerRadius: CGFloat = CGFloat.nan {
     didSet {
       configCornerRadius()
     }
   }
   
   // MARK: - FillDesignable
-  @IBInspectable public var fillColor: UIColor? {
+  @IBInspectable open var fillColor: UIColor? {
     didSet {
       configFillColor()
     }
   }
   
-  @IBInspectable public var predefinedColor: String? {
+  @IBInspectable open var predefinedColor: String? {
     didSet {
       configFillColor()
     }
   }
   
-  @IBInspectable public var opacity: CGFloat = CGFloat.nan {
+  @IBInspectable open var opacity: CGFloat = CGFloat.nan {
     didSet {
       configOpacity()
     }
   }
   
   // MARK: - BorderDesignable
-  @IBInspectable public var borderColor: UIColor? {
+  @IBInspectable open var borderColor: UIColor? {
     didSet {
       configBorder()
     }
   }
   
-  @IBInspectable public var borderWidth: CGFloat = CGFloat.nan {
+  @IBInspectable open var borderWidth: CGFloat = CGFloat.nan {
     didSet {
       configBorder()
     }
   }
   
-  public var borderSides: BorderSides  = .AllSides {
+  open var borderSides: BorderSides  = .AllSides {
     didSet {
       configBorder()
     }
@@ -59,38 +59,38 @@ import UIKit
     }
   }  
   // MARK: - RotationDesignable
-  @IBInspectable public var rotate: CGFloat = CGFloat.nan {
+  @IBInspectable open var rotate: CGFloat = CGFloat.nan {
     didSet {
       configRotate()
     }
   }
   
   // MARK: - ShadowDesignable
-  @IBInspectable public var shadowColor: UIColor? {
+  @IBInspectable open var shadowColor: UIColor? {
     didSet {
       configShadowColor()
     }
   }
   
-  @IBInspectable public var shadowRadius: CGFloat = CGFloat.nan {
+  @IBInspectable open var shadowRadius: CGFloat = CGFloat.nan {
     didSet {
       configShadowRadius()
     }
   }
   
-  @IBInspectable public var shadowOpacity: CGFloat = CGFloat.nan {
+  @IBInspectable open var shadowOpacity: CGFloat = CGFloat.nan {
     didSet {
       configShadowOpacity()
     }
   }
   
-  @IBInspectable public var shadowOffset: CGPoint = CGPoint(x: CGFloat.nan, y: CGFloat.nan) {
+  @IBInspectable open var shadowOffset: CGPoint = CGPoint(x: CGFloat.nan, y: CGFloat.nan) {
     didSet {
       configShadowOffset()
     }
   }
   // MARK: - BlurDesignable
-  public var blurEffectStyle: UIBlurEffectStyle? {
+  open var blurEffectStyle: UIBlurEffectStyle? {
     didSet {
       configBlurEffectStyle()
     }
@@ -101,7 +101,7 @@ import UIKit
     }
   }
   
-  public var vibrancyEffectStyle: UIBlurEffectStyle? {
+  open var vibrancyEffectStyle: UIBlurEffectStyle? {
     didSet {
       configBlurEffectStyle()
     }
@@ -112,28 +112,28 @@ import UIKit
     }
   }
   
-  @IBInspectable public var blurOpacity: CGFloat = CGFloat.nan {
+  @IBInspectable open var blurOpacity: CGFloat = CGFloat.nan {
     didSet {
       configBlurEffectStyle()
     }
   }
   
   // MARK: - TintDesignable
-  @IBInspectable public var tintOpacity: CGFloat = CGFloat.nan
-  @IBInspectable public var shadeOpacity: CGFloat = CGFloat.nan
-  @IBInspectable public var toneColor: UIColor?
-  @IBInspectable public var toneOpacity: CGFloat = CGFloat.nan
+  @IBInspectable open var tintOpacity: CGFloat = CGFloat.nan
+  @IBInspectable open var shadeOpacity: CGFloat = CGFloat.nan
+  @IBInspectable open var toneColor: UIColor?
+  @IBInspectable open var toneOpacity: CGFloat = CGFloat.nan
   
   // MARK: - GradientDesignable
-  @IBInspectable public var startColor: UIColor?
-  @IBInspectable public var endColor: UIColor?
-  public var predefinedGradient: GradientType?
+  @IBInspectable open var startColor: UIColor?
+  @IBInspectable open var endColor: UIColor?
+  open var predefinedGradient: GradientType?
   @IBInspectable var _predefinedGradient: String? {
     didSet {
       predefinedGradient = GradientType(string: _predefinedGradient)
     }
   }
-  public var startPoint: GradientStartPoint = .top
+  open var startPoint: GradientStartPoint = .top
   @IBInspectable var _startPoint: String? {
     didSet {
       startPoint = GradientStartPoint(string: _startPoint, default: .top)
@@ -141,7 +141,7 @@ import UIKit
   }
   
   // MARK: - MaskDesignable
-  public var maskType: MaskType = .none {
+  open var maskType: MaskType = .none {
     didSet {
       configMask()
       configBorder()
@@ -156,44 +156,44 @@ import UIKit
   }
   
   // MARK: - Animatable
-  public var animationType: AnimationType = .none
+  open var animationType: AnimationType = .none
   @IBInspectable var _animationType: String? {
     didSet {
       animationType = AnimationType(string: _animationType)
     }
   }
-  @IBInspectable public var autoRun: Bool = true
-  @IBInspectable public var duration: Double = Double.nan
-  @IBInspectable public var delay: Double = Double.nan
-  @IBInspectable public var damping: CGFloat = CGFloat.nan
-  @IBInspectable public var velocity: CGFloat = CGFloat.nan
-  @IBInspectable public var force: CGFloat = CGFloat.nan
-  @IBInspectable public var repeatCount: Float = Float.nan
+  @IBInspectable open var autoRun: Bool = true
+  @IBInspectable open var duration: Double = Double.nan
+  @IBInspectable open var delay: Double = Double.nan
+  @IBInspectable open var damping: CGFloat = CGFloat.nan
+  @IBInspectable open var velocity: CGFloat = CGFloat.nan
+  @IBInspectable open var force: CGFloat = CGFloat.nan
+  @IBInspectable open var repeatCount: Float = Float.nan
   
   // MARK: - Lifecycle
-  public override func prepareForInterfaceBuilder() {
+  open override func prepareForInterfaceBuilder() {
     super.prepareForInterfaceBuilder()
     configInspectableProperties()
   }
   
-  public override func awakeFromNib() {
+  open override func awakeFromNib() {
     super.awakeFromNib()
     configInspectableProperties()
   }
   
-  public override func layoutSubviews() {
+  open override func layoutSubviews() {
     super.layoutSubviews()
     configAfterLayoutSubviews()
     autoRunAnimation()
   }
   
   // MARK: - Private
-  private func configInspectableProperties() {
+  fileprivate func configInspectableProperties() {
     configAnimatableProperties()
     configTintedColor()
   }
   
-  private func configAfterLayoutSubviews() {
+  fileprivate func configAfterLayoutSubviews() {
     configMask()
     configBorder()
     configGradient()

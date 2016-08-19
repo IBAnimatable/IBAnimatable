@@ -5,8 +5,8 @@
 
 import UIKit
 
-public class PresentFadeSegue: UIStoryboardSegue {
-  public override func perform() {
+open class PresentFadeSegue: UIStoryboardSegue {
+  open override func perform() {
     destination.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(.fade(direction: .cross))
     source.present(destination, animated: true, completion: nil)
   }

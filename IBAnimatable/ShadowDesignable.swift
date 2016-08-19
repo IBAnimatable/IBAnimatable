@@ -66,7 +66,7 @@ public extension ShadowDesignable where Self: UIView {
     }
   }
   
-  private func commonSetup() {
+  fileprivate func commonSetup() {
     // Need to set `layer.masksToBounds` to `false`. 
     // If `layer.masksToBounds == true` then shadow doesn't work any more.
     if layer.masksToBounds {

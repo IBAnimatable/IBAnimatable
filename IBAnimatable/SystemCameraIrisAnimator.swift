@@ -5,15 +5,15 @@
 
 import UIKit
 
-public class SystemCameraIrisAnimator: NSObject, AnimatedTransitioning {
+open class SystemCameraIrisAnimator: NSObject, AnimatedTransitioning {
   // MARK: - AnimatorProtocol
-  public var transitionAnimationType: TransitionAnimationType
-  public var transitionDuration: Duration = defaultTransitionDuration
-  public var reverseAnimationType: TransitionAnimationType?
-  public var interactiveGestureType: InteractiveGestureType?
+  open var transitionAnimationType: TransitionAnimationType
+  open var transitionDuration: Duration = defaultTransitionDuration
+  open var reverseAnimationType: TransitionAnimationType?
+  open var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
-  private var hollowState: TransitionHollowState
+  fileprivate var hollowState: TransitionHollowState
   
   public init(hollowState: TransitionHollowState, transitionDuration: Duration) {    
     self.transitionDuration = transitionDuration

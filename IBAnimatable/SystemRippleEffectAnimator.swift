@@ -5,12 +5,12 @@
 
 import UIKit
 
-public class SystemRippleEffectAnimator: NSObject, AnimatedTransitioning {
+open class SystemRippleEffectAnimator: NSObject, AnimatedTransitioning {
   // MARK: - AnimatorProtocol
-  public var transitionAnimationType: TransitionAnimationType
-  public var transitionDuration: Duration = defaultTransitionDuration
-  public var reverseAnimationType: TransitionAnimationType?
-  public var interactiveGestureType: InteractiveGestureType?
+  open var transitionAnimationType: TransitionAnimationType
+  open var transitionDuration: Duration = defaultTransitionDuration
+  open var reverseAnimationType: TransitionAnimationType?
+  open var interactiveGestureType: InteractiveGestureType?
   
   public init(transitionDuration: Duration) {
     self.transitionDuration = transitionDuration

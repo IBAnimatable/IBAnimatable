@@ -6,8 +6,8 @@
 import UIKit
 
 // Super abstract class for all interactive animator subclasses
-public class InteractiveAnimator: UIPercentDrivenInteractiveTransition {
-  internal(set) public var interacting = false
+open class InteractiveAnimator: UIPercentDrivenInteractiveTransition {
+  internal(set) open var interacting = false
   
   // transitionType: Used to deteminate pop or dismiss
   let transitionType: TransitionType

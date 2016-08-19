@@ -5,8 +5,8 @@
 
 import UIKit
 
-public class PresentSlideWithDismissInteractionSegue: UIStoryboardSegue {
-  public override func perform() {
+open class PresentSlideWithDismissInteractionSegue: UIStoryboardSegue {
+  open override func perform() {
     destination.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(.slide(toDirection: .left, params: []), interactiveGestureType: .default)
     source.present(destination, animated: true, completion: nil)
   }

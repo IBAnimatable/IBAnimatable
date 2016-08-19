@@ -6,7 +6,7 @@
 import UIKit
 
 // Pan interactive animator: pan gesture transition controller
-public class PanInteractiveAnimator: InteractiveAnimator {
+open class PanInteractiveAnimator: InteractiveAnimator {
   
   override func createGestureRecognizer() -> UIGestureRecognizer {
     return UIPanGestureRecognizer(target: self, action: #selector(handleGesture(_:)))

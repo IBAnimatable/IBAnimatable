@@ -30,7 +30,7 @@ public enum TransitionAnimationType {
   case systemCameraIris(hollowState: TransitionHollowState)
   
   public var stringValue: String {
-    return String(self)
+    return String(describing: self)
   }
 
   public static func fromString(_ transitionType: String) -> TransitionAnimationType? {

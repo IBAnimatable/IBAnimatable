@@ -48,7 +48,7 @@ public extension TintDesignable where Self: UIView {
     }
   }
   
-  private func addColorSubview(_ color: UIColor, opacity: CGFloat) {
+  fileprivate func addColorSubview(_ color: UIColor, opacity: CGFloat) {
     let subview = UIView(frame: self.bounds)
     subview.backgroundColor = color
     subview.alpha = opacity

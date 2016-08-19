@@ -19,7 +19,6 @@ public extension TableViewCellDesignable where Self: UITableViewCell {
       if responds(to: #selector(setter: UIView.preservesSuperviewLayoutMargins)) {
         preservesSuperviewLayoutMargins = false
       }
-      
       if responds(to: #selector(setter: UIView.layoutMargins)) {
         layoutMargins = .zero
       }

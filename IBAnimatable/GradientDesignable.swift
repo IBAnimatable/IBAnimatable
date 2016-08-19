@@ -23,7 +23,7 @@ public extension GradientDesignable where Self: UIView {
     }
   }
 
-  private func configGradientWithStartColor(_ startColor: UIColor, endColor: UIColor) {
+  fileprivate func configGradientWithStartColor(_ startColor: UIColor, endColor: UIColor) {
     // Default value is `.Top`
     
     let gradientStartPoint = startPoint
@@ -62,13 +62,13 @@ public extension GradientDesignable where Self: UIView {
     self.insertSubview(gradientView, at: 0)
   }
   
-  private func createGradientLayer() -> CAGradientLayer {
+  fileprivate func createGradientLayer() -> CAGradientLayer {
     let gradientLayer: CAGradientLayer = CAGradientLayer()
     gradientLayer.frame = self.bounds
     return gradientLayer
   }
   
-  private func configPredefinedGradient() -> GradientColor? {
+  fileprivate func configPredefinedGradient() -> GradientColor? {
     
     guard let gradientType = predefinedGradient else {
         return nil
@@ -94,7 +94,7 @@ private class GradientView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
   
-   class func layerClass() -> AnyClass {
+  override class var layerClass: AnyClass {
     return CAGradientLayer.self
   }
   

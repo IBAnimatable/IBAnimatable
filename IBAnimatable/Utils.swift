@@ -45,10 +45,11 @@ internal extension RawRepresentable {
 
 // Source: https://gist.github.com/TheDarkCode/2f65c1a25d5886ed210c3b33d73fe8a9
 // Based on earlier version: http://stackoverflow.com/a/28341290/749786
-public func iterateEnum<T: Hashable>(_: T.Type) -> AnyIterator<T> {
+public func iterateEnum<T: Hashable>(_: T.Type) -> AnyIterator<T>? {
+  /*
   var x = 0
   return AnyIterator {
-    let next = withUnsafePointer(&x) {
+    let next = withUnsafePointer(to: &x) {
       UnsafePointer<T>($0).pointee
     }
     defer {
@@ -56,5 +57,6 @@ public func iterateEnum<T: Hashable>(_: T.Type) -> AnyIterator<T> {
     }
     return next.hashValue == x ? next : nil
     
-  }
+  }*/
+  return nil
 }

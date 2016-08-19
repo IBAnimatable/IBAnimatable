@@ -8,8 +8,8 @@ import IBAnimatable
 
 class TransitionTableViewController: UITableViewController {
 
-  private var transitionAnimationsHeaders = [String]()
-  private var transitionAnimations = [[String]]()
+  fileprivate var transitionAnimationsHeaders = [String]()
+  fileprivate var transitionAnimations = [[String]]()
 
   // MARK: - Lifecycle
   override func viewDidLoad() {
@@ -18,7 +18,7 @@ class TransitionTableViewController: UITableViewController {
   }
 
   // MARK: - Navigation
-  override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     super.prepare(for: segue, sender: sender)
     
     guard let toNavigationController = segue.destination as? AnimatableNavigationController, let indexPath = tableView.indexPathForSelectedRow else {

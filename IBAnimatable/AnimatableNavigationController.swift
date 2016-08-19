@@ -5,7 +5,7 @@
 
 import UIKit
 
-public class AnimatableNavigationController: UINavigationController, TransitionAnimatable {
+open class AnimatableNavigationController: UINavigationController, TransitionAnimatable {
   
   // MARK: - TransitionAnimatable
   @IBInspectable  var _transitionAnimationType: String? {
@@ -15,17 +15,17 @@ public class AnimatableNavigationController: UINavigationController, TransitionA
       }
     }
   }
-   public var transitionAnimationType: TransitionAnimationType? {
+   open var transitionAnimationType: TransitionAnimationType? {
     didSet {
       configureNavigationControllerDelegate()
     }
   }
-  @IBInspectable public var transitionDuration: Double = .nan {
+  @IBInspectable open var transitionDuration: Double = .nan {
     didSet {
       configureNavigationControllerDelegate()
     }
   }
-  public var interactiveGestureType: InteractiveGestureType? {
+  open var interactiveGestureType: InteractiveGestureType? {
     didSet {
       configureNavigationControllerDelegate()
     }
@@ -41,9 +41,9 @@ public class AnimatableNavigationController: UINavigationController, TransitionA
   
   // MARK: - Private
   // Must have a property to keep the reference alive because `UINavigationController.delegate` is `weak`
-  private var navigator: Navigator?
+  fileprivate var navigator: Navigator?
   
-  private func configureNavigationControllerDelegate() {
+  fileprivate func configureNavigationControllerDelegate() {
     guard let animationType = transitionAnimationType else {
       navigator = nil
       delegate = nil

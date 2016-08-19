@@ -8,22 +8,22 @@ import Foundation
 /**
  Presenter Manager: Used to cache the Presenters for Present and Dismiss transitions
  */
-public class PresenterManager {
+open class PresenterManager {
   // MARK: - Singleton Constructor
-  private init() {}
-  private struct Shared {
+  fileprivate init() {}
+  fileprivate struct Shared {
     static let instance = PresenterManager()
   }
   
-  public static func sharedManager() -> PresenterManager {
+  open static func sharedManager() -> PresenterManager {
     return Shared.instance
   }
   
   // MARK: - Private
-  private var cache = [String: Presenter]()
+  fileprivate var cache = [String: Presenter]()
   
   // MARK: Internal Interface
-  public func retrievePresenter(_ transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) -> Presenter {
+  open func retrievePresenter(_ transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) -> Presenter {
     // Get the cached presenter
     let presenter = cache[transitionAnimationType.stringValue]
     if let presenter = presenter {

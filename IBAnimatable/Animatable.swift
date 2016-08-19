@@ -76,25 +76,25 @@ public extension Animatable where Self: UIView {
   public func animate(_ animation: AnimationType? = nil, completion: AnimatableCompletion? = nil) {
     switch animation ?? animationType {
     case let .slide(way, direction):
-      slide(way: way ?? .in, direction: direction ?? .right, completion: completion)
+      slide(way, direction: direction, completion: completion)
     case let .squeeze(way, direction):
-      squeeze(way: way ?? .in, direction: direction ?? .right, completion: completion)
+      squeeze(way, direction: direction, completion: completion)
     case let .squeezeFade(way, direction):
-      squeezeFade(way: way ?? .in, direction: direction ?? .right, completion: completion)
+      squeezeFade(way, direction: direction, completion: completion)
     case let .slideFade(way, direction):
-      slideFade(way: way  ?? .in, direction: direction ?? .right, completion: completion)
+      slideFade(way, direction: direction, completion: completion)
     case let .fade(way):
-      fade(way: way ?? .in, completion: completion)
+      fade(way, completion: completion)
     case let .zoom(way):
-      zoom(way: way ?? .in, completion: completion)
+      zoom(way, completion: completion)
     case let .zoomInvert(way):
-      zoom(way: way ?? .in, invert: true, completion: completion)
+      zoom(way, invert: true, completion: completion)
     case .shake:
       shake(completion)
     case .pop:
       pop(completion)
     case let .flip( axis):
-      flip(axis: axis ?? .x, completion: completion)
+      flip(axis, completion: completion)
     case .morph:
       morph(completion)
     case .flash:
@@ -104,11 +104,11 @@ public extension Animatable where Self: UIView {
     case .swing:
       swing(completion)
     case let .rotate(direction):
-      rotate(direction: direction ?? .cw, completion: completion)
+      rotate(direction, completion: completion)
     case let .moveBy(x, y):
-      moveBy(x: x ?? 0, y: y ?? 0, completion: completion)
+      moveBy(x, y: y, completion: completion)
     case let .moveTo(x, y):
-      moveTo(x: x ?? 0, y: y ?? 0, completion: completion)
+      moveTo(x, y: y, completion: completion)
     case .none:
       break
     }
@@ -125,7 +125,7 @@ public extension Animatable where Self: UIView {
   }
   
   // MARK: - Animation methods
-  private func computeValues(way: AnimationType.Way, direction: AnimationType.Direction, shouldScale: Bool) -> AnimationValues {
+  fileprivate func computeValues(_ way: AnimationType.Way, direction: AnimationType.Direction, shouldScale: Bool) -> AnimationValues {
     let yDistance = screenSize.height * force
     let xDistance = screenSize.width * force
     let scale = 3 * force
@@ -160,9 +160,9 @@ public extension Animatable where Self: UIView {
     
   }
   
-  public func slide(way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
+  public func slide(_ way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
 
-    let values = computeValues(way: way, direction: direction, shouldScale: false)
+    let values = computeValues(way, direction: direction, shouldScale: false)
     switch way {
     case .in:
       animateIn(values.x, values.y, values.scaleX, values.scaleY, 1, completion)
@@ -172,9 +172,9 @@ public extension Animatable where Self: UIView {
   }
   
   
-  public func squeeze( way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
+  public func squeeze( _ way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
   
-    let values = computeValues(way: way, direction: direction, shouldScale: true)
+    let values = computeValues(way, direction: direction, shouldScale: true)
     switch way {
     case .in:
       animateIn(values.x, values.y, values.scaleX, values.scaleY, 1, completion)
@@ -183,7 +183,7 @@ public extension Animatable where Self: UIView {
     }
   }
   
-  public func rotate(direction: AnimationType.RotationDirection, completion: AnimatableCompletion? = nil) {
+  public func rotate(_ direction: AnimationType.RotationDirection, completion: AnimatableCompletion? = nil) {
   
     CALayer.animate({
       let animation = CABasicAnimation(keyPath: "transform.rotation")
@@ -198,7 +198,7 @@ public extension Animatable where Self: UIView {
 
   }
   
-  public func moveTo(x: Double, y: Double, completion: AnimatableCompletion? = nil) {
+  public func moveTo(_ x: Double, y: Double, completion: AnimatableCompletion? = nil) {
     if x.isNaN && y.isNaN {
       return
     }
@@ -218,12 +218,12 @@ public extension Animatable where Self: UIView {
     } else {
       yOffsetToMove = CGFloat(y) - absolutePosition.y
     }
-      animateBy(x: xOffsetToMove, y: yOffsetToMove, completion: completion)
+      animateBy(xOffsetToMove, y: yOffsetToMove, completion: completion)
   }
   
-  public func slideFade( way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
+  public func slideFade( _ way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
     
-    let values = computeValues(way: way, direction: direction, shouldScale: false)
+    let values = computeValues(way, direction: direction, shouldScale: false)
     switch way {
     case .in:
       alpha = 0
@@ -232,7 +232,7 @@ public extension Animatable where Self: UIView {
       animateOut(values.x, values.y, values.scaleX, values.scaleY, 0, completion)
     }
   }
-  public func fade(way: AnimationType.FadeWay, completion: AnimatableCompletion? = nil) {
+  public func fade(_ way: AnimationType.FadeWay, completion: AnimatableCompletion? = nil) {
     switch way {
     case .outIn:
       fadeOutIn(completion)
@@ -247,9 +247,9 @@ public extension Animatable where Self: UIView {
     }
   }
   
-  public func squeezeFade(way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
+  public func squeezeFade(_ way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
     
-    let values = computeValues(way: way, direction: direction, shouldScale: true)
+    let values = computeValues(way, direction: direction, shouldScale: true)
     switch way {
     case .in:
       alpha = 0
@@ -259,7 +259,7 @@ public extension Animatable where Self: UIView {
     }
   }
   
-  public func zoom(way: AnimationType.Way, invert: Bool = false, completion: AnimatableCompletion? = nil) {
+  public func zoom(_ way: AnimationType.Way, invert: Bool = false, completion: AnimatableCompletion? = nil) {
     let toAlpha: CGFloat
 
     switch way {
@@ -283,7 +283,7 @@ public extension Animatable where Self: UIView {
     
   }
   
-  public func flip(axis: AnimationType.Axis, completion: AnimatableCompletion? = nil) {
+  public func flip(_ axis: AnimationType.Axis, completion: AnimatableCompletion? = nil) {
      let scaleX: CGFloat
     let scaleY: CGFloat
     switch axis {
@@ -415,18 +415,18 @@ public extension Animatable where Self: UIView {
     }, completion: completion)
   }
 
-  public func moveBy(x: Double, y: Double, completion: AnimatableCompletion? = nil) {
+  public func moveBy(_ x: Double, y: Double, completion: AnimatableCompletion? = nil) {
     if x.isNaN && y.isNaN {
       return
     }
     
     let xOffsetToMove = x.isNaN ? 0: CGFloat(x)
     let yOffsetToMove = y.isNaN ? 0: CGFloat(y)
-    animateBy(x: xOffsetToMove, y: yOffsetToMove, completion: completion)
+    animateBy(xOffsetToMove, y: yOffsetToMove, completion: completion)
   }
   
   // MARK: - Private
-  private func fadeOutIn(_ completion: AnimatableCompletion? = nil) {
+  fileprivate func fadeOutIn(_ completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CABasicAnimation(keyPath: "opacity")
       animation.fromValue = 1
@@ -439,7 +439,7 @@ public extension Animatable where Self: UIView {
       }, completion: completion)
   }
   
-  private func fadeInOut(_ completion: AnimatableCompletion? = nil) {
+  fileprivate func fadeInOut(_ completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CABasicAnimation(keyPath: "opacity")
       animation.fromValue = 0
@@ -457,7 +457,7 @@ public extension Animatable where Self: UIView {
     })
   }
 
-  private func animateBy(x: CGFloat, y: CGFloat, completion: AnimatableCompletion? = nil) {
+  fileprivate func animateBy(_ x: CGFloat, y: CGFloat, completion: AnimatableCompletion? = nil) {
     let translate = CGAffineTransform(translationX: x, y: y)
     UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [],
       animations: {
@@ -472,7 +472,7 @@ public extension Animatable where Self: UIView {
   }
  
   
-  private func animateIn(_ x: CGFloat, _ y: CGFloat, _ scaleX: CGFloat, _ scaleY: CGFloat, _ alpha: CGFloat, _ completion: AnimatableCompletion? = nil) {
+  fileprivate func animateIn(_ x: CGFloat, _ y: CGFloat, _ scaleX: CGFloat, _ scaleY: CGFloat, _ alpha: CGFloat, _ completion: AnimatableCompletion? = nil) {
     let translate = CGAffineTransform(translationX: x, y: y)
     let scale = CGAffineTransform(scaleX: scaleX, y: scaleY)
     let translateAndScale = translate.concatenating(scale)
@@ -490,7 +490,7 @@ public extension Animatable where Self: UIView {
       })
   }
 
-  private func animateOut(_ x: CGFloat, _ y: CGFloat, _ scaleX: CGFloat, _ scaleY: CGFloat, _ alpha: CGFloat, _ completion: AnimatableCompletion? = nil) {
+  fileprivate func animateOut(_ x: CGFloat, _ y: CGFloat, _ scaleX: CGFloat, _ scaleY: CGFloat, _ alpha: CGFloat, _ completion: AnimatableCompletion? = nil) {
     let translate = CGAffineTransform(translationX: x, y: y)
     let scale = CGAffineTransform(scaleX: scaleX, y: scaleY)
     let translateAndScale = translate.concatenating(scale)
@@ -509,7 +509,7 @@ public extension Animatable where Self: UIView {
   }
   
   // MARK: Private helper
-  private var screenSize: CGSize {
+  fileprivate var screenSize: CGSize {
     return self.window?.screen.bounds.size ?? CGSize.zero
   }
 }

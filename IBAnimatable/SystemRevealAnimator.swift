@@ -5,15 +5,15 @@
 
 import UIKit
 
-public class SystemRevealAnimator: NSObject, AnimatedTransitioning {
+open class SystemRevealAnimator: NSObject, AnimatedTransitioning {
   // MARK: - AnimatorProtocol
-  public var transitionAnimationType: TransitionAnimationType
-  public var transitionDuration: Duration = defaultTransitionDuration
-  public var reverseAnimationType: TransitionAnimationType?
-  public var interactiveGestureType: InteractiveGestureType?
+  open var transitionAnimationType: TransitionAnimationType
+  open var transitionDuration: Duration = defaultTransitionDuration
+  open var reverseAnimationType: TransitionAnimationType?
+  open var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
-  private var fromDirection: TransitionDirection
+  fileprivate var fromDirection: TransitionDirection
   
   public init(fromDirection: TransitionDirection, transitionDuration: Duration) {
     self.fromDirection = fromDirection

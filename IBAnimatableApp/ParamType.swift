@@ -30,9 +30,15 @@ enum ParamType {
   case number(min: Double, max: Double, interval: Double, ascending: Bool, unit: String)
   case enumeration(values: [String])
   
-  init<T: RawRepresentable where T: Hashable>(fromEnum: T.Type) {
+  init<T: RawRepresentable>(fromEnum: T.Type) where T: Hashable {
     let iterator = iterateEnum(from: fromEnum)
-    let values = iterator.map {  return String($0.rawValue) }
+    //TODO: REWRITE THIS
+    /*
+    let values = iterator.map { (e: T) -> String in
+      return String(describing: e.rawValue)
+    }*/
+    //let values = iterator.map {  return String(describing: $0.rawValue) }
+    let values:[String] = [];
     self = .enumeration(values: values)
   }
   
@@ -53,9 +59,9 @@ enum ParamType {
   
     switch self {
     case let .number(min, _, interval, ascending, _) where ascending == true:
-      return formatter.string(from: min + Double(index) * interval)!
+      return formatter.string(from: NSNumber(value: min + Double(index) * interval))!
     case let .number(_, max, interval, _, _):
-      return formatter.string(from: max - Double(index) * interval)!
+      return formatter.string(from: NSNumber(value: max - Double(index) * interval))!
     case let .enumeration(values):
       return values[safe: index] ?? ""
     }
@@ -89,4 +95,3 @@ extension PickerEntry {
     
   }
 }
-

@@ -32,12 +32,12 @@ public extension BlurDesignable where Self: UIView {
       return
     }
     
-    let blurEffectView = createVisualEffectView(effect: UIBlurEffect(style: blurStyle))
+    let blurEffectView = createVisualEffectView(UIBlurEffect(style: blurStyle))
     
     // Apply vibrancy effect to all subviews
     if let vibrancyStyle = vibrancyEffectStyle {
       let vibrancyEffect = UIVibrancyEffect(blurEffect: UIBlurEffect(style: vibrancyStyle))
-      let vibrancyEffectView = createVisualEffectView(effect: vibrancyEffect)
+      let vibrancyEffectView = createVisualEffectView(vibrancyEffect)
       subviews.forEach {
         vibrancyEffectView.contentView.addSubview($0)
       }
@@ -50,7 +50,7 @@ public extension BlurDesignable where Self: UIView {
 
 private extension BlurDesignable where Self: UIView {
   
-  func createVisualEffectView(effect: UIVisualEffect) -> UIVisualEffectView {
+  func createVisualEffectView(_ effect: UIVisualEffect) -> UIVisualEffectView {
     let visualEffectView = UIVisualEffectView(effect: effect)
     visualEffectView.alpha = blurOpacity.isNaN ? 1.0 : blurOpacity
     if layer.cornerRadius > 0 {

@@ -5,27 +5,27 @@
 
 import UIKit
 
-public class FoldAnimator: NSObject, AnimatedTransitioning {
+open class FoldAnimator: NSObject, AnimatedTransitioning {
   // MARK: - AnimatorProtocol
-  public var transitionAnimationType: TransitionAnimationType
-  public var transitionDuration: Duration = defaultTransitionDuration
-  public var reverseAnimationType: TransitionAnimationType?
-  public var interactiveGestureType: InteractiveGestureType?
+  open var transitionAnimationType: TransitionAnimationType
+  open var transitionDuration: Duration = defaultTransitionDuration
+  open var reverseAnimationType: TransitionAnimationType?
+  open var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - Private params
-  private var fromDirection: TransitionDirection
-  private var folds: Int = 2
+  fileprivate var fromDirection: TransitionDirection
+  fileprivate var folds: Int = 2
   
   // MARK: - Private fold transition
-  private var transform: CATransform3D = CATransform3DIdentity
-  private var reverse: Bool = false
-  private var horizontal: Bool = false
-  private var size: CGSize = CGSize.zero
-  private var foldSize: CGFloat = 0.0
-  private var width: CGFloat {
+  fileprivate var transform: CATransform3D = CATransform3DIdentity
+  fileprivate var reverse: Bool = false
+  fileprivate var horizontal: Bool = false
+  fileprivate var size: CGSize = CGSize.zero
+  fileprivate var foldSize: CGFloat = 0.0
+  fileprivate var width: CGFloat {
       return horizontal ? size.width : size.height
   }
-  private var height: CGFloat {
+  fileprivate var height: CGFloat {
     return horizontal ? size.height : size.width
   }
   

@@ -5,15 +5,15 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableViewController: UIViewController, ViewControllerDesignable, StatusBarDesignable, RootWindowDesignable, TransitionAnimatable {
+@IBDesignable open class AnimatableViewController: UIViewController, ViewControllerDesignable, StatusBarDesignable, RootWindowDesignable, TransitionAnimatable {
   // MARK: - ViewControllerDesignable
-  @IBInspectable public var hideNavigationBar: Bool = false
+  @IBInspectable open var hideNavigationBar: Bool = false
   
   // MARK: - StatusBarDesignable
-  @IBInspectable public var lightStatusBar: Bool = false
+  @IBInspectable open var lightStatusBar: Bool = false
   
   // MARK: - RootWindowDesignable
-  @IBInspectable public var rootWindowBackgroundColor: UIColor?
+  @IBInspectable open var rootWindowBackgroundColor: UIColor?
 
   // MARK: - TransitionAnimatable
   @IBInspectable  var _transitionAnimationType: String? {
@@ -23,11 +23,11 @@ import UIKit
       }
     }
   }
-  public var transitionAnimationType: TransitionAnimationType?
+  open var transitionAnimationType: TransitionAnimationType?
   
-  @IBInspectable public var transitionDuration: Double = .nan
+  @IBInspectable open var transitionDuration: Double = .nan
   
-  public var interactiveGestureType: InteractiveGestureType?
+  open var interactiveGestureType: InteractiveGestureType?
   @IBInspectable var _interactiveGestureType: String? {
     didSet {
       if let _interactiveGestureType = _interactiveGestureType {
@@ -37,26 +37,27 @@ import UIKit
   }
 
   // MARK: - Lifecylce
-  public override func viewWillAppear(_ animated: Bool) {
+  open override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     confingHideNavigationBar()
     configRootWindowBackgroundColor()
   }
   
-  public override func viewWillDisappear(_ animated: Bool) {
+  open override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     resetHideNavigationBar()
 
   }
   
-  public override var preferredStatusBarStyle: UIStatusBarStyle {
+  open override var preferredStatusBarStyle: UIStatusBarStyle {
     if lightStatusBar {
       return .lightContent
     }
     return .default
   }
 
-  public override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+  
+  open override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     super.prepare(for: segue, sender: sender)
     
     // Configure custom transition animation

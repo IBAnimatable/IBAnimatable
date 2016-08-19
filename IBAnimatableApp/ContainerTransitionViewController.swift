@@ -13,8 +13,8 @@ class ContainerTransitionViewController: UIViewController, UITabBarDelegate {
   @IBOutlet var tabBar: UITabBar!
   @IBOutlet var containerView: UIView!
   
-  private var viewControllers = [AnimatableViewController]()
-  private var currentViewController: AnimatableViewController?
+  fileprivate var viewControllers = [AnimatableViewController]()
+  fileprivate var currentViewController: AnimatableViewController?
   
   // MARK: Life cycle
   

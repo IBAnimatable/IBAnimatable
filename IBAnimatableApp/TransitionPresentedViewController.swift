@@ -30,7 +30,7 @@ class TransitionPresentedViewController: AnimatableViewController {
     hideButtonsIfNeeded()
   }
 
-  override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     super.prepare(for: segue, sender: sender)
     
     // Set the transition animation type for `AnimatableViewController`, used for Present/Dismiss transitions
@@ -111,7 +111,7 @@ private extension TransitionPresentedViewController {
   func presentViaSegue(_ segueClass: UIStoryboardSegue.Type?, useDismissInteraction: Bool) {
     if let segueClass = segueClass, let toViewController = storyboard?.instantiateViewController(withIdentifier: "TransitionPresentedViewController") as? TransitionPresentedViewController {
       toViewController.useDismissInteraction = useDismissInteraction
-      let segue = segueClass.init(identifier: String(segueClass), source: self, destination: toViewController)
+      let segue = segueClass.init(identifier: String(describing: segueClass), source: self, destination: toViewController)
       prepare(for: segue, sender: self)
       segue.perform()
     }

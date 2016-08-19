@@ -5,17 +5,17 @@
 
 import UIKit
 
-public class ExplodeAnimator: NSObject, AnimatedTransitioning {
+open class ExplodeAnimator: NSObject, AnimatedTransitioning {
   // MARK: - AnimatorProtocol
-  public var transitionAnimationType: TransitionAnimationType
-  public var transitionDuration: Duration = defaultTransitionDuration
-  public var reverseAnimationType: TransitionAnimationType?
-  public var interactiveGestureType: InteractiveGestureType?
+  open var transitionAnimationType: TransitionAnimationType
+  open var transitionDuration: Duration = defaultTransitionDuration
+  open var reverseAnimationType: TransitionAnimationType?
+  open var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
-  private var xFactor: CGFloat = 10.0
-  private var minAngle: CGFloat = -10.0
-  private var maxAngle: CGFloat = 10.0
+  fileprivate var xFactor: CGFloat = 10.0
+  fileprivate var minAngle: CGFloat = -10.0
+  fileprivate var maxAngle: CGFloat = 10.0
   
   public init(params: [String], transitionDuration: Duration) {
     self.transitionDuration = transitionDuration

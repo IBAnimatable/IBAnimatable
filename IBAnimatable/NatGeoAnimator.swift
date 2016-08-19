@@ -5,17 +5,17 @@
 
 import UIKit
 
-public class NatGeoAnimator: NSObject, AnimatedTransitioning {
+open class NatGeoAnimator: NSObject, AnimatedTransitioning {
   
   // MARK: - AnimatorProtocol
-  public var transitionAnimationType: TransitionAnimationType
-  public var transitionDuration: Duration = defaultTransitionDuration
-  public var reverseAnimationType: TransitionAnimationType?
-  public var interactiveGestureType: InteractiveGestureType?
+  open var transitionAnimationType: TransitionAnimationType
+  open var transitionDuration: Duration = defaultTransitionDuration
+  open var reverseAnimationType: TransitionAnimationType?
+  open var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
-  private var fromDirection: TransitionDirection
-  private let firstPartRatio: Double = 0.8
+  fileprivate var fromDirection: TransitionDirection
+  fileprivate let firstPartRatio: Double = 0.8
   
   // MARK: - Life cycle
   

@@ -5,17 +5,17 @@
 
 import UIKit
 
-public class PortalAnimator: NSObject, AnimatedTransitioning {
+open class PortalAnimator: NSObject, AnimatedTransitioning {
 
   // MARK: - AnimatorProtocol
-  public var transitionAnimationType: TransitionAnimationType
-  public var transitionDuration: Duration = defaultTransitionDuration
-  public var reverseAnimationType: TransitionAnimationType?
-  public var interactiveGestureType: InteractiveGestureType?
+  open var transitionAnimationType: TransitionAnimationType
+  open var transitionDuration: Duration = defaultTransitionDuration
+  open var reverseAnimationType: TransitionAnimationType?
+  open var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
-  private var fromDirection: TransitionDirection
-  private var zoomScale: CGFloat = 0.8
+  fileprivate var fromDirection: TransitionDirection
+  fileprivate var zoomScale: CGFloat = 0.8
   
   public init(fromDirection: TransitionDirection, params: [String], transitionDuration: Duration) {
     self.transitionDuration = transitionDuration

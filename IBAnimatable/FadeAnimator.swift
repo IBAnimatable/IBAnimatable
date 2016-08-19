@@ -5,15 +5,15 @@
 
 import UIKit
 
-public class FadeAnimator: NSObject, AnimatedTransitioning {
+open class FadeAnimator: NSObject, AnimatedTransitioning {
   // MARK: - AnimatorProtocol
-  public var transitionAnimationType: TransitionAnimationType
-  public var transitionDuration: Duration = defaultTransitionDuration
-  public var reverseAnimationType: TransitionAnimationType?
-  public var interactiveGestureType: InteractiveGestureType? = .pan(fromDirection: .horizontal)
+  open var transitionAnimationType: TransitionAnimationType
+  open var transitionDuration: Duration = defaultTransitionDuration
+  open var reverseAnimationType: TransitionAnimationType?
+  open var interactiveGestureType: InteractiveGestureType? = .pan(fromDirection: .horizontal)
 
   // MARK: - private
-  private var direction: TransitionDirection
+  fileprivate var direction: TransitionDirection
   
   public init(direction: TransitionDirection, transitionDuration: Duration) {
     self.direction = direction
