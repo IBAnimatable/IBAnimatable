@@ -61,10 +61,8 @@ private extension TransitionPresentedViewController {
     }
     
     // No gesture for this animator
-    guard let interactiveGestureTypeString = self.interactiveGestureType,
-      let interactiveGestureType = InteractiveGestureType.fromString(interactiveGestureTypeString),
-      let transitionAnimationTypeString = self.transitionAnimationType,
-      let transitionAnimationType = TransitionAnimationType.fromString(transitionAnimationTypeString) else {
+    guard let interactiveGestureType = self.interactiveGestureType,
+      let transitionAnimationType = self.transitionAnimationType else {
         return
     }
     
@@ -77,14 +75,14 @@ private extension TransitionPresentedViewController {
     }
     
     // Set up the segues without dismiss interaction
-    var segueName = "IBAnimatable.Present" + extractAnimationType(transitionAnimationType) + "Segue"
+    var segueName = "IBAnimatable.Present" + extractAnimationType(transitionAnimationType.stringValue) + "Segue"
     
     if let segueClass = NSClassFromString(segueName) as? UIStoryboardSegue.Type {
       presentingSegueClass = segueClass
     }
     
     // Set up the segues with dismiss interaction
-    segueName = "IBAnimatable.Present" + extractAnimationType(transitionAnimationType) + "WithDismissInteractionSegue"
+    segueName = "IBAnimatable.Present" + extractAnimationType(transitionAnimationType.stringValue) + "WithDismissInteractionSegue"
     
     if let segueClass = NSClassFromString(segueName) as? UIStoryboardSegue.Type {
       presentingWithDismissInteractionSegueClass = segueClass

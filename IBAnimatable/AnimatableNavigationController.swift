@@ -8,7 +8,14 @@ import UIKit
 public class AnimatableNavigationController: UINavigationController, TransitionAnimatable {
   
   // MARK: - TransitionAnimatable
-  @IBInspectable public var transitionAnimationType: String? {
+  @IBInspectable  var _transitionAnimationType: String? {
+    didSet {
+      if let _transitionAnimationType = _transitionAnimationType {
+        transitionAnimationType = TransitionAnimationType.fromString(_transitionAnimationType)
+      }
+    }
+  }
+   public var transitionAnimationType: TransitionAnimationType? {
     didSet {
       configureNavigationControllerDelegate()
     }
@@ -18,16 +25,18 @@ public class AnimatableNavigationController: UINavigationController, TransitionA
       configureNavigationControllerDelegate()
     }
   }
-  @IBInspectable public var interactiveGestureType: String? {
+  public var interactiveGestureType: InteractiveGestureType? {
     didSet {
       configureNavigationControllerDelegate()
     }
   }
-  
-  // MARK: - Lifecylce
-  public override func viewDidLoad() {
-    super.viewDidLoad()
-    configureNavigationControllerDelegate()
+
+  @IBInspectable var _interactiveGestureType: String? {
+    didSet {
+      if let _interactiveGestureType = _interactiveGestureType {
+        interactiveGestureType = InteractiveGestureType.fromString(_interactiveGestureType)
+      }
+    }
   }
   
   // MARK: - Private
@@ -35,7 +44,7 @@ public class AnimatableNavigationController: UINavigationController, TransitionA
   private var navigator: Navigator?
   
   private func configureNavigationControllerDelegate() {
-    guard let transitionAnimationType = transitionAnimationType, let animationType = TransitionAnimationType.fromString(transitionAnimationType) else {
+    guard let animationType = transitionAnimationType else {
       navigator = nil
       delegate = nil
       return
@@ -45,7 +54,7 @@ public class AnimatableNavigationController: UINavigationController, TransitionA
     if transitionDuration.isNaN {
       duration = defaultTransitionDuration
     }
-    if let interactiveGestureType = interactiveGestureType, let gestureType = InteractiveGestureType.fromString(interactiveGestureType) {
+    if let gestureType = interactiveGestureType {
       navigator = Navigator(transitionAnimationType: animationType, transitionDuration: duration, interactiveGestureType: gestureType)
     } else {
       navigator = Navigator(transitionAnimationType: animationType, transitionDuration: duration)

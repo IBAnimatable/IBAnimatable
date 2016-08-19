@@ -24,12 +24,13 @@ class TransitionTableViewController: UITableViewController {
     guard let toNavigationController = segue.destination as? AnimatableNavigationController, let indexPath = tableView.indexPathForSelectedRow else {
       return
     }
+    let transitionString = transitionAnimations[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
     
-    let transitionAnimationType = String(transitionAnimations[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row])
+    let transitionAnimationType = TransitionAnimationType.fromString(transitionString)
     
     // Set the transition animation type for `AnimatableNavigationController`, used for Push/Pop transitions
     toNavigationController.transitionAnimationType = transitionAnimationType
-    toNavigationController.navigationBar.topItem?.title = transitionAnimationType
+    toNavigationController.navigationBar.topItem?.title = transitionString
    
     // Set the transition animation type for `AnimatableViewController`, used for Present/Dismiss transitions
     if let toViewController = toNavigationController.topViewController as? TransitionViewController {
