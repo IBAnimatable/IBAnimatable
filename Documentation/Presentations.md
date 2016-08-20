@@ -57,9 +57,15 @@ After we select "present portal with dismiss interaction", we need to check the 
 
 You can see the example in "Presentations.storyboard" and play around with the different configurations.-->
 
+## Configuring a Presentation Programatically
+
+## Modal Position
+
+## Modal Size
+
 ## Presentation Animators
 
-`IBAnimatable` provide a broad set of Presentation Animators. We can use them in Interface Builder as **Presentation Animation** and **Dismiss Animation** as described in [Configuring Present transition in Interface Builder](#configuring-present-transition-in-interface-builder), or programmatically in code. They are all standard Transition Animators conform to `UIViewControllerAnimatedTransitioning`.
+`IBAnimatable` provide a broad set of Presentation Animators. We can use them in Interface Builder as **Presentation Animation** and **Dismiss Animation** as described in [Configuring a Presentation in Interface Builder](#configuring-a-presentation-in-interface-builder), or programmatically in code. They are all standard Transition Animators conform to `UIViewControllerAnimatedTransitioning`.
 
 You can see all supported Transition Animators in the demo App, open the App and tap on "Playground" button, then tap on "presentations", then play with the different options.
 
@@ -83,7 +89,12 @@ You can see all supported Transition Animators in the demo App, open the App and
 
 | Value | Effect |
 | ------------- | ------------- |
-| `Cover` | Slide in / out |
+| `Cover(Top)` | Slide in / out from top |
+| `Cover(Right)` | Slide in / out from right |
+| `Cover(Bottom)` | Slide in / out from bottom |
+| `Cover(Left)` | Slide in / out from left |
+
+![Transition - Fade Transition](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/FadeTransition.gif)
 
 ### Zoom
 
@@ -101,6 +112,7 @@ You can see all supported Transition Animators in the demo App, open the App and
 
 ![Transition - Fade Transition](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/FadeTransition.gif)
 
+## Keyboard Translation
 
 ## Contribution
 
