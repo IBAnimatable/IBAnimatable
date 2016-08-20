@@ -104,7 +104,7 @@ public class AnimatableModalViewController: UIViewController, PresentationDesign
     }
   }
 
-  @IBInspectable public var shadowOffset: CGPoint = CGPoint.zero {
+  @IBInspectable public var shadowOffset: CGPoint = .zero {
     didSet {
       presenter?.presentationConfiguration?.shadowOffset = shadowOffset
     }

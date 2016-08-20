@@ -162,7 +162,7 @@ public extension AnimatablePresentationController {
     if let center = modalCenter() {
       origin = calculateOrigin(center, size: size)
     } else {
-      origin = modalOrigin() ?? CGPoint.zero
+      origin = modalOrigin() ?? .zero
     }
 
     presentedViewFrame.size = size
