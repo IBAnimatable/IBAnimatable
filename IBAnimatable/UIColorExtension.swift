@@ -5,9 +5,9 @@
 
 import UIKit
 
-extension UIColor {
+public extension UIColor {
   
-  convenience init(hexString: String) {
+  public convenience init(hexString: String) {
     let hex = hexString.stringByTrimmingCharactersInSet(NSCharacterSet.alphanumericCharacterSet().invertedSet)
     var int = UInt32()
     NSScanner(string: hex).scanHexInt(&int)

@@ -142,12 +142,11 @@
 		E2A062B51CB1A60E00C54B40 /* PresentExplodeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A062B41CB1A60E00C54B40 /* PresentExplodeSegue.swift */; };
 		E2BCCD381CDCA15D00431DA0 /* ContainerTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BCCD371CDCA15D00431DA0 /* ContainerTransition.swift */; };
 		E2D33E511D3A5418006F2492 /* Presentations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2D33E501D3A5418006F2492 /* Presentations.storyboard */; };
-		E2D33E531D3A5490006F2492 /* PresentationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D33E521D3A5490006F2492 /* PresentationsViewController.swift */; };
+		E2D33E531D3A5490006F2492 /* PresentingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D33E521D3A5490006F2492 /* PresentingViewController.swift */; };
 		E2D33E551D3A5557006F2492 /* PresentationPresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D33E541D3A5557006F2492 /* PresentationPresentedViewController.swift */; };
-		E2D33E571D3A59B8006F2492 /* PresentationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D33E561D3A59B8006F2492 /* PresentationsTableViewController.swift */; };
-		E2DAD63B1D5F5CC600333ABF /* DropDownAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DAD63A1D5F5CC600333ABF /* DropDownAnimator.swift */; };
 		E2DAD6311D5F141F00333ABF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2DAD6301D5F141F00333ABF /* Main.storyboard */; };
 		E2DAD6391D5F4C2E00333ABF /* PresentationKeyboardTranslation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DAD6381D5F4C2E00333ABF /* PresentationKeyboardTranslation.swift */; };
+		E2DAD63B1D5F5CC600333ABF /* DropDownAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DAD63A1D5F5CC600333ABF /* DropDownAnimator.swift */; };
 		E2E28E6C1C6A6C30003F3852 /* GradientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6A1C6A6C30003F3852 /* GradientType.swift */; };
 		E2E28E6F1C6A6D22003F3852 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */; };
 		E2F45B571CDB845F001D2E37 /* FlipAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F45B561CDB845F001D2E37 /* FlipAnimator.swift */; };
@@ -310,12 +309,11 @@
 		E2A062B41CB1A60E00C54B40 /* PresentExplodeSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentExplodeSegue.swift; sourceTree = "<group>"; };
 		E2BCCD371CDCA15D00431DA0 /* ContainerTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerTransition.swift; sourceTree = "<group>"; };
 		E2D33E501D3A5418006F2492 /* Presentations.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Presentations.storyboard; sourceTree = "<group>"; };
-		E2D33E521D3A5490006F2492 /* PresentationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationsViewController.swift; sourceTree = "<group>"; };
+		E2D33E521D3A5490006F2492 /* PresentingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentingViewController.swift; sourceTree = "<group>"; };
 		E2D33E541D3A5557006F2492 /* PresentationPresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationPresentedViewController.swift; sourceTree = "<group>"; };
-		E2D33E561D3A59B8006F2492 /* PresentationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationsTableViewController.swift; sourceTree = "<group>"; };
-		E2DAD63A1D5F5CC600333ABF /* DropDownAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownAnimator.swift; sourceTree = "<group>"; };
 		E2DAD6301D5F141F00333ABF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E2DAD6381D5F4C2E00333ABF /* PresentationKeyboardTranslation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationKeyboardTranslation.swift; sourceTree = "<group>"; };
+		E2DAD63A1D5F5CC600333ABF /* DropDownAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownAnimator.swift; sourceTree = "<group>"; };
 		E2E28E6A1C6A6C30003F3852 /* GradientType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientType.swift; sourceTree = "<group>"; };
 		E2E28E6D1C6A6D22003F3852 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		E2E28E711C6A6E70003F3852 /* GradientsTypeScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GradientsTypeScript.swift; path = Scripts/GradientsTypeScript.swift; sourceTree = SOURCE_ROOT; };
@@ -500,8 +498,7 @@
 				AE8A4FF91C856EEC00E9E368 /* TransitionViewController.swift */,
 				AED57AE41CE5C0CB00C359E3 /* TransitionPushedViewController.swift */,
 				AEDB24D01CE9EC0F0086612C /* TransitionPresentedViewController.swift */,
-				E2D33E561D3A59B8006F2492 /* PresentationsTableViewController.swift */,
-				E2D33E521D3A5490006F2492 /* PresentationsViewController.swift */,
+				E2D33E521D3A5490006F2492 /* PresentingViewController.swift */,
 				E2D33E541D3A5557006F2492 /* PresentationPresentedViewController.swift */,
 				AE1B9A651CE3EB100098D962 /* InteractionTableViewController.swift */,
 				AE87646D1D2331010044E0AB /* UserInterfaceMaskTableViewController.swift */,
@@ -969,9 +966,8 @@
 				AE8FBAA91C853C7A00EB8AEA /* Functions.swift in Sources */,
 				E25EC6E71CDE034300743DB8 /* ContainerTransitionViewController.swift in Sources */,
 				AEDB24D11CE9EC0F0086612C /* TransitionPresentedViewController.swift in Sources */,
-				E2D33E531D3A5490006F2492 /* PresentationsViewController.swift in Sources */,
+				E2D33E531D3A5490006F2492 /* PresentingViewController.swift in Sources */,
 				AED1A1031BFE9820001346FA /* AppDelegate.swift in Sources */,
-				E2D33E571D3A59B8006F2492 /* PresentationsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
