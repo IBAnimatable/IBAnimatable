@@ -6,7 +6,7 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableScrollView: UIScrollView, CornerDesignable, FillDesignable, BorderDesignable, RotationDesignable, ShadowDesignable, BlurDesignable, TintDesignable, GradientDesignable, MaskDesignable, Animatable {
+@IBDesignable public class AnimatableScrollView: UIScrollView, CornerDesignable, FillDesignable, BorderDesignable, RotationDesignable, ShadowDesignable, TintDesignable, GradientDesignable, MaskDesignable, Animatable {
 
   // MARK: - CornerDesignable
   @IBInspectable public var cornerRadius: CGFloat = CGFloat.NaN {
@@ -82,25 +82,6 @@ import UIKit
   @IBInspectable public var shadowOffset: CGPoint = CGPoint(x: CGFloat.NaN, y: CGFloat.NaN) {
     didSet {
       configShadowOffset()
-    }
-  }
-
-  // MARK: - BlurDesignable
-  @IBInspectable public var blurEffectStyle: String? {
-    didSet {
-      configBlurEffectStyle()
-    }
-  }
-
-  @IBInspectable public var vibrancyEffectStyle: String? {
-    didSet {
-      configBlurEffectStyle()
-    }
-  }
-
-  @IBInspectable public var blurOpacity: CGFloat = CGFloat.NaN {
-    didSet {
-      configBlurEffectStyle()
     }
   }
 
