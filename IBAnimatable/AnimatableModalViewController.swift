@@ -92,7 +92,7 @@ public class AnimatableModalViewController: UIViewController, PresentationDesign
     }
   }
 
-  @IBInspectable public var shadowRadius: CGFloat = CGFloat.NaN {
+  @IBInspectable public var shadowRadius: CGFloat = 0.7 {
     didSet {
       presenter?.presentationConfiguration?.shadowRadius = shadowRadius
     }
@@ -104,7 +104,7 @@ public class AnimatableModalViewController: UIViewController, PresentationDesign
     }
   }
 
-  @IBInspectable public var shadowOffset: CGPoint = CGPoint(x: CGFloat.NaN, y: CGFloat.NaN) {
+  @IBInspectable public var shadowOffset: CGPoint = CGPoint.zero {
     didSet {
       presenter?.presentationConfiguration?.shadowOffset = shadowOffset
     }

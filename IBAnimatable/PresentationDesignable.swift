@@ -76,8 +76,8 @@ public struct PresentationConfiguration {
   var blurOpacity: CGFloat = .NaN
   var shadowColor: UIColor?
   var shadowRadius: CGFloat = .NaN
-  var shadowOpacity: CGFloat = .NaN
-  var shadowOffset: CGPoint = CGPoint(x: CGFloat.NaN, y: CGFloat.NaN)
+  var shadowOpacity: CGFloat = 0.7
+  var shadowOffset: CGPoint = CGPoint.zero
   var modalPosition: PresentationModalPosition = .Center
   var modalSize: (PresentationModalSize, PresentationModalSize) = (.Half, .Half)
   var keyboardTranslation = ModalKeyboardTranslation.None
