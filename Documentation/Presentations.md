@@ -13,14 +13,14 @@ Firstly, select a `UIViewController` then configure the custom class to `Animata
 
 Then we can configure the **Presentation Animations**, **Transition Duration** and **Modal specs** properties in Attributes inspector (![Attributes inspector](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/AttributesInspector.png)). 
 
-| Property | Description | Example |
-| ------------- | ------------- | ------------- |
-| Presentation Animation | The animation effect when *Present* a `ViewController`, you can find all supported transition animations in [Presentation Animators](#presentation-animators) section. | `CrossDissolve` for fade animation, some animator can support parameters, e.g. `Cover(Left)`, `Cover(Right)`,`Cover(Bottom)`, and `Cover(Top)` for a slide in from a specific direction. The default value is `Cover(Bottom)` |
-| Dismissal Animation | The animation effect when *Dismiss* a `ViewController`, you can find all supported transition animations in [Presentation Animators](#presentation-animators) section. By default, it will use the `Presentation animation` value | `CrossDissolve` for fade animation, some animator can support parameters, e.g. `Cover(Left)`, `Cover(Right)`,`Cover(Bottom)`, and `Cover(Top)` for a slide in from a specific direction. |
-| Transition Duration | The duration of the transition animation in seconds. The default value is `0.4` | `0.5` means half a second, `2` means two seconds |
-| Modal Position | The modal position when it will be presented, you can find all supported position in [Modal Position](#modal-position) section. |  |
-| Modal width | The modal width when it will be presented, you can find all supported size in [Modal Size](#modal-size) section. |  |
-| Modal height | The modal height when it will be presented, you can find all supported size in [Modal Size](#modal-size) section. |  |
+| Property | Description |
+| ------------- | ------------- |
+| Presentation Animation | The animation effect when *Present* a `ViewController`, you can find all supported transition animations in [Presentation Animators](#presentation-animators) section. |
+| Dismissal Animation | The animation effect when *Dismiss* a `ViewController`, you can find all supported transition animations in [Presentation Animators](#presentation-animators) section. By default, it will use the `Presentation animation` value |
+| Transition Duration | The duration of the transition animation in seconds. The default value is `0.4` |
+| Modal Position | The modal position when it will be presented, you can find all supported position in [Modal Position](#modal-position) section. The default value is `Center` |  |
+| Modal width | The modal width when it will be presented, you can find all supported size in [Modal Size](#modal-size) section. The default value is `Half` |  |
+| Modal height | The modal height when it will be presented, you can find all supported size in [Modal Size](#modal-size) section. The default value is `Half` |  |
 | Corner Radius | Corner radius of your modal  |  |
 | Dismiss On Tap | Dismiss the modal when tapping on the dimmingView  |  |
 | Background Color | Background of the dimmingView. Default value is black |  |
@@ -52,7 +52,7 @@ You can find that example in the demo application by choosing "Playground", then
 | ------------- | ------------- |
 | `Center` | Center the modal in the screen |
 
-![Modal position - Center](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/Presentation Center.png)
+![Modal position - Center](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentationCenter.png)
 
 ### TopCenter
 
@@ -60,7 +60,7 @@ You can find that example in the demo application by choosing "Playground", then
 | ------------- | ------------- |
 | `TopCenter` | Horizontally center but stay at the top |
 
-![Modal position - TopCenter](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/Presentation TopCenter.png)
+![Modal position - TopCenter](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentationTopCenter.png)
 
 ### BottomCenter
 
@@ -68,7 +68,7 @@ You can find that example in the demo application by choosing "Playground", then
 | ------------- | ------------- |
 | `BottomCenter ` | Horizontally center but stay at the bottom |
 
-![Modal position - BottomCenter](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/Presentation BottomCenter.png)
+![Modal position - BottomCenter](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentationBottomCenter.png)
 
 ### LeftCenter
 
@@ -76,7 +76,7 @@ You can find that example in the demo application by choosing "Playground", then
 | ------------- | ------------- |
 | `LeftCenter ` | Vertically center but stay at the left |
 
-![Modal position - LeftCenter](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/Presentation LeftCenter.png)
+![Modal position - LeftCenter](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentationLeftCenter.png)
 
 ### RightCenter
 
@@ -84,7 +84,7 @@ You can find that example in the demo application by choosing "Playground", then
 | ------------- | ------------- |
 | `RightCenter ` | Vertically center but stay at the right |
 
-![Modal position - RightCenter](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentationCustomOrigin.png)
+![Modal position - RightCenter](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentationRightCenter.png)
 
 ### CustomCenter
 
@@ -92,7 +92,9 @@ You can find that example in the demo application by choosing "Playground", then
 | ------------- | ------------- |
 | `CustomCenter(centerPoint: CGPoint)` | Custom origin (position relative to the center of the modal |
 
-![Modal position - CustomCenter](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentationCustomOrigin.png)
+*The following screenshot is using `CustomCenter(120,320)`*
+
+![Modal position - CustomCenter](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentationCustomCenter.png)
 
 ### CustomOrigin
 
@@ -100,7 +102,9 @@ You can find that example in the demo application by choosing "Playground", then
 | ------------- | ------------- |
 | `CustomOrigin(origin: CGPoint)` | Custom origin |
 
-![Modal position - CustomOrigin](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentationCustomOrigin.gif)
+*The following screenshot is using `CustomOrigin(20,20)`*
+
+![Modal position - CustomOrigin](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentationCustomOrigin.png)
 
 ## Modal Size
 
@@ -112,13 +116,17 @@ You can find that example in the demo application by choosing "Playground", then
 | ------------- | ------------- |
 | `Half` | Half screen (width or height) |
 
-![Modal size - Half](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentationHalf.png)
+*The following screenshot is using `Full` as with, and `Half` as height*
+
+![Modal size - Half](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentationFullHalf.png)
 
 ### Full
 
 | Value | Effect |
 | ------------- | ------------- |
 | `Full` | Use the full size of the screen (width or height) |
+
+*The following screenshot is using `Full` as with, and `Full` as height*
 
 ![Modal size - Full](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentationFull.png)
 
@@ -127,6 +135,8 @@ You can find that example in the demo application by choosing "Playground", then
 | Value | Effect |
 | ------------- | ------------- |
 | `Custom(Float)` | Set a custom value |
+
+*The following screenshot is using `Custom(300)` as with, and `Custom(300)` as height*
 
 ![Modal size - Custom](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentationSizeCustom.png)
 
