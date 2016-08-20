@@ -47,7 +47,7 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
   private let sizes = ["Half", "Full"]
   private let keyboardTranslations = ["None", "MoveUp", "AboveKeyboard"]
   private let blurEffectStyles = ["None", "ExtraLight", "Light", "Dark"]
-  private let colors = ["0x000000", "0xfe0000", "0xff7900", "0xffb900", "0xffde00", "0xfcff00", "0xd2ff00", "0x05c000", "0x00c0a7", "0x0600ff", "0x6700bf", "0x9500c0", "0xbf0199", "0xffffff"]
+  private let colors = [UIColor.blackColor(), UIColor.redColor(), UIColor.orangeColor(), UIColor.brownColor(), UIColor.yellowColor(), UIColor.lightGrayColor(), UIColor.greenColor(), UIColor.cyanColor(), UIColor.blueColor(), UIColor.purpleColor(), UIColor.purpleColor().colorWithAlphaComponent(0.5), UIColor.darkGrayColor(), UIColor.magentaColor(), UIColor.whiteColor()]
 
   private var selectedButton: UIButton?
 
@@ -71,14 +71,14 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
     presentedViewController.modalPosition = selectedModalPosition ?? "Center"
     presentedViewController.modalWidth = selectedModalWidth ?? "Half"
     presentedViewController.modalHeight = selectedModalHeight ?? "Half"
-    presentedViewController.backgroundColor = UIColor(hexString: colors[Int(sliderBackgroundColor.value)])
+    presentedViewController.backgroundColor = colors[Int(sliderBackgroundColor.value)]
     presentedViewController.opacity = CGFloat(sliderOpacity.value)
     presentedViewController.dismissOnTap = switchDismissOnTap.on
     presentedViewController.keyboardTranslation = selectedKeyboardTranslation
     presentedViewController.cornerRadius = CGFloat(sliderCornerRadius.value)
     presentedViewController.blurEffectStyle = selectedBlurEffectStyle
     presentedViewController.blurOpacity = CGFloat(sliderBlurOpacity.value)
-    presentedViewController.shadowColor = UIColor(hexString: colors[Int(sliderShadowColor.value)])
+    presentedViewController.shadowColor = colors[Int(sliderShadowColor.value)]
     presentedViewController.shadowOpacity = CGFloat(sliderShadowOpacity.value)
     presentedViewController.shadowRadius = CGFloat(sliderShadowRadius.value)
     presentedViewController.shadowOffset = CGPoint(x: CGFloat(sliderShadowOffsetX.value), y: CGFloat(sliderShadowOffsetY.value))
