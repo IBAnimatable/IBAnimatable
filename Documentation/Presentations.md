@@ -204,4 +204,11 @@ You can see all supported Keyboard Translation in the demo App, open the App and
 
 ## Contribution
 
-If you'd like to add more presentation animations to `IBAnimatable`, it is super easy, please have a look at [How to develop an animator (animation controller)](https://github.com/IBAnimatable/IBAnimatable/wiki/How-to-develop-an-animator-(animation-controller)). Let's have some fun 😉. If you have any question, please open an issue. 
+If you'd like to add more presentation options to `IBAnimatable`, it is super easy, please have a look at:
+
+- [How to develop a presentation animator](https://github.com/IBAnimatable/IBAnimatable/wiki/How-to-develop-a-presentation-animator). 
+- [How to develop a keyboard translation](https://github.com/IBAnimatable/IBAnimatable/wiki/How-to-develop-a-keyboard-translation). 
+- [How to develop a custom modal size](https://github.com/IBAnimatable/IBAnimatable/wiki/How-to-develop-a-custom-modal-size). 
+- [How to develop a custom modal position](https://github.com/IBAnimatable/IBAnimatable/wiki/How-to-develop-a-custom-modal-position). 
+
+Let's have some fun 😉. If you have any question, please open an issue. 
