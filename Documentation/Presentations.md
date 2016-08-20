@@ -1,6 +1,6 @@
 # How to design and prototype custom presentation animation in Interface Builder with IBAnimatable
 
-For most of the non-trivial apps, we have to present modally some Scene (`ViewController`). August 20th, 2016 as of this writing, out of the box, Interface Builder only supports fullscreen presentation with limited animations e.g. "Cover Vertical" and "Flip Horizontal". With `IBAnimatable` we can configure in the interface builder the presentation animation, the dismissal animation, the modal size, the `dimmingView` appearance, and even more.
+For most of the non-trivial apps, we have to present modally some Scene (`ViewController`). August 20th, 2016 as of this writing, out of the box, Interface Builder only supports fullscreen modals with limited animations e.g. "Cover Vertical" and "Flip Horizontal". Using `IBAnimatable` we can configure in the interface builder the presentation animation, the dismissal animation, the modal size, the `dimmingView` appearance, and a lot more.
 
 
 ## Configuring a Presentation in Interface Builder
@@ -18,50 +18,117 @@ Then we can configure the **Presentation Animations**, **Transition Duration** a
 | Presentation Animation | The animation effect when *Present* a `ViewController`, you can find all supported transition animations in [Presentation Animators](#presentation-animators) section. | `CrossDissolve` for fade animation, some animator can support parameters, e.g. `Cover(Left)`, `Cover(Right)`,`Cover(Bottom)`, and `Cover(Top)` for a slide in from a specific direction. The default value is `Cover(Bottom)` |
 | Dismissal Animation | The animation effect when *Dismiss* a `ViewController`, you can find all supported transition animations in [Presentation Animators](#presentation-animators) section. By default, it will use the `Presentation animation` value | `CrossDissolve` for fade animation, some animator can support parameters, e.g. `Cover(Left)`, `Cover(Right)`,`Cover(Bottom)`, and `Cover(Top)` for a slide in from a specific direction. |
 | Transition Duration | The duration of the transition animation in seconds. The default value is `0.4` | `0.5` means half a second, `2` means two seconds |
-| Modal Position |   |  |
-| Modal width |   |  |
-| Modal height |   |  |
-| Corner Radius |   |  |
-| Dismiss On Tap |   |  |
-| Background Color |   |  |
-| Opacity |   |  |
-| Blur Effect style |   |  |
-| Blur Opacity |   |  |
-| Shadow Color |   |  |
-| Opacity Radius |   |  |
-| Shadow Opacity |   |  |
-| Shadow Offset |   |  |
-| Keyboard Translation |   |  |
+| Modal Position | The modal position when it will be presented, you can find all supported position in [Modal Position](#modal-position) section. |  |
+| Modal width | The modal width when it will be presented, you can find all supported size in [Modal Size](#modal-size) section. |  |
+| Modal height | The modal height when it will be presented, you can find all supported size in [Modal Size](#modal-size) section. |  |
+| Corner Radius | Corner radius of your modal  |  |
+| Dismiss On Tap | Dismiss the modal when tapping on the dimmingView  |  |
+| Background Color | Background of the dimmingView. Default value is black |  |
+| Opacity | Opacity of the background color specified above. the default value is 0.7, the value range is from 0.0 to 1.0. |  |
+| Blur Effect style | Support three different blur effects: ExtraLight, Light and Dark, also can be found in emum `https://github.com/IBAnimatable/IBAnimatable/blob/master/IBAnimatable/BlurEffectStyle.swift`. The look of blur effect in Interface Builder is different from Simulator or device. |  |
+| Blur Opacity | Opacity of the blur effect specified above. the default value is CGFloat.NaN, the value range is from 0.0 to 1.0. |  |
+| Shadow Color | Shadow color |  |
+| Opacity Radius | Shadow corner radius. The default value is CGFloat.NaN, the value is greater than 0. |  |
+| Shadow Opacity | Shadow opacity. The default value is 0.7, the value is from 0.0 to 1.0. |  |
+| Shadow Offset | x is horizontal offset and y is vertical offset. |  |
+| Keyboard Translation | The translation applied when the keyboard is opening, you can find all supported translations in [Keyboard Translations](#keyboard-translations) section. |  |
 
-![Transition - Present Transition](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentTransitionAnimation.png)
+![Transition - Present Transition](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentationSetup.png)
 
-Once we configure those properties, **ALL Transition** (please notice it is all, including Present and Exit Segues) for this `ViewController` will use the configured animation effect. The transition animation will look like this based on the settings above. 
+To present your controller, you can do either using segues as well as presenting it programatically. 
+**Note:** If you don't want to use the interface builder, you can fully customise your presentation by code. The system is the same.
 
-![Transition - Present Transition](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentTransition.gif)
+![Transition - Present Transition](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentationDemo.gif)
 
-You can see the example in "TransitionsInInterfaceBuilder.storyboard" and play around different configurations. Then open the App and tap on "Playground" button, and tap on "transitions" cell to navigate to Transitions Scene. Tap on "IB" button to see the configurations you made in "TransitionsInInterfaceBuilder.storyboard".
-
-If you want to have separate animation effect for different **Present Transition**, see the section [Configuring Present transition in Interface Builder via Segue](#configuring-present-transition-in-interface-builder-via-segue).
-
-## Configuring a Presentation in Interface Builder via Segue
-
-<!--In some case, we may want to have different animation effect for various **Present Transition**. `IBAnimatable` provides a set of custom Segues to support that. You can find all supported Segues in [Segues](#segues) section.
-
-To use custom Segue, we can **control drag** from one `ViewController` to another `ViewController`, then select a custom Segue e.g. "present portal with dismiss interaction". Because Interface Builder doesn't support `@IBInspectable` for Segue, we are not able to change the transition direction, duration and dismissal gesture. There are one or two Segues for each **Transition Animator**. One is without dismissal interaction, and one's with (if this transition animator has interactive dismissal gesture). For example, for `PortalAnimator`, we have "present portal" for **Portal animation** without dismissal interaction, and have "present portal with dismiss interaction" for **Portal animation** with default dismissal interaction, which is `Pinch(Close)`. 
-
-![Transition - Present Transition via Segue](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentTransitionViaSegue.png)
-
-After we select "present portal with dismiss interaction", we need to check the **Module** in Attributes inspector (![Attributes inspector](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/AttributesInspector.png)). The App may crash if the field is empty. It probably is a bug of Interface Builder. To fix it just simply click on the **Module** field and hit enter, it should show **IBAnimatable**. If everything is ready, we can see the transition animation like this as below. We can have more than one Segue within the same ViewController. They will have different transition animation based on the selected Segue.
-
-![Transition - Present Transition via Segue](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentTransitionViaSegue.gif)
-
-You can see the example in "Presentations.storyboard" and play around with the different configurations.-->
-
-## Configuring a Presentation Programatically
+You can find that example in the demo application by choosing "Playground", then tap on "presentations". Config your presentation by choosing the your favorite setup, then just press "Present" in order to see the result.
 
 ## Modal Position
 
+`IBAnimatable` provide a broad set of prebuild position for your modal. We can use them in Interface Builder as **Modal Position** as described in [Configuring a Presentation in Interface Builder](#configuring-a-presentation-in-interface-builder), or programmatically in code.
+
+### Center
+
+| Value | Effect |
+| ------------- | ------------- |
+| `Center` | Center the modal in the screen |
+
+![Modal position - Center](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/Presentation Center.png)
+
+### TopCenter
+
+| Value | Effect |
+| ------------- | ------------- |
+| `TopCenter` | Horizontally center but stay at the top |
+
+![Modal position - TopCenter](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/Presentation TopCenter.png)
+
+### BottomCenter
+
+| Value | Effect |
+| ------------- | ------------- |
+| `BottomCenter ` | Horizontally center but stay at the bottom |
+
+![Modal position - BottomCenter](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/Presentation BottomCenter.png)
+
+### LeftCenter
+
+| Value | Effect |
+| ------------- | ------------- |
+| `LeftCenter ` | Vertically center but stay at the left |
+
+![Modal position - LeftCenter](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/Presentation LeftCenter.png)
+
+### RightCenter
+
+| Value | Effect |
+| ------------- | ------------- |
+| `RightCenter ` | Vertically center but stay at the right |
+
+![Modal position - RightCenter](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentationCustomOrigin.png)
+
+### CustomCenter
+
+| Value | Effect |
+| ------------- | ------------- |
+| `CustomCenter(centerPoint: CGPoint)` | Custom origin (position relative to the center of the modal |
+
+![Modal position - CustomCenter](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentationCustomOrigin.png)
+
+### CustomOrigin
+
+| Value | Effect |
+| ------------- | ------------- |
+| `CustomOrigin(origin: CGPoint)` | Custom origin |
+
+![Modal position - CustomOrigin](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentationCustomOrigin.gif)
+
 ## Modal Size
+
+`IBAnimatable` provide a broad set of prebuild size for your modal. We can use them in Interface Builder as **Modal Width** and **Modal Height** as described in [Configuring a Presentation in Interface Builder](#configuring-a-presentation-in-interface-builder), or programmatically in code.
+
+### Half
+
+| Value | Effect |
+| ------------- | ------------- |
+| `Half` | Half screen (width or height) |
+
+![Modal size - Half](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentationHalf.png)
+
+### Full
+
+| Value | Effect |
+| ------------- | ------------- |
+| `Full` | Use the full size of the screen (width or height) |
+
+![Modal size - Full](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentationFull.png)
+
+### Custom
+
+| Value | Effect |
+| ------------- | ------------- |
+| `Custom(Float)` | Set a custom value |
+
+![Modal size - Custom](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentationSizeCustom.png)
 
 ## Presentation Animators
 
@@ -73,9 +140,9 @@ You can see all supported Transition Animators in the demo App, open the App and
 
 | Value | Effect |
 | ------------- | ------------- |
-| `Flip ` | TODO |
+| `Flip ` | |
 
-![Transition - Fade Transition](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/FadeTransition.gif)
+![Transition - Fade Transition](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentationFlip.gif)
 
 ### CrossDissolve
 
@@ -83,7 +150,7 @@ You can see all supported Transition Animators in the demo App, open the App and
 | ------------- | ------------- |
 | `CrossDissolve` | Cross fade |
 
-![Transition - Fade Transition](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/FadeTransition.gif)
+![Transition - Fade Transition](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/CrossdissolveAnimator.gif)
 
 ### Cover
 
@@ -94,25 +161,46 @@ You can see all supported Transition Animators in the demo App, open the App and
 | `Cover(Bottom)` | Slide in / out from bottom |
 | `Cover(Left)` | Slide in / out from left |
 
-![Transition - Fade Transition](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/FadeTransition.gif)
+![Transition - Fade Transition](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/CoverAnimator.gif)
 
 ### Zoom
 
 | Value | Effect |
 | ------------- | ------------- |
-| `Zoom` | TODO |
+| `Zoom` | Zoom effect |
 
-![Transition - Fade Transition](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/FadeTransition.gif)
+![Transition - Fade Transition](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ZoomAnimator.gif)
 
 ### DropDown
 
 | Value | Effect |
 | ------------- | ------------- |
-| `DropDown` | TODO |
+| `DropDown` | Slide in then slide out with a drop effect |
 
-![Transition - Fade Transition](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/FadeTransition.gif)
+![Transition - Fade Transition](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/DropDownAnimator.gif)
 
-## Keyboard Translation
+## Keyboard Translations
+
+If your modal contains an `UITextField` / `UITextView`, you can adapt its origin when the keyboard is opening
+`IBAnimatable` provide a broad set of translation when the keyboard is opening. We can use them in Interface Builder as **Keyboard Transalation** as described in [Configuring a Presentation in Interface Builder](#configuring-a-presentation-in-interface-builder), or programmatically in code.
+
+### MoveUp
+
+| Value | Effect |
+| ------------- | ------------- |
+| `MoveUp` | Move the modal up of the keyboard height |
+
+![Transition - Fade Transition](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/KeyboardTranslationMoveUp.gif)
+
+### AboveKeyboard
+
+| Value | Effect |
+| ------------- | ------------- |
+| `AboveKeyboard` | Position the modal above the keyboard |
+
+![Transition - Fade Transition](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/KeyboardTranslationAboveKeyboard.gif)
+
+You can see all supported Keyboard Translation in the demo App, open the App and tap on "Playground" button, then tap on "presentations", then play with the different options.
 
 ## Contribution
 
