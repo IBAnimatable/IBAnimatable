@@ -63,23 +63,11 @@ private extension AnimatablePresentationController {
     }
     
     // Set up shadow
-    if presentationConfiguration.shadowRadius > 0 {
+    presentedViewController.view.layer.shadowOffset.width = presentationConfiguration.shadowOffset.x
+    presentedViewController.view.layer.shadowOffset.height = presentationConfiguration.shadowOffset.y
+    presentedViewController.view.layer.shadowOpacity = Float(presentationConfiguration.shadowOpacity)
+    if let shadowColor = presentationConfiguration.shadowColor where presentedViewController.view.layer.shadowRadius > 0 {
       presentedViewController.view.layer.shadowRadius = presentationConfiguration.shadowRadius
-      presentedViewController.view.layer.masksToBounds = false
-    }
-    
-    if !presentationConfiguration.shadowOffset.x.isNaN && !presentationConfiguration.shadowOffset.y.isNaN {
-      presentedViewController.view.layer.shadowOffset.width = presentationConfiguration.shadowOffset.x
-      presentedViewController.view.layer.shadowOffset.height = presentationConfiguration.shadowOffset.y
-      presentedViewController.view.layer.masksToBounds = false
-    }
-    
-    if presentationConfiguration.shadowOpacity > 0 {
-      presentedViewController.view.layer.shadowOpacity = Float(presentationConfiguration.shadowOpacity)
-      presentedViewController.view.layer.masksToBounds = false
-    }
-    
-    if let shadowColor = presentationConfiguration.shadowColor {
       presentedViewController.view.layer.shadowColor = shadowColor.CGColor
       presentedViewController.view.layer.masksToBounds = false
     }
