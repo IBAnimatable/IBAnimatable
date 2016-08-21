@@ -18,8 +18,8 @@ open class ContainerTransition: NSObject {
   
   fileprivate let container: UIView?
   fileprivate let parentViewController: UIViewController?
-  fileprivate var viewControllers: [String: UIViewController]? = nil
-  fileprivate var views: [String: UIView]? = nil
+  fileprivate var viewControllers: [UITransitionContextViewControllerKey: UIViewController]? = nil
+  fileprivate var views: [UITransitionContextViewKey: UIView]? = nil
   fileprivate let completion: ContainerTransitionCompletion?
   
   // MARK: Life cycle
@@ -49,10 +49,10 @@ open class ContainerTransition: NSObject {
       return
     }
     
-    viewControllers = [UITransitionContextViewControllerKey.from.rawValue: unwrappedFromViewController,
-                       UITransitionContextViewControllerKey.to.rawValue: toViewController]
-    views = [UITransitionContextViewKey.from.rawValue: unwrappedFromViewController.view,
-             UITransitionContextViewKey.to.rawValue: toViewController.view]
+    viewControllers = [UITransitionContextViewControllerKey.from: unwrappedFromViewController,
+                       UITransitionContextViewControllerKey.to: toViewController]
+    views = [UITransitionContextViewKey.from: unwrappedFromViewController.view,
+             UITransitionContextViewKey.to: toViewController.view]
   }
   
   open func animate() {
@@ -80,18 +80,18 @@ extension ContainerTransition: UIViewControllerContextTransitioning {
  
   
   public func viewController(forKey key: UITransitionContextViewControllerKey) -> UIViewController? {
-    return viewControllers?[key.rawValue]
+    return viewControllers?[key]
   }
   
   public func view(forKey key: UITransitionContextViewKey) -> UIView? {
-    return views?[key.rawValue]
+    return views?[key]
   }
 
   
   public func completeTransition(_ didComplete: Bool) {
-    viewControllers?[UITransitionContextViewControllerKey.from.rawValue]?.view.removeFromSuperview()
-    viewControllers?[UITransitionContextViewControllerKey.from.rawValue]?.removeFromParentViewController()
-    viewControllers?[UITransitionContextViewControllerKey.to.rawValue]?.didMove(toParentViewController: parentViewController)
+    viewControllers?[UITransitionContextViewControllerKey.from]?.view.removeFromSuperview()
+    viewControllers?[UITransitionContextViewControllerKey.from]?.removeFromParentViewController()
+    viewControllers?[UITransitionContextViewControllerKey.to]?.didMove(toParentViewController: parentViewController)
     parentViewController?.view.isUserInteractionEnabled = true
     completion?()
   }
