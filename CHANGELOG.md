@@ -6,8 +6,10 @@ All notable changes to this project will be documented in this file.
 ### Next
 
 #### API breaking changes
-None
 
+- `AnimatableStackView` doesn't conform anymore to `BlurDesignable`
+- `AnimatableScrollView` doesn't conform anymore to `BlurDesignable`
+ 
 #### Enhancements
 None
 
