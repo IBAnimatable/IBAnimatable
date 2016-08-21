@@ -11,7 +11,10 @@ All notable changes to this project will be documented in this file.
 - `AnimatableScrollView` doesn't conform anymore to `BlurDesignable`
  
 #### Enhancements
-None
+
+- Introducing `AnimatableActivityIndicatorView` to support custom activity indicator animations. Currently supported:
+  - BallBeats
+  - More will come soon!
 
 #### Bugfixes
 
