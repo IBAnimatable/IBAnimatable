@@ -51,8 +51,8 @@ extension IBEnum {
 public extension IBEnum where Self : RawRepresentable & Hashable {
   init?(string: String?) {
     let lowerString = string?.lowercased()
-    let iterator = iterateEnum(Self.self)
-    for e in iterator! {
+    let iterator = iterateEnum(from: Self.self)
+    for e in iterator {
       
       if String(describing: e.rawValue).lowercased() == lowerString {
         self = e as Self
