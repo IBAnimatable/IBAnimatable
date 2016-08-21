@@ -156,6 +156,8 @@
 		E2E62B821D69B60A00294A73 /* ActivityIndicatorAnimationBallBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E62B811D69B60A00294A73 /* ActivityIndicatorAnimationBallBeat.swift */; };
 		E2E62B841D69B63800294A73 /* ActivityIndicatorAnimating.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E62B831D69B63800294A73 /* ActivityIndicatorAnimating.swift */; };
 		E2E62B861D69B6B400294A73 /* ActivityIndicatorShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E62B851D69B6B400294A73 /* ActivityIndicatorShape.swift */; };
+		E2E62B891D69BDEF00294A73 /* UserInterfaceActivityIndicator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2E62B881D69BDEF00294A73 /* UserInterfaceActivityIndicator.storyboard */; };
+		E2E62B8B1D69BE3800294A73 /* UserInterfaceActivityIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E62B8A1D69BE3800294A73 /* UserInterfaceActivityIndicatorViewController.swift */; };
 		E2F45B571CDB845F001D2E37 /* FlipAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F45B561CDB845F001D2E37 /* FlipAnimator.swift */; };
 		E2F45B591CDBAF39001D2E37 /* PresentFlipSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F45B581CDBAF39001D2E37 /* PresentFlipSegue.swift */; };
 		E2F45B5B1CDBAF5C001D2E37 /* PresentFlipWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F45B5A1CDBAF5C001D2E37 /* PresentFlipWithDismissInteractionSegue.swift */; };
@@ -331,6 +333,8 @@
 		E2E62B811D69B60A00294A73 /* ActivityIndicatorAnimationBallBeat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationBallBeat.swift; sourceTree = "<group>"; };
 		E2E62B831D69B63800294A73 /* ActivityIndicatorAnimating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimating.swift; sourceTree = "<group>"; };
 		E2E62B851D69B6B400294A73 /* ActivityIndicatorShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorShape.swift; sourceTree = "<group>"; };
+		E2E62B881D69BDEF00294A73 /* UserInterfaceActivityIndicator.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserInterfaceActivityIndicator.storyboard; sourceTree = "<group>"; };
+		E2E62B8A1D69BE3800294A73 /* UserInterfaceActivityIndicatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInterfaceActivityIndicatorViewController.swift; sourceTree = "<group>"; };
 		E2F45B561CDB845F001D2E37 /* FlipAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlipAnimator.swift; sourceTree = "<group>"; };
 		E2F45B581CDBAF39001D2E37 /* PresentFlipSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentFlipSegue.swift; sourceTree = "<group>"; };
 		E2F45B5A1CDBAF5C001D2E37 /* PresentFlipWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentFlipWithDismissInteractionSegue.swift; sourceTree = "<group>"; };
@@ -518,6 +522,7 @@
 				AE87646D1D2331010044E0AB /* UserInterfaceMaskTableViewController.swift */,
 				AE87646F1D2332F60044E0AB /* MaskViewController.swift */,
 				E25EC6E61CDE034300743DB8 /* ContainerTransitionViewController.swift */,
+				E2E62B8A1D69BE3800294A73 /* UserInterfaceActivityIndicatorViewController.swift */,
 			);
 			name = code;
 			sourceTree = "<group>";
@@ -686,6 +691,7 @@
 			children = (
 				AE0D30991CE149150093B578 /* UserInterface.storyboard */,
 				AE87646B1D232F1D0044E0AB /* UserInterfaceMask.storyboard */,
+				E2E62B881D69BDEF00294A73 /* UserInterfaceActivityIndicator.storyboard */,
 			);
 			name = UserInterface;
 			sourceTree = "<group>";
@@ -854,6 +860,7 @@
 				AE0D309C1CE14A170093B578 /* Animations.storyboard in Resources */,
 				AE154B101C788A560093C05B /* Transitions.storyboard in Resources */,
 				AEF4938D1CE0161C00B76FD6 /* Playground.storyboard in Resources */,
+				E2E62B891D69BDEF00294A73 /* UserInterfaceActivityIndicator.storyboard in Resources */,
 				AE0D309A1CE149150093B578 /* UserInterface.storyboard in Resources */,
 				AE87646C1D232F1D0044E0AB /* UserInterfaceMask.storyboard in Resources */,
 			);
@@ -1027,6 +1034,7 @@
 				E25EC6E71CDE034300743DB8 /* ContainerTransitionViewController.swift in Sources */,
 				AEDB24D11CE9EC0F0086612C /* TransitionPresentedViewController.swift in Sources */,
 				E2D33E531D3A5490006F2492 /* PresentingViewController.swift in Sources */,
+				E2E62B8B1D69BE3800294A73 /* UserInterfaceActivityIndicatorViewController.swift in Sources */,
 				AED1A1031BFE9820001346FA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
