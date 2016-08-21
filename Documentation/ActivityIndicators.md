@@ -24,8 +24,17 @@ You can see an example of each animation in the demo app. Launch the app, then t
 ###Supported animation:
 
 1. [BallBeat](#ballbeat)
+2. [BallPulseSync](#ballpulsesync)
+3. [LineScalePulseOut](#linescalepulseout)
 
 ### BallBeat
 
 ![ActivityIndicator - BallBeat](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallBeat.gif)
 
+### BallPulseSync
+
+![ActivityIndicator - BallPulseSync](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallPulseSync.gif)
+
+### LineScalePulseOut
+
+![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorLineScalePulseOut.gif)

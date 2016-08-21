@@ -14,6 +14,8 @@ All notable changes to this project will be documented in this file.
 
 - Introducing `AnimatableActivityIndicatorView` to support custom activity indicator animations. Currently supported:
   - BallBeats
+  - BallPulseSync
+  - LineScalePulseOut
   - More will come soon!
 
 #### Bugfixes

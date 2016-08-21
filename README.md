@@ -44,7 +44,7 @@ You can also check out [swift2.3 branch](https://github.com/IBAnimatable/IBAnima
 
 ## Documentations
 * [<del>Fully</del> Mostly documented API Reference](Documentation/APIs.md) 
-* [Activity indicator animations](Documentation/ActivityIndicator.md)
+* [Activity indicator animations](Documentation/ActivityIndicators.md)
 * [How to design and prototype custom transition animation and gesture interaction in Interface Builder with IBAnimatable](Documentation/Transitions.md)
 
 ## How to run the example App

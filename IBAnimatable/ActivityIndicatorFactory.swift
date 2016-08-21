@@ -12,6 +12,10 @@ public struct ActivityIndicatorFactory {
       fatalError()
     case .BallBeat:
       return ActivityIndicatorAnimationBallBeat()
+    case .BallPulseSync:
+      return ActivityIndicatorAnimationBallPulseSync()
+    case .LineScalePulseOut:
+      return ActivityIndicatorAnimationLineScalePulseOut()
     }
   }
 }

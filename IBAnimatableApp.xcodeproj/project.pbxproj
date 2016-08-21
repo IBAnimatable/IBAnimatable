@@ -127,6 +127,8 @@
 		E2614B611D23C94300BBBAFA /* AnimatableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2614B601D23C94300BBBAFA /* AnimatableScrollView.swift */; };
 		E26B3EDA1CCD4C1D00BFD0AB /* NatGeoAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B3ED91CCD4C1D00BFD0AB /* NatGeoAnimator.swift */; };
 		E26B3EDC1CCD579200BFD0AB /* PresentNatGeoSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B3EDB1CCD579200BFD0AB /* PresentNatGeoSegue.swift */; };
+		E27594971D69FB4E005DBA0C /* ActivityIndicatorAnimationBallPulseSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27594961D69FB4E005DBA0C /* ActivityIndicatorAnimationBallPulseSync.swift */; };
+		E27594991D69FB66005DBA0C /* ActivityIndicatorAnimationLineScalePulseOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27594981D69FB66005DBA0C /* ActivityIndicatorAnimationLineScalePulseOut.swift */; };
 		E27691E91CAFC72C004A725C /* SystemMoveInAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691E81CAFC72C004A725C /* SystemMoveInAnimator.swift */; };
 		E27691EB1CAFC91A004A725C /* SystemPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691EA1CAFC91A004A725C /* SystemPushAnimator.swift */; };
 		E27691EF1CAFCA29004A725C /* SystemRevealAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691EE1CAFCA29004A725C /* SystemRevealAnimator.swift */; };
@@ -303,6 +305,8 @@
 		E2614B601D23C94300BBBAFA /* AnimatableScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableScrollView.swift; sourceTree = "<group>"; };
 		E26B3ED91CCD4C1D00BFD0AB /* NatGeoAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NatGeoAnimator.swift; sourceTree = "<group>"; };
 		E26B3EDB1CCD579200BFD0AB /* PresentNatGeoSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentNatGeoSegue.swift; sourceTree = "<group>"; };
+		E27594961D69FB4E005DBA0C /* ActivityIndicatorAnimationBallPulseSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationBallPulseSync.swift; sourceTree = "<group>"; };
+		E27594981D69FB66005DBA0C /* ActivityIndicatorAnimationLineScalePulseOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationLineScalePulseOut.swift; sourceTree = "<group>"; };
 		E27691E81CAFC72C004A725C /* SystemMoveInAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemMoveInAnimator.swift; sourceTree = "<group>"; };
 		E27691EA1CAFC91A004A725C /* SystemPushAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPushAnimator.swift; sourceTree = "<group>"; };
 		E27691EE1CAFCA29004A725C /* SystemRevealAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemRevealAnimator.swift; sourceTree = "<group>"; };
@@ -738,6 +742,8 @@
 			isa = PBXGroup;
 			children = (
 				E2E62B811D69B60A00294A73 /* ActivityIndicatorAnimationBallBeat.swift */,
+				E27594961D69FB4E005DBA0C /* ActivityIndicatorAnimationBallPulseSync.swift */,
+				E27594981D69FB66005DBA0C /* ActivityIndicatorAnimationLineScalePulseOut.swift */,
 			);
 			name = animations;
 			sourceTree = "<group>";
@@ -897,6 +903,7 @@
 				E2E62B861D69B6B400294A73 /* ActivityIndicatorShape.swift in Sources */,
 				E20078A11CB8FB94002B2C16 /* FoldAnimator.swift in Sources */,
 				AEDE6E6B1CCECE8A000DECF0 /* PinchInteractiveAnimator.swift in Sources */,
+				E27594971D69FB4E005DBA0C /* ActivityIndicatorAnimationBallPulseSync.swift in Sources */,
 				E2E62B791D69B20500294A73 /* AnimatableActivityIndicatorView.swift in Sources */,
 				E20078A31CB912E1002B2C16 /* PresentFoldSegue.swift in Sources */,
 				AEE552A81C815AC5009CF623 /* FadeAnimator.swift in Sources */,
@@ -1011,6 +1018,7 @@
 				AE7C26111CB4F680002CF125 /* InteractiveAnimatorFactory.swift in Sources */,
 				AE4C53F61C8843AB007C9EFA /* InteractiveGestureType.swift in Sources */,
 				CAB56443CD667F41413A560F /* SystemTransitionType.swift in Sources */,
+				E27594991D69FB66005DBA0C /* ActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
 				E210ABCC1D3AAAD0001D0362 /* PresentationPresenterManager.swift in Sources */,
 				CAB566CA933963DAA0C7E074 /* Constants.swift in Sources */,
 				E21E840E1D3A31A900C742E7 /* AnimatablePresentationController.swift in Sources */,
