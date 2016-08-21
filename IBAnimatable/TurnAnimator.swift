@@ -66,21 +66,21 @@ extension TurnAnimator: UIViewControllerAnimatedTransitioning {
     transform.m34 = -0.002
     containerView.layer.sublayerTransform = transform
     toView.frame = fromView.frame
-    animateTurnTransition(fromView, toView: toView) {
+    animateTurnTransition(fromView: fromView, toView: toView) {
       transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
     }
   }
 
-  fileprivate func animateTurnTransition(_ fromView: UIView, toView: UIView, completion: AnimatableCompletion) {
+  fileprivate func animateTurnTransition(fromView: UIView, toView: UIView, completion: AnimatableCompletion) {
     let factor = reverse ? 1.0 : -1.0
-    toView.layer.transform = rotate(factor * -.pi * 2)
+    toView.layer.transform = rotate(angle: factor * -.pi * 2)
     UIView.animateKeyframes(withDuration: transitionDuration, delay: 0.0, options: .layoutSubviews, animations: {
       UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5) {
-            fromView.layer.transform = self.rotate(factor * .pi * 2)
+            fromView.layer.transform = self.rotate(angle: factor * .pi * 2)
       }
 
       UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5) {
-        toView.layer.transform =  self.rotate(0.0)
+        toView.layer.transform =  self.rotate(angle: 0.0)
       }
     }) { _ in
         completion()
@@ -93,7 +93,7 @@ extension TurnAnimator: UIViewControllerAnimatedTransitioning {
 
 private extension TurnAnimator {
 
-  func rotate(_ angle: Double) -> CATransform3D {
+  func rotate(angle: Double) -> CATransform3D {
     if fromDirection == .left || fromDirection == .right {
       return  CATransform3DMakeRotation(CGFloat(angle), 0.0, 1.0, 0.0)
     } else {

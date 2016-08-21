@@ -23,7 +23,7 @@ open class PresenterManager {
   fileprivate var cache = [String: Presenter]()
   
   // MARK: Internal Interface
-  open func retrievePresenter(_ transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) -> Presenter {
+  open func retrievePresenter(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) -> Presenter {
     // Get the cached presenter
     let presenter = cache[transitionAnimationType.stringValue]
     if let presenter = presenter {

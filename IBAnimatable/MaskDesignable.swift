@@ -294,7 +294,7 @@ private extension MaskDesignable where Self: UIView {
    
    - Returns: A radian converted from the provided degree.
    */
-  func degree2radian(_ degree: CGFloat) -> CGFloat {
+  func degree2radian(degree: CGFloat) -> CGFloat {
     return .pi * degree / 180
   }
   

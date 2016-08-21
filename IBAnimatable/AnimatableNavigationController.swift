@@ -11,7 +11,7 @@ open class AnimatableNavigationController: UINavigationController, TransitionAni
   @IBInspectable  var _transitionAnimationType: String? {
     didSet {
       if let _transitionAnimationType = _transitionAnimationType {
-        transitionAnimationType = TransitionAnimationType.fromString(_transitionAnimationType)
+        transitionAnimationType = TransitionAnimationType.fromString(transitionType: _transitionAnimationType)
       }
     }
   }

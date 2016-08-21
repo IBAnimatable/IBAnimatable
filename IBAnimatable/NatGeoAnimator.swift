@@ -53,9 +53,9 @@ extension NatGeoAnimator: UIViewControllerAnimatedTransitioning {
     containerView.addSubview(toView)
     containerView.addSubview(fromView)
     if fromDirection == .left {
-      executeLeftAnimation(transitionContext, containerView: containerView, fromView: fromView, toView: toView)
+      executeLeftAnimation(context: transitionContext, containerView: containerView, fromView: fromView, toView: toView)
     } else {
-      executeRightAnimations(transitionContext, containerView: containerView, fromView: fromView, toView: toView)
+      executeRightAnimations(context: transitionContext, containerView: containerView, fromView: fromView, toView: toView)
     }
   }
   
@@ -65,7 +65,7 @@ extension NatGeoAnimator: UIViewControllerAnimatedTransitioning {
 
 private extension NatGeoAnimator {
   
-  func executeLeftAnimation(_ transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
+  func executeLeftAnimation(context transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
     fromView.isUserInteractionEnabled = false
     var fromLayer = fromView.layer
     var toLayer = toView.layer
@@ -100,7 +100,7 @@ private extension NatGeoAnimator {
 
 private extension NatGeoAnimator {
   
-  func executeRightAnimations(_ transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
+  func executeRightAnimations(context transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
 
     toView.isUserInteractionEnabled = true
     var fromLayer = toView.layer

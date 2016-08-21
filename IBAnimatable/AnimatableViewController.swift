@@ -19,7 +19,7 @@ import UIKit
   @IBInspectable  var _transitionAnimationType: String? {
     didSet {
       if let _transitionAnimationType = _transitionAnimationType {
-        transitionAnimationType = TransitionAnimationType.fromString(_transitionAnimationType)
+        transitionAnimationType = TransitionAnimationType.fromString(transitionType: _transitionAnimationType)
       }
     }
   }
@@ -69,9 +69,9 @@ import UIKit
     let toViewController = segue.destination
     // If interactiveGestureType has been set
     if let interactiveGestureType = interactiveGestureType {
-      toViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration, interactiveGestureType: interactiveGestureType)
+      toViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(transitionAnimationType: animationType, transitionDuration: transitionDuration, interactiveGestureType: interactiveGestureType)
     } else {
-      toViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration)
+      toViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(transitionAnimationType: animationType, transitionDuration: transitionDuration)
     }
   }
 }

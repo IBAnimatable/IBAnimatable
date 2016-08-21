@@ -144,7 +144,7 @@ open var animationType: AnimationType = .none
   // MARK: - Private
   private func configInspectableProperties() {
     configAnimatableProperties()
-    config(placeholderLabel, placeholderLabelConstraints: &placeholderLabelConstraints)
+    config(placeholder: placeholderLabel, placeholderLabelConstraints: &placeholderLabelConstraints)
     NotificationCenter.default.addObserver(self, selector: #selector(textDidChange), name: NSNotification.Name.UITextViewTextDidChange, object: nil)
   }
 
