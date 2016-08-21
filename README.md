@@ -167,6 +167,7 @@ Many thanks to [all contributors](https://github.com/IBAnimatable/IBAnimatable/g
 * Framer Studio - Design and preview animations in one place.
 * [Spring by Meng To](https://github.com/MengTo/Spring) - steal a lot of animation parameters from this project.
 * [VCTransitionsLibrary by Colin Eberhardt](https://github.com/ColinEberhardt/VCTransitionsLibrary) - port all transition animations from this project, and add parameters support and fix bugs.
+* [NVActivityIndicatorView by Vinh Nguyen](https://github.com/ninjaprox/NVActivityIndicatorView) - port all activity indicator animations from this project.
 * [Invision ToDo App UI Kit](http://www.invisionapp.com/do), The demo App's original design is from this UI Kit and redone in Interface Builder. We also added interaction, navigation and animations.
 
 ## Change Log
