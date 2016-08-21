@@ -5,7 +5,7 @@
 
 import UIKit
 
-open class ScreenEdgePanInteractiveAnimator: InteractiveAnimator {
+public class ScreenEdgePanInteractiveAnimator: InteractiveAnimator {
   
   override func createGestureRecognizer() -> UIGestureRecognizer {
     let gestureRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handleGesture(_:)))

@@ -8,7 +8,7 @@ import UIKit
 /**
  Navigator for `UINavigationController` to support custom transition animation for Push and Pop
  */
-open class Navigator: NSObject {
+public class Navigator: NSObject {
   var transitionAnimationType: TransitionAnimationType
   var transitionDuration: Duration = defaultTransitionDuration
   

@@ -7,12 +7,12 @@ import UIKit
 /**
  System Cube Animator - To support 3D animation (Four rotation directions supported: left, right, top, bottom)
  */
-open class SystemCubeAnimator: NSObject, AnimatedTransitioning {
+public class SystemCubeAnimator: NSObject, AnimatedTransitioning {
   // MARK: - AnimatorProtocol
-  open var transitionAnimationType: TransitionAnimationType
-  open var transitionDuration: Duration = defaultTransitionDuration
-  open var reverseAnimationType: TransitionAnimationType?
-  open var interactiveGestureType: InteractiveGestureType?
+  public var transitionAnimationType: TransitionAnimationType
+  public var transitionDuration: Duration = defaultTransitionDuration
+  public var reverseAnimationType: TransitionAnimationType?
+  public var interactiveGestureType: InteractiveGestureType?
 
   // MARK: - private
   fileprivate var fromDirection: TransitionDirection

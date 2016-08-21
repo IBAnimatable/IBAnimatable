@@ -5,14 +5,14 @@
 
 import UIKit
 
-open class ContainerTransition: NSObject {
+public class ContainerTransition: NSObject {
   
   public typealias ContainerTransitionCompletion = () -> Void
   
   // MARK: Properties
   
-  open var animationType: TransitionAnimationType?
-  open var transitionDuration: Duration = defaultTransitionDuration
+  public var animationType: TransitionAnimationType?
+  public var transitionDuration: Duration = defaultTransitionDuration
   
   // MARK: Private
   
@@ -55,7 +55,7 @@ open class ContainerTransition: NSObject {
              UITransitionContextViewKey.to: toViewController.view]
   }
   
-  open func animate() {
+  public func animate() {
     guard let unwrappedAnimationType = animationType else {
       return
     }
@@ -65,12 +65,12 @@ open class ContainerTransition: NSObject {
     animator.transitionDuration = transitionDuration
     animator.animateTransition(using: self)
   }
-  open var isAnimated: Bool { return false }
-  open var isInteractive: Bool { return false }
-  open var presentationStyle: UIModalPresentationStyle { return .none }
-  open var transitionWasCancelled: Bool { return false }
-  open var targetTransform: CGAffineTransform { return CGAffineTransform.identity }
-  open var containerView: UIView {return container!}
+  public var isAnimated: Bool { return false }
+  public var isInteractive: Bool { return false }
+  public var presentationStyle: UIModalPresentationStyle { return .none }
+  public var transitionWasCancelled: Bool { return false }
+  public var targetTransform: CGAffineTransform { return CGAffineTransform.identity }
+  public var containerView: UIView {return container!}
 }
 
 // MARK: - UIViewControllerContextTransitioning

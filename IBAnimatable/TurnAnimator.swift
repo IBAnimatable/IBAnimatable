@@ -5,12 +5,12 @@
 
 import UIKit
 
-open class TurnAnimator: NSObject, AnimatedTransitioning {
+public class TurnAnimator: NSObject, AnimatedTransitioning {
   // MARK: - AnimatorProtocol
-  open var transitionAnimationType: TransitionAnimationType
-  open var transitionDuration: Duration = defaultTransitionDuration
-  open var reverseAnimationType: TransitionAnimationType?
-  open var interactiveGestureType: InteractiveGestureType? = .pan(fromDirection: .horizontal)
+  public var transitionAnimationType: TransitionAnimationType
+  public var transitionDuration: Duration = defaultTransitionDuration
+  public var reverseAnimationType: TransitionAnimationType?
+  public var interactiveGestureType: InteractiveGestureType? = .pan(fromDirection: .horizontal)
   
   // MARK: - Private params
   fileprivate var fromDirection: TransitionDirection

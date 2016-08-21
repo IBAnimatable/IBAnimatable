@@ -5,12 +5,12 @@
 
 import UIKit
 
-open class SystemRotateAnimator: NSObject, AnimatedTransitioning {
+public class SystemRotateAnimator: NSObject, AnimatedTransitioning {
   // MARK: - AnimatorProtocol
-  open var transitionAnimationType: TransitionAnimationType
-  open var transitionDuration: Duration = defaultTransitionDuration
-  open var reverseAnimationType: TransitionAnimationType?
-  open var interactiveGestureType: InteractiveGestureType?
+  public var transitionAnimationType: TransitionAnimationType
+  public var transitionDuration: Duration = defaultTransitionDuration
+  public var reverseAnimationType: TransitionAnimationType?
+  public var interactiveGestureType: InteractiveGestureType?
   
   public init(transitionDuration: Duration) {
     self.transitionDuration = transitionDuration

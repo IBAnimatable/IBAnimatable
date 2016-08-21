@@ -5,12 +5,12 @@
 
 import UIKit
 
-open class SystemPageAnimator: NSObject, AnimatedTransitioning {
+public class SystemPageAnimator: NSObject, AnimatedTransitioning {
   // MARK: - AnimatorProtocol
-  open var transitionAnimationType: TransitionAnimationType
-  open var transitionDuration: Duration = defaultTransitionDuration
-  open var reverseAnimationType: TransitionAnimationType?
-  open var interactiveGestureType: InteractiveGestureType?
+  public var transitionAnimationType: TransitionAnimationType
+  public var transitionDuration: Duration = defaultTransitionDuration
+  public var reverseAnimationType: TransitionAnimationType?
+  public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
   fileprivate var type: TransitionPageType

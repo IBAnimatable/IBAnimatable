@@ -5,12 +5,12 @@
 
 import UIKit
 
-open class ExplodeAnimator: NSObject, AnimatedTransitioning {
+public class ExplodeAnimator: NSObject, AnimatedTransitioning {
   // MARK: - AnimatorProtocol
-  open var transitionAnimationType: TransitionAnimationType
-  open var transitionDuration: Duration = defaultTransitionDuration
-  open var reverseAnimationType: TransitionAnimationType?
-  open var interactiveGestureType: InteractiveGestureType?
+  public var transitionAnimationType: TransitionAnimationType
+  public var transitionDuration: Duration = defaultTransitionDuration
+  public var reverseAnimationType: TransitionAnimationType?
+  public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
   fileprivate var xFactor: CGFloat = 10.0
