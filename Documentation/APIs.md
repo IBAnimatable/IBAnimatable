@@ -19,6 +19,7 @@ To use `IBAnimatable`, we can drag and drop a UIKit element and connect it with 
 | UIViewController | AnimatableViewController | |
 | UINavigationController | AnimatableNavigationController | |
 | UISlider | AnimatableSlider | |
+| UIActivityIndicatorView | AnimatableActivityIndicatorView | [Lis of animations available](./ActivityIndicator.md) |
 
 ### Designable protocols
 `IBAnimatable` provides a set of Designable protocols as below. Because of the power of protocol-oriented programming in Swift, we don't even have to use Animatable default UI elements e.g. `AnimatableView` to unlocked the power of `IBAnimatable`. We can conform to `IBAnimatable` protocols to use the default implementation in protocol extension to create other custom UI elements.
@@ -182,6 +183,18 @@ Easily add color layer on top of the UI element especially `AnimatableImageView`
 | x | CGFloat | Used to specify the absolute x to move in `MoveTo` animation and x offset in `MoveBy`. When used in `MoveBy`, negative means moving left and positive means moving right. The default value is `CGFloat.NaN` |
 | y | CGFloat | Used to specify the absolute y to move in `MoveTo` animation and y offset in `MoveBy`. When used in `MoveBy`, negative means moving up and positive means moving down. The default value is `CGFloat.NaN`|
 
+### TransitionAnimatable protocol
+| Property name | Data type | Description |
+| ------------- |:-------------:| ----- |
+| transitionAnimationType | Optional&lt;String> | Supported transition animations. Tap on "Playground" button to see all predefined transition animations, e.g. `Fade`, `SystemCube(Left)` and `SystemPageCurl(Bottom)`. The transition type starts with `System` can only use in Push/Pop transitions, not Present/Dismiss transitions. Note: For `SystemRotate` seems that only `SystemRotate(90)` is working. |
+| transitionDuration | Double | transition duration. The default value is defined in [`Constants`](../IBAnimatable/Constants.swift) (0.7 seconds) |
+| interactiveGestureType | Optional&lt;String> | interactive gesture type. used to specify the gesture to dismiss/pop current scence. All supported interactive gesture types are in [`InteractiveGestureType`](../IBAnimatable/InteractiveGestureType.swift) |
+
+Also see [Transition Animators](Transitions.md#transition-animators) and [Interactive Animators](Transitions.md#interactive-animators)
+
+### ActivityIndicatorAnimatable
+
+Fully documented in [Activity indicator animations](ActivityIndicator.md)
 
 ### Extension
 #### UIViewController
@@ -196,15 +209,6 @@ With these methods, we can navigate back or dismiss current ViewController witho
 | Method name | Description |
 | ------------- | ----- |
 | class func animate(animation: AnimatableExecution, completion: AnimatableCompletion? = nil) | Simplify CALayer animations with completion closure |
-
-### TransitionAnimatable protocol
-| Property name | Data type | Description |
-| ------------- |:-------------:| ----- |
-| transitionAnimationType | Optional&lt;String> | Supported transition animations. Tap on "Playground" button to see all predefined transition animations, e.g. `Fade`, `SystemCube(Left)` and `SystemPageCurl(Bottom)`. The transition type starts with `System` can only use in Push/Pop transitions, not Present/Dismiss transitions. Note: For `SystemRotate` seems that only `SystemRotate(90)` is working. |
-| transitionDuration | Double | transition duration. The default value is defined in [`Constants`](../IBAnimatable/Constants.swift) (0.7 seconds) |
-| interactiveGestureType | Optional&lt;String> | interactive gesture type. used to specify the gesture to dismiss/pop current scence. All supported interactive gesture types are in [`InteractiveGestureType`](../IBAnimatable/InteractiveGestureType.swift) |
-
-Also see [Transition Animators](Transitions.md#transition-animators) and [Interactive Animators](Transitions.md#interactive-animators)
 
 ### Segues
 See [Segues](Transitions.md#segues)
