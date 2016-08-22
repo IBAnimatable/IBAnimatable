@@ -98,7 +98,7 @@ extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSourc
     let animString = selectedEntry.toString(selectedIndexes: pickerView.selectedRow(inComponent: 1), pickerView.selectedRow(inComponent: 2))
     let animType = AnimationType(string: animString)
     pickerView.isUserInteractionEnabled = false
-    aView.animate(animType) {
+    aView.animate(animation: animType) {
       if #available(iOS 10.0, *) {
         if !self.aView.transform.isIdentity {
           Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { timer in

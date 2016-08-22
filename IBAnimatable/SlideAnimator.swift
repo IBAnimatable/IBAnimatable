@@ -13,10 +13,10 @@ public class SlideAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
-  private var fromDirection: TransitionDirection
-  private var horizontal = false
-  private var reverse = false
-  private var fade = false
+  fileprivate var fromDirection: TransitionDirection
+  fileprivate var horizontal = false
+  fileprivate var reverse = false
+  fileprivate var fade = false
   
   public init(fromDirection: TransitionDirection, params: [String], transitionDuration: Duration) {
     self.fromDirection = fromDirection
@@ -70,7 +70,7 @@ extension SlideAnimator: UIViewControllerAnimatedTransitioning {
       toView.alpha = 0
     }
     toView.transform = travel.inverted()
-    animateSlideTransition(toView, fromView: fromView, travel: travel) {
+    animateSlideTransition(toView: toView, fromView: fromView, travel: travel) {
       fromView.transform = CGAffineTransform.identity
       transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
     }
@@ -82,7 +82,7 @@ extension SlideAnimator: UIViewControllerAnimatedTransitioning {
 
 private extension SlideAnimator {
   
-  func animateSlideTransition(_ toView: UIView, fromView: UIView, travel: CGAffineTransform, completion: AnimatableCompletion) {
+  func animateSlideTransition(toView: UIView, fromView: UIView, travel: CGAffineTransform, completion: AnimatableCompletion) {
     UIView.animate(withDuration: transitionDuration, animations: {
       fromView.transform = travel
       toView.transform = CGAffineTransform.identity

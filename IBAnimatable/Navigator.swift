@@ -13,9 +13,9 @@ public class Navigator: NSObject {
   var transitionDuration: Duration = defaultTransitionDuration
   
   // animation controller
-  private var animator: AnimatedTransitioning?
+  fileprivate var animator: AnimatedTransitioning?
   // interaction controller
-  private var interactiveAnimator: InteractiveAnimator?
+  fileprivate var interactiveAnimator: InteractiveAnimator?
   
   public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) {
     self.transitionAnimationType = transitionAnimationType

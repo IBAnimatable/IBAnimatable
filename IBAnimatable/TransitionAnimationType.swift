@@ -30,10 +30,10 @@ public enum TransitionAnimationType {
   case systemCameraIris(hollowState: TransitionHollowState)
   
   public var stringValue: String {
-    return String(self)
+    return String(describing: self)
   }
 
-  public static func fromString(_ transitionType: String) -> TransitionAnimationType? {
+  public static func fromString(transitionType: String) -> TransitionAnimationType? {
     if transitionType.hasPrefix("SystemRippleEffect") {
       return .systemRippleEffect
     } else if transitionType.hasPrefix("SystemSuckEffect") {
@@ -41,15 +41,15 @@ public enum TransitionAnimationType {
     } else if transitionType.hasPrefix("Explode") {
       return .explode(params: params(forTransitionType: transitionType))
     } else if transitionType.hasPrefix("Fade") {
-      return fadeTransitionAnimationType(transitionType)
+      return fadeTransitionAnimationType(transitionType: transitionType)
     } else if transitionType.hasPrefix("SystemCameraIris") {
-        return cameraIrisTransitionAnimationType(transitionType)
+        return cameraIrisTransitionAnimationType(transitionType: transitionType)
     } else if transitionType.hasPrefix("SystemPage") {
-      return pageTransitionAnimationType(transitionType)
+      return pageTransitionAnimationType(transitionType: transitionType)
     } else if transitionType.hasPrefix("SystemRotate") {
       return .systemRotate
     } else {
-      return fromStringWithDirection(transitionType)
+      return fromStringWithDirection(transitionType: transitionType)
     }
   }
 
@@ -59,7 +59,7 @@ public enum TransitionAnimationType {
 
 private extension TransitionAnimationType {
   
-  static func fadeTransitionAnimationType(_ transitionType: String) -> TransitionAnimationType {
+  static func fadeTransitionAnimationType(transitionType: String) -> TransitionAnimationType {
     let transitionParams = params(forTransitionType: transitionType)
     if transitionParams.contains("in") {
       return .fade(direction: .in)
@@ -69,7 +69,7 @@ private extension TransitionAnimationType {
     return .fade(direction: .cross)
   }
  
-  static func cameraIrisTransitionAnimationType(_ transitionType: String) -> TransitionAnimationType? {
+  static func cameraIrisTransitionAnimationType(transitionType: String) -> TransitionAnimationType? {
     let transitionParams = params(forTransitionType: transitionType)
     if transitionParams.contains("hollowopen") {
       return .systemCameraIris(hollowState: .open)
@@ -79,7 +79,7 @@ private extension TransitionAnimationType {
     return .systemCameraIris(hollowState: .none)
   }
   
-  static func pageTransitionAnimationType(_ transitionType: String) -> TransitionAnimationType? {
+  static func pageTransitionAnimationType(transitionType: String) -> TransitionAnimationType? {
     let transitionParams = params(forTransitionType: transitionType)
     if transitionParams.contains("uncurl") {
       return .systemPage(type: .unCurl)
@@ -89,7 +89,7 @@ private extension TransitionAnimationType {
     return nil
   }
   
-  static func fromStringWithDirection(_ transitionType: String) -> TransitionAnimationType? {
+  static func fromStringWithDirection(transitionType: String) -> TransitionAnimationType? {
     let transitionParams = params(forTransitionType: transitionType)
     let direction = transitionDirection(forParams: transitionParams) ?? .left
     if transitionType.hasPrefix("SystemCube") {
@@ -111,11 +111,11 @@ private extension TransitionAnimationType {
     } else if transitionType.hasPrefix("Flip") {
       return .flip(fromDirection: direction)
     } else {
-      return fromStringWithDirectionAndParams(transitionType, direction: direction, params: transitionParams)
+      return fromStringWithDirectionAndParams(transitionType: transitionType, direction: direction, params: transitionParams)
     }
   }
   
-  static func fromStringWithDirectionAndParams(_ transitionType: String, direction: TransitionDirection, params: [String]) -> TransitionAnimationType? {
+  static func fromStringWithDirectionAndParams(transitionType: String, direction: TransitionDirection, params: [String]) -> TransitionAnimationType? {
     var params = params
     params.removeFirst()
     if transitionType.hasPrefix("Fold") {

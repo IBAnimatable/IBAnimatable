@@ -10,7 +10,7 @@ extension UIViewController {
   
   func generateRandomGradient() -> GradientType {
     var predefinedGradients = [GradientType]()
-    iterateEnum(GradientType.self).forEach {
+    iterateEnum(from: GradientType.self).forEach {
       predefinedGradients.append($0)
     }
     

@@ -13,7 +13,7 @@ public class SystemPageAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
-  private var type: TransitionPageType
+  fileprivate var type: TransitionPageType
   
   public init(type: TransitionPageType, transitionDuration: Duration) {
     self.transitionDuration = transitionDuration

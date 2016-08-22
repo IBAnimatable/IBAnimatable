@@ -13,8 +13,8 @@ class ContainerTransitionViewController: UIViewController, UITabBarDelegate {
   @IBOutlet var tabBar: UITabBar!
   @IBOutlet var containerView: UIView!
   
-  private var viewControllers = [AnimatableViewController]()
-  private var currentViewController: AnimatableViewController?
+  fileprivate var viewControllers = [AnimatableViewController]()
+  fileprivate var currentViewController: AnimatableViewController?
   
   // MARK: Life cycle
   
@@ -33,30 +33,30 @@ private extension ContainerTransitionViewController {
   func createChildViewControllers() {
     var viewController = AnimatableViewController()
     viewController.view.backgroundColor = .blue
-    viewController.transitionAnimationType = TransitionAnimationType.fromString("Explode")
+    viewController.transitionAnimationType = TransitionAnimationType.fromString(transitionType: "Explode")
     viewControllers.append(viewController)
    
     viewController = AnimatableViewController()
     viewController.view.backgroundColor = .green
-    viewController.transitionAnimationType = TransitionAnimationType.fromString("Fold")
+    viewController.transitionAnimationType = TransitionAnimationType.fromString(transitionType: "Fold")
     viewControllers.append(viewController)
 
     viewController = AnimatableViewController()
     viewController.view.backgroundColor = .yellow
-    viewController.transitionAnimationType = TransitionAnimationType.fromString("NatGeo")
+    viewController.transitionAnimationType = TransitionAnimationType.fromString(transitionType: "NatGeo")
     viewControllers.append(viewController)
     
     viewController = AnimatableViewController()
     viewController.view.backgroundColor = .red
-    viewController.transitionAnimationType = TransitionAnimationType.fromString("Portal")
+    viewController.transitionAnimationType = TransitionAnimationType.fromString(transitionType: "Portal")
     viewControllers.append(viewController)
     
-    cycleFromViewController(containerView, fromViewController: nil, toViewController: viewControllers[0])
+    cycleFromViewController(containerView: containerView, fromViewController: nil, toViewController: viewControllers[0])
 
   }
   
-  func cycleFromViewController(_ containerView: UIView, fromViewController: AnimatableViewController?, toViewController: AnimatableViewController) {
-    guard let animationType = TransitionAnimationType.fromString(toViewController.transitionAnimationType?.stringValue ?? "") else {
+  func cycleFromViewController(containerView: UIView, fromViewController: AnimatableViewController?, toViewController: AnimatableViewController) {
+    guard let animationType = TransitionAnimationType.fromString(transitionType: toViewController.transitionAnimationType?.stringValue ?? "") else {
       return
     }
     
@@ -76,9 +76,9 @@ private extension ContainerTransitionViewController {
 
 extension ContainerTransitionViewController {
 
-  @objc(tabBar:didSelectItem:) func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+  func tabBar(tabBar: UITabBar, didSelect item: UITabBarItem) {
     let toViewController = viewControllers[item.tag]
-    cycleFromViewController(containerView, fromViewController: currentViewController, toViewController: toViewController)
+    cycleFromViewController(containerView: containerView, fromViewController: currentViewController, toViewController: toViewController)
   }
   
 }

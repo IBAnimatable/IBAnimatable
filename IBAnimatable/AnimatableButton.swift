@@ -5,48 +5,48 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableButton: UIButton, CornerDesignable, FillDesignable, BorderDesignable, ShadowDesignable, MaskDesignable, Animatable {
+@IBDesignable open class AnimatableButton: UIButton, CornerDesignable, FillDesignable, BorderDesignable, ShadowDesignable, MaskDesignable, Animatable {
   
   // MARK: - CornerDesignable
-  @IBInspectable public var cornerRadius: CGFloat = CGFloat.nan {
+  @IBInspectable open var cornerRadius: CGFloat = CGFloat.nan {
     didSet {
       configCornerRadius()
     }
   }
   
   // MARK: - FillDesignable
-  @IBInspectable public var fillColor: UIColor? {
+  @IBInspectable open var fillColor: UIColor? {
     didSet {
       configFillColor()
     }
   }
 
-  @IBInspectable public var predefinedColor: String? {
+  @IBInspectable open var predefinedColor: String? {
     didSet {
       configFillColor()
     }
   }
   
-  @IBInspectable public var opacity: CGFloat = CGFloat.nan {
+  @IBInspectable open var opacity: CGFloat = CGFloat.nan {
     didSet {
       configOpacity()
     }
   }
   
   // MARK: - BorderDesignable
-  @IBInspectable public var borderColor: UIColor? {
+  @IBInspectable open var borderColor: UIColor? {
     didSet {
       configBorder()
     }
   }
   
-  @IBInspectable public var borderWidth: CGFloat = CGFloat.nan {
+  @IBInspectable open var borderWidth: CGFloat = CGFloat.nan {
     didSet {
       configBorder()
     }
   }
   
-   public var borderSides: BorderSides  = .AllSides {
+   open var borderSides: BorderSides  = .AllSides {
     didSet {
       configBorder()
     }
@@ -60,32 +60,32 @@ import UIKit
   
 
   // MARK: - ShadowDesignable
-  @IBInspectable public var shadowColor: UIColor? {
+  @IBInspectable open var shadowColor: UIColor? {
     didSet {
       configShadowColor()
     }
   }
 
-  @IBInspectable public var shadowRadius: CGFloat = CGFloat.nan {
+  @IBInspectable open var shadowRadius: CGFloat = CGFloat.nan {
     didSet {
       configShadowRadius()
     }
   }
 
-  @IBInspectable public var shadowOpacity: CGFloat = CGFloat.nan {
+  @IBInspectable open var shadowOpacity: CGFloat = CGFloat.nan {
     didSet {
       configShadowOpacity()
     }
   }
 
-  @IBInspectable public var shadowOffset: CGPoint = CGPoint(x: CGFloat.nan, y: CGFloat.nan) {
+  @IBInspectable open var shadowOffset: CGPoint = CGPoint(x: CGFloat.nan, y: CGFloat.nan) {
     didSet {
       configShadowOffset()
     }
   }
   
   // MARK: - MaskDesignable
-  public var maskType: MaskType = .none {
+  open var maskType: MaskType = .none {
     didSet {
       configMask()
       configBorder()
@@ -100,43 +100,43 @@ import UIKit
   }
   
   // MARK: - Animatable
-public var animationType: AnimationType = .none
+open var animationType: AnimationType = .none
 @IBInspectable  var _animationType: String? {
     didSet {
      animationType = AnimationType(string: _animationType)
     }
   }
-  @IBInspectable public var autoRun: Bool = true
-  @IBInspectable public var duration: Double = Double.nan
-  @IBInspectable public var delay: Double = Double.nan
-  @IBInspectable public var damping: CGFloat = CGFloat.nan
-  @IBInspectable public var velocity: CGFloat = CGFloat.nan
-  @IBInspectable public var force: CGFloat = CGFloat.nan
-  @IBInspectable public var repeatCount: Float = Float.nan
+  @IBInspectable open var autoRun: Bool = true
+  @IBInspectable open var duration: Double = Double.nan
+  @IBInspectable open var delay: Double = Double.nan
+  @IBInspectable open var damping: CGFloat = CGFloat.nan
+  @IBInspectable open var velocity: CGFloat = CGFloat.nan
+  @IBInspectable open var force: CGFloat = CGFloat.nan
+  @IBInspectable open var repeatCount: Float = Float.nan
   
   // MARK: - Lifecycle
-  public override func prepareForInterfaceBuilder() {
+  open override func prepareForInterfaceBuilder() {
     super.prepareForInterfaceBuilder()
     configInspectableProperties()
   }
   
-  public override func awakeFromNib() {
+  open override func awakeFromNib() {
     super.awakeFromNib()
     configInspectableProperties()
   }
   
-  public override func layoutSubviews() {
+  open override func layoutSubviews() {
     super.layoutSubviews()
     configAfterLayoutSubviews()
     autoRunAnimation()
   }
   
   // MARK: - Private
-  private func configInspectableProperties() {
+  fileprivate func configInspectableProperties() {
     configAnimatableProperties()
   }
   
-  private func configAfterLayoutSubviews() {
+  fileprivate func configAfterLayoutSubviews() {
     configMask()
     configBorder()
   }

@@ -32,11 +32,11 @@ public protocol AnimatedTransitioning: UIViewControllerAnimatedTransitioning {
 
 public extension AnimatedTransitioning {
   public func getViews(using transitionContext: UIViewControllerContextTransitioning) -> (UIView?, UIView?, UIView?) {
-    return (transitionContext.view(forKey: UITransitionContextFromViewKey), transitionContext.view(forKey: UITransitionContextToViewKey), transitionContext.containerView)
+    return (transitionContext.view(forKey: UITransitionContextViewKey.from), transitionContext.view(forKey: UITransitionContextViewKey.to), transitionContext.containerView)
   }
   
   public func getViewControllers(using transitionContext: UIViewControllerContextTransitioning) -> (UIViewController?, UIViewController?, UIView?) {
-    return (transitionContext.viewController(forKey: UITransitionContextFromViewControllerKey), transitionContext.viewController(forKey: UITransitionContextToViewControllerKey), transitionContext.containerView)
+    return (transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from), transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to), transitionContext.containerView)
   }
   
   public func getTransitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {

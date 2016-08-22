@@ -13,7 +13,7 @@ public class FadeAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType? = .pan(fromDirection: .horizontal)
 
   // MARK: - private
-  private var direction: TransitionDirection
+  fileprivate var direction: TransitionDirection
   
   public init(direction: TransitionDirection, transitionDuration: Duration) {
     self.direction = direction

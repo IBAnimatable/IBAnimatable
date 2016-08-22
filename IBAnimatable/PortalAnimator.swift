@@ -14,8 +14,8 @@ public class PortalAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
-  private var fromDirection: TransitionDirection
-  private var zoomScale: CGFloat = 0.8
+  fileprivate var fromDirection: TransitionDirection
+  fileprivate var zoomScale: CGFloat = 0.8
   
   public init(fromDirection: TransitionDirection, params: [String], transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
@@ -55,9 +55,9 @@ extension PortalAnimator: UIViewControllerAnimatedTransitioning {
     
     switch fromDirection {
     case .forward:
-      executeForwardAnimation(transitionContext, containerView: containerView, fromView: fromView, toView: toView)
+      executeForwardAnimation(transitionContext: transitionContext, containerView: containerView, fromView: fromView, toView: toView)
     default:
-      executeBackwardAnimation(transitionContext, containerView: containerView, fromView: fromView, toView: toView)
+      executeBackwardAnimation(transitionContext: transitionContext, containerView: containerView, fromView: fromView, toView: toView)
     }
   }
   
@@ -67,7 +67,7 @@ extension PortalAnimator: UIViewControllerAnimatedTransitioning {
 
 private extension PortalAnimator {
 
-  func executeForwardAnimation(_ transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
+  func executeForwardAnimation(transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
     let toViewSnapshot = toView.resizableSnapshotView(from: toView.frame, afterScreenUpdates: true, withCapInsets: .zero)!
     let scale = CATransform3DIdentity
     toViewSnapshot.layer.transform = CATransform3DScale(scale, zoomScale, zoomScale, 1)
@@ -95,11 +95,11 @@ private extension PortalAnimator {
       completion: { _ in
         fromView.isHidden = false
         if transitionContext.transitionWasCancelled {
-          self.removeOtherViews(fromView)
+          self.removeOtherViews(viewToKeep: fromView)
         } else {
           toView.frame = containerView.frame
           containerView.addSubview(toView)
-          self.removeOtherViews(toView)
+          self.removeOtherViews(viewToKeep: toView)
         }
         transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
       }
@@ -112,7 +112,7 @@ private extension PortalAnimator {
 
 private extension PortalAnimator {
   
-  func executeBackwardAnimation(_ transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
+  func executeBackwardAnimation(transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
     containerView.addSubview(fromView)
     toView.frame = toView.frame.offsetBy(dx: toView.frame.width, dy: 0)
     containerView.addSubview(toView)
@@ -138,9 +138,9 @@ private extension PortalAnimator {
       },
       completion: { _ in
         if transitionContext.transitionWasCancelled {
-          self.removeOtherViews(fromView)
+          self.removeOtherViews(viewToKeep: fromView)
         } else {
-          self.removeOtherViews(toView)
+          self.removeOtherViews(viewToKeep: toView)
           toView.frame = containerView.bounds
           fromView.layer.transform = CATransform3DIdentity
         }
@@ -155,7 +155,7 @@ private extension PortalAnimator {
 
 private extension PortalAnimator {
   
-  func removeOtherViews(_ viewToKeep: UIView) {
+  func removeOtherViews(viewToKeep: UIView) {
     guard let containerView = viewToKeep.superview else {
       return
     }

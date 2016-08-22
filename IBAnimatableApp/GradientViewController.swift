@@ -23,11 +23,10 @@ class GradientViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    if (usePredefinedGradient) {
+    if usePredefinedGradient {
     gView.predefinedGradient = GradientType(string: gradientValues.valueAt(index: 0))
     gView.startPoint = GradientStartPoint(string: startPointValues.valueAt(index: 0)) ?? .top
-    }
-    else {
+    } else {
       gView.startColor = ColorType(string: self.colorValues.valueAt(index: 0))?.color
       gView.endColor = ColorType(string: self.colorValues.valueAt(index: 0))?.color
     }
@@ -55,7 +54,7 @@ extension GradientViewController : UIPickerViewDelegate, UIPickerViewDataSource 
   }
   
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    if (usePredefinedGradient) {
+    if usePredefinedGradient {
       gView.predefinedGradient = GradientType(string: gradientValues.valueAt(index: pickerView.selectedRow(inComponent: 0)))
       gView.startPoint = GradientStartPoint(string: startPointValues.valueAt(index: pickerView.selectedRow(inComponent: 1))) ?? .top
     } else {

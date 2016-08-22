@@ -10,8 +10,8 @@ import Foundation
 public func iterateEnum<T: Hashable>(from: T.Type) -> AnyIterator<T> {
   var x = 0
   return AnyIterator {
-    let next = withUnsafePointer(&x) {
-      UnsafePointer<T>($0).pointee
+    let next = withUnsafePointer(to: &x) {
+      $0.withMemoryRebound(to: T.self, capacity: 1) { $0.pointee }
     }
     defer {
       x += 1

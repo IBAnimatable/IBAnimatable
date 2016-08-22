@@ -26,7 +26,7 @@ public extension PlaceholderDesignable where Self: UITextField {
 
 public extension PlaceholderDesignable where Self: UITextView {
 
-  public func config(_ placeholderLabel: UILabel, placeholderLabelConstraints: inout [NSLayoutConstraint]) {
+  public func config(placeholder placeholderLabel: UILabel, placeholderLabelConstraints: inout [NSLayoutConstraint]) {
     placeholderLabel.font = font
     placeholderLabel.textColor = placeholderColor
     placeholderLabel.textAlignment = textAlignment

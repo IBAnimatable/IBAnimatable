@@ -13,9 +13,9 @@ public class ExplodeAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
-  private var xFactor: CGFloat = 10.0
-  private var minAngle: CGFloat = -10.0
-  private var maxAngle: CGFloat = 10.0
+  fileprivate var xFactor: CGFloat = 10.0
+  fileprivate var minAngle: CGFloat = -10.0
+  fileprivate var maxAngle: CGFloat = 10.0
   
   public init(params: [String], transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
