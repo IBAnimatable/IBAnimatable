@@ -34,7 +34,6 @@ private extension ActivityIndicatorAnimatable where Self: UIView {
       return
     }
 
-    layer.sublayers = nil
     let type = ActivityIndicatorType.fromString(animationType)
     guard type != .None else {
       return
