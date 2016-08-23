@@ -50,7 +50,7 @@ private extension ActivityIndicatorAnimationBallClipRotateMultiple {
     let rotateAnimation = CAKeyframeAnimation(keyPath:"transform.rotation.z")
     rotateAnimation.keyTimes = scaleAnimation.keyTimes
     rotateAnimation.timingFunctions = [timingFunction, timingFunction]
-    if (!reverse) {
+    if !reverse {
       rotateAnimation.values = [0, M_PI, 2 * M_PI]
     } else {
       rotateAnimation.values = [0, -M_PI, -2 * M_PI]
@@ -67,6 +67,7 @@ private extension ActivityIndicatorAnimationBallClipRotateMultiple {
     return animation
   }
 
+  // swiftlint:disable:next function_parameter_count
   func circleOf(shape shape: ActivityIndicatorShape, duration: CFTimeInterval, timingFunction: CAMediaTimingFunction, layer: CALayer, size: CGFloat, color: UIColor, reverse: Bool) {
     let circle = shape.createLayerWith(size: CGSize(width: size, height: size), color: color)
     let frame = CGRect(x: (layer.bounds.size.width - size) / 2,

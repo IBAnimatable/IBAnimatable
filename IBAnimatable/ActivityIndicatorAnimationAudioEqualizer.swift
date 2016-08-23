@@ -51,7 +51,7 @@ private extension ActivityIndicatorAnimationAudioEqualizer {
     for j in 0..<values.count {
       let heightFactor = values[j]
       let height = size.height * CGFloat(heightFactor)
-      let point = CGPointMake(0, size.height - height)
+      let point = CGPoint(x: 0, y: size.height - height)
       let path = UIBezierPath(rect: CGRect(origin: point, size: CGSize(width: lineSize, height: height)))
       animation.values?.append(path.CGPath)
     }

@@ -19,7 +19,7 @@ public class ActivityIndicatorAnimationBallScale: ActivityIndicatorAnimating {
     circle.frame = CGRect(x: (layer.bounds.size.width - size.width) / 2,
                           y: (layer.bounds.size.height - size.height) / 2,
                           width: size.width,
-                          height: size.height);
+                          height: size.height)
     circle.addAnimation(animation, forKey: "animation")
     layer.addSublayer(circle)
   }
@@ -31,7 +31,7 @@ private extension ActivityIndicatorAnimationBallScale {
 
   var animation: CAAnimationGroup {
     let animation = CAAnimationGroup()
-    animation.animations = [scaleAnimation, opacityAnimation];
+    animation.animations = [scaleAnimation, opacityAnimation]
     animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
     animation.duration = duration
     animation.repeatCount = HUGE
@@ -41,16 +41,16 @@ private extension ActivityIndicatorAnimationBallScale {
 
   var scaleAnimation: CABasicAnimation {
     let scaleAnimation = CABasicAnimation(keyPath:"transform.scale")
-    scaleAnimation.duration = duration;
-    scaleAnimation.fromValue = 0;
-    scaleAnimation.toValue = 1;
+    scaleAnimation.duration = duration
+    scaleAnimation.fromValue = 0
+    scaleAnimation.toValue = 1
     return scaleAnimation
   }
 
   var opacityAnimation: CABasicAnimation {
     let opacityAnimation = CABasicAnimation(keyPath:"opacity")
-    opacityAnimation.duration = duration;
-    opacityAnimation.fromValue = 1;
+    opacityAnimation.duration = duration
+    opacityAnimation.fromValue = 1
     opacityAnimation.toValue = 0
     return opacityAnimation
   }

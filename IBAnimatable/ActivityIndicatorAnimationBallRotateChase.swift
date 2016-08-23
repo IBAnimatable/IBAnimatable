@@ -14,13 +14,13 @@ public class ActivityIndicatorAnimationBallRotateChase: ActivityIndicatorAnimati
   // MARK: ActivityIndicatorAnimating
 
   public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
-    let circleSize = size.width / 5;
+    let circleSize = size.width / 5
     for i in 0 ..< 5 {
       let factor = Float(i) * 1.0 / 5
       let circle = ActivityIndicatorShape.Circle.createLayerWith(size: CGSize(width: circleSize, height: circleSize), color: color)
-      let animation = rotateAnimation(factor, x: layer.bounds.size.width / 2, y: layer.bounds.size.height / 2, size: CGSizeMake(size.width - circleSize, size.height - circleSize))
+      let animation = rotateAnimation(factor, x: layer.bounds.size.width / 2, y: layer.bounds.size.height / 2, size: CGSize(width: size.width - circleSize, height: size.height - circleSize))
 
-      circle.frame = CGRectMake(0, 0, circleSize, circleSize)
+      circle.frame = CGRect(x: 0, y: 0, width: circleSize, height: circleSize)
       circle.addAnimation(animation, forKey: "animation")
       layer.addSublayer(circle)
     }

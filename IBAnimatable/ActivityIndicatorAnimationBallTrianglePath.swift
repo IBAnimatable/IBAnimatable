@@ -24,19 +24,19 @@ public class ActivityIndicatorAnimationBallTrianglePath: ActivityIndicatorAnimat
 
     let topCenterCircle = ActivityIndicatorShape.Ring.createLayerWith(size: CGSize(width: circleSize, height: circleSize), color: color)
     changeAnimation(animation, values:["{0,0}", "{hx,fy}", "{-hx,fy}", "{0,0}"], deltaX: deltaX, deltaY: deltaY)
-    topCenterCircle.frame = CGRectMake(x + size.width / 2 - circleSize / 2, y, circleSize, circleSize)
+    topCenterCircle.frame = CGRect(x: x + size.width / 2 - circleSize / 2, y: y, width: circleSize, height: circleSize)
     topCenterCircle.addAnimation(animation, forKey: "animation")
     layer.addSublayer(topCenterCircle)
 
     let bottomLeftCircle = ActivityIndicatorShape.Ring.createLayerWith(size: CGSize(width: circleSize, height: circleSize), color: color)
     changeAnimation(animation, values: ["{0,0}", "{hx,-fy}", "{fx,0}", "{0,0}"], deltaX: deltaX, deltaY: deltaY)
-    bottomLeftCircle.frame = CGRectMake(x, y + size.height - circleSize, circleSize, circleSize)
+    bottomLeftCircle.frame = CGRect(x: x, y: y + size.height - circleSize, width: circleSize, height: circleSize)
     bottomLeftCircle.addAnimation(animation, forKey: "animation")
     layer.addSublayer(bottomLeftCircle)
 
     let bottomRightCircle = ActivityIndicatorShape.Ring.createLayerWith(size: CGSize(width: circleSize, height: circleSize), color: color)
     changeAnimation(animation, values: ["{0,0}", "{-fx,0}", "{-hx,-fy}", "{0,0}"], deltaX: deltaX, deltaY:deltaY)
-    bottomRightCircle.frame = CGRectMake(x + size.width - circleSize, y + size.height - circleSize, circleSize, circleSize)
+    bottomRightCircle.frame = CGRect(x: x + size.width - circleSize, y: y + size.height - circleSize, width: circleSize, height: circleSize)
     bottomRightCircle.addAnimation(animation, forKey: "animation")
     layer.addSublayer(bottomRightCircle)
   }
@@ -71,7 +71,7 @@ private extension ActivityIndicatorAnimationBallTrianglePath {
     let valueMutableString = NSMutableString(string: valueString)
     let fullDeltaX = 2 * deltaX
     let fullDeltaY = 2 * deltaY
-    var range = NSMakeRange(0, valueMutableString.length)
+    var range = NSRange(location: 0, length: valueMutableString.length)
     valueMutableString.replaceOccurrencesOfString("hx", withString: "\(deltaX)", options: NSStringCompareOptions.CaseInsensitiveSearch, range: range)
     range.length = valueMutableString.length
     valueMutableString.replaceOccurrencesOfString("fx", withString: "\(fullDeltaX)", options: NSStringCompareOptions.CaseInsensitiveSearch, range: range)

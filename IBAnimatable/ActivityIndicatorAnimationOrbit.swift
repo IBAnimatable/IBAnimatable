@@ -39,7 +39,7 @@ private extension ActivityIndicatorAnimationOrbit {
     let rotateAnimation = createSatelliteRotateAnimation(layer)
     let circle = ActivityIndicatorShape.Circle.createLayerWith(size: CGSize(width: satelliteSize, height: satelliteSize), color: color)
 
-    let frame = CGRectMake(0, 0, satelliteSize, satelliteSize)
+    let frame = CGRect(x: 0, y: 0, width: satelliteSize, height: satelliteSize)
     circle.frame = frame
     circle.addAnimation(rotateAnimation, forKey: "animation")
     layer.addSublayer(circle)
@@ -47,7 +47,7 @@ private extension ActivityIndicatorAnimationOrbit {
 
   func createSatelliteRotateAnimation(layer: CALayer) -> CAKeyframeAnimation {
     let rotateAnimation = CAKeyframeAnimation(keyPath: "position")
-    rotateAnimation.path = UIBezierPath(arcCenter: CGPoint(x: CGRectGetMidX(layer.bounds), y: CGRectGetMidY(layer.bounds)),
+    rotateAnimation.path = UIBezierPath(arcCenter: CGPoint(x: layer.bounds.midX, y: layer.bounds.midY),
                                         radius: (size.width - satelliteSize) / 2,
                                         startAngle: CGFloat(M_PI) * 1.5,
                                         endAngle: CGFloat(M_PI) * 1.5 + 4 * CGFloat(M_PI),
@@ -66,10 +66,10 @@ private extension ActivityIndicatorAnimationOrbit {
 
   func coreInLayer(layer: CALayer, color: UIColor) {
     let circle = ActivityIndicatorShape.Circle.createLayerWith(size: CGSize(width: coreSize, height: coreSize), color: color)
-    let frame = CGRectMake((layer.bounds.size.width - coreSize) / 2,
-                           (layer.bounds.size.height - coreSize) / 2,
-                           coreSize,
-                           coreSize)
+    let frame = CGRect(x: (layer.bounds.size.width - coreSize) / 2,
+                       y: (layer.bounds.size.height - coreSize) / 2,
+                       width: coreSize,
+                       height: coreSize)
     circle.frame = frame
     circle.addAnimation(coreScaleAnimation, forKey: "animation")
     layer.addSublayer(circle)
@@ -81,7 +81,7 @@ private extension ActivityIndicatorAnimationOrbit {
     let standByTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
     let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
     scaleAnimation.keyTimes = [0, 0.45, 0.55, 1]
-    scaleAnimation.timingFunctions = [inTimingFunction, standByTimingFunction, outTimingFunction];
+    scaleAnimation.timingFunctions = [inTimingFunction, standByTimingFunction, outTimingFunction]
     scaleAnimation.values = [1, 1.3, 1.3, 1]
     scaleAnimation.duration = duration
     scaleAnimation.repeatCount = HUGE
@@ -97,10 +97,10 @@ private extension ActivityIndicatorAnimationOrbit {
   func ring1InLayer(layer: CALayer, color: UIColor) {
     let animation = ring1Animation
     let circle = ActivityIndicatorShape.Circle.createLayerWith(size: CGSize(width: coreSize, height: coreSize), color: color)
-    let frame = CGRectMake((layer.bounds.size.width - coreSize) / 2,
-                           (layer.bounds.size.height - coreSize) / 2,
-                           coreSize,
-                           coreSize)
+    let frame = CGRect(x: (layer.bounds.size.width - coreSize) / 2,
+                       y: (layer.bounds.size.height - coreSize) / 2,
+                       width: coreSize,
+                       height: coreSize)
     circle.frame = frame
     circle.addAnimation(animation, forKey: "animation")
     layer.addSublayer(circle)
@@ -143,10 +143,10 @@ private extension ActivityIndicatorAnimationOrbit {
   func ring2InLayer(layer: CALayer, color: UIColor) {
     let animation = ring2Animation
     let circle = ActivityIndicatorShape.Circle.createLayerWith(size: CGSize(width: coreSize, height: coreSize), color: color)
-    let frame = CGRectMake((layer.bounds.size.width - coreSize) / 2,
-                           (layer.bounds.size.height - coreSize) / 2,
-                           coreSize,
-                           coreSize)
+    let frame = CGRect(x: (layer.bounds.size.width - coreSize) / 2,
+                       y: (layer.bounds.size.height - coreSize) / 2,
+                       width: coreSize,
+                       height: coreSize)
     circle.frame = frame
     circle.addAnimation(animation, forKey: "animation")
     layer.addSublayer(circle)
