@@ -22,7 +22,9 @@ public extension ActivityIndicatorAnimatable where Self: UIView {
   public func stopAnimating() {
     layer.sublayers = nil
     isAnimating = false
-    hidden = hidesWhenStopped ? true : hidden
+    if hidesWhenStopped {
+      hidden = true
+    }
   }
 
 }

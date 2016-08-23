@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class AnimatableActivityIndicatorView: UIView, ActivityIndicatorAnimatable {
+@IBDesignable public class AnimatableActivityIndicatorView: UIView, ActivityIndicatorAnimatable {
 
   // MARK: ActivityIndicatorAnimatable
   @IBInspectable public var animationType: String = "BallBeats"

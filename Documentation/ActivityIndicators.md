@@ -1,6 +1,6 @@
 # Activity indicator animations
 
-`IBAnimatable` provide a broad set of nice loading animations. We can use them in interface builder as well as in code by using `AnimatableActivityIndicatorView`.
+`IBAnimatable` provides a broad set of nice loading animations. We can use them in Interface Builder as well as in code by using `AnimatableActivityIndicatorView`.
 
 You can see an example of each animation in the demo app. Launch the app, then tap on "Playground" button, and tap on "Activity Indicator" cell. Choose your animation, and see the result.
 
