@@ -20,9 +20,7 @@ public enum ModalKeyboardTranslation {
   }
 
   public func translationFrame(keyboardFrame: CGRect, presentedFrame: CGRect) -> CGRect {
-    let keyboardMinY = UIScreen.mainScreen().bounds.height - keyboardFrame.height
-    let presentedViewMaxY = presentedFrame.origin.y + presentedFrame.height + 20.0
-    let offset = presentedViewMaxY - keyboardMinY
+    let keyboardMinY = UIScreen.mainScreen().bounds.height - keyboardFrame.height    
     var frame = presentedFrame
     switch self {
     case .MoveUp: frame.origin.y -= keyboardFrame.height; break
