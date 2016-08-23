@@ -46,6 +46,7 @@ You can also check out [swift2.3 branch](https://github.com/IBAnimatable/IBAnima
 * [<del>Fully</del> Mostly documented API Reference](Documentation/APIs.md) 
 * [Activity indicator animations](Documentation/ActivityIndicators.md)
 * [How to design and prototype custom transition animation and gesture interaction in Interface Builder with IBAnimatable](Documentation/Transitions.md)
+* [How to design and prototype custom presentation animation in Interface Builder with IBAnimatable](Documentation/Presentations.md)
 
 ## How to run the example App
 The easy way to learn and understand how powerful of `IBAnimatable`is to run the example App and play around the settings in Interface Builder. Just a few steps we can run the App as below, to see more features, we can tap on "Forget Password" button to unlock them. 😉

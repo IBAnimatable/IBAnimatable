@@ -25,7 +25,7 @@ public enum ModalKeyboardTranslation {
     let offset = presentedViewMaxY - keyboardMinY
     var frame = presentedFrame
     switch self {
-    case .MoveUp: frame.origin.y -= offset; break
+    case .MoveUp: frame.origin.y -= keyboardFrame.height; break
     case .AboveKeyboard: frame.origin.y = keyboardMinY - presentedFrame.height - 20
     default: break
     }
