@@ -55,7 +55,7 @@ private extension ActivityIndicatorAnimationBallPulseSync {
     animation.timingFunctions = [timingFunciton, timingFunciton, timingFunciton]
     animation.values = [0, deltaY, -deltaY, 0]
     animation.duration = duration
-    animation.repeatCount = HUGE
+    animation.repeatCount = .infinity
     animation.removedOnCompletion = false
     return animation
   }

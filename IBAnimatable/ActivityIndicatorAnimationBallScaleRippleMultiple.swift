@@ -41,7 +41,7 @@ private extension ActivityIndicatorAnimationBallScaleRippleMultiple {
     let animation = CAAnimationGroup()
     animation.animations = [scaleAnimation, opacityAnimation]
     animation.duration = duration
-    animation.repeatCount = HUGE
+    animation.repeatCount = .infinity
     animation.removedOnCompletion = false
     return animation
   }

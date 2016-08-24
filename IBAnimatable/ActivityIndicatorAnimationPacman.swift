@@ -47,7 +47,7 @@ private extension ActivityIndicatorAnimationPacman {
     let animation = CAAnimationGroup()
     animation.animations = [strokeStartAnimation, strokeEndAnimation]
     animation.duration = duration
-    animation.repeatCount = HUGE
+    animation.repeatCount = .infinity
     animation.removedOnCompletion = false
     return animation
   }
@@ -98,7 +98,7 @@ private extension ActivityIndicatorAnimationPacman {
     animation.animations = [translateAnimation, opacityAnimation]
     animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
     animation.duration = circleDuration
-    animation.repeatCount = HUGE
+    animation.repeatCount = .infinity
     animation.removedOnCompletion = false
     return animation
   }

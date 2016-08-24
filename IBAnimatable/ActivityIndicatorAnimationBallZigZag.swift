@@ -29,7 +29,7 @@ public class ActivityIndicatorAnimationBallZigZag: ActivityIndicatorAnimating {
                         NSValue(CATransform3D: CATransform3DMakeTranslation(deltaX, -deltaY, 0)),
                         NSValue(CATransform3D: CATransform3DMakeTranslation(0, 0, 0))]
     animation.duration = duration
-    animation.repeatCount = HUGE
+    animation.repeatCount = .infinity
     animation.removedOnCompletion = false
     circleAt(frame: frame, layer: layer, size: CGSize(width: circleSize, height: circleSize), color: color, animation: animation)
 

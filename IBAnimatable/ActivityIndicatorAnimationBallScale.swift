@@ -34,7 +34,7 @@ private extension ActivityIndicatorAnimationBallScale {
     animation.animations = [scaleAnimation, opacityAnimation]
     animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
     animation.duration = duration
-    animation.repeatCount = HUGE
+    animation.repeatCount = .infinity
     animation.removedOnCompletion = false
     return animation
   }

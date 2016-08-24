@@ -53,7 +53,7 @@ private extension ActivityIndicatorAnimationOrbit {
                                         endAngle: CGFloat(M_PI) * 1.5 + 4 * CGFloat(M_PI),
                                         clockwise: true).CGPath
     rotateAnimation.duration = duration * 2
-    rotateAnimation.repeatCount = HUGE
+    rotateAnimation.repeatCount = .infinity
     rotateAnimation.removedOnCompletion = false
     return rotateAnimation
   }
@@ -84,7 +84,7 @@ private extension ActivityIndicatorAnimationOrbit {
     scaleAnimation.timingFunctions = [inTimingFunction, standByTimingFunction, outTimingFunction]
     scaleAnimation.values = [1, 1.3, 1.3, 1]
     scaleAnimation.duration = duration
-    scaleAnimation.repeatCount = HUGE
+    scaleAnimation.repeatCount = .infinity
     scaleAnimation.removedOnCompletion = false
     return scaleAnimation
   }
@@ -110,7 +110,7 @@ private extension ActivityIndicatorAnimationOrbit {
     let animation = CAAnimationGroup()
     animation.animations = [ring1ScaleAnimation, ring1OpacityAnimation]
     animation.duration = duration
-    animation.repeatCount = HUGE
+    animation.repeatCount = .infinity
     animation.removedOnCompletion = false
     return animation
   }
@@ -156,7 +156,7 @@ private extension ActivityIndicatorAnimationOrbit {
     let animation = CAAnimationGroup()
     animation.animations = [ring2ScaleAnimation, ring2OpacityAnimation]
     animation.duration = duration
-    animation.repeatCount = HUGE
+    animation.repeatCount = .infinity
     animation.removedOnCompletion = false
     return animation
   }

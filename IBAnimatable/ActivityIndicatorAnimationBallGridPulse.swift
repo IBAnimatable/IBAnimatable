@@ -49,7 +49,7 @@ private extension ActivityIndicatorAnimationBallGridPulse {
   var animation: CAAnimationGroup {
     let animation = CAAnimationGroup()
     animation.animations = [scaleAnimation, opacityAnimation]
-    animation.repeatCount = HUGE
+    animation.repeatCount = .infinity
     animation.removedOnCompletion = false
     return animation
   }

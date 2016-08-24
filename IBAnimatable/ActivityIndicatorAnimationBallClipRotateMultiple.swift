@@ -61,7 +61,7 @@ private extension ActivityIndicatorAnimationBallClipRotateMultiple {
     let animation = CAAnimationGroup()
     animation.animations = [scaleAnimation, rotateAnimation]
     animation.duration = duration
-    animation.repeatCount = HUGE
+    animation.repeatCount = .infinity
     animation.removedOnCompletion = false
 
     return animation

@@ -39,20 +39,20 @@ private extension ActivityIndicatorAnimationBallRotateChase {
     let timeFunc = CAMediaTimingFunction(controlPoints: 0.5, 0.15 + rate, 0.25, 1.0)
     let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
     scaleAnimation.duration = duration
-    scaleAnimation.repeatCount = HUGE
+    scaleAnimation.repeatCount = .infinity
     scaleAnimation.fromValue = fromScale
     scaleAnimation.toValue = toScale
 
     let positionAnimation = CAKeyframeAnimation(keyPath: "position")
     positionAnimation.duration = duration
-    positionAnimation.repeatCount = HUGE
+    positionAnimation.repeatCount = .infinity
     positionAnimation.path = UIBezierPath(arcCenter: CGPoint(x: x, y: y), radius: size.width / 2, startAngle: 3 * CGFloat(M_PI) * 0.5, endAngle: 3 * CGFloat(M_PI) * 0.5 + 2 * CGFloat(M_PI), clockwise: true).CGPath
 
     let animation = CAAnimationGroup()
     animation.animations = [scaleAnimation, positionAnimation]
     animation.timingFunction = timeFunc
     animation.duration = duration
-    animation.repeatCount = HUGE
+    animation.repeatCount = .infinity
     animation.removedOnCompletion = false
     return animation
   }

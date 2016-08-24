@@ -44,7 +44,7 @@ private extension ActivityIndicatorAnimationBallClipRotatePulse {
     animation.timingFunctions = [timingFunction, timingFunction]
     animation.values = [1, 0.3, 1]
     animation.duration = duration
-    animation.repeatCount = HUGE
+    animation.repeatCount = .infinity
     animation.removedOnCompletion = false
     return animation
   }
@@ -71,7 +71,7 @@ private extension ActivityIndicatorAnimationBallClipRotatePulse {
     let animation = CAAnimationGroup()
     animation.animations = [scaleAnimation, rotateAnimation]
     animation.duration = duration
-    animation.repeatCount = HUGE
+    animation.repeatCount = .infinity
     animation.removedOnCompletion = false
     return animation
   }

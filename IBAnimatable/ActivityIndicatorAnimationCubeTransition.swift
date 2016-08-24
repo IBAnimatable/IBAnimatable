@@ -47,7 +47,7 @@ private extension ActivityIndicatorAnimationCubeTransition {
     let animation = CAAnimationGroup()
     animation.animations = [scaleAnimation, translateAnimation, rotateAnimation]
     animation.duration = duration
-    animation.repeatCount = HUGE
+    animation.repeatCount = .infinity
     animation.removedOnCompletion = false
     return animation
   }

@@ -37,7 +37,7 @@ private extension ActivityIndicatorAnimationSemiCircleSpin {
     animation.keyTimes = [0, 0.5, 1]
     animation.values = [0, M_PI, 2 * M_PI]
     animation.duration = duration
-    animation.repeatCount = HUGE
+    animation.repeatCount = .infinity
     animation.removedOnCompletion = false
     return animation
   }

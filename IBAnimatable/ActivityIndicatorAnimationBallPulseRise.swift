@@ -53,7 +53,7 @@ private extension ActivityIndicatorAnimationBallPulseRise {
     let animation = CAAnimationGroup()
     animation.animations = [scaleAnimation, translateAnimation]
     animation.duration = duration
-    animation.repeatCount = HUGE
+    animation.repeatCount = .infinity
     animation.removedOnCompletion = false
     return animation
   }
@@ -88,7 +88,7 @@ private extension ActivityIndicatorAnimationBallPulseRise {
     let animation = CAAnimationGroup()
     animation.animations = [scaleAnimation, translateAnimation]
     animation.duration = duration
-    animation.repeatCount = HUGE
+    animation.repeatCount = .infinity
     animation.removedOnCompletion = false
     return animation
   }

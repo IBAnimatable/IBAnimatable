@@ -47,7 +47,7 @@ private extension ActivityIndicatorAnimationLineSpinFadeLoader {
     animation.timingFunctions = [timingFunction, timingFunction]
     animation.values = [1, 0.3, 1]
     animation.duration = duration
-    animation.repeatCount = HUGE
+    animation.repeatCount = .infinity
     animation.removedOnCompletion = false
     return animation
   }

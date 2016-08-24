@@ -57,7 +57,7 @@ private extension ActivityIndicatorAnimationAudioEqualizer {
     }
 
     animation.duration = duration
-    animation.repeatCount = HUGE
+    animation.repeatCount = .infinity
     animation.removedOnCompletion = false
     return animation
   }

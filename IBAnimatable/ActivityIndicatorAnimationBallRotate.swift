@@ -49,7 +49,7 @@ private extension ActivityIndicatorAnimationBallRotate {
     let animation = CAAnimationGroup()
     animation.animations = [scaleAnimation, rotateAnimation]
     animation.duration = duration
-    animation.repeatCount = HUGE
+    animation.repeatCount = .infinity
     animation.removedOnCompletion = false
     return animation
   }

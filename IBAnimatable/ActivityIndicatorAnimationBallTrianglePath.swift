@@ -52,7 +52,7 @@ private extension ActivityIndicatorAnimationBallTrianglePath {
     animation.keyTimes = [0, 0.33, 0.66, 1]
     animation.timingFunctions = [timingFunction, timingFunction, timingFunction]
     animation.duration = duration
-    animation.repeatCount = HUGE
+    animation.repeatCount = .infinity
     animation.removedOnCompletion = false
     return animation
   }
