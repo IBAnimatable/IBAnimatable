@@ -4,7 +4,6 @@
 //
 
 import UIKit
-import QuartzCore
 
 public class DropDownAnimator: NSObject, AnimatedPresenting {
 

@@ -4,7 +4,6 @@
 //
 
 import UIKit
-import QuartzCore
 
 public class ActivityIndicatorAnimationBallZigZag: ActivityIndicatorAnimating {
 
