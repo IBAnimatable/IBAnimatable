@@ -18,8 +18,7 @@ enum ActivityIndicatorShape {
   case Pacman
 
   func createLayerWith(size size: CGSize, color: UIColor) -> CALayer {
-    let lineWidth: CGFloat = 2
-    let layer: CAShapeLayer
+    let lineWidth: CGFloat = 2    
     switch self {
     case .Circle:
       return circleShapeLayer(with: size, color: color)
@@ -59,7 +58,7 @@ private extension ActivityIndicatorShape {
 
   func circleShapeLayer(with size: CGSize, color: UIColor) -> CAShapeLayer {
     let layer = CAShapeLayer()
-    var path = UIBezierPath()
+    let path = UIBezierPath()
     path.addArcWithCenter(CGPoint(x: size.width / 2, y: size.height / 2),
                           radius: size.width / 2,
                           startAngle: 0,
@@ -71,7 +70,7 @@ private extension ActivityIndicatorShape {
 
   func semiCircleShapeLayer(with size: CGSize, color: UIColor) -> CAShapeLayer {
     let layer = CAShapeLayer()
-    var path = UIBezierPath()
+    let path = UIBezierPath()
     path.addArcWithCenter(CGPoint(x: size.width / 2, y: size.height / 2),
                           radius: size.width / 2,
                           startAngle: CGFloat(-M_PI / 6),
@@ -90,7 +89,7 @@ private extension ActivityIndicatorShape {
 
   func ringShapeLayer(with size: CGSize, color: UIColor, lineWidth: CGFloat) -> CAShapeLayer {
     let layer = CAShapeLayer()
-    var path = UIBezierPath()
+    let path = UIBezierPath()
     path.addArcWithCenter(CGPoint(x: size.width / 2, y: size.height / 2),
                           radius: size.width / 2,
                           startAngle: 0,
@@ -104,7 +103,7 @@ private extension ActivityIndicatorShape {
 
   func ringTwoHalfVerticalShapeLayer(with size: CGSize, color: UIColor, lineWidth: CGFloat) -> CAShapeLayer {
     let layer = CAShapeLayer()
-    var path = UIBezierPath()
+    let path = UIBezierPath()
     path.addArcWithCenter(CGPoint(x: size.width / 2, y: size.height / 2),
                           radius:size.width / 2,
                           startAngle:CGFloat(-3 * M_PI_4),
@@ -127,7 +126,7 @@ private extension ActivityIndicatorShape {
 
   func ringTwoHalfHorizontalShapeLayer(with size: CGSize, color: UIColor, lineWidth: CGFloat) -> CAShapeLayer {
     let layer = CAShapeLayer()
-    var path = UIBezierPath()
+    let path = UIBezierPath()
     path.addArcWithCenter(CGPoint(x: size.width / 2, y: size.height / 2),
                           radius:size.width / 2,
                           startAngle:CGFloat(3 * M_PI_4),
@@ -150,7 +149,7 @@ private extension ActivityIndicatorShape {
 
   func ringThirdFourShapeLayer(with size: CGSize, color: UIColor, lineWidth: CGFloat) -> CAShapeLayer {
     let layer = CAShapeLayer()
-    var path = UIBezierPath()
+    let path = UIBezierPath()
     path.addArcWithCenter(CGPoint(x: size.width / 2, y: size.height / 2),
                           radius: size.width / 2,
                           startAngle: CGFloat(-3 * M_PI_4),
@@ -170,7 +169,7 @@ private extension ActivityIndicatorShape {
 
   func rectangleShapeLayer(with size: CGSize, color: UIColor) -> CAShapeLayer {
     let layer = CAShapeLayer()
-    var path = UIBezierPath()
+    let path = UIBezierPath()
     path.moveToPoint(CGPoint(x: 0, y: 0))
     path.addLineToPoint(CGPoint(x: size.width, y: 0))
     path.addLineToPoint(CGPoint(x: size.width, y: size.height))
@@ -181,7 +180,7 @@ private extension ActivityIndicatorShape {
 
   func triangleShapeLayer(with size: CGSize, color: UIColor) -> CAShapeLayer {
     let layer = CAShapeLayer()
-    var path = UIBezierPath()
+    let path = UIBezierPath()
     let offsetY = size.height / 4
     path.moveToPoint(CGPoint(x: 0, y: size.height - offsetY))
     path.addLineToPoint(CGPoint(x: size.width / 2, y: size.height / 2 - offsetY))
@@ -202,7 +201,7 @@ private extension ActivityIndicatorShape {
 
   func pacmanShapeLayer(with size: CGSize, color: UIColor) -> CAShapeLayer {
     let layer = CAShapeLayer()
-    var path = UIBezierPath()
+    let path = UIBezierPath()
     path.addArcWithCenter(CGPoint(x: size.width / 2, y: size.height / 2),
                           radius: size.width / 4,
                           startAngle: 0,

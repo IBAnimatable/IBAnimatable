@@ -13,11 +13,7 @@ All notable changes to this project will be documented in this file.
 #### Enhancements
 
 - Support for custom presentation, for more information, [read the documentation](Documentation/Presentations.md)
-- Introducing [AnimatableActivityIndicatorView](Documentation/ActivityIndicators.md) to support custom activity indicator animations. Currently supported:
-  - BallBeats
-  - BallPulseSync
-  - LineScalePulseOut
-  - More will come soon!
+- Introducing [AnimatableActivityIndicatorView](Documentation/ActivityIndicators.md) to support custom activity indicator animations. Already supporting 31 animations! Take a look at at the [full list](Documentation/ActivityIndicators.md)
 
 #### Bugfixes
 

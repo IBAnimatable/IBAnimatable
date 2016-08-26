@@ -62,7 +62,7 @@ private extension ActivityIndicatorAnimationBallBeat {
     animation.animations = [scaleAnimation, opacityAnimation]
     animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
     animation.duration = duration
-    animation.repeatCount = HUGE
+    animation.repeatCount = .infinity
     animation.removedOnCompletion = false
     return animation
   }

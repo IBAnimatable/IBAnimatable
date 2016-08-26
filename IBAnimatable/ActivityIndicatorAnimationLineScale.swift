@@ -1,15 +1,16 @@
 //
-//  Created by Tom Baranes on 21/08/16.
-//  Copyright © 2016 IBAnimatable. All rights reserved.
+//  Created by Tom Baranes on 23/08/16.
+//  Copyright (c) 2016 IBAnimatable. All rights reserved.
 //
 
 import UIKit
 
-public class ActivityIndicatorAnimationLineScalePulseOut: ActivityIndicatorAnimating {
+public class ActivityIndicatorAnimationLineScale: ActivityIndicatorAnimating {
 
   // MARK: Properties
 
   private let duration: CFTimeInterval = 1
+  private let timingFunction = CAMediaTimingFunction(controlPoints: 0.2, 0.68, 0.18, 1.08)
 
   // MARK: ActivityIndicatorAnimating
 
@@ -18,33 +19,27 @@ public class ActivityIndicatorAnimationLineScalePulseOut: ActivityIndicatorAnima
     let x = (layer.bounds.size.width - size.width) / 2
     let y = (layer.bounds.size.height - size.height) / 2
     let beginTime = CACurrentMediaTime()
-    let beginTimes = [0.4, 0.2, 0, 0.2, 0.4]
-    let animation = self.animation
+    let beginTimes = [0.1, 0.2, 0.3, 0.4, 0.5]
 
-    // Draw lines
+    let animation = self.animation
     for i in 0 ..< 5 {
       let line = ActivityIndicatorShape.Line.createLayerWith(size: CGSize(width: lineSize, height: size.height), color: color)
-      let frame = CGRect(x: x + lineSize * 2 * CGFloat(i),
-                         y: y,
-                         width: lineSize,
-                         height: size.height)
+      let frame = CGRect(x: x + lineSize * 2 * CGFloat(i), y: y, width: lineSize, height: size.height)
 
       animation.beginTime = beginTime + beginTimes[i]
       line.frame = frame
       line.addAnimation(animation, forKey: "animation")
       layer.addSublayer(line)
     }
-
   }
 
 }
 
 // MARK: - Setup
 
-private extension ActivityIndicatorAnimationLineScalePulseOut {
+private extension ActivityIndicatorAnimationLineScale {
 
   var animation: CAKeyframeAnimation {
-    let timingFunction = CAMediaTimingFunction(controlPoints: 0.85, 0.25, 0.37, 0.85)
     let animation = CAKeyframeAnimation(keyPath: "transform.scale.y")
     animation.keyTimes = [0, 0.5, 1]
     animation.timingFunctions = [timingFunction, timingFunction]
