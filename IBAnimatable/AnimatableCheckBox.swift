@@ -1,103 +1,108 @@
 //
 //  Created by Jake Lin on 12/20/15.
-//  Copyright © 2015 Jake Lin. All rights reserved.
+//  Copyright © 2015 IBAnimatable. All rights reserved.
 //
 
 import UIKit
 
-@IBDesignable public class AnimatableCheckBox: UIButton, CheckBoxDesignable, CornerDesignable, FillDesignable, BorderDesignable, ShadowDesignable, MaskDesignable, Animatable {
+@IBDesignable open class AnimatableCheckBox: UIButton, CheckBoxDesignable, CornerDesignable, FillDesignable, BorderDesignable, ShadowDesignable, MaskDesignable, Animatable {
   
   // MARK: - CheckBoxDesignable
-  @IBInspectable public var checked: Bool = false {
+  @IBInspectable open var checked: Bool = false {
     didSet {
       configCheckBoxChecked()
     }
   }
   
-  @IBInspectable public var checkedImage: UIImage? = nil {
+  @IBInspectable open var checkedImage: UIImage? = nil {
     didSet {
       configCheckBoxCheckedImage()
     }
   }
   
-  @IBInspectable public var uncheckedImage: UIImage? = nil {
+  @IBInspectable open var uncheckedImage: UIImage? = nil {
     didSet {
       configCheckBoxUncheckedImage()
     }
   }
   
   // MARK: - CornerDesignable
-  @IBInspectable public var cornerRadius: CGFloat = CGFloat.nan {
+  @IBInspectable open var cornerRadius: CGFloat = CGFloat.nan {
     didSet {
       configCornerRadius()
     }
   }
   
   // MARK: - FillDesignable
-  @IBInspectable public var fillColor: UIColor? {
+  @IBInspectable open var fillColor: UIColor? {
     didSet {
       configFillColor()
     }
   }
   
-  @IBInspectable public var predefinedColor: String? {
+  @IBInspectable open var predefinedColor: String? {
     didSet {
       configFillColor()
     }
   }
   
-  @IBInspectable public var opacity: CGFloat = CGFloat.nan {
+  @IBInspectable open var opacity: CGFloat = CGFloat.nan {
     didSet {
       configOpacity()
     }
   }
   
   // MARK: - BorderDesignable
-  @IBInspectable public var borderColor: UIColor? {
+  @IBInspectable open var borderColor: UIColor? {
     didSet {
       configBorder()
     }
   }
   
-  @IBInspectable public var borderWidth: CGFloat = CGFloat.nan {
+  @IBInspectable open var borderWidth: CGFloat = CGFloat.nan {
     didSet {
       configBorder()
     }
   }
   
-  @IBInspectable public var borderSide: String? {
+  open var borderSides: BorderSides  = .AllSides {
     didSet {
       configBorder()
     }
   }
   
+  @IBInspectable var _borderSides: String? {
+    didSet {
+      borderSides = BorderSides(rawValue: _borderSides)
+    }
+  }  
   // MARK: - ShadowDesignable
-  @IBInspectable public var shadowColor: UIColor? {
+  @IBInspectable open var shadowColor: UIColor? {
     didSet {
       configShadowColor()
     }
   }
   
-  @IBInspectable public var shadowRadius: CGFloat = CGFloat.nan {
+  @IBInspectable open var shadowRadius: CGFloat = CGFloat.nan {
     didSet {
       configShadowRadius()
     }
   }
   
-  @IBInspectable public var shadowOpacity: CGFloat = CGFloat.nan {
+  @IBInspectable open var shadowOpacity: CGFloat = CGFloat.nan {
     didSet {
       configShadowOpacity()
     }
   }
   
-  @IBInspectable public var shadowOffset: CGPoint = CGPoint(x: CGFloat.nan, y: CGFloat.nan) {
+  @IBInspectable open var shadowOffset: CGPoint = CGPoint(x: CGFloat.nan, y: CGFloat.nan) {
     didSet {
       configShadowOffset()
     }
   }
   
   // MARK: - MaskDesignable
-  public var maskType: MaskType = .none {
+  open var maskType: MaskType = .none {
     didSet {
       configMask()
       configBorder()
@@ -112,37 +117,40 @@ import UIKit
   }
   
   // MARK: - Animatable
-  @IBInspectable public var animationType: String?
-  @IBInspectable public var autoRun: Bool = true
-  @IBInspectable public var duration: Double = Double.nan
-  @IBInspectable public var delay: Double = Double.nan
-  @IBInspectable public var damping: CGFloat = CGFloat.nan
-  @IBInspectable public var velocity: CGFloat = CGFloat.nan
-  @IBInspectable public var force: CGFloat = CGFloat.nan
-  @IBInspectable public var repeatCount: Float = Float.nan
-  @IBInspectable public var x: CGFloat = CGFloat.nan
-  @IBInspectable public var y: CGFloat = CGFloat.nan
+open var animationType: AnimationType = .none
+@IBInspectable  var _animationType: String? {
+    didSet {
+     animationType = AnimationType(string: _animationType)
+    }
+  }
+  @IBInspectable open var autoRun: Bool = true
+  @IBInspectable open var duration: Double = Double.nan
+  @IBInspectable open var delay: Double = Double.nan
+  @IBInspectable open var damping: CGFloat = CGFloat.nan
+  @IBInspectable open var velocity: CGFloat = CGFloat.nan
+  @IBInspectable open var force: CGFloat = CGFloat.nan
+  @IBInspectable open var repeatCount: Float = Float.nan
   
   // MARK: - Lifecycle
-  public override func prepareForInterfaceBuilder() {
+  open override func prepareForInterfaceBuilder() {
     super.prepareForInterfaceBuilder()
     setup()
     configInspectableProperties()
   }
   
-  public override func awakeFromNib() {
+  open override func awakeFromNib() {
     super.awakeFromNib()
     setup()
     configInspectableProperties()
   }
   
-  public override func layoutSubviews() {
+  open override func layoutSubviews() {
     super.layoutSubviews()
     configAfterLayoutSubviews()
     autoRunAnimation()
   }
   
-  public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+  open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
     if isTouchInside {
       checked = !checked
       sendActions(for: .valueChanged)
@@ -151,17 +159,17 @@ import UIKit
   }
   
   // MARK: - Private
-  private func setup() {
+  fileprivate func setup() {
     // No title for CheckBox
     setTitle("", for: UIControlState())
-    tintColor = .clear()
+    tintColor = .clear
   }
   
-  private func configInspectableProperties() {
+  fileprivate func configInspectableProperties() {
     configAnimatableProperties()
   }
   
-  private func configAfterLayoutSubviews() {
+  fileprivate func configAfterLayoutSubviews() {
     configMask()
     configBorder()
   }

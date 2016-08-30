@@ -1,6 +1,6 @@
 //
 //  Created by Jake Lin on 12/5/15.
-//  Copyright © 2015 Jake Lin. All rights reserved.
+//  Copyright © 2015 IBAnimatable. All rights reserved.
 //
 
 import UIKit
@@ -15,7 +15,7 @@ public extension FillDesignable where Self: UIView {
   public func configFillColor() {
     if let unwrappedFillColor = fillColor {
       backgroundColor = unwrappedFillColor
-    } else if let unwrappedPredefinedColor = predefinedColorFromString(predefinedColor) {
+    } else if let unwrappedPredefinedColor = predefinedColorFromString(predefinedColor: predefinedColor) {
       backgroundColor = unwrappedPredefinedColor
     }
   }
@@ -37,7 +37,7 @@ public extension FillDesignable where Self: UITableViewCell {
     if let unwrappedFillColor = fillColor {
       backgroundColor = unwrappedFillColor
       contentView.backgroundColor = unwrappedFillColor
-    } else if let unwrappedPredefinedColor = predefinedColorFromString(predefinedColor) {
+    } else if let unwrappedPredefinedColor = predefinedColorFromString(predefinedColor: predefinedColor) {
       backgroundColor = unwrappedPredefinedColor
       contentView.backgroundColor = unwrappedPredefinedColor
     }
@@ -46,7 +46,7 @@ public extension FillDesignable where Self: UITableViewCell {
 
 private extension FillDesignable {
   
-  func predefinedColorFromString(_ predefinedColor: String?) -> UIColor? {
+  func predefinedColorFromString(predefinedColor: String?) -> UIColor? {
     guard let unwrappedColorTypeString = predefinedColor, let colorType = ColorType(rawValue: unwrappedColorTypeString) else {
       return nil
     }

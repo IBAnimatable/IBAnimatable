@@ -1,11 +1,11 @@
 //
 //  Created by Jake Lin on 12/2/15.
-//  Copyright © 2015 Jake Lin. All rights reserved.
+//  Copyright © 2015 IBAnimatable. All rights reserved.
 //
 
 import Foundation
 
-public enum GradientStartPoint: String {
+public enum GradientStartPoint: String, IBEnum {
   case top
   case topRight
   case right

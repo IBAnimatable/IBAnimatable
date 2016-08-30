@@ -1,6 +1,6 @@
 //
 //  Created by Jake Lin on 2/29/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import Foundation
@@ -10,8 +10,8 @@ import Foundation
  */
 public class PresenterManager {
   // MARK: - Singleton Constructor
-  private init() {}
-  private struct Shared {
+  fileprivate init() {}
+  fileprivate struct Shared {
     static let instance = PresenterManager()
   }
   
@@ -20,10 +20,10 @@ public class PresenterManager {
   }
   
   // MARK: - Private
-  private var cache = [String: Presenter]()
+  fileprivate var cache = [String: Presenter]()
   
   // MARK: Internal Interface
-  public func retrievePresenter(_ transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) -> Presenter {
+  public func retrievePresenter(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) -> Presenter {
     // Get the cached presenter
     let presenter = cache[transitionAnimationType.stringValue]
     if let presenter = presenter {

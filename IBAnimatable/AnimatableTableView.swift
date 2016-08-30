@@ -1,93 +1,111 @@
 //
 //  Created by Jake Lin on 12/15/15.
-//  Copyright © 2015 Jake Lin. All rights reserved.
+//  Copyright © 2015 IBAnimatable. All rights reserved.
 //
 
 import UIKit
 
-@IBDesignable public class AnimatableTableView: UITableView, FillDesignable, BorderDesignable, GradientDesignable, Animatable {
+@IBDesignable open class AnimatableTableView: UITableView, FillDesignable, BorderDesignable, GradientDesignable, Animatable {
   
   // MARK: - FillDesignable
-  @IBInspectable public var fillColor: UIColor? {
+  @IBInspectable open var fillColor: UIColor? {
     didSet {
       configFillColor()
     }
   }
   
-  @IBInspectable public var predefinedColor: String? {
+  @IBInspectable open var predefinedColor: String? {
     didSet {
       configFillColor()
     }
   }
   
-  @IBInspectable public var opacity: CGFloat = CGFloat.nan {
+  @IBInspectable open var opacity: CGFloat = CGFloat.nan {
     didSet {
       configOpacity()
     }
   }
   
   // MARK: - BorderDesignable
-  @IBInspectable public var borderColor: UIColor? {
+  @IBInspectable open var borderColor: UIColor? {
     didSet {
       configBorder()
     }
   }
   
-  @IBInspectable public var borderWidth: CGFloat = CGFloat.nan {
+  @IBInspectable open var borderWidth: CGFloat = CGFloat.nan {
     didSet {
       configBorder()
     }
   }
   
-  @IBInspectable public var borderSide: String? {
+  open var borderSides: BorderSides  = .AllSides {
     didSet {
       configBorder()
     }
   }
   
+  @IBInspectable var _borderSides: String? {
+    didSet {
+      borderSides = BorderSides(rawValue: _borderSides)
+    }
+  }  
   // MARK: - GradientDesignable
-  @IBInspectable public var startColor: UIColor?
-  @IBInspectable public var endColor: UIColor?
-  @IBInspectable public var predefinedGradient: String?
-  @IBInspectable public var startPoint: String?
+  @IBInspectable open var startColor: UIColor?
+  @IBInspectable open var endColor: UIColor?
+  open var predefinedGradient: GradientType?
+  @IBInspectable var _predefinedGradient: String? {
+    didSet {
+      predefinedGradient = GradientType(string: _predefinedGradient)
+    }
+  }
+open var startPoint: GradientStartPoint = .top
+  @IBInspectable var _startPoint: String? {
+    didSet {
+      startPoint = GradientStartPoint(string: _startPoint, default: .top)
+    }
+  }
   
   // MARK: - Animatable
-  @IBInspectable public var animationType: String?
-  @IBInspectable public var autoRun: Bool = true
-  @IBInspectable public var duration: Double = Double.nan
-  @IBInspectable public var delay: Double = Double.nan
-  @IBInspectable public var damping: CGFloat = CGFloat.nan
-  @IBInspectable public var velocity: CGFloat = CGFloat.nan
-  @IBInspectable public var force: CGFloat = CGFloat.nan
-  @IBInspectable public var repeatCount: Float = Float.nan
-  @IBInspectable public var x: CGFloat = CGFloat.nan
-  @IBInspectable public var y: CGFloat = CGFloat.nan
+open var animationType: AnimationType = .none
+@IBInspectable  var _animationType: String? {
+    didSet {
+     animationType = AnimationType(string: _animationType)
+    }
+  }
+  @IBInspectable open var autoRun: Bool = true
+  @IBInspectable open var duration: Double = Double.nan
+  @IBInspectable open var delay: Double = Double.nan
+  @IBInspectable open var damping: CGFloat = CGFloat.nan
+  @IBInspectable open var velocity: CGFloat = CGFloat.nan
+  @IBInspectable open var force: CGFloat = CGFloat.nan
+  @IBInspectable open var repeatCount: Float = Float.nan
   
   // MARK: - Lifecycle
-  public override func prepareForInterfaceBuilder() {
+  open override func prepareForInterfaceBuilder() {
     super.prepareForInterfaceBuilder()
     configInspectableProperties()
   }
   
-  public override func awakeFromNib() {
+  open override func awakeFromNib() {
     super.awakeFromNib()
     configInspectableProperties()
   }
   
-  public override func layoutSubviews() {
+  open override func layoutSubviews() {
     super.layoutSubviews()
     autoRunAnimation()
     configAfterLayoutSubviews()
   }
   
   // MARK: - Private
-  private func configInspectableProperties() {
+  fileprivate func configInspectableProperties() {
     configAnimatableProperties()
     configOpacity()
     
   }
   
-  private func configAfterLayoutSubviews() {
+  fileprivate func configAfterLayoutSubviews() {
     configBorder()
     configGradient()
   }

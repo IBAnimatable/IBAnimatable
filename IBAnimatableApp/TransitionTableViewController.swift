@@ -1,6 +1,6 @@
 //
 //  Created by Jake Lin on 2/29/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import UIKit
@@ -8,8 +8,8 @@ import IBAnimatable
 
 class TransitionTableViewController: UITableViewController {
 
-  private var transitionAnimationsHeaders = [String]()
-  private var transitionAnimations = [[String]]()
+  fileprivate var transitionAnimationsHeaders = [String]()
+  fileprivate var transitionAnimations = [[String]]()
 
   // MARK: - Lifecycle
   override func viewDidLoad() {
@@ -18,18 +18,19 @@ class TransitionTableViewController: UITableViewController {
   }
 
   // MARK: - Navigation
-  override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     super.prepare(for: segue, sender: sender)
     
-    guard let toNavigationController = segue.destinationViewController as? AnimatableNavigationController, indexPath = tableView.indexPathForSelectedRow else {
+    guard let toNavigationController = segue.destination as? AnimatableNavigationController, let indexPath = tableView.indexPathForSelectedRow else {
       return
     }
+    let transitionString = transitionAnimations[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
     
-    let transitionAnimationType = String(transitionAnimations[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row])
+    let transitionAnimationType = TransitionAnimationType.fromString(transitionType: transitionString)
     
     // Set the transition animation type for `AnimatableNavigationController`, used for Push/Pop transitions
     toNavigationController.transitionAnimationType = transitionAnimationType
-    toNavigationController.navigationBar.topItem?.title = transitionAnimationType
+    toNavigationController.navigationBar.topItem?.title = transitionString
    
     // Set the transition animation type for `AnimatableViewController`, used for Present/Dismiss transitions
     if let toViewController = toNavigationController.topViewController as? TransitionViewController {
@@ -110,7 +111,7 @@ extension TransitionTableViewController {
   // MARK: - reset the group heander font color and size
   override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
     if let header = view as? UITableViewHeaderFooterView {
-      header.textLabel?.textColor = .white()
+      header.textLabel?.textColor = .white
       header.textLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFontWeightLight)
     }
   }

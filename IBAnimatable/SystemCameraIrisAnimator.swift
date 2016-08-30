@@ -1,6 +1,6 @@
 //
 //  Created by Tom Baranes on 30/03/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import UIKit
@@ -13,7 +13,7 @@ public class SystemCameraIrisAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
-  private var hollowState: TransitionHollowState
+  fileprivate var hollowState: TransitionHollowState
   
   public init(hollowState: TransitionHollowState, transitionDuration: Duration) {    
     self.transitionDuration = transitionDuration

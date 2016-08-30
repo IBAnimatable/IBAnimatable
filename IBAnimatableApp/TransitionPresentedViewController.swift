@@ -1,6 +1,6 @@
 //
 //  Created by Jake Lin on 5/16/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import UIKit
@@ -22,7 +22,7 @@ class TransitionPresentedViewController: AnimatableViewController {
     super.viewDidLoad()
     
     if let animatableView = view as? AnimatableView {
-      animatableView.predefinedGradient = String(generateRandomGradient())
+      animatableView.predefinedGradient = generateRandomGradient()
     }
     
     configureGestureLabel()
@@ -30,11 +30,11 @@ class TransitionPresentedViewController: AnimatableViewController {
     hideButtonsIfNeeded()
   }
 
-  override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     super.prepare(for: segue, sender: sender)
     
     // Set the transition animation type for `AnimatableViewController`, used for Present/Dismiss transitions
-    if let toViewController = segue.destinationViewController as? AnimatableViewController {
+    if let toViewController = segue.destination as? AnimatableViewController {
       toViewController.transitionAnimationType = transitionAnimationType
       toViewController.interactiveGestureType = interactiveGestureType
     }
@@ -61,10 +61,8 @@ private extension TransitionPresentedViewController {
     }
     
     // No gesture for this animator
-    guard let interactiveGestureTypeString = interactiveGestureType,
-      interactiveGestureType = InteractiveGestureType.fromString(interactiveGestureTypeString),
-      transitionAnimationTypeString = transitionAnimationType,
-      transitionAnimationType = TransitionAnimationType.fromString(transitionAnimationTypeString) else {
+    guard let interactiveGestureType = self.interactiveGestureType,
+      let transitionAnimationType = self.transitionAnimationType else {
         return
     }
     
@@ -77,14 +75,14 @@ private extension TransitionPresentedViewController {
     }
     
     // Set up the segues without dismiss interaction
-    var segueName = "IBAnimatable.Present" + extractAnimationType(transitionAnimationType) + "Segue"
+    var segueName = "IBAnimatable.Present" + extractAnimationType(transitionAnimationType.stringValue) + "Segue"
     
     if let segueClass = NSClassFromString(segueName) as? UIStoryboardSegue.Type {
       presentingSegueClass = segueClass
     }
     
     // Set up the segues with dismiss interaction
-    segueName = "IBAnimatable.Present" + extractAnimationType(transitionAnimationType) + "WithDismissInteractionSegue"
+    segueName = "IBAnimatable.Present" + extractAnimationType(transitionAnimationType.stringValue) + "WithDismissInteractionSegue"
     
     if let segueClass = NSClassFromString(segueName) as? UIStoryboardSegue.Type {
       presentingWithDismissInteractionSegueClass = segueClass
@@ -111,9 +109,9 @@ private extension TransitionPresentedViewController {
   }
   
   func presentViaSegue(_ segueClass: UIStoryboardSegue.Type?, useDismissInteraction: Bool) {
-    if let segueClass = segueClass, toViewController = storyboard?.instantiateViewController(withIdentifier: "TransitionPresentedViewController") as? TransitionPresentedViewController {
+    if let segueClass = segueClass, let toViewController = storyboard?.instantiateViewController(withIdentifier: "TransitionPresentedViewController") as? TransitionPresentedViewController {
       toViewController.useDismissInteraction = useDismissInteraction
-      let segue = segueClass.init(identifier: String(segueClass), source: self, destination: toViewController)
+      let segue = segueClass.init(identifier: String(describing: segueClass), source: self, destination: toViewController)
       prepare(for: segue, sender: self)
       segue.perform()
     }

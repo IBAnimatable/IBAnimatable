@@ -1,6 +1,6 @@
 //
 //  Created by Tom Baranes on 28/03/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import UIKit
@@ -13,7 +13,7 @@ public class SystemPageAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
-  private var type: TransitionPageType
+  fileprivate var type: TransitionPageType
   
   public init(type: TransitionPageType, transitionDuration: Duration) {
     self.transitionDuration = transitionDuration

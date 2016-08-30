@@ -1,13 +1,13 @@
 //
-//  Created by Tom Baranes on 24/04/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Created by Tom Baranes on 01/05/16.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import UIKit
 
-public class PresentTurnWithDismissInteractionSegue: UIStoryboardSegue {
-  public override func perform() {
-    destinationViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(.turn(fromDirection: .left), interactiveGestureType: .default)
-    sourceViewController.present(destinationViewController, animated: true, completion: nil)
+open class PresentTurnWithDismissInteractionSegue: UIStoryboardSegue {
+  open override func perform() {
+    destination.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(transitionAnimationType: .turn(fromDirection: .left), interactiveGestureType: .default)
+    source.present(destination, animated: true, completion: nil)
   }
 }

@@ -1,6 +1,6 @@
 //
 //  Created by Tom Baranes on 06/05/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import UIKit
@@ -16,11 +16,11 @@ public class ContainerTransition: NSObject {
   
   // MARK: Private
   
-  private let container: UIView?
-  private let parentViewController: UIViewController?
-  private var viewControllers: [String: UIViewController]? = nil
-  private var views: [String: UIView]? = nil
-  private let completion: ContainerTransitionCompletion?
+  fileprivate let container: UIView?
+  fileprivate let parentViewController: UIViewController?
+  fileprivate var viewControllers: [UITransitionContextViewControllerKey: UIViewController]? = nil
+  fileprivate var views: [UITransitionContextViewKey: UIView]? = nil
+  fileprivate let completion: ContainerTransitionCompletion?
   
   // MARK: Life cycle
   
@@ -49,10 +49,10 @@ public class ContainerTransition: NSObject {
       return
     }
     
-    viewControllers = [UITransitionContextFromViewControllerKey: unwrappedFromViewController,
-                       UITransitionContextToViewControllerKey: toViewController]
-    views = [UITransitionContextFromViewKey: unwrappedFromViewController.view,
-             UITransitionContextToViewKey: toViewController.view]
+    viewControllers = [UITransitionContextViewControllerKey.from: unwrappedFromViewController,
+                       UITransitionContextViewControllerKey.to: toViewController]
+    views = [UITransitionContextViewKey.from: unwrappedFromViewController.view,
+             UITransitionContextViewKey.to: toViewController.view]
   }
   
   public func animate() {
@@ -65,32 +65,33 @@ public class ContainerTransition: NSObject {
     animator.transitionDuration = transitionDuration
     animator.animateTransition(using: self)
   }
+  public var isAnimated: Bool { return false }
+  public var isInteractive: Bool { return false }
+  public var presentationStyle: UIModalPresentationStyle { return .none }
+  public var transitionWasCancelled: Bool { return false }
+  public var targetTransform: CGAffineTransform { return CGAffineTransform.identity }
+  public var containerView: UIView {return container!}
 }
 
 // MARK: - UIViewControllerContextTransitioning
 
 extension ContainerTransition: UIViewControllerContextTransitioning {
   
-  public func containerView() -> UIView {
-    return container!
-  }
+ 
   
-  public func viewController(forKey key: String) -> UIViewController? {
+  public func viewController(forKey key: UITransitionContextViewControllerKey) -> UIViewController? {
     return viewControllers?[key]
   }
   
-  public func view(forKey key: String) -> UIView? {
+  public func view(forKey key: UITransitionContextViewKey) -> UIView? {
     return views?[key]
   }
-  
-  public func transitionWasCancelled() -> Bool {
-    return false
-  }
+
   
   public func completeTransition(_ didComplete: Bool) {
-    viewControllers?[UITransitionContextFromViewControllerKey]?.view.removeFromSuperview()
-    viewControllers?[UITransitionContextFromViewControllerKey]?.removeFromParentViewController()
-    viewControllers?[UITransitionContextToViewControllerKey]?.didMove(toParentViewController: parentViewController)
+    viewControllers?[UITransitionContextViewControllerKey.from]?.view.removeFromSuperview()
+    viewControllers?[UITransitionContextViewControllerKey.from]?.removeFromParentViewController()
+    viewControllers?[UITransitionContextViewControllerKey.to]?.didMove(toParentViewController: parentViewController)
     parentViewController?.view.isUserInteractionEnabled = true
     completion?()
   }
@@ -100,10 +101,6 @@ extension ContainerTransition: UIViewControllerContextTransitioning {
   
   public func initialFrame(for vc: UIViewController) -> CGRect { return CGRect.zero }
   public func finalFrame(for vc: UIViewController) -> CGRect { return CGRect.zero}
-  public func isAnimated() -> Bool { return false }
-  public func isInteractive() -> Bool { return false }
-  public func presentationStyle() -> UIModalPresentationStyle { return .none }
-  public func targetTransform() -> CGAffineTransform { return CGAffineTransform.identity }
   public func updateInteractiveTransition(_ percentComplete: CGFloat) {}
   public func finishInteractiveTransition() {}
   public func cancelInteractiveTransition() {}

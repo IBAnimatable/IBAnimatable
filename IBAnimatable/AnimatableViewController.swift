@@ -1,59 +1,77 @@
 //
 //  Created by Jake Lin on 12/14/15.
-//  Copyright © 2015 Jake Lin. All rights reserved.
+//  Copyright © 2015 IBAnimatable. All rights reserved.
 //
 
 import UIKit
 
-@IBDesignable public class AnimatableViewController: UIViewController, ViewControllerDesignable, StatusBarDesignable, RootWindowDesignable, TransitionAnimatable {
+@IBDesignable open class AnimatableViewController: UIViewController, ViewControllerDesignable, StatusBarDesignable, RootWindowDesignable, TransitionAnimatable {
   // MARK: - ViewControllerDesignable
-  @IBInspectable public var hideNavigationBar: Bool = false
+  @IBInspectable open var hideNavigationBar: Bool = false
   
   // MARK: - StatusBarDesignable
-  @IBInspectable public var lightStatusBar: Bool = false
+  @IBInspectable open var lightStatusBar: Bool = false
   
   // MARK: - RootWindowDesignable
-  @IBInspectable public var rootWindowBackgroundColor: UIColor?
+  @IBInspectable open var rootWindowBackgroundColor: UIColor?
 
   // MARK: - TransitionAnimatable
-  @IBInspectable public var transitionAnimationType: String?
-  @IBInspectable public var transitionDuration: Double = .nan
-  @IBInspectable public var interactiveGestureType: String?
+  @IBInspectable  var _transitionAnimationType: String? {
+    didSet {
+      if let _transitionAnimationType = _transitionAnimationType {
+        transitionAnimationType = TransitionAnimationType.fromString(transitionType: _transitionAnimationType)
+      }
+    }
+  }
+  open var transitionAnimationType: TransitionAnimationType?
+  
+  @IBInspectable open var transitionDuration: Double = .nan
+  
+  open var interactiveGestureType: InteractiveGestureType?
+  @IBInspectable var _interactiveGestureType: String? {
+    didSet {
+      if let _interactiveGestureType = _interactiveGestureType {
+        interactiveGestureType = InteractiveGestureType.fromString(_interactiveGestureType)
+      }
+    }
+  }
 
   // MARK: - Lifecylce
-  public override func viewWillAppear(_ animated: Bool) {
+  open override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     confingHideNavigationBar()
     configRootWindowBackgroundColor()
   }
   
-  public override func viewWillDisappear(_ animated: Bool) {
+  open override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     resetHideNavigationBar()
+
   }
   
-  public override func preferredStatusBarStyle() -> UIStatusBarStyle {
+  open override var preferredStatusBarStyle: UIStatusBarStyle {
     if lightStatusBar {
       return .lightContent
     }
     return .default
   }
 
-  public override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+  
+  open override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     super.prepare(for: segue, sender: sender)
     
     // Configure custom transition animation
-    guard let transitionAnimationType = transitionAnimationType, let animationType = TransitionAnimationType.fromString(transitionAnimationType) else {
+    guard let animationType = transitionAnimationType else {
       super.prepare(for: segue, sender: sender)
       return
     }
     
-    let toViewController = segue.destinationViewController
+    let toViewController = segue.destination
     // If interactiveGestureType has been set
-    if let interactiveGestureType = interactiveGestureType, let interactiveGestureTypeValue = InteractiveGestureType.fromString(interactiveGestureType) {
-      toViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration, interactiveGestureType: interactiveGestureTypeValue)
+    if let interactiveGestureType = interactiveGestureType {
+      toViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(transitionAnimationType: animationType, transitionDuration: transitionDuration, interactiveGestureType: interactiveGestureType)
     } else {
-      toViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration)
+      toViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(transitionAnimationType: animationType, transitionDuration: transitionDuration)
     }
   }
 }

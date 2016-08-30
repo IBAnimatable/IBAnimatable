@@ -1,6 +1,6 @@
 //
 //  Created by Jake Lin on 3/3/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import Foundation
@@ -15,7 +15,7 @@ public enum InteractiveGestureType {
   case pinch(direction: GestureDirection)
   
   var stringValue: String {
-    return String(self)
+    return String(describing: self)
   }
   
   public static func fromString(_ interactiveGestureType: String) -> InteractiveGestureType? {
@@ -30,8 +30,8 @@ public enum InteractiveGestureType {
   
   // Return the `String` without qualification
   public func toString() -> String {
-    let namespace = "IBAnimatable." + String(GestureDirection.self) + "."
-    return String(self).replacingOccurrences(of: namespace, with: "")
+    let namespace = "IBAnimatable." + String(describing: GestureDirection.self) + "."
+    return String(describing: self).replacingOccurrences(of: namespace, with: "")
   }
 }
 

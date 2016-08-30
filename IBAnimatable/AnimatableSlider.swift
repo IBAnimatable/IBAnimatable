@@ -1,98 +1,106 @@
 //
 //  Created by Tom Baranes on 25/06/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import UIKit
 
-@IBDesignable public class AnimatableSlider: UIView, BorderDesignable, RotationDesignable, ShadowDesignable, Animatable {
+@IBDesignable open class AnimatableSlider: UIView, BorderDesignable, RotationDesignable, ShadowDesignable, Animatable {
   
   // MARK: - BorderDesignable
-  @IBInspectable public var borderColor: UIColor? {
+  @IBInspectable open var borderColor: UIColor? {
     didSet {
       configBorder()
     }
   }
   
-  @IBInspectable public var borderWidth: CGFloat = CGFloat.nan {
+  @IBInspectable open var borderWidth: CGFloat = CGFloat.nan {
     didSet {
       configBorder()
     }
   }
   
-  @IBInspectable public var borderSide: String? {
+  open var borderSides: BorderSides  = .AllSides {
     didSet {
       configBorder()
     }
   }
   
+  @IBInspectable var _borderSides: String? {
+    didSet {
+      borderSides = BorderSides(rawValue: _borderSides)
+    }
+  }  
   // MARK: - RotationDesignable
-  @IBInspectable public var rotate: CGFloat = CGFloat.nan {
+  @IBInspectable open var rotate: CGFloat = CGFloat.nan {
     didSet {
       configRotate()
     }
   }
   
   // MARK: - ShadowDesignable
-  @IBInspectable public var shadowColor: UIColor? {
+  @IBInspectable open var shadowColor: UIColor? {
     didSet {
       configShadowColor()
     }
   }
   
-  @IBInspectable public var shadowRadius: CGFloat = CGFloat.nan {
+  @IBInspectable open var shadowRadius: CGFloat = CGFloat.nan {
     didSet {
       configShadowRadius()
     }
   }
   
-  @IBInspectable public var shadowOpacity: CGFloat = CGFloat.nan {
+  @IBInspectable open var shadowOpacity: CGFloat = CGFloat.nan {
     didSet {
       configShadowOpacity()
     }
   }
   
-  @IBInspectable public var shadowOffset: CGPoint = CGPoint(x: CGFloat.nan, y: CGFloat.nan) {
+  @IBInspectable open var shadowOffset: CGPoint = CGPoint(x: CGFloat.nan, y: CGFloat.nan) {
     didSet {
       configShadowOffset()
     }
   }
   
   // MARK: - Animatable
-  @IBInspectable public var animationType: String?
-  @IBInspectable public var autoRun: Bool = true
-  @IBInspectable public var duration: Double = Double.nan
-  @IBInspectable public var delay: Double = Double.nan
-  @IBInspectable public var damping: CGFloat = CGFloat.nan
-  @IBInspectable public var velocity: CGFloat = CGFloat.nan
-  @IBInspectable public var force: CGFloat = CGFloat.nan
-  @IBInspectable public var repeatCount: Float = Float.nan
-  @IBInspectable public var x: CGFloat = CGFloat.nan
-  @IBInspectable public var y: CGFloat = CGFloat.nan
+open var animationType: AnimationType = .none
+@IBInspectable  var _animationType: String? {
+    didSet {
+     animationType = AnimationType(string: _animationType)
+    }
+  }
+  @IBInspectable open var autoRun: Bool = true
+  @IBInspectable open var duration: Double = Double.nan
+  @IBInspectable open var delay: Double = Double.nan
+  @IBInspectable open var damping: CGFloat = CGFloat.nan
+  @IBInspectable open var velocity: CGFloat = CGFloat.nan
+  @IBInspectable open var force: CGFloat = CGFloat.nan
+  @IBInspectable open var repeatCount: Float = Float.nan
   
   // MARK: - Lifecycle
-  public override func prepareForInterfaceBuilder() {
+  open override func prepareForInterfaceBuilder() {
     super.prepareForInterfaceBuilder()
     configInspectableProperties()
   }
   
-  public override func awakeFromNib() {
+  open override func awakeFromNib() {
     super.awakeFromNib()
     configInspectableProperties()
   }
   
-  public override func layoutSubviews() {
+  open override func layoutSubviews() {
     super.layoutSubviews()
     configAfterLayoutSubviews()
     autoRunAnimation()
   }
   
   // MARK: - Private
-  private func configInspectableProperties() {
+  fileprivate func configInspectableProperties() {
     configAnimatableProperties()
   }
   
-  private func configAfterLayoutSubviews() {
+  fileprivate func configAfterLayoutSubviews() {
     configBorder()
   }
 }

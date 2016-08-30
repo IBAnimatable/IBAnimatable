@@ -1,6 +1,6 @@
 //
 //  Created by Tom Baranes on 24/04/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import UIKit
@@ -14,8 +14,8 @@ public class NatGeoAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
-  private var fromDirection: TransitionDirection
-  private let firstPartRatio: Double = 0.8
+  fileprivate var fromDirection: TransitionDirection
+  fileprivate let firstPartRatio: Double = 0.8
   
   // MARK: - Life cycle
   
@@ -53,9 +53,9 @@ extension NatGeoAnimator: UIViewControllerAnimatedTransitioning {
     containerView.addSubview(toView)
     containerView.addSubview(fromView)
     if fromDirection == .left {
-      executeLeftAnimation(transitionContext, containerView: containerView, fromView: fromView, toView: toView)
+      executeLeftAnimation(context: transitionContext, containerView: containerView, fromView: fromView, toView: toView)
     } else {
-      executeRightAnimations(transitionContext, containerView: containerView, fromView: fromView, toView: toView)
+      executeRightAnimations(context: transitionContext, containerView: containerView, fromView: fromView, toView: toView)
     }
   }
   
@@ -65,7 +65,7 @@ extension NatGeoAnimator: UIViewControllerAnimatedTransitioning {
 
 private extension NatGeoAnimator {
   
-  func executeLeftAnimation(_ transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
+  func executeLeftAnimation(context transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
     fromView.isUserInteractionEnabled = false
     var fromLayer = fromView.layer
     var toLayer = toView.layer
@@ -85,7 +85,7 @@ private extension NatGeoAnimator {
         self.sourceLastTransform(&fromLayer)
       }
     }) { _ in
-      if transitionContext.transitionWasCancelled() {
+      if transitionContext.transitionWasCancelled {
         containerView.bringSubview(toFront: fromView)
         fromView.isUserInteractionEnabled = true
       }
@@ -100,7 +100,7 @@ private extension NatGeoAnimator {
 
 private extension NatGeoAnimator {
   
-  func executeRightAnimations(_ transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
+  func executeRightAnimations(context transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
 
     toView.isUserInteractionEnabled = true
     var fromLayer = toView.layer
@@ -121,7 +121,7 @@ private extension NatGeoAnimator {
         self.destinationFirstTransform(&toLayer)
       }
     }) { _ in
-      if transitionContext.transitionWasCancelled() {
+      if transitionContext.transitionWasCancelled {
         containerView.bringSubview(toFront: fromView)
         toView.isUserInteractionEnabled = false
       }
@@ -180,7 +180,7 @@ private extension NatGeoAnimator {
     fromView.layer.transform = CATransform3DIdentity
     toView.layer.transform = CATransform3DIdentity
     containerView.layer.transform = CATransform3DIdentity
-    transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+    transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
   }
   
 }

@@ -1,6 +1,6 @@
 //
 //  Created by Jake Lin on 5/13/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import UIKit
@@ -14,11 +14,10 @@ class TransitionPushedViewController: UIViewController {
     super.viewDidLoad()
     
     if let animatableView = view as? AnimatableView {
-      animatableView.predefinedGradient = String(generateRandomGradient())
+      animatableView.predefinedGradient = generateRandomGradient()
     }
     configureGestureLabel()
   }
-
 }
 
 private extension TransitionPushedViewController {
@@ -32,10 +31,8 @@ private extension TransitionPushedViewController {
     }
     
     // No gesture for this animator
-    guard let interactiveGestureTypeString = navigationController.interactiveGestureType,
-      interactiveGestureType = InteractiveGestureType.fromString(interactiveGestureTypeString),
-      transitionAnimationTypeString = navigationController.transitionAnimationType,
-      transitionAnimationType = TransitionAnimationType.fromString(transitionAnimationTypeString) else {
+    guard let interactiveGestureType = navigationController.interactiveGestureType,
+      let transitionAnimationType = navigationController.transitionAnimationType else {
       return
     }
     

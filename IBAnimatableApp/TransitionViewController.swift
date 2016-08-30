@@ -1,6 +1,6 @@
 //
 //  Created by Jake Lin on 3/1/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import UIKit
@@ -14,17 +14,18 @@ class TransitionViewController: AnimatableViewController {
     super.viewDidLoad()
     
     // Transition animations start with `System` do not support Present transition, so hide it
-    if let animationType = transitionAnimationType where animationType.hasPrefix("System") {
+    if let animationType = transitionAnimationType,
+      animationType.stringValue.hasPrefix("System") {
       // Cannot use `hidden` here because of `UIStackView`
       presentButton.alpha = 0
     }
   }
   
-  override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     super.prepare(for: segue, sender: sender)
     
     // Set the transition animation type for `AnimatableViewController`, used for Present/Dismiss transitions
-    if let toViewController = segue.destinationViewController as? AnimatableViewController {
+    if let toViewController = segue.destination as? AnimatableViewController {
       toViewController.transitionAnimationType = transitionAnimationType
       toViewController.interactiveGestureType = interactiveGestureType
     }

@@ -1,12 +1,12 @@
 //
 //  Created by Jake Lin on 4/26/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import UIKit
 
 public class PinchInteractiveAnimator: InteractiveAnimator {
-  private var startScale: CGFloat = 0
+  fileprivate var startScale: CGFloat = 0
   
   override func createGestureRecognizer() -> UIGestureRecognizer {
     let gestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(handleGesture(_:)))

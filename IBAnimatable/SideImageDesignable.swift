@@ -1,6 +1,6 @@
 //
 //  Created by Jake Lin on 12/8/15.
-//  Copyright © 2015 Jake Lin. All rights reserved.
+//  Copyright © 2015 IBAnimatable. All rights reserved.
 //
 
 import UIKit
@@ -54,27 +54,27 @@ public extension SideImageDesignable where Self: UITextField {
     configRightImage()
   }
   
-  private func configLeftImage() {
+  fileprivate func configLeftImage() {
     guard let wrappedLeftImage = leftImage else {
       return
     }
     
-    let sideView = generateSideViewWithImage(wrappedLeftImage, leftPadding: leftImageLeftPadding, rightPadding: leftImageRightPadding, topPadding: leftImageTopPadding)
+    let sideView = generateSideViewWithImage(image: wrappedLeftImage, leftPadding: leftImageLeftPadding, rightPadding: leftImageRightPadding, topPadding: leftImageTopPadding)
     leftViewMode = .always
     leftView = sideView
   }
   
-  private func configRightImage() {
+  fileprivate func configRightImage() {
     guard let wrappedRightImage = rightImage else {
       return
     }
     
-    let sideView = generateSideViewWithImage(wrappedRightImage, leftPadding: rightImageLeftPadding, rightPadding: rightImageRightPadding, topPadding: rightImageTopPadding)
+    let sideView = generateSideViewWithImage(image: wrappedRightImage, leftPadding: rightImageLeftPadding, rightPadding: rightImageRightPadding, topPadding: rightImageTopPadding)
     rightViewMode = .always
     rightView = sideView
   }
   
-  private func generateSideViewWithImage(_ image: UIImage, leftPadding: CGFloat, rightPadding: CGFloat, topPadding: CGFloat) -> UIView {
+  fileprivate func generateSideViewWithImage(image: UIImage, leftPadding: CGFloat, rightPadding: CGFloat, topPadding: CGFloat) -> UIView {
     let imageView = UIImageView(image: image)
     
     // If not set, use 0 as default value

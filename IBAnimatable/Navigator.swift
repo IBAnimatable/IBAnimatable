@@ -1,6 +1,6 @@
 //
 // Created by Jake Lin on 2/24/16.
-// Copyright (c) 2016 Jake Lin. All rights reserved.
+// Copyright (c) 2016 IBAnimatable. All rights reserved.
 //
 
 import UIKit
@@ -13,9 +13,9 @@ public class Navigator: NSObject {
   var transitionDuration: Duration = defaultTransitionDuration
   
   // animation controller
-  private var animator: AnimatedTransitioning?
+  fileprivate var animator: AnimatedTransitioning?
   // interaction controller
-  private var interactiveAnimator: InteractiveAnimator?
+  fileprivate var interactiveAnimator: InteractiveAnimator?
   
   public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) {
     self.transitionAnimationType = transitionAnimationType
@@ -58,7 +58,7 @@ extension Navigator: UINavigationControllerDelegate {
   
   // MARK: - interaction controller
   public func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-    if let interactiveAnimator = interactiveAnimator , interactiveAnimator.interacting {
+    if let interactiveAnimator = interactiveAnimator, interactiveAnimator.interacting {
       return interactiveAnimator
     } else {
       return nil

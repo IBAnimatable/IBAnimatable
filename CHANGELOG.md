@@ -14,58 +14,82 @@ None
 #### Bugfixes
 None
 
-### [2.4](https://github.com/JakeLin/IBAnimatable/releases/tag/2.4)
+### [2.6](https://github.com/IBAnimatable/IBAnimatable/releases/tag/2.6)
 
 #### API breaking changes
 None
 
 #### Enhancements
-- New designable properties for `UITextView`: placeholder text and color [#227](https://github.com/JakeLin/IBAnimatable/issues/227)
-- Add `AnimatableSlider` [#228](https://github.com/JakeLin/IBAnimatable/pull/228)
-- Add `AnimatableScrollView` [#232](https://github.com/JakeLin/IBAnimatable/pull/232)
-
+Move to IBAnimatable organization [#235](https://github.com/JakeLin/IBAnimatable/issues/235)
 
 #### Bugfixes
-- Use `UIBezierPath` to mask `Circle`, which can fix a bug when uses Circle mask with `borderSide` [#234](https://github.com/JakeLin/IBAnimatable/pull/234)
-- Fix a bug for `Polygon` mask when the `width` is longer than the `height`. [#234](https://github.com/JakeLin/IBAnimatable/pull/234)
-- Fix a crash when the parameters number of `Wave` mask is not 3. [#234](https://github.com/JakeLin/IBAnimatable/pull/234)
+None
 
-### [2.3](https://github.com/JakeLin/IBAnimatable/releases/tag/2.3)
+### [2.5](https://github.com/IBAnimatable/IBAnimatable/releases/tag/2.5)
+
 #### API breaking changes
-
-- Change `PanFromLeft`, `PanFromRight`, `PanFromTop`, `PanFromBottom`, `PanHorizontally` and `PanVertically` to `Pan(Left)`, `Pan(Right)`, `Pan(Top)`, `Pan(Bottom)`, `Pan(Horizontal)` and `Pan(Vertical)` for `Pan` gesture transition controller. [#125](https://github.com/JakeLin/IBAnimatable/issues/125)
-- Refactor `direction` to `fromDirection` for system transition animators.  Refactor `TransitionFromDirection` to `TransitionDirection`. [#206](https://github.com/JakeLin/IBAnimatable/pull/206)
-- Refactor `Fade`, `FadeIn` and `FadeOut` to `Fade(direction: TransitionDirection)` in `TransitionAnimationType`. Use `Fade(In)` to replace `FadeIn` and use `Fade(Out) to replace `FadeOut`.[#209](https://github.com/JakeLin/IBAnimatable/pull/209)
-- Remove `PresentFadeInSegue`, `PresentFadeInWithDismissInteractionSegue`, `PresentFadeOutSegue` and `PresentFadeOutWithDismissInteractionSegue`, use  `PresentFadeSegue` and `PresentFadeWithDismissInteractionSegue` instead. [#209](https://github.com/JakeLin/IBAnimatable/pull/209)
-- Remove `degree` for `SystemRotate` since it only supports 90 degrees. [#210](https://github.com/JakeLin/IBAnimatable/pull/210)
+None
 
 #### Enhancements
 
-- Add `ScreenEdgePanInteractiveAnimator` to support `ScreenEdgePan(Left)`, `ScreenEdgePan(Right)`, `ScreenEdgePan(Top)`, `ScreenEdgePan(Bottom)`, `ScreenEdgePan(Horizontal)` and `ScreenEdgePan(Vertical)` for `ScreenEdgePan` gesture transition controller. [#125](https://github.com/JakeLin/IBAnimatable/issues/125)
-- Support multiple sides for border [#168](https://github.com/JakeLin/IBAnimatable/pull/168)
-- Add `ExplodeAnimator` to support Explode transition animation. It supports parameters `Explode(xFactor, minAngle, maxAngle)`, if no specified, the default values are `Explode(10, -10, 10)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
-- Add `FoldAnimator` to support Fold transition animation. It supports parameters `Explode(direction, nbFolds)`, if no specified, the default values are `Fold(Left, 2)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
-- Add `PortalAnimator` to support Portal transition animation. It supports parameters `Portal(direction, zoomScale)`, if no specified, the default values are `Portal(Backward, 0.8)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
-- Add `NatGeoAnimator` to support NatGeo transition animation. It supports only a direction `NatGeo(direction)`, if no specified, the default values are `NatGeo(Left)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
-- Add `Turn` to support Turn transition animation. It supports only a direction `Turn(direction)`, if no specified, the default values are `Turn(Left)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
-- Add `CardsAnimator` to support Cards transition animation. It supports parameters `Cards(direction)`, if no specified, the default values are `Cards(Forward)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
-- Add `FlipAnimator` to support Flip transition animation. It supports parameters `Flip(direction)`, if no specified, the default values are `Flip(Left)`. Currently only support `Flip(Left)` and `Flip(Right)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
+- Add `vibrancyBlurEffect` to `BlurDesignable`. Once specify the Vibrancy effect style, all subviews will apply this vibrancy effect [#245](https://github.com/IBAnimatable/IBAnimatable/pull/245)
+- New animations: `ZoomInvertIn` and ``ZoomInvertOut` [#249](https://github.com/IBAnimatable/IBAnimatable/pull/249)
+
+#### Bugfixes
+None
+
+### [2.4](https://github.com/IBAnimatable/IBAnimatable/releases/tag/2.4)
+
+#### API breaking changes
+None
+
+#### Enhancements
+- New designable properties for `UITextView`: placeholder text and color [#227](https://github.com/IBAnimatable/IBAnimatable/issues/227)
+- Add `AnimatableSlider` [#228](https://github.com/IBAnimatable/IBAnimatable/pull/228)
+- Add `AnimatableScrollView` [#232](https://github.com/IBAnimatable/IBAnimatable/pull/232)
+
+
+#### Bugfixes
+- Use `UIBezierPath` to mask `Circle`, which can fix a bug when uses Circle mask with `borderSide` [#234](https://github.com/IBAnimatable/IBAnimatable/pull/234)
+- Fix a bug for `Polygon` mask when the `width` is longer than the `height`. [#234](https://github.com/IBAnimatable/IBAnimatable/pull/234)
+- Fix a crash when the parameters number of `Wave` mask is not 3. [#234](https://github.com/IBAnimatable/IBAnimatable/pull/234)
+
+### [2.3](https://github.com/IBAnimatable/IBAnimatable/releases/tag/2.3)
+#### API breaking changes
+
+- Change `PanFromLeft`, `PanFromRight`, `PanFromTop`, `PanFromBottom`, `PanHorizontally` and `PanVertically` to `Pan(Left)`, `Pan(Right)`, `Pan(Top)`, `Pan(Bottom)`, `Pan(Horizontal)` and `Pan(Vertical)` for `Pan` gesture transition controller. [#125](https://github.com/IBAnimatable/IBAnimatable/issues/125)
+- Refactor `direction` to `fromDirection` for system transition animators.  Refactor `TransitionFromDirection` to `TransitionDirection`. [#206](https://github.com/IBAnimatable/IBAnimatable/pull/206)
+- Refactor `Fade`, `FadeIn` and `FadeOut` to `Fade(direction: TransitionDirection)` in `TransitionAnimationType`. Use `Fade(In)` to replace `FadeIn` and use `Fade(Out) to replace `FadeOut`.[#209](https://github.com/IBAnimatable/IBAnimatable/pull/209)
+- Remove `PresentFadeInSegue`, `PresentFadeInWithDismissInteractionSegue`, `PresentFadeOutSegue` and `PresentFadeOutWithDismissInteractionSegue`, use  `PresentFadeSegue` and `PresentFadeWithDismissInteractionSegue` instead. [#209](https://github.com/IBAnimatable/IBAnimatable/pull/209)
+- Remove `degree` for `SystemRotate` since it only supports 90 degrees. [#210](https://github.com/IBAnimatable/IBAnimatable/pull/210)
+
+#### Enhancements
+
+- Add `ScreenEdgePanInteractiveAnimator` to support `ScreenEdgePan(Left)`, `ScreenEdgePan(Right)`, `ScreenEdgePan(Top)`, `ScreenEdgePan(Bottom)`, `ScreenEdgePan(Horizontal)` and `ScreenEdgePan(Vertical)` for `ScreenEdgePan` gesture transition controller. [#125](https://github.com/IBAnimatable/IBAnimatable/issues/125)
+- Support multiple sides for border [#168](https://github.com/IBAnimatable/IBAnimatable/pull/168)
+- Add `ExplodeAnimator` to support Explode transition animation. It supports parameters `Explode(xFactor, minAngle, maxAngle)`, if no specified, the default values are `Explode(10, -10, 10)`. [#155](https://github.com/IBAnimatable/IBAnimatable/issues/155)
+- Add `FoldAnimator` to support Fold transition animation. It supports parameters `Explode(direction, nbFolds)`, if no specified, the default values are `Fold(Left, 2)`. [#155](https://github.com/IBAnimatable/IBAnimatable/issues/155)
+- Add `PortalAnimator` to support Portal transition animation. It supports parameters `Portal(direction, zoomScale)`, if no specified, the default values are `Portal(Backward, 0.8)`. [#155](https://github.com/IBAnimatable/IBAnimatable/issues/155)
+- Add `NatGeoAnimator` to support NatGeo transition animation. It supports only a direction `NatGeo(direction)`, if no specified, the default values are `NatGeo(Left)`. [#155](https://github.com/IBAnimatable/IBAnimatable/issues/155)
+- Add `Turn` to support Turn transition animation. It supports only a direction `Turn(direction)`, if no specified, the default values are `Turn(Left)`. [#155](https://github.com/IBAnimatable/IBAnimatable/issues/155)
+- Add `CardsAnimator` to support Cards transition animation. It supports parameters `Cards(direction)`, if no specified, the default values are `Cards(Forward)`. [#155](https://github.com/IBAnimatable/IBAnimatable/issues/155)
+- Add `FlipAnimator` to support Flip transition animation. It supports parameters `Flip(direction)`, if no specified, the default values are `Flip(Left)`. Currently only support `Flip(Left)` and `Flip(Right)`. [#155](https://github.com/IBAnimatable/IBAnimatable/issues/155)
 - Add `ContainerTransition` to manage transition animations between two UIViewController in a container
-- Add `AnimatableCollectionViewCell` [#167](https://github.com/JakeLin/IBAnimatable/pull/167)
-- Add `PinchInteractiveAnimator` to support `Pinch(Close)`, `Pinch(Open)` for `Pinch` gesture transition controller. [#125](https://github.com/JakeLin/IBAnimatable/issues/125)
-- Add `SlideAnimator` to support Slide transition animation. It supports parameters `Slide(direction, fade)`, if no specified, the default values are `Flip(Left)`. [#155](https://github.com/JakeLin/IBAnimatable/issues/155)
-- Add IBAnimatable Playground to demonstrate transitions and interactions. [#204](https://github.com/JakeLin/IBAnimatable/pull/204)
-- Add `Parallelogram` mask. [#207 - Parallelogram Mask support in Maskdesignable](https://github.com/JakeLin/IBAnimatable/pull/207)
-- Add `popToRootViewController` segue for poping to root ViewController of the NavigationController. [#212](https://github.com/JakeLin/IBAnimatable/pull/212)
+- Add `AnimatableCollectionViewCell` [#167](https://github.com/IBAnimatable/IBAnimatable/pull/167)
+- Add `PinchInteractiveAnimator` to support `Pinch(Close)`, `Pinch(Open)` for `Pinch` gesture transition controller. [#125](https://github.com/IBAnimatable/IBAnimatable/issues/125)
+- Add `SlideAnimator` to support Slide transition animation. It supports parameters `Slide(direction, fade)`, if no specified, the default values are `Flip(Left)`. [#155](https://github.com/IBAnimatable/IBAnimatable/issues/155)
+- Add IBAnimatable Playground to demonstrate transitions and interactions. [#204](https://github.com/IBAnimatable/IBAnimatable/pull/204)
+- Add `Parallelogram` mask. [#207 - Parallelogram Mask support in Maskdesignable](https://github.com/IBAnimatable/IBAnimatable/pull/207)
+- Add `popToRootViewController` segue for poping to root ViewController of the NavigationController. [#212](https://github.com/IBAnimatable/IBAnimatable/pull/212)
 
 #### Bugfixes
 
 - Use `weak` for the `viewController` in `InteractiveAnimator` to avoid retain cycle.
-- Fixed the right image of `SideImageDesignable` [#176](https://github.com/JakeLin/IBAnimatable/issues/176)
-- Fix a bug to support single side of border for AnimatableTextField [#179](https://github.com/JakeLin/IBAnimatable/issues/179)
+- Fixed the right image of `SideImageDesignable` [#176](https://github.com/IBAnimatable/IBAnimatable/issues/176)
+- Fix a bug to support single side of border for AnimatableTextField [#179](https://github.com/IBAnimatable/IBAnimatable/issues/179)
 - `AnimatorFactory` and all the `***Animators` can now be used / instantiate outside of `IBAnimatable`
 
-### [2.2](https://github.com/JakeLin/IBAnimatable/releases/tag/2.2)
+### [2.2](https://github.com/IBAnimatable/IBAnimatable/releases/tag/2.2)
 
 #### API breaking changes
 
@@ -75,7 +99,7 @@ None
 #### Enhancements
 
 - `AnimatableLabel` now conforms `BorderDesignable`
-- New transition animations [#126](https://github.com/JakeLin/IBAnimatable/issues/126):
+- New transition animations [#126](https://github.com/IBAnimatable/IBAnimatable/issues/126):
     - `SystemSuckEffect`
     - `SystemRippleEffect`
     - `SystemMoveIn`
@@ -91,24 +115,24 @@ None
          - `SystemCameraIris`
          - `SystemCameraIris(HollowOpen)`
          - `SystemCameraIris(HollowClose)`
-- Use framework in demo app [#149](https://github.com/JakeLin/IBAnimatable/pull/149)
+- Use framework in demo app [#149](https://github.com/IBAnimatable/IBAnimatable/pull/149)
 
 #### Bugfixes
 
-- Fix the sided borders issue [#150](https://github.com/JakeLin/IBAnimatable/pull/150)
-- Fix the `FromTop` and `FromBottom` directions in system built-in animations [#156](https://github.com/JakeLin/IBAnimatable/pull/156)
+- Fix the sided borders issue [#150](https://github.com/IBAnimatable/IBAnimatable/pull/150)
+- Fix the `FromTop` and `FromBottom` directions in system built-in animations [#156](https://github.com/IBAnimatable/IBAnimatable/pull/156)
 
-### [2.1](https://github.com/JakeLin/IBAnimatable/releases/tag/2.1)
+### [2.1](https://github.com/IBAnimatable/IBAnimatable/releases/tag/2.1)
 
 #### API breaking changes
 
-- Remove `MaskDesignable` public methods ([#101](https://github.com/JakeLin/IBAnimatable/issues/101)):
+- Remove `MaskDesignable` public methods ([#101](https://github.com/IBAnimatable/IBAnimatable/issues/101)):
    	- Remove `maskCircle()`, use `view.maskType = String(MaskType.Circle)` instead
    	- Remove `maskStar(_:)`, use `view.maskType = "Star(6)"` instead
    	- Remove `maskPolygon()`, use `view.maskType = String(MaskType.Polygon)` instead
    	- Remove `maskTriangle()`, use `view.maskType = String(MaskType.Triangle)` instead
    	- Remove `maskWave(_:_:_:)`, use `view.maskType = "Wave(up, 16, 40)"` instead
-- Improve the options in `TransitionAnimationType` enum. ([#137](https://github.com/JakeLin/IBAnimatable/pull/137))
+- Improve the options in `TransitionAnimationType` enum. ([#137](https://github.com/IBAnimatable/IBAnimatable/pull/137))
    	- Remove `SystemCubeFromLeft`, use `SystemCube(Left)`
    	- Remove `SystemCubeFromRight`, use `SystemCube(Right)`
    	- Remove `SystemCubeFromTop`, use `SystemCube(Top)`
@@ -121,17 +145,17 @@ None
 #### Enhancements
 
 - Support Xcode 7.3 and Swift 2.2
-- Configurable mask polygon (sides) [#112](https://github.com/JakeLin/IBAnimatable/issues/112)
-- Add `SystemPageCurlAnimator` to support `SystemPageCurlFromTop` and `SystemPageCurlFromBottom` transition animations [#126](https://github.com/JakeLin/IBAnimatable/issues/126)
+- Configurable mask polygon (sides) [#112](https://github.com/IBAnimatable/IBAnimatable/issues/112)
+- Add `SystemPageCurlAnimator` to support `SystemPageCurlFromTop` and `SystemPageCurlFromBottom` transition animations [#126](https://github.com/IBAnimatable/IBAnimatable/issues/126)
 - `AnimatableLabel` now conforms `CornerDesignable` and `FillDesignable`
-- Support Carthage 0.15.2 [#131](https://github.com/JakeLin/IBAnimatable/issues/131)
+- Support Carthage 0.15.2 [#131](https://github.com/IBAnimatable/IBAnimatable/issues/131)
 
 #### Bugfixes
 
-- Fixed a bug that was making `GradientDesignable` not filling the dedicated frame [#129](https://github.com/JakeLin/IBAnimatable/issues/129)
+- Fixed a bug that was making `GradientDesignable` not filling the dedicated frame [#129](https://github.com/IBAnimatable/IBAnimatable/issues/129)
 - Fixed a bug that was making `MaskDesignable` not filling the dedicated frame
 
-### [2.0](https://github.com/JakeLin/IBAnimatable/releases/tag/2.0)
+### [2.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/2.0)
 
 #### API breaking changes
 
@@ -158,50 +182,52 @@ None
 - Fix potential crash when using `GradientDesignable`
 - Fix slideIn/Out animations on second screens (e.g. AirPlay)
 
-### [1.2](https://github.com/JakeLin/IBAnimatable/releases/tag/1.2)
+### [1.2](https://github.com/IBAnimatable/IBAnimatable/releases/tag/1.2)
 
 #### Enhancements
 
-- Swift Package Manager support. [#5](https://github.com/JakeLin/IBAnimatable/issues/5)
-- Predefined flat colors. [#71](https://github.com/JakeLin/IBAnimatable/issues/71)
-- Customise mask draw from interface builder [#50](https://github.com/JakeLin/IBAnimatable/issues/50) [#8](https://github.com/JakeLin/IBAnimatable/issues/8) [#76](https://github.com/JakeLin/IBAnimatable/issues/76):
+- Swift Package Manager support. [#5](https://github.com/IBAnimatable/IBAnimatable/issues/5)
+- Predefined flat colors. [#71](https://github.com/IBAnimatable/IBAnimatable/issues/71)
+- Customise mask draw from interface builder [#50](https://github.com/IBAnimatable/IBAnimatable/issues/50) [#8](https://github.com/IBAnimatable/IBAnimatable/issues/8) [#76](https://github.com/IBAnimatable/IBAnimatable/issues/76):
   - Star(6) -> draw star mask with 6 sides.
   - Wave(up,50,100) -> draw a wave up mask with 50 as width, and 100 as offset.
 - Makes `BorderDesignable` usable in playground
-- Add MoveTo and MoveBy animations [#74](https://github.com/JakeLin/IBAnimatable/issues/74)
+- Add MoveTo and MoveBy animations [#74](https://github.com/IBAnimatable/IBAnimatable/issues/74)
 
 #### Bugfixes
 
-- Fixed `GradientDesignable` rotation. [#86](https://github.com/JakeLin/IBAnimatable/issues/86)
+- Fixed `GradientDesignable` rotation. [#86](https://github.com/IBAnimatable/IBAnimatable/issues/86)
 - Fixed `BorderDesignable` after rotation.
-- Fixed mask star drawing bug. [#95](https://github.com/JakeLin/IBAnimatable/issues/95)
-- Fixed the border color / width when used with a mask. [#95](https://github.com/JakeLin/IBAnimatable/issues/101)
+- Fixed mask star drawing bug. [#95](https://github.com/IBAnimatable/IBAnimatable/issues/95)
+- Fixed the border color / width when used with a mask. [#95](https://github.com/IBAnimatable/IBAnimatable/issues/101)
 
-### [1.1](https://github.com/JakeLin/IBAnimatable/releases/tag/1.1)
+### [1.1](https://github.com/IBAnimatable/IBAnimatable/releases/tag/1.1)
 
 #### API breaking changes
 
-- Remove `DesignableGradientView`, use `AnimatableView` to configure gradient. [#81](https://github.com/JakeLin/IBAnimatable/issues/81) and [#86](https://github.com/JakeLin/IBAnimatable/issues/86)
+- Remove `DesignableGradientView`, use `AnimatableView` to configure gradient. [#81](https://github.com/IBAnimatable/IBAnimatable/issues/81) and [#86](https://github.com/IBAnimatable/IBAnimatable/issues/86)
 
 #### Enhancements
 
-- New animations: Rotate, RotateCCW [#51](https://github.com/JakeLin/IBAnimatable/issues/51)
+- New animations: Rotate, RotateCCW [#51](https://github.com/IBAnimatable/IBAnimatable/issues/51)
 - New masks: Star, Triangle, Polygon, Wave
 - SidebarImage now support right images
-- Predefined gradients [#24](https://github.com/JakeLin/IBAnimatable/issues/24)
-- iOS8 support [#89](https://github.com/JakeLin/IBAnimatable/issues/89)
+- Predefined gradients [#24](https://github.com/IBAnimatable/IBAnimatable/issues/24)
+- iOS8 support [#89](https://github.com/IBAnimatable/IBAnimatable/issues/89)
 
 #### Bugfixes
 
 - Fixed left gradient
-- Fixed slideOut / slideIn animations [#46](https://github.com/JakeLin/IBAnimatable/issues/46)
+- Fixed slideOut / slideIn animations [#46](https://github.com/IBAnimatable/IBAnimatable/issues/46)
 
-### [1.0.1](https://github.com/JakeLin/IBAnimatable/releases/tag/1.0.1)
+### [1.0.1](https://github.com/IBAnimatable/IBAnimatable/releases/tag/1.0.1)
 
 #### Enhancements
 
-- Carthage support - [#6](https://github.com/JakeLin/IBAnimatable/issues/6)
+- Carthage support - [#6](https://github.com/IBAnimatable/IBAnimatable/issues/6)
 
-### [1.0](https://github.com/JakeLin/IBAnimatable/releases/tag/1.0)
+### [1.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/1.0)
 
 - Initial release
+
+

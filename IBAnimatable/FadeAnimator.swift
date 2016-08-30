@@ -1,6 +1,6 @@
 //
 //  Created by Jake Lin on 2/27/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import UIKit
@@ -13,7 +13,7 @@ public class FadeAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType? = .pan(fromDirection: .horizontal)
 
   // MARK: - private
-  private var direction: TransitionDirection
+  fileprivate var direction: TransitionDirection
   
   public init(direction: TransitionDirection, transitionDuration: Duration) {
     self.direction = direction
@@ -71,7 +71,7 @@ extension FadeAnimator: UIViewControllerAnimatedTransitioning {
         }
       },
       completion: { _ in
-        transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+        transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
       }
     )
   }
