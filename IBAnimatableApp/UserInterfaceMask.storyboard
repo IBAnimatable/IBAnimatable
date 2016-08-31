@@ -109,16 +109,16 @@
                                 <rect key="frame" x="0.0" y="394" width="375" height="179"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" red="0.14117647059999999" green="0.78039215689999997" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="0.90000000000000002"/>
+                                        <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
-                                        <point key="value" x="10" y="10"/>
+                                        <point key="value" x="0.0" y="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
