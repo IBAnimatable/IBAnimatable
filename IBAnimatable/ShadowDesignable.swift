@@ -68,25 +68,43 @@ public extension ShadowDesignable where Self: UIView {
   
   public func configMaskShadow() {
     commonSetup()
-    // if a layer mask is specified, display the shadow to match the mask
+    
+    // if a `layer.mask` is specified, add a new shadow layer to display the shadow to match the mask shape.
     if let mask = layer.mask as? CAShapeLayer {
+      // Clear default layer borders
+      layer.shadowColor = nil
+      layer.shadowRadius = 0
+      layer.shadowOpacity = 0
+      
+      // Remove any previous shadow layer
+      layer.superlayer?.sublayers?.filter { $0.name == "shadowLayer-\(unsafeAddressOf(self))" }
+        .forEach { $0.removeFromSuperlayer() }
+      
+      // Create new layer with object's memory reference to make this string unique. Otherwise common name will remove all the shadow layers as it's adding in layer's superview.
+      let shadowLayer = CAShapeLayer()
+      shadowLayer.name = "shadowLayer-\(unsafeAddressOf(self))"
+      shadowLayer.frame = frame
+      
+      // Configure shadow properties
       if let unwrappedShadowColor = shadowColor {
-//        layer.shadowColor = unwrappedShadowColor.CGColor
-//        mask.shadowColor = unwrappedShadowColor.CGColor
+        shadowLayer.shadowColor = unwrappedShadowColor.CGColor
       }
       if !shadowRadius.isNaN && shadowRadius > 0 {
-        mask.shadowRadius = shadowRadius
+        shadowLayer.shadowRadius = shadowRadius
       }
       if !shadowOpacity.isNaN && shadowOpacity >= 0 && shadowOpacity <= 1 {
-        mask.shadowOpacity = Float(shadowOpacity)
+        shadowLayer.shadowOpacity = Float(shadowOpacity)
       }
       if !shadowOffset.x.isNaN {
-        mask.shadowOffset.width = shadowOffset.x
+        shadowLayer.shadowOffset.width = shadowOffset.x
       }
       if !shadowOffset.y.isNaN {
-        mask.shadowOffset.height = shadowOffset.y
+        shadowLayer.shadowOffset.height = shadowOffset.y
       }
-      mask.shadowPath = mask.path
+      shadowLayer.shadowPath = mask.path
+      
+      // Add to layer's superview in order to render shadow otherwise it will clip out due to mask layer.
+      layer.superlayer?.insertSublayer(shadowLayer, below: layer)
     }
   }
   
