@@ -9,7 +9,7 @@ public class ActivityIndicatorAnimationBallZigZag: ActivityIndicatorAnimating {
 
   // MARK: Properties
 
-  private let duration: CFTimeInterval = 0.7
+  fileprivate let duration: CFTimeInterval = 0.7
 
   // MARK: ActivityIndicatorAnimating
 
@@ -23,20 +23,20 @@ public class ActivityIndicatorAnimationBallZigZag: ActivityIndicatorAnimating {
     let animation = CAKeyframeAnimation(keyPath:"transform")
     animation.keyTimes = [0.0, 0.33, 0.66, 1.0]
     animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
-    animation.values = [NSValue(CATransform3D: CATransform3DMakeTranslation(0, 0, 0)),
-                        NSValue(CATransform3D: CATransform3DMakeTranslation(-deltaX, -deltaY, 0)),
-                        NSValue(CATransform3D: CATransform3DMakeTranslation(deltaX, -deltaY, 0)),
-                        NSValue(CATransform3D: CATransform3DMakeTranslation(0, 0, 0))]
+    animation.values = [NSValue(caTransform3D: CATransform3DMakeTranslation(0, 0, 0)),
+                        NSValue(caTransform3D: CATransform3DMakeTranslation(-deltaX, -deltaY, 0)),
+                        NSValue(caTransform3D: CATransform3DMakeTranslation(deltaX, -deltaY, 0)),
+                        NSValue(caTransform3D: CATransform3DMakeTranslation(0, 0, 0))]
     animation.duration = duration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     circleAt(frame: frame, layer: layer, size: CGSize(width: circleSize, height: circleSize), color: color, animation: animation)
 
     // Circle 2 animation
-    animation.values = [NSValue(CATransform3D: CATransform3DMakeTranslation(0, 0, 0)),
-                        NSValue(CATransform3D: CATransform3DMakeTranslation(deltaX, deltaY, 0)),
-                        NSValue(CATransform3D: CATransform3DMakeTranslation(-deltaX, deltaY, 0)),
-                        NSValue(CATransform3D: CATransform3DMakeTranslation(0, 0, 0))]
+    animation.values = [NSValue(caTransform3D: CATransform3DMakeTranslation(0, 0, 0)),
+                        NSValue(caTransform3D: CATransform3DMakeTranslation(deltaX, deltaY, 0)),
+                        NSValue(caTransform3D: CATransform3DMakeTranslation(-deltaX, deltaY, 0)),
+                        NSValue(caTransform3D: CATransform3DMakeTranslation(0, 0, 0))]
     circleAt(frame: frame, layer: layer, size: CGSize(width: circleSize, height: circleSize), color: color, animation: animation)
   }
 
@@ -44,12 +44,12 @@ public class ActivityIndicatorAnimationBallZigZag: ActivityIndicatorAnimating {
 
 // MARK: - Setup
 
-private extension ActivityIndicatorAnimationBallZigZag {
+fileprivate extension ActivityIndicatorAnimationBallZigZag {
 
-  func circleAt(frame frame: CGRect, layer: CALayer, size: CGSize, color: UIColor, animation: CAAnimation) {
+  func circleAt(frame: CGRect, layer: CALayer, size: CGSize, color: UIColor, animation: CAAnimation) {
     let circle = ActivityIndicatorShape.Circle.createLayerWith(size: size, color: color)
     circle.frame = frame
-    circle.addAnimation(animation, forKey: "animation")
+    circle.add(animation, forKey: "animation")
     layer.addSublayer(circle)
   }
 

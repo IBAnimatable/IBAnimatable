@@ -14,7 +14,7 @@ public protocol ActivityIndicatorAnimatable: class {
 public extension ActivityIndicatorAnimatable where Self: UIView {
 
   public func startAnimating() {
-    hidden = false
+    isHidden = false
     configLayer()
     isAnimating = true
   }
@@ -23,7 +23,7 @@ public extension ActivityIndicatorAnimatable where Self: UIView {
     layer.sublayers = nil
     isAnimating = false
     if hidesWhenStopped {
-      hidden = true
+      isHidden = true
     }
   }
 
@@ -36,12 +36,12 @@ private extension ActivityIndicatorAnimatable where Self: UIView {
       return
     }
 
-    let type = ActivityIndicatorType.fromString(animationType)
+    let type = ActivityIndicatorType.fromString(string: animationType)
     guard type != .None else {
       return
     }
 
-    let activityIndicator = ActivityIndicatorFactory.generateActivityIndicator(type)
+    let activityIndicator = ActivityIndicatorFactory.generateActivityIndicator(activityIndicatorType: type)
     activityIndicator.configAnimation(in: layer, size: bounds.size, color: color)
     layer.speed = 1
   }

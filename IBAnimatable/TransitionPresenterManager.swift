@@ -20,7 +20,7 @@ public class TransitionPresenterManager {
   }
   
   // MARK: - Private
-  fileprivate var cache = [String: TransitionPresenterManager]()
+  fileprivate var cache = [String: TransitionPresenter]()
   
   // MARK: Internal Interface
   public func retrievePresenter(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) -> TransitionPresenter {

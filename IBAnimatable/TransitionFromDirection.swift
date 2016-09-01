@@ -42,41 +42,41 @@ public enum TransitionDirection {
 
   static func fromString(forParams params: [String]) -> TransitionDirection? {
     if params.contains("left") {
-      return .Left
+      return .left
     } else if params.contains("right") {
-      return .Right
+      return .right
     } else if params.contains("top") {
-      return .Top
+      return .top
     } else if params.contains("bottom") {
-      return .Bottom
+      return .bottom
     } else if params.contains("forward") {
-      return .Forward
+      return .forward
     } else if params.contains("backward") {
-      return .Backward
+      return .backward
     }
     return nil
   }
 
   var opposite: TransitionDirection {
     switch self {
-    case .Left:
-      return .Right
-    case .Right:
-      return .Left
-    case .Top:
-      return .Bottom
-    case .Bottom:
-      return .Top
-    case .In:
-      return .Out
-    case .Out:
-      return .In
-    case .Forward:
-      return .Backward
-    case .Backward:
-      return .Forward
-    case .Cross:
-      return .Cross
+    case .left:
+      return .right
+    case .right:
+      return .left
+    case .top:
+      return .bottom
+    case .bottom:
+      return .top
+    case .in:
+      return .out
+    case .out:
+      return .in
+    case .forward:
+      return .backward
+    case .backward:
+      return .forward
+    case .cross:
+      return .cross
     }
   }
 }

@@ -9,8 +9,8 @@ public class ActivityIndicatorAnimationLineScale: ActivityIndicatorAnimating {
 
   // MARK: Properties
 
-  private let duration: CFTimeInterval = 1
-  private let timingFunction = CAMediaTimingFunction(controlPoints: 0.2, 0.68, 0.18, 1.08)
+  fileprivate let duration: CFTimeInterval = 1
+  fileprivate let timingFunction = CAMediaTimingFunction(controlPoints: 0.2, 0.68, 0.18, 1.08)
 
   // MARK: ActivityIndicatorAnimating
 
@@ -28,7 +28,7 @@ public class ActivityIndicatorAnimationLineScale: ActivityIndicatorAnimating {
 
       animation.beginTime = beginTime + beginTimes[i]
       line.frame = frame
-      line.addAnimation(animation, forKey: "animation")
+      line.add(animation, forKey: "animation")
       layer.addSublayer(line)
     }
   }
@@ -37,7 +37,7 @@ public class ActivityIndicatorAnimationLineScale: ActivityIndicatorAnimating {
 
 // MARK: - Setup
 
-private extension ActivityIndicatorAnimationLineScale {
+fileprivate extension ActivityIndicatorAnimationLineScale {
 
   var animation: CAKeyframeAnimation {
     let animation = CAKeyframeAnimation(keyPath: "transform.scale.y")
@@ -46,7 +46,7 @@ private extension ActivityIndicatorAnimationLineScale {
     animation.values = [1, 0.4, 1]
     animation.duration = duration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 

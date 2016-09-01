@@ -29,7 +29,7 @@ public class ActivityIndicatorAnimationBallPulse: ActivityIndicatorAnimating {
             
             animation.beginTime = beginTime + beginTimes[i]
             circle.frame = frame
-            circle.addAnimation(animation, forKey: "animation")
+            circle.add(animation, forKey: "animation")
             layer.addSublayer(circle)
         }
     }
@@ -37,7 +37,7 @@ public class ActivityIndicatorAnimationBallPulse: ActivityIndicatorAnimating {
 
 // MARK: - Setup
 
-private extension ActivityIndicatorAnimationBallPulse {
+fileprivate extension ActivityIndicatorAnimationBallPulse {
 
   var animation: CAKeyframeAnimation {
     let duration: CFTimeInterval = 0.75
@@ -48,7 +48,7 @@ private extension ActivityIndicatorAnimationBallPulse {
     animation.values = [1, 0.3, 1]
     animation.duration = duration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 

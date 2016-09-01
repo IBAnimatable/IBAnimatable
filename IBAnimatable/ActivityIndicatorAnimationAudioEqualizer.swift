@@ -9,8 +9,8 @@ public class ActivityIndicatorAnimationAudioEqualizer: ActivityIndicatorAnimatin
 
   // MARK: Properties
 
-  private var size: CGSize = .zero
-  private var lineSize: CGFloat = 0
+  fileprivate var size: CGSize = .zero
+  fileprivate var lineSize: CGFloat = 0
 
   // MARK: ActivityIndicatorAnimating
 
@@ -24,14 +24,14 @@ public class ActivityIndicatorAnimationAudioEqualizer: ActivityIndicatorAnimatin
 
     // Draw lines
     for i in 0 ..< 4 {
-      let animation = createAnimation(duration[i], values: values)
+      let animation = createAnimation(duration: duration[i], values: values)
       let line = ActivityIndicatorShape.Line.createLayerWith(size: CGSize(width: lineSize, height: size.height), color: color)
       let frame = CGRect(x: x + lineSize * 2 * CGFloat(i),
                          y: y,
                          width: lineSize,
                          height: size.height)
       line.frame = frame
-      line.addAnimation(animation, forKey: "animation")
+      line.add(animation, forKey: "animation")
       layer.addSublayer(line)
     }
   }
@@ -40,12 +40,12 @@ public class ActivityIndicatorAnimationAudioEqualizer: ActivityIndicatorAnimatin
 
 // MARK: - Setup
 
-private extension ActivityIndicatorAnimationAudioEqualizer {
+fileprivate extension ActivityIndicatorAnimationAudioEqualizer {
 
   func createAnimation(duration: CFTimeInterval, values: [Double]) -> CAKeyframeAnimation {
     let animation = CAKeyframeAnimation()
     animation.keyPath = "path"
-    animation.additive = true
+    animation.isAdditive = true
     animation.values = []
 
     for j in 0..<values.count {
@@ -53,12 +53,12 @@ private extension ActivityIndicatorAnimationAudioEqualizer {
       let height = size.height * CGFloat(heightFactor)
       let point = CGPoint(x: 0, y: size.height - height)
       let path = UIBezierPath(rect: CGRect(origin: point, size: CGSize(width: lineSize, height: height)))
-      animation.values?.append(path.CGPath)
+      animation.values?.append(path.cgPath)
     }
 
     animation.duration = duration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 

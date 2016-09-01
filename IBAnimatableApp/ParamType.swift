@@ -38,7 +38,7 @@ enum ParamType {
       return String(describing: e.rawValue)
     }*/
     //let values = iterator.map {  return String(describing: $0.rawValue) }
-    let values:[String] = [];
+    let values: [String] = []
     self = .enumeration(values: values)
   }
   

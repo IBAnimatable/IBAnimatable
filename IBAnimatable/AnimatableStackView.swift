@@ -91,34 +91,6 @@ import UIKit
     }
   }
   
-  // MARK: - BlurDesignable
-  open var blurEffectStyle: UIBlurEffectStyle? {
-    didSet {
-      configBlurEffectStyle()
-    }
-  }
-  @IBInspectable var _blurEffectStyle: String? {
-    didSet {
-      blurEffectStyle = UIBlurEffectStyle(string: _blurEffectStyle)
-    }
-  }
-open var vibrancyEffectStyle: UIBlurEffectStyle? {
-    didSet {
-      configBlurEffectStyle()
-    }
-  }
-  @IBInspectable var _vibrancyEffectStyle: String? {
-    didSet {
-      vibrancyEffectStyle = UIBlurEffectStyle(string: _vibrancyEffectStyle)
-    }
-  }
-
-  @IBInspectable open var blurOpacity: CGFloat = CGFloat.nan {
-    didSet {
-      configBlurEffectStyle()
-    }
-  }
-  
   // MARK: - TintDesignable
   @IBInspectable open var tintOpacity: CGFloat = CGFloat.nan
   @IBInspectable open var shadeOpacity: CGFloat = CGFloat.nan

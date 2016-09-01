@@ -12,7 +12,7 @@ import UIKit
 
   // MARK: ActivityIndicatorAnimatable
   @IBInspectable public var animationType: String = "BallBeats"
-  @IBInspectable public var color: UIColor = .blackColor()
+  @IBInspectable public var color: UIColor = .black
   @IBInspectable public var hidesWhenStopped: Bool = true
   public var isAnimating: Bool = false
 

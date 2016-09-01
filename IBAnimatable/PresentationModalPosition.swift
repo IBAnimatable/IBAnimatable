@@ -59,7 +59,7 @@ extension PresentationModalPosition {
     } else if position.hasPrefix("RightCenter") {
       return .RightCenter
     }
-    return fromStringWithParameters(position)
+    return fromStringWithParameters(position: position)
   }
 
 
@@ -69,7 +69,7 @@ extension PresentationModalPosition {
       return .Center
     }
 
-    guard let x = Float(posParams[0]), y = Float(posParams[1]) else {
+    guard let x = Float(posParams[0]), let y = Float(posParams[1]) else {
       return .Center
     }
 
@@ -86,13 +86,13 @@ extension PresentationModalPosition {
 private extension PresentationModalPosition {
 
   static func params(forPosition position: String) -> [String] {
-    let range = position.rangeOfString("(")
-    let position = position.stringByReplacingOccurrencesOfString(" ", withString: "")
-      .lowercaseString
-      .substringFromIndex(range?.startIndex ?? position.endIndex)
-      .stringByReplacingOccurrencesOfString("(", withString: "")
-      .stringByReplacingOccurrencesOfString(")", withString: "")
-    return position.componentsSeparatedByString(",")
+    let range = position.range(of: "(")
+    let position = position.replacingOccurrences(of: " ", with: "").lowercased()
+      .substring(from: range?.lowerBound ?? position.endIndex)
+      .replacingOccurrences(of: "(", with: "")
+      .replacingOccurrences(of: ")", with: "")
+      .capitalized
+    return position.components(separatedBy: ",")
   }
 
 }

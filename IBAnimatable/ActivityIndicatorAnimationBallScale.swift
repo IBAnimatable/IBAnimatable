@@ -9,7 +9,7 @@ public class ActivityIndicatorAnimationBallScale: ActivityIndicatorAnimating {
 
   // MARK: Properties
 
-  private let duration: CFTimeInterval = 1
+  fileprivate let duration: CFTimeInterval = 1
 
   // MARK: ActivityIndicatorAnimating
 
@@ -20,14 +20,14 @@ public class ActivityIndicatorAnimationBallScale: ActivityIndicatorAnimating {
                           y: (layer.bounds.size.height - size.height) / 2,
                           width: size.width,
                           height: size.height)
-    circle.addAnimation(animation, forKey: "animation")
+    circle.add(animation, forKey: "animation")
     layer.addSublayer(circle)
   }
 }
 
 // MARK: - Setup
 
-private extension ActivityIndicatorAnimationBallScale {
+fileprivate extension ActivityIndicatorAnimationBallScale {
 
   var animation: CAAnimationGroup {
     let animation = CAAnimationGroup()
@@ -35,7 +35,7 @@ private extension ActivityIndicatorAnimationBallScale {
     animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
     animation.duration = duration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 

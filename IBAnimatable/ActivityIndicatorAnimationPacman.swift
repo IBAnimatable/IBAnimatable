@@ -9,24 +9,24 @@ public class ActivityIndicatorAnimationPacman: ActivityIndicatorAnimating {
 
   // MARK: Properties
 
-  private let duration: CFTimeInterval = 0.5
-  private let circleDuration: CFTimeInterval = 1
-  private var size: CGSize = .zero
-  private let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
+  fileprivate let duration: CFTimeInterval = 0.5
+  fileprivate let circleDuration: CFTimeInterval = 1
+  fileprivate var size: CGSize = .zero
+  fileprivate let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
 
   // MARK: ActivityIndicatorAnimating
 
   public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     self.size = size
-    circleInLayer(layer, color: color)
-    pacmanInLayer(layer, color: color)
+    circleInLayer(layer: layer, color: color)
+    pacmanInLayer(layer: layer, color: color)
   }
 
 }
 
 // MARK: - Pacman
 
-private extension ActivityIndicatorAnimationPacman {
+fileprivate extension ActivityIndicatorAnimationPacman {
 
   func pacmanInLayer(layer: CALayer, color: UIColor) {
     let pacmanSize = 2 * size.width / 3
@@ -39,7 +39,7 @@ private extension ActivityIndicatorAnimationPacman {
       height: pacmanSize
     )
     pacman.frame = frame
-    pacman.addAnimation(animation, forKey: "animation")
+    pacman.add(animation, forKey: "animation")
     layer.addSublayer(pacman)
   }
 
@@ -48,7 +48,7 @@ private extension ActivityIndicatorAnimationPacman {
     animation.animations = [strokeStartAnimation, strokeEndAnimation]
     animation.duration = duration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 
@@ -74,7 +74,7 @@ private extension ActivityIndicatorAnimationPacman {
 
 // MARK: - Circle
 
-private extension ActivityIndicatorAnimationPacman {
+fileprivate extension ActivityIndicatorAnimationPacman {
 
   func circleInLayer(layer: CALayer, color: UIColor) {
     let circleSize = size.width / 5
@@ -89,7 +89,7 @@ private extension ActivityIndicatorAnimationPacman {
     )
 
     circle.frame = frame
-    circle.addAnimation(animation, forKey: "animation")
+    circle.add(animation, forKey: "animation")
     layer.addSublayer(circle)
   }
 
@@ -99,7 +99,7 @@ private extension ActivityIndicatorAnimationPacman {
     animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
     animation.duration = circleDuration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 

@@ -9,8 +9,8 @@ public class ActivityIndicatorAnimationBallScaleRipple: ActivityIndicatorAnimati
 
   // MARK: Properties
 
-  private let duration: CFTimeInterval = 1
-  private let timingFunction = CAMediaTimingFunction(controlPoints: 0.21, 0.53, 0.56, 0.8)
+  fileprivate let duration: CFTimeInterval = 1
+  fileprivate let timingFunction = CAMediaTimingFunction(controlPoints: 0.21, 0.53, 0.56, 0.8)
 
   // MARK: ActivityIndicatorAnimating
 
@@ -23,21 +23,21 @@ public class ActivityIndicatorAnimationBallScaleRipple: ActivityIndicatorAnimati
                        height: size.height)
 
     circle.frame = frame
-    circle.addAnimation(animation, forKey: "animation")
+    circle.add(animation, forKey: "animation")
     layer.addSublayer(circle)
   }
 }
 
 // MARK: - Setup
 
-private extension ActivityIndicatorAnimationBallScaleRipple {
+fileprivate extension ActivityIndicatorAnimationBallScaleRipple {
 
   var animation: CAAnimationGroup {
     let animation = CAAnimationGroup()
     animation.animations = [scaleAnimation, opacityAnimation]
     animation.duration = duration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 

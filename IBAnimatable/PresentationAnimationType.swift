@@ -9,36 +9,36 @@ import UIKit
  Predefined Transition Animation Type
  */
 public enum PresentationAnimationType {
-  case Flip
-  case CrossDissolve
-  case Cover(fromDirection: TransitionDirection)
-  case Zoom
-  case DropDown
+  case flip
+  case crossDissolve
+  case cover(fromDirection: TransitionDirection)
+  case zoom
+  case dropDown
 
   public var stringValue: String {
-    return String(self)
+    return String(describing: self)
   }
 
   public var systemTransition: UIModalTransitionStyle? {
     switch self {
-    case .CrossDissolve: return .CrossDissolve
-    case .Flip: return .FlipHorizontal
-    case .Cover(fromDirection: .Bottom): return .CoverVertical
+    case .crossDissolve: return .crossDissolve
+    case .flip: return .flipHorizontal
+    case .cover(fromDirection: .bottom): return .coverVertical
     default: return nil
     }
   }
 
   public static func fromString(transitionType: String) -> PresentationAnimationType? {
     if transitionType.hasPrefix("CrossDissolve") {
-      return .CrossDissolve
+      return .crossDissolve
     } else if transitionType.hasPrefix("Flip") {
-      return .Flip
+      return .flip
     } else if transitionType.hasPrefix("Zoom") {
-      return .Zoom
+      return .zoom
     } else if transitionType.hasPrefix("DropDown") {
-      return .DropDown
+      return .dropDown
     }
-    return fromStringWithDirection(transitionType)
+    return fromStringWithDirection(presentationType: transitionType)
   }
 
 }
@@ -49,11 +49,11 @@ private extension PresentationAnimationType {
 
   static func fromStringWithDirection(presentationType: String) -> PresentationAnimationType? {
     let transitionParams = params(forTransitionType: presentationType)
-    let direction = TransitionDirection.fromString(forParams: transitionParams) ?? .Left
+    let direction = TransitionDirection.fromString(forParams: transitionParams) ?? .left
     if presentationType.hasPrefix("Cover") {
-      return .Cover(fromDirection: direction)
+      return .cover(fromDirection: direction)
     } else {
-      return fromStringWithDirectionAndParams(presentationType, direction: direction, params: transitionParams)
+      return fromStringWithDirectionAndParams(presentationType: presentationType, direction: direction, params: transitionParams)
     }
   }
 
@@ -69,13 +69,13 @@ private extension PresentationAnimationType {
 private extension PresentationAnimationType {
 
   static func params(forTransitionType transitionType: String) -> [String] {
-    let range = transitionType.rangeOfString("(")
-    let transitionType = transitionType.stringByReplacingOccurrencesOfString(" ", withString: "")
-      .lowercaseString
-      .substringFromIndex(range?.startIndex ?? transitionType.endIndex)
-      .stringByReplacingOccurrencesOfString("(", withString: "")
-      .stringByReplacingOccurrencesOfString(")", withString: "")
-    return transitionType.componentsSeparatedByString(",")
+    let range = transitionType.range(of: "(")
+    let transitionType = transitionType.replacingOccurrences(of: " ", with: "").lowercased()
+      .substring(from: range?.lowerBound ?? transitionType.endIndex)
+      .replacingOccurrences(of: "(", with: "")
+      .replacingOccurrences(of: ")", with: "")
+      .capitalized
+    return transitionType.components(separatedBy: ",")
   }
 
 }

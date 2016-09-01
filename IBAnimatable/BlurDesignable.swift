@@ -28,22 +28,22 @@ public extension BlurDesignable where Self: UIView {
    configBlurEffectStyle method, should be called in layoutSubviews() method
    */
   public func configBlurEffectStyle() {
-    guard let unwrappedBlurEffectStyle = blurEffectStyle, style = blurEffectStyle(from: unwrappedBlurEffectStyle) else {
+    guard let TransitionAnimationType = blurEffectStyle else {
       return
     }
 
-    let blurEffectView = createVisualEffectView(UIBlurEffect(style: style))
-    if let unwrappedVibrancyStyle = vibrancyEffectStyle, vibrancyStyle = blurEffectStyle(from: unwrappedVibrancyStyle) {
+    let blurEffectView = createVisualEffectView(effect: UIBlurEffect(style: TransitionAnimationType))
+    if let vibrancyStyle = vibrancyEffectStyle {
       subviews.flatMap { $0 as? AnimatableVibrancyView }
         .forEach { $0.removeFromSuperview() }
 
-      let vibrancyEffectView = createVisualEffectView(UIVibrancyEffect(forBlurEffect: UIBlurEffect(style: vibrancyStyle)))
+      let vibrancyEffectView = createVisualEffectView(effect: UIVibrancyEffect(blurEffect: UIBlurEffect(style: vibrancyStyle)))
       subviews.forEach {
         vibrancyEffectView.contentView.addSubview($0)
       }
       blurEffectView.contentView.addSubview(vibrancyEffectView)
     }
-    insertSubview(blurEffectView, atIndex: 0)
+    insertSubview(blurEffectView, at: 0)
   }
 
 
@@ -60,27 +60,28 @@ private extension BlurDesignable where Self: UIView {
     }
 
     visualEffectView.frame = bounds
-    visualEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+    visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     return visualEffectView
   }
 
+  /*
   func blurEffectStyle(from blurEffectStyle: String) -> UIBlurEffectStyle? {
     var style: UIBlurEffectStyle?
-    guard let blurEffectStyle = BlurEffectStyle(rawValue: blurEffectStyle) else {
+    guard let blurEffectStyle = UIBlurEffectStyle.init(string: blurEffectStyle) else {
       return nil
     }
 
     switch blurEffectStyle {
-    case .ExtraLight:
-      style = .ExtraLight
-    case .Light:
-      style = .Light
-    case .Dark:
-      style = .Dark
+    case .extraLight:
+      style = .extraLight
+    case .light:
+      style = .light
+    case .dark:
+      style = .dark
     }
     return style
   }
-  
+  */
 }
 
 private class AnimatableVibrancyView: UIVisualEffectView {

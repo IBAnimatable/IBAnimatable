@@ -9,7 +9,7 @@ public class ActivityIndicatorAnimationTriangleSkewSpin: ActivityIndicatorAnimat
 
   // MARK: Properties
 
-  private let duration: CFTimeInterval = 3
+  fileprivate let duration: CFTimeInterval = 3
 
   // MARK: ActivityIndicatorAnimating
 
@@ -19,7 +19,7 @@ public class ActivityIndicatorAnimationTriangleSkewSpin: ActivityIndicatorAnimat
     let triangle = ActivityIndicatorShape.Triangle.createLayerWith(size: size, color: color)
     let animation = self.animation
     triangle.frame = CGRect(x: x, y: y, width: size.width, height: size.height)
-    triangle.addAnimation(animation, forKey: "animation")
+    triangle.add(animation, forKey: "animation")
     layer.addSublayer(triangle)
   }
 
@@ -27,7 +27,7 @@ public class ActivityIndicatorAnimationTriangleSkewSpin: ActivityIndicatorAnimat
 
 // MARK: - Setup
 
-private extension ActivityIndicatorAnimationTriangleSkewSpin {
+fileprivate extension ActivityIndicatorAnimationTriangleSkewSpin {
 
   var animation: CAKeyframeAnimation {
     let timingFunction = CAMediaTimingFunction(controlPoints: 0.09, 0.57, 0.49, 0.9)
@@ -35,18 +35,18 @@ private extension ActivityIndicatorAnimationTriangleSkewSpin {
     animation.keyTimes = [0, 0.25, 0.5, 0.75, 1]
     animation.timingFunctions = [timingFunction, timingFunction, timingFunction, timingFunction]
     animation.values = [
-      NSValue(CATransform3D: CATransform3DConcat(createRotateXTransform(angle: 0), createRotateYTransform(angle: 0))),
-      NSValue(CATransform3D: CATransform3DConcat(createRotateXTransform(angle: CGFloat(M_PI)), createRotateYTransform(angle: 0))),
-      NSValue(CATransform3D: CATransform3DConcat(createRotateXTransform(angle: CGFloat(M_PI)), createRotateYTransform(angle: CGFloat(M_PI)))),
-      NSValue(CATransform3D: CATransform3DConcat(createRotateXTransform(angle: 0), createRotateYTransform(angle: CGFloat(M_PI)))),
-      NSValue(CATransform3D: CATransform3DConcat(createRotateXTransform(angle: 0), createRotateYTransform(angle: 0)))]
+      NSValue(caTransform3D: CATransform3DConcat(createRotateXTransform(angle: 0), createRotateYTransform(angle: 0))),
+      NSValue(caTransform3D: CATransform3DConcat(createRotateXTransform(angle: CGFloat(M_PI)), createRotateYTransform(angle: 0))),
+      NSValue(caTransform3D: CATransform3DConcat(createRotateXTransform(angle: CGFloat(M_PI)), createRotateYTransform(angle: CGFloat(M_PI)))),
+      NSValue(caTransform3D: CATransform3DConcat(createRotateXTransform(angle: 0), createRotateYTransform(angle: CGFloat(M_PI)))),
+      NSValue(caTransform3D: CATransform3DConcat(createRotateXTransform(angle: 0), createRotateYTransform(angle: 0)))]
     animation.duration = duration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 
-  func createRotateXTransform(angle angle: CGFloat) -> CATransform3D {
+  func createRotateXTransform(angle: CGFloat) -> CATransform3D {
     var transform = CATransform3DMakeRotation(angle, 1, 0, 0)
 
     transform.m34 = CGFloat(-1) / 100
@@ -54,7 +54,7 @@ private extension ActivityIndicatorAnimationTriangleSkewSpin {
     return transform
   }
 
-  func createRotateYTransform(angle angle: CGFloat) -> CATransform3D {
+  func createRotateYTransform(angle: CGFloat) -> CATransform3D {
     var transform = CATransform3DMakeRotation(angle, 0, 1, 0)
 
     transform.m34 = CGFloat(-1) / 100

@@ -9,7 +9,7 @@ public class ActivityIndicatorAnimationBallScaleMultiple: ActivityIndicatorAnima
 
   // MARK: Properties
 
-  private let duration: CFTimeInterval = 1
+  fileprivate let duration: CFTimeInterval = 1
 
   // MARK: ActivityIndicatorAnimating
 
@@ -27,7 +27,7 @@ public class ActivityIndicatorAnimationBallScaleMultiple: ActivityIndicatorAnima
             animation.beginTime = beginTime + beginTimes[i]
             circle.frame = frame
             circle.opacity = 0
-            circle.addAnimation(animation, forKey: "animation")
+            circle.add(animation, forKey: "animation")
             layer.addSublayer(circle)
         }
     }
@@ -35,7 +35,7 @@ public class ActivityIndicatorAnimationBallScaleMultiple: ActivityIndicatorAnima
 
 // MARK: - Setup
 
-private extension ActivityIndicatorAnimationBallScaleMultiple {
+fileprivate extension ActivityIndicatorAnimationBallScaleMultiple {
 
   var animation: CAAnimationGroup {
     let animation = CAAnimationGroup()
@@ -43,7 +43,7 @@ private extension ActivityIndicatorAnimationBallScaleMultiple {
     animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
     animation.duration = duration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 

@@ -9,9 +9,9 @@ public class ActivityIndicatorAnimationBallPulseRise: ActivityIndicatorAnimating
 
   // MARK: Properties
 
-  private let duration: CFTimeInterval = 1
-  private var deltaY: CGFloat = 0
-  private let timingFunction = CAMediaTimingFunction(controlPoints: 0.15, 0.46, 0.9, 0.6)
+  fileprivate let duration: CFTimeInterval = 1
+  fileprivate var deltaY: CGFloat = 0
+  fileprivate let timingFunction = CAMediaTimingFunction(controlPoints: 0.15, 0.46, 0.9, 0.6)
 
   // MARK: ActivityIndicatorAnimating
 
@@ -33,9 +33,9 @@ public class ActivityIndicatorAnimationBallPulseRise: ActivityIndicatorAnimating
 
       circle.frame = frame
       if i % 2 == 0 {
-        circle.addAnimation(evenAnimation, forKey: "animation")
+        circle.add(evenAnimation, forKey: "animation")
       } else {
-        circle.addAnimation(oddAnimation, forKey: "animation")
+        circle.add(oddAnimation, forKey: "animation")
       }
       layer.addSublayer(circle)
     }
@@ -45,7 +45,7 @@ public class ActivityIndicatorAnimationBallPulseRise: ActivityIndicatorAnimating
 
 // MARK: - Setup Odd
 
-private extension ActivityIndicatorAnimationBallPulseRise {
+fileprivate extension ActivityIndicatorAnimationBallPulseRise {
 
   var oddAnimation: CAAnimation {
     let scaleAnimation = oddScaleAnimation
@@ -54,7 +54,7 @@ private extension ActivityIndicatorAnimationBallPulseRise {
     animation.animations = [scaleAnimation, translateAnimation]
     animation.duration = duration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 
@@ -80,7 +80,7 @@ private extension ActivityIndicatorAnimationBallPulseRise {
 
 // MARK: - Even Odd
 
-private extension ActivityIndicatorAnimationBallPulseRise {
+fileprivate extension ActivityIndicatorAnimationBallPulseRise {
 
   var evenAnimation: CAAnimation {
     let scaleAnimation = evenScaleAnimation
@@ -89,7 +89,7 @@ private extension ActivityIndicatorAnimationBallPulseRise {
     animation.animations = [scaleAnimation, translateAnimation]
     animation.duration = duration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 

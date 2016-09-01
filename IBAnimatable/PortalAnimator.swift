@@ -43,11 +43,11 @@ public class PortalAnimator: NSObject, AnimatedTransitioning {
 
 extension PortalAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-    return getTransitionDuration(using: transitionContext)
+    return transitionDuration(using: transitionContext)
   }
   
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-    let (tempfromView, tempToView, tempContainerView) = getViews(using: transitionContext)
+    let (tempfromView, tempToView, tempContainerView) = retrieveViews(transitionContext: transitionContext)
     guard let fromView = tempfromView, let toView = tempToView, let containerView = tempContainerView else {
       transitionContext.completeTransition(true)
       return

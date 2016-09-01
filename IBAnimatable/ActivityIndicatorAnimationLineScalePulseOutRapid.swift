@@ -9,9 +9,9 @@ public class ActivityIndicatorAnimationLineScalePulseOutRapid: ActivityIndicator
 
   // MARK: Properties
 
-  private let duration: CFTimeInterval = 0.9
-  private let timingFunction = CAMediaTimingFunction(controlPoints: 0.11, 0.49, 0.38, 0.78)
-  private let beginTime = CACurrentMediaTime()
+  fileprivate let duration: CFTimeInterval = 0.9
+  fileprivate let timingFunction = CAMediaTimingFunction(controlPoints: 0.11, 0.49, 0.38, 0.78)
+  fileprivate let beginTime = CACurrentMediaTime()
 
   // MARK: ActivityIndicatorAnimating
 
@@ -31,7 +31,7 @@ public class ActivityIndicatorAnimationLineScalePulseOutRapid: ActivityIndicator
 
       animation.beginTime = beginTime + beginTimes[i]
       line.frame = frame
-      line.addAnimation(animation, forKey: "animation")
+      line.add(animation, forKey: "animation")
       layer.addSublayer(line)
     }
   }
@@ -39,7 +39,7 @@ public class ActivityIndicatorAnimationLineScalePulseOutRapid: ActivityIndicator
 
 // MARK: - Setup
 
-private extension ActivityIndicatorAnimationLineScalePulseOutRapid {
+fileprivate extension ActivityIndicatorAnimationLineScalePulseOutRapid {
 
   var animation: CAKeyframeAnimation {
     let animation = CAKeyframeAnimation(keyPath: "transform.scale.y")
@@ -49,7 +49,7 @@ private extension ActivityIndicatorAnimationLineScalePulseOutRapid {
     animation.values = [1, 0.3, 1]
     animation.duration = duration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 

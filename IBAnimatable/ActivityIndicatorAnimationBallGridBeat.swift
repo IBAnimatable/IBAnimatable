@@ -9,7 +9,7 @@ public class ActivityIndicatorAnimationBallGridBeat: ActivityIndicatorAnimating 
 
   // MARK: Properties
 
-  private let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
+  fileprivate let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
 
   // MARK: ActivityIndicatorAnimating
 
@@ -35,7 +35,7 @@ public class ActivityIndicatorAnimationBallGridBeat: ActivityIndicatorAnimating 
         animation.duration = durations[3 * i + j]
         animation.beginTime = beginTime + beginTimes[3 * i + j]
         circle.frame = frame
-        circle.addAnimation(animation, forKey: "animation")
+        circle.add(animation, forKey: "animation")
         layer.addSublayer(circle)
       }
     }
@@ -44,7 +44,7 @@ public class ActivityIndicatorAnimationBallGridBeat: ActivityIndicatorAnimating 
 
 // MARK: - Setup
 
-private extension ActivityIndicatorAnimationBallGridBeat {
+fileprivate extension ActivityIndicatorAnimationBallGridBeat {
 
   var animation: CAKeyframeAnimation {
     let animation = CAKeyframeAnimation(keyPath: "opacity")
@@ -52,7 +52,7 @@ private extension ActivityIndicatorAnimationBallGridBeat {
     animation.timingFunctions = [timingFunction, timingFunction]
     animation.values = [1, 0.7, 1]
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 

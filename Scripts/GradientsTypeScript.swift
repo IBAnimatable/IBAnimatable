@@ -3,7 +3,7 @@
 import Foundation
 import UIKit
 
-func colorLiteral(hexString: String) -> String{
+func colorLiteral(hexString: String) -> String {
   let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
   var int = UInt32()
   Scanner(string: hex).scanHexInt32(&int)
@@ -35,7 +35,7 @@ extension String {
 let gradientTypeURL = "https://raw.githubusercontent.com/Ghosh/uiGradients/master/gradients.json"
 
 func JSON(_ urlToRequest: String) -> Data {
-  guard let data = try? Data(contentsOf: URL(string: urlToRequest)!)else{
+  guard let data = try? Data(contentsOf: URL(string: urlToRequest)!) else {
     fatalError("URL Request failed")
   }
   return data

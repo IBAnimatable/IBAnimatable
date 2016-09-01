@@ -9,7 +9,7 @@ public class ActivityIndicatorAnimationBallClipRotate: ActivityIndicatorAnimatin
 
   // MARK: Properties
 
-  private let duration: CFTimeInterval = 0.75
+  fileprivate let duration: CFTimeInterval = 0.75
 
   // MARK: ActivityIndicatorAnimating
 
@@ -24,7 +24,7 @@ public class ActivityIndicatorAnimationBallClipRotate: ActivityIndicatorAnimatin
                        height: size.height)
 
     circle.frame = frame
-    circle.addAnimation(animation, forKey: "animation")
+    circle.add(animation, forKey: "animation")
     layer.addSublayer(circle)
   }
 
@@ -32,7 +32,7 @@ public class ActivityIndicatorAnimationBallClipRotate: ActivityIndicatorAnimatin
 
 // MARK: - Setup
 
-private extension ActivityIndicatorAnimationBallClipRotate {
+fileprivate extension ActivityIndicatorAnimationBallClipRotate {
 
   var scaleAnimation: CAKeyframeAnimation {
     let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
@@ -54,7 +54,7 @@ private extension ActivityIndicatorAnimationBallClipRotate {
     animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
     animation.duration = duration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
   

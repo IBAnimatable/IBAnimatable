@@ -47,7 +47,7 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
   private let sizes = ["Half", "Full"]
   private let keyboardTranslations = ["None", "MoveUp", "AboveKeyboard"]
   private let blurEffectStyles = ["None", "ExtraLight", "Light", "Dark"]
-  private let colors = [UIColor.blackColor(), UIColor.redColor(), UIColor.orangeColor(), UIColor.brownColor(), UIColor.yellowColor(), UIColor.lightGrayColor(), UIColor.greenColor(), UIColor.cyanColor(), UIColor.blueColor(), UIColor.purpleColor(), UIColor.purpleColor().colorWithAlphaComponent(0.5), UIColor.darkGrayColor(), UIColor.magentaColor(), UIColor.whiteColor()]
+  private let colors = [UIColor.black, UIColor.red, UIColor.orange, UIColor.brown, UIColor.yellow, UIColor.lightGray, UIColor.green, UIColor.cyan, UIColor.blue, UIColor.purple, UIColor.purple.colorWithAlphaComponent(0.5), UIColor.darkGray, UIColor.magenta, UIColor.white]
 
   private var selectedButton: UIButton?
 

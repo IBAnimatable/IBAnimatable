@@ -9,7 +9,7 @@ public class ActivityIndicatorAnimationBallGridPulse: ActivityIndicatorAnimating
 
   // MARK: Properties
 
-  private let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
+  fileprivate let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
 
   // MARK: ActivityIndicatorAnimating
 
@@ -35,7 +35,7 @@ public class ActivityIndicatorAnimationBallGridPulse: ActivityIndicatorAnimating
         animation.duration = durations[3 * i + j]
         animation.beginTime = beginTime + beginTimes[3 * i + j]
         circle.frame = frame
-        circle.addAnimation(animation, forKey: "animation")
+        circle.add(animation, forKey: "animation")
         layer.addSublayer(circle)
       }
     }
@@ -44,13 +44,13 @@ public class ActivityIndicatorAnimationBallGridPulse: ActivityIndicatorAnimating
 
 // MARK: - Setup
 
-private extension ActivityIndicatorAnimationBallGridPulse {
+fileprivate extension ActivityIndicatorAnimationBallGridPulse {
 
   var animation: CAAnimationGroup {
     let animation = CAAnimationGroup()
     animation.animations = [scaleAnimation, opacityAnimation]
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 

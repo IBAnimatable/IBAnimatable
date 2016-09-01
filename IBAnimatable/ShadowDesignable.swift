@@ -77,17 +77,17 @@ public extension ShadowDesignable where Self: UIView {
       layer.shadowOpacity = 0
       
       // Remove any previous shadow layer
-      layer.superlayer?.sublayers?.filter { $0.name == "shadowLayer-\(unsafeAddressOf(self))" }
+      layer.superlayer?.sublayers?.filter { $0.name == "shadowLayer-\(Unmanaged.passUnretained(self))" }
         .forEach { $0.removeFromSuperlayer() }
       
       // Create new layer with object's memory reference to make this string unique. Otherwise common name will remove all the shadow layers as it's adding in layer's superview.
       let shadowLayer = CAShapeLayer()
-      shadowLayer.name = "shadowLayer-\(unsafeAddressOf(self))"
+      shadowLayer.name = "shadowLayer-\(Unmanaged.passUnretained(self))"
       shadowLayer.frame = frame
       
       // Configure shadow properties
       if let unwrappedShadowColor = shadowColor {
-        shadowLayer.shadowColor = unwrappedShadowColor.CGColor
+        shadowLayer.shadowColor = unwrappedShadowColor.cgColor
       }
       if !shadowRadius.isNaN && shadowRadius > 0 {
         shadowLayer.shadowRadius = shadowRadius

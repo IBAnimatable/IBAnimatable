@@ -57,13 +57,13 @@ public struct AnimatorFactory {
 
   public static func generateAnimator(presentationAnimationType: PresentationAnimationType, transitionDuration: Duration) -> AnimatedPresenting {
     switch presentationAnimationType {
-    case let .Cover(direction):
+    case let .cover(direction):
       return CoverAnimator(from: direction, transitionDuration: transitionDuration)
-    case .Zoom:
+    case .zoom:
       return ZoomAnimator(transitionDuration: transitionDuration)
-    case .DropDown:
+    case .dropDown:
       return DropDownAnimator(transitionDuration: transitionDuration)
-    case .Flip, .CrossDissolve: // System animation, will never be executed
+    case .flip, .crossDissolve: // System animation, will never be executed
       fatalError()
     }
   }

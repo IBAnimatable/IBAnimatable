@@ -9,8 +9,8 @@ public class ActivityIndicatorAnimationLineSpinFadeLoader: ActivityIndicatorAnim
 
   // MARK: Properties
 
-  private let duration: CFTimeInterval = 1.2
-  private let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+  fileprivate let duration: CFTimeInterval = 1.2
+  fileprivate let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
 
   // MARK: ActivityIndicatorAnimating
 
@@ -30,7 +30,7 @@ public class ActivityIndicatorAnimationLineSpinFadeLoader: ActivityIndicatorAnim
                         containerSize: size,
                         color: color)
       animation.beginTime = beginTime + beginTimes[i]
-      line.addAnimation(animation, forKey: "animation")
+      line.add(animation, forKey: "animation")
       layer.addSublayer(line)
     }
   }
@@ -39,7 +39,7 @@ public class ActivityIndicatorAnimationLineSpinFadeLoader: ActivityIndicatorAnim
 
 // MARK: - Setup
 
-private extension ActivityIndicatorAnimationLineSpinFadeLoader {
+fileprivate extension ActivityIndicatorAnimationLineSpinFadeLoader {
 
   var animation: CAKeyframeAnimation {
     let animation = CAKeyframeAnimation(keyPath: "opacity")
@@ -48,11 +48,11 @@ private extension ActivityIndicatorAnimationLineSpinFadeLoader {
     animation.values = [1, 0.3, 1]
     animation.duration = duration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 
-  func lineAt(angle angle: CGFloat, size: CGSize, origin: CGPoint, containerSize: CGSize, color: UIColor) -> CALayer {
+  func lineAt(angle: CGFloat, size: CGSize, origin: CGPoint, containerSize: CGSize, color: UIColor) -> CALayer {
     let radius = containerSize.width / 2 - max(size.width, size.height) / 2
     let lineContainerSize = CGSize(width: max(size.width, size.height), height: max(size.width, size.height))
     let lineContainer = CALayer()

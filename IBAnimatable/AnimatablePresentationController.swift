@@ -10,8 +10,8 @@ public class AnimatablePresentationController: UIPresentationController {
 
   // MARK: Properties
 
-  private let presentationConfiguration: PresentationConfiguration
-  private var dimmingView = AnimatableView()
+  fileprivate let presentationConfiguration: PresentationConfiguration
+  fileprivate var dimmingView = AnimatableView()
 
   // MARK: Init
 
@@ -19,7 +19,7 @@ public class AnimatablePresentationController: UIPresentationController {
        presentingViewController: UIViewController,
        presentationConfiguration: PresentationConfiguration) {
     self.presentationConfiguration = presentationConfiguration
-    super.init(presentedViewController: presentedViewController, presentingViewController: presentingViewController)
+    super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
 
     setupDimmingView()
     setupPresentedView()
@@ -27,15 +27,15 @@ public class AnimatablePresentationController: UIPresentationController {
   }
 
   deinit {
-    NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
-    NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)    
+    NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+    NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)    
   }
 
   // MARK: Actions
 
   func chromeViewTapped(gesture: UIGestureRecognizer) {
-    if gesture.state == .Ended && presentationConfiguration.dismissOnTap {
-      presentingViewController.dismissViewControllerAnimated(true, completion: nil)
+    if gesture.state == .ended && presentationConfiguration.dismissOnTap {
+      presentingViewController.dismiss(animated: true, completion: nil)
     }
   }
 
@@ -52,7 +52,7 @@ private extension AnimatablePresentationController {
       dimmingView.blurEffectStyle = blurEffectStyle
       dimmingView.blurOpacity = presentationConfiguration.blurOpacity
     } else {
-      dimmingView.fillColor = presentationConfiguration.backgroundColor.colorWithAlphaComponent(presentationConfiguration.opacity)
+      dimmingView.fillColor = presentationConfiguration.backgroundColor.withAlphaComponent(presentationConfiguration.opacity)
     }
   }
   
@@ -66,9 +66,9 @@ private extension AnimatablePresentationController {
     presentedViewController.view.layer.shadowOffset.width = presentationConfiguration.shadowOffset.x
     presentedViewController.view.layer.shadowOffset.height = presentationConfiguration.shadowOffset.y
     presentedViewController.view.layer.shadowOpacity = Float(presentationConfiguration.shadowOpacity)
-    if let shadowColor = presentationConfiguration.shadowColor where presentedViewController.view.layer.shadowRadius > 0 {
+    if let shadowColor = presentationConfiguration.shadowColor, presentedViewController.view.layer.shadowRadius > 0 {
       presentedViewController.view.layer.shadowRadius = presentationConfiguration.shadowRadius
-      presentedViewController.view.layer.shadowColor = shadowColor.CGColor
+      presentedViewController.view.layer.shadowColor = shadowColor.cgColor
       presentedViewController.view.layer.masksToBounds = false
     }
   }
@@ -77,35 +77,35 @@ private extension AnimatablePresentationController {
 
 // MARK: - Notifications
 
-extension AnimatablePresentationController {
+fileprivate extension AnimatablePresentationController {
 
-  private func setupObservers() {
+  func setupObservers() {
     guard presentationConfiguration.keyboardTranslation != .None else {
       return
     }
 
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AnimatablePresentationController.keyboardWasShown(_:)), name: UIKeyboardWillShowNotification, object: nil)
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AnimatablePresentationController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(AnimatablePresentationController.UIKeyboardDidShow(notification:)), name: .UIKeyboardDidShow, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(AnimatablePresentationController.keyboardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
   } 
 
-  func keyboardWasShown (notification: NSNotification) {
-    if let keyboardFrame = notification.userInfo?[UIKeyboardFrameEndUserInfoKey]?.CGRectValue() {
-      let presentedFrame = frameOfPresentedViewInContainerView()
-      let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey]?.doubleValue ?? 0.5
-      let translatedFrame = presentationConfiguration.keyboardTranslation.translationFrame(keyboardFrame, presentedFrame: presentedFrame)
+  @objc func UIKeyboardDidShow (notification: NSNotification) {
+    if let keyboardFrame = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue {
+      let presentedFrame = frameOfPresentedViewInContainerView
+      let duration = (notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue ?? 0.5
+      let translatedFrame = presentationConfiguration.keyboardTranslation.translationFrame(keyboardFrame: keyboardFrame, presentedFrame: presentedFrame)
 
       let curve = UIViewAnimationOptions(rawValue: UInt(duration))
-      UIView.animateWithDuration(duration, delay: 0, options: curve, animations: {
-        self.presentedView()?.frame = translatedFrame
+      UIView.animate(withDuration: duration, delay: 0, options: curve, animations: {
+        self.presentedView?.frame = translatedFrame
       }, completion: nil)
     }
   }
 
-  func keyboardWillHide (notification: NSNotification) {    
-    let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey]?.doubleValue ?? 0.5
+  @objc func keyboardWillHide (notification: NSNotification) {    
+    let duration = (notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue ?? 0.5
     let curve = UIViewAnimationOptions(rawValue: UInt(duration))
-    UIView.animateWithDuration(duration, delay: 0, options: curve, animations: {
-      self.presentedView()!.frame = self.frameOfPresentedViewInContainerView()
+    UIView.animate(withDuration: duration, delay: 0, options: curve, animations: {
+      self.presentedView!.frame = self.frameOfPresentedViewInContainerView
     }, completion: nil)
   }
 
@@ -120,8 +120,8 @@ private extension AnimatablePresentationController {
       return CGSize.zero
     }
 
-    let width = CGFloat(presentationConfiguration.modalSize.0.width(containerSize))
-    let height = CGFloat(presentationConfiguration.modalSize.1.height(containerSize))
+    let width = CGFloat(presentationConfiguration.modalSize.0.width(parentSize: containerSize))
+    let height = CGFloat(presentationConfiguration.modalSize.1.height(parentSize: containerSize))
     return CGSize(width: width, height: height)
   }
 
@@ -130,7 +130,7 @@ private extension AnimatablePresentationController {
       return nil
     }
 
-    return presentationConfiguration.modalPosition.calculateCenter(containerBounds, modalSize: modalSize())
+    return presentationConfiguration.modalPosition.calculateCenter(containerBounds: containerBounds, modalSize: modalSize())
   }
 
   func modalOrigin() -> CGPoint? {
@@ -150,33 +150,34 @@ private extension AnimatablePresentationController {
 public extension AnimatablePresentationController {
 
   // MARK: Presentation
-
-  override func frameOfPresentedViewInContainerView() -> CGRect {
+  
+  
+  public override var frameOfPresentedViewInContainerView: CGRect {
     guard let containerBounds = containerView?.bounds else {
       return CGRect.zero
     }
 
     var presentedViewFrame = CGRect.zero
-    let size = sizeForChildContentContainer(presentedViewController, withParentContainerSize: containerBounds.size)
+    let sizeForChildContentContainer = size(forChildContentContainer: presentedViewController, withParentContainerSize: containerBounds.size)
     let origin: CGPoint
     if let center = modalCenter() {
-      origin = calculateOrigin(center, size: size)
+      origin = calculateOrigin(center: center, size: sizeForChildContentContainer)
     } else {
       origin = modalOrigin() ?? .zero
     }
 
-    presentedViewFrame.size = size
+    presentedViewFrame.size = sizeForChildContentContainer
     presentedViewFrame.origin = origin
     return presentedViewFrame
   }
 
-  override func sizeForChildContentContainer(container: UIContentContainer, withParentContainerSize parentSize: CGSize) -> CGSize {
+  override func size(forChildContentContainer container: UIContentContainer, withParentContainerSize parentSize: CGSize) -> CGSize {
     return modalSize()
   }
-
+  
   override func containerViewWillLayoutSubviews() {
     dimmingView.frame = containerView?.bounds ?? .zero
-    presentedView()?.frame = frameOfPresentedViewInContainerView()
+    presentedView?.frame = frameOfPresentedViewInContainerView
   }
 
   // MARK: Animation
@@ -184,9 +185,9 @@ public extension AnimatablePresentationController {
   override func presentationTransitionWillBegin() {
     dimmingView.frame = containerView?.bounds ?? CGRect.zero
     dimmingView.alpha = 0.0
-    containerView?.insertSubview(dimmingView, atIndex: 0)
-    if let coordinator = presentedViewController.transitionCoordinator() {
-      coordinator.animateAlongsideTransition({ _ in
+    containerView?.insertSubview(dimmingView, at: 0)
+    if let coordinator = presentedViewController.transitionCoordinator {
+      coordinator.animate(alongsideTransition: { _ in
         self.dimmingView.alpha = 1.0
       }, completion: nil)
     } else {
@@ -194,15 +195,15 @@ public extension AnimatablePresentationController {
     }
   }
 
-  public override func presentationTransitionDidEnd(completed: Bool) {
+  public override func presentationTransitionDidEnd(_ completed: Bool) {
     if !completed {
       dimmingView.removeFromSuperview()
     }
   }
 
   override func dismissalTransitionWillBegin() {
-    if let coordinator = presentedViewController.transitionCoordinator() {
-      coordinator.animateAlongsideTransition({ _ in
+    if let coordinator = presentedViewController.transitionCoordinator {
+      coordinator.animate(alongsideTransition: { _ in
         self.dimmingView.alpha = 0.0
       }, completion: nil)
     } else {
@@ -210,7 +211,7 @@ public extension AnimatablePresentationController {
     }
   }
 
-  public override func dismissalTransitionDidEnd(completed: Bool) {
+  public override func dismissalTransitionDidEnd(_ completed: Bool) {
     if completed {
       dimmingView.removeFromSuperview()
     }

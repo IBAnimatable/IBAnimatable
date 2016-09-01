@@ -9,10 +9,10 @@ public class ActivityIndicatorAnimationCubeTransition: ActivityIndicatorAnimatin
 
   // MARK: Properties
 
-  private let duration: CFTimeInterval = 1.6
-  private let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-  private var deltaX: CGFloat = 0
-  private var deltaY: CGFloat = 0
+  fileprivate let duration: CFTimeInterval = 1.6
+  fileprivate let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+  fileprivate var deltaX: CGFloat = 0
+  fileprivate var deltaY: CGFloat = 0
 
   // MARK: ActivityIndicatorAnimating
 
@@ -33,7 +33,7 @@ public class ActivityIndicatorAnimationCubeTransition: ActivityIndicatorAnimatin
 
       animation.beginTime = beginTime + beginTimes[i]
       square.frame = frame
-      square.addAnimation(animation, forKey: "animation")
+      square.add(animation, forKey: "animation")
       layer.addSublayer(square)
     }
   }
@@ -41,14 +41,14 @@ public class ActivityIndicatorAnimationCubeTransition: ActivityIndicatorAnimatin
 
 // MARK: - Setup
 
-private extension ActivityIndicatorAnimationCubeTransition {
+fileprivate extension ActivityIndicatorAnimationCubeTransition {
 
   var animation: CAAnimationGroup {
     let animation = CAAnimationGroup()
     animation.animations = [scaleAnimation, translateAnimation, rotateAnimation]
     animation.duration = duration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 
@@ -75,11 +75,11 @@ private extension ActivityIndicatorAnimationCubeTransition {
     translateAnimation.keyTimes = scaleAnimation.keyTimes
     translateAnimation.timingFunctions = scaleAnimation.timingFunctions
     translateAnimation.values = [
-      NSValue(CGSize: CGSize(width: 0, height: 0)),
-      NSValue(CGSize: CGSize(width: deltaX, height: 0)),
-      NSValue(CGSize: CGSize(width: deltaX, height: deltaY)),
-      NSValue(CGSize: CGSize(width: 0, height: deltaY)),
-      NSValue(CGSize: CGSize(width: 0, height: 0))
+      NSValue(cgSize: CGSize(width: 0, height: 0)),
+      NSValue(cgSize: CGSize(width: deltaX, height: 0)),
+      NSValue(cgSize: CGSize(width: deltaX, height: deltaY)),
+      NSValue(cgSize: CGSize(width: 0, height: deltaY)),
+      NSValue(cgSize: CGSize(width: 0, height: 0))
     ]
     translateAnimation.duration = duration
     return translateAnimation

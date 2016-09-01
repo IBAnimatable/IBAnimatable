@@ -9,8 +9,8 @@ public class ActivityIndicatorAnimationBallRotate: ActivityIndicatorAnimating {
 
   // MARK: Properties
 
-  private let duration: CFTimeInterval = 1
-  private let timingFunction = CAMediaTimingFunction(controlPoints: 0.7, -0.13, 0.22, 0.86)
+  fileprivate let duration: CFTimeInterval = 1
+  fileprivate let timingFunction = CAMediaTimingFunction(controlPoints: 0.7, -0.13, 0.22, 0.86)
 
   // MARK: ActivityIndicatorAnimating
 
@@ -36,21 +36,21 @@ public class ActivityIndicatorAnimationBallRotate: ActivityIndicatorAnimating {
     circle.addSublayer(leftCircle)
     circle.addSublayer(rightCircle)
     circle.addSublayer(centerCircle)
-    circle.addAnimation(animation, forKey: "animation")
+    circle.add(animation, forKey: "animation")
     layer.addSublayer(circle)
   }
 }
 
 // MARK: - Setup
 
-private extension ActivityIndicatorAnimationBallRotate {
+fileprivate extension ActivityIndicatorAnimationBallRotate {
 
   var animation: CAAnimationGroup {
     let animation = CAAnimationGroup()
     animation.animations = [scaleAnimation, rotateAnimation]
     animation.duration = duration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 

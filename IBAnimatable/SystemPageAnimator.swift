@@ -34,15 +34,15 @@ public class SystemPageAnimator: NSObject, AnimatedTransitioning {
 
 extension SystemPageAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-    return getTransitionDuration(using: transitionContext)
+    return transitionDuration(using: transitionContext)
   }
   
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     switch self.type {
     case .curl:
-      animateWithCATransition(using: transitionContext, type: SystemTransitionType.pageCurl, subtype: nil)
+      animateWithCATransition(transitionContext: transitionContext, type: SystemTransitionType.pageCurl, subtype: nil)
     case .unCurl:
-      animateWithCATransition(using: transitionContext, type: SystemTransitionType.pageUnCurl, subtype: nil)
+      animateWithCATransition(transitionContext: transitionContext, type: SystemTransitionType.pageUnCurl, subtype: nil)
     }
   }
 }

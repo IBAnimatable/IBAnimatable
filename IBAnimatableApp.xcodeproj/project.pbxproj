@@ -1155,7 +1155,6 @@
 				CAB5610BC7B5D20C927AAB87 /* Navigator.swift in Sources */,
 				AE7C26111CB4F680002CF125 /* InteractiveAnimatorFactory.swift in Sources */,
 				AE4C53F61C8843AB007C9EFA /* InteractiveGestureType.swift in Sources */,
-				CAB56443CD667F41413A560F /* SystemTransitionType.swift in Sources */,
 				E210ABCC1D3AAAD0001D0362 /* PresentationPresenterManager.swift in Sources */,
 				CAB566CA933963DAA0C7E074 /* Constants.swift in Sources */,
 				E21E840E1D3A31A900C742E7 /* AnimatablePresentationController.swift in Sources */,

@@ -9,7 +9,7 @@ public class ActivityIndicatorAnimationSemiCircleSpin: ActivityIndicatorAnimatin
 
   // MARK: Properties
 
-  private let duration: CFTimeInterval = 0.6
+  fileprivate let duration: CFTimeInterval = 0.6
 
   // MARK: ActivityIndicatorAnimating
 
@@ -23,14 +23,14 @@ public class ActivityIndicatorAnimationSemiCircleSpin: ActivityIndicatorAnimatin
       height: size.height
     )
     circle.frame = frame
-    circle.addAnimation(animation, forKey: "animation")
+    circle.add(animation, forKey: "animation")
     layer.addSublayer(circle)
   }
 }
 
 // MARK: - Setup
 
-private extension ActivityIndicatorAnimationSemiCircleSpin {
+fileprivate extension ActivityIndicatorAnimationSemiCircleSpin {
 
   var animation: CAKeyframeAnimation {
     let animation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
@@ -38,7 +38,7 @@ private extension ActivityIndicatorAnimationSemiCircleSpin {
     animation.values = [0, M_PI, 2 * M_PI]
     animation.duration = duration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 }

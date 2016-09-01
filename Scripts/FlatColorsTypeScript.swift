@@ -7,7 +7,7 @@ let colorsTypeURL = "https://gist.githubusercontent.com/tkrugg/a577c32e93eecc6c7
 
 
 func JSON(_ urlToRequest: String) -> Data {
-  guard let data = try? Data(contentsOf: URL(string: urlToRequest)!)else{
+  guard let data = try? Data(contentsOf: URL(string: urlToRequest)!) else {
     fatalError("URL Request failed")
   }
   return data
@@ -26,7 +26,7 @@ func parseJSON(JSONData: Data) -> [String: String]? {
 }
 
 
-func colorLiteral(r: Int, g: Int, b: Int, a: Double)->String{
+func colorLiteral(r: Int, g: Int, b: Int, a: Double) -> String {
   return "#colorLiteral(red: \(CGFloat(r) / 255), green: \(CGFloat(g) / 255), blue: \(CGFloat(b) / 255), alpha: \(a))"
   
 }

@@ -9,7 +9,7 @@ public class ActivityIndicatorAnimationLineScaleParty: ActivityIndicatorAnimatin
 
   // MARK: Properties
 
-  private let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
+  fileprivate let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
 
   // MARK: ActivityIndicatorAnimating
 
@@ -29,7 +29,7 @@ public class ActivityIndicatorAnimationLineScaleParty: ActivityIndicatorAnimatin
       animation.beginTime = beginTime + beginTimes[i]
       animation.duration = durations[i]
       line.frame = frame
-      line.addAnimation(animation, forKey: "animation")
+      line.add(animation, forKey: "animation")
       layer.addSublayer(line)
     }
   }
@@ -37,7 +37,7 @@ public class ActivityIndicatorAnimationLineScaleParty: ActivityIndicatorAnimatin
 
 // MARK: - Setup
 
-private extension ActivityIndicatorAnimationLineScaleParty {
+fileprivate extension ActivityIndicatorAnimationLineScaleParty {
 
   var animation: CAKeyframeAnimation {
     let animation = CAKeyframeAnimation(keyPath:"transform.scale")
@@ -45,7 +45,7 @@ private extension ActivityIndicatorAnimationLineScaleParty {
     animation.timingFunctions = [timingFunction, timingFunction]
     animation.values = [1, 0.5, 1]
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 

@@ -19,7 +19,7 @@ public class PresentationPresenter: NSObject {
   }
 
   // animation controller
-  private var animator: AnimatedPresenting?
+  fileprivate var animator: AnimatedPresenting?
 
   public init(presentationAnimationType: PresentationAnimationType, transitionDuration: Duration = defaultPresentationDuration) {
     self.presentationAnimationType = presentationAnimationType
@@ -28,7 +28,7 @@ public class PresentationPresenter: NSObject {
 
     updateTransitionDuration()
     if presentationAnimationType.systemTransition == nil {
-      animator = AnimatorFactory.generateAnimator(presentationAnimationType, transitionDuration: transitionDuration)
+      animator = AnimatorFactory.generateAnimator(presentationAnimationType: presentationAnimationType, transitionDuration: transitionDuration)
     }
   }
 
@@ -64,7 +64,7 @@ extension PresentationPresenter: UIViewControllerTransitioningDelegate {
     if dismissalAnimationType.systemTransition != nil {
       return nil
     }
-    return AnimatorFactory.generateAnimator(dismissalAnimationType, transitionDuration: transitionDuration)
+    return AnimatorFactory.generateAnimator(presentationAnimationType: dismissalAnimationType, transitionDuration: transitionDuration)
   }
 
 }

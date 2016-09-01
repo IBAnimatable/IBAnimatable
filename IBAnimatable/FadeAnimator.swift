@@ -37,11 +37,11 @@ public class FadeAnimator: NSObject, AnimatedTransitioning {
 
 extension FadeAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-    return getTransitionDuration(using: transitionContext)
+    return transitionDuration(using: transitionContext)
   }
   
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-    let (tempfromView, tempToView, tempContainerView) = getViews(using: transitionContext)
+    let (tempfromView, tempToView, tempContainerView) = retrieveViews(transitionContext: transitionContext)
     guard let fromView = tempfromView, let toView = tempToView, let containerView = tempContainerView else {
       transitionContext.completeTransition(true)
       return
@@ -52,9 +52,7 @@ extension FadeAnimator: UIViewControllerAnimatedTransitioning {
       toView.alpha = 0
       containerView.addSubview(toView)
     case .out:
-      if let fromView = tempfromView {
-        containerView.insertSubview(toView, belowSubview: fromView)
-      }
+      containerView.insertSubview(toView, belowSubview: fromView)
     default:
       toView.alpha = 0
       containerView.addSubview(toView)
@@ -66,9 +64,9 @@ extension FadeAnimator: UIViewControllerAnimatedTransitioning {
         case .in:
           toView.alpha = 1
         case .out:
-          tempfromView?.alpha = 0
+          fromView.alpha = 0
         default:
-          tempfromView?.alpha = 0
+          fromView.alpha = 0
           toView.alpha = 1
         }
       },

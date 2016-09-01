@@ -9,7 +9,7 @@ public class ActivityIndicatorAnimationBallSpinFadeLoader: ActivityIndicatorAnim
 
   // MARK: Properties
 
-  private let duration: CFTimeInterval = 1
+  fileprivate let duration: CFTimeInterval = 1
 
   // MARK: ActivityIndicatorAnimating
 
@@ -32,12 +32,12 @@ public class ActivityIndicatorAnimationBallSpinFadeLoader: ActivityIndicatorAnim
                 color: color)
             
             animation.beginTime = beginTime + beginTimes[i]
-            circle.addAnimation(animation, forKey: "animation")
+            circle.add(animation, forKey: "animation")
             layer.addSublayer(circle)
         }
     }
     
-    func circleAt(angle angle: CGFloat, size: CGFloat, origin: CGPoint, containerSize: CGSize, color: UIColor) -> CALayer {
+    func circleAt(angle: CGFloat, size: CGFloat, origin: CGPoint, containerSize: CGSize, color: UIColor) -> CALayer {
         let radius = containerSize.width / 2 - size / 2
         let circle = ActivityIndicatorShape.Circle.createLayerWith(size: CGSize(width: size, height: size), color: color)
         let frame = CGRect(
@@ -54,7 +54,7 @@ public class ActivityIndicatorAnimationBallSpinFadeLoader: ActivityIndicatorAnim
 
 // MARK: - Setup
 
-private extension ActivityIndicatorAnimationBallSpinFadeLoader {
+fileprivate extension ActivityIndicatorAnimationBallSpinFadeLoader {
 
   var animation: CAAnimationGroup {
     let animation = CAAnimationGroup()
@@ -62,7 +62,7 @@ private extension ActivityIndicatorAnimationBallSpinFadeLoader {
     animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
     animation.duration = duration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 

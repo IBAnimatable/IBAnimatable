@@ -9,9 +9,9 @@ public class ActivityIndicatorAnimationBallPulseSync: ActivityIndicatorAnimating
 
   // MARK: Properties
 
-  private let duration: CFTimeInterval = 0.6
-  private var size: CGSize = .zero
-  private var circleSize: CGFloat = 0
+  fileprivate let duration: CFTimeInterval = 0.6
+  fileprivate var size: CGSize = .zero
+  fileprivate var circleSize: CGFloat = 0
 
   // MARK: ActivityIndicatorAnimating
 
@@ -35,7 +35,7 @@ public class ActivityIndicatorAnimationBallPulseSync: ActivityIndicatorAnimating
 
       animation.beginTime = beginTime + beginTimes[i]
       circle.frame = frame
-      circle.addAnimation(animation, forKey: "animation")
+      circle.add(animation, forKey: "animation")
       layer.addSublayer(circle)
     }
 
@@ -45,7 +45,7 @@ public class ActivityIndicatorAnimationBallPulseSync: ActivityIndicatorAnimating
 
 // MARK: - Setup
 
-private extension ActivityIndicatorAnimationBallPulseSync {
+fileprivate extension ActivityIndicatorAnimationBallPulseSync {
 
   var animation: CAKeyframeAnimation {
     let deltaY = (size.height / 2 - circleSize / 2) / 2
@@ -56,7 +56,7 @@ private extension ActivityIndicatorAnimationBallPulseSync {
     animation.values = [0, deltaY, -deltaY, 0]
     animation.duration = duration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 

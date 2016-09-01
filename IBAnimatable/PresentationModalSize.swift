@@ -43,7 +43,7 @@ extension PresentationModalSize {
     } else if size.hasPrefix("Full") {
       return .Full
     }
-    return fromStringWithParameters(size)
+    return fromStringWithParameters(size: size)
   }
 
 
@@ -64,13 +64,13 @@ extension PresentationModalSize {
 private extension PresentationModalSize {
 
   static func params(forSize size: String) -> [String] {
-    let range = size.rangeOfString("(")
-    let size = size.stringByReplacingOccurrencesOfString(" ", withString: "")
-      .lowercaseString
-      .substringFromIndex(range?.startIndex ?? size.endIndex)
-      .stringByReplacingOccurrencesOfString("(", withString: "")
-      .stringByReplacingOccurrencesOfString(")", withString: "")
-    return size.componentsSeparatedByString(",")
+    let range = size.range(of: "(")
+    let size = size.replacingOccurrences(of: " ", with: "").lowercased()
+      .substring(from: range?.lowerBound ?? size.endIndex)
+      .replacingOccurrences(of: "(", with: "")
+      .replacingOccurrences(of: ")", with: "")
+      .capitalized
+    return size.components(separatedBy: ",")
   }
   
 }

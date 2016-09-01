@@ -9,7 +9,7 @@ public class ActivityIndicatorAnimationBallClipRotateMultiple: ActivityIndicator
 
   // MARK: Properties
 
-  private let duration: CFTimeInterval = 0.7
+  fileprivate let duration: CFTimeInterval = 0.7
 
   // MARK: ActivityIndicatorAnimating
 
@@ -36,9 +36,9 @@ public class ActivityIndicatorAnimationBallClipRotateMultiple: ActivityIndicator
 
 // MARK: - Setup
 
-private extension ActivityIndicatorAnimationBallClipRotateMultiple {
+fileprivate extension ActivityIndicatorAnimationBallClipRotateMultiple {
 
-  func createAnimationIn(duration duration: CFTimeInterval, timingFunction: CAMediaTimingFunction, reverse: Bool) -> CAAnimation {
+  func createAnimationIn(duration: CFTimeInterval, timingFunction: CAMediaTimingFunction, reverse: Bool) -> CAAnimation {
     // Scale animation
     let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
     scaleAnimation.keyTimes = [0, 0.5, 1]
@@ -62,13 +62,13 @@ private extension ActivityIndicatorAnimationBallClipRotateMultiple {
     animation.animations = [scaleAnimation, rotateAnimation]
     animation.duration = duration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
 
     return animation
   }
 
   // swiftlint:disable:next function_parameter_count
-  func circleOf(shape shape: ActivityIndicatorShape, duration: CFTimeInterval, timingFunction: CAMediaTimingFunction, layer: CALayer, size: CGFloat, color: UIColor, reverse: Bool) {
+  func circleOf(shape: ActivityIndicatorShape, duration: CFTimeInterval, timingFunction: CAMediaTimingFunction, layer: CALayer, size: CGFloat, color: UIColor, reverse: Bool) {
     let circle = shape.createLayerWith(size: CGSize(width: size, height: size), color: color)
     let frame = CGRect(x: (layer.bounds.size.width - size) / 2,
                        y: (layer.bounds.size.height - size) / 2,
@@ -77,7 +77,7 @@ private extension ActivityIndicatorAnimationBallClipRotateMultiple {
     let animation = createAnimationIn(duration: duration, timingFunction: timingFunction, reverse: reverse)
 
     circle.frame = frame
-    circle.addAnimation(animation, forKey: "animation")
+    circle.add(animation, forKey: "animation")
     layer.addSublayer(circle)
   }
 
