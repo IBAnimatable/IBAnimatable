@@ -46,13 +46,15 @@ extension FadeAnimator: UIViewControllerAnimatedTransitioning {
       transitionContext.completeTransition(true)
       return
     }
-    
+
     switch direction {
     case .in:
       toView.alpha = 0
       containerView.addSubview(toView)
     case .out:
-      containerView.insertSubview(toView, belowSubview: fromView)
+      if let fromView = tempfromView {
+        containerView.insertSubview(toView, belowSubview: fromView)
+      }
     default:
       toView.alpha = 0
       containerView.addSubview(toView)
@@ -64,9 +66,9 @@ extension FadeAnimator: UIViewControllerAnimatedTransitioning {
         case .in:
           toView.alpha = 1
         case .out:
-          fromView.alpha = 0
+          tempfromView?.alpha = 0
         default:
-          fromView.alpha = 0
+          tempfromView?.alpha = 0
           toView.alpha = 1
         }
       },

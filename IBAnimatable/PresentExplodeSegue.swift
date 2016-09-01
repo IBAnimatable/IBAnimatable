@@ -7,7 +7,7 @@ import UIKit
 
 open class PresentExplodeSegue: UIStoryboardSegue {
   open override func perform() {
-    destination.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(transitionAnimationType: .explode(params: []))
+    destination.transitioningDelegate = TransitionPresenterManager.sharedManager().retrievePresenter(transitionAnimationType: .explode(params: []))
     source.present(destination, animated: true, completion: nil)
   }
 }

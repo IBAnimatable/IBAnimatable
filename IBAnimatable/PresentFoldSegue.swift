@@ -8,7 +8,7 @@ import UIKit
 open class PresentFoldSegue: UIStoryboardSegue {
   open override func perform() {
     
-    destination.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(transitionAnimationType: .fold(fromDirection: .left, params: []))
+    destination.transitioningDelegate = TransitionPresenterManager.sharedManager().retrievePresenter(transitionAnimationType: .fold(fromDirection: .left, params: []))
     source.present(destination, animated: true, completion: nil)
   }
 }

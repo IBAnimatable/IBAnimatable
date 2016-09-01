@@ -14,6 +14,24 @@ None
 #### Bugfixes
 None
 
+### [2.7](https://github.com/IBAnimatable/IBAnimatable/releases/tag/2.7)
+
+#### API breaking changes
+
+- `AnimatableStackView` doesn't conform anymore to `BlurDesignable`
+- `AnimatableScrollView` doesn't conform anymore to `BlurDesignable`
+ 
+#### Enhancements
+
+- Support for custom presentation, for more information, [read the documentation](Documentation/Presentations.md)
+- Introducing [AnimatableActivityIndicatorView](Documentation/ActivityIndicators.md) to support custom activity indicator animations. Already supporting 31 animations! Take a look at at the [full list](Documentation/ActivityIndicators.md)
+
+#### Bugfixes
+
+- Fixed `cornerRadius` when used with a gradient [#268](https://github.com/JakeLin/IBAnimatable/issues/268)
+- Remove previous vibrancy view when adding setting a new vibrancy. Previous bug: all the views was staying in the hierarchy [#277](https://github.com/JakeLin/IBAnimatable/issues/277)
+- Fixed "Shadows not working with Mask type" issue [#267](https://github.com/JakeLin/IBAnimatable/issues/267)
+
 ### [2.6](https://github.com/IBAnimatable/IBAnimatable/releases/tag/2.6)
 
 #### API breaking changes

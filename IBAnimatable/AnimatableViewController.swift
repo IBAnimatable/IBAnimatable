@@ -61,17 +61,19 @@ import UIKit
     super.prepare(for: segue, sender: sender)
     
     // Configure custom transition animation
-    guard let animationType = transitionAnimationType else {
-      super.prepare(for: segue, sender: sender)
-      return
+    guard let transitionAnimationType = transitionAnimationType,
+      animationType = TransitionAnimationType.fromString(transitionAnimationType)
+      where (segue.destinationViewController is PresentationDesignable) == false else {
+        return
     }
     
     let toViewController = segue.destination
     // If interactiveGestureType has been set
-    if let interactiveGestureType = interactiveGestureType {
-      toViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(transitionAnimationType: animationType, transitionDuration: transitionDuration, interactiveGestureType: interactiveGestureType)
+    if let interactiveGestureType = interactiveGestureType, interactiveGestureTypeValue = InteractiveGestureType.fromString(interactiveGestureType) {
+      toViewController.transitioningDelegate = TransitionPresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration, interactiveGestureType: interactiveGestureTypeValue)
     } else {
-      toViewController.transitioningDelegate = PresenterManager.sharedManager().retrievePresenter(transitionAnimationType: animationType, transitionDuration: transitionDuration)
+      toViewController.transitioningDelegate = TransitionPresenterManager.sharedManager().retrievePresenter(animationType, transitionDuration: transitionDuration)
     }
   }
+
 }

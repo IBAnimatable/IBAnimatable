@@ -7,17 +7,11 @@ import UIKit
 /**
  AnimatedTransitioning is the protocol of all Animator subclasses
  */
-public protocol AnimatedTransitioning: UIViewControllerAnimatedTransitioning {
-  
+public protocol AnimatedTransitioning: ViewControllerAnimatedTransitioning {
   /**
    Value of `TransitionAnimationType` enum
    */
   var transitionAnimationType: TransitionAnimationType { get set }
-  
-  /**
-   Transition duration
-   */
-  var transitionDuration: Duration { get set }
 
   /**
    Reverse animation type: used to specify the revers animation for pop or dismiss.
@@ -31,24 +25,9 @@ public protocol AnimatedTransitioning: UIViewControllerAnimatedTransitioning {
 }
 
 public extension AnimatedTransitioning {
-  public func getViews(using transitionContext: UIViewControllerContextTransitioning) -> (UIView?, UIView?, UIView?) {
-    return (transitionContext.view(forKey: UITransitionContextViewKey.from), transitionContext.view(forKey: UITransitionContextViewKey.to), transitionContext.containerView)
-  }
-  
-  public func getViewControllers(using transitionContext: UIViewControllerContextTransitioning) -> (UIViewController?, UIViewController?, UIView?) {
-    return (transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from), transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to), transitionContext.containerView)
-  }
-  
-  public func getTransitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-    if let transitionContext = transitionContext {
-      return transitionContext.isAnimated ? transitionDuration : 0
-    }
-    return 0
-  }
-  
-  public func animateWithCATransition(using transitionContext: UIViewControllerContextTransitioning, type: SystemTransitionType, subtype: String?) {
-    let (_, tempToView, tempContainerView) = getViews(using: transitionContext)
-    guard let toView = tempToView, let containerView = tempContainerView else {
+  public func animateWithCATransition(transitionContext: UIViewControllerContextTransitioning, type: SystemTransitionType, subtype: String?) {
+    let (_, tempToView, tempContainerView) = retrieveViews(transitionContext)
+    guard let toView = tempToView, containerView = tempContainerView else {
       transitionContext.completeTransition(true)
       return
     }
