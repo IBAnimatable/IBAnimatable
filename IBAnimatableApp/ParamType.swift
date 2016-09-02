@@ -11,7 +11,7 @@ import UIKit
 
 
 extension String {
-  func colorize(color: UIColor) -> NSAttributedString {
+  func colorize(_ color: UIColor) -> NSAttributedString {
     return NSAttributedString(string: self, attributes: [NSForegroundColorAttributeName: color])
   }
 }
@@ -31,7 +31,7 @@ enum ParamType {
   case enumeration(values: [String])
   
   init<T: RawRepresentable>(fromEnum: T.Type) where T: Hashable {
-    let iterator = iterateEnum(from: fromEnum)
+    // _ = iterateEnum(fromEnum)
     //TODO: REWRITE THIS
     /*
     let values = iterator.map { (e: T) -> String in
@@ -52,7 +52,7 @@ enum ParamType {
     }
   }
   /// Number at Index, use just for number case.
-  func valueAt(index: Int) -> String {
+  func valueAt(_ index: Int) -> String {
     let formatter = NumberFormatter()
     formatter.minimumFractionDigits = 0
     formatter.maximumFractionDigits = 3
@@ -67,12 +67,12 @@ enum ParamType {
     }
   }
   
-  func titleAt(index: Int) -> String {
+  func titleAt(_ index: Int) -> String {
     switch self {
     case .enumeration(_):
-      return valueAt(index: index)
+      return valueAt(index)
     case let .number(_, _, _, _, unit):
-      return   ("\(valueAt(index: index)) \(unit)").trimmingCharacters(in: CharacterSet.whitespaces)
+      return   ("\(valueAt(index)) \(unit)").trimmingCharacters(in: CharacterSet.whitespaces)
     }
   }
 }
@@ -88,7 +88,7 @@ extension PickerEntry {
   func toString(selectedIndexes indexes: Int?...) -> String {
     
     let paramString = indexes.enumerated().flatMap({ (i: Int, index: Int?) -> String? in
-      return params[safe:i]?.valueAt(index: index ?? 0)
+      return params[safe:i]?.valueAt(index ?? 0)
     }).joined(separator: ",")
     
     return "\(name)(\(paramString))"

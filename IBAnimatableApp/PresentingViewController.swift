@@ -42,22 +42,22 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
 
   // MARK: Properties
 
-  private let animations = ["None", "Flip", "CrossDissolve", "Cover(Left)", "Cover(Right)", "Cover(Top)", "Cover(Bottom)", "Zoom", "DropDown"]
-  private let positions = ["Center", "TopCenter", "BottomCenter", "LeftCenter", "RightCenter"]
-  private let sizes = ["Half", "Full"]
-  private let keyboardTranslations = ["None", "MoveUp", "AboveKeyboard"]
-  private let blurEffectStyles = ["None", "ExtraLight", "Light", "Dark"]
-  private let colors = [UIColor.black, UIColor.red, UIColor.orange, UIColor.brown, UIColor.yellow, UIColor.lightGray, UIColor.green, UIColor.cyan, UIColor.blue, UIColor.purple, UIColor.purple.colorWithAlphaComponent(0.5), UIColor.darkGray, UIColor.magenta, UIColor.white]
+  fileprivate let animations = ["None", "Flip", "CrossDissolve", "Cover(Left)", "Cover(Right)", "Cover(Top)", "Cover(Bottom)", "Zoom", "DropDown"]
+  fileprivate let positions = ["Center", "TopCenter", "BottomCenter", "LeftCenter", "RightCenter"]
+  fileprivate let sizes = ["Half", "Full"]
+  fileprivate let keyboardTranslations = ["None", "MoveUp", "AboveKeyboard"]
+  fileprivate let blurEffectStyles = ["None", "ExtraLight", "Light", "Dark"]
+  fileprivate let colors = [.black, .red, .orange, .brown, .yellow, .lightGray, .green, .cyan, .blue, .purple, UIColor.purple.withAlphaComponent(0.5), .darkGray, .magenta, .white]
 
-  private var selectedButton: UIButton?
+  fileprivate var selectedButton: UIButton?
 
-  private var selectedAnimationType: String?
-  private var selectedDismissalAnimationType: String?
-  private var selectedModalPosition: String?
-  private var selectedModalWidth: String = "Half"
-  private var selectedModalHeight: String = "Half"
-  private var selectedKeyboardTranslation: String?
-  private var selectedBlurEffectStyle: String?
+  fileprivate var selectedAnimationType: String?
+  fileprivate var selectedDismissalAnimationType: String?
+  fileprivate var selectedModalPosition: String?
+  fileprivate var selectedModalWidth: String = "Half"
+  fileprivate var selectedModalHeight: String = "Half"
+  fileprivate var selectedKeyboardTranslation: String?
+  fileprivate var selectedBlurEffectStyle: String?
 
   // MARK: Life cycle
 
@@ -65,18 +65,18 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
     super.viewDidLoad()
   }
 
-  private func setupModal(presentedViewController: AnimatableModalViewController) {
+  fileprivate func setupModal(_ presentedViewController: AnimatableModalViewController) {
     presentedViewController.presentationAnimationType = selectedAnimationType
     presentedViewController.dismissalAnimationType = selectedDismissalAnimationType
     presentedViewController.modalPosition = selectedModalPosition ?? "Center"
-    presentedViewController.modalWidth = selectedModalWidth ?? "Half"
-    presentedViewController.modalHeight = selectedModalHeight ?? "Half"
+    presentedViewController.modalWidth = selectedModalWidth 
+    presentedViewController.modalHeight = selectedModalHeight 
     presentedViewController.backgroundColor = colors[Int(sliderBackgroundColor.value)]
     presentedViewController.opacity = CGFloat(sliderOpacity.value)
-    presentedViewController.dismissOnTap = switchDismissOnTap.on
+    presentedViewController.dismissOnTap = switchDismissOnTap.isOn
     presentedViewController.keyboardTranslation = selectedKeyboardTranslation
     presentedViewController.cornerRadius = CGFloat(sliderCornerRadius.value)
-    presentedViewController.blurEffectStyle = selectedBlurEffectStyle
+    presentedViewController.blurEffectStyle = UIBlurEffectStyle(string: selectedBlurEffectStyle)
     presentedViewController.blurOpacity = CGFloat(sliderBlurOpacity.value)
     presentedViewController.shadowColor = colors[Int(sliderShadowColor.value)]
     presentedViewController.shadowOpacity = CGFloat(sliderShadowOpacity.value)
@@ -86,7 +86,7 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
     setDismissalAnimationTypeIfNeeded(presentedViewController)
   }
 
-  private func setDismissalAnimationTypeIfNeeded(viewController: AnimatableModalViewController) {
+  fileprivate func setDismissalAnimationTypeIfNeeded(_ viewController: AnimatableModalViewController) {
     guard selectedDismissalAnimationType == nil else {
       return
     }
@@ -106,9 +106,9 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
 extension PresentingViewController {
 
   @IBAction func presentProgramatically() {
-    if let presentedViewController = UIStoryboard(name: "Presentations", bundle: nil).instantiateViewControllerWithIdentifier("PresentationPresentedViewController") as? AnimatableModalViewController {
+    if let presentedViewController = UIStoryboard(name: "Presentations", bundle: nil).instantiateViewController(withIdentifier: "PresentationPresentedViewController") as? AnimatableModalViewController {
       setupModal(presentedViewController)
-      presentViewController(presentedViewController, animated: true, completion: nil)
+      present(presentedViewController, animated: true, completion: nil)
     }
   }
 
@@ -148,39 +148,39 @@ extension PresentingViewController {
 
 extension PresentingViewController {
 
-  @IBAction func backgroundColorValueChanged(sender: UISlider) {
+  @IBAction func backgroundColorValueChanged(_ sender: UISlider) {
     //    labelShadowOpacity.text = "Shadow opacity (\(sender.value))"
   }
 
-  @IBAction func cornerRadiusValueChanged(sender: UISlider) {
+  @IBAction func cornerRadiusValueChanged(_ sender: UISlider) {
     labelCornerRadius.text = "Corner radius (\(sender.value))"
   }
 
-  @IBAction func opacityValueChanged(sender: UISlider) {
+  @IBAction func opacityValueChanged(_ sender: UISlider) {
     labelOpacity.text = "Opacity (\(sender.value))"
   }
 
-  @IBAction func blurOpacityValueChanged(sender: UISlider) {
+  @IBAction func blurOpacityValueChanged(_ sender: UISlider) {
     labelBlurOpacity.text = "Blur opacity (\(sender.value))"
   }
 
-  @IBAction func shadowColorValueChanged(sender: UISlider) {
+  @IBAction func shadowColorValueChanged(_ sender: UISlider) {
 //    labelShadowOpacity.text = "Shadow opacity (\(sender.value))"
   }
 
-  @IBAction func shadowOpacityValueChanged(sender: UISlider) {
+  @IBAction func shadowOpacityValueChanged(_ sender: UISlider) {
     labelShadowOpacity.text = "Shadow opacity (\(sender.value))"
   }
 
-  @IBAction func shadowRadiusValueChanged(sender: UISlider) {
+  @IBAction func shadowRadiusValueChanged(_ sender: UISlider) {
     labelShadowRadius.text = "Shadow radius (\(sender.value))"
   }
 
-  @IBAction func shadowOffsetXValueChanged(sender: UISlider) {
+  @IBAction func shadowOffsetXValueChanged(_ sender: UISlider) {
     labelShadowOffsetX.text = "Shadow offset X (\(sender.value))"
   }
 
-  @IBAction func shadowOffsetYValueChanged(sender: UISlider) {
+  @IBAction func shadowOffsetYValueChanged(_ sender: UISlider) {
     labelShadowOffsetY.text = "Shadow offset Y (\(sender.value))"
   }
 }
@@ -192,16 +192,16 @@ extension PresentingViewController {
   func showPicker() {
     pickerView.reloadAllComponents()
     resetSelectedItemPicker()
-    dimmingPickerView.fadeIn()
-    containerPickerView.slideInUp()
-    dimmingPickerView.hidden = false
+    dimmingPickerView.fade(way: .in)
+    containerPickerView.slide(way: .in, direction: .up)
+    dimmingPickerView.isHidden = false
   }
 
   @IBAction func hidePicker() {
-    dimmingPickerView.fadeOut({
-      self.dimmingPickerView.hidden = true
+    dimmingPickerView.fade(way: .out, completion: {
+      self.dimmingPickerView.isHidden = true
     })
-    containerPickerView.slideOutDown()
+    containerPickerView.slide(way: .out, direction: .down)
     selectedButton = nil
   }
 
@@ -223,59 +223,59 @@ extension PresentingViewController {
   func resetSelectedItemPicker() {
     var row: Int?
     if selectedButton == btnAnimationType {
-      row = animations.indexOf(selectedAnimationType ?? "")      
+      row = animations.index(of: selectedAnimationType ?? "")      
     } else if selectedButton == btnDismissalAnimationType {
-      row = animations.indexOf(selectedDismissalAnimationType ?? "")
+      row = animations.index(of: selectedDismissalAnimationType ?? "")
     } else if selectedButton == btnModalPosition {
-      row = positions.indexOf(selectedModalPosition ?? "")
+      row = positions.index(of: selectedModalPosition ?? "")
     } else if selectedButton == btnModalSize {
-      pickerView.selectRow(sizes.indexOf(selectedModalWidth ?? "") ?? 0, inComponent: 0, animated: false)
-      pickerView.selectRow(sizes.indexOf(selectedModalHeight ?? "") ?? 0, inComponent: 1, animated: false)
+      pickerView.selectRow(sizes.index(of: selectedModalWidth) ?? 0, inComponent: 0, animated: false)
+      pickerView.selectRow(sizes.index(of: selectedModalHeight) ?? 0, inComponent: 1, animated: false)
       return
     } else if selectedButton == btnKeyboardTranslation {
-      row = keyboardTranslations.indexOf(selectedKeyboardTranslation ?? "")
+      row = keyboardTranslations.index(of: selectedKeyboardTranslation ?? "")
     } else if selectedButton == btnBlurEffectStyle {
-      row = blurEffectStyles.indexOf(selectedBlurEffectStyle ?? "")
+      row = blurEffectStyles.index(of: selectedBlurEffectStyle ?? "")
     }
     pickerView.selectRow(row ?? 0, inComponent: 0, animated: false)
   }
 
   // MARK: UIPickerDelegate / DataSource
 
-  func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+  @objc(numberOfComponentsInPickerView:) func numberOfComponents(in pickerView: UIPickerView) -> Int {
     return componentsForSelectedButton().count
   }
 
-  func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+  func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
     return componentsForSelectedButton()[component].count
   }
 
-  func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+  func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
     return componentsForSelectedButton()[component][row]
   }
 
-  func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+  func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     let title = componentsForSelectedButton()[component][row]
     if selectedButton == btnAnimationType {
-      btnAnimationType.setTitle("Animation type (\(title))", forState: .Normal)
+      btnAnimationType.setTitle("Animation type (\(title))", for: .normal)
       selectedAnimationType = title
     } else if selectedButton == btnDismissalAnimationType {
-      btnDismissalAnimationType.setTitle("Dismissal animation type (\(title))", forState: .Normal)
+      btnDismissalAnimationType.setTitle("Dismissal animation type (\(title))", for: .normal)
       selectedDismissalAnimationType = title
     } else if selectedButton == btnModalPosition {
-      btnModalPosition.setTitle("Modal Position (\(title))", forState: .Normal)
+      btnModalPosition.setTitle("Modal Position (\(title))", for: .normal)
       selectedModalPosition = title
     } else if selectedButton == btnModalSize && component == 0 {
-      btnModalSize.setTitle("Modal size (\(title) - \(selectedModalHeight))", forState: .Normal)
+      btnModalSize.setTitle("Modal size (\(title) - \(selectedModalHeight))", for: .normal)
       selectedModalWidth = title
     } else if selectedButton == btnModalSize && component == 1 {
-      btnModalSize.setTitle("Modal size (\(selectedModalWidth) - \(title))", forState: .Normal)
+      btnModalSize.setTitle("Modal size (\(selectedModalWidth) - \(title))", for: .normal)
       selectedModalHeight = title
     } else if selectedButton == btnKeyboardTranslation {
-      btnKeyboardTranslation.setTitle("Keyboard translation (\(title))", forState: .Normal)
+      btnKeyboardTranslation.setTitle("Keyboard translation (\(title))", for: .normal)
       selectedKeyboardTranslation = title
     } else if selectedButton == btnBlurEffectStyle {
-      btnBlurEffectStyle.setTitle("Blur effect style (\(title))", forState: .Normal)
+      btnBlurEffectStyle.setTitle("Blur effect style (\(title))", for: .normal)
       selectedBlurEffectStyle = title
     }
   }

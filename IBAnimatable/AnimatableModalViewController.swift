@@ -6,7 +6,7 @@
 import UIKit
 
 /// `AnimatableModalViewController` is a customised modal view controller used as the `presentedViewController` for `UIPresentationController`. We can use it in Interface Builder to style the modal view and dimming view. Also configure the presentation and dismissal animations.
-public class AnimatableModalViewController: UIViewController, PresentationDesignable {
+open class AnimatableModalViewController: UIViewController, PresentationDesignable {
 
   // MARK: - AnimatablePresentationController
 
@@ -140,11 +140,11 @@ public class AnimatableModalViewController: UIViewController, PresentationDesign
 
   // MARK: Life cycle
 
-  override public func viewDidLoad() {
+  override open func viewDidLoad() {
     super.viewDidLoad()
   }
 
-  public override func viewDidAppear(_ animated: Bool) {
+  open override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     let animationType = PresentationAnimationType.fromString(transitionType: dismissalAnimationType ?? "") ?? .cover(fromDirection: .bottom)
     if let dismissSystemTransition = animationType.systemTransition {

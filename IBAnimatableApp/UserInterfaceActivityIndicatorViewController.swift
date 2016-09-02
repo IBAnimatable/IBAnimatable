@@ -14,9 +14,9 @@ class UserInterfaceActivityIndicatorViewController: UIViewController, UIPickerVi
 
   // MARK: Properties
 
-  private var activityIndicatorsType: [String] {
+  fileprivate var activityIndicatorsType: [String] {
     var types = [String]()
-    iterateEnum(ActivityIndicatorType).forEach {
+    iterateEnum(ActivityIndicatorType.self).forEach {
       types.append($0.rawValue)
     }
     return types
@@ -27,7 +27,7 @@ class UserInterfaceActivityIndicatorViewController: UIViewController, UIPickerVi
   override func viewDidLoad() {
     super.viewDidLoad()
     if let animatableView = view as? AnimatableView {
-      animatableView.predefinedGradient = String(generateRandomGradient())
+      animatableView.predefinedGradient = generateRandomGradient()
     }
   }
 
@@ -35,20 +35,20 @@ class UserInterfaceActivityIndicatorViewController: UIViewController, UIPickerVi
 
 extension UserInterfaceActivityIndicatorViewController {
 
-  func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+  @objc(numberOfComponentsInPickerView:) func numberOfComponents(in pickerView: UIPickerView) -> Int {
     return 1
   }
   
-  func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+  func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
     return activityIndicatorsType.count
   }
 
-  func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+  func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
     let title = activityIndicatorsType[row]
-    return NSAttributedString(string: title, attributes: [NSForegroundColorAttributeName:UIColor.whiteColor()])
+    return NSAttributedString(string: title, attributes: [NSForegroundColorAttributeName:UIColor.white])
   }
 
-  func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+  func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     activityIndicatorView.stopAnimating()
     activityIndicatorView.animationType = activityIndicatorsType[row]
     activityIndicatorView.startAnimating()
