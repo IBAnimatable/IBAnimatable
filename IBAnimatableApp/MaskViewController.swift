@@ -39,9 +39,7 @@ class MaskViewController: UIViewController {
     let maskString = selectedEntry.toString(selectedIndexes:0)
     let maskType = MaskType(string: maskString)
     maskedView.maskType = maskType
-    //  maskedImageView.maskType = maskType
   }
-  
 }
 
 
