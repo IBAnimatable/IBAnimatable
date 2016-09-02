@@ -1,4 +1,4 @@
-//
+ //
 //  Created by Jake Lin on 2/27/16.
 //  Copyright © 2016 IBAnimatable. All rights reserved.
 //
@@ -37,7 +37,7 @@ public class FadeAnimator: NSObject, AnimatedTransitioning {
 
 extension FadeAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-    return transitionDuration(using: transitionContext)
+    return retrieveTransitionDuration(transitionContext: transitionContext)
   }
   
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {

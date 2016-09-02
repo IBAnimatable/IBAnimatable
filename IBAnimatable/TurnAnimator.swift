@@ -52,7 +52,7 @@ public class TurnAnimator: NSObject, AnimatedTransitioning {
 
 extension TurnAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-    return transitionDuration(using: transitionContext)
+    return retrieveTransitionDuration(transitionContext: transitionContext)
   }
   
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
