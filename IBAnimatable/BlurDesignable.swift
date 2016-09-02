@@ -28,11 +28,11 @@ public extension BlurDesignable where Self: UIView {
    configBlurEffectStyle method, should be called in layoutSubviews() method
    */
   public func configBlurEffectStyle() {
-    guard let TransitionAnimationType = blurEffectStyle else {
+    guard let blurEffectStyle = blurEffectStyle else {
       return
     }
 
-    let blurEffectView = createVisualEffectView(effect: UIBlurEffect(style: TransitionAnimationType))
+    let blurEffectView = createVisualEffectView(effect: UIBlurEffect(style: blurEffectStyle))
     if let vibrancyStyle = vibrancyEffectStyle {
       subviews.flatMap { $0 as? AnimatableVibrancyView }
         .forEach { $0.removeFromSuperview() }
@@ -45,8 +45,6 @@ public extension BlurDesignable where Self: UIView {
     }
     insertSubview(blurEffectView, at: 0)
   }
-
-
 }
 
 private extension BlurDesignable where Self: UIView {
@@ -63,25 +61,6 @@ private extension BlurDesignable where Self: UIView {
     visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     return visualEffectView
   }
-
-  /*
-  func blurEffectStyle(from blurEffectStyle: String) -> UIBlurEffectStyle? {
-    var style: UIBlurEffectStyle?
-    guard let blurEffectStyle = UIBlurEffectStyle.init(string: blurEffectStyle) else {
-      return nil
-    }
-
-    switch blurEffectStyle {
-    case .extraLight:
-      style = .extraLight
-    case .light:
-      style = .light
-    case .dark:
-      style = .dark
-    }
-    return style
-  }
-  */
 }
 
 private class AnimatableVibrancyView: UIVisualEffectView {
