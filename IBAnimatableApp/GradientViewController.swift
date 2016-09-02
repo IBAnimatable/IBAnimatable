@@ -57,6 +57,8 @@ extension GradientViewController : UIPickerViewDelegate, UIPickerViewDataSource 
     } else {
       gView.startColor = ColorType(rawValue: self.colorValues.valueAt(pickerView.selectedRow(inComponent: 0)))?.color
       gView.endColor = ColorType(rawValue: self.colorValues.valueAt(pickerView.selectedRow(inComponent: 1)))?.color
+      gView.startPoint = GradientStartPoint(rawValue: startPointValues.valueAt(pickerView.selectedRow(inComponent: 2))) ?? .top
+
     }
     gView.configGradient()
   }

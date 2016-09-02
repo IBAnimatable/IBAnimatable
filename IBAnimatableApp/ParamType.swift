@@ -31,14 +31,8 @@ enum ParamType {
   case enumeration(values: [String])
   
   init<T: RawRepresentable>(fromEnum: T.Type) where T: Hashable {
-    // _ = iterateEnum(fromEnum)
-    //TODO: REWRITE THIS
-    /*
-    let values = iterator.map { (e: T) -> String in
-      return String(describing: e.rawValue)
-    }*/
-    //let values = iterator.map {  return String(describing: $0.rawValue) }
-    let values: [String] = []
+    let iterator = iterateEnum(fromEnum)
+    let values = iterator.map {  return String(describing: $0.rawValue) }
     self = .enumeration(values: values)
   }
   

@@ -13,7 +13,7 @@ class UserInterfaceTableViewController: UITableViewController {
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let gradientVC = segue.destination as? GradientViewController {
-      gradientVC.usePredefinedGradient = segue.identifier == "gradients"
+      gradientVC.usePredefinedGradient = segue.identifier == "predefinedGradients"
     }
   }
 }
