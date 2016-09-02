@@ -12,7 +12,7 @@ public protocol TransitionAnimatable: class {
   var transitionAnimationType: TransitionAnimationType? { get set }
   
   /**
-   Transition duration: default value should be `Double.NaN`. Need to use `Double` instead of `NSTimeInterval` because IB doesn't support `NSTimeInterval`
+   Transition duration: default value should be `Double.nan`. Need to use `Double` instead of `TimeInterval` because IB doesn't support `TimeInterval`
    */
   var transitionDuration: Double { get set }
   

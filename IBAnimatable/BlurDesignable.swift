@@ -28,16 +28,16 @@ public extension BlurDesignable where Self: UIView {
    configBlurEffectStyle method, should be called in layoutSubviews() method
    */
   public func configBlurEffectStyle() {
-    guard let blurStyle = blurEffectStyle else {
+    guard let blurEffectStyle = blurEffectStyle else {
       return
     }
-    
-    let blurEffectView = createVisualEffectView(effect: UIBlurEffect(style: blurStyle))
-    
-    // Apply vibrancy effect to all subviews
+
+    let blurEffectView = createVisualEffectView(effect: UIBlurEffect(style: blurEffectStyle))
     if let vibrancyStyle = vibrancyEffectStyle {
-      let vibrancyEffect = UIVibrancyEffect(blurEffect: UIBlurEffect(style: vibrancyStyle))
-      let vibrancyEffectView = createVisualEffectView(effect: vibrancyEffect)
+      subviews.flatMap { $0 as? AnimatableVibrancyView }
+        .forEach { $0.removeFromSuperview() }
+
+      let vibrancyEffectView = createVisualEffectView(effect: UIVibrancyEffect(blurEffect: UIBlurEffect(style: vibrancyStyle)))
       subviews.forEach {
         vibrancyEffectView.contentView.addSubview($0)
       }
@@ -47,19 +47,22 @@ public extension BlurDesignable where Self: UIView {
   }
 }
 
-
 private extension BlurDesignable where Self: UIView {
-  
+
   func createVisualEffectView(effect: UIVisualEffect) -> UIVisualEffectView {
-    let visualEffectView = UIVisualEffectView(effect: effect)
+    let visualEffectView = AnimatableVibrancyView(effect: effect)
     visualEffectView.alpha = blurOpacity.isNaN ? 1.0 : blurOpacity
     if layer.cornerRadius > 0 {
       visualEffectView.layer.cornerRadius = layer.cornerRadius
       visualEffectView.clipsToBounds = true
     }
-    
+
     visualEffectView.frame = bounds
     visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     return visualEffectView
   }
+}
+
+private class AnimatableVibrancyView: UIVisualEffectView {
+
 }

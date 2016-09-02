@@ -23,10 +23,10 @@ public class SystemRotateAnimator: NSObject, AnimatedTransitioning {
 
 extension SystemRotateAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-    return getTransitionDuration(using: transitionContext)
+    return transitionDuration(using: transitionContext)
   }
   
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-    animateWithCATransition(using: transitionContext, type: SystemTransitionType.rotate, subtype: "90")
+    animateWithCATransition(transitionContext: transitionContext, type: SystemTransitionType.rotate, subtype: "90")
   }
 }

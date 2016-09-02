@@ -282,7 +282,7 @@ private extension MaskDesignable where Self: UIView {
     layer.mask?.removeFromSuperlayer()
     
     let maskLayer = CAShapeLayer()
-    maskLayer.frame = CGRect(origin: CGPoint.zero, size: bounds.size)
+    maskLayer.frame = CGRect(origin: .zero, size: bounds.size)
     maskLayer.path = path.cgPath
     layer.mask = maskLayer
   }

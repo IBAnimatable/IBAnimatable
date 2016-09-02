@@ -51,11 +51,11 @@ private extension ContainerTransitionViewController {
     viewController.transitionAnimationType = TransitionAnimationType.fromString(transitionType: "Portal")
     viewControllers.append(viewController)
     
-    cycleFromViewController(containerView: containerView, fromViewController: nil, toViewController: viewControllers[0])
+    cycleFromViewController(containerView, fromViewController: nil, toViewController: viewControllers[0])
 
   }
   
-  func cycleFromViewController(containerView: UIView, fromViewController: AnimatableViewController?, toViewController: AnimatableViewController) {
+  func cycleFromViewController(_ containerView: UIView, fromViewController: AnimatableViewController?, toViewController: AnimatableViewController) {
     guard let animationType = TransitionAnimationType.fromString(transitionType: toViewController.transitionAnimationType?.stringValue ?? "") else {
       return
     }
@@ -76,9 +76,9 @@ private extension ContainerTransitionViewController {
 
 extension ContainerTransitionViewController {
 
-  func tabBar(tabBar: UITabBar, didSelect item: UITabBarItem) {
+  @objc(tabBar:didSelectItem:) func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
     let toViewController = viewControllers[item.tag]
-    cycleFromViewController(containerView: containerView, fromViewController: currentViewController, toViewController: toViewController)
+    cycleFromViewController(containerView, fromViewController: currentViewController, toViewController: toViewController)
   }
   
 }

@@ -1,9 +1,6 @@
 //
-//  BlurEffectViewController.swift
-//  IBAnimatableApp
-//
 //  Created by jason akakpo on 27/07/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import UIKit
@@ -24,11 +21,11 @@ class GradientViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     if usePredefinedGradient {
-    gView.predefinedGradient = GradientType(string: gradientValues.valueAt(index: 0))
-    gView.startPoint = GradientStartPoint(string: startPointValues.valueAt(index: 0)) ?? .top
+    gView.predefinedGradient = GradientType(rawValue: gradientValues.valueAt(0))
+    gView.startPoint = GradientStartPoint(rawValue: startPointValues.valueAt(0)) ?? .top
     } else {
-      gView.startColor = ColorType(string: self.colorValues.valueAt(index: 0))?.color
-      gView.endColor = ColorType(string: self.colorValues.valueAt(index: 0))?.color
+      gView.startColor = ColorType(rawValue: self.colorValues.valueAt(0))?.color
+      gView.endColor = ColorType(rawValue: self.colorValues.valueAt(0))?.color
     }
   }
 }
@@ -46,20 +43,20 @@ extension GradientViewController : UIPickerViewDelegate, UIPickerViewDataSource 
     label.textColor = .white
     label.textAlignment = .center
     label.minimumScaleFactor = 0.5
-    label.text = componentValues[component].titleAt(index: row)
+    label.text = componentValues[component].titleAt(row)
     return label
   }
   func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-      return componentValues[component].titleAt(index: row).colorize(color: .white)
+      return componentValues[component].titleAt(row).colorize(.white)
   }
   
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     if usePredefinedGradient {
-      gView.predefinedGradient = GradientType(string: gradientValues.valueAt(index: pickerView.selectedRow(inComponent: 0)))
-      gView.startPoint = GradientStartPoint(string: startPointValues.valueAt(index: pickerView.selectedRow(inComponent: 1))) ?? .top
+      gView.predefinedGradient = GradientType(rawValue: gradientValues.valueAt(pickerView.selectedRow(inComponent: 0)))
+      gView.startPoint = GradientStartPoint(rawValue: startPointValues.valueAt(pickerView.selectedRow(inComponent: 1))) ?? .top
     } else {
-      gView.startColor = ColorType(string: self.colorValues.valueAt(index: pickerView.selectedRow(inComponent: 0)))?.color
-      gView.endColor = ColorType(string: self.colorValues.valueAt(index: pickerView.selectedRow(inComponent: 1)))?.color
+      gView.startColor = ColorType(rawValue: self.colorValues.valueAt(pickerView.selectedRow(inComponent: 0)))?.color
+      gView.endColor = ColorType(rawValue: self.colorValues.valueAt(pickerView.selectedRow(inComponent: 1)))?.color
     }
     gView.configGradient()
   }

@@ -40,17 +40,17 @@ public class SystemCameraIrisAnimator: NSObject, AnimatedTransitioning {
 
 extension SystemCameraIrisAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-    return getTransitionDuration(using: transitionContext)
+    return transitionDuration(using: transitionContext)
   }
   
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     switch self.hollowState {
     case .open:
-      animateWithCATransition(using: transitionContext, type: SystemTransitionType.cameraIrisHollowOpen, subtype: nil)
+      animateWithCATransition(transitionContext: transitionContext, type: SystemTransitionType.cameraIrisHollowOpen, subtype: nil)
     case .close:
-      animateWithCATransition(using: transitionContext, type: SystemTransitionType.cameraIrisHollowClose, subtype: nil)
+      animateWithCATransition(transitionContext: transitionContext, type: SystemTransitionType.cameraIrisHollowClose, subtype: nil)
     case .none:
-      animateWithCATransition(using: transitionContext, type: SystemTransitionType.cameraIris, subtype: nil)
+      animateWithCATransition(transitionContext: transitionContext, type: SystemTransitionType.cameraIris, subtype: nil)
 
     }
   }

@@ -7,7 +7,7 @@ import UIKit
 
 // FIXME: almost same as `AnimatableView`, Need to refactor to encasuplate.
 @available(iOS 9, *)
-@IBDesignable open class AnimatableStackView: UIStackView, CornerDesignable, FillDesignable, BorderDesignable, RotationDesignable, ShadowDesignable, BlurDesignable, TintDesignable, GradientDesignable, MaskDesignable, Animatable {
+@IBDesignable open class AnimatableStackView: UIStackView, CornerDesignable, FillDesignable, BorderDesignable, RotationDesignable, ShadowDesignable, TintDesignable, GradientDesignable, MaskDesignable, Animatable {
   
   // MARK: - CornerDesignable
   @IBInspectable open var cornerRadius: CGFloat = CGFloat.nan {
@@ -88,34 +88,6 @@ import UIKit
   @IBInspectable open var shadowOffset: CGPoint = CGPoint(x: CGFloat.nan, y: CGFloat.nan) {
     didSet {
       configShadowOffset()
-    }
-  }
-  
-  // MARK: - BlurDesignable
-  open var blurEffectStyle: UIBlurEffectStyle? {
-    didSet {
-      configBlurEffectStyle()
-    }
-  }
-  @IBInspectable var _blurEffectStyle: String? {
-    didSet {
-      blurEffectStyle = UIBlurEffectStyle(string: _blurEffectStyle)
-    }
-  }
-open var vibrancyEffectStyle: UIBlurEffectStyle? {
-    didSet {
-      configBlurEffectStyle()
-    }
-  }
-  @IBInspectable var _vibrancyEffectStyle: String? {
-    didSet {
-      vibrancyEffectStyle = UIBlurEffectStyle(string: _vibrancyEffectStyle)
-    }
-  }
-
-  @IBInspectable open var blurOpacity: CGFloat = CGFloat.nan {
-    didSet {
-      configBlurEffectStyle()
     }
   }
   

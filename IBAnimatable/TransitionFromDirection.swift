@@ -39,4 +39,44 @@ public enum TransitionDirection {
   var isHorizontal: Bool {
     return self == .left || self == .right
   }
+
+  static func fromString(forParams params: [String]) -> TransitionDirection? {
+    if params.contains("left") {
+      return .left
+    } else if params.contains("right") {
+      return .right
+    } else if params.contains("top") {
+      return .top
+    } else if params.contains("bottom") {
+      return .bottom
+    } else if params.contains("forward") {
+      return .forward
+    } else if params.contains("backward") {
+      return .backward
+    }
+    return nil
+  }
+
+  var opposite: TransitionDirection {
+    switch self {
+    case .left:
+      return .right
+    case .right:
+      return .left
+    case .top:
+      return .bottom
+    case .bottom:
+      return .top
+    case .in:
+      return .out
+    case .out:
+      return .in
+    case .forward:
+      return .backward
+    case .backward:
+      return .forward
+    case .cross:
+      return .cross
+    }
+  }
 }

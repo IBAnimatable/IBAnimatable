@@ -1,7 +1,4 @@
 //
-//  BorderViewController.swift
-//  IBAnimatableApp
-//
 //  Created by jason akakpo on 13/08/16.
 //  Copyright © 2016 IBAnimatable. All rights reserved.
 //

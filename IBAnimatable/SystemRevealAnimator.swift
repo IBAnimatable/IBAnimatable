@@ -44,10 +44,10 @@ public class SystemRevealAnimator: NSObject, AnimatedTransitioning {
 
 extension SystemRevealAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-    return getTransitionDuration(using: transitionContext)
+    return transitionDuration(using: transitionContext)
   }
   
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-    animateWithCATransition(using: transitionContext, type: SystemTransitionType.reveal, subtype: fromDirection.CATransitionSubtype)
+    animateWithCATransition(transitionContext: transitionContext, type: SystemTransitionType.reveal, subtype: fromDirection.CATransitionSubtype)
   }
 }
