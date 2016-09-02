@@ -55,7 +55,7 @@ func parse(_ JSONData: Data) -> [[String: AnyObject]]? {
 // Generator constants
 let enumCase = "\tcase %@\n"
 let switchCase = "case .%@:\n"
-let colors =  "\treturn (%@,%@)\n"
+let colors =  "\treturn (%@, %@)\n"
 let endEnumOrSwitch = "}"
 
 // Finale string
