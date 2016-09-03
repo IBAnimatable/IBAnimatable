@@ -38,7 +38,7 @@ public class NatGeoAnimator: NSObject, AnimatedTransitioning {
 
 extension NatGeoAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-    return transitionDuration(using: transitionContext)
+    return retrieveTransitionDuration(transitionContext: transitionContext)
   }
   
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {

@@ -90,11 +90,11 @@
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="transitionAnimationType" value="Explode"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="transitionDuration">
+                        <userDefinedRuntimeAttribute type="string" keyPath="_transitionAnimationType" value="Explode"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="_transitionDuration">
                             <real key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="string" keyPath="interactiveGestureType" value="Pan(Left)"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="_interactiveGestureType" value="Pan(Left)"/>
                     </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OYQ-Df-93j" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -132,11 +132,11 @@ Did you try some gestures?</string>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="transitionAnimationType" value="Explode"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="transitionDuration">
+                        <userDefinedRuntimeAttribute type="string" keyPath="_transitionAnimationType" value="Explode"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="_transitionDuration">
                             <real key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="string" keyPath="interactiveGestureType" value="Pan(Left)"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="_interactiveGestureType" value="Pan(Left)"/>
                     </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7mP-MC-00R" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -173,11 +173,11 @@ Did you try a pinch?</string>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="transitionAnimationType" value="Explode"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="transitionDuration">
+                        <userDefinedRuntimeAttribute type="string" keyPath="_transitionAnimationType" value="Explode"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="_transitionDuration">
                             <real key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="string" keyPath="interactiveGestureType" value="Pan(Left)"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="_interactiveGestureType" value="Pan(Left)"/>
                     </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AVJ-39-VNw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -201,11 +201,11 @@ Did you try a pinch?</string>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="transitionAnimationType" value="Explode"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="transitionDuration">
+                        <userDefinedRuntimeAttribute type="string" keyPath="_transitionAnimationType" value="Explode"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="_transitionDuration">
                             <real key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="string" keyPath="interactiveGestureType" value="Pan(Left)"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="_interactiveGestureType" value="Pan(Left)"/>
                     </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Uy-GK-TiJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -228,11 +228,11 @@ Did you try a pinch?</string>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="transitionDuration">
+                        <userDefinedRuntimeAttribute type="number" keyPath="_transitionDuration">
                             <real key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="string" keyPath="transitionAnimationType" value="SystemCube(Right)"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="interactiveGestureType" value="Default"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="_transitionAnimationType" value="SystemCube(Right)"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="_interactiveGestureType" value="Default"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="5ps-L0-bib" kind="relationship" relationship="rootViewController" id="k1Y-a3-5dC"/>

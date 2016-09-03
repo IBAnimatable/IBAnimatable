@@ -50,7 +50,7 @@ public extension MaskDesignable where Self: UIView {
     case .triangle:
       maskTriangle()
     case .none:
-      return
+      layer.mask?.removeFromSuperlayer()
     }
   }
 }
