@@ -33,11 +33,13 @@ public extension BlurDesignable where Self: UIView {
     }
 
     let blurEffectView = createVisualEffectView(effect: UIBlurEffect(style: blurEffectStyle))
-    if let vibrancyStyle = vibrancyEffectStyle {
-      subviews.flatMap { $0 as? AnimatableVibrancyView }
-        .forEach { $0.removeFromSuperview() }
-
-      let vibrancyEffectView = createVisualEffectView(effect: UIVibrancyEffect(blurEffect: UIBlurEffect(style: vibrancyStyle)))
+    subviews.flatMap { $0 as? AnimatableVibrancyView }
+      .forEach { $0.removeFromSuperview() }
+    
+    // Add `vibrancyEffectView` if `vibrancyEffectStyle` has been set.
+    if let vibrancyEffectStyle = vibrancyEffectStyle {
+      let blurEffectStyleForVibrancy = UIBlurEffect(style: vibrancyEffectStyle)
+      let vibrancyEffectView = createVisualEffectView(effect: UIVibrancyEffect(blurEffect: blurEffectStyleForVibrancy))
       subviews.forEach {
         vibrancyEffectView.contentView.addSubview($0)
       }

@@ -29,6 +29,8 @@ extension BlurEffectViewController : UIPickerViewDelegate, UIPickerViewDataSourc
     if component == 2 {
       return opacityValues.count()
     }
+    
+    // When component == 0 || component == 1, display blur effects
     return values.count
   }
   func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -37,7 +39,7 @@ extension BlurEffectViewController : UIPickerViewDelegate, UIPickerViewDataSourc
   
   func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
     if component == 2 {
-      return (opacityValues.titleAt(row) ).colorize(.white)
+      return (opacityValues.titleAt(row)).colorize(.white)
     }
       return values[safe: row]?.colorize(.white)
   }
