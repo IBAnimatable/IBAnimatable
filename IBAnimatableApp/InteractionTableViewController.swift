@@ -12,7 +12,7 @@ class InteractionTableViewController: UITableViewController {
 // MARK: - UITableViewDataSource / UITableViewDelegate
 
 extension InteractionTableViewController {
-  
+
   // MARK: - reset the group heander font color and size
   override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
     if let header = view as? UITableViewHeaderFooterView {

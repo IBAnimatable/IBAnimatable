@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EUy-AH-IJE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EUy-AH-IJE">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,7 +29,7 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.72941176470000002" green="0.46666666670000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -42,11 +42,11 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.72941176470000002" green="0.46666666670000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="QTk-dN-RSb" kind="custom" customClass="PresentPortalWithDismissInteractionSegue" customModule="IBAnimatable" id="ZP9-5j-fle"/>
+                                            <segue destination="QTk-dN-RSb" kind="custom" customClass="PresentPortalWithDismissInteractionSegue" customModule="IBAnimatable" id="eWj-gh-gIp"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z86-aB-NQh" userLabel="Push button" customClass="AnimatableButton" customModule="IBAnimatable">
@@ -55,7 +55,7 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.72941176470000002" green="0.46666666670000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -76,7 +76,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="EY3-a7-f4G" secondAttribute="trailing" constant="20" id="ukc-uX-oZy"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="predefinedColor" value="FlatGreenSea"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="predefinedColor" value="flatGreenSea"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <toolbarItems/>
@@ -128,7 +128,7 @@ Did you try some gestures?</string>
                             <constraint firstItem="vmG-2t-thM" firstAttribute="centerY" secondItem="Goa-e7-hdb" secondAttribute="centerY" id="wci-8S-MIC"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="predefinedColor" value="FlatAlizarin"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="predefinedColor" value="flatAlizarin"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <userDefinedRuntimeAttributes>
@@ -169,7 +169,7 @@ Did you try a pinch?</string>
                             <constraint firstItem="w4o-9k-Mjd" firstAttribute="centerY" secondItem="Tke-p6-rQ1" secondAttribute="centerY" id="hgF-NA-KCZ"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="predefinedColor" value="FlatPeterRiver"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="predefinedColor" value="flatPeterRiver"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <userDefinedRuntimeAttributes>
@@ -197,7 +197,7 @@ Did you try a pinch?</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="predefinedColor" value="FlatOrange"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="predefinedColor" value="flatOrange"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <userDefinedRuntimeAttributes>
@@ -221,7 +221,7 @@ Did you try a pinch?</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.72941176470000002" green="0.46666666670000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="solidColor" value="YES"/>
                         </userDefinedRuntimeAttributes>
