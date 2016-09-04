@@ -85,7 +85,7 @@ extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSourc
     guard let param = selectedEntry.params[safe: component - 1] else {
       return nil
     }
-    return param.titleAt(row).colorize(.white)
+    return param.title(at: row).colorize(.white)
   }
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     if component == 0 {

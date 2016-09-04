@@ -39,7 +39,7 @@ extension BlurEffectViewController : UIPickerViewDelegate, UIPickerViewDataSourc
   
   func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
     if component == 2 {
-      return (opacityValues.titleAt(row)).colorize(.white)
+      return (opacityValues.title(at: row)).colorize(.white)
     }
       return values[safe: row]?.colorize(.white)
   }
@@ -47,7 +47,7 @@ extension BlurEffectViewController : UIPickerViewDelegate, UIPickerViewDataSourc
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     imageView.blurEffectStyle = UIBlurEffectStyle(string:values[pickerView.selectedRow(inComponent: 0)])
     imageView.vibrancyEffectStyle = UIBlurEffectStyle(string:values[pickerView.selectedRow(inComponent: 1)])
-    imageView.blurOpacity = CGFloat(Double(opacityValues.valueAt(pickerView.selectedRow(inComponent: 2)))!)
+    imageView.blurOpacity = CGFloat(Double(opacityValues.value(at: pickerView.selectedRow(inComponent: 2)))!)
   }
 
   func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {

@@ -3,7 +3,7 @@
 //  IBAnimatableApp
 //
 //  Created by jason akakpo on 27/07/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import Foundation
@@ -11,6 +11,7 @@ import UIKit
 
 
 extension String {
+  /// Returns `NSAttributedString` with specified color.
   func colorize(_ color: UIColor) -> NSAttributedString {
     return NSAttributedString(string: self, attributes: [NSForegroundColorAttributeName: color])
   }
@@ -22,7 +23,6 @@ extension Array {
     return indices.contains(index) ? self[index] : nil  /// Returns the element at the specified index iff it is within bounds, otherwise nil.
   }
 }
-
 
 
 enum ParamType {
@@ -46,7 +46,7 @@ enum ParamType {
     }
   }
   /// Number at Index, use just for number case.
-  func valueAt(_ index: Int) -> String {
+  func value(at index: Int) -> String {
     let formatter = NumberFormatter()
     formatter.minimumFractionDigits = 0
     formatter.maximumFractionDigits = 3
@@ -61,12 +61,12 @@ enum ParamType {
     }
   }
   
-  func titleAt(_ index: Int) -> String {
+  func title(at index: Int) -> String {
     switch self {
     case .enumeration(_):
-      return valueAt(index)
+      return value(at: index)
     case let .number(_, _, _, _, unit):
-      return   ("\(valueAt(index)) \(unit)").trimmingCharacters(in: CharacterSet.whitespaces)
+      return   ("\(value(at: index)) \(unit)").trimmingCharacters(in: CharacterSet.whitespaces)
     }
   }
 }
@@ -82,7 +82,7 @@ extension PickerEntry {
   func toString(selectedIndexes indexes: Int?...) -> String {
     
     let paramString = indexes.enumerated().flatMap({ (i: Int, index: Int?) -> String? in
-      return params[safe:i]?.valueAt(index ?? 0)
+      return params[safe:i]?.value(at: index ?? 0)
     }).joined(separator: ",")
     
     return "\(name)(\(paramString))"
