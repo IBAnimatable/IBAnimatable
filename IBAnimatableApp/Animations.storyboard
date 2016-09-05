@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11173.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6fu-hw-r8W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6fu-hw-r8W">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11143.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Animations View Controller-->
+        <!--Animations-->
         <scene sceneID="LOg-ph-uxk">
             <objects>
                 <viewController id="6fu-hw-r8W" customClass="AnimationsViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -14,7 +14,7 @@
                         <viewControllerLayoutGuide type="bottom" id="0Qs-nl-SBc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XSp-F9-R7q" customClass="AnimatableView" customModule="IBAnimatable">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tQF-RJ-Z0F">
@@ -22,7 +22,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xyg-QW-Cwt">
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xh0-cF-cXI" customClass="AnimatableView" customModule="IBAnimatable">
-                                                <color key="backgroundColor" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.72941176470000002" green="0.46666666670000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="ELz-Iy-8c5"/>
                                                     <constraint firstAttribute="width" constant="100" id="ZI3-Zu-2AL"/>
@@ -60,14 +60,27 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <navigationItem key="navigationItem" title="Animations" id="gmc-mt-JSS">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="Pmx-Hz-V1L">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="vRM-MU-A6k" kind="unwind" unwindAction="unwindToViewController:" id="fIn-mg-7PZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="aView" destination="Xh0-cF-cXI" id="J7B-P5-zGb"/>
                         <outlet property="pickerView" destination="HGl-88-fhe" id="9xg-L7-mWu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AHr-XG-qqY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="vRM-MU-A6k" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="654" y="227"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back" width="21" height="21"/>
+    </resources>
 </document>
