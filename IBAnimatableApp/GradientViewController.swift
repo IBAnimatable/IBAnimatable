@@ -21,11 +21,11 @@ class GradientViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     if usePredefinedGradient {
-    gView.predefinedGradient = GradientType(rawValue: gradientValues.valueAt(0))
-    gView.startPoint = GradientStartPoint(rawValue: startPointValues.valueAt(0)) ?? .top
+      gView.predefinedGradient = GradientType(rawValue: gradientValues.value(at: 0))
+      gView.startPoint = GradientStartPoint(rawValue: startPointValues.value(at: 0)) ?? .top
     } else {
-      gView.startColor = ColorType(rawValue: self.colorValues.valueAt(0))?.color
-      gView.endColor = ColorType(rawValue: self.colorValues.valueAt(0))?.color
+      gView.startColor = ColorType(rawValue: self.colorValues.value(at: 0))?.color
+      gView.endColor = ColorType(rawValue: self.colorValues.value(at: 0))?.color
     }
   }
 }
@@ -43,21 +43,21 @@ extension GradientViewController : UIPickerViewDelegate, UIPickerViewDataSource 
     label.textColor = .white
     label.textAlignment = .center
     label.minimumScaleFactor = 0.5
-    label.text = componentValues[component].titleAt(row)
+    label.text = componentValues[component].title(at: row)
     return label
   }
   func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-      return componentValues[component].titleAt(row).colorize(.white)
+    return componentValues[component].title(at: row).colorize(.white)
   }
   
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     if usePredefinedGradient {
-      gView.predefinedGradient = GradientType(rawValue: gradientValues.valueAt(pickerView.selectedRow(inComponent: 0)))
-      gView.startPoint = GradientStartPoint(rawValue: startPointValues.valueAt(pickerView.selectedRow(inComponent: 1))) ?? .top
+      gView.predefinedGradient = GradientType(rawValue: gradientValues.value(at: pickerView.selectedRow(inComponent: 0)))
+      gView.startPoint = GradientStartPoint(rawValue: startPointValues.value(at: pickerView.selectedRow(inComponent: 1))) ?? .top
     } else {
-      gView.startColor = ColorType(rawValue: self.colorValues.valueAt(pickerView.selectedRow(inComponent: 0)))?.color
-      gView.endColor = ColorType(rawValue: self.colorValues.valueAt(pickerView.selectedRow(inComponent: 1)))?.color
-      gView.startPoint = GradientStartPoint(rawValue: startPointValues.valueAt(pickerView.selectedRow(inComponent: 2))) ?? .top
+      gView.startColor = ColorType(rawValue: self.colorValues.value(at: pickerView.selectedRow(inComponent: 0)))?.color
+      gView.endColor = ColorType(rawValue: self.colorValues.value(at: pickerView.selectedRow(inComponent: 1)))?.color
+      gView.startPoint = GradientStartPoint(rawValue: startPointValues.value(at: pickerView.selectedRow(inComponent: 2))) ?? .top
 
     }
     gView.configGradient()

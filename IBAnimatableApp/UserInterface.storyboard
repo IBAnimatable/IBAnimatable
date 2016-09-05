@@ -278,7 +278,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JdN-Fw-n4f" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="gJl-3C-ZLK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4474" y="-282"/>
+            <point key="canvasLocation" x="4730" y="-282"/>
         </scene>
         <!--UserInterfaceMask-->
         <scene sceneID="jMl-6T-PN8">
@@ -301,6 +301,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="login-bg" translatesAutoresizingMaskIntoConstraints="NO" id="YyC-Db-hLM" customClass="AnimatableImageView" customModule="IBAnimatable"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JH8-bL-Mlf" customClass="AnimatableView" customModule="IBAnimatable">
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="checked" translatesAutoresizingMaskIntoConstraints="NO" id="3zJ-p8-8T7">
+                                        <frame key="frameInset" minX="50.00%" minY="120" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62w-fm-V0f" customClass="AnimatableView" customModule="IBAnimatable">
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cfZ-nJ-ANc" userLabel="Picker Stack View" customClass="AnimatableStackView" customModule="IBAnimatable">
@@ -364,17 +373,21 @@ Opacity</string>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.99997437000274658" blue="0.99999129772186279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="JH8-bL-Mlf" firstAttribute="centerX" secondItem="YyC-Db-hLM" secondAttribute="centerX" id="07q-D4-TQQ"/>
                             <constraint firstItem="YyC-Db-hLM" firstAttribute="width" secondItem="cfy-Fq-hgK" secondAttribute="width" id="0ec-U9-lrX"/>
+                            <constraint firstItem="JH8-bL-Mlf" firstAttribute="width" secondItem="YyC-Db-hLM" secondAttribute="width" id="BuZ-5B-a1Q"/>
                             <constraint firstItem="YyC-Db-hLM" firstAttribute="centerY" secondItem="cfy-Fq-hgK" secondAttribute="centerY" id="CHQ-Mf-kHl"/>
                             <constraint firstAttribute="bottom" secondItem="62w-fm-V0f" secondAttribute="bottom" id="GNa-Y6-Ych"/>
+                            <constraint firstItem="JH8-bL-Mlf" firstAttribute="height" secondItem="YyC-Db-hLM" secondAttribute="height" id="PEE-tx-y27"/>
                             <constraint firstAttribute="trailing" secondItem="62w-fm-V0f" secondAttribute="trailing" id="Xiq-Pp-h45"/>
                             <constraint firstItem="62w-fm-V0f" firstAttribute="leading" secondItem="cfy-Fq-hgK" secondAttribute="leading" id="bML-ll-g7M"/>
                             <constraint firstItem="YyC-Db-hLM" firstAttribute="height" secondItem="cfy-Fq-hgK" secondAttribute="height" id="eZa-zs-qXa"/>
+                            <constraint firstItem="JH8-bL-Mlf" firstAttribute="centerY" secondItem="YyC-Db-hLM" secondAttribute="centerY" id="hEq-dR-xrg"/>
                             <constraint firstItem="YyC-Db-hLM" firstAttribute="centerX" secondItem="cfy-Fq-hgK" secondAttribute="centerX" id="tZG-ct-gOe"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="YyC-Db-hLM" id="50v-4v-VYt"/>
+                        <outlet property="blurEffectView" destination="JH8-bL-Mlf" id="bYF-Mj-mSN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FX3-ux-6qf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -532,7 +545,6 @@ Opacity</string>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="75u-pF-Sy6" firstAttribute="leading" secondItem="Pif-t8-9Jy" secondAttribute="leading" constant="10" id="cwn-6x-vrp"/>
                                             <constraint firstAttribute="bottom" secondItem="75u-pF-Sy6" secondAttribute="bottom" constant="10" id="euW-Le-T71"/>

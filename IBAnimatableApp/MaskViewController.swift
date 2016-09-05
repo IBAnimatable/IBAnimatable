@@ -75,7 +75,7 @@ extension MaskViewController : UIPickerViewDelegate, UIPickerViewDataSource {
     if component == 0 {
       label.text = entries[safe: row]?.name
     } else {
-      label.text = selectedEntry.params[safe: component - 1]?.titleAt(row)
+      label.text = selectedEntry.params[safe: component - 1]?.title(at: row)
     }
     return label
     
