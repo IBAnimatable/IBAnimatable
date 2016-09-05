@@ -8,12 +8,12 @@ import UIKit
 /// A protocol provides blur designable feature.
 public protocol BlurDesignable {
   /**
-   Blur effect style: `ExtraLight`, `Light` or `Dark`
+   Blur effect style: `extraLight`, `light`, `dark`, `regular` (iOS 10+) or `prominent` (iOS 10+).
    */
   var blurEffectStyle: UIBlurEffectStyle? { get set }
 
   /**
-   Vibrancy effect style: `ExtraLight`, `Light` or `Dark`. Once specify the Vibrancy effect style, all subviews will apply this vibrancy effect.
+   Vibrancy effect style: `extraLight`, `light`, `dark`, `regular` (iOS 10+) or `prominent` (iOS 10+). Once specify the vibrancy effect style, all subviews of blur effect view will apply this vibrancy effect. The property should set once. Because once we use `UIVisualEffectView`, Apple uses a private class like `_UIVisualEffectContentView` to contain subviews which will change the view hierarchy. After that, we are not able to restore the original view hierarchy. Also, the Auto Layout constraints will be broken when the system change the view hierarchy. We need to manually re-set up the constraints or use Autoresizing masks to layout the subviews.
    */
   var vibrancyEffectStyle: UIBlurEffectStyle? { get set }
   
@@ -28,9 +28,15 @@ public extension BlurDesignable where Self: UIView {
    configBlurEffectStyle method, should be called in layoutSubviews() method
    */
   public func configBlurEffectStyle() {
+    // Used for caching the previous visual effect view
+    var privateVisualEffectView: PrivateVisualEffectView?
+    
     // Remove the existing visual effect view
     subviews.flatMap { $0 as? PrivateVisualEffectView }
-      .forEach { $0.removeFromSuperview() }
+      .forEach {
+        privateVisualEffectView = $0 // Cache it for the subviews
+        $0.removeFromSuperview()
+    }
     
     guard let blurEffectStyle = blurEffectStyle else {
       return
@@ -45,7 +51,17 @@ public extension BlurDesignable where Self: UIView {
       subviews.forEach {
         vibrancyEffectView.contentView.addSubview($0)
       }
+      
+      // If privateVisualEffectView is not `nil`, re-add them to the `vibrancyEffectView.contentView`
+      privateVisualEffectView?.contentView.subviews.forEach {
+        vibrancyEffectView.contentView.addSubview($0)
+      }
       blurEffectView.contentView.addSubview(vibrancyEffectView)
+    } else {
+      // If privateVisualEffectView is not `nil`, re-add them back to the subviews of original UI element.
+      privateVisualEffectView?.contentView.subviews.forEach {
+        addSubview($0)
+      }
     }
 
     insertSubview(blurEffectView, at: 0)
