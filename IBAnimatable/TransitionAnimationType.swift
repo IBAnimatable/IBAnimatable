@@ -29,7 +29,7 @@ public enum TransitionAnimationType {
   case systemPush(fromDirection: Direction)
   case systemReveal(fromDirection: Direction)
   case systemPage(type: TransitionPageType)
-  case systemCameraIris(hollowState: TransitionHollowState)
+  case systemCameraIris(hollowState: HollowState)
   
   public var stringValue: String {
     return String(describing: self)
@@ -57,7 +57,7 @@ extension TransitionAnimationType: IBEnum {
     case "Fade":
       self = .fade(direction: Direction(raw: params[safe: 0], defaultValue: .cross))
     case "systemcamerairis":
-      self = .systemCameraIris(hollowState: TransitionHollowState(raw: params[safe: 0], defaultValue: .none))
+      self = .systemCameraIris(hollowState: HollowState(raw: params[safe: 0], defaultValue: .none))
     case "systempage":
       self = .systemPage(type: TransitionPageType(raw: params[safe: 0], defaultValue: .curl))
     case "systemrotate":
@@ -105,7 +105,7 @@ extension TransitionAnimationType: IBEnum {
 // MARK: - `Direction`
 extension TransitionAnimationType {
   /**
-   Transition direction: used to specify the direction for the transition
+   Direction: used to specify the direction for the transition
    */
   public enum Direction: String {
     case left
@@ -179,5 +179,17 @@ extension TransitionAnimationType {
         return .cross
       }
     }
+  }
+}
+
+// MARK: - `TransitionHollowState`
+extension TransitionAnimationType {
+  /**
+   Hollow state: used to specify the hollow state for `systemCameraIris` transition
+   */
+  public enum HollowState: String {
+    case none
+    case open
+    case close
   }
 }

@@ -13,9 +13,9 @@ public class SystemCameraIrisAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
-  fileprivate var hollowState: TransitionHollowState
+  fileprivate var hollowState: TransitionAnimationType.HollowState
   
-  public init(hollowState: TransitionHollowState, transitionDuration: Duration) {    
+  public init(hollowState: TransitionAnimationType.HollowState, transitionDuration: Duration) {    
     self.transitionDuration = transitionDuration
     self.hollowState = hollowState
     
