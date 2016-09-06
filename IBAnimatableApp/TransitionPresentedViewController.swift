@@ -61,16 +61,19 @@ private extension TransitionPresentedViewController {
     }
     
     // No gesture for this animator
-    guard let interactiveGestureType = self.interactiveGestureType,
-      let transitionAnimationType = self.transitionAnimationType else {
+    guard let interactiveGestureType = self.interactiveGestureType else {
         return
+    }
+    
+    if case .none = transitionAnimationType {
+      return
     }
     
     gestureLabel.text = retrieveGestureText(interactiveGestureType, transitionAnimationType: transitionAnimationType, exit: "dismiss")
   }
   
   func prepareSegues() {
-    guard let transitionAnimationType = transitionAnimationType else {
+    if case .none = transitionAnimationType {
       return
     }
     

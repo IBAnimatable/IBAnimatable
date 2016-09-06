@@ -56,11 +56,11 @@ private extension ContainerTransitionViewController {
   }
   
   func cycleFromViewController(_ containerView: UIView, fromViewController: AnimatableViewController?, toViewController: AnimatableViewController) {
-    guard let transitionAnimationType = toViewController.transitionAnimationType else {
+    if case .none = toViewController.transitionAnimationType {
       return
     }
     
-    let transitionContext = ContainerTransition(animationType: transitionAnimationType,
+    let transitionContext = ContainerTransition(animationType: toViewController.transitionAnimationType,
                                                 container: containerView,
                                                 parentViewController: self,
                                                 fromViewController: fromViewController,

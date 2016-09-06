@@ -31,12 +31,15 @@ private extension TransitionPushedViewController {
     }
     
     // No gesture for this animator
-    guard let interactiveGestureType = navigationController.interactiveGestureType,
-      let transitionAnimationType = navigationController.transitionAnimationType else {
+    guard let interactiveGestureType = navigationController.interactiveGestureType else {
       return
     }
     
-    gestureLabel.text = retrieveGestureText(interactiveGestureType, transitionAnimationType: transitionAnimationType, exit: "pop")
+    if case .none = navigationController.transitionAnimationType {
+      return
+    }
+    
+    gestureLabel.text = retrieveGestureText(interactiveGestureType, transitionAnimationType: navigationController.transitionAnimationType, exit: "pop")
   }
   
 }

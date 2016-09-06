@@ -23,7 +23,7 @@ import UIKit
       }
     }
   }
-  open var transitionAnimationType: TransitionAnimationType?
+  open var transitionAnimationType: TransitionAnimationType = .none
   
   @IBInspectable open var transitionDuration: Double = .nan
   
@@ -65,7 +65,7 @@ import UIKit
         return
     }
     
-    guard let transitionAnimationType = transitionAnimationType else {
+    if case .none = transitionAnimationType {
       return
     }
     

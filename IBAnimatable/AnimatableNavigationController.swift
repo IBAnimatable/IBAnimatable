@@ -15,7 +15,7 @@ open class AnimatableNavigationController: UINavigationController, TransitionAni
       }
     }
   }
-   open var transitionAnimationType: TransitionAnimationType? {
+   open var transitionAnimationType: TransitionAnimationType = .none {
     didSet {
       configureNavigationControllerDelegate()
     }
@@ -44,7 +44,7 @@ open class AnimatableNavigationController: UINavigationController, TransitionAni
   fileprivate var navigator: Navigator?
   
   fileprivate func configureNavigationControllerDelegate() {
-    guard let animationType = transitionAnimationType else {
+    if case .none = transitionAnimationType {
       navigator = nil
       delegate = nil
       return
@@ -55,9 +55,9 @@ open class AnimatableNavigationController: UINavigationController, TransitionAni
       duration = defaultTransitionDuration
     }
     if let gestureType = interactiveGestureType {
-      navigator = Navigator(transitionAnimationType: animationType, transitionDuration: duration, interactiveGestureType: gestureType)
+      navigator = Navigator(transitionAnimationType: transitionAnimationType, transitionDuration: duration, interactiveGestureType: gestureType)
     } else {
-      navigator = Navigator(transitionAnimationType: animationType, transitionDuration: duration)
+      navigator = Navigator(transitionAnimationType: transitionAnimationType, transitionDuration: duration)
     }
     delegate = navigator
   }
