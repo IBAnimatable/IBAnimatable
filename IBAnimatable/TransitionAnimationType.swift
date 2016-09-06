@@ -194,6 +194,7 @@ extension TransitionAnimationType {
   }
 }
 
+// MARK: - `PageType`
 extension TransitionAnimationType {
   /**
    Page type: used to specify the page type for `systemPage` transition
@@ -201,5 +202,29 @@ extension TransitionAnimationType {
   public enum PageType: String {
     case curl
     case unCurl
+  }
+}
+
+// MARK: - `SystemTransitionType`
+extension TransitionAnimationType {
+  /**
+   System transition type: map to iOS built-in CATransition Type
+   refer to http://iphonedevwiki.net/index.php/CATransition
+   */
+  public enum SystemTransitionType: String {
+    case fade     // kCATransitionFade
+    case moveIn   // kCATransitionMoveIn
+    case push     // kCATransitionPush
+    case reveal   // kCATransitionReveal
+    case flip
+    case cube
+    case pageCurl
+    case pageUnCurl
+    case rippleEffect
+    case suckEffect
+    case cameraIris
+    case cameraIrisHollowOpen
+    case cameraIrisHollowClose
+    case rotate
   }
 }

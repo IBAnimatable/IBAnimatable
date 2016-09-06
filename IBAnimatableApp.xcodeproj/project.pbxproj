@@ -15,7 +15,6 @@
 		73A99B671D5FC8650079C7EC /* BorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A99B661D5FC8650079C7EC /* BorderViewController.swift */; };
 		73B7D8861D233FB700DD3F43 /* IBEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B7D8851D233FB700DD3F43 /* IBEnum.swift */; };
 		73BDE6EC1D5654ED00D19EAE /* GradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BDE6EB1D5654ED00D19EAE /* GradientViewController.swift */; };
-		73CF12281D4828EE0025404E /* SystemTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56645FCD11BEC66200818 /* SystemTransitionType.swift */; };
 		73ED71F81D34CA4700755C9B /* AnimationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED71F71D34CA4700755C9B /* AnimationsViewController.swift */; };
 		AE0D309A1CE149150093B578 /* UserInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE0D30991CE149150093B578 /* UserInterface.storyboard */; };
 		AE0D309C1CE14A170093B578 /* Animations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE0D309B1CE14A170093B578 /* Animations.storyboard */; };
@@ -306,7 +305,6 @@
 		AEEF86BD1CA8E9E200899AAB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEF4938C1CE0161C00B76FD6 /* Playground.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Playground.storyboard; sourceTree = "<group>"; };
 		CAB562E75DABEED7FCE0F309 /* FillDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillDesignable.swift; sourceTree = "<group>"; };
-		CAB56645FCD11BEC66200818 /* SystemTransitionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemTransitionType.swift; sourceTree = "<group>"; };
 		CAB5692C91C9ECC8018DE83E /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		CAB56A8BA4FB110D501DC1DC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D7E765671C4C8961008C3116 /* IBAnimatable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = IBAnimatable.playground; sourceTree = "<group>"; };
@@ -700,7 +698,6 @@
 				AE4C53F41C8843AB007C9EFA /* InteractiveGestureType.swift */,
 				73B7D8851D233FB700DD3F43 /* IBEnum.swift */,
 				AE18787D1C1D980D00300246 /* MaskType.swift */,
-				CAB56645FCD11BEC66200818 /* SystemTransitionType.swift */,
 				AE154B7D1C7D061A0093C05B /* TransitionAnimationType.swift */,
 				AE6D430B1C98B658006E2F67 /* TransitionType.swift */,
 				731205801D28A3830009BCAC /* Utils.swift */,
@@ -1064,7 +1061,6 @@
 				AE154B851C7D1A740093C05B /* AnimatedTransitioning.swift in Sources */,
 				AE6B017B1C2A445100950BB2 /* AnimatableBarButtonItem.swift in Sources */,
 				E27691E91CAFC72C004A725C /* SystemMoveInAnimator.swift in Sources */,
-				73CF12281D4828EE0025404E /* SystemTransitionType.swift in Sources */,
 				33A8B9ED1C7E790800082529 /* SystemCubeAnimator.swift in Sources */,
 				E2F45B591CDBAF39001D2E37 /* PresentFlipSegue.swift in Sources */,
 				E20027171D467E9700FEB28D /* ViewControllerAnimatedTransitioning.swift in Sources */,
