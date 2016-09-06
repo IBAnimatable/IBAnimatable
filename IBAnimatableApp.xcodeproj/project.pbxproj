@@ -85,7 +85,6 @@
 		AE8A4FFA1C856EEC00E9E368 /* TransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8A4FF91C856EEC00E9E368 /* TransitionViewController.swift */; };
 		AE8FBAA91C853C7A00EB8AEA /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8FBAA81C853C7A00EB8AEA /* Functions.swift */; };
 		AE9407871CAE86DE0084BCB8 /* TransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D430B1C98B658006E2F67 /* TransitionType.swift */; };
-		AE9407891CAE871C0084BCB8 /* TransitionPageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9407881CAE871C0084BCB8 /* TransitionPageType.swift */; };
 		AE94078A1CAE87860084BCB8 /* SystemPageAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23D08B71CA9336500440E7C /* SystemPageAnimator.swift */; };
 		AEC23FC01CB3DC4800E42D99 /* ScreenEdgePanInteractiveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC23FBF1CB3DC4800E42D99 /* ScreenEdgePanInteractiveAnimator.swift */; };
 		AEC23FC21CB3DE0900E42D99 /* InteractiveAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC23FC11CB3DE0900E42D99 /* InteractiveAnimator.swift */; };
@@ -273,7 +272,6 @@
 		AE8A4FF91C856EEC00E9E368 /* TransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionViewController.swift; sourceTree = "<group>"; };
 		AE8C53AF1C0F1C0400A775AF /* GradientStartPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientStartPoint.swift; path = IBAnimatable/GradientStartPoint.swift; sourceTree = SOURCE_ROOT; };
 		AE8FBAA81C853C7A00EB8AEA /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
-		AE9407881CAE871C0084BCB8 /* TransitionPageType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionPageType.swift; sourceTree = "<group>"; };
 		AEC23FBF1CB3DC4800E42D99 /* ScreenEdgePanInteractiveAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenEdgePanInteractiveAnimator.swift; sourceTree = "<group>"; };
 		AEC23FC11CB3DE0900E42D99 /* InteractiveAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveAnimator.swift; sourceTree = "<group>"; };
 		AEC5F9CD1CF660A000F20354 /* TransitionsInInterfaceBuilder.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TransitionsInInterfaceBuilder.storyboard; sourceTree = "<group>"; };
@@ -704,7 +702,6 @@
 				AE18787D1C1D980D00300246 /* MaskType.swift */,
 				CAB56645FCD11BEC66200818 /* SystemTransitionType.swift */,
 				AE154B7D1C7D061A0093C05B /* TransitionAnimationType.swift */,
-				AE9407881CAE871C0084BCB8 /* TransitionPageType.swift */,
 				AE6D430B1C98B658006E2F67 /* TransitionType.swift */,
 				731205801D28A3830009BCAC /* Utils.swift */,
 				E210ABC01D3A9388001D0362 /* PresentationAnimationType.swift */,
@@ -1082,7 +1079,6 @@
 				AEDD8A321C7EDAE30033175A /* SystemFlipAnimator.swift in Sources */,
 				AE6B01681C2A444900950BB2 /* BlurDesignable.swift in Sources */,
 				E2E62B801D69B5F000294A73 /* ActivityIndicatorFactory.swift in Sources */,
-				AE9407891CAE871C0084BCB8 /* TransitionPageType.swift in Sources */,
 				AE6B01711C2A444900950BB2 /* PlaceholderDesignable.swift in Sources */,
 				AE6B01821C2A445100950BB2 /* AnimatableTableViewCell.swift in Sources */,
 				E28E28231D6CCA5C0043D56E /* ActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,

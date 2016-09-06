@@ -28,7 +28,7 @@ public enum TransitionAnimationType {
   case systemMoveIn(fromDirection: Direction)
   case systemPush(fromDirection: Direction)
   case systemReveal(fromDirection: Direction)
-  case systemPage(type: TransitionPageType)
+  case systemPage(type: PageType)
   case systemCameraIris(hollowState: HollowState)
   
   public var stringValue: String {
@@ -59,7 +59,7 @@ extension TransitionAnimationType: IBEnum {
     case "systemcamerairis":
       self = .systemCameraIris(hollowState: HollowState(raw: params[safe: 0], defaultValue: .none))
     case "systempage":
-      self = .systemPage(type: TransitionPageType(raw: params[safe: 0], defaultValue: .curl))
+      self = .systemPage(type: PageType(raw: params[safe: 0], defaultValue: .curl))
     case "systemrotate":
       self = .systemRotate
     case "systemcube":
@@ -191,5 +191,15 @@ extension TransitionAnimationType {
     case none
     case open
     case close
+  }
+}
+
+extension TransitionAnimationType {
+  /**
+   Page type: used to specify the page type for `systemPage` transition
+   */
+  public enum PageType: String {
+    case curl
+    case unCurl
   }
 }
