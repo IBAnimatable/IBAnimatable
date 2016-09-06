@@ -76,8 +76,7 @@ private extension TransitionTableViewController {
     transitionAnimationsHeaders.append("Slide")
     transitionAnimations.append(["Slide(Left, fade)", "Slide(Right)", "Slide(Top, fade)", "Slide(Bottom)"])
     transitionAnimationsHeaders.append("Others")
-    transitionAnimations.append(["SystemRotate", "SystemRippleEffect", "SystemSuckEffect", "Explode(10,-10,10)"])
-
+    transitionAnimations.append(["SystemRotate", "SystemRippleEffect", "SystemSuckEffect", "Explode", "Explode(10,-20,20)"])
   }
   
   func transitionTypeWithDirections(forName prefixName: String) -> [String] {

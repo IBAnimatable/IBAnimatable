@@ -13,8 +13,7 @@ public enum TransitionAnimationType {
   case systemRotate
   case systemSuckEffect
   case systemRippleEffect
-  // TODO: params can be typealiase
-  case explode(params: [String])
+  case explode(xFactor: CGFloat?, minAngle: CGFloat?, maxAngle: CGFloat?)
   case fade(direction: Direction)
   case fold(from: Direction, folds: Int?)
   case portal(direction: Direction, params: [String])
@@ -53,7 +52,18 @@ extension TransitionAnimationType: IBEnum {
     case "systemsuckeffect":
       self = .systemSuckEffect
     case "explode":
-      self = .explode(params: params)
+      if params.count == 3 {
+        if let unwrappedXFactor = Double(params[0]),
+          let unwrappedMinAngle = Double(params[1]),
+          let unwrappedMaxAngle = Double(params[2]) {
+          let xFactor = CGFloat(unwrappedXFactor)
+          let minAngle = CGFloat(unwrappedMinAngle)
+          let maxAngle = CGFloat(unwrappedMaxAngle)
+          self = .explode(xFactor: xFactor, minAngle: minAngle, maxAngle: maxAngle)
+          return
+        }
+      }
+      self = .explode(xFactor: nil, minAngle: nil, maxAngle: nil)
     case "fade":
       self = .fade(direction: Direction(raw: params[safe: 0], defaultValue: .cross))
     case "systemcamerairis":
