@@ -30,35 +30,34 @@ public class FoldAnimator: NSObject, AnimatedTransitioning {
   }
   
   // MARK: - Life cycle
-  public init(fromDirection: TransitionAnimationType.Direction, params: [String], transitionDuration: Duration) {
+  public init(fromDirection: TransitionAnimationType.Direction, folds: Int?, transitionDuration: Duration) {
     self.fromDirection = fromDirection
     self.transitionDuration = transitionDuration
     horizontal = fromDirection.isHorizontal
     
-    if let firstParam = params.first,
-           let unwrappedFolds = Int(firstParam) {
-        self.folds = unwrappedFolds
+    if let folds = folds {
+      self.folds = folds
     }
     
     switch fromDirection {
     case .right:
-      self.transitionAnimationType = .fold(fromDirection: .right, params: params)
-      self.reverseAnimationType = .fold(fromDirection: .left, params: params)
+      self.transitionAnimationType = .fold(from: .right, folds: folds)
+      self.reverseAnimationType = .fold(from: .left, folds: folds)
       self.interactiveGestureType = .pan(fromDirection: .left)
       reverse = true
     case .top:
-      self.transitionAnimationType = .fold(fromDirection: .top, params: params)
-      self.reverseAnimationType = .fold(fromDirection: .bottom, params: params)
+      self.transitionAnimationType = .fold(from: .top, folds: folds)
+      self.reverseAnimationType = .fold(from: .bottom, folds: folds)
       self.interactiveGestureType = .pan(fromDirection: .bottom)
       reverse = false
     case .bottom:
-      self.transitionAnimationType = .fold(fromDirection: .bottom, params: params)
-      self.reverseAnimationType = .fold(fromDirection: .top, params: params)
+      self.transitionAnimationType = .fold(from: .bottom, folds: folds)
+      self.reverseAnimationType = .fold(from: .top, folds: folds)
       self.interactiveGestureType = .pan(fromDirection: .top)
       reverse = true
     default:
-      self.transitionAnimationType = .fold(fromDirection: .left, params: params)
-      self.reverseAnimationType = .fold(fromDirection: .right, params: params)
+      self.transitionAnimationType = .fold(from: .left, folds: folds)
+      self.reverseAnimationType = .fold(from: .right, folds: folds)
       self.interactiveGestureType = .pan(fromDirection: .right)
       reverse = false      
     }

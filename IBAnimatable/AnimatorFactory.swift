@@ -24,8 +24,8 @@ public struct AnimatorFactory {
       return ExplodeAnimator(params: params, transitionDuration: transitionDuration)
     case let .fade(direction):
       return FadeAnimator(direction: direction, transitionDuration: transitionDuration)
-    case let .fold(direction, params):
-      return FoldAnimator(fromDirection: direction, params: params, transitionDuration: transitionDuration)
+    case let .fold(direction, folds):
+      return FoldAnimator(fromDirection: direction, folds: folds, transitionDuration: transitionDuration)
     case let .portal(direction, params):
       return PortalAnimator(fromDirection: direction, params: params, transitionDuration: transitionDuration)
     case let .natGeo(direction):

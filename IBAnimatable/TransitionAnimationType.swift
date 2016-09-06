@@ -16,7 +16,7 @@ public enum TransitionAnimationType {
   // TODO: params can be typealiase
   case explode(params: [String])
   case fade(direction: Direction)
-  case fold(fromDirection: Direction, params: [String])
+  case fold(from: Direction, folds: Int?)
   case portal(direction: Direction, params: [String])
   case slide(toDirection: Direction, params: [String])
   case natGeo(toDirection: Direction)
@@ -82,9 +82,11 @@ extension TransitionAnimationType: IBEnum {
       self = .flip(fromDirection: Direction(raw: params[safe: 0], defaultValue: .left))
     case "fold":
       let direction = Direction(raw: params[safe: 0], defaultValue: .left)
-      var params = params
-      params.removeFirst()
-      self = .fold(fromDirection: direction, params: params)
+      if let foldsString = params[safe: 1], let folds = Int(foldsString) {
+        self = .fold(from: direction, folds: folds)
+      } else {
+        self = .fold(from: direction, folds: nil)
+      }
     case "portal":
       let direction = Direction(raw: params[safe: 0], defaultValue: .left)
       var params = params
