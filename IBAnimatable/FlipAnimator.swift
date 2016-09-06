@@ -13,7 +13,7 @@ public class FlipAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - Private params
-  fileprivate var fromDirection: TransitionDirection
+  fileprivate var fromDirection: TransitionAnimationType.Direction
   
   // MARK: - Private fold transition
   fileprivate var transform: CATransform3D = CATransform3DIdentity
@@ -21,7 +21,7 @@ public class FlipAnimator: NSObject, AnimatedTransitioning {
   fileprivate var horizontal: Bool = false
   
   // MARK: - Life cycle
-  public init(fromDirection: TransitionDirection, transitionDuration: Duration) {
+  public init(fromDirection: TransitionAnimationType.Direction, transitionDuration: Duration) {
     self.fromDirection = fromDirection
     self.transitionDuration = transitionDuration
     horizontal = fromDirection.isHorizontal

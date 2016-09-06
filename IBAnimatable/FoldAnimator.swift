@@ -13,7 +13,7 @@ public class FoldAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - Private params
-  fileprivate var fromDirection: TransitionDirection
+  fileprivate var fromDirection: TransitionAnimationType.Direction
   fileprivate var folds: Int = 2
   
   // MARK: - Private fold transition
@@ -30,7 +30,7 @@ public class FoldAnimator: NSObject, AnimatedTransitioning {
   }
   
   // MARK: - Life cycle
-  public init(fromDirection: TransitionDirection, params: [String], transitionDuration: Duration) {
+  public init(fromDirection: TransitionAnimationType.Direction, params: [String], transitionDuration: Duration) {
     self.fromDirection = fromDirection
     self.transitionDuration = transitionDuration
     horizontal = fromDirection.isHorizontal

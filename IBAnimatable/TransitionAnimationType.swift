@@ -3,7 +3,7 @@
 //  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /**
  Predefined Transition Animation Type
@@ -15,19 +15,19 @@ public enum TransitionAnimationType {
   case systemRippleEffect
   // TODO: params can be typealiase
   case explode(params: [String])
-  case fade(direction: TransitionDirection)
-  case fold(fromDirection: TransitionDirection, params: [String])
-  case portal(direction: TransitionDirection, params: [String])
-  case slide(toDirection: TransitionDirection, params: [String])
-  case natGeo(toDirection: TransitionDirection)
-  case turn(fromDirection: TransitionDirection)
-  case cards(direction: TransitionDirection)
-  case flip(fromDirection: TransitionDirection)
-  case systemCube(fromDirection: TransitionDirection)
-  case systemFlip(fromDirection: TransitionDirection)
-  case systemMoveIn(fromDirection: TransitionDirection)
-  case systemPush(fromDirection: TransitionDirection)
-  case systemReveal(fromDirection: TransitionDirection)
+  case fade(direction: Direction)
+  case fold(fromDirection: Direction, params: [String])
+  case portal(direction: Direction, params: [String])
+  case slide(toDirection: Direction, params: [String])
+  case natGeo(toDirection: Direction)
+  case turn(fromDirection: Direction)
+  case cards(direction: Direction)
+  case flip(fromDirection: Direction)
+  case systemCube(fromDirection: Direction)
+  case systemFlip(fromDirection: Direction)
+  case systemMoveIn(fromDirection: Direction)
+  case systemPush(fromDirection: Direction)
+  case systemReveal(fromDirection: Direction)
   case systemPage(type: TransitionPageType)
   case systemCameraIris(hollowState: TransitionHollowState)
   
@@ -55,7 +55,7 @@ extension TransitionAnimationType: IBEnum {
     case "Explode":
       self = .explode(params: params)
     case "Fade":
-      self = .fade(direction: TransitionDirection(raw: params[safe: 0], defaultValue: .cross))
+      self = .fade(direction: Direction(raw: params[safe: 0], defaultValue: .cross))
     case "systemcamerairis":
       self = .systemCameraIris(hollowState: TransitionHollowState(raw: params[safe: 0], defaultValue: .none))
     case "systempage":
@@ -63,35 +63,35 @@ extension TransitionAnimationType: IBEnum {
     case "systemrotate":
       self = .systemRotate
     case "systemcube":
-      self = .systemCube(fromDirection: TransitionDirection(raw: params[safe: 0], defaultValue: .left))
+      self = .systemCube(fromDirection: Direction(raw: params[safe: 0], defaultValue: .left))
     case "systemflip":
-      self = .systemFlip(fromDirection: TransitionDirection(raw: params[safe: 0], defaultValue: .left))
+      self = .systemFlip(fromDirection: Direction(raw: params[safe: 0], defaultValue: .left))
     case "systemmovein":
-      self = .systemMoveIn(fromDirection: TransitionDirection(raw: params[safe: 0], defaultValue: .left))
+      self = .systemMoveIn(fromDirection: Direction(raw: params[safe: 0], defaultValue: .left))
     case "systempush":
-      self = .systemPush(fromDirection: TransitionDirection(raw: params[safe: 0], defaultValue: .left))
+      self = .systemPush(fromDirection: Direction(raw: params[safe: 0], defaultValue: .left))
     case "systemreveal":
-      self = .systemReveal(fromDirection: TransitionDirection(raw: params[safe: 0], defaultValue: .left))
+      self = .systemReveal(fromDirection: Direction(raw: params[safe: 0], defaultValue: .left))
     case "natgeo":
-      self = .natGeo(toDirection: TransitionDirection(raw: params[safe: 0], defaultValue: .left))
+      self = .natGeo(toDirection: Direction(raw: params[safe: 0], defaultValue: .left))
     case "turn":
-      self = .turn(fromDirection: TransitionDirection(raw: params[safe: 0], defaultValue: .left))
+      self = .turn(fromDirection: Direction(raw: params[safe: 0], defaultValue: .left))
     case "cards":
-      self = .cards(direction: TransitionDirection(raw: params[safe: 0], defaultValue: .left))
+      self = .cards(direction: Direction(raw: params[safe: 0], defaultValue: .left))
     case "flip":
-      self = .flip(fromDirection: TransitionDirection(raw: params[safe: 0], defaultValue: .left))
+      self = .flip(fromDirection: Direction(raw: params[safe: 0], defaultValue: .left))
     case "fold":
-      let direction = TransitionDirection(raw: params[safe: 0], defaultValue: .left)
+      let direction = Direction(raw: params[safe: 0], defaultValue: .left)
       var params = params
       params.removeFirst()
       self = .fold(fromDirection: direction, params: params)
     case "portal":
-      let direction = TransitionDirection(raw: params[safe: 0], defaultValue: .left)
+      let direction = Direction(raw: params[safe: 0], defaultValue: .left)
       var params = params
       params.removeFirst()
       self = .portal(direction: direction, params: params)
     case "slide":
-      let direction = TransitionDirection(raw: params[safe: 0], defaultValue: .left)
+      let direction = Direction(raw: params[safe: 0], defaultValue: .left)
       var params = params
       params.removeFirst()
       self = .slide(toDirection: direction, params: params)
@@ -99,5 +99,85 @@ extension TransitionAnimationType: IBEnum {
       self = .none
     }
     
+  }
+}
+
+// MARK: - `Direction`
+extension TransitionAnimationType {
+  /**
+   Transition direction: used to specify the direction for the transition
+   */
+  public enum Direction: String {
+    case left
+    case right
+    case top
+    case bottom
+    case forward
+    case backward
+    case `in`
+    case out
+    case cross
+    
+    // Convert from direction to CATransition Subtype used in `CATransition`
+    var CATransitionSubtype: String {
+      switch self {
+      case .left:
+        return kCATransitionFromLeft
+      case .right:
+        return kCATransitionFromRight
+      case .top:
+        // The actual transition direction is oposite, need to reverse
+        return kCATransitionFromBottom
+      case .bottom:
+        // The actual transition direction is oposite, need to reverse
+        return kCATransitionFromTop
+      default:
+        return ""
+      }
+    }
+    
+    var isHorizontal: Bool {
+      return self == .left || self == .right
+    }
+    
+    static func fromString(forParams params: [String]) -> Direction? {
+      if params.contains("left") {
+        return .left
+      } else if params.contains("right") {
+        return .right
+      } else if params.contains("top") {
+        return .top
+      } else if params.contains("bottom") {
+        return .bottom
+      } else if params.contains("forward") {
+        return .forward
+      } else if params.contains("backward") {
+        return .backward
+      }
+      return nil
+    }
+    
+    var opposite: Direction {
+      switch self {
+      case .left:
+        return .right
+      case .right:
+        return .left
+      case .top:
+        return .bottom
+      case .bottom:
+        return .top
+      case .in:
+        return .out
+      case .out:
+        return .in
+      case .forward:
+        return .backward
+      case .backward:
+        return .forward
+      case .cross:
+        return .cross
+      }
+    }
   }
 }

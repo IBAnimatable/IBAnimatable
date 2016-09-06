@@ -14,12 +14,12 @@ public class NatGeoAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
-  fileprivate var fromDirection: TransitionDirection
+  fileprivate var fromDirection: TransitionAnimationType.Direction
   fileprivate let firstPartRatio: Double = 0.8
   
   // MARK: - Life cycle
   
-  public init(fromDirection: TransitionDirection, transitionDuration: Duration) {
+  public init(fromDirection: TransitionAnimationType.Direction, transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
     self.fromDirection = fromDirection
     
