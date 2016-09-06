@@ -119,7 +119,7 @@ extension TransitionAnimationType {
     case cross
     
     // Convert from direction to CATransition Subtype used in `CATransition`
-    var CATransitionSubtype: String {
+    var caTransitionSubtype: String {
       switch self {
       case .left:
         return kCATransitionFromLeft
