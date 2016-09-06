@@ -80,7 +80,7 @@ private extension AnimatablePresentationController {
 fileprivate extension AnimatablePresentationController {
 
   func setupObservers() {
-    guard presentationConfiguration.keyboardTranslation != .None else {
+    guard presentationConfiguration.keyboardTranslation != .none else {
       return
     }
 

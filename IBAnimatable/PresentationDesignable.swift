@@ -78,5 +78,5 @@ public struct PresentationConfiguration {
   var shadowOffset: CGPoint = .zero
   var modalPosition: PresentationModalPosition = .Center
   var modalSize: (PresentationModalSize, PresentationModalSize) = (.Half, .Half)
-  var keyboardTranslation = ModalKeyboardTranslation.None
+  var keyboardTranslation = ModalKeyboardTranslation.none
 }

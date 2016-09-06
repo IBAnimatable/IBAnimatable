@@ -142,10 +142,10 @@ open class AnimatableModalViewController: UIViewController, PresentationDesignab
   }
   @IBInspectable var _keyboardTranslation: String = "" {
     didSet {
-      keyboardTranslation = ModalKeyboardTranslation.fromString(string: _keyboardTranslation)
+      keyboardTranslation = ModalKeyboardTranslation(string: _keyboardTranslation) ?? .none
     }
   }
-  public var keyboardTranslation: ModalKeyboardTranslation = .None {
+  public var keyboardTranslation: ModalKeyboardTranslation = .none {
     didSet {
       presenter?.presentationConfiguration?.keyboardTranslation = keyboardTranslation    }
   }
