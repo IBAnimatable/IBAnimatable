@@ -5,9 +5,10 @@
 import UIKit
 
 /**
-TransitionDirection: used to specify the direction for the transition
+Transition direction: used to specify the direction for the transition
 */
-public enum TransitionDirection {
+// TODO: can be an internal enum
+public enum TransitionDirection: String {
   case left
   case right
   case top

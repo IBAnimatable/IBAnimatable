@@ -5,9 +5,10 @@
 
 import UIKit
 
+/// Protocol for transition animations
 public protocol TransitionAnimatable: class {
   /**
-   String value of `TransitionAnimationType` enum, used to specify the transition animations
+   Transition animation type: used to specify the transition animation
    */
   var transitionAnimationType: TransitionAnimationType? { get set }
   
@@ -17,7 +18,7 @@ public protocol TransitionAnimatable: class {
   var transitionDuration: Double { get set }
   
   /**
-   String value of `InteractiveGestureType` enum, used to specify the gesture to dismiss/pop current scence
+   Interactive gesture type: used to specify the gesture to dismiss or pop from current scence
    */
   var interactiveGestureType: InteractiveGestureType? { get set }
 }

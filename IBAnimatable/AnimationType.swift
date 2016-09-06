@@ -51,16 +51,16 @@ public enum AnimationType {
   }
 }
 
-extension AnimationType : IBEnum {
+extension AnimationType: IBEnum {
   
   public init(string: String?) {
     guard let string = string else {
       self = .none
       return
     }
-    let nameAndParames = AnimationType.extractNameAndParams(from: string)
-    let name = nameAndParames.name
-    let params = nameAndParames.params
+    let nameAndParams = AnimationType.extractNameAndParams(from: string)
+    let name = nameAndParams.name
+    let params = nameAndParams.params
     
     switch name {
     case "slide":

@@ -8,11 +8,11 @@ import UIKit
  Animator Factory
  */
 public struct AnimatorFactory {
-  public static func generateAnimator(_ transitionAnimationType: TransitionAnimationType) -> AnimatedTransitioning {
+  public static func generateAnimator(_ transitionAnimationType: TransitionAnimationType) -> AnimatedTransitioning? {
     return generateAnimator(transitionAnimationType, transitionDuration: defaultTransitionDuration)
   }
 
-  public static func generateAnimator(_ transitionAnimationType: TransitionAnimationType, transitionDuration: Duration) -> AnimatedTransitioning {
+  public static func generateAnimator(_ transitionAnimationType: TransitionAnimationType, transitionDuration: Duration) -> AnimatedTransitioning? {
     switch transitionAnimationType {
     case .systemRotate:
       return SystemRotateAnimator(transitionDuration: transitionDuration)
@@ -52,6 +52,8 @@ public struct AnimatorFactory {
       return SystemPageAnimator(type: type, transitionDuration: transitionDuration)
     case let .systemCameraIris(hollowState):
       return SystemCameraIrisAnimator(hollowState: hollowState, transitionDuration: transitionDuration)
+    default:
+      return nil
     }
   }
 

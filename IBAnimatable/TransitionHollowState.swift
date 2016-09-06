@@ -5,7 +5,7 @@
 
 import Foundation
 
-public enum TransitionHollowState {
+public enum TransitionHollowState: String {
   case none
   case open
   case close

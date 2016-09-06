@@ -5,7 +5,7 @@
 
 import Foundation
 
-public enum TransitionPageType {
+public enum TransitionPageType: String {
   case curl
   case unCurl
 }

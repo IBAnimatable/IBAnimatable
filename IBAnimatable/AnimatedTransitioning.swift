@@ -9,7 +9,7 @@ import UIKit
  */
 public protocol AnimatedTransitioning: ViewControllerAnimatedTransitioning {
   /**
-   Value of `TransitionAnimationType` enum
+   Transition animation type: used to specify the transition animation.
    */
   var transitionAnimationType: TransitionAnimationType { get set }
 
