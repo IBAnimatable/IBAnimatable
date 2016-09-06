@@ -52,9 +52,9 @@ extension TransitionAnimationType: IBEnum {
       self = .systemRippleEffect
     case "systemsuckeffect":
       self = .systemSuckEffect
-    case "Explode":
+    case "explode":
       self = .explode(params: params)
-    case "Fade":
+    case "fade":
       self = .fade(direction: Direction(raw: params[safe: 0], defaultValue: .cross))
     case "systemcamerairis":
       self = .systemCameraIris(hollowState: HollowState(raw: params[safe: 0], defaultValue: .none))
@@ -100,7 +100,6 @@ extension TransitionAnimationType: IBEnum {
     default:
       self = .none
     }
-    
   }
 }
 

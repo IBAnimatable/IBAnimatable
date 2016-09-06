@@ -108,7 +108,7 @@ extension TransitionTableViewController {
     return cell
   }
   
-  // MARK: - reset the group heander font color and size
+  // MARK: - reset the group header font color and size
   override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
     if let header = view as? UITableViewHeaderFooterView {
       header.textLabel?.textColor = .white
