@@ -16,7 +16,7 @@ public enum TransitionAnimationType {
   case explode(xFactor: CGFloat?, minAngle: CGFloat?, maxAngle: CGFloat?)
   case fade(direction: Direction)
   case fold(from: Direction, folds: Int?)
-  case portal(direction: Direction, params: [String])
+  case portal(direction: Direction, zoomScale: CGFloat?)
   case slide(toDirection: Direction, params: [String])
   case natGeo(toDirection: Direction)
   case turn(fromDirection: Direction)
@@ -99,9 +99,12 @@ extension TransitionAnimationType: IBEnum {
       }
     case "portal":
       let direction = Direction(raw: params[safe: 0], defaultValue: .left)
-      var params = params
-      params.removeFirst()
-      self = .portal(direction: direction, params: params)
+      if let zoomScaleString = params[safe: 1], let zoomScale = Double(zoomScaleString) {
+        let zoomScale = CGFloat(zoomScale)
+        self = .portal(direction: direction, zoomScale: zoomScale)
+      } else {
+        self = .portal(direction: direction, zoomScale: nil)
+      }
     case "slide":
       let direction = Direction(raw: params[safe: 0], defaultValue: .left)
       var params = params
