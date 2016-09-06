@@ -28,7 +28,8 @@ public enum PresentationAnimationType {
     }
   }
 
-  public static func fromString(transitionType: String) -> PresentationAnimationType? {
+  public static func fromString(transitionType: String?) -> PresentationAnimationType? {
+    guard let transitionType = transitionType else { return nil } 
     if transitionType.hasPrefix("CrossDissolve") {
       return .crossDissolve
     } else if transitionType.hasPrefix("Flip") {
