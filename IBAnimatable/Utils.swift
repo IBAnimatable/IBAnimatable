@@ -19,6 +19,9 @@ extension String {
   func toDouble() -> Double? {
     return Double(self)
   }
+  func toFloat() -> Float? {
+    return Float(self)
+  }
   func toInt() -> Int? {
     return Int(self)
   }

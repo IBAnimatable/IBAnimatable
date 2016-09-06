@@ -76,7 +76,7 @@ public struct PresentationConfiguration {
   var shadowRadius: CGFloat = .nan
   var shadowOpacity: CGFloat = 0.7
   var shadowOffset: CGPoint = .zero
-  var modalPosition: PresentationModalPosition = .Center
-  var modalSize: (PresentationModalSize, PresentationModalSize) = (.Half, .Half)
+  var modalPosition: PresentationModalPosition = .center
+  var modalSize: (PresentationModalSize, PresentationModalSize) = (.half, .half)
   var keyboardTranslation = ModalKeyboardTranslation.none
 }

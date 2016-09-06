@@ -11,7 +11,7 @@ open class AnimatableModalViewController: UIViewController, PresentationDesignab
   // MARK: - AnimatablePresentationController
   @IBInspectable var _presentationAnimationType: String? {
     didSet {
-      if let animationType = PresentationAnimationType.fromString(transitionType: _presentationAnimationType) {
+      if let animationType = PresentationAnimationType(string: _presentationAnimationType) {
         presentationAnimationType = animationType
       }
     }
@@ -26,7 +26,7 @@ open class AnimatableModalViewController: UIViewController, PresentationDesignab
   
   @IBInspectable var _dismissalAnimationType: String? {
     didSet {
-      if let animationType = PresentationAnimationType.fromString(transitionType: _presentationAnimationType) {
+      if let animationType = PresentationAnimationType(string: _presentationAnimationType) {
         dismissalAnimationType = animationType
       }
     }
@@ -46,29 +46,29 @@ open class AnimatableModalViewController: UIViewController, PresentationDesignab
   }
   @IBInspectable var _modalPosition: String? {
     didSet {
-      modalPosition = PresentationModalPosition.fromString(position: _modalPosition ?? "")
+      modalPosition = PresentationModalPosition(string: _modalPosition ?? "")
     }
   }
   
-  public var modalPosition: PresentationModalPosition = .Center {
+  public var modalPosition: PresentationModalPosition = .center {
     didSet {
       presenter?.presentationConfiguration?.modalPosition = modalPosition
     }
   }
   @IBInspectable var _modalWidth: String? {
     didSet {
-      let modalWidth = PresentationModalSize.fromString(size: _modalWidth ?? "")
+      let modalWidth = PresentationModalSize(string: _modalWidth) ?? .half
       modalSize = (modalWidth, modalSize.height)
     }
   }
   @IBInspectable var _modalHeight: String? {
     didSet {
-      let modalHeight = PresentationModalSize.fromString(size: _modalHeight ?? "")
+      let modalHeight = PresentationModalSize(string: _modalHeight) ?? .half
       modalSize = (modalSize.width, modalHeight)
     }
   }
   
-  public var modalSize: ModalSize = (.Half, .Half) {
+  public var modalSize: ModalSize = (.half, .half) {
     didSet {
       presenter?.presentationConfiguration?.modalSize = modalSize
     }
