@@ -23,20 +23,20 @@ public class SystemCubeAnimator: NSObject, AnimatedTransitioning {
     
     switch fromDirection {
     case .right:
-      self.transitionAnimationType = .systemCube(fromDirection: .right)
-      self.reverseAnimationType = .systemCube(fromDirection: .left)
+      self.transitionAnimationType = .systemCube(from: .right)
+      self.reverseAnimationType = .systemCube(from: .left)
       self.interactiveGestureType = .pan(fromDirection: .left)
     case .top:
-      self.transitionAnimationType = .systemCube(fromDirection: .top)
-      self.reverseAnimationType = .systemCube(fromDirection: .bottom)
+      self.transitionAnimationType = .systemCube(from: .top)
+      self.reverseAnimationType = .systemCube(from: .bottom)
       self.interactiveGestureType = .pan(fromDirection: .bottom)
     case .bottom:
-      self.transitionAnimationType = .systemCube(fromDirection: .bottom)
-      self.reverseAnimationType = .systemCube(fromDirection: .top)
+      self.transitionAnimationType = .systemCube(from: .bottom)
+      self.reverseAnimationType = .systemCube(from: .top)
       self.interactiveGestureType = .pan(fromDirection: .top)
     default:
-      self.transitionAnimationType = .systemCube(fromDirection: .left)
-      self.reverseAnimationType = .systemCube(fromDirection: .right)
+      self.transitionAnimationType = .systemCube(from: .left)
+      self.reverseAnimationType = .systemCube(from: .right)
       self.interactiveGestureType = .pan(fromDirection: .right)
     }
     

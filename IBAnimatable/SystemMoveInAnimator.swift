@@ -21,20 +21,20 @@ public class SystemMoveInAnimator: NSObject, AnimatedTransitioning {
     
     switch fromDirection {
     case .right:
-      self.transitionAnimationType = .systemMoveIn(fromDirection: .right)
-      self.reverseAnimationType = .systemMoveIn(fromDirection: .left)
+      self.transitionAnimationType = .systemMoveIn(from: .right)
+      self.reverseAnimationType = .systemMoveIn(from: .left)
       self.interactiveGestureType = .pan(fromDirection: .left)
     case .top:
-      self.transitionAnimationType = .systemMoveIn(fromDirection: .top)
-      self.reverseAnimationType = .systemMoveIn(fromDirection: .bottom)
+      self.transitionAnimationType = .systemMoveIn(from: .top)
+      self.reverseAnimationType = .systemMoveIn(from: .bottom)
       self.interactiveGestureType = .pan(fromDirection: .bottom)
     case .bottom:
-      self.transitionAnimationType = .systemMoveIn(fromDirection: .bottom)
-      self.reverseAnimationType = .systemMoveIn(fromDirection: .top)
+      self.transitionAnimationType = .systemMoveIn(from: .bottom)
+      self.reverseAnimationType = .systemMoveIn(from: .top)
       self.interactiveGestureType = .pan(fromDirection: .top)
     default:
-      self.transitionAnimationType = .systemMoveIn(fromDirection: .left)
-      self.reverseAnimationType = .systemMoveIn(fromDirection: .right)
+      self.transitionAnimationType = .systemMoveIn(from: .left)
+      self.reverseAnimationType = .systemMoveIn(from: .right)
       self.interactiveGestureType = .pan(fromDirection: .right)
     }
     

@@ -22,11 +22,11 @@ public enum TransitionAnimationType {
   case turn(from: Direction)
   case cards(direction: Direction)
   case flip(from: Direction)
-  case systemCube(fromDirection: Direction)
-  case systemFlip(fromDirection: Direction)
-  case systemMoveIn(fromDirection: Direction)
-  case systemPush(fromDirection: Direction)
-  case systemReveal(fromDirection: Direction)
+  case systemCube(from: Direction)
+  case systemFlip(from: Direction)
+  case systemMoveIn(from: Direction)
+  case systemPush(from: Direction)
+  case systemReveal(from: Direction)
   case systemPage(type: PageType)
   case systemCameraIris(hollowState: HollowState)
   
@@ -73,15 +73,15 @@ extension TransitionAnimationType: IBEnum {
     case "systemrotate":
       self = .systemRotate
     case "systemcube":
-      self = .systemCube(fromDirection: Direction(raw: params[safe: 0], defaultValue: .left))
+      self = .systemCube(from: Direction(raw: params[safe: 0], defaultValue: .left))
     case "systemflip":
-      self = .systemFlip(fromDirection: Direction(raw: params[safe: 0], defaultValue: .left))
+      self = .systemFlip(from: Direction(raw: params[safe: 0], defaultValue: .left))
     case "systemmovein":
-      self = .systemMoveIn(fromDirection: Direction(raw: params[safe: 0], defaultValue: .left))
+      self = .systemMoveIn(from: Direction(raw: params[safe: 0], defaultValue: .left))
     case "systempush":
-      self = .systemPush(fromDirection: Direction(raw: params[safe: 0], defaultValue: .left))
+      self = .systemPush(from: Direction(raw: params[safe: 0], defaultValue: .left))
     case "systemreveal":
-      self = .systemReveal(fromDirection: Direction(raw: params[safe: 0], defaultValue: .left))
+      self = .systemReveal(from: Direction(raw: params[safe: 0], defaultValue: .left))
     case "natgeo":
       self = .natGeo(to: Direction(raw: params[safe: 0], defaultValue: .left))
     case "turn":

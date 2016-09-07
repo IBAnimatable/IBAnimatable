@@ -24,20 +24,20 @@ public class SystemFlipAnimator: NSObject, AnimatedTransitioning {
     
     switch fromDirection {
     case .right:
-      self.transitionAnimationType = .systemFlip(fromDirection: .right)
-      self.reverseAnimationType = .systemFlip(fromDirection: .left)
+      self.transitionAnimationType = .systemFlip(from: .right)
+      self.reverseAnimationType = .systemFlip(from: .left)
       self.interactiveGestureType = .pan(fromDirection: .left)
     case .top:
-      self.transitionAnimationType = .systemFlip(fromDirection: .top)
-      self.reverseAnimationType = .systemFlip(fromDirection: .bottom)
+      self.transitionAnimationType = .systemFlip(from: .top)
+      self.reverseAnimationType = .systemFlip(from: .bottom)
       self.interactiveGestureType = .pan(fromDirection: .bottom)
     case .bottom:
-      self.transitionAnimationType = .systemFlip(fromDirection: .bottom)
-      self.reverseAnimationType = .systemFlip(fromDirection: .top)
+      self.transitionAnimationType = .systemFlip(from: .bottom)
+      self.reverseAnimationType = .systemFlip(from: .top)
       self.interactiveGestureType = .pan(fromDirection: .top)
     default:
-      self.transitionAnimationType = .systemFlip(fromDirection: .left)
-      self.reverseAnimationType = .systemFlip(fromDirection: .right)
+      self.transitionAnimationType = .systemFlip(from: .left)
+      self.reverseAnimationType = .systemFlip(from: .right)
       self.interactiveGestureType = .pan(fromDirection: .right)
     }
     

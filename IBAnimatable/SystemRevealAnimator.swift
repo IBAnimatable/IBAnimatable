@@ -21,20 +21,20 @@ public class SystemRevealAnimator: NSObject, AnimatedTransitioning {
     
     switch fromDirection {
     case .right:
-      self.transitionAnimationType = .systemReveal(fromDirection: .right)
-      self.reverseAnimationType = .systemReveal(fromDirection: .left)
+      self.transitionAnimationType = .systemReveal(from: .right)
+      self.reverseAnimationType = .systemReveal(from: .left)
       self.interactiveGestureType = .pan(fromDirection: .left)
     case .top:
-      self.transitionAnimationType = .systemReveal(fromDirection: .top)
-      self.reverseAnimationType = .systemReveal(fromDirection: .bottom)
+      self.transitionAnimationType = .systemReveal(from: .top)
+      self.reverseAnimationType = .systemReveal(from: .bottom)
       self.interactiveGestureType = .pan(fromDirection: .bottom)
     case .bottom:
-      self.transitionAnimationType = .systemReveal(fromDirection: .bottom)
-      self.reverseAnimationType = .systemReveal(fromDirection: .top)
+      self.transitionAnimationType = .systemReveal(from: .bottom)
+      self.reverseAnimationType = .systemReveal(from: .top)
       self.interactiveGestureType = .pan(fromDirection: .top)
     default:
-      self.transitionAnimationType = .systemPush(fromDirection: .left)
-      self.reverseAnimationType = .systemPush(fromDirection: .right)
+      self.transitionAnimationType = .systemPush(from: .left)
+      self.reverseAnimationType = .systemPush(from: .right)
       self.interactiveGestureType = .pan(fromDirection: .right)
     }
     
