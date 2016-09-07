@@ -21,7 +21,7 @@ public enum TransitionAnimationType {
   case natGeo(to: Direction)
   case turn(from: Direction)
   case cards(direction: Direction)
-  case flip(fromDirection: Direction)
+  case flip(from: Direction)
   case systemCube(fromDirection: Direction)
   case systemFlip(fromDirection: Direction)
   case systemMoveIn(fromDirection: Direction)
@@ -89,7 +89,7 @@ extension TransitionAnimationType: IBEnum {
     case "cards":
       self = .cards(direction: Direction(raw: params[safe: 0], defaultValue: .left))
     case "flip":
-      self = .flip(fromDirection: Direction(raw: params[safe: 0], defaultValue: .left))
+      self = .flip(from: Direction(raw: params[safe: 0], defaultValue: .left))
     case "fold":
       let direction = Direction(raw: params[safe: 0], defaultValue: .left)
       if let foldsString = params[safe: 1], let folds = Int(foldsString) {
