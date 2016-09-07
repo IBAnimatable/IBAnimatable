@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableActivityIndicatorView: UIView, ActivityIndicatorAnimatable {
+@IBDesignable open class AnimatableActivityIndicatorView: UIView, ActivityIndicatorAnimatable {
 
   // MARK: ActivityIndicatorAnimatable
   open var animationType: ActivityIndicatorType = .none
@@ -21,7 +21,7 @@ import UIKit
       }
     }
   }
-  @IBInspectable public var color: UIColor = .black
-  @IBInspectable public var hidesWhenStopped: Bool = true
-  public var isAnimating: Bool = false
+  @IBInspectable open var color: UIColor = .black
+  @IBInspectable open var hidesWhenStopped: Bool = true
+  open var isAnimating: Bool = false
 }
