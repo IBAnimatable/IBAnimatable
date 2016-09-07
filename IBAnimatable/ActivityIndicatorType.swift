@@ -4,6 +4,7 @@
 //
 
 import UIKit
+
 /// Activity indicator type: used to specify the animation for the activity indicator.
 public enum ActivityIndicatorType: String, IBEnum {
   case none

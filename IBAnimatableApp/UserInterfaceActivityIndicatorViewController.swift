@@ -14,10 +14,10 @@ class UserInterfaceActivityIndicatorViewController: UIViewController, UIPickerVi
 
   // MARK: Properties
 
-  fileprivate var activityIndicatorsType: [String] {
-    var types = [String]()
+  fileprivate var activityIndicatorsType: [ActivityIndicatorType] {
+    var types = [ActivityIndicatorType]()
     iterateEnum(ActivityIndicatorType.self).forEach {
-      types.append($0.rawValue)
+      types.append($0)
     }
     return types
   }
@@ -45,7 +45,7 @@ extension UserInterfaceActivityIndicatorViewController {
 
   func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
     let title = activityIndicatorsType[row]
-    return NSAttributedString(string: title, attributes: [NSForegroundColorAttributeName:UIColor.white])
+    return NSAttributedString(string: title.rawValue, attributes: [NSForegroundColorAttributeName:UIColor.white])
   }
 
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

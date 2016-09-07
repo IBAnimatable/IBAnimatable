@@ -5,10 +5,10 @@
 
 import UIKit
 
-/// Protocol for activity indicator animations.
+/// Protocol for activity indicator view.
 public protocol ActivityIndicatorAnimatable: class {
   /// Animation type
-  var animationType: String { get set }
+  var animationType: ActivityIndicatorType { get set }
   /// Color of the indicator
   var color: UIColor { get set }
   /// Specify whether hide the indicator when the animation stopped
@@ -44,11 +44,11 @@ private extension ActivityIndicatorAnimatable where Self: UIView {
       return
     }
 
-    guard let activityIndicatorType = ActivityIndicatorType(string: animationType), activityIndicatorType != .none else {
+    if case .none = animationType {
       return
     }
 
-    let activityIndicator = ActivityIndicatorFactory.generateActivityIndicator(activityIndicatorType: activityIndicatorType)
+    let activityIndicator = ActivityIndicatorFactory.generateActivityIndicator(activityIndicatorType: animationType)
     activityIndicator.configAnimation(in: layer, size: bounds.size, color: color)
     layer.speed = 1
   }
