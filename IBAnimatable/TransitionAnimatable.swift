@@ -20,5 +20,5 @@ public protocol TransitionAnimatable: class {
   /**
    Interactive gesture type: used to specify the gesture to dismiss or pop from current scence
    */
-  var interactiveGestureType: InteractiveGestureType? { get set }
+  var interactiveGestureType: InteractiveGestureType { get set }
 }

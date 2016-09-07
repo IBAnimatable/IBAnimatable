@@ -25,7 +25,7 @@ open class AnimatableNavigationController: UINavigationController, TransitionAni
       configureNavigationControllerDelegate()
     }
   }
-  open var interactiveGestureType: InteractiveGestureType? {
+  open var interactiveGestureType: InteractiveGestureType = .none {
     didSet {
       configureNavigationControllerDelegate()
     }
@@ -34,7 +34,7 @@ open class AnimatableNavigationController: UINavigationController, TransitionAni
   @IBInspectable var _interactiveGestureType: String? {
     didSet {
       if let _interactiveGestureType = _interactiveGestureType {
-        interactiveGestureType = InteractiveGestureType.fromString(_interactiveGestureType)
+        interactiveGestureType = InteractiveGestureType(string: _interactiveGestureType)
       }
     }
   }
@@ -54,10 +54,11 @@ open class AnimatableNavigationController: UINavigationController, TransitionAni
     if transitionDuration.isNaN {
       duration = defaultTransitionDuration
     }
-    if let gestureType = interactiveGestureType {
-      navigator = Navigator(transitionAnimationType: transitionAnimationType, transitionDuration: duration, interactiveGestureType: gestureType)
-    } else {
+    
+    if case .none = interactiveGestureType {
       navigator = Navigator(transitionAnimationType: transitionAnimationType, transitionDuration: duration)
+    } else {
+      navigator = Navigator(transitionAnimationType: transitionAnimationType, transitionDuration: duration, interactiveGestureType: interactiveGestureType)
     }
     delegate = navigator
   }

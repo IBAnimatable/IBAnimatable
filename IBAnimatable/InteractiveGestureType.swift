@@ -6,10 +6,11 @@
 import Foundation
 
 /**
- The interactive gesture type
+ Interactive gesture type: used to pop or dismiss view controller for transitons.
  */
 public enum InteractiveGestureType {
-  case `default`          // Will use the default interactive gesture type from `AnimatedTransitioning`
+  case none
+  case `default`          /// The default interactive gesture type from `AnimatedTransitioning`
   case pan(fromDirection: GestureDirection)
   case screenEdgePan(fromDirection: GestureDirection)
   case pinch(direction: GestureDirection)
@@ -18,52 +19,52 @@ public enum InteractiveGestureType {
     return String(describing: self)
   }
   
-  public static func fromString(_ interactiveGestureType: String) -> InteractiveGestureType? {
-    if interactiveGestureType.hasPrefix("default") {
-      return .default
-    } else if interactiveGestureType.hasPrefix("pan") || interactiveGestureType.hasPrefix("screenEdgePan") ||
-      interactiveGestureType.hasPrefix("pinch") {
-      return fromStringWithDirection(interactiveGestureType)
-    }
-    return nil
+  /// Returns the string value without qualification
+  public var stringValueWithoutQualification: String {
+    let namespace = "IBAnimatable." + String(describing: InteractiveGestureType.self) + "." + String(describing: GestureDirection.self) + "."
+    return String(describing: self).replacingOccurrences(of: namespace, with: "")
   }
   
-  // Return the `String` without qualification
-  public func toString() -> String {
-    let namespace = "IBAnimatable." + String(describing: GestureDirection.self) + "."
-    return String(describing: self).replacingOccurrences(of: namespace, with: "")
+  /**
+   GestureDirection: Used to specify the direction in `InteractiveGestureType`
+   */
+  public enum GestureDirection: String {
+    case horizontal
+    case vertical
+    case left
+    case right
+    case top
+    case bottom
+    case close
+    case open
   }
 }
 
-// MARK: - InteractiveGestureType from string
-
-private extension InteractiveGestureType {
-  static func cleanInteractiveGestureType(_ interactiveGestureType: String) -> String {
-    let range = interactiveGestureType.range(of: "(")
-    let interactiveGestureType = interactiveGestureType.replacingOccurrences(of: " ", with: "").lowercased()
-      .substring(from: range?.lowerBound ?? interactiveGestureType.endIndex)
-      .replacingOccurrences(of: "(", with: "")
-      .replacingOccurrences(of: ")", with: "")
-      .capitalized
-    return interactiveGestureType
-  }
-  
-  static func fromStringWithDirection(_ interactiveGestureType: String) -> InteractiveGestureType? {
-    let gestureDirectionString = cleanInteractiveGestureType(interactiveGestureType)
-    
-    guard let direction = GestureDirection(rawValue: gestureDirectionString) else {
-      return nil
+extension InteractiveGestureType: IBEnum {
+  public init(string: String?) {
+    guard let string = string else {
+      self = .none
+      return
     }
     
-    if interactiveGestureType.hasPrefix("pan") {
-      return .pan(fromDirection: direction)
-    } else if interactiveGestureType.hasPrefix("screenEdgePan") {
-      return .screenEdgePan(fromDirection: direction)
-    } else if interactiveGestureType.hasPrefix("pinch") {
-      return .pinch(direction: direction)
-    }
+    let nameAndParams = InteractiveGestureType.extractNameAndParams(from: string)
+    let name = nameAndParams.name
+    let params = nameAndParams.params
     
-    return nil
+    switch name {
+    case "default":
+      self = .default
+    case "pan":
+      let direction = GestureDirection(raw: params[safe: 0], defaultValue: .left)
+      self = .pan(fromDirection: direction)
+    case "screenedgePan":
+      let direction = GestureDirection(raw: params[safe: 0], defaultValue: .left)
+      self = .screenEdgePan(fromDirection: direction)
+    case "pinch":
+      let direction = GestureDirection(raw: params[safe: 0], defaultValue: .open)
+      self = .pinch(direction: direction)
+    default:
+      self = .none
+    }
   }
-
 }

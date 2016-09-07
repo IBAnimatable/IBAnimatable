@@ -18,20 +18,20 @@ extension UIViewController {
     return predefinedGradients[randomIndex]
   }
   
-  func retrieveGestureText(_ interactiveGestureType: InteractiveGestureType, transitionAnimationType: TransitionAnimationType, exit: String) -> String {
+  func retrieveGestureText(interactiveGestureType: InteractiveGestureType, transitionAnimationType: TransitionAnimationType, exit: String) -> String {
     switch interactiveGestureType {
     case .default:
       // Default gesture
       let transitionAnimator = AnimatorFactory.generateAnimator(transitionAnimationType)
       if let interactiveGestureType = transitionAnimator?.interactiveGestureType {
-        return String("or use \(interactiveGestureType.toString()) gesture to \(exit)")
+        return String("or use \(interactiveGestureType.stringValueWithoutQualification) gesture to \(exit)")
       }
       
       // The transition animator doesn't have default `interactiveGestureType`
       return ""
     default:
       // Specified gesture
-      return String("or use \(interactiveGestureType.toString()) gesture to \(exit)")
+      return String("or use \(interactiveGestureType.stringValueWithoutQualification) gesture to \(exit)")
     }
   }
   
