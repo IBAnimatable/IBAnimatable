@@ -8,69 +8,69 @@ import UIKit
 public struct ActivityIndicatorFactory {
   public static func generateActivityIndicator(activityIndicatorType: ActivityIndicatorType) -> ActivityIndicatorAnimating {
     switch activityIndicatorType {
-    case .None:
+    case .none:
       fatalError()
-    case .AudioEqualizer:
+    case .audioEqualizer:
       return ActivityIndicatorAnimationAudioEqualizer()
-    case .BallBeat:
+    case .ballBeat:
       return ActivityIndicatorAnimationBallBeat()
-    case .BallClipRotate:
+    case .ballClipRotate:
       return ActivityIndicatorAnimationBallClipRotate()
-    case .BallClipRotateMultiple:
+    case .ballClipRotateMultiple:
       return ActivityIndicatorAnimationBallClipRotateMultiple()
-    case .BallClipRotatePulse:
+    case .ballClipRotatePulse:
       return ActivityIndicatorAnimationBallClipRotatePulse()
-    case .BallGridBeat:
+    case .ballGridBeat:
       return ActivityIndicatorAnimationBallGridBeat()
-    case .BallGridPulse:
+    case .ballGridPulse:
       return ActivityIndicatorAnimationBallGridPulse()
-    case .BallPulse:
+    case .ballPulse:
       return ActivityIndicatorAnimationBallPulse()
-    case .BallPulseRise:
+    case .ballPulseRise:
       return ActivityIndicatorAnimationBallPulseRise()
-    case .BallPulseSync:
+    case .ballPulseSync:
       return ActivityIndicatorAnimationBallPulseSync()
-    case .BallRotate:
+    case .ballRotate:
       return ActivityIndicatorAnimationBallRotate()
-    case .BallRotateChase:
+    case .ballRotateChase:
       return ActivityIndicatorAnimationBallRotateChase()
-    case .BallScale:
+    case .ballScale:
       return ActivityIndicatorAnimationBallScale()
-    case .BallScaleMultiple:
+    case .ballScaleMultiple:
       return ActivityIndicatorAnimationBallScaleMultiple()
-    case .BallScaleRipple:
+    case .ballScaleRipple:
       return ActivityIndicatorAnimationBallScaleRipple()
-    case .BallScaleRippleMultiple:
+    case .ballScaleRippleMultiple:
       return ActivityIndicatorAnimationBallScaleRippleMultiple()
-    case .BallSpinFadeLoader:
+    case .ballSpinFadeLoader:
       return ActivityIndicatorAnimationBallSpinFadeLoader()
-    case .BallTrianglePath:
+    case .ballTrianglePath:
       return ActivityIndicatorAnimationBallTrianglePath()
-    case .BallZigZag:
+    case .ballZigZag:
       return ActivityIndicatorAnimationBallZigZag()
-    case .BallZigZagDeflect:
+    case .ballZigZagDeflect:
       return ActivityIndicatorAnimationBallZigZagDeflect()
-    case .CubeTransition:
+    case .cubeTransition:
       return ActivityIndicatorAnimationCubeTransition()
-    case .LineScale:
+    case .lineScale:
       return ActivityIndicatorAnimationLineScale()
-    case .LineSpinFadeLoader:
+    case .lineSpinFadeLoader:
       return ActivityIndicatorAnimationLineSpinFadeLoader()
-    case .LineScaleParty:
+    case .lineScaleParty:
       return ActivityIndicatorAnimationLineScaleParty()
-    case .LineScalePulseOut:
+    case .lineScalePulseOut:
       return ActivityIndicatorAnimationLineScalePulseOut()
-    case .LineScalePulseOutRapid:
+    case .lineScalePulseOutRapid:
       return ActivityIndicatorAnimationLineScalePulseOutRapid()
-    case .Orbit:
+    case .orbit:
       return ActivityIndicatorAnimationOrbit()
-    case .Pacman:
+    case .pacman:
       return ActivityIndicatorAnimationPacman()
-    case .SemiCircleSpin:
+    case .semiCircleSpin:
       return ActivityIndicatorAnimationSemiCircleSpin()
-    case .SquareSpin:
+    case .squareSpin:
       return ActivityIndicatorAnimationSquareSpin()
-    case .TriangleSkewSpin:
+    case .triangleSkewSpin:
       return ActivityIndicatorAnimationTriangleSkewSpin()
     }
   }
