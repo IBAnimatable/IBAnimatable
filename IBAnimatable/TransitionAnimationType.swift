@@ -18,7 +18,7 @@ public enum TransitionAnimationType {
   case fold(from: Direction, folds: Int?)
   case portal(direction: Direction, zoomScale: CGFloat?)
   case slide(to: Direction, isFade: Bool)
-  case natGeo(toDirection: Direction)
+  case natGeo(to: Direction)
   case turn(fromDirection: Direction)
   case cards(direction: Direction)
   case flip(fromDirection: Direction)
@@ -83,7 +83,7 @@ extension TransitionAnimationType: IBEnum {
     case "systemreveal":
       self = .systemReveal(fromDirection: Direction(raw: params[safe: 0], defaultValue: .left))
     case "natgeo":
-      self = .natGeo(toDirection: Direction(raw: params[safe: 0], defaultValue: .left))
+      self = .natGeo(to: Direction(raw: params[safe: 0], defaultValue: .left))
     case "turn":
       self = .turn(fromDirection: Direction(raw: params[safe: 0], defaultValue: .left))
     case "cards":

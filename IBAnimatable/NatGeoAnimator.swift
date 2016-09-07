@@ -25,11 +25,11 @@ public class NatGeoAnimator: NSObject, AnimatedTransitioning {
     
     switch fromDirection {
     case .right:
-      self.transitionAnimationType = .natGeo(toDirection: .right)
-      self.reverseAnimationType = .natGeo(toDirection: .left)
+      self.transitionAnimationType = .natGeo(to: .right)
+      self.reverseAnimationType = .natGeo(to: .left)
     default:
-      self.transitionAnimationType = .natGeo(toDirection: .left)
-      self.reverseAnimationType = .natGeo(toDirection: .right)
+      self.transitionAnimationType = .natGeo(to: .left)
+      self.reverseAnimationType = .natGeo(to: .right)
     }
     
     super.init()
