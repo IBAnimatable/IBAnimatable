@@ -30,8 +30,8 @@ public class FoldAnimator: NSObject, AnimatedTransitioning {
   }
   
   // MARK: - Life cycle
-  public init(fromDirection: TransitionAnimationType.Direction, folds: Int?, transitionDuration: Duration) {
-    self.fromDirection = fromDirection
+  public init(from direction: TransitionAnimationType.Direction, folds: Int?, transitionDuration: Duration) {
+    fromDirection = direction
     self.transitionDuration = transitionDuration
     horizontal = fromDirection.isHorizontal
     
@@ -43,22 +43,22 @@ public class FoldAnimator: NSObject, AnimatedTransitioning {
     case .right:
       self.transitionAnimationType = .fold(from: .right, folds: folds)
       self.reverseAnimationType = .fold(from: .left, folds: folds)
-      self.interactiveGestureType = .pan(fromDirection: .left)
+      self.interactiveGestureType = .pan(from: .left)
       reverse = true
     case .top:
       self.transitionAnimationType = .fold(from: .top, folds: folds)
       self.reverseAnimationType = .fold(from: .bottom, folds: folds)
-      self.interactiveGestureType = .pan(fromDirection: .bottom)
+      self.interactiveGestureType = .pan(from: .bottom)
       reverse = false
     case .bottom:
       self.transitionAnimationType = .fold(from: .bottom, folds: folds)
       self.reverseAnimationType = .fold(from: .top, folds: folds)
-      self.interactiveGestureType = .pan(fromDirection: .top)
+      self.interactiveGestureType = .pan(from: .top)
       reverse = true
     default:
       self.transitionAnimationType = .fold(from: .left, folds: folds)
       self.reverseAnimationType = .fold(from: .right, folds: folds)
-      self.interactiveGestureType = .pan(fromDirection: .right)
+      self.interactiveGestureType = .pan(from: .right)
       reverse = false      
     }
     super.init()

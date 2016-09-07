@@ -11,8 +11,8 @@ import Foundation
 public enum InteractiveGestureType {
   case none
   case `default`          /// The default interactive gesture type from `AnimatedTransitioning`
-  case pan(fromDirection: GestureDirection)
-  case screenEdgePan(fromDirection: GestureDirection)
+  case pan(from: GestureDirection)
+  case screenEdgePan(from: GestureDirection)
   case pinch(direction: GestureDirection)
   
   var stringValue: String {
@@ -56,10 +56,10 @@ extension InteractiveGestureType: IBEnum {
       self = .default
     case "pan":
       let direction = GestureDirection(raw: params[safe: 0], defaultValue: .left)
-      self = .pan(fromDirection: direction)
+      self = .pan(from: direction)
     case "screenedgePan":
       let direction = GestureDirection(raw: params[safe: 0], defaultValue: .left)
-      self = .screenEdgePan(fromDirection: direction)
+      self = .screenEdgePan(from: direction)
     case "pinch":
       let direction = GestureDirection(raw: params[safe: 0], defaultValue: .open)
       self = .pinch(direction: direction)

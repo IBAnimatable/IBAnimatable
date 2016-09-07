@@ -15,27 +15,27 @@ public class SystemMoveInAnimator: NSObject, AnimatedTransitioning {
   // MARK: - private
   fileprivate var fromDirection: TransitionAnimationType.Direction
   
-  public init(fromDirection: TransitionAnimationType.Direction, transitionDuration: Duration) {
-    self.fromDirection = fromDirection
+  public init(from direction: TransitionAnimationType.Direction, transitionDuration: Duration) {
+    fromDirection = direction
     self.transitionDuration = transitionDuration
     
     switch fromDirection {
     case .right:
       self.transitionAnimationType = .systemMoveIn(from: .right)
       self.reverseAnimationType = .systemMoveIn(from: .left)
-      self.interactiveGestureType = .pan(fromDirection: .left)
+      self.interactiveGestureType = .pan(from: .left)
     case .top:
       self.transitionAnimationType = .systemMoveIn(from: .top)
       self.reverseAnimationType = .systemMoveIn(from: .bottom)
-      self.interactiveGestureType = .pan(fromDirection: .bottom)
+      self.interactiveGestureType = .pan(from: .bottom)
     case .bottom:
       self.transitionAnimationType = .systemMoveIn(from: .bottom)
       self.reverseAnimationType = .systemMoveIn(from: .top)
-      self.interactiveGestureType = .pan(fromDirection: .top)
+      self.interactiveGestureType = .pan(from: .top)
     default:
       self.transitionAnimationType = .systemMoveIn(from: .left)
       self.reverseAnimationType = .systemMoveIn(from: .right)
-      self.interactiveGestureType = .pan(fromDirection: .right)
+      self.interactiveGestureType = .pan(from: .right)
     }
     
     super.init()

@@ -19,9 +19,9 @@ public class NatGeoAnimator: NSObject, AnimatedTransitioning {
   
   // MARK: - Life cycle
   
-  public init(fromDirection: TransitionAnimationType.Direction, transitionDuration: Duration) {
+  public init(from direction: TransitionAnimationType.Direction, transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
-    self.fromDirection = fromDirection
+    fromDirection = direction
     
     switch fromDirection {
     case .right:

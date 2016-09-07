@@ -10,7 +10,7 @@ public class TurnAnimator: NSObject, AnimatedTransitioning {
   public var transitionAnimationType: TransitionAnimationType
   public var transitionDuration: Duration = defaultTransitionDuration
   public var reverseAnimationType: TransitionAnimationType?
-  public var interactiveGestureType: InteractiveGestureType? = .pan(fromDirection: .horizontal)
+  public var interactiveGestureType: InteractiveGestureType? = .pan(from: .horizontal)
   
   // MARK: - Private params
   fileprivate var fromDirection: TransitionAnimationType.Direction
@@ -20,30 +20,30 @@ public class TurnAnimator: NSObject, AnimatedTransitioning {
   fileprivate var reverse: Bool = false
   
   // MARK: - Life cycle
-  public init(fromDirection: TransitionAnimationType.Direction, transitionDuration: Duration) {
-    self.fromDirection = fromDirection
+  public init(from direction: TransitionAnimationType.Direction, transitionDuration: Duration) {
+    fromDirection = direction
     self.transitionDuration = transitionDuration
     
     switch fromDirection {
     case .right:
       self.transitionAnimationType = .turn(from: .right)
       self.reverseAnimationType = .turn(from: .left)
-      self.interactiveGestureType = .pan(fromDirection: .left)
+      self.interactiveGestureType = .pan(from: .left)
       reverse = true
     case .top:
       self.transitionAnimationType = .turn(from: .top)
       self.reverseAnimationType = .turn(from: .bottom)
-      self.interactiveGestureType = .pan(fromDirection: .bottom)
+      self.interactiveGestureType = .pan(from: .bottom)
       reverse = false
     case .bottom:
       self.transitionAnimationType = .turn(from: .bottom)
       self.reverseAnimationType = .turn(from: .top)
-      self.interactiveGestureType = .pan(fromDirection: .top)
+      self.interactiveGestureType = .pan(from: .top)
       reverse = true
     default:
       self.transitionAnimationType = .turn(from: .left)
       self.reverseAnimationType = .turn(from: .right)
-      self.interactiveGestureType = .pan(fromDirection: .right)
+      self.interactiveGestureType = .pan(from: .right)
       reverse = false      
     }
     super.init()

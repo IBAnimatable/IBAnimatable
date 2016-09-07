@@ -18,8 +18,8 @@ public class SlideAnimator: NSObject, AnimatedTransitioning {
   fileprivate var isReverse = false
   fileprivate var isFade = false
   
-  public init(fromDirection: TransitionAnimationType.Direction, isFade: Bool, transitionDuration: Duration) {
-    self.fromDirection = fromDirection
+  public init(from direction: TransitionAnimationType.Direction, isFade: Bool, transitionDuration: Duration) {
+    fromDirection = direction
     self.transitionDuration = transitionDuration
     self.isFade = isFade
     isHorizontal = fromDirection.isHorizontal
@@ -28,22 +28,22 @@ public class SlideAnimator: NSObject, AnimatedTransitioning {
     case .right:
       self.transitionAnimationType = .slide(to: .right, isFade: isFade)
       self.reverseAnimationType = .slide(to: .left, isFade: isFade)
-      self.interactiveGestureType = .pan(fromDirection: .right)
+      self.interactiveGestureType = .pan(from: .right)
       isReverse = true
     case .top:
       self.transitionAnimationType = .slide(to: .top, isFade: isFade)
       self.reverseAnimationType = .slide(to: .bottom, isFade: isFade)
-      self.interactiveGestureType = .pan(fromDirection: .top)
+      self.interactiveGestureType = .pan(from: .top)
       isReverse = false
     case .bottom:
       self.transitionAnimationType = .slide(to: .bottom, isFade: isFade)
       self.reverseAnimationType = .slide(to: .top, isFade: isFade)
-      self.interactiveGestureType = .pan(fromDirection: .bottom)
+      self.interactiveGestureType = .pan(from: .bottom)
       isReverse = true
     default:
       self.transitionAnimationType = .slide(to: .left, isFade: isFade)
       self.reverseAnimationType = .slide(to: .right, isFade: isFade)
-      self.interactiveGestureType = .pan(fromDirection: .left)
+      self.interactiveGestureType = .pan(from: .left)
       isReverse = false
     }
     super.init()

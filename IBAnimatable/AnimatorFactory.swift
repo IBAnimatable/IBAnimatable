@@ -25,29 +25,29 @@ public struct AnimatorFactory {
     case let .fade(direction):
       return FadeAnimator(direction: direction, transitionDuration: transitionDuration)
     case let .fold(direction, folds):
-      return FoldAnimator(fromDirection: direction, folds: folds, transitionDuration: transitionDuration)
+      return FoldAnimator(from: direction, folds: folds, transitionDuration: transitionDuration)
     case let .portal(direction, zoomScale):
-      return PortalAnimator(fromDirection: direction, zoomScale: zoomScale, transitionDuration: transitionDuration)
+      return PortalAnimator(from: direction, zoomScale: zoomScale, transitionDuration: transitionDuration)
     case let .natGeo(direction):
-      return NatGeoAnimator(fromDirection: direction, transitionDuration: transitionDuration)
+      return NatGeoAnimator(from: direction, transitionDuration: transitionDuration)
     case let .turn(direction):
-      return TurnAnimator(fromDirection: direction, transitionDuration: transitionDuration)
+      return TurnAnimator(from: direction, transitionDuration: transitionDuration)
     case let .cards(direction):
-      return CardsAnimator(fromDirection: direction, transitionDuration: transitionDuration)
+      return CardsAnimator(from: direction, transitionDuration: transitionDuration)
     case let .flip(direction):
-      return FlipAnimator(fromDirection: direction, transitionDuration: transitionDuration)
+      return FlipAnimator(from: direction, transitionDuration: transitionDuration)
     case let .slide(direction, isFade):
-      return SlideAnimator(fromDirection: direction, isFade: isFade, transitionDuration: transitionDuration)
+      return SlideAnimator(from: direction, isFade: isFade, transitionDuration: transitionDuration)
     case let .systemCube(direction):
-      return SystemCubeAnimator(fromDirection: direction, transitionDuration: transitionDuration)
+      return SystemCubeAnimator(from: direction, transitionDuration: transitionDuration)
     case let .systemFlip(direction):
-      return SystemFlipAnimator(fromDirection: direction, transitionDuration: transitionDuration)
+      return SystemFlipAnimator(from: direction, transitionDuration: transitionDuration)
     case let .systemMoveIn(direction):
-      return SystemMoveInAnimator(fromDirection: direction, transitionDuration: transitionDuration)
+      return SystemMoveInAnimator(from: direction, transitionDuration: transitionDuration)
     case let .systemPush(direction):
-      return SystemPushAnimator(fromDirection: direction, transitionDuration: transitionDuration)
+      return SystemPushAnimator(from: direction, transitionDuration: transitionDuration)
     case let .systemReveal(direction):
-      return SystemRevealAnimator(fromDirection: direction, transitionDuration: transitionDuration)
+      return SystemRevealAnimator(from: direction, transitionDuration: transitionDuration)
     case let .systemPage(type):
       return SystemPageAnimator(type: type, transitionDuration: transitionDuration)
     case let .systemCameraIris(hollowState):
