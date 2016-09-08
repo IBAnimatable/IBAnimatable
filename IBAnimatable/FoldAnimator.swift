@@ -195,7 +195,7 @@ private extension FoldAnimator {
 
 private extension FoldAnimator {
 
-  func animateFoldTransition(fromView view: UIView, toViewFolds: [UIView], fromViewFolds: [UIView], completion: AnimatableCompletion) {
+  func animateFoldTransition(fromView view: UIView, toViewFolds: [UIView], fromViewFolds: [UIView], completion: @escaping AnimatableCompletion) {
     view.frame = view.frame.offsetBy(dx: view.frame.width, dy: 0)
     UIView.animate(withDuration: transitionDuration, animations: {
       for i in 0..<self.folds {

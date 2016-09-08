@@ -82,7 +82,7 @@ private extension ExplodeAnimator {
     return snapshots
   }
   
-  func animateSnapshotsExplode(_ snapshots: [UIView], completion: AnimatableCompletion) {
+  func animateSnapshotsExplode(_ snapshots: [UIView], completion: @escaping AnimatableCompletion) {
     UIView.animate(withDuration: transitionDuration, animations: {
       snapshots.forEach {
         let xOffset = self.randomFloatBetween(-100.0, upper: 100.0)

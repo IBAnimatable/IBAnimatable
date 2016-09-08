@@ -174,7 +174,7 @@ private extension FlipAnimator {
 
 private extension FlipAnimator {
   
-  func animateFlipTransition(flippedSectionOfFromView: (UIView, UIView), flippedSectionOfToView: (UIView, UIView), completion: AnimatableCompletion) {
+  func animateFlipTransition(flippedSectionOfFromView: (UIView, UIView), flippedSectionOfToView: (UIView, UIView), completion: @escaping AnimatableCompletion) {
     UIView.animateKeyframes(withDuration: transitionDuration, delay: 0, options: .layoutSubviews, animations: {
       UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5, animations: { 
         flippedSectionOfFromView.0.layer.transform = self.rotate(angle: self.reverse ? -.pi * 2 : .pi * 2)
