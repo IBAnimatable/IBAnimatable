@@ -30,10 +30,10 @@ public class Navigator: NSObject {
       switch interactiveGestureType {
       case .default:
         if let interactiveGestureType = animator?.interactiveGestureType {
-          interactiveAnimator = InteractiveAnimatorFactory.generateInteractiveAnimator(interactiveGestureType, transitionType: .navigationTransition(.pop))
+          interactiveAnimator = InteractiveAnimatorFactory.makeInteractiveAnimator(interactiveGestureType: interactiveGestureType, transitionType: .navigationTransition(.pop))
         }
       default:
-        interactiveAnimator = InteractiveAnimatorFactory.generateInteractiveAnimator(interactiveGestureType, transitionType: .navigationTransition(.pop))
+        interactiveAnimator = InteractiveAnimatorFactory.makeInteractiveAnimator(interactiveGestureType: interactiveGestureType, transitionType: .navigationTransition(.pop))
       }
     }
   }

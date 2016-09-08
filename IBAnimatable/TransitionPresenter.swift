@@ -59,10 +59,10 @@ public class TransitionPresenter: NSObject {
       switch interactiveGestureType {
       case .default:
         if let interactiveGestureType = animator?.interactiveGestureType {
-          interactiveAnimator = InteractiveAnimatorFactory.generateInteractiveAnimator(interactiveGestureType, transitionType: .presentationTransition(.dismissal))
+          interactiveAnimator = InteractiveAnimatorFactory.makeInteractiveAnimator(interactiveGestureType: interactiveGestureType, transitionType: .presentationTransition(.dismissal))
         }
       default:
-        interactiveAnimator = InteractiveAnimatorFactory.generateInteractiveAnimator(interactiveGestureType, transitionType: .presentationTransition(.dismissal))
+        interactiveAnimator = InteractiveAnimatorFactory.makeInteractiveAnimator(interactiveGestureType: interactiveGestureType, transitionType: .presentationTransition(.dismissal))
       }
     } else {
       interactiveAnimator = nil
