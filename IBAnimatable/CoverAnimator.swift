@@ -83,7 +83,7 @@ private extension CoverAnimator {
 
 private extension CoverAnimator {
 
-  func animateCover(animatingView: UIView, finalFrame: CGRect, completion: AnimatableCompletion) {
+  func animateCover(animatingView: UIView, finalFrame: CGRect, completion: @escaping AnimatableCompletion) {
     UIView.animate(withDuration: transitionDuration, animations: {
       animatingView.frame = finalFrame
     }, completion: { _ in
