@@ -22,7 +22,7 @@ extension UIViewController {
     switch interactiveGestureType {
     case .default:
       // Default gesture
-      let transitionAnimator = AnimatorFactory.generateAnimator(transitionAnimationType)
+      let transitionAnimator = AnimatorFactory.makeAnimator(transitionAnimationType: transitionAnimationType)
       if let interactiveGestureType = transitionAnimator?.interactiveGestureType {
         return String("or use \(interactiveGestureType.stringValueWithoutQualification) gesture to \(exit)")
       }

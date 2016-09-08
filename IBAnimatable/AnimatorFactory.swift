@@ -8,11 +8,7 @@ import UIKit
  Animator Factory
  */
 public struct AnimatorFactory {
-  public static func generateAnimator(_ transitionAnimationType: TransitionAnimationType) -> AnimatedTransitioning? {
-    return generateAnimator(transitionAnimationType, transitionDuration: defaultTransitionDuration)
-  }
-
-  public static func generateAnimator(_ transitionAnimationType: TransitionAnimationType, transitionDuration: Duration) -> AnimatedTransitioning? {
+  public static func makeAnimator(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration) -> AnimatedTransitioning? {
     switch transitionAnimationType {
     case .systemRotate:
       return SystemRotateAnimator(transitionDuration: transitionDuration)

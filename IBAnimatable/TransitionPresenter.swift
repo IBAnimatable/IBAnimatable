@@ -39,7 +39,7 @@ public class TransitionPresenter: NSObject {
     super.init()
     
     updateTransitionDuration()
-    animator = AnimatorFactory.generateAnimator(transitionAnimationType, transitionDuration: transitionDuration)
+    animator = AnimatorFactory.makeAnimator(transitionAnimationType: transitionAnimationType, transitionDuration: transitionDuration)
     
     self.interactiveGestureType = interactiveGestureType
     updateInteractiveAnimator()
@@ -82,7 +82,7 @@ extension TransitionPresenter: UIViewControllerTransitioningDelegate {
   public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     // Use the reverse animation
     if let reverseTransitionAnimationType = animator?.reverseAnimationType {
-      return AnimatorFactory.generateAnimator(reverseTransitionAnimationType, transitionDuration: transitionDuration)
+      return AnimatorFactory.makeAnimator(transitionAnimationType: reverseTransitionAnimationType, transitionDuration: transitionDuration)
     }
     return nil
   }

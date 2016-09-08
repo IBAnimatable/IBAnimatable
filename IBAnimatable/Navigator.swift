@@ -22,7 +22,7 @@ public class Navigator: NSObject {
     self.transitionDuration = transitionDuration
     super.init()
     
-    animator = AnimatorFactory.generateAnimator(transitionAnimationType, transitionDuration: transitionDuration)
+    animator = AnimatorFactory.makeAnimator(transitionAnimationType: transitionAnimationType, transitionDuration: transitionDuration)
     
     // If interactiveGestureType has been set
     if let interactiveGestureType = interactiveGestureType {
@@ -50,7 +50,7 @@ extension Navigator: UINavigationControllerDelegate {
     } else if operation == .pop {
       // Use the reverse animation
       if let reverseTransitionAnimationType = animator?.reverseAnimationType {
-        return AnimatorFactory.generateAnimator(reverseTransitionAnimationType, transitionDuration: transitionDuration)
+        return AnimatorFactory.makeAnimator(transitionAnimationType: reverseTransitionAnimationType, transitionDuration: transitionDuration)
       }
     }
     return nil
