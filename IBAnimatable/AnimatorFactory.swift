@@ -53,7 +53,7 @@ public struct AnimatorFactory {
     }
   }
 
-  public static func generateAnimator(presentationAnimationType: PresentationAnimationType, transitionDuration: Duration) -> AnimatedPresenting {
+  public static func makeAnimator(presentationAnimationType: PresentationAnimationType, transitionDuration: Duration = defaultPresentationDuration) -> AnimatedPresenting {
     switch presentationAnimationType {
     case let .cover(direction):
       return CoverAnimator(from: direction, transitionDuration: transitionDuration)
