@@ -6,7 +6,7 @@
 import UIKit
 
 public struct ActivityIndicatorFactory {
-  public static func generateActivityIndicator(activityIndicatorType: ActivityIndicatorType) -> ActivityIndicatorAnimating {
+  public static func makeActivityIndicator(activityIndicatorType: ActivityIndicatorType) -> ActivityIndicatorAnimating {
     switch activityIndicatorType {
     case .none:
       fatalError()

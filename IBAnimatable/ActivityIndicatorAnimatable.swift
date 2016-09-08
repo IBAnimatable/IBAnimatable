@@ -48,7 +48,7 @@ private extension ActivityIndicatorAnimatable where Self: UIView {
       return
     }
 
-    let activityIndicator = ActivityIndicatorFactory.generateActivityIndicator(activityIndicatorType: animationType)
+    let activityIndicator = ActivityIndicatorFactory.makeActivityIndicator(activityIndicatorType: animationType)
     activityIndicator.configAnimation(in: layer, size: bounds.size, color: color)
     layer.speed = 1
   }
