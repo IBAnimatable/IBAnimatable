@@ -6,9 +6,9 @@
 import UIKit
 
 /**
- Presenter for `UIViewController` to support custom transition animation for Present and Dismiss
+ TransitionPresenter for `UIViewController` to support custom transition animation for Present and Dismiss
  */
-public class Presenter: NSObject {
+public class TransitionPresenter: NSObject {
   fileprivate var transitionAnimationType: TransitionAnimationType
   var transitionDuration: Duration {
     didSet {
@@ -35,11 +35,10 @@ public class Presenter: NSObject {
   
   public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) {
     self.transitionAnimationType = transitionAnimationType
-    self.transitionDuration = transitionDuration
+    self.transitionDuration = transitionDuration    
     super.init()
     
     updateTransitionDuration()
-    
     animator = AnimatorFactory.generateAnimator(transitionAnimationType, transitionDuration: transitionDuration)
     
     self.interactiveGestureType = interactiveGestureType
@@ -71,7 +70,8 @@ public class Presenter: NSObject {
   }
 }
 
-extension Presenter: UIViewControllerTransitioningDelegate {
+extension TransitionPresenter: UIViewControllerTransitioningDelegate {
+
   // MARK: - animation controller
   public func animationController(forPresentedController presented: UIViewController, presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     animator?.transitionDuration = transitionDuration

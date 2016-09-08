@@ -12,17 +12,17 @@ public protocol SideImageDesignable {
   var leftImage: UIImage? { get set }
   
   /**
-   * Left padding of the left image, default value is CGFloat.NaN
+   * Left padding of the left image, default value is CGFloat.nan
    */
   var leftImageLeftPadding: CGFloat { get set }
   
   /**
-   * Right padding of the left image, default value is CGFloat.NaN
+   * Right padding of the left image, default value is CGFloat.nan
    */
   var leftImageRightPadding: CGFloat { get set }
   
   /**
-   * Top padding of the left image, default value is CGFloat.NaN
+   * Top padding of the left image, default value is CGFloat.nan
    */
   var leftImageTopPadding: CGFloat { get set }
   
@@ -32,17 +32,17 @@ public protocol SideImageDesignable {
   var rightImage: UIImage? { get set }
   
   /**
-   * Left padding of the right image, default value is CGFloat.NaN
+   * Left padding of the right image, default value is CGFloat.nan
    */
   var rightImageLeftPadding: CGFloat { get set }
   
   /**
-   * Right padding of the right image, default value is CGFloat.NaN
+   * Right padding of the right image, default value is CGFloat.nan
    */
   var rightImageRightPadding: CGFloat { get set }
   
   /**
-   * Top padding of the right image, default value is CGFloat.NaN
+   * Top padding of the right image, default value is CGFloat.nan
    */
   var rightImageTopPadding: CGFloat { get set }
 }

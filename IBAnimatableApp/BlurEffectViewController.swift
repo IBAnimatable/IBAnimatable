@@ -1,9 +1,6 @@
 //
-//  BlurEffectViewController.swift
-//  IBAnimatableApp
-//
 //  Created by jason akakpo on 27/07/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import UIKit
@@ -11,8 +8,8 @@ import IBAnimatable
 
 class BlurEffectViewController: UIViewController {
   
-  @IBOutlet weak var imageView: AnimatableImageView!
- 
+  @IBOutlet var blurEffectView: AnimatableView!
+  
   let opacityValues = ParamType.number(min: 0.0, max: 1.0, interval: 0.1, ascending: false, unit: "")
   lazy var values: [String] = {
     var values = ["none", "extraLight", "light", "dark"]
@@ -29,6 +26,8 @@ extension BlurEffectViewController : UIPickerViewDelegate, UIPickerViewDataSourc
     if component == 2 {
       return opacityValues.count()
     }
+    
+    // When component == 0 || component == 1, display blur effects
     return values.count
   }
   func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -37,15 +36,15 @@ extension BlurEffectViewController : UIPickerViewDelegate, UIPickerViewDataSourc
   
   func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
     if component == 2 {
-      return (opacityValues.titleAt(index: row) ).colorize(color: .white)
+      return (opacityValues.title(at: row)).colorize(.white)
     }
-      return values[safe: row]?.colorize(color: .white)
+      return values[safe: row]?.colorize(.white)
   }
 
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    imageView.blurEffectStyle = UIBlurEffectStyle(string:values[pickerView.selectedRow(inComponent: 0)])
-    imageView.vibrancyEffectStyle = UIBlurEffectStyle(string:values[pickerView.selectedRow(inComponent: 1)])
-    imageView.blurOpacity = CGFloat(Double(opacityValues.valueAt(index: pickerView.selectedRow(inComponent: 2)))!)
+    blurEffectView.blurEffectStyle = UIBlurEffectStyle(string:values[pickerView.selectedRow(inComponent: 0)])
+    blurEffectView.vibrancyEffectStyle = UIBlurEffectStyle(string:values[pickerView.selectedRow(inComponent: 1)])
+    blurEffectView.blurOpacity = CGFloat(Double(opacityValues.value(at: pickerView.selectedRow(inComponent: 2)))!)
   }
 
   func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {

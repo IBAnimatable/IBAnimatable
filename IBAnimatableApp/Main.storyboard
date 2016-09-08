@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="l6o-2n-J10">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="xkD-nc-dIU">
+            <objects>
+                <viewController id="l6o-2n-J10" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aju-Gi-iM9"/>
+                        <viewControllerLayoutGuide type="bottom" id="x3c-Zj-41j"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Zb-ln-vCD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0f-jh-Uh1">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IBAnimatable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2UR-Mx-FBU">
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, enjoy the demo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAS-Ee-lhd">
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="2UR-Mx-FBU" firstAttribute="centerY" secondItem="C0f-jh-Uh1" secondAttribute="centerY" id="UDh-QG-XFz"/>
+                                    <constraint firstItem="lAS-Ee-lhd" firstAttribute="centerX" secondItem="C0f-jh-Uh1" secondAttribute="centerX" id="W02-gv-GtM"/>
+                                    <constraint firstItem="2UR-Mx-FBU" firstAttribute="centerX" secondItem="C0f-jh-Uh1" secondAttribute="centerX" id="evY-5q-eAS"/>
+                                    <constraint firstItem="lAS-Ee-lhd" firstAttribute="top" secondItem="2UR-Mx-FBU" secondAttribute="bottom" constant="5" id="sEX-AL-khy"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="nQF-gv-DgD">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQ6-br-D2b" customClass="AnimatableButton" customModule="IBAnimatable">
+                                        <color key="backgroundColor" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="TNq-Lf-9FA"/>
+                                        </constraints>
+                                        <state key="normal" title="Demo application">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="AV2-NQ-rHH" kind="presentation" id="0PJ-Nq-5Lw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mnm-1A-4XS" customClass="AnimatableButton" customModule="IBAnimatable">
+                                        <color key="backgroundColor" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Playground">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="ZP4-Ul-hjM" kind="presentation" id="JRW-KN-WE1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="yQ6-br-D2b" firstAttribute="height" secondItem="Mnm-1A-4XS" secondAttribute="height" id="q3D-yH-W02"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.72941176470000002" green="0.46666666670000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nQF-gv-DgD" firstAttribute="centerX" secondItem="0Zb-ln-vCD" secondAttribute="centerX" id="2uv-BO-ccu"/>
+                            <constraint firstItem="nQF-gv-DgD" firstAttribute="top" secondItem="C0f-jh-Uh1" secondAttribute="bottom" id="7wH-Aa-ONP"/>
+                            <constraint firstAttribute="trailing" secondItem="C0f-jh-Uh1" secondAttribute="trailing" id="8AR-fq-TwP"/>
+                            <constraint firstItem="nQF-gv-DgD" firstAttribute="width" secondItem="0Zb-ln-vCD" secondAttribute="width" multiplier="0.8" id="D6X-0E-6cX"/>
+                            <constraint firstItem="nQF-gv-DgD" firstAttribute="centerY" secondItem="0Zb-ln-vCD" secondAttribute="centerY" id="OJi-9G-Mzs"/>
+                            <constraint firstItem="C0f-jh-Uh1" firstAttribute="top" secondItem="aju-Gi-iM9" secondAttribute="bottom" id="nhQ-Dl-5UW"/>
+                            <constraint firstItem="C0f-jh-Uh1" firstAttribute="leading" secondItem="0Zb-ln-vCD" secondAttribute="leading" id="o4k-8g-KDt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="T7e-mN-iFb"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uTA-82-CQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="936" y="373"/>
+        </scene>
+        <!--DemoApp-->
+        <scene sceneID="Au8-z9-02c">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DemoApp" id="AV2-NQ-rHH" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aZu-nD-fPx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1466" y="352"/>
+        </scene>
+        <!--Playground-->
+        <scene sceneID="DcI-pm-Tv7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Playground" id="ZP4-Ul-hjM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VdQ-FT-fKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1474" y="393"/>
+        </scene>
+    </scenes>
+</document>

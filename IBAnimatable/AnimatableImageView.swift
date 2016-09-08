@@ -144,6 +144,7 @@ import UIKit
     didSet {
       configMask()
       configBorder()
+      configMaskShadow()
     }
   }
   
@@ -195,6 +196,7 @@ open var animationType: AnimationType = .none
   fileprivate func configAfterLayoutSubviews() {
     configMask()
     configBorder()
+    configMaskShadow()
     configGradient()    
   }
 }
