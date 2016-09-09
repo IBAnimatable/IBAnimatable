@@ -17,7 +17,7 @@ public class ActivityIndicatorAnimationBallClipRotate: ActivityIndicatorAnimatin
     let animation = self.animation
 
     // Draw circle
-    let circle = ActivityIndicatorShape.RingThirdFour.createLayerWith(size: CGSize(width: size.width, height: size.height), color: color)
+    let circle = ActivityIndicatorShape.RingThirdFour.makeLayer(size: CGSize(width: size.width, height: size.height), color: color)
     let frame = CGRect(x: (layer.bounds.size.width - size.width) / 2,
                        y: (layer.bounds.size.height - size.height) / 2,
                        width: size.width,

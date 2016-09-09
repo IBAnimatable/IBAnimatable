@@ -24,8 +24,8 @@ public class ActivityIndicatorAnimationAudioEqualizer: ActivityIndicatorAnimatin
 
     // Draw lines
     for i in 0 ..< 4 {
-      let animation = createAnimation(duration: duration[i], values: values)
-      let line = ActivityIndicatorShape.Line.createLayerWith(size: CGSize(width: lineSize, height: size.height), color: color)
+      let animation = makeAnimation(duration: duration[i], values: values)
+      let line = ActivityIndicatorShape.Line.makeLayer(size: CGSize(width: lineSize, height: size.height), color: color)
       let frame = CGRect(x: x + lineSize * 2 * CGFloat(i),
                          y: y,
                          width: lineSize,
@@ -42,7 +42,7 @@ public class ActivityIndicatorAnimationAudioEqualizer: ActivityIndicatorAnimatin
 
 fileprivate extension ActivityIndicatorAnimationAudioEqualizer {
 
-  func createAnimation(duration: CFTimeInterval, values: [Double]) -> CAKeyframeAnimation {
+  func makeAnimation(duration: CFTimeInterval, values: [Double]) -> CAKeyframeAnimation {
     let animation = CAKeyframeAnimation()
     animation.keyPath = "path"
     animation.isAdditive = true

@@ -37,7 +37,7 @@ fileprivate extension ActivityIndicatorAnimationOrbit {
 
   func satelliteInLayer(layer: CALayer, color: UIColor) {
     let rotateAnimation = createSatelliteRotateAnimation(layer: layer)
-    let circle = ActivityIndicatorShape.Circle.createLayerWith(size: CGSize(width: satelliteSize, height: satelliteSize), color: color)
+    let circle = ActivityIndicatorShape.Circle.makeLayer(size: CGSize(width: satelliteSize, height: satelliteSize), color: color)
 
     let frame = CGRect(x: 0, y: 0, width: satelliteSize, height: satelliteSize)
     circle.frame = frame
@@ -65,7 +65,7 @@ fileprivate extension ActivityIndicatorAnimationOrbit {
 fileprivate extension ActivityIndicatorAnimationOrbit {
 
   func coreInLayer(layer: CALayer, color: UIColor) {
-    let circle = ActivityIndicatorShape.Circle.createLayerWith(size: CGSize(width: coreSize, height: coreSize), color: color)
+    let circle = ActivityIndicatorShape.Circle.makeLayer(size: CGSize(width: coreSize, height: coreSize), color: color)
     let frame = CGRect(x: (layer.bounds.size.width - coreSize) / 2,
                        y: (layer.bounds.size.height - coreSize) / 2,
                        width: coreSize,
@@ -96,7 +96,7 @@ fileprivate extension ActivityIndicatorAnimationOrbit {
 
   func ring1InLayer(layer: CALayer, color: UIColor) {
     let animation = ring1Animation
-    let circle = ActivityIndicatorShape.Circle.createLayerWith(size: CGSize(width: coreSize, height: coreSize), color: color)
+    let circle = ActivityIndicatorShape.Circle.makeLayer(size: CGSize(width: coreSize, height: coreSize), color: color)
     let frame = CGRect(x: (layer.bounds.size.width - coreSize) / 2,
                        y: (layer.bounds.size.height - coreSize) / 2,
                        width: coreSize,
@@ -142,7 +142,7 @@ fileprivate extension ActivityIndicatorAnimationOrbit {
 
   func ring2InLayer(layer: CALayer, color: UIColor) {
     let animation = ring2Animation
-    let circle = ActivityIndicatorShape.Circle.createLayerWith(size: CGSize(width: coreSize, height: coreSize), color: color)
+    let circle = ActivityIndicatorShape.Circle.makeLayer(size: CGSize(width: coreSize, height: coreSize), color: color)
     let frame = CGRect(x: (layer.bounds.size.width - coreSize) / 2,
                        y: (layer.bounds.size.height - coreSize) / 2,
                        width: coreSize,

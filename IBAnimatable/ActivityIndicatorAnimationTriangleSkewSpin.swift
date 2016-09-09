@@ -16,7 +16,7 @@ public class ActivityIndicatorAnimationTriangleSkewSpin: ActivityIndicatorAnimat
   public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     let x = (layer.bounds.size.width - size.width) / 2
     let y = (layer.bounds.size.height - size.height) / 2
-    let triangle = ActivityIndicatorShape.Triangle.createLayerWith(size: size, color: color)
+    let triangle = ActivityIndicatorShape.Triangle.makeLayer(size: size, color: color)
     let animation = self.animation
     triangle.frame = CGRect(x: x, y: y, width: size.width, height: size.height)
     triangle.add(animation, forKey: "animation")

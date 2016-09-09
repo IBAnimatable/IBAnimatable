@@ -28,7 +28,7 @@ public class ActivityIndicatorAnimationCubeTransition: ActivityIndicatorAnimatin
 
     let animation = self.animation
     for i in 0 ..< 2 {
-      let square = ActivityIndicatorShape.Rectangle.createLayerWith(size: CGSize(width: squareSize, height: squareSize), color: color)
+      let square = ActivityIndicatorShape.Rectangle.makeLayer(size: CGSize(width: squareSize, height: squareSize), color: color)
       let frame = CGRect(x: x, y: y, width: squareSize, height: squareSize)
 
       animation.beginTime = beginTime + beginTimes[i]

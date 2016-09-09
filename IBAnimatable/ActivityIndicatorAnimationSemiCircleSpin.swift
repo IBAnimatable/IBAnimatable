@@ -15,7 +15,7 @@ public class ActivityIndicatorAnimationSemiCircleSpin: ActivityIndicatorAnimatin
 
   public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     let animation = self.animation
-    let circle = ActivityIndicatorShape.CircleSemi.createLayerWith(size: size, color: color)
+    let circle = ActivityIndicatorShape.CircleSemi.makeLayer(size: size, color: color)
     let frame = CGRect(
       x: (layer.bounds.width - size.width) / 2,
       y: (layer.bounds.height - size.height) / 2,

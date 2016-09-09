@@ -30,7 +30,7 @@ fileprivate extension ActivityIndicatorAnimationPacman {
 
   func pacmanInLayer(layer: CALayer, color: UIColor) {
     let pacmanSize = 2 * size.width / 3
-    let pacman = ActivityIndicatorShape.Pacman.createLayerWith(size: CGSize(width: pacmanSize, height: pacmanSize), color: color)
+    let pacman = ActivityIndicatorShape.Pacman.makeLayer(size: CGSize(width: pacmanSize, height: pacmanSize), color: color)
     let animation = pacmanAnimation
     let frame = CGRect(
       x: (layer.bounds.size.width - size.width) / 2,
@@ -78,7 +78,7 @@ fileprivate extension ActivityIndicatorAnimationPacman {
 
   func circleInLayer(layer: CALayer, color: UIColor) {
     let circleSize = size.width / 5
-    let circle = ActivityIndicatorShape.Circle.createLayerWith(size: CGSize(width: circleSize, height: circleSize), color: color)
+    let circle = ActivityIndicatorShape.Circle.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
     let animation = circleAnimation
     let frame = CGRect(
       x: (layer.bounds.size.width - size.width) / 2 + size.width - circleSize,

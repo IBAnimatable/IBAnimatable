@@ -21,7 +21,7 @@ public class ActivityIndicatorAnimationBallPulse: ActivityIndicatorAnimating {
 
         // Draw circles
         for i in 0 ..< 3 {
-            let circle = ActivityIndicatorShape.Circle.createLayerWith(size: CGSize(width: circleSize, height: circleSize), color: color)
+            let circle = ActivityIndicatorShape.Circle.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
             let frame = CGRect(x: x + circleSize * CGFloat(i) + circleSpacing * CGFloat(i),
                 y: y,
                 width: circleSize,

@@ -17,7 +17,7 @@ enum ActivityIndicatorShape {
   case Line
   case Pacman
 
-  func createLayerWith(size: CGSize, color: UIColor) -> CALayer {
+  func makeLayer(size: CGSize, color: UIColor) -> CALayer {
     let lineWidth: CGFloat = 2    
     switch self {
     case .Circle:
