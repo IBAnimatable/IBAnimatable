@@ -9,12 +9,12 @@ public class ActivityIndicatorAnimationOrbit: ActivityIndicatorAnimating {
 
   // MARK: Properties
 
-  let duration: CFTimeInterval = 1.9
-  let satelliteCoreRatio: CGFloat = 0.25
-  let distanceRatio: CGFloat = 1.5
-  var coreSize: CGFloat = 0
-  var satelliteSize: CGFloat = 0
-  var size: CGSize = .zero
+  fileprivate let duration: CFTimeInterval = 1.9
+  fileprivate let satelliteCoreRatio: CGFloat = 0.25
+  fileprivate let distanceRatio: CGFloat = 1.5
+  fileprivate var coreSize: CGFloat = 0
+  fileprivate var satelliteSize: CGFloat = 0
+  fileprivate var size: CGSize = .zero
 
   // MARK: ActivityIndicatorAnimating
 
@@ -23,10 +23,10 @@ public class ActivityIndicatorAnimationOrbit: ActivityIndicatorAnimating {
 
     coreSize = size.width / (1 + satelliteCoreRatio + distanceRatio)
     satelliteSize = coreSize * satelliteCoreRatio
-    ring1InLayer(layer: layer, color: color)
-    ring2InLayer(layer: layer, color: color)
-    coreInLayer(layer: layer, color: color)
-    satelliteInLayer(layer: layer, color: color)
+    animateRing1(in: layer, color: color)
+    animateRing2(in: layer, color: color)
+    animateCore(in: layer, color: color)
+    animateSatellite(in: layer, color: color)
   }
 
 }
@@ -35,8 +35,8 @@ public class ActivityIndicatorAnimationOrbit: ActivityIndicatorAnimating {
 
 private extension ActivityIndicatorAnimationOrbit {
 
-  func satelliteInLayer(layer: CALayer, color: UIColor) {
-    let rotateAnimation = createSatelliteRotateAnimation(layer: layer)
+  func animateSatellite(in layer: CALayer, color: UIColor) {
+    let rotateAnimation = makeSatelliteRotateAnimation(layer: layer)
     let circle = ActivityIndicatorShape.Circle.makeLayer(size: CGSize(width: satelliteSize, height: satelliteSize), color: color)
 
     let frame = CGRect(x: 0, y: 0, width: satelliteSize, height: satelliteSize)
@@ -45,7 +45,7 @@ private extension ActivityIndicatorAnimationOrbit {
     layer.addSublayer(circle)
   }
 
-  func createSatelliteRotateAnimation(layer: CALayer) -> CAKeyframeAnimation {
+  func makeSatelliteRotateAnimation(layer: CALayer) -> CAKeyframeAnimation {
     let rotateAnimation = CAKeyframeAnimation(keyPath: "position")
     rotateAnimation.path = UIBezierPath(arcCenter: CGPoint(x: layer.bounds.midX, y: layer.bounds.midY),
                                         radius: (size.width - satelliteSize) / 2,
@@ -64,7 +64,7 @@ private extension ActivityIndicatorAnimationOrbit {
 
 private extension ActivityIndicatorAnimationOrbit {
 
-  func coreInLayer(layer: CALayer, color: UIColor) {
+  func animateCore(in layer: CALayer, color: UIColor) {
     let circle = ActivityIndicatorShape.Circle.makeLayer(size: CGSize(width: coreSize, height: coreSize), color: color)
     let frame = CGRect(x: (layer.bounds.size.width - coreSize) / 2,
                        y: (layer.bounds.size.height - coreSize) / 2,
@@ -94,7 +94,7 @@ private extension ActivityIndicatorAnimationOrbit {
 
 private extension ActivityIndicatorAnimationOrbit {
 
-  func ring1InLayer(layer: CALayer, color: UIColor) {
+  func animateRing1(in layer: CALayer, color: UIColor) {
     let animation = ring1Animation
     let circle = ActivityIndicatorShape.Circle.makeLayer(size: CGSize(width: coreSize, height: coreSize), color: color)
     let frame = CGRect(x: (layer.bounds.size.width - coreSize) / 2,
@@ -140,7 +140,7 @@ private extension ActivityIndicatorAnimationOrbit {
 
 private extension ActivityIndicatorAnimationOrbit {
 
-  func ring2InLayer(layer: CALayer, color: UIColor) {
+  func animateRing2(in layer: CALayer, color: UIColor) {
     let animation = ring2Animation
     let circle = ActivityIndicatorShape.Circle.makeLayer(size: CGSize(width: coreSize, height: coreSize), color: color)
     let frame = CGRect(x: (layer.bounds.size.width - coreSize) / 2,
