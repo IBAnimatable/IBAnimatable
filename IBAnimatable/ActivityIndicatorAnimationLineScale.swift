@@ -37,7 +37,7 @@ public class ActivityIndicatorAnimationLineScale: ActivityIndicatorAnimating {
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationLineScale {
+private extension ActivityIndicatorAnimationLineScale {
 
   var animation: CAKeyframeAnimation {
     let animation = CAKeyframeAnimation(keyPath: "transform.scale.y")

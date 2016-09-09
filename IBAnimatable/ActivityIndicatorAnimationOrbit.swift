@@ -33,7 +33,7 @@ public class ActivityIndicatorAnimationOrbit: ActivityIndicatorAnimating {
 
 // MARK: - Satellite
 
-fileprivate extension ActivityIndicatorAnimationOrbit {
+private extension ActivityIndicatorAnimationOrbit {
 
   func satelliteInLayer(layer: CALayer, color: UIColor) {
     let rotateAnimation = createSatelliteRotateAnimation(layer: layer)
@@ -62,7 +62,7 @@ fileprivate extension ActivityIndicatorAnimationOrbit {
 
 // MARK: - Core
 
-fileprivate extension ActivityIndicatorAnimationOrbit {
+private extension ActivityIndicatorAnimationOrbit {
 
   func coreInLayer(layer: CALayer, color: UIColor) {
     let circle = ActivityIndicatorShape.Circle.makeLayer(size: CGSize(width: coreSize, height: coreSize), color: color)
@@ -92,7 +92,7 @@ fileprivate extension ActivityIndicatorAnimationOrbit {
 
 // MARK: - Ring 1
 
-fileprivate extension ActivityIndicatorAnimationOrbit {
+private extension ActivityIndicatorAnimationOrbit {
 
   func ring1InLayer(layer: CALayer, color: UIColor) {
     let animation = ring1Animation
@@ -138,7 +138,7 @@ fileprivate extension ActivityIndicatorAnimationOrbit {
 
 // MARK: - Ring 2
 
-fileprivate extension ActivityIndicatorAnimationOrbit {
+private extension ActivityIndicatorAnimationOrbit {
 
   func ring2InLayer(layer: CALayer, color: UIColor) {
     let animation = ring2Animation

@@ -39,7 +39,7 @@ public class ActivityIndicatorAnimationBallBeat: ActivityIndicatorAnimating {
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationBallBeat {
+private extension ActivityIndicatorAnimationBallBeat {
 
   var scaleAnimation: CAKeyframeAnimation {
     let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")

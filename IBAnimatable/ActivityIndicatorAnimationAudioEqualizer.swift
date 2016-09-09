@@ -40,7 +40,7 @@ public class ActivityIndicatorAnimationAudioEqualizer: ActivityIndicatorAnimatin
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationAudioEqualizer {
+private extension ActivityIndicatorAnimationAudioEqualizer {
 
   func makeAnimation(duration: CFTimeInterval, values: [Double]) -> CAKeyframeAnimation {
     let animation = CAKeyframeAnimation()

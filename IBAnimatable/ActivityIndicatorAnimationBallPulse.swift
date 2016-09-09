@@ -37,7 +37,7 @@ public class ActivityIndicatorAnimationBallPulse: ActivityIndicatorAnimating {
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationBallPulse {
+private extension ActivityIndicatorAnimationBallPulse {
 
   var animation: CAKeyframeAnimation {
     let duration: CFTimeInterval = 0.75

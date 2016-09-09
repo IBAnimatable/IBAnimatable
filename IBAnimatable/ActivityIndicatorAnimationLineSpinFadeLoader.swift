@@ -39,7 +39,7 @@ public class ActivityIndicatorAnimationLineSpinFadeLoader: ActivityIndicatorAnim
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationLineSpinFadeLoader {
+private extension ActivityIndicatorAnimationLineSpinFadeLoader {
 
   var animation: CAKeyframeAnimation {
     let animation = CAKeyframeAnimation(keyPath: "opacity")

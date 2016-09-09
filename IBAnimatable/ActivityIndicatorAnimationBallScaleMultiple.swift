@@ -35,7 +35,7 @@ public class ActivityIndicatorAnimationBallScaleMultiple: ActivityIndicatorAnima
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationBallScaleMultiple {
+private extension ActivityIndicatorAnimationBallScaleMultiple {
 
   var animation: CAAnimationGroup {
     let animation = CAAnimationGroup()

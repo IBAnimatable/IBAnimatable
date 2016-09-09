@@ -54,7 +54,7 @@ public class ActivityIndicatorAnimationBallSpinFadeLoader: ActivityIndicatorAnim
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationBallSpinFadeLoader {
+private extension ActivityIndicatorAnimationBallSpinFadeLoader {
   
   var animation: CAAnimationGroup {
     let animation = CAAnimationGroup()

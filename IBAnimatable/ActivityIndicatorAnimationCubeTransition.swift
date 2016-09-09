@@ -41,7 +41,7 @@ public class ActivityIndicatorAnimationCubeTransition: ActivityIndicatorAnimatin
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationCubeTransition {
+private extension ActivityIndicatorAnimationCubeTransition {
 
   var animation: CAAnimationGroup {
     let animation = CAAnimationGroup()

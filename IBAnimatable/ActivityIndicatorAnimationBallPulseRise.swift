@@ -45,7 +45,7 @@ public class ActivityIndicatorAnimationBallPulseRise: ActivityIndicatorAnimating
 
 // MARK: - Setup Odd
 
-fileprivate extension ActivityIndicatorAnimationBallPulseRise {
+private extension ActivityIndicatorAnimationBallPulseRise {
 
   var oddAnimation: CAAnimation {
     let scaleAnimation = oddScaleAnimation
@@ -80,7 +80,7 @@ fileprivate extension ActivityIndicatorAnimationBallPulseRise {
 
 // MARK: - Even Odd
 
-fileprivate extension ActivityIndicatorAnimationBallPulseRise {
+private extension ActivityIndicatorAnimationBallPulseRise {
 
   var evenAnimation: CAAnimation {
     let scaleAnimation = evenScaleAnimation

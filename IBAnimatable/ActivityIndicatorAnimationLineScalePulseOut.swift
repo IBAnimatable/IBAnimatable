@@ -41,7 +41,7 @@ public class ActivityIndicatorAnimationLineScalePulseOut: ActivityIndicatorAnima
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationLineScalePulseOut {
+private extension ActivityIndicatorAnimationLineScalePulseOut {
 
   var animation: CAKeyframeAnimation {
     let timingFunction = CAMediaTimingFunction(controlPoints: 0.85, 0.25, 0.37, 0.85)

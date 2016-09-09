@@ -45,7 +45,7 @@ public class ActivityIndicatorAnimationBallTrianglePath: ActivityIndicatorAnimat
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationBallTrianglePath {
+private extension ActivityIndicatorAnimationBallTrianglePath {
 
   var animation: CAKeyframeAnimation {
     let animation = CAKeyframeAnimation(keyPath:"transform")

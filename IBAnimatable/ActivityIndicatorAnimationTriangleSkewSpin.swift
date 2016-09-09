@@ -27,7 +27,7 @@ public class ActivityIndicatorAnimationTriangleSkewSpin: ActivityIndicatorAnimat
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationTriangleSkewSpin {
+private extension ActivityIndicatorAnimationTriangleSkewSpin {
 
   var animation: CAKeyframeAnimation {
     let timingFunction = CAMediaTimingFunction(controlPoints: 0.09, 0.57, 0.49, 0.9)

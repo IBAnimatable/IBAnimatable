@@ -36,7 +36,7 @@ public class ActivityIndicatorAnimationBallClipRotateMultiple: ActivityIndicator
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationBallClipRotateMultiple {
+private extension ActivityIndicatorAnimationBallClipRotateMultiple {
 
   func makeAnimationIn(duration: CFTimeInterval, timingFunction: CAMediaTimingFunction, reverse: Bool) -> CAAnimation {
     // Scale animation

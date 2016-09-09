@@ -44,7 +44,7 @@ public class ActivityIndicatorAnimationBallGridPulse: ActivityIndicatorAnimating
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationBallGridPulse {
+private extension ActivityIndicatorAnimationBallGridPulse {
 
   var animation: CAAnimationGroup {
     let animation = CAAnimationGroup()

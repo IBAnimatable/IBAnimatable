@@ -43,7 +43,7 @@ public class ActivityIndicatorAnimationBallRotate: ActivityIndicatorAnimating {
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationBallRotate {
+private extension ActivityIndicatorAnimationBallRotate {
 
   var animation: CAAnimationGroup {
     let animation = CAAnimationGroup()

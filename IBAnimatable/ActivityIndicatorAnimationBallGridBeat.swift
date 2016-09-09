@@ -44,7 +44,7 @@ public class ActivityIndicatorAnimationBallGridBeat: ActivityIndicatorAnimating 
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationBallGridBeat {
+private extension ActivityIndicatorAnimationBallGridBeat {
 
   var animation: CAKeyframeAnimation {
     let animation = CAKeyframeAnimation(keyPath: "opacity")

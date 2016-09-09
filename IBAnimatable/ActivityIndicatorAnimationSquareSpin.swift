@@ -30,7 +30,7 @@ public class ActivityIndicatorAnimationSquareSpin: ActivityIndicatorAnimating {
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationSquareSpin {
+private extension ActivityIndicatorAnimationSquareSpin {
 
   var animation: CAKeyframeAnimation {
     let timingFunction = CAMediaTimingFunction(controlPoints: 0.09, 0.57, 0.49, 0.9)

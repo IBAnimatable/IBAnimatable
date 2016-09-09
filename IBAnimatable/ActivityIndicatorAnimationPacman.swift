@@ -26,7 +26,7 @@ public class ActivityIndicatorAnimationPacman: ActivityIndicatorAnimating {
 
 // MARK: - Pacman
 
-fileprivate extension ActivityIndicatorAnimationPacman {
+private extension ActivityIndicatorAnimationPacman {
 
   func pacmanInLayer(layer: CALayer, color: UIColor) {
     let pacmanSize = 2 * size.width / 3
@@ -74,7 +74,7 @@ fileprivate extension ActivityIndicatorAnimationPacman {
 
 // MARK: - Circle
 
-fileprivate extension ActivityIndicatorAnimationPacman {
+private extension ActivityIndicatorAnimationPacman {
 
   func circleInLayer(layer: CALayer, color: UIColor) {
     let circleSize = size.width / 5

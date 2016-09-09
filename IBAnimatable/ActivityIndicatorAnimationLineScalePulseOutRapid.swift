@@ -39,7 +39,7 @@ public class ActivityIndicatorAnimationLineScalePulseOutRapid: ActivityIndicator
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationLineScalePulseOutRapid {
+private extension ActivityIndicatorAnimationLineScalePulseOutRapid {
 
   var animation: CAKeyframeAnimation {
     let animation = CAKeyframeAnimation(keyPath: "transform.scale.y")

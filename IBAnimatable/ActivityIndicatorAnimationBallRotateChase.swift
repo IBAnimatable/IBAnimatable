@@ -31,7 +31,7 @@ public class ActivityIndicatorAnimationBallRotateChase: ActivityIndicatorAnimati
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationBallRotateChase {
+private extension ActivityIndicatorAnimationBallRotateChase {
 
   func rotateAnimation(rate: Float, x: CGFloat, y: CGFloat, size: CGSize) -> CAAnimationGroup {
     let fromScale = 1 - rate

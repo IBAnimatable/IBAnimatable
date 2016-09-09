@@ -45,7 +45,7 @@ public class ActivityIndicatorAnimationBallPulseSync: ActivityIndicatorAnimating
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationBallPulseSync {
+private extension ActivityIndicatorAnimationBallPulseSync {
 
   var animation: CAKeyframeAnimation {
     let deltaY = (size.height / 2 - circleSize / 2) / 2

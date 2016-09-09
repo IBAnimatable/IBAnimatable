@@ -30,7 +30,7 @@ public class ActivityIndicatorAnimationSemiCircleSpin: ActivityIndicatorAnimatin
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationSemiCircleSpin {
+private extension ActivityIndicatorAnimationSemiCircleSpin {
 
   var animation: CAKeyframeAnimation {
     let animation = CAKeyframeAnimation(keyPath: "transform.rotation.z")

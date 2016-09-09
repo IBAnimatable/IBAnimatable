@@ -32,7 +32,7 @@ public class ActivityIndicatorAnimationBallClipRotate: ActivityIndicatorAnimatin
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationBallClipRotate {
+private extension ActivityIndicatorAnimationBallClipRotate {
 
   var scaleAnimation: CAKeyframeAnimation {
     let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
