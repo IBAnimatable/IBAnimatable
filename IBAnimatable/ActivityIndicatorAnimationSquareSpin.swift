@@ -38,30 +38,26 @@ private extension ActivityIndicatorAnimationSquareSpin {
     animation.keyTimes = [0, 0.25, 0.5, 0.75, 1]
     animation.timingFunctions = [timingFunction, timingFunction, timingFunction, timingFunction]
     animation.values = [
-      NSValue(caTransform3D: CATransform3DConcat(createRotateXTransform(angle: 0), createRotateYTransform(angle: 0))),
-      NSValue(caTransform3D: CATransform3DConcat(createRotateXTransform(angle: CGFloat(M_PI)), createRotateYTransform(angle: 0))),
-      NSValue(caTransform3D: CATransform3DConcat(createRotateXTransform(angle: CGFloat(M_PI)), createRotateYTransform(angle: CGFloat(M_PI)))),
-      NSValue(caTransform3D: CATransform3DConcat(createRotateXTransform(angle: 0), createRotateYTransform(angle: CGFloat(M_PI)))),
-      NSValue(caTransform3D: CATransform3DConcat(createRotateXTransform(angle: 0), createRotateYTransform(angle: 0)))]
+      NSValue(caTransform3D: CATransform3DConcat(makeRotateXTransform(angle: 0), makeRotateYTransform(angle: 0))),
+      NSValue(caTransform3D: CATransform3DConcat(makeRotateXTransform(angle: CGFloat.pi), makeRotateYTransform(angle: 0))),
+      NSValue(caTransform3D: CATransform3DConcat(makeRotateXTransform(angle: CGFloat.pi), makeRotateYTransform(angle: CGFloat.pi))),
+      NSValue(caTransform3D: CATransform3DConcat(makeRotateXTransform(angle: 0), makeRotateYTransform(angle: CGFloat.pi))),
+      NSValue(caTransform3D: CATransform3DConcat(makeRotateXTransform(angle: 0), makeRotateYTransform(angle: 0)))]
     animation.duration = duration
     animation.repeatCount = .infinity
     animation.isRemovedOnCompletion = false
     return animation
   }
 
-  func createRotateXTransform(angle: CGFloat) -> CATransform3D {
+  func makeRotateXTransform(angle: CGFloat) -> CATransform3D {
     var transform = CATransform3DMakeRotation(angle, 1, 0, 0)
-
     transform.m34 = CGFloat(-1) / 100
-
     return transform
   }
 
-  func createRotateYTransform(angle: CGFloat) -> CATransform3D {
+  func makeRotateYTransform(angle: CGFloat) -> CATransform3D {
     var transform = CATransform3DMakeRotation(angle, 0, 1, 0)
-
     transform.m34 = CGFloat(-1) / 100
-    
     return transform
   }
   
