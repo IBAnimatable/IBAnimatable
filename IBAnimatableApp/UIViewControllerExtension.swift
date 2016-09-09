@@ -8,7 +8,7 @@ import IBAnimatable
 
 extension UIViewController {
   
-  func generateRandomGradient() -> GradientType {
+  func makeRandomGradient() -> GradientType {
     var predefinedGradients = [GradientType]()
     iterateEnum(GradientType.self).forEach {
       predefinedGradients.append($0)
