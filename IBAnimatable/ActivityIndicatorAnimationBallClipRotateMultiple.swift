@@ -51,9 +51,9 @@ private extension ActivityIndicatorAnimationBallClipRotateMultiple {
     rotateAnimation.keyTimes = scaleAnimation.keyTimes
     rotateAnimation.timingFunctions = [timingFunction, timingFunction]
     if !reverse {
-      rotateAnimation.values = [0, M_PI, 2 * M_PI]
+      rotateAnimation.values = [0, CGFloat.pi, 2 * CGFloat.pi]
     } else {
-      rotateAnimation.values = [0, -M_PI, -2 * M_PI]
+      rotateAnimation.values = [0, -CGFloat.pi, -2 * CGFloat.pi]
     }
     rotateAnimation.duration = duration
 

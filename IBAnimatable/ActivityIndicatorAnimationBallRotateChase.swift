@@ -46,7 +46,7 @@ private extension ActivityIndicatorAnimationBallRotateChase {
     let positionAnimation = CAKeyframeAnimation(keyPath: "position")
     positionAnimation.duration = duration
     positionAnimation.repeatCount = .infinity
-    positionAnimation.path = UIBezierPath(arcCenter: CGPoint(x: x, y: y), radius: size.width / 2, startAngle: 3 * CGFloat(M_PI) * 0.5, endAngle: 3 * CGFloat(M_PI) * 0.5 + 2 * CGFloat(M_PI), clockwise: true).cgPath
+    positionAnimation.path = UIBezierPath(arcCenter: CGPoint(x: x, y: y), radius: size.width / 2, startAngle: 3 * CGFloat.pi / 2, endAngle: 3 * CGFloat.pi / 2 + 2 * CGFloat.pi, clockwise: true).cgPath
 
     let animation = CAAnimationGroup()
     animation.animations = [scaleAnimation, positionAnimation]
