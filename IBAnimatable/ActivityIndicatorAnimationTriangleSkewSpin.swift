@@ -17,9 +17,8 @@ public class ActivityIndicatorAnimationTriangleSkewSpin: ActivityIndicatorAnimat
     let x = (layer.bounds.size.width - size.width) / 2
     let y = (layer.bounds.size.height - size.height) / 2
     let triangle = ActivityIndicatorShape.Triangle.makeLayer(size: size, color: color)
-    let animation = self.animation
     triangle.frame = CGRect(x: x, y: y, width: size.width, height: size.height)
-    triangle.add(animation, forKey: "animation")
+    triangle.add(self.animation, forKey: "animation")
     layer.addSublayer(triangle)
   }
 
@@ -35,30 +34,26 @@ private extension ActivityIndicatorAnimationTriangleSkewSpin {
     animation.keyTimes = [0, 0.25, 0.5, 0.75, 1]
     animation.timingFunctions = [timingFunction, timingFunction, timingFunction, timingFunction]
     animation.values = [
-      NSValue(caTransform3D: CATransform3DConcat(createRotateXTransform(angle: 0), createRotateYTransform(angle: 0))),
-      NSValue(caTransform3D: CATransform3DConcat(createRotateXTransform(angle: CGFloat.pi), createRotateYTransform(angle: 0))),
-      NSValue(caTransform3D: CATransform3DConcat(createRotateXTransform(angle: CGFloat.pi), createRotateYTransform(angle: CGFloat.pi))),
-      NSValue(caTransform3D: CATransform3DConcat(createRotateXTransform(angle: 0), createRotateYTransform(angle: CGFloat.pi))),
-      NSValue(caTransform3D: CATransform3DConcat(createRotateXTransform(angle: 0), createRotateYTransform(angle: 0)))]
+      NSValue(caTransform3D: CATransform3DConcat(makeRotateXTransform(angle: 0), makeRotateYTransform(angle: 0))),
+      NSValue(caTransform3D: CATransform3DConcat(makeRotateXTransform(angle: CGFloat.pi), makeRotateYTransform(angle: 0))),
+      NSValue(caTransform3D: CATransform3DConcat(makeRotateXTransform(angle: CGFloat.pi), makeRotateYTransform(angle: CGFloat.pi))),
+      NSValue(caTransform3D: CATransform3DConcat(makeRotateXTransform(angle: 0), makeRotateYTransform(angle: CGFloat.pi))),
+      NSValue(caTransform3D: CATransform3DConcat(makeRotateXTransform(angle: 0), makeRotateYTransform(angle: 0)))]
     animation.duration = duration
     animation.repeatCount = .infinity
     animation.isRemovedOnCompletion = false
     return animation
   }
 
-  func createRotateXTransform(angle: CGFloat) -> CATransform3D {
+  func makeRotateXTransform(angle: CGFloat) -> CATransform3D {
     var transform = CATransform3DMakeRotation(angle, 1, 0, 0)
-
     transform.m34 = CGFloat(-1) / 100
-
     return transform
   }
 
-  func createRotateYTransform(angle: CGFloat) -> CATransform3D {
+  func makeRotateYTransform(angle: CGFloat) -> CATransform3D {
     var transform = CATransform3DMakeRotation(angle, 0, 1, 0)
-
     transform.m34 = CGFloat(-1) / 100
-
     return transform
   }
   
