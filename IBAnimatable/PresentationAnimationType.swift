@@ -11,7 +11,7 @@ import UIKit
 public enum PresentationAnimationType {
   case flip
   case crossDissolve
-  case cover(fromDirection: TransitionDirection)
+  case cover(fromDirection: TransitionAnimationType.Direction)
   case zoom
   case dropDown
 
@@ -49,7 +49,7 @@ private extension PresentationAnimationType {
 
   static func fromStringWithDirection(presentationType: String) -> PresentationAnimationType? {
     let transitionParams = params(forTransitionType: presentationType)
-    let direction = TransitionDirection.fromString(forParams: transitionParams) ?? .left
+    let direction = TransitionAnimationType.Direction.fromString(forParams: transitionParams) ?? .left
     if presentationType.hasPrefix("Cover") {
       return .cover(fromDirection: direction)
     } else {
@@ -57,7 +57,7 @@ private extension PresentationAnimationType {
     }
   }
 
-  static func fromStringWithDirectionAndParams(presentationType: String, direction: TransitionDirection, params: [String]) -> PresentationAnimationType? {
+  static func fromStringWithDirectionAndParams(presentationType: String, direction: TransitionAnimationType.Direction, params: [String]) -> PresentationAnimationType? {
     var params = params
     params.removeFirst()    
     return nil

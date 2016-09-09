@@ -33,22 +33,22 @@ private extension ContainerTransitionViewController {
   func createChildViewControllers() {
     var viewController = AnimatableViewController()
     viewController.view.backgroundColor = .blue
-    viewController.transitionAnimationType = TransitionAnimationType.fromString(transitionType: "Explode")
+    viewController.transitionAnimationType = TransitionAnimationType(string: "Explode")
     viewControllers.append(viewController)
    
     viewController = AnimatableViewController()
     viewController.view.backgroundColor = .green
-    viewController.transitionAnimationType = TransitionAnimationType.fromString(transitionType: "Fold")
+    viewController.transitionAnimationType = TransitionAnimationType(string: "Fold")
     viewControllers.append(viewController)
 
     viewController = AnimatableViewController()
     viewController.view.backgroundColor = .yellow
-    viewController.transitionAnimationType = TransitionAnimationType.fromString(transitionType: "NatGeo")
+    viewController.transitionAnimationType = TransitionAnimationType(string: "NatGeo")
     viewControllers.append(viewController)
     
     viewController = AnimatableViewController()
     viewController.view.backgroundColor = .red
-    viewController.transitionAnimationType = TransitionAnimationType.fromString(transitionType: "Portal")
+    viewController.transitionAnimationType = TransitionAnimationType(string: "Portal")
     viewControllers.append(viewController)
     
     cycleFromViewController(containerView, fromViewController: nil, toViewController: viewControllers[0])
@@ -56,11 +56,11 @@ private extension ContainerTransitionViewController {
   }
   
   func cycleFromViewController(_ containerView: UIView, fromViewController: AnimatableViewController?, toViewController: AnimatableViewController) {
-    guard let animationType = TransitionAnimationType.fromString(transitionType: toViewController.transitionAnimationType?.stringValue ?? "") else {
+    if case .none = toViewController.transitionAnimationType {
       return
     }
     
-    let transitionContext = ContainerTransition(animationType: animationType,
+    let transitionContext = ContainerTransition(animationType: toViewController.transitionAnimationType,
                                                 container: containerView,
                                                 parentViewController: self,
                                                 fromViewController: fromViewController,

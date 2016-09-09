@@ -13,7 +13,7 @@ public class FlipAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - Private params
-  fileprivate var fromDirection: TransitionDirection
+  fileprivate var fromDirection: TransitionAnimationType.Direction
   
   // MARK: - Private fold transition
   fileprivate var transform: CATransform3D = CATransform3DIdentity
@@ -21,21 +21,21 @@ public class FlipAnimator: NSObject, AnimatedTransitioning {
   fileprivate var horizontal: Bool = false
   
   // MARK: - Life cycle
-  public init(fromDirection: TransitionDirection, transitionDuration: Duration) {
-    self.fromDirection = fromDirection
+  public init(from direction: TransitionAnimationType.Direction, transitionDuration: Duration) {
+    fromDirection = direction
     self.transitionDuration = transitionDuration
     horizontal = fromDirection.isHorizontal
     
     switch fromDirection {
     case .right:
-      self.transitionAnimationType = .flip(fromDirection: .right)
-      self.reverseAnimationType = .flip(fromDirection: .left)
-      self.interactiveGestureType = .pan(fromDirection: .left)
+      self.transitionAnimationType = .flip(from: .right)
+      self.reverseAnimationType = .flip(from: .left)
+      self.interactiveGestureType = .pan(from: .left)
       reverse = true
     default:
-      self.transitionAnimationType = .flip(fromDirection: .left)
-      self.reverseAnimationType = .flip(fromDirection: .right)
-      self.interactiveGestureType = .pan(fromDirection: .right)
+      self.transitionAnimationType = .flip(from: .left)
+      self.reverseAnimationType = .flip(from: .right)
+      self.interactiveGestureType = .pan(from: .right)
       reverse = false      
     }
     super.init()

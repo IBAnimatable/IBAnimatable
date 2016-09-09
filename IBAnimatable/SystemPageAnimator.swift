@@ -13,9 +13,9 @@ public class SystemPageAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
-  fileprivate var type: TransitionPageType
+  fileprivate var type: TransitionAnimationType.PageType
   
-  public init(type: TransitionPageType, transitionDuration: Duration) {
+  public init(type: TransitionAnimationType.PageType, transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
     self.type = type
     
@@ -40,9 +40,9 @@ extension SystemPageAnimator: UIViewControllerAnimatedTransitioning {
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     switch self.type {
     case .curl:
-      animateWithCATransition(transitionContext: transitionContext, type: SystemTransitionType.pageCurl, subtype: nil)
+      animateWithCATransition(transitionContext: transitionContext, type: TransitionAnimationType.SystemTransitionType.pageCurl, subtype: nil)
     case .unCurl:
-      animateWithCATransition(transitionContext: transitionContext, type: SystemTransitionType.pageUnCurl, subtype: nil)
+      animateWithCATransition(transitionContext: transitionContext, type: TransitionAnimationType.SystemTransitionType.pageUnCurl, subtype: nil)
     }
   }
 }

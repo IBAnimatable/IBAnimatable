@@ -1,9 +1,6 @@
 //
-//  Utils.swift
-//  IBAnimatableApp
-//
 //  Created by jason akakpo on 03/07/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import Foundation
@@ -24,7 +21,7 @@ extension String {
   }
 }
 
-internal extension RawRepresentable {
+extension RawRepresentable {
 
   init?(raw: RawValue?) {
     guard let raw = raw else {
@@ -42,9 +39,6 @@ internal extension RawRepresentable {
   }
 }
 
-
-// Source: https://gist.github.com/TheDarkCode/2f65c1a25d5886ed210c3b33d73fe8a9
-// Based on earlier version: http://stackoverflow.com/a/28341290/749786
 func iterateEnum<T: Hashable>(from: T.Type) -> AnyIterator<T> {
   var x = 0
   return AnyIterator {
