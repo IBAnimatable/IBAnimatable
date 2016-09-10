@@ -61,7 +61,7 @@ private extension ActivityIndicatorAnimationLineSpinFadeLoader {
       y: origin.y + radius * (sin(angle) + 1),
       width: lineContainerSize.width,
       height: lineContainerSize.height)
-    let line = ActivityIndicatorShape.Line.makeLayer(size: size, color: color)
+    let line = ActivityIndicatorShape.line.makeLayer(size: size, color: color)
     let lineFrame = CGRect(
       x: (lineContainerSize.width - size.width) / 2,
       y: (lineContainerSize.height - size.height) / 2,

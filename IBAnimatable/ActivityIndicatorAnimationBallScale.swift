@@ -15,7 +15,7 @@ public class ActivityIndicatorAnimationBallScale: ActivityIndicatorAnimating {
 
   public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     let animation = self.animation
-    let circle = ActivityIndicatorShape.Circle.makeLayer(size: size, color: color)
+    let circle = ActivityIndicatorShape.circle.makeLayer(size: size, color: color)
     circle.frame = CGRect(x: (layer.bounds.size.width - size.width) / 2,
                           y: (layer.bounds.size.height - size.height) / 2,
                           width: size.width,

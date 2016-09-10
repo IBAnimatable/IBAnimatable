@@ -23,7 +23,7 @@ public class ActivityIndicatorAnimationLineScalePulseOut: ActivityIndicatorAnima
 
     // Draw lines
     for i in 0 ..< 5 {
-      let line = ActivityIndicatorShape.Line.makeLayer(size: CGSize(width: lineSize, height: size.height), color: color)
+      let line = ActivityIndicatorShape.line.makeLayer(size: CGSize(width: lineSize, height: size.height), color: color)
       let frame = CGRect(x: x + lineSize * 2 * CGFloat(i),
                          y: y,
                          width: lineSize,

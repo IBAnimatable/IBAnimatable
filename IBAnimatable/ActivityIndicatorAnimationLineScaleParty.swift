@@ -24,7 +24,7 @@ public class ActivityIndicatorAnimationLineScaleParty: ActivityIndicatorAnimatin
     // Animation
     let animation = self.animation
     for i in 0..<4 {
-      let line = ActivityIndicatorShape.Line.makeLayer(size: CGSize(width: lineSize, height: size.height), color: color)
+      let line = ActivityIndicatorShape.line.makeLayer(size: CGSize(width: lineSize, height: size.height), color: color)
       let frame = CGRect(x: x + lineSize * 2 * CGFloat(i), y: y, width: lineSize, height: size.height)
       animation.beginTime = beginTime + beginTimes[i]
       animation.duration = durations[i]

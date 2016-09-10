@@ -16,7 +16,7 @@ public class ActivityIndicatorAnimationSquareSpin: ActivityIndicatorAnimating {
   public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
 
     let animation = self.animation
-    let square = ActivityIndicatorShape.Rectangle.makeLayer(size: size, color: color)
+    let square = ActivityIndicatorShape.rectangle.makeLayer(size: size, color: color)
     let frame = CGRect(x: (layer.bounds.size.width - size.width) / 2,
                        y: (layer.bounds.size.height - size.height) / 2,
                        width: size.width,

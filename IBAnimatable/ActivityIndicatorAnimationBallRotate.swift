@@ -19,9 +19,9 @@ public class ActivityIndicatorAnimationBallRotate: ActivityIndicatorAnimating {
     let animation = self.animation
 
     // Draw circles
-    let leftCircle = ActivityIndicatorShape.Circle.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
-    let rightCircle = ActivityIndicatorShape.Circle.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
-    let centerCircle = ActivityIndicatorShape.Circle.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
+    let leftCircle = ActivityIndicatorShape.circle.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
+    let rightCircle = ActivityIndicatorShape.circle.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
+    let centerCircle = ActivityIndicatorShape.circle.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
 
     leftCircle.opacity = 0.8
     leftCircle.frame = CGRect(x: 0, y: (size.height - circleSize) / 2, width: circleSize, height: circleSize)

@@ -17,7 +17,7 @@ public class ActivityIndicatorAnimationBallRotateChase: ActivityIndicatorAnimati
     let circleSize = size.width / 5
     for i in 0 ..< 5 {
       let factor = Float(i) * 1.0 / 5
-      let circle = ActivityIndicatorShape.Circle.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
+      let circle = ActivityIndicatorShape.circle.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
       let animation = rotateAnimation(rate: factor, x: layer.bounds.size.width / 2, y: layer.bounds.size.height / 2, size: CGSize(width: size.width - circleSize, height: size.height - circleSize))
 
       circle.frame = CGRect(x: 0, y: 0, width: circleSize, height: circleSize)

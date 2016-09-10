@@ -28,7 +28,7 @@ private extension ActivityIndicatorAnimationBallClipRotatePulse {
   func animateSmallCircle(duration: CFTimeInterval, timingFunction: CAMediaTimingFunction, layer: CALayer, size: CGSize, color: UIColor) {
     let animation = makeSmallCircleAanimation()
     let circleSize = size.width / 2
-    let circle = ActivityIndicatorShape.Circle.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
+    let circle = ActivityIndicatorShape.circle.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
     let frame = CGRect(x: (layer.bounds.size.width - circleSize) / 2,
                        y: (layer.bounds.size.height - circleSize) / 2,
                        width: circleSize,
@@ -57,7 +57,7 @@ private extension ActivityIndicatorAnimationBallClipRotatePulse {
 
   func animateBigCircle(duration: CFTimeInterval, timingFunction: CAMediaTimingFunction, layer: CALayer, size: CGSize, color: UIColor) {
     let animation = makeBigCircleAanimation()
-    let circle = ActivityIndicatorShape.RingTwoHalfVertical.makeLayer(size: size, color: color)
+    let circle = ActivityIndicatorShape.ringTwoHalfVertical.makeLayer(size: size, color: color)
     let frame = CGRect(x: (layer.bounds.size.width - size.width) / 2,
                        y: (layer.bounds.size.height - size.height) / 2,
                        width: size.width,

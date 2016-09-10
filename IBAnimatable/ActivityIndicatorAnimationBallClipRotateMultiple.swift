@@ -18,13 +18,13 @@ public class ActivityIndicatorAnimationBallClipRotateMultiple: ActivityIndicator
     let smallCircleSize: CGFloat = size.width / 2
     let longDuration: CFTimeInterval = 1
     let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-    circleOf(shape: .RingTwoHalfHorizontal,
+    circleOf(shape: .ringTwoHalfHorizontal,
              duration: longDuration,
              timingFunction: timingFunction,
              layer: layer,
              size: bigCircleSize,
              color: color, reverse: false)
-    circleOf(shape: .RingTwoHalfVertical,
+    circleOf(shape: .ringTwoHalfVertical,
              duration: longDuration,
              timingFunction: timingFunction,
              layer: layer,

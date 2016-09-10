@@ -25,7 +25,7 @@ public class ActivityIndicatorAnimationBallPulseRise: ActivityIndicatorAnimating
     let oddAnimation = self.oddAnimation
     let evenAnimation = self.evenAnimation
     for i in 0 ..< 5 {
-      let circle = ActivityIndicatorShape.Circle.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
+      let circle = ActivityIndicatorShape.circle.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
       let frame = CGRect(x: x + circleSize * CGFloat(i) + circleSpacing * CGFloat(i),
                          y: y,
                          width: circleSize,
