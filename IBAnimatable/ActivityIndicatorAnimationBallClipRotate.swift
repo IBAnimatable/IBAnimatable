@@ -17,7 +17,7 @@ public class ActivityIndicatorAnimationBallClipRotate: ActivityIndicatorAnimatin
     let animation = self.animation
 
     // Draw circle
-    let circle = ActivityIndicatorShape.RingThirdFour.createLayerWith(size: CGSize(width: size.width, height: size.height), color: color)
+    let circle = ActivityIndicatorShape.ringThirdFour.makeLayer(size: CGSize(width: size.width, height: size.height), color: color)
     let frame = CGRect(x: (layer.bounds.size.width - size.width) / 2,
                        y: (layer.bounds.size.height - size.height) / 2,
                        width: size.width,
@@ -32,7 +32,7 @@ public class ActivityIndicatorAnimationBallClipRotate: ActivityIndicatorAnimatin
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationBallClipRotate {
+private extension ActivityIndicatorAnimationBallClipRotate {
 
   var scaleAnimation: CAKeyframeAnimation {
     let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
@@ -44,7 +44,7 @@ fileprivate extension ActivityIndicatorAnimationBallClipRotate {
   var rotateAnimation: CAKeyframeAnimation {
     let rotateAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
     rotateAnimation.keyTimes = scaleAnimation.keyTimes
-    rotateAnimation.values = [0, M_PI, 2 * M_PI]
+    rotateAnimation.values = [0, CGFloat.pi, 2 * CGFloat.pi]
     return rotateAnimation
   }
 

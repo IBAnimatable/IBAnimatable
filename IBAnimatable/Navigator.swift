@@ -22,7 +22,7 @@ public class Navigator: NSObject {
     self.transitionDuration = transitionDuration
     super.init()
     
-    animator = AnimatorFactory.generateAnimator(transitionAnimationType, transitionDuration: transitionDuration)
+    animator = AnimatorFactory.makeAnimator(transitionAnimationType: transitionAnimationType, transitionDuration: transitionDuration)
     
     // If interactiveGestureType has been set
     if let interactiveGestureType = interactiveGestureType {
@@ -30,10 +30,10 @@ public class Navigator: NSObject {
       switch interactiveGestureType {
       case .default:
         if let interactiveGestureType = animator?.interactiveGestureType {
-          interactiveAnimator = InteractiveAnimatorFactory.generateInteractiveAnimator(interactiveGestureType, transitionType: .navigationTransition(.pop))
+          interactiveAnimator = InteractiveAnimatorFactory.makeInteractiveAnimator(interactiveGestureType: interactiveGestureType, transitionType: .navigationTransition(.pop))
         }
       default:
-        interactiveAnimator = InteractiveAnimatorFactory.generateInteractiveAnimator(interactiveGestureType, transitionType: .navigationTransition(.pop))
+        interactiveAnimator = InteractiveAnimatorFactory.makeInteractiveAnimator(interactiveGestureType: interactiveGestureType, transitionType: .navigationTransition(.pop))
       }
     }
   }
@@ -42,7 +42,7 @@ public class Navigator: NSObject {
 extension Navigator: UINavigationControllerDelegate {
   // MARK: - animation controller
   public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    interactiveAnimator?.connectGestureRecognizer(toVC)
+    interactiveAnimator?.connectGestureRecognizer(to: toVC)
     
     if operation == .push {
       animator?.transitionDuration = transitionDuration
@@ -50,7 +50,7 @@ extension Navigator: UINavigationControllerDelegate {
     } else if operation == .pop {
       // Use the reverse animation
       if let reverseTransitionAnimationType = animator?.reverseAnimationType {
-        return AnimatorFactory.generateAnimator(reverseTransitionAnimationType, transitionDuration: transitionDuration)
+        return AnimatorFactory.makeAnimator(transitionAnimationType: reverseTransitionAnimationType, transitionDuration: transitionDuration)
       }
     }
     return nil

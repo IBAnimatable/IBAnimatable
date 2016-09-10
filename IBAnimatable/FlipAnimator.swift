@@ -60,7 +60,7 @@ extension FlipAnimator: UIViewControllerAnimatedTransitioning {
     containerView.layer.sublayerTransform = transform
     toView.frame = fromView.frame
     
-    let flipViews = createSnapshots(toView: toView, fromView: fromView, containerView: containerView)
+    let flipViews = makeSnapshots(toView: toView, fromView: fromView, containerView: containerView)
     animateFlipTransition(flippedSectionOfFromView: flipViews.0, flippedSectionOfToView: flipViews.1) {
       if transitionContext.transitionWasCancelled {
         self.removeOtherViews(viewToKeep: fromView)
@@ -78,18 +78,18 @@ extension FlipAnimator: UIViewControllerAnimatedTransitioning {
 
 private extension FlipAnimator {
   
-  func createSnapshots(toView: UIView, fromView: UIView, containerView: UIView) -> ((UIView, UIView), (UIView, UIView)) {
-    let toViewSnapshots = createSnapshot(fromView: toView, afterUpdates: true)
+  func makeSnapshots(toView: UIView, fromView: UIView, containerView: UIView) -> ((UIView, UIView), (UIView, UIView)) {
+    let toViewSnapshots = makeSnapshot(from: toView, afterUpdates: true)
     var flippedSectionOfToView = toViewSnapshots[reverse ? 0 : 1]
 
-    let fromViewSnapshots = createSnapshot(fromView: fromView, afterUpdates: false)
+    let fromViewSnapshots = makeSnapshot(from: fromView, afterUpdates: false)
     var flippedSectionOfFromView = fromViewSnapshots[reverse ? 1 : 0]
 
-    flippedSectionOfFromView = addShadow(toView: flippedSectionOfFromView, reverse: !reverse)
+    flippedSectionOfFromView = addShadow(to: flippedSectionOfFromView, reverse: !reverse)
     let flippedSectionOfFromViewShadow = flippedSectionOfFromView.subviews[1]
     flippedSectionOfFromViewShadow.alpha = 0.0
 
-    flippedSectionOfToView = addShadow(toView: flippedSectionOfToView, reverse:reverse)
+    flippedSectionOfToView = addShadow(to: flippedSectionOfToView, reverse:reverse)
     let flippedSectionOfToViewShadow = flippedSectionOfToView.subviews[1]
     flippedSectionOfToViewShadow.alpha = 1.0
 
@@ -102,7 +102,7 @@ private extension FlipAnimator {
     return ((flippedSectionOfFromView, flippedSectionOfFromViewShadow), (flippedSectionOfToView, flippedSectionOfToViewShadow))
   }
   
-  func createSnapshot(fromView view: UIView, afterUpdates: Bool) -> [UIView] {
+  func makeSnapshot(from view: UIView, afterUpdates: Bool) -> [UIView] {
     let containerView = view.superview
 
     let width = valuesForAxe(initialValue: view.frame.size.width / 2, reverseValue: view.frame.size.width)
@@ -123,7 +123,7 @@ private extension FlipAnimator {
     return [leftHandView!, rightHandView!]
   }
   
-  func addShadow(toView view: UIView, reverse: Bool) -> UIView {
+  func addShadow(to view: UIView, reverse: Bool) -> UIView {
     let containerView = view.superview
     let viewWithShadow = UIView(frame: view.frame)
     containerView?.insertSubview(viewWithShadow, aboveSubview: view)

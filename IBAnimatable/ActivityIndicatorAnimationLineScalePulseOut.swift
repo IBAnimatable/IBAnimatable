@@ -23,7 +23,7 @@ public class ActivityIndicatorAnimationLineScalePulseOut: ActivityIndicatorAnima
 
     // Draw lines
     for i in 0 ..< 5 {
-      let line = ActivityIndicatorShape.Line.createLayerWith(size: CGSize(width: lineSize, height: size.height), color: color)
+      let line = ActivityIndicatorShape.line.makeLayer(size: CGSize(width: lineSize, height: size.height), color: color)
       let frame = CGRect(x: x + lineSize * 2 * CGFloat(i),
                          y: y,
                          width: lineSize,
@@ -41,7 +41,7 @@ public class ActivityIndicatorAnimationLineScalePulseOut: ActivityIndicatorAnima
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationLineScalePulseOut {
+private extension ActivityIndicatorAnimationLineScalePulseOut {
 
   var animation: CAKeyframeAnimation {
     let timingFunction = CAMediaTimingFunction(controlPoints: 0.85, 0.25, 0.37, 0.85)

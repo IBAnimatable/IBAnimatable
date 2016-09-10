@@ -61,7 +61,7 @@ public class ContainerTransition: NSObject {
     }
     
     parentViewController?.view.isUserInteractionEnabled = false
-    let animator = AnimatorFactory.generateAnimator(unwrappedAnimationType)
+    let animator = AnimatorFactory.makeAnimator(transitionAnimationType: unwrappedAnimationType)
     animator?.transitionDuration = transitionDuration
     animator?.animateTransition(using: self)
   }

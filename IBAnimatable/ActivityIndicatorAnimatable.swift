@@ -4,21 +4,29 @@
 //
 
 import UIKit
+
+/// Protocol for activity indicator view.
 public protocol ActivityIndicatorAnimatable: class {
-  var animationType: String { get set }
+  /// Animation type
+  var animationType: ActivityIndicatorType { get set }
+  /// Color of the indicator
   var color: UIColor { get set }
+  /// Specify whether hide the indicator when the animation stopped
   var hidesWhenStopped: Bool { get set }
+  /// Animating status
   var isAnimating: Bool { get set }
 }
 
 public extension ActivityIndicatorAnimatable where Self: UIView {
 
+  /// Start animating the activity indicator
   public func startAnimating() {
     isHidden = false
     configLayer()
     isAnimating = true
   }
 
+  /// Stop animating the activity indicator
   public func stopAnimating() {
     layer.sublayers = nil
     isAnimating = false
@@ -36,12 +44,11 @@ private extension ActivityIndicatorAnimatable where Self: UIView {
       return
     }
 
-    let type = ActivityIndicatorType.fromString(string: animationType)
-    guard type != .None else {
+    if case .none = animationType {
       return
     }
 
-    let activityIndicator = ActivityIndicatorFactory.generateActivityIndicator(activityIndicatorType: type)
+    let activityIndicator = ActivityIndicatorFactory.makeActivityIndicator(activityIndicatorType: animationType)
     activityIndicator.configAnimation(in: layer, size: bounds.size, color: color)
     layer.speed = 1
   }

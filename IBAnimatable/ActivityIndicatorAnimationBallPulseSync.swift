@@ -27,7 +27,7 @@ public class ActivityIndicatorAnimationBallPulseSync: ActivityIndicatorAnimating
     
     // Draw circles
     for i in 0 ..< 3 {
-      let circle = ActivityIndicatorShape.Circle.createLayerWith(size: CGSize(width: circleSize, height: circleSize), color: color)
+      let circle = ActivityIndicatorShape.circle.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
       let frame = CGRect(x: x + circleSize * CGFloat(i) + circleSpacing * CGFloat(i),
                          y: y,
                          width: circleSize,
@@ -45,7 +45,7 @@ public class ActivityIndicatorAnimationBallPulseSync: ActivityIndicatorAnimating
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationBallPulseSync {
+private extension ActivityIndicatorAnimationBallPulseSync {
 
   var animation: CAKeyframeAnimation {
     let deltaY = (size.height / 2 - circleSize / 2) / 2

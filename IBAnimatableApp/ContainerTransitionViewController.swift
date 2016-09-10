@@ -20,7 +20,7 @@ class ContainerTransitionViewController: UIViewController, UITabBarDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    createChildViewControllers()
+    makeChildViewControllers()
     tabBar.selectedItem = tabBar.items?.first
   }
   
@@ -30,7 +30,7 @@ class ContainerTransitionViewController: UIViewController, UITabBarDelegate {
 
 private extension ContainerTransitionViewController {
   
-  func createChildViewControllers() {
+  func makeChildViewControllers() {
     var viewController = AnimatableViewController()
     viewController.view.backgroundColor = .blue
     viewController.transitionAnimationType = TransitionAnimationType(string: "Explode")
@@ -52,7 +52,6 @@ private extension ContainerTransitionViewController {
     viewControllers.append(viewController)
     
     cycleFromViewController(containerView, fromViewController: nil, toViewController: viewControllers[0])
-
   }
   
   func cycleFromViewController(_ containerView: UIView, fromViewController: AnimatableViewController?, toViewController: AnimatableViewController) {

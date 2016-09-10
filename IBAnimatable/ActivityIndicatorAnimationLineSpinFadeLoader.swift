@@ -24,7 +24,7 @@ public class ActivityIndicatorAnimationLineSpinFadeLoader: ActivityIndicatorAnim
 
     let animation = self.animation
     for i in 0 ..< 8 {
-      let line = lineAt(angle: CGFloat(M_PI_4 * Double(i)),
+      let line = makeLineLayer(angle: CGFloat.pi / 4 * CGFloat(i),
                         size: lineSize,
                         origin: CGPoint(x: x, y: y),
                         containerSize: size,
@@ -39,7 +39,7 @@ public class ActivityIndicatorAnimationLineSpinFadeLoader: ActivityIndicatorAnim
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationLineSpinFadeLoader {
+private extension ActivityIndicatorAnimationLineSpinFadeLoader {
 
   var animation: CAKeyframeAnimation {
     let animation = CAKeyframeAnimation(keyPath: "opacity")
@@ -52,7 +52,7 @@ fileprivate extension ActivityIndicatorAnimationLineSpinFadeLoader {
     return animation
   }
 
-  func lineAt(angle: CGFloat, size: CGSize, origin: CGPoint, containerSize: CGSize, color: UIColor) -> CALayer {
+  func makeLineLayer(angle: CGFloat, size: CGSize, origin: CGPoint, containerSize: CGSize, color: UIColor) -> CALayer {
     let radius = containerSize.width / 2 - max(size.width, size.height) / 2
     let lineContainerSize = CGSize(width: max(size.width, size.height), height: max(size.width, size.height))
     let lineContainer = CALayer()
@@ -61,7 +61,7 @@ fileprivate extension ActivityIndicatorAnimationLineSpinFadeLoader {
       y: origin.y + radius * (sin(angle) + 1),
       width: lineContainerSize.width,
       height: lineContainerSize.height)
-    let line = ActivityIndicatorShape.Line.createLayerWith(size: size, color: color)
+    let line = ActivityIndicatorShape.line.makeLayer(size: size, color: color)
     let lineFrame = CGRect(
       x: (lineContainerSize.width - size.width) / 2,
       y: (lineContainerSize.height - size.height) / 2,
@@ -71,7 +71,7 @@ fileprivate extension ActivityIndicatorAnimationLineSpinFadeLoader {
     lineContainer.frame = lineContainerFrame
     line.frame = lineFrame
     lineContainer.addSublayer(line)
-    lineContainer.sublayerTransform = CATransform3DMakeRotation(CGFloat(M_PI_2) + angle, 0, 0, 1)
+    lineContainer.sublayerTransform = CATransform3DMakeRotation(CGFloat.pi / 2 + angle, 0, 0, 1)
     return lineContainer
   }
 

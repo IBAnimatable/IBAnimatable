@@ -8,12 +8,12 @@ import UIKit
 public class PinchInteractiveAnimator: InteractiveAnimator {
   fileprivate var startScale: CGFloat = 0
   
-  override func createGestureRecognizer() -> UIGestureRecognizer {
-    let gestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
+  override func makeGestureRecognizer() -> UIGestureRecognizer {
+    let gestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(handleGesture(for:)))
     return gestureRecognizer
   }
   
-  override func shouldBeginProgress(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+  override func shouldBeginProgress(for gestureRecognizer: UIGestureRecognizer) -> Bool {
     guard let gestureRecognizer = gestureRecognizer as? UIPinchGestureRecognizer else {
       return false
     }
@@ -33,7 +33,7 @@ public class PinchInteractiveAnimator: InteractiveAnimator {
     }
   }
   
-  override func calculateProgress(_ gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
+  override func calculateProgress(for gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
     guard let  gestureRecognizer = gestureRecognizer as? UIPinchGestureRecognizer,
       let _ = gestureRecognizer.view?.superview else {
         return (0, false)

@@ -26,7 +26,7 @@ public class ActivityIndicatorAnimationBallGridPulse: ActivityIndicatorAnimating
     // Draw circles
     for i in 0 ..< 3 {
       for j in 0 ..< 3 {
-        let circle = ActivityIndicatorShape.Circle.createLayerWith(size: CGSize(width: circleSize, height: circleSize), color: color)
+        let circle = ActivityIndicatorShape.circle.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
         let frame = CGRect(x: x + circleSize * CGFloat(j) + circleSpacing * CGFloat(j),
                            y: y + circleSize * CGFloat(i) + circleSpacing * CGFloat(i),
                            width: circleSize,
@@ -44,7 +44,7 @@ public class ActivityIndicatorAnimationBallGridPulse: ActivityIndicatorAnimating
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationBallGridPulse {
+private extension ActivityIndicatorAnimationBallGridPulse {
 
   var animation: CAAnimationGroup {
     let animation = CAAnimationGroup()

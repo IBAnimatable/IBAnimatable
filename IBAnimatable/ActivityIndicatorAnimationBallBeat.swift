@@ -23,7 +23,7 @@ public class ActivityIndicatorAnimationBallBeat: ActivityIndicatorAnimating {
 
     // Draw circles
     for i in 0 ..< 3 {
-      let circle = ActivityIndicatorShape.Circle.createLayerWith(size: CGSize(width: circleSize, height: circleSize), color: color)
+      let circle = ActivityIndicatorShape.circle.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
       let frame = CGRect(x: x + circleSize * CGFloat(i) + circleSpacing * CGFloat(i),
                          y: y,
                          width: circleSize,
@@ -39,7 +39,7 @@ public class ActivityIndicatorAnimationBallBeat: ActivityIndicatorAnimating {
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationBallBeat {
+private extension ActivityIndicatorAnimationBallBeat {
 
   var scaleAnimation: CAKeyframeAnimation {
     let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")

@@ -16,7 +16,7 @@ public class ActivityIndicatorAnimationBallScaleRipple: ActivityIndicatorAnimati
 
   public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     let animation = self.animation
-    let circle = ActivityIndicatorShape.Ring.createLayerWith(size: size, color: color)
+    let circle = ActivityIndicatorShape.ring.makeLayer(size: size, color: color)
     let frame = CGRect(x: (layer.bounds.size.width - size.width) / 2,
                        y: (layer.bounds.size.height - size.height) / 2,
                        width: size.width,
@@ -30,7 +30,7 @@ public class ActivityIndicatorAnimationBallScaleRipple: ActivityIndicatorAnimati
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationBallScaleRipple {
+private extension ActivityIndicatorAnimationBallScaleRipple {
 
   var animation: CAAnimationGroup {
     let animation = CAAnimationGroup()

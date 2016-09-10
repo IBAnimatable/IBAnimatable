@@ -14,7 +14,7 @@ class TransitionTableViewController: UITableViewController {
   // MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    generateTransitionTypeData()
+    populateTransitionTypeData()
   }
 
   // MARK: - Navigation
@@ -44,7 +44,7 @@ class TransitionTableViewController: UITableViewController {
 
 private extension TransitionTableViewController {
   
-  func generateTransitionTypeData() {
+  func populateTransitionTypeData() {
     transitionAnimationsHeaders.append("Fade")
     transitionAnimations.append(["Fade", "Fade(In)", "Fade(Out)"])
     transitionAnimationsHeaders.append("SystemCube")
