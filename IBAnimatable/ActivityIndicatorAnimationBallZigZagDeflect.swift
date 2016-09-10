@@ -33,14 +33,16 @@ public class ActivityIndicatorAnimationBallZigZagDeflect: ActivityIndicatorAnima
     animation.repeatCount = .infinity
     animation.autoreverses = true
     animation.isRemovedOnCompletion = false
-    circleAt(frame: frame, layer: layer, size: CGSize(width: circleSize, height: circleSize), color: color, animation: animation)
+    let circle1 = makeCircleLayer(frame: frame, size: CGSize(width: circleSize, height: circleSize), color: color, animation: animation)
+    layer.addSublayer(circle1)
     
     // Circle 2
     animation.values = [NSValue(caTransform3D: CATransform3DMakeTranslation(0, 0, 0)),
                         NSValue(caTransform3D: CATransform3DMakeTranslation(deltaX, deltaY, 0)),
                         NSValue(caTransform3D: CATransform3DMakeTranslation(-deltaX, deltaY, 0)),
                         NSValue(caTransform3D: CATransform3DMakeTranslation(0, 0, 0))]
-    circleAt(frame: frame, layer: layer, size: CGSize(width: circleSize, height: circleSize), color: color, animation: animation)
+    let circle2 = makeCircleLayer(frame: frame, size: CGSize(width: circleSize, height: circleSize), color: color, animation: animation)
+    layer.addSublayer(circle2)
   }
   
 }
@@ -49,11 +51,11 @@ public class ActivityIndicatorAnimationBallZigZagDeflect: ActivityIndicatorAnima
 
 private extension ActivityIndicatorAnimationBallZigZagDeflect {
   
-  func circleAt(frame: CGRect, layer: CALayer, size: CGSize, color: UIColor, animation: CAAnimation) {
+  func makeCircleLayer(frame: CGRect, size: CGSize, color: UIColor, animation: CAAnimation) -> CALayer{
     let circle = ActivityIndicatorShape.circle.makeLayer(size: size, color: color)
     circle.frame = frame
     circle.add(animation, forKey: "animation")
-    layer.addSublayer(circle)
+    return circle
   }
   
 }
