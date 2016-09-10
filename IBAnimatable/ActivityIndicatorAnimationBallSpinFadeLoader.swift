@@ -25,7 +25,7 @@ public class ActivityIndicatorAnimationBallSpinFadeLoader: ActivityIndicatorAnim
     
     // Draw circles
     for i in 0 ..< 8 {
-      let circle = circleAt(angle: CGFloat.pi / 4 * CGFloat(i),
+      let circle = makeCircleLayer(angle: CGFloat.pi / 4 * CGFloat(i),
                             size: circleSize,
                             origin: CGPoint(x: x, y: y),
                             containerSize: size,
@@ -37,7 +37,7 @@ public class ActivityIndicatorAnimationBallSpinFadeLoader: ActivityIndicatorAnim
     }
   }
   
-  func circleAt(angle: CGFloat, size: CGFloat, origin: CGPoint, containerSize: CGSize, color: UIColor) -> CALayer {
+  func makeCircleLayer(angle: CGFloat, size: CGFloat, origin: CGPoint, containerSize: CGSize, color: UIColor) -> CALayer {
     let radius = containerSize.width / 2 - size / 2
     let circle = ActivityIndicatorShape.circle.makeLayer(size: CGSize(width: size, height: size), color: color)
     let frame = CGRect(
