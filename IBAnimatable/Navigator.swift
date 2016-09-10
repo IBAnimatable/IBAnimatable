@@ -42,7 +42,7 @@ public class Navigator: NSObject {
 extension Navigator: UINavigationControllerDelegate {
   // MARK: - animation controller
   public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    interactiveAnimator?.connectGestureRecognizer(toVC)
+    interactiveAnimator?.connectGestureRecognizer(to: toVC)
     
     if operation == .push {
       animator?.transitionDuration = transitionDuration
