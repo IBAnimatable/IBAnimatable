@@ -24,7 +24,7 @@ public class ActivityIndicatorAnimationLineSpinFadeLoader: ActivityIndicatorAnim
 
     let animation = self.animation
     for i in 0 ..< 8 {
-      let line = lineAt(angle: CGFloat.pi / 4 * CGFloat(i),
+      let line = makeLineLayer(angle: CGFloat.pi / 4 * CGFloat(i),
                         size: lineSize,
                         origin: CGPoint(x: x, y: y),
                         containerSize: size,
@@ -52,7 +52,7 @@ private extension ActivityIndicatorAnimationLineSpinFadeLoader {
     return animation
   }
 
-  func lineAt(angle: CGFloat, size: CGSize, origin: CGPoint, containerSize: CGSize, color: UIColor) -> CALayer {
+  func makeLineLayer(angle: CGFloat, size: CGSize, origin: CGPoint, containerSize: CGSize, color: UIColor) -> CALayer {
     let radius = containerSize.width / 2 - max(size.width, size.height) / 2
     let lineContainerSize = CGSize(width: max(size.width, size.height), height: max(size.width, size.height))
     let lineContainer = CALayer()
