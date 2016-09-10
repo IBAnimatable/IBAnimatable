@@ -23,19 +23,19 @@ public class ActivityIndicatorAnimationBallTrianglePath: ActivityIndicatorAnimat
     let animation = self.animation
 
     let topCenterCircle = ActivityIndicatorShape.ring.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
-    changeAnimation(animation: animation, values:["{0,0}", "{hx,fy}", "{-hx,fy}", "{0,0}"], deltaX: deltaX, deltaY: deltaY)
+    change(animation: animation, values:["{0,0}", "{hx,fy}", "{-hx,fy}", "{0,0}"], deltaX: deltaX, deltaY: deltaY)
     topCenterCircle.frame = CGRect(x: x + size.width / 2 - circleSize / 2, y: y, width: circleSize, height: circleSize)
     topCenterCircle.add(animation, forKey: "animation")
     layer.addSublayer(topCenterCircle)
 
     let bottomLeftCircle = ActivityIndicatorShape.ring.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
-    changeAnimation(animation: animation, values: ["{0,0}", "{hx,-fy}", "{fx,0}", "{0,0}"], deltaX: deltaX, deltaY: deltaY)
+    change(animation: animation, values: ["{0,0}", "{hx,-fy}", "{fx,0}", "{0,0}"], deltaX: deltaX, deltaY: deltaY)
     bottomLeftCircle.frame = CGRect(x: x, y: y + size.height - circleSize, width: circleSize, height: circleSize)
     bottomLeftCircle.add(animation, forKey: "animation")
     layer.addSublayer(bottomLeftCircle)
 
     let bottomRightCircle = ActivityIndicatorShape.ring.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
-    changeAnimation(animation: animation, values: ["{0,0}", "{-fx,0}", "{-hx,-fy}", "{0,0}"], deltaX: deltaX, deltaY:deltaY)
+    change(animation: animation, values: ["{0,0}", "{-fx,0}", "{-hx,-fy}", "{0,0}"], deltaX: deltaX, deltaY:deltaY)
     bottomRightCircle.frame = CGRect(x: x + size.width - circleSize, y: y + size.height - circleSize, width: circleSize, height: circleSize)
     bottomRightCircle.add(animation, forKey: "animation")
     layer.addSublayer(bottomRightCircle)
@@ -57,7 +57,7 @@ private extension ActivityIndicatorAnimationBallTrianglePath {
     return animation
   }
 
-  func changeAnimation(animation: CAKeyframeAnimation, values rawValues: [String], deltaX: CGFloat, deltaY: CGFloat) {
+  func change(animation: CAKeyframeAnimation, values rawValues: [String], deltaX: CGFloat, deltaY: CGFloat) {
     let values = NSMutableArray(capacity: 5)
     for rawValue in rawValues {
       let point = CGPointFromString(translateString(valueString: rawValue, deltaX: deltaX, deltaY: deltaY))
