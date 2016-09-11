@@ -15,7 +15,7 @@ public class ActivityIndicatorAnimationBallPulseSync: ActivityIndicatorAnimating
 
   // MARK: ActivityIndicatorAnimating
 
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     let circleSpacing: CGFloat = 2
     self.size = size
     circleSize = (size.width - circleSpacing * 2) / 3

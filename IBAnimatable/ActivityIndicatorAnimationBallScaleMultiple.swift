@@ -13,7 +13,7 @@ public class ActivityIndicatorAnimationBallScaleMultiple: ActivityIndicatorAnima
 
   // MARK: ActivityIndicatorAnimating
 
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
         let beginTime = CACurrentMediaTime()
         let beginTimes = [0, 0.2, 0.4]
         let animation = self.animation

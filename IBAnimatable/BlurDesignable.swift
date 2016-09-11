@@ -25,9 +25,9 @@ public protocol BlurDesignable {
 
 public extension BlurDesignable where Self: UIView {
   /**
-   configBlurEffectStyle method, should be called in layoutSubviews() method
+   configureBlurEffectStyle method, should be called in layoutSubviews() method
    */
-  public func configBlurEffectStyle() {
+  public func configureBlurEffectStyle() {
     // Used for caching the previous visual effect view
     var privateVisualEffectView: PrivateVisualEffectView?
     

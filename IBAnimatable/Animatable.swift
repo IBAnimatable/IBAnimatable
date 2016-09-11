@@ -51,7 +51,7 @@ public protocol Animatable: class {
 }
 
 public extension Animatable where Self: UIView {
-  public func configAnimatableProperties() {
+  public func configureAnimatableProperties() {
     // Apply default values
     if duration.isNaN {
       duration = 0.7

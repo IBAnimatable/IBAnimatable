@@ -13,7 +13,7 @@ public class ActivityIndicatorAnimationBallZigZagDeflect: ActivityIndicatorAnima
   
   // MARK: ActivityIndicatorAnimating
   
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     
     let circleSize: CGFloat = size.width / 5
     let duration: CFTimeInterval = 0.75

@@ -14,7 +14,7 @@ public class ActivityIndicatorAnimationBallClipRotatePulse: ActivityIndicatorAni
 
   // MARK: ActivityIndicatorAnimating
 
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     animateSmallCircle(duration: duration, timingFunction: timingFunction, layer: layer, size: size, color: color)
     animateBigCircle(duration: duration, timingFunction: timingFunction, layer: layer, size: size, color: color)
   }

@@ -13,7 +13,7 @@ public class ActivityIndicatorAnimationBallSpinFadeLoader: ActivityIndicatorAnim
   
   // MARK: ActivityIndicatorAnimating
   
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     
     let circleSpacing: CGFloat = -2
     let circleSize = (size.width - 4 * circleSpacing) / 5

@@ -10,7 +10,7 @@ public protocol TableViewCellDesignable {
 }
 
 public extension TableViewCellDesignable where Self: UITableViewCell {
-  public func configSeparatorMargins() {
+  public func configureSeparatorMargins() {
     if removeSeparatorMargins {
       if responds(to: #selector(setter: UITableViewCell.separatorInset)) {
         separatorInset = .zero

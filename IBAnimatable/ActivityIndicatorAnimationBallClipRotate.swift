@@ -13,7 +13,7 @@ public class ActivityIndicatorAnimationBallClipRotate: ActivityIndicatorAnimatin
 
   // MARK: ActivityIndicatorAnimating
 
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     let animation = self.animation
 
     // Draw circle

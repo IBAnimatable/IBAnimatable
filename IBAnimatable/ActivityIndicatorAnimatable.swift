@@ -22,7 +22,7 @@ public extension ActivityIndicatorAnimatable where Self: UIView {
   /// Start animating the activity indicator
   public func startAnimating() {
     isHidden = false
-    configLayer()
+    configureLayer()
     isAnimating = true
   }
 
@@ -39,7 +39,7 @@ public extension ActivityIndicatorAnimatable where Self: UIView {
 
 private extension ActivityIndicatorAnimatable where Self: UIView {
 
-  func configLayer() {
+  func configureLayer() {
     guard layer.sublayers == nil else {
       return
     }
@@ -49,7 +49,7 @@ private extension ActivityIndicatorAnimatable where Self: UIView {
     }
 
     let activityIndicator = ActivityIndicatorFactory.makeActivityIndicator(activityIndicatorType: animationType)
-    activityIndicator.configAnimation(in: layer, size: bounds.size, color: color)
+    activityIndicator.configureAnimation(in: layer, size: bounds.size, color: color)
     layer.speed = 1
   }
 

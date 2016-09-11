@@ -13,7 +13,7 @@ public class ActivityIndicatorAnimationBallRotateChase: ActivityIndicatorAnimati
 
   // MARK: ActivityIndicatorAnimating
 
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     let circleSize = size.width / 5
     for i in 0 ..< 5 {
       let factor = Float(i) * 1.0 / 5

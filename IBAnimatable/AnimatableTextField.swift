@@ -10,45 +10,45 @@ import UIKit
   // MARK: - CornerDesignable
   @IBInspectable open var cornerRadius: CGFloat = CGFloat.nan {
     didSet {
-      configCornerRadius()
+      configureCornerRadius()
     }
   }
   
   // MARK: - FillDesignable
   @IBInspectable open var fillColor: UIColor? {
     didSet {
-      configFillColor()
+      configureFillColor()
     }
   }
   
   @IBInspectable open var predefinedColor: String? {
     didSet {
-      configFillColor()
+      configureFillColor()
     }
   }
   
   @IBInspectable open var opacity: CGFloat = CGFloat.nan {
     didSet {
-      configOpacity()
+      configureOpacity()
     }
   }
   
   // MARK: - BorderDesignable
   @IBInspectable open var borderColor: UIColor? {
     didSet {
-      configBorder()
+      configureBorder()
     }
   }
   
   @IBInspectable open var borderWidth: CGFloat = CGFloat.nan {
     didSet {
-      configBorder()
+      configureBorder()
     }
   }
   
   open var borderSides: BorderSides  = .AllSides {
     didSet {
-      configBorder()
+      configureBorder()
     }
   }
   
@@ -60,44 +60,44 @@ import UIKit
   // MARK: - ShadowDesignable
   @IBInspectable open var shadowColor: UIColor? {
     didSet {
-      configShadowColor()
+      configureShadowColor()
     }
   }
   
   @IBInspectable open var shadowRadius: CGFloat = CGFloat.nan {
     didSet {
-      configShadowRadius()
+      configureShadowRadius()
     }
   }
   
   @IBInspectable open var shadowOpacity: CGFloat = CGFloat.nan {
     didSet {
-      configShadowOpacity()
+      configureShadowOpacity()
     }
   }
   
   @IBInspectable open var shadowOffset: CGPoint = CGPoint(x: CGFloat.nan, y: CGFloat.nan) {
     didSet {
-      configShadowOffset()
+      configureShadowOffset()
     }
   }
   
   // MARK: - PaddingDesignable
   @IBInspectable open var paddingLeft: CGFloat = CGFloat.nan {
     didSet {
-      configPaddingLeft()
+      configurePaddingLeft()
     }
   }
   
   @IBInspectable open var paddingRight: CGFloat = CGFloat.nan {
     didSet {
-      configPaddingRight()
+      configurePaddingRight()
     }
   }
 
   @IBInspectable open var paddingSide: CGFloat = CGFloat.nan {
     didSet {
-      configPaddingSide()
+      configurePaddingSide()
     }
   }
   
@@ -115,7 +115,7 @@ import UIKit
   // MARK: - CSSPlaceholderable
   @IBInspectable open var placeholderColor: UIColor? {
     didSet {
-      configPlaceholderColor()
+      configurePlaceholderColor()
     }
   }
   
@@ -137,27 +137,27 @@ open var animationType: AnimationType = .none
   // MARK: - Lifecycle
   open override func prepareForInterfaceBuilder() {
     super.prepareForInterfaceBuilder()
-    configInspectableProperties()
+    configureInspectableProperties()
   }
   
   open override func awakeFromNib() {
     super.awakeFromNib()
-    configInspectableProperties()
+    configureInspectableProperties()
   }
   
   open override func layoutSubviews() {
     super.layoutSubviews()
-    configAfterLayoutSubviews()
+    configureAfterLayoutSubviews()
     autoRunAnimation()
   }
   
   // MARK: - Private
-  fileprivate func configInspectableProperties() {
-    configAnimatableProperties()
-    configImages()
+  fileprivate func configureInspectableProperties() {
+    configureAnimatableProperties()
+    configureImages()
   }
   
-  fileprivate func configAfterLayoutSubviews() {
-    configBorder()
+  fileprivate func configureAfterLayoutSubviews() {
+    configureBorder()
   }
 }

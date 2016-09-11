@@ -18,7 +18,7 @@ public class ActivityIndicatorAnimationOrbit: ActivityIndicatorAnimating {
 
   // MARK: ActivityIndicatorAnimating
 
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     self.size = size
 
     coreSize = size.width / (1 + satelliteCoreRatio + distanceRatio)

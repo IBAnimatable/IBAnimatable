@@ -16,7 +16,7 @@ public class ActivityIndicatorAnimationPacman: ActivityIndicatorAnimating {
 
   // MARK: ActivityIndicatorAnimating
 
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     self.size = size
     animateCircle(in: layer, color: color)
     animatePacman(in: layer, color: color)

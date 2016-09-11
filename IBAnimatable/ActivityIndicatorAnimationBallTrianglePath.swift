@@ -14,7 +14,7 @@ public class ActivityIndicatorAnimationBallTrianglePath: ActivityIndicatorAnimat
 
   // MARK: ActivityIndicatorAnimating
 
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     let circleSize = size.width / 5
     let deltaX = size.width / 2 - circleSize / 2
     let deltaY = size.height / 2 - circleSize / 2
