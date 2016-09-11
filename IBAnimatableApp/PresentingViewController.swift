@@ -66,15 +66,15 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
   }
 
   fileprivate func setupModal(_ presentedViewController: AnimatableModalViewController) {
-    presentedViewController.presentationAnimationType = selectedAnimationType
-    presentedViewController.dismissalAnimationType = selectedDismissalAnimationType
-    presentedViewController.modalPosition = selectedModalPosition ?? "Center"
-    presentedViewController.modalWidth = selectedModalWidth 
-    presentedViewController.modalHeight = selectedModalHeight 
+    presentedViewController.presentationAnimationType = PresentationAnimationType(string: selectedAnimationType) ?? .cover(fromDirection: .bottom)
+    presentedViewController.dismissalAnimationType = PresentationAnimationType(string: selectedDismissalAnimationType) ?? .cover(fromDirection: .bottom)
+    presentedViewController.modalPosition = PresentationModalPosition(string: selectedModalPosition)
+    presentedViewController.modalSize = (width: PresentationModalSize(string: selectedModalWidth)!, height: PresentationModalSize(string:selectedModalHeight)!)
+  
     presentedViewController.backgroundColor = colors[Int(sliderBackgroundColor.value)]
     presentedViewController.opacity = CGFloat(sliderOpacity.value)
     presentedViewController.dismissOnTap = switchDismissOnTap.isOn
-    presentedViewController.keyboardTranslation = selectedKeyboardTranslation
+    presentedViewController.keyboardTranslation = ModalKeyboardTranslation(string: selectedKeyboardTranslation) ?? .none
     presentedViewController.cornerRadius = CGFloat(sliderCornerRadius.value)
     presentedViewController.blurEffectStyle = UIBlurEffectStyle(string: selectedBlurEffectStyle)
     presentedViewController.blurOpacity = CGFloat(sliderBlurOpacity.value)
@@ -93,10 +93,10 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
     
     // FIXME: Dirty hack to make `Flip` and `CrossDissolve` work properly for dismissal transition.
     // If we don't apply this hack, both the dismissal transitions of `Flip` and `CrossDissolve` will slide down the modal not flip or crossDissolve(fade).
-    if viewController.presentationAnimationType == "Flip" {
-      viewController.dismissalAnimationType = "Flip"
-    } else if viewController.presentationAnimationType == "CrossDissolve" {
-      viewController.dismissalAnimationType = "CrossDissolve"
+    if viewController.presentationAnimationType.stringValue == PresentationAnimationType.flip.stringValue {
+      viewController.dismissalAnimationType = .flip
+    } else if viewController.presentationAnimationType.stringValue == PresentationAnimationType.crossDissolve.stringValue {
+      viewController.dismissalAnimationType = .crossDissolve
     }
   }
 }
