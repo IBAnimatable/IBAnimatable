@@ -17,7 +17,7 @@ public extension PlaceholderDesignable where Self: UITextField {
 
   var placeholderText: String? { get { return "" } set {} }
 
-  public func configPlaceholderColor() {
+  public func configurePlaceholderColor() {
     if let unwrappedPlaceholderColor = placeholderColor {
       attributedPlaceholder = NSAttributedString(string: placeholder!, attributes: [NSForegroundColorAttributeName: unwrappedPlaceholderColor])
     }
@@ -26,7 +26,7 @@ public extension PlaceholderDesignable where Self: UITextField {
 
 public extension PlaceholderDesignable where Self: UITextView {
 
-  public func config(placeholder placeholderLabel: UILabel, placeholderLabelConstraints: inout [NSLayoutConstraint]) {
+  public func configure(placeholderLabel: UILabel, placeholderLabelConstraints: inout [NSLayoutConstraint]) {
     placeholderLabel.font = font
     placeholderLabel.textColor = placeholderColor
     placeholderLabel.textAlignment = textAlignment

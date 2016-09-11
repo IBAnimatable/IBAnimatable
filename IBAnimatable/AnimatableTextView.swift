@@ -10,45 +10,45 @@ import UIKit
   // MARK: - CornerDesignable
   @IBInspectable open var cornerRadius: CGFloat = CGFloat.nan {
     didSet {
-      configCornerRadius()
+      configureCornerRadius()
     }
   }
   
   // MARK: - FillDesignable
   @IBInspectable open var fillColor: UIColor? {
     didSet {
-      configFillColor()
+      configureFillColor()
     }
   }
   
   @IBInspectable open var predefinedColor: String? {
     didSet {
-      configFillColor()
+      configureFillColor()
     }
   }
   
   @IBInspectable open var opacity: CGFloat = CGFloat.nan {
     didSet {
-      configOpacity()
+      configureOpacity()
     }
   }
 
   // MARK: - BorderDesignable
   @IBInspectable open var borderColor: UIColor? {
     didSet {
-      configBorder()
+      configureBorder()
     }
   }
   
   @IBInspectable open var borderWidth: CGFloat = CGFloat.nan {
     didSet {
-      configBorder()
+      configureBorder()
     }
   }
   
   open var borderSides: BorderSides  = .AllSides {
     didSet {
-      configBorder()
+      configureBorder()
     }
   }
   
@@ -123,17 +123,17 @@ open var animationType: AnimationType = .none
   // MARK: - Lifecycle
   open override func prepareForInterfaceBuilder() {
     super.prepareForInterfaceBuilder()
-    configInspectableProperties()
+    configureInspectableProperties()
   }
   
   open override func awakeFromNib() {
     super.awakeFromNib()
-    configInspectableProperties()
+    configureInspectableProperties()
   }
   
   open override func layoutSubviews() {
     super.layoutSubviews()
-    configAfterLayoutSubviews()
+    configureAfterLayoutSubviews()
     autoRunAnimation()
   }
 
@@ -142,9 +142,9 @@ open var animationType: AnimationType = .none
   }
   
   // MARK: - Private
-  private func configInspectableProperties() {
-    configAnimatableProperties()
-    config(placeholder: placeholderLabel, placeholderLabelConstraints: &placeholderLabelConstraints)
+  private func configureInspectableProperties() {
+    configureAnimatableProperties()
+    configure(placeholderLabel: placeholderLabel, placeholderLabelConstraints: &placeholderLabelConstraints)
     NotificationCenter.default.addObserver(self, selector: #selector(textDidChange), name: NSNotification.Name.UITextViewTextDidChange, object: nil)
   }
 
@@ -152,8 +152,8 @@ open var animationType: AnimationType = .none
     placeholderLabel.isHidden = !text.isEmpty
   }
 
-  private func configAfterLayoutSubviews() {
-    configBorder()
+  private func configureAfterLayoutSubviews() {
+    configureBorder()
     placeholderLabel.preferredMaxLayoutWidth = textContainer.size.width - textContainer.lineFragmentPadding * 2.0
   }
 }

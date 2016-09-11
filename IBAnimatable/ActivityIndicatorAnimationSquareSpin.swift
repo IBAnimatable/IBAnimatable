@@ -13,7 +13,7 @@ public class ActivityIndicatorAnimationSquareSpin: ActivityIndicatorAnimating {
 
   // MARK: ActivityIndicatorAnimating
 
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
 
     let animation = self.animation
     let square = ActivityIndicatorShape.rectangle.makeLayer(size: size, color: color)

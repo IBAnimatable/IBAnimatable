@@ -33,28 +33,28 @@ public protocol ShadowDesignable {
 }
 
 public extension ShadowDesignable where Self: UIView {
-  public func configShadowColor() {
+  public func configureShadowColor() {
     if let unwrappedShadowColor = shadowColor {
       commonSetup()
       layer.shadowColor = unwrappedShadowColor.cgColor
     }
   }
 
-  public func configShadowRadius() {
+  public func configureShadowRadius() {
     if !shadowRadius.isNaN && shadowRadius > 0 {
       commonSetup()
       layer.shadowRadius = shadowRadius
     }
   }
 
-  public func configShadowOpacity() {
+  public func configureShadowOpacity() {
     if !shadowOpacity.isNaN && shadowOpacity >= 0 && shadowOpacity <= 1 {
       commonSetup()
       layer.shadowOpacity = Float(shadowOpacity)
     }
   }
 
-  public func configShadowOffset() {
+  public func configureShadowOffset() {
     if !shadowOffset.x.isNaN {
       commonSetup()
       layer.shadowOffset.width = shadowOffset.x
@@ -66,7 +66,7 @@ public extension ShadowDesignable where Self: UIView {
     }
   }
   
-  public func configMaskShadow() {
+  public func configureMaskShadow() {
     commonSetup()
     
     // if a `layer.mask` is specified, add a new shadow layer to display the shadow to match the mask shape.

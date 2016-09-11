@@ -10,64 +10,64 @@ import UIKit
   // MARK: - CheckBoxDesignable
   @IBInspectable open var checked: Bool = false {
     didSet {
-      configCheckBoxChecked()
+      configureCheckBoxChecked()
     }
   }
   
   @IBInspectable open var checkedImage: UIImage? = nil {
     didSet {
-      configCheckBoxCheckedImage()
+      configureCheckBoxCheckedImage()
     }
   }
   
   @IBInspectable open var uncheckedImage: UIImage? = nil {
     didSet {
-      configCheckBoxUncheckedImage()
+      configureCheckBoxUncheckedImage()
     }
   }
   
   // MARK: - CornerDesignable
   @IBInspectable open var cornerRadius: CGFloat = CGFloat.nan {
     didSet {
-      configCornerRadius()
+      configureCornerRadius()
     }
   }
   
   // MARK: - FillDesignable
   @IBInspectable open var fillColor: UIColor? {
     didSet {
-      configFillColor()
+      configureFillColor()
     }
   }
   
   @IBInspectable open var predefinedColor: String? {
     didSet {
-      configFillColor()
+      configureFillColor()
     }
   }
   
   @IBInspectable open var opacity: CGFloat = CGFloat.nan {
     didSet {
-      configOpacity()
+      configureOpacity()
     }
   }
   
   // MARK: - BorderDesignable
   @IBInspectable open var borderColor: UIColor? {
     didSet {
-      configBorder()
+      configureBorder()
     }
   }
   
   @IBInspectable open var borderWidth: CGFloat = CGFloat.nan {
     didSet {
-      configBorder()
+      configureBorder()
     }
   }
   
   open var borderSides: BorderSides  = .AllSides {
     didSet {
-      configBorder()
+      configureBorder()
     }
   }
   
@@ -79,33 +79,33 @@ import UIKit
   // MARK: - ShadowDesignable
   @IBInspectable open var shadowColor: UIColor? {
     didSet {
-      configShadowColor()
+      configureShadowColor()
     }
   }
   
   @IBInspectable open var shadowRadius: CGFloat = CGFloat.nan {
     didSet {
-      configShadowRadius()
+      configureShadowRadius()
     }
   }
   
   @IBInspectable open var shadowOpacity: CGFloat = CGFloat.nan {
     didSet {
-      configShadowOpacity()
+      configureShadowOpacity()
     }
   }
   
   @IBInspectable open var shadowOffset: CGPoint = CGPoint(x: CGFloat.nan, y: CGFloat.nan) {
     didSet {
-      configShadowOffset()
+      configureShadowOffset()
     }
   }
   
   // MARK: - MaskDesignable
   open var maskType: MaskType = .none {
     didSet {
-      configMask()
-      configBorder()
+      configureMask()
+      configureBorder()
     }
   }
   
@@ -135,18 +135,18 @@ open var animationType: AnimationType = .none
   open override func prepareForInterfaceBuilder() {
     super.prepareForInterfaceBuilder()
     setup()
-    configInspectableProperties()
+    configureInspectableProperties()
   }
   
   open override func awakeFromNib() {
     super.awakeFromNib()
     setup()
-    configInspectableProperties()
+    configureInspectableProperties()
   }
   
   open override func layoutSubviews() {
     super.layoutSubviews()
-    configAfterLayoutSubviews()
+    configureAfterLayoutSubviews()
     autoRunAnimation()
   }
   
@@ -165,12 +165,12 @@ open var animationType: AnimationType = .none
     tintColor = .clear
   }
   
-  fileprivate func configInspectableProperties() {
-    configAnimatableProperties()
+  fileprivate func configureInspectableProperties() {
+    configureAnimatableProperties()
   }
   
-  fileprivate func configAfterLayoutSubviews() {
-    configMask()
-    configBorder()
+  fileprivate func configureAfterLayoutSubviews() {
+    configureMask()
+    configureBorder()
   }
 }

@@ -13,18 +13,18 @@ public protocol GradientDesignable {
 }
 
 public extension GradientDesignable where Self: UIView {
-  public func configGradient() {
-    let predefinedGradient = configPredefinedGradient()
+  public func configureGradient() {
+    let predefinedGradient = configurePredefinedGradient()
     if let unwrappedStartColor = startColor, let unwrappedEndColor = endColor {
-      configGradient(startColor: unwrappedStartColor, endColor: unwrappedEndColor)
+      configureGradient(startColor: unwrappedStartColor, endColor: unwrappedEndColor)
     } else if let unwrappedStartColor = predefinedGradient?.0, let unwrappedEndColor = predefinedGradient?.1 {
-      configGradient(startColor: unwrappedStartColor, endColor: unwrappedEndColor)
+      configureGradient(startColor: unwrappedStartColor, endColor: unwrappedEndColor)
     }
   }
 }
 
 fileprivate extension GradientDesignable where Self: UIView  {
-  func configGradient(startColor: UIColor, endColor: UIColor) {
+  func configureGradient(startColor: UIColor, endColor: UIColor) {
     // Default value is `.Top`
     
     let gradientStartPoint = startPoint
@@ -72,7 +72,7 @@ fileprivate extension GradientDesignable where Self: UIView  {
     return gradientLayer
   }
   
-  func configPredefinedGradient() -> GradientColor? {
+  func configurePredefinedGradient() -> GradientColor? {
     
     guard let gradientType = predefinedGradient else {
       return nil

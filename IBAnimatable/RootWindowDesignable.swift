@@ -14,7 +14,7 @@ public protocol RootWindowDesignable {
 
 public extension RootWindowDesignable where Self: UIViewController {
   
-  public func configRootWindowBackgroundColor() {
+  public func configureRootWindowBackgroundColor() {
     #if NS_EXTENSION_UNAVAILABLE_IOS
       
       if let wrappedRootWindowBackgroundColor = rootWindowBackgroundColor,

@@ -60,6 +60,6 @@ extension GradientViewController : UIPickerViewDelegate, UIPickerViewDataSource 
       gView.startPoint = GradientStartPoint(rawValue: startPointValues.value(at: pickerView.selectedRow(inComponent: 2))) ?? .top
 
     }
-    gView.configGradient()
+    gView.configureGradient()
   }
 }

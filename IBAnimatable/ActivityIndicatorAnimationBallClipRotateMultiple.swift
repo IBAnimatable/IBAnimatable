@@ -13,7 +13,7 @@ public class ActivityIndicatorAnimationBallClipRotateMultiple: ActivityIndicator
 
   // MARK: ActivityIndicatorAnimating
 
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     let bigCircleSize: CGFloat = size.width
     let smallCircleSize: CGFloat = size.width / 2
     let longDuration: CFTimeInterval = 1

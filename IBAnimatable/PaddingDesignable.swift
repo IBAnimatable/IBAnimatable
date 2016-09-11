@@ -23,7 +23,7 @@ public protocol PaddingDesignable {
 }
 
 public extension PaddingDesignable where Self: UITextField {
-  public func configPaddingLeft() {
+  public func configurePaddingLeft() {
     if paddingLeft.isNaN {
       return
     }
@@ -33,7 +33,7 @@ public extension PaddingDesignable where Self: UITextField {
     leftView = padding
   }
   
-  public func configPaddingRight() {
+  public func configurePaddingRight() {
     if paddingRight.isNaN {
       return
     }
@@ -43,7 +43,7 @@ public extension PaddingDesignable where Self: UITextField {
     rightView = padding
   }
 
-  public func configPaddingSide() {
+  public func configurePaddingSide() {
     if paddingSide.isNaN {
       return
     }

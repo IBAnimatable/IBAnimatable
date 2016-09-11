@@ -39,8 +39,8 @@ import UIKit
   // MARK: - Lifecylce
   open override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    confingHideNavigationBar()
-    configRootWindowBackgroundColor()
+    configureHideNavigationBar()
+    configureRootWindowBackgroundColor()
   }
   
   open override func viewWillDisappear(_ animated: Bool) {

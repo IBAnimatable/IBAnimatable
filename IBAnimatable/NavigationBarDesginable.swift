@@ -13,7 +13,7 @@ public protocol NavigationBarDesignable {
 }
 
 public extension NavigationBarDesignable where Self: UINavigationBar {
-  public func configNavigationBar() {
+  public func configureNavigationBar() {
     if solidColor {
       let emptyImage = UIImage()
       setBackgroundImage(emptyImage, for: .any, barMetrics: .default)

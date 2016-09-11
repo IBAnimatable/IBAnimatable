@@ -24,7 +24,7 @@ public protocol BorderDesignable {
 }
 
 public extension BorderDesignable where Self: UITextField {
-  public func configBorder() {
+  public func configureBorder() {
     // set the borderSytle to `.None` to support single side of border
     borderStyle = .none
     commonConfigBorder()
@@ -32,7 +32,7 @@ public extension BorderDesignable where Self: UITextField {
 }
 
 public extension BorderDesignable where Self: UIView {
-  public func configBorder() {
+  public func configureBorder() {
     commonConfigBorder()
   }
 }

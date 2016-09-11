@@ -11,16 +11,16 @@ import UIKit
   // MARK: - Lifecycle
   open override func prepareForInterfaceBuilder() {
     super.prepareForInterfaceBuilder()
-    configInspectableProperties()
+    configureInspectableProperties()
   }
   
   open override func awakeFromNib() {
     super.awakeFromNib()
-    configInspectableProperties()
+    configureInspectableProperties()
   }
   
   // MARK: - Private
-  fileprivate func configInspectableProperties() {
-    configNavigationBar()
+  fileprivate func configureInspectableProperties() {
+    configureNavigationBar()
   }
 }

@@ -14,7 +14,7 @@ public class ActivityIndicatorAnimationAudioEqualizer: ActivityIndicatorAnimatin
 
   // MARK: ActivityIndicatorAnimating
 
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     self.size = size
     lineSize = size.width / 9
     let x = (layer.bounds.size.width - lineSize * 7) / 2

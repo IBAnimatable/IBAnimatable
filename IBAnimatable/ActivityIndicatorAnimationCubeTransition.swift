@@ -16,7 +16,7 @@ public class ActivityIndicatorAnimationCubeTransition: ActivityIndicatorAnimatin
 
   // MARK: ActivityIndicatorAnimating
 
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
 
     let squareSize = size.width / 5
     let x = (layer.bounds.size.width - size.width) / 2
