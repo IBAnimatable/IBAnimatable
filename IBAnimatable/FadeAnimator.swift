@@ -46,6 +46,11 @@ extension FadeAnimator: UIViewControllerAnimatedTransitioning {
       transitionContext.completeTransition(true)
       return
     }
+    
+    let (_, tempToViewController, _) = retrieveViewControllers(transitionContext)
+    if let toViewController = tempToViewController {
+      toView.frame = transitionContext.finalFrameForViewController(toViewController)
+    }
 
     switch direction {
     case .in:

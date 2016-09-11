@@ -32,6 +32,11 @@ public extension AnimatedTransitioning {
       return
     }
 
+    let (_, tempToViewController, _) = retrieveViewControllers(transitionContext)
+    if let toViewController = tempToViewController {
+      toView.frame = transitionContext.finalFrameForViewController(toViewController)
+    }
+    
     containerView.addSubview(toView)
     CALayer.animate({
       let transition = CATransition()

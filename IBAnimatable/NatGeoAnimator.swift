@@ -50,6 +50,11 @@ extension NatGeoAnimator: UIViewControllerAnimatedTransitioning {
       return
     }
     
+    let (_, tempToViewController, _) = retrieveViewControllers(transitionContext)
+    if let toViewController = tempToViewController {
+      toView.frame = transitionContext.finalFrameForViewController(toViewController)
+    }
+    
     containerView.addSubview(toView)
     containerView.addSubview(fromView)
     if fromDirection == .left {
