@@ -45,6 +45,11 @@ extension CardsAnimator: UIViewControllerAnimatedTransitioning {
       return
     }
     
+    let (_, tempToViewController, _) = retrieveViewControllers(transitionContext)
+    if let toViewController = tempToViewController {
+      toView.frame = transitionContext.finalFrameForViewController(toViewController)
+    }
+    
     if fromDirection == .Forward {
       executeForwardAnimation(transitionContext, containerView: containerView, fromView: fromView, toView: toView)
     } else {
