@@ -44,7 +44,7 @@ public enum PresentationAnimationType: IBEnum {
     case "dropdown":
       self = .dropDown
     case "cover":
-      self = .cover(fromDirection: TransitionDirection.fromString(forParams: params)!)
+      self = .cover(fromDirection: TransitionAnimationType.Direction.fromString(forParams: params)!)
     default:
       return nil
     }
