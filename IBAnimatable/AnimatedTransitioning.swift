@@ -9,7 +9,7 @@ import UIKit
  */
 public protocol AnimatedTransitioning: ViewControllerAnimatedTransitioning {
   /**
-   Value of `TransitionAnimationType` enum
+   Transition animation type: used to specify the transition animation.
    */
   var transitionAnimationType: TransitionAnimationType { get set }
 
@@ -25,7 +25,7 @@ public protocol AnimatedTransitioning: ViewControllerAnimatedTransitioning {
 }
 
 public extension AnimatedTransitioning {
-  public func animateWithCATransition(transitionContext: UIViewControllerContextTransitioning, type: SystemTransitionType, subtype: String?) {
+  public func animateWithCATransition(transitionContext: UIViewControllerContextTransitioning, type: TransitionAnimationType.SystemTransitionType, subtype: String?) {
     let (_, tempToView, tempContainerView) = retrieveViews(transitionContext: transitionContext)
     guard let toView = tempToView, let containerView = tempContainerView else {
       transitionContext.completeTransition(true)

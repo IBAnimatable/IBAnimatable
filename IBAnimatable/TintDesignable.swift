@@ -30,9 +30,9 @@ public protocol TintDesignable {
 
 public extension TintDesignable where Self: UIView {
   /**
-   configTintedColor method, should be called in layoutSubviews() method
+   configureTintedColor method, should be called in layoutSubviews() method
    */
-  public func configTintedColor() {
+  public func configureTintedColor() {
     if !tintOpacity.isNaN && tintOpacity >= 0 && tintOpacity <= 1 {
       addColorSubview(color: .white, opacity: tintOpacity)
     }

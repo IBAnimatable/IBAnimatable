@@ -13,22 +13,23 @@ public protocol GradientDesignable {
 }
 
 public extension GradientDesignable where Self: UIView {
-
-  public func configGradient() {
-    let predefinedGradient = configPredefinedGradient()
+  public func configureGradient() {
+    let predefinedGradient = configurePredefinedGradient()
     if let unwrappedStartColor = startColor, let unwrappedEndColor = endColor {
-      configGradientWithStartColor(unwrappedStartColor, endColor: unwrappedEndColor)
+      configureGradient(startColor: unwrappedStartColor, endColor: unwrappedEndColor)
     } else if let unwrappedStartColor = predefinedGradient?.0, let unwrappedEndColor = predefinedGradient?.1 {
-      configGradientWithStartColor(unwrappedStartColor, endColor: unwrappedEndColor)
+      configureGradient(startColor: unwrappedStartColor, endColor: unwrappedEndColor)
     }
   }
+}
 
-  fileprivate func configGradientWithStartColor(_ startColor: UIColor, endColor: UIColor) {
+fileprivate extension GradientDesignable where Self: UIView  {
+  func configureGradient(startColor: UIColor, endColor: UIColor) {
     // Default value is `.Top`
     
     let gradientStartPoint = startPoint
-    let gradientLayer = createGradientLayer()
-    gradientLayer.colors = [startColor.cgColor, endColor.cgColor]    
+    let gradientLayer = makeGradientLayer()
+    gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
     switch gradientStartPoint {
     case .top:
       gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
@@ -56,37 +57,35 @@ public extension GradientDesignable where Self: UIView {
       gradientLayer.endPoint = CGPoint(x: 1, y: 1)
     }
     
-    let gradientView = GradientView(frame: bounds, layer: gradientLayer)
-    let oldGradientView = viewWithTag(gradientView.tag)
-    oldGradientView?.removeFromSuperview()
-    self.insertSubview(gradientView, at: 0)
+    subviews.filter { $0 is PrivateGradientView }.forEach {
+      $0.removeFromSuperview()
+    }
+    
+    let gradientView = PrivateGradientView(frame: bounds, layer: gradientLayer)
+    insertSubview(gradientView, at: 0)
   }
   
-  fileprivate func createGradientLayer() -> CAGradientLayer {
+  func makeGradientLayer() -> CAGradientLayer {
     let gradientLayer: CAGradientLayer = CAGradientLayer()
-    gradientLayer.frame = self.bounds
+    gradientLayer.frame = bounds
     gradientLayer.cornerRadius = layer.cornerRadius
     return gradientLayer
   }
   
-  fileprivate func configPredefinedGradient() -> GradientColor? {
+  func configurePredefinedGradient() -> GradientColor? {
     
     guard let gradientType = predefinedGradient else {
-        return nil
+      return nil
     }
     return gradientType.colors
   }
 }
 
-private class GradientView: UIView {
-
-  let viewTag = 999
-  
+private class PrivateGradientView: UIView {
   // MARK: - Life cycle
   
   init(frame: CGRect, layer: CAGradientLayer) {
     super.init(frame: frame)
-    tag = viewTag
     self.layer.insertSublayer(layer, at: 0)
     autoresizingMask = [.flexibleWidth, .flexibleHeight]
   }

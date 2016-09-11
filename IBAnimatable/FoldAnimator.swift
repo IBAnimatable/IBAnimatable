@@ -13,7 +13,7 @@ public class FoldAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - Private params
-  fileprivate var fromDirection: TransitionDirection
+  fileprivate var fromDirection: TransitionAnimationType.Direction
   fileprivate var folds: Int = 2
   
   // MARK: - Private fold transition
@@ -30,36 +30,35 @@ public class FoldAnimator: NSObject, AnimatedTransitioning {
   }
   
   // MARK: - Life cycle
-  public init(fromDirection: TransitionDirection, params: [String], transitionDuration: Duration) {
-    self.fromDirection = fromDirection
+  public init(from direction: TransitionAnimationType.Direction, folds: Int?, transitionDuration: Duration) {
+    fromDirection = direction
     self.transitionDuration = transitionDuration
     horizontal = fromDirection.isHorizontal
     
-    if let firstParam = params.first,
-           let unwrappedFolds = Int(firstParam) {
-        self.folds = unwrappedFolds
+    if let folds = folds {
+      self.folds = folds
     }
     
     switch fromDirection {
     case .right:
-      self.transitionAnimationType = .fold(fromDirection: .right, params: params)
-      self.reverseAnimationType = .fold(fromDirection: .left, params: params)
-      self.interactiveGestureType = .pan(fromDirection: .left)
+      self.transitionAnimationType = .fold(from: .right, folds: folds)
+      self.reverseAnimationType = .fold(from: .left, folds: folds)
+      self.interactiveGestureType = .pan(from: .left)
       reverse = true
     case .top:
-      self.transitionAnimationType = .fold(fromDirection: .top, params: params)
-      self.reverseAnimationType = .fold(fromDirection: .bottom, params: params)
-      self.interactiveGestureType = .pan(fromDirection: .bottom)
+      self.transitionAnimationType = .fold(from: .top, folds: folds)
+      self.reverseAnimationType = .fold(from: .bottom, folds: folds)
+      self.interactiveGestureType = .pan(from: .bottom)
       reverse = false
     case .bottom:
-      self.transitionAnimationType = .fold(fromDirection: .bottom, params: params)
-      self.reverseAnimationType = .fold(fromDirection: .top, params: params)
-      self.interactiveGestureType = .pan(fromDirection: .top)
+      self.transitionAnimationType = .fold(from: .bottom, folds: folds)
+      self.reverseAnimationType = .fold(from: .top, folds: folds)
+      self.interactiveGestureType = .pan(from: .top)
       reverse = true
     default:
-      self.transitionAnimationType = .fold(fromDirection: .left, params: params)
-      self.reverseAnimationType = .fold(fromDirection: .right, params: params)
-      self.interactiveGestureType = .pan(fromDirection: .right)
+      self.transitionAnimationType = .fold(from: .left, folds: folds)
+      self.reverseAnimationType = .fold(from: .right, folds: folds)
+      self.interactiveGestureType = .pan(from: .right)
       reverse = false      
     }
     super.init()
@@ -87,7 +86,7 @@ extension FoldAnimator: UIViewControllerAnimatedTransitioning {
     size = toView.frame.size
     foldSize = width * 0.5 / CGFloat(folds)
 
-    let viewFolds = createSnapshots(toView: toView, fromView: fromView, containerView: containerView)
+    let viewFolds = makeSnapshots(toView: toView, fromView: fromView, containerView: containerView)
     animateFoldTransition(fromView: fromView, toViewFolds: viewFolds[0], fromViewFolds: viewFolds[1], completion: {
       if !transitionContext.transitionWasCancelled {
         toView.frame = containerView.bounds
@@ -107,31 +106,31 @@ extension FoldAnimator: UIViewControllerAnimatedTransitioning {
 
 private extension FoldAnimator {
   
-  func createSnapshots(toView: UIView, fromView: UIView, containerView: UIView) -> [[UIView]] {
+  func makeSnapshots(toView: UIView, fromView: UIView, containerView: UIView) -> [[UIView]] {
     var fromViewFolds = [UIView]()
     var toViewFolds = [UIView]()
     for i in 0..<folds {
       let offset = CGFloat(i) * foldSize * 2
-      let leftFromViewFold = createSnapshot(fromView: fromView, afterUpdates: false, offset: offset, left: true)
+      let leftFromViewFold = makeSnapshot(from: fromView, afterUpdates: false, offset: offset, left: true)
       var axesValues = valuesForAxe(initialValue: offset, reverseValue: height / 2)
       leftFromViewFold.layer.position = CGPoint(x: axesValues.0, y: axesValues.1)
       fromViewFolds.append(leftFromViewFold)
       leftFromViewFold.subviews[1].alpha = 0.0
 
-      let rightFromViewFold = createSnapshot(fromView: fromView, afterUpdates: false, offset: offset + foldSize, left: false)
+      let rightFromViewFold = makeSnapshot(from: fromView, afterUpdates: false, offset: offset + foldSize, left: false)
       axesValues = valuesForAxe(initialValue: offset + foldSize * 2, reverseValue: height / 2)
       rightFromViewFold.layer.position = CGPoint(x: axesValues.0, y: axesValues.1)
       fromViewFolds.append(rightFromViewFold)
       rightFromViewFold.subviews[1].alpha = 0.0
 
-      let leftToViewFold = createSnapshot(fromView: toView, afterUpdates: true, offset: offset, left: true)
+      let leftToViewFold = makeSnapshot(from: toView, afterUpdates: true, offset: offset, left: true)
       axesValues = valuesForAxe(initialValue: self.reverse ? width : 0.0, reverseValue: height / 2)
       leftToViewFold.layer.position = CGPoint(x: axesValues.0, y: axesValues.1)
       axesValues = valuesForAxe(initialValue: 0.0, reverseValue: 1.0)
       leftToViewFold.layer.transform = CATransform3DMakeRotation(.pi * 2, axesValues.0, axesValues.1, 0.0)
       toViewFolds.append(leftToViewFold)
 
-      let rightToViewFold = createSnapshot(fromView: toView, afterUpdates: true, offset: offset + foldSize, left: false)
+      let rightToViewFold = makeSnapshot(from: toView, afterUpdates: true, offset: offset + foldSize, left: false)
       axesValues = valuesForAxe(initialValue: self.reverse ? width : 0.0, reverseValue: height / 2)
       rightToViewFold.layer.position = CGPoint(x: axesValues.0, y: axesValues.1)
       axesValues = valuesForAxe(initialValue: 0.0, reverseValue: 1.0)
@@ -141,7 +140,7 @@ private extension FoldAnimator {
     return [toViewFolds, fromViewFolds]
   }
   
-  func createSnapshot(fromView view: UIView, afterUpdates: Bool, offset: CGFloat, left: Bool) -> UIView {
+  func makeSnapshot(from view: UIView, afterUpdates: Bool, offset: CGFloat, left: Bool) -> UIView {
     let containerView = view.superview
     var snapshotView: UIView
     var axesValues = valuesForAxe(initialValue: offset, reverseValue: 0.0)
@@ -157,14 +156,14 @@ private extension FoldAnimator {
       snapshotView.addSubview(subSnapshotView!)
     }
     
-    let snapshotWithShadowView = addShadow(toView: snapshotView, reverse: left)
+    let snapshotWithShadowView = addShadow(to: snapshotView, reverse: left)
     containerView?.addSubview(snapshotWithShadowView)
     axesValues = valuesForAxe(initialValue: left ? 0.0 : 1.0, reverseValue: 0.5)
     snapshotWithShadowView.layer.anchorPoint = CGPoint(x: axesValues.0, y: axesValues.1)
     return snapshotWithShadowView
   }
   
-  func addShadow(toView view: UIView, reverse: Bool) -> UIView {
+  func addShadow(to view: UIView, reverse: Bool) -> UIView {
     let viewWithShadow = UIView(frame: view.frame)
     let shadowView = UIView(frame: viewWithShadow.bounds)
     let gradient = CAGradientLayer()
@@ -195,7 +194,7 @@ private extension FoldAnimator {
 
 private extension FoldAnimator {
 
-  func animateFoldTransition(fromView view: UIView, toViewFolds: [UIView], fromViewFolds: [UIView], completion: AnimatableCompletion) {
+  func animateFoldTransition(fromView view: UIView, toViewFolds: [UIView], fromViewFolds: [UIView], completion: @escaping AnimatableCompletion) {
     view.frame = view.frame.offsetBy(dx: view.frame.width, dy: 0)
     UIView.animate(withDuration: transitionDuration, animations: {
       for i in 0..<self.folds {

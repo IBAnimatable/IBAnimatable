@@ -10,8 +10,8 @@ import Foundation
  */
 public class TransitionPresenterManager {
   // MARK: - Singleton Constructor
-  fileprivate init() {}
-  fileprivate struct Shared {
+  private init() {}
+  private struct Shared {
     static let instance = TransitionPresenterManager()
   }
   
@@ -20,7 +20,7 @@ public class TransitionPresenterManager {
   }
   
   // MARK: - Private
-  fileprivate var cache = [String: TransitionPresenter]()
+  private var cache = [String: TransitionPresenter]()
   
   // MARK: Internal Interface
   public func retrievePresenter(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) -> TransitionPresenter {

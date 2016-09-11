@@ -13,12 +13,12 @@ public class ActivityIndicatorAnimationBallScaleMultiple: ActivityIndicatorAnima
 
   // MARK: ActivityIndicatorAnimating
 
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
         let beginTime = CACurrentMediaTime()
         let beginTimes = [0, 0.2, 0.4]
         let animation = self.animation
         for i in 0 ..< 3 {
-            let circle = ActivityIndicatorShape.Circle.createLayerWith(size: size, color: color)
+            let circle = ActivityIndicatorShape.circle.makeLayer(size: size, color: color)
             let frame = CGRect(x: (layer.bounds.size.width - size.width) / 2,
                 y: (layer.bounds.size.height - size.height) / 2,
                 width: size.width,
@@ -35,7 +35,7 @@ public class ActivityIndicatorAnimationBallScaleMultiple: ActivityIndicatorAnima
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationBallScaleMultiple {
+private extension ActivityIndicatorAnimationBallScaleMultiple {
 
   var animation: CAAnimationGroup {
     let animation = CAAnimationGroup()

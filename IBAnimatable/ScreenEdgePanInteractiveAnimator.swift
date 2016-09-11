@@ -7,8 +7,8 @@ import UIKit
 
 public class ScreenEdgePanInteractiveAnimator: InteractiveAnimator {
   
-  override func createGestureRecognizer() -> UIGestureRecognizer {
-    let gestureRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
+  override func makeGestureRecognizer() -> UIGestureRecognizer {
+    let gestureRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handleGesture(for:)))
     switch interactiveGestureType {
     case let .screenEdgePan(direction):
       switch direction {
@@ -33,7 +33,7 @@ public class ScreenEdgePanInteractiveAnimator: InteractiveAnimator {
     return gestureRecognizer
   }
   
-  override func calculateProgress(_ gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
+  override func calculateProgress(for gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
     guard let  gestureRecognizer = gestureRecognizer as? UIScreenEdgePanGestureRecognizer,
       let superview = gestureRecognizer.view?.superview else {
         return (0, false)

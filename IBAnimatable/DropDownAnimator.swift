@@ -52,7 +52,7 @@ extension DropDownAnimator: UIViewControllerAnimatedTransitioning {
 
 private extension DropDownAnimator {
 
-  func animateDropDown(animatingView: UIView, presenting: Bool, completion: AnimatableCompletion) {
+  func animateDropDown(animatingView: UIView, presenting: Bool, completion: @escaping AnimatableCompletion) {
     if presenting {
       animatePresengingDropDown(animatingView: animatingView, completion: completion)
     } else {
@@ -60,7 +60,7 @@ private extension DropDownAnimator {
     }
   }
 
-  func animatePresengingDropDown(animatingView: UIView, completion: AnimatableCompletion) {
+  func animatePresengingDropDown(animatingView: UIView, completion: @escaping AnimatableCompletion) {
     let y = animatingView.center.y
     let animation = CAKeyframeAnimation(keyPath: "position.y")
     animation.values = [y - UIScreen.main.bounds.height, y + 20, y - 10, y]
@@ -72,7 +72,7 @@ private extension DropDownAnimator {
     animatingView.layer.add(animation, forKey: "dropdown")
   }
 
-  func animateDismissingDropDown(animatingView: UIView, completion: AnimatableCompletion) {
+  func animateDismissingDropDown(animatingView: UIView, completion: @escaping AnimatableCompletion) {
     var point = animatingView.center
     let angle = CGFloat(arc4random_uniform(100)) - 50
     point.y += UIScreen.main.bounds.height

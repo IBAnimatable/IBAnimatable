@@ -11,7 +11,7 @@ import UIKit
 public enum PresentationAnimationType: IBEnum {
   case flip
   case crossDissolve
-  case cover(fromDirection: TransitionDirection)
+  case cover(fromDirection: TransitionAnimationType.Direction)
   case zoom
   case dropDown
   

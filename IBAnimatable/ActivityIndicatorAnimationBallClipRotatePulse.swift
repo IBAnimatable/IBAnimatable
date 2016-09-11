@@ -14,21 +14,21 @@ public class ActivityIndicatorAnimationBallClipRotatePulse: ActivityIndicatorAni
 
   // MARK: ActivityIndicatorAnimating
 
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
-    smallCircleWith(duration: duration, timingFunction: timingFunction, layer: layer, size: size, color: color)
-    bigCircleWith(duration: duration, timingFunction: timingFunction, layer: layer, size: size, color: color)
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+    animateSmallCircle(duration: duration, timingFunction: timingFunction, layer: layer, size: size, color: color)
+    animateBigCircle(duration: duration, timingFunction: timingFunction, layer: layer, size: size, color: color)
   }
 
 }
 
 // MARK: Small circle
 
-fileprivate extension ActivityIndicatorAnimationBallClipRotatePulse {
+private extension ActivityIndicatorAnimationBallClipRotatePulse {
 
-  func smallCircleWith(duration: CFTimeInterval, timingFunction: CAMediaTimingFunction, layer: CALayer, size: CGSize, color: UIColor) {
-    let animation = createSmallCircleAanimation()
+  func animateSmallCircle(duration: CFTimeInterval, timingFunction: CAMediaTimingFunction, layer: CALayer, size: CGSize, color: UIColor) {
+    let animation = makeSmallCircleAnimation()
     let circleSize = size.width / 2
-    let circle = ActivityIndicatorShape.Circle.createLayerWith(size: CGSize(width: circleSize, height: circleSize), color: color)
+    let circle = ActivityIndicatorShape.circle.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
     let frame = CGRect(x: (layer.bounds.size.width - circleSize) / 2,
                        y: (layer.bounds.size.height - circleSize) / 2,
                        width: circleSize,
@@ -38,7 +38,7 @@ fileprivate extension ActivityIndicatorAnimationBallClipRotatePulse {
     layer.addSublayer(circle)
   }
 
-  func createSmallCircleAanimation() -> CAKeyframeAnimation {
+  func makeSmallCircleAnimation() -> CAKeyframeAnimation {
     let animation = CAKeyframeAnimation(keyPath:"transform.scale")
     animation.keyTimes = [0, 0.3, 1]
     animation.timingFunctions = [timingFunction, timingFunction]
@@ -53,11 +53,11 @@ fileprivate extension ActivityIndicatorAnimationBallClipRotatePulse {
 
 // MARK: Big circle
 
-fileprivate extension ActivityIndicatorAnimationBallClipRotatePulse {
+private extension ActivityIndicatorAnimationBallClipRotatePulse {
 
-  func bigCircleWith(duration: CFTimeInterval, timingFunction: CAMediaTimingFunction, layer: CALayer, size: CGSize, color: UIColor) {
-    let animation = createBigCircleAanimation()
-    let circle = ActivityIndicatorShape.RingTwoHalfVertical.createLayerWith(size: size, color: color)
+  func animateBigCircle(duration: CFTimeInterval, timingFunction: CAMediaTimingFunction, layer: CALayer, size: CGSize, color: UIColor) {
+    let animation = makeBigCircleAnimation()
+    let circle = ActivityIndicatorShape.ringTwoHalfVertical.makeLayer(size: size, color: color)
     let frame = CGRect(x: (layer.bounds.size.width - size.width) / 2,
                        y: (layer.bounds.size.height - size.height) / 2,
                        width: size.width,
@@ -67,7 +67,7 @@ fileprivate extension ActivityIndicatorAnimationBallClipRotatePulse {
     layer.addSublayer(circle)
   }
 
-  func createBigCircleAanimation() -> CAAnimationGroup {
+  func makeBigCircleAnimation() -> CAAnimationGroup {
     let animation = CAAnimationGroup()
     animation.animations = [scaleAnimation, rotateAnimation]
     animation.duration = duration
@@ -89,7 +89,7 @@ fileprivate extension ActivityIndicatorAnimationBallClipRotatePulse {
     let rotateAnimation = CAKeyframeAnimation(keyPath:"transform.rotation.z")
     rotateAnimation.keyTimes = scaleAnimation.keyTimes
     rotateAnimation.timingFunctions = [timingFunction, timingFunction]
-    rotateAnimation.values = [0, M_PI, 2 * M_PI]
+    rotateAnimation.values = [0, CGFloat.pi, 2 * CGFloat.pi]
     rotateAnimation.duration = duration
     return rotateAnimation
   }

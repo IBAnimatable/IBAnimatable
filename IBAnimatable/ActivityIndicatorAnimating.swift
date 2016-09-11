@@ -14,5 +14,5 @@ public protocol ActivityIndicatorAnimating {
    - Parameter size: The size of the activity indicator.
    - Parameter color: The color of the activity indicator.
    */
-  func configAnimation(in layer: CALayer, size: CGSize, color: UIColor)
+  func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor)
 }

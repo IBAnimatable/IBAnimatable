@@ -16,7 +16,7 @@ public class ActivityIndicatorAnimationCubeTransition: ActivityIndicatorAnimatin
 
   // MARK: ActivityIndicatorAnimating
 
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
 
     let squareSize = size.width / 5
     let x = (layer.bounds.size.width - size.width) / 2
@@ -28,7 +28,7 @@ public class ActivityIndicatorAnimationCubeTransition: ActivityIndicatorAnimatin
 
     let animation = self.animation
     for i in 0 ..< 2 {
-      let square = ActivityIndicatorShape.Rectangle.createLayerWith(size: CGSize(width: squareSize, height: squareSize), color: color)
+      let square = ActivityIndicatorShape.rectangle.makeLayer(size: CGSize(width: squareSize, height: squareSize), color: color)
       let frame = CGRect(x: x, y: y, width: squareSize, height: squareSize)
 
       animation.beginTime = beginTime + beginTimes[i]
@@ -41,7 +41,7 @@ public class ActivityIndicatorAnimationCubeTransition: ActivityIndicatorAnimatin
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationCubeTransition {
+private extension ActivityIndicatorAnimationCubeTransition {
 
   var animation: CAAnimationGroup {
     let animation = CAAnimationGroup()
@@ -56,7 +56,7 @@ fileprivate extension ActivityIndicatorAnimationCubeTransition {
     let rotateAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
     rotateAnimation.keyTimes = scaleAnimation.keyTimes
     rotateAnimation.timingFunctions = scaleAnimation.timingFunctions
-    rotateAnimation.values = [0, CGFloat(-M_PI_2), CGFloat(-M_PI), CGFloat(-1.5 * M_PI), CGFloat(-2 * M_PI)]
+    rotateAnimation.values = [0, -CGFloat.pi / 2, -CGFloat.pi, -1.5 * CGFloat.pi, -2 * CGFloat.pi]
     rotateAnimation.duration = duration
     return rotateAnimation
   }

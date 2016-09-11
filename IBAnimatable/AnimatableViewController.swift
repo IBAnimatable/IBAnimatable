@@ -19,19 +19,19 @@ import UIKit
   @IBInspectable  var _transitionAnimationType: String? {
     didSet {
       if let _transitionAnimationType = _transitionAnimationType {
-        transitionAnimationType = TransitionAnimationType.fromString(transitionType: _transitionAnimationType)
+        transitionAnimationType = TransitionAnimationType(string: _transitionAnimationType)
       }
     }
   }
-  open var transitionAnimationType: TransitionAnimationType?
+  open var transitionAnimationType: TransitionAnimationType = .none
   
   @IBInspectable open var transitionDuration: Double = .nan
   
-  open var interactiveGestureType: InteractiveGestureType?
+  open var interactiveGestureType: InteractiveGestureType = .none
   @IBInspectable var _interactiveGestureType: String? {
     didSet {
       if let _interactiveGestureType = _interactiveGestureType {
-        interactiveGestureType = InteractiveGestureType.fromString(_interactiveGestureType)
+        interactiveGestureType = InteractiveGestureType(string: _interactiveGestureType)
       }
     }
   }
@@ -39,8 +39,8 @@ import UIKit
   // MARK: - Lifecylce
   open override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    confingHideNavigationBar()
-    configRootWindowBackgroundColor()
+    configureHideNavigationBar()
+    configureRootWindowBackgroundColor()
   }
   
   open override func viewWillDisappear(_ animated: Bool) {
@@ -65,16 +65,16 @@ import UIKit
         return
     }
     
-    guard let transitionAnimationType = transitionAnimationType else {
+    if case .none = transitionAnimationType {
       return
     }
     
     let toViewController = segue.destination
-    // If interactiveGestureType has been set
-    if let interactiveGestureType = interactiveGestureType {
-      toViewController.transitioningDelegate = TransitionPresenterManager.sharedManager().retrievePresenter(transitionAnimationType: transitionAnimationType, transitionDuration: transitionDuration, interactiveGestureType: interactiveGestureType)
-    } else {
+    // If interactiveGestureType hasn't been set
+    if case .none = interactiveGestureType {
       toViewController.transitioningDelegate = TransitionPresenterManager.sharedManager().retrievePresenter(transitionAnimationType: transitionAnimationType, transitionDuration: transitionDuration)
+    } else {
+      toViewController.transitioningDelegate = TransitionPresenterManager.sharedManager().retrievePresenter(transitionAnimationType: transitionAnimationType, transitionDuration: transitionDuration, interactiveGestureType: interactiveGestureType)
     }
   }
 

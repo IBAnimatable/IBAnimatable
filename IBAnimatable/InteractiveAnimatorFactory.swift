@@ -8,7 +8,7 @@ import UIKit
  Interactive Animator Factory
  */
 struct InteractiveAnimatorFactory {
-  static func generateInteractiveAnimator(_ interactiveGestureType: InteractiveGestureType, transitionType: TransitionType) -> InteractiveAnimator? {
+  static func makeInteractiveAnimator(interactiveGestureType: InteractiveGestureType, transitionType: TransitionType) -> InteractiveAnimator? {
     switch interactiveGestureType {
     case .pan:
       return PanInteractiveAnimator(interactiveGestureType: interactiveGestureType, transitionType: transitionType)

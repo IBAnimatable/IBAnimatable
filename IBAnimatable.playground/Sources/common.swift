@@ -34,7 +34,7 @@ public class CircleView: AnimatableView {
     let frame = CGRect(x: animatableViewX, y: animatableViewY, width: animatableViewWidth, height: animatableViewWidth)
     super.init(frame: frame)
     
-    configAnimatableProperties()
+    configureAnimatableProperties()
     fillColor = #colorLiteral(red: 0.7098039216, green: 0.4549019608, blue: 0.9607843137, alpha: 1)
     borderWidth = 2
     borderColor = .purple()

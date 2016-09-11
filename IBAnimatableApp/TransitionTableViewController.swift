@@ -14,7 +14,7 @@ class TransitionTableViewController: UITableViewController {
   // MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    generateTransitionTypeData()
+    populateTransitionTypeData()
   }
 
   // MARK: - Navigation
@@ -26,7 +26,7 @@ class TransitionTableViewController: UITableViewController {
     }
     let transitionString = transitionAnimations[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
     
-    let transitionAnimationType = TransitionAnimationType.fromString(transitionType: transitionString)
+    let transitionAnimationType = TransitionAnimationType(string: transitionString)
     
     // Set the transition animation type for `AnimatableNavigationController`, used for Push/Pop transitions
     toNavigationController.transitionAnimationType = transitionAnimationType
@@ -44,7 +44,7 @@ class TransitionTableViewController: UITableViewController {
 
 private extension TransitionTableViewController {
   
-  func generateTransitionTypeData() {
+  func populateTransitionTypeData() {
     transitionAnimationsHeaders.append("Fade")
     transitionAnimations.append(["Fade", "Fade(In)", "Fade(Out)"])
     transitionAnimationsHeaders.append("SystemCube")
@@ -76,8 +76,7 @@ private extension TransitionTableViewController {
     transitionAnimationsHeaders.append("Slide")
     transitionAnimations.append(["Slide(Left, fade)", "Slide(Right)", "Slide(Top, fade)", "Slide(Bottom)"])
     transitionAnimationsHeaders.append("Others")
-    transitionAnimations.append(["SystemRotate", "SystemRippleEffect", "SystemSuckEffect", "Explode(10,-10,10)"])
-
+    transitionAnimations.append(["SystemRotate", "SystemRippleEffect", "SystemSuckEffect", "Explode", "Explode(10,-20,20)"])
   }
   
   func transitionTypeWithDirections(forName prefixName: String) -> [String] {
@@ -108,7 +107,7 @@ extension TransitionTableViewController {
     return cell
   }
   
-  // MARK: - reset the group heander font color and size
+  // MARK: - reset the group header font color and size
   override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
     if let header = view as? UITableViewHeaderFooterView {
       header.textLabel?.textColor = .white

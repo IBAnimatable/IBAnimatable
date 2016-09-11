@@ -10,12 +10,12 @@ public class FadeAnimator: NSObject, AnimatedTransitioning {
   public var transitionAnimationType: TransitionAnimationType
   public var transitionDuration: Duration = defaultTransitionDuration
   public var reverseAnimationType: TransitionAnimationType?
-  public var interactiveGestureType: InteractiveGestureType? = .pan(fromDirection: .horizontal)
+  public var interactiveGestureType: InteractiveGestureType? = .pan(from: .horizontal)
 
   // MARK: - private
-  fileprivate var direction: TransitionDirection
+  fileprivate var direction: TransitionAnimationType.Direction
   
-  public init(direction: TransitionDirection, transitionDuration: Duration) {
+  public init(direction: TransitionAnimationType.Direction, transitionDuration: Duration) {
     self.direction = direction
     self.transitionDuration = transitionDuration
     

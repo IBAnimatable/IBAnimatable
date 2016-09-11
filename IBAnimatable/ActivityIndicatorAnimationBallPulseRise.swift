@@ -15,7 +15,7 @@ public class ActivityIndicatorAnimationBallPulseRise: ActivityIndicatorAnimating
 
   // MARK: ActivityIndicatorAnimating
 
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     let circleSpacing: CGFloat = 2
     let circleSize = (size.width - 4 * circleSpacing) / 5
     let x = (layer.bounds.size.width - size.width) / 2
@@ -25,7 +25,7 @@ public class ActivityIndicatorAnimationBallPulseRise: ActivityIndicatorAnimating
     let oddAnimation = self.oddAnimation
     let evenAnimation = self.evenAnimation
     for i in 0 ..< 5 {
-      let circle = ActivityIndicatorShape.Circle.createLayerWith(size: CGSize(width: circleSize, height: circleSize), color: color)
+      let circle = ActivityIndicatorShape.circle.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
       let frame = CGRect(x: x + circleSize * CGFloat(i) + circleSpacing * CGFloat(i),
                          y: y,
                          width: circleSize,
@@ -45,7 +45,7 @@ public class ActivityIndicatorAnimationBallPulseRise: ActivityIndicatorAnimating
 
 // MARK: - Setup Odd
 
-fileprivate extension ActivityIndicatorAnimationBallPulseRise {
+private extension ActivityIndicatorAnimationBallPulseRise {
 
   var oddAnimation: CAAnimation {
     let scaleAnimation = oddScaleAnimation
@@ -80,7 +80,7 @@ fileprivate extension ActivityIndicatorAnimationBallPulseRise {
 
 // MARK: - Even Odd
 
-fileprivate extension ActivityIndicatorAnimationBallPulseRise {
+private extension ActivityIndicatorAnimationBallPulseRise {
 
   var evenAnimation: CAAnimation {
     let scaleAnimation = evenScaleAnimation

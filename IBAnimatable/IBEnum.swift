@@ -1,11 +1,9 @@
 //
 //  Created by jason akakpo on 27/06/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import Foundation
-
-
 
 /**
  A protocol provides extension method for converting `String` into `enum`.
@@ -30,10 +28,10 @@ public extension IBEnum {
    - Returns: A tuple containing the name and an array of parameter string
    */
   static func extractNameAndParams(from string: String) -> (name: String, params: [String]) {
-    let tokens = string.lowercased().components(separatedBy: CharacterSet(charactersIn: "()")).filter({!$0.isEmpty})
+    let tokens = string.lowercased().components(separatedBy: CharacterSet(charactersIn: "()")).filter{ !$0.isEmpty }
     let name = tokens.first ?? ""
     let paramsString = tokens.count >= 2 ? tokens[1] : ""
-    let params = paramsString.components(separatedBy: ",").filter({!$0.isEmpty})
+    let params = paramsString.components(separatedBy: ",").filter{ !$0.isEmpty }.map{ $0.trimmingCharacters(in: .whitespaces) }
     
     return (name: name, params: params)
   }
@@ -48,12 +46,11 @@ extension IBEnum {
 
 
 /// IBEnum provide default initializer for RawRepresentable Enum
-public extension IBEnum where Self : RawRepresentable & Hashable {
+public extension IBEnum where Self: RawRepresentable & Hashable {
   init?(string: String?) {
     let lowerString = string?.lowercased()
     let iterator = iterateEnum(from: Self.self)
     for e in iterator {
-      
       if String(describing: e.rawValue).lowercased() == lowerString {
         self = e as Self
         return

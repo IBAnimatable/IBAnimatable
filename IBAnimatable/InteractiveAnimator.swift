@@ -26,26 +26,26 @@ public class InteractiveAnimator: UIPercentDrivenInteractiveTransition {
   
   deinit {
     if let gestureRecognizer = gestureRecognizer, let view = viewController?.view {
-      gestureRecognizer.removeTarget(self, action: #selector(handleGesture(_:)))
+      gestureRecognizer.removeTarget(self, action: #selector(handleGesture(for:)))
       view.removeGestureRecognizer(gestureRecognizer)
     }
   }
   
-  func connectGestureRecognizer(_ viewController: UIViewController) {
+  func connectGestureRecognizer(to viewController: UIViewController) {
     self.viewController = viewController
-    let gestureRecognizerType = createGestureRecognizer()
+    let gestureRecognizerType = makeGestureRecognizer()
     gestureRecognizer = gestureRecognizerType
     if let gestureRecognizer = gestureRecognizer {
       self.viewController?.view.addGestureRecognizer(gestureRecognizer)
     }
   }
   
-  func handleGesture(_ gestureRecognizer: UIGestureRecognizer) {
-    let (progress, shouldFinishInteractiveTransition) = calculateProgress(gestureRecognizer)
+  func handleGesture(for gestureRecognizer: UIGestureRecognizer) {
+    let (progress, shouldFinishInteractiveTransition) = calculateProgress(for: gestureRecognizer)
     
     switch gestureRecognizer.state {
     case .began:
-      guard shouldBeginProgress(gestureRecognizer) else {
+      guard shouldBeginProgress(for: gestureRecognizer) else {
         return
       }
       
@@ -78,17 +78,17 @@ public class InteractiveAnimator: UIPercentDrivenInteractiveTransition {
   }
   
   // Because Swift doesn't support pure virtual method, need to throw error
-  func createGestureRecognizer() -> UIGestureRecognizer {
-    preconditionFailure("This method must be overridden")
+  func makeGestureRecognizer() -> UIGestureRecognizer {
+    fatalError("This method must be overridden")
   }
   
-  func shouldBeginProgress(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+  func shouldBeginProgress(for gestureRecognizer: UIGestureRecognizer) -> Bool {
     // return true by default
     return true
   }
   
-  func calculateProgress(_ gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
-    preconditionFailure("This method must be overridden")
+  func calculateProgress(for gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
+    fatalError("This method must be overridden")
   }
 
 }

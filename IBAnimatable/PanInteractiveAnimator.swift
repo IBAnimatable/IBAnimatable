@@ -8,11 +8,11 @@ import UIKit
 // Pan interactive animator: pan gesture transition controller
 public class PanInteractiveAnimator: InteractiveAnimator {
   
-  override func createGestureRecognizer() -> UIGestureRecognizer {
-    return UIPanGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
+  override func makeGestureRecognizer() -> UIGestureRecognizer {
+    return UIPanGestureRecognizer(target: self, action: #selector(handleGesture(for:)))
   }
   
-  override func calculateProgress(_ gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
+  override func calculateProgress(for gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
     guard let  gestureRecognizer = gestureRecognizer as? UIPanGestureRecognizer,
       let superview = gestureRecognizer.view?.superview else {
       return (0, false)

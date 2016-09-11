@@ -13,7 +13,7 @@ public class ActivityIndicatorAnimationBallZigZagDeflect: ActivityIndicatorAnima
   
   // MARK: ActivityIndicatorAnimating
   
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     
     let circleSize: CGFloat = size.width / 5
     let duration: CFTimeInterval = 0.75
@@ -33,27 +33,29 @@ public class ActivityIndicatorAnimationBallZigZagDeflect: ActivityIndicatorAnima
     animation.repeatCount = .infinity
     animation.autoreverses = true
     animation.isRemovedOnCompletion = false
-    circleAt(frame: frame, layer: layer, size: CGSize(width: circleSize, height: circleSize), color: color, animation: animation)
+    let circle1 = makeCircleLayer(frame: frame, size: CGSize(width: circleSize, height: circleSize), color: color, animation: animation)
+    layer.addSublayer(circle1)
     
     // Circle 2
     animation.values = [NSValue(caTransform3D: CATransform3DMakeTranslation(0, 0, 0)),
                         NSValue(caTransform3D: CATransform3DMakeTranslation(deltaX, deltaY, 0)),
                         NSValue(caTransform3D: CATransform3DMakeTranslation(-deltaX, deltaY, 0)),
                         NSValue(caTransform3D: CATransform3DMakeTranslation(0, 0, 0))]
-    circleAt(frame: frame, layer: layer, size: CGSize(width: circleSize, height: circleSize), color: color, animation: animation)
+    let circle2 = makeCircleLayer(frame: frame, size: CGSize(width: circleSize, height: circleSize), color: color, animation: animation)
+    layer.addSublayer(circle2)
   }
   
 }
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationBallZigZagDeflect {
+private extension ActivityIndicatorAnimationBallZigZagDeflect {
   
-  func circleAt(frame: CGRect, layer: CALayer, size: CGSize, color: UIColor, animation: CAAnimation) {
-    let circle = ActivityIndicatorShape.Circle.createLayerWith(size: size, color: color)
+  func makeCircleLayer(frame: CGRect, size: CGSize, color: UIColor, animation: CAAnimation) -> CALayer{
+    let circle = ActivityIndicatorShape.circle.makeLayer(size: size, color: color)
     circle.frame = frame
     circle.add(animation, forKey: "animation")
-    layer.addSublayer(circle)
+    return circle
   }
   
 }

@@ -13,7 +13,7 @@ public protocol CornerDesignable {
 }
 
 public extension CornerDesignable where Self: UIView {
-  public func configCornerRadius() {
+  public func configureCornerRadius() {
     if !cornerRadius.isNaN && cornerRadius > 0 {
       layer.cornerRadius = cornerRadius
     }

@@ -14,14 +14,14 @@ public class ActivityIndicatorAnimationBallRotate: ActivityIndicatorAnimating {
 
   // MARK: ActivityIndicatorAnimating
 
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     let circleSize: CGFloat = size.width / 5
     let animation = self.animation
 
     // Draw circles
-    let leftCircle = ActivityIndicatorShape.Circle.createLayerWith(size: CGSize(width: circleSize, height: circleSize), color: color)
-    let rightCircle = ActivityIndicatorShape.Circle.createLayerWith(size: CGSize(width: circleSize, height: circleSize), color: color)
-    let centerCircle = ActivityIndicatorShape.Circle.createLayerWith(size: CGSize(width: circleSize, height: circleSize), color: color)
+    let leftCircle = ActivityIndicatorShape.circle.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
+    let rightCircle = ActivityIndicatorShape.circle.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
+    let centerCircle = ActivityIndicatorShape.circle.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
 
     leftCircle.opacity = 0.8
     leftCircle.frame = CGRect(x: 0, y: (size.height - circleSize) / 2, width: circleSize, height: circleSize)
@@ -43,7 +43,7 @@ public class ActivityIndicatorAnimationBallRotate: ActivityIndicatorAnimating {
 
 // MARK: - Setup
 
-fileprivate extension ActivityIndicatorAnimationBallRotate {
+private extension ActivityIndicatorAnimationBallRotate {
 
   var animation: CAAnimationGroup {
     let animation = CAAnimationGroup()
@@ -67,7 +67,7 @@ fileprivate extension ActivityIndicatorAnimationBallRotate {
     let rotateAnimation = CAKeyframeAnimation(keyPath:"transform.rotation.z")
     rotateAnimation.keyTimes = [0, 0.5, 1]
     rotateAnimation.timingFunctions = [timingFunction, timingFunction]
-    rotateAnimation.values = [0, M_PI, 2 * M_PI]
+    rotateAnimation.values = [0, CGFloat.pi, 2 * CGFloat.pi]
     rotateAnimation.duration = duration
     return rotateAnimation
 

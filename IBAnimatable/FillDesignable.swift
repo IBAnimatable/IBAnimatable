@@ -12,7 +12,7 @@ public protocol FillDesignable {
 }
 
 public extension FillDesignable where Self: UIView {
-  public func configFillColor() {
+  public func configureFillColor() {
     if let unwrappedFillColor = fillColor {
       backgroundColor = unwrappedFillColor
     } else if let unwrappedPredefinedColor = predefinedColorFromString(predefinedColor: predefinedColor) {
@@ -20,7 +20,7 @@ public extension FillDesignable where Self: UIView {
     }
   }
 
-  public func configOpacity() {
+  public func configureOpacity() {
     if !opacity.isNaN && opacity >= 0 && opacity <= 1 {
       alpha = opacity
 
@@ -33,7 +33,7 @@ public extension FillDesignable where Self: UIView {
 }
 
 public extension FillDesignable where Self: UITableViewCell {
-  public func configFillColor() {
+  public func configureFillColor() {
     if let unwrappedFillColor = fillColor {
       backgroundColor = unwrappedFillColor
       contentView.backgroundColor = unwrappedFillColor

@@ -17,20 +17,20 @@ public class ExplodeAnimator: NSObject, AnimatedTransitioning {
   fileprivate var minAngle: CGFloat = -10.0
   fileprivate var maxAngle: CGFloat = 10.0
   
-  public init(params: [String], transitionDuration: Duration) {
+  public init(xFactor: CGFloat?, minAngle: CGFloat?, maxAngle: CGFloat?, transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
-    self.transitionAnimationType = .explode(params: params)
-    self.reverseAnimationType = .explode(params: params)
-    
-    if params.count == 3 {
-      if let unwrappedXFactor = Double(params[0]),
-             let unwrappedMinAngle = Double(params[1]),
-             let unwrappedMaxAngle = Double(params[2]) {
-        self.xFactor = CGFloat(unwrappedXFactor)
-        self.minAngle = CGFloat(unwrappedMinAngle)
-        self.maxAngle = CGFloat(unwrappedMaxAngle)
-      }
+    if let xFactor = xFactor {
+      self.xFactor = xFactor
     }
+    if let minAngle = minAngle {
+      self.minAngle = minAngle
+    }
+    if let maxAngle = maxAngle {
+      self.maxAngle = maxAngle
+    }
+    
+    self.transitionAnimationType = .explode(xFactor: self.xFactor, minAngle: self.minAngle, maxAngle: self.maxAngle)
+    self.reverseAnimationType = .explode(xFactor: self.xFactor, minAngle: self.minAngle, maxAngle: self.maxAngle)
     super.init()
   }
 }
@@ -49,7 +49,7 @@ extension ExplodeAnimator: UIViewControllerAnimatedTransitioning {
     
     containerView.insertSubview(toView, at: 0)
     
-    let snapshots = createSnapshots(toView, fromView: fromView, containerView: containerView)
+    let snapshots = makeSnapshots(toView: toView, fromView: fromView, containerView: containerView)
     containerView.sendSubview(toBack: fromView)
     animateSnapshotsExplode(snapshots) {
       if transitionContext.transitionWasCancelled {
@@ -64,7 +64,7 @@ extension ExplodeAnimator: UIViewControllerAnimatedTransitioning {
 
 private extension ExplodeAnimator {
   
-  func createSnapshots(_ toView: UIView, fromView: UIView, containerView: UIView) -> [UIView] {
+  func makeSnapshots(toView: UIView, fromView: UIView, containerView: UIView) -> [UIView] {
     let size = toView.frame.size
     var snapshots = [UIView]()
     let yFactor = xFactor * size.height / size.width
@@ -82,12 +82,12 @@ private extension ExplodeAnimator {
     return snapshots
   }
   
-  func animateSnapshotsExplode(_ snapshots: [UIView], completion: AnimatableCompletion) {
+  func animateSnapshotsExplode(_ snapshots: [UIView], completion: @escaping AnimatableCompletion) {
     UIView.animate(withDuration: transitionDuration, animations: {
       snapshots.forEach {
-        let xOffset = self.randomFloatBetween(-100.0, upper: 100.0)
-        let yOffset = self.randomFloatBetween(-100.0, upper: 100.0)
-        let angle = self.randomFloatBetween(self.minAngle, upper: self.maxAngle)
+        let xOffset = self.randomFloat(from: -100.0, to: 100.0)
+        let yOffset = self.randomFloat(from: -100.0, to: 100.0)
+        let angle = self.randomFloat(from: self.minAngle, to: self.maxAngle)
 
         let translateTransform = CGAffineTransform(translationX: $0.frame.origin.x - xOffset, y: $0.frame.origin.y - yOffset)
         let angleTransform = translateTransform.rotated(by: angle)
@@ -103,7 +103,7 @@ private extension ExplodeAnimator {
     })
   }
   
-  func randomFloatBetween(_ lower: CGFloat, upper: CGFloat) -> CGFloat {
+  func randomFloat(from lower: CGFloat, to upper: CGFloat) -> CGFloat {
     return CGFloat(arc4random_uniform(UInt32(upper - lower))) + lower
   }
   

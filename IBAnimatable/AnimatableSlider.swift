@@ -10,19 +10,19 @@ import UIKit
   // MARK: - BorderDesignable
   @IBInspectable open var borderColor: UIColor? {
     didSet {
-      configBorder()
+      configureBorder()
     }
   }
   
   @IBInspectable open var borderWidth: CGFloat = CGFloat.nan {
     didSet {
-      configBorder()
+      configureBorder()
     }
   }
   
   open var borderSides: BorderSides  = .AllSides {
     didSet {
-      configBorder()
+      configureBorder()
     }
   }
   
@@ -34,32 +34,32 @@ import UIKit
   // MARK: - RotationDesignable
   @IBInspectable open var rotate: CGFloat = CGFloat.nan {
     didSet {
-      configRotate()
+      configureRotate()
     }
   }
   
   // MARK: - ShadowDesignable
   @IBInspectable open var shadowColor: UIColor? {
     didSet {
-      configShadowColor()
+      configureShadowColor()
     }
   }
   
   @IBInspectable open var shadowRadius: CGFloat = CGFloat.nan {
     didSet {
-      configShadowRadius()
+      configureShadowRadius()
     }
   }
   
   @IBInspectable open var shadowOpacity: CGFloat = CGFloat.nan {
     didSet {
-      configShadowOpacity()
+      configureShadowOpacity()
     }
   }
   
   @IBInspectable open var shadowOffset: CGPoint = CGPoint(x: CGFloat.nan, y: CGFloat.nan) {
     didSet {
-      configShadowOffset()
+      configureShadowOffset()
     }
   }
   
@@ -81,26 +81,26 @@ open var animationType: AnimationType = .none
   // MARK: - Lifecycle
   open override func prepareForInterfaceBuilder() {
     super.prepareForInterfaceBuilder()
-    configInspectableProperties()
+    configureInspectableProperties()
   }
   
   open override func awakeFromNib() {
     super.awakeFromNib()
-    configInspectableProperties()
+    configureInspectableProperties()
   }
   
   open override func layoutSubviews() {
     super.layoutSubviews()
-    configAfterLayoutSubviews()
+    configureAfterLayoutSubviews()
     autoRunAnimation()
   }
   
   // MARK: - Private
-  fileprivate func configInspectableProperties() {
-    configAnimatableProperties()
+  fileprivate func configureInspectableProperties() {
+    configureAnimatableProperties()
   }
   
-  fileprivate func configAfterLayoutSubviews() {
-    configBorder()
+  fileprivate func configureAfterLayoutSubviews() {
+    configureBorder()
   }
 }

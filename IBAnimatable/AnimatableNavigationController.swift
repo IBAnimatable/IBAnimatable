@@ -11,11 +11,11 @@ open class AnimatableNavigationController: UINavigationController, TransitionAni
   @IBInspectable  var _transitionAnimationType: String? {
     didSet {
       if let _transitionAnimationType = _transitionAnimationType {
-        transitionAnimationType = TransitionAnimationType.fromString(transitionType: _transitionAnimationType)
+        transitionAnimationType = TransitionAnimationType(string: _transitionAnimationType)
       }
     }
   }
-   open var transitionAnimationType: TransitionAnimationType? {
+   open var transitionAnimationType: TransitionAnimationType = .none {
     didSet {
       configureNavigationControllerDelegate()
     }
@@ -25,7 +25,7 @@ open class AnimatableNavigationController: UINavigationController, TransitionAni
       configureNavigationControllerDelegate()
     }
   }
-  open var interactiveGestureType: InteractiveGestureType? {
+  open var interactiveGestureType: InteractiveGestureType = .none {
     didSet {
       configureNavigationControllerDelegate()
     }
@@ -34,7 +34,7 @@ open class AnimatableNavigationController: UINavigationController, TransitionAni
   @IBInspectable var _interactiveGestureType: String? {
     didSet {
       if let _interactiveGestureType = _interactiveGestureType {
-        interactiveGestureType = InteractiveGestureType.fromString(_interactiveGestureType)
+        interactiveGestureType = InteractiveGestureType(string: _interactiveGestureType)
       }
     }
   }
@@ -44,7 +44,7 @@ open class AnimatableNavigationController: UINavigationController, TransitionAni
   fileprivate var navigator: Navigator?
   
   fileprivate func configureNavigationControllerDelegate() {
-    guard let animationType = transitionAnimationType else {
+    if case .none = transitionAnimationType {
       navigator = nil
       delegate = nil
       return
@@ -54,10 +54,11 @@ open class AnimatableNavigationController: UINavigationController, TransitionAni
     if transitionDuration.isNaN {
       duration = defaultTransitionDuration
     }
-    if let gestureType = interactiveGestureType {
-      navigator = Navigator(transitionAnimationType: animationType, transitionDuration: duration, interactiveGestureType: gestureType)
+    
+    if case .none = interactiveGestureType {
+      navigator = Navigator(transitionAnimationType: transitionAnimationType, transitionDuration: duration)
     } else {
-      navigator = Navigator(transitionAnimationType: animationType, transitionDuration: duration)
+      navigator = Navigator(transitionAnimationType: transitionAnimationType, transitionDuration: duration, interactiveGestureType: interactiveGestureType)
     }
     delegate = navigator
   }

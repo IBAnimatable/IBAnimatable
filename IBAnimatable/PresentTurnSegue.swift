@@ -7,7 +7,7 @@ import UIKit
 
 open class PresentTurnSegue: UIStoryboardSegue {
   open override func perform() {
-    destination.transitioningDelegate = TransitionPresenterManager.sharedManager().retrievePresenter(transitionAnimationType: .turn(fromDirection: .left))
+    destination.transitioningDelegate = TransitionPresenterManager.sharedManager().retrievePresenter(transitionAnimationType: .turn(from: .left))
     source.present(destination, animated: true, completion: nil)
   }
 }

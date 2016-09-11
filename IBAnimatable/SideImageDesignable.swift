@@ -5,6 +5,7 @@
 
 import UIKit
 
+/// Protocol for designing side image 
 public protocol SideImageDesignable {
   /**
    * The left image
@@ -48,33 +49,34 @@ public protocol SideImageDesignable {
 }
 
 public extension SideImageDesignable where Self: UITextField {
-
-  public func configImages() {
-    configLeftImage()
-    configRightImage()
+  public func configureImages() {
+    configureLeftImage()
+    configureRightImage()
   }
-  
-  fileprivate func configLeftImage() {
+}
+
+fileprivate extension SideImageDesignable where Self: UITextField {
+  func configureLeftImage() {
     guard let wrappedLeftImage = leftImage else {
       return
     }
     
-    let sideView = generateSideViewWithImage(image: wrappedLeftImage, leftPadding: leftImageLeftPadding, rightPadding: leftImageRightPadding, topPadding: leftImageTopPadding)
+    let sideView = makeSideView(with: wrappedLeftImage, leftPadding: leftImageLeftPadding, rightPadding: leftImageRightPadding, topPadding: leftImageTopPadding)
     leftViewMode = .always
     leftView = sideView
   }
   
-  fileprivate func configRightImage() {
+  func configureRightImage() {
     guard let wrappedRightImage = rightImage else {
       return
     }
     
-    let sideView = generateSideViewWithImage(image: wrappedRightImage, leftPadding: rightImageLeftPadding, rightPadding: rightImageRightPadding, topPadding: rightImageTopPadding)
+    let sideView = makeSideView(with: wrappedRightImage, leftPadding: rightImageLeftPadding, rightPadding: rightImageRightPadding, topPadding: rightImageTopPadding)
     rightViewMode = .always
     rightView = sideView
   }
   
-  fileprivate func generateSideViewWithImage(image: UIImage, leftPadding: CGFloat, rightPadding: CGFloat, topPadding: CGFloat) -> UIView {
+  func makeSideView(with image: UIImage, leftPadding: CGFloat, rightPadding: CGFloat, topPadding: CGFloat) -> UIView {
     let imageView = UIImageView(image: image)
     
     // If not set, use 0 as default value
@@ -88,7 +90,7 @@ public extension SideImageDesignable where Self: UITextField {
     if !rightPadding.isNaN {
       rightPaddingValue = rightPadding
     }
-
+    
     // If does not specify `topPadding`, then center it in the middle
     if topPadding.isNaN {
       imageView.frame.origin = CGPoint(x: leftPaddingValue, y: (bounds.height - imageView.bounds.height) / 2)

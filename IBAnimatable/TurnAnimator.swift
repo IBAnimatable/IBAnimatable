@@ -10,40 +10,40 @@ public class TurnAnimator: NSObject, AnimatedTransitioning {
   public var transitionAnimationType: TransitionAnimationType
   public var transitionDuration: Duration = defaultTransitionDuration
   public var reverseAnimationType: TransitionAnimationType?
-  public var interactiveGestureType: InteractiveGestureType? = .pan(fromDirection: .horizontal)
+  public var interactiveGestureType: InteractiveGestureType? = .pan(from: .horizontal)
   
   // MARK: - Private params
-  fileprivate var fromDirection: TransitionDirection
+  fileprivate var fromDirection: TransitionAnimationType.Direction
   
   // MARK: - Private fold transition
   fileprivate var transform: CATransform3D = CATransform3DIdentity
   fileprivate var reverse: Bool = false
   
   // MARK: - Life cycle
-  public init(fromDirection: TransitionDirection, transitionDuration: Duration) {
-    self.fromDirection = fromDirection
+  public init(from direction: TransitionAnimationType.Direction, transitionDuration: Duration) {
+    fromDirection = direction
     self.transitionDuration = transitionDuration
     
     switch fromDirection {
     case .right:
-      self.transitionAnimationType = .turn(fromDirection: .right)
-      self.reverseAnimationType = .turn(fromDirection: .left)
-      self.interactiveGestureType = .pan(fromDirection: .left)
+      self.transitionAnimationType = .turn(from: .right)
+      self.reverseAnimationType = .turn(from: .left)
+      self.interactiveGestureType = .pan(from: .left)
       reverse = true
     case .top:
-      self.transitionAnimationType = .turn(fromDirection: .top)
-      self.reverseAnimationType = .turn(fromDirection: .bottom)
-      self.interactiveGestureType = .pan(fromDirection: .bottom)
+      self.transitionAnimationType = .turn(from: .top)
+      self.reverseAnimationType = .turn(from: .bottom)
+      self.interactiveGestureType = .pan(from: .bottom)
       reverse = false
     case .bottom:
-      self.transitionAnimationType = .turn(fromDirection: .bottom)
-      self.reverseAnimationType = .turn(fromDirection: .top)
-      self.interactiveGestureType = .pan(fromDirection: .top)
+      self.transitionAnimationType = .turn(from: .bottom)
+      self.reverseAnimationType = .turn(from: .top)
+      self.interactiveGestureType = .pan(from: .top)
       reverse = true
     default:
-      self.transitionAnimationType = .turn(fromDirection: .left)
-      self.reverseAnimationType = .turn(fromDirection: .right)
-      self.interactiveGestureType = .pan(fromDirection: .right)
+      self.transitionAnimationType = .turn(from: .left)
+      self.reverseAnimationType = .turn(from: .right)
+      self.interactiveGestureType = .pan(from: .right)
       reverse = false      
     }
     super.init()
@@ -71,7 +71,7 @@ extension TurnAnimator: UIViewControllerAnimatedTransitioning {
     }
   }
 
-  fileprivate func animateTurnTransition(fromView: UIView, toView: UIView, completion: AnimatableCompletion) {
+  private func animateTurnTransition(fromView: UIView, toView: UIView, completion: @escaping AnimatableCompletion) {
     let factor = reverse ? 1.0 : -1.0
     toView.layer.transform = rotate(angle: factor * -.pi * 2)
     UIView.animateKeyframes(withDuration: transitionDuration, delay: 0.0, options: .layoutSubviews, animations: {

@@ -15,8 +15,8 @@ public protocol MaskDesignable {
    ```
    public var maskType: MaskType = .none {
      didSet {
-       configMask()
-       configBorder()
+       configureMask()
+       configureBorder()
      }
    }
    ```
@@ -35,7 +35,7 @@ public protocol MaskDesignable {
 
 public extension MaskDesignable where Self: UIView {
   /// Mask the IBAnimatable UI element with provided `maskType`
-  public func configMask() {
+  public func configureMask() {
     switch maskType {
     case .circle:
       maskCircle()

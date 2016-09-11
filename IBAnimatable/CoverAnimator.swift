@@ -11,9 +11,9 @@ public class CoverAnimator: NSObject, AnimatedPresenting {
   public var transitionDuration: Duration = defaultTransitionDuration
 
   // MARK: - private
-  fileprivate var direction: TransitionDirection
+  fileprivate var direction: TransitionAnimationType.Direction
 
-  public init(from direction: TransitionDirection, transitionDuration: Duration) {
+  public init(from direction: TransitionAnimationType.Direction, transitionDuration: Duration) {
     self.direction = direction
     self.transitionDuration = transitionDuration
     super.init()
@@ -60,7 +60,7 @@ extension CoverAnimator: UIViewControllerAnimatedTransitioning {
 
 private extension CoverAnimator {
 
-  func getFinalFrame(from direction: TransitionDirection, initialFrame: CGRect, containerFrame: CGRect) -> CGRect {
+  func getFinalFrame(from direction: TransitionAnimationType.Direction, initialFrame: CGRect, containerFrame: CGRect) -> CGRect {
     var initialFrame = initialFrame
     switch direction {
     case .right:
@@ -83,7 +83,7 @@ private extension CoverAnimator {
 
 private extension CoverAnimator {
 
-  func animateCover(animatingView: UIView, finalFrame: CGRect, completion: AnimatableCompletion) {
+  func animateCover(animatingView: UIView, finalFrame: CGRect, completion: @escaping AnimatableCompletion) {
     UIView.animate(withDuration: transitionDuration, animations: {
       animatingView.frame = finalFrame
     }, completion: { _ in

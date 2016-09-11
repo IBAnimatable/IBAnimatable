@@ -13,9 +13,9 @@ public class SystemCameraIrisAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
-  fileprivate var hollowState: TransitionHollowState
+  fileprivate var hollowState: TransitionAnimationType.HollowState
   
-  public init(hollowState: TransitionHollowState, transitionDuration: Duration) {    
+  public init(hollowState: TransitionAnimationType.HollowState, transitionDuration: Duration) {    
     self.transitionDuration = transitionDuration
     self.hollowState = hollowState
     
@@ -46,11 +46,11 @@ extension SystemCameraIrisAnimator: UIViewControllerAnimatedTransitioning {
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     switch self.hollowState {
     case .open:
-      animateWithCATransition(transitionContext: transitionContext, type: SystemTransitionType.cameraIrisHollowOpen, subtype: nil)
+      animateWithCATransition(transitionContext: transitionContext, type: TransitionAnimationType.SystemTransitionType.cameraIrisHollowOpen, subtype: nil)
     case .close:
-      animateWithCATransition(transitionContext: transitionContext, type: SystemTransitionType.cameraIrisHollowClose, subtype: nil)
+      animateWithCATransition(transitionContext: transitionContext, type: TransitionAnimationType.SystemTransitionType.cameraIrisHollowClose, subtype: nil)
     case .none:
-      animateWithCATransition(transitionContext: transitionContext, type: SystemTransitionType.cameraIris, subtype: nil)
+      animateWithCATransition(transitionContext: transitionContext, type: TransitionAnimationType.SystemTransitionType.cameraIris, subtype: nil)
 
     }
   }

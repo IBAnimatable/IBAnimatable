@@ -10,45 +10,45 @@ import UIKit
   // MARK: - CornerDesignable
   @IBInspectable open var cornerRadius: CGFloat = CGFloat.nan {
     didSet {
-      configCornerRadius()
+      configureCornerRadius()
     }
   }
   
   // MARK: - FillDesignable
   @IBInspectable open var fillColor: UIColor? {
     didSet {
-      configFillColor()
+      configureFillColor()
     }
   }
   
   @IBInspectable open var predefinedColor: String? {
     didSet {
-      configFillColor()
+      configureFillColor()
     }
   }
   
   @IBInspectable open var opacity: CGFloat = CGFloat.nan {
     didSet {
-      configOpacity()
+      configureOpacity()
     }
   }
   
   // MARK: - BorderDesignable
   @IBInspectable open var borderColor: UIColor? {
     didSet {
-      configBorder()
+      configureBorder()
     }
   }
   
   @IBInspectable open var borderWidth: CGFloat = CGFloat.nan {
     didSet {
-      configBorder()
+      configureBorder()
     }
   }
   
   open var borderSides: BorderSides  = .AllSides {
     didSet {
-      configBorder()
+      configureBorder()
     }
   }
   
@@ -75,34 +75,34 @@ open var animationType: AnimationType = .none
   // MARK: - RotationDesignable
   @IBInspectable open var rotate: CGFloat = CGFloat.nan {
     didSet {
-      configRotate()
+      configureRotate()
     }
   }
   
   // MARK: - Lifecycle
   open override func prepareForInterfaceBuilder() {
     super.prepareForInterfaceBuilder()
-    configInspectableProperties()
+    configureInspectableProperties()
   }
   
   open override func awakeFromNib() {
     super.awakeFromNib()
-    configInspectableProperties()
+    configureInspectableProperties()
   }
   
   open override func layoutSubviews() {
     super.layoutSubviews()
-    configAfterLayoutSubviews()
+    configureAfterLayoutSubviews()
     autoRunAnimation()
   }
   
   // MARK: - Private
-  fileprivate func configInspectableProperties() {
-    configAnimatableProperties()
-    configBorder()
+  fileprivate func configureInspectableProperties() {
+    configureAnimatableProperties()
+    configureBorder()
   }
   
-  fileprivate func configAfterLayoutSubviews() {
-    configBorder()
+  fileprivate func configureAfterLayoutSubviews() {
+    configureBorder()
   }
 }
