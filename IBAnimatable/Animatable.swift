@@ -85,6 +85,8 @@ public extension Animatable where Self: UIView {
       shake(repeatCount: repeatCount, completion: completion)
     case let .pop(repeatCount):
       pop(repeatCount: repeatCount, completion: completion)
+    case let .squash(repeatCount):
+      squash(repeatCount: repeatCount, completion: completion)
     case let .flip(axis):
       flip(axis: axis, completion: completion)
     case let .morph(repeatCount):
@@ -272,6 +274,27 @@ public extension Animatable where Self: UIView {
       animation.repeatCount = Float(repeatCount)
       animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       self.layer.add(animation, forKey: "pop")
+    }, completion: completion)
+  }
+  
+  public func squash(repeatCount: Int, completion: AnimatableCompletion? = nil) {
+    CALayer.animate({
+      let squashX = CAKeyframeAnimation(keyPath: "transform.scale.x")
+      squashX.values = [1, 1.5 * self.force, 0.5, 1.5 * self.force, 1]
+      squashX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+      squashX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      
+      let squashY = CAKeyframeAnimation(keyPath: "transform.scale.y")
+      squashY.values = [1, 0.5, 1, 0.5, 1]
+      squashY.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+      squashY.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      
+      let animationGroup = CAAnimationGroup()
+      animationGroup.animations = [squashX, squashY]
+      animationGroup.duration = CFTimeInterval(self.duration)
+      animationGroup.repeatCount = Float(repeatCount)
+      animationGroup.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
+      self.layer.add(animationGroup, forKey: "squash")
     }, completion: completion)
   }
   

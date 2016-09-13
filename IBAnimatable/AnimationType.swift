@@ -20,6 +20,7 @@ public enum AnimationType {
   case zoomInvert(way: Way)
   case shake(repeatCount: Int)
   case pop(repeatCount: Int)
+  case squash(repeatCount: Int)
   case flip(along: Axis)
   case morph(repeatCount: Int)
   case flash(repeatCount: Int)
@@ -83,6 +84,9 @@ extension AnimationType: IBEnum {
     case "pop":
       let repeatCount = retrieveRepeatCount(string:params[safe: 0])
       self = .pop(repeatCount: repeatCount)
+    case "squash":
+      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      self = .squash(repeatCount: repeatCount)
     case "flip":
       let axis = Axis(raw: params[safe: 0], defaultValue: .x)
       self = .flip(along: axis)

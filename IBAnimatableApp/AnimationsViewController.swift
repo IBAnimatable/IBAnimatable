@@ -35,6 +35,7 @@ class AnimationsViewController: UIViewController {
     PickerEntry(params: [axisParams], name: "flip"),
     PickerEntry(params: [repeatCountParam], name: "shake"),
     PickerEntry(params: [repeatCountParam], name: "pop"),
+    PickerEntry(params: [repeatCountParam], name: "squash"),
     PickerEntry(params: [repeatCountParam], name: "morph"),
     PickerEntry(params: [repeatCountParam], name: "flash"),
     PickerEntry(params: [repeatCountParam], name: "wobble"),
