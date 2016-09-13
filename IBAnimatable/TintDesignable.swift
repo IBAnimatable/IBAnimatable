@@ -41,9 +41,9 @@ public extension TintDesignable where Self: UIView {
       addColorSubview(color: .black, opacity: shadeOpacity)
     }
     
-    if let unwrappedToneColor = toneColor {
+    if let toneColor = toneColor {
       if !toneOpacity.isNaN && toneOpacity >= 0 && toneOpacity <= 1 {
-        addColorSubview(color: unwrappedToneColor, opacity: toneOpacity)
+        addColorSubview(color: toneColor, opacity: toneOpacity)
       }
     }
   }

@@ -45,19 +45,19 @@ var switchColorType = "switch colorType {\n"
 let colorsType: Dictionary? = parseJSON(JSONData: JSON(colorsTypeURL))
 
 // Parsing
-if let uwnrappedColorsType = colorsType {
-  for colorName in uwnrappedColorsType.keys {
-    if var unwrappedRGBColors = uwnrappedColorsType[colorName] {
+if let colorsType = colorsType {
+  for colorName in colorsType.keys {
+    if var rgbColors = colorsType[colorName] {
       var finalName = colorName.capitalized(with: NSLocale.current)
       finalName = finalName.replacingOccurrences(of: "-", with: "")
       finalName = "flat" + finalName
       enumColorType += String(format: enumCase, finalName)
       switchColorType += String(format: switchCase, finalName)
       
-      unwrappedRGBColors = unwrappedRGBColors.replacingOccurrences(of: "rgba(", with: "")
-      unwrappedRGBColors = unwrappedRGBColors.replacingOccurrences(of: ")", with: "")
-      unwrappedRGBColors = unwrappedRGBColors.replacingOccurrences(of: " ", with: "")
-      let colors = unwrappedRGBColors.components(separatedBy: ",")
+      rgbColors = rgbColors.replacingOccurrences(of: "rgba(", with: "")
+      rgbColors = rgbColors.replacingOccurrences(of: ")", with: "")
+      rgbColors = rgbColors.replacingOccurrences(of: " ", with: "")
+      let colors = rgbColors.components(separatedBy: ",")
       switchColorType += String(format: color, colorLiteral(r: Int(colors[0])!, g: Int(colors[1])!, b: Int(colors[2])!, a: Double(colors[3])!))
     }
   }

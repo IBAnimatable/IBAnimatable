@@ -34,9 +34,9 @@ public protocol ShadowDesignable {
 
 public extension ShadowDesignable where Self: UIView {
   public func configureShadowColor() {
-    if let unwrappedShadowColor = shadowColor {
+    if let shadowColor = shadowColor {
       commonSetup()
-      layer.shadowColor = unwrappedShadowColor.cgColor
+      layer.shadowColor = shadowColor.cgColor
     }
   }
 
@@ -86,8 +86,8 @@ public extension ShadowDesignable where Self: UIView {
       shadowLayer.frame = frame
       
       // Configure shadow properties
-      if let unwrappedShadowColor = shadowColor {
-        shadowLayer.shadowColor = unwrappedShadowColor.cgColor
+      if let shadowColor = shadowColor {
+        shadowLayer.shadowColor = shadowColor.cgColor
       }
       if !shadowRadius.isNaN && shadowRadius > 0 {
         shadowLayer.shadowRadius = shadowRadius

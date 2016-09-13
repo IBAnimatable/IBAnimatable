@@ -39,7 +39,7 @@ public extension BorderDesignable where Self: UIView {
 
 private extension BorderDesignable where Self: UIView {
   func commonConfigBorder() {
-    guard let unwrappedBorderColor = borderColor, borderWidth > 0 else {
+    guard let borderColor = borderColor, borderWidth > 0 else {
       return
     }
     
@@ -55,7 +55,7 @@ private extension BorderDesignable where Self: UIView {
       borderLayer.name = "borderAllSides"
       borderLayer.path = mask.path
       borderLayer.fillColor = UIColor.clear.cgColor
-      borderLayer.strokeColor = unwrappedBorderColor.cgColor
+      borderLayer.strokeColor = borderColor.cgColor
       borderLayer.lineWidth = borderWidth
       borderLayer.frame = bounds
       layer.insertSublayer(borderLayer, at: 0)
@@ -65,7 +65,7 @@ private extension BorderDesignable where Self: UIView {
     //let sides = BorderSides(rawValue: BorderSides)
     
     if borderSides == .AllSides {
-      layer.borderColor = unwrappedBorderColor.cgColor
+      layer.borderColor = borderColor.cgColor
       layer.borderWidth = borderWidth
       return
     }
@@ -97,7 +97,7 @@ private extension BorderDesignable where Self: UIView {
     
     border.path = borderPath.cgPath
     border.fillColor = UIColor.clear.cgColor
-    border.strokeColor = unwrappedBorderColor.cgColor
+    border.strokeColor = borderColor.cgColor
     border.lineWidth = borderWidth
     border.frame = bounds
     layer.insertSublayer(border, at: 0)

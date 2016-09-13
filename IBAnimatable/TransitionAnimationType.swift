@@ -53,12 +53,12 @@ extension TransitionAnimationType: IBEnum {
       self = .systemSuckEffect
     case "explode":
       if params.count == 3 {
-        if let unwrappedXFactor = Double(params[0]),
-          let unwrappedMinAngle = Double(params[1]),
-          let unwrappedMaxAngle = Double(params[2]) {
-          let xFactor = CGFloat(unwrappedXFactor)
-          let minAngle = CGFloat(unwrappedMinAngle)
-          let maxAngle = CGFloat(unwrappedMaxAngle)
+        if let xFactor = Double(params[0]),
+          let minAngle = Double(params[1]),
+          let maxAngle = Double(params[2]) {
+          let xFactor = CGFloat(xFactor)
+          let minAngle = CGFloat(minAngle)
+          let maxAngle = CGFloat(maxAngle)
           self = .explode(xFactor: xFactor, minAngle: minAngle, maxAngle: maxAngle)
           return
         }

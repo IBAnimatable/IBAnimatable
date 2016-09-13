@@ -66,9 +66,9 @@ var switchPredefinedGradientType = "switch gradientType {\n"
 let gradientsType = parse(JSON(gradientTypeURL))
 for gradient in gradientsType! {
   if var name = gradient["name"] as? String,
-    let unwrappedColors = gradient["colors"] as? [String],
-    let startColor = unwrappedColors.first,
-    let endColor = unwrappedColors.last {
+    let colors = gradient["colors"] as? [String],
+    let startColor = colors.first,
+    let endColor = colors.last {
     name = name.capitalized
     name = name.replacingOccurrences(of: " ", with: "").lowercaseFirstLetter()
     enumGradientType += String(format: enumCase, name)

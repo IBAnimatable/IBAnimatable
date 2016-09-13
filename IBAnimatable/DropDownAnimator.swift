@@ -90,9 +90,9 @@ private extension DropDownAnimator {
 
 extension DropDownAnimator: CAAnimationDelegate {
   public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-    if let unwrappedCompletion = completion {
-      unwrappedCompletion()
-      completion = nil
+    if let completion = completion {
+      completion()
+      self.completion = nil
     }
   }
 

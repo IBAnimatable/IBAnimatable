@@ -57,21 +57,21 @@ public extension SideImageDesignable where Self: UITextField {
 
 fileprivate extension SideImageDesignable where Self: UITextField {
   func configureLeftImage() {
-    guard let wrappedLeftImage = leftImage else {
+    guard let leftImage = leftImage else {
       return
     }
     
-    let sideView = makeSideView(with: wrappedLeftImage, leftPadding: leftImageLeftPadding, rightPadding: leftImageRightPadding, topPadding: leftImageTopPadding)
+    let sideView = makeSideView(with: leftImage, leftPadding: leftImageLeftPadding, rightPadding: leftImageRightPadding, topPadding: leftImageTopPadding)
     leftViewMode = .always
     leftView = sideView
   }
   
   func configureRightImage() {
-    guard let wrappedRightImage = rightImage else {
+    guard let rightImage = rightImage else {
       return
     }
     
-    let sideView = makeSideView(with: wrappedRightImage, leftPadding: rightImageLeftPadding, rightPadding: rightImageRightPadding, topPadding: rightImageTopPadding)
+    let sideView = makeSideView(with: rightImage, leftPadding: rightImageLeftPadding, rightPadding: rightImageRightPadding, topPadding: rightImageTopPadding)
     rightViewMode = .always
     rightView = sideView
   }
