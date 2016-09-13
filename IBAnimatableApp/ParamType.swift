@@ -1,7 +1,4 @@
 //
-//  ParamType.swift
-//  IBAnimatableApp
-//
 //  Created by jason akakpo on 27/07/16.
 //  Copyright © 2016 IBAnimatable. All rights reserved.
 //

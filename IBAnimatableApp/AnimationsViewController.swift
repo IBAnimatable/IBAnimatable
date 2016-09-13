@@ -16,12 +16,12 @@ private let axisParams = ParamType(fromEnum: AnimationType.Axis.self)
 private let rotationDirectionParams = ParamType(fromEnum: AnimationType.RotationDirection.self)
 private let positiveNumberParam = ParamType.number(min: 0, max: 50, interval: 2, ascending: true, unit:"")
 private let numberParam = ParamType.number(min: -50, max: 50, interval: 5, ascending: true, unit: "")
+private let repeatCountParam = ParamType.number(min: 1, max: 10, interval: 1, ascending: true, unit:"")
 
 class AnimationsViewController: UIViewController {
   
-  @IBOutlet weak var aView: AnimatableView!
+  @IBOutlet weak var animatableView: AnimatableView!
   @IBOutlet weak var pickerView: UIPickerView!
-  
   
   // prebuit common params
   let entries: [PickerEntry] = [
@@ -33,10 +33,13 @@ class AnimationsViewController: UIViewController {
     PickerEntry(params: [wayParam], name: "zoom"),
     PickerEntry(params: [wayParam], name: "zoomInvert"),
     PickerEntry(params: [axisParams], name: "flip"),
-    PickerEntry(params: [], name: "flash"),
-    PickerEntry(params: [], name: "wobble"),
-    PickerEntry(params: [], name: "swing"),
-    PickerEntry(params: [rotationDirectionParams], name: "rotate"),
+    PickerEntry(params: [repeatCountParam], name: "shake"),
+    PickerEntry(params: [repeatCountParam], name: "pop"),
+    PickerEntry(params: [repeatCountParam], name: "morph"),
+    PickerEntry(params: [repeatCountParam], name: "flash"),
+    PickerEntry(params: [repeatCountParam], name: "wobble"),
+    PickerEntry(params: [repeatCountParam], name: "swing"),
+    PickerEntry(params: [rotationDirectionParams, repeatCountParam], name: "rotate"),
     PickerEntry(params: [positiveNumberParam, positiveNumberParam], name: "moveby"),
     PickerEntry(params: [numberParam, numberParam], name: "moveto")
     ]
@@ -44,7 +47,6 @@ class AnimationsViewController: UIViewController {
   
   var selectedEntry: PickerEntry!
   override func viewDidLoad() {
-  
     super.viewDidLoad()
     selectedEntry = entries[0]
     pickerView.dataSource = self
@@ -65,6 +67,7 @@ extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSourc
   func numberOfComponents(in pickerView: UIPickerView) -> Int {
     return 3
   }
+  
   func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
     switch component {
     case 0:
@@ -77,6 +80,7 @@ extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSourc
       return 0
     }
   }
+  
   func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
     
     if component == 0 {
@@ -87,6 +91,7 @@ extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSourc
     }
     return param.title(at: row).colorize(.white)
   }
+  
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     if component == 0 {
       if selectedEntry.name != entries[row].name {
@@ -95,15 +100,15 @@ extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSourc
         pickerView.reloadComponent(2)
       }
     }
-    let animString = selectedEntry.toString(selectedIndexes: pickerView.selectedRow(inComponent: 1), pickerView.selectedRow(inComponent: 2))
-    let animType = AnimationType(string: animString)
+    let animationString = selectedEntry.toString(selectedIndexes: pickerView.selectedRow(inComponent: 1), pickerView.selectedRow(inComponent: 2))
+    let animationType = AnimationType(string: animationString)
     pickerView.isUserInteractionEnabled = false
-    aView.animate(animation: animType) {
+    animatableView.animate(animation: animationType) {
       if #available(iOS 10.0, *) {
-        if !self.aView.transform.isIdentity {
-          Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { timer in
-            self.aView.alpha = 1
-            self.aView.transform = CGAffineTransform.identity
+        if !self.animatableView.transform.isIdentity {
+          Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { _ in
+            self.animatableView.alpha = 1
+            self.animatableView.transform = CGAffineTransform.identity
             self.pickerView.isUserInteractionEnabled = true
           }
         } else {
