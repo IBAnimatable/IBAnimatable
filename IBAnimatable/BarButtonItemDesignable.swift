@@ -11,13 +11,13 @@ public protocol BarButtonItemDesignable {
 
 public extension BarButtonItemDesignable where Self: UIBarButtonItem {
   public func confingBarButtonItemImage() {
-    guard let unwrappedRoundedImage = roundedImage else {
+    guard let roundedImage = roundedImage else {
       return
     }
     
-    let originalImage: UIImage? = unwrappedRoundedImage.withRenderingMode(.alwaysOriginal)
-    if let unwrappedImage = originalImage {
-      image = unwrappedImage
+    let originalImage: UIImage? = roundedImage.withRenderingMode(.alwaysOriginal)
+    if let originalImage = originalImage {
+      image = originalImage
     }
   }
 }

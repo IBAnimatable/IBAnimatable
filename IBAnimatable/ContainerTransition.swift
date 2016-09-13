@@ -42,26 +42,26 @@ public class ContainerTransition: NSObject {
     fromViewController?.willMove(toParentViewController: nil)
     parentViewController.addChildViewController(toViewController)
     
-    guard let unwrappedFromViewController = fromViewController else {
+    guard let fromViewController = fromViewController else {
       container.addSubview(toViewController.view)
       toViewController.didMove(toParentViewController: parentViewController)
       completion?()
       return
     }
     
-    viewControllers = [UITransitionContextViewControllerKey.from: unwrappedFromViewController,
+    viewControllers = [UITransitionContextViewControllerKey.from: fromViewController,
                        UITransitionContextViewControllerKey.to: toViewController]
-    views = [UITransitionContextViewKey.from: unwrappedFromViewController.view,
+    views = [UITransitionContextViewKey.from: fromViewController.view,
              UITransitionContextViewKey.to: toViewController.view]
   }
   
   public func animate() {
-    guard let unwrappedAnimationType = animationType else {
+    guard let animationType = animationType else {
       return
     }
     
     parentViewController?.view.isUserInteractionEnabled = false
-    let animator = AnimatorFactory.makeAnimator(transitionAnimationType: unwrappedAnimationType)
+    let animator = AnimatorFactory.makeAnimator(transitionAnimationType: animationType)
     animator?.transitionDuration = transitionDuration
     animator?.animateTransition(using: self)
   }
