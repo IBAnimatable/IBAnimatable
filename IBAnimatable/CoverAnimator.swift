@@ -30,14 +30,14 @@ extension CoverAnimator: UIViewControllerAnimatedTransitioning {
 
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     let (fromView, toView, tempContainerView) = retrieveViews(transitionContext: transitionContext)
-    let presenting = isPresenting(transitionContext: transitionContext)
-    guard let containerView = tempContainerView, let animatingView = presenting ? toView : fromView else {
+    let isPresenting = self.isPresenting(transitionContext: transitionContext)
+    guard let containerView = tempContainerView, let animatingView = isPresenting ? toView : fromView else {
       transitionContext.completeTransition(true)
       return
     }
 
     let finalFrame: CGRect
-    if presenting {
+    if isPresenting {
       finalFrame = getFinalFrame(from: direction, initialFrame: animatingView.frame, containerFrame: containerView.frame)
       containerView.addSubview(animatingView)
     } else {
@@ -47,7 +47,7 @@ extension CoverAnimator: UIViewControllerAnimatedTransitioning {
     }
     
     animateCover(animatingView: animatingView, finalFrame: finalFrame) {
-      if !presenting {
+      if !isPresenting {
         fromView?.removeFromSuperview()
       }
       transitionContext.completeTransition(!transitionContext.transitionWasCancelled)

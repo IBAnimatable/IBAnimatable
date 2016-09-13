@@ -65,7 +65,7 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
     super.viewDidLoad()
   }
 
-  fileprivate func setupModal(_ presentedViewController: AnimatableModalViewController) {
+  fileprivate func setupModal(for presentedViewController: AnimatableModalViewController) {
     presentedViewController.presentationAnimationType = selectedAnimationType
     presentedViewController.dismissalAnimationType = selectedDismissalAnimationType
     presentedViewController.modalPosition = selectedModalPosition ?? "Center"
@@ -107,7 +107,7 @@ extension PresentingViewController {
 
   @IBAction func presentProgramatically() {
     if let presentedViewController = UIStoryboard(name: "Presentations", bundle: nil).instantiateViewController(withIdentifier: "PresentationPresentedViewController") as? AnimatableModalViewController {
-      setupModal(presentedViewController)
+      setupModal(for: presentedViewController)
       present(presentedViewController, animated: true, completion: nil)
     }
   }
