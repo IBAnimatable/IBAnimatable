@@ -11,11 +11,11 @@ import UIKit
  */
 
 public enum AnimationType {
-  case slide(way: Way, direction: Direction)
-  case squeeze(way: Way, direction: Direction) // miss squeeze
-  case slideFade(way: Way, direction: Direction)
+  case slide(way: Way, from: Direction)
+  case squeeze(way: Way, from: Direction) // miss squeeze
+  case slideFade(way: Way, from: Direction)
+  case squeezeFade(way: Way, from: Direction)
   case fade(way: FadeWay)
-  case squeezeFade(way: Way, direction: Direction)
   case zoom(way: Way)
   case zoomInvert(way: Way)
   case shake(repeatCount: Int)
@@ -64,15 +64,15 @@ extension AnimationType: IBEnum {
     
     switch name {
     case "slide":
-      self = .slide(way: Way(raw: params[safe: 0], defaultValue: .in), direction: Direction(raw: params[safe: 1], defaultValue: .left))
+      self = .slide(way: Way(raw: params[safe: 0], defaultValue: .in), from: Direction(raw: params[safe: 1], defaultValue: .left))
     case "squeeze":
-      self = .squeeze(way: Way(raw: params[safe: 0], defaultValue: .in), direction: Direction(raw: params[safe: 1], defaultValue: .left))
+      self = .squeeze(way: Way(raw: params[safe: 0], defaultValue: .in), from: Direction(raw: params[safe: 1], defaultValue: .left))
     case "fade":
       self = .fade(way: FadeWay(raw: params[safe: 0], defaultValue: .in))
     case "slidefade":
-      self = .slideFade(way: Way(raw: params[safe: 0], defaultValue: .in), direction: Direction(raw: params[safe: 1], defaultValue: .left))
+      self = .slideFade(way: Way(raw: params[safe: 0], defaultValue: .in), from: Direction(raw: params[safe: 1], defaultValue: .left))
     case "squeezefade":
-      self = .squeezeFade(way: Way(raw: params[safe: 0], defaultValue: .in), direction: Direction(raw: params[safe: 1], defaultValue: .left))
+      self = .squeezeFade(way: Way(raw: params[safe: 0], defaultValue: .in), from: Direction(raw: params[safe: 1], defaultValue: .left))
     case "zoom":
       self = .zoom(way: Way(raw: params[safe: 0], defaultValue: .in))
     case "zoominvert":

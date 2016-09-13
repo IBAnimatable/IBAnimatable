@@ -68,19 +68,19 @@ public extension Animatable where Self: UIView {
   public func animate(animation: AnimationType? = nil, completion: AnimatableCompletion? = nil) {
     switch animation ?? animationType {
     case let .slide(way, direction):
-      slide(way: way, direction: direction, completion: completion)
+      slide(way, direction: direction, completion: completion)
     case let .squeeze(way, direction):
       squeeze(way, direction: direction, completion: completion)
     case let .squeezeFade(way, direction):
-      squeezeFade(way: way, direction: direction, completion: completion)
+      squeezeFade(way, direction: direction, completion: completion)
     case let .slideFade(way, direction):
       slideFade(way, direction: direction, completion: completion)
     case let .fade(way):
-      fade(way: way, completion: completion)
+      fade(way, completion: completion)
     case let .zoom(way):
-      zoom(way: way, completion: completion)
+      zoom(way, completion: completion)
     case let .zoomInvert(way):
-      zoom(way: way, invert: true, completion: completion)
+      zoom(way, invert: true, completion: completion)
     case let .shake(repeatCount):
       shake(repeatCount: repeatCount, completion: completion)
     case let .pop(repeatCount):
@@ -152,7 +152,7 @@ public extension Animatable where Self: UIView {
     
   }
   
-  public func slide(way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
+  public func slide(_ way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
 
     let values = computeValues(way: way, direction: direction, shouldScale: false)
     switch way {
@@ -164,7 +164,7 @@ public extension Animatable where Self: UIView {
   }
   
   
-  public func squeeze( _ way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
+  public func squeeze(_ way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
   
     let values = computeValues(way: way, direction: direction, shouldScale: true)
     switch way {
@@ -212,7 +212,7 @@ public extension Animatable where Self: UIView {
       animateBy(x: xOffsetToMove, y: yOffsetToMove, completion: completion)
   }
   
-  public func slideFade( _ way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
+  public func slideFade(_ way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
     
     let values = computeValues(way: way, direction: direction, shouldScale: false)
     switch way {
@@ -223,7 +223,8 @@ public extension Animatable where Self: UIView {
       animateOut(values.x, values.y, values.scaleX, values.scaleY, 0, completion)
     }
   }
-  public func fade(way: AnimationType.FadeWay, completion: AnimatableCompletion? = nil) {
+  
+  public func fade(_ way: AnimationType.FadeWay, completion: AnimatableCompletion? = nil) {
     switch way {
     case .outIn:
       fadeOutIn(completion: completion)
@@ -238,7 +239,7 @@ public extension Animatable where Self: UIView {
     }
   }
   
-  public func squeezeFade(way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
+  public func squeezeFade(_ way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
     
     let values = computeValues(way: way, direction: direction, shouldScale: true)
     switch way {
@@ -250,7 +251,7 @@ public extension Animatable where Self: UIView {
     }
   }
   
-  public func zoom(way: AnimationType.Way, invert: Bool = false, completion: AnimatableCompletion? = nil) {
+  public func zoom(_ way: AnimationType.Way, invert: Bool = false, completion: AnimatableCompletion? = nil) {
     let toAlpha: CGFloat
 
     switch way {
@@ -271,7 +272,6 @@ public extension Animatable where Self: UIView {
       toAlpha = 0
       animateOut(0, 0, scale, scale, toAlpha, completion)
     }
-    
   }
   
   public func flip(axis: AnimationType.Axis, completion: AnimatableCompletion? = nil) {
