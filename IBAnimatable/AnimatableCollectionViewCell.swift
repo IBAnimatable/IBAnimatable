@@ -89,7 +89,6 @@ import UIKit
   @IBInspectable open var damping: CGFloat = CGFloat.nan
   @IBInspectable open var velocity: CGFloat = CGFloat.nan
   @IBInspectable open var force: CGFloat = CGFloat.nan
-  @IBInspectable open var repeatCount: Float = Float.nan
   
   // MARK: - Lifecycle
   open override func prepareForInterfaceBuilder() {

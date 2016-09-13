@@ -42,11 +42,6 @@ public protocol Animatable: class {
    Animation force (default value should be 1)
    */
   var force: CGFloat { get set }
-  
-  /**
-   Repeat count for Shake, Pop, Morph, Squeeze, Flash, Wobble and Swing animations
-   */
-  var repeatCount: Float { get set }
 
 }
 
@@ -68,9 +63,6 @@ public extension Animatable where Self: UIView {
     if force.isNaN {
       force = 1
     }
-    if repeatCount.isNaN {
-      repeatCount = 1
-    }
   }
   
   public func animate(animation: AnimationType? = nil, completion: AnimatableCompletion? = nil) {
@@ -89,22 +81,22 @@ public extension Animatable where Self: UIView {
       zoom(way: way, completion: completion)
     case let .zoomInvert(way):
       zoom(way: way, invert: true, completion: completion)
-    case .shake:
-      shake(completion: completion)
-    case .pop:
-      pop(completion: completion)
-    case let .flip( axis):
+    case let .shake(repeatCount):
+      shake(repeatCount: repeatCount, completion: completion)
+    case let .pop(repeatCount):
+      pop(repeatCount: repeatCount, completion: completion)
+    case let .flip(axis):
       flip(axis: axis, completion: completion)
-    case .morph:
-      morph(completion: completion)
-    case .flash:
-      flash(completion: completion)
-    case .wobble:
-      wobble(completion: completion)
-    case .swing:
-      swing(completion: completion)
-    case let .rotate(direction):
-      rotate(direction: direction, completion: completion)
+    case let .morph(repeatCount):
+      morph(repeatCount: repeatCount, completion: completion)
+    case let .flash(repeatCount):
+      flash(repeatCount: repeatCount, completion: completion)
+    case let .wobble(repeatCount):
+      wobble(repeatCount: repeatCount, completion: completion)
+    case let .swing(repeatCount):
+      swing(repeatCount: repeatCount, completion: completion)
+    case let .rotate(direction, repeatCount):
+      rotate(direction: direction, repeatCount: repeatCount, completion: completion)
     case let .moveBy(x, y):
       moveBy(x: x, y: y, completion: completion)
     case let .moveTo(x, y):
@@ -183,14 +175,14 @@ public extension Animatable where Self: UIView {
     }
   }
   
-  public func rotate(direction: AnimationType.RotationDirection, completion: AnimatableCompletion? = nil) {
+  public func rotate(direction: AnimationType.RotationDirection, repeatCount: Int, completion: AnimatableCompletion? = nil) {
   
     CALayer.animate({
       let animation = CABasicAnimation(keyPath: "transform.rotation")
       animation.fromValue = direction == .cw ? 0 : CGFloat.pi * 2
       animation.toValue = direction == .cw  ? CGFloat.pi * 2 : 0
       animation.duration = CFTimeInterval(self.duration)
-      animation.repeatCount = self.repeatCount
+      animation.repeatCount = Float(repeatCount)
       animation.autoreverses = false
       animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       self.layer.add(animation, forKey: "rotate")
@@ -283,7 +275,7 @@ public extension Animatable where Self: UIView {
   }
   
   public func flip(axis: AnimationType.Axis, completion: AnimatableCompletion? = nil) {
-     let scaleX: CGFloat
+    let scaleX: CGFloat
     let scaleY: CGFloat
     switch axis {
     case .x:
@@ -294,9 +286,9 @@ public extension Animatable where Self: UIView {
       scaleY = 1
     }
     animateIn(0, 0, scaleX, scaleY, 1, completion)
-  
   }
-  public func shake(completion: AnimatableCompletion? = nil) {
+  
+  public func shake(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CAKeyframeAnimation(keyPath: "position.x")
       animation.values = [0, 30 * self.force, -30 * self.force, 30 * self.force, 0]
@@ -304,13 +296,13 @@ public extension Animatable where Self: UIView {
       animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
       animation.duration = CFTimeInterval(self.duration)
       animation.isAdditive = true
-      animation.repeatCount = self.repeatCount
+      animation.repeatCount = Float(repeatCount)
       animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       self.layer.add(animation, forKey: "shake")
     }, completion: completion)
   }
   
-  public func pop(completion: AnimatableCompletion? = nil) {
+  public func pop(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CAKeyframeAnimation(keyPath: "transform.scale")
       animation.values = [0, 0.2 * self.force, -0.2 * self.force, 0.2 * self.force, 0]
@@ -318,13 +310,13 @@ public extension Animatable where Self: UIView {
       animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
       animation.duration = CFTimeInterval(self.duration)
       animation.isAdditive = true
-      animation.repeatCount = self.repeatCount
+      animation.repeatCount = Float(repeatCount)
       animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       self.layer.add(animation, forKey: "pop")
     }, completion: completion)
   }
   
-  public func morph(completion: AnimatableCompletion? = nil) {
+  public func morph(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let morphX = CAKeyframeAnimation(keyPath: "transform.scale.x")
       morphX.values = [1, 1.3 * self.force, 0.7, 1.3 * self.force, 1]
@@ -339,13 +331,13 @@ public extension Animatable where Self: UIView {
       let animationGroup = CAAnimationGroup()
       animationGroup.animations = [morphX, morphY]
       animationGroup.duration = CFTimeInterval(self.duration)
-      animationGroup.repeatCount = self.repeatCount
+      animationGroup.repeatCount = Float(repeatCount)
       animationGroup.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       self.layer.add(animationGroup, forKey: "morph")
     }, completion: completion)
   }
 
-  public func squeeze(completion: AnimatableCompletion? = nil) {
+  public func squeeze(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let squeezeX = CAKeyframeAnimation(keyPath: "transform.scale.x")
       squeezeX.values = [1, 1.5 * self.force, 0.5, 1.5 * self.force, 1]
@@ -360,26 +352,26 @@ public extension Animatable where Self: UIView {
       let animationGroup = CAAnimationGroup()
       animationGroup.animations = [squeezeX, squeezeY]
       animationGroup.duration = CFTimeInterval(self.duration)
-      animationGroup.repeatCount = self.repeatCount
+      animationGroup.repeatCount = Float(repeatCount)
       animationGroup.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       self.layer.add(animationGroup, forKey: "squeeze")
     }, completion: completion)
   }
   
-  public func flash(completion: AnimatableCompletion? = nil) {
+  public func flash(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CABasicAnimation(keyPath: "opacity")
       animation.fromValue = 1
       animation.toValue = 0
       animation.duration = CFTimeInterval(self.duration)
-      animation.repeatCount = self.repeatCount * 2.0
+      animation.repeatCount = Float(repeatCount) * 2.0
       animation.autoreverses = true
       animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       self.layer.add(animation, forKey: "flash")
     }, completion: completion)
   }
   
-  public func wobble(completion: AnimatableCompletion? = nil) {
+  public func wobble(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let rotation = CAKeyframeAnimation(keyPath: "transform.rotation")
       rotation.values = [0, 0.3 * self.force, -0.3 * self.force, 0.3 * self.force, 0]
@@ -396,19 +388,19 @@ public extension Animatable where Self: UIView {
       animationGroup.animations = [rotation, positionX]
       animationGroup.duration = CFTimeInterval(self.duration)
       animationGroup.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
-      animationGroup.repeatCount = self.repeatCount
+      animationGroup.repeatCount = Float(repeatCount)
       self.layer.add(animationGroup, forKey: "wobble")
     }, completion: completion)
   }
   
-  public func swing(completion: AnimatableCompletion? = nil) {
+  public func swing(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CAKeyframeAnimation(keyPath: "transform.rotation")
       animation.values = [0, 0.3 * self.force, -0.3 * self.force, 0.3 * self.force, 0]
       animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       animation.duration = CFTimeInterval(self.duration)
       animation.isAdditive = true
-      animation.repeatCount = self.repeatCount
+      animation.repeatCount = Float(repeatCount)
       animation.beginTime = CACurrentMediaTime() + CFTimeInterval(self.delay)
       self.layer.add(animation, forKey: "swing")
     }, completion: completion)

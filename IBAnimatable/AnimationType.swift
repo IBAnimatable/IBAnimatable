@@ -18,14 +18,14 @@ public enum AnimationType {
   case squeezeFade(way: Way, direction: Direction)
   case zoom(way: Way)
   case zoomInvert(way: Way)
-  case shake
-  case pop
+  case shake(repeatCount: Int)
+  case pop(repeatCount: Int)
   case flip(along: Axis)
-  case morph
-  case flash
-  case wobble
-  case swing
-  case rotate(direction: RotationDirection)
+  case morph(repeatCount: Int)
+  case flash(repeatCount: Int)
+  case wobble(repeatCount: Int)
+  case swing(repeatCount: Int)
+  case rotate(direction: RotationDirection, repeatCount: Int)
   case moveTo(x: Double, y: Double)
   case moveBy(x: Double, y: Double)
   case none
@@ -78,21 +78,29 @@ extension AnimationType: IBEnum {
     case "zoominvert":
       self = .zoomInvert(way: Way(raw: params[safe: 0], defaultValue: .in))
     case "shake":
-      self = .shake
+      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      self = .shake(repeatCount: repeatCount)
     case "pop":
-      self = .pop
+      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      self = .pop(repeatCount: repeatCount)
     case "flip":
-      self = .flip(along: Axis(raw: params[safe: 0], defaultValue: .x))
+      let axis = Axis(raw: params[safe: 0], defaultValue: .x)
+      self = .flip(along: axis)
     case "morph":
-      self = .morph
+      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      self = .morph(repeatCount: repeatCount)
     case "flash":
-      self = .flash
+      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      self = .flash(repeatCount: repeatCount)
     case "wobble":
-      self = .wobble
+      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      self = .wobble(repeatCount: repeatCount)
     case "swing":
-      self = .swing
+      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      self = .swing(repeatCount: repeatCount)
     case "rotate":
-      self = .rotate(direction: RotationDirection(raw: params[safe: 0], defaultValue: .cw))
+      let repeatCount = retrieveRepeatCount(string:params[safe: 1])
+      self = .rotate(direction: RotationDirection(raw: params[safe: 0], defaultValue: .cw), repeatCount: repeatCount)
     case "moveto":
       self = .moveTo(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
     case "moveby":
@@ -101,4 +109,13 @@ extension AnimationType: IBEnum {
       self = .none
     }
   }
+}
+
+private func retrieveRepeatCount(string: String?) -> Int {
+  // Default value for repeat count is `1`
+  guard let string = string, let repeatCount = Int(string) else {
+    return 1
+  }
+  
+  return repeatCount
 }
