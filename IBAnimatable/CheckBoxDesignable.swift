@@ -17,19 +17,19 @@ public extension CheckBoxDesignable where Self: UIButton {
   }
   
   public func configureCheckBoxCheckedImage() {
-    guard let unwrappedCheckedImage = checkedImage else {
+    guard let checkedImage = checkedImage else {
       return
     }
     
-    setBackgroundImage(unwrappedCheckedImage, for: .selected)
-    setBackgroundImage(unwrappedCheckedImage, for: [.selected, .highlighted])
+    setBackgroundImage(checkedImage, for: .selected)
+    setBackgroundImage(checkedImage, for: [.selected, .highlighted])
   }
   
   public func configureCheckBoxUncheckedImage() {
-    guard let unwrappedUncheckedImage = uncheckedImage else {
+    guard let uncheckedImage = uncheckedImage else {
       return
     }
     
-    setBackgroundImage(unwrappedUncheckedImage, for: UIControlState())
+    setBackgroundImage(uncheckedImage, for: UIControlState())
   }
 }

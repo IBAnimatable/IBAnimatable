@@ -15,10 +15,10 @@ public protocol GradientDesignable {
 public extension GradientDesignable where Self: UIView {
   public func configureGradient() {
     let predefinedGradient = configurePredefinedGradient()
-    if let unwrappedStartColor = startColor, let unwrappedEndColor = endColor {
-      configureGradient(startColor: unwrappedStartColor, endColor: unwrappedEndColor)
-    } else if let unwrappedStartColor = predefinedGradient?.0, let unwrappedEndColor = predefinedGradient?.1 {
-      configureGradient(startColor: unwrappedStartColor, endColor: unwrappedEndColor)
+    if let startColor = startColor, let endColor = endColor {
+      configureGradient(startColor: startColor, endColor: endColor)
+    } else if let startColor = predefinedGradient?.start, let endColor = predefinedGradient?.end {
+      configureGradient(startColor: startColor, endColor: endColor)
     }
   }
 }

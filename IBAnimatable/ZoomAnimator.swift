@@ -28,17 +28,17 @@ extension ZoomAnimator: UIViewControllerAnimatedTransitioning {
 
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     let (fromView, toView, tempContainerView) = retrieveViews(transitionContext: transitionContext)
-    let presenting = isPresenting(transitionContext: transitionContext)
-    guard let containerView = tempContainerView, let animatingView = presenting ? toView : fromView else {
+    let isPresenting = self.isPresenting(transitionContext: transitionContext)
+    guard let containerView = tempContainerView, let animatingView = isPresenting ? toView : fromView else {
       transitionContext.completeTransition(true)
       return
     }
 
-    if presenting {
+    if isPresenting {
       containerView.addSubview(animatingView)
     }
-    animateZoom(animatingView: animatingView, presenting: presenting) {
-      if !presenting {
+    animateZoom(animatingView: animatingView, isPresenting: isPresenting) {
+      if !isPresenting {
         fromView?.removeFromSuperview()
       }
       transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
@@ -51,8 +51,8 @@ extension ZoomAnimator: UIViewControllerAnimatedTransitioning {
 
 private extension ZoomAnimator {
 
-  func animateZoom(animatingView: UIView, presenting: Bool, completion: @escaping AnimatableCompletion) {
-    if presenting {
+  func animateZoom(animatingView: UIView, isPresenting: Bool, completion: @escaping AnimatableCompletion) {
+    if isPresenting {
       animatePresengingZoom(animatingView: animatingView, completion: completion)
     } else {
       animateDismissingZoom(animatingView: animatingView, completion: completion)

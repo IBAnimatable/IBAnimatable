@@ -18,8 +18,8 @@ public extension PlaceholderDesignable where Self: UITextField {
   var placeholderText: String? { get { return "" } set {} }
 
   public func configurePlaceholderColor() {
-    if let unwrappedPlaceholderColor = placeholderColor {
-      attributedPlaceholder = NSAttributedString(string: placeholder!, attributes: [NSForegroundColorAttributeName: unwrappedPlaceholderColor])
+    if let placeholderColor = placeholderColor, let placeholder = placeholder {
+      attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSForegroundColorAttributeName: placeholderColor])
     }
   }
 }

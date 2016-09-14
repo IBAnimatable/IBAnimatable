@@ -13,10 +13,10 @@ public protocol FillDesignable {
 
 public extension FillDesignable where Self: UIView {
   public func configureFillColor() {
-    if let unwrappedFillColor = fillColor {
-      backgroundColor = unwrappedFillColor
-    } else if let unwrappedPredefinedColor = predefinedColorFromString(predefinedColor: predefinedColor) {
-      backgroundColor = unwrappedPredefinedColor
+    if let fillColor = fillColor {
+      backgroundColor = fillColor
+    } else if let predefinedColor = predefinedColor(string: predefinedColor) {
+      backgroundColor = predefinedColor
     }
   }
 
@@ -34,20 +34,20 @@ public extension FillDesignable where Self: UIView {
 
 public extension FillDesignable where Self: UITableViewCell {
   public func configureFillColor() {
-    if let unwrappedFillColor = fillColor {
-      backgroundColor = unwrappedFillColor
-      contentView.backgroundColor = unwrappedFillColor
-    } else if let unwrappedPredefinedColor = predefinedColorFromString(predefinedColor: predefinedColor) {
-      backgroundColor = unwrappedPredefinedColor
-      contentView.backgroundColor = unwrappedPredefinedColor
+    if let fillColor = fillColor {
+      backgroundColor = fillColor
+      contentView.backgroundColor = fillColor
+    } else if let predefinedColor = predefinedColor(string: predefinedColor) {
+      backgroundColor = predefinedColor
+      contentView.backgroundColor = predefinedColor
     }
   }
 }
 
 private extension FillDesignable {
   
-  func predefinedColorFromString(predefinedColor: String?) -> UIColor? {
-    guard let unwrappedColorTypeString = predefinedColor, let colorType = ColorType(rawValue: unwrappedColorTypeString) else {
+  func predefinedColor(string predefinedColor: String?) -> UIColor? {
+    guard let predefinedColor = predefinedColor, let colorType = ColorType(rawValue: predefinedColor) else {
       return nil
     }
     

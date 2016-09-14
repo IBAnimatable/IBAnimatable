@@ -77,14 +77,14 @@ private extension TransitionPresentedViewController {
       return
     }
     
-    // Set up the segues without dismiss interaction
+    // Set up the segue without dismissal interaction
     var segueName = "IBAnimatable.Present" + extractAnimationType(transitionAnimationType.stringValue.capitalized) + "Segue"
     
     if let segueClass = NSClassFromString(segueName) as? UIStoryboardSegue.Type {
       presentingSegueClass = segueClass
     }
     
-    // Set up the segues with dismiss interaction
+    // Set up the segue with dismissal interaction
     segueName = "IBAnimatable.Present" + extractAnimationType(transitionAnimationType.stringValue.capitalized) + "WithDismissInteractionSegue"
     
     if let segueClass = NSClassFromString(segueName) as? UIStoryboardSegue.Type {

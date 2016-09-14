@@ -29,17 +29,17 @@ extension DropDownAnimator: UIViewControllerAnimatedTransitioning {
 
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     let (fromView, toView, tempContainerView) = retrieveViews(transitionContext: transitionContext)
-    let presenting = isPresenting(transitionContext: transitionContext)
-    guard let containerView = tempContainerView, let animatingView = presenting ? toView : fromView else {
+    let isPresenting = self.isPresenting(transitionContext: transitionContext)
+    guard let containerView = tempContainerView, let animatingView = isPresenting ? toView : fromView else {
       transitionContext.completeTransition(true)
       return
     }
 
-    if presenting {
+    if isPresenting {
       containerView.addSubview(animatingView)
     }
-    animateDropDown(animatingView: animatingView, presenting: presenting) {
-      if !presenting {
+    animateDropDown(animatingView: animatingView, isPresenting: isPresenting) {
+      if !isPresenting {
         fromView?.removeFromSuperview()
       }
       transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
@@ -52,8 +52,8 @@ extension DropDownAnimator: UIViewControllerAnimatedTransitioning {
 
 private extension DropDownAnimator {
 
-  func animateDropDown(animatingView: UIView, presenting: Bool, completion: @escaping AnimatableCompletion) {
-    if presenting {
+  func animateDropDown(animatingView: UIView, isPresenting: Bool, completion: @escaping AnimatableCompletion) {
+    if isPresenting {
       animatePresengingDropDown(animatingView: animatingView, completion: completion)
     } else {
       animateDismissingDropDown(animatingView: animatingView, completion: completion)
@@ -90,9 +90,9 @@ private extension DropDownAnimator {
 
 extension DropDownAnimator: CAAnimationDelegate {
   public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-    if let unwrappedCompletion = completion {
-      unwrappedCompletion()
-      completion = nil
+    if let completion = completion {
+      completion()
+      self.completion = nil
     }
   }
 
