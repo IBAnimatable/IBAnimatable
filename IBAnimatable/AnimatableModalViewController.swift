@@ -175,8 +175,8 @@ open class AnimatableModalViewController: UIViewController, PresentationDesignab
     super.viewDidAppear(animated)
     
     let animationType = dismissalAnimationType
-    if let dismissSystemTransition = animationType.systemTransition {
-      modalTransitionStyle = dismissSystemTransition
+    if let dismissalSystemTransition = animationType.systemTransition {
+      modalTransitionStyle = dismissalSystemTransition
     }
   }
 }
