@@ -51,7 +51,7 @@ public class ActivityIndicatorAnimationBallZigZagDeflect: ActivityIndicatorAnima
 
 private extension ActivityIndicatorAnimationBallZigZagDeflect {
   
-  func makeCircleLayer(frame: CGRect, size: CGSize, color: UIColor, animation: CAAnimation) -> CALayer{
+  func makeCircleLayer(frame: CGRect, size: CGSize, color: UIColor, animation: CAAnimation) -> CALayer {
     let circle = ActivityIndicatorShape.circle.makeLayer(size: size, color: color)
     circle.frame = frame
     circle.add(animation, forKey: "animation")
