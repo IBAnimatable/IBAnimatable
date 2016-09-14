@@ -31,7 +31,7 @@ open class AnimatableModalViewController: UIViewController, PresentationDesignab
       }
     }
   }
-  public var dismissalAnimationType: PresentationAnimationType = .cover(fromDirection: .bottom) {
+  public var dismissalAnimationType: PresentationAnimationType = .cover(from: .bottom) {
     didSet {
       if oldValue.stringValue != dismissalAnimationType.stringValue {
         setupPresenter()

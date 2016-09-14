@@ -11,7 +11,7 @@ import UIKit
 public enum PresentationAnimationType: IBEnum {
   case flip
   case crossDissolve
-  case cover(fromDirection: TransitionAnimationType.Direction)
+  case cover(from: TransitionAnimationType.Direction)
   case zoom
   case dropDown
   
@@ -23,7 +23,7 @@ public enum PresentationAnimationType: IBEnum {
     switch self {
     case .crossDissolve: return .crossDissolve
     case .flip: return .flipHorizontal
-    case .cover(fromDirection: .bottom): return .coverVertical
+    case .cover(from: .bottom): return .coverVertical
     default: return nil
     }
   }
@@ -44,7 +44,7 @@ public enum PresentationAnimationType: IBEnum {
     case "dropdown":
       self = .dropDown
     case "cover":
-      self = .cover(fromDirection: TransitionAnimationType.Direction.fromString(forParams: params)!)
+      self = .cover(from: TransitionAnimationType.Direction.fromString(forParams: params) ?? .bottom)
     default:
       return nil
     }

@@ -66,8 +66,8 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
   }
 
   fileprivate func setupModal(_ presentedViewController: AnimatableModalViewController) {
-    presentedViewController.presentationAnimationType = PresentationAnimationType(string: selectedAnimationType) ?? .cover(fromDirection: .bottom)
-    presentedViewController.dismissalAnimationType = PresentationAnimationType(string: selectedDismissalAnimationType) ?? .cover(fromDirection: .bottom)
+    presentedViewController.presentationAnimationType = PresentationAnimationType(string: selectedAnimationType) ?? .cover(from: .bottom)
+    presentedViewController.dismissalAnimationType = PresentationAnimationType(string: selectedDismissalAnimationType) ?? .cover(from: .bottom)
     presentedViewController.modalPosition = PresentationModalPosition(string: selectedModalPosition)
     presentedViewController.modalSize = (width: PresentationModalSize(string: selectedModalWidth)!, height: PresentationModalSize(string:selectedModalHeight)!)
   
