@@ -153,6 +153,7 @@ public extension Animatable where Self: UIView {
 
   }
   
+  // swiftlint:disable variable_name_min_length
   public func moveTo(x: Double, y: Double, completion: AnimatableCompletion? = nil) {
     if x.isNaN && y.isNaN {
       return
@@ -174,6 +175,8 @@ public extension Animatable where Self: UIView {
     }
     animateBy(x: xOffsetToMove, y: yOffsetToMove, completion: completion)
   }
+  // swiftlint:enable variable_name_min_length
+
   
   public func slideFade(_ way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
     let values = computeValues(way: way, direction: direction, shouldScale: false)
@@ -387,7 +390,8 @@ public extension Animatable where Self: UIView {
       self.layer.add(animation, forKey: "swing")
     }, completion: completion)
   }
-
+  
+  // swiftlint:disable variable_name_min_length
   public func moveBy(x: Double, y: Double, completion: AnimatableCompletion? = nil) {
     if x.isNaN && y.isNaN {
       return
@@ -398,6 +402,8 @@ public extension Animatable where Self: UIView {
     animateBy(x: xOffsetToMove, y: yOffsetToMove, completion: completion)
   }
 }
+// swiftlint:enable variable_name_min_length
+
 
 private extension Animatable where Self: UIView {
   func computeValues(way: AnimationType.Way, direction: AnimationType.Direction, shouldScale: Bool) -> AnimationValues {
@@ -466,6 +472,7 @@ private extension Animatable where Self: UIView {
     )
   }
   
+  // swiftlint:disable variable_name_min_length
   func animateBy(x: CGFloat, y: CGFloat, completion: AnimatableCompletion? = nil) {
     let translate = CGAffineTransform(translationX: x, y: y)
     UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [],
@@ -521,6 +528,8 @@ private extension Animatable where Self: UIView {
     return self.window?.screen.bounds.size ?? CGSize.zero
   }
 }
+// swiftlint:enable variable_name_min_length
+
 
 public extension Animatable where Self: UIBarItem {
   // TODO: animations for `UIBarItem`
