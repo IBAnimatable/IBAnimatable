@@ -9,18 +9,31 @@ import UIKit
 open class AnimatableModalViewController: UIViewController, PresentationDesignable {
 
   // MARK: - AnimatablePresentationController
-
-  @IBInspectable public var presentationAnimationType: String? {
+  @IBInspectable var _presentationAnimationType: String? {
     didSet {
-      if oldValue != presentationAnimationType {
+      if let animationType = PresentationAnimationType(string: _presentationAnimationType) {
+        presentationAnimationType = animationType
+      }
+    }
+  }
+  public var presentationAnimationType: PresentationAnimationType = .cover(from: .bottom) {
+    didSet {
+      if oldValue.stringValue != presentationAnimationType.stringValue {
         setupPresenter()
       }
     }
   }
 
-  @IBInspectable public var dismissalAnimationType: String? {
+  @IBInspectable var _dismissalAnimationType: String? {
     didSet {
-      if oldValue != dismissalAnimationType {
+      if let animationType = PresentationAnimationType(string: _presentationAnimationType) {
+        dismissalAnimationType = animationType
+      }
+    }
+  }
+  public var dismissalAnimationType: PresentationAnimationType = .cover(from: .bottom) {
+    didSet {
+      if oldValue.stringValue != dismissalAnimationType.stringValue {
         setupPresenter()
       }
     }
@@ -31,25 +44,37 @@ open class AnimatableModalViewController: UIViewController, PresentationDesignab
       presenter?.transitionDuration = transitionDuration
     }
   }
-
-  @IBInspectable public var modalPosition: String = "Center" {
+  @IBInspectable var _modalPosition: String? {
     didSet {
-      presenter?.presentationConfiguration?.modalPosition = PresentationModalPosition.fromString(position: modalPosition)
+      modalPosition = PresentationModalPosition(string: _modalPosition ?? "")
     }
   }
 
-  @IBInspectable public var modalWidth: String = "Half" {
+  public var modalPosition: PresentationModalPosition = .center {
     didSet {
-      presenter?.presentationConfiguration?.modalSize = (PresentationModalSize.fromString(size: modalWidth), PresentationModalSize.fromString(size: modalHeight))
+      presenter?.presentationConfiguration?.modalPosition = modalPosition
     }
   }
-
-  @IBInspectable public var modalHeight: String = "Half" {
+  @IBInspectable var _modalWidth: String? {
     didSet {
-      presenter?.presentationConfiguration?.modalSize = (PresentationModalSize.fromString(size: modalWidth), PresentationModalSize.fromString(size: modalHeight))
+      let modalWidth = PresentationModalSize(string: _modalWidth) ?? .half
+      modalSize = (modalWidth, modalSize.height)
     }
   }
-
+  @IBInspectable var _modalHeight: String? {
+    didSet {
+      let modalHeight = PresentationModalSize(string: _modalHeight) ?? .half
+      modalSize = (modalSize.width, modalHeight)
+    }
+  }
+  
+  public var modalSize: ModalSize = (.half, .half) {
+    didSet {
+      presenter?.presentationConfiguration?.modalSize = modalSize
+    }
+  }
+  
+  
   @IBInspectable public var cornerRadius: CGFloat = .nan {
     didSet {
       presenter?.presentationConfiguration?.cornerRadius = cornerRadius
@@ -85,7 +110,7 @@ open class AnimatableModalViewController: UIViewController, PresentationDesignab
       blurEffectStyle = UIBlurEffectStyle(string: _blurEffectStyle)
     }
   }
-  
+
   @IBInspectable public var blurOpacity: CGFloat = .nan {
     didSet {
       presenter?.presentationConfiguration?.blurOpacity = blurOpacity
@@ -115,17 +140,20 @@ open class AnimatableModalViewController: UIViewController, PresentationDesignab
       presenter?.presentationConfiguration?.shadowOffset = shadowOffset
     }
   }
-
-  @IBInspectable public var keyboardTranslation: String? {
+  @IBInspectable var _keyboardTranslation: String = "" {
     didSet {
-      presenter?.presentationConfiguration?.keyboardTranslation = ModalKeyboardTranslation.fromString(string: keyboardTranslation)
+      keyboardTranslation = ModalKeyboardTranslation(string: _keyboardTranslation) ?? .none
     }
+  }
+  public var keyboardTranslation: ModalKeyboardTranslation = .none {
+    didSet {
+      presenter?.presentationConfiguration?.keyboardTranslation = keyboardTranslation    }
   }
 
   // MARK: Private
 
   fileprivate var presenter: PresentationPresenter?
-
+  
   // MARK: Life cycle
 
   public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -139,14 +167,14 @@ open class AnimatableModalViewController: UIViewController, PresentationDesignab
   }
 
   // MARK: Life cycle
-
   override open func viewDidLoad() {
     super.viewDidLoad()
   }
 
   open override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    let animationType = PresentationAnimationType.fromString(transitionType: dismissalAnimationType ?? "") ?? .cover(fromDirection: .bottom)
+    
+    let animationType = dismissalAnimationType
     if let dismissalSystemTransition = animationType.systemTransition {
       modalTransitionStyle = dismissalSystemTransition
     }
@@ -155,19 +183,18 @@ open class AnimatableModalViewController: UIViewController, PresentationDesignab
 
 private extension AnimatableModalViewController {
   func setupPresenter() {
-    // If not set, use the system default transition `.CoverVertical` which maps to `.Cover(fromDirection: .Bottom)`
-    let animationType = PresentationAnimationType.fromString(transitionType: presentationAnimationType ?? "") ?? .cover(fromDirection: .bottom)
-    presenter = PresentationPresenterManager.sharedManager().retrievePresenter(presentationAnimationType: animationType, transitionDuration: transitionDuration)
-    presenter?.dismissalAnimationType = PresentationAnimationType.fromString(transitionType: dismissalAnimationType ?? "")
+    
+    presenter = PresentationPresenterManager.sharedManager().retrievePresenter(presentationAnimationType: presentationAnimationType, transitionDuration: transitionDuration)
+    presenter?.dismissalAnimationType = dismissalAnimationType
     transitioningDelegate = presenter
     modalPresentationStyle = .custom
-    if let systemTransition = animationType.systemTransition {
+    if let systemTransition = presentationAnimationType.systemTransition {
       modalTransitionStyle = systemTransition
     }
     
     var presentationConfiguration = PresentationConfiguration()
-    presentationConfiguration.modalPosition = PresentationModalPosition.fromString(position: modalPosition)
-    presentationConfiguration.modalSize = (PresentationModalSize.fromString(size: modalWidth), PresentationModalSize.fromString(size: modalHeight))
+    presentationConfiguration.modalPosition = modalPosition
+    presentationConfiguration.modalSize = modalSize
     presentationConfiguration.cornerRadius = cornerRadius
     presentationConfiguration.dismissOnTap = dismissOnTap
     presentationConfiguration.backgroundColor = backgroundColor
@@ -178,7 +205,7 @@ private extension AnimatableModalViewController {
     presentationConfiguration.shadowOpacity = shadowOpacity
     presentationConfiguration.shadowRadius = shadowRadius
     presentationConfiguration.shadowOffset = shadowOffset
-    presentationConfiguration.keyboardTranslation = ModalKeyboardTranslation.fromString(string: keyboardTranslation)
+    presentationConfiguration.keyboardTranslation = keyboardTranslation
     presenter?.presentationConfiguration = presentationConfiguration
   }
 }

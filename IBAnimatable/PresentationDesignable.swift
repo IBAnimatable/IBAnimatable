@@ -5,27 +5,25 @@
 
 import UIKit
 
+public typealias ModalSize = (width: PresentationModalSize, height: PresentationModalSize)
 /// PresentationDesignable is a protocol to define customised modal view controller which is used as the `presentedViewController` for `UIPresentationController` 
 public protocol PresentationDesignable: class {
 
   /// Presentation animation type, all supported animation type can be found in `PresentationAnimationType`
-  var presentationAnimationType: String? { get set }
+  var presentationAnimationType: PresentationAnimationType { get set }
   
   /// Dismissal animation type, all supported animation type can be found in `PresentationAnimationType`
-  var dismissalAnimationType: String? { get set }
+  var dismissalAnimationType: PresentationAnimationType { get set }
   /// Tranistion duration
   var transitionDuration: Double { get set }
   
   
   // Modal position, all supported modal position can be found in `PresentationModalPosition`
-  var modalPosition: String { get set }
+  var modalPosition: PresentationModalPosition { get set }
   
-  // Modal width, all supported modal width can be found in `PresentationModalSize`
-  var modalWidth: String { get set }
+  // Modal Size, all supported modal Sizes can be found in `PresentationModalSize`
+  var modalSize: ModalSize { get set }
   
-  // Modal height, all supported modal width can be found in `PresentationModalSize`
-  var modalHeight: String { get set }
-
   
   /// The corner radius of the modal view
   var cornerRadius: CGFloat { get set }
@@ -62,7 +60,7 @@ public protocol PresentationDesignable: class {
   var shadowOffset: CGPoint { get set }
 
   /// Modal's translation when the keyboard is opening
-  var keyboardTranslation: String? { get set }
+  var keyboardTranslation: ModalKeyboardTranslation { get set }
 
 }
 
@@ -78,7 +76,7 @@ public struct PresentationConfiguration {
   var shadowRadius: CGFloat = .nan
   var shadowOpacity: CGFloat = 0.7
   var shadowOffset: CGPoint = .zero
-  var modalPosition: PresentationModalPosition = .Center
-  var modalSize: (PresentationModalSize, PresentationModalSize) = (.Half, .Half)
-  var keyboardTranslation = ModalKeyboardTranslation.None
+  var modalPosition: PresentationModalPosition = .center
+  var modalSize: (PresentationModalSize, PresentationModalSize) = (.half, .half)
+  var keyboardTranslation = ModalKeyboardTranslation.none
 }

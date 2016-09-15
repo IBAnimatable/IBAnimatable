@@ -23,7 +23,7 @@ public extension GradientDesignable where Self: UIView {
   }
 }
 
-fileprivate extension GradientDesignable where Self: UIView  {
+fileprivate extension GradientDesignable where Self: UIView {
   func configureGradient(startColor: UIColor, endColor: UIColor) {
     // Default value is `.Top`
     
