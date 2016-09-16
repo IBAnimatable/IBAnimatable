@@ -16,7 +16,7 @@ public class ContainerTransition: NSObject {
   
   // MARK: Private
   
-  private let container: UIView?
+  private let container: UIView
   private let parentViewController: UIViewController?
   private var viewControllers: [String: UIViewController]? = nil
   private var views: [String: UIView]? = nil
@@ -72,7 +72,7 @@ public class ContainerTransition: NSObject {
 extension ContainerTransition: UIViewControllerContextTransitioning {
   
   public func containerView() -> UIView {
-    return container!
+    return container
   }
   
   public func viewControllerForKey(key: String) -> UIViewController? {

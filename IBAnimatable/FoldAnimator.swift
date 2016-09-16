@@ -143,21 +143,26 @@ private extension FoldAnimator {
   
   func createSnapshot(fromView view: UIView, afterUpdates: Bool, offset: CGFloat, left: Bool) -> UIView {
     let containerView = view.superview
-    var snapshotView: UIView
+    let snapshotView: UIView?
     var axesValues = valuesForAxe(offset, reverseValue: 0.0)
     let axesValues2 = valuesForAxe(foldSize, reverseValue: height)
     let snapshotRegion = CGRect(x: axesValues.0, y: axesValues.1, width: axesValues2.0, height: axesValues2.1)
     if !afterUpdates {
-      snapshotView = view.resizableSnapshotViewFromRect(snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: UIEdgeInsetsZero)!
+      snapshotView = view.resizableSnapshotViewFromRect(snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: UIEdgeInsetsZero)
     } else {
       axesValues = valuesForAxe(foldSize, reverseValue: height)
       snapshotView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: axesValues.0, height: axesValues.1))
-      snapshotView.backgroundColor = view.backgroundColor
-      let subSnapshotView = view.resizableSnapshotViewFromRect(snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: UIEdgeInsetsZero)
-      snapshotView.addSubview(subSnapshotView!)
+      snapshotView?.backgroundColor = view.backgroundColor
+      if let subSnapshotView = view.resizableSnapshotViewFromRect(snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: UIEdgeInsetsZero) {
+        snapshotView?.addSubview(subSnapshotView)
+      }
     }
     
-    let snapshotWithShadowView = addShadow(toView: snapshotView, reverse: left)
+    guard let toView = snapshotView else {
+      return UIView(frame: .zero)
+    }
+    
+    let snapshotWithShadowView = addShadow(toView: toView, reverse: left)
     containerView?.addSubview(snapshotWithShadowView)
     axesValues = valuesForAxe(left ? 0.0 : 1.0, reverseValue: 0.5)
     snapshotWithShadowView.layer.anchorPoint = CGPoint(x: axesValues.0, y: axesValues.1)
