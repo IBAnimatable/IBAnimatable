@@ -3,13 +3,13 @@ All notable changes to this project will be documented in this file.
 `IBAnimatable` adheres to [Semantic Versioning](http://semver.org/).
 
 ## Versions
-### Next
+### [2.8](https://github.com/IBAnimatable/IBAnimatable/releases/tag/2.8)
 
 #### API breaking changes
 None
 
 #### Enhancements
-None
+Upgrade to Swift 2.3
 
 #### Bugfixes
 None
