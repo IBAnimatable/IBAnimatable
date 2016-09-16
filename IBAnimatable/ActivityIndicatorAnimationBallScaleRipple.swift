@@ -9,21 +9,21 @@ public class ActivityIndicatorAnimationBallScaleRipple: ActivityIndicatorAnimati
 
   // MARK: Properties
 
-  private let duration: CFTimeInterval = 1
-  private let timingFunction = CAMediaTimingFunction(controlPoints: 0.21, 0.53, 0.56, 0.8)
+  fileprivate let duration: CFTimeInterval = 1
+  fileprivate let timingFunction = CAMediaTimingFunction(controlPoints: 0.21, 0.53, 0.56, 0.8)
 
   // MARK: ActivityIndicatorAnimating
 
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     let animation = self.animation
-    let circle = ActivityIndicatorShape.Ring.createLayerWith(size: size, color: color)
+    let circle = ActivityIndicatorShape.ring.makeLayer(size: size, color: color)
     let frame = CGRect(x: (layer.bounds.size.width - size.width) / 2,
                        y: (layer.bounds.size.height - size.height) / 2,
                        width: size.width,
                        height: size.height)
 
     circle.frame = frame
-    circle.addAnimation(animation, forKey: "animation")
+    circle.add(animation, forKey: "animation")
     layer.addSublayer(circle)
   }
 }
@@ -37,7 +37,7 @@ private extension ActivityIndicatorAnimationBallScaleRipple {
     animation.animations = [scaleAnimation, opacityAnimation]
     animation.duration = duration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 

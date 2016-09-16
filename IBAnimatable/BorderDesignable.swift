@@ -19,83 +19,27 @@ public protocol BorderDesignable {
   /**
    border side: Top, Right, Bottom or Left, if not specified, all border sides will display,
    */
-  var borderSide: String? { get set }
+  var borderSides: BorderSides { get set }
   
-}
-
-struct BorderSides: OptionSetType {
-  let rawValue: Int
-  
-  static let Unknown = BorderSides(rawValue: 0)
-  
-  static let Top = BorderSides(rawValue: 1)
-  static let Right = BorderSides(rawValue: 1 << 1)
-  static let Bottom = BorderSides(rawValue: 1 << 2)
-  static let Left = BorderSides(rawValue: 1 << 3)
-  
-  static let AllSides: BorderSides = [.Top, .Right, .Bottom, .Left]
-  
-  init(rawValue: Int) {
-    self.rawValue = rawValue
-  }
-  
-  init(rawValue: String?) {
-    guard let rawValue = rawValue else {
-      self = .AllSides
-      return
-    }
-    
-    guard !rawValue.isEmpty else {
-      self = .AllSides
-      return
-    }
-    
-    let sideElements = rawValue.characters.split(",")
-      .map(String.init)
-      .map { BorderSide(rawValue: $0.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())) }
-      .map { BorderSides(side:$0) }
-    
-    guard !sideElements.contains(.Unknown) else {
-      self = .AllSides
-      return
-    }
-    
-    self = BorderSides(sideElements)
-    
-  }
-  
-  init(side: BorderSide?) {
-    guard let side = side else { 
-      self = .Unknown 
-      return 
-    }
-    
-    switch side {
-    case .Top: self = .Top
-    case .Right: self = .Right
-    case .Bottom: self = .Bottom
-    case .Left: self = .Left
-    }
-  }
 }
 
 public extension BorderDesignable where Self: UITextField {
-  public func configBorder() {
+  public func configureBorder() {
     // set the borderSytle to `.None` to support single side of border
-    borderStyle = .None
+    borderStyle = .none
     commonConfigBorder()
   }
 }
 
 public extension BorderDesignable where Self: UIView {
-  public func configBorder() {
+  public func configureBorder() {
     commonConfigBorder()
   }
 }
 
 private extension BorderDesignable where Self: UIView {
   func commonConfigBorder() {
-    guard let unwrappedBorderColor = borderColor where borderWidth > 0 else {
+    guard let borderColor = borderColor, borderWidth > 0 else {
       return
     }
     
@@ -110,18 +54,18 @@ private extension BorderDesignable where Self: UIView {
       let borderLayer = CAShapeLayer()
       borderLayer.name = "borderAllSides"
       borderLayer.path = mask.path
-      borderLayer.fillColor = UIColor.clearColor().CGColor
-      borderLayer.strokeColor = unwrappedBorderColor.CGColor
+      borderLayer.fillColor = UIColor.clear.cgColor
+      borderLayer.strokeColor = borderColor.cgColor
       borderLayer.lineWidth = borderWidth
       borderLayer.frame = bounds
-      layer.insertSublayer(borderLayer, atIndex: 0)
+      layer.insertSublayer(borderLayer, at: 0)
       return
     }
     
-    let sides = BorderSides(rawValue: borderSide)
+    //let sides = BorderSides(rawValue: BorderSides)
     
-    if sides == .AllSides {
-      layer.borderColor = unwrappedBorderColor.CGColor
+    if borderSides == .AllSides {
+      layer.borderColor = borderColor.cgColor
       layer.borderWidth = borderWidth
       return
     }
@@ -131,31 +75,31 @@ private extension BorderDesignable where Self: UIView {
     border.name = "borderSideLayer"
     
     let borderPath = UIBezierPath()
-    
-    var lines:[(start: CGPoint, end: CGPoint)] = []
-    if sides.contains(.Top) {
-      lines.append((start: .zero, end: CGPoint(x: bounds.size.width, y: 0)))
+    let shift = borderWidth / 2
+    var lines: [(start: CGPoint, end: CGPoint)] = []
+    if borderSides.contains(.top) {
+      lines.append((start: CGPoint(x: 0, y: shift), end: CGPoint(x: bounds.size.width, y: shift)))
     }
-    if sides.contains(.Right) {
-      lines.append((start: CGPoint(x: bounds.size.width, y: 0), end: CGPoint(x: bounds.size.width, y: bounds.size.height)))
+    if borderSides.contains(.right) {
+      lines.append((start: CGPoint(x: bounds.size.width - shift, y: 0), end: CGPoint(x: bounds.size.width - shift, y: bounds.size.height)))
     }
-    if sides.contains(.Bottom) {
-      lines.append((start:CGPoint(x: 0, y: bounds.size.height), end: CGPoint(x: bounds.size.width, y: bounds.size.height)))
+    if borderSides.contains(.bottom) {
+      lines.append((start: CGPoint(x: 0, y: bounds.size.height - shift), end: CGPoint(x: bounds.size.width, y: bounds.size.height - shift)))
     }
-    if sides.contains(.Left) {
-      lines.append((start: .zero, end: CGPoint(x: 0, y: bounds.size.height)))
+    if borderSides.contains(.left) {
+      lines.append((start: CGPoint(x: shift, y: 0), end: CGPoint(x: shift, y: bounds.size.height)))
     }
     
     for linePoints in lines {
-      borderPath.moveToPoint(linePoints.start)
-      borderPath.addLineToPoint(linePoints.end)
+      borderPath.move(to: linePoints.start)
+      borderPath.addLine(to: linePoints.end)
     }
     
-    border.path = borderPath.CGPath
-    border.fillColor = UIColor.clearColor().CGColor
-    border.strokeColor = unwrappedBorderColor.CGColor
+    border.path = borderPath.cgPath
+    border.fillColor = UIColor.clear.cgColor
+    border.strokeColor = borderColor.cgColor
     border.lineWidth = borderWidth
     border.frame = bounds
-    layer.insertSublayer(border, atIndex: 0)
+    layer.insertSublayer(border, at: 0)
   }
 }

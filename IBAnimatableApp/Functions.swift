@@ -7,11 +7,11 @@ import Foundation
 
 // Source: https://gist.github.com/TheDarkCode/2f65c1a25d5886ed210c3b33d73fe8a9
 // Based on earlier version: http://stackoverflow.com/a/28341290/749786
-public func iterateEnum<T: Hashable>(_: T.Type) -> AnyGenerator<T> {
+public func iterateEnum<T: Hashable>(_ from: T.Type) -> AnyIterator<T> {
   var x = 0
-  return AnyGenerator {
-    let next = withUnsafePointer(&x) {
-      UnsafePointer<T>($0).memory
+  return AnyIterator {
+    let next = withUnsafePointer(to: &x) {
+      $0.withMemoryRebound(to: T.self, capacity: 1) { $0.pointee }
     }
     defer {
       x += 1

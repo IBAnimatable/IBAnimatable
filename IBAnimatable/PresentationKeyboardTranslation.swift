@@ -5,26 +5,17 @@
 
 import UIKit
 
-public enum ModalKeyboardTranslation {
-  case None
-  case MoveUp  
-  case AboveKeyboard
-
-  static public func fromString(string: String?) -> ModalKeyboardTranslation {
-    if string == "MoveUp" {
-      return .MoveUp
-    } else if string == "AboveKeyboard" {
-      return .AboveKeyboard
-    }
-    return .None
-  }
+public enum ModalKeyboardTranslation: String, IBEnum {
+  case none
+  case moveUp
+  case aboveKeyboard
 
   public func translationFrame(keyboardFrame: CGRect, presentedFrame: CGRect) -> CGRect {
-    let keyboardMinY = UIScreen.mainScreen().bounds.height - keyboardFrame.height    
+    let keyboardMinY = UIScreen.main.bounds.height - keyboardFrame.height    
     var frame = presentedFrame
     switch self {
-    case .MoveUp: frame.origin.y -= keyboardFrame.height; break
-    case .AboveKeyboard: frame.origin.y = keyboardMinY - presentedFrame.height - 20
+    case .moveUp: frame.origin.y -= keyboardFrame.height; break
+    case .aboveKeyboard: frame.origin.y = keyboardMinY - presentedFrame.height - 20
     default: break
     }
     return frame

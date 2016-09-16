@@ -9,17 +9,17 @@ public class ActivityIndicatorAnimationBallScaleRippleMultiple: ActivityIndicato
 
   // MARK: Properties
 
-  private let duration: CFTimeInterval = 1.25
-  private let timingFunction = CAMediaTimingFunction(controlPoints: 0.21, 0.53, 0.56, 0.8)
+  fileprivate let duration: CFTimeInterval = 1.25
+  fileprivate let timingFunction = CAMediaTimingFunction(controlPoints: 0.21, 0.53, 0.56, 0.8)
 
   // MARK: ActivityIndicatorAnimating
 
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
         let beginTime = CACurrentMediaTime()
         let beginTimes = [0.0, 0.2, 0.4]
         let animation = self.animation
         for i in 0 ..< 3 {
-            let circle = ActivityIndicatorShape.Ring.createLayerWith(size: size, color: color)
+            let circle = ActivityIndicatorShape.ring.makeLayer(size: size, color: color)
             let frame = CGRect(x: (layer.bounds.size.width - size.width) / 2,
                 y: (layer.bounds.size.height - size.height) / 2,
                 width: size.width,
@@ -27,7 +27,7 @@ public class ActivityIndicatorAnimationBallScaleRippleMultiple: ActivityIndicato
             
             animation.beginTime = beginTime + beginTimes[i]
             circle.frame = frame
-            circle.addAnimation(animation, forKey: "animation")
+            circle.add(animation, forKey: "animation")
             layer.addSublayer(circle)
         }
     }
@@ -42,7 +42,7 @@ private extension ActivityIndicatorAnimationBallScaleRippleMultiple {
     animation.animations = [scaleAnimation, opacityAnimation]
     animation.duration = duration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 

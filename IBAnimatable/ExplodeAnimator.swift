@@ -13,50 +13,50 @@ public class ExplodeAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
-  private var xFactor: CGFloat = 10.0
-  private var minAngle: CGFloat = -10.0
-  private var maxAngle: CGFloat = 10.0
+  fileprivate var xFactor: CGFloat = 10.0
+  fileprivate var minAngle: CGFloat = -10.0
+  fileprivate var maxAngle: CGFloat = 10.0
   
-  public init(params: [String], transitionDuration: Duration) {
+  public init(xFactor: CGFloat?, minAngle: CGFloat?, maxAngle: CGFloat?, transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
-    self.transitionAnimationType = .Explode(params: params)
-    self.reverseAnimationType = .Explode(params: params)
-    
-    if params.count == 3 {
-      if let unwrappedXFactor = Double(params[0]),
-             unwrappedMinAngle = Double(params[1]),
-             unwrappedMaxAngle = Double(params[2]) {
-        self.xFactor = CGFloat(unwrappedXFactor)
-        self.minAngle = CGFloat(unwrappedMinAngle)
-        self.maxAngle = CGFloat(unwrappedMaxAngle)
-      }
+    if let xFactor = xFactor {
+      self.xFactor = xFactor
     }
+    if let minAngle = minAngle {
+      self.minAngle = minAngle
+    }
+    if let maxAngle = maxAngle {
+      self.maxAngle = maxAngle
+    }
+    
+    self.transitionAnimationType = .explode(xFactor: self.xFactor, minAngle: self.minAngle, maxAngle: self.maxAngle)
+    self.reverseAnimationType = .explode(xFactor: self.xFactor, minAngle: self.minAngle, maxAngle: self.maxAngle)
     super.init()
   }
 }
 
 extension ExplodeAnimator: UIViewControllerAnimatedTransitioning {
-  public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-    return retrieveTransitionDuration(transitionContext)
+  public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    return retrieveTransitionDuration(transitionContext: transitionContext)
   }
   
-  public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-    let (tempfromView, tempToView, tempContainerView) = retrieveViews(transitionContext)
-    guard let fromView = tempfromView, toView = tempToView, containerView = tempContainerView else {
+  public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+    let (tempfromView, tempToView, tempContainerView) = retrieveViews(transitionContext: transitionContext)
+    guard let fromView = tempfromView, let toView = tempToView, let containerView = tempContainerView else {
       transitionContext.completeTransition(true)
       return
     }
     
-    containerView.insertSubview(toView, atIndex: 0)
+    containerView.insertSubview(toView, at: 0)
     
-    let snapshots = createSnapshots(toView: toView, fromView: fromView, containerView: containerView)
-    containerView.sendSubviewToBack(fromView)
+    let snapshots = makeSnapshots(toView: toView, fromView: fromView, containerView: containerView)
+    containerView.sendSubview(toBack: fromView)
     animateSnapshotsExplode(snapshots) {
-      if transitionContext.transitionWasCancelled() {
-        containerView.bringSubviewToFront(fromView)
+      if transitionContext.transitionWasCancelled {
+        containerView.bringSubview(toFront: fromView)
       }
       
-      transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+      transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
     }
   }
   
@@ -64,34 +64,34 @@ extension ExplodeAnimator: UIViewControllerAnimatedTransitioning {
 
 private extension ExplodeAnimator {
   
-  func createSnapshots(toView toView: UIView, fromView: UIView, containerView: UIView) -> [UIView] {
+  func makeSnapshots(toView: UIView, fromView: UIView, containerView: UIView) -> [UIView] {
     let size = toView.frame.size
     var snapshots = [UIView]()
     let yFactor = xFactor * size.height / size.width
     
-    let fromViewSnapshot = fromView.snapshotViewAfterScreenUpdates(false)
-    for x in 0.0.stride(to: Double(size.width), by: Double(size.width / xFactor)) {
-      for y in 0.0.stride(to: Double(size.height), by: Double(size.width / yFactor)) {
+    let fromViewSnapshot = fromView.snapshotView(afterScreenUpdates: false)
+    for x in stride(from: 0.0, to: Double(size.width), by: Double(size.width / xFactor)) {
+      for y in stride(from: 0.0, to: Double(size.height), by: Double(size.width / yFactor)) {
         let snapshotRegion = CGRect(x: CGFloat(x), y: CGFloat(y), width: size.width / xFactor, height: size.height / yFactor)
-        let snapshot = fromViewSnapshot.resizableSnapshotViewFromRect(snapshotRegion, afterScreenUpdates: false, withCapInsets: UIEdgeInsetsZero)
-        snapshot.frame = snapshotRegion
-        containerView.addSubview(snapshot)
-        snapshots.append(snapshot)
+        let snapshot = fromViewSnapshot?.resizableSnapshotView(from: snapshotRegion, afterScreenUpdates: false, withCapInsets: .zero)
+        snapshot?.frame = snapshotRegion
+        containerView.addSubview(snapshot!)
+        snapshots.append(snapshot!)
       }
     }
     return snapshots
   }
   
-  func animateSnapshotsExplode(snapshots: [UIView], completion: AnimatableCompletion) {
-    UIView.animateWithDuration(transitionDuration, animations: {
+  func animateSnapshotsExplode(_ snapshots: [UIView], completion: @escaping AnimatableCompletion) {
+    UIView.animate(withDuration: transitionDuration, animations: {
       snapshots.forEach {
-        let xOffset = self.randomFloatBetween(lower: -100.0, upper: 100.0)
-        let yOffset = self.randomFloatBetween(lower: -100.0, upper: 100.0)
-        let angle = self.randomFloatBetween(lower: self.minAngle, upper: self.maxAngle)
+        let xOffset = self.randomFloat(from: -100.0, to: 100.0)
+        let yOffset = self.randomFloat(from: -100.0, to: 100.0)
+        let angle = self.randomFloat(from: self.minAngle, to: self.maxAngle)
 
-        let translateTransform = CGAffineTransformMakeTranslation($0.frame.origin.x - xOffset, $0.frame.origin.y - yOffset)
-        let angleTransform = CGAffineTransformRotate(translateTransform, angle)
-        let scaleTransform = CGAffineTransformScale(angleTransform, 0.01, 0.01)
+        let translateTransform = CGAffineTransform(translationX: $0.frame.origin.x - xOffset, y: $0.frame.origin.y - yOffset)
+        let angleTransform = translateTransform.rotated(by: angle)
+        let scaleTransform = angleTransform.scaledBy(x: 0.01, y: 0.01)
         
         $0.transform = scaleTransform
         $0.alpha = 0.0
@@ -103,7 +103,7 @@ private extension ExplodeAnimator {
     })
   }
   
-  func randomFloatBetween(lower lower: CGFloat, upper: CGFloat) -> CGFloat {
+  func randomFloat(from lower: CGFloat, to upper: CGFloat) -> CGFloat {
     return CGFloat(arc4random_uniform(UInt32(upper - lower))) + lower
   }
   

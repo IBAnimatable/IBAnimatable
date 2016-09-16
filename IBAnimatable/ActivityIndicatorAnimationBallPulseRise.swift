@@ -9,13 +9,13 @@ public class ActivityIndicatorAnimationBallPulseRise: ActivityIndicatorAnimating
 
   // MARK: Properties
 
-  private let duration: CFTimeInterval = 1
-  private var deltaY: CGFloat = 0
-  private let timingFunction = CAMediaTimingFunction(controlPoints: 0.15, 0.46, 0.9, 0.6)
+  fileprivate let duration: CFTimeInterval = 1
+  fileprivate var deltaY: CGFloat = 0
+  fileprivate let timingFunction = CAMediaTimingFunction(controlPoints: 0.15, 0.46, 0.9, 0.6)
 
   // MARK: ActivityIndicatorAnimating
 
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     let circleSpacing: CGFloat = 2
     let circleSize = (size.width - 4 * circleSpacing) / 5
     let x = (layer.bounds.size.width - size.width) / 2
@@ -25,7 +25,7 @@ public class ActivityIndicatorAnimationBallPulseRise: ActivityIndicatorAnimating
     let oddAnimation = self.oddAnimation
     let evenAnimation = self.evenAnimation
     for i in 0 ..< 5 {
-      let circle = ActivityIndicatorShape.Circle.createLayerWith(size: CGSize(width: circleSize, height: circleSize), color: color)
+      let circle = ActivityIndicatorShape.circle.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
       let frame = CGRect(x: x + circleSize * CGFloat(i) + circleSpacing * CGFloat(i),
                          y: y,
                          width: circleSize,
@@ -33,9 +33,9 @@ public class ActivityIndicatorAnimationBallPulseRise: ActivityIndicatorAnimating
 
       circle.frame = frame
       if i % 2 == 0 {
-        circle.addAnimation(evenAnimation, forKey: "animation")
+        circle.add(evenAnimation, forKey: "animation")
       } else {
-        circle.addAnimation(oddAnimation, forKey: "animation")
+        circle.add(oddAnimation, forKey: "animation")
       }
       layer.addSublayer(circle)
     }
@@ -54,7 +54,7 @@ private extension ActivityIndicatorAnimationBallPulseRise {
     animation.animations = [scaleAnimation, translateAnimation]
     animation.duration = duration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 
@@ -89,7 +89,7 @@ private extension ActivityIndicatorAnimationBallPulseRise {
     animation.animations = [scaleAnimation, translateAnimation]
     animation.duration = duration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 

@@ -5,13 +5,13 @@
 
 import Foundation
 
-public enum GradientStartPoint: String {
-  case Top
-  case TopRight
-  case Right
-  case BottomRight
-  case Bottom
-  case BottomLeft
-  case Left
-  case TopLeft
+public enum GradientStartPoint: String, IBEnum {
+  case top
+  case topRight
+  case right
+  case bottomRight
+  case bottom
+  case bottomLeft
+  case left
+  case topLeft
 }

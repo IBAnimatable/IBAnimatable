@@ -5,37 +5,46 @@
 
 import UIKit
 
-public class AnimatableNavigationController: UINavigationController, TransitionAnimatable {
+open class AnimatableNavigationController: UINavigationController, TransitionAnimatable {
   
   // MARK: - TransitionAnimatable
-  @IBInspectable public var transitionAnimationType: String? {
+  @IBInspectable  var _transitionAnimationType: String? {
+    didSet {
+      if let _transitionAnimationType = _transitionAnimationType {
+        transitionAnimationType = TransitionAnimationType(string: _transitionAnimationType)
+      }
+    }
+  }
+   open var transitionAnimationType: TransitionAnimationType = .none {
     didSet {
       configureNavigationControllerDelegate()
     }
   }
-  @IBInspectable public var transitionDuration: Double = .NaN {
+  @IBInspectable open var transitionDuration: Double = .nan {
     didSet {
       configureNavigationControllerDelegate()
     }
   }
-  @IBInspectable public var interactiveGestureType: String? {
+  open var interactiveGestureType: InteractiveGestureType = .none {
     didSet {
       configureNavigationControllerDelegate()
     }
   }
-  
-  // MARK: - Lifecylce
-  public override func viewDidLoad() {
-    super.viewDidLoad()
-    configureNavigationControllerDelegate()
+
+  @IBInspectable var _interactiveGestureType: String? {
+    didSet {
+      if let _interactiveGestureType = _interactiveGestureType {
+        interactiveGestureType = InteractiveGestureType(string: _interactiveGestureType)
+      }
+    }
   }
   
   // MARK: - Private
   // Must have a property to keep the reference alive because `UINavigationController.delegate` is `weak`
-  private var navigator: Navigator?
+  fileprivate var navigator: Navigator?
   
-  private func configureNavigationControllerDelegate() {
-    guard let transitionAnimationType = transitionAnimationType, animationType = TransitionAnimationType.fromString(transitionAnimationType) else {
+  fileprivate func configureNavigationControllerDelegate() {
+    if case .none = transitionAnimationType {
       navigator = nil
       delegate = nil
       return
@@ -45,10 +54,11 @@ public class AnimatableNavigationController: UINavigationController, TransitionA
     if transitionDuration.isNaN {
       duration = defaultTransitionDuration
     }
-    if let interactiveGestureType = interactiveGestureType, gestureType = InteractiveGestureType.fromString(interactiveGestureType) {
-      navigator = Navigator(transitionAnimationType: animationType, transitionDuration: duration, interactiveGestureType: gestureType)
+    
+    if case .none = interactiveGestureType {
+      navigator = Navigator(transitionAnimationType: transitionAnimationType, transitionDuration: duration)
     } else {
-      navigator = Navigator(transitionAnimationType: animationType, transitionDuration: duration)
+      navigator = Navigator(transitionAnimationType: transitionAnimationType, transitionDuration: duration, interactiveGestureType: interactiveGestureType)
     }
     delegate = navigator
   }

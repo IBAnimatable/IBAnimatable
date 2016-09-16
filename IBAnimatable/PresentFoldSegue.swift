@@ -5,9 +5,10 @@
 
 import UIKit
 
-public class PresentFoldSegue: UIStoryboardSegue {
-  public override func perform() {
-    destinationViewController.transitioningDelegate = TransitionPresenterManager.sharedManager().retrievePresenter(.Fold(fromDirection: .Left, params: []))
-    sourceViewController.presentViewController(destinationViewController, animated: true, completion: nil)
+open class PresentFoldSegue: UIStoryboardSegue {
+  open override func perform() {
+    
+    destination.transitioningDelegate = TransitionPresenterManager.sharedManager().retrievePresenter(transitionAnimationType: .fold(from: .left, folds: nil))
+    source.present(destination, animated: true, completion: nil)
   }
 }

@@ -7,143 +7,167 @@ import UIKit
 
 // FIXME: almost same as `AnimatableView`, Need to refactor to encasuplate.
 @available(iOS 9, *)
-@IBDesignable public class AnimatableStackView: UIStackView, CornerDesignable, FillDesignable, BorderDesignable, RotationDesignable, ShadowDesignable, TintDesignable, GradientDesignable, MaskDesignable, Animatable {
+@IBDesignable open class AnimatableStackView: UIStackView, CornerDesignable, FillDesignable, BorderDesignable, RotationDesignable, ShadowDesignable, TintDesignable, GradientDesignable, MaskDesignable, Animatable {
   
   // MARK: - CornerDesignable
-  @IBInspectable public var cornerRadius: CGFloat = CGFloat.NaN {
+  @IBInspectable open var cornerRadius: CGFloat = CGFloat.nan {
     didSet {
-      configCornerRadius()
+      configureCornerRadius()
     }
   }
   
   // MARK: - FillDesignable
-  @IBInspectable public var fillColor: UIColor? {
+  @IBInspectable open var fillColor: UIColor? {
     didSet {
-      configFillColor()
+      configureFillColor()
     }
   }
   
-  @IBInspectable public var predefinedColor: String? {
+  @IBInspectable open var predefinedColor: String? {
     didSet {
-      configFillColor()
+      configureFillColor()
     }
   }
   
-  @IBInspectable public var opacity: CGFloat = CGFloat.NaN {
+  @IBInspectable open var opacity: CGFloat = CGFloat.nan {
     didSet {
-      configOpacity()
+      configureOpacity()
     }
   }
   
   // MARK: - BorderDesignable
-  @IBInspectable public var borderColor: UIColor? {
+  @IBInspectable open var borderColor: UIColor? {
     didSet {
-      configBorder()
+      configureBorder()
     }
   }
   
-  @IBInspectable public var borderWidth: CGFloat = CGFloat.NaN {
+  @IBInspectable open var borderWidth: CGFloat = CGFloat.nan {
     didSet {
-      configBorder()
+      configureBorder()
     }
   }
   
-  @IBInspectable public var borderSide: String? {
+  open var borderSides: BorderSides  = .AllSides {
     didSet {
-      configBorder()
+      configureBorder()
     }
   }
   
+  @IBInspectable var _borderSides: String? {
+    didSet {
+      borderSides = BorderSides(rawValue: _borderSides)
+    }
+  }  
   // MARK: - RotationDesignable
-  @IBInspectable public var rotate: CGFloat = CGFloat.NaN {
+  @IBInspectable open var rotate: CGFloat = CGFloat.nan {
     didSet {
-      configRotate()
+      configureRotate()
     }
   }
   
   // MARK: - ShadowDesignable
-  @IBInspectable public var shadowColor: UIColor? {
+  @IBInspectable open var shadowColor: UIColor? {
     didSet {
-      configShadowColor()
+      configureShadowColor()
     }
   }
   
-  @IBInspectable public var shadowRadius: CGFloat = CGFloat.NaN {
+  @IBInspectable open var shadowRadius: CGFloat = CGFloat.nan {
     didSet {
-      configShadowRadius()
+      configureShadowRadius()
     }
   }
   
-  @IBInspectable public var shadowOpacity: CGFloat = CGFloat.NaN {
+  @IBInspectable open var shadowOpacity: CGFloat = CGFloat.nan {
     didSet {
-      configShadowOpacity()
+      configureShadowOpacity()
     }
   }
   
-  @IBInspectable public var shadowOffset: CGPoint = CGPoint(x: CGFloat.NaN, y: CGFloat.NaN) {
+  @IBInspectable open var shadowOffset: CGPoint = CGPoint(x: CGFloat.nan, y: CGFloat.nan) {
     didSet {
-      configShadowOffset()
+      configureShadowOffset()
     }
   }
-    
+  
   // MARK: - TintDesignable
-  @IBInspectable public var tintOpacity: CGFloat = CGFloat.NaN
-  @IBInspectable public var shadeOpacity: CGFloat = CGFloat.NaN
-  @IBInspectable public var toneColor: UIColor?
-  @IBInspectable public var toneOpacity: CGFloat = CGFloat.NaN
+  @IBInspectable open var tintOpacity: CGFloat = CGFloat.nan
+  @IBInspectable open var shadeOpacity: CGFloat = CGFloat.nan
+  @IBInspectable open var toneColor: UIColor?
+  @IBInspectable open var toneOpacity: CGFloat = CGFloat.nan
   
   // MARK: - GradientDesignable
-  @IBInspectable public var startColor: UIColor?
-  @IBInspectable public var endColor: UIColor?
-  @IBInspectable public var predefinedGradient: String?
-  @IBInspectable public var startPoint: String?
-  
-  // MARK: - MaskDesignable
-  @IBInspectable public var maskType: String? {
+  @IBInspectable open var startColor: UIColor?
+  @IBInspectable open var endColor: UIColor?
+  open var predefinedGradient: GradientType?
+  @IBInspectable var _predefinedGradient: String? {
     didSet {
-      configMask()
-      configBorder()      
+      predefinedGradient = GradientType(string: _predefinedGradient)
+    }
+  }
+  open var startPoint: GradientStartPoint = .top
+  @IBInspectable var _startPoint: String? {
+    didSet {
+      startPoint = GradientStartPoint(string: _startPoint, default: .top)
     }
   }
   
+  // MARK: - MaskDesignable
+  open var maskType: MaskType = .none {
+    didSet {
+      configureMask()
+      configureBorder()
+    }
+  }
+  
+  /// The mask type used in Interface Builder. **Should not** use this property in code.
+  @IBInspectable var _maskType: String? {
+    didSet {
+      maskType = MaskType(string: _maskType)
+    }
+  }
+
   // MARK: - Animatable
-  @IBInspectable public var animationType: String?
-  @IBInspectable public var autoRun: Bool = true
-  @IBInspectable public var duration: Double = Double.NaN
-  @IBInspectable public var delay: Double = Double.NaN
-  @IBInspectable public var damping: CGFloat = CGFloat.NaN
-  @IBInspectable public var velocity: CGFloat = CGFloat.NaN
-  @IBInspectable public var force: CGFloat = CGFloat.NaN
-  @IBInspectable public var repeatCount: Float = Float.NaN
-  @IBInspectable public var x: CGFloat = CGFloat.NaN
-  @IBInspectable public var y: CGFloat = CGFloat.NaN
+  open var animationType: AnimationType = .none
+  @IBInspectable  var _animationType: String? {
+    didSet {
+     animationType = AnimationType(string: _animationType)
+    }
+  }
+  @IBInspectable open var autoRun: Bool = true
+  @IBInspectable open var duration: Double = Double.nan
+  @IBInspectable open var delay: Double = Double.nan
+  @IBInspectable open var damping: CGFloat = CGFloat.nan
+  @IBInspectable open var velocity: CGFloat = CGFloat.nan
+  @IBInspectable open var force: CGFloat = CGFloat.nan
   
   // MARK: - Lifecycle
-  public override func prepareForInterfaceBuilder() {
+  open override func prepareForInterfaceBuilder() {
     super.prepareForInterfaceBuilder()
-    configInspectableProperties()
+    configureInspectableProperties()
   }
   
-  public override func awakeFromNib() {
+  open override func awakeFromNib() {
     super.awakeFromNib()
-    configInspectableProperties()
+    configureInspectableProperties()
   }
   
-  public override func layoutSubviews() {
+  open override func layoutSubviews() {
     super.layoutSubviews()
-    configAfterLayoutSubviews()
+    configureAfterLayoutSubviews()
     autoRunAnimation()
   }
   
   // MARK: - Private
-  private func configInspectableProperties() {
-    configAnimatableProperties()
-    configTintedColor()    
+  fileprivate func configureInspectableProperties() {
+    configureAnimatableProperties()
+    configureTintedColor()
   }
   
-  private func configAfterLayoutSubviews() {
-    configMask()
-    configBorder()
-    configGradient()
+  fileprivate func configureAfterLayoutSubviews() {
+    configureMask()
+    configureBorder()
+    configureGradient()
   }
 }

@@ -13,29 +13,29 @@ public class SystemMoveInAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
-  private var fromDirection: TransitionDirection
+  fileprivate var fromDirection: TransitionAnimationType.Direction
   
-  public init(fromDirection: TransitionDirection, transitionDuration: Duration) {
-    self.fromDirection = fromDirection
+  public init(from direction: TransitionAnimationType.Direction, transitionDuration: Duration) {
+    fromDirection = direction
     self.transitionDuration = transitionDuration
     
     switch fromDirection {
-    case .Right:
-      self.transitionAnimationType = .SystemMoveIn(fromDirection: .Right)
-      self.reverseAnimationType = .SystemMoveIn(fromDirection: .Left)
-      self.interactiveGestureType = .Pan(fromDirection: .Left)
-    case .Top:
-      self.transitionAnimationType = .SystemMoveIn(fromDirection: .Top)
-      self.reverseAnimationType = .SystemMoveIn(fromDirection: .Bottom)
-      self.interactiveGestureType = .Pan(fromDirection: .Bottom)
-    case .Bottom:
-      self.transitionAnimationType = .SystemMoveIn(fromDirection: .Bottom)
-      self.reverseAnimationType = .SystemMoveIn(fromDirection: .Top)
-      self.interactiveGestureType = .Pan(fromDirection: .Top)
+    case .right:
+      self.transitionAnimationType = .systemMoveIn(from: .right)
+      self.reverseAnimationType = .systemMoveIn(from: .left)
+      self.interactiveGestureType = .pan(from: .left)
+    case .top:
+      self.transitionAnimationType = .systemMoveIn(from: .top)
+      self.reverseAnimationType = .systemMoveIn(from: .bottom)
+      self.interactiveGestureType = .pan(from: .bottom)
+    case .bottom:
+      self.transitionAnimationType = .systemMoveIn(from: .bottom)
+      self.reverseAnimationType = .systemMoveIn(from: .top)
+      self.interactiveGestureType = .pan(from: .top)
     default:
-      self.transitionAnimationType = .SystemMoveIn(fromDirection: .Left)
-      self.reverseAnimationType = .SystemMoveIn(fromDirection: .Right)
-      self.interactiveGestureType = .Pan(fromDirection: .Right)
+      self.transitionAnimationType = .systemMoveIn(from: .left)
+      self.reverseAnimationType = .systemMoveIn(from: .right)
+      self.interactiveGestureType = .pan(from: .right)
     }
     
     super.init()
@@ -43,11 +43,11 @@ public class SystemMoveInAnimator: NSObject, AnimatedTransitioning {
 }
 
 extension SystemMoveInAnimator: UIViewControllerAnimatedTransitioning {
-  public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-    return retrieveTransitionDuration(transitionContext)
+  public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    return retrieveTransitionDuration(transitionContext: transitionContext)
   }
   
-  public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-    animateWithCATransition(transitionContext, type: SystemTransitionType.MoveIn, subtype: fromDirection.CATransitionSubtype)
+  public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+    animateWithCATransition(transitionContext: transitionContext, type: TransitionAnimationType.SystemTransitionType.moveIn, subtype: fromDirection.caTransitionSubtype)
   }
 }

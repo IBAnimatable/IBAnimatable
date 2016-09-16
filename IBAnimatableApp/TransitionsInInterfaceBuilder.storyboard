@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="EUy-AH-IJE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EUy-AH-IJE">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Animatable View Controller-->
@@ -18,19 +19,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EY3-a7-f4G">
-                                <rect key="frame" x="36" y="191" width="303" height="220"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dz1-Bg-cTz" userLabel="Present button" customClass="AnimatableButton" customModule="IBAnimatable">
-                                        <rect key="frame" x="0.0" y="0.0" width="303" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="d2C-XQ-aOL"/>
                                         </constraints>
                                         <state key="normal" title="Tap to present">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.72941176470000002" green="0.46666666670000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -38,27 +37,25 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHf-qd-c7a" userLabel="Present button" customClass="AnimatableButton" customModule="IBAnimatable">
-                                        <rect key="frame" x="0.0" y="80" width="303" height="60"/>
                                         <state key="normal" title="Tap to present via segue">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.72941176470000002" green="0.46666666670000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="QTk-dN-RSb" kind="custom" customClass="PresentPortalWithDismissInteractionSegue" customModule="IBAnimatable" id="ZP9-5j-fle"/>
+                                            <segue destination="QTk-dN-RSb" kind="custom" customClass="PresentPortalWithDismissInteractionSegue" customModule="IBAnimatable" id="eWj-gh-gIp"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z86-aB-NQh" userLabel="Push button" customClass="AnimatableButton" customModule="IBAnimatable">
-                                        <rect key="frame" x="0.0" y="160" width="303" height="60"/>
                                         <state key="normal" title="Tap to push">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.72941176470000002" green="0.46666666670000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -72,39 +69,38 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="EY3-a7-f4G" firstAttribute="centerY" secondItem="2oI-EM-VaK" secondAttribute="centerY" id="3hG-H8-8du"/>
                             <constraint firstItem="EY3-a7-f4G" firstAttribute="leading" secondItem="2oI-EM-VaK" secondAttribute="leadingMargin" constant="20" id="nUv-ay-xKb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EY3-a7-f4G" secondAttribute="trailing" constant="20" id="ukc-uX-oZy"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="predefinedColor" value="FlatGreenSea"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="predefinedColor" value="flatGreenSea"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="v0Z-TM-7Am">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="7St-dx-aSb">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="jsv-bL-ifc" kind="unwind" unwindAction="dismissCurrentViewController:" id="X88-Vw-df8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="transitionAnimationType" value="Explode"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="transitionDuration">
+                        <userDefinedRuntimeAttribute type="string" keyPath="_transitionAnimationType" value="Explode"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="_transitionDuration">
                             <real key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="string" keyPath="interactiveGestureType" value="Pan(Left)"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="_interactiveGestureType" value="Pan(Left)"/>
                     </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OYQ-Df-93j" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="jsv-bL-ifc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="868.5" y="360.5"/>
+            <point key="canvasLocation" x="632" y="360"/>
         </scene>
         <!--Animatable View Controller-->
         <scene sceneID="fHv-DU-F1a">
@@ -119,30 +115,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmG-2t-thM">
-                                <rect key="frame" x="67.5" y="313" width="240.5" height="41"/>
                                 <string key="text">Wondering how to come back? 
 Did you try some gestures?</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vmG-2t-thM" firstAttribute="centerX" secondItem="Goa-e7-hdb" secondAttribute="centerX" id="JEo-eY-iWh"/>
                             <constraint firstItem="vmG-2t-thM" firstAttribute="centerY" secondItem="Goa-e7-hdb" secondAttribute="centerY" id="wci-8S-MIC"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="predefinedColor" value="FlatAlizarin"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="predefinedColor" value="flatAlizarin"/>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="transitionAnimationType" value="Explode"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="transitionDuration">
+                        <userDefinedRuntimeAttribute type="string" keyPath="_transitionAnimationType" value="Explode"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="_transitionDuration">
                             <real key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="string" keyPath="interactiveGestureType" value="Pan(Left)"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="_interactiveGestureType" value="Pan(Left)"/>
                     </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7mP-MC-00R" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -162,30 +156,28 @@ Did you try some gestures?</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4o-9k-Mjd">
-                                <rect key="frame" x="67.5" y="313" width="240.5" height="41"/>
                                 <string key="text">Wondering how to come back? 
 Did you try a pinch?</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="w4o-9k-Mjd" firstAttribute="centerX" secondItem="Tke-p6-rQ1" secondAttribute="centerX" id="VcS-Ov-gcN"/>
                             <constraint firstItem="w4o-9k-Mjd" firstAttribute="centerY" secondItem="Tke-p6-rQ1" secondAttribute="centerY" id="hgF-NA-KCZ"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="predefinedColor" value="FlatPeterRiver"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="predefinedColor" value="flatPeterRiver"/>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="transitionAnimationType" value="Explode"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="transitionDuration">
+                        <userDefinedRuntimeAttribute type="string" keyPath="_transitionAnimationType" value="Explode"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="_transitionDuration">
                             <real key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="string" keyPath="interactiveGestureType" value="Pan(Left)"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="_interactiveGestureType" value="Pan(Left)"/>
                     </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AVJ-39-VNw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -203,46 +195,44 @@ Did you try a pinch?</string>
                     <view key="view" contentMode="scaleToFill" id="Eye-3m-W9E" customClass="AnimatableView" customModule="IBAnimatable">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="predefinedColor" value="FlatOrange"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="predefinedColor" value="flatOrange"/>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="transitionAnimationType" value="Explode"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="transitionDuration">
+                        <userDefinedRuntimeAttribute type="string" keyPath="_transitionAnimationType" value="Explode"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="_transitionDuration">
                             <real key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="string" keyPath="interactiveGestureType" value="Pan(Left)"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="_interactiveGestureType" value="Pan(Left)"/>
                     </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Uy-GK-TiJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="868.5" y="1128.5"/>
+            <point key="canvasLocation" x="632" y="1145"/>
         </scene>
         <!--Animatable Navigation Controller-->
         <scene sceneID="WCI-9v-Ho1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EUy-AH-IJE" customClass="AnimatableNavigationController" customModule="IBAnimatable" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="pzy-Op-s2k" customClass="DesignableNavigationBar" customModule="IBAnimatable">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.72941176470000002" green="0.46666666670000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="solidColor" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="transitionDuration">
+                        <userDefinedRuntimeAttribute type="number" keyPath="_transitionDuration">
                             <real key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="string" keyPath="transitionAnimationType" value="SystemCube(Right)"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="interactiveGestureType" value="Default"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="_transitionAnimationType" value="SystemCube(Right)"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="_interactiveGestureType" value="Default"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="5ps-L0-bib" kind="relationship" relationship="rootViewController" id="k1Y-a3-5dC"/>
@@ -250,7 +240,7 @@ Did you try a pinch?</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4r-AY-Keq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="400.5" y="360.5"/>
+            <point key="canvasLocation" x="-41" y="360"/>
         </scene>
     </scenes>
 </document>

@@ -9,22 +9,22 @@ public class ActivityIndicatorAnimationBallClipRotate: ActivityIndicatorAnimatin
 
   // MARK: Properties
 
-  private let duration: CFTimeInterval = 0.75
+  fileprivate let duration: CFTimeInterval = 0.75
 
   // MARK: ActivityIndicatorAnimating
 
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     let animation = self.animation
 
     // Draw circle
-    let circle = ActivityIndicatorShape.RingThirdFour.createLayerWith(size: CGSize(width: size.width, height: size.height), color: color)
+    let circle = ActivityIndicatorShape.ringThirdFour.makeLayer(size: CGSize(width: size.width, height: size.height), color: color)
     let frame = CGRect(x: (layer.bounds.size.width - size.width) / 2,
                        y: (layer.bounds.size.height - size.height) / 2,
                        width: size.width,
                        height: size.height)
 
     circle.frame = frame
-    circle.addAnimation(animation, forKey: "animation")
+    circle.add(animation, forKey: "animation")
     layer.addSublayer(circle)
   }
 
@@ -44,7 +44,7 @@ private extension ActivityIndicatorAnimationBallClipRotate {
   var rotateAnimation: CAKeyframeAnimation {
     let rotateAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
     rotateAnimation.keyTimes = scaleAnimation.keyTimes
-    rotateAnimation.values = [0, M_PI, 2 * M_PI]
+    rotateAnimation.values = [0, CGFloat.pi, 2 * CGFloat.pi]
     return rotateAnimation
   }
 
@@ -54,7 +54,7 @@ private extension ActivityIndicatorAnimationBallClipRotate {
     animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
     animation.duration = duration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
   

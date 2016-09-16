@@ -9,18 +9,18 @@ public class ActivityIndicatorAnimationBallScale: ActivityIndicatorAnimating {
 
   // MARK: Properties
 
-  private let duration: CFTimeInterval = 1
+  fileprivate let duration: CFTimeInterval = 1
 
   // MARK: ActivityIndicatorAnimating
 
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     let animation = self.animation
-    let circle = ActivityIndicatorShape.Circle.createLayerWith(size: size, color: color)
+    let circle = ActivityIndicatorShape.circle.makeLayer(size: size, color: color)
     circle.frame = CGRect(x: (layer.bounds.size.width - size.width) / 2,
                           y: (layer.bounds.size.height - size.height) / 2,
                           width: size.width,
                           height: size.height)
-    circle.addAnimation(animation, forKey: "animation")
+    circle.add(animation, forKey: "animation")
     layer.addSublayer(circle)
   }
 }
@@ -35,7 +35,7 @@ private extension ActivityIndicatorAnimationBallScale {
     animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
     animation.duration = duration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 

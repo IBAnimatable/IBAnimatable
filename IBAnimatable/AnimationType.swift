@@ -4,62 +4,122 @@
 //
 
 import Foundation
+import UIKit
 
 /**
  Predefined Animation Type
  */
-public enum AnimationType: String {
-  case SlideInLeft
-  case SlideInRight
-  case SlideInDown
-  case SlideInUp
-  case SlideOutLeft
-  case SlideOutRight
-  case SlideOutDown
-  case SlideOutUp
-  case SqueezeInLeft
-  case SqueezeInRight
-  case SqueezeInDown
-  case SqueezeInUp
-  case SqueezeOutLeft
-  case SqueezeOutRight
-  case SqueezeOutDown
-  case SqueezeOutUp
-  case FadeIn
-  case FadeOut
-  case FadeOutIn
-  case FadeInOut
-  case FadeInLeft
-  case FadeInRight
-  case FadeInDown
-  case FadeInUp
-  case FadeOutLeft
-  case FadeOutRight
-  case FadeOutDown
-  case FadeOutUp
-  case SqueezeFadeInLeft
-  case SqueezeFadeInRight
-  case SqueezeFadeInDown
-  case SqueezeFadeInUp
-  case SqueezeFadeOutLeft
-  case SqueezeFadeOutRight
-  case SqueezeFadeOutDown
-  case SqueezeFadeOutUp
-  case ZoomIn
-  case ZoomOut
-  case ZoomInvertIn
-  case ZoomInvertOut
-  case Shake
-  case Pop
-  case FlipX
-  case FlipY
-  case Morph
-  case Squeeze
-  case Flash
-  case Wobble
-  case Swing
-  case Rotate
-  case RotateCCW
-  case MoveTo
-  case MoveBy
+
+public enum AnimationType {
+  case slide(way: Way, from: Direction)
+  case squeeze(way: Way, from: Direction) // miss squeeze
+  case slideFade(way: Way, from: Direction)
+  case squeezeFade(way: Way, from: Direction)
+  case fade(way: FadeWay)
+  case zoom(way: Way)
+  case zoomInvert(way: Way)
+  case shake(repeatCount: Int)
+  case pop(repeatCount: Int)
+  case squash(repeatCount: Int)
+  case flip(along: Axis)
+  case morph(repeatCount: Int)
+  case flash(repeatCount: Int)
+  case wobble(repeatCount: Int)
+  case swing(repeatCount: Int)
+  case rotate(direction: RotationDirection, repeatCount: Int)
+  case moveTo(x: Double, y: Double)
+  case moveBy(x: Double, y: Double)
+  case none
+  
+  public enum FadeWay: String {
+    case `in`, out, inOut = "inout", outIn = "outin"
+  }
+  public enum Way: String {
+    case out, `in`
+  }
+  public enum Axis: String {
+    case x, y
+  }
+  public enum Direction: String {
+    case left, right, up, down
+    
+    func isVertical() -> Bool {
+      return self == .down || self == .up
+    }
+  }
+  public enum RotationDirection: String {
+    case cw, ccw
+  }
+}
+
+extension AnimationType: IBEnum {
+  
+  public init(string: String?) {
+    guard let string = string else {
+      self = .none
+      return
+    }
+    let nameAndParams = AnimationType.extractNameAndParams(from: string)
+    let name = nameAndParams.name
+    let params = nameAndParams.params
+    
+    switch name {
+    case "slide":
+      self = .slide(way: Way(raw: params[safe: 0], defaultValue: .in), from: Direction(raw: params[safe: 1], defaultValue: .left))
+    case "squeeze":
+      self = .squeeze(way: Way(raw: params[safe: 0], defaultValue: .in), from: Direction(raw: params[safe: 1], defaultValue: .left))
+    case "fade":
+      self = .fade(way: FadeWay(raw: params[safe: 0], defaultValue: .in))
+    case "slidefade":
+      self = .slideFade(way: Way(raw: params[safe: 0], defaultValue: .in), from: Direction(raw: params[safe: 1], defaultValue: .left))
+    case "squeezefade":
+      self = .squeezeFade(way: Way(raw: params[safe: 0], defaultValue: .in), from: Direction(raw: params[safe: 1], defaultValue: .left))
+    case "zoom":
+      self = .zoom(way: Way(raw: params[safe: 0], defaultValue: .in))
+    case "zoominvert":
+      self = .zoomInvert(way: Way(raw: params[safe: 0], defaultValue: .in))
+    case "shake":
+      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      self = .shake(repeatCount: repeatCount)
+    case "pop":
+      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      self = .pop(repeatCount: repeatCount)
+    case "squash":
+      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      self = .squash(repeatCount: repeatCount)
+    case "flip":
+      let axis = Axis(raw: params[safe: 0], defaultValue: .x)
+      self = .flip(along: axis)
+    case "morph":
+      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      self = .morph(repeatCount: repeatCount)
+    case "flash":
+      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      self = .flash(repeatCount: repeatCount)
+    case "wobble":
+      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      self = .wobble(repeatCount: repeatCount)
+    case "swing":
+      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      self = .swing(repeatCount: repeatCount)
+    case "rotate":
+      let repeatCount = retrieveRepeatCount(string:params[safe: 1])
+      self = .rotate(direction: RotationDirection(raw: params[safe: 0], defaultValue: .cw), repeatCount: repeatCount)
+    case "moveto":
+      self = .moveTo(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
+    case "moveby":
+      self = .moveBy(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
+    default:
+      self = .none
+    }
+  }
+}
+
+private func retrieveRepeatCount(string: String?) -> Int {
+  // Default value for repeat count is `1`
+  guard let string = string, let repeatCount = Int(string) else {
+    return 1
+  }
+  
+  return repeatCount
 }

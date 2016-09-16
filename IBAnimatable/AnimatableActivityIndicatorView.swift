@@ -8,12 +8,20 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableActivityIndicatorView: UIView, ActivityIndicatorAnimatable {
+@IBDesignable open class AnimatableActivityIndicatorView: UIView, ActivityIndicatorAnimatable {
 
   // MARK: ActivityIndicatorAnimatable
-  @IBInspectable public var animationType: String = "BallBeats"
-  @IBInspectable public var color: UIColor = .blackColor()
-  @IBInspectable public var hidesWhenStopped: Bool = true
-  public var isAnimating: Bool = false
-
+  open var animationType: ActivityIndicatorType = .none
+  @IBInspectable var _animationType: String? {
+    didSet {
+      if let type = _animationType, let animationType = ActivityIndicatorType(string: type) {
+        self.animationType = animationType
+      } else {
+        animationType = .none
+      }
+    }
+  }
+  @IBInspectable open var color: UIColor = .black
+  @IBInspectable open var hidesWhenStopped: Bool = true
+  open var isAnimating: Bool = false
 }

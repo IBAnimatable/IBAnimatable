@@ -13,29 +13,29 @@ public class FlipAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - Private params
-  private var fromDirection: TransitionDirection
+  fileprivate var fromDirection: TransitionAnimationType.Direction
   
   // MARK: - Private fold transition
-  private var transform: CATransform3D = CATransform3DIdentity
-  private var reverse: Bool = false
-  private var horizontal: Bool = false
+  fileprivate var transform: CATransform3D = CATransform3DIdentity
+  fileprivate var reverse: Bool = false
+  fileprivate var horizontal: Bool = false
   
   // MARK: - Life cycle
-  public init(fromDirection: TransitionDirection, transitionDuration: Duration) {
-    self.fromDirection = fromDirection
+  public init(from direction: TransitionAnimationType.Direction, transitionDuration: Duration) {
+    fromDirection = direction
     self.transitionDuration = transitionDuration
     horizontal = fromDirection.isHorizontal
     
     switch fromDirection {
-    case .Right:
-      self.transitionAnimationType = .Flip(fromDirection: .Right)
-      self.reverseAnimationType = .Flip(fromDirection: .Left)
-      self.interactiveGestureType = .Pan(fromDirection: .Left)
+    case .right:
+      self.transitionAnimationType = .flip(from: .right)
+      self.reverseAnimationType = .flip(from: .left)
+      self.interactiveGestureType = .pan(from: .left)
       reverse = true
     default:
-      self.transitionAnimationType = .Flip(fromDirection: .Left)
-      self.reverseAnimationType = .Flip(fromDirection: .Right)
-      self.interactiveGestureType = .Pan(fromDirection: .Right)
+      self.transitionAnimationType = .flip(from: .left)
+      self.reverseAnimationType = .flip(from: .right)
+      self.interactiveGestureType = .pan(from: .right)
       reverse = false      
     }
     super.init()
@@ -43,32 +43,32 @@ public class FlipAnimator: NSObject, AnimatedTransitioning {
 }
 
 extension FlipAnimator: UIViewControllerAnimatedTransitioning {
-  public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-    return retrieveTransitionDuration(transitionContext)
+  public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    return retrieveTransitionDuration(transitionContext: transitionContext)
   }
   
-  public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-    let (tempfromView, tempToView, tempContainerView) = retrieveViews(transitionContext)
-    guard let fromView = tempfromView, toView = tempToView, containerView = tempContainerView else {
+  public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+    let (tempfromView, tempToView, tempContainerView) = retrieveViews(transitionContext: transitionContext)
+    guard let fromView = tempfromView, let toView = tempToView, let containerView = tempContainerView else {
       transitionContext.completeTransition(true)
       return
     }
     
-    containerView.insertSubview(toView, atIndex: 0)
+    containerView.insertSubview(toView, at: 0)
     
     transform.m34 = -0.002
     containerView.layer.sublayerTransform = transform
     toView.frame = fromView.frame
     
-    let flipViews = createSnapshots(toView: toView, fromView: fromView, containerView: containerView)
-    animateFlipTransition(flipViews.0, flippedSectionOfToView: flipViews.1) {
-      if transitionContext.transitionWasCancelled() {
-        self.removeOtherViews(fromView)
+    let flipViews = makeSnapshots(toView: toView, fromView: fromView, containerView: containerView)
+    animateFlipTransition(flippedSectionOfFromView: flipViews.0, flippedSectionOfToView: flipViews.1) {
+      if transitionContext.transitionWasCancelled {
+        self.removeOtherViews(viewToKeep: fromView)
       } else {
-        self.removeOtherViews(toView)
+        self.removeOtherViews(viewToKeep: toView)
       }
       
-      transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+      transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
     }
   }
   
@@ -78,52 +78,52 @@ extension FlipAnimator: UIViewControllerAnimatedTransitioning {
 
 private extension FlipAnimator {
   
-  func createSnapshots(toView toView: UIView, fromView: UIView, containerView: UIView) -> ((UIView, UIView), (UIView, UIView)) {
-    let toViewSnapshots = createSnapshot(fromView: toView, afterUpdates: true)
+  func makeSnapshots(toView: UIView, fromView: UIView, containerView: UIView) -> ((UIView, UIView), (UIView, UIView)) {
+    let toViewSnapshots = makeSnapshot(from: toView, afterUpdates: true)
     var flippedSectionOfToView = toViewSnapshots[reverse ? 0 : 1]
 
-    let fromViewSnapshots = createSnapshot(fromView: fromView, afterUpdates: false)
+    let fromViewSnapshots = makeSnapshot(from: fromView, afterUpdates: false)
     var flippedSectionOfFromView = fromViewSnapshots[reverse ? 1 : 0]
 
-    flippedSectionOfFromView = addShadow(toView: flippedSectionOfFromView, reverse: !reverse)
+    flippedSectionOfFromView = addShadow(to: flippedSectionOfFromView, reverse: !reverse)
     let flippedSectionOfFromViewShadow = flippedSectionOfFromView.subviews[1]
     flippedSectionOfFromViewShadow.alpha = 0.0
 
-    flippedSectionOfToView = addShadow(toView: flippedSectionOfToView, reverse:reverse)
+    flippedSectionOfToView = addShadow(to: flippedSectionOfToView, reverse:reverse)
     let flippedSectionOfToViewShadow = flippedSectionOfToView.subviews[1]
     flippedSectionOfToViewShadow.alpha = 1.0
 
-    var axesValues = valuesForAxe(reverse ? 0.0 : 1.0, reverseValue: 0.5)
-    updateAnchorPointAndOffset(CGPoint(x: axesValues.0, y: axesValues.1), view: flippedSectionOfFromView)
-    axesValues = valuesForAxe(reverse ? 1.0 : 0.0, reverseValue: 0.5)
-    updateAnchorPointAndOffset(CGPoint(x: axesValues.0, y: axesValues.1), view: flippedSectionOfToView)
+    var axesValues = valuesForAxe(initialValue: reverse ? 0.0 : 1.0, reverseValue: 0.5)
+    updateAnchorPointAndOffset(anchorPoint: CGPoint(x: axesValues.0, y: axesValues.1), view: flippedSectionOfFromView)
+    axesValues = valuesForAxe(initialValue: reverse ? 1.0 : 0.0, reverseValue: 0.5)
+    updateAnchorPointAndOffset(anchorPoint: CGPoint(x: axesValues.0, y: axesValues.1), view: flippedSectionOfToView)
     
-    flippedSectionOfToView.layer.transform = rotate(reverse ? M_PI_2 : -M_PI_2)
+    flippedSectionOfToView.layer.transform = rotate(angle: reverse ? .pi * 2 : -.pi * 2)
     return ((flippedSectionOfFromView, flippedSectionOfFromViewShadow), (flippedSectionOfToView, flippedSectionOfToViewShadow))
   }
   
-  func createSnapshot(fromView view: UIView, afterUpdates: Bool) -> [UIView] {
+  func makeSnapshot(from view: UIView, afterUpdates: Bool) -> [UIView] {
     let containerView = view.superview
 
-    let width = valuesForAxe(view.frame.size.width / 2, reverseValue: view.frame.size.width)
-    let height = valuesForAxe(view.frame.size.height, reverseValue: view.frame.size.height / 2)
+    let width = valuesForAxe(initialValue: view.frame.size.width / 2, reverseValue: view.frame.size.width)
+    let height = valuesForAxe(initialValue: view.frame.size.height, reverseValue: view.frame.size.height / 2)
     var snapshotRegion = CGRect(x: 0, y: 0, width: width.0, height: height.0)
-    let leftHandView = view.resizableSnapshotViewFromRect(snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: UIEdgeInsetsZero)
-    leftHandView.frame = snapshotRegion
-    containerView?.addSubview(leftHandView)
+    let leftHandView = view.resizableSnapshotView(from: snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: .zero)
+    leftHandView?.frame = snapshotRegion
+    containerView?.addSubview(leftHandView!)
 
-    let x = valuesForAxe(view.frame.size.width / 2, reverseValue: 0)
-    let y = valuesForAxe(0, reverseValue: view.frame.size.height / 2)
+    let x = valuesForAxe(initialValue: view.frame.size.width / 2, reverseValue: 0)
+    let y = valuesForAxe(initialValue: 0, reverseValue: view.frame.size.height / 2)
     snapshotRegion = CGRect(x: x.0, y: y.0, width: width.0, height: height.0)
-    let rightHandView = view.resizableSnapshotViewFromRect(snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: UIEdgeInsetsZero)
-    rightHandView.frame = snapshotRegion
-    containerView?.addSubview(rightHandView)
+    let rightHandView = view.resizableSnapshotView(from: snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: .zero)
+    rightHandView?.frame = snapshotRegion
+    containerView?.addSubview(rightHandView!)
 
-    containerView?.sendSubviewToBack(view)
-    return [leftHandView, rightHandView]
+    containerView?.sendSubview(toBack: view)
+    return [leftHandView!, rightHandView!]
   }
   
-  func addShadow(toView view: UIView, reverse: Bool) -> UIView {
+  func addShadow(to view: UIView, reverse: Bool) -> UIView {
     let containerView = view.superview
     let viewWithShadow = UIView(frame: view.frame)
     containerView?.insertSubview(viewWithShadow, aboveSubview: view)
@@ -134,18 +134,18 @@ private extension FlipAnimator {
     gradient.frame = shadowView.bounds
     gradient.colors = [UIColor(white: 0.0, alpha: 0.0), UIColor(white: 0.0, alpha: 0.5)]
     if horizontal {
-      var axesValues = valuesForAxe(reverse ? 0.0 : 1.0, reverseValue: reverse ? 0.2 : 0.0)
+      var axesValues = valuesForAxe(initialValue: reverse ? 0.0 : 1.0, reverseValue: reverse ? 0.2 : 0.0)
       gradient.startPoint = CGPoint(x: axesValues.0, y: axesValues.1)
-      axesValues = valuesForAxe(reverse ? 1.0 : 0.0, reverseValue: reverse ? 0.0 : 1.0)
+      axesValues = valuesForAxe(initialValue: reverse ? 1.0 : 0.0, reverseValue: reverse ? 0.0 : 1.0)
       gradient.endPoint = CGPoint(x: axesValues.0, y: axesValues.1)
     } else {
-      var axesValues = valuesForAxe(reverse ? 0.2 : 0.0, reverseValue: reverse ? 0.0 : 1.0)
+      var axesValues = valuesForAxe(initialValue: reverse ? 0.2 : 0.0, reverseValue: reverse ? 0.0 : 1.0)
       gradient.startPoint = CGPoint(x: axesValues.0, y: axesValues.1)
-      axesValues = valuesForAxe(reverse ? 0.0 : 1.0, reverseValue: reverse ? 1.0 : 0.0)
+      axesValues = valuesForAxe(initialValue: reverse ? 0.0 : 1.0, reverseValue: reverse ? 1.0 : 0.0)
       gradient.endPoint = CGPoint(x: axesValues.0, y: axesValues.1)
     }
         
-    shadowView.layer.insertSublayer(gradient, atIndex: 1)
+    shadowView.layer.insertSublayer(gradient, at: 1)
     view.frame = view.bounds
     viewWithShadow.addSubview(view)
     viewWithShadow.addSubview(shadowView)
@@ -164,7 +164,7 @@ private extension FlipAnimator {
   }
 
   func rotate(angle: Double) -> CATransform3D {
-    let axesValues = valuesForAxe(0.0, reverseValue: 1.0)    
+    let axesValues = valuesForAxe(initialValue: 0.0, reverseValue: 1.0)    
     return  CATransform3DMakeRotation(CGFloat(angle), axesValues.0, axesValues.1, 0.0)
   }
   
@@ -174,15 +174,15 @@ private extension FlipAnimator {
 
 private extension FlipAnimator {
   
-  func animateFlipTransition(flippedSectionOfFromView: (UIView, UIView), flippedSectionOfToView: (UIView, UIView), completion: AnimatableCompletion) {
-    UIView.animateKeyframesWithDuration(transitionDuration, delay: 0, options: .LayoutSubviews, animations: {
-      UIView.addKeyframeWithRelativeStartTime(0.0, relativeDuration: 0.5, animations: { 
-        flippedSectionOfFromView.0.layer.transform = self.rotate(self.reverse ? -M_PI_2 : M_PI_2)
+  func animateFlipTransition(flippedSectionOfFromView: (UIView, UIView), flippedSectionOfToView: (UIView, UIView), completion: @escaping AnimatableCompletion) {
+    UIView.animateKeyframes(withDuration: transitionDuration, delay: 0, options: .layoutSubviews, animations: {
+      UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5, animations: { 
+        flippedSectionOfFromView.0.layer.transform = self.rotate(angle: self.reverse ? -.pi * 2 : .pi * 2)
         flippedSectionOfFromView.1.alpha = 1.0
       })
       
-      UIView.addKeyframeWithRelativeStartTime(0.5, relativeDuration: 0.5, animations: {
-        flippedSectionOfToView.0.layer.transform = self.rotate(self.reverse ? 0.001 : -0.001)
+      UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5, animations: {
+        flippedSectionOfToView.0.layer.transform = self.rotate(angle: self.reverse ? 0.001 : -0.001)
         flippedSectionOfToView.1.alpha = 0.0
       })
     }) { _ in

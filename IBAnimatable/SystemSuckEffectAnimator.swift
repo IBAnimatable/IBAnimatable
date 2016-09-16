@@ -14,18 +14,18 @@ public class SystemSuckEffectAnimator: NSObject, AnimatedTransitioning {
   
   public init(transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
-    self.transitionAnimationType = .SystemSuckEffect
-    self.reverseAnimationType = .SystemSuckEffect
+    self.transitionAnimationType = .systemSuckEffect
+    self.reverseAnimationType = .systemSuckEffect
     super.init()
   }
 }
 
 extension SystemSuckEffectAnimator: UIViewControllerAnimatedTransitioning {
-  public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-    return retrieveTransitionDuration(transitionContext)
+  public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    return retrieveTransitionDuration(transitionContext: transitionContext)
   }
   
-  public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-    animateWithCATransition(transitionContext, type: SystemTransitionType.SuckEffect, subtype: nil)
+  public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+    animateWithCATransition(transitionContext: transitionContext, type: TransitionAnimationType.SystemTransitionType.suckEffect, subtype: nil)
   }
 }

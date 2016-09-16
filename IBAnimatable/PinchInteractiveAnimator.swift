@@ -6,24 +6,24 @@
 import UIKit
 
 public class PinchInteractiveAnimator: InteractiveAnimator {
-  private var startScale: CGFloat = 0
+  fileprivate var startScale: CGFloat = 0
   
-  override func createGestureRecognizer() -> UIGestureRecognizer {
-    let gestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
+  override func makeGestureRecognizer() -> UIGestureRecognizer {
+    let gestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(handleGesture(for:)))
     return gestureRecognizer
   }
   
-  override func shouldBeginProgress(gestureRecognizer: UIGestureRecognizer) -> Bool {
+  override func shouldBeginProgress(for gestureRecognizer: UIGestureRecognizer) -> Bool {
     guard let gestureRecognizer = gestureRecognizer as? UIPinchGestureRecognizer else {
       return false
     }
     
     switch interactiveGestureType {
-    case let .Pinch(direction):
+    case let .pinch(direction):
       switch direction {
-      case .Close:
+      case .close:
         return gestureRecognizer.velocity < 0
-      case .Open:
+      case .open:
         return gestureRecognizer.velocity > 0
       default:
         return true
@@ -33,24 +33,24 @@ public class PinchInteractiveAnimator: InteractiveAnimator {
     }
   }
   
-  override func calculateProgress(gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
+  override func calculateProgress(for gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
     guard let  gestureRecognizer = gestureRecognizer as? UIPinchGestureRecognizer,
-      _ = gestureRecognizer.view?.superview else {
+      let _ = gestureRecognizer.view?.superview else {
         return (0, false)
     }
     
-    if gestureRecognizer.state == .Began {
+    if gestureRecognizer.state == .began {
       startScale = gestureRecognizer.scale
     }
     
     var progress: CGFloat
     let _: CGFloat
     switch interactiveGestureType {
-    case let .Pinch(direction):
+    case let .pinch(direction):
       switch direction {
-      case .Close:
+      case .close:
         progress = 1.0 - gestureRecognizer.scale / startScale
-      case .Open:
+      case .open:
         let scaleFator: CGFloat = 1.2 // To make the pinch open gesture more natural 😓
         progress = gestureRecognizer.scale / scaleFator - 1.0
       default:

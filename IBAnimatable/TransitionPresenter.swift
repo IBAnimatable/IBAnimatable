@@ -9,7 +9,7 @@ import UIKit
  TransitionPresenter for `UIViewController` to support custom transition animation for Present and Dismiss
  */
 public class TransitionPresenter: NSObject {
-  private var transitionAnimationType: TransitionAnimationType  
+  fileprivate var transitionAnimationType: TransitionAnimationType
   var transitionDuration: Duration {
     didSet {
       if oldValue != transitionDuration {
@@ -28,10 +28,10 @@ public class TransitionPresenter: NSObject {
   }
   
   // animation controller
-  private var animator: AnimatedTransitioning?
+  fileprivate var animator: AnimatedTransitioning?
   
   // interaction controller
-  private var interactiveAnimator: InteractiveAnimator?
+  fileprivate var interactiveAnimator: InteractiveAnimator?
   
   public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) {
     self.transitionAnimationType = transitionAnimationType
@@ -39,30 +39,30 @@ public class TransitionPresenter: NSObject {
     super.init()
     
     updateTransitionDuration()
-    animator = AnimatorFactory.generateAnimator(transitionAnimationType, transitionDuration: transitionDuration)
+    animator = AnimatorFactory.makeAnimator(transitionAnimationType: transitionAnimationType, transitionDuration: transitionDuration)
     
     self.interactiveGestureType = interactiveGestureType
     updateInteractiveAnimator()
   }
   
   // MARK: - Private
-  private func updateTransitionDuration() {
+  fileprivate func updateTransitionDuration() {
     if transitionDuration.isNaN {
       transitionDuration = defaultTransitionDuration
     }
   }
   
-  private func updateInteractiveAnimator() {
+  fileprivate func updateInteractiveAnimator() {
     // If interactiveGestureType has been set
     if let interactiveGestureType = interactiveGestureType {
       // If configured as `.Default` then use the default interactive gesture type from the Animator
       switch interactiveGestureType {
-      case .Default:
+      case .default:
         if let interactiveGestureType = animator?.interactiveGestureType {
-          interactiveAnimator = InteractiveAnimatorFactory.generateInteractiveAnimator(interactiveGestureType, transitionType: .PresentationTransition(.Dismissal))
+          interactiveAnimator = InteractiveAnimatorFactory.makeInteractiveAnimator(interactiveGestureType: interactiveGestureType, transitionType: .presentationTransition(.dismissal))
         }
       default:
-        interactiveAnimator = InteractiveAnimatorFactory.generateInteractiveAnimator(interactiveGestureType, transitionType: .PresentationTransition(.Dismissal))
+        interactiveAnimator = InteractiveAnimatorFactory.makeInteractiveAnimator(interactiveGestureType: interactiveGestureType, transitionType: .presentationTransition(.dismissal))
       }
     } else {
       interactiveAnimator = nil
@@ -73,23 +73,23 @@ public class TransitionPresenter: NSObject {
 extension TransitionPresenter: UIViewControllerTransitioningDelegate {
 
   // MARK: - animation controller
-  public func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+  public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     animator?.transitionDuration = transitionDuration
-    interactiveAnimator?.connectGestureRecognizer(presented)
+    interactiveAnimator?.connectGestureRecognizer(to: presented)
     return animator
   }
 
-  public func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+  public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     // Use the reverse animation
     if let reverseTransitionAnimationType = animator?.reverseAnimationType {
-      return AnimatorFactory.generateAnimator(reverseTransitionAnimationType, transitionDuration: transitionDuration)
+      return AnimatorFactory.makeAnimator(transitionAnimationType: reverseTransitionAnimationType, transitionDuration: transitionDuration)
     }
     return nil
   }
   
   // MARK: - interaction controller
-  public func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-    if let interactiveAnimator = interactiveAnimator where interactiveAnimator.interacting {
+  public func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+    if let interactiveAnimator = interactiveAnimator, interactiveAnimator.interacting {
       return interactiveAnimator
     } else {
       return nil

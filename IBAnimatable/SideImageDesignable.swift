@@ -5,6 +5,7 @@
 
 import UIKit
 
+/// Protocol for designing side image 
 public protocol SideImageDesignable {
   /**
    * The left image
@@ -12,17 +13,17 @@ public protocol SideImageDesignable {
   var leftImage: UIImage? { get set }
   
   /**
-   * Left padding of the left image, default value is CGFloat.NaN
+   * Left padding of the left image, default value is CGFloat.nan
    */
   var leftImageLeftPadding: CGFloat { get set }
   
   /**
-   * Right padding of the left image, default value is CGFloat.NaN
+   * Right padding of the left image, default value is CGFloat.nan
    */
   var leftImageRightPadding: CGFloat { get set }
   
   /**
-   * Top padding of the left image, default value is CGFloat.NaN
+   * Top padding of the left image, default value is CGFloat.nan
    */
   var leftImageTopPadding: CGFloat { get set }
   
@@ -32,49 +33,50 @@ public protocol SideImageDesignable {
   var rightImage: UIImage? { get set }
   
   /**
-   * Left padding of the right image, default value is CGFloat.NaN
+   * Left padding of the right image, default value is CGFloat.nan
    */
   var rightImageLeftPadding: CGFloat { get set }
   
   /**
-   * Right padding of the right image, default value is CGFloat.NaN
+   * Right padding of the right image, default value is CGFloat.nan
    */
   var rightImageRightPadding: CGFloat { get set }
   
   /**
-   * Top padding of the right image, default value is CGFloat.NaN
+   * Top padding of the right image, default value is CGFloat.nan
    */
   var rightImageTopPadding: CGFloat { get set }
 }
 
 public extension SideImageDesignable where Self: UITextField {
-
-  public func configImages() {
-    configLeftImage()
-    configRightImage()
+  public func configureImages() {
+    configureLeftImage()
+    configureRightImage()
   }
-  
-  private func configLeftImage() {
-    guard let wrappedLeftImage = leftImage else {
+}
+
+fileprivate extension SideImageDesignable where Self: UITextField {
+  func configureLeftImage() {
+    guard let leftImage = leftImage else {
       return
     }
     
-    let sideView = generateSideViewWithImage(wrappedLeftImage, leftPadding: leftImageLeftPadding, rightPadding: leftImageRightPadding, topPadding: leftImageTopPadding)
-    leftViewMode = .Always
+    let sideView = makeSideView(with: leftImage, leftPadding: leftImageLeftPadding, rightPadding: leftImageRightPadding, topPadding: leftImageTopPadding)
+    leftViewMode = .always
     leftView = sideView
   }
   
-  private func configRightImage() {
-    guard let wrappedRightImage = rightImage else {
+  func configureRightImage() {
+    guard let rightImage = rightImage else {
       return
     }
     
-    let sideView = generateSideViewWithImage(wrappedRightImage, leftPadding: rightImageLeftPadding, rightPadding: rightImageRightPadding, topPadding: rightImageTopPadding)
-    rightViewMode = .Always
+    let sideView = makeSideView(with: rightImage, leftPadding: rightImageLeftPadding, rightPadding: rightImageRightPadding, topPadding: rightImageTopPadding)
+    rightViewMode = .always
     rightView = sideView
   }
   
-  private func generateSideViewWithImage(image: UIImage, leftPadding: CGFloat, rightPadding: CGFloat, topPadding: CGFloat) -> UIView {
+  func makeSideView(with image: UIImage, leftPadding: CGFloat, rightPadding: CGFloat, topPadding: CGFloat) -> UIView {
     let imageView = UIImageView(image: image)
     
     // If not set, use 0 as default value
@@ -88,7 +90,7 @@ public extension SideImageDesignable where Self: UITextField {
     if !rightPadding.isNaN {
       rightPaddingValue = rightPadding
     }
-
+    
     // If does not specify `topPadding`, then center it in the middle
     if topPadding.isNaN {
       imageView.frame.origin = CGPoint(x: leftPaddingValue, y: (bounds.height - imageView.bounds.height) / 2)

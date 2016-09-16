@@ -25,68 +25,70 @@ public class InteractiveAnimator: UIPercentDrivenInteractiveTransition {
   }
   
   deinit {
-    if let gestureRecognizer = gestureRecognizer, view = viewController?.view {
-      gestureRecognizer.removeTarget(self, action: #selector(handleGesture(_:)))
+    if let gestureRecognizer = gestureRecognizer, let view = viewController?.view {
+      gestureRecognizer.removeTarget(self, action: #selector(handleGesture(for:)))
       view.removeGestureRecognizer(gestureRecognizer)
     }
   }
   
-  func connectGestureRecognizer(viewController: UIViewController) {
+  func connectGestureRecognizer(to viewController: UIViewController) {
     self.viewController = viewController
-    let gestureRecognizerType = createGestureRecognizer()
+    let gestureRecognizerType = makeGestureRecognizer()
     gestureRecognizer = gestureRecognizerType
     if let gestureRecognizer = gestureRecognizer {
       self.viewController?.view.addGestureRecognizer(gestureRecognizer)
     }
   }
   
-  func handleGesture(gestureRecognizer: UIGestureRecognizer) {
-    let (progress, shouldFinishInteractiveTransition) = calculateProgress(gestureRecognizer)
+  func handleGesture(for gestureRecognizer: UIGestureRecognizer) {
+    let (progress, shouldFinishInteractiveTransition) = calculateProgress(for: gestureRecognizer)
     
     switch gestureRecognizer.state {
-    case .Began:
-      guard shouldBeginProgress(gestureRecognizer) else {
+    case .began:
+      guard shouldBeginProgress(for: gestureRecognizer) else {
         return
       }
       
       interacting = true
       switch transitionType {
-      case .NavigationTransition(.Pop):
-        viewController?.navigationController?.popViewControllerAnimated(true)
-      case .PresentationTransition(.Dismissal):
-        viewController?.dismissViewControllerAnimated(true, completion: nil)
+      case .navigationTransition(.pop):
+        if let navigationController = viewController?.navigationController {
+          navigationController.popViewController(animated: true)
+        }
+      case .presentationTransition(.dismissal):
+        viewController?.dismiss(animated: true, completion: nil)
       default:
         break
       }
-    case .Changed:
-      updateInteractiveTransition(progress)
-    case .Cancelled, .Ended:
+    case .changed:
+      update(progress)
+    case .cancelled, .ended:
       interacting = false
       if shouldFinishInteractiveTransition {
-        finishInteractiveTransition()
+        finish()
       } else {
-        cancelInteractiveTransition()
+        cancel()
       }
     default:
       // Something happened then cancel the transition.
       interacting = false
-      cancelInteractiveTransition()
+      cancel()
       break
     }
   }
   
   // Because Swift doesn't support pure virtual method, need to throw error
-  func createGestureRecognizer() -> UIGestureRecognizer {
-    preconditionFailure("This method must be overridden")
+  func makeGestureRecognizer() -> UIGestureRecognizer {
+    fatalError("This method must be overridden")
   }
   
-  func shouldBeginProgress(gestureRecognizer: UIGestureRecognizer) -> Bool {
+  func shouldBeginProgress(for gestureRecognizer: UIGestureRecognizer) -> Bool {
     // return true by default
     return true
   }
   
-  func calculateProgress(gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
-    preconditionFailure("This method must be overridden")
+  func calculateProgress(for gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
+    fatalError("This method must be overridden")
   }
 
 }

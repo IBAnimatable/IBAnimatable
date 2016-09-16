@@ -1,3 +1,7 @@
+## Swift 3 branch
+
+We use this branch to support Swift 3. Once Xcode 8 RTM, we will merge it to master. The demo app works fine. But it is WIP, please use it with caution. If you have any idea, please comment on [Issue #211 - Swift 3 support](https://github.com/JakeLin/IBAnimatable/issues/221). 
+
 ![IBAnimatable](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/Hero.png)
 
 Design and prototype customized UI, interaction, navigation, transition and animation for App Store ready Apps in Interface Builder with IBAnimatable.
@@ -6,26 +10,16 @@ Design and prototype customized UI, interaction, navigation, transition and anim
 
 [![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=56abf6d42c882e010057b182&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/56abf6d42c882e010057b182/build/latest)
 [![Build Status](https://travis-ci.org/IBAnimatable/IBAnimatable.svg?branch=master)](https://travis-ci.org/IBAnimatable/IBAnimatable)
-[![Language](https://img.shields.io/badge/language-Swift%202.2-orange.svg)](https://swift.org)
+[![Language](https://img.shields.io/badge/language-Swift%203.0-orange.svg)](https://swift.org)
 [![CocoaPods](https://img.shields.io/cocoapods/v/IBAnimatable.svg?style=flat)](http://cocoadocs.org/docsets/IBAnimatable/)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/github/license/IBAnimatable/IBAnimatable.svg?style=flat)](https://github.com/IBAnimatable/IBAnimatable/blob/master/LICENSE)
 
 **The app was made in Interface Builder with `IBAnimatable` without a single line of code**. Due to the size of [the GIF file on Dribbble](https://dribbble.com/shots/2453933-IBAnimatable-Design-App-Store-ready-Apps-in-Interface-Builder), it only demonstrates a subset of features. We can also find the full HD version on [YouTube](https://www.youtube.com/watch?v=dvD8X6J1YLM) or [MP4 on Github](https://github.com/IBAnimatable/IBAnimatable-Misc/blob/master/Videos/IBAnimatable.mp4?raw=true)
 
-## Key features
-* **100% compatible with `UIKit`**. All `IBAnimatable` APIs are extensions of `UIKit`. No pollutions to `UIKit`'s APIs.
-* **100% compatible with Auto Layout and Size Classes**. No custom layout system.
-* **User interface design and preview in IB**: corner radius, border, mask, shadow, gradient colors, tint color, blur effect etc.
-* **Animation design in IB**: slide in/out, fade in/out, zoom in/out, flip, pop, shake, rotate, move etc.
-* **Transition design in IB**: fade, slide, flip, cube, portal, fold, explosion etc.
-* **Interactive gesture design in IB**: pan, screen edge pan, pinch etc. 
-* **Presentation design in IB**: flip, cover, zoom, dropdown etc.
-* **Activity indicator design in IB**: ball beat, ball rotate, cube transition, Pacman etc.  
-
 ![StoryboardPreview](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/Storyboard.jpg)
 
-This is the full design in a Storyboard in Interface Builder.
+Here is the full design in a Storyboard in Interface Builder.
 
 With `IBAnimatable`, we can design a UI in Interface Builder like what we can do in Sketch, and prototype animations in a Swift playground like what we can do in Framer. Also, we can use the output of the design directly in the production ready App.
 
@@ -33,8 +27,6 @@ As a designer, we love Sketch, which is a simple but yet super powerful tool to 
 
 ## Interested in Swift 3?
 Please check out [swift3 branch](https://github.com/IBAnimatable/IBAnimatable/tree/swift3), we are working on cool stuff.
-
-You can also check out [swift2.3 branch](https://github.com/IBAnimatable/IBAnimatable/tree/swift2.3) for Swift 2.3 support.
 
 ## Languages
 [中文](Documentation/README.zh.md)
@@ -54,9 +46,7 @@ You can also check out [swift2.3 branch](https://github.com/IBAnimatable/IBAnima
 
 ## Documentations
 * [<del>Fully</del> Mostly documented API Reference](Documentation/APIs.md) 
-* [Activity indicator animations](Documentation/ActivityIndicators.md)
 * [How to design and prototype custom transition animation and gesture interaction in Interface Builder with IBAnimatable](Documentation/Transitions.md)
-* [How to design and prototype custom presentation animation in Interface Builder with IBAnimatable](Documentation/Presentations.md)
 
 ## How to run the example App
 The easy way to learn and understand how powerful of `IBAnimatable`is to run the example App and play around the settings in Interface Builder. Just a few steps we can run the App as below, to see more features, we can tap on "Forget Password" button to unlock them. 😉
@@ -149,7 +139,7 @@ Add `pod 'IBAnimatable'` to your Podfile.
 
 ### [Carthage](https://github.com/Carthage/Carthage)
 
-Add `github "IBAnimatable/IBAnimatable" ~> 2` to your Cartfile.
+Add `github "IBanimatable/IBAnimatable" ~> 2` to your Cartfile.
 
 Please Notice, there is [a limitation of a built framework for `@IBDesignable` and `@IBInspectable`](https://github.com/Carthage/Carthage/issues/335), that will impact on `IBAnimatable` when you use Carthage.
 
@@ -168,7 +158,7 @@ All of us can contribute to this project. Fewer overheads mean less time to buil
 
 * If you like the project, please share it with the other designers and developers, and star 🌟 the project. 🤗
 
-Many thanks to [all contributors](https://github.com/IBAnimatable/IBAnimatable/graphs/contributors) 🤗 especially to [@tbaranes](https://github.com/tbaranes) who develops a lot of features and maintains the project.
+Many thanks to [all contributors](graphs/contributors) 🤗 especially to [@tbaranes](https://github.com/tbaranes) who develops a lot of features and maintains the project.
 
 ## Roadmap
 [Vision, Technical Considerations and Roadmap](Documentation/Roadmap.md)
@@ -179,7 +169,6 @@ Many thanks to [all contributors](https://github.com/IBAnimatable/IBAnimatable/g
 * Framer Studio - Design and preview animations in one place.
 * [Spring by Meng To](https://github.com/MengTo/Spring) - steal a lot of animation parameters from this project.
 * [VCTransitionsLibrary by Colin Eberhardt](https://github.com/ColinEberhardt/VCTransitionsLibrary) - port all transition animations from this project, and add parameters support and fix bugs.
-* [NVActivityIndicatorView by Vinh Nguyen](https://github.com/ninjaprox/NVActivityIndicatorView) - port all activity indicator animations from this project.
 * [Invision ToDo App UI Kit](http://www.invisionapp.com/do), The demo App's original design is from this UI Kit and redone in Interface Builder. We also added interaction, navigation and animations.
 
 ## Change Log

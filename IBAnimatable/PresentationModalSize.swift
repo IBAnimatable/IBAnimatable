@@ -5,72 +5,54 @@
 
 import UIKit
 
-public enum PresentationModalSize {
+public enum PresentationModalSize: IBEnum {
 
-  case Half
-  case Full
-  case Custom(size: Float)
+  case half
+  case full
+  case custom(size: Float)
 
   func width(parentSize: CGSize) -> Float {
     switch self {
-    case .Half:
+    case .half:
       return floorf(Float(parentSize.width) / 2.0)
-    case .Full:
+    case .full:
       return Float(parentSize.width)
-    case .Custom(let size):
+    case .custom(let size):
       return size
     }
   }
 
   func height(parentSize: CGSize) -> Float {
-    switch self {
-    case .Half:
+
+  switch self {
+    case .half:
       return floorf(Float(parentSize.height) / 2.0)
-    case .Full:
+    case .full:
       return Float(parentSize.height)
-    case .Custom(let size):
+    case .custom(let size):
       return size
     }
   }
 
 }
 
-extension PresentationModalSize {
 
-  public static func fromString(size: String) -> PresentationModalSize {
-    if size.hasPrefix("Half") {
-      return .Half
-    } else if size.hasPrefix("Full") {
-      return .Full
+public extension PresentationModalSize {
+  init?(string: String?) {
+    guard let string = string else { return nil }
+    let nameANdParams = PresentationModalSize.extractNameAndParams(from: string)
+    let name = nameANdParams.name
+    let params = nameANdParams.params
+    
+    switch name {
+      case "half":
+      self = .half
+      case "full":
+      self = .full
+      case "custom" where params.count == 1:
+        self = .custom(size: params[0].toFloat() ?? 0)
+    default:
+      return nil
     }
-    return fromStringWithParameters(size)
   }
-
-
-  static func fromStringWithParameters(size: String) -> PresentationModalSize {
-    let sizeParams = params(forSize: size)
-    guard let value = Float(sizeParams.first ?? "") else {
-      return .Half
-    }
-
-    if size.hasPrefix("Custom") {
-      return .Custom(size: value)
-    }
-    return .Half
-  }
-
-}
-
-private extension PresentationModalSize {
-
-  static func params(forSize size: String) -> [String] {
-    let range = size.rangeOfString("(")
-    let size = size.stringByReplacingOccurrencesOfString(" ", withString: "")
-      .lowercaseString
-      .substringFromIndex(range?.startIndex ?? size.endIndex)
-      .stringByReplacingOccurrencesOfString("(", withString: "")
-      .stringByReplacingOccurrencesOfString(")", withString: "")
-    return size.componentsSeparatedByString(",")
-  }
-  
 }

@@ -5,94 +5,101 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableSlider: UIView, BorderDesignable, RotationDesignable, ShadowDesignable, Animatable {
-
+@IBDesignable open class AnimatableSlider: UIView, BorderDesignable, RotationDesignable, ShadowDesignable, Animatable {
+  
   // MARK: - BorderDesignable
-  @IBInspectable public var borderColor: UIColor? {
+  @IBInspectable open var borderColor: UIColor? {
     didSet {
-      configBorder()
+      configureBorder()
     }
   }
-
-  @IBInspectable public var borderWidth: CGFloat = CGFloat.NaN {
+  
+  @IBInspectable open var borderWidth: CGFloat = CGFloat.nan {
     didSet {
-      configBorder()
+      configureBorder()
     }
   }
-
-  @IBInspectable public var borderSide: String? {
+  
+  open var borderSides: BorderSides  = .AllSides {
     didSet {
-      configBorder()
+      configureBorder()
     }
   }
-
+  
+  @IBInspectable var _borderSides: String? {
+    didSet {
+      borderSides = BorderSides(rawValue: _borderSides)
+    }
+  }  
   // MARK: - RotationDesignable
-  @IBInspectable public var rotate: CGFloat = CGFloat.NaN {
+  @IBInspectable open var rotate: CGFloat = CGFloat.nan {
     didSet {
-      configRotate()
+      configureRotate()
     }
   }
-
+  
   // MARK: - ShadowDesignable
-  @IBInspectable public var shadowColor: UIColor? {
+  @IBInspectable open var shadowColor: UIColor? {
     didSet {
-      configShadowColor()
+      configureShadowColor()
     }
   }
-
-  @IBInspectable public var shadowRadius: CGFloat = CGFloat.NaN {
+  
+  @IBInspectable open var shadowRadius: CGFloat = CGFloat.nan {
     didSet {
-      configShadowRadius()
+      configureShadowRadius()
     }
   }
-
-  @IBInspectable public var shadowOpacity: CGFloat = CGFloat.NaN {
+  
+  @IBInspectable open var shadowOpacity: CGFloat = CGFloat.nan {
     didSet {
-      configShadowOpacity()
+      configureShadowOpacity()
     }
   }
-
-  @IBInspectable public var shadowOffset: CGPoint = CGPoint(x: CGFloat.NaN, y: CGFloat.NaN) {
+  
+  @IBInspectable open var shadowOffset: CGPoint = CGPoint(x: CGFloat.nan, y: CGFloat.nan) {
     didSet {
-      configShadowOffset()
+      configureShadowOffset()
     }
   }
-
+  
   // MARK: - Animatable
-  @IBInspectable public var animationType: String?
-  @IBInspectable public var autoRun: Bool = true
-  @IBInspectable public var duration: Double = Double.NaN
-  @IBInspectable public var delay: Double = Double.NaN
-  @IBInspectable public var damping: CGFloat = CGFloat.NaN
-  @IBInspectable public var velocity: CGFloat = CGFloat.NaN
-  @IBInspectable public var force: CGFloat = CGFloat.NaN
-  @IBInspectable public var repeatCount: Float = Float.NaN
-  @IBInspectable public var x: CGFloat = CGFloat.NaN
-  @IBInspectable public var y: CGFloat = CGFloat.NaN
-
+  open var animationType: AnimationType = .none
+  @IBInspectable  var _animationType: String? {
+    didSet {
+     animationType = AnimationType(string: _animationType)
+    }
+  }
+  @IBInspectable open var autoRun: Bool = true
+  @IBInspectable open var duration: Double = Double.nan
+  @IBInspectable open var delay: Double = Double.nan
+  @IBInspectable open var damping: CGFloat = CGFloat.nan
+  @IBInspectable open var velocity: CGFloat = CGFloat.nan
+  @IBInspectable open var force: CGFloat = CGFloat.nan
+  
   // MARK: - Lifecycle
-  public override func prepareForInterfaceBuilder() {
+  open override func prepareForInterfaceBuilder() {
     super.prepareForInterfaceBuilder()
-    configInspectableProperties()
+    configureInspectableProperties()
   }
-
-  public override func awakeFromNib() {
+  
+  open override func awakeFromNib() {
     super.awakeFromNib()
-    configInspectableProperties()
+    configureInspectableProperties()
   }
-
-  public override func layoutSubviews() {
+  
+  open override func layoutSubviews() {
     super.layoutSubviews()
-    configAfterLayoutSubviews()
+    configureAfterLayoutSubviews()
     autoRunAnimation()
   }
-
+  
   // MARK: - Private
-  private func configInspectableProperties() {
-    configAnimatableProperties()
+  fileprivate func configureInspectableProperties() {
+    configureAnimatableProperties()
   }
-
-  private func configAfterLayoutSubviews() {
-    configBorder()
+  
+  fileprivate func configureAfterLayoutSubviews() {
+    configureBorder()
   }
 }

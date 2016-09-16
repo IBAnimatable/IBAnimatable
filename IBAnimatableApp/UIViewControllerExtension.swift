@@ -8,9 +8,9 @@ import IBAnimatable
 
 extension UIViewController {
   
-  func generateRandomGradient() -> GradientType {
+  func makeRandomGradient() -> GradientType {
     var predefinedGradients = [GradientType]()
-    iterateEnum(GradientType).forEach {
+    iterateEnum(GradientType.self).forEach {
       predefinedGradients.append($0)
     }
     
@@ -20,18 +20,18 @@ extension UIViewController {
   
   func retrieveGestureText(interactiveGestureType: InteractiveGestureType, transitionAnimationType: TransitionAnimationType, exit: String) -> String {
     switch interactiveGestureType {
-    case .Default:
+    case .default:
       // Default gesture
-      let transitionAnimator = AnimatorFactory.generateAnimator(transitionAnimationType)
-      if let interactiveGestureType = transitionAnimator.interactiveGestureType {
-        return String("or use \(interactiveGestureType.toString()) gesture to \(exit)")
+      let transitionAnimator = AnimatorFactory.makeAnimator(transitionAnimationType: transitionAnimationType)
+      if let interactiveGestureType = transitionAnimator?.interactiveGestureType {
+        return String("or use \(interactiveGestureType.stringValueWithoutQualification) gesture to \(exit)")
       }
       
       // The transition animator doesn't have default `interactiveGestureType`
       return ""
     default:
       // Specified gesture
-      return String("or use \(interactiveGestureType.toString()) gesture to \(exit)")
+      return String("or use \(interactiveGestureType.stringValueWithoutQualification) gesture to \(exit)")
     }
   }
   

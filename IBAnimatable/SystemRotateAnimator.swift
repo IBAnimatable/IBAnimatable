@@ -14,19 +14,19 @@ public class SystemRotateAnimator: NSObject, AnimatedTransitioning {
   
   public init(transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
-    self.transitionAnimationType = .SystemRotate
-    self.reverseAnimationType = .SystemRotate
+    self.transitionAnimationType = .systemRotate
+    self.reverseAnimationType = .systemRotate
     
     super.init()
   }
 }
 
 extension SystemRotateAnimator: UIViewControllerAnimatedTransitioning {
-  public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-    return retrieveTransitionDuration(transitionContext)
+  public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    return retrieveTransitionDuration(transitionContext: transitionContext)
   }
   
-  public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-    animateWithCATransition(transitionContext, type: SystemTransitionType.Rotate, subtype: "90")
+  public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+    animateWithCATransition(transitionContext: transitionContext, type: TransitionAnimationType.SystemTransitionType.rotate, subtype: "90")
   }
 }

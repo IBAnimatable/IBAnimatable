@@ -8,45 +8,45 @@ import UIKit
 // Pan interactive animator: pan gesture transition controller
 public class PanInteractiveAnimator: InteractiveAnimator {
   
-  override func createGestureRecognizer() -> UIGestureRecognizer {
-    return UIPanGestureRecognizer(target: self, action: #selector(handleGesture(_:)))
+  override func makeGestureRecognizer() -> UIGestureRecognizer {
+    return UIPanGestureRecognizer(target: self, action: #selector(handleGesture(for:)))
   }
   
-  override func calculateProgress(gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
+  override func calculateProgress(for gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
     guard let  gestureRecognizer = gestureRecognizer as? UIPanGestureRecognizer,
-      superview = gestureRecognizer.view?.superview else {
+      let superview = gestureRecognizer.view?.superview else {
       return (0, false)
     }
-    let translation = gestureRecognizer.translationInView(superview)
-    let velocity = gestureRecognizer.velocityInView(superview)
+    let translation = gestureRecognizer.translation(in: superview)
+    let velocity = gestureRecognizer.velocity(in: superview)
     
     var progress: CGFloat
     let distance: CGFloat
     let speed: CGFloat
     switch interactiveGestureType {
-    case let .Pan(direction):
+    case let .pan(direction):
       switch direction {
-      case .Horizontal:
+      case .horizontal:
         distance = superview.frame.width
         progress = abs(translation.x / distance)
         speed = abs(velocity.x)
-      case .Left:
+      case .left:
         distance = superview.frame.width
         progress = translation.x / distance
         speed = velocity.x
-      case .Right:
+      case .right:
         distance = superview.frame.width
         progress = -(translation.x / distance)
         speed = -velocity.x
-      case .Vertical:
+      case .vertical:
         distance = superview.frame.height
         progress = abs(translation.y / distance)
         speed = abs(velocity.y)
-      case .Top:
+      case .top:
         distance = superview.frame.height
         progress = translation.y / distance
         speed = velocity.y
-      case .Bottom:
+      case .bottom:
         distance = superview.frame.height
         progress = -translation.y / distance
         speed = -velocity.y

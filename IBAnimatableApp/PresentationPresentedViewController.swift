@@ -14,7 +14,7 @@ class PresentationPresentedViewController: AnimatableModalViewController {
     super.viewDidLoad()
 
     if let animatableView = view as? AnimatableView {
-      animatableView.predefinedGradient = String(generateRandomGradient())
+      animatableView.predefinedGradient = makeRandomGradient()
     }
   }
 

@@ -22,7 +22,7 @@ class TransitionPresentedViewController: AnimatableViewController {
     super.viewDidLoad()
     
     if let animatableView = view as? AnimatableView {
-      animatableView.predefinedGradient = String(generateRandomGradient())
+      animatableView.predefinedGradient = makeRandomGradient()
     }
     
     configureGestureLabel()
@@ -30,21 +30,21 @@ class TransitionPresentedViewController: AnimatableViewController {
     hideButtonsIfNeeded()
   }
 
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    super.prepareForSegue(segue, sender: sender)
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    super.prepare(for: segue, sender: sender)
     
     // Set the transition animation type for `AnimatableViewController`, used for Present/Dismiss transitions
-    if let toViewController = segue.destinationViewController as? AnimatableViewController {
+    if let toViewController = segue.destination as? AnimatableViewController {
       toViewController.transitionAnimationType = transitionAnimationType
       toViewController.interactiveGestureType = interactiveGestureType
     }
   }
 
-  @IBAction func presentViaSegueDidTap(sender: AnyObject) {
+  @IBAction func presentViaSegueDidTap(_ sender: AnyObject) {
     presentViaSegue(presentingSegueClass, useDismissInteraction: false)
   }
   
-  @IBAction func presentViaDismissInteractionSegueDidTap(sender: AnyObject) {
+  @IBAction func presentViaDismissInteractionSegueDidTap(_ sender: AnyObject) {
     presentViaSegue(presentingWithDismissInteractionSegueClass, useDismissInteraction: true)
   }
 }
@@ -61,30 +61,31 @@ private extension TransitionPresentedViewController {
     }
     
     // No gesture for this animator
-    guard let interactiveGestureTypeString = interactiveGestureType,
-      interactiveGestureType = InteractiveGestureType.fromString(interactiveGestureTypeString),
-      transitionAnimationTypeString = transitionAnimationType,
-      transitionAnimationType = TransitionAnimationType.fromString(transitionAnimationTypeString) else {
-        return
-    }
-    
-    gestureLabel.text = retrieveGestureText(interactiveGestureType, transitionAnimationType: transitionAnimationType, exit: "dismiss")
-  }
-  
-  func prepareSegues() {
-    guard let transitionAnimationType = transitionAnimationType else {
+    if case .none = interactiveGestureType {
       return
     }
     
-    // Set up the segues without dismiss interaction
-    var segueName = "IBAnimatable.Present" + extractAnimationType(transitionAnimationType) + "Segue"
+    if case .none = transitionAnimationType {
+      return
+    }
+    
+    gestureLabel.text = retrieveGestureText(interactiveGestureType: interactiveGestureType, transitionAnimationType: transitionAnimationType, exit: "dismiss")
+  }
+  
+  func prepareSegues() {
+    if case .none = transitionAnimationType {
+      return
+    }
+    
+    // Set up the segue without dismissal interaction
+    var segueName = "IBAnimatable.Present" + extractAnimationType(transitionAnimationType.stringValue.capitalized) + "Segue"
     
     if let segueClass = NSClassFromString(segueName) as? UIStoryboardSegue.Type {
       presentingSegueClass = segueClass
     }
     
-    // Set up the segues with dismiss interaction
-    segueName = "IBAnimatable.Present" + extractAnimationType(transitionAnimationType) + "WithDismissInteractionSegue"
+    // Set up the segue with dismissal interaction
+    segueName = "IBAnimatable.Present" + extractAnimationType(transitionAnimationType.stringValue.capitalized) + "WithDismissInteractionSegue"
     
     if let segueClass = NSClassFromString(segueName) as? UIStoryboardSegue.Type {
       presentingWithDismissInteractionSegueClass = segueClass
@@ -103,18 +104,18 @@ private extension TransitionPresentedViewController {
   }
   
   // To extract the type without parameters
-  func extractAnimationType(animationType: String) -> String {
-    if let range = animationType.rangeOfString("(") {
-      return animationType.substringToIndex(range.startIndex)
+  func extractAnimationType(_ animationType: String) -> String {
+    if let range = animationType.range(of: "(") {
+      return animationType.substring(to: range.lowerBound)
     }
     return animationType
   }
   
-  func presentViaSegue(segueClass: UIStoryboardSegue.Type?, useDismissInteraction: Bool) {
-    if let segueClass = segueClass, toViewController = storyboard?.instantiateViewControllerWithIdentifier("TransitionPresentedViewController") as? TransitionPresentedViewController {
+  func presentViaSegue(_ segueClass: UIStoryboardSegue.Type?, useDismissInteraction: Bool) {
+    if let segueClass = segueClass, let toViewController = storyboard?.instantiateViewController(withIdentifier: "TransitionPresentedViewController") as? TransitionPresentedViewController {
       toViewController.useDismissInteraction = useDismissInteraction
-      let segue = segueClass.init(identifier: String(segueClass), source: self, destination: toViewController)
-      prepareForSegue(segue, sender: self)
+      let segue = segueClass.init(identifier: String(describing: segueClass), source: self, destination: toViewController)
+      prepare(for: segue, sender: self)
       segue.perform()
     }
   }

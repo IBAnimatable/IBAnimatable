@@ -5,9 +5,9 @@
 
 import UIKit
 
-public class PresentFlipWithDismissInteractionSegue: UIStoryboardSegue {
-  public override func perform() {
-    destinationViewController.transitioningDelegate = TransitionPresenterManager.sharedManager().retrievePresenter(.Flip(fromDirection: .Left), interactiveGestureType: .Default)
-    sourceViewController.presentViewController(destinationViewController, animated: true, completion: nil)
+open class PresentFlipWithDismissInteractionSegue: UIStoryboardSegue {
+  open override func perform() {
+    destination.transitioningDelegate = TransitionPresenterManager.sharedManager().retrievePresenter(transitionAnimationType: .flip(from: .left), interactiveGestureType: .default)
+    source.present(destination, animated: true, completion: nil)
   }
 }

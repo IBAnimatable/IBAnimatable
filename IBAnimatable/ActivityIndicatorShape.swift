@@ -6,79 +6,73 @@
 import UIKit
 
 enum ActivityIndicatorShape {
-  case Circle
-  case CircleSemi
-  case Ring
-  case RingTwoHalfVertical
-  case RingTwoHalfHorizontal
-  case RingThirdFour
-  case Rectangle
-  case Triangle
-  case Line
-  case Pacman
+  case circle
+  case circleSemi
+  case ring
+  case ringTwoHalfVertical
+  case ringTwoHalfHorizontal
+  case ringThirdFour
+  case rectangle
+  case triangle
+  case line
+  case pacman
 
-  func createLayerWith(size size: CGSize, color: UIColor) -> CALayer {
+  func makeLayer(size: CGSize, color: UIColor) -> CALayer {
     let lineWidth: CGFloat = 2    
     switch self {
-    case .Circle:
-      return circleShapeLayer(with: size, color: color)
-    case .CircleSemi:
-      return semiCircleShapeLayer(with: size, color: color)
-    case .Ring:
-      return ringShapeLayer(with: size, color: color, lineWidth: lineWidth)
-    case .RingTwoHalfVertical:
-      return ringTwoHalfVerticalShapeLayer(with: size, color: color, lineWidth: lineWidth)
-    case .RingTwoHalfHorizontal:
-      return ringTwoHalfHorizontalShapeLayer(with: size, color: color, lineWidth: lineWidth)
-    case .RingThirdFour:
-      return ringThirdFourShapeLayer(with: size, color: color, lineWidth: lineWidth)
-    case .Rectangle:
-      return rectangleShapeLayer(with: size, color: color)
-    case .Triangle:
-      return triangleShapeLayer(with: size, color: color)
-    case .Line:
-      return lineShapeLayer(with: size, color: color)
-    case .Pacman:
-      return pacmanShapeLayer(with: size, color: color)
+    case .circle:
+      return makeCircleShapeLayer(with: size, color: color)
+    case .circleSemi:
+      return makeSemiCircleShapeLayer(with: size, color: color)
+    case .ring:
+      return makeRingShapeLayer(with: size, color: color, lineWidth: lineWidth)
+    case .ringTwoHalfVertical:
+      return makeRingTwoHalfVerticalShapeLayer(with: size, color: color, lineWidth: lineWidth)
+    case .ringTwoHalfHorizontal:
+      return makeRingTwoHalfHorizontalShapeLayer(with: size, color: color, lineWidth: lineWidth)
+    case .ringThirdFour:
+      return makeRingThirdFourShapeLayer(with: size, color: color, lineWidth: lineWidth)
+    case .rectangle:
+      return makeRectangleShapeLayer(with: size, color: color)
+    case .triangle:
+      return makeTriangleShapeLayer(with: size, color: color)
+    case .line:
+      return makeLineShapeLayer(with: size, color: color)
+    case .pacman:
+      return makePacmanShapeLayer(with: size, color: color)
     }
   }
-
-  func completingLayer(layer: CAShapeLayer, path: UIBezierPath, size: CGSize) -> CAShapeLayer {
-    layer.backgroundColor = nil
-    layer.path = path.CGPath
-    layer.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-    return layer
-  }
-
 }
 
 // MARK: - Circles
 
 private extension ActivityIndicatorShape {
 
-  func circleShapeLayer(with size: CGSize, color: UIColor) -> CAShapeLayer {
+  func makeCircleShapeLayer(with size: CGSize, color: UIColor) -> CAShapeLayer {
     let layer = CAShapeLayer()
     let path = UIBezierPath()
-    path.addArcWithCenter(CGPoint(x: size.width / 2, y: size.height / 2),
+    path.addArc(withCenter: CGPoint(x: size.width / 2, y: size.height / 2),
                           radius: size.width / 2,
                           startAngle: 0,
-                          endAngle: CGFloat(2 * M_PI),
+                          endAngle: 2 * CGFloat.pi,
                           clockwise: false)
-    layer.fillColor = color.CGColor
-    return completingLayer(layer, path: path, size: size)
+    layer.fillColor = color.cgColor
+    layer.apply(path: path, size: size)
+    return layer
   }
 
-  func semiCircleShapeLayer(with size: CGSize, color: UIColor) -> CAShapeLayer {
+  func makeSemiCircleShapeLayer(with size: CGSize, color: UIColor) -> CAShapeLayer {
     let layer = CAShapeLayer()
     let path = UIBezierPath()
-    path.addArcWithCenter(CGPoint(x: size.width / 2, y: size.height / 2),
+    path.addArc(withCenter: CGPoint(x: size.width / 2, y: size.height / 2),
                           radius: size.width / 2,
-                          startAngle: CGFloat(-M_PI / 6),
-                          endAngle: CGFloat(-5 * M_PI / 6),
+                          startAngle: -CGFloat.pi / 6,
+                          endAngle: -5 * CGFloat.pi / 6,
                           clockwise: false)
-    path.closePath()
-    layer.fillColor = color.CGColor
-    return completingLayer(layer, path: path, size: size)
+    path.close()
+    layer.fillColor = color.cgColor
+    layer.apply(path: path, size: size)
+    return layer
   }
 
 }
@@ -87,78 +81,82 @@ private extension ActivityIndicatorShape {
 
 private extension ActivityIndicatorShape {
 
-  func ringShapeLayer(with size: CGSize, color: UIColor, lineWidth: CGFloat) -> CAShapeLayer {
+  func makeRingShapeLayer(with size: CGSize, color: UIColor, lineWidth: CGFloat) -> CAShapeLayer {
     let layer = CAShapeLayer()
     let path = UIBezierPath()
-    path.addArcWithCenter(CGPoint(x: size.width / 2, y: size.height / 2),
+    path.addArc(withCenter: CGPoint(x: size.width / 2, y: size.height / 2),
                           radius: size.width / 2,
                           startAngle: 0,
-                          endAngle: CGFloat(2 * M_PI),
+                          endAngle: 2 * CGFloat.pi,
                           clockwise: false)
     layer.fillColor = nil
-    layer.strokeColor = color.CGColor
+    layer.strokeColor = color.cgColor
     layer.lineWidth = lineWidth
-    return completingLayer(layer, path: path, size: size)
+    layer.apply(path: path, size: size)
+    return layer
   }
 
-  func ringTwoHalfVerticalShapeLayer(with size: CGSize, color: UIColor, lineWidth: CGFloat) -> CAShapeLayer {
+  func makeRingTwoHalfVerticalShapeLayer(with size: CGSize, color: UIColor, lineWidth: CGFloat) -> CAShapeLayer {
     let layer = CAShapeLayer()
     let path = UIBezierPath()
-    path.addArcWithCenter(CGPoint(x: size.width / 2, y: size.height / 2),
+    path.addArc(withCenter: CGPoint(x: size.width / 2, y: size.height / 2),
                           radius:size.width / 2,
-                          startAngle:CGFloat(-3 * M_PI_4),
-                          endAngle:CGFloat(-M_PI_4),
+                          startAngle:-3 * CGFloat.pi / 4,
+                          endAngle:-CGFloat.pi / 4,
                           clockwise:true)
-    path.moveToPoint(
-      CGPoint(x: size.width / 2 - size.width / 2 * CGFloat(cos(M_PI_4)),
-        y: size.height / 2 + size.height / 2 * CGFloat(sin(M_PI_4)))
+    path.move(
+      to: CGPoint(x: size.width / 2 - size.width / 2 * cos(CGFloat.pi / 4),
+        y: size.height / 2 + size.height / 2 * sin(CGFloat.pi / 4))
     )
-    path.addArcWithCenter(CGPoint(x: size.width / 2, y: size.height / 2),
+    path.addArc(withCenter: CGPoint(x: size.width / 2, y: size.height / 2),
                           radius:size.width / 2,
-                          startAngle:CGFloat(-5 * M_PI_4),
-                          endAngle:CGFloat(-7 * M_PI_4),
+                          startAngle:-5 * CGFloat.pi / 4,
+                          endAngle:-7 * CGFloat.pi / 4,
                           clockwise:false)
     layer.fillColor = nil
-    layer.strokeColor = color.CGColor
+    layer.strokeColor = color.cgColor
     layer.lineWidth = lineWidth
-    return completingLayer(layer, path: path, size: size)
+    layer.apply(path: path, size: size)
+    return layer
   }
 
-  func ringTwoHalfHorizontalShapeLayer(with size: CGSize, color: UIColor, lineWidth: CGFloat) -> CAShapeLayer {
+  func makeRingTwoHalfHorizontalShapeLayer(with size: CGSize, color: UIColor, lineWidth: CGFloat) -> CAShapeLayer {
     let layer = CAShapeLayer()
     let path = UIBezierPath()
-    path.addArcWithCenter(CGPoint(x: size.width / 2, y: size.height / 2),
+    path.addArc(withCenter: CGPoint(x: size.width / 2, y: size.height / 2),
                           radius:size.width / 2,
-                          startAngle:CGFloat(3 * M_PI_4),
-                          endAngle:CGFloat(5 * M_PI_4),
+                          startAngle:3 * CGFloat.pi / 4,
+                          endAngle:5 * CGFloat.pi / 4,
                           clockwise:true)
-    path.moveToPoint(
-      CGPoint(x: size.width / 2 + size.width / 2 * CGFloat(cos(M_PI_4)),
-        y: size.height / 2 - size.height / 2 * CGFloat(sin(M_PI_4)))
+    path.move(
+      to: CGPoint(x: size.width / 2 + size.width / 2 * cos(CGFloat.pi / 4),
+        y: size.height / 2 - size.height / 2 * sin(CGFloat.pi / 4))
     )
-    path.addArcWithCenter(CGPoint(x: size.width / 2, y: size.height / 2),
+    path.addArc(withCenter: CGPoint(x: size.width / 2, y: size.height / 2),
                           radius:size.width / 2,
-                          startAngle:CGFloat(-M_PI_4),
-                          endAngle:CGFloat(M_PI_4),
+                          startAngle:-CGFloat.pi / 4,
+                          endAngle:CGFloat.pi / 4,
                           clockwise:true)
     layer.fillColor = nil
-    layer.strokeColor = color.CGColor
+    layer.strokeColor = color.cgColor
     layer.lineWidth = lineWidth
-    return completingLayer(layer, path: path, size: size)
+    layer.apply(path: path, size: size)
+    return layer
   }
 
-  func ringThirdFourShapeLayer(with size: CGSize, color: UIColor, lineWidth: CGFloat) -> CAShapeLayer {
+  func makeRingThirdFourShapeLayer(with size: CGSize, color: UIColor, lineWidth: CGFloat) -> CAShapeLayer {
     let layer = CAShapeLayer()
     let path = UIBezierPath()
-    path.addArcWithCenter(CGPoint(x: size.width / 2, y: size.height / 2),
+    path.addArc(withCenter: CGPoint(x: size.width / 2, y: size.height / 2),
                           radius: size.width / 2,
-                          startAngle: CGFloat(-3 * M_PI_4),
-                          endAngle: CGFloat(-M_PI_4),
+                          startAngle: -3 * CGFloat.pi / 4,
+                          endAngle: -CGFloat.pi / 4,
                           clockwise: false)
     layer.fillColor = nil
-    layer.strokeColor = color.CGColor
+    layer.strokeColor = color.cgColor
     layer.lineWidth = lineWidth
-    return completingLayer(layer, path: path, size: size)
+    layer.apply(path: path, size: size)
+    return layer
   }
 
 }
@@ -167,50 +165,62 @@ private extension ActivityIndicatorShape {
 
 private extension ActivityIndicatorShape {
 
-  func rectangleShapeLayer(with size: CGSize, color: UIColor) -> CAShapeLayer {
+  func makeRectangleShapeLayer(with size: CGSize, color: UIColor) -> CAShapeLayer {
     let layer = CAShapeLayer()
     let path = UIBezierPath()
-    path.moveToPoint(CGPoint(x: 0, y: 0))
-    path.addLineToPoint(CGPoint(x: size.width, y: 0))
-    path.addLineToPoint(CGPoint(x: size.width, y: size.height))
-    path.addLineToPoint(CGPoint(x: 0, y: size.height))
-    layer.fillColor = color.CGColor
-    return completingLayer(layer, path: path, size: size)
+    path.move(to: CGPoint(x: 0, y: 0))
+    path.addLine(to: CGPoint(x: size.width, y: 0))
+    path.addLine(to: CGPoint(x: size.width, y: size.height))
+    path.addLine(to: CGPoint(x: 0, y: size.height))
+    layer.fillColor = color.cgColor
+    layer.apply(path: path, size: size)
+    return layer
   }
 
-  func triangleShapeLayer(with size: CGSize, color: UIColor) -> CAShapeLayer {
+  func makeTriangleShapeLayer(with size: CGSize, color: UIColor) -> CAShapeLayer {
     let layer = CAShapeLayer()
     let path = UIBezierPath()
     let offsetY = size.height / 4
-    path.moveToPoint(CGPoint(x: 0, y: size.height - offsetY))
-    path.addLineToPoint(CGPoint(x: size.width / 2, y: size.height / 2 - offsetY))
-    path.addLineToPoint(CGPoint(x: size.width, y: size.height - offsetY))
-    path.closePath()
-    layer.fillColor = color.CGColor
-    return completingLayer(layer, path: path, size: size)
+    path.move(to: CGPoint(x: 0, y: size.height - offsetY))
+    path.addLine(to: CGPoint(x: size.width / 2, y: size.height / 2 - offsetY))
+    path.addLine(to: CGPoint(x: size.width, y: size.height - offsetY))
+    path.close()
+    layer.fillColor = color.cgColor
+    layer.apply(path: path, size: size)
+    return layer
   }
 
-  func lineShapeLayer(with size: CGSize, color: UIColor) -> CAShapeLayer {
+  func makeLineShapeLayer(with size: CGSize, color: UIColor) -> CAShapeLayer {
     let layer = CAShapeLayer()
     var path = UIBezierPath()
     path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: size.width, height: size.height),
                         cornerRadius: size.width / 2)
-    layer.fillColor = color.CGColor
-    return completingLayer(layer, path: path, size: size)
+    layer.fillColor = color.cgColor
+    layer.apply(path: path, size: size)
+    return layer
   }
 
-  func pacmanShapeLayer(with size: CGSize, color: UIColor) -> CAShapeLayer {
+  func makePacmanShapeLayer(with size: CGSize, color: UIColor) -> CAShapeLayer {
     let layer = CAShapeLayer()
     let path = UIBezierPath()
-    path.addArcWithCenter(CGPoint(x: size.width / 2, y: size.height / 2),
+    path.addArc(withCenter: CGPoint(x: size.width / 2, y: size.height / 2),
                           radius: size.width / 4,
                           startAngle: 0,
-                          endAngle: CGFloat(2 * M_PI),
+                          endAngle: 2 * CGFloat.pi,
                           clockwise: true)
     layer.fillColor = nil
-    layer.strokeColor = color.CGColor
+    layer.strokeColor = color.cgColor
     layer.lineWidth = size.width / 2
-    return completingLayer(layer, path: path, size: size)
+    layer.apply(path: path, size: size)
+    return layer
   }
 
+}
+
+private extension CAShapeLayer {
+  func apply(path: UIBezierPath, size: CGSize) {
+    self.backgroundColor = nil
+    self.path = path.cgPath
+    self.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+  }
 }

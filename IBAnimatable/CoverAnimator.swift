@@ -11,9 +11,9 @@ public class CoverAnimator: NSObject, AnimatedPresenting {
   public var transitionDuration: Duration = defaultTransitionDuration
 
   // MARK: - private
-  private var direction: TransitionDirection
+  fileprivate var direction: TransitionAnimationType.Direction
 
-  public init(from direction: TransitionDirection, transitionDuration: Duration) {
+  public init(from direction: TransitionAnimationType.Direction, transitionDuration: Duration) {
     self.direction = direction
     self.transitionDuration = transitionDuration
     super.init()
@@ -24,20 +24,20 @@ public class CoverAnimator: NSObject, AnimatedPresenting {
 
 extension CoverAnimator: UIViewControllerAnimatedTransitioning {
 
-  public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-    return retrieveTransitionDuration(transitionContext)
+  public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    return retrieveTransitionDuration(transitionContext: transitionContext)
   }
 
-  public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-    let (fromView, toView, tempContainerView) = retrieveViews(transitionContext)
-    let presenting = isPresenting(transitionContext)
-    guard let containerView = tempContainerView, animatingView = presenting ? toView : fromView else {
+  public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+    let (fromView, toView, tempContainerView) = retrieveViews(transitionContext: transitionContext)
+    let isPresenting = self.isPresenting(transitionContext: transitionContext)
+    guard let containerView = tempContainerView, let animatingView = isPresenting ? toView : fromView else {
       transitionContext.completeTransition(true)
       return
     }
 
     let finalFrame: CGRect
-    if presenting {
+    if isPresenting {
       finalFrame = getFinalFrame(from: direction, initialFrame: animatingView.frame, containerFrame: containerView.frame)
       containerView.addSubview(animatingView)
     } else {
@@ -47,10 +47,10 @@ extension CoverAnimator: UIViewControllerAnimatedTransitioning {
     }
     
     animateCover(animatingView: animatingView, finalFrame: finalFrame) {
-      if !presenting {
+      if !isPresenting {
         fromView?.removeFromSuperview()
       }
-      transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+      transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
     }
   }
 
@@ -60,16 +60,16 @@ extension CoverAnimator: UIViewControllerAnimatedTransitioning {
 
 private extension CoverAnimator {
 
-  func getFinalFrame(from direction: TransitionDirection, initialFrame: CGRect, containerFrame: CGRect) -> CGRect {
+  func getFinalFrame(from direction: TransitionAnimationType.Direction, initialFrame: CGRect, containerFrame: CGRect) -> CGRect {
     var initialFrame = initialFrame
     switch direction {
-    case .Right:
+    case .right:
       initialFrame.origin.x = 0 - initialFrame.size.width
-    case .Left:
+    case .left:
       initialFrame.origin.x = containerFrame.size.width + initialFrame.size.width
-    case .Top:
+    case .top:
       initialFrame.origin.y = containerFrame.size.height + initialFrame.size.height
-    case .Bottom:
+    case .bottom:
       initialFrame.origin.y = 0 - initialFrame.size.height
     default:
       fatalError()
@@ -83,8 +83,8 @@ private extension CoverAnimator {
 
 private extension CoverAnimator {
 
-  func animateCover(animatingView animatingView: UIView, finalFrame: CGRect, completion: AnimatableCompletion) {
-    UIView.animateWithDuration(transitionDuration, animations: {
+  func animateCover(animatingView: UIView, finalFrame: CGRect, completion: @escaping AnimatableCompletion) {
+    UIView.animate(withDuration: transitionDuration, animations: {
       animatingView.frame = finalFrame
     }, completion: { _ in
         completion()

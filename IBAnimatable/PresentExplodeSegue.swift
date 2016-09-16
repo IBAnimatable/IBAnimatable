@@ -5,9 +5,9 @@
 
 import UIKit
 
-public class PresentExplodeSegue: UIStoryboardSegue {
-  public override func perform() {
-    destinationViewController.transitioningDelegate = TransitionPresenterManager.sharedManager().retrievePresenter(.Explode(params: []))
-    sourceViewController.presentViewController(destinationViewController, animated: true, completion: nil)
+open class PresentExplodeSegue: UIStoryboardSegue {
+  open override func perform() {
+    destination.transitioningDelegate = TransitionPresenterManager.sharedManager().retrievePresenter(transitionAnimationType: .explode(xFactor: nil, minAngle: nil, maxAngle: nil))
+    source.present(destination, animated: true, completion: nil)
   }
 }

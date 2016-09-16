@@ -30,32 +30,32 @@ public protocol TintDesignable {
 
 public extension TintDesignable where Self: UIView {
   /**
-   configTintedColor method, should be called in layoutSubviews() method
+   configureTintedColor method, should be called in layoutSubviews() method
    */
-  public func configTintedColor() {
+  public func configureTintedColor() {
     if !tintOpacity.isNaN && tintOpacity >= 0 && tintOpacity <= 1 {
-      addColorSubview(UIColor.whiteColor(), opacity: tintOpacity)
+      addColorSubview(color: .white, opacity: tintOpacity)
     }
     
     if !shadeOpacity.isNaN && shadeOpacity >= 0 && shadeOpacity <= 1 {
-      addColorSubview(UIColor.blackColor(), opacity: shadeOpacity)
+      addColorSubview(color: .black, opacity: shadeOpacity)
     }
     
-    if let unwrappedToneColor = toneColor {
+    if let toneColor = toneColor {
       if !toneOpacity.isNaN && toneOpacity >= 0 && toneOpacity <= 1 {
-        addColorSubview(unwrappedToneColor, opacity: toneOpacity)
+        addColorSubview(color: toneColor, opacity: toneOpacity)
       }
     }
   }
   
-  private func addColorSubview(color: UIColor, opacity: CGFloat) {
+  fileprivate func addColorSubview(color: UIColor, opacity: CGFloat) {
     let subview = UIView(frame: self.bounds)
     subview.backgroundColor = color
     subview.alpha = opacity
     if layer.cornerRadius > 0 {
       subview.layer.cornerRadius = layer.cornerRadius
     }
-    subview.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-    self.insertSubview(subview, atIndex: 0)
+    subview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    self.insertSubview(subview, at: 0)
   }
 }

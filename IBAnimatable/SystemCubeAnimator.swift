@@ -15,29 +15,29 @@ public class SystemCubeAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
 
   // MARK: - private
-  private var fromDirection: TransitionDirection
+  fileprivate var fromDirection: TransitionAnimationType.Direction
   
-  public init(fromDirection: TransitionDirection, transitionDuration: Duration) {
-    self.fromDirection = fromDirection
+  public init(from direction: TransitionAnimationType.Direction, transitionDuration: Duration) {
+    fromDirection = direction
     self.transitionDuration = transitionDuration
     
     switch fromDirection {
-    case .Right:
-      self.transitionAnimationType = .SystemCube(fromDirection: .Right)
-      self.reverseAnimationType = .SystemCube(fromDirection: .Left)
-      self.interactiveGestureType = .Pan(fromDirection: .Left)
-    case .Top:
-      self.transitionAnimationType = .SystemCube(fromDirection: .Top)
-      self.reverseAnimationType = .SystemCube(fromDirection: .Bottom)
-      self.interactiveGestureType = .Pan(fromDirection: .Bottom)
-    case .Bottom:
-      self.transitionAnimationType = .SystemCube(fromDirection: .Bottom)
-      self.reverseAnimationType = .SystemCube(fromDirection: .Top)
-      self.interactiveGestureType = .Pan(fromDirection: .Top)
+    case .right:
+      self.transitionAnimationType = .systemCube(from: .right)
+      self.reverseAnimationType = .systemCube(from: .left)
+      self.interactiveGestureType = .pan(from: .left)
+    case .top:
+      self.transitionAnimationType = .systemCube(from: .top)
+      self.reverseAnimationType = .systemCube(from: .bottom)
+      self.interactiveGestureType = .pan(from: .bottom)
+    case .bottom:
+      self.transitionAnimationType = .systemCube(from: .bottom)
+      self.reverseAnimationType = .systemCube(from: .top)
+      self.interactiveGestureType = .pan(from: .top)
     default:
-      self.transitionAnimationType = .SystemCube(fromDirection: .Left)
-      self.reverseAnimationType = .SystemCube(fromDirection: .Right)
-      self.interactiveGestureType = .Pan(fromDirection: .Right)
+      self.transitionAnimationType = .systemCube(from: .left)
+      self.reverseAnimationType = .systemCube(from: .right)
+      self.interactiveGestureType = .pan(from: .right)
     }
     
     super.init()
@@ -45,11 +45,11 @@ public class SystemCubeAnimator: NSObject, AnimatedTransitioning {
 }
 
 extension SystemCubeAnimator: UIViewControllerAnimatedTransitioning {
-  public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-    return retrieveTransitionDuration(transitionContext)
+  public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    return retrieveTransitionDuration(transitionContext: transitionContext)
   }
   
-  public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-    animateWithCATransition(transitionContext, type: SystemTransitionType.Cube, subtype: fromDirection.CATransitionSubtype)
+  public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+    animateWithCATransition(transitionContext: transitionContext, type: TransitionAnimationType.SystemTransitionType.cube, subtype: fromDirection.caTransitionSubtype)
   }
 }

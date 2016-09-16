@@ -5,22 +5,22 @@
 
 import UIKit
 
-@IBDesignable public class DesignableNavigationBar: UINavigationBar, NavigationBarDesignable {
-  @IBInspectable public var solidColor: Bool = false
+@IBDesignable open class DesignableNavigationBar: UINavigationBar, NavigationBarDesignable {
+  @IBInspectable open var solidColor: Bool = false
   
   // MARK: - Lifecycle
-  public override func prepareForInterfaceBuilder() {
+  open override func prepareForInterfaceBuilder() {
     super.prepareForInterfaceBuilder()
-    configInspectableProperties()
+    configureInspectableProperties()
   }
   
-  public override func awakeFromNib() {
+  open override func awakeFromNib() {
     super.awakeFromNib()
-    configInspectableProperties()
+    configureInspectableProperties()
   }
   
   // MARK: - Private
-  private func configInspectableProperties() {
-    configNavigationBar()
+  fileprivate func configureInspectableProperties() {
+    configureNavigationBar()
   }
 }

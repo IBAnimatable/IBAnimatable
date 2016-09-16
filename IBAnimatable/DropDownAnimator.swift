@@ -9,7 +9,7 @@ public class DropDownAnimator: NSObject, AnimatedPresenting {
 
   // MARK: - AnimatedPresenting
   public var transitionDuration: Duration = defaultTransitionDuration
-  private var completion: AnimatableCompletion?
+  fileprivate var completion: AnimatableCompletion?
 
   // MARK: - Life cycle
   public init(transitionDuration: Duration) {
@@ -23,26 +23,26 @@ public class DropDownAnimator: NSObject, AnimatedPresenting {
 
 extension DropDownAnimator: UIViewControllerAnimatedTransitioning {
 
-  public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-    return retrieveTransitionDuration(transitionContext)
+  public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    return retrieveTransitionDuration(transitionContext: transitionContext)
   }
 
-  public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-    let (fromView, toView, tempContainerView) = retrieveViews(transitionContext)
-    let presenting = isPresenting(transitionContext)
-    guard let containerView = tempContainerView, animatingView = presenting ? toView : fromView else {
+  public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+    let (fromView, toView, tempContainerView) = retrieveViews(transitionContext: transitionContext)
+    let isPresenting = self.isPresenting(transitionContext: transitionContext)
+    guard let containerView = tempContainerView, let animatingView = isPresenting ? toView : fromView else {
       transitionContext.completeTransition(true)
       return
     }
 
-    if presenting {
+    if isPresenting {
       containerView.addSubview(animatingView)
     }
-    animateDropDown(animatingView: animatingView, presenting: presenting) {
-      if !presenting {
+    animateDropDown(animatingView: animatingView, isPresenting: isPresenting) {
+      if !isPresenting {
         fromView?.removeFromSuperview()
       }
-      transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+      transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
     }
   }
 
@@ -52,33 +52,33 @@ extension DropDownAnimator: UIViewControllerAnimatedTransitioning {
 
 private extension DropDownAnimator {
 
-  func animateDropDown(animatingView animatingView: UIView, presenting: Bool, completion: AnimatableCompletion) {
-    if presenting {
+  func animateDropDown(animatingView: UIView, isPresenting: Bool, completion: @escaping AnimatableCompletion) {
+    if isPresenting {
       animatePresengingDropDown(animatingView: animatingView, completion: completion)
     } else {
       animateDismissingDropDown(animatingView: animatingView, completion: completion)
     }
   }
 
-  func animatePresengingDropDown(animatingView animatingView: UIView, completion: AnimatableCompletion) {
+  func animatePresengingDropDown(animatingView: UIView, completion: @escaping AnimatableCompletion) {
     let y = animatingView.center.y
     let animation = CAKeyframeAnimation(keyPath: "position.y")
-    animation.values = [y - UIScreen.mainScreen().bounds.height, y + 20, y - 10, y]
+    animation.values = [y - UIScreen.main.bounds.height, y + 20, y - 10, y]
     animation.keyTimes = [0, 0.5, 0.75, 1]
     animation.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut), CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear), CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)]
     animation.duration = transitionDuration
     animation.delegate = self
     self.completion = completion
-    animatingView.layer.addAnimation(animation, forKey: "dropdown")
+    animatingView.layer.add(animation, forKey: "dropdown")
   }
 
-  func animateDismissingDropDown(animatingView animatingView: UIView, completion: AnimatableCompletion) {
+  func animateDismissingDropDown(animatingView: UIView, completion: @escaping AnimatableCompletion) {
     var point = animatingView.center
     let angle = CGFloat(arc4random_uniform(100)) - 50
-    point.y += UIScreen.mainScreen().bounds.height
-    UIView.animateWithDuration(transitionDuration, animations: {
+    point.y += UIScreen.main.bounds.height
+    UIView.animate(withDuration: transitionDuration, animations: {
       animatingView.center = point
-      animatingView.transform = CGAffineTransformMakeRotation(angle / 100)
+      animatingView.transform = CGAffineTransform(rotationAngle: angle / 100)
     }, completion: { _ in
       completion()
     })
@@ -88,12 +88,11 @@ private extension DropDownAnimator {
 
 // MARK: - CAAnimationDelegate
 
-extension DropDownAnimator {
-
-  public override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
-    if let unwrappedCompletion = completion {
-      unwrappedCompletion()
-      completion = nil
+extension DropDownAnimator: CAAnimationDelegate {
+  public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+    if let completion = completion {
+      completion()
+      self.completion = nil
     }
   }
 

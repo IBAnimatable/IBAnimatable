@@ -5,9 +5,9 @@
 
 import UIKit
 
-public class PresentSlideSegue: UIStoryboardSegue {
-  public override func perform() {
-    destinationViewController.transitioningDelegate = TransitionPresenterManager.sharedManager().retrievePresenter(.Slide(toDirection: .Left, params: []))
-    sourceViewController.presentViewController(destinationViewController, animated: true, completion: nil)
+open class PresentSlideSegue: UIStoryboardSegue {
+  open override func perform() {
+    destination.transitioningDelegate = TransitionPresenterManager.sharedManager().retrievePresenter(transitionAnimationType: .slide(to: .left, isFade: false))
+    source.present(destination, animated: true, completion: nil)
   }
 }

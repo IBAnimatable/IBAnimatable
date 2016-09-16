@@ -13,19 +13,19 @@ public class SystemPageAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
-  private var type: TransitionPageType
+  fileprivate var type: TransitionAnimationType.PageType
   
-  public init(type: TransitionPageType, transitionDuration: Duration) {
+  public init(type: TransitionAnimationType.PageType, transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
     self.type = type
     
     switch type {
-    case .Curl:
-      self.transitionAnimationType = .SystemPage(type: .Curl)
-      self.reverseAnimationType = .SystemPage(type: .UnCurl)
-    case .UnCurl:
-      self.transitionAnimationType = .SystemPage(type: .UnCurl)
-      self.reverseAnimationType = .SystemPage(type: .Curl)
+    case .curl:
+      self.transitionAnimationType = .systemPage(type: .curl)
+      self.reverseAnimationType = .systemPage(type: .unCurl)
+    case .unCurl:
+      self.transitionAnimationType = .systemPage(type: .unCurl)
+      self.reverseAnimationType = .systemPage(type: .curl)
     }
     
     super.init()
@@ -33,16 +33,16 @@ public class SystemPageAnimator: NSObject, AnimatedTransitioning {
 }
 
 extension SystemPageAnimator: UIViewControllerAnimatedTransitioning {
-  public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-    return retrieveTransitionDuration(transitionContext)
+  public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    return retrieveTransitionDuration(transitionContext: transitionContext)
   }
   
-  public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+  public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     switch self.type {
-    case .Curl:
-      animateWithCATransition(transitionContext, type: SystemTransitionType.PageCurl, subtype: nil)
-    case .UnCurl:
-      animateWithCATransition(transitionContext, type: SystemTransitionType.PageUnCurl, subtype: nil)
+    case .curl:
+      animateWithCATransition(transitionContext: transitionContext, type: TransitionAnimationType.SystemTransitionType.pageCurl, subtype: nil)
+    case .unCurl:
+      animateWithCATransition(transitionContext: transitionContext, type: TransitionAnimationType.SystemTransitionType.pageUnCurl, subtype: nil)
     }
   }
 }

@@ -9,7 +9,7 @@ import UIKit
  */
 public protocol AnimatedTransitioning: ViewControllerAnimatedTransitioning {
   /**
-   Value of `TransitionAnimationType` enum
+   Transition animation type: used to specify the transition animation.
    */
   var transitionAnimationType: TransitionAnimationType { get set }
 
@@ -25,16 +25,16 @@ public protocol AnimatedTransitioning: ViewControllerAnimatedTransitioning {
 }
 
 public extension AnimatedTransitioning {
-  public func animateWithCATransition(transitionContext: UIViewControllerContextTransitioning, type: SystemTransitionType, subtype: String?) {
-    let (_, tempToView, tempContainerView) = retrieveViews(transitionContext)
-    guard let toView = tempToView, containerView = tempContainerView else {
+  public func animateWithCATransition(transitionContext: UIViewControllerContextTransitioning, type: TransitionAnimationType.SystemTransitionType, subtype: String?) {
+    let (_, tempToView, tempContainerView) = retrieveViews(transitionContext: transitionContext)
+    guard let toView = tempToView, let containerView = tempContainerView else {
       transitionContext.completeTransition(true)
       return
     }
 
-    let (_, tempToViewController, _) = retrieveViewControllers(transitionContext)
+    let (_, tempToViewController, _) = retrieveViewControllers(transitionContext: transitionContext)
     if let toViewController = tempToViewController {
-      toView.frame = transitionContext.finalFrameForViewController(toViewController)
+      toView.frame = transitionContext.finalFrame(for: toViewController)
     }
     
     containerView.addSubview(toView)
@@ -44,13 +44,13 @@ public extension AnimatedTransitioning {
       if let subtype = subtype {
         transition.subtype = subtype
       }
-      transition.duration = self.transitionDuration(transitionContext)
+      transition.duration = self.transitionDuration(using: transitionContext)
       // Use `EaseOutQubic` for system built-in transition animations. Thanks to @lexrus
       transition.timingFunction = CAMediaTimingFunction(controlPoints: 0.215, 0.61, 0.355, 1)
-      containerView.layer.addAnimation(transition, forKey: kCATransition)
+      containerView.layer.add(transition, forKey: kCATransition)
     },
     completion: {
-      transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+      transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
     })
   }
 }

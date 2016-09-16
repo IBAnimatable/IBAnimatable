@@ -9,11 +9,11 @@ public class ActivityIndicatorAnimationBallGridBeat: ActivityIndicatorAnimating 
 
   // MARK: Properties
 
-  private let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
+  fileprivate let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
 
   // MARK: ActivityIndicatorAnimating
 
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     let circleSpacing: CGFloat = 2
     let circleSize = (size.width - circleSpacing * 2) / 3
     let x = (layer.bounds.size.width - size.width) / 2
@@ -26,7 +26,7 @@ public class ActivityIndicatorAnimationBallGridBeat: ActivityIndicatorAnimating 
     // Draw circles
     for i in 0 ..< 3 {
       for j in 0 ..< 3 {
-        let circle = ActivityIndicatorShape.Circle.createLayerWith(size: CGSize(width: circleSize, height: circleSize), color: color)
+        let circle = ActivityIndicatorShape.circle.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
         let frame = CGRect(x: x + circleSize * CGFloat(j) + circleSpacing * CGFloat(j),
                            y: y + circleSize * CGFloat(i) + circleSpacing * CGFloat(i),
                            width: circleSize,
@@ -35,7 +35,7 @@ public class ActivityIndicatorAnimationBallGridBeat: ActivityIndicatorAnimating 
         animation.duration = durations[3 * i + j]
         animation.beginTime = beginTime + beginTimes[3 * i + j]
         circle.frame = frame
-        circle.addAnimation(animation, forKey: "animation")
+        circle.add(animation, forKey: "animation")
         layer.addSublayer(circle)
       }
     }
@@ -52,7 +52,7 @@ private extension ActivityIndicatorAnimationBallGridBeat {
     animation.timingFunctions = [timingFunction, timingFunction]
     animation.values = [1, 0.7, 1]
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 

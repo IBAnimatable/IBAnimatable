@@ -13,25 +13,25 @@ public class SystemCameraIrisAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
   
   // MARK: - private
-  private var hollowState: TransitionHollowState
+  fileprivate var hollowState: TransitionAnimationType.HollowState
   
-  public init(hollowState: TransitionHollowState, transitionDuration: Duration) {    
+  public init(hollowState: TransitionAnimationType.HollowState, transitionDuration: Duration) {    
     self.transitionDuration = transitionDuration
     self.hollowState = hollowState
     
     switch hollowState {
-    case .Open:
-      self.transitionAnimationType = .SystemCameraIris(hollowState: .Open)
-      self.reverseAnimationType = .SystemCameraIris(hollowState: .Close)
-      self.interactiveGestureType = .Pinch(direction: .Close)
-    case .Close:
-      self.transitionAnimationType = .SystemCameraIris(hollowState: .Close)
-      self.reverseAnimationType = .SystemCameraIris(hollowState: .Open)
-      self.interactiveGestureType = .Pinch(direction: .Open)
-    case .None:
-      self.transitionAnimationType = .SystemCameraIris(hollowState: .None)
-      self.reverseAnimationType = .SystemCameraIris(hollowState: .None)
-      self.interactiveGestureType = .Pinch(direction: .Close)
+    case .open:
+      self.transitionAnimationType = .systemCameraIris(hollowState: .open)
+      self.reverseAnimationType = .systemCameraIris(hollowState: .close)
+      self.interactiveGestureType = .pinch(direction: .close)
+    case .close:
+      self.transitionAnimationType = .systemCameraIris(hollowState: .close)
+      self.reverseAnimationType = .systemCameraIris(hollowState: .open)
+      self.interactiveGestureType = .pinch(direction: .open)
+    case .none:
+      self.transitionAnimationType = .systemCameraIris(hollowState: .none)
+      self.reverseAnimationType = .systemCameraIris(hollowState: .none)
+      self.interactiveGestureType = .pinch(direction: .close)
     }
     
     super.init()
@@ -39,18 +39,18 @@ public class SystemCameraIrisAnimator: NSObject, AnimatedTransitioning {
 }
 
 extension SystemCameraIrisAnimator: UIViewControllerAnimatedTransitioning {
-  public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-    return retrieveTransitionDuration(transitionContext)
+  public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    return retrieveTransitionDuration(transitionContext: transitionContext)
   }
   
-  public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+  public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     switch self.hollowState {
-    case .Open:
-      animateWithCATransition(transitionContext, type: SystemTransitionType.CameraIrisHollowOpen, subtype: nil)
-    case .Close:
-      animateWithCATransition(transitionContext, type: SystemTransitionType.CameraIrisHollowClose, subtype: nil)
-    case .None:
-      animateWithCATransition(transitionContext, type: SystemTransitionType.CameraIris, subtype: nil)
+    case .open:
+      animateWithCATransition(transitionContext: transitionContext, type: TransitionAnimationType.SystemTransitionType.cameraIrisHollowOpen, subtype: nil)
+    case .close:
+      animateWithCATransition(transitionContext: transitionContext, type: TransitionAnimationType.SystemTransitionType.cameraIrisHollowClose, subtype: nil)
+    case .none:
+      animateWithCATransition(transitionContext: transitionContext, type: TransitionAnimationType.SystemTransitionType.cameraIris, subtype: nil)
 
     }
   }

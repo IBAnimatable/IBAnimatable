@@ -17,44 +17,45 @@ public extension PlaceholderDesignable where Self: UITextField {
 
   var placeholderText: String? { get { return "" } set {} }
 
-  public func configPlaceholderColor() {
-    if let unwrappedPlaceholderColor = placeholderColor {
-      attributedPlaceholder = NSAttributedString(string: placeholder!, attributes: [NSForegroundColorAttributeName: unwrappedPlaceholderColor])
+  public func configurePlaceholderColor() {
+    if let placeholderColor = placeholderColor, let placeholder = placeholder {
+      attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSForegroundColorAttributeName: placeholderColor])
     }
   }
 }
 
 public extension PlaceholderDesignable where Self: UITextView {
 
-  public func configPlaceholderLabel(placeholderLabel: UILabel, inout placeholderLabelConstraints: [NSLayoutConstraint]) {
+  public func configure(placeholderLabel: UILabel, placeholderLabelConstraints: inout [NSLayoutConstraint]) {
     placeholderLabel.font = font
     placeholderLabel.textColor = placeholderColor
     placeholderLabel.textAlignment = textAlignment
     placeholderLabel.text = placeholderText
     placeholderLabel.numberOfLines = 0
-    placeholderLabel.backgroundColor = .clearColor()
+    placeholderLabel.backgroundColor = .clear
     placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
     addSubview(placeholderLabel)
-    updateConstraintsForPlaceholderLabel(placeholderLabel, placeholderLabelConstraints: &placeholderLabelConstraints)
+    update(placeholderLabel, using: &placeholderLabelConstraints)
   }
 
-  public func updateConstraintsForPlaceholderLabel(placeholderLabel: UILabel, inout placeholderLabelConstraints: [NSLayoutConstraint]) {
-    var newConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-(\(textContainerInset.left + textContainer.lineFragmentPadding))-[placeholder]",
+  public func update(_ placeholderLabel: UILabel, using constraints: inout [NSLayoutConstraint]) {
+    var newConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-(\(textContainerInset.left + textContainer.lineFragmentPadding))-[placeholder]",
                                                                         options: [], metrics: nil,
                                                                         views: ["placeholder": placeholderLabel])
-    newConstraints += NSLayoutConstraint.constraintsWithVisualFormat("V:|-(\(textContainerInset.top))-[placeholder]",
+    newConstraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|-(\(textContainerInset.top))-[placeholder]",
                                                                      options: [], metrics: nil,
                                                                      views: ["placeholder": placeholderLabel])
     newConstraints.append(NSLayoutConstraint(item: placeholderLabel,
-      attribute: .Width,
-      relatedBy: .Equal,
+      attribute: .width,
+      relatedBy: .equal,
       toItem: self,
-      attribute: .Width,
+      attribute: .width,
       multiplier: 1.0,
       constant: -(textContainerInset.left + textContainerInset.right + textContainer.lineFragmentPadding * 2.0)))
-    removeConstraints(placeholderLabelConstraints)
+    
+    removeConstraints(constraints)
     addConstraints(newConstraints)
-    placeholderLabelConstraints = newConstraints
+    constraints = newConstraints
   }
 
 }

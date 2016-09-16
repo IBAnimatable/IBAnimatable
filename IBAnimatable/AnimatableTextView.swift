@@ -5,148 +5,154 @@
 
 import UIKit
 
-@IBDesignable public class AnimatableTextView: UITextView, CornerDesignable, FillDesignable, BorderDesignable, Animatable, PlaceholderDesignable {
+@IBDesignable open class AnimatableTextView: UITextView, CornerDesignable, FillDesignable, BorderDesignable, Animatable, PlaceholderDesignable {
   
   // MARK: - CornerDesignable
-  @IBInspectable public var cornerRadius: CGFloat = CGFloat.NaN {
+  @IBInspectable open var cornerRadius: CGFloat = CGFloat.nan {
     didSet {
-      configCornerRadius()
+      configureCornerRadius()
     }
   }
   
   // MARK: - FillDesignable
-  @IBInspectable public var fillColor: UIColor? {
+  @IBInspectable open var fillColor: UIColor? {
     didSet {
-      configFillColor()
+      configureFillColor()
     }
   }
   
-  @IBInspectable public var predefinedColor: String? {
+  @IBInspectable open var predefinedColor: String? {
     didSet {
-      configFillColor()
+      configureFillColor()
     }
   }
   
-  @IBInspectable public var opacity: CGFloat = CGFloat.NaN {
+  @IBInspectable open var opacity: CGFloat = CGFloat.nan {
     didSet {
-      configOpacity()
+      configureOpacity()
     }
   }
 
   // MARK: - BorderDesignable
-  @IBInspectable public var borderColor: UIColor? {
+  @IBInspectable open var borderColor: UIColor? {
     didSet {
-      configBorder()
+      configureBorder()
     }
   }
   
-  @IBInspectable public var borderWidth: CGFloat = CGFloat.NaN {
+  @IBInspectable open var borderWidth: CGFloat = CGFloat.nan {
     didSet {
-      configBorder()
+      configureBorder()
     }
   }
   
-  @IBInspectable public var borderSide: String? {
+  open var borderSides: BorderSides  = .AllSides {
     didSet {
-      configBorder()
+      configureBorder()
     }
   }
-
+  
+  @IBInspectable var _borderSides: String? {
+    didSet {
+      borderSides = BorderSides(rawValue: _borderSides)
+    }
+  }
   // MARK: - PlaceholderDesignable
-  @IBInspectable public var placeholderText: String? {
+  @IBInspectable open var placeholderText: String? {
     didSet {
       placeholderLabel.text = placeholderText
     }
   }
 
-  @IBInspectable public var placeholderColor: UIColor? {
+  @IBInspectable open var placeholderColor: UIColor? {
     didSet {
       placeholderLabel.textColor = placeholderColor
     }
   }
 
   // MARK: - Animatable
-  @IBInspectable public var animationType: String?
-  @IBInspectable public var autoRun: Bool = true
-  @IBInspectable public var duration: Double = Double.NaN
-  @IBInspectable public var delay: Double = Double.NaN
-  @IBInspectable public var damping: CGFloat = CGFloat.NaN
-  @IBInspectable public var velocity: CGFloat = CGFloat.NaN
-  @IBInspectable public var force: CGFloat = CGFloat.NaN
-  @IBInspectable public var repeatCount: Float = Float.NaN
-  @IBInspectable public var x: CGFloat = CGFloat.NaN
-  @IBInspectable public var y: CGFloat = CGFloat.NaN
-
+  open var animationType: AnimationType = .none
+  @IBInspectable  var _animationType: String? {
+    didSet {
+     animationType = AnimationType(string: _animationType)
+    }
+  }
+  @IBInspectable open var autoRun: Bool = true
+  @IBInspectable open var duration: Double = Double.nan
+  @IBInspectable open var delay: Double = Double.nan
+  @IBInspectable open var damping: CGFloat = CGFloat.nan
+  @IBInspectable open var velocity: CGFloat = CGFloat.nan
+  @IBInspectable open var force: CGFloat = CGFloat.nan
+  
   // MARK: Override properties
-  override public var font: UIFont! {
+  override open var font: UIFont! {
     didSet {
       placeholderLabel.font = font
     }
   }
 
-  override public var textAlignment: NSTextAlignment {
+  override open var textAlignment: NSTextAlignment {
     didSet {
       placeholderLabel.textAlignment = textAlignment
     }
   }
 
-  public override var text: String! {
+  open override var text: String! {
     didSet {
       textDidChange()
     }
   }
 
-  override public var attributedText: NSAttributedString! {
+  override open var attributedText: NSAttributedString! {
     didSet {
       textDidChange()
     }
   }
 
-  override public var textContainerInset: UIEdgeInsets {
+  override open var textContainerInset: UIEdgeInsets {
     didSet {
-      updateConstraintsForPlaceholderLabel(placeholderLabel, placeholderLabelConstraints: &placeholderLabelConstraints)
+      update(placeholderLabel, using: &placeholderLabelConstraints)
     }
   }
 
   // MARK: Private properties
-  private let placeholderLabel: UILabel = UILabel()
-  private var placeholderLabelConstraints = [NSLayoutConstraint]()
+  fileprivate let placeholderLabel: UILabel = UILabel()
+  fileprivate var placeholderLabelConstraints = [NSLayoutConstraint]()
 
   // MARK: - Lifecycle
-  public override func prepareForInterfaceBuilder() {
+  open override func prepareForInterfaceBuilder() {
     super.prepareForInterfaceBuilder()
-    configInspectableProperties()
+    configureInspectableProperties()
   }
   
-  public override func awakeFromNib() {
+  open override func awakeFromNib() {
     super.awakeFromNib()
-    configInspectableProperties()
+    configureInspectableProperties()
   }
   
-  public override func layoutSubviews() {
+  open override func layoutSubviews() {
     super.layoutSubviews()
-    configAfterLayoutSubviews()
+    configureAfterLayoutSubviews()
     autoRunAnimation()
   }
 
   deinit {
-    NSNotificationCenter.defaultCenter().removeObserver(self, name: UITextViewTextDidChangeNotification, object: nil)
+    NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UITextViewTextDidChange, object: nil)
   }
   
   // MARK: - Private
-  private func configInspectableProperties() {
-    configAnimatableProperties()
-    configPlaceholderLabel(placeholderLabel, placeholderLabelConstraints: &placeholderLabelConstraints)
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(textDidChange), name: UITextViewTextDidChangeNotification, object: nil)
+  private func configureInspectableProperties() {
+    configureAnimatableProperties()
+    configure(placeholderLabel: placeholderLabel, placeholderLabelConstraints: &placeholderLabelConstraints)
+    NotificationCenter.default.addObserver(self, selector: #selector(textDidChange), name: NSNotification.Name.UITextViewTextDidChange, object: nil)
   }
 
   @objc private func textDidChange() {
-    placeholderLabel.hidden = !text.isEmpty
+    placeholderLabel.isHidden = !text.isEmpty
   }
 
-  private func configAfterLayoutSubviews() {
-    configBorder()
+  private func configureAfterLayoutSubviews() {
+    configureBorder()
     placeholderLabel.preferredMaxLayoutWidth = textContainer.size.width - textContainer.lineFragmentPadding * 2.0
-
   }
 }

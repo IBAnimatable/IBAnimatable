@@ -3,161 +3,241 @@
 //  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /**
  Predefined Transition Animation Type
  */
 public enum TransitionAnimationType {
-  case SystemRotate
-  case SystemSuckEffect
-  case SystemRippleEffect
-  case Explode(params: [String])
-  case Fade(direction: TransitionDirection)
-  case Fold(fromDirection: TransitionDirection, params: [String])
-  case Portal(direction: TransitionDirection, params: [String])
-  case Slide(toDirection: TransitionDirection, params: [String])
-  case NatGeo(toDirection: TransitionDirection)
-  case Turn(fromDirection: TransitionDirection)
-  case Cards(direction: TransitionDirection)
-  case Flip(fromDirection: TransitionDirection)
-  case SystemCube(fromDirection: TransitionDirection)
-  case SystemFlip(fromDirection: TransitionDirection)
-  case SystemMoveIn(fromDirection: TransitionDirection)
-  case SystemPush(fromDirection: TransitionDirection)
-  case SystemReveal(fromDirection: TransitionDirection)
-  case SystemPage(type: TransitionPageType)
-  case SystemCameraIris(hollowState: TransitionHollowState)
+  case none
+  case systemRotate
+  case systemSuckEffect
+  case systemRippleEffect
+  case explode(xFactor: CGFloat?, minAngle: CGFloat?, maxAngle: CGFloat?)
+  case fade(direction: Direction)
+  case fold(from: Direction, folds: Int?)
+  case portal(direction: Direction, zoomScale: CGFloat?)
+  case slide(to: Direction, isFade: Bool)
+  case natGeo(to: Direction)
+  case turn(from: Direction)
+  case cards(direction: Direction)
+  case flip(from: Direction)
+  case systemCube(from: Direction)
+  case systemFlip(from: Direction)
+  case systemMoveIn(from: Direction)
+  case systemPush(from: Direction)
+  case systemReveal(from: Direction)
+  case systemPage(type: PageType)
+  case systemCameraIris(hollowState: HollowState)
   
   public var stringValue: String {
-    return String(self)
-  }
-
-  public static func fromString(transitionType: String) -> TransitionAnimationType? {
-    if transitionType.hasPrefix("SystemRippleEffect") {
-      return .SystemRippleEffect
-    } else if transitionType.hasPrefix("SystemSuckEffect") {
-        return .SystemSuckEffect
-    } else if transitionType.hasPrefix("Explode") {
-      return .Explode(params: params(forTransitionType: transitionType))
-    } else if transitionType.hasPrefix("Fade") {
-      return fadeTransitionAnimationType(transitionType)
-    } else if transitionType.hasPrefix("SystemCameraIris") {
-        return cameraIrisTransitionAnimationType(transitionType)
-    } else if transitionType.hasPrefix("SystemPage") {
-      return pageTransitionAnimationType(transitionType)
-    } else if transitionType.hasPrefix("SystemRotate") {
-      return .SystemRotate
-    } else {
-      return fromStringWithDirection(transitionType)
-    }
-  }
-
-}
-
-// MARK: - TransitionAnimationType from string
-
-private extension TransitionAnimationType {
-  
-  static func fadeTransitionAnimationType(transitionType: String) -> TransitionAnimationType {
-    let transitionParams = params(forTransitionType: transitionType)
-    if transitionParams.contains("in") {
-      return .Fade(direction: .In)
-    } else if transitionParams.contains("out") {
-      return .Fade(direction: .Out)
-    }
-    return .Fade(direction: .Cross)
-  }
- 
-  static func cameraIrisTransitionAnimationType(transitionType: String) -> TransitionAnimationType? {
-    let transitionParams = params(forTransitionType: transitionType)
-    if transitionParams.contains("hollowopen") {
-      return .SystemCameraIris(hollowState: .Open)
-    } else if transitionParams.contains("hollowclose") {
-      return .SystemCameraIris(hollowState: .Close)
-    }
-    return .SystemCameraIris(hollowState: .None)
-  }
-  
-  static func pageTransitionAnimationType(transitionType: String) -> TransitionAnimationType? {
-    let transitionParams = params(forTransitionType: transitionType)
-    if transitionParams.contains("uncurl") {
-      return .SystemPage(type: .UnCurl)
-    } else if transitionParams.contains("curl") {
-      return .SystemPage(type: .Curl)      
-    }
-    return nil
-  }
-  
-  static func fromStringWithDirection(transitionType: String) -> TransitionAnimationType? {
-    let transitionParams = params(forTransitionType: transitionType)
-    let direction = transitionDirection(forParams: transitionParams) ?? .Left
-    if transitionType.hasPrefix("SystemCube") {
-      return .SystemCube(fromDirection: direction)
-    } else if transitionType.hasPrefix("SystemFlip") {
-      return .SystemFlip(fromDirection: direction)
-    } else if transitionType.hasPrefix("SystemMoveIn") {
-      return .SystemMoveIn(fromDirection: direction)
-    } else if transitionType.hasPrefix("SystemPush") {
-      return .SystemPush(fromDirection: direction)
-    } else if transitionType.hasPrefix("SystemReveal") {
-      return .SystemReveal(fromDirection: direction)
-    } else if transitionType.hasPrefix("NatGeo") {
-      return .NatGeo(toDirection: direction)
-    } else if transitionType.hasPrefix("Turn") {
-      return .Turn(fromDirection: direction)      
-    } else if transitionType.hasPrefix("Cards") {
-      return .Cards(direction: direction)
-    } else if transitionType.hasPrefix("Flip") {
-      return .Flip(fromDirection: direction)
-    } else {
-      return fromStringWithDirectionAndParams(transitionType, direction: direction, params: transitionParams)
-    }
-  }
-  
-  static func fromStringWithDirectionAndParams(transitionType: String, direction: TransitionDirection, params: [String]) -> TransitionAnimationType? {
-    var params = params
-    params.removeFirst()
-    if transitionType.hasPrefix("Fold") {
-      return .Fold(fromDirection: direction, params: params)
-    } else if transitionType.hasPrefix("Portal") {
-      return .Portal(direction: direction, params: params)
-    } else if transitionType.hasPrefix("Slide") {
-      return .Slide(toDirection: direction, params: params)
-    }
-    return nil
+    return String(describing: self)
   }
 }
 
-// MARK: - Helpers
-
-private extension TransitionAnimationType {
-  
-  static func params(forTransitionType transitionType: String) -> [String] {
-    let range = transitionType.rangeOfString("(")
-    let transitionType = transitionType.stringByReplacingOccurrencesOfString(" ", withString: "")
-      .lowercaseString
-      .substringFromIndex(range?.startIndex ?? transitionType.endIndex)
-      .stringByReplacingOccurrencesOfString("(", withString: "")
-      .stringByReplacingOccurrencesOfString(")", withString: "")
-    return transitionType.componentsSeparatedByString(",")
-  }
-  
-  static func transitionDirection(forParams params: [String]) -> TransitionDirection? {
-    if params.contains("left") {
-      return .Left
-    } else if params.contains("right") {
-      return .Right
-    } else if params.contains("top") {
-      return .Top
-    } else if params.contains("bottom") {
-      return .Bottom
-    } else if params.contains("forward") {
-      return .Forward
-    } else if params.contains("backward") {
-      return .Backward
+extension TransitionAnimationType: IBEnum {
+  public init(string: String?) {
+    guard let string = string else {
+      self = .none
+      return
     }
-    return nil
+    
+    let nameAndParams = TransitionAnimationType.extractNameAndParams(from: string)
+    let name = nameAndParams.name
+    let params = nameAndParams.params
+    
+    switch name {
+    case "systemrippleeffect":
+      self = .systemRippleEffect
+    case "systemsuckeffect":
+      self = .systemSuckEffect
+    case "explode":
+      if params.count == 3 {
+        if let xFactor = Double(params[0]),
+          let minAngle = Double(params[1]),
+          let maxAngle = Double(params[2]) {
+          let xFactor = CGFloat(xFactor)
+          let minAngle = CGFloat(minAngle)
+          let maxAngle = CGFloat(maxAngle)
+          self = .explode(xFactor: xFactor, minAngle: minAngle, maxAngle: maxAngle)
+          return
+        }
+      }
+      self = .explode(xFactor: nil, minAngle: nil, maxAngle: nil)
+    case "fade":
+      self = .fade(direction: Direction(raw: params[safe: 0], defaultValue: .cross))
+    case "systemcamerairis":
+      self = .systemCameraIris(hollowState: HollowState(raw: params[safe: 0], defaultValue: .none))
+    case "systempage":
+      self = .systemPage(type: PageType(raw: params[safe: 0], defaultValue: .curl))
+    case "systemrotate":
+      self = .systemRotate
+    case "systemcube":
+      self = .systemCube(from: Direction(raw: params[safe: 0], defaultValue: .left))
+    case "systemflip":
+      self = .systemFlip(from: Direction(raw: params[safe: 0], defaultValue: .left))
+    case "systemmovein":
+      self = .systemMoveIn(from: Direction(raw: params[safe: 0], defaultValue: .left))
+    case "systempush":
+      self = .systemPush(from: Direction(raw: params[safe: 0], defaultValue: .left))
+    case "systemreveal":
+      self = .systemReveal(from: Direction(raw: params[safe: 0], defaultValue: .left))
+    case "natgeo":
+      self = .natGeo(to: Direction(raw: params[safe: 0], defaultValue: .left))
+    case "turn":
+      self = .turn(from: Direction(raw: params[safe: 0], defaultValue: .left))
+    case "cards":
+      self = .cards(direction: Direction(raw: params[safe: 0], defaultValue: .left))
+    case "flip":
+      self = .flip(from: Direction(raw: params[safe: 0], defaultValue: .left))
+    case "fold":
+      let direction = Direction(raw: params[safe: 0], defaultValue: .left)
+      if let foldsString = params[safe: 1], let folds = Int(foldsString) {
+        self = .fold(from: direction, folds: folds)
+      } else {
+        self = .fold(from: direction, folds: nil)
+      }
+    case "portal":
+      let direction = Direction(raw: params[safe: 0], defaultValue: .left)
+      if let zoomScaleString = params[safe: 1], let zoomScale = Double(zoomScaleString) {
+        let zoomScale = CGFloat(zoomScale)
+        self = .portal(direction: direction, zoomScale: zoomScale)
+      } else {
+        self = .portal(direction: direction, zoomScale: nil)
+      }
+    case "slide":
+      let direction = Direction(raw: params[safe: 0], defaultValue: .left)
+      let isFade = params.contains("fade")
+      self = .slide(to: direction, isFade: isFade)
+    default:
+      self = .none
+    }
   }
-  
+}
+
+// MARK: - `Direction`
+extension TransitionAnimationType {
+  /**
+   Direction: used to specify the direction for the transition
+   */
+  public enum Direction: String {
+    case left
+    case right
+    case top
+    case bottom
+    case forward
+    case backward
+    case `in`
+    case out
+    case cross
+    
+    // Convert from direction to CATransition Subtype used in `CATransition`
+    var caTransitionSubtype: String {
+      switch self {
+      case .left:
+        return kCATransitionFromLeft
+      case .right:
+        return kCATransitionFromRight
+      case .top:
+        // The actual transition direction is oposite, need to reverse
+        return kCATransitionFromBottom
+      case .bottom:
+        // The actual transition direction is oposite, need to reverse
+        return kCATransitionFromTop
+      default:
+        return ""
+      }
+    }
+    
+    var isHorizontal: Bool {
+      return self == .left || self == .right
+    }
+    
+    static func fromString(forParams params: [String]) -> Direction? {
+      if params.contains("left") {
+        return .left
+      } else if params.contains("right") {
+        return .right
+      } else if params.contains("top") {
+        return .top
+      } else if params.contains("bottom") {
+        return .bottom
+      } else if params.contains("forward") {
+        return .forward
+      } else if params.contains("backward") {
+        return .backward
+      }
+      return nil
+    }
+    
+    var opposite: Direction {
+      switch self {
+      case .left:
+        return .right
+      case .right:
+        return .left
+      case .top:
+        return .bottom
+      case .bottom:
+        return .top
+      case .in:
+        return .out
+      case .out:
+        return .in
+      case .forward:
+        return .backward
+      case .backward:
+        return .forward
+      case .cross:
+        return .cross
+      }
+    }
+  }
+}
+
+// MARK: - `TransitionHollowState`
+extension TransitionAnimationType {
+  /**
+   Hollow state: used to specify the hollow state for `systemCameraIris` transition
+   */
+  public enum HollowState: String {
+    case none
+    case open
+    case close
+  }
+}
+
+// MARK: - `PageType`
+extension TransitionAnimationType {
+  /**
+   Page type: used to specify the page type for `systemPage` transition
+   */
+  public enum PageType: String {
+    case curl
+    case unCurl
+  }
+}
+
+// MARK: - `SystemTransitionType`
+extension TransitionAnimationType {
+  /**
+   System transition type: map to iOS built-in CATransition Type
+   refer to http://iphonedevwiki.net/index.php/CATransition
+   */
+  public enum SystemTransitionType: String {
+    case fade     // kCATransitionFade
+    case moveIn   // kCATransitionMoveIn
+    case push     // kCATransitionPush
+    case reveal   // kCATransitionReveal
+    case flip
+    case cube
+    case pageCurl
+    case pageUnCurl
+    case rippleEffect
+    case suckEffect
+    case cameraIris
+    case cameraIrisHollowOpen
+    case cameraIrisHollowClose
+    case rotate
+  }
 }

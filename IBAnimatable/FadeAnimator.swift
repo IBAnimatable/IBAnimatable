@@ -10,25 +10,25 @@ public class FadeAnimator: NSObject, AnimatedTransitioning {
   public var transitionAnimationType: TransitionAnimationType
   public var transitionDuration: Duration = defaultTransitionDuration
   public var reverseAnimationType: TransitionAnimationType?
-  public var interactiveGestureType: InteractiveGestureType? = .Pan(fromDirection: .Horizontal)
+  public var interactiveGestureType: InteractiveGestureType? = .pan(from: .horizontal)
 
   // MARK: - private
-  private var direction: TransitionDirection
+  fileprivate var direction: TransitionAnimationType.Direction
   
-  public init(direction: TransitionDirection, transitionDuration: Duration) {
+  public init(direction: TransitionAnimationType.Direction, transitionDuration: Duration) {
     self.direction = direction
     self.transitionDuration = transitionDuration
     
     switch direction {
-    case .In:
-      self.transitionAnimationType = .Fade(direction: .In)
-      self.reverseAnimationType = .Fade(direction: .Out)
-    case .Out:
-      self.transitionAnimationType = .Fade(direction: .Out)
-      self.reverseAnimationType = .Fade(direction: .In)
+    case .in:
+      self.transitionAnimationType = .fade(direction: .in)
+      self.reverseAnimationType = .fade(direction: .out)
+    case .out:
+      self.transitionAnimationType = .fade(direction: .out)
+      self.reverseAnimationType = .fade(direction: .in)
     default:
-      self.transitionAnimationType = .Fade(direction: .Cross)
-      self.reverseAnimationType = .Fade(direction: .Cross)
+      self.transitionAnimationType = .fade(direction: .cross)
+      self.reverseAnimationType = .fade(direction: .cross)
     }
     
     super.init()
@@ -36,49 +36,48 @@ public class FadeAnimator: NSObject, AnimatedTransitioning {
 }
 
 extension FadeAnimator: UIViewControllerAnimatedTransitioning {
-  public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-    return retrieveTransitionDuration(transitionContext)
+  public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    return retrieveTransitionDuration(transitionContext: transitionContext)
   }
   
-  public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-    let (tempfromView, tempToView, tempContainerView) = retrieveViews(transitionContext)
-    guard let containerView = tempContainerView, toView = tempToView else {
+  public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+    let (tempfromView, tempToView, tempContainerView) = retrieveViews(transitionContext: transitionContext)
+    guard let fromView = tempfromView, let toView = tempToView, let containerView = tempContainerView else {
       transitionContext.completeTransition(true)
       return
     }
     
-    let (_, tempToViewController, _) = retrieveViewControllers(transitionContext)
+    let (_, tempToViewController, _) = retrieveViewControllers(transitionContext: transitionContext)
     if let toViewController = tempToViewController {
-      toView.frame = transitionContext.finalFrameForViewController(toViewController)
+      toView.frame = transitionContext.finalFrame(for: toViewController)
     }
 
     switch direction {
-    case .In:
+    case .in:
       toView.alpha = 0
       containerView.addSubview(toView)
-    case .Out:
-      if let fromView = tempfromView {
-        containerView.insertSubview(toView, belowSubview: fromView)
-      }
+    case .out:
+      containerView.insertSubview(toView, belowSubview: fromView)
     default:
       toView.alpha = 0
       containerView.addSubview(toView)
     }
     
-    UIView.animateWithDuration(transitionDuration(transitionContext),
+    UIView.animate(withDuration: transitionDuration(using: transitionContext),
       animations: {
         switch self.direction {
-        case .In:
+        case .in:
           toView.alpha = 1
-        case .Out:
-          tempfromView?.alpha = 0
+        case .out:
+          fromView.alpha = 0
         default:
-          tempfromView?.alpha = 0
+          fromView.alpha = 0
           toView.alpha = 1
         }
       },
       completion: { _ in
-        transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
-    })
+        transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+      }
+    )
   }
 }

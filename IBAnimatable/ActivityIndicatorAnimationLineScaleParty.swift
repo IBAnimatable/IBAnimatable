@@ -9,11 +9,11 @@ public class ActivityIndicatorAnimationLineScaleParty: ActivityIndicatorAnimatin
 
   // MARK: Properties
 
-  private let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
+  fileprivate let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
 
   // MARK: ActivityIndicatorAnimating
 
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     let lineSize = size.width / 7
     let x = (layer.bounds.size.width - size.width) / 2
     let y = (layer.bounds.size.height - size.height) / 2
@@ -24,12 +24,12 @@ public class ActivityIndicatorAnimationLineScaleParty: ActivityIndicatorAnimatin
     // Animation
     let animation = self.animation
     for i in 0..<4 {
-      let line = ActivityIndicatorShape.Line.createLayerWith(size: CGSize(width: lineSize, height: size.height), color: color)
+      let line = ActivityIndicatorShape.line.makeLayer(size: CGSize(width: lineSize, height: size.height), color: color)
       let frame = CGRect(x: x + lineSize * 2 * CGFloat(i), y: y, width: lineSize, height: size.height)
       animation.beginTime = beginTime + beginTimes[i]
       animation.duration = durations[i]
       line.frame = frame
-      line.addAnimation(animation, forKey: "animation")
+      line.add(animation, forKey: "animation")
       layer.addSublayer(line)
     }
   }
@@ -45,7 +45,7 @@ private extension ActivityIndicatorAnimationLineScaleParty {
     animation.timingFunctions = [timingFunction, timingFunction]
     animation.values = [1, 0.5, 1]
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 

@@ -8,13 +8,13 @@ import UIKit
  Interactive Animator Factory
  */
 struct InteractiveAnimatorFactory {
-  static func generateInteractiveAnimator(interactiveGestureType: InteractiveGestureType, transitionType: TransitionType) -> InteractiveAnimator? {
+  static func makeInteractiveAnimator(interactiveGestureType: InteractiveGestureType, transitionType: TransitionType) -> InteractiveAnimator? {
     switch interactiveGestureType {
-    case .Pan:
+    case .pan:
       return PanInteractiveAnimator(interactiveGestureType: interactiveGestureType, transitionType: transitionType)
-    case .ScreenEdgePan:
+    case .screenEdgePan:
       return ScreenEdgePanInteractiveAnimator(interactiveGestureType: interactiveGestureType, transitionType: transitionType)
-    case .Pinch:
+    case .pinch:
       return PinchInteractiveAnimator(interactiveGestureType: interactiveGestureType, transitionType: transitionType)
     default:
       return nil

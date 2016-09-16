@@ -14,11 +14,10 @@ class TransitionPushedViewController: UIViewController {
     super.viewDidLoad()
     
     if let animatableView = view as? AnimatableView {
-      animatableView.predefinedGradient = String(generateRandomGradient())
+      animatableView.predefinedGradient = makeRandomGradient()
     }
     configureGestureLabel()
   }
-
 }
 
 private extension TransitionPushedViewController {
@@ -32,14 +31,15 @@ private extension TransitionPushedViewController {
     }
     
     // No gesture for this animator
-    guard let interactiveGestureTypeString = navigationController.interactiveGestureType,
-      interactiveGestureType = InteractiveGestureType.fromString(interactiveGestureTypeString),
-      transitionAnimationTypeString = navigationController.transitionAnimationType,
-      transitionAnimationType = TransitionAnimationType.fromString(transitionAnimationTypeString) else {
+    if case .none = navigationController.interactiveGestureType {
       return
     }
     
-    gestureLabel.text = retrieveGestureText(interactiveGestureType, transitionAnimationType: transitionAnimationType, exit: "pop")
+    if case .none = navigationController.transitionAnimationType {
+      return
+    }
+    
+    gestureLabel.text = retrieveGestureText(interactiveGestureType: navigationController.interactiveGestureType, transitionAnimationType: navigationController.transitionAnimationType, exit: "pop")
   }
   
 }

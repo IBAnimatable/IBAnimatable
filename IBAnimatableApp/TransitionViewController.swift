@@ -14,17 +14,17 @@ class TransitionViewController: AnimatableViewController {
     super.viewDidLoad()
     
     // Transition animations start with `System` do not support Present transition, so hide it
-    if let animationType = transitionAnimationType where animationType.hasPrefix("System") {
+    if transitionAnimationType.stringValue.hasPrefix("system") {
       // Cannot use `hidden` here because of `UIStackView`
       presentButton.alpha = 0
     }
   }
   
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    super.prepareForSegue(segue, sender: sender)
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    super.prepare(for: segue, sender: sender)
     
     // Set the transition animation type for `AnimatableViewController`, used for Present/Dismiss transitions
-    if let toViewController = segue.destinationViewController as? AnimatableViewController {
+    if let toViewController = segue.destination as? AnimatableViewController {
       toViewController.transitionAnimationType = transitionAnimationType
       toViewController.interactiveGestureType = interactiveGestureType
     }

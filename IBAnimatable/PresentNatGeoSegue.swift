@@ -5,9 +5,9 @@
 
 import UIKit
 
-public class PresentNatGeoSegue: UIStoryboardSegue {
-  public override func perform() {
-    destinationViewController.transitioningDelegate = TransitionPresenterManager.sharedManager().retrievePresenter(.NatGeo(toDirection: .Left))
-    sourceViewController.presentViewController(destinationViewController, animated: true, completion: nil)
+open class PresentNatGeoSegue: UIStoryboardSegue {
+  open override func perform() {
+    destination.transitioningDelegate = TransitionPresenterManager.sharedManager().retrievePresenter(transitionAnimationType: .natGeo(to: .left))
+    source.present(destination, animated: true, completion: nil)
   }
 }

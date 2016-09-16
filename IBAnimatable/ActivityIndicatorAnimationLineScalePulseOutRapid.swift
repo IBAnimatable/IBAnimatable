@@ -9,13 +9,13 @@ public class ActivityIndicatorAnimationLineScalePulseOutRapid: ActivityIndicator
 
   // MARK: Properties
 
-  private let duration: CFTimeInterval = 0.9
-  private let timingFunction = CAMediaTimingFunction(controlPoints: 0.11, 0.49, 0.38, 0.78)
-  private let beginTime = CACurrentMediaTime()
+  fileprivate let duration: CFTimeInterval = 0.9
+  fileprivate let timingFunction = CAMediaTimingFunction(controlPoints: 0.11, 0.49, 0.38, 0.78)
+  fileprivate let beginTime = CACurrentMediaTime()
 
   // MARK: ActivityIndicatorAnimating
 
-  public func configAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+  public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     let lineSize = size.width / 9
     let x = (layer.bounds.size.width - size.width) / 2
     let y = (layer.bounds.size.height - size.height) / 2
@@ -23,7 +23,7 @@ public class ActivityIndicatorAnimationLineScalePulseOutRapid: ActivityIndicator
 
     let animation = self.animation
     for i in 0 ..< 5 {
-      let line = ActivityIndicatorShape.Line.createLayerWith(size: CGSize(width: lineSize, height: size.height), color: color)
+      let line = ActivityIndicatorShape.line.makeLayer(size: CGSize(width: lineSize, height: size.height), color: color)
       let frame = CGRect(x: x + lineSize * 2 * CGFloat(i),
                          y: y,
                          width: lineSize,
@@ -31,7 +31,7 @@ public class ActivityIndicatorAnimationLineScalePulseOutRapid: ActivityIndicator
 
       animation.beginTime = beginTime + beginTimes[i]
       line.frame = frame
-      line.addAnimation(animation, forKey: "animation")
+      line.add(animation, forKey: "animation")
       layer.addSublayer(line)
     }
   }
@@ -49,7 +49,7 @@ private extension ActivityIndicatorAnimationLineScalePulseOutRapid {
     animation.values = [1, 0.3, 1]
     animation.duration = duration
     animation.repeatCount = .infinity
-    animation.removedOnCompletion = false
+    animation.isRemovedOnCompletion = false
     return animation
   }
 
