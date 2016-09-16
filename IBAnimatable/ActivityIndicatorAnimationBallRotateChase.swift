@@ -57,4 +57,3 @@ private extension ActivityIndicatorAnimationBallRotateChase {
   }
 }
 // swiftlint:enable variable_name_min_length
-
