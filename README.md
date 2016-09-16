@@ -6,7 +6,7 @@ Design and prototype customized UI, interaction, navigation, transition and anim
 
 [![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=56abf6d42c882e010057b182&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/56abf6d42c882e010057b182/build/latest)
 [![Build Status](https://travis-ci.org/IBAnimatable/IBAnimatable.svg?branch=master)](https://travis-ci.org/IBAnimatable/IBAnimatable)
-[![Language](https://img.shields.io/badge/language-Swift%202.2-orange.svg)](https://swift.org)
+[![Language](https://img.shields.io/badge/language-Swift%202.3-orange.svg)](https://swift.org)
 [![CocoaPods](https://img.shields.io/cocoapods/v/IBAnimatable.svg?style=flat)](http://cocoadocs.org/docsets/IBAnimatable/)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/github/license/IBAnimatable/IBAnimatable.svg?style=flat)](https://github.com/IBAnimatable/IBAnimatable/blob/master/LICENSE)
@@ -31,8 +31,8 @@ With `IBAnimatable`, we can design a UI in Interface Builder like what we can do
 
 As a designer, we love Sketch, which is a simple but yet super powerful tool to create UI. However, Sketch can't design interaction, navigation, transition and animation, and we may need another tool like Framer to design some of them. Moreover, to make an App Store ready App, we need to use Xcode and Interface Builder to implement the UI and animations. To speed up the process and minimize the waste, we create `IBAnimatable` to make Interface Builder designable and animatable.   
 
-## Interested in Swift 3?
-Please check out [swift3 branch](https://github.com/IBAnimatable/IBAnimatable/tree/swift3), we are working on cool stuff.
+## Swift 2.3
+This branch (swift2) is used for Swift 2.2 / 2.3. Main features will be added in master branch (supports Swift 3). If you have fixed bugs for Swift 2.3, please pull request to this branch.
 
 You can also check out [swift2.3 branch](https://github.com/IBAnimatable/IBAnimatable/tree/swift2.3) for Swift 2.3 support.
 

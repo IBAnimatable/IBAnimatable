@@ -69,14 +69,18 @@ private extension ExplodeAnimator {
     var snapshots = [UIView]()
     let yFactor = xFactor * size.height / size.width
     
-    let fromViewSnapshot = fromView.snapshotViewAfterScreenUpdates(false)
+    guard let fromViewSnapshot = fromView.snapshotViewAfterScreenUpdates(false) else {
+      return snapshots
+    }
     for x in 0.0.stride(to: Double(size.width), by: Double(size.width / xFactor)) {
       for y in 0.0.stride(to: Double(size.height), by: Double(size.width / yFactor)) {
         let snapshotRegion = CGRect(x: CGFloat(x), y: CGFloat(y), width: size.width / xFactor, height: size.height / yFactor)
         let snapshot = fromViewSnapshot.resizableSnapshotViewFromRect(snapshotRegion, afterScreenUpdates: false, withCapInsets: UIEdgeInsetsZero)
-        snapshot.frame = snapshotRegion
-        containerView.addSubview(snapshot)
-        snapshots.append(snapshot)
+        if let snapshot = snapshot {
+          snapshot.frame = snapshotRegion
+          containerView.addSubview(snapshot)
+          snapshots.append(snapshot)
+        }
       }
     }
     return snapshots
