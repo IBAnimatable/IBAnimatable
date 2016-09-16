@@ -30,7 +30,7 @@ extension DropDownAnimator: UIViewControllerAnimatedTransitioning {
   public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
     let (fromView, toView, tempContainerView) = retrieveViews(transitionContext)
     let presenting = isPresenting(transitionContext)
-    guard let containerView = tempContainerView, animatingView = presenting ? toView : fromView else {
+    guard let containerView = tempContainerView, let animatingView = presenting ? toView : fromView else {
       transitionContext.completeTransition(true)
       return
     }
@@ -88,9 +88,9 @@ private extension DropDownAnimator {
 
 // MARK: - CAAnimationDelegate
 
-extension DropDownAnimator {
-
-  public override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
+extension DropDownAnimator: CAAnimationDelegate {
+  
+  public func animationDidStop(anim: CAAnimation, finished flag: Bool) {
     if let unwrappedCompletion = completion {
       unwrappedCompletion()
       completion = nil
