@@ -96,15 +96,19 @@ extension ContainerTransition: UIViewControllerContextTransitioning {
     completion?()
   }
   
-  
+  public func initialFrame(for vc: UIViewController) -> CGRect {
+    return vc.view.frame
+  }
+
+  public func finalFrame(for vc: UIViewController) -> CGRect {
+    return vc.view.frame
+  }
+
   // MARK: Mandatory protocol
-  
-  public func initialFrame(for vc: UIViewController) -> CGRect { return CGRect.zero }
-  public func finalFrame(for vc: UIViewController) -> CGRect { return CGRect.zero}
+
   public func updateInteractiveTransition(_ percentComplete: CGFloat) {}
   public func finishInteractiveTransition() {}
   public func cancelInteractiveTransition() {}
-  public func pauseInteractiveTransition() {
-  }
+  public func pauseInteractiveTransition() {}
   
 }
