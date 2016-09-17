@@ -55,10 +55,6 @@ private extension ContainerTransitionViewController {
   }
   
   func cycleFromViewController(_ containerView: UIView, fromViewController: AnimatableViewController?, toViewController: AnimatableViewController) {
-    if case .none = toViewController.transitionAnimationType {
-      return
-    }
-    
     let transitionContext = ContainerTransition(animationType: toViewController.transitionAnimationType,
                                                 container: containerView,
                                                 parentViewController: self,
@@ -75,7 +71,8 @@ private extension ContainerTransitionViewController {
 
 extension ContainerTransitionViewController {
 
-  @objc(tabBar:didSelectItem:) func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+  @objc(tabBar:didSelectItem:)
+  func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
     let toViewController = viewControllers[item.tag]
     cycleFromViewController(containerView, fromViewController: currentViewController, toViewController: toViewController)
   }
