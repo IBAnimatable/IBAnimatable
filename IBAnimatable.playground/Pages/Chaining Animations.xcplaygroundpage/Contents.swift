@@ -15,13 +15,27 @@ let view = CircleView()
 iPhoneView.addSubview(view)
 
 ////: Start another animation in completion closure
-view.squeezeInDown { view.pop { view.shake { view.squeeze { view.wobble { view.flipX { view.flash { view.flipY { view.fadeOutDown() } } } } } } } }
+view.squeezeFade(.in, direction: .down) {
+    view.pop(repeatCount: 1) {
+        view.shake(repeatCount: 1) {
+            view.squeeze(repeatCount: 1) {
+                view.wobble(repeatCount: 1) {
+                    view.flip(axis: .x) {
+                        view.flip(axis: .y) {
+                            view.slideFade(.out, direction: .down)
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 //: To apply delay, we can specify the animationType and delay
-//view.animationType = String(AnimationType.pop)
-//view.animate{
+//view.animationType = AnimationType.pop(repeatCount: 1)
+//view.animate {
 //  view.delay = 0.3
-//  view.animationType = String(AnimationType.shake)
+//  view.animationType = AnimationType.shake(repeatCount: 1)
 //  view.animate()
 //}
 
