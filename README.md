@@ -34,8 +34,6 @@ As a designer, we love Sketch, which is a simple but yet super powerful tool to 
 ## Swift 2.3
 This branch (swift2) is used for Swift 2.2 / 2.3. Main features will be added in master branch (supports Swift 3). If you have fixed bugs for Swift 2.3, please pull request to this branch.
 
-You can also check out [swift2.3 branch](https://github.com/IBAnimatable/IBAnimatable/tree/swift2.3) for Swift 2.3 support.
-
 ## Languages
 [中文](Documentation/README.zh.md)
 
