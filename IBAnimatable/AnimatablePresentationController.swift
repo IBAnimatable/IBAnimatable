@@ -16,7 +16,7 @@ public class AnimatablePresentationController: UIPresentationController {
   // MARK: Init
 
   init(presentedViewController: UIViewController,
-       presentingViewController: UIViewController,
+       presentingViewController: UIViewController?,
        presentationConfiguration: PresentationConfiguration) {
     self.presentationConfiguration = presentationConfiguration
     super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
@@ -174,7 +174,7 @@ public extension AnimatablePresentationController {
   override func size(forChildContentContainer container: UIContentContainer, withParentContainerSize parentSize: CGSize) -> CGSize {
     return modalSize()
   }
-  
+
   override func containerViewWillLayoutSubviews() {
     dimmingView.frame = containerView?.bounds ?? .zero
     presentedView?.frame = frameOfPresentedViewInContainerView

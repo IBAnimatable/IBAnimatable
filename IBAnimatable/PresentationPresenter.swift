@@ -43,7 +43,7 @@ public class PresentationPresenter: NSObject {
 extension PresentationPresenter: UIViewControllerTransitioningDelegate {
 
   // MARK: - presentation
-  public func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
+  public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
     guard let presentationConfiguration = presentationConfiguration else {
       return nil
     }
