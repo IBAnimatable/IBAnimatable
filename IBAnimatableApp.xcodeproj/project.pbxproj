@@ -257,7 +257,7 @@
 		AE65CF911C96E35600A723F8 /* PresentFadeWithDismissInteractionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentFadeWithDismissInteractionSegue.swift; sourceTree = "<group>"; };
 		AE6B01551C2A082300950BB2 /* IBAnimatable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IBAnimatable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE6C21051C842A0F00DB6892 /* TransitionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionTableViewController.swift; sourceTree = "<group>"; };
-		AE6C66FF1BFBF93500134A35 /* IBAnimatable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBAnimatable.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE6C66FF1BFBF93500134A35 /* IBAnimatableApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBAnimatableApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE6D430B1C98B658006E2F67 /* TransitionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionType.swift; sourceTree = "<group>"; };
 		AE74D6D61C166FB100718E0E /* SideImageDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideImageDesignable.swift; sourceTree = "<group>"; };
 		AE7C26101CB4F680002CF125 /* InteractiveAnimatorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveAnimatorFactory.swift; sourceTree = "<group>"; };
@@ -611,7 +611,7 @@
 		AE6C67001BFBF93500134A35 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AE6C66FF1BFBF93500134A35 /* IBAnimatable.app */,
+				AE6C66FF1BFBF93500134A35 /* IBAnimatableApp.app */,
 				AE6B01551C2A082300950BB2 /* IBAnimatable.framework */,
 			);
 			name = Products;
@@ -895,7 +895,7 @@
 			);
 			name = IBAnimatableApp;
 			productName = IBAnimatableApp;
-			productReference = AE6C66FF1BFBF93500134A35 /* IBAnimatable.app */;
+			productReference = AE6C66FF1BFBF93500134A35 /* IBAnimatableApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -918,7 +918,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AE6C66FA1BFBF93500134A35 /* Build configuration list for PBXProject "IBAnimatable" */;
+			buildConfigurationList = AE6C66FA1BFBF93500134A35 /* Build configuration list for PBXProject "IBAnimatableApp" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1353,7 +1353,7 @@
 				INFOPLIST_FILE = IBAnimatableApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IBAnimatable.IBAnimatable;
-				PRODUCT_NAME = IBAnimatable;
+				PRODUCT_NAME = IBAnimatableApp;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1369,7 +1369,7 @@
 				INFOPLIST_FILE = IBAnimatableApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IBAnimatable.IBAnimatable;
-				PRODUCT_NAME = IBAnimatable;
+				PRODUCT_NAME = IBAnimatableApp;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1387,7 +1387,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AE6C66FA1BFBF93500134A35 /* Build configuration list for PBXProject "IBAnimatable" */ = {
+		AE6C66FA1BFBF93500134A35 /* Build configuration list for PBXProject "IBAnimatableApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AE6C670F1BFBF93500134A35 /* Debug */,
