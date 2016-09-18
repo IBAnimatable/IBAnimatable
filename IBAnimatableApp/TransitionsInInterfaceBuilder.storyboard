@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EUy-AH-IJE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EUy-AH-IJE">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -91,7 +91,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="_transitionAnimationType" value="Explode"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="_transitionDuration">
+                        <userDefinedRuntimeAttribute type="number" keyPath="transitionDuration">
                             <real key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="_interactiveGestureType" value="Pan(Left)"/>
@@ -133,7 +133,7 @@ Did you try some gestures?</string>
                     </view>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="_transitionAnimationType" value="Explode"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="_transitionDuration">
+                        <userDefinedRuntimeAttribute type="number" keyPath="transitionDuration">
                             <real key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="_interactiveGestureType" value="Pan(Left)"/>
@@ -174,7 +174,7 @@ Did you try a pinch?</string>
                     </view>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="_transitionAnimationType" value="Explode"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="_transitionDuration">
+                        <userDefinedRuntimeAttribute type="number" keyPath="transitionDuration">
                             <real key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="_interactiveGestureType" value="Pan(Left)"/>
@@ -202,7 +202,7 @@ Did you try a pinch?</string>
                     </view>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="_transitionAnimationType" value="Explode"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="_transitionDuration">
+                        <userDefinedRuntimeAttribute type="number" keyPath="transitionDuration">
                             <real key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="_interactiveGestureType" value="Pan(Left)"/>
@@ -228,7 +228,7 @@ Did you try a pinch?</string>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="_transitionDuration">
+                        <userDefinedRuntimeAttribute type="number" keyPath="transitionDuration">
                             <real key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="_transitionAnimationType" value="SystemCube(Right)"/>
