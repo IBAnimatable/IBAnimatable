@@ -33,32 +33,28 @@ private extension ContainerTransitionViewController {
   func makeChildViewControllers() {
     var viewController = AnimatableViewController()
     viewController.view.backgroundColor = .blue
-    viewController.transitionAnimationType = TransitionAnimationType(string: "Explode")
+    viewController.transitionAnimationType = .explode(xFactor: nil, minAngle: nil, maxAngle: nil)
     viewControllers.append(viewController)
    
     viewController = AnimatableViewController()
     viewController.view.backgroundColor = .green
-    viewController.transitionAnimationType = TransitionAnimationType(string: "Fold")
+    viewController.transitionAnimationType = .fold(from: .right, folds: nil)
     viewControllers.append(viewController)
 
     viewController = AnimatableViewController()
     viewController.view.backgroundColor = .yellow
-    viewController.transitionAnimationType = TransitionAnimationType(string: "NatGeo")
+    viewController.transitionAnimationType = .natGeo(to: .right)
     viewControllers.append(viewController)
     
     viewController = AnimatableViewController()
     viewController.view.backgroundColor = .red
-    viewController.transitionAnimationType = TransitionAnimationType(string: "Portal")
+    viewController.transitionAnimationType = .portal(direction: .backward, zoomScale: nil)
     viewControllers.append(viewController)
     
     cycleFromViewController(containerView, fromViewController: nil, toViewController: viewControllers[0])
   }
   
   func cycleFromViewController(_ containerView: UIView, fromViewController: AnimatableViewController?, toViewController: AnimatableViewController) {
-    if case .none = toViewController.transitionAnimationType {
-      return
-    }
-    
     let transitionContext = ContainerTransition(animationType: toViewController.transitionAnimationType,
                                                 container: containerView,
                                                 parentViewController: self,
@@ -75,7 +71,8 @@ private extension ContainerTransitionViewController {
 
 extension ContainerTransitionViewController {
 
-  @objc(tabBar:didSelectItem:) func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+  @objc(tabBar:didSelectItem:)
+  func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
     let toViewController = viewControllers[item.tag]
     cycleFromViewController(containerView, fromViewController: currentViewController, toViewController: toViewController)
   }
