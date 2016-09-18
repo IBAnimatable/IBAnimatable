@@ -15,7 +15,7 @@ let view = CircleView()
 iPhoneView.addSubview(view)
 
 //: animationType: all supported predefined animations can be found in `enum AnimationType`
-view.animationType = String(AnimationType.squeezeInLeft)
+view.animationType = .squeeze(way: .in, from: .left)
 
 //: duration: used to specify the duration of animation. Default value is 0.7
 view.duration = 0.8
@@ -31,9 +31,6 @@ view.velocity = 2
 
 //: force: used to apply force to the animation. The number is higher, the animation property has more changes. eg. for Pop animation, higher force causes the view poping bigger. Default is 1
 view.force = 1
-
-//: repeatCount: used to sepecify the count to repeat the animation. Can noly used in Shake, Pop, Morph, Squeeze, Flash, Wobble, Swing and Rotate animations
-view.repeatCount = 5
 
 view.animate()
 

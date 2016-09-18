@@ -15,7 +15,7 @@ public class PhoneView: UIView {
   public init() {
     let frame = CGRect(x: 0, y: 0, width: iPhoneWidth, height: iPhoneHeight)
     super.init(frame: frame)
-    backgroundColor = .white()
+    backgroundColor = .white
     
   }
   
@@ -37,7 +37,7 @@ public class CircleView: AnimatableView {
     configureAnimatableProperties()
     fillColor = #colorLiteral(red: 0.7098039216, green: 0.4549019608, blue: 0.9607843137, alpha: 1)
     borderWidth = 2
-    borderColor = .purple()
+    borderColor = .purple
     maskType = .circle
   }
   
