@@ -918,7 +918,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AE6C66FA1BFBF93500134A35 /* Build configuration list for PBXProject "IBAnimatableApp" */;
+			buildConfigurationList = AE6C66FA1BFBF93500134A35 /* Build configuration list for PBXProject "IBAnimatable" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1387,7 +1387,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AE6C66FA1BFBF93500134A35 /* Build configuration list for PBXProject "IBAnimatableApp" */ = {
+		AE6C66FA1BFBF93500134A35 /* Build configuration list for PBXProject "IBAnimatable" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AE6C670F1BFBF93500134A35 /* Debug */,
