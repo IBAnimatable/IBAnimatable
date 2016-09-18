@@ -3,7 +3,7 @@ language: objective-c
 script:
   - |
     xcodebuild build \
-    -project IBAnimatableApp.xcodeproj \
-    -scheme IBAnimatable \
+    -project IBAnimatable.xcodeproj \
+    -scheme IBAnimatableApp \
     -sdk iphonesimulator \
     -destination 'platform=iOS Simulator,name=iPhone 6,OS=latest'
