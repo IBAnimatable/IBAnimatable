@@ -918,7 +918,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AE6C66FA1BFBF93500134A35 /* Build configuration list for PBXProject "IBAnimatableApp" */;
+			buildConfigurationList = AE6C66FA1BFBF93500134A35 /* Build configuration list for PBXProject "IBAnimatable" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1228,7 +1228,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JakeLin.IBAnimatable;
+				PRODUCT_BUNDLE_IDENTIFIER = IBAnimatable.IBAnimatable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -1250,7 +1250,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JakeLin.IBAnimatable;
+				PRODUCT_BUNDLE_IDENTIFIER = IBAnimatable.IBAnimatable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1352,7 +1352,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = IBAnimatableApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = IBAnimatable.IBAnimatable;
+				PRODUCT_BUNDLE_IDENTIFIER = IBAnimatable.IBAnimatableApp;
 				PRODUCT_NAME = IBAnimatableApp;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -1368,7 +1368,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = IBAnimatableApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = IBAnimatable.IBAnimatable;
+				PRODUCT_BUNDLE_IDENTIFIER = IBAnimatable.IBAnimatableApp;
 				PRODUCT_NAME = IBAnimatableApp;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
@@ -1387,7 +1387,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AE6C66FA1BFBF93500134A35 /* Build configuration list for PBXProject "IBAnimatableApp" */ = {
+		AE6C66FA1BFBF93500134A35 /* Build configuration list for PBXProject "IBAnimatable" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AE6C670F1BFBF93500134A35 /* Debug */,
