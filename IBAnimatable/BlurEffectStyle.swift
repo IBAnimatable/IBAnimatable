@@ -25,12 +25,12 @@ extension UIBlurEffectStyle : IBEnum {
       self = .dark
       return
     case "prominent":
-      if #available(iOSApplicationExtension 10.0, *) {
+      if #available(iOS 10.0, *) {
         self = .prominent
         return
       }
     case "regular":
-      if #available(iOSApplicationExtension 10.0, *) {
+      if #available(iOS 10.0, *) {
         self = .regular
         return
       }
