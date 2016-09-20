@@ -14,9 +14,14 @@ import UIKit
     }
   }
   
-  @IBInspectable open var predefinedColor: String? {
+  open var predefinedColor: ColorType? {
     didSet {
       configureFillColor()
+    }
+  }
+  @IBInspectable var _predefinedColor: String? {
+    didSet {
+      predefinedColor = ColorType(string: _predefinedColor)
     }
   }
   
