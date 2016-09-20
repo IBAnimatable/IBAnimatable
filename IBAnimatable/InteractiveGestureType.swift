@@ -57,7 +57,7 @@ extension InteractiveGestureType: IBEnum {
     case "pan":
       let direction = GestureDirection(raw: params[safe: 0], defaultValue: .left)
       self = .pan(from: direction)
-    case "screenedgePan":
+    case "screenedgepan":
       let direction = GestureDirection(raw: params[safe: 0], defaultValue: .left)
       self = .screenEdgePan(from: direction)
     case "pinch":
