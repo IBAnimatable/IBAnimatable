@@ -14,6 +14,36 @@ None
 #### Bugfixes
 None
 
+### [3.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.0)
+
+IBAnimatable 3.0 is to the major release to support Swift 3 🎉.
+
+#### API breaking changes
+- This version follows Swift 3 [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/) and contains a lot of breaking changes from version 2.x. Please check out [IBAnimatable 3.0 Migration Guide](Documentation/IBAnimatable 3.0 Migration Guide.md) for more information about how to migrate your project to 3.0. 
+
+#### Enhancements
+- Complete Swift 3 Compatibility [#221](https://github.com/IBAnimatable/IBAnimatable/issues/221)
+- New Swift enum system [#218](https://github.com/IBAnimatable/IBAnimatable/issues/218) 
+
+#### Bugfixes
+- Fix `borderSides` [#280](https://github.com/IBAnimatable/IBAnimatable/issues/280) 
+- Fix blur effect view [#302](https://github.com/IBAnimatable/IBAnimatable/issues/302) 
+
+All issues associated with this version can be found using this [filter](https://github.com/IBAnimatable/IBAnimatable/milestone/2?closed=1).
+
+---
+### [2.8.1](https://github.com/IBAnimatable/IBAnimatable/releases/tag/2.8.1)
+
+#### API breaking changes
+None
+
+#### Enhancements
+Upgrade to Swift 2.3
+
+#### Bugfixes
+None
+
+---
 ### [2.7](https://github.com/IBAnimatable/IBAnimatable/releases/tag/2.7)
 
 #### API breaking changes
@@ -28,21 +58,23 @@ None
 
 #### Bugfixes
 
-- Fixed `cornerRadius` when used with a gradient [#268](https://github.com/JakeLin/IBAnimatable/issues/268)
-- Remove previous vibrancy view when adding setting a new vibrancy. Previous bug: all the views was staying in the hierarchy [#277](https://github.com/JakeLin/IBAnimatable/issues/277)
-- Fixed "Shadows not working with Mask type" issue [#267](https://github.com/JakeLin/IBAnimatable/issues/267)
+- Fixed `cornerRadius` when used with a gradient [#268](https://github.com/IBAnimatable/IBAnimatable/issues/268)
+- Remove previous vibrancy view when adding setting a new vibrancy. Previous bug: all the views was staying in the hierarchy [#277](https://github.com/IBAnimatable/IBAnimatable/issues/277)
+- Fixed "Shadows not working with Mask type" issue [#267](https://github.com/IBAnimatable/IBAnimatable/issues/267)
 
+---
 ### [2.6](https://github.com/IBAnimatable/IBAnimatable/releases/tag/2.6)
 
 #### API breaking changes
 None
 
 #### Enhancements
-Move to IBAnimatable organization [#235](https://github.com/JakeLin/IBAnimatable/issues/235)
+Move to IBAnimatable organization [#235](https://github.com/IBAnimatable/IBAnimatable/issues/235)
 
 #### Bugfixes
 None
 
+---
 ### [2.5](https://github.com/IBAnimatable/IBAnimatable/releases/tag/2.5)
 
 #### API breaking changes
@@ -56,6 +88,7 @@ None
 #### Bugfixes
 None
 
+---
 ### [2.4](https://github.com/IBAnimatable/IBAnimatable/releases/tag/2.4)
 
 #### API breaking changes
@@ -72,6 +105,7 @@ None
 - Fix a bug for `Polygon` mask when the `width` is longer than the `height`. [#234](https://github.com/IBAnimatable/IBAnimatable/pull/234)
 - Fix a crash when the parameters number of `Wave` mask is not 3. [#234](https://github.com/IBAnimatable/IBAnimatable/pull/234)
 
+---
 ### [2.3](https://github.com/IBAnimatable/IBAnimatable/releases/tag/2.3)
 #### API breaking changes
 
@@ -107,12 +141,12 @@ None
 - Fix a bug to support single side of border for AnimatableTextField [#179](https://github.com/IBAnimatable/IBAnimatable/issues/179)
 - `AnimatorFactory` and all the `***Animators` can now be used / instantiate outside of `IBAnimatable`
 
+---
 ### [2.2](https://github.com/IBAnimatable/IBAnimatable/releases/tag/2.2)
 
 #### API breaking changes
 
 - Change `SystemPageCurlAnimator` to `SystemPageAnimator` to support `SystemPage(Curl)` and `SystemPage(UnCurl)` transition animations.
-
 
 #### Enhancements
 
@@ -140,6 +174,7 @@ None
 - Fix the sided borders issue [#150](https://github.com/IBAnimatable/IBAnimatable/pull/150)
 - Fix the `FromTop` and `FromBottom` directions in system built-in animations [#156](https://github.com/IBAnimatable/IBAnimatable/pull/156)
 
+---
 ### [2.1](https://github.com/IBAnimatable/IBAnimatable/releases/tag/2.1)
 
 #### API breaking changes
@@ -173,6 +208,7 @@ None
 - Fixed a bug that was making `GradientDesignable` not filling the dedicated frame [#129](https://github.com/IBAnimatable/IBAnimatable/issues/129)
 - Fixed a bug that was making `MaskDesignable` not filling the dedicated frame
 
+---
 ### [2.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/2.0)
 
 #### API breaking changes
@@ -200,6 +236,7 @@ None
 - Fix potential crash when using `GradientDesignable`
 - Fix slideIn/Out animations on second screens (e.g. AirPlay)
 
+---
 ### [1.2](https://github.com/IBAnimatable/IBAnimatable/releases/tag/1.2)
 
 #### Enhancements
@@ -238,12 +275,14 @@ None
 - Fixed left gradient
 - Fixed slideOut / slideIn animations [#46](https://github.com/IBAnimatable/IBAnimatable/issues/46)
 
+---
 ### [1.0.1](https://github.com/IBAnimatable/IBAnimatable/releases/tag/1.0.1)
 
 #### Enhancements
 
 - Carthage support - [#6](https://github.com/IBAnimatable/IBAnimatable/issues/6)
 
+---
 ### [1.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/1.0)
 
 - Initial release
