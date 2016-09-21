@@ -161,7 +161,7 @@ Add `pod 'IBAnimatable'` to your Podfile.
 
 ### [Carthage](https://github.com/Carthage/Carthage)
 
-Add `github "IBanimatable/IBAnimatable" ~> 3` to your Cartfile.
+Add `github "IBanimatable/IBAnimatable"` to your Cartfile.
 
 Please Notice, there is [a limitation of a built framework for `@IBDesignable` and `@IBInspectable`](https://github.com/Carthage/Carthage/issues/335), that will impact on `IBAnimatable` when you use Carthage.
 
