@@ -1,9 +1,6 @@
 //
-//  AnimationsViewController.swift
-//  IBAnimatableApp
-//
 //  Created by jason akakpo on 12/07/16.
-//  Copyright © 2016 Jake Lin. All rights reserved.
+//  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
 import UIKit

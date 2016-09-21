@@ -15,7 +15,7 @@ let view = CircleView()
 iPhoneView.addSubview(view)
 
 //: animationType: all supported predefined animations can be found in `enum AnimationType`
-view.animationType = .squeeze(way: .in, from: .left)
+view.animationType = .squeeze(way: .in, direction: .left)
 
 //: duration: used to specify the duration of animation. Default value is 0.7
 view.duration = 0.8
