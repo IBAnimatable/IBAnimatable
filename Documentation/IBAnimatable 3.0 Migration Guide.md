@@ -2,7 +2,7 @@
 
 IBAnimatable 3.0 is the latest major release of IBAnimatable, a library for designing and prototyping customized UI, interaction, navigation, transition and animation for App Store ready Apps in Interface Builder. As a major release, following Semantic Versioning conventions, 3.0 introduces API-breaking changes.
 
-This guide is provided in order to ease the transition of existing applications using IBAnimatable 2.x to the latest APIs, as well as explain the design and structure of new and updated functionality.
+This guide is provided in order to ease the transition of existing applications using IBAnimatable 2.x to the latest APIs, as well as explaining the design and structure of new and updated functionality.
 
 ## Requirements
 
@@ -15,7 +15,7 @@ For those of you that would like to use IBAnimatable with Swift 2.2 or 2.3, plea
 ## Benefits of upgrading
 
 - **Complete Swift 3 compatibility:** includes the full adoption of the new [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/).
-- **New enum system:** uses enums to provide nice programmatical APIs to replace stringy APIs.
+- **New enum system:** uses enums to provide strongly typed APIs to replace stringly typed APIs.
 
 ## Breaking API Changes
 IBAnimatable 3 has fully adopted all the new Swift 3 changes and conventions, including the new [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/). Because of this, almost every API in IBAnimatable has been modified in some way. We can't possibly document every single change, so we're going to attempt to identify the most common APIs and how they have changed to help you through those sometimes less than helpful compiler errors.
@@ -57,7 +57,7 @@ After that we can use it for **Animation Type** in **Attributes inspector** like
 And we can use it in code like: 
 
 ```swift
-var view = AnimatableView() // Set up a           s view from Storyboard or frame.
+var view = AnimatableView() // Set up a view from Storyboard or frame.
 view.animationType = "SlideInLeft"
 // view.animationType = "SlideOutRight"
 ```
@@ -345,8 +345,9 @@ Because we have change the properties name to support Interface Builder. Most of
 
 There are a couple of ways to fix them.
 
-0. Open the *.storyboard file with your favor editor e.g. Atom, VS Code or sublime. Replace the value as below:
-1. Or open the storyboard in Interface Builder, select the element (with warnings). Then open **Identity inspector**, and change the value in **User Defined Runtime Attributes**
+0. Open the *.storyboard file with your favor editor e.g. Atom, VS Code or sublime. Replace the value as below.
+2. Or open the storyboard in Interface Builder, select the element (with warnings). Then open **Identity inspector**, and change the value in **User Defined Runtime Attributes**.
+3. Or You can also find them by doing a search in Xcode (even doing a replace all, but that's may be dangerous)
 
 | Before | After  |
 | --- | --- |
