@@ -308,7 +308,7 @@ view.maskType = .circle
 button.animationType = .shake(repeatCount: 1)
 ``` 
 
-Please find more information for [Enums](###Enums) and [Protocols](###Protocols).
+Please find more information for [Enums](#Enums) and [Protocols](#Protocols).
 
 ### Custom UI elements
 If you have created your own custom UI elements and used the protocols in `IBAnimatable` like [IBAnimatableMaterial](https://github.com/IBAnimatable/IBAnimatableMaterial) project, you need to change the implementation for some properties e.g. `animationType` and `maskType`. Here is an example for `maskType`:
