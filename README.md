@@ -108,7 +108,7 @@ There are some properties we can change to customize the animation. What we need
 
 ```swift
 // Setup the animation
-view.animationType = .squeeze(way: .in, from: .left)
+view.animationType = .squeeze(way: .in, direction: .left)
 view.delay = 0.5
 view.damping = 0.5
 view.velocity = 2

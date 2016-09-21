@@ -34,11 +34,11 @@
 $ git clone https://github.com/IBAnimatable/IBAnimatable.git
 ```
 
-2) 在 Xcode 打开 .xcworkspace 文件
+2) 在 Xcode 打开 .xcodeproj 文件
 
 ```bash
 $ cd IBAnimatable
-$ open IBAnimatableApp.xcodeproj
+$ open IBAnimatable.xcodeproj
 ```
 
 3) 编译并运行
@@ -63,9 +63,9 @@ $ open IBAnimatableApp.xcodeproj
 ## 手工运行动画
 在上面我们已经看到，我们可以不需要任何代码就能在 Interface Builder 进行设计，但是 `IBAnimatable` 还提供编程接口来让我们完全控制UI和动画。`IBAnimatable` 提供了例如 `pop()` 那样简单的 API，我们只需要一行代码就能执行动画。
 
-```
-view.pop() // pop animation for the view
-view.squeezeFadeInLeft() // squeeze and fade in from left animation
+```swift
+view.pop(repeatCount: 1) // pop animation for the view
+view.squeezeFade(.in, direction:.left) // squeeze and fade in from left animation
 ```
 
 在 [Swift Playground Page - Predefined Animations](../IBAnimatable.playground/Pages/Predefined%20Animations.xcplaygroundpage) 里面我们可以尝试不同的动画。
@@ -73,9 +73,9 @@ view.squeezeFadeInLeft() // squeeze and fade in from left animation
 ### 动画的属性
 我们可以通过修改动画的属性来进一步个性化我们的动画。我们只需要修改这项属性，然后调用 `animate()` 方法来运行动画。
 
-```
+```swift
 // Setup the animation
-view.animationType = "SqueezeInLeft"
+view.animationType = .squeeze(way: .in, direction: .left)
 view.delay = 0.5
 view.damping = 0.5
 view.velocity = 2
@@ -90,20 +90,35 @@ view.animate()
 ### 串联动画
 有时候我们需要把多个动画串联起来执行，`IBAnimatable` 提供非常简易的方式来把动画串联起来。
 
-```
+```swift
 // 只要把下一个动画放在 `{}` closure 就可以了，下面的例子是当执行完从上而下的滑动后 Pop 的动画。
-view.squeezeInDown{ view.pop() }
+view.squeeze(.in, direction: .down) { view.pop(repeatCount: 1) }
 
 // 这是 "Animate in Swift Playground" Gif 动画的源代码，把好几个动画串联起来执行。
-view.squeezeInDown{ view.pop { view.shake{ view.squeeze{ view.wobble{ view.flipX { view.flash{ view.flipY { view.fadeOutDown() } } } } } } } }
+view.squeezeFade(.in, direction: .down) {
+  view.pop(repeatCount: 1) {
+    view.shake(repeatCount: 1) {
+      view.squeeze(repeatCount: 1) {
+        view.wobble(repeatCount: 1) {
+          view.flip(axis: .x) {
+            view.flip(axis: .y) {
+              view.slideFade(.out, direction: .down)
+            }
+          }
+        }
+      }
+    }
+  }
+}
 ```
+这些语法不是很漂亮，如果你有兴趣来完善它，请看 [Issue #14 - Chain-able animations](https://github.com/IBAnimatable/IBAnimatable/issues/14) ，我们一起来实现可串联动画的 API
 
 ## 怎样安装
 ### 手工安装
 把 `IBAnimatable` 文件夹拷贝到你的 Xcode 项目中
 
 ### Swift package manager
-在 `Package.swift` 中添加 `.Package(url: "https://github.com/IBAnimatable/IBanimatable.git", majorVersion: 1)` 。
+在 `Package.swift` 中添加 `.Package(url: "https://github.com/IBAnimatable/IBanimatable.git", majorVersion: 3)` 。
 
 ### CocoaPods
 
@@ -111,7 +126,7 @@ view.squeezeInDown{ view.pop { view.shake{ view.squeeze{ view.wobble{ view.flipX
 
 ### Carthage
 
-在 `Cartfile` 中添加 `github "IBAnimatable/IBAnimatable" ~> 2` 。
+在 `Cartfile` 中添加 `github "IBAnimatable/IBAnimatable" ~> 3` 。
 
 ### Git submodule
 你一定很熟悉 Git，应该不用我多说了，把这个 Repo 作为一个 submodule ，并把项目文件加到你的 workspace 里面，然后把 `IBAnimatable.framework` 放到你的应用程序的 Target 里面。
