@@ -16,7 +16,7 @@ None
 
 ### [3.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.0)
 
-IBAnimatable 3.0 is to the major release to support Swift 3 🎉.
+IBAnimatable 3.0 is the major release to support Swift 3 🎉.
 
 #### API breaking changes
 - This version follows Swift 3 [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/) and contains a lot of breaking changes from version 2.x. Please check out [IBAnimatable 3.0 Migration Guide](Documentation/IBAnimatable 3.0 Migration Guide.md) for more information about how to migrate your project to 3.0. 
