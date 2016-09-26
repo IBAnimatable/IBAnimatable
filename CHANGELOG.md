@@ -12,7 +12,7 @@ None
 None
 
 #### Bugfixes
-None
+Fix `clipsToBounds` issue.  [#303](https://github.com/IBAnimatable/IBAnimatable/issues/303) 
 
 ### [3.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.0)
 

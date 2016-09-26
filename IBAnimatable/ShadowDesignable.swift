@@ -67,10 +67,10 @@ public extension ShadowDesignable where Self: UIView {
   }
   
   public func configureMaskShadow() {
-    commonSetup()
-    
     // if a `layer.mask` is specified, add a new shadow layer to display the shadow to match the mask shape.
     if let mask = layer.mask as? CAShapeLayer {
+      commonSetup()
+      
       // Clear default layer borders
       layer.shadowColor = nil
       layer.shadowRadius = 0
