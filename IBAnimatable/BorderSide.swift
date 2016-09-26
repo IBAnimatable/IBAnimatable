@@ -10,6 +10,10 @@ public enum BorderSide: String {
   case right
   case bottom
   case left
+  case topOut
+  case rightOut
+  case bottomOut
+  case leftOut
 }
 
 
@@ -22,6 +26,10 @@ public struct BorderSides: OptionSet {
   public static let right = BorderSides(rawValue: 1 << 1)
   public static let bottom = BorderSides(rawValue: 1 << 2)
   public static let left = BorderSides(rawValue: 1 << 3)
+  public static let topOut = BorderSides(rawValue: 1 << 4)
+  public static let rightOut = BorderSides(rawValue: 1 << 5)
+  public static let bottomOut = BorderSides(rawValue: 1 << 6)
+  public static let leftOut = BorderSides(rawValue: 1 << 7)
   
   public static let AllSides: BorderSides = [.top, .right, .bottom, .left]
   
@@ -59,6 +67,10 @@ public struct BorderSides: OptionSet {
     case .right: self = .right
     case .bottom: self = .bottom
     case .left: self = .left
+    case .topOut: self = .topOut
+    case .rightOut: self = .rightOut
+    case .bottomOut: self = .bottomOut
+    case .leftOut: self = .leftOut
     }
   }
 }

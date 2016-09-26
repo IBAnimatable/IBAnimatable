@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dM8-H6-op1">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dM8-H6-op1">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -436,120 +436,232 @@ Opacity</string>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pif-t8-9Jy" userLabel="Bottom Panel" customClass="AnimatableView" customModule="IBAnimatable">
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="75u-pF-Sy6">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="wnm-DK-oQ2">
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wXB-Ve-Nx8">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="75u-pF-Sy6">
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0B-Jv-kmo" customClass="AnimatableCheckBox" customModule="IBAnimatable">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wXB-Ve-Nx8">
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0B-Jv-kmo" customClass="AnimatableCheckBox" customModule="IBAnimatable">
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="G0B-Jv-kmo" secondAttribute="height" id="IXX-5w-Pqc"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checked"/>
+                                                                            <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="unchecked"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="checked" value="YES"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="boxChecked:" destination="yzd-wU-DRz" eventType="touchUpInside" id="qYA-tx-78w"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="Top" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qkf-AH-sgw">
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="G0B-Jv-kmo" secondAttribute="height" id="IXX-5w-Pqc"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="FcK-Z8-jTw"/>
                                                                 </constraints>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checked"/>
-                                                                    <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="unchecked"/>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="checked" value="YES"/>
-                                                                </userDefinedRuntimeAttributes>
-                                                                <connections>
-                                                                    <action selector="boxChecked:" destination="yzd-wU-DRz" eventType="touchUpInside" id="qYA-tx-78w"/>
-                                                                </connections>
-                                                            </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="Top" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qkf-AH-sgw">
-                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WJt-th-N1Y">
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GpR-xE-BpF" customClass="AnimatableCheckBox" customModule="IBAnimatable">
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="GpR-xE-BpF" secondAttribute="height" id="1v5-dx-sXj"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checked"/>
+                                                                            <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="unchecked"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="checked" value="YES"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="boxChecked:" destination="yzd-wU-DRz" eventType="touchUpInside" id="DOP-rn-NsG"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="Left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ery-U0-7n4">
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="zE2-v2-aoc"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2Gl-ke-oiy">
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1WE-rk-t4D" customClass="AnimatableCheckBox" customModule="IBAnimatable">
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="1WE-rk-t4D" secondAttribute="height" id="pM7-dI-q5F"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checked"/>
+                                                                            <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="unchecked"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="checked" value="YES"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="boxChecked:" destination="yzd-wU-DRz" eventType="touchUpInside" id="fAe-iT-Es4"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="Right" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdN-WX-lYa">
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="aSG-ho-4jm"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ojc-jR-F4A">
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5p-Qm-Tx2" customClass="AnimatableCheckBox" customModule="IBAnimatable">
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="a5p-Qm-Tx2" secondAttribute="height" id="KAM-N8-nt8"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checked"/>
+                                                                            <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="unchecked"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="checked" value="YES"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="boxChecked:" destination="yzd-wU-DRz" eventType="touchUpInside" id="U0Z-BG-mKq"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="Bottom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCe-5b-zdS">
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="qOq-2s-TIf"/>
+                                                                </constraints>
+                                                            </stackView>
                                                         </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="FcK-Z8-jTw"/>
-                                                        </constraints>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WJt-th-N1Y">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qLs-kY-IQF">
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GpR-xE-BpF" customClass="AnimatableCheckBox" customModule="IBAnimatable">
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="eW1-le-c4R">
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mKR-xZ-bLL" customClass="AnimatableCheckBox" customModule="IBAnimatable">
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="mKR-xZ-bLL" secondAttribute="height" id="F5W-z1-MO7"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checked"/>
+                                                                            <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="unchecked"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="checked" value="NO"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="boxChecked:" destination="yzd-wU-DRz" eventType="touchUpInside" id="BnP-1M-J0F"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="Top" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfH-Ex-fS4">
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="GpR-xE-BpF" secondAttribute="height" id="1v5-dx-sXj"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="Tmv-wb-VqE"/>
                                                                 </constraints>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checked"/>
-                                                                    <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="unchecked"/>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="checked" value="YES"/>
-                                                                </userDefinedRuntimeAttributes>
-                                                                <connections>
-                                                                    <action selector="boxChecked:" destination="yzd-wU-DRz" eventType="touchUpInside" id="DOP-rn-NsG"/>
-                                                                </connections>
-                                                            </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="Left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ery-U0-7n4">
-                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="zE2-v2-aoc"/>
-                                                        </constraints>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2Gl-ke-oiy">
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1WE-rk-t4D" customClass="AnimatableCheckBox" customModule="IBAnimatable">
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4a2-sx-89B">
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CcS-OC-NqW" customClass="AnimatableCheckBox" customModule="IBAnimatable">
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="CcS-OC-NqW" secondAttribute="height" id="Hxu-p5-58e"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checked"/>
+                                                                            <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="unchecked"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="checked" value="NO"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="boxChecked:" destination="yzd-wU-DRz" eventType="touchUpInside" id="EW2-cQ-e1g"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="LeftOut" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1s-1H-NhC">
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="1WE-rk-t4D" secondAttribute="height" id="pM7-dI-q5F"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="ySg-hl-Gzy"/>
                                                                 </constraints>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checked"/>
-                                                                    <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="unchecked"/>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="checked" value="YES"/>
-                                                                </userDefinedRuntimeAttributes>
-                                                                <connections>
-                                                                    <action selector="boxChecked:" destination="yzd-wU-DRz" eventType="touchUpInside" id="fAe-iT-Es4"/>
-                                                                </connections>
-                                                            </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="Right" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdN-WX-lYa">
-                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="aSG-ho-4jm"/>
-                                                        </constraints>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ojc-jR-F4A">
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5p-Qm-Tx2" customClass="AnimatableCheckBox" customModule="IBAnimatable">
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9Eo-Np-Zaj">
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6D-MN-PKn" customClass="AnimatableCheckBox" customModule="IBAnimatable">
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="v6D-MN-PKn" secondAttribute="height" id="Et0-eI-gXz"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checked"/>
+                                                                            <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="unchecked"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="checked" value="NO"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="boxChecked:" destination="yzd-wU-DRz" eventType="touchUpInside" id="iet-Eb-IY9"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="RightOut" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03v-wZ-SUc">
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="a5p-Qm-Tx2" secondAttribute="height" id="KAM-N8-nt8"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="b0s-Tc-vD1"/>
                                                                 </constraints>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checked"/>
-                                                                    <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="unchecked"/>
-                                                                    <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
-                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="checked" value="YES"/>
-                                                                </userDefinedRuntimeAttributes>
-                                                                <connections>
-                                                                    <action selector="boxChecked:" destination="yzd-wU-DRz" eventType="touchUpInside" id="U0Z-BG-mKq"/>
-                                                                </connections>
-                                                            </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="Bottom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCe-5b-zdS">
-                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Xfb-rB-urY">
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCn-gC-x56" customClass="AnimatableCheckBox" customModule="IBAnimatable">
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="jCn-gC-x56" secondAttribute="height" id="6E8-iA-fmM"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="image" keyPath="checkedImage" value="checked"/>
+                                                                            <userDefinedRuntimeAttribute type="image" keyPath="uncheckedImage" value="unchecked"/>
+                                                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="Pop"/>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="checked" value="NO"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="boxChecked:" destination="yzd-wU-DRz" eventType="touchUpInside" id="U4A-7L-fa2"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="251" text="BottomOut" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeU-1s-71y">
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="Y6P-RR-Dya"/>
+                                                                </constraints>
+                                                            </stackView>
                                                         </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="qOq-2s-TIf"/>
-                                                        </constraints>
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="75u-pF-Sy6" firstAttribute="leading" secondItem="Pif-t8-9Jy" secondAttribute="leading" constant="10" id="cwn-6x-vrp"/>
-                                            <constraint firstAttribute="bottom" secondItem="75u-pF-Sy6" secondAttribute="bottom" constant="10" id="euW-Le-T71"/>
-                                            <constraint firstAttribute="trailing" secondItem="75u-pF-Sy6" secondAttribute="trailing" constant="10" id="ezg-o2-Xj4"/>
-                                            <constraint firstItem="75u-pF-Sy6" firstAttribute="top" secondItem="Pif-t8-9Jy" secondAttribute="top" constant="10" id="kpG-tX-V6P"/>
+                                            <constraint firstItem="wnm-DK-oQ2" firstAttribute="leading" secondItem="Pif-t8-9Jy" secondAttribute="leading" constant="5" id="1d3-oT-N0f"/>
+                                            <constraint firstAttribute="trailing" secondItem="wnm-DK-oQ2" secondAttribute="trailing" constant="5" id="4Up-eF-dSj"/>
+                                            <constraint firstItem="wnm-DK-oQ2" firstAttribute="top" secondItem="Pif-t8-9Jy" secondAttribute="top" constant="5" id="8ct-C0-jKU"/>
+                                            <constraint firstAttribute="bottom" secondItem="wnm-DK-oQ2" secondAttribute="bottom" constant="5" id="pAH-GA-bX0"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
@@ -570,9 +682,13 @@ Opacity</string>
                     </view>
                     <connections>
                         <outlet property="botCheckBox" destination="a5p-Qm-Tx2" id="N3D-gH-7ba"/>
+                        <outlet property="botOutCheckBox" destination="jCn-gC-x56" id="YMY-qY-BHJ"/>
                         <outlet property="leftCheckBox" destination="GpR-xE-BpF" id="BHt-3E-Toa"/>
-                        <outlet property="rightCheckBox" destination="1WE-rk-t4D" id="AE3-Zw-Bs5"/>
+                        <outlet property="leftOutCheckBoxOut" destination="CcS-OC-NqW" id="yvL-zd-8IN"/>
+                        <outlet property="rightCheckBox" destination="1WE-rk-t4D" id="uXB-Ih-7vr"/>
+                        <outlet property="rightOutCheckBox" destination="v6D-MN-PKn" id="uYR-eo-9SH"/>
                         <outlet property="topCheckBox" destination="G0B-Jv-kmo" id="xDx-hv-xxK"/>
+                        <outlet property="topOutCheckBox" destination="mKR-xZ-bLL" id="rXd-To-PvZ"/>
                         <outlet property="viewToBorder" destination="5YH-3K-Z6I" id="I7p-ec-DdY"/>
                     </connections>
                 </viewController>

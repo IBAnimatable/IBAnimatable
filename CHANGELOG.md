@@ -9,7 +9,8 @@ All notable changes to this project will be documented in this file.
 None
 
 #### Enhancements
-None
+
+- New borders to draw out (in by default): `topOut`, `bottomOut`, `leftOut`, `rightOut`
 
 #### Bugfixes
 Fix `clipsToBounds` issue.  [#303](https://github.com/IBAnimatable/IBAnimatable/issues/303) 
