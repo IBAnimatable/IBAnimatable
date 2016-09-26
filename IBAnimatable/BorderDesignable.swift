@@ -75,6 +75,21 @@ private extension BorderDesignable where Self: UIView {
     border.name = "borderSideLayer"
     
     let borderPath = UIBezierPath()
+    let lines = makeLines()
+    for linePoints in lines {
+      borderPath.move(to: linePoints.start)
+      borderPath.addLine(to: linePoints.end)
+    }
+    
+    border.path = borderPath.cgPath
+    border.fillColor = UIColor.clear.cgColor
+    border.strokeColor = borderColor.cgColor
+    border.lineWidth = borderWidth
+    border.frame = bounds
+    layer.insertSublayer(border, at: 0)
+  }
+
+  private func makeLines() -> [(start: CGPoint, end: CGPoint)] {
     let shift = borderWidth / 2
     var lines: [(start: CGPoint, end: CGPoint)] = []
     if borderSides.contains(.top) {
@@ -89,17 +104,19 @@ private extension BorderDesignable where Self: UIView {
     if borderSides.contains(.left) {
       lines.append((start: CGPoint(x: shift, y: 0), end: CGPoint(x: shift, y: bounds.size.height)))
     }
-    
-    for linePoints in lines {
-      borderPath.move(to: linePoints.start)
-      borderPath.addLine(to: linePoints.end)
+    if borderSides.contains(.topOut) {
+      lines.append((start: CGPoint(x: 0, y: shift), end: CGPoint(x: bounds.size.width, y: shift)))
     }
-    
-    border.path = borderPath.cgPath
-    border.fillColor = UIColor.clear.cgColor
-    border.strokeColor = borderColor.cgColor
-    border.lineWidth = borderWidth
-    border.frame = bounds
-    layer.insertSublayer(border, at: 0)
+    if borderSides.contains(.rightOut) {
+      lines.append((start: CGPoint(x: bounds.size.width - shift, y: 0), end: CGPoint(x: bounds.size.width - shift, y: bounds.size.height)))
+    }
+    if borderSides.contains(.bottomOut) {
+      lines.append((start: CGPoint(x: 0, y: bounds.size.height - shift), end: CGPoint(x: bounds.size.width, y: bounds.size.height - shift)))
+    }
+    if borderSides.contains(.leftOut) {
+      lines.append((start: CGPoint(x: shift, y: 0), end: CGPoint(x: shift, y: bounds.size.height)))
+    }
+    return lines
   }
+
 }
