@@ -9,7 +9,8 @@ All notable changes to this project will be documented in this file.
 None
 
 #### Enhancements
-None
+
+- New borders to draw out (in by default): `topOut`, `bottomOut`, `leftOut`, `rightOut`
 
 #### Bugfixes
 None
