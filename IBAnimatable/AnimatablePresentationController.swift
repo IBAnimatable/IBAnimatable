@@ -77,19 +77,19 @@ private extension AnimatablePresentationController {
 
 // MARK: - Notifications
 
-fileprivate extension AnimatablePresentationController {
+extension AnimatablePresentationController {
 
-  func setupObservers() {
+  fileprivate func setupObservers() {
     guard presentationConfiguration.keyboardTranslation != .none else {
       return
     }
 
-    NotificationCenter.default.addObserver(self, selector: #selector(AnimatablePresentationController.UIKeyboardDidShow(notification:)), name: .UIKeyboardDidShow, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(AnimatablePresentationController.keyboardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
   } 
 
-  @objc func UIKeyboardDidShow (notification: NSNotification) {
-    if let keyboardFrame = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue {
+  func keyboardWillShow(notification: NSNotification) {
+    if let keyboardFrame = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
       let presentedFrame = frameOfPresentedViewInContainerView
       let duration = (notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue ?? 0.5
       let translatedFrame = presentationConfiguration.keyboardTranslation.translationFrame(keyboardFrame: keyboardFrame, presentedFrame: presentedFrame)
@@ -101,7 +101,7 @@ fileprivate extension AnimatablePresentationController {
     }
   }
 
-  @objc func keyboardWillHide (notification: NSNotification) {    
+  func keyboardWillHide(notification: NSNotification) {
     let duration = (notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue ?? 0.5
     let curve = UIViewAnimationOptions(rawValue: UInt(duration))
     UIView.animate(withDuration: duration, delay: 0, options: curve, animations: {
