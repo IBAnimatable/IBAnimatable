@@ -12,7 +12,9 @@ None
 None
 
 #### Bugfixes
-Fix `clipsToBounds` issue.  [#303](https://github.com/IBAnimatable/IBAnimatable/issues/303) 
+
+- Fix `clipsToBounds` issue.  [#303](https://github.com/IBAnimatable/IBAnimatable/issues/303) 
+- Fix `keyboardTranslation` when presenting a custom controller
 
 ### [3.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.0)
 
