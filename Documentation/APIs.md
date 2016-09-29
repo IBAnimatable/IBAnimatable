@@ -194,7 +194,7 @@ Also see [Transition Animators](Transitions.md#transition-animators) and [Intera
 
 ### ActivityIndicatorAnimatable
 
-Fully documented in [Activity indicator animations](ActivityIndicator.md)
+Fully documented in [Activity indicator animations](ActivityIndicators.md)
 
 ### Extension
 #### UIViewController
