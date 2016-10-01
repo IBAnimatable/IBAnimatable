@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oAB-Bz-TaE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oAB-Bz-TaE">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -132,7 +132,7 @@
                             <constraint firstItem="hNr-ng-iZE" firstAttribute="centerY" secondItem="OnE-aw-cD0" secondAttribute="centerY" id="ySh-2Q-cWM"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="predefinedColor" value="flatGreenSea"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="_predefinedColor" value="flatGreenSea"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <toolbarItems/>
@@ -231,7 +231,7 @@
                             <constraint firstItem="FgP-UH-Os8" firstAttribute="centerY" secondItem="2wE-60-Psz" secondAttribute="centerY" id="jX3-Sm-5Z0"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="_predefinedGradient" value="Forest"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="_predefinedGradient" value="forest"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
@@ -350,7 +350,7 @@
                             <constraint firstItem="63B-zV-SiK" firstAttribute="centerY" secondItem="LRM-UA-5Be" secondAttribute="centerY" id="iV9-y6-lD9"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="_predefinedGradient" value="Haikus"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="_predefinedGradient" value="haikus"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
@@ -454,7 +454,7 @@
                             <constraint firstItem="0Gp-E2-vhb" firstAttribute="leading" secondItem="Ya9-02-nKR" secondAttribute="leadingMargin" constant="12" id="yDl-7D-bYX"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="_predefinedGradient" value="Candy"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="_predefinedGradient" value="candy"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <userDefinedRuntimeAttributes>
@@ -564,7 +564,7 @@
                             <constraint firstItem="vlY-8I-KHB" firstAttribute="leading" secondItem="wii-JR-fVE" secondAttribute="leadingMargin" constant="12" id="rY5-jL-F0A"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="_predefinedGradient" value="Moss"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="_predefinedGradient" value="moss"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
@@ -583,7 +583,7 @@
         <image name="back" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ftd-QI-Jx6"/>
-        <segue reference="DNB-vZ-0SS"/>
+        <segue reference="HbQ-Kq-gSf"/>
+        <segue reference="DUR-wR-gOd"/>
     </inferredMetricsTieBreakers>
 </document>
