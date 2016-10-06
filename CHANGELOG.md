@@ -3,6 +3,18 @@ All notable changes to this project will be documented in this file.
 `IBAnimatable` adheres to [Semantic Versioning](http://semver.org/).
 
 ## Versions
+### Next
+
+#### API breaking changes
+None
+
+#### Enhancements
+None
+
+#### Bugfixes
+
+- Fix `clipsToBounds` issue.  [#303](https://github.com/IBAnimatable/IBAnimatable/issues/303) 
+
 ### [2.8.1](https://github.com/IBAnimatable/IBAnimatable/releases/tag/2.8.1)
 
 #### API breaking changes
