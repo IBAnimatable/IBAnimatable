@@ -32,7 +32,9 @@ With `IBAnimatable`, we can design a UI in Interface Builder like what we can do
 As a designer, we love Sketch, which is a simple but yet super powerful tool to create UI. However, Sketch can't design interaction, navigation, transition and animation, and we may need another tool like Framer to design some of them. Moreover, to make an App Store ready App, we need to use Xcode and Interface Builder to implement the UI and animations. To speed up the process and minimize the waste, we create `IBAnimatable` to make Interface Builder designable and animatable.   
 
 ## Swift 2.3
-This branch (swift2) is used for Swift 2.2 / 2.3. Main features will be added in master branch (supports Swift 3). If you have fixed bugs for Swift 2.3, please pull request to this branch.
+This branch (swift2) is used for Swift 2.2 / 2.3. Main features will be added in master branch (supports Swift 3). If you have fixed bugs for Swift 2.3, please pull request to this branch. If you are using Xcode 7.3.1 with Swift 2.2 please use IBAnimatable 2.7. If you are using Xcode 8 with Swift 2.3, please use the latest tagged 2.x release (version 2.8.2). If you find any issue and create a PR for Swift 2.3, please PR to `swift2` branch. 
+
+When you use Swift 2.3 with IBAnimatable, you may see some issue like `dlopen(IBAnimatable.framework, 1): Symbol not found: __TMVs20_DisabledRangeIndex_`. That's a bug of Xcode 8, please have a look at [Issue - Failed to render and update auto layout status](https://github.com/IBAnimatable/IBAnimatable/issues/349)
 
 ## Languages
 [中文](Documentation/README.zh.md)
