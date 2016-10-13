@@ -14,14 +14,14 @@ Design and prototype customized UI, interaction, navigation, transition and anim
 **The app was made in Interface Builder with `IBAnimatable` without a single line of code**. Due to the size of [the GIF file on Dribbble](https://dribbble.com/shots/2453933-IBAnimatable-Design-App-Store-ready-Apps-in-Interface-Builder), it only demonstrates a subset of features. We can also find the full HD version on [YouTube](https://www.youtube.com/watch?v=dvD8X6J1YLM) or [MP4 on Github](https://github.com/IBAnimatable/IBAnimatable-Misc/blob/master/Videos/IBAnimatable.mp4?raw=true)
 
 ## Key features
-* **100% compatible with `UIKit`**. All `IBAnimatable` APIs are extensions of `UIKit`. No pollutions to `UIKit`'s APIs.
-* **100% compatible with Auto Layout and Size Classes**. No custom layout system.
-* **User interface design and preview in IB**: corner radius, border, mask, shadow, gradient colors, tint color, blur effect etc.
-* **Animation design in IB**: slide in/out, fade in/out, zoom in/out, flip, pop, shake, rotate, move etc.
-* **Transition design in IB**: fade, slide, flip, cube, portal, fold, explosion etc.
-* **Interactive gesture design in IB**: pan, screen edge pan, pinch etc. 
-* **Presentation design in IB**: flip, cover, zoom, dropdown etc.
-* **Activity indicator design in IB**: ball beat, ball rotate, cube transition, Pacman etc.  
+- [x] **100% compatible with `UIKit`**. All `IBAnimatable` APIs are extensions of `UIKit`. No pollutions to `UIKit`'s APIs.
+- [x] **100% compatible with Auto Layout and Size Classes**. No custom layout system.
+- [x] **User interface design and preview in IB**: corner radius, border, mask, shadow, gradient colors, tint color, blur effect etc.
+- [x] **Animation design in IB**: slide in/out, fade in/out, zoom in/out, flip, pop, shake, rotate, move etc.
+- [x] **Transition design in IB**: fade, slide, flip, cube, portal, fold, explosion etc.
+- [x] **Interactive gesture design in IB**: pan, screen edge pan, pinch etc. 
+- [x] **Presentation design in IB**: flip, cover, zoom, dropdown etc.
+- [x] **Activity indicator design in IB**: ball beat, ball rotate, cube transition, Pacman etc.  
 
 
 ![StoryboardPreview](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/Storyboard.jpg)
@@ -38,7 +38,7 @@ IBAnimatable 3.0 is the latest major release of IBAnimatable. This version follo
 If you are using Xcode 8 with Swift 3, please use the latest tagged 3.x release.
 
 ## Swift 2.2 or 2.3?
-If you are using Xcode 7.3.1 with Swift 2.2 please use IBAnimatable 2.7. If you are using Xcode 8 with Swift 2.3, please use the latest tagged 2.x release (version 2.8.1). If you find any issue and create a PR for Swift 2.3, please PR to `swift2` branch.
+If you are using Xcode 7.3.1 with Swift 2.2 please use IBAnimatable 2.7. If you are using Xcode 8 with Swift 2.3, please use the latest tagged 2.x release (version 2.8.1). If you find any issue and create a PR for Swift 2.3, please PR to `swift2` branch. When you use Swift 2.3 with IBAnimatable, you may see some issue like `dlopen(IBAnimatable.framework, 1): Symbol not found: __TMVs20_DisabledRangeIndex_`. That's a bug of Xcode 8, please have a look at [Issue - Failed to render and update auto layout status](https://github.com/IBAnimatable/IBAnimatable/issues/349)
 
 ## Languages
 [中文](Documentation/README.zh.md)
@@ -196,6 +196,7 @@ Many thanks to [all contributors](graphs/contributors) 🤗 especially to [@tbar
 * Framer Studio - Design and preview animations in one place.
 * [Spring by Meng To](https://github.com/MengTo/Spring) - steal a lot of animation parameters from this project.
 * [VCTransitionsLibrary by Colin Eberhardt](https://github.com/ColinEberhardt/VCTransitionsLibrary) - port all transition animations from this project, and add parameters support and fix bugs.
+* [NVActivityIndicatorView by Vinh Nguyen](NVActivityIndicatorView by Vinh Nguyen - port all activity indicator animations from this project.) - port all activity indicator animations from this project.
 * [Invision ToDo App UI Kit](http://www.invisionapp.com/do), The demo App's original design is from this UI Kit and redone in Interface Builder. We also added interaction, navigation and animations.
 
 ## Change Log
