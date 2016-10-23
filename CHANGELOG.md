@@ -12,6 +12,17 @@ None
 None
 
 #### Bugfixes
+None
+
+### [3.0.1](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.0.1)
+
+#### API breaking changes
+None
+
+#### Enhancements
+None
+
+#### Bugfixes
 
 - Fix `clipsToBounds` issue.  [#303](https://github.com/IBAnimatable/IBAnimatable/issues/303) 
 - Fix `keyboardTranslation` when presenting a custom controller
