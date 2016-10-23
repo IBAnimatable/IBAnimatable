@@ -12,6 +12,17 @@ None
 None
 
 #### Bugfixes
+None
+
+### [2.8.2](https://github.com/IBAnimatable/IBAnimatable/releases/tag/2.8.2)
+
+#### API breaking changes
+None
+
+#### Enhancements
+None
+
+#### Bugfixes
 
 - Fix `clipsToBounds` issue.  [#303](https://github.com/IBAnimatable/IBAnimatable/issues/303) 
 
