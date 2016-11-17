@@ -222,6 +222,7 @@
 		73BDE6EB1D5654ED00D19EAE /* GradientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientViewController.swift; sourceTree = "<group>"; };
 		73ED71F71D34CA4700755C9B /* AnimationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationsViewController.swift; sourceTree = "<group>"; };
 		90F04E661DDDC1D9007614CB /* CornerSide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerSide.swift; sourceTree = "<group>"; };
+		90F04E681DDDC650007614CB /* CornerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerViewController.swift; sourceTree = "<group>"; };
 		AE0B0FE91C25372200E36B78 /* TableViewCellDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellDesignable.swift; sourceTree = "<group>"; };
 		AE0B0FEB1C26397700E36B78 /* AnimatableCheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableCheckBox.swift; sourceTree = "<group>"; };
 		AE0B0FED1C263A1900E36B78 /* CheckBoxDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBoxDesignable.swift; sourceTree = "<group>"; };
@@ -595,6 +596,7 @@
 				733323021D56BCF200B88F6E /* UserInterfaceTableViewController.swift */,
 				73A99B661D5FC8650079C7EC /* BorderViewController.swift */,
 				E2E62B8A1D69BE3800294A73 /* UserInterfaceActivityIndicatorViewController.swift */,
+				90F04E681DDDC650007614CB /* CornerViewController.swift */,
 			);
 			name = code;
 			sourceTree = "<group>";
@@ -1183,6 +1185,7 @@
 				AEDB24D11CE9EC0F0086612C /* TransitionPresentedViewController.swift in Sources */,
 				E2D33E531D3A5490006F2492 /* PresentingViewController.swift in Sources */,
 				E2E62B8B1D69BE3800294A73 /* UserInterfaceActivityIndicatorViewController.swift in Sources */,
+				90F04E691DDDC650007614CB /* CornerViewController.swift in Sources */,
 				AED1A1031BFE9820001346FA /* AppDelegate.swift in Sources */,
 				732485D71D4902510068FD93 /* ParamType.swift in Sources */,
 			);
