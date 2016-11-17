@@ -16,6 +16,8 @@
 		73B7D8861D233FB700DD3F43 /* IBEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B7D8851D233FB700DD3F43 /* IBEnum.swift */; };
 		73BDE6EC1D5654ED00D19EAE /* GradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BDE6EB1D5654ED00D19EAE /* GradientViewController.swift */; };
 		73ED71F81D34CA4700755C9B /* AnimationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED71F71D34CA4700755C9B /* AnimationsViewController.swift */; };
+		90F04E671DDDC1D9007614CB /* CornerSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F04E661DDDC1D9007614CB /* CornerSide.swift */; };
+		90F04E691DDDC650007614CB /* CornerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F04E681DDDC650007614CB /* CornerViewController.swift */; };
 		AE0D309A1CE149150093B578 /* UserInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE0D30991CE149150093B578 /* UserInterface.storyboard */; };
 		AE0D309C1CE14A170093B578 /* Animations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE0D309B1CE14A170093B578 /* Animations.storyboard */; };
 		AE148F321C9C2C3800E8126F /* IBAnimatable.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE6B01551C2A082300950BB2 /* IBAnimatable.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -219,6 +221,7 @@
 		73B7D8851D233FB700DD3F43 /* IBEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBEnum.swift; sourceTree = "<group>"; };
 		73BDE6EB1D5654ED00D19EAE /* GradientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientViewController.swift; sourceTree = "<group>"; };
 		73ED71F71D34CA4700755C9B /* AnimationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationsViewController.swift; sourceTree = "<group>"; };
+		90F04E661DDDC1D9007614CB /* CornerSide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerSide.swift; sourceTree = "<group>"; };
 		AE0B0FE91C25372200E36B78 /* TableViewCellDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellDesignable.swift; sourceTree = "<group>"; };
 		AE0B0FEB1C26397700E36B78 /* AnimatableCheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableCheckBox.swift; sourceTree = "<group>"; };
 		AE0B0FED1C263A1900E36B78 /* CheckBoxDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBoxDesignable.swift; sourceTree = "<group>"; };
@@ -690,6 +693,7 @@
 				AE81DB4D1C11DF00000AEB20 /* BlurEffectStyle.swift */,
 				AED97B851C1710A900D2B0B8 /* BorderSide.swift */,
 				E2472EA31C6F97F800A20E27 /* ColorType.swift */,
+				90F04E661DDDC1D9007614CB /* CornerSide.swift */,
 				AE8C53AF1C0F1C0400A775AF /* GradientStartPoint.swift */,
 				E2E28E6A1C6A6C30003F3852 /* GradientType.swift */,
 				AE4C53F41C8843AB007C9EFA /* InteractiveGestureType.swift */,
@@ -1009,6 +1013,7 @@
 				E28E28361D6CCA5C0043D56E /* ActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				E2E62B861D69B6B400294A73 /* ActivityIndicatorShape.swift in Sources */,
 				E20078A11CB8FB94002B2C16 /* FoldAnimator.swift in Sources */,
+				90F04E671DDDC1D9007614CB /* CornerSide.swift in Sources */,
 				AEDE6E6B1CCECE8A000DECF0 /* PinchInteractiveAnimator.swift in Sources */,
 				E2E62B791D69B20500294A73 /* AnimatableActivityIndicatorView.swift in Sources */,
 				E28E28351D6CCA5C0043D56E /* ActivityIndicatorAnimationLineScaleParty.swift in Sources */,
