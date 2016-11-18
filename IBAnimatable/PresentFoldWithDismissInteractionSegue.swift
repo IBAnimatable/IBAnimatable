@@ -7,7 +7,7 @@ import UIKit
 
 open class PresentFoldWithDismissInteractionSegue: UIStoryboardSegue {
   open override func perform() {
-    destination.transitioningDelegate = TransitionPresenterManager.sharedManager().retrievePresenter(transitionAnimationType: .fold(from: .left, folds: nil), interactiveGestureType: .default)
+    destination.transitioningDelegate = TransitionPresenterManager.shared.retrievePresenter(transitionAnimationType: .fold(from: .left, folds: nil), interactiveGestureType: .default)
     source.present(destination, animated: true, completion: nil)
   }
 }

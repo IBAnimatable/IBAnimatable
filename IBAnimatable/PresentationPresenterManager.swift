@@ -6,15 +6,11 @@
 import Foundation
 
 public class PresentationPresenterManager {
-  // MARK: - Singleton Constructor
-  private init() {}
-  private struct Shared {
-    static let instance = PresentationPresenterManager()
-  }
+  // MARK: - Singleton
 
-  public static func sharedManager() -> PresentationPresenterManager {
-    return Shared.instance
-  }
+  static let shared = PresentationPresenterManager()
+
+  private init() {}
 
   // MARK: - Private
   private var cache = [String: PresentationPresenter]()

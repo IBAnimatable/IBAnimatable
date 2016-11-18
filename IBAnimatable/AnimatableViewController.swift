@@ -72,9 +72,9 @@ import UIKit
     let toViewController = segue.destination
     // If interactiveGestureType hasn't been set
     if case .none = interactiveGestureType {
-      toViewController.transitioningDelegate = TransitionPresenterManager.sharedManager().retrievePresenter(transitionAnimationType: transitionAnimationType, transitionDuration: transitionDuration)
+      toViewController.transitioningDelegate = TransitionPresenterManager.shared.retrievePresenter(transitionAnimationType: transitionAnimationType, transitionDuration: transitionDuration)
     } else {
-      toViewController.transitioningDelegate = TransitionPresenterManager.sharedManager().retrievePresenter(transitionAnimationType: transitionAnimationType, transitionDuration: transitionDuration, interactiveGestureType: interactiveGestureType)
+      toViewController.transitioningDelegate = TransitionPresenterManager.shared.retrievePresenter(transitionAnimationType: transitionAnimationType, transitionDuration: transitionDuration, interactiveGestureType: interactiveGestureType)
     }
   }
 
