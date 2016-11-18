@@ -14,6 +14,18 @@ import UIKit
     }
   }
   
+  open var cornerSides: CornerSides  = .AllSides {
+    didSet {
+      configureCornerRadius()
+    }
+  }
+  
+  @IBInspectable var _cornerSides: String? {
+    didSet {
+      cornerSides = CornerSides(rawValue: _cornerSides)
+    }
+  }
+  
   // MARK: - FillDesignable
   @IBInspectable open var fillColor: UIColor? {
     didSet {

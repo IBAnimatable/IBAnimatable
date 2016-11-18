@@ -57,6 +57,7 @@ To use `IBAnimatable`, we can drag and drop a UIKit element and connect it with 
 | Property name | Data type | Description |
 | ------------- |:-------------:| ----- |
 | cornerRadius | CGFloat | rounded corner radius. The default value is `CGFloat.NaN`, the value is greater than 0. |
+| cornerSides | Optional&lt;String> | corner side: `topLeft`, `topRight`, `bottomLeft` or `bottomRight`, also can be found in emum [`CornerSide`](../IBAnimatable/CornerSide.swift). Multiple sides can be configured with a comma separated list of sides (e.g. `topLeft,topRight`). If not specified, then display four sides. **Please notice**: If we use `maskType` property then it will be replaced by `cornerSide`. |
 
 #### `FillDesignable`
 | Property name | Data type | Description |
