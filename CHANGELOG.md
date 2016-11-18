@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.
 None
 
 #### Enhancements
-None
+- Add `cornerSide` to `CornerDesignable` to support multiple sides for corner.
 
 #### Bugfixes
 None
