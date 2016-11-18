@@ -9,6 +9,17 @@ All notable changes to this project will be documented in this file.
 None
 
 #### Enhancements
+None
+
+#### Bugfixes
+None
+
+### [3.1](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.1)
+
+#### API breaking changes
+None
+
+#### Enhancements
 - Add `cornerSide` to `CornerDesignable` to support multiple sides for corner.
 
 #### Bugfixes
