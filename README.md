@@ -44,12 +44,12 @@ If you are using Xcode 7.3.1 with Swift 2.2 please use IBAnimatable 2.7. If you 
 [中文](Documentation/README.zh.md)
 
 ## Features
-* From prototype to shippable App Store ready App - What you design in Interface Builder is what the App exactly looks. 
+* From prototype to shippable App Store ready App - What you design in Interface Builder is what the App exactly looks. More details can be found in this talk [Prototype and Design App Store ready Apps in Interface Builder (/dev/world/2016)](https://youtu.be/HaB2_ki_67w)
 * Designer-friendly - Sketch style configuration panel on Attributes inspector (![Attributes inspector](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/AttributesInspector.png)) to lower the learning curve for using Interface Builder.   
 * Animation design support in Swift playground - Similar to Framer, we can prototype animations in Swift playground to save time for running on a simulator or actual iOS devices. 
 * Built-in Auto Layout support - We can use Auto Layout and Size Classes with `IBAnimatable` to support orientations and multiple iOS devices. 
 * Navigation and transition support - We can use default navigation pattern in the App. `IBAnimatable` also has custom transition animators and segues to support transition animations and gesture interactions.
-* Protocol-oriented programming - `IBAnimatable` uses a protocol-oriented programming paradigm. With Swift protocol extension, it is easy to support more designable or animatable features. We can even use these protocol extensions to create other custom UI elements instead of using the default ones from `IBAnimatable`.  
+* Protocol-oriented programming - `IBAnimatable` uses a protocol-oriented programming paradigm. With Swift protocol extension, it is easy to support more designable or animatable features. We can even use these protocol extensions to create other custom UI elements instead of using the default ones from `IBAnimatable`. More details can be found in this talk [Prototype and Design App Store ready Apps in Interface Builder (/dev/world/2016) - Part 2: Protocol oriented programming](https://youtu.be/HaB2_ki_67w?t=24m13s)
 
 ## Use cases
 * Prototyping - Create interactive prototypes to validate ideas quickly.
@@ -59,6 +59,7 @@ If you are using Xcode 7.3.1 with Swift 2.2 please use IBAnimatable 2.7. If you 
 ## Documentations
 * [<del>Fully</del> Mostly documented API Reference](Documentation/APIs.md) 
 * [How to design and prototype custom transition animation and gesture interaction in Interface Builder with IBAnimatable](Documentation/Transitions.md)
+* Youtube video:  [Prototype and Design App Store ready Apps in Interface Builder (/dev/world/2016) - Part 2: Protocol oriented programming](https://youtu.be/HaB2_ki_67w)
 
 ## How to run the example App
 The easy way to learn and understand how powerful of `IBAnimatable`is to run the example App and play around the settings in Interface Builder. Just a few steps we can run the App as below, to see more features, we can tap on "Forget Password" button to unlock them. 😉
