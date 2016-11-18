@@ -169,7 +169,7 @@ Add `pod 'IBAnimatable'` to your Podfile.
 
 Add `github "IBanimatable/IBAnimatable"` to your Cartfile.
 
-Please Notice, there is [a limitation of a built framework for `@IBDesignable` and `@IBInspectable`](https://github.com/Carthage/Carthage/issues/335), that will impact on `IBAnimatable` when you use Carthage.
+Please Notice, there is [a limitation of a built framework for `@IBDesignable` and `@IBInspectable`](https://github.com/Carthage/Carthage/issues/335), that will impact on `IBAnimatable` when you use Carthage. There is a workaround to use Carthage or Swift package manager with `IBAnimatable`, please have a look at [Carthage – no Animatable UI Classes appearing in Storyboard](https://github.com/IBAnimatable/IBAnimatable/issues/354)
 
 ### Git submodule
 
