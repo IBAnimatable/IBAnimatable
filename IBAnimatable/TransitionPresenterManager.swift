@@ -9,16 +9,12 @@ import Foundation
  TransitionPresenter Manager: Used to cache the Presenters for Present and Dismiss transitions
  */
 public class TransitionPresenterManager {
-  // MARK: - Singleton Constructor
+  // MARK: - Singleton
+
+  static let shared = TransitionPresenterManager()
+
   private init() {}
-  private struct Shared {
-    static let instance = TransitionPresenterManager()
-  }
-  
-  public static func sharedManager() -> TransitionPresenterManager {
-    return Shared.instance
-  }
-  
+
   // MARK: - Private
   private var cache = [String: TransitionPresenter]()
   

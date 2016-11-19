@@ -184,7 +184,7 @@ open class AnimatableModalViewController: UIViewController, PresentationDesignab
 private extension AnimatableModalViewController {
   func setupPresenter() {
     
-    presenter = PresentationPresenterManager.sharedManager().retrievePresenter(presentationAnimationType: presentationAnimationType, transitionDuration: transitionDuration)
+    presenter = PresentationPresenterManager.shared.retrievePresenter(presentationAnimationType: presentationAnimationType, transitionDuration: transitionDuration)
     presenter?.dismissalAnimationType = dismissalAnimationType
     transitioningDelegate = presenter
     modalPresentationStyle = .custom

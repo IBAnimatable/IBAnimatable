@@ -7,7 +7,7 @@ import UIKit
 
 open class PresentPortalWithDismissInteractionSegue: UIStoryboardSegue {
   open override func perform() {
-    destination.transitioningDelegate = TransitionPresenterManager.sharedManager().retrievePresenter(transitionAnimationType: .portal(direction: .forward, zoomScale: nil), interactiveGestureType: .default)
+    destination.transitioningDelegate = TransitionPresenterManager.shared.retrievePresenter(transitionAnimationType: .portal(direction: .forward, zoomScale: nil), interactiveGestureType: .default)
     source.present(destination, animated: true, completion: nil)
   }
 }

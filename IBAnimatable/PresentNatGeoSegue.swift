@@ -7,7 +7,7 @@ import UIKit
 
 open class PresentNatGeoSegue: UIStoryboardSegue {
   open override func perform() {
-    destination.transitioningDelegate = TransitionPresenterManager.sharedManager().retrievePresenter(transitionAnimationType: .natGeo(to: .left))
+    destination.transitioningDelegate = TransitionPresenterManager.shared.retrievePresenter(transitionAnimationType: .natGeo(to: .left))
     source.present(destination, animated: true, completion: nil)
   }
 }
