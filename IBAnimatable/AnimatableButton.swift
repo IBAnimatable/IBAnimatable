@@ -74,7 +74,6 @@ import UIKit
       borderSides = BorderSides(rawValue: _borderSides)
     }
   }
-  
 
   // MARK: - ShadowDesignable
   @IBInspectable open var shadowColor: UIColor? {

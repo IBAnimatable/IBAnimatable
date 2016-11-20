@@ -15,7 +15,6 @@ public enum CornerSide: String {
   case bottomRight
 }
 
-
 public struct CornerSides: OptionSet {
   public let rawValue: Int
   

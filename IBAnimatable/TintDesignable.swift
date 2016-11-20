@@ -10,8 +10,7 @@ public protocol TintDesignable {
    Opacity in tint Color (White): from 0 to 1
    */
   var tintOpacity: CGFloat { get set }
-  
-  
+
   /**
    Opacity in shade Color (Black): from 0 to 1
    */

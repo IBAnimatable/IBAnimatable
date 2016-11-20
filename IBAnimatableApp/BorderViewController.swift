@@ -13,7 +13,6 @@ class BorderViewController: UIViewController {
   @IBOutlet weak var botCheckBox: AnimatableCheckBox!
   @IBOutlet weak var leftCheckBox: AnimatableCheckBox!
   @IBOutlet weak var rightCheckBox: AnimatableCheckBox!
-  
 
   @IBAction func boxChecked(_ sender: AnimatableCheckBox) {
     let border: BorderSides
@@ -36,6 +35,5 @@ class BorderViewController: UIViewController {
     }
     
   }
-  
 
 }

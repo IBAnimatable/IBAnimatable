@@ -7,8 +7,7 @@ import UIKit
 import IBAnimatable
 
 class MaskViewController: UIViewController {
-  
-  
+
   @IBOutlet var maskedView: AnimatableView!
   // @IBOutlet var maskedImageView: AnimatableImageView!
   @IBOutlet weak var pickerView: UIPickerView!
@@ -26,8 +25,6 @@ class MaskViewController: UIViewController {
             PickerEntry(params:[waveParam, widthParam], name: "wave"),
             PickerEntry(params:[angleParam], name: "parallelogram"),
             PickerEntry(params:[], name: "none")
-      
-      
     ]
   }()
   
@@ -41,7 +38,6 @@ class MaskViewController: UIViewController {
     maskedView.maskType = maskType
   }
 }
-
 
 extension MaskViewController : UIPickerViewDelegate, UIPickerViewDataSource {
   

@@ -3,7 +3,6 @@
 //  Copyright © 2015 IBAnimatable. All rights reserved.
 //
 
-
 import UIKit
 
 @IBDesignable open class AnimatableScrollView: UIScrollView, CornerDesignable, FillDesignable, BorderDesignable, RotationDesignable, ShadowDesignable, BlurDesignable, TintDesignable, GradientDesignable, MaskDesignable, Animatable {

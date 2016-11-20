@@ -16,37 +16,31 @@ public protocol PresentationDesignable: class {
   var dismissalAnimationType: PresentationAnimationType { get set }
   /// Tranistion duration
   var transitionDuration: Double { get set }
-  
-  
+
   // Modal position, all supported modal position can be found in `PresentationModalPosition`
   var modalPosition: PresentationModalPosition { get set }
   
   // Modal Size, all supported modal Sizes can be found in `PresentationModalSize`
   var modalSize: ModalSize { get set }
-  
-  
+
   /// The corner radius of the modal view
   var cornerRadius: CGFloat { get set }
-  
 
   /// If set to `true`, the modal view will dismiss when tap on the dimming view.
   var dismissOnTap: Bool { get set }
 
-  
   /// The background color of the dimming view. The default value is black color.
   var backgroundColor: UIColor { get set }
   
   /// The opacity of the dimming view. The default value is `0.7`.
   var opacity: CGFloat { get set }
 
-  
   /// The blur effect style of the dimming view. If use this property, `backgroundColor` and `opacity` are ignored.
   var blurEffectStyle: UIBlurEffectStyle? { get set }
   
   /// The blur opacity of the dimming view. If use this property, `backgroundColor` and `opacity` are ignored.
   var blurOpacity: CGFloat { get set }
 
- 
   /// The shadow color of the modal view. If use this property, `cornerRadius` is ignored.
   var shadowColor: UIColor? { get set }
   

@@ -16,8 +16,7 @@ class CornerViewController: UIViewController {
   @IBOutlet weak var topRightCheckBox: AnimatableCheckBox!
   @IBOutlet weak var bottomLeftCheckBox: AnimatableCheckBox!
   @IBOutlet weak var bottomRightCheckBox: AnimatableCheckBox!
-  
-  
+
   @IBAction func boxChecked(_ sender: AnimatableCheckBox) {
     let corner: CornerSides
 
@@ -41,6 +40,5 @@ class CornerViewController: UIViewController {
     }
     
   }
-  
-  
+
 }

@@ -177,7 +177,6 @@ public extension Animatable where Self: UIView {
   }
   // swiftlint:enable variable_name_min_length
 
-  
   public func slideFade(_ way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
     let values = computeValues(way: way, direction: direction, shouldScale: false)
     switch way {
@@ -404,7 +403,6 @@ public extension Animatable where Self: UIView {
 }
 // swiftlint:enable variable_name_min_length
 
-
 private extension Animatable where Self: UIView {
   func computeValues(way: AnimationType.Way, direction: AnimationType.Direction, shouldScale: Bool) -> AnimationValues {
     let yDistance = screenSize.height * force
@@ -486,8 +484,7 @@ private extension Animatable where Self: UIView {
       }
     )
   }
-  
-  
+
   func animateIn(x: CGFloat, y: CGFloat, scaleX: CGFloat, scaleY: CGFloat, alpha: CGFloat, completion: AnimatableCompletion? = nil) {
     let translate = CGAffineTransform(translationX: x, y: y)
     let scale = CGAffineTransform(scaleX: scaleX, y: scaleY)
@@ -529,7 +526,6 @@ private extension Animatable where Self: UIView {
   }
 }
 // swiftlint:enable variable_name_min_length
-
 
 public extension Animatable where Self: UIBarItem {
   // TODO: animations for `UIBarItem`

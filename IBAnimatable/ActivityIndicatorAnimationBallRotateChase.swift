@@ -28,7 +28,6 @@ public class ActivityIndicatorAnimationBallRotateChase: ActivityIndicatorAnimati
 
 }
 
-
 // MARK: - Setup
 // swiftlint:disable variable_name_min_length
 private extension ActivityIndicatorAnimationBallRotateChase {

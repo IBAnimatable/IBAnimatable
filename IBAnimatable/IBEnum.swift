@@ -18,7 +18,6 @@ public protocol IBEnum {
   init?(string: String?)
 }
 
-
 public extension IBEnum {
   /**
    Helper function that returns a tuple containing the name and params from a string `string`
@@ -37,13 +36,11 @@ public extension IBEnum {
   }
 }
 
-
 extension IBEnum {
   init(string: String?, default defaultValue: Self) {
     self = Self(string: string) ?? defaultValue
   }
 }
-
 
 /// IBEnum provide default initializer for RawRepresentable Enum
 public extension IBEnum where Self: RawRepresentable & Hashable {

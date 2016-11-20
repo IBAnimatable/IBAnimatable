@@ -6,7 +6,6 @@
 import Foundation
 import UIKit
 
-
 extension String {
   /// Returns `NSAttributedString` with specified color.
   func colorize(_ color: UIColor) -> NSAttributedString {
@@ -20,7 +19,6 @@ extension Array {
     return indices.contains(index) ? self[index] : nil  /// Returns the element at the specified index iff it is within bounds, otherwise nil.
   }
 }
-
 
 enum ParamType {
   
@@ -67,7 +65,6 @@ enum ParamType {
     }
   }
 }
-
 
 struct PickerEntry {
   let params: [ParamType]
