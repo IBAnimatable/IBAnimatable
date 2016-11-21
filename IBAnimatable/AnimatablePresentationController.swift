@@ -150,8 +150,7 @@ private extension AnimatablePresentationController {
 public extension AnimatablePresentationController {
 
   // MARK: Presentation
-  
-  
+
   public override var frameOfPresentedViewInContainerView: CGRect {
     guard let containerBounds = containerView?.bounds else {
       return CGRect.zero

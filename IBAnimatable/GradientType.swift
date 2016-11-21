@@ -180,7 +180,6 @@ public enum GradientType: String, IBEnum {
   case iiitDelhi
 }
 
-
 extension GradientType {
   var colors: GradientColor {
     get {

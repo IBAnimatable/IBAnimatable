@@ -73,8 +73,7 @@ open class AnimatableModalViewController: UIViewController, PresentationDesignab
       presenter?.presentationConfiguration?.modalSize = modalSize
     }
   }
-  
-  
+
   @IBInspectable public var cornerRadius: CGFloat = .nan {
     didSet {
       presenter?.presentationConfiguration?.cornerRadius = cornerRadius

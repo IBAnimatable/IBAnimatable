@@ -5,14 +5,12 @@ import UIKit
 
 let colorsTypeURL = "https://gist.githubusercontent.com/tkrugg/a577c32e93eecc6c7991/raw/f7866132e26f9bffcda9caf13dced55e4a99e145/flatuicolors.json"
 
-
 func JSON(_ urlToRequest: String) -> Data {
   guard let data = try? Data(contentsOf: URL(string: urlToRequest)!) else {
     fatalError("URL Request failed")
   }
   return data
 }
-
 
 func parseJSON(JSONData: Data) -> [String: String]? {
   var json: [String: String]?
@@ -31,7 +29,6 @@ func colorLiteral(r: Int, g: Int, b: Int, a: Double) -> String {
   
 }
 // swiftlint:enable variable_name_min_length
-
 
 // Generator constants
 let enumCase = "\tcase %@\n"

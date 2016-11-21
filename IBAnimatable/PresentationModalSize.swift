@@ -36,7 +36,6 @@ public enum PresentationModalSize: IBEnum {
 
 }
 
-
 public extension PresentationModalSize {
   init?(string: String?) {
     guard let string = string else { return nil }

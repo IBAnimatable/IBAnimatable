@@ -41,8 +41,7 @@ class AnimationsViewController: UIViewController {
     PickerEntry(params: [positiveNumberParam, positiveNumberParam], name: "moveby"),
     PickerEntry(params: [numberParam, numberParam], name: "moveto")
     ]
-  
-  
+
   var selectedEntry: PickerEntry!
   override func viewDidLoad() {
     super.viewDidLoad()

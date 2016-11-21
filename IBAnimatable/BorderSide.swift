@@ -12,7 +12,6 @@ public enum BorderSide: String {
   case left
 }
 
-
 public struct BorderSides: OptionSet {
   public let rawValue: Int
   

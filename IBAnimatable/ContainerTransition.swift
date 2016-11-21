@@ -76,9 +76,7 @@ public class ContainerTransition: NSObject {
 // MARK: - UIViewControllerContextTransitioning
 
 extension ContainerTransition: UIViewControllerContextTransitioning {
-  
- 
-  
+
   public func viewController(forKey key: UITransitionContextViewControllerKey) -> UIViewController? {
     return viewControllers?[key]
   }
@@ -87,7 +85,6 @@ extension ContainerTransition: UIViewControllerContextTransitioning {
     return views?[key]
   }
 
-  
   public func completeTransition(_ didComplete: Bool) {
     viewControllers?[UITransitionContextViewControllerKey.from]?.view.removeFromSuperview()
     viewControllers?[UITransitionContextViewControllerKey.from]?.removeFromParentViewController()
