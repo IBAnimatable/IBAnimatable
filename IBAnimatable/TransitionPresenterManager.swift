@@ -11,7 +11,7 @@ import Foundation
 public class TransitionPresenterManager {
   // MARK: - Singleton
 
-  static let shared = TransitionPresenterManager()
+  public static let shared = TransitionPresenterManager()
 
   private init() {}
 
