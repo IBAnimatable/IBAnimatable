@@ -12,7 +12,8 @@ None
 None
 
 #### Bugfixes
-None
+
+- Make `PresentationPresenterManager ` and `TransitionPresenterManager ` `shared` property public again. [#364](https://github.com/IBAnimatable/IBAnimatable/issues/364) 
 
 ### [3.1](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.1)
 
@@ -20,7 +21,7 @@ None
 None
 
 #### Enhancements
-- Add `cornerSide` to `CornerDesignable` to support multiple sides for corner.
+- Add `cornerSide` to `CornerDesignable` to support multiple sides for corner. [#356](https://github.com/IBAnimatable/IBAnimatable/issues/356) 
 
 #### Bugfixes
 None
