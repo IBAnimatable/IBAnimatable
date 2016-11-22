@@ -8,7 +8,7 @@ import Foundation
 public class PresentationPresenterManager {
   // MARK: - Singleton
 
-  static let shared = PresentationPresenterManager()
+  public static let shared = PresentationPresenterManager()
 
   private init() {}
 
