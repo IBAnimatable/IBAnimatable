@@ -12,6 +12,17 @@ None
 None
 
 #### Bugfixes
+None
+
+### [3.1.1](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.1.1)
+
+#### API breaking changes
+None
+
+#### Enhancements
+None
+
+#### Bugfixes
 
 - Make `PresentationPresenterManager ` and `TransitionPresenterManager ` `shared` property public again. [#364](https://github.com/IBAnimatable/IBAnimatable/issues/364) 
 
