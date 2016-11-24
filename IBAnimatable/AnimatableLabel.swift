@@ -119,6 +119,7 @@ import UIKit
   }
   
   fileprivate func configureAfterLayoutSubviews() {
+    configureCornerRadius()
     configureBorder()
   }
 }
