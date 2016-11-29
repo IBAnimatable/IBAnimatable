@@ -27,7 +27,7 @@ enum ParamType {
   
   init<T: RawRepresentable>(fromEnum: T.Type) where T: Hashable {
     let iterator = iterateEnum(fromEnum)
-    let values = iterator.map {  return String(describing: $0.rawValue) }
+    let values = iterator.map { return String(describing: $0.rawValue) }
     self = .enumeration(values: values)
   }
   

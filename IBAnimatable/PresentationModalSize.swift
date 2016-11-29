@@ -38,11 +38,13 @@ public enum PresentationModalSize: IBEnum {
 
 public extension PresentationModalSize {
   init?(string: String?) {
-    guard let string = string else { return nil }
+    guard let string = string else {
+      return nil
+    }
+
     let nameANdParams = PresentationModalSize.extractNameAndParams(from: string)
     let name = nameANdParams.name
     let params = nameANdParams.params
-    
     switch name {
       case "half":
       self = .half

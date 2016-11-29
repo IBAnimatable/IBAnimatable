@@ -16,7 +16,7 @@ class MaskViewController: UIViewController {
     let pointsParam = ParamType.number(min: 3, max: 10, interval: 1, ascending: true, unit: "points") // default 5
     let sidesParam = ParamType.number(min: 3, max: 10, interval: 1, ascending: true, unit: "sides") // default 6
     let angleParam = ParamType.number(min: 60, max: 120, interval: 2, ascending: true, unit: "°") // default 6
-    let waveParam = ParamType.init(fromEnum: MaskType.WaveDirection.self)
+    let waveParam = ParamType(fromEnum: MaskType.WaveDirection.self)
     let widthParam = ParamType.number(min: 15, max: 90, interval: 2, ascending: true, unit: "px")
     
     return [PickerEntry(params:[], name:"circle"),
