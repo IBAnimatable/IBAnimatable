@@ -5,7 +5,7 @@
 
 import UIKit
 
-@IBDesignable open class AnimatableCollectionViewCell: UICollectionViewCell, CornerDesignable, FillDesignable, BorderDesignable, TableViewCellDesignable, GradientDesignable, Animatable {
+@IBDesignable open class AnimatableCollectionViewCell: UICollectionViewCell, CornerDesignable, FillDesignable, BorderDesignable, ShadowDesignable, TableViewCellDesignable, GradientDesignable, Animatable {
   
   // MARK: - CornerDesignable
   @IBInspectable open var cornerRadius: CGFloat = CGFloat.nan {
@@ -25,6 +25,31 @@ import UIKit
       cornerSides = CornerSides(rawValue: _cornerSides)
     }
   }
+    
+    // MARK: - ShadowDesignable
+    @IBInspectable open var shadowColor: UIColor? {
+        didSet {
+            configureShadowColor()
+        }
+    }
+    
+    @IBInspectable open var shadowRadius: CGFloat = CGFloat.nan {
+        didSet {
+            configureShadowRadius()
+        }
+    }
+    
+    @IBInspectable open var shadowOpacity: CGFloat = CGFloat.nan {
+        didSet {
+            configureShadowOpacity()
+        }
+    }
+    
+    @IBInspectable open var shadowOffset: CGPoint = CGPoint(x: CGFloat.nan, y: CGFloat.nan) {
+        didSet {
+            configureShadowOffset()
+        }
+    }
   
   // MARK: - FillDesignable
   @IBInspectable open var fillColor: UIColor? {
