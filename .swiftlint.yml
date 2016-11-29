@@ -7,3 +7,12 @@ disabled_rules:
   - function_body_length
   - cyclomatic_complexity
   - type_name
+
+opt_in_rules:
+ - closure_spacing
+ - conditional_returns_on_newline
+ - empty_count
+ - explicit_init
+ - overridden_super_call
+ - redundant_nil_coalescing
+ - nimble_operator
