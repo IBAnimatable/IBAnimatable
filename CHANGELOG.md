@@ -13,6 +13,7 @@ None
 
 #### Bugfixes
 - Fix initial `cornerSide` rendering issue.
+[#367](https://github.com/IBAnimatable/IBAnimatable/pull/367)
 
 ### [3.1.1](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.1.1)
 
