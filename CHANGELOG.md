@@ -9,7 +9,8 @@ All notable changes to this project will be documented in this file.
 None
 
 #### Enhancements
-None
+- Add support for corner and shadow on UICollectionViewCell.
+[#368]https://github.com/IBAnimatable/IBAnimatable/pull/368
 
 #### Bugfixes
 None
@@ -20,7 +21,7 @@ None
 None
 
 #### Enhancements
-- Add support for corner and shadow on UICollectionViewCell.
+None
 
 #### Bugfixes
 
