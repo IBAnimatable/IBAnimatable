@@ -26,30 +26,30 @@ import UIKit
     }
   }
     
-    // MARK: - ShadowDesignable
-    @IBInspectable open var shadowColor: UIColor? {
-        didSet {
-            configureShadowColor()
-        }
+  // MARK: - ShadowDesignable
+  @IBInspectable open var shadowColor: UIColor? {
+    didSet {
+      configureShadowColor()
     }
-    
-    @IBInspectable open var shadowRadius: CGFloat = CGFloat.nan {
-        didSet {
-            configureShadowRadius()
-        }
+  }
+  
+  @IBInspectable open var shadowRadius: CGFloat = CGFloat.nan {
+    didSet {
+      configureShadowRadius()
     }
-    
-    @IBInspectable open var shadowOpacity: CGFloat = CGFloat.nan {
-        didSet {
-            configureShadowOpacity()
-        }
+  }
+  
+  @IBInspectable open var shadowOpacity: CGFloat = CGFloat.nan {
+    didSet {
+      configureShadowOpacity()
     }
-    
-    @IBInspectable open var shadowOffset: CGPoint = CGPoint(x: CGFloat.nan, y: CGFloat.nan) {
-        didSet {
-            configureShadowOffset()
-        }
+  }
+  
+  @IBInspectable open var shadowOffset: CGPoint = CGPoint(x: CGFloat.nan, y: CGFloat.nan) {
+    didSet {
+      configureShadowOffset()
     }
+  }
   
   // MARK: - FillDesignable
   @IBInspectable open var fillColor: UIColor? {
