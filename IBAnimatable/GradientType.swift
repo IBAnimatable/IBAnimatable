@@ -5,6 +5,7 @@
 
 import UIKit
 
+// swiftlint:disable file_length
 public typealias GradientColor = (start: UIColor, end: UIColor)
 public enum GradientType: String, IBEnum {
   case coolBrown
