@@ -12,7 +12,8 @@ None
 None
 
 #### Bugfixes
-None
+- Fix initial `cornerSide` rendering issue.
+[#367](https://github.com/IBAnimatable/IBAnimatable/pull/367)
 
 ### [3.1.1](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.1.1)
 
@@ -24,7 +25,7 @@ None
 
 #### Bugfixes
 
-- Make `PresentationPresenterManager ` and `TransitionPresenterManager ` `shared` property public again. [#364](https://github.com/IBAnimatable/IBAnimatable/issues/364) 
+- Make `PresentationPresenterManager ` and `TransitionPresenterManager ` `shared` property public again. [#364](https://github.com/IBAnimatable/IBAnimatable/issues/364)
 
 ### [3.1](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.1)
 
@@ -32,7 +33,7 @@ None
 None
 
 #### Enhancements
-- Add `cornerSide` to `CornerDesignable` to support multiple sides for corner. [#356](https://github.com/IBAnimatable/IBAnimatable/issues/356) 
+- Add `cornerSide` to `CornerDesignable` to support multiple sides for corner. [#356](https://github.com/IBAnimatable/IBAnimatable/issues/356)
 
 #### Bugfixes
 None
@@ -47,7 +48,7 @@ None
 
 #### Bugfixes
 
-- Fix `clipsToBounds` issue.  [#303](https://github.com/IBAnimatable/IBAnimatable/issues/303) 
+- Fix `clipsToBounds` issue.  [#303](https://github.com/IBAnimatable/IBAnimatable/issues/303)
 - Fix `keyboardTranslation` when presenting a custom controller
 
 ### [3.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.0)
@@ -55,15 +56,15 @@ None
 IBAnimatable 3.0 is the major release to support Swift 3 🎉.
 
 #### API breaking changes
-- This version follows Swift 3 [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/) and contains a lot of breaking changes from version 2.x. Please check out [IBAnimatable 3.0 Migration Guide](Documentation/IBAnimatable 3.0 Migration Guide.md) for more information about how to migrate your project to 3.0. 
+- This version follows Swift 3 [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/) and contains a lot of breaking changes from version 2.x. Please check out [IBAnimatable 3.0 Migration Guide](Documentation/IBAnimatable 3.0 Migration Guide.md) for more information about how to migrate your project to 3.0.
 
 #### Enhancements
 - Complete Swift 3 Compatibility [#221](https://github.com/IBAnimatable/IBAnimatable/issues/221)
-- New Swift enum system [#218](https://github.com/IBAnimatable/IBAnimatable/issues/218) 
+- New Swift enum system [#218](https://github.com/IBAnimatable/IBAnimatable/issues/218)
 
 #### Bugfixes
-- Fix `borderSides` [#280](https://github.com/IBAnimatable/IBAnimatable/issues/280) 
-- Fix blur effect view [#302](https://github.com/IBAnimatable/IBAnimatable/issues/302) 
+- Fix `borderSides` [#280](https://github.com/IBAnimatable/IBAnimatable/issues/280)
+- Fix blur effect view [#302](https://github.com/IBAnimatable/IBAnimatable/issues/302)
 
 All issues associated with this version can be found using this [filter](https://github.com/IBAnimatable/IBAnimatable/milestone/2?closed=1).
 
@@ -86,7 +87,7 @@ None
 
 - `AnimatableStackView` doesn't conform anymore to `BlurDesignable`
 - `AnimatableScrollView` doesn't conform anymore to `BlurDesignable`
- 
+
 #### Enhancements
 
 - Support for custom presentation, for more information, [read the documentation](Documentation/Presentations.md)
@@ -322,5 +323,3 @@ None
 ### [1.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/1.0)
 
 - Initial release
-
-

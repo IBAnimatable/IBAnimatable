@@ -169,6 +169,7 @@ import UIKit
   }
 
   private func configureAfterLayoutSubviews() {
+    configureCornerRadius()
     configureBorder()
     placeholderLabel.preferredMaxLayoutWidth = textContainer.size.width - textContainer.lineFragmentPadding * 2.0
   }

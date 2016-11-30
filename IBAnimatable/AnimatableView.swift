@@ -212,6 +212,7 @@ import UIKit
   
   fileprivate func configureAfterLayoutSubviews() {
     configureMask()
+    configureCornerRadius()
     configureBorder()
     configureMaskShadow()
     configureGradient()
