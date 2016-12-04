@@ -10,9 +10,9 @@ class GradientViewController: UIViewController {
   
   @IBOutlet weak var gView: AnimatableView!
   
-  let gradientValues = ParamType.init(fromEnum: GradientType.self)
-  let startPointValues = ParamType.init(fromEnum: GradientStartPoint.self)
-  let colorValues = ParamType.init(fromEnum: ColorType.self)
+  let gradientValues = ParamType(fromEnum: GradientType.self)
+  let startPointValues = ParamType(fromEnum: GradientStartPoint.self)
+  let colorValues = ParamType(fromEnum: ColorType.self)
   var usePredefinedGradient = true
   lazy var componentValues: [ParamType] = {
     return self.usePredefinedGradient ? [self.gradientValues, self.startPointValues] : [self.colorValues, self.colorValues, self.startPointValues]

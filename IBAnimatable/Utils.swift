@@ -38,7 +38,7 @@ extension RawRepresentable {
       self = defaultValue
       return
     }
-    self = Self.init(rawValue: value) ?? defaultValue
+    self = Self(rawValue: value) ?? defaultValue
   }
 }
 

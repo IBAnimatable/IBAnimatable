@@ -5,6 +5,7 @@
 
 import UIKit
 
+// swiftlint:disable file_length
 private typealias AnimationValues = (x: CGFloat, y: CGFloat, scaleX: CGFloat, scaleY: CGFloat)
 public protocol Animatable: class {
   

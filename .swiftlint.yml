@@ -1,9 +1,20 @@
+line_length: 150
+file_length: 500
+
 disabled_rules:
   - trailing_whitespace
   - todo
   - variable_name
   - line_length
-  - file_length
   - function_body_length
   - cyclomatic_complexity
   - type_name
+
+opt_in_rules:
+ - closure_spacing
+ - conditional_returns_on_newline
+ - empty_count
+ - explicit_init
+ - overridden_super_call
+ - redundant_nil_coalescing
+ - nimble_operator

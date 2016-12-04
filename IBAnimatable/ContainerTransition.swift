@@ -70,7 +70,7 @@ public class ContainerTransition: NSObject {
   public var presentationStyle: UIModalPresentationStyle { return .none }
   public var transitionWasCancelled: Bool { return false }
   public var targetTransform: CGAffineTransform { return CGAffineTransform.identity }
-  public var containerView: UIView {return container!}
+  public var containerView: UIView { return container! }
 }
 
 // MARK: - UIViewControllerContextTransitioning

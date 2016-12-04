@@ -30,7 +30,7 @@ extension String {
   }
 }
 
-//MARK: - Script
+// MARK: - Script
 
 let gradientTypeURL = "https://raw.githubusercontent.com/Ghosh/uiGradients/master/gradients.json"
 
