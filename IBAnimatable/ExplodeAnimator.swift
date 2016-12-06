@@ -11,12 +11,12 @@ public class ExplodeAnimator: NSObject, AnimatedTransitioning {
   public var transitionDuration: Duration = defaultTransitionDuration
   public var reverseAnimationType: TransitionAnimationType?
   public var interactiveGestureType: InteractiveGestureType?
-  
+
   // MARK: - private
   fileprivate var xFactor: CGFloat = 10.0
   fileprivate var minAngle: CGFloat = -10.0
   fileprivate var maxAngle: CGFloat = 10.0
-  
+
   public init(xFactor: CGFloat?, minAngle: CGFloat?, maxAngle: CGFloat?, transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
     if let xFactor = xFactor {
@@ -28,7 +28,7 @@ public class ExplodeAnimator: NSObject, AnimatedTransitioning {
     if let maxAngle = maxAngle {
       self.maxAngle = maxAngle
     }
-    
+
     self.transitionAnimationType = .explode(xFactor: self.xFactor, minAngle: self.minAngle, maxAngle: self.maxAngle)
     self.reverseAnimationType = .explode(xFactor: self.xFactor, minAngle: self.minAngle, maxAngle: self.maxAngle)
     super.init()
@@ -39,36 +39,36 @@ extension ExplodeAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
     return retrieveTransitionDuration(transitionContext: transitionContext)
   }
-  
+
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     let (tempfromView, tempToView, tempContainerView) = retrieveViews(transitionContext: transitionContext)
     guard let fromView = tempfromView, let toView = tempToView, let containerView = tempContainerView else {
       transitionContext.completeTransition(true)
       return
     }
-    
+
     containerView.insertSubview(toView, at: 0)
-    
+
     let snapshots = makeSnapshots(toView: toView, fromView: fromView, containerView: containerView)
     containerView.sendSubview(toBack: fromView)
     animateSnapshotsExplode(snapshots) {
       if transitionContext.transitionWasCancelled {
         containerView.bringSubview(toFront: fromView)
       }
-      
+
       transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
     }
   }
-  
+
 }
 
 private extension ExplodeAnimator {
-  
+
   func makeSnapshots(toView: UIView, fromView: UIView, containerView: UIView) -> [UIView] {
     let size = toView.frame.size
     var snapshots = [UIView]()
     let yFactor = xFactor * size.height / size.width
-    
+
     let fromViewSnapshot = fromView.snapshotView(afterScreenUpdates: false)
     for x in stride(from: 0.0, to: Double(size.width), by: Double(size.width / xFactor)) {
       for y in stride(from: 0.0, to: Double(size.height), by: Double(size.width / yFactor)) {
@@ -81,7 +81,7 @@ private extension ExplodeAnimator {
     }
     return snapshots
   }
-  
+
   func animateSnapshotsExplode(_ snapshots: [UIView], completion: @escaping AnimatableCompletion) {
     UIView.animate(withDuration: transitionDuration, animations: {
       snapshots.forEach {
@@ -92,7 +92,7 @@ private extension ExplodeAnimator {
         let translateTransform = CGAffineTransform(translationX: $0.frame.origin.x - xOffset, y: $0.frame.origin.y - yOffset)
         let angleTransform = translateTransform.rotated(by: angle)
         let scaleTransform = angleTransform.scaledBy(x: 0.01, y: 0.01)
-        
+
         $0.transform = scaleTransform
         $0.alpha = 0.0
       }
@@ -102,9 +102,9 @@ private extension ExplodeAnimator {
       completion()
     })
   }
-  
+
   func randomFloat(from lower: CGFloat, to upper: CGFloat) -> CGFloat {
     return CGFloat(arc4random_uniform(UInt32(upper - lower))) + lower
   }
-  
+
 }

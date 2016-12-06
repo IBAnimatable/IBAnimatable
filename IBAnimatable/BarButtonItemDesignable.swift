@@ -14,7 +14,7 @@ public extension BarButtonItemDesignable where Self: UIBarButtonItem {
     guard let roundedImage = roundedImage else {
       return
     }
-    
+
     let originalImage: UIImage? = roundedImage.withRenderingMode(.alwaysOriginal)
     if let originalImage = originalImage {
       image = originalImage

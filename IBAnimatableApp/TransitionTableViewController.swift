@@ -20,18 +20,18 @@ class TransitionTableViewController: UITableViewController {
   // MARK: - Navigation
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     super.prepare(for: segue, sender: sender)
-    
+
     guard let toNavigationController = segue.destination as? AnimatableNavigationController, let indexPath = tableView.indexPathForSelectedRow else {
       return
     }
     let transitionString = transitionAnimations[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
-    
+
     let transitionAnimationType = TransitionAnimationType(string: transitionString)
-    
+
     // Set the transition animation type for `AnimatableNavigationController`, used for Push/Pop transitions
     toNavigationController.transitionAnimationType = transitionAnimationType
     toNavigationController.navigationBar.topItem?.title = transitionString
-   
+
     // Set the transition animation type for `AnimatableViewController`, used for Present/Dismiss transitions
     if let toViewController = toNavigationController.topViewController as? TransitionViewController {
       toViewController.transitionAnimationType = transitionAnimationType
@@ -43,7 +43,7 @@ class TransitionTableViewController: UITableViewController {
 // MARK: - Factory
 
 private extension TransitionTableViewController {
-  
+
   func populateTransitionTypeData() {
     transitionAnimationsHeaders.append("Fade")
     transitionAnimations.append(["Fade", "Fade(In)", "Fade(Out)"])
@@ -78,35 +78,35 @@ private extension TransitionTableViewController {
     transitionAnimationsHeaders.append("Others")
     transitionAnimations.append(["SystemRotate", "SystemRippleEffect", "SystemSuckEffect", "Explode", "Explode(10,-20,20)"])
   }
-  
+
   func transitionTypeWithDirections(forName prefixName: String) -> [String] {
     return [prefixName + "(Left)", prefixName + "(Right)", prefixName + "(Top)", prefixName + "(Bottom)"]
   }
-  
+
 }
 
 // MARK: - UITableViewDataSource / UITableViewDelegate
 
 extension TransitionTableViewController {
-  
+
   override func numberOfSections(in tableView: UITableView) -> Int {
     return transitionAnimations.count
   }
-  
+
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return transitionAnimations[section].count
   }
-  
+
   override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     return transitionAnimationsHeaders[section]
   }
-  
+
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "transitionCell", for: indexPath) as UITableViewCell
     cell.textLabel?.text = transitionAnimations[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
     return cell
   }
-  
+
   // MARK: - reset the group header font color and size
   override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
     if let header = view as? UITableViewHeaderFooterView {

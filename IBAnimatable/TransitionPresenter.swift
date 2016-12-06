@@ -17,7 +17,7 @@ public class TransitionPresenter: NSObject {
       }
     }
   }
-  
+
   var interactiveGestureType: InteractiveGestureType? {
     // Update `interactiveAnimator` if needed
     didSet {
@@ -26,32 +26,32 @@ public class TransitionPresenter: NSObject {
       }
     }
   }
-  
+
   // animation controller
   fileprivate var animator: AnimatedTransitioning?
-  
+
   // interaction controller
   fileprivate var interactiveAnimator: InteractiveAnimator?
-  
+
   public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) {
     self.transitionAnimationType = transitionAnimationType
-    self.transitionDuration = transitionDuration    
+    self.transitionDuration = transitionDuration
     super.init()
-    
+
     updateTransitionDuration()
     animator = AnimatorFactory.makeAnimator(transitionAnimationType: transitionAnimationType, transitionDuration: transitionDuration)
-    
+
     self.interactiveGestureType = interactiveGestureType
     updateInteractiveAnimator()
   }
-  
+
   // MARK: - Private
   fileprivate func updateTransitionDuration() {
     if transitionDuration.isNaN {
       transitionDuration = defaultTransitionDuration
     }
   }
-  
+
   fileprivate func updateInteractiveAnimator() {
     // If interactiveGestureType has been set
     if let interactiveGestureType = interactiveGestureType {
@@ -86,7 +86,7 @@ extension TransitionPresenter: UIViewControllerTransitioningDelegate {
     }
     return nil
   }
-  
+
   // MARK: - interaction controller
   public func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
     if let interactiveAnimator = interactiveAnimator, interactiveAnimator.interacting {

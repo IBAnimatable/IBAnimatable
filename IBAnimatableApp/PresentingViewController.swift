@@ -70,7 +70,7 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
     presentedViewController.dismissalAnimationType = PresentationAnimationType(string: selectedDismissalAnimationType) ?? .cover(from: .bottom)
     presentedViewController.modalPosition = PresentationModalPosition(string: selectedModalPosition)
     presentedViewController.modalSize = (width: PresentationModalSize(string: selectedModalWidth)!, height: PresentationModalSize(string:selectedModalHeight)!)
-  
+
     presentedViewController.backgroundColor = colors[Int(sliderBackgroundColor.value)]
     presentedViewController.opacity = CGFloat(sliderOpacity.value)
     presentedViewController.dismissOnTap = switchDismissOnTap.isOn
@@ -90,7 +90,7 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
     guard selectedDismissalAnimationType == nil else {
       return
     }
-    
+
     // FIXME: Dirty hack to make `Flip` and `CrossDissolve` work properly for dismissal transition.
     // If we don't apply this hack, both the dismissal transitions of `Flip` and `CrossDissolve` will slide down the modal not flip or crossDissolve(fade).
     if viewController.presentationAnimationType.stringValue == PresentationAnimationType.flip.stringValue {
@@ -223,7 +223,7 @@ extension PresentingViewController {
   func resetSelectedItemPicker() {
     var row: Int?
     if selectedButton == btnAnimationType {
-      row = animations.index(of: selectedAnimationType ?? "")      
+      row = animations.index(of: selectedAnimationType ?? "")
     } else if selectedButton == btnDismissalAnimationType {
       row = animations.index(of: selectedDismissalAnimationType ?? "")
     } else if selectedButton == btnModalPosition {
@@ -279,5 +279,5 @@ extension PresentingViewController {
       selectedBlurEffectStyle = title
     }
   }
-  
+
 }

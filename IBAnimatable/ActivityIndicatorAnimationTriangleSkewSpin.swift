@@ -56,5 +56,5 @@ private extension ActivityIndicatorAnimationTriangleSkewSpin {
     transform.m34 = CGFloat(-1) / 100
     return transform
   }
-  
+
 }

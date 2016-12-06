@@ -6,7 +6,7 @@
 import UIKit
 
 public class ScreenEdgePanInteractiveAnimator: InteractiveAnimator {
-  
+
   override func makeGestureRecognizer() -> UIGestureRecognizer {
     let gestureRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handleGesture(for:)))
     switch interactiveGestureType {
@@ -32,7 +32,7 @@ public class ScreenEdgePanInteractiveAnimator: InteractiveAnimator {
     }
     return gestureRecognizer
   }
-  
+
   override func calculateProgress(for gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
     guard let  gestureRecognizer = gestureRecognizer as? UIScreenEdgePanGestureRecognizer,
       let superview = gestureRecognizer.view?.superview else {
@@ -40,7 +40,7 @@ public class ScreenEdgePanInteractiveAnimator: InteractiveAnimator {
     }
     let translation = gestureRecognizer.translation(in: superview)
     let velocity = gestureRecognizer.velocity(in: superview)
-    
+
     var progress: CGFloat
     let distance: CGFloat
     let speed: CGFloat
@@ -77,12 +77,12 @@ public class ScreenEdgePanInteractiveAnimator: InteractiveAnimator {
     default:
       return (0, false)
     }
-    
+
     progress = min(max(progress, 0), 0.99)
-  
+
     // Finish the transition when pass the threathold
     let shouldFinishInteractiveTransition =  progress > 0.5 || speed > 1000
-    
+
     return (progress, shouldFinishInteractiveTransition)
   }
 }

@@ -60,5 +60,5 @@ private extension ActivityIndicatorAnimationSquareSpin {
     transform.m34 = CGFloat(-1) / 100
     return transform
   }
-  
+
 }

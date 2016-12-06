@@ -80,7 +80,7 @@ private extension ActivityIndicatorAnimationBallClipRotateMultiple {
 
     circleLayer.frame = frame
     circleLayer.add(animation, forKey: "animation")
-    
+
     return circleLayer
   }
 

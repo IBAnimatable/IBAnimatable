@@ -6,7 +6,7 @@
 import UIKit
 
 public class ActivityIndicatorAnimationBallPulse: ActivityIndicatorAnimating {
-  
+
   // MARK: ActivityIndicatorAnimating
 
   public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
@@ -26,7 +26,7 @@ public class ActivityIndicatorAnimationBallPulse: ActivityIndicatorAnimating {
                 y: y,
                 width: circleSize,
                 height: circleSize)
-            
+
             animation.beginTime = beginTime + beginTimes[i]
             circle.frame = frame
             circle.add(animation, forKey: "animation")

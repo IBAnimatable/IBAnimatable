@@ -13,7 +13,7 @@ public extension ViewControllerDesignable where Self: UIViewController {
   public func configureHideNavigationBar() {
     navigationController?.isNavigationBarHidden = hideNavigationBar
   }
-  
+
   public func resetHideNavigationBar() {
     navigationController?.isNavigationBarHidden = false
   }

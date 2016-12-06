@@ -23,7 +23,7 @@ public class ActivityIndicatorAnimationBallScaleMultiple: ActivityIndicatorAnima
                 y: (layer.bounds.size.height - size.height) / 2,
                 width: size.width,
                 height: size.height)
-            
+
             animation.beginTime = beginTime + beginTimes[i]
             circle.frame = frame
             circle.opacity = 0

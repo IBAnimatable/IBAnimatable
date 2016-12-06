@@ -11,19 +11,19 @@ public class SlideAnimator: NSObject, AnimatedTransitioning {
   public var transitionDuration: Duration = defaultTransitionDuration
   public var reverseAnimationType: TransitionAnimationType?
   public var interactiveGestureType: InteractiveGestureType?
-  
+
   // MARK: - private
   fileprivate var fromDirection: TransitionAnimationType.Direction
   fileprivate var isHorizontal = false
   fileprivate var isReverse = false
   fileprivate var isFade = false
-  
+
   public init(from direction: TransitionAnimationType.Direction, isFade: Bool, transitionDuration: Duration) {
     fromDirection = direction
     self.transitionDuration = transitionDuration
     self.isFade = isFade
     isHorizontal = fromDirection.isHorizontal
-    
+
     switch fromDirection {
     case .right:
       self.transitionAnimationType = .slide(to: .right, isFade: isFade)
@@ -54,14 +54,14 @@ extension SlideAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
     return retrieveTransitionDuration(transitionContext: transitionContext)
   }
-  
+
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     let (tempfromView, tempToView, tempContainerView) = retrieveViews(transitionContext: transitionContext)
     guard let fromView = tempfromView, let toView = tempToView, let containerView = tempContainerView else {
       transitionContext.completeTransition(true)
       return
     }
-    
+
     let travelDistance = isHorizontal ? containerView.bounds.width : containerView.bounds.height
     let travel = CGAffineTransform(translationX: isHorizontal ? (isReverse ? travelDistance : -travelDistance) : 0, y: isHorizontal ? 0 : (isReverse ? travelDistance : -travelDistance))
     containerView.addSubview(toView)

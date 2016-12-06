@@ -9,10 +9,10 @@ import IBAnimatable
 class TransitionPushedViewController: UIViewController {
 
   @IBOutlet var gestureLabel: UILabel!
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
     if let animatableView = view as? AnimatableView {
       animatableView.predefinedGradient = makeRandomGradient()
     }
@@ -21,25 +21,25 @@ class TransitionPushedViewController: UIViewController {
 }
 
 private extension TransitionPushedViewController {
-  
+
   func configureGestureLabel() {
     // Shows nothing by default
     gestureLabel.text = "to pop"
-    
+
     guard let navigationController = self.navigationController as? AnimatableNavigationController else {
       return
     }
-    
+
     // No gesture for this animator
     if case .none = navigationController.interactiveGestureType {
       return
     }
-    
+
     if case .none = navigationController.transitionAnimationType {
       return
     }
-    
+
     gestureLabel.text = retrieveGestureText(interactiveGestureType: navigationController.interactiveGestureType, transitionAnimationType: navigationController.transitionAnimationType, exit: "pop")
   }
-  
+
 }

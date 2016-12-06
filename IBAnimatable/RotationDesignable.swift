@@ -7,7 +7,7 @@ import UIKit
 import Darwin
 
 /**
-  It is not able to preview the rotation in IB. 
+  It is not able to preview the rotation in IB.
 */
 public protocol RotationDesignable {
   var rotate: CGFloat { get set }

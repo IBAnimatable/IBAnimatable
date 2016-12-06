@@ -11,19 +11,19 @@ import UIKit
 public class Navigator: NSObject {
   var transitionAnimationType: TransitionAnimationType
   var transitionDuration: Duration = defaultTransitionDuration
-  
+
   // animation controller
   fileprivate var animator: AnimatedTransitioning?
   // interaction controller
   fileprivate var interactiveAnimator: InteractiveAnimator?
-  
+
   public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) {
     self.transitionAnimationType = transitionAnimationType
     self.transitionDuration = transitionDuration
     super.init()
-    
+
     animator = AnimatorFactory.makeAnimator(transitionAnimationType: transitionAnimationType, transitionDuration: transitionDuration)
-    
+
     // If interactiveGestureType has been set
     if let interactiveGestureType = interactiveGestureType {
       // If configured as `.Default` then use the default interactive gesture type from the Animator
@@ -43,7 +43,7 @@ extension Navigator: UINavigationControllerDelegate {
   // MARK: - animation controller
   public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     interactiveAnimator?.connectGestureRecognizer(to: toVC)
-    
+
     if operation == .push {
       animator?.transitionDuration = transitionDuration
       return animator
@@ -55,7 +55,7 @@ extension Navigator: UINavigationControllerDelegate {
     }
     return nil
   }
-  
+
   // MARK: - interaction controller
   public func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
     if let interactiveAnimator = interactiveAnimator, interactiveAnimator.interacting {

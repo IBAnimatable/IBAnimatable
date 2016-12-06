@@ -7,18 +7,18 @@ import UIKit
 
 @IBDesignable open class DesignableNavigationBar: UINavigationBar, NavigationBarDesignable {
   @IBInspectable open var solidColor: Bool = false
-  
+
   // MARK: - Lifecycle
   open override func prepareForInterfaceBuilder() {
     super.prepareForInterfaceBuilder()
     configureInspectableProperties()
   }
-  
+
   open override func awakeFromNib() {
     super.awakeFromNib()
     configureInspectableProperties()
   }
-  
+
   // MARK: - Private
   fileprivate func configureInspectableProperties() {
     configureNavigationBar()

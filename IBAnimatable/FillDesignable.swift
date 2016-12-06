@@ -45,9 +45,9 @@ public extension FillDesignable where Self: UITableViewCell {
 }
 
 private extension FillDesignable {
-  
+
   func predefinedColor(string predefinedColor: String?) -> UIColor? {
     return ColorType(rawValue: predefinedColor ?? "")?.color
   }
-  
+
 }

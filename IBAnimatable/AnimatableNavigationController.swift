@@ -6,7 +6,7 @@
 import UIKit
 
 open class AnimatableNavigationController: UINavigationController, TransitionAnimatable {
-  
+
   // MARK: - TransitionAnimatable
   @IBInspectable  var _transitionAnimationType: String? {
     didSet {
@@ -38,11 +38,11 @@ open class AnimatableNavigationController: UINavigationController, TransitionAni
       }
     }
   }
-  
+
   // MARK: - Private
   // Must have a property to keep the reference alive because `UINavigationController.delegate` is `weak`
   fileprivate var navigator: Navigator?
-  
+
   fileprivate func configureNavigationControllerDelegate() {
     if case .none = transitionAnimationType {
       navigator = nil
@@ -54,7 +54,7 @@ open class AnimatableNavigationController: UINavigationController, TransitionAni
     if transitionDuration.isNaN {
       duration = defaultTransitionDuration
     }
-    
+
     if case .none = interactiveGestureType {
       navigator = Navigator(transitionAnimationType: transitionAnimationType, transitionDuration: duration)
     } else {

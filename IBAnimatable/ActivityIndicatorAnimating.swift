@@ -9,7 +9,7 @@ import UIKit
 public protocol ActivityIndicatorAnimating {
   /**
    Define the animation for the activity indicator.
-   
+
    - Parameter layer: The layer to execute the animation
    - Parameter size: The size of the activity indicator.
    - Parameter color: The color of the activity indicator.

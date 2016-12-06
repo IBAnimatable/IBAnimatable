@@ -23,9 +23,9 @@ public enum MaskType: IBEnum {
   case wave(direction: WaveDirection, width: Double, offset: Double)
   ///  For parallelogram shape with an angle (default: 60). If `angle == 90` then it is a rectangular mask. If `angle < 90` then is a left-oriented parallelogram\-\
   case parallelogram(angle: Double)
-  
+
   case none
-  
+
   /**
    Wave direction for `wave` shape.
    */
@@ -43,11 +43,11 @@ public extension MaskType {
       self = .none
       return
     }
-    
+
     let nameAndParames = MaskType.extractNameAndParams(from: string)
     let name = nameAndParames.name
     let params = nameAndParames.params
-    
+
     switch name {
     case "circle":
       self = .circle

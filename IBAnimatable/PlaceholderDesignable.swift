@@ -52,7 +52,7 @@ public extension PlaceholderDesignable where Self: UITextView {
       attribute: .width,
       multiplier: 1.0,
       constant: -(textContainerInset.left + textContainerInset.right + textContainer.lineFragmentPadding * 2.0)))
-    
+
     removeConstraints(constraints)
     addConstraints(newConstraints)
     constraints = newConstraints

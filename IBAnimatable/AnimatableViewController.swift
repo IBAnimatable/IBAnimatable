@@ -8,10 +8,10 @@ import UIKit
 @IBDesignable open class AnimatableViewController: UIViewController, ViewControllerDesignable, StatusBarDesignable, RootWindowDesignable, TransitionAnimatable {
   // MARK: - ViewControllerDesignable
   @IBInspectable open var hideNavigationBar: Bool = false
-  
+
   // MARK: - StatusBarDesignable
   @IBInspectable open var lightStatusBar: Bool = false
-  
+
   // MARK: - RootWindowDesignable
   @IBInspectable open var rootWindowBackgroundColor: UIColor?
 
@@ -24,9 +24,9 @@ import UIKit
     }
   }
   open var transitionAnimationType: TransitionAnimationType = .none
-  
+
   @IBInspectable open var transitionDuration: Double = .nan
-  
+
   open var interactiveGestureType: InteractiveGestureType = .none
   @IBInspectable var _interactiveGestureType: String? {
     didSet {
@@ -42,13 +42,13 @@ import UIKit
     configureHideNavigationBar()
     configureRootWindowBackgroundColor()
   }
-  
+
   open override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     resetHideNavigationBar()
 
   }
-  
+
   open override var preferredStatusBarStyle: UIStatusBarStyle {
     if lightStatusBar {
       return .lightContent
@@ -58,16 +58,16 @@ import UIKit
 
   open override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     super.prepare(for: segue, sender: sender)
-    
+
     // Configure custom transition animation
     guard (segue.destination is PresentationDesignable) == false else {
         return
     }
-    
+
     if case .none = transitionAnimationType {
       return
     }
-    
+
     let toViewController = segue.destination
     // If interactiveGestureType hasn't been set
     if case .none = interactiveGestureType {

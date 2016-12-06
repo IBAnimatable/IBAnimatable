@@ -16,10 +16,9 @@ private let numberParam = ParamType.number(min: -50, max: 50, interval: 5, ascen
 private let repeatCountParam = ParamType.number(min: 1, max: 10, interval: 1, ascending: true, unit:"")
 
 class AnimationsViewController: UIViewController {
-  
+
   @IBOutlet weak var animatableView: AnimatableView!
   @IBOutlet weak var pickerView: UIPickerView!
-  
   // prebuit common params
   let entries: [PickerEntry] = [
     PickerEntry(params: [wayParam, directionParam], name: "slide"),
@@ -49,22 +48,21 @@ class AnimationsViewController: UIViewController {
     pickerView.dataSource = self
     pickerView.delegate = self
   }
-  
 }
 
 extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSource {
-  
+
   func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
     if component == 0 {
       return entries.count
     }
     return selectedEntry.params[safe: component - 1]?.count() ?? 0
   }
-  
+
   func numberOfComponents(in pickerView: UIPickerView) -> Int {
     return 3
   }
-  
+
   func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
     switch component {
     case 0:
@@ -77,9 +75,8 @@ extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSourc
       return 0
     }
   }
-  
+
   func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-    
     if component == 0 {
       return entries[safe: row]?.name.colorize(.white)
     }
@@ -88,7 +85,7 @@ extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSourc
     }
     return param.title(at: row).colorize(.white)
   }
-  
+
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     if component == 0 {
       if selectedEntry.name != entries[row].name {
@@ -113,7 +110,5 @@ extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSourc
         }
       }
     }
-    
   }
-  
 }

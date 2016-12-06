@@ -17,7 +17,7 @@ public protocol AnimatedTransitioning: ViewControllerAnimatedTransitioning {
    Reverse animation type: used to specify the revers animation for pop or dismiss.
    */
   var reverseAnimationType: TransitionAnimationType? { get set }
-  
+
   /**
    Interactive gesture type: used to specify the gesture type to pop or dismiss.
    */
@@ -36,7 +36,7 @@ public extension AnimatedTransitioning {
     if let toViewController = tempToViewController {
       toView.frame = transitionContext.finalFrame(for: toViewController)
     }
-    
+
     containerView.addSubview(toView)
     CALayer.animate({
       let transition = CATransition()
