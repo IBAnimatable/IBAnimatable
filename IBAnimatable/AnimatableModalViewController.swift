@@ -67,7 +67,7 @@ open class AnimatableModalViewController: UIViewController, PresentationDesignab
       modalSize = (modalSize.width, modalHeight)
     }
   }
-  
+
   public var modalSize: ModalSize = (.half, .half) {
     didSet {
       presenter?.presentationConfiguration?.modalSize = modalSize
@@ -152,7 +152,7 @@ open class AnimatableModalViewController: UIViewController, PresentationDesignab
   // MARK: Private
 
   fileprivate var presenter: PresentationPresenter?
-  
+
   // MARK: Life cycle
 
   public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -172,7 +172,7 @@ open class AnimatableModalViewController: UIViewController, PresentationDesignab
 
   open override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    
+
     let animationType = dismissalAnimationType
     if let dismissalSystemTransition = animationType.systemTransition {
       modalTransitionStyle = dismissalSystemTransition
@@ -182,7 +182,7 @@ open class AnimatableModalViewController: UIViewController, PresentationDesignab
 
 private extension AnimatableModalViewController {
   func setupPresenter() {
-    
+
     presenter = PresentationPresenterManager.shared.retrievePresenter(presentationAnimationType: presentationAnimationType, transitionDuration: transitionDuration)
     presenter?.dismissalAnimationType = dismissalAnimationType
     transitioningDelegate = presenter
@@ -190,7 +190,7 @@ private extension AnimatableModalViewController {
     if let systemTransition = presentationAnimationType.systemTransition {
       modalTransitionStyle = systemTransition
     }
-    
+
     var presentationConfiguration = PresentationConfiguration()
     presentationConfiguration.modalPosition = modalPosition
     presentationConfiguration.modalSize = modalSize

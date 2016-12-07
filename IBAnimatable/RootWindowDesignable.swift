@@ -13,17 +13,17 @@ public protocol RootWindowDesignable {
 }
 
 public extension RootWindowDesignable where Self: UIViewController {
-  
+
   public func configureRootWindowBackgroundColor() {
     #if NS_EXTENSION_UNAVAILABLE_IOS
-      
+
       if let rootWindowBackgroundColor = rootWindowBackgroundColor,
         let delegate = UIApplication.sharedApplication().delegate,
         let rootWindow = delegate.window {
           rootWindow?.backgroundColor = rootWindowBackgroundColor
       }
-      
+
     #endif
   }
-  
+
 }

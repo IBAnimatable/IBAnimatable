@@ -11,19 +11,19 @@ public class TurnAnimator: NSObject, AnimatedTransitioning {
   public var transitionDuration: Duration = defaultTransitionDuration
   public var reverseAnimationType: TransitionAnimationType?
   public var interactiveGestureType: InteractiveGestureType? = .pan(from: .horizontal)
-  
+
   // MARK: - Private params
   fileprivate var fromDirection: TransitionAnimationType.Direction
-  
+
   // MARK: - Private fold transition
   fileprivate var transform: CATransform3D = CATransform3DIdentity
   fileprivate var reverse: Bool = false
-  
+
   // MARK: - Life cycle
   public init(from direction: TransitionAnimationType.Direction, transitionDuration: Duration) {
     fromDirection = direction
     self.transitionDuration = transitionDuration
-    
+
     switch fromDirection {
     case .right:
       self.transitionAnimationType = .turn(from: .right)
@@ -44,7 +44,7 @@ public class TurnAnimator: NSObject, AnimatedTransitioning {
       self.transitionAnimationType = .turn(from: .left)
       self.reverseAnimationType = .turn(from: .right)
       self.interactiveGestureType = .pan(from: .right)
-      reverse = false      
+      reverse = false
     }
     super.init()
   }
@@ -54,14 +54,14 @@ extension TurnAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
     return retrieveTransitionDuration(transitionContext: transitionContext)
   }
-  
+
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     let (tempfromView, tempToView, tempContainerView) = retrieveViews(transitionContext: transitionContext)
     guard let fromView = tempfromView, let toView = tempToView, let containerView = tempContainerView else {
       transitionContext.completeTransition(true)
       return
     }
-    
+
     containerView.addSubview(toView)
     transform.m34 = -0.002
     containerView.layer.sublayerTransform = transform
@@ -86,7 +86,7 @@ extension TurnAnimator: UIViewControllerAnimatedTransitioning {
         completion()
     }
   }
-  
+
 }
 
 // MARK: - Helpers

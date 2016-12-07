@@ -7,9 +7,9 @@ import UIKit
 import IBAnimatable
 
 class GradientViewController: UIViewController {
-  
+
   @IBOutlet weak var gView: AnimatableView!
-  
+
   let gradientValues = ParamType(fromEnum: GradientType.self)
   let startPointValues = ParamType(fromEnum: GradientStartPoint.self)
   let colorValues = ParamType(fromEnum: ColorType.self)
@@ -17,7 +17,7 @@ class GradientViewController: UIViewController {
   lazy var componentValues: [ParamType] = {
     return self.usePredefinedGradient ? [self.gradientValues, self.startPointValues] : [self.colorValues, self.colorValues, self.startPointValues]
   }()
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
     if usePredefinedGradient {
@@ -34,7 +34,7 @@ extension GradientViewController : UIPickerViewDelegate, UIPickerViewDataSource 
   func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
     return componentValues[component].count()
   }
-  
+
   func numberOfComponents(in pickerView: UIPickerView) -> Int {
     return componentValues.count
   }
@@ -49,7 +49,7 @@ extension GradientViewController : UIPickerViewDelegate, UIPickerViewDataSource 
   func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
     return componentValues[component].title(at: row).colorize(.white)
   }
-  
+
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     if usePredefinedGradient {
       gView.predefinedGradient = GradientType(rawValue: gradientValues.value(at: pickerView.selectedRow(inComponent: 0)))

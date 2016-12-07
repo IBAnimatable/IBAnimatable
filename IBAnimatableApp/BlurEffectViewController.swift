@@ -7,9 +7,9 @@ import UIKit
 import IBAnimatable
 
 class BlurEffectViewController: UIViewController {
-  
+
   @IBOutlet var blurEffectView: AnimatableView!
-  
+
   let opacityValues = ParamType.number(min: 0.0, max: 1.0, interval: 0.1, ascending: false, unit: "")
   lazy var values: [String] = {
     var values = ["none", "extraLight", "light", "dark"]
@@ -18,7 +18,7 @@ class BlurEffectViewController: UIViewController {
     }
     return values
   }()
-  
+
 }
 
 extension BlurEffectViewController : UIPickerViewDelegate, UIPickerViewDataSource {
@@ -26,14 +26,14 @@ extension BlurEffectViewController : UIPickerViewDelegate, UIPickerViewDataSourc
     if component == 2 {
       return opacityValues.count()
     }
-    
+
     // When component == 0 || component == 1, display blur effects
     return values.count
   }
   func numberOfComponents(in pickerView: UIPickerView) -> Int {
     return 3
   }
-  
+
   func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
     if component == 2 {
       return (opacityValues.title(at: row)).colorize(.white)

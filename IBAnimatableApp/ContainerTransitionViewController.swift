@@ -9,33 +9,33 @@ import IBAnimatable
 class ContainerTransitionViewController: UIViewController, UITabBarDelegate {
 
   // MARK: Properties
-  
+
   @IBOutlet var tabBar: UITabBar!
   @IBOutlet var containerView: UIView!
-  
+
   fileprivate var viewControllers = [AnimatableViewController]()
   fileprivate var currentViewController: AnimatableViewController?
-  
+
   // MARK: Life cycle
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
     makeChildViewControllers()
     tabBar.selectedItem = tabBar.items?.first
   }
-  
+
 }
 
 // MARK: - ChildViewController
 
 private extension ContainerTransitionViewController {
-  
+
   func makeChildViewControllers() {
     var viewController = AnimatableViewController()
     viewController.view.backgroundColor = .blue
     viewController.transitionAnimationType = .explode(xFactor: nil, minAngle: nil, maxAngle: nil)
     viewControllers.append(viewController)
-   
+
     viewController = AnimatableViewController()
     viewController.view.backgroundColor = .green
     viewController.transitionAnimationType = .fold(from: .right, folds: nil)
@@ -45,15 +45,15 @@ private extension ContainerTransitionViewController {
     viewController.view.backgroundColor = .yellow
     viewController.transitionAnimationType = .natGeo(to: .right)
     viewControllers.append(viewController)
-    
+
     viewController = AnimatableViewController()
     viewController.view.backgroundColor = .red
     viewController.transitionAnimationType = .portal(direction: .backward, zoomScale: nil)
     viewControllers.append(viewController)
-    
+
     cycleFromViewController(containerView, fromViewController: nil, toViewController: viewControllers[0])
   }
-  
+
   func cycleFromViewController(_ containerView: UIView, fromViewController: AnimatableViewController?, toViewController: AnimatableViewController) {
     let transitionContext = ContainerTransition(animationType: toViewController.transitionAnimationType,
                                                 container: containerView,
@@ -64,7 +64,7 @@ private extension ContainerTransitionViewController {
     }
     transitionContext.animate()
   }
-  
+
 }
 
 // MARK: - UITabBarDelegate
@@ -76,5 +76,5 @@ extension ContainerTransitionViewController {
     let toViewController = viewControllers[item.tag]
     cycleFromViewController(containerView, fromViewController: currentViewController, toViewController: toViewController)
   }
-  
+
 }

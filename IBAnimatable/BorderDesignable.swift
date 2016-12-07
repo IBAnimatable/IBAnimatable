@@ -15,12 +15,12 @@ public protocol BorderDesignable {
    `border-width`, border width
    */
   var borderWidth: CGFloat { get set }
-  
+
   /**
    border side: Top, Right, Bottom or Left, if not specified, all border sides will display,
    */
   var borderSides: BorderSides { get set }
-  
+
 }
 
 public extension BorderDesignable where Self: UITextField {
@@ -42,13 +42,13 @@ private extension BorderDesignable where Self: UIView {
     guard let borderColor = borderColor, borderWidth > 0 else {
       return
     }
-    
+
     // Clear borders
     layer.borderColor = nil
     layer.borderWidth = 0
     layer.sublayers?.filter { $0.name == "borderSideLayer" || $0.name == "borderAllSides" }
       .forEach { $0.removeFromSuperlayer() }
-    
+
     // if a layer mask is specified, only border the mask
     if let mask = layer.mask as? CAShapeLayer {
       let borderLayer = CAShapeLayer()
@@ -61,19 +61,19 @@ private extension BorderDesignable where Self: UIView {
       layer.insertSublayer(borderLayer, at: 0)
       return
     }
-    
+
     //let sides = BorderSides(rawValue: BorderSides)
-    
+
     if borderSides == .AllSides {
       layer.borderColor = borderColor.cgColor
       layer.borderWidth = borderWidth
       return
     }
-    
+
     // configure border for specified sides
     let border = CAShapeLayer()
     border.name = "borderSideLayer"
-    
+
     let borderPath = UIBezierPath()
     let shift = borderWidth / 2
     var lines: [(start: CGPoint, end: CGPoint)] = []
@@ -89,12 +89,12 @@ private extension BorderDesignable where Self: UIView {
     if borderSides.contains(.left) {
       lines.append((start: CGPoint(x: shift, y: 0), end: CGPoint(x: shift, y: bounds.size.height)))
     }
-    
+
     for linePoints in lines {
       borderPath.move(to: linePoints.start)
       borderPath.addLine(to: linePoints.end)
     }
-    
+
     border.path = borderPath.cgPath
     border.fillColor = UIColor.clear.cgColor
     border.strokeColor = borderColor.cgColor

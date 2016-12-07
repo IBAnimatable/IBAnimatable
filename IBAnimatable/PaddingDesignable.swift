@@ -27,17 +27,17 @@ public extension PaddingDesignable where Self: UITextField {
     if paddingLeft.isNaN {
       return
     }
-    
+
     let padding = UIView(frame: CGRect(x: 0, y: 0, width: paddingLeft, height: 0))
     leftViewMode = .always
     leftView = padding
   }
-  
+
   public func configurePaddingRight() {
     if paddingRight.isNaN {
       return
     }
-    
+
     let padding = UIView(frame: CGRect(x: 0, y: 0, width: paddingRight, height: 0))
     rightViewMode = .always
     rightView = padding
@@ -47,7 +47,7 @@ public extension PaddingDesignable where Self: UITextField {
     if paddingSide.isNaN {
       return
     }
-    
+
     let padding = UIView(frame: CGRect(x: 0, y: 0, width: paddingSide, height: paddingSide))
     leftViewMode = .always
     leftView = padding

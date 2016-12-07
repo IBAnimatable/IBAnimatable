@@ -16,7 +16,7 @@ public protocol BlurDesignable {
    Vibrancy effect style: `extraLight`, `light`, `dark`, `regular` (iOS 10+) or `prominent` (iOS 10+). Once specify the vibrancy effect style, all subviews of blur effect view will apply this vibrancy effect. The property should set once. Because once we use `UIVisualEffectView`, Apple uses a private class like `_UIVisualEffectContentView` to contain subviews which will change the view hierarchy. After that, we are not able to restore the original view hierarchy. Also, the Auto Layout constraints will be broken when the system change the view hierarchy. We need to manually re-set up the constraints or use Autoresizing masks to layout the subviews.
    */
   var vibrancyEffectStyle: UIBlurEffectStyle? { get set }
-  
+
   /**
    Blur opacity: The opacity of UI element using blur effect. The default value is 1.0 if not specified. There is some performance penalty when we use this property.
    */
@@ -30,20 +30,20 @@ public extension BlurDesignable where Self: UIView {
   public func configureBlurEffectStyle() {
     // Used for caching the previous visual effect view
     var privateVisualEffectView: PrivateVisualEffectView?
-    
+
     // Remove the existing visual effect view
     subviews.flatMap { $0 as? PrivateVisualEffectView }
       .forEach {
         privateVisualEffectView = $0 // Cache it for the subviews
         $0.removeFromSuperview()
     }
-    
+
     guard let blurEffectStyle = blurEffectStyle else {
       return
     }
 
     let blurEffectView = makeVisualEffectView(effect: UIBlurEffect(style: blurEffectStyle))
-    
+
     // If `vibrancyEffectStyle` has been set, add `vibrancyEffectView` into `blurEffectView`.
     if let vibrancyEffectStyle = vibrancyEffectStyle {
       let blurEffectStyleForVibrancy = UIBlurEffect(style: vibrancyEffectStyle)
@@ -51,7 +51,7 @@ public extension BlurDesignable where Self: UIView {
       subviews.forEach {
         vibrancyEffectView.contentView.addSubview($0)
       }
-      
+
       // If privateVisualEffectView is not `nil`, re-add them to the `vibrancyEffectView.contentView`
       privateVisualEffectView?.contentView.subviews.forEach {
         vibrancyEffectView.contentView.addSubview($0)

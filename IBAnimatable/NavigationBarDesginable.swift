@@ -18,7 +18,7 @@ public extension NavigationBarDesignable where Self: UINavigationBar {
       let emptyImage = UIImage()
       setBackgroundImage(emptyImage, for: .any, barMetrics: .default)
       shadowImage = emptyImage
-      // Need to manually untick translucent in Interface Builder, 
+      // Need to manually untick translucent in Interface Builder,
       // otherwise, it will have constrait issue in IB although it is correct in run time.
       // translucent = false
     } else {

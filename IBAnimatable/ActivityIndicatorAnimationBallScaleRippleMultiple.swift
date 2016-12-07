@@ -24,7 +24,7 @@ public class ActivityIndicatorAnimationBallScaleRippleMultiple: ActivityIndicato
                 y: (layer.bounds.size.height - size.height) / 2,
                 width: size.width,
                 height: size.height)
-            
+
             animation.beginTime = beginTime + beginTimes[i]
             circle.frame = frame
             circle.add(animation, forKey: "animation")
@@ -63,5 +63,5 @@ private extension ActivityIndicatorAnimationBallScaleRippleMultiple {
     opacityAnimation.duration = duration
     return opacityAnimation
   }
-  
+
 }

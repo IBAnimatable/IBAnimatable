@@ -2,7 +2,6 @@ line_length: 150
 file_length: 500
 
 disabled_rules:
-  - trailing_whitespace
   - todo
   - variable_name
   - line_length

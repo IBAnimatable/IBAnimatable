@@ -11,7 +11,7 @@ public class SystemRippleEffectAnimator: NSObject, AnimatedTransitioning {
   public var transitionDuration: Duration = defaultTransitionDuration
   public var reverseAnimationType: TransitionAnimationType?
   public var interactiveGestureType: InteractiveGestureType?
-  
+
   public init(transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
     self.transitionAnimationType = .systemRippleEffect
@@ -24,7 +24,7 @@ extension SystemRippleEffectAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
     return retrieveTransitionDuration(transitionContext: transitionContext)
   }
-  
+
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     animateWithCATransition(transitionContext: transitionContext, type: TransitionAnimationType.SystemTransitionType.rippleEffect, subtype: nil)
   }

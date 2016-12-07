@@ -12,19 +12,19 @@ public class PortalAnimator: NSObject, AnimatedTransitioning {
   public var transitionDuration: Duration = defaultTransitionDuration
   public var reverseAnimationType: TransitionAnimationType?
   public var interactiveGestureType: InteractiveGestureType?
-  
+
   // MARK: - private
   fileprivate var fromDirection: TransitionAnimationType.Direction
   fileprivate var zoomScale: CGFloat = 0.8
-  
+
   public init(from direction: TransitionAnimationType.Direction, zoomScale: CGFloat?, transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
     fromDirection = direction
-    
+
     if let zoomScale = zoomScale {
       self.zoomScale = zoomScale
     }
-    
+
     switch fromDirection {
     case .forward:
       self.transitionAnimationType = .portal(direction: .forward, zoomScale: self.zoomScale)
@@ -44,14 +44,14 @@ extension PortalAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
     return retrieveTransitionDuration(transitionContext: transitionContext)
   }
-  
+
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     let (tempfromView, tempToView, tempContainerView) = retrieveViews(transitionContext: transitionContext)
     guard let fromView = tempfromView, let toView = tempToView, let containerView = tempContainerView else {
       transitionContext.completeTransition(true)
       return
     }
-    
+
     switch fromDirection {
     case .forward:
       executeForwardAnimation(transitionContext: transitionContext, containerView: containerView, fromView: fromView, toView: toView)
@@ -59,7 +59,7 @@ extension PortalAnimator: UIViewControllerAnimatedTransitioning {
       executeBackwardAnimation(transitionContext: transitionContext, containerView: containerView, fromView: fromView, toView: toView)
     }
   }
-  
+
 }
 
 // MARK: - Forward
@@ -81,7 +81,7 @@ private extension PortalAnimator {
     let rightHandView = fromView.resizableSnapshotView(from: rightSnapshotRegion, afterScreenUpdates: false, withCapInsets: .zero)!
     rightHandView.frame = rightSnapshotRegion
     containerView.addSubview(rightHandView)
-    
+
     fromView.isHidden = true
 
     UIView.animate(withDuration: transitionDuration, delay: 0.0, options: .curveEaseOut,
@@ -104,13 +104,13 @@ private extension PortalAnimator {
       }
     )
   }
-  
+
 }
 
 // MARK: - Reverse
 
 private extension PortalAnimator {
-  
+
   func executeBackwardAnimation(transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
     containerView.addSubview(fromView)
     toView.frame = toView.frame.offsetBy(dx: toView.frame.width, dy: 0)
@@ -147,23 +147,23 @@ private extension PortalAnimator {
       }
     )
   }
-  
+
 }
 
 // MARK: - Helper
 
 private extension PortalAnimator {
-  
+
   func removeOtherViews(viewToKeep: UIView) {
     guard let containerView = viewToKeep.superview else {
       return
     }
-    
+
     containerView.subviews.forEach {
       if $0 != viewToKeep {
         $0.removeFromSuperview()
       }
     }
   }
-  
+
 }

@@ -7,7 +7,7 @@ import UIKit
 
 public class ZoomAnimator: NSObject, AnimatedPresenting {
 
-  // MARK: - AnimatedPresenting  
+  // MARK: - AnimatedPresenting
   public var transitionDuration: Duration = defaultTransitionDuration
 
   // MARK: - Life cycle

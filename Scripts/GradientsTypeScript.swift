@@ -18,7 +18,7 @@ func colorLiteral(hexString: String) -> String {
   default:
     (a, r, g, b) = (1, 1, 1, 0)
   }
-  
+
   return "#colorLiteral(red: \(CGFloat(r) / 255), green: \(CGFloat(g) / 255), blue: \(CGFloat(b) / 255), alpha: \(CGFloat(a) / 255))"
 }
 

@@ -28,7 +28,7 @@ public class AnimatablePresentationController: UIPresentationController {
 
   deinit {
     NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-    NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)    
+    NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
   }
 
   // MARK: Actions
@@ -55,13 +55,13 @@ private extension AnimatablePresentationController {
       dimmingView.fillColor = presentationConfiguration.backgroundColor.withAlphaComponent(presentationConfiguration.opacity)
     }
   }
-  
+
   func setupPresentedView() {
     if presentationConfiguration.cornerRadius > 0 {
       presentedViewController.view.layer.cornerRadius = presentationConfiguration.cornerRadius
       presentedViewController.view.layer.masksToBounds = true
     }
-    
+
     // Set up shadow
     presentedViewController.view.layer.shadowOffset.width = presentationConfiguration.shadowOffset.x
     presentedViewController.view.layer.shadowOffset.height = presentationConfiguration.shadowOffset.y
@@ -86,7 +86,7 @@ extension AnimatablePresentationController {
 
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
-  } 
+  }
 
   func keyboardWillShow(notification: NSNotification) {
     if let keyboardFrame = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {

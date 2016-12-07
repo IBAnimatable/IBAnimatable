@@ -84,5 +84,5 @@ private extension ActivityIndicatorAnimationCubeTransition {
     translateAnimation.duration = duration
     return translateAnimation
   }
-  
+
 }

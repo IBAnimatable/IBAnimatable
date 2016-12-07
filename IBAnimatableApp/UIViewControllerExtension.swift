@@ -7,17 +7,17 @@ import UIKit
 import IBAnimatable
 
 extension UIViewController {
-  
+
   func makeRandomGradient() -> GradientType {
     var predefinedGradients = [GradientType]()
     iterateEnum(GradientType.self).forEach {
       predefinedGradients.append($0)
     }
-    
+
     let randomIndex: Int = Int(arc4random_uniform(UInt32(predefinedGradients.count)))
     return predefinedGradients[randomIndex]
   }
-  
+
   func retrieveGestureText(interactiveGestureType: InteractiveGestureType, transitionAnimationType: TransitionAnimationType, exit: String) -> String {
     switch interactiveGestureType {
     case .default:
@@ -26,7 +26,7 @@ extension UIViewController {
       if let interactiveGestureType = transitionAnimator?.interactiveGestureType {
         return String("or use \(interactiveGestureType.stringValueWithoutQualification) gesture to \(exit)")
       }
-      
+
       // The transition animator doesn't have default `interactiveGestureType`
       return ""
     default:
@@ -34,5 +34,5 @@ extension UIViewController {
       return String("or use \(interactiveGestureType.stringValueWithoutQualification) gesture to \(exit)")
     }
   }
-  
+
 }

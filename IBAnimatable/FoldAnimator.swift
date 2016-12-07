@@ -11,11 +11,11 @@ public class FoldAnimator: NSObject, AnimatedTransitioning {
   public var transitionDuration: Duration = defaultTransitionDuration
   public var reverseAnimationType: TransitionAnimationType?
   public var interactiveGestureType: InteractiveGestureType?
-  
+
   // MARK: - Private params
   fileprivate var fromDirection: TransitionAnimationType.Direction
   fileprivate var folds: Int = 2
-  
+
   // MARK: - Private fold transition
   fileprivate var transform: CATransform3D = CATransform3DIdentity
   fileprivate var reverse: Bool = false
@@ -28,17 +28,17 @@ public class FoldAnimator: NSObject, AnimatedTransitioning {
   fileprivate var height: CGFloat {
     return horizontal ? size.height : size.width
   }
-  
+
   // MARK: - Life cycle
   public init(from direction: TransitionAnimationType.Direction, folds: Int?, transitionDuration: Duration) {
     fromDirection = direction
     self.transitionDuration = transitionDuration
     horizontal = fromDirection.isHorizontal
-    
+
     if let folds = folds {
       self.folds = folds
     }
-    
+
     switch fromDirection {
     case .right:
       self.transitionAnimationType = .fold(from: .right, folds: folds)
@@ -59,7 +59,7 @@ public class FoldAnimator: NSObject, AnimatedTransitioning {
       self.transitionAnimationType = .fold(from: .left, folds: folds)
       self.reverseAnimationType = .fold(from: .right, folds: folds)
       self.interactiveGestureType = .pan(from: .right)
-      reverse = false      
+      reverse = false
     }
     super.init()
   }
@@ -69,20 +69,20 @@ extension FoldAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
     return retrieveTransitionDuration(transitionContext: transitionContext)
   }
-  
+
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     let (tempfromView, tempToView, tempContainerView) = retrieveViews(transitionContext: transitionContext)
     guard let fromView = tempfromView, let toView = tempToView, let containerView = tempContainerView else {
       transitionContext.completeTransition(true)
       return
     }
-    
+
     toView.frame = toView.frame.offsetBy(dx: toView.frame.size.width, dy: 0)
     containerView.addSubview(toView)
-    
+
     transform.m34 = -0.005
     containerView.layer.sublayerTransform = transform
-    
+
     size = toView.frame.size
     foldSize = width * 0.5 / CGFloat(folds)
 
@@ -94,18 +94,18 @@ extension FoldAnimator: UIViewControllerAnimatedTransitioning {
       } else {
         fromView.frame = containerView.bounds
       }
-      
+
       transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
       }
     )
   }
-  
+
 }
 
 // MARK: - Setup fold transition
 
 private extension FoldAnimator {
-  
+
   func makeSnapshots(toView: UIView, fromView: UIView, containerView: UIView) -> [[UIView]] {
     var fromViewFolds = [UIView]()
     var toViewFolds = [UIView]()
@@ -139,7 +139,7 @@ private extension FoldAnimator {
     }
     return [toViewFolds, fromViewFolds]
   }
-  
+
   func makeSnapshot(from view: UIView, afterUpdates: Bool, offset: CGFloat, left: Bool) -> UIView {
     let containerView = view.superview
     var snapshotView: UIView
@@ -155,14 +155,14 @@ private extension FoldAnimator {
       let subSnapshotView = view.resizableSnapshotView(from: snapshotRegion, afterScreenUpdates: afterUpdates, withCapInsets: .zero)
       snapshotView.addSubview(subSnapshotView!)
     }
-    
+
     let snapshotWithShadowView = addShadow(to: snapshotView, reverse: left)
     containerView?.addSubview(snapshotWithShadowView)
     axesValues = valuesForAxe(initialValue: left ? 0.0 : 1.0, reverseValue: 0.5)
     snapshotWithShadowView.layer.anchorPoint = CGPoint(x: axesValues.0, y: axesValues.1)
     return snapshotWithShadowView
   }
-  
+
   func addShadow(to view: UIView, reverse: Bool) -> UIView {
     let viewWithShadow = UIView(frame: view.frame)
     let shadowView = UIView(frame: viewWithShadow.bounds)
@@ -181,7 +181,7 @@ private extension FoldAnimator {
       gradient.endPoint = CGPoint(x: axesValues.0, y: axesValues.1)
     }
     shadowView.layer.insertSublayer(gradient, at: 1)
-    
+
     view.frame = view.bounds
     viewWithShadow.addSubview(view)
     viewWithShadow.addSubview(shadowView)
@@ -205,14 +205,14 @@ private extension FoldAnimator {
         axesValues = self.valuesForAxe(initialValue: 0.0, reverseValue: 1.0)
         leftFromView.layer.transform = CATransform3DRotate(self.transform, .pi * 2, axesValues.0, axesValues.1, 0)
         leftFromView.subviews[1].alpha = 1.0
-        
+
         let rightFromView = fromViewFolds[i * 2 + 1]
         axesValues = self.valuesForAxe(initialValue: self.reverse ? 0.0 : self.width, reverseValue: self.height / 2)
         rightFromView.layer.position = CGPoint(x: axesValues.0, y: axesValues.1)
         axesValues = self.valuesForAxe(initialValue: 0.0, reverseValue: 1.0)
         rightFromView.layer.transform = CATransform3DRotate(self.transform, -.pi * 2, axesValues.0, axesValues.1, 0)
         rightFromView.subviews[1].alpha = 1.0
-        
+
         let leftToView = toViewFolds[i * 2]
         axesValues = self.valuesForAxe(initialValue: offset, reverseValue: self.height / 2)
         leftToView.layer.position = CGPoint(x: axesValues.0, y: axesValues.1)
@@ -234,19 +234,19 @@ private extension FoldAnimator {
       fromViewFolds.forEach {
         $0.removeFromSuperview()
       }
-      
+
       completion()
     })
   }
-  
+
 }
 
 // MARK: - Helpers
 
 private extension FoldAnimator {
-  
+
   func valuesForAxe(initialValue: CGFloat, reverseValue: CGFloat) -> (CGFloat, CGFloat) {
     return horizontal ? (initialValue, reverseValue) : (reverseValue, initialValue)
   }
-  
+
 }

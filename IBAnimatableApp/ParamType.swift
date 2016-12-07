@@ -21,16 +21,16 @@ extension Array {
 }
 
 enum ParamType {
-  
+
   case number(min: Double, max: Double, interval: Double, ascending: Bool, unit: String)
   case enumeration(values: [String])
-  
+
   init<T: RawRepresentable>(fromEnum: T.Type) where T: Hashable {
     let iterator = iterateEnum(fromEnum)
     let values = iterator.map { return String(describing: $0.rawValue) }
     self = .enumeration(values: values)
   }
-  
+
   /// Number of different values to show in the picker
   func count() -> Int {
     switch self {
@@ -45,7 +45,7 @@ enum ParamType {
     let formatter = NumberFormatter()
     formatter.minimumFractionDigits = 0
     formatter.maximumFractionDigits = 3
-  
+
     switch self {
     case let .number(min, _, interval, ascending, _) where ascending == true:
       return formatter.string(from: NSNumber(value: min + Double(index) * interval))!
@@ -55,7 +55,7 @@ enum ParamType {
       return values[safe: index] ?? ""
     }
   }
-  
+
   func title(at index: Int) -> String {
     switch self {
     case .enumeration(_):
@@ -74,12 +74,12 @@ struct PickerEntry {
 extension PickerEntry {
   /// Convert the entry to a `AnimationType` string
   func toString(selectedIndexes indexes: Int?...) -> String {
-    
+
     let paramString = indexes.enumerated().flatMap({ (i: Int, index: Int?) -> String? in
       return params[safe:i]?.value(at: index ?? 0)
     }).joined(separator: ",")
-    
+
     return "\(name)(\(paramString))"
-    
+
   }
 }

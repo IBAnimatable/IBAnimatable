@@ -26,7 +26,6 @@ func parseJSON(JSONData: Data) -> [String: String]? {
 // swiftlint:disable variable_name_min_length
 func colorLiteral(r: Int, g: Int, b: Int, a: Double) -> String {
   return "#colorLiteral(red: \(CGFloat(r) / 255), green: \(CGFloat(g) / 255), blue: \(CGFloat(b) / 255), alpha: \(a))"
-  
 }
 // swiftlint:enable variable_name_min_length
 
@@ -52,7 +51,7 @@ if let colorsType = colorsType {
       finalName = "flat" + finalName
       enumColorType += String(format: enumCase, finalName)
       switchColorType += String(format: switchCase, finalName)
-      
+
       rgbColors = rgbColors.replacingOccurrences(of: "rgba(", with: "")
       rgbColors = rgbColors.replacingOccurrences(of: ")", with: "")
       rgbColors = rgbColors.replacingOccurrences(of: " ", with: "")
@@ -60,7 +59,7 @@ if let colorsType = colorsType {
       switchColorType += String(format: color, colorLiteral(r: Int(colors[0])!, g: Int(colors[1])!, b: Int(colors[2])!, a: Double(colors[3])!))
     }
   }
-  
+
   enumColorType += endEnumOrSwitch
   switchColorType += endEnumOrSwitch
   print(enumColorType)

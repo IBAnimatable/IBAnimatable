@@ -57,5 +57,5 @@ private extension ActivityIndicatorAnimationBallClipRotate {
     animation.isRemovedOnCompletion = false
     return animation
   }
-  
+
 }

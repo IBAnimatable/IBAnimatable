@@ -17,11 +17,11 @@ public class SystemFlipAnimator: NSObject, AnimatedTransitioning {
 
   // MARK: - private
   fileprivate var fromDirection: TransitionAnimationType.Direction
-  
+
   public init(from direction: TransitionAnimationType.Direction, transitionDuration: Duration) {
     fromDirection = direction
     self.transitionDuration = transitionDuration
-    
+
     switch fromDirection {
     case .right:
       self.transitionAnimationType = .systemFlip(from: .right)
@@ -40,7 +40,7 @@ public class SystemFlipAnimator: NSObject, AnimatedTransitioning {
       self.reverseAnimationType = .systemFlip(from: .right)
       self.interactiveGestureType = .pan(from: .right)
     }
-    
+
     super.init()
   }
 }
@@ -49,7 +49,7 @@ extension SystemFlipAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
     return retrieveTransitionDuration(transitionContext: transitionContext)
   }
-  
+
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     animateWithCATransition(transitionContext: transitionContext, type: TransitionAnimationType.SystemTransitionType.flip, subtype: fromDirection.caTransitionSubtype)
   }
