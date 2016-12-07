@@ -13,18 +13,19 @@ public class PresentationPresenterManager {
   private init() {}
 
   // MARK: - Private
-  private var cache = [String: PresentationPresenter]()
+  private var cache = [PresentationPresenterChacheKey: PresentationPresenter]()
 
   // MARK: Internal Interface
   public func retrievePresenter(presentationAnimationType: PresentationAnimationType, transitionDuration: Duration = defaultPresentationDuration, interactiveGestureType: InteractiveGestureType? = nil) -> PresentationPresenter {
-    let presenter = cache[presentationAnimationType.stringValue]
+    let key = PresentationPresenterChacheKey(presentationAnimationType: presentationAnimationType)
+    let presenter = cache[key]
     if let presenter = presenter {
       presenter.transitionDuration = transitionDuration
       return presenter
     }
 
     let newPresenter = PresentationPresenter(presentationAnimationType: presentationAnimationType, transitionDuration: transitionDuration)
-    cache[presentationAnimationType.stringValue] = newPresenter
+    cache[key] = newPresenter
     return newPresenter
   }
 }

@@ -16,12 +16,13 @@ public class TransitionPresenterManager {
   private init() {}
 
   // MARK: - Private
-  private var cache = [String: TransitionPresenter]()
+  private var cache = [TransitionPresenterChacheKey: TransitionPresenter]()
   
   // MARK: Internal Interface
   public func retrievePresenter(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) -> TransitionPresenter {
     // Get the cached presenter
-    let presenter = cache[transitionAnimationType.stringValue]
+    let key = TransitionPresenterChacheKey(transitionAnimationType: transitionAnimationType)
+    let presenter = cache[key]
     if let presenter = presenter {
       // Update the `transitionDuration` and `interactiveGestureType` every time to reuse the same presenter with the same type
       presenter.transitionDuration = transitionDuration
@@ -31,7 +32,7 @@ public class TransitionPresenterManager {
     
     // Create a new if cache doesn't exist
     let newPresenter = TransitionPresenter(transitionAnimationType: transitionAnimationType, transitionDuration: transitionDuration, interactiveGestureType: interactiveGestureType)
-    cache[transitionAnimationType.stringValue] = newPresenter
+    cache[key] = newPresenter
     return newPresenter
   }
 }
