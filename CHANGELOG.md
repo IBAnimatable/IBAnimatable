@@ -9,7 +9,8 @@ All notable changes to this project will be documented in this file.
 None
 
 #### Enhancements
-None
+- Use Swift Enum as key in our internal presentation and transition cache.
+[#360](https://github.com/IBAnimatable/IBAnimatable/issues/360)
 
 #### Bugfixes
 - Fix initial `cornerSide` rendering issue.
