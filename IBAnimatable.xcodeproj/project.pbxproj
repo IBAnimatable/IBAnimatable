@@ -16,8 +16,6 @@
 		73B7D8861D233FB700DD3F43 /* IBEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B7D8851D233FB700DD3F43 /* IBEnum.swift */; };
 		73BDE6EC1D5654ED00D19EAE /* GradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BDE6EB1D5654ED00D19EAE /* GradientViewController.swift */; };
 		73ED71F81D34CA4700755C9B /* AnimationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ED71F71D34CA4700755C9B /* AnimationsViewController.swift */; };
-		902531CA1DF8A156006EED1C /* PresentationPresenterChacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902531C91DF8A156006EED1C /* PresentationPresenterChacheKey.swift */; };
-		902531CC1DF8A221006EED1C /* TransitionPresenterCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902531CB1DF8A221006EED1C /* TransitionPresenterCacheKey.swift */; };
 		90F04E671DDDC1D9007614CB /* CornerSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F04E661DDDC1D9007614CB /* CornerSide.swift */; };
 		90F04E691DDDC650007614CB /* CornerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F04E681DDDC650007614CB /* CornerViewController.swift */; };
 		AE0D309A1CE149150093B578 /* UserInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE0D30991CE149150093B578 /* UserInterface.storyboard */; };
@@ -223,8 +221,6 @@
 		73B7D8851D233FB700DD3F43 /* IBEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBEnum.swift; sourceTree = "<group>"; };
 		73BDE6EB1D5654ED00D19EAE /* GradientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientViewController.swift; sourceTree = "<group>"; };
 		73ED71F71D34CA4700755C9B /* AnimationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationsViewController.swift; sourceTree = "<group>"; };
-		902531C91DF8A156006EED1C /* PresentationPresenterChacheKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationPresenterChacheKey.swift; sourceTree = "<group>"; };
-		902531CB1DF8A221006EED1C /* TransitionPresenterCacheKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionPresenterCacheKey.swift; sourceTree = "<group>"; };
 		90F04E661DDDC1D9007614CB /* CornerSide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerSide.swift; sourceTree = "<group>"; };
 		90F04E681DDDC650007614CB /* CornerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerViewController.swift; sourceTree = "<group>"; };
 		AE0B0FE91C25372200E36B78 /* TableViewCellDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellDesignable.swift; sourceTree = "<group>"; };
@@ -561,10 +557,8 @@
 				AE7C26101CB4F680002CF125 /* InteractiveAnimatorFactory.swift */,
 				CAB5692C91C9ECC8018DE83E /* Navigator.swift */,
 				E210ABC91D3AAAC4001D0362 /* PresentationPresenter.swift */,
-				902531C91DF8A156006EED1C /* PresentationPresenterChacheKey.swift */,
 				E210ABCB1D3AAAD0001D0362 /* PresentationPresenterManager.swift */,
 				AE154B8D1C7D89CB0093C05B /* TransitionPresenter.swift */,
-				902531CB1DF8A221006EED1C /* TransitionPresenterCacheKey.swift */,
 				AEE552AF1C839EB7009CF623 /* TransitionPresenterManager.swift */,
 			);
 			name = common;
@@ -1141,7 +1135,6 @@
 				E2E62B841D69B63800294A73 /* ActivityIndicatorAnimating.swift in Sources */,
 				AEC23FC01CB3DC4800E42D99 /* ScreenEdgePanInteractiveAnimator.swift in Sources */,
 				E28E282B1D6CCA5C0043D56E /* ActivityIndicatorAnimationBallScale.swift in Sources */,
-				902531CA1DF8A156006EED1C /* PresentationPresenterChacheKey.swift in Sources */,
 				E299DF541CD5F8C300EC30D4 /* TurnAnimator.swift in Sources */,
 				E210ABCA1D3AAAC4001D0362 /* PresentationPresenter.swift in Sources */,
 				E28E28211D6CCA5C0043D56E /* ActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
@@ -1161,7 +1154,6 @@
 				AE6B017E1C2A445100950BB2 /* AnimatableImageView.swift in Sources */,
 				AE6B01761C2A444900950BB2 /* TableViewCellDesignable.swift in Sources */,
 				CAB5610BC7B5D20C927AAB87 /* Navigator.swift in Sources */,
-				902531CC1DF8A221006EED1C /* TransitionPresenterCacheKey.swift in Sources */,
 				AE7C26111CB4F680002CF125 /* InteractiveAnimatorFactory.swift in Sources */,
 				AE4C53F61C8843AB007C9EFA /* InteractiveGestureType.swift in Sources */,
 				E210ABCC1D3AAAD0001D0362 /* PresentationPresenterManager.swift in Sources */,

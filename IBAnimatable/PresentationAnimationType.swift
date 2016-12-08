@@ -49,5 +49,15 @@ public enum PresentationAnimationType: IBEnum {
       return nil
     }
   }
+
+}
+
+extension PresentationAnimationType: Hashable {
+  public var hashValue: Int {
+    return stringValue.hashValue
+  }
   
+  public static func == (lhs: PresentationAnimationType, rhs: PresentationAnimationType) -> Bool {
+    return lhs.stringValue == rhs.stringValue
+  }
 }
