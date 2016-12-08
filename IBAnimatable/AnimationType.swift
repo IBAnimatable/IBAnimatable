@@ -120,6 +120,5 @@ private func retrieveRepeatCount(string: String?) -> Int {
   guard let string = string, let repeatCount = Int(string) else {
     return 1
   }
-
   return repeatCount
 }
