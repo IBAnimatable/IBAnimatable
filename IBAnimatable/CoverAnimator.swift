@@ -7,7 +7,7 @@ import UIKit
 
 public class CoverAnimator: NSObject, AnimatedPresenting {
 
-  // MARK: - AnimatedPresenting  
+  // MARK: - AnimatedPresenting
   public var transitionDuration: Duration = defaultTransitionDuration
 
   // MARK: - private
@@ -45,7 +45,7 @@ extension CoverAnimator: UIViewControllerAnimatedTransitioning {
       let oppositeDirection = direction.opposite
       finalFrame = getFinalFrame(from: oppositeDirection, initialFrame: animatingView.frame, containerFrame: containerView.frame)
     }
-    
+
     animateCover(animatingView: animatingView, finalFrame: finalFrame) {
       if !isPresenting {
         fromView?.removeFromSuperview()

@@ -12,7 +12,7 @@ import Foundation
 public protocol IBEnum {
   /**
    Initializes a swift `enum` with provided optional string
-   
+
    - Parameter string: The optional string to be converted into `enum`.
    */
   init?(string: String?)
@@ -21,7 +21,7 @@ public protocol IBEnum {
 public extension IBEnum {
   /**
    Helper function that returns a tuple containing the name and params from a string `string`
-   
+
    - Parameter from string: The string to be converted into `enum`.
    - Discussion: the string format is like "enumName(param1,param2,param3)"
    - Returns: A tuple containing the name and an array of parameter string
@@ -31,7 +31,7 @@ public extension IBEnum {
     let name = tokens.first ?? ""
     let paramsString = tokens.count >= 2 ? tokens[1] : ""
     let params = paramsString.components(separatedBy: ",").filter { !$0.isEmpty }.map { $0.trimmingCharacters(in: .whitespaces) }
-    
+
     return (name: name, params: params)
   }
 }

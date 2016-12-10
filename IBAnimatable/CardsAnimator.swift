@@ -6,20 +6,20 @@
 import UIKit
 
 public class CardsAnimator: NSObject, AnimatedTransitioning {
-  
+
   // MARK: - AnimatorProtocol
   public var transitionAnimationType: TransitionAnimationType
   public var transitionDuration: Duration = defaultTransitionDuration
   public var reverseAnimationType: TransitionAnimationType?
   public var interactiveGestureType: InteractiveGestureType?
-  
+
   // MARK: - private
   fileprivate var fromDirection: TransitionAnimationType.Direction
-  
+
   public init(from direction: TransitionAnimationType.Direction, transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
     fromDirection = direction
-    
+
     switch fromDirection {
     case .backward:
       self.transitionAnimationType = .cards(direction: .backward)
@@ -28,7 +28,7 @@ public class CardsAnimator: NSObject, AnimatedTransitioning {
       self.transitionAnimationType = .cards(direction: .forward)
       self.reverseAnimationType = .cards(direction: .backward)
     }
-    
+
     super.init()
   }
 }
@@ -37,27 +37,27 @@ extension CardsAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
     return retrieveTransitionDuration(transitionContext: transitionContext)
   }
-  
+
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     let (tempfromView, tempToView, tempContainerView) = retrieveViews(transitionContext: transitionContext)
     guard let fromView = tempfromView, let toView = tempToView, let containerView = tempContainerView else {
       transitionContext.completeTransition(true)
       return
     }
-    
+
     if fromDirection == .forward {
       executeForwardAnimation(transitionContext: transitionContext, containerView: containerView, fromView: fromView, toView: toView)
     } else {
       executeBackwardAnimation(transitionContext: transitionContext, containerView: containerView, fromView: fromView, toView: toView)
     }
   }
-  
+
 }
 
 // MARK: - Forward
 
 private extension CardsAnimator {
-  
+
   func executeBackwardAnimation(transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
     let frame = fromView.frame
     var offScreenFrame = frame
@@ -76,10 +76,10 @@ private extension CardsAnimator {
         fromView.layer.transform = t2
       }
 
-      UIView.addKeyframe(withRelativeStartTime: 0.6, relativeDuration: 0.2) {        
+      UIView.addKeyframe(withRelativeStartTime: 0.6, relativeDuration: 0.2) {
         toView.frame = toView.frame.offsetBy(dx: 0.0, dy: -30.0)
       }
-      
+
       UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.2) {
         toView.frame = frame
       }
@@ -88,39 +88,39 @@ private extension CardsAnimator {
       transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
     }
   }
-  
+
 }
 
 // MARK: - Reverse
 
 private extension CardsAnimator {
-  
+
   func executeForwardAnimation(transitionContext: UIViewControllerContextTransitioning, containerView: UIView, fromView: UIView, toView: UIView) {
     let frame = fromView.frame
     toView.frame = frame
     let scale = CATransform3DIdentity
     toView.layer.transform = CATransform3DScale(scale, 0.6, 0.6, 1)
     toView.alpha = 0.6
-    
+
     containerView.insertSubview(toView, belowSubview: fromView)
     var frameOffScreen = frame
     frameOffScreen.origin.y = frame.height
     let t1 = firstTransform()
-    
+
     UIView.animateKeyframes(withDuration: transitionDuration, delay: 0.0, options: .calculationModeCubic, animations: {
       UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5) {
         fromView.frame = frameOffScreen
       }
-      
+
       UIView.addKeyframe(withRelativeStartTime: 0.35, relativeDuration: 0.35) {
         toView.layer.transform = t1
         toView.alpha = 1.0
       }
-      
+
       UIView.addKeyframe(withRelativeStartTime: 0.75, relativeDuration: 0.25) {
         toView.layer.transform = CATransform3DIdentity
       }
-      
+
     }) { _ in
       if transitionContext.transitionWasCancelled {
         toView.layer.transform = CATransform3DIdentity
@@ -129,7 +129,7 @@ private extension CardsAnimator {
       transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
     }
   }
-  
+
 }
 
 // MARK: - Helper
@@ -151,5 +151,5 @@ private extension CardsAnimator {
     t2 = CATransform3DScale(t2, 0.8, 0.8, 1)
     return t2
   }
-  
+
 }

@@ -28,7 +28,7 @@ public class TransitionPresenterManager {
       presenter.interactiveGestureType = interactiveGestureType
       return presenter
     }
-    
+
     // Create a new if cache doesn't exist
     let newPresenter = TransitionPresenter(transitionAnimationType: transitionAnimationType, transitionDuration: transitionDuration, interactiveGestureType: interactiveGestureType)
     cache[transitionAnimationType] = newPresenter

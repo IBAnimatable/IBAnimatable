@@ -7,17 +7,17 @@ import UIKit
 
 public class PinchInteractiveAnimator: InteractiveAnimator {
   fileprivate var startScale: CGFloat = 0
-  
+
   override func makeGestureRecognizer() -> UIGestureRecognizer {
     let gestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(handleGesture(for:)))
     return gestureRecognizer
   }
-  
+
   override func shouldBeginProgress(for gestureRecognizer: UIGestureRecognizer) -> Bool {
     guard let gestureRecognizer = gestureRecognizer as? UIPinchGestureRecognizer else {
       return false
     }
-    
+
     switch interactiveGestureType {
     case let .pinch(direction):
       switch direction {
@@ -32,17 +32,17 @@ public class PinchInteractiveAnimator: InteractiveAnimator {
       return false
     }
   }
-  
+
   override func calculateProgress(for gestureRecognizer: UIGestureRecognizer) -> (progress: CGFloat, shouldFinishInteractiveTransition: Bool) {
     guard let  gestureRecognizer = gestureRecognizer as? UIPinchGestureRecognizer,
       let _ = gestureRecognizer.view?.superview else {
         return (0, false)
     }
-    
+
     if gestureRecognizer.state == .began {
       startScale = gestureRecognizer.scale
     }
-    
+
     var progress: CGFloat
     let _: CGFloat
     switch interactiveGestureType {
@@ -60,12 +60,12 @@ public class PinchInteractiveAnimator: InteractiveAnimator {
     default:
       return (0, false)
     }
-    
+
     progress = min(max(progress, 0), 0.99)
-    
+
     // Finish the transition when pass the threathold
     let shouldFinishInteractiveTransition =  progress > 0.5
-    
+
     return (progress, shouldFinishInteractiveTransition)
   }
 }

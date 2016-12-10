@@ -5,39 +5,40 @@
 
 import UIKit
 
+// swiftlint:disable file_length
 private typealias AnimationValues = (x: CGFloat, y: CGFloat, scaleX: CGFloat, scaleY: CGFloat)
 public protocol Animatable: class {
-  
+
   /**
      `AnimationType` enum
   */
   var animationType: AnimationType { get set }
-  
+
   /**
    Auto run flag, if `true` it will automatically start animation when `layoutSubviews`. Default should be `true`
    */
   var autoRun: Bool { get set }
-  
+
   /**
    Animation duration (in seconds)
    */
   var duration: Double { get set }
-  
+
   /**
    Animation delay (in seconds, default value should be 0)
    */
   var delay: Double { get set }
-  
+
   /**
    Spring animation damping (0 ~ 1, default value should be 0.7)
    */
   var damping: CGFloat { get set }
-  
+
   /**
    Spring animation velocity (default value should be 0.7)
    */
   var velocity: CGFloat { get set }
-  
+
   /**
    Animation force (default value should be 1)
    */
@@ -64,7 +65,7 @@ public extension Animatable where Self: UIView {
       force = 1
     }
   }
-  
+
   public func animate(animation: AnimationType? = nil, completion: AnimatableCompletion? = nil) {
     switch animation ?? animationType {
     case let .slide(way, direction):
@@ -117,7 +118,7 @@ public extension Animatable where Self: UIView {
       animate()
     }
   }
-  
+
   // MARK: - Animation methods
   public func slide(_ way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
     let values = computeValues(way: way, direction: direction, shouldScale: false)
@@ -128,7 +129,7 @@ public extension Animatable where Self: UIView {
       animateOut(x: values.x, y: values.y, scaleX: values.scaleX, scaleY: values.scaleY, alpha: 1, completion: completion)
     }
   }
-  
+
   public func squeeze(_ way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
     let values = computeValues(way: way, direction: direction, shouldScale: true)
     switch way {
@@ -138,7 +139,7 @@ public extension Animatable where Self: UIView {
       animateOut(x: values.x, y: values.y, scaleX: values.scaleX, scaleY: values.scaleY, alpha: 1, completion: completion)
     }
   }
-  
+
   public func rotate(direction: AnimationType.RotationDirection, repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CABasicAnimation(keyPath: "transform.rotation")
@@ -152,7 +153,7 @@ public extension Animatable where Self: UIView {
       }, completion: completion)
 
   }
-  
+
   // swiftlint:disable variable_name_min_length
   public func moveTo(x: Double, y: Double, completion: AnimatableCompletion? = nil) {
     if x.isNaN && y.isNaN {
@@ -166,7 +167,7 @@ public extension Animatable where Self: UIView {
     } else {
       xOffsetToMove = CGFloat(x) - absolutePosition.x
     }
-    
+
     var yOffsetToMove: CGFloat
     if y.isNaN {
       yOffsetToMove = 0
@@ -187,7 +188,7 @@ public extension Animatable where Self: UIView {
       animateOut(x: values.x, y: values.y, scaleX: values.scaleX, scaleY: values.scaleY, alpha: 0, completion: completion)
     }
   }
-  
+
   public func fade(_ way: AnimationType.FadeWay, completion: AnimatableCompletion? = nil) {
     switch way {
     case .outIn:
@@ -202,7 +203,7 @@ public extension Animatable where Self: UIView {
       animateOut(x: 0, y: 0, scaleX: 1, scaleY: 1, alpha: 0, completion: completion)
     }
   }
-  
+
   public func squeezeFade(_ way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
     let values = computeValues(way: way, direction: direction, shouldScale: true)
     switch way {
@@ -213,7 +214,7 @@ public extension Animatable where Self: UIView {
       animateOut(x: values.x, y: values.y, scaleX: values.scaleX, scaleY: values.scaleY, alpha: 0, completion: completion)
     }
   }
-  
+
   public func zoom(_ way: AnimationType.Way, invert: Bool = false, completion: AnimatableCompletion? = nil) {
     let toAlpha: CGFloat
 
@@ -236,7 +237,7 @@ public extension Animatable where Self: UIView {
       animateOut(x: 0, y: 0, scaleX: scale, scaleY: scale, alpha: toAlpha, completion: completion)
     }
   }
-  
+
   public func flip(axis: AnimationType.Axis, completion: AnimatableCompletion? = nil) {
     let scaleX: CGFloat
     let scaleY: CGFloat
@@ -250,7 +251,7 @@ public extension Animatable where Self: UIView {
     }
     animateIn(x: 0, y: 0, scaleX: scaleX, scaleY: scaleY, alpha: 1, completion: completion)
   }
-  
+
   public func shake(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CAKeyframeAnimation(keyPath: "position.x")
@@ -264,7 +265,7 @@ public extension Animatable where Self: UIView {
       self.layer.add(animation, forKey: "shake")
     }, completion: completion)
   }
-  
+
   public func pop(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CAKeyframeAnimation(keyPath: "transform.scale")
@@ -278,19 +279,19 @@ public extension Animatable where Self: UIView {
       self.layer.add(animation, forKey: "pop")
     }, completion: completion)
   }
-  
+
   public func squash(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let squashX = CAKeyframeAnimation(keyPath: "transform.scale.x")
       squashX.values = [1, 1.5 * self.force, 0.5, 1.5 * self.force, 1]
       squashX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       squashX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-      
+
       let squashY = CAKeyframeAnimation(keyPath: "transform.scale.y")
       squashY.values = [1, 0.5, 1, 0.5, 1]
       squashY.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       squashY.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-      
+
       let animationGroup = CAAnimationGroup()
       animationGroup.animations = [squashX, squashY]
       animationGroup.duration = CFTimeInterval(self.duration)
@@ -299,19 +300,19 @@ public extension Animatable where Self: UIView {
       self.layer.add(animationGroup, forKey: "squash")
     }, completion: completion)
   }
-  
+
   public func morph(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let morphX = CAKeyframeAnimation(keyPath: "transform.scale.x")
       morphX.values = [1, 1.3 * self.force, 0.7, 1.3 * self.force, 1]
       morphX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       morphX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-     
+
       let morphY = CAKeyframeAnimation(keyPath: "transform.scale.y")
       morphY.values = [1, 0.7, 1.3 * self.force, 0.7, 1]
       morphY.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       morphY.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-      
+
       let animationGroup = CAAnimationGroup()
       animationGroup.animations = [morphX, morphY]
       animationGroup.duration = CFTimeInterval(self.duration)
@@ -327,12 +328,12 @@ public extension Animatable where Self: UIView {
       squeezeX.values = [1, 1.5 * self.force, 0.5, 1.5 * self.force, 1]
       squeezeX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       squeezeX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-      
+
       let squeezeY = CAKeyframeAnimation(keyPath: "transform.scale.y")
       squeezeY.values = [1, 0.5, 1, 0.5, 1]
       squeezeY.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       squeezeY.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-      
+
       let animationGroup = CAAnimationGroup()
       animationGroup.animations = [squeezeX, squeezeY]
       animationGroup.duration = CFTimeInterval(self.duration)
@@ -341,7 +342,7 @@ public extension Animatable where Self: UIView {
       self.layer.add(animationGroup, forKey: "squeeze")
     }, completion: completion)
   }
-  
+
   public func flash(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CABasicAnimation(keyPath: "opacity")
@@ -354,20 +355,20 @@ public extension Animatable where Self: UIView {
       self.layer.add(animation, forKey: "flash")
     }, completion: completion)
   }
-  
+
   public func wobble(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let rotation = CAKeyframeAnimation(keyPath: "transform.rotation")
       rotation.values = [0, 0.3 * self.force, -0.3 * self.force, 0.3 * self.force, 0]
       rotation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       rotation.isAdditive = true
-      
+
       let positionX = CAKeyframeAnimation(keyPath: "position.x")
       positionX.values = [0, 30 * self.force, -30 * self.force, 30 * self.force, 0]
       positionX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       positionX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
       positionX.isAdditive = true
-      
+
       let animationGroup = CAAnimationGroup()
       animationGroup.animations = [rotation, positionX]
       animationGroup.duration = CFTimeInterval(self.duration)
@@ -376,7 +377,7 @@ public extension Animatable where Self: UIView {
       self.layer.add(animationGroup, forKey: "wobble")
     }, completion: completion)
   }
-  
+
   public func swing(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CAKeyframeAnimation(keyPath: "transform.rotation")
@@ -389,13 +390,13 @@ public extension Animatable where Self: UIView {
       self.layer.add(animation, forKey: "swing")
     }, completion: completion)
   }
-  
+
   // swiftlint:disable variable_name_min_length
   public func moveBy(x: Double, y: Double, completion: AnimatableCompletion? = nil) {
     if x.isNaN && y.isNaN {
       return
     }
-    
+
     let xOffsetToMove = x.isNaN ? 0: CGFloat(x)
     let yOffsetToMove = y.isNaN ? 0: CGFloat(y)
     animateBy(x: xOffsetToMove, y: yOffsetToMove, completion: completion)
@@ -410,7 +411,7 @@ private extension Animatable where Self: UIView {
     let scale = 3 * force
     var scaleX: CGFloat = 1
     var scaleY: CGFloat = 1
-    
+
     var x: CGFloat = 0
     var y: CGFloat = 0
     switch direction {
@@ -437,7 +438,7 @@ private extension Animatable where Self: UIView {
       return (x: x, y: y, scaleX: scaleX, scaleY: scaleY)
     }
   }
-  
+
   func fadeOutIn(completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CABasicAnimation(keyPath: "opacity")
@@ -450,7 +451,7 @@ private extension Animatable where Self: UIView {
       self.layer.add(animation, forKey: "fade")
       }, completion: completion)
   }
-  
+
   func fadeInOut(completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CABasicAnimation(keyPath: "opacity")
@@ -469,7 +470,7 @@ private extension Animatable where Self: UIView {
       }
     )
   }
-  
+
   // swiftlint:disable variable_name_min_length
   func animateBy(x: CGFloat, y: CGFloat, completion: AnimatableCompletion? = nil) {
     let translate = CGAffineTransform(translationX: x, y: y)
@@ -490,7 +491,7 @@ private extension Animatable where Self: UIView {
     let scale = CGAffineTransform(scaleX: scaleX, y: scaleY)
     let translateAndScale = translate.concatenating(scale)
     transform = translateAndScale
-    
+
     UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [],
       animations: {
         self.transform = CGAffineTransform.identity
@@ -502,12 +503,12 @@ private extension Animatable where Self: UIView {
         }
     })
   }
-  
+
   func animateOut(x: CGFloat, y: CGFloat, scaleX: CGFloat, scaleY: CGFloat, alpha: CGFloat, completion: AnimatableCompletion? = nil) {
     let translate = CGAffineTransform(translationX: x, y: y)
     let scale = CGAffineTransform(scaleX: scaleX, y: scaleY)
     let translateAndScale = translate.concatenating(scale)
-    
+
     UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: velocity, options: [],
       animations: {
         self.transform = translateAndScale

@@ -30,7 +30,7 @@ public enum AnimationType {
   case moveTo(x: Double, y: Double)
   case moveBy(x: Double, y: Double)
   case none
-  
+
   public enum FadeWay: String {
     case `in`, out, inOut = "inout", outIn = "outin"
   }
@@ -42,7 +42,7 @@ public enum AnimationType {
   }
   public enum Direction: String {
     case left, right, up, down
-    
+
     func isVertical() -> Bool {
       return self == .down || self == .up
     }
@@ -53,7 +53,7 @@ public enum AnimationType {
 }
 
 extension AnimationType: IBEnum {
-  
+
   public init(string: String?) {
     guard let string = string else {
       self = .none
@@ -62,7 +62,7 @@ extension AnimationType: IBEnum {
     let nameAndParams = AnimationType.extractNameAndParams(from: string)
     let name = nameAndParams.name
     let params = nameAndParams.params
-    
+
     switch name {
     case "slide":
       self = .slide(way: Way(raw: params[safe: 0], defaultValue: .in), direction: Direction(raw: params[safe: 1], defaultValue: .left))
@@ -120,6 +120,6 @@ private func retrieveRepeatCount(string: String?) -> Int {
   guard let string = string, let repeatCount = Int(string) else {
     return 1
   }
-  
+
   return repeatCount
 }

@@ -14,11 +14,11 @@ public enum PresentationAnimationType: IBEnum {
   case cover(from: TransitionAnimationType.Direction)
   case zoom
   case dropDown
-  
+
   public var stringValue: String {
     return String(describing: self)
   }
-  
+
   public var systemTransition: UIModalTransitionStyle? {
     switch self {
     case .crossDissolve: return .crossDissolve
@@ -27,13 +27,15 @@ public enum PresentationAnimationType: IBEnum {
     default: return nil
     }
   }
-  
+
   public init?(string: String?) {
-    guard let string = string else { return nil }
+    guard let string = string else {
+      return nil
+    }
+
     let nameAndParames = MaskType.extractNameAndParams(from: string)
     let name = nameAndParames.name
     let params = nameAndParames.params
-    
     switch name {
     case "crossdissolve":
       self = .crossDissolve

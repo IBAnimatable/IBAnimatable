@@ -8,13 +8,13 @@ import UIKit
 @IBDesignable open class AnimatableBarButtonItem: UIBarButtonItem, BarButtonItemDesignable, Animatable {
   // MARK: - BarButtonItemDesignable
   @IBInspectable open var roundedImage: UIImage?
-  
+
   // MARK: - Lifecycle
   open override func prepareForInterfaceBuilder() {
     super.prepareForInterfaceBuilder()
     configureInspectableProperties()
   }
-  
+
   open override func awakeFromNib() {
     super.awakeFromNib()
     configureInspectableProperties()
@@ -23,10 +23,10 @@ import UIKit
   // TODO: animations
 //  public override func layoutSubviews() {
 //    super.layoutSubviews()
-//    
+//
 //    autoRunAnimation()
 //  }
-  
+
   // MARK: - Animatable
   open var animationType: AnimationType = .none
   @IBInspectable var _animationType: String? {
@@ -40,7 +40,7 @@ import UIKit
   @IBInspectable open var damping: CGFloat = CGFloat.nan
   @IBInspectable open var velocity: CGFloat = CGFloat.nan
   @IBInspectable open var force: CGFloat = CGFloat.nan
-  
+
   // MARK: - Private
   fileprivate func configureInspectableProperties() {
 //    configureAnimatableProperties()

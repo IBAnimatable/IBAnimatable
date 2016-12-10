@@ -7,7 +7,7 @@ import UIKit
 
 /**
   These properties are not able to render in IB correctly, it maybe a bug of IB.
- 
+
   To use them, `UIView`'s `clipsToBounds` and `CALayer`'s `masksToBounds` (`Clip Subviews` in IB) must be `false`,
 */
 public protocol ShadowDesignable {
@@ -59,32 +59,32 @@ public extension ShadowDesignable where Self: UIView {
       commonSetup()
       layer.shadowOffset.width = shadowOffset.x
     }
-    
+
     if !shadowOffset.y.isNaN {
       commonSetup()
       layer.shadowOffset.height = shadowOffset.y
     }
   }
-  
+
   public func configureMaskShadow() {
     // if a `layer.mask` is specified, add a new shadow layer to display the shadow to match the mask shape.
     if let mask = layer.mask as? CAShapeLayer {
       commonSetup()
-      
+
       // Clear default layer borders
       layer.shadowColor = nil
       layer.shadowRadius = 0
       layer.shadowOpacity = 0
-      
+
       // Remove any previous shadow layer
       layer.superlayer?.sublayers?.filter { $0.name == "shadowLayer-\(Unmanaged.passUnretained(self))" }
         .forEach { $0.removeFromSuperlayer() }
-      
+
       // Create new layer with object's memory reference to make this string unique. Otherwise common name will remove all the shadow layers as it's adding in layer's superview.
       let shadowLayer = CAShapeLayer()
       shadowLayer.name = "shadowLayer-\(Unmanaged.passUnretained(self))"
       shadowLayer.frame = frame
-      
+
       // Configure shadow properties
       if let shadowColor = shadowColor {
         shadowLayer.shadowColor = shadowColor.cgColor
@@ -102,14 +102,14 @@ public extension ShadowDesignable where Self: UIView {
         shadowLayer.shadowOffset.height = shadowOffset.y
       }
       shadowLayer.shadowPath = mask.path
-      
+
       // Add to layer's superview in order to render shadow otherwise it will clip out due to mask layer.
       layer.superlayer?.insertSublayer(shadowLayer, below: layer)
     }
   }
-  
+
   fileprivate func commonSetup() {
-    // Need to set `layer.masksToBounds` to `false`. 
+    // Need to set `layer.masksToBounds` to `false`.
     // If `layer.masksToBounds == true` then shadow doesn't work any more.
     if layer.masksToBounds {
       layer.masksToBounds = false

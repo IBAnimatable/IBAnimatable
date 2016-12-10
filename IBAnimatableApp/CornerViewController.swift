@@ -10,7 +10,7 @@ import UIKit
 import IBAnimatable
 
 class CornerViewController: UIViewController {
-  
+
   @IBOutlet weak var viewToCorner: AnimatableView!
   @IBOutlet weak var topLeftCheckBox: AnimatableCheckBox!
   @IBOutlet weak var topRightCheckBox: AnimatableCheckBox!
@@ -38,7 +38,7 @@ class CornerViewController: UIViewController {
     } else {
       viewToCorner.cornerSides.remove(corner)
     }
-    
+
   }
 
 }

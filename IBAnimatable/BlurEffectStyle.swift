@@ -12,7 +12,7 @@ extension UIBlurEffectStyle : IBEnum {
     guard let string = string?.lowercased() else {
       return nil
     }
-    
+
     switch string {
     case "extralight":
       self = .extraLight

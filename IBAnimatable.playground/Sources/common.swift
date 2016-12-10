@@ -16,13 +16,12 @@ public class PhoneView: UIView {
     let frame = CGRect(x: 0, y: 0, width: iPhoneWidth, height: iPhoneHeight)
     super.init(frame: frame)
     backgroundColor = .white
-    
   }
-  
+
   public override init(frame: CGRect) {
     super.init(frame: frame)
   }
-  
+
   public required init(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
@@ -33,18 +32,18 @@ public class CircleView: AnimatableView {
   public init() {
     let frame = CGRect(x: animatableViewX, y: animatableViewY, width: animatableViewWidth, height: animatableViewWidth)
     super.init(frame: frame)
-    
+
     configureAnimatableProperties()
     fillColor = #colorLiteral(red: 0.7098039216, green: 0.4549019608, blue: 0.9607843137, alpha: 1)
     borderWidth = 2
     borderColor = .purple
     maskType = .circle
   }
-  
+
   public override init(frame: CGRect) {
     super.init(frame: frame)
   }
-  
+
   public required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }

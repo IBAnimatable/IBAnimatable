@@ -9,6 +9,8 @@ All notable changes to this project will be documented in this file.
 None
 
 #### Enhancements
+- Add support for corner and shadow on UICollectionViewCell.
+[#368]https://github.com/IBAnimatable/IBAnimatable/pull/368
 - Use Swift Enum as key in our internal presentation and transition cache.
 [#360](https://github.com/IBAnimatable/IBAnimatable/issues/360)
 

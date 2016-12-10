@@ -15,7 +15,7 @@ public extension TableViewCellDesignable where Self: UITableViewCell {
       if responds(to: #selector(setter: UITableViewCell.separatorInset)) {
         separatorInset = .zero
       }
-      
+
       if responds(to: #selector(setter: UIView.preservesSuperviewLayoutMargins)) {
         preservesSuperviewLayoutMargins = false
       }

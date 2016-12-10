@@ -14,17 +14,17 @@ public enum InteractiveGestureType {
   case pan(from: GestureDirection)
   case screenEdgePan(from: GestureDirection)
   case pinch(direction: GestureDirection)
-  
+
   var stringValue: String {
     return String(describing: self)
   }
-  
+
   /// Returns the string value without qualification
   public var stringValueWithoutQualification: String {
     let namespace = "IBAnimatable." + String(describing: InteractiveGestureType.self) + "." + String(describing: GestureDirection.self) + "."
     return String(describing: self).replacingOccurrences(of: namespace, with: "")
   }
-  
+
   /**
    GestureDirection: Used to specify the direction in `InteractiveGestureType`
    */
@@ -46,11 +46,11 @@ extension InteractiveGestureType: IBEnum {
       self = .none
       return
     }
-    
+
     let nameAndParams = InteractiveGestureType.extractNameAndParams(from: string)
     let name = nameAndParams.name
     let params = nameAndParams.params
-    
+
     switch name {
     case "default":
       self = .default

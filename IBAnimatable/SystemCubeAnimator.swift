@@ -16,11 +16,11 @@ public class SystemCubeAnimator: NSObject, AnimatedTransitioning {
 
   // MARK: - private
   fileprivate var fromDirection: TransitionAnimationType.Direction
-  
+
   public init(from direction: TransitionAnimationType.Direction, transitionDuration: Duration) {
     fromDirection = direction
     self.transitionDuration = transitionDuration
-    
+
     switch fromDirection {
     case .right:
       self.transitionAnimationType = .systemCube(from: .right)
@@ -39,7 +39,7 @@ public class SystemCubeAnimator: NSObject, AnimatedTransitioning {
       self.reverseAnimationType = .systemCube(from: .right)
       self.interactiveGestureType = .pan(from: .right)
     }
-    
+
     super.init()
   }
 }
@@ -48,7 +48,7 @@ extension SystemCubeAnimator: UIViewControllerAnimatedTransitioning {
   public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
     return retrieveTransitionDuration(transitionContext: transitionContext)
   }
-  
+
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     animateWithCATransition(transitionContext: transitionContext, type: TransitionAnimationType.SystemTransitionType.cube, subtype: fromDirection.caTransitionSubtype)
   }

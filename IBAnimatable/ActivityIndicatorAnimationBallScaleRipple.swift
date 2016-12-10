@@ -58,5 +58,5 @@ private extension ActivityIndicatorAnimationBallScaleRipple {
     opacityAnimation.duration = duration
     return opacityAnimation
   }
-  
+
 }

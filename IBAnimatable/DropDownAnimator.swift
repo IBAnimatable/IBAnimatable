@@ -83,7 +83,7 @@ private extension DropDownAnimator {
       completion()
     })
   }
-  
+
 }
 
 // MARK: - CAAnimationDelegate

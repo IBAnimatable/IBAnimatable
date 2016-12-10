@@ -16,9 +16,9 @@ class MaskViewController: UIViewController {
     let pointsParam = ParamType.number(min: 3, max: 10, interval: 1, ascending: true, unit: "points") // default 5
     let sidesParam = ParamType.number(min: 3, max: 10, interval: 1, ascending: true, unit: "sides") // default 6
     let angleParam = ParamType.number(min: 60, max: 120, interval: 2, ascending: true, unit: "°") // default 6
-    let waveParam = ParamType.init(fromEnum: MaskType.WaveDirection.self)
+    let waveParam = ParamType(fromEnum: MaskType.WaveDirection.self)
     let widthParam = ParamType.number(min: 15, max: 90, interval: 2, ascending: true, unit: "px")
-    
+
     return [PickerEntry(params:[], name:"circle"),
             PickerEntry(params:[sidesParam], name: "polygon"),
             PickerEntry(params:[pointsParam], name: "star"),
@@ -27,7 +27,7 @@ class MaskViewController: UIViewController {
             PickerEntry(params:[], name: "none")
     ]
   }()
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
     selectedEntry = entries[0]
@@ -40,20 +40,20 @@ class MaskViewController: UIViewController {
 }
 
 extension MaskViewController : UIPickerViewDelegate, UIPickerViewDataSource {
-  
+
   func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
     if component == 0 {
       return entries.count
     }
     return selectedEntry.params[safe: component - 1]?.count() ?? 0
   }
-  
+
   func numberOfComponents(in pickerView: UIPickerView) -> Int {
     return 3
   }
-  
+
   func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-    
+
     // the goal of this is to mask useless components
     switch component {
     case 0:
@@ -64,7 +64,7 @@ extension MaskViewController : UIPickerViewDelegate, UIPickerViewDataSource {
       return self.view.frame.size.width * 0.25
     }
   }
-  
+
   func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
     let label = UILabel()
     label.textColor = .white
@@ -74,9 +74,9 @@ extension MaskViewController : UIPickerViewDelegate, UIPickerViewDataSource {
       label.text = selectedEntry.params[safe: component - 1]?.title(at: row)
     }
     return label
-    
+
   }
-  
+
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     if component == 0 {
       if selectedEntry.name != entries[row].name {
