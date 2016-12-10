@@ -553,13 +553,13 @@
 			isa = PBXGroup;
 			children = (
 				AE154B8A1C7D59EE0093C05B /* AnimatorFactory.swift */,
+				E2BCCD371CDCA15D00431DA0 /* ContainerTransition.swift */,
 				AE7C26101CB4F680002CF125 /* InteractiveAnimatorFactory.swift */,
 				CAB5692C91C9ECC8018DE83E /* Navigator.swift */,
-				E2BCCD371CDCA15D00431DA0 /* ContainerTransition.swift */,
-				AE154B8D1C7D89CB0093C05B /* TransitionPresenter.swift */,
-				AEE552AF1C839EB7009CF623 /* TransitionPresenterManager.swift */,
 				E210ABC91D3AAAC4001D0362 /* PresentationPresenter.swift */,
 				E210ABCB1D3AAAD0001D0362 /* PresentationPresenterManager.swift */,
+				AE154B8D1C7D89CB0093C05B /* TransitionPresenter.swift */,
+				AEE552AF1C839EB7009CF623 /* TransitionPresenterManager.swift */,
 			);
 			name = common;
 			sourceTree = "<group>";
