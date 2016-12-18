@@ -9,6 +9,17 @@ All notable changes to this project will be documented in this file.
 None
 
 #### Enhancements
+None
+
+#### Bugfixes
+None
+
+### [3.1.2](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.1.2)
+
+#### API breaking changes
+None
+
+#### Enhancements
 - Add support for corner and shadow on UICollectionViewCell.
 [#368]https://github.com/IBAnimatable/IBAnimatable/pull/368
 - Use Swift Enum as key in our internal presentation and transition cache.
@@ -326,3 +337,5 @@ None
 ### [1.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/1.0)
 
 - Initial release
+
+
