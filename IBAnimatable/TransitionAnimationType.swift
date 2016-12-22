@@ -246,7 +246,7 @@ extension TransitionAnimationType: Hashable {
   public var hashValue: Int {
     return stringValue.hashValue
   }
-  
+
   public static func == (lhs: TransitionAnimationType, rhs: TransitionAnimationType) -> Bool {
     return lhs.stringValue == rhs.stringValue
   }

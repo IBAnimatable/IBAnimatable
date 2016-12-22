@@ -17,7 +17,7 @@ public class TransitionPresenterManager {
 
   // MARK: - Private
   private var cache = [TransitionAnimationType: TransitionPresenter]()
-  
+
   // MARK: Internal Interface
   public func retrievePresenter(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) -> TransitionPresenter {
     // Get the cached presenter
