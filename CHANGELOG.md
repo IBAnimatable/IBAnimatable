@@ -12,7 +12,8 @@ None
 None
 
 #### Bugfixes
-None
+
+- Fix `slide(.out, *)` and `squeeze(.out, *)` translation coordinates [#379](https://github.com/IBAnimatable/IBAnimatable/issues/379)
 
 ### [3.1.2](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.1.2)
 
