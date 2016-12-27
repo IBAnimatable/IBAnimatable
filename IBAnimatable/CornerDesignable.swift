@@ -48,16 +48,13 @@ public extension CornerDesignable where Self: UICollectionViewCell {
 public extension CornerDesignable where Self: UIView {
   public func configureCornerRadius() {
     if !cornerRadius.isNaN && cornerRadius > 0 {
-      if cornerSides == .AllSides {
-        layer.cornerRadius = cornerRadius
-      } else {
-        layer.cornerRadius = 0.0
-
-        // if a layer mask is specified, remove it
-        layer.mask?.removeFromSuperlayer()
-
-        layer.mask = cornerSidesLayer()
-      }
+      // Use `layer.mask` instead of `layer.cornerRadius` to support shadow
+      layer.cornerRadius = 0.0
+      
+      // if a layer mask is specified, remove it
+      layer.mask?.removeFromSuperlayer()
+      
+      layer.mask = cornerSidesLayer()
     }
   }
 
