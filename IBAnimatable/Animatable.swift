@@ -406,8 +406,6 @@ public extension Animatable where Self: UIView {
 
 private extension Animatable where Self: UIView {
   func computeValues(way: AnimationType.Way, direction: AnimationType.Direction, shouldScale: Bool) -> AnimationValues {
-    let yDistance = screenSize.height * force
-    let xDistance = screenSize.width * force
     let scale = 3 * force
     var scaleX: CGFloat = 1
     var scaleY: CGFloat = 1
@@ -416,14 +414,17 @@ private extension Animatable where Self: UIView {
     var y: CGFloat = 0
     switch direction {
     case .left:
-      x = -xDistance
+      x = -(screenSize.width - frame.maxX + frame.width)
     case .right:
-      x = xDistance
+      x = frame.maxX
     case .down:
-      y = -yDistance
+      y = -(screenSize.height - frame.maxY + frame.height)
     case .up:
-      y = yDistance
+      y = frame.maxY
     }
+
+    x *= force
+    y *= force
     if shouldScale && direction.isVertical() {
       scaleY = scale
     } else if shouldScale {
