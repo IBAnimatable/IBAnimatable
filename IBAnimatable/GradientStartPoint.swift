@@ -27,25 +27,23 @@ extension GradientStartPoint {
       return
     }
 
-    let nameAndParams = AnimationType.extractNameAndParams(from: string)
-    let name = nameAndParams.name
-    let params = nameAndParams.params
+    let (name, params) = AnimationType.extractNameAndParams(from: string)
     switch name {
     case "top":
       self = .top
-    case "topRight":
+    case "topright":
       self = .topRight
     case "right":
       self = .right
-    case "bottomRight":
+    case "bottomright":
       self = .bottomRight
     case "bottom":
       self = .bottom
-    case "bottomLeft":
+    case "bottomleft":
       self = .bottomLeft
     case "left":
       self = .left
-    case "topLeft":
+    case "topleft":
       self = .topLeft
     case "custom":
       self = .custom(start: CGPoint(x: params[safe: 0]?.toDouble() ?? 0,
