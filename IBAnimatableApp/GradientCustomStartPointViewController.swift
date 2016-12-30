@@ -14,11 +14,8 @@ class GradientCustomStartPointViewController: UIViewController {
   @IBOutlet weak var gView: AnimatableView!
 
   let gradientValues = ParamType(fromEnum: GradientType.self)
-  let startX = ParamType.number(min: 0, max: 1, interval: 0.1, ascending: true, unit: "")
-  let startY = ParamType.number(min: 0, max: 1, interval: 0.1, ascending: true, unit: "")
-  let endX = ParamType.number(min: 0, max: 1, interval: 0.1, ascending: true, unit: "")
-  let endY = ParamType.number(min: 0, max: 1, interval: 0.1, ascending: true, unit: "")
-  lazy var componentValues: [ParamType] = [self.gradientValues, self.startX, self.startY, self.endX, self.endY]
+  let coordPointValues = ParamType.number(min: 0, max: 1, interval: 0.1, ascending: true, unit: "")
+  lazy var componentValues: [ParamType] = [self.gradientValues, self.coordPointValues, self.coordPointValues, self.coordPointValues, self.coordPointValues]
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -51,8 +48,8 @@ extension GradientCustomStartPointViewController : UIPickerViewDelegate, UIPicke
     let startY = pickerView.selectedRow(inComponent: 2)
     let endX = pickerView.selectedRow(inComponent: 3)
     let endY = pickerView.selectedRow(inComponent: 4)
-    let startPoint = CGPoint(x: Double(self.startX.value(at: startX)) ?? 0, y: Double(self.startY.value(at: startY)) ?? 0)
-    let endPoint = CGPoint(x: Double(self.endX.value(at: endX)) ?? 0, y: Double(self.endY.value(at: endY)) ?? 0)
+    let startPoint = CGPoint(x: Double(self.coordPointValues.value(at: startX)) ?? 0, y: Double(self.coordPointValues.value(at: startY)) ?? 0)
+    let endPoint = CGPoint(x: Double(self.coordPointValues.value(at: endX)) ?? 0, y: Double(self.coordPointValues.value(at: endY)) ?? 0)
 
     gView.startPoint = .custom(start: startPoint, end: endPoint)
     gView.predefinedGradient = GradientType(rawValue: gradientValues.value(at: pickerView.selectedRow(inComponent: 0)))
