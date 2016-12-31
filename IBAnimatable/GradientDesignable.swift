@@ -55,6 +55,11 @@ fileprivate extension GradientDesignable where Self: UIView {
     case .topLeft:
       gradientLayer.startPoint = CGPoint(x: 0, y: 0)
       gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+    case let .custom(start, end):
+      gradientLayer.startPoint = CGPoint(x: start.x, y: start.y)
+      gradientLayer.endPoint = CGPoint(x: end.x, y: end.y)
+    case .none:
+      break
     }
 
     subviews.filter { $0 is PrivateGradientView }.forEach {
