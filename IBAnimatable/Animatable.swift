@@ -66,7 +66,34 @@ public extension Animatable where Self: UIView {
     }
   }
 
-  public func animate(animation: AnimationType? = nil, completion: AnimatableCompletion? = nil) {
+  public func animate(animation: AnimationType) -> AnimationPromise<Self> {
+    let promise = AnimationPromise(view: self)
+    return promise.then(animation)
+  }
+
+  public func animate(animation: AnimationType? = nil, completion: AnimatableCompletion? = nil) {// here for retro-compatibility
+   // self.animate(animation: animation, promise: nil)
+   // self.animate(animation)
+    self.animate(animation: animation ?? self.animationType).completion(completion)
+  }
+
+  public func delay(delay: Double) -> AnimationPromise<Self> {
+    let promise = AnimationPromise(view: self)
+    return promise.delay(delay)
+  }
+
+  internal func doAnimation(animation: AnimationType? = nil, configuration: AnimationConfiguration, promise: AnimationPromise<Self>) -> AnimationPromise<Self> {
+
+    // Dirty code, need to be upgraded.
+    self.duration = configuration.duration
+    self.delay = configuration.delay
+    self.damping = configuration.damping
+    self.velocity = configuration.velocity
+    self.force = configuration.force
+
+    let completion = {() -> Void in
+      promise.animCompleted()
+    }
     switch animation ?? animationType {
     case let .slide(way, direction):
       slide(way, direction: direction, completion: completion)
@@ -107,6 +134,7 @@ public extension Animatable where Self: UIView {
     case .none:
       break
     }
+    return promise
   }
 
   /**
@@ -120,7 +148,7 @@ public extension Animatable where Self: UIView {
   }
 
   // MARK: - Animation methods
-  public func slide(_ way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
+  func slide(_ way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
     let values = computeValues(way: way, direction: direction, shouldScale: false)
     switch way {
     case .in:
@@ -130,7 +158,7 @@ public extension Animatable where Self: UIView {
     }
   }
 
-  public func squeeze(_ way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
+  func squeeze(_ way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
     let values = computeValues(way: way, direction: direction, shouldScale: true)
     switch way {
     case .in:
@@ -140,7 +168,7 @@ public extension Animatable where Self: UIView {
     }
   }
 
-  public func rotate(direction: AnimationType.RotationDirection, repeatCount: Int, completion: AnimatableCompletion? = nil) {
+  func rotate(direction: AnimationType.RotationDirection, repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CABasicAnimation(keyPath: "transform.rotation")
       animation.fromValue = direction == .cw ? 0 : CGFloat.pi * 2
@@ -155,7 +183,7 @@ public extension Animatable where Self: UIView {
   }
 
   // swiftlint:disable variable_name_min_length
-  public func moveTo(x: Double, y: Double, completion: AnimatableCompletion? = nil) {
+  func moveTo(x: Double, y: Double, completion: AnimatableCompletion? = nil) {
     if x.isNaN && y.isNaN {
       return
     }
@@ -178,7 +206,7 @@ public extension Animatable where Self: UIView {
   }
   // swiftlint:enable variable_name_min_length
 
-  public func slideFade(_ way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
+  func slideFade(_ way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
     let values = computeValues(way: way, direction: direction, shouldScale: false)
     switch way {
     case .in:
@@ -189,7 +217,7 @@ public extension Animatable where Self: UIView {
     }
   }
 
-  public func fade(_ way: AnimationType.FadeWay, completion: AnimatableCompletion? = nil) {
+  func fade(_ way: AnimationType.FadeWay, completion: AnimatableCompletion? = nil) {
     switch way {
     case .outIn:
       fadeOutIn(completion: completion)
@@ -204,7 +232,7 @@ public extension Animatable where Self: UIView {
     }
   }
 
-  public func squeezeFade(_ way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
+  func squeezeFade(_ way: AnimationType.Way, direction: AnimationType.Direction, completion: AnimatableCompletion? = nil) {
     let values = computeValues(way: way, direction: direction, shouldScale: true)
     switch way {
     case .in:
@@ -215,7 +243,7 @@ public extension Animatable where Self: UIView {
     }
   }
 
-  public func zoom(_ way: AnimationType.Way, invert: Bool = false, completion: AnimatableCompletion? = nil) {
+  func zoom(_ way: AnimationType.Way, invert: Bool = false, completion: AnimatableCompletion? = nil) {
     let toAlpha: CGFloat
 
     switch way {
@@ -238,7 +266,7 @@ public extension Animatable where Self: UIView {
     }
   }
 
-  public func flip(axis: AnimationType.Axis, completion: AnimatableCompletion? = nil) {
+  func flip(axis: AnimationType.Axis, completion: AnimatableCompletion? = nil) {
     let scaleX: CGFloat
     let scaleY: CGFloat
     switch axis {
@@ -252,7 +280,7 @@ public extension Animatable where Self: UIView {
     animateIn(x: 0, y: 0, scaleX: scaleX, scaleY: scaleY, alpha: 1, completion: completion)
   }
 
-  public func shake(repeatCount: Int, completion: AnimatableCompletion? = nil) {
+  func shake(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CAKeyframeAnimation(keyPath: "position.x")
       animation.values = [0, 30 * self.force, -30 * self.force, 30 * self.force, 0]
@@ -266,7 +294,7 @@ public extension Animatable where Self: UIView {
     }, completion: completion)
   }
 
-  public func pop(repeatCount: Int, completion: AnimatableCompletion? = nil) {
+  func pop(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CAKeyframeAnimation(keyPath: "transform.scale")
       animation.values = [0, 0.2 * self.force, -0.2 * self.force, 0.2 * self.force, 0]
@@ -280,7 +308,7 @@ public extension Animatable where Self: UIView {
     }, completion: completion)
   }
 
-  public func squash(repeatCount: Int, completion: AnimatableCompletion? = nil) {
+  func squash(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let squashX = CAKeyframeAnimation(keyPath: "transform.scale.x")
       squashX.values = [1, 1.5 * self.force, 0.5, 1.5 * self.force, 1]
@@ -301,7 +329,7 @@ public extension Animatable where Self: UIView {
     }, completion: completion)
   }
 
-  public func morph(repeatCount: Int, completion: AnimatableCompletion? = nil) {
+  func morph(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let morphX = CAKeyframeAnimation(keyPath: "transform.scale.x")
       morphX.values = [1, 1.3 * self.force, 0.7, 1.3 * self.force, 1]
@@ -322,7 +350,7 @@ public extension Animatable where Self: UIView {
     }, completion: completion)
   }
 
-  public func squeeze(repeatCount: Int, completion: AnimatableCompletion? = nil) {
+  func squeeze(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let squeezeX = CAKeyframeAnimation(keyPath: "transform.scale.x")
       squeezeX.values = [1, 1.5 * self.force, 0.5, 1.5 * self.force, 1]
@@ -343,7 +371,7 @@ public extension Animatable where Self: UIView {
     }, completion: completion)
   }
 
-  public func flash(repeatCount: Int, completion: AnimatableCompletion? = nil) {
+  func flash(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CABasicAnimation(keyPath: "opacity")
       animation.fromValue = 1
@@ -356,7 +384,7 @@ public extension Animatable where Self: UIView {
     }, completion: completion)
   }
 
-  public func wobble(repeatCount: Int, completion: AnimatableCompletion? = nil) {
+  func wobble(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let rotation = CAKeyframeAnimation(keyPath: "transform.rotation")
       rotation.values = [0, 0.3 * self.force, -0.3 * self.force, 0.3 * self.force, 0]
@@ -378,7 +406,7 @@ public extension Animatable where Self: UIView {
     }, completion: completion)
   }
 
-  public func swing(repeatCount: Int, completion: AnimatableCompletion? = nil) {
+  func swing(repeatCount: Int, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CAKeyframeAnimation(keyPath: "transform.rotation")
       animation.values = [0, 0.3 * self.force, -0.3 * self.force, 0.3 * self.force, 0]
@@ -392,7 +420,7 @@ public extension Animatable where Self: UIView {
   }
 
   // swiftlint:disable variable_name_min_length
-  public func moveBy(x: Double, y: Double, completion: AnimatableCompletion? = nil) {
+  func moveBy(x: Double, y: Double, completion: AnimatableCompletion? = nil) {
     if x.isNaN && y.isNaN {
       return
     }
