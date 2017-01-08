@@ -66,9 +66,8 @@ public extension Animatable where Self: UIView {
     }
   }
 
-  @discardableResult public func animate(animation: AnimationType) -> AnimationPromise<Self> {
-    let promise = AnimationPromise(view: self)
-    return promise.then(animation)
+  @discardableResult public func animate(animation: AnimationType, duration: TimeInterval? = nil, damping: CGFloat? = nil, velocity: CGFloat? = nil, force: CGFloat? = nil) -> AnimationPromise<Self> {
+    return AnimationPromise(view: self).then(animation, duration: duration, damping: damping, velocity: velocity, force: force)
   }
 
 

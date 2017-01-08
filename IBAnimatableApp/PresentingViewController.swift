@@ -202,7 +202,6 @@ extension PresentingViewController {
       self.dimmingPickerView.isHidden = true
     }
     containerPickerView.animate(animation: .slide(way: .out, direction: .down))
-    containerPickerView.doAn
     selectedButton = nil
   }
 
