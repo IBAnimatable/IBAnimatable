@@ -28,7 +28,7 @@ class BlurEffectViewController: UIViewController {
       .then(.slide(way: .in, direction: .left))
       .then(.pop(repeatCount: 1))
       .completion {
-        self.blurEffectView.alpha = 0
+        print("Done ;)")
     }
   }
 }
