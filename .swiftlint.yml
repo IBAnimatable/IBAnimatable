@@ -17,3 +17,9 @@ opt_in_rules:
  - overridden_super_call
  - redundant_nil_coalescing
  - nimble_operator
+ - attributes
+ - closure_end_indentation
+ - first_where
+ - number_separator
+ - operator_usage_whitespace
+ - prohibited_super_call
