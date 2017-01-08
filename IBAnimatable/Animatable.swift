@@ -27,7 +27,7 @@ public protocol Animatable: class {
   /**
    Animation delay (in seconds, default value should be 0)
    */
-  var delay: Double { get set }
+  var delay: TimeInterval { get set }
 
   /**
    Spring animation damping (0 ~ 1, default value should be 0.7)
@@ -77,7 +77,7 @@ public extension Animatable where Self: UIView {
     self.animate(animation: animation ?? self.animationType).completion(completion)
   }
 
-  public func delay(delay: Double) -> AnimationPromise<Self> {
+  public func delay(delay: TimeInterval) -> AnimationPromise<Self> {
     let promise = AnimationPromise(view: self)
     return promise.delay(delay)
   }
