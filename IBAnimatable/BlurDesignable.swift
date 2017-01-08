@@ -36,7 +36,7 @@ public extension BlurDesignable where Self: UIView {
       .forEach {
         privateVisualEffectView = $0 // Cache it for the subviews
         $0.removeFromSuperview()
-    }
+      }
 
     guard let blurEffectStyle = blurEffectStyle else {
       return

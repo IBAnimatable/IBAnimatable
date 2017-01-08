@@ -5,7 +5,8 @@
 
 import UIKit
 
-@IBDesignable open class DesignableNavigationBar: UINavigationBar, NavigationBarDesignable {
+@IBDesignable
+open class DesignableNavigationBar: UINavigationBar, NavigationBarDesignable {
   @IBInspectable open var solidColor: Bool = false
 
   // MARK: - Lifecycle

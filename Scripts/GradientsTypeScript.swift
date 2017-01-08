@@ -1,3 +1,4 @@
+// swiftlint:disable:next operator_usage_whitespace
 #!/usr/bin/swift
 
 import Foundation

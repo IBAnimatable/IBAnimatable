@@ -5,7 +5,8 @@
 
 import UIKit
 
-@IBDesignable open class AnimatableTextView: UITextView, CornerDesignable, FillDesignable, BorderDesignable, Animatable, PlaceholderDesignable {
+@IBDesignable
+open class AnimatableTextView: UITextView, CornerDesignable, FillDesignable, BorderDesignable, Animatable, PlaceholderDesignable {
 
   // MARK: - CornerDesignable
   @IBInspectable open var cornerRadius: CGFloat = CGFloat.nan {
@@ -164,7 +165,8 @@ import UIKit
     NotificationCenter.default.addObserver(self, selector: #selector(textDidChange), name: NSNotification.Name.UITextViewTextDidChange, object: nil)
   }
 
-  @objc private func textDidChange() {
+  @objc
+  private func textDidChange() {
     placeholderLabel.isHidden = !text.isEmpty
   }
 

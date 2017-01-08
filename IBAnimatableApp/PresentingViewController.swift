@@ -242,7 +242,8 @@ extension PresentingViewController {
 
   // MARK: UIPickerDelegate / DataSource
 
-  @objc(numberOfComponentsInPickerView:) func numberOfComponents(in pickerView: UIPickerView) -> Int {
+  @objc(numberOfComponentsInPickerView:)
+  func numberOfComponents(in pickerView: UIPickerView) -> Int {
     return componentsForSelectedButton().count
   }
 

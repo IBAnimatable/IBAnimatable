@@ -155,10 +155,10 @@ private extension FlipAnimator {
   func updateAnchorPointAndOffset(anchorPoint: CGPoint, view: UIView) {
     view.layer.anchorPoint = anchorPoint
     if horizontal {
-      let xOffset =  anchorPoint.x - 0.5
+      let xOffset = anchorPoint.x - 0.5
       view.frame = view.frame.offsetBy(dx: xOffset * view.frame.size.width, dy: 0)
     } else {
-      let yOffset =  anchorPoint.y - 0.5
+      let yOffset = anchorPoint.y - 0.5
       view.frame = view.frame.offsetBy(dx: 0, dy: yOffset * view.frame.size.height)
     }
   }

@@ -5,7 +5,8 @@
 
 import UIKit
 
-@IBDesignable open class AnimatableTableView: UITableView, FillDesignable, BorderDesignable, GradientDesignable, Animatable {
+@IBDesignable
+open class AnimatableTableView: UITableView, FillDesignable, BorderDesignable, GradientDesignable, Animatable {
 
   // MARK: - FillDesignable
   @IBInspectable open var fillColor: UIColor? {
