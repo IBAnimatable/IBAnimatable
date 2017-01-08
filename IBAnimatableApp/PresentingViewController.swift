@@ -192,16 +192,17 @@ extension PresentingViewController {
   func showPicker() {
     pickerView.reloadAllComponents()
     resetSelectedItemPicker()
-    dimmingPickerView.fade(.in)
-    containerPickerView.slide(.in, direction: .up)
+    dimmingPickerView.animate(animation: .fade(way: .in))
+    containerPickerView.animate(animation: .slide(way: .in, direction: .up))
     dimmingPickerView.isHidden = false
   }
 
   @IBAction func hidePicker() {
-    dimmingPickerView.fade(.out, completion: {
+    dimmingPickerView.animate(animation: .fade(way: .out)).completion {
       self.dimmingPickerView.isHidden = true
-    })
-    containerPickerView.slide(.out, direction: .down)
+    }
+    containerPickerView.animate(animation: .slide(way: .out, direction: .down))
+    containerPickerView.doAn
     selectedButton = nil
   }
 
