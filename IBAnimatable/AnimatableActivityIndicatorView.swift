@@ -8,7 +8,8 @@
 
 import UIKit
 
-@IBDesignable open class AnimatableActivityIndicatorView: UIView, ActivityIndicatorAnimatable {
+@IBDesignable
+open class AnimatableActivityIndicatorView: UIView, ActivityIndicatorAnimatable {
 
   // MARK: ActivityIndicatorAnimatable
   open var animationType: ActivityIndicatorType = .none

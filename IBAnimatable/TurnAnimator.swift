@@ -80,7 +80,7 @@ extension TurnAnimator: UIViewControllerAnimatedTransitioning {
       }
 
       UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5) {
-        toView.layer.transform =  self.rotate(angle: 0.0)
+        toView.layer.transform = self.rotate(angle: 0.0)
       }
     }) { _ in
         completion()

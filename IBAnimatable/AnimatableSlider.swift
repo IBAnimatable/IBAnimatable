@@ -5,7 +5,8 @@
 
 import UIKit
 
-@IBDesignable open class AnimatableSlider: UIView, BorderDesignable, RotationDesignable, ShadowDesignable, Animatable {
+@IBDesignable
+open class AnimatableSlider: UIView, BorderDesignable, RotationDesignable, ShadowDesignable, Animatable {
 
   // MARK: - BorderDesignable
   @IBInspectable open var borderColor: UIColor? {

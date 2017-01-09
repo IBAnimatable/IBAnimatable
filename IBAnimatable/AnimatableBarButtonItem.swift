@@ -5,7 +5,8 @@
 
 import UIKit
 
-@IBDesignable open class AnimatableBarButtonItem: UIBarButtonItem, BarButtonItemDesignable, Animatable {
+@IBDesignable
+open class AnimatableBarButtonItem: UIBarButtonItem, BarButtonItemDesignable, Animatable {
   // MARK: - BarButtonItemDesignable
   @IBInspectable open var roundedImage: UIImage?
 

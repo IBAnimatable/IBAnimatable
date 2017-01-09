@@ -35,7 +35,8 @@ class UserInterfaceActivityIndicatorViewController: UIViewController, UIPickerVi
 
 extension UserInterfaceActivityIndicatorViewController {
 
-  @objc(numberOfComponentsInPickerView:) func numberOfComponents(in pickerView: UIPickerView) -> Int {
+  @objc(numberOfComponentsInPickerView:)
+  func numberOfComponents(in pickerView: UIPickerView) -> Int {
     return 1
   }
 
@@ -45,7 +46,7 @@ extension UserInterfaceActivityIndicatorViewController {
 
   func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
     let title = activityIndicatorsType[row]
-    return NSAttributedString(string: title.rawValue, attributes: [NSForegroundColorAttributeName:UIColor.white])
+    return NSAttributedString(string: title.rawValue, attributes: [NSForegroundColorAttributeName: UIColor.white])
   }
 
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

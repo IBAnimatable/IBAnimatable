@@ -6,7 +6,7 @@
 import UIKit
 import IBAnimatable
 
-private let wayParam = 	ParamType(fromEnum: AnimationType.Way.self)
+private let wayParam = ParamType(fromEnum: AnimationType.Way.self)
 private let directionParam = ParamType(fromEnum: AnimationType.Direction.self)
 private let fadeWayParams = ParamType(fromEnum: AnimationType.FadeWay.self)
 private let axisParams = ParamType(fromEnum: AnimationType.Axis.self)
