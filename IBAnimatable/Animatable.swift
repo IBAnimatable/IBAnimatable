@@ -146,9 +146,10 @@ fileprivate extension Animatable where Self: UIView {
     let values = computeValues(way: way, direction: direction, configuration: configuration, shouldScale: false)
     switch way {
     case .in:
-      animateIn(x: values.x, y: values.y, scaleX: values.scaleX, scaleY: values.scaleY, alpha: 1, configuration: configuration, completion: completion)
+
+      animateIn(animationValues: values, alpha: 1, configuration: configuration, completion: completion)
     case .out:
-      animateOut(x: values.x, y: values.y, scaleX: values.scaleX, scaleY: values.scaleY, alpha: 1, configuration: configuration, completion: completion)
+      animateOut(animationValues: values, alpha: 1, configuration: configuration, completion: completion)
     }
   }
 
@@ -156,9 +157,9 @@ fileprivate extension Animatable where Self: UIView {
     let values = computeValues(way: way, direction: direction, configuration: configuration, shouldScale: true)
     switch way {
     case .in:
-      animateIn(x: values.x, y: values.y, scaleX: values.scaleX, scaleY: values.scaleY, alpha: 1, configuration: configuration, completion: completion)
+      animateIn(animationValues: values, alpha: 1, configuration: configuration, completion: completion)
     case .out:
-      animateOut(x: values.x, y: values.y, scaleX: values.scaleX, scaleY: values.scaleY, alpha: 1, configuration: configuration, completion: completion)
+      animateOut(animationValues: values, alpha: 1, configuration: configuration, completion: completion)
     }
   }
 
@@ -205,9 +206,9 @@ fileprivate extension Animatable where Self: UIView {
     switch way {
     case .in:
       alpha = 0
-      animateIn(x: values.x, y: values.y, scaleX: values.scaleX, scaleY: values.scaleY, alpha: 1, configuration: configuration, completion: completion)
+      animateIn(animationValues: values, alpha: 1, configuration: configuration, completion: completion)
     case .out:
-      animateOut(x: values.x, y: values.y, scaleX: values.scaleX, scaleY: values.scaleY, alpha: 0, configuration: configuration, completion: completion)
+      animateOut(animationValues: values, alpha: 0, configuration: configuration, completion: completion)
     }
   }
 
@@ -219,10 +220,10 @@ fileprivate extension Animatable where Self: UIView {
       fadeInOut(configuration: configuration, completion: completion)
     case .in:
       alpha = 0
-      animateIn(x: 0, y: 0, scaleX: 1, scaleY: 1, alpha: 1, configuration: configuration, completion: completion)
+      animateIn(animationValues: AnimationValues(x: 0, y: 0, scaleX: 1, scaleY: 1), alpha: 1, configuration: configuration, completion: completion)
     case .out:
       alpha = 1
-      animateOut(x: 0, y: 0, scaleX: 1, scaleY: 1, alpha: 0, configuration: configuration, completion: completion)
+      animateOut(animationValues: AnimationValues(x: 0, y: 0, scaleX: 1, scaleY: 1), alpha: 0, configuration: configuration, completion: completion)
     }
   }
 
@@ -231,9 +232,9 @@ fileprivate extension Animatable where Self: UIView {
     switch way {
     case .in:
       alpha = 0
-      animateIn(x: values.x, y: values.y, scaleX: values.scaleX, scaleY: values.scaleY, alpha: 1, configuration: configuration, completion: completion)
+      animateIn(animationValues: values, alpha: 1, configuration: configuration, completion: completion)
     case .out:
-      animateOut(x: values.x, y: values.y, scaleX: values.scaleX, scaleY: values.scaleY, alpha: 0, configuration: configuration, completion: completion)
+      animateOut(animationValues: values, alpha: 0, configuration: configuration, completion: completion)
     }
   }
 
@@ -246,17 +247,17 @@ fileprivate extension Animatable where Self: UIView {
       alpha = 0
       toAlpha = 1
       transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-      animateIn(x: 0, y: 0, scaleX: scale / 2, scaleY: scale / 2, alpha: toAlpha, configuration: configuration, completion: completion)
+      animateIn(animationValues: AnimationValues(x: 0, y: 0, scaleX: scale / 2, scaleY: scale / 2), alpha: toAlpha, configuration: configuration, completion: completion)
     case .in:
       let scale = 2 * configuration.force
       alpha = 0
       toAlpha = 1
-      animateIn(x: 0, y: 0, scaleX: scale, scaleY: scale, alpha: toAlpha, configuration: configuration, completion: completion)
+      animateIn(animationValues: AnimationValues(x: 0, y: 0, scaleX: scale, scaleY: scale), alpha: toAlpha, configuration: configuration, completion: completion)
     case .out:
       let scale = (invert ? 0.1 :  2) * configuration.force
       alpha = 1
       toAlpha = 0
-      animateOut(x: 0, y: 0, scaleX: scale, scaleY: scale, alpha: toAlpha, configuration: configuration, completion: completion)
+      animateOut(animationValues: AnimationValues(x: 0, y: 0, scaleX: scale, scaleY: scale), alpha: toAlpha, configuration: configuration, completion: completion)
     }
   }
 
@@ -271,7 +272,7 @@ fileprivate extension Animatable where Self: UIView {
       scaleX = -1
       scaleY = 1
     }
-    animateIn(x: 0, y: 0, scaleX: scaleX, scaleY: scaleY, alpha: 1, configuration: configuration, completion: completion)
+    animateIn(animationValues: AnimationValues(x: 0, y: 0, scaleX: scaleX, scaleY: scaleY), alpha: 1, configuration: configuration, completion: completion)
   }
 
   func shake(repeatCount: Int, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
@@ -508,10 +509,10 @@ fileprivate extension Animatable where Self: UIView {
     )
   }
 
- // swiftlint:disable function_parameter_count
-  func animateIn(x: CGFloat, y: CGFloat, scaleX: CGFloat, scaleY: CGFloat, alpha: CGFloat, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
-    let translate = CGAffineTransform(translationX: x, y: y)
-    let scale = CGAffineTransform(scaleX: scaleX, y: scaleY)
+
+  func animateIn(animationValues: AnimationValues, alpha: CGFloat, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+    let translate = CGAffineTransform(translationX: animationValues.x, y: animationValues.y)
+    let scale = CGAffineTransform(scaleX: animationValues.scaleX, y: animationValues.scaleY)
     let translateAndScale = translate.concatenating(scale)
     transform = translateAndScale
 
@@ -527,10 +528,9 @@ fileprivate extension Animatable where Self: UIView {
     })
   }
 
-  // swiftlint:disable function_parameter_count
-  func animateOut(x: CGFloat, y: CGFloat, scaleX: CGFloat, scaleY: CGFloat, alpha: CGFloat, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
-    let translate = CGAffineTransform(translationX: x, y: y)
-    let scale = CGAffineTransform(scaleX: scaleX, y: scaleY)
+  func animateOut(animationValues: AnimationValues, alpha: CGFloat, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+    let translate = CGAffineTransform(translationX: animationValues.x, y: animationValues.y)
+    let scale = CGAffineTransform(scaleX: animationValues.scaleX, y: animationValues.scaleY)
     let translateAndScale = translate.concatenating(scale)
 
     UIView.animate(withDuration: configuration.duration, delay: configuration.delay, usingSpringWithDamping: configuration.damping, initialSpringVelocity: configuration.velocity, options: [],
