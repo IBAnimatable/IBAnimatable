@@ -21,15 +21,6 @@ class BlurEffectViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.blurEffectView.animate(animation: .pop(repeatCount: 1))
-      .delay(1)
-      .then( .slide(way: .out, direction: .left))
-      .delay(1)
-      .then(.slide(way: .in, direction: .left))
-      .then(.pop(repeatCount: 1))
-      .completion {
-        print("Done ;)")
-    }
   }
 }
 

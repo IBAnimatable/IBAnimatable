@@ -42,9 +42,7 @@ extension TransitionAnimationType: IBEnum {
       return
     }
 
-    let nameAndParams = TransitionAnimationType.extractNameAndParams(from: string)
-    let name = nameAndParams.name
-    let params = nameAndParams.params
+    let (name, params) = TransitionAnimationType.extractNameAndParams(from: string)
 
     switch name {
     case "systemrippleeffect":

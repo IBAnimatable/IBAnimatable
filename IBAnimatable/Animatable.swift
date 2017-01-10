@@ -78,6 +78,7 @@ public extension Animatable where Self: UIView {
   public func delay(delay: TimeInterval) -> AnimationPromise<Self> {
     let promise = AnimationPromise(view: self)
     return promise.delay(delay)
+
   }
 
   internal func doAnimation(animation: AnimationType? = nil, configuration: AnimationConfiguration, promise: AnimationPromise<Self>) {

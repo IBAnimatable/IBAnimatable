@@ -44,9 +44,7 @@ public extension MaskType {
       return
     }
 
-    let nameAndParames = MaskType.extractNameAndParams(from: string)
-    let name = nameAndParames.name
-    let params = nameAndParames.params
+    let (name, params) = MaskType.extractNameAndParams(from: string)
 
     switch name {
     case "circle":
