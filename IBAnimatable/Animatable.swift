@@ -22,7 +22,7 @@ public protocol Animatable: class {
   /**
    Animation duration (in seconds)
    */
-  var duration: Double { get set }
+  var duration: TimeInterval { get set }
 
   /**
    Animation delay (in seconds, default value should be 0)
@@ -70,8 +70,8 @@ public extension Animatable where Self: UIView {
     return AnimationPromise(view: self).then(animation, duration: duration, damping: damping, velocity: velocity, force: force)
   }
 
-
- public func animate(animation: AnimationType? = nil, completion: AnimatableCompletion? = nil) {// here for retro-compatibility
+  @available(*, deprecated, message: "use animate(animation: AnimationType).then(...).completion instead. Will be removed in future versions")
+  public func animate(animation: AnimationType? = nil, completion: AnimatableCompletion? = nil) {// here for retro-compatibility
     self.animate(animation: animation ?? self.animationType).completion(completion)
   }
 
@@ -85,7 +85,7 @@ public extension Animatable where Self: UIView {
 
 
     let completion = {
-      promise.animCompleted()
+      promise.animationCompleted()
     }
     switch animation ?? animationType {
     case let .slide(way, direction):

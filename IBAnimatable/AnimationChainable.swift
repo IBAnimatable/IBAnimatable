@@ -11,7 +11,7 @@ typealias AnimationTuple = (type: AnimationType, configuration: AnimationConfigu
 struct AnimationConfiguration {
   let damping: CGFloat
   let velocity: CGFloat
-  let duration: Double
+  let duration: TimeInterval
   let delay: TimeInterval
   let force: CGFloat
 
@@ -30,7 +30,7 @@ public class AnimationPromise<T: UIView> where T: Animatable {
   }
 
 
-   func animCompleted() {
+   func animationCompleted() {
       animationList.remove(at: 0)
       if let anim = animationList.first {
         view.doAnimation(animation: anim.type, configuration: anim.configuration, promise: self)
