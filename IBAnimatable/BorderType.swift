@@ -33,3 +33,17 @@ extension BorderType {
     }
   }
 }
+
+extension BorderType: Equatable {
+}
+
+public func == (lhs: BorderType, rhs: BorderType) -> Bool {
+  switch (lhs, rhs) {
+  case (.solid, .solid):
+    return true
+  case (.dash, .dash):
+    return true
+  default:
+    return false
+  }
+}

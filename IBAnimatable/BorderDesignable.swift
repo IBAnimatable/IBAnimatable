@@ -81,6 +81,15 @@ fileprivate extension BorderDesignable where Self: UIView {
 
 fileprivate extension BorderDesignable where Self: UIView {
   func drawBorders() {
+    if borderType == .solid, borderSides == .AllSides {
+      layer.borderColor = borderColor!.cgColor
+      layer.borderWidth = borderWidth
+    } else {
+      drawBordersSides()
+    }
+  }
+
+  func drawBordersSides() {
     let shapeLayer = CAShapeLayer()
     shapeLayer.name = "borderSideLayer"
     shapeLayer.path = makeBorderPath().cgPath
