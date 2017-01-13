@@ -9,7 +9,7 @@
 import Foundation
 
 public enum BorderType: String, IBEnum {
-  case Solid
-  case Dash
+  case solid
+  case dash
   case none
 }

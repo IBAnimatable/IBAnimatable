@@ -7,6 +7,11 @@ import UIKit
 
 public protocol BorderDesignable {
   /**
+   `border-type`, border type
+   */
+  var borderType: BorderType { get set }
+
+  /**
     `border-color`, border color
   */
   var borderColor: UIColor? { get set }
