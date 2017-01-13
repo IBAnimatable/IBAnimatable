@@ -88,9 +88,12 @@ fileprivate extension BorderDesignable where Self: UIView {
     shapeLayer.strokeColor = borderColor!.cgColor
     shapeLayer.lineWidth = borderWidth
     shapeLayer.frame = bounds
-    if borderType == .dash {
+    switch borderType {
+    case let .dash(dashLength, spaceLength):
       shapeLayer.lineJoin = kCALineJoinRound
-      shapeLayer.lineDashPattern = [6, 3]
+      shapeLayer.lineDashPattern = [dashLength as NSNumber, spaceLength as NSNumber]
+    case .solid, .none:
+      break
     }
     layer.insertSublayer(shapeLayer, at: 0)
   }

@@ -8,8 +8,28 @@
 
 import Foundation
 
-public enum BorderType: String, IBEnum {
+public enum BorderType: IBEnum {
   case solid
-  case dash
+  case dash(dashLength: Int, spaceLength: Int)
   case none
+}
+
+extension BorderType {
+
+  public init(string: String?) {
+    guard let string = string else {
+      self = .none
+      return
+    }
+
+    let (name, params) = AnimationType.extractNameAndParams(from: string)
+    switch name {
+    case "solid":
+      self = .solid
+    case "dash":
+      self = .dash(dashLength: params[safe: 0]?.toInt() ?? 1, spaceLength: params[safe: 1]?.toInt() ?? 1)
+    default:
+      self = .none
+    }
+  }
 }
