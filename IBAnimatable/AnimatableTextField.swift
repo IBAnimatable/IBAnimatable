@@ -120,12 +120,12 @@ open class AnimatableTextField: UITextField, CornerDesignable, FillDesignable, B
   }
 
   // MARK: - SideImageDesignable
-  @IBInspectable open var leftImage: UIImage? = nil
+  @IBInspectable open var leftImage: UIImage?
   @IBInspectable open var leftImageLeftPadding: CGFloat = CGFloat.nan
   @IBInspectable open var leftImageRightPadding: CGFloat = CGFloat.nan
   @IBInspectable open var leftImageTopPadding: CGFloat = CGFloat.nan
 
-  @IBInspectable open var rightImage: UIImage? = nil
+  @IBInspectable open var rightImage: UIImage?
   @IBInspectable open var rightImageLeftPadding: CGFloat = CGFloat.nan
   @IBInspectable open var rightImageRightPadding: CGFloat = CGFloat.nan
   @IBInspectable open var rightImageTopPadding: CGFloat = CGFloat.nan
