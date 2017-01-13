@@ -17,7 +17,7 @@ open class AnimatableSlider: UIView, BorderDesignable, RotationDesignable, Shado
 
   @IBInspectable var _borderType: String? {
     didSet {
-      borderType = BorderType(string: _borderType) ?? .solid
+      borderType = BorderType(string: _borderType)
     }
   }
 

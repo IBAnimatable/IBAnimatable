@@ -85,7 +85,7 @@ open class AnimatableCollectionViewCell: UICollectionViewCell, CornerDesignable,
 
   @IBInspectable var _borderType: String? {
     didSet {
-      borderType = BorderType(string: _borderType) ?? .solid
+      borderType = BorderType(string: _borderType)
     }
   }
 

@@ -41,7 +41,7 @@ open class AnimatableTableView: UITableView, FillDesignable, BorderDesignable, G
 
   @IBInspectable var _borderType: String? {
     didSet {
-      borderType = BorderType(string: _borderType) ?? .solid
+      borderType = BorderType(string: _borderType)
     }
   }
 

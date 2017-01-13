@@ -60,7 +60,7 @@ open class AnimatableView: UIView, CornerDesignable, FillDesignable, BorderDesig
 
   @IBInspectable var _borderType: String? {
     didSet {
-      borderType = BorderType(string: _borderType) ?? .solid
+      borderType = BorderType(string: _borderType)
     }
   }
 

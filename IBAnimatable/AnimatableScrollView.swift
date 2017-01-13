@@ -60,7 +60,7 @@ open class AnimatableScrollView: UIScrollView, CornerDesignable, FillDesignable,
 
   @IBInspectable var _borderType: String? {
     didSet {
-      borderType = BorderType(string: _borderType) ?? .solid
+      borderType = BorderType(string: _borderType)
     }
   }
 
