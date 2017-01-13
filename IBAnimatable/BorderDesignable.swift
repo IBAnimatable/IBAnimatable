@@ -56,7 +56,6 @@ fileprivate extension BorderDesignable where Self: UIView {
     } else {
       drawBorders()
     }
-    configureBorderType()
   }
 
   private func clearLayer() {
@@ -82,23 +81,6 @@ fileprivate extension BorderDesignable where Self: UIView {
 
 fileprivate extension BorderDesignable where Self: UIView {
   func drawBorders() {
-    if borderSides == .AllSides {
-      drawBorders()
-    } else {
-      drawBorderSides()
-    }
-  }
-
-  // MARK: All Borders
-
-  private func drawAllBorders() {
-    layer.borderColor = borderColor!.cgColor
-    layer.borderWidth = borderWidth
-  }
-
-  // MARK: Sides
-
-  private func drawBorderSides() {
     let shapeLayer = CAShapeLayer()
     shapeLayer.name = "borderSideLayer"
     shapeLayer.path = makeBorderPath().cgPath
@@ -106,6 +88,10 @@ fileprivate extension BorderDesignable where Self: UIView {
     shapeLayer.strokeColor = borderColor!.cgColor
     shapeLayer.lineWidth = borderWidth
     shapeLayer.frame = bounds
+    if borderType == .dash {
+      shapeLayer.lineJoin = kCALineJoinRound
+      shapeLayer.lineDashPattern = [6, 3]
+    }
     layer.insertSublayer(shapeLayer, at: 0)
   }
 
