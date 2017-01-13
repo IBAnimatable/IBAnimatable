@@ -10,6 +10,7 @@ None
 
 #### Enhancements
 - New gradient `startPoint`: `.custom(startX, startY, endX, endY)`. [#380](https://github.com/IBAnimatable/IBAnimatable/pull/380)
+- Introducing `borderType`, find all the information in the documentation [#389](https://github.com/IBAnimatable/IBAnimatable/pull/380)
 
 #### Bugfixes
 
