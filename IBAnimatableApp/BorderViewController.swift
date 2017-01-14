@@ -75,19 +75,6 @@ extension BorderViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     return 3
   }
 
-//  func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-//    switch component {
-//    case 0:
-//      return self.view.frame.size.width * 0.5
-//    case 1:
-//      return self.view.frame.size.width * 0.25
-//    case 2:
-//      return self.view.frame.size.width * 0.25
-//    default:
-//      return 0
-//    }
-//  }
-
   func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
     if component == 0 {
       return entries[safe: row]?.name.colorize(.white)
