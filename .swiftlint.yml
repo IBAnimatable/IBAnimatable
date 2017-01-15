@@ -1,5 +1,9 @@
 line_length: 150
 file_length: 500
+number_separator:
+  minimum_length: 5
+large_tuple:
+  warning: 3
 
 disabled_rules:
   - todo
@@ -8,6 +12,8 @@ disabled_rules:
   - function_body_length
   - cyclomatic_complexity
   - type_name
+  - shorthand_operator # waiting next release
+  - unused_optional_binding # waiting next release
 
 opt_in_rules:
  - closure_spacing
@@ -17,9 +23,9 @@ opt_in_rules:
  - overridden_super_call
  - redundant_nil_coalescing
  - nimble_operator
- - attributes
  - closure_end_indentation
  - first_where
- - number_separator
+ - attributes
  - operator_usage_whitespace
  - prohibited_super_call
+ - number_separator

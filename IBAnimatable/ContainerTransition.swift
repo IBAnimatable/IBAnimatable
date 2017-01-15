@@ -18,8 +18,8 @@ public class ContainerTransition: NSObject {
 
   fileprivate let container: UIView?
   fileprivate let parentViewController: UIViewController?
-  fileprivate var viewControllers: [UITransitionContextViewControllerKey: UIViewController]? = nil
-  fileprivate var views: [UITransitionContextViewKey: UIView]? = nil
+  fileprivate var viewControllers: [UITransitionContextViewControllerKey: UIViewController]?
+  fileprivate var views: [UITransitionContextViewKey: UIView]?
   fileprivate let completion: ContainerTransitionCompletion?
 
   // MARK: Life cycle

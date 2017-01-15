@@ -15,13 +15,13 @@ open class AnimatableCheckBox: UIButton, CheckBoxDesignable, CornerDesignable, F
     }
   }
 
-  @IBInspectable open var checkedImage: UIImage? = nil {
+  @IBInspectable open var checkedImage: UIImage? {
     didSet {
       configureCheckBoxCheckedImage()
     }
   }
 
-  @IBInspectable open var uncheckedImage: UIImage? = nil {
+  @IBInspectable open var uncheckedImage: UIImage? {
     didSet {
       configureCheckBoxUncheckedImage()
     }

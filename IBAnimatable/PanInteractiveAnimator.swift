@@ -60,7 +60,7 @@ public class PanInteractiveAnimator: InteractiveAnimator {
     progress = min(max(progress, 0), 0.99)
 
     // Finish the transition when pass the threathold
-    let shouldFinishInteractiveTransition = progress > 0.5 || speed > 1_000
+    let shouldFinishInteractiveTransition = progress > 0.5 || speed > 1000
     return (progress, shouldFinishInteractiveTransition)
   }
 }
