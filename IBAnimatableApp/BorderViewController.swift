@@ -6,13 +6,38 @@
 import UIKit
 import IBAnimatable
 
+fileprivate let dashLength = ParamType.number(min: 1, max: 10, interval: 1, ascending: true, unit: "")
+fileprivate let dashSpaceLength = ParamType.number(min: 1, max: 10, interval: 1, ascending: true, unit: "")
+
 class BorderViewController: UIViewController {
+
+  // MARK: IBOutlets
 
   @IBOutlet weak var viewToBorder: AnimatableView!
   @IBOutlet weak var topCheckBox: AnimatableCheckBox!
   @IBOutlet weak var botCheckBox: AnimatableCheckBox!
   @IBOutlet weak var leftCheckBox: AnimatableCheckBox!
   @IBOutlet weak var rightCheckBox: AnimatableCheckBox!
+  @IBOutlet weak var pickerView: UIPickerView!
+
+  // MARK: Properties
+
+  var selectedEntry: PickerEntry!
+  let entries: [PickerEntry] = [
+    PickerEntry(params: [], name: "solid"),
+    PickerEntry(params: [dashLength, dashSpaceLength], name: "dash")
+  ]
+
+  // MARK: Life cycle
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    selectedEntry = entries[0]
+    pickerView.dataSource = self
+    pickerView.delegate = self
+  }
+
+  // MARK: IBAction
 
   @IBAction func boxChecked(_ sender: AnimatableCheckBox) {
     let border: BorderSides
@@ -33,7 +58,43 @@ class BorderViewController: UIViewController {
     } else {
       viewToBorder.borderSides.remove(border)
     }
-
   }
 
+}
+
+extension BorderViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+
+  func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    if component == 0 {
+      return entries.count
+    }
+    return selectedEntry.params[safe: component - 1]?.count() ?? 0
+  }
+
+  func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    return 3
+  }
+
+  func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+    if component == 0 {
+      return entries[safe: row]?.name.colorize(.white)
+    }
+    guard let param = selectedEntry.params[safe: component - 1] else {
+      return nil
+    }
+    return param.title(at: row).colorize(.white)
+  }
+
+  func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    if component == 0 {
+      if selectedEntry.name != entries[row].name {
+        selectedEntry = entries[row]
+        pickerView.reloadComponent(1)
+        pickerView.reloadComponent(2)
+      }
+    }
+
+    let animationString = selectedEntry.toString(selectedIndexes: pickerView.selectedRow(inComponent: 1), pickerView.selectedRow(inComponent: 2))
+    viewToBorder.borderType = BorderType(string: animationString)
+  }
 }

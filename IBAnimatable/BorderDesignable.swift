@@ -7,6 +7,11 @@ import UIKit
 
 public protocol BorderDesignable {
   /**
+   `bordertype: solid, dash, if not specified, solid will be used
+   */
+  var borderType: BorderType { get set }
+
+  /**
     `border-color`, border color
   */
   var borderColor: UIColor? { get set }
@@ -37,46 +42,84 @@ public extension BorderDesignable where Self: UIView {
   }
 }
 
-private extension BorderDesignable where Self: UIView {
+// MARK: - Layer
+
+fileprivate extension BorderDesignable where Self: UIView {
   func commonConfigBorder() {
-    guard let borderColor = borderColor, borderWidth > 0 else {
+    guard borderColor != nil, borderWidth > 0 else {
       return
     }
 
-    // Clear borders
+    clearLayer()
+    if let mask = layer.mask as? CAShapeLayer {
+      applyBorderOnMask(mask)
+    } else {
+      drawBorders()
+    }
+  }
+
+  private func clearLayer() {
     layer.borderColor = nil
     layer.borderWidth = 0
     layer.sublayers?.filter { $0.name == "borderSideLayer" || $0.name == "borderAllSides" }
       .forEach { $0.removeFromSuperlayer() }
+  }
 
-    // if a layer mask is specified, only border the mask
-    if let mask = layer.mask as? CAShapeLayer {
-      let borderLayer = CAShapeLayer()
-      borderLayer.name = "borderAllSides"
-      borderLayer.path = mask.path
-      borderLayer.fillColor = UIColor.clear.cgColor
-      borderLayer.strokeColor = borderColor.cgColor
-      borderLayer.lineWidth = borderWidth
-      borderLayer.frame = bounds
-      layer.insertSublayer(borderLayer, at: 0)
-      return
-    }
+  private func applyBorderOnMask(_ mask: CAShapeLayer) {
+    let borderLayer = CAShapeLayer()
+    borderLayer.name = "borderAllSides"
+    borderLayer.path = mask.path
+    borderLayer.fillColor = UIColor.clear.cgColor
+    borderLayer.strokeColor = borderColor!.cgColor
+    borderLayer.lineWidth = borderWidth
+    borderLayer.frame = bounds
+    layer.insertSublayer(borderLayer, at: 0)
+  }
+}
 
-    //let sides = BorderSides(rawValue: BorderSides)
+// MARK: - Drawing
 
-    if borderSides == .AllSides {
-      layer.borderColor = borderColor.cgColor
+fileprivate extension BorderDesignable where Self: UIView {
+  func drawBorders() {
+    if borderType == .solid, borderSides == .AllSides {
+      layer.borderColor = borderColor!.cgColor
       layer.borderWidth = borderWidth
-      return
+    } else {
+      drawBordersSides()
     }
+  }
 
-    // configure border for specified sides
-    let border = CAShapeLayer()
-    border.name = "borderSideLayer"
+  func drawBordersSides() {
+    let shapeLayer = CAShapeLayer()
+    shapeLayer.name = "borderSideLayer"
+    shapeLayer.path = makeBorderPath().cgPath
+    shapeLayer.fillColor = UIColor.clear.cgColor
+    shapeLayer.strokeColor = borderColor!.cgColor
+    shapeLayer.lineWidth = borderWidth
+    shapeLayer.frame = bounds
+    switch borderType {
+    case let .dash(dashLength, spaceLength):
+      shapeLayer.lineJoin = kCALineJoinRound
+      shapeLayer.lineDashPattern = [dashLength as NSNumber, spaceLength as NSNumber]
+    case .solid, .none:
+      break
+    }
+    layer.insertSublayer(shapeLayer, at: 0)
+  }
 
+  func makeBorderPath() -> UIBezierPath {
+    let lines = makeLines()
     let borderPath = UIBezierPath()
+    lines.forEach {
+      borderPath.move(to: $0.start)
+      borderPath.addLine(to: $0.end)
+    }
+    return borderPath
+  }
+
+  func makeLines() -> [(start: CGPoint, end: CGPoint)] {
     let shift = borderWidth / 2
-    var lines: [(start: CGPoint, end: CGPoint)] = []
+    var lines = [(start: CGPoint, end: CGPoint)]()
     if borderSides.contains(.top) {
       lines.append((start: CGPoint(x: 0, y: shift), end: CGPoint(x: bounds.size.width, y: shift)))
     }
@@ -89,17 +132,6 @@ private extension BorderDesignable where Self: UIView {
     if borderSides.contains(.left) {
       lines.append((start: CGPoint(x: shift, y: 0), end: CGPoint(x: shift, y: bounds.size.height)))
     }
-
-    for linePoints in lines {
-      borderPath.move(to: linePoints.start)
-      borderPath.addLine(to: linePoints.end)
-    }
-
-    border.path = borderPath.cgPath
-    border.fillColor = UIColor.clear.cgColor
-    border.strokeColor = borderColor.cgColor
-    border.lineWidth = borderWidth
-    border.frame = bounds
-    layer.insertSublayer(border, at: 0)
+    return lines
   }
 }

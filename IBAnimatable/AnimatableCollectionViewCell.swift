@@ -77,6 +77,18 @@ open class AnimatableCollectionViewCell: UICollectionViewCell, CornerDesignable,
   }
 
   // MARK: - BorderDesignable
+  open var borderType: BorderType  = .solid {
+    didSet {
+      configureBorder()
+    }
+  }
+
+  @IBInspectable var _borderType: String? {
+    didSet {
+      borderType = BorderType(string: _borderType)
+    }
+  }
+
   @IBInspectable open var borderColor: UIColor? {
     didSet {
       configureBorder()
