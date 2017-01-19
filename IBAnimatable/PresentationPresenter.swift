@@ -51,12 +51,12 @@ extension PresentationPresenter: UIViewControllerTransitioningDelegate {
   }
 
   // MARK: - animation controller
-  public func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+  public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     animator?.transitionDuration = transitionDuration
     return animator
   }
 
-  public func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+  public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     guard let dismissalAnimationType = dismissalAnimationType else {
       return animator
     }
