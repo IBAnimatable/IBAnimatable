@@ -47,6 +47,7 @@ public extension BorderDesignable where Self: UIView {
 fileprivate extension BorderDesignable where Self: UIView {
   func commonConfigBorder() {
     guard borderColor != nil, borderWidth > 0 else {
+      clearLayer()
       return
     }
 
