@@ -41,7 +41,7 @@ To use `IBAnimatable`, we can drag and drop a UIKit element and connect it with 
 #### `BorderDesignable`
 | Property name | Data type | Description |
 | ------------- |:-------------:| ----- |
-| borderType | Optional&lt;String> | border side: `solid`, `dash`, also can be found in emum [`BorderSide`](../IBAnimatable/BorderType.swift). If not specified, then display solid borders. **Please notice**: If we use `maskType` property then `borderType` will be ignored. |
+| borderType | Optional&lt;String> | border type: `solid`, `dash`, also can be found in emum [`BorderSide`](../IBAnimatable/BorderType.swift). If not specified, then display solid borders. **Please notice**: If we use `maskType` property then `borderType` will be ignored. |
 | borderColor | Optional&lt;UIColor> | border color |
 | borderWidth | CGFloat | border width. Default value is `CGFloat.NaN`, the value is greater than 0. |
 | borderSide | Optional&lt;String> | border side: `top`, `right`, `bottom` or `left`, also can be found in emum [`BorderSide`](../IBAnimatable/BorderSide.swift). Multiple sides can be configured with a comma separated list of sides (e.g. `top,bottom`). If not specified, then display four sides. **Please notice**: If we use `maskType` property then `borderSide` will be ignored. |
