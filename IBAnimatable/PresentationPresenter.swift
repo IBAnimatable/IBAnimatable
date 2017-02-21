@@ -7,10 +7,10 @@ import UIKit
 
 public class PresentationPresenter: NSObject {
   private var presentationAnimationType: PresentationAnimationType
-  var dismissalAnimationType: PresentationAnimationType?
+  public var dismissalAnimationType: PresentationAnimationType?
 
-  var presentationConfiguration: PresentationConfiguration?
-  var transitionDuration: Duration {
+  public var presentationConfiguration: PresentationConfiguration?
+  public var transitionDuration: Duration {
     didSet {
       if oldValue != transitionDuration {
         updateTransitionDuration()

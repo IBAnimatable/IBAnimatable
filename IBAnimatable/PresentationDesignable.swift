@@ -103,19 +103,19 @@ public extension PresentationDesignable where Self: UIViewController {
 
 /// `PresentationConfiguration` a struct is used for specifying the dimming view and modal view for `AnimatablePresentationController`
 public struct PresentationConfiguration {
-  var cornerRadius: CGFloat = .nan
-  var dismissOnTap: Bool = true
-  var backgroundColor: UIColor = .black
-  var opacity: CGFloat = 0.7
-  var blurEffectStyle: UIBlurEffectStyle?
-  var blurOpacity: CGFloat = .nan
-  var shadowColor: UIColor?
-  var shadowRadius: CGFloat = .nan
-  var shadowOpacity: CGFloat = 0.7
-  var shadowOffset: CGPoint = .zero
-  var modalPosition: PresentationModalPosition = .center
-  var modalSize: (PresentationModalSize, PresentationModalSize) = (.half, .half)
-  var keyboardTranslation = ModalKeyboardTranslation.none
+  public var cornerRadius: CGFloat = .nan
+  public var dismissOnTap: Bool = true
+  public var backgroundColor: UIColor = .black
+  public var opacity: CGFloat = 0.7
+  public var blurEffectStyle: UIBlurEffectStyle?
+  public var blurOpacity: CGFloat = .nan
+  public var shadowColor: UIColor?
+  public var shadowRadius: CGFloat = .nan
+  public var shadowOpacity: CGFloat = 0.7
+  public var shadowOffset: CGPoint = .zero
+  public var modalPosition: PresentationModalPosition = .center
+  public var modalSize: (PresentationModalSize, PresentationModalSize) = (.half, .half)
+  public var keyboardTranslation = ModalKeyboardTranslation.none
 
   public init() {}
 }
