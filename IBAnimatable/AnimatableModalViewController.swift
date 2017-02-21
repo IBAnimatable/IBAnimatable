@@ -171,10 +171,6 @@ open class AnimatableModalViewController: UIViewController, PresentationDesignab
 
   open override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-
-    let animationType = dismissalAnimationType
-    if let dismissalSystemTransition = animationType.systemTransition {
-      modalTransitionStyle = dismissalSystemTransition
-    }
+    configureDismissalTransition()
   }
 }

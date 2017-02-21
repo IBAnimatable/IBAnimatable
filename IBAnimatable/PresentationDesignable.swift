@@ -60,6 +60,8 @@ public protocol PresentationDesignable: class {
 
 }
 
+// MARK: - Configuration
+
 public extension PresentationDesignable where Self: UIViewController {
 
   public func configurePresenter() {
@@ -88,7 +90,16 @@ public extension PresentationDesignable where Self: UIViewController {
     presenter?.presentationConfiguration = presentationConfiguration
   }
 
+  public func configureDismissalTransition() {
+    let animationType = dismissalAnimationType
+    if let dismissalSystemTransition = animationType.systemTransition {
+      modalTransitionStyle = dismissalSystemTransition
+    }
+  }
+
 }
+
+// MARK: - PresentationConfiguration
 
 /// `PresentationConfiguration` a struct is used for specifying the dimming view and modal view for `AnimatablePresentationController`
 public struct PresentationConfiguration {
