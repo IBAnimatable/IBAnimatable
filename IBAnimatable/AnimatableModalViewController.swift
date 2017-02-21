@@ -19,7 +19,7 @@ open class AnimatableModalViewController: UIViewController, PresentationDesignab
   public var presentationAnimationType: PresentationAnimationType = .cover(from: .bottom) {
     didSet {
       if oldValue.stringValue != presentationAnimationType.stringValue {
-        setupPresenter()
+        configurePresenter()
       }
     }
   }
@@ -34,7 +34,7 @@ open class AnimatableModalViewController: UIViewController, PresentationDesignab
   public var dismissalAnimationType: PresentationAnimationType = .cover(from: .bottom) {
     didSet {
       if oldValue.stringValue != dismissalAnimationType.stringValue {
-        setupPresenter()
+        configurePresenter()
       }
     }
   }
@@ -146,23 +146,22 @@ open class AnimatableModalViewController: UIViewController, PresentationDesignab
   }
   public var keyboardTranslation: ModalKeyboardTranslation = .none {
     didSet {
-      presenter?.presentationConfiguration?.keyboardTranslation = keyboardTranslation    }
+      presenter?.presentationConfiguration?.keyboardTranslation = keyboardTranslation
+    }
   }
 
-  // MARK: Private
-
-  fileprivate var presenter: PresentationPresenter?
+  public var presenter: PresentationPresenter?
 
   // MARK: Life cycle
 
   public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setupPresenter()
+    configurePresenter()
   }
 
   public required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-    setupPresenter()
+    configurePresenter()
   }
 
   // MARK: Life cycle
@@ -177,34 +176,5 @@ open class AnimatableModalViewController: UIViewController, PresentationDesignab
     if let dismissalSystemTransition = animationType.systemTransition {
       modalTransitionStyle = dismissalSystemTransition
     }
-  }
-}
-
-private extension AnimatableModalViewController {
-  func setupPresenter() {
-
-    presenter = PresentationPresenterManager.shared.retrievePresenter(presentationAnimationType: presentationAnimationType, transitionDuration: transitionDuration)
-    presenter?.dismissalAnimationType = dismissalAnimationType
-    transitioningDelegate = presenter
-    modalPresentationStyle = .custom
-    if let systemTransition = presentationAnimationType.systemTransition {
-      modalTransitionStyle = systemTransition
-    }
-
-    var presentationConfiguration = PresentationConfiguration()
-    presentationConfiguration.modalPosition = modalPosition
-    presentationConfiguration.modalSize = modalSize
-    presentationConfiguration.cornerRadius = cornerRadius
-    presentationConfiguration.dismissOnTap = dismissOnTap
-    presentationConfiguration.backgroundColor = backgroundColor
-    presentationConfiguration.opacity = opacity
-    presentationConfiguration.blurEffectStyle = blurEffectStyle
-    presentationConfiguration.blurOpacity = blurOpacity
-    presentationConfiguration.shadowColor = shadowColor
-    presentationConfiguration.shadowOpacity = shadowOpacity
-    presentationConfiguration.shadowRadius = shadowRadius
-    presentationConfiguration.shadowOffset = shadowOffset
-    presentationConfiguration.keyboardTranslation = keyboardTranslation
-    presenter?.presentationConfiguration = presentationConfiguration
   }
 }

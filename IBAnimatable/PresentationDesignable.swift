@@ -9,6 +9,8 @@ public typealias ModalSize = (width: PresentationModalSize, height: Presentation
 /// PresentationDesignable is a protocol to define customised modal view controller which is used as the `presentedViewController` for `UIPresentationController`
 public protocol PresentationDesignable: class {
 
+  var presenter: PresentationPresenter? { get set }
+
   /// Presentation animation type, all supported animation type can be found in `PresentationAnimationType`
   var presentationAnimationType: PresentationAnimationType { get set }
 
@@ -58,6 +60,36 @@ public protocol PresentationDesignable: class {
 
 }
 
+public extension PresentationDesignable where Self: UIViewController {
+
+  public func configurePresenter() {
+    presenter = PresentationPresenterManager.shared.retrievePresenter(presentationAnimationType: presentationAnimationType, transitionDuration: transitionDuration)
+    presenter?.dismissalAnimationType = dismissalAnimationType
+    transitioningDelegate = presenter
+    modalPresentationStyle = .custom
+    if let systemTransition = presentationAnimationType.systemTransition {
+      modalTransitionStyle = systemTransition
+    }
+
+    var presentationConfiguration = PresentationConfiguration()
+    presentationConfiguration.modalPosition = modalPosition
+    presentationConfiguration.modalSize = modalSize
+    presentationConfiguration.cornerRadius = cornerRadius
+    presentationConfiguration.dismissOnTap = dismissOnTap
+    presentationConfiguration.backgroundColor = backgroundColor
+    presentationConfiguration.opacity = opacity
+    presentationConfiguration.blurEffectStyle = blurEffectStyle
+    presentationConfiguration.blurOpacity = blurOpacity
+    presentationConfiguration.shadowColor = shadowColor
+    presentationConfiguration.shadowOpacity = shadowOpacity
+    presentationConfiguration.shadowRadius = shadowRadius
+    presentationConfiguration.shadowOffset = shadowOffset
+    presentationConfiguration.keyboardTranslation = keyboardTranslation
+    presenter?.presentationConfiguration = presentationConfiguration
+  }
+
+}
+
 /// `PresentationConfiguration` a struct is used for specifying the dimming view and modal view for `AnimatablePresentationController`
 public struct PresentationConfiguration {
   var cornerRadius: CGFloat = .nan
@@ -74,7 +106,5 @@ public struct PresentationConfiguration {
   var modalSize: (PresentationModalSize, PresentationModalSize) = (.half, .half)
   var keyboardTranslation = ModalKeyboardTranslation.none
 
-  public init() {
-
-  }
+  public init() {}
 }
