@@ -13,7 +13,8 @@ None
 - Introducing `borderType`, find all the information in the documentation [#389](https://github.com/IBAnimatable/IBAnimatable/pull/380)
 
 #### Bugfixes
-
+- Fix `cornerSide` radius in conjunction with shadow mask.
+[#375](https://github.com/IBAnimatable/IBAnimatable/issues/375)
 - Fix `slide(.out, *)` and `squeeze(.out, *)` translation coordinates [#379](https://github.com/IBAnimatable/IBAnimatable/issues/379)
 - Fix `No such module IBAnimatable` when attempting to run the Playground [#251](https://github.com/IBAnimatable/IBAnimatable/issues/251)
 - Fix custom presentation animations [#393](https://github.com/IBAnimatable/IBAnimatable/pull/393)
@@ -343,5 +344,3 @@ None
 ### [1.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/1.0)
 
 - Initial release
-
-

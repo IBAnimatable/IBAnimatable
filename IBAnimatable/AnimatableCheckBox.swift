@@ -31,12 +31,14 @@ open class AnimatableCheckBox: UIButton, CheckBoxDesignable, CornerDesignable, F
   @IBInspectable open var cornerRadius: CGFloat = CGFloat.nan {
     didSet {
       configureCornerRadius()
+      configureMaskShadow()
     }
   }
 
   open var cornerSides: CornerSides  = .AllSides {
     didSet {
       configureCornerRadius()
+      configureMaskShadow()
     }
   }
 
