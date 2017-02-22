@@ -20,16 +20,16 @@ None
 None
 
 #### Enhancements
-- New gradient `startPoint`: `.custom(startX, startY, endX, endY)`. [#380](https://github.com/IBAnimatable/IBAnimatable/pull/380)
-- Introducing `borderType`, find all the information in the documentation [#389](https://github.com/IBAnimatable/IBAnimatable/pull/380)
+- New gradient `startPoint`: `.custom(startX, startY, endX, endY)`. [#380](https://github.com/IBAnimatable/IBAnimatable/pull/380) by @tbaranes
+- Introducing `borderType`, find all the information in the documentation [#389](https://github.com/IBAnimatable/IBAnimatable/pull/380) by @tbaranes
 
 #### Bugfixes
 
-- Fix `slide(.out, *)` and `squeeze(.out, *)` translation coordinates [#379](https://github.com/IBAnimatable/IBAnimatable/issues/379)
-- Fix `No such module IBAnimatable` when attempting to run the Playground [#251](https://github.com/IBAnimatable/IBAnimatable/issues/251)
-- Fix custom presentation animations [#393](https://github.com/IBAnimatable/IBAnimatable/pull/393)
-- Fix border state when trying to reset a valid border [#398](https://github.com/IBAnimatable/IBAnimatable/pull/398)
-- Make `PresentationDesignable` usable outside of IBAnimatable [#402](https://github.com/IBAnimatable/IBAnimatable/pull/402)
+- Fix `slide(.out, *)` and `squeeze(.out, *)` translation coordinates [#379](https://github.com/IBAnimatable/IBAnimatable/issues/379) by @tbaranes
+- Fix `No such module IBAnimatable` when attempting to run the Playground [#251](https://github.com/IBAnimatable/IBAnimatable/issues/251) and [#391](https://github.com/IBAnimatable/IBAnimatable/pull/391) by @emcphersonburke 
+- Fix custom presentation animations [#393](https://github.com/IBAnimatable/IBAnimatable/pull/393) by @tbaranes
+- Fix border state when trying to reset a valid border [#398](https://github.com/IBAnimatable/IBAnimatable/pull/398) by @tbaranes
+- Make `PresentationDesignable` usable outside of IBAnimatable [#402](https://github.com/IBAnimatable/IBAnimatable/pull/402) by @tbaranes
  
 ### [3.1.2](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.1.2)
 
