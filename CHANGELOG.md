@@ -9,6 +9,17 @@ All notable changes to this project will be documented in this file.
 None
 
 #### Enhancements
+None
+
+#### Bugfixes
+None
+
+### [3.1.3](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.1.3)
+
+#### API breaking changes
+None
+
+#### Enhancements
 - New gradient `startPoint`: `.custom(startX, startY, endX, endY)`. [#380](https://github.com/IBAnimatable/IBAnimatable/pull/380)
 - Introducing `borderType`, find all the information in the documentation [#389](https://github.com/IBAnimatable/IBAnimatable/pull/380)
 
