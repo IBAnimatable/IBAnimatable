@@ -116,6 +116,4 @@ public struct PresentationConfiguration {
   public var modalPosition: PresentationModalPosition = .center
   public var modalSize: (PresentationModalSize, PresentationModalSize) = (.half, .half)
   public var keyboardTranslation = ModalKeyboardTranslation.none
-
-  public init() {}
 }
