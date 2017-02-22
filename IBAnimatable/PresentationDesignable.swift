@@ -9,6 +9,8 @@ public typealias ModalSize = (width: PresentationModalSize, height: Presentation
 /// PresentationDesignable is a protocol to define customised modal view controller which is used as the `presentedViewController` for `UIPresentationController`
 public protocol PresentationDesignable: class {
 
+  var presenter: PresentationPresenter? { get set }
+
   /// Presentation animation type, all supported animation type can be found in `PresentationAnimationType`
   var presentationAnimationType: PresentationAnimationType { get set }
 
@@ -58,19 +60,60 @@ public protocol PresentationDesignable: class {
 
 }
 
+// MARK: - Configuration
+
+public extension PresentationDesignable where Self: UIViewController {
+
+  public func configurePresenter() {
+    presenter = PresentationPresenterManager.shared.retrievePresenter(presentationAnimationType: presentationAnimationType, transitionDuration: transitionDuration)
+    presenter?.dismissalAnimationType = dismissalAnimationType
+    transitioningDelegate = presenter
+    modalPresentationStyle = .custom
+    if let systemTransition = presentationAnimationType.systemTransition {
+      modalTransitionStyle = systemTransition
+    }
+
+    var presentationConfiguration = PresentationConfiguration()
+    presentationConfiguration.modalPosition = modalPosition
+    presentationConfiguration.modalSize = modalSize
+    presentationConfiguration.cornerRadius = cornerRadius
+    presentationConfiguration.dismissOnTap = dismissOnTap
+    presentationConfiguration.backgroundColor = backgroundColor
+    presentationConfiguration.opacity = opacity
+    presentationConfiguration.blurEffectStyle = blurEffectStyle
+    presentationConfiguration.blurOpacity = blurOpacity
+    presentationConfiguration.shadowColor = shadowColor
+    presentationConfiguration.shadowOpacity = shadowOpacity
+    presentationConfiguration.shadowRadius = shadowRadius
+    presentationConfiguration.shadowOffset = shadowOffset
+    presentationConfiguration.keyboardTranslation = keyboardTranslation
+    presenter?.presentationConfiguration = presentationConfiguration
+  }
+
+  public func configureDismissalTransition() {
+    let animationType = dismissalAnimationType
+    if let dismissalSystemTransition = animationType.systemTransition {
+      modalTransitionStyle = dismissalSystemTransition
+    }
+  }
+
+}
+
+// MARK: - PresentationConfiguration
+
 /// `PresentationConfiguration` a struct is used for specifying the dimming view and modal view for `AnimatablePresentationController`
 public struct PresentationConfiguration {
-  var cornerRadius: CGFloat = .nan
-  var dismissOnTap: Bool = true
-  var backgroundColor: UIColor = .black
-  var opacity: CGFloat = 0.7
-  var blurEffectStyle: UIBlurEffectStyle?
-  var blurOpacity: CGFloat = .nan
-  var shadowColor: UIColor?
-  var shadowRadius: CGFloat = .nan
-  var shadowOpacity: CGFloat = 0.7
-  var shadowOffset: CGPoint = .zero
-  var modalPosition: PresentationModalPosition = .center
-  var modalSize: (PresentationModalSize, PresentationModalSize) = (.half, .half)
-  var keyboardTranslation = ModalKeyboardTranslation.none
+  public var cornerRadius: CGFloat = .nan
+  public var dismissOnTap: Bool = true
+  public var backgroundColor: UIColor = .black
+  public var opacity: CGFloat = 0.7
+  public var blurEffectStyle: UIBlurEffectStyle?
+  public var blurOpacity: CGFloat = .nan
+  public var shadowColor: UIColor?
+  public var shadowRadius: CGFloat = .nan
+  public var shadowOpacity: CGFloat = 0.7
+  public var shadowOffset: CGPoint = .zero
+  public var modalPosition: PresentationModalPosition = .center
+  public var modalSize: (PresentationModalSize, PresentationModalSize) = (.half, .half)
+  public var keyboardTranslation = ModalKeyboardTranslation.none
 }
