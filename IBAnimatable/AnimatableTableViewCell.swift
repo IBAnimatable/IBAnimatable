@@ -6,7 +6,26 @@
 import UIKit
 
 @IBDesignable
-open class AnimatableTableViewCell: UITableViewCell, FillDesignable, BorderDesignable, TableViewCellDesignable, GradientDesignable, Animatable {
+open class AnimatableTableViewCell: UITableViewCell, CornerDesignable, FillDesignable, BorderDesignable, TableViewCellDesignable, GradientDesignable, Animatable {
+
+  // MARK: - CornerDesignable
+  @IBInspectable open var cornerRadius: CGFloat = CGFloat.nan {
+    didSet {
+      configureCornerRadius()
+    }
+  }
+
+  open var cornerSides: CornerSides  = .AllSides {
+    didSet {
+      configureCornerRadius()
+    }
+  }
+
+  @IBInspectable var _cornerSides: String? {
+    didSet {
+      cornerSides = CornerSides(rawValue: _cornerSides)
+    }
+  }
 
   // MARK: - FillDesignable
   @IBInspectable open var fillColor: UIColor? {
@@ -126,6 +145,7 @@ open var startPoint: GradientStartPoint = .top
   }
 
   fileprivate func configureAfterLayoutSubviews() {
+    configureCornerRadius()
     configureBorder()
     configureGradient()
   }

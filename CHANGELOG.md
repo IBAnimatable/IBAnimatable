@@ -9,7 +9,9 @@ All notable changes to this project will be documented in this file.
 None
 
 #### Enhancements
-None
+
+- Add support for corner on AnimatableTableViewCell.
+[#368](https://github.com/IBAnimatable/IBAnimatable/pull/403)
 
 #### Bugfixes
 None
