@@ -9,7 +9,8 @@ All notable changes to this project will be documented in this file.
 None
 
 #### Enhancements
-
+- Add support for custom masks
+[#406](https://github.com/IBAnimatable/IBAnimatable/pull/407)
 - Add support for corner on AnimatableTableViewCell.
 [#368](https://github.com/IBAnimatable/IBAnimatable/pull/403)
 
