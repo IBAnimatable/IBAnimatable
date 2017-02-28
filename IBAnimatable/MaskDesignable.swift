@@ -31,7 +31,7 @@ public protocol MaskDesignable {
    ```
    */
   var maskType: MaskType { get set }
-  var previousMaskType: MaskType? { get set }
+  var previousMaskType: MaskType { get set }
 }
 
 public extension MaskDesignable where Self: UIView {
@@ -51,8 +51,10 @@ public extension MaskDesignable where Self: UIView {
     case .triangle:
       maskTriangle()
     case .none:
-      if previousMaskType != nil {
-        layer.mask?.removeFromSuperlayer()
+      if case .none = previousMaskType {
+        return
+      } else {
+          layer.mask?.removeFromSuperlayer()
       }
     }
   }

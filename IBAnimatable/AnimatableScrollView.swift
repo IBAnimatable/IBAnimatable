@@ -171,16 +171,14 @@ open class AnimatableScrollView: UIScrollView, CornerDesignable, FillDesignable,
 
   // MARK: - MaskDesignable
   open var maskType: MaskType = .none {
-    willSet {
-      previousMaskType = newValue
-    }
     didSet {
+      previousMaskType = oldValue
       configureMask()
       configureBorder()
     }
   }
 
-  open var previousMaskType: MaskType? = nil
+  open var previousMaskType: MaskType = .none
 
   /// The mask type used in Interface Builder. **Should not** use this property in code.
   @IBInspectable var _maskType: String? {
