@@ -69,16 +69,16 @@ public extension CornerDesignable where Self: UIView {
     let cornerRadii = CGSize(width: cornerRadius, height: cornerRadius)
 
     var roundingCorners: UIRectCorner = []
-    if cornerSides.contains(.topLeft) {
+    if cornerSides.contains(.topleft) {
       roundingCorners.insert(.topLeft)
     }
-    if cornerSides.contains(.topRight) {
+    if cornerSides.contains(.topright) {
       roundingCorners.insert(.topRight)
     }
-    if cornerSides.contains(.bottomLeft) {
+    if cornerSides.contains(.bottomleft) {
       roundingCorners.insert(.bottomLeft)
     }
-    if cornerSides.contains(.bottomRight) {
+    if cornerSides.contains(.bottomright) {
       roundingCorners.insert(.bottomRight)
     }
 

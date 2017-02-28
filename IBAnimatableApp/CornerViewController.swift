@@ -22,13 +22,13 @@ class CornerViewController: UIViewController {
 
     switch sender {
     case topLeftCheckBox:
-      corner = .topLeft
+      corner = .topleft
     case topRightCheckBox:
-      corner = .topRight
+      corner = .topright
     case bottomLeftCheckBox:
-      corner = .bottomLeft
+      corner = .bottomleft
     case bottomRightCheckBox:
-      corner = .bottomRight
+      corner = .bottomright
     default:
       return
     }
