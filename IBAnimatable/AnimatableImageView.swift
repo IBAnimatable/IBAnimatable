@@ -171,12 +171,17 @@ open class AnimatableImageView: UIImageView, CornerDesignable, FillDesignable, B
 
   // MARK: - MaskDesignable
   open var maskType: MaskType = .none {
+    willSet {
+      previousMaskType = newValue
+    }
     didSet {
       configureMask()
       configureBorder()
       configureMaskShadow()
     }
   }
+
+  open var previousMaskType: MaskType? = nil
 
   /// The mask type used in Interface Builder. **Should not** use this property in code.
   @IBInspectable var _maskType: String? {
