@@ -31,6 +31,7 @@ public protocol MaskDesignable {
    ```
    */
   var maskType: MaskType { get set }
+  /// `previousMaskType` is a property to cache the previous mask type. If it is not `.none`, then we will remove `layer.mask` before re-adding it. This allows for custom masks to be preserved when using MaskDesignable classes.
   var previousMaskType: MaskType { get set }
 }
 
