@@ -6,10 +6,9 @@ All notable changes to this project will be documented in this file.
 ### Next
 
 #### API breaking changes
-None
+- Change the rawValue for `CornerSide` enum. Since we fix an issue to make corner sides case insensitive [#394]. If we use `CornerSide` in code, we need to change `.topLeft` to `.topleft`, `.topRight` to `.topright`, `.bottomLeft` to `.bottomleft` and `.bottomRight` to `.bottomright`. If we use `CornerSide` in Interface Builder, there is not breaking change for it.
 
 #### Enhancements
-
 - Add support for corner on AnimatableTableViewCell.
 [#368](https://github.com/IBAnimatable/IBAnimatable/pull/403)
 
@@ -58,7 +57,6 @@ None
 None
 
 #### Bugfixes
-
 - Make `PresentationPresenterManager ` and `TransitionPresenterManager ` `shared` property public again. [#364](https://github.com/IBAnimatable/IBAnimatable/issues/364)
 
 ### [3.1](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.1)
@@ -81,7 +79,6 @@ None
 None
 
 #### Bugfixes
-
 - Fix `clipsToBounds` issue.  [#303](https://github.com/IBAnimatable/IBAnimatable/issues/303)
 - Fix `keyboardTranslation` when presenting a custom controller
 
