@@ -15,7 +15,7 @@ None
 
 #### Bugfixes
 - Make corner sides case insensitive.
-[#394](https://github.com/IBAnimatable/IBAnimatable/issues/394)
+[#394](https://github.com/IBAnimatable/IBAnimatable/issues/394) by @mmadjer
 
 ### [3.1.3](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.1.3)
 
