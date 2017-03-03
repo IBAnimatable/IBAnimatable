@@ -25,7 +25,7 @@ public struct CornerSides: OptionSet {
   public static let bottomLeft = CornerSides(rawValue: 1 << 2)
   public static let bottomRight = CornerSides(rawValue: 1 << 3)
 
-  public static let AllSides: CornerSides = [.topleft, .topright, .bottomleft, .bottomright]
+  public static let allSides: CornerSides = [.topLeft, .topRight, .bottomLeft, .bottomRight]
 
   public init(rawValue: Int) {
     self.rawValue = rawValue
@@ -33,7 +33,7 @@ public struct CornerSides: OptionSet {
 
   init(rawValue: String?) {
     guard let rawValue = rawValue, !rawValue.isEmpty else {
-      self = .AllSides
+      self = .allSides
       return
     }
 
@@ -43,7 +43,7 @@ public struct CornerSides: OptionSet {
       .map { CornerSides(side: $0) }
 
     guard !sideElements.contains(.unknown) else {
-      self = .AllSides
+      self = .allSides
       return
     }
 

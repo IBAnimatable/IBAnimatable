@@ -15,7 +15,7 @@ open class AnimatableLabel: UILabel, CornerDesignable, FillDesignable, Animatabl
     }
   }
 
-  open var cornerSides: CornerSides  = .AllSides {
+  open var cornerSides: CornerSides  = .allSides {
     didSet {
       configureCornerRadius()
     }
