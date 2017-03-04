@@ -10,13 +10,13 @@ All notable changes to this project will be documented in this file.
 
 #### Enhancements
 - Add support for custom masks
-[#406](https://github.com/IBAnimatable/IBAnimatable/pull/407)
+[#406](https://github.com/IBAnimatable/IBAnimatable/pull/407) by @DanielAsher(https://github.com/DanielAsher)
 - Add support for corner on AnimatableTableViewCell.
-[#368](https://github.com/IBAnimatable/IBAnimatable/pull/403)
+[#368](https://github.com/IBAnimatable/IBAnimatable/pull/403) by [@tbaranes](https://github.com/tbaranes)
 
 #### Bugfixes
 - Make corner sides case insensitive.
-[#394](https://github.com/IBAnimatable/IBAnimatable/issues/394) by @mmadjer
+[#394](https://github.com/IBAnimatable/IBAnimatable/issues/394) by [@mmadjer](https://github.com/mmadjer)
 
 ### [3.1.3](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.1.3)
 
@@ -24,16 +24,16 @@ All notable changes to this project will be documented in this file.
 None
 
 #### Enhancements
-- New gradient `startPoint`: `.custom(startX, startY, endX, endY)`. [#380](https://github.com/IBAnimatable/IBAnimatable/pull/380) by @tbaranes
-- Introducing `borderType`, find all the information in the documentation [#389](https://github.com/IBAnimatable/IBAnimatable/pull/380) by @tbaranes
+- New gradient `startPoint`: `.custom(startX, startY, endX, endY)`. [#380](https://github.com/IBAnimatable/IBAnimatable/pull/380) by [@tbaranes](https://github.com/tbaranes)
+- Introducing `borderType`, find all the information in the documentation [#389](https://github.com/IBAnimatable/IBAnimatable/pull/380) by [@tbaranes](https://github.com/tbaranes)
 
 #### Bugfixes
 
-- Fix `slide(.out, *)` and `squeeze(.out, *)` translation coordinates [#379](https://github.com/IBAnimatable/IBAnimatable/issues/379) by @tbaranes
-- Fix `No such module IBAnimatable` when attempting to run the Playground [#251](https://github.com/IBAnimatable/IBAnimatable/issues/251) and [#391](https://github.com/IBAnimatable/IBAnimatable/pull/391) by @emcphersonburke
-- Fix custom presentation animations [#393](https://github.com/IBAnimatable/IBAnimatable/pull/393) by @tbaranes
-- Fix border state when trying to reset a valid border [#398](https://github.com/IBAnimatable/IBAnimatable/pull/398) by @tbaranes
-- Make `PresentationDesignable` usable outside of IBAnimatable [#402](https://github.com/IBAnimatable/IBAnimatable/pull/402) by @tbaranes
+- Fix `slide(.out, *)` and `squeeze(.out, *)` translation coordinates [#379](https://github.com/IBAnimatable/IBAnimatable/issues/379) by [@tbaranes](https://github.com/tbaranes)
+- Fix `No such module IBAnimatable` when attempting to run the Playground [#251](https://github.com/IBAnimatable/IBAnimatable/issues/251) and [#391](https://github.com/IBAnimatable/IBAnimatable/pull/391) by [@emcphersonburke](https://github.com/emcphersonburke)
+- Fix custom presentation animations [#393](https://github.com/IBAnimatable/IBAnimatable/pull/393) by [@tbaranes](https://github.com/tbaranes)
+- Fix border state when trying to reset a valid border [#398](https://github.com/IBAnimatable/IBAnimatable/pull/398) by [@tbaranes](https://github.com/tbaranes)
+- Make `PresentationDesignable` usable outside of IBAnimatable [#402](https://github.com/IBAnimatable/IBAnimatable/pull/402) by [@tbaranes](https://github.com/tbaranes)
 
 ### [3.1.2](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.1.2)
 
@@ -356,3 +356,5 @@ None
 ### [1.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/1.0)
 
 - Initial release
+
+
