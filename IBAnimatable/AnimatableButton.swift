@@ -15,7 +15,7 @@ open class AnimatableButton: UIButton, CornerDesignable, FillDesignable, BorderD
     }
   }
 
-  open var cornerSides: CornerSides  = .AllSides {
+  open var cornerSides: CornerSides  = .allSides {
     didSet {
       configureCornerRadius()
     }

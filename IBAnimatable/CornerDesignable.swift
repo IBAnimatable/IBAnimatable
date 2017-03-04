@@ -27,7 +27,7 @@ public extension CornerDesignable where Self: UICollectionViewCell {
       }
       layer.cornerRadius = 0.0
 
-      if cornerSides == .AllSides {
+      if cornerSides == .allSides {
         contentView.layer.cornerRadius = cornerRadius
       } else {
         contentView.layer.cornerRadius = 0.0
@@ -48,7 +48,7 @@ public extension CornerDesignable where Self: UICollectionViewCell {
 public extension CornerDesignable where Self: UIView {
   public func configureCornerRadius() {
     if !cornerRadius.isNaN && cornerRadius > 0 {
-      if cornerSides == .AllSides {
+      if cornerSides == .allSides {
         layer.cornerRadius = cornerRadius
       } else {
         layer.cornerRadius = 0.0

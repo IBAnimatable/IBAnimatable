@@ -9,10 +9,10 @@
 import Foundation
 
 public enum CornerSide: String {
-  case topLeft
-  case topRight
-  case bottomLeft
-  case bottomRight
+  case topLeft = "topleft"
+  case topRight = "topright"
+  case bottomLeft = "bottomleft"
+  case bottomRight = "bottomright"
 }
 
 public struct CornerSides: OptionSet {
@@ -25,7 +25,7 @@ public struct CornerSides: OptionSet {
   public static let bottomLeft = CornerSides(rawValue: 1 << 2)
   public static let bottomRight = CornerSides(rawValue: 1 << 3)
 
-  public static let AllSides: CornerSides = [.topLeft, .topRight, .bottomLeft, .bottomRight]
+  public static let allSides: CornerSides = [.topLeft, .topRight, .bottomLeft, .bottomRight]
 
   public init(rawValue: Int) {
     self.rawValue = rawValue
@@ -33,17 +33,17 @@ public struct CornerSides: OptionSet {
 
   init(rawValue: String?) {
     guard let rawValue = rawValue, !rawValue.isEmpty else {
-      self = .AllSides
+      self = .allSides
       return
     }
 
-    let sideElements = rawValue.characters.split(separator: ",")
+    let sideElements = rawValue.lowercased().characters.split(separator: ",")
       .map(String.init)
       .map { CornerSide(rawValue: $0.trimmingCharacters(in: CharacterSet.whitespaces)) }
       .map { CornerSides(side: $0) }
 
     guard !sideElements.contains(.unknown) else {
-      self = .AllSides
+      self = .allSides
       return
     }
 

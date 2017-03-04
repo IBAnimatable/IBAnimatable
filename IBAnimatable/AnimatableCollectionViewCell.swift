@@ -15,7 +15,7 @@ open class AnimatableCollectionViewCell: UICollectionViewCell, CornerDesignable,
     }
   }
 
-  open var cornerSides: CornerSides  = .AllSides {
+  open var cornerSides: CornerSides  = .allSides {
     didSet {
       configureCornerRadius()
     }

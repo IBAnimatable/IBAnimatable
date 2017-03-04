@@ -15,7 +15,7 @@ open class AnimatableView: UIView, CornerDesignable, FillDesignable, BorderDesig
     }
   }
 
-  open var cornerSides: CornerSides  = .AllSides {
+  open var cornerSides: CornerSides  = .allSides {
     didSet {
       configureCornerRadius()
     }
