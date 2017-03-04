@@ -31,13 +31,11 @@ public protocol MaskDesignable {
    ```
    */
   var maskType: MaskType { get set }
-  /// `previousMaskType` is a property to cache the previous mask type. If it is not `.none`, then we will remove `layer.mask` before re-adding it. This allows for custom masks to be preserved when using MaskDesignable classes.
-  var previousMaskType: MaskType { get set }
 }
 
 public extension MaskDesignable where Self: UIView {
   /// Mask the IBAnimatable UI element with provided `maskType`
-  public func configureMask() {
+  public func configureMask(previousMaskType: MaskType) {
     switch maskType {
     case .circle:
       maskCircle()
@@ -52,6 +50,7 @@ public extension MaskDesignable where Self: UIView {
     case .triangle:
       maskTriangle()
     case .none:
+      // If `previousMaskType` is `.none`, then we will **not** remove `layer.mask` before re-adding it. This allows for custom masks to be preserved.
       if case .none = previousMaskType {
         return
       } else {

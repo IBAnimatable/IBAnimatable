@@ -172,14 +172,11 @@ open class AnimatableImageView: UIImageView, CornerDesignable, FillDesignable, B
   // MARK: - MaskDesignable
   open var maskType: MaskType = .none {
     didSet {
-      previousMaskType = oldValue
-      configureMask()
+      configureMask(previousMaskType: oldValue)
       configureBorder()
       configureMaskShadow()
     }
   }
-
-  open var previousMaskType: MaskType = .none
 
   /// The mask type used in Interface Builder. **Should not** use this property in code.
   @IBInspectable var _maskType: String? {
@@ -226,7 +223,7 @@ open class AnimatableImageView: UIImageView, CornerDesignable, FillDesignable, B
   }
 
   fileprivate func configureAfterLayoutSubviews() {
-    configureMask()
+    configureMask(previousMaskType: maskType)
     configureCornerRadius()
     configureBorder()
     configureMaskShadow()
