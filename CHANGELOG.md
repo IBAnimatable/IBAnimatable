@@ -6,11 +6,12 @@ All notable changes to this project will be documented in this file.
 ### Next
 
 #### API breaking changes
-- `CornerSide`'s swift3 migration leftovers: renaming `.AllSides` to `.allSides`. If you were setting programatically a cornerSide to your view, you will just have to lowercase the A.
+- `CornerSide`'s swift3 migration leftovers: renaming `.AllSides` to `.allSides`. If you were setting programatically a cornerSide to your view, you will just have to lowercase the A. [#409](https://github.com/IBAnimatable/IBAnimatable/pull/409) 
+- Add a new parameter `previousMaskType` to `configureMask` method. All classes conforming to `MaskDesignable` protocol, when calling extension method `configureMask`, they need to pass `previousMaskType`. [#407](https://github.com/IBAnimatable/IBAnimatable/pull/407)
 
 #### Enhancements
 - Add support for custom masks
-[#406](https://github.com/IBAnimatable/IBAnimatable/pull/407) by @DanielAsher(https://github.com/DanielAsher)
+[#407](https://github.com/IBAnimatable/IBAnimatable/pull/407) by @DanielAsher(https://github.com/DanielAsher)
 - Add support for corner on AnimatableTableViewCell.
 [#368](https://github.com/IBAnimatable/IBAnimatable/pull/403) by [@tbaranes](https://github.com/tbaranes)
 
