@@ -9,10 +9,10 @@
 import Foundation
 
 public enum CornerSide: String {
-  case topleft
-  case topright
-  case bottomleft
-  case bottomright
+  case topLeft = "topleft"
+  case topRight = "topright"
+  case bottomLeft = "bottomleft"
+  case bottomRight = "bottomright"
 }
 
 public struct CornerSides: OptionSet {
@@ -20,12 +20,12 @@ public struct CornerSides: OptionSet {
 
   public static let unknown = CornerSides(rawValue: 0)
 
-  public static let topleft = CornerSides(rawValue: 1)
-  public static let topright = CornerSides(rawValue: 1 << 1)
-  public static let bottomleft = CornerSides(rawValue: 1 << 2)
-  public static let bottomright = CornerSides(rawValue: 1 << 3)
+  public static let topLeft = CornerSides(rawValue: 1)
+  public static let topRight = CornerSides(rawValue: 1 << 1)
+  public static let bottomLeft = CornerSides(rawValue: 1 << 2)
+  public static let bottomRight = CornerSides(rawValue: 1 << 3)
 
-  public static let AllSides: CornerSides = [.topleft, .topright, .bottomleft, .bottomright]
+  public static let allSides: CornerSides = [.topLeft, .topRight, .bottomLeft, .bottomRight]
 
   public init(rawValue: Int) {
     self.rawValue = rawValue
@@ -33,7 +33,7 @@ public struct CornerSides: OptionSet {
 
   init(rawValue: String?) {
     guard let rawValue = rawValue, !rawValue.isEmpty else {
-      self = .AllSides
+      self = .allSides
       return
     }
 
@@ -43,7 +43,7 @@ public struct CornerSides: OptionSet {
       .map { CornerSides(side: $0) }
 
     guard !sideElements.contains(.unknown) else {
-      self = .AllSides
+      self = .allSides
       return
     }
 
@@ -57,10 +57,10 @@ public struct CornerSides: OptionSet {
     }
 
     switch side {
-    case .topleft: self = .topleft
-    case .topright: self = .topright
-    case .bottomleft: self = .bottomleft
-    case .bottomright: self = .bottomright
+    case .topLeft: self = .topLeft
+    case .topRight: self = .topRight
+    case .bottomLeft: self = .bottomLeft
+    case .bottomRight: self = .bottomRight
     }
   }
 }

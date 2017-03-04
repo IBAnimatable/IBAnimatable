@@ -15,7 +15,7 @@ open class AnimatableTableViewCell: UITableViewCell, CornerDesignable, FillDesig
     }
   }
 
-  open var cornerSides: CornerSides  = .AllSides {
+  open var cornerSides: CornerSides  = .allSides {
     didSet {
       configureCornerRadius()
     }

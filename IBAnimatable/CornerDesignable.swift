@@ -27,7 +27,7 @@ public extension CornerDesignable where Self: UICollectionViewCell {
       }
       layer.cornerRadius = 0.0
 
-      if cornerSides == .AllSides {
+      if cornerSides == .allSides {
         contentView.layer.cornerRadius = cornerRadius
       } else {
         contentView.layer.cornerRadius = 0.0
@@ -48,7 +48,7 @@ public extension CornerDesignable where Self: UICollectionViewCell {
 public extension CornerDesignable where Self: UIView {
   public func configureCornerRadius() {
     if !cornerRadius.isNaN && cornerRadius > 0 {
-      if cornerSides == .AllSides {
+      if cornerSides == .allSides {
         layer.cornerRadius = cornerRadius
       } else {
         layer.cornerRadius = 0.0
@@ -69,16 +69,16 @@ public extension CornerDesignable where Self: UIView {
     let cornerRadii = CGSize(width: cornerRadius, height: cornerRadius)
 
     var roundingCorners: UIRectCorner = []
-    if cornerSides.contains(.topleft) {
+    if cornerSides.contains(.topLeft) {
       roundingCorners.insert(.topLeft)
     }
-    if cornerSides.contains(.topright) {
+    if cornerSides.contains(.topRight) {
       roundingCorners.insert(.topRight)
     }
-    if cornerSides.contains(.bottomleft) {
+    if cornerSides.contains(.bottomLeft) {
       roundingCorners.insert(.bottomLeft)
     }
-    if cornerSides.contains(.bottomright) {
+    if cornerSides.contains(.bottomRight) {
       roundingCorners.insert(.bottomRight)
     }
 

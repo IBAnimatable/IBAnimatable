@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 ### Next
 
 #### API breaking changes
-- Change the rawValue for `CornerSide` enum. Since we fix an issue to make corner sides case insensitive [#394]. If we use `CornerSide` in code, we need to change `.topLeft` to `.topleft`, `.topRight` to `.topright`, `.bottomLeft` to `.bottomleft` and `.bottomRight` to `.bottomright`. If we use `CornerSide` in Interface Builder, there is not breaking change for it.
+- `CornerSide`'s swift3 migration leftovers: renaming `.AllSides` to `.allSides`. If you were setting programatically a cornerSide to your view, you will just have to lowercase the A.
 
 #### Enhancements
 - Add support for corner on AnimatableTableViewCell.

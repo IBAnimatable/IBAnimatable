@@ -34,7 +34,7 @@ open class AnimatableCheckBox: UIButton, CheckBoxDesignable, CornerDesignable, F
     }
   }
 
-  open var cornerSides: CornerSides  = .AllSides {
+  open var cornerSides: CornerSides  = .allSides {
     didSet {
       configureCornerRadius()
     }

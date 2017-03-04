@@ -15,7 +15,7 @@ open class AnimatableScrollView: UIScrollView, CornerDesignable, FillDesignable,
     }
   }
 
-  open var cornerSides: CornerSides  = .AllSides {
+  open var cornerSides: CornerSides  = .allSides {
     didSet {
       configureCornerRadius()
     }
