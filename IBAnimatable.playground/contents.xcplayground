@@ -3,6 +3,6 @@
     <pages>
         <page name='Predefined Animations'/>
         <page name='Animation Properties'/>
-        <page name='Chaining Animations'/>
+        <page name='Old Chaining Animations'/>
     </pages>
 </playground>
