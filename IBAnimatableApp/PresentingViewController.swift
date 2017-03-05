@@ -165,7 +165,7 @@ extension PresentingViewController {
   }
 
   @IBAction func shadowColorValueChanged(_ sender: UISlider) {
-//    labelShadowOpacity.text = "Shadow opacity (\(sender.value))"
+    //    labelShadowOpacity.text = "Shadow opacity (\(sender.value))"
   }
 
   @IBAction func shadowOpacityValueChanged(_ sender: UISlider) {
@@ -280,5 +280,5 @@ extension PresentingViewController {
       selectedBlurEffectStyle = title
     }
   }
-
+  
 }

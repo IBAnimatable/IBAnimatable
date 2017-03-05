@@ -66,7 +66,8 @@ public extension Animatable where Self: UIView {
     }
   }
 
-  @discardableResult public func animate(animation: AnimationType, duration: TimeInterval? = nil, damping: CGFloat? = nil, velocity: CGFloat? = nil, force: CGFloat? = nil) -> AnimationPromise<Self> {
+  @discardableResult
+  public func animate(animation: AnimationType, duration: TimeInterval? = nil, damping: CGFloat? = nil, velocity: CGFloat? = nil, force: CGFloat? = nil) -> AnimationPromise<Self> {
     return AnimationPromise(view: self).then(animation, duration: duration, damping: damping, velocity: velocity, force: force)
   }
 
@@ -82,8 +83,6 @@ public extension Animatable where Self: UIView {
   }
 
   internal func doAnimation(animation: AnimationType? = nil, configuration: AnimationConfiguration, promise: AnimationPromise<Self>) {
-
-
     let completion = {
       promise.animationCompleted()
     }
@@ -139,6 +138,7 @@ public extension Animatable where Self: UIView {
     }
   }
 }
+
 fileprivate extension Animatable where Self: UIView {
 
   // MARK: - Animation methods
@@ -177,7 +177,6 @@ fileprivate extension Animatable where Self: UIView {
 
   }
 
-  // swiftlint:disable variable_name_min_length
   func moveTo(x: Double, y: Double, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
     if x.isNaN && y.isNaN {
       return
@@ -199,7 +198,6 @@ fileprivate extension Animatable where Self: UIView {
     }
     animateBy(x: xOffsetToMove, y: yOffsetToMove, configuration: configuration, completion: completion)
   }
-  // swiftlint:enable variable_name_min_length
 
   func slideFade(_ way: AnimationType.Way, direction: AnimationType.Direction, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
     let values = computeValues(way: way, direction: direction, configuration: configuration, shouldScale: false)
@@ -508,7 +506,6 @@ fileprivate extension Animatable where Self: UIView {
       }
     )
   }
-
 
   func animateIn(animationValues: AnimationValues, alpha: CGFloat, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
     let translate = CGAffineTransform(translationX: animationValues.x, y: animationValues.y)

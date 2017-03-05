@@ -17,7 +17,6 @@ struct AnimationConfiguration {
 
 }
 
-
 public class AnimationPromise<T: UIView> where T: Animatable {
 
   private var view: T
@@ -29,7 +28,6 @@ public class AnimationPromise<T: UIView> where T: Animatable {
     self.view = view
   }
 
-
    func animationCompleted() {
       animationList.remove(at: 0)
       if let anim = animationList.first {
@@ -39,14 +37,14 @@ public class AnimationPromise<T: UIView> where T: Animatable {
     }
   }
 
-
   public func completion(_ completion: AnimatableCompletion?) {
     self.completion = completion
   }
 
-   @discardableResult public func  then(_ animation: AnimationType, duration: TimeInterval? = nil, damping: CGFloat? = nil, velocity: CGFloat? = nil, force: CGFloat? = nil) -> AnimationPromise {
+  @discardableResult
+  public func  then(_ animation: AnimationType, duration: TimeInterval? = nil, damping: CGFloat? = nil, velocity: CGFloat? = nil, force: CGFloat? = nil) -> AnimationPromise {
     let animTuple = AnimationTuple(type: animation, configuration: AnimationConfiguration(damping: damping ?? view.damping, velocity: velocity ?? view.velocity, duration: duration ?? view.duration, delay: delayForNextAnimation, force: force ?? view.force))
-    self.animationList.append(animTuple)
+    animationList.append(animTuple)
     if animationList.count == 1 { // If it's the only animation, launch it immediately
       view.doAnimation(animation: animation, configuration: animTuple.configuration, promise: self)
     }
@@ -54,7 +52,8 @@ public class AnimationPromise<T: UIView> where T: Animatable {
     return self
   }
 
-  @discardableResult public func delay(_ delay: TimeInterval) -> AnimationPromise {
+  @discardableResult
+  public func delay(_ delay: TimeInterval) -> AnimationPromise {
     delayForNextAnimation = delay
     return self
   }
