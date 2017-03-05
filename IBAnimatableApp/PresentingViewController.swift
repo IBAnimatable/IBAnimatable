@@ -192,16 +192,16 @@ extension PresentingViewController {
   func showPicker() {
     pickerView.reloadAllComponents()
     resetSelectedItemPicker()
-    dimmingPickerView.animate(animation: .fade(way: .in))
-    containerPickerView.animate(animation: .slide(way: .in, direction: .up))
+    dimmingPickerView.animate(.fade(way: .in))
+    containerPickerView.animate(.slide(way: .in, direction: .up))
     dimmingPickerView.isHidden = false
   }
 
   @IBAction func hidePicker() {
-    dimmingPickerView.animate(animation: .fade(way: .out)).completion {
+    dimmingPickerView.animate(.fade(way: .out)).completion {
       self.dimmingPickerView.isHidden = true
     }
-    containerPickerView.animate(animation: .slide(way: .out, direction: .down))
+    containerPickerView.animate(.slide(way: .out, direction: .down))
     selectedButton = nil
   }
 
@@ -280,5 +280,5 @@ extension PresentingViewController {
       selectedBlurEffectStyle = title
     }
   }
-  
+
 }

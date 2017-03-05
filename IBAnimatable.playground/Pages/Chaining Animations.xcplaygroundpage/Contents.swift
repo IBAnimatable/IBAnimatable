@@ -15,7 +15,7 @@ let view = CircleView()
 iPhoneView.addSubview(view)
 
 ////: Start another animation in completion closure
-view.squeezeFade(.in, direction: .down) {
+view.squeezeFade(.in, direction: .down). {
     view.pop(repeatCount: 1) {
         view.shake(repeatCount: 1) {
             view.squeeze(repeatCount: 1) {

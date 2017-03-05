@@ -31,7 +31,7 @@ public class AnimationPromise<T: UIView> where T: Animatable {
    func animationCompleted() {
       animationList.remove(at: 0)
       if let anim = animationList.first {
-        view.doAnimation(animation: anim.type, configuration: anim.configuration, promise: self)
+        view.doAnimation(anim.type, configuration: anim.configuration, promise: self)
       } else {
         completion?()
     }
@@ -46,7 +46,7 @@ public class AnimationPromise<T: UIView> where T: Animatable {
     let animTuple = AnimationTuple(type: animation, configuration: AnimationConfiguration(damping: damping ?? view.damping, velocity: velocity ?? view.velocity, duration: duration ?? view.duration, delay: delayForNextAnimation, force: force ?? view.force))
     animationList.append(animTuple)
     if animationList.count == 1 { // If it's the only animation, launch it immediately
-      view.doAnimation(animation: animation, configuration: animTuple.configuration, promise: self)
+      view.doAnimation(animation, configuration: animTuple.configuration, promise: self)
     }
     delayForNextAnimation = 0
     return self

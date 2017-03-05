@@ -67,22 +67,22 @@ public extension Animatable where Self: UIView {
   }
 
   @discardableResult
-  public func animate(animation: AnimationType, duration: TimeInterval? = nil, damping: CGFloat? = nil, velocity: CGFloat? = nil, force: CGFloat? = nil) -> AnimationPromise<Self> {
+  public func animate(_ animation: AnimationType, duration: TimeInterval? = nil, damping: CGFloat? = nil, velocity: CGFloat? = nil, force: CGFloat? = nil) -> AnimationPromise<Self> {
     return AnimationPromise(view: self).then(animation, duration: duration, damping: damping, velocity: velocity, force: force)
   }
 
-  @available(*, deprecated, message: "use animate(animation: AnimationType).then(...).completion instead. Will be removed in future versions")
-  public func animate(animation: AnimationType? = nil, completion: AnimatableCompletion? = nil) {// here for retro-compatibility
-    self.animate(animation: animation ?? self.animationType).completion(completion)
+  @available(*, deprecated, message: "use animate(AnimationType).then(...).completion instead. Will be removed in future versions")
+  public func animate(_ animation: AnimationType? = nil, completion: AnimatableCompletion? = nil) {// here for retro-compatibility
+    self.animate(animation ?? self.animationType).completion(completion)
   }
 
-  public func delay(delay: TimeInterval) -> AnimationPromise<Self> {
+  public func delay(_ delay: TimeInterval) -> AnimationPromise<Self> {
     let promise = AnimationPromise(view: self)
     return promise.delay(delay)
 
   }
 
-  internal func doAnimation(animation: AnimationType? = nil, configuration: AnimationConfiguration, promise: AnimationPromise<Self>) {
+  internal func doAnimation(_ animation: AnimationType? = nil, configuration: AnimationConfiguration, promise: AnimationPromise<Self>) {
     let completion = {
       promise.animationCompleted()
     }
@@ -134,7 +134,7 @@ public extension Animatable where Self: UIView {
   func autoRunAnimation() {
     if autoRun {
       autoRun = false
-      animate(animation: self.animationType)
+      animate(self.animationType)
     }
   }
 }
