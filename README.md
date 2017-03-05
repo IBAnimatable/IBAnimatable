@@ -130,27 +130,16 @@ You can play around with all animations with different properties in the [Swift 
 Sometimes, we need to run another animation after the previous one. With `IBAnimatable`, we can easily chain animations together to provide a sleek user experience.
 
 ```swift
-// Simply put the next animation within `{}` closure as below. It is an example to pop the view after the squeeze in from the top effect.
-view.squeeze(.in, direction: .down) { view.pop(repeatCount: 1) }
-
 // We can chain the animations together, it is the source code of animated GIF in "Animate in Swift playground" section
-view.squeezeFade(.in, direction: .down) {
-  view.pop(repeatCount: 1) {
-    view.shake(repeatCount: 1) {
-      view.squeeze(repeatCount: 1) {
-        view.wobble(repeatCount: 1) {
-          view.flip(axis: .x) {
-            view.flip(axis: .y) {
-              view.slideFade(.out, direction: .down)
-            }
-          }
-        }
-      }
-    }
-  }
-}
+view.animate(.squeezeFade(way: .in, direction: .down))
+    .then(.pop(repeatCount: 1))
+    .then(.shake(repeatCount: 1))
+    .then(.squeeze(way: .in, direction: .down))
+    .then(.wobble(repeatCount: 1))
+    .then(.flip(along: .x))
+    .then(.flip(along: .y))
+    .then(.slideFade(way: .out, direction: .down))
 ```
-The syntax is not nice, if you would like help us improve it, please checkout [Issue #14 - Chain-able animations](https://github.com/IBAnimatable/IBAnimatable/issues/14) and contact us, thanks.
 
 ## How to install
 ### Manually install
