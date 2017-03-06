@@ -6,19 +6,18 @@ All notable changes to this project will be documented in this file.
 ### Next
 
 #### API breaking changes
-- `CornerSide`'s swift3 migration leftovers: renaming `.AllSides` to `.allSides`. If you were setting programatically a cornerSide to your view, you will just have to lowercase the A. [#409](https://github.com/IBAnimatable/IBAnimatable/pull/409) 
-- Add a new parameter `previousMaskType` to `configureMask` method. All classes conforming to `MaskDesignable` protocol, when calling extension method `configureMask`, they need to pass `previousMaskType`. [#407](https://github.com/IBAnimatable/IBAnimatable/pull/407)
+- `CornerSide`'s swift3 migration leftovers: renaming `.AllSides` to `.allSides`. If you were setting programatically a cornerSide to your view, you will just have to lowercase the A. [#409](https://github.com/IBAnimatable/IBAnimatable/pull/409) by [@tbaranes](https://github.com/tbaranes)
 
 #### Enhancements
 - Add support for custom masks
-[#407](https://github.com/IBAnimatable/IBAnimatable/pull/407) by @DanielAsher(https://github.com/DanielAsher)
+[#407](https://github.com/IBAnimatable/IBAnimatable/pull/407) by [@DanielAsher](https://github.com/DanielAsher)
 - Add support for corner on AnimatableTableViewCell.
 [#368](https://github.com/IBAnimatable/IBAnimatable/pull/403) by [@tbaranes](https://github.com/tbaranes)
 
 #### Bugfixes
 - Make corner sides case insensitive.
 [#394](https://github.com/IBAnimatable/IBAnimatable/issues/394) by [@mmadjer](https://github.com/mmadjer)
-- Frame is converted to window coordinate space to fix miscalculations in computed values when is using `slideOut`, ... [#412](https://github.com/IBAnimatable/IBAnimatable/issues/412) by [@redent](https://github.com/redent)
+- Frame is converted to window coordinate space to fix miscalculations in computed values (used with `slideOut`, ...) [#412](https://github.com/IBAnimatable/IBAnimatable/issues/412) by [@redent](https://github.com/redent)
  
 ### [3.1.3](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.1.3)
 
