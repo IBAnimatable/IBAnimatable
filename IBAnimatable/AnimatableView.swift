@@ -173,7 +173,7 @@ open class AnimatableView: UIView, CornerDesignable, FillDesignable, BorderDesig
   // MARK: - MaskDesignable
   open var maskType: MaskType = .none {
     didSet {
-      configureMask()
+      configureMask(previousMaskType: oldValue)
       configureBorder()
       configureMaskShadow()
     }
@@ -224,7 +224,7 @@ open class AnimatableView: UIView, CornerDesignable, FillDesignable, BorderDesig
   }
 
   fileprivate func configureAfterLayoutSubviews() {
-    configureMask()
+    configureMask(previousMaskType: maskType)
     configureCornerRadius()
     configureBorder()
     configureMaskShadow()

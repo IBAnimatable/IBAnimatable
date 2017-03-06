@@ -116,7 +116,7 @@ open class AnimatableButton: UIButton, CornerDesignable, FillDesignable, BorderD
   // MARK: - MaskDesignable
   open var maskType: MaskType = .none {
     didSet {
-      configureMask()
+      configureMask(previousMaskType: oldValue)
       configureBorder()
       configureMaskShadow()
     }
@@ -166,7 +166,7 @@ open class AnimatableButton: UIButton, CornerDesignable, FillDesignable, BorderD
   }
 
   fileprivate func configureAfterLayoutSubviews() {
-    configureMask()
+    configureMask(previousMaskType: maskType)
     configureCornerRadius()
     configureBorder()
     configureMaskShadow()

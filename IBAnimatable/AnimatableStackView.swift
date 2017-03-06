@@ -146,7 +146,7 @@ open class AnimatableStackView: UIStackView, CornerDesignable, FillDesignable, B
   // MARK: - MaskDesignable
   open var maskType: MaskType = .none {
     didSet {
-      configureMask()
+      configureMask(previousMaskType: oldValue)
       configureBorder()
     }
   }
@@ -196,7 +196,7 @@ open class AnimatableStackView: UIStackView, CornerDesignable, FillDesignable, B
   }
 
   fileprivate func configureAfterLayoutSubviews() {
-    configureMask()
+    configureMask(previousMaskType: maskType)
     configureCornerRadius()
     configureBorder()
     configureGradient()

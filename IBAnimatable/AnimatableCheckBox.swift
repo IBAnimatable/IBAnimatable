@@ -134,7 +134,7 @@ open class AnimatableCheckBox: UIButton, CheckBoxDesignable, CornerDesignable, F
   // MARK: - MaskDesignable
   open var maskType: MaskType = .none {
     didSet {
-      configureMask()
+      configureMask(previousMaskType: oldValue)
       configureBorder()
     }
   }
@@ -199,7 +199,7 @@ open class AnimatableCheckBox: UIButton, CheckBoxDesignable, CornerDesignable, F
   }
 
   fileprivate func configureAfterLayoutSubviews() {
-    configureMask()
+    configureMask(previousMaskType: maskType)
     configureCornerRadius()
     configureBorder()
   }

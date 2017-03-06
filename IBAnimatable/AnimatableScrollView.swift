@@ -172,7 +172,7 @@ open class AnimatableScrollView: UIScrollView, CornerDesignable, FillDesignable,
   // MARK: - MaskDesignable
   open var maskType: MaskType = .none {
     didSet {
-      configureMask()
+      configureMask(previousMaskType: oldValue)
       configureBorder()
     }
   }
@@ -222,7 +222,7 @@ open class AnimatableScrollView: UIScrollView, CornerDesignable, FillDesignable,
   }
 
   fileprivate func configureAfterLayoutSubviews() {
-    configureMask()
+    configureMask(previousMaskType: maskType)
     configureCornerRadius()
     configureBorder()
     configureGradient()
