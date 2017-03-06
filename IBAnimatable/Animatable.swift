@@ -409,15 +409,14 @@ private extension Animatable where Self: UIView {
     let scale = 3 * force
     var scaleX: CGFloat = 1
     var scaleY: CGFloat = 1
-    
+
     var frame: CGRect
     if let window = self.window {
       frame = window.convert(self.frame, to: window)
-    }
-    else {
+    } else {
       frame = self.frame
     }
-    
+
     var x: CGFloat = 0
     var y: CGFloat = 0
     switch (way, direction) {
@@ -430,7 +429,7 @@ private extension Animatable where Self: UIView {
     case (.in, .down), (.out, .up):
       y = -frame.maxY
     }
-    
+
     x *= force
     y *= force
     if shouldScale && direction.isVertical() {
@@ -438,7 +437,7 @@ private extension Animatable where Self: UIView {
     } else if shouldScale {
       scaleX = scale
     }
-    
+
     return (x: x, y: y, scaleX: scaleX, scaleY: scaleY)
   }
 
