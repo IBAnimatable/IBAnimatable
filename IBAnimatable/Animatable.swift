@@ -409,20 +409,28 @@ private extension Animatable where Self: UIView {
     let scale = 3 * force
     var scaleX: CGFloat = 1
     var scaleY: CGFloat = 1
-
+    
+    var frame: CGRect
+    if let window = self.window {
+      frame = window.convert(self.frame, to: window)
+    }
+    else {
+      frame = self.frame
+    }
+    
     var x: CGFloat = 0
     var y: CGFloat = 0
-    switch direction {
-    case .left:
-      x = -(screenSize.width - frame.maxX + frame.width)
-    case .right:
-      x = frame.maxX
-    case .down:
-      y = -(screenSize.height - frame.maxY + frame.height)
-    case .up:
-      y = frame.maxY
+    switch (way, direction) {
+    case (.in, .left), (.out, .right):
+      x = screenSize.width - frame.minX
+    case (.in, .right), (.out, .left):
+      x = -frame.maxX
+    case (.in, .up), (.out, .down):
+      y = screenSize.height - frame.minY
+    case (.in, .down), (.out, .up):
+      y = -frame.maxY
     }
-
+    
     x *= force
     y *= force
     if shouldScale && direction.isVertical() {
@@ -430,14 +438,8 @@ private extension Animatable where Self: UIView {
     } else if shouldScale {
       scaleX = scale
     }
-    switch way {
-    case .in:
-      return (x: x, y: y, scaleX: scaleX, scaleY: scaleY)
-    case .out where direction.isVertical():
-      return (x: x, y: -y, scaleX: scaleX, scaleY: scaleY)
-    case .out:
-      return (x: x, y: y, scaleX: scaleX, scaleY: scaleY)
-    }
+    
+    return (x: x, y: y, scaleX: scaleX, scaleY: scaleY)
   }
 
   func fadeOutIn(completion: AnimatableCompletion? = nil) {
