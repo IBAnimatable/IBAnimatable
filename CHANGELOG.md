@@ -18,7 +18,8 @@ All notable changes to this project will be documented in this file.
 #### Bugfixes
 - Make corner sides case insensitive.
 [#394](https://github.com/IBAnimatable/IBAnimatable/issues/394) by [@mmadjer](https://github.com/mmadjer)
-
+- Frame is converted to window coordinate space to fix miscalculations in computed values when is using `slideOut`, ... [#412](https://github.com/IBAnimatable/IBAnimatable/issues/412) by [@redent](https://github.com/redent)
+ 
 ### [3.1.3](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.1.3)
 
 #### API breaking changes
