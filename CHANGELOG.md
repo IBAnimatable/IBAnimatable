@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.
 - `CornerSide`'s swift3 migration leftovers: renaming `.AllSides` to `.allSides`. If you were setting programatically a cornerSide to your view, you will just have to lowercase the A. [#409](https://github.com/IBAnimatable/IBAnimatable/pull/409) by [@tbaranes](https://github.com/tbaranes)
 
 #### Enhancements
-- Add support for custom masks
+- Conserve custom layer mask when using `Animatable*` instead of removing them
 [#407](https://github.com/IBAnimatable/IBAnimatable/pull/407) by [@DanielAsher](https://github.com/DanielAsher)
 - Add support for corner on AnimatableTableViewCell.
 [#368](https://github.com/IBAnimatable/IBAnimatable/pull/403) by [@tbaranes](https://github.com/tbaranes)
@@ -19,6 +19,7 @@ All notable changes to this project will be documented in this file.
 [#394](https://github.com/IBAnimatable/IBAnimatable/issues/394) by [@mmadjer](https://github.com/mmadjer)
 - Frame is converted to window coordinate space to fix miscalculations in computed values (used with `slideOut`, ...) [#412](https://github.com/IBAnimatable/IBAnimatable/issues/412) by [@redent](https://github.com/redent)
  
+---
 ### [3.1.3](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.1.3)
 
 #### API breaking changes
@@ -36,6 +37,7 @@ None
 - Fix border state when trying to reset a valid border [#398](https://github.com/IBAnimatable/IBAnimatable/pull/398) by [@tbaranes](https://github.com/tbaranes)
 - Make `PresentationDesignable` usable outside of IBAnimatable [#402](https://github.com/IBAnimatable/IBAnimatable/pull/402) by [@tbaranes](https://github.com/tbaranes)
 
+---
 ### [3.1.2](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.1.2)
 
 #### API breaking changes
@@ -51,6 +53,7 @@ None
 - Fix initial `cornerSide` rendering issue.
 [#367](https://github.com/IBAnimatable/IBAnimatable/pull/367)
 
+---
 ### [3.1.1](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.1.1)
 
 #### API breaking changes
@@ -62,6 +65,7 @@ None
 #### Bugfixes
 - Make `PresentationPresenterManager ` and `TransitionPresenterManager ` `shared` property public again. [#364](https://github.com/IBAnimatable/IBAnimatable/issues/364)
 
+---
 ### [3.1](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.1)
 
 #### API breaking changes
@@ -73,6 +77,7 @@ None
 #### Bugfixes
 None
 
+---
 ### [3.0.1](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.0.1)
 
 #### API breaking changes
@@ -85,6 +90,7 @@ None
 - Fix `clipsToBounds` issue.  [#303](https://github.com/IBAnimatable/IBAnimatable/issues/303)
 - Fix `keyboardTranslation` when presenting a custom controller
 
+---
 ### [3.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.0)
 
 IBAnimatable 3.0 is the major release to support Swift 3 🎉.
