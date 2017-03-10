@@ -71,11 +71,6 @@ public extension Animatable where Self: UIView {
     return AnimationPromise(view: self).then(animation, duration: duration, damping: damping, velocity: velocity, force: force)
   }
 
-  @available(*, deprecated, message: "use animate(AnimationType).then(...).completion instead. Will be removed in future versions")
-  public func animate(_ animation: AnimationType? = nil, completion: AnimatableCompletion? = nil) {// here for retro-compatibility
-    self.animate(animation ?? self.animationType).completion(completion)
-  }
-
   public func delay(_ delay: TimeInterval) -> AnimationPromise<Self> {
     let promise = AnimationPromise(view: self)
     return promise.delay(delay)
