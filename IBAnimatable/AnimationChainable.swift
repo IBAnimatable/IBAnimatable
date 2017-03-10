@@ -30,7 +30,7 @@ public class AnimationPromise<T: UIView> where T: Animatable {
    func animationCompleted() {
       animationList.removeFirst()
       if let currentAnimation = animationList.first {
-        view.doAnimation(currentAnimation.type, configuration: anim.configuration, promise: self)
+        view.doAnimation(currentAnimation.type, configuration: currentAnimation.configuration, promise: self)
       } else {
         completion?()
     }
