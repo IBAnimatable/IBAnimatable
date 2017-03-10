@@ -18,10 +18,6 @@ class BlurEffectViewController: UIViewController {
     }
     return values
   }()
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-  }
 }
 
 extension BlurEffectViewController : UIPickerViewDelegate, UIPickerViewDataSource {
