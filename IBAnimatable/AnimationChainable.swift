@@ -14,7 +14,6 @@ struct AnimationConfiguration {
   let duration: TimeInterval
   let delay: TimeInterval
   let force: CGFloat
-
 }
 
 public class AnimationPromise<T: UIView> where T: Animatable {
