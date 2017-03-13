@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		33A8B9ED1C7E790800082529 /* SystemCubeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8B9EB1C7E790800082529 /* SystemCubeAnimator.swift */; };
+		7305EC0E1E1996E000BF4C9A /* AnimationChainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7305EC0D1E1996E000BF4C9A /* AnimationChainable.swift */; };
 		731205811D28A3830009BCAC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731205801D28A3830009BCAC /* Utils.swift */; };
 		732485D71D4902510068FD93 /* ParamType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732485D61D4902510068FD93 /* ParamType.swift */; };
 		733323031D56BCF200B88F6E /* UserInterfaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733323021D56BCF200B88F6E /* UserInterfaceTableViewController.swift */; };
@@ -215,6 +216,7 @@
 
 /* Begin PBXFileReference section */
 		33A8B9EB1C7E790800082529 /* SystemCubeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemCubeAnimator.swift; sourceTree = "<group>"; };
+		7305EC0D1E1996E000BF4C9A /* AnimationChainable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationChainable.swift; sourceTree = "<group>"; };
 		731205801D28A3830009BCAC /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		732485D61D4902510068FD93 /* ParamType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParamType.swift; sourceTree = "<group>"; };
 		733323021D56BCF200B88F6E /* UserInterfaceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInterfaceTableViewController.swift; sourceTree = "<group>"; };
@@ -655,6 +657,7 @@
 				AE154B2A1C7BB5370093C05B /* common */,
 				E2E28E701C6A6E5E003F3852 /* scripts */,
 				AEEF86BD1CA8E9E200899AAB /* Info.plist */,
+				7305EC0D1E1996E000BF4C9A /* AnimationChainable.swift */,
 			);
 			path = IBAnimatable;
 			sourceTree = SOURCE_ROOT;
@@ -1021,6 +1024,7 @@
 				E28E28361D6CCA5C0043D56E /* ActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				E2E62B861D69B6B400294A73 /* ActivityIndicatorShape.swift in Sources */,
 				E20078A11CB8FB94002B2C16 /* FoldAnimator.swift in Sources */,
+				7305EC0E1E1996E000BF4C9A /* AnimationChainable.swift in Sources */,
 				90F04E671DDDC1D9007614CB /* CornerSide.swift in Sources */,
 				AEDE6E6B1CCECE8A000DECF0 /* PinchInteractiveAnimator.swift in Sources */,
 				E2E62B791D69B20500294A73 /* AnimatableActivityIndicatorView.swift in Sources */,

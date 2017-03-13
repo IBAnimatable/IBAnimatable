@@ -165,7 +165,7 @@ extension PresentingViewController {
   }
 
   @IBAction func shadowColorValueChanged(_ sender: UISlider) {
-//    labelShadowOpacity.text = "Shadow opacity (\(sender.value))"
+    //    labelShadowOpacity.text = "Shadow opacity (\(sender.value))"
   }
 
   @IBAction func shadowOpacityValueChanged(_ sender: UISlider) {
@@ -192,16 +192,16 @@ extension PresentingViewController {
   func showPicker() {
     pickerView.reloadAllComponents()
     resetSelectedItemPicker()
-    dimmingPickerView.fade(.in)
-    containerPickerView.slide(.in, direction: .up)
+    dimmingPickerView.animate(.fade(way: .in))
+    containerPickerView.animate(.slide(way: .in, direction: .up))
     dimmingPickerView.isHidden = false
   }
 
   @IBAction func hidePicker() {
-    dimmingPickerView.fade(.out, completion: {
+    dimmingPickerView.animate(.fade(way: .out)).completion {
       self.dimmingPickerView.isHidden = true
-    })
-    containerPickerView.slide(.out, direction: .down)
+    }
+    containerPickerView.animate(.slide(way: .out, direction: .down))
     selectedButton = nil
   }
 

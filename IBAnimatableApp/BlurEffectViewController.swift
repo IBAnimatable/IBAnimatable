@@ -18,7 +18,6 @@ class BlurEffectViewController: UIViewController {
     }
     return values
   }()
-
 }
 
 extension BlurEffectViewController : UIPickerViewDelegate, UIPickerViewDataSource {
