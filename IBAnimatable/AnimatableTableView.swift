@@ -6,7 +6,7 @@
 import UIKit
 
 @IBDesignable
-open class AnimatableTableView: UITableView, FillDesignable, BorderDesignable, GradientDesignable, Animatable {
+open class AnimatableTableView: UITableView, FillDesignable, BorderDesignable, GradientDesignable, BackgroundImageDesignable, BlurDesignable, Animatable {
 
   // MARK: - FillDesignable
   @IBInspectable open var fillColor: UIColor? {
@@ -81,6 +81,42 @@ open var startPoint: GradientStartPoint = .top
   @IBInspectable var _startPoint: String? {
     didSet {
       startPoint = GradientStartPoint(string: _startPoint, default: .top)
+    }
+  }
+
+  // MARK: - BackgroundImageDesignable
+  @IBInspectable open var backgroundImage: UIImage? {
+    didSet {
+      configureBackgroundImage()
+      configureBackgroundBlurEffectStyle()
+    }
+  }
+
+  // MARK: - BlurDesignable
+  open var blurEffectStyle: UIBlurEffectStyle? {
+    didSet {
+      configureBackgroundBlurEffectStyle()
+    }
+  }
+  @IBInspectable var _blurEffectStyle: String? {
+    didSet {
+      blurEffectStyle = UIBlurEffectStyle(string: _blurEffectStyle)
+    }
+  }
+  open var vibrancyEffectStyle: UIBlurEffectStyle? {
+    didSet {
+      configureBackgroundBlurEffectStyle()
+    }
+  }
+  @IBInspectable var _vibrancyEffectStyle: String? {
+    didSet {
+      vibrancyEffectStyle = UIBlurEffectStyle(string: _vibrancyEffectStyle)
+    }
+  }
+
+  @IBInspectable open var blurOpacity: CGFloat = CGFloat.nan {
+    didSet {
+      configureBackgroundBlurEffectStyle()
     }
   }
 
