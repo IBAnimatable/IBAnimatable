@@ -7,12 +7,16 @@ All notable changes to this project will be documented in this file.
 
 #### API breaking changes
 - `CornerSide`'s swift3 migration leftovers: renaming `.AllSides` to `.allSides`. If you were setting programatically a cornerSide to your view, you will just have to lowercase the A. [#409](https://github.com/IBAnimatable/IBAnimatable/pull/409) by [@tbaranes](https://github.com/tbaranes)
+- `AnimatableSlider` inherit from `UISlider`
 
 #### Enhancements
 - Conserve custom layer mask when using `Animatable*` instead of removing them
 [#407](https://github.com/IBAnimatable/IBAnimatable/pull/407) by [@DanielAsher](https://github.com/DanielAsher)
 - Add support for corner on AnimatableTableViewCell.
-[#368](https://github.com/IBAnimatable/IBAnimatable/pull/403) by [@tbaranes](https://github.com/tbaranes)
+[#403](https://github.com/IBAnimatable/IBAnimatable/pull/403) by [@tbaranes](https://github.com/tbaranes)
+- Make images of `AnimatableSlider` designable.
+[#417](https://github.com/IBAnimatable/IBAnimatable/pull/417) by [@phimage](https://github.com/phimage)
+
 
 #### Bugfixes
 - Make corner sides case insensitive.
@@ -160,7 +164,7 @@ None
 #### Enhancements
 
 - Add `vibrancyBlurEffect` to `BlurDesignable`. Once specify the Vibrancy effect style, all subviews will apply this vibrancy effect [#245](https://github.com/IBAnimatable/IBAnimatable/pull/245)
-- New animations: `ZoomInvertIn` and ``ZoomInvertOut` [#249](https://github.com/IBAnimatable/IBAnimatable/pull/249)
+- New animations: `ZoomInvertIn` and `ZoomInvertOut` [#249](https://github.com/IBAnimatable/IBAnimatable/pull/249)
 
 #### Bugfixes
 None
@@ -188,7 +192,7 @@ None
 
 - Change `PanFromLeft`, `PanFromRight`, `PanFromTop`, `PanFromBottom`, `PanHorizontally` and `PanVertically` to `Pan(Left)`, `Pan(Right)`, `Pan(Top)`, `Pan(Bottom)`, `Pan(Horizontal)` and `Pan(Vertical)` for `Pan` gesture transition controller. [#125](https://github.com/IBAnimatable/IBAnimatable/issues/125)
 - Refactor `direction` to `fromDirection` for system transition animators.  Refactor `TransitionFromDirection` to `TransitionDirection`. [#206](https://github.com/IBAnimatable/IBAnimatable/pull/206)
-- Refactor `Fade`, `FadeIn` and `FadeOut` to `Fade(direction: TransitionDirection)` in `TransitionAnimationType`. Use `Fade(In)` to replace `FadeIn` and use `Fade(Out) to replace `FadeOut`.[#209](https://github.com/IBAnimatable/IBAnimatable/pull/209)
+- Refactor `Fade`, `FadeIn` and `FadeOut` to `Fade(direction: TransitionDirection)` in `TransitionAnimationType`. Use `Fade(In)` to replace `FadeIn` and use `Fade(Out)` to replace `FadeOut`.[#209](https://github.com/IBAnimatable/IBAnimatable/pull/209)
 - Remove `PresentFadeInSegue`, `PresentFadeInWithDismissInteractionSegue`, `PresentFadeOutSegue` and `PresentFadeOutWithDismissInteractionSegue`, use  `PresentFadeSegue` and `PresentFadeWithDismissInteractionSegue` instead. [#209](https://github.com/IBAnimatable/IBAnimatable/pull/209)
 - Remove `degree` for `SystemRotate` since it only supports 90 degrees. [#210](https://github.com/IBAnimatable/IBAnimatable/pull/210)
 
