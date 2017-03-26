@@ -2,6 +2,7 @@ osx_image: xcode8
 language: objective-c
 before_install: 
   - bundle install
+  - brew outdated swiftlint || brew upgrade swiftlint
 script: 
   - xcodebuild build -project IBAnimatable.xcodeproj -scheme IBAnimatableApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6,OS=latest'
   - bundle exec danger
