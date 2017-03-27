@@ -6,7 +6,45 @@
 import UIKit
 
 @IBDesignable
-open class AnimatableSlider: UIView, BorderDesignable, RotationDesignable, ShadowDesignable, Animatable {
+open class AnimatableSlider: UISlider, SliderImagesDesignable, BorderDesignable, RotationDesignable, ShadowDesignable, Animatable {
+
+  // MARK: - SliderImagesDesignable
+
+  @IBInspectable open var thumbImage: UIImage? {
+    didSet {
+      configureThumbImage()
+    }
+  }
+
+  @IBInspectable open var thumbHighlightedImage: UIImage? {
+    didSet {
+      configureThumbImage()
+    }
+  }
+
+  @IBInspectable open var minimumTrackImage: UIImage? {
+    didSet {
+      configureMinimumTrackImage()
+    }
+  }
+
+  @IBInspectable open var minimumTrackHighlightedImage: UIImage? {
+    didSet {
+      configureMinimumTrackImage()
+    }
+  }
+
+  @IBInspectable open var maximumTrackImage: UIImage? {
+    didSet {
+      configureMaximumTrackImage()
+    }
+  }
+
+  @IBInspectable open var maximumTrackHighlightedImage: UIImage? {
+    didSet {
+      configureMaximumTrackImage()
+    }
+  }
 
   // MARK: - BorderDesignable
   open var borderType: BorderType  = .solid {
