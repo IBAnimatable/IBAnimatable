@@ -12,8 +12,6 @@ disabled_rules:
   - function_body_length
   - cyclomatic_complexity
   - type_name
-  - shorthand_operator # waiting next release
-  - unused_optional_binding # waiting next release
 
 opt_in_rules:
  - closure_spacing
@@ -29,3 +27,5 @@ opt_in_rules:
  - operator_usage_whitespace
  - prohibited_super_call
  - number_separator
+ - object_literal
+ - fatal_error_message
