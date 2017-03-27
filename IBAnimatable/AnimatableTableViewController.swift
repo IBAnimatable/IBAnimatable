@@ -43,7 +43,7 @@ open class AnimatableTableViewController: UITableViewController, ViewControllerD
 
   // MARK: - RefreshControlDesignable
 
-  @IBInspectable open var hasRefreshControl: Bool = true {
+  @IBInspectable open var hasRefreshControl: Bool = false {
     didSet {
       configureRefreshController()
     }
