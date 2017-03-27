@@ -7,7 +7,7 @@ large_tuple:
 
 disabled_rules:
   - todo
-  - variable_name
+  - identifier_name
   - line_length
   - function_body_length
   - cyclomatic_complexity
