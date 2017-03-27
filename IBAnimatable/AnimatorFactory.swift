@@ -61,8 +61,8 @@ public struct AnimatorFactory {
       return ZoomAnimator(transitionDuration: transitionDuration)
     case .dropDown:
       return DropDownAnimator(transitionDuration: transitionDuration)
-    case .flip, .crossDissolve: // System animation, will never be executed
-      fatalError()
+    case .flip, .crossDissolve:
+      fatalError("System animation, will never be executed")
     }
   }
 

@@ -132,6 +132,7 @@ private extension FlipAnimator {
     let shadowView = UIView(frame: viewWithShadow.bounds)
     let gradient = CAGradientLayer()
     gradient.frame = shadowView.bounds
+    // swiftlint:disable:next object_literal
     gradient.colors = [UIColor(white: 0.0, alpha: 0.0), UIColor(white: 0.0, alpha: 0.5)]
     if horizontal {
       var axesValues = valuesForAxe(initialValue: reverse ? 0.0 : 1.0, reverseValue: reverse ? 0.2 : 0.0)
