@@ -12,6 +12,11 @@ public class AnimatablePresentationController: UIPresentationController {
 
   fileprivate let presentationConfiguration: PresentationConfiguration
   fileprivate var dimmingView = AnimatableView()
+  fileprivate var presentationBackgroundView = PresentationBackgroundView()
+
+  fileprivate var containerFrame: CGRect {
+    return presentationConfiguration.contextFrameForPresentation ?? containerView?.bounds ?? .zero
+  }
 
   // MARK: Init
 
@@ -21,9 +26,9 @@ public class AnimatablePresentationController: UIPresentationController {
     self.presentationConfiguration = presentationConfiguration
     super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
 
-    setupDimmingView()
-    setupPresentedView()
-    setupObservers()
+    configureDimmingView()
+    configurePresentedView()
+    makeObservers()
   }
 
   deinit {
@@ -33,7 +38,7 @@ public class AnimatablePresentationController: UIPresentationController {
 
   // MARK: Actions
 
-  func chromeViewTapped(gesture: UIGestureRecognizer) {
+  func dimmingViewTapped(gesture: UIGestureRecognizer) {
     if gesture.state == .ended && presentationConfiguration.dismissOnTap {
       presentingViewController.dismiss(animated: true, completion: nil)
     }
@@ -45,9 +50,12 @@ public class AnimatablePresentationController: UIPresentationController {
 
 private extension AnimatablePresentationController {
 
-  func setupDimmingView() {
-    let tap = UITapGestureRecognizer(target: self, action: #selector(chromeViewTapped))
+  func configureDimmingView() {
+    var tap = UITapGestureRecognizer(target: self, action: #selector(dimmingViewTapped))
     dimmingView.addGestureRecognizer(tap)
+    tap = UITapGestureRecognizer(target: self, action: #selector(dimmingViewTapped))
+    presentationBackgroundView.addGestureRecognizer(tap)
+
     if let blurEffectStyle = presentationConfiguration.blurEffectStyle {
       dimmingView.blurEffectStyle = blurEffectStyle
       dimmingView.blurOpacity = presentationConfiguration.blurOpacity
@@ -56,7 +64,7 @@ private extension AnimatablePresentationController {
     }
   }
 
-  func setupPresentedView() {
+  func configurePresentedView() {
     if presentationConfiguration.cornerRadius > 0 {
       presentedViewController.view.layer.cornerRadius = presentationConfiguration.cornerRadius
       presentedViewController.view.layer.masksToBounds = true
@@ -79,7 +87,7 @@ private extension AnimatablePresentationController {
 
 extension AnimatablePresentationController {
 
-  fileprivate func setupObservers() {
+  fileprivate func makeObservers() {
     guard presentationConfiguration.keyboardTranslation != .none else {
       return
     }
@@ -117,21 +125,14 @@ extension AnimatablePresentationController {
 private extension AnimatablePresentationController {
 
   func modalSize() -> CGSize {
-    guard let containerSize = containerView?.bounds.size else {
-      return CGSize.zero
-    }
-
+    let containerSize = containerFrame.size
     let width = CGFloat(presentationConfiguration.modalSize.0.width(parentSize: containerSize))
     let height = CGFloat(presentationConfiguration.modalSize.1.height(parentSize: containerSize))
     return CGSize(width: width, height: height)
   }
 
   func modalCenter() -> CGPoint? {
-    guard let containerBounds = containerView?.bounds else {
-      return nil
-    }
-
-    return presentationConfiguration.modalPosition.calculateCenter(containerBounds: containerBounds, modalSize: modalSize())
+    return presentationConfiguration.modalPosition.calculateCenter(containerBounds: containerFrame, modalSize: modalSize())
   }
 
   func modalOrigin() -> CGPoint? {
@@ -153,10 +154,7 @@ public extension AnimatablePresentationController {
   // MARK: Presentation
 
   public override var frameOfPresentedViewInContainerView: CGRect {
-    guard let containerBounds = containerView?.bounds else {
-      return CGRect.zero
-    }
-
+    let containerBounds = containerFrame
     var presentedViewFrame = CGRect.zero
     let sizeForChildContentContainer = size(forChildContentContainer: presentedViewController, withParentContainerSize: containerBounds.size)
     let origin: CGPoint
@@ -176,16 +174,21 @@ public extension AnimatablePresentationController {
   }
 
   override func containerViewWillLayoutSubviews() {
-    dimmingView.frame = containerView?.bounds ?? .zero
+    dimmingView.frame = containerFrame
     presentedView?.frame = frameOfPresentedViewInContainerView
   }
 
   // MARK: Animation
 
   override func presentationTransitionWillBegin() {
-    dimmingView.frame = containerView?.bounds ?? CGRect.zero
+    presentationBackgroundView.frame = containerView?.bounds ?? .zero
+    presentationBackgroundView.passthroughViews = presentingViewController.view.subviews
+    containerView?.insertSubview(presentationBackgroundView, at: 0)
+
+    dimmingView.frame = containerFrame
     dimmingView.alpha = 0.0
-    containerView?.insertSubview(dimmingView, at: 0)
+    containerView?.insertSubview(dimmingView, at: 1)
+
     if let coordinator = presentedViewController.transitionCoordinator {
       coordinator.animate(alongsideTransition: { _ in
         self.dimmingView.alpha = 1.0

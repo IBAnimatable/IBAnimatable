@@ -11,6 +11,9 @@ public protocol PresentationDesignable: class {
 
   var presenter: PresentationPresenter? { get set }
 
+  /// Present over current context, imitates `UIModalPresentation.currentContext`. If true, the presentedVC will have the same frame as the presentingVC 
+  var overCurrentContext: Bool { get set }
+
   /// Presentation animation type, all supported animation type can be found in `PresentationAnimationType`
   var presentationAnimationType: PresentationAnimationType { get set }
 
@@ -76,6 +79,13 @@ public extension PresentationDesignable where Self: UIViewController {
     }
 
     var presentationConfiguration = PresentationConfiguration()
+
+    presentationConfiguration.contextFrameForPresentation = CGRect(origin: .zero, size: CGSize(width: 300, height: 300))
+//    if overCurrentContext {
+//      let correctedOrigin = view.convert(view.frame.origin, to: nil)
+//      presentationConfiguration.contextFrameForPresentation = CGRect(origin: correctedOrigin, size: view.bounds.size)
+//    }
+
     presentationConfiguration.modalPosition = modalPosition
     presentationConfiguration.modalSize = modalSize
     presentationConfiguration.cornerRadius = cornerRadius
@@ -118,4 +128,5 @@ public struct PresentationConfiguration {
   public var modalPosition: PresentationModalPosition = .center
   public var modalSize: (PresentationModalSize, PresentationModalSize) = (.half, .half)
   public var keyboardTranslation = ModalKeyboardTranslation.none
+  public var contextFrameForPresentation: CGRect?
 }
