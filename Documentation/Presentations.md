@@ -15,6 +15,7 @@ Then we can configure the **Presentation Animations**, **Transition Duration** a
 
 | Property | Description |
 | ------------- | ------------- |
+| Over Current Context | If true, the presentation will have the same size as the controller doing the presentation. If false, the presentation will be in fullscreen. In both cases, the others parameters will be applied. |
 | Presentation Animation | The animation effect when *Present* a `ViewController`, you can find all supported transition animations in [Presentation Animators](#presentation-animators) section. |
 | Dismissal Animation | The animation effect when *Dismiss* a `ViewController`, you can find all supported transition animations in [Presentation Animators](#presentation-animators) section. By default, it will use the Presentation animation value. For example, if the Presentation animation is cover down from the top, then the default Dismissal Animation is cover up to the top. |
 | Transition Duration | The duration of the transition animation in seconds. The default value is `0.4` |
