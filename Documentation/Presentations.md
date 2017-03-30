@@ -15,7 +15,6 @@ Then we can configure the **Presentation Animations**, **Transition Duration** a
 
 | Property | Description |
 | ------------- | ------------- |
-| Over Current Context | If true, the presentation will have the same size as the controller doing the presentation. If false, the presentation will be in fullscreen. In both cases, the others parameters will be applied. |
 | Presentation Animation | The animation effect when *Present* a `ViewController`, you can find all supported transition animations in [Presentation Animators](#presentation-animators) section. |
 | Dismissal Animation | The animation effect when *Dismiss* a `ViewController`, you can find all supported transition animations in [Presentation Animators](#presentation-animators) section. By default, it will use the Presentation animation value. For example, if the Presentation animation is cover down from the top, then the default Dismissal Animation is cover up to the top. |
 | Transition Duration | The duration of the transition animation in seconds. The default value is `0.4` |
@@ -211,6 +210,40 @@ If your modal contains a `UITextField` or `UITextView`, you can adjust its posit
 ![Transition - Fade Transition](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/KeyboardTranslationAboveKeyboard.gif)
 
 You can see all supported Keyboard Translation in the demo App, open the App and tap on "Playground" button, then tap on "presentations", then play with the different options.
+
+## Presenting over current context
+
+Using the above configuration, you can't have the same result as using `UIModalPresentationStyle.currentContext`, but `IBAnimatable` have a workaround to support it while supporting *all the above customisation*.
+
+That can be useful in a few cases, for example: having a split view controller, but you may want to present a controller over the first one, and let the second one clickable. You can see an example in the demo app: Playground -> Presentation -> Over context.
+
+![Presentation - Over Current Context](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentationOverCurrentContext.gif)
+
+### Using storyboards and segues
+
+In order to use this feature in storyboards, you have to use a custom segue. To use custom Segue, we can **control drag** from one `ViewController` to another `ViewController`, then select a custom Segue and set its class to `PresentOverCurrentContextSegue`.
+
+Using that usage allow you to use all the features of a custom presentation while writing 0 lines of code.
+
+You can see an example in "Presentation.storyboard".
+
+### Programatically
+
+For this special case, `AnimatableModalViewController` has another property that's not designable:
+
+| Property | Description |
+| ------------- | ------------- |
+| context frame for presentation | If not nil, the presented view controller will have use this frame, imitates `UIModalPresentationStyle.currentContext`  If nil, the presented view controller will be in fullscreen. *Note:* The modal position / size will be calculated based on this if not nil. |
+
+Anywhere before `presenting` your viewController, just set the `contextFrameForPresentation` that it should have.
+For example, if you want your presented view controller to have the same frame as the `viewController` presenting it, you will just have to do:
+
+```
+modalViewController.contextFrameForPresentation = presentingVC.view.frame
+modalViewController.present(presentingVC, animated: true)
+```
+
+That's all. You have presented a controller over the current context with a custom configuration!
 
 ## Contribution
 

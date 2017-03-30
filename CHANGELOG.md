@@ -10,7 +10,7 @@ All notable changes to this project will be documented in this file.
 - `AnimatableSlider` inherit from `UISlider`
 - Replace all `SystemAnimator` classes with `SystemTransitionAnimator`
 [#427](https://github.com/IBAnimatable/IBAnimatable/pull/427) by [@SD10](https://github.com/sd10)
-- `PresentationDesignable` now supports `overCurrentScreen` which allow you to present a controller with a custom configuration over another instead of being in fullscreen.
+- `PresentationDesignable` now supports `contextFrameForPresentation` which allow you to present a controller with a custom configuration over another instead of being in fullscreen. Imitates `UIModalPresentationStyle.currentContext`
 
 #### Enhancements
 - Conserve custom layer mask when using `Animatable*` instead of removing them
