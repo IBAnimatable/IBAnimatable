@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 #### API breaking changes
 - `CornerSide`'s swift3 migration leftovers: renaming `.AllSides` to `.allSides`. If you were setting programatically a cornerSide to your view, you will just have to lowercase the A. [#409](https://github.com/IBAnimatable/IBAnimatable/pull/409) by [@tbaranes](https://github.com/tbaranes)
 - `AnimatableSlider` inherit from `UISlider`
-- `PresentationDesignable` now supports `overCurrentScreen` which allow you to present a controller with a custom configuration over another instead of being in fullscreen.
+- `PresentationDesignable` now supports `contextFrameForPresentation` which allow you to present a controller with a custom configuration over another instead of being in fullscreen. Imitates `UIModalPresentationStyle.currentContext`
 
 #### Enhancements
 - Conserve custom layer mask when using `Animatable*` instead of removing them
