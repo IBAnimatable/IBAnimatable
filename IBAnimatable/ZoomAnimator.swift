@@ -61,7 +61,12 @@ private extension ZoomAnimator {
 
   func animatePresengingZoom(animatingView: UIView, completion: @escaping AnimatableCompletion) {
     animatingView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-    UIView.animate(withDuration: transitionDuration, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: [.curveEaseOut], animations: {
+    UIView.animate(withDuration: transitionDuration,
+                   delay: 0.0,
+                   usingSpringWithDamping: 0.6,
+                   initialSpringVelocity: 0,
+                   options: [.curveEaseOut],
+    animations: {
       animatingView.transform = CGAffineTransform(scaleX: 1, y: 1)
     }) { _ in
       completion()
@@ -69,7 +74,12 @@ private extension ZoomAnimator {
   }
 
   func animateDismissingZoom(animatingView: UIView, completion: @escaping AnimatableCompletion) {
-    UIView.animate(withDuration: transitionDuration, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: [.curveEaseIn], animations: {
+    UIView.animate(withDuration: transitionDuration,
+                   delay: 0.0,
+                   usingSpringWithDamping: 0.6,
+                   initialSpringVelocity: 0,
+                   options: [.curveEaseIn],
+    animations: {
       animatingView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
       animatingView.alpha = 0.0
     }) { _ in

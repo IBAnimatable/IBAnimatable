@@ -8,7 +8,8 @@ import UIKit
  Animator Factory
  */
 public struct AnimatorFactory {
-  public static func makeAnimator(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration) -> AnimatedTransitioning? {
+  public static func makeAnimator(transitionAnimationType: TransitionAnimationType,
+                                  transitionDuration: Duration = defaultTransitionDuration) -> AnimatedTransitioning? {
     switch transitionAnimationType {
     case .systemRotate:
       return SystemRotateAnimator(transitionDuration: transitionDuration)
@@ -53,7 +54,8 @@ public struct AnimatorFactory {
     }
   }
 
-  public static func makeAnimator(presentationAnimationType: PresentationAnimationType, transitionDuration: Duration = defaultPresentationDuration) -> AnimatedPresenting {
+  public static func makeAnimator(presentationAnimationType: PresentationAnimationType,
+                                  transitionDuration: Duration = defaultPresentationDuration) -> AnimatedPresenting {
     switch presentationAnimationType {
     case let .cover(direction):
       return CoverAnimator(from: direction, transitionDuration: transitionDuration)

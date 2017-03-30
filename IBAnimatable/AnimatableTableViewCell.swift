@@ -6,7 +6,8 @@
 import UIKit
 
 @IBDesignable
-open class AnimatableTableViewCell: UITableViewCell, CornerDesignable, FillDesignable, BorderDesignable, TableViewCellDesignable, GradientDesignable, Animatable {
+open class AnimatableTableViewCell: UITableViewCell, CornerDesignable, FillDesignable, BorderDesignable,
+                                                     TableViewCellDesignable, GradientDesignable, Animatable {
 
   // MARK: - CornerDesignable
   @IBInspectable open var cornerRadius: CGFloat = CGFloat.nan {

@@ -17,7 +17,10 @@ public class ActivityIndicatorAnimationBallZigZag: ActivityIndicatorAnimating {
     let circleSize: CGFloat = size.width / 5
     let deltaX = size.width / 2 - circleSize / 2
     let deltaY = size.height / 2 - circleSize / 2
-    let frame = CGRect(x: (layer.bounds.size.width - circleSize) / 2, y: (layer.bounds.size.height - circleSize) / 2, width: circleSize, height: circleSize)
+    let frame = CGRect(x: (layer.bounds.size.width - circleSize) / 2,
+                       y: (layer.bounds.size.height - circleSize) / 2,
+                       width: circleSize,
+                       height: circleSize)
 
     // Circle 1 animation
     let animation = CAKeyframeAnimation(keyPath:"transform")

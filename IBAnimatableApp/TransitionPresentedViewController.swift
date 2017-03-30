@@ -69,7 +69,9 @@ private extension TransitionPresentedViewController {
       return
     }
 
-    gestureLabel.text = retrieveGestureText(interactiveGestureType: interactiveGestureType, transitionAnimationType: transitionAnimationType, exit: "dismiss")
+    gestureLabel.text = retrieveGestureText(interactiveGestureType: interactiveGestureType,
+                                            transitionAnimationType: transitionAnimationType,
+                                            exit: "dismiss")
   }
 
   func prepareSegues() {
@@ -112,7 +114,8 @@ private extension TransitionPresentedViewController {
   }
 
   func presentViaSegue(_ segueClass: UIStoryboardSegue.Type?, useDismissInteraction: Bool) {
-    if let segueClass = segueClass, let toViewController = storyboard?.instantiateViewController(withIdentifier: "TransitionPresentedViewController") as? TransitionPresentedViewController {
+    let presentedVC = storyboard?.instantiateViewController(withIdentifier: "TransitionPresentedViewController")
+    if let segueClass = segueClass, let toViewController = presentedVC as? TransitionPresentedViewController {
       toViewController.useDismissInteraction = useDismissInteraction
       let segue = segueClass.init(identifier: String(describing: segueClass), source: self, destination: toViewController)
       prepare(for: segue, sender: self)

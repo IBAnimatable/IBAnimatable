@@ -47,7 +47,8 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
   fileprivate let sizes = ["Half", "Full", "custom(100)"]
   fileprivate let keyboardTranslations = ["None", "MoveUp", "AboveKeyboard"]
   fileprivate let blurEffectStyles = ["None", "ExtraLight", "Light", "Dark"]
-  fileprivate let colors = [.black, .red, .orange, .brown, .yellow, .lightGray, .green, .cyan, .blue, .purple, UIColor.purple.withAlphaComponent(0.5), .darkGray, .magenta, .white]
+  fileprivate let colors = [.black, .red, .orange, .brown, .yellow, .lightGray, .green, .cyan, .blue, .purple,
+                            UIColor.purple.withAlphaComponent(0.5), .darkGray, .magenta, .white]
 
   fileprivate var selectedButton: UIButton?
 
@@ -69,7 +70,8 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
     presentedViewController.presentationAnimationType = PresentationAnimationType(string: selectedAnimationType) ?? .cover(from: .bottom)
     presentedViewController.dismissalAnimationType = PresentationAnimationType(string: selectedDismissalAnimationType) ?? .cover(from: .bottom)
     presentedViewController.modalPosition = PresentationModalPosition(string: selectedModalPosition)
-    presentedViewController.modalSize = (width: PresentationModalSize(string: selectedModalWidth)!, height: PresentationModalSize(string:selectedModalHeight)!)
+    presentedViewController.modalSize = (width: PresentationModalSize(string: selectedModalWidth)!,
+                                         height: PresentationModalSize(string:selectedModalHeight)!)
 
     presentedViewController.backgroundColor = colors[Int(sliderBackgroundColor.value)]
     presentedViewController.opacity = CGFloat(sliderOpacity.value)
@@ -106,7 +108,9 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
 extension PresentingViewController {
 
   @IBAction func presentProgramatically() {
-    if let presentedViewController = UIStoryboard(name: "Presentations", bundle: nil).instantiateViewController(withIdentifier: "PresentationPresentedViewController") as? AnimatableModalViewController {
+    let storyboard = UIStoryboard(name: "Presentations", bundle: nil)
+    let presentedVC = storyboard.instantiateViewController(withIdentifier: "PresentationPresentedViewController")
+    if let presentedViewController = presentedVC as? AnimatableModalViewController {
       setupModal(for: presentedViewController)
       present(presentedViewController, animated: true, completion: nil)
     }

@@ -17,7 +17,9 @@ public class Navigator: NSObject {
   // interaction controller
   fileprivate var interactiveAnimator: InteractiveAnimator?
 
-  public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration, interactiveGestureType: InteractiveGestureType? = nil) {
+  public init(transitionAnimationType: TransitionAnimationType,
+              transitionDuration: Duration = defaultTransitionDuration,
+              interactiveGestureType: InteractiveGestureType? = nil) {
     self.transitionAnimationType = transitionAnimationType
     self.transitionDuration = transitionDuration
     super.init()
@@ -30,10 +32,12 @@ public class Navigator: NSObject {
       switch interactiveGestureType {
       case .default:
         if let interactiveGestureType = animator?.interactiveGestureType {
-          interactiveAnimator = InteractiveAnimatorFactory.makeInteractiveAnimator(interactiveGestureType: interactiveGestureType, transitionType: .navigationTransition(.pop))
+          interactiveAnimator = InteractiveAnimatorFactory.makeInteractiveAnimator(interactiveGestureType: interactiveGestureType,
+                                                                                   transitionType: .navigationTransition(.pop))
         }
       default:
-        interactiveAnimator = InteractiveAnimatorFactory.makeInteractiveAnimator(interactiveGestureType: interactiveGestureType, transitionType: .navigationTransition(.pop))
+        interactiveAnimator = InteractiveAnimatorFactory.makeInteractiveAnimator(interactiveGestureType: interactiveGestureType,
+                                                                                 transitionType: .navigationTransition(.pop))
       }
     }
   }
@@ -41,7 +45,10 @@ public class Navigator: NSObject {
 
 extension Navigator: UINavigationControllerDelegate {
   // MARK: - animation controller
-  public func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+  public func navigationController(_ navigationController: UINavigationController,
+                                   animationControllerFor operation: UINavigationControllerOperation,
+                                   from fromVC: UIViewController,
+                                   to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     interactiveAnimator?.connectGestureRecognizer(to: toVC)
 
     if operation == .push {
@@ -57,7 +64,9 @@ extension Navigator: UINavigationControllerDelegate {
   }
 
   // MARK: - interaction controller
-  public func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+  public func navigationController(_ navigationController: UINavigationController,
+                                   interactionControllerFor animationController: UIViewControllerAnimatedTransitioning)
+                                          -> UIViewControllerInteractiveTransitioning? {
     if let interactiveAnimator = interactiveAnimator, interactiveAnimator.interacting {
       return interactiveAnimator
     } else {

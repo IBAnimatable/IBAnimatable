@@ -70,7 +70,10 @@ private extension ActivityIndicatorAnimationBallClipRotateMultiple {
   }
 
   // swiftlint:disable:next function_parameter_count
-  func makeCircleLayerOf(shape: ActivityIndicatorShape, duration: CFTimeInterval, timingFunction: CAMediaTimingFunction, layerSize: CGSize, size: CGFloat, color: UIColor, reverse: Bool) -> CALayer {
+  func makeCircleLayerOf(shape: ActivityIndicatorShape,
+                         duration: CFTimeInterval, timingFunction: CAMediaTimingFunction,
+                         layerSize: CGSize, size: CGFloat,
+                         color: UIColor, reverse: Bool) -> CALayer {
     let circleLayer = shape.makeLayer(size: CGSize(width: size, height: size), color: color)
     let frame = CGRect(x: (layerSize.width - size) / 2,
                        y: (layerSize.height - size) / 2,

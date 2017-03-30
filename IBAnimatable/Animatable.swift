@@ -67,7 +67,11 @@ public extension Animatable where Self: UIView {
   }
 
   @discardableResult
-  public func animate(_ animation: AnimationType, duration: TimeInterval? = nil, damping: CGFloat? = nil, velocity: CGFloat? = nil, force: CGFloat? = nil) -> AnimationPromise<Self> {
+  public func animate(_ animation: AnimationType,
+                      duration: TimeInterval? = nil,
+                      damping: CGFloat? = nil,
+                      velocity: CGFloat? = nil,
+                      force: CGFloat? = nil) -> AnimationPromise<Self> {
     return AnimationPromise(view: self).then(animation, duration: duration, damping: damping, velocity: velocity, force: force)
   }
 
@@ -137,7 +141,9 @@ public extension Animatable where Self: UIView {
 fileprivate extension Animatable where Self: UIView {
 
   // MARK: - Animation methods
-  func slide(_ way: AnimationType.Way, direction: AnimationType.Direction, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+  func slide(_ way: AnimationType.Way, direction: AnimationType.Direction,
+             configuration: AnimationConfiguration,
+             completion: AnimatableCompletion? = nil) {
     let values = computeValues(way: way, direction: direction, configuration: configuration, shouldScale: false)
     switch way {
     case .in:
@@ -148,7 +154,9 @@ fileprivate extension Animatable where Self: UIView {
     }
   }
 
-  func squeeze(_ way: AnimationType.Way, direction: AnimationType.Direction, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+  func squeeze(_ way: AnimationType.Way, direction: AnimationType.Direction,
+               configuration: AnimationConfiguration,
+               completion: AnimatableCompletion? = nil) {
     let values = computeValues(way: way, direction: direction, configuration: configuration, shouldScale: true)
     switch way {
     case .in:
@@ -158,7 +166,9 @@ fileprivate extension Animatable where Self: UIView {
     }
   }
 
-  func rotate(direction: AnimationType.RotationDirection, repeatCount: Int, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+  func rotate(direction: AnimationType.RotationDirection, repeatCount: Int,
+              configuration: AnimationConfiguration,
+              completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let animation = CABasicAnimation(keyPath: "transform.rotation")
       animation.fromValue = direction == .cw ? 0 : CGFloat.pi * 2
@@ -194,7 +204,9 @@ fileprivate extension Animatable where Self: UIView {
     animateBy(x: xOffsetToMove, y: yOffsetToMove, configuration: configuration, completion: completion)
   }
 
-  func slideFade(_ way: AnimationType.Way, direction: AnimationType.Direction, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+  func slideFade(_ way: AnimationType.Way, direction: AnimationType.Direction,
+                 configuration: AnimationConfiguration,
+                 completion: AnimatableCompletion? = nil) {
     let values = computeValues(way: way, direction: direction, configuration: configuration, shouldScale: false)
     switch way {
     case .in:
@@ -220,7 +232,9 @@ fileprivate extension Animatable where Self: UIView {
     }
   }
 
-    func squeezeFade(_ way: AnimationType.Way, direction: AnimationType.Direction, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+    func squeezeFade(_ way: AnimationType.Way, direction: AnimationType.Direction,
+                     configuration: AnimationConfiguration,
+                     completion: AnimatableCompletion? = nil) {
     let values = computeValues(way: way, direction: direction, configuration: configuration, shouldScale: true)
     switch way {
     case .in:
@@ -240,17 +254,26 @@ fileprivate extension Animatable where Self: UIView {
       alpha = 0
       toAlpha = 1
       transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-      animateIn(animationValues: AnimationValues(x: 0, y: 0, scaleX: scale / 2, scaleY: scale / 2), alpha: toAlpha, configuration: configuration, completion: completion)
+      animateIn(animationValues: AnimationValues(x: 0, y: 0, scaleX: scale / 2, scaleY: scale / 2),
+                alpha: toAlpha,
+                configuration: configuration,
+                completion: completion)
     case .in:
       let scale = 2 * configuration.force
       alpha = 0
       toAlpha = 1
-      animateIn(animationValues: AnimationValues(x: 0, y: 0, scaleX: scale, scaleY: scale), alpha: toAlpha, configuration: configuration, completion: completion)
+      animateIn(animationValues: AnimationValues(x: 0, y: 0, scaleX: scale, scaleY: scale),
+                alpha: toAlpha,
+                configuration: configuration,
+                completion: completion)
     case .out:
       let scale = (invert ? 0.1 :  2) * configuration.force
       alpha = 1
       toAlpha = 0
-      animateOut(animationValues: AnimationValues(x: 0, y: 0, scaleX: scale, scaleY: scale), alpha: toAlpha, configuration: configuration, completion: completion)
+      animateOut(animationValues: AnimationValues(x: 0, y: 0, scaleX: scale, scaleY: scale),
+                 alpha: toAlpha,
+                 configuration: configuration,
+                 completion: completion)
     }
   }
 
@@ -265,7 +288,10 @@ fileprivate extension Animatable where Self: UIView {
       scaleX = -1
       scaleY = 1
     }
-    animateIn(animationValues: AnimationValues(x: 0, y: 0, scaleX: scaleX, scaleY: scaleY), alpha: 1, configuration: configuration, completion: completion)
+    animateIn(animationValues: AnimationValues(x: 0, y: 0, scaleX: scaleX, scaleY: scaleY),
+              alpha: 1,
+              configuration: configuration,
+              completion: completion)
   }
 
   func shake(repeatCount: Int, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
@@ -419,7 +445,9 @@ fileprivate extension Animatable where Self: UIView {
   }
 
 // swiftlint:enable variable_name_min_length
-  func computeValues(way: AnimationType.Way, direction: AnimationType.Direction, configuration: AnimationConfiguration, shouldScale: Bool) -> AnimationValues {
+  func computeValues(way: AnimationType.Way, direction: AnimationType.Direction,
+                     configuration: AnimationConfiguration,
+                     shouldScale: Bool) -> AnimationValues {
     let scale = 3 * configuration.force
     var scaleX: CGFloat = 1
     var scaleY: CGFloat = 1
@@ -490,7 +518,11 @@ fileprivate extension Animatable where Self: UIView {
   // swiftlint:disable variable_name_min_length
   func animateBy(x: CGFloat, y: CGFloat, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
     let translate = CGAffineTransform(translationX: x, y: y)
-    UIView.animate(withDuration: configuration.duration, delay: configuration.delay, usingSpringWithDamping: configuration.damping, initialSpringVelocity: configuration.velocity, options: [],
+    UIView.animate(withDuration: configuration.duration,
+                   delay: configuration.delay,
+                   usingSpringWithDamping: configuration.damping,
+                   initialSpringVelocity: configuration.velocity,
+                   options: [],
       animations: {
         self.transform = translate
       },
@@ -508,7 +540,11 @@ fileprivate extension Animatable where Self: UIView {
     let translateAndScale = translate.concatenating(scale)
     transform = translateAndScale
 
-    UIView.animate(withDuration: configuration.duration, delay: configuration.delay, usingSpringWithDamping: configuration.damping, initialSpringVelocity: configuration.velocity, options: [],
+    UIView.animate(withDuration: configuration.duration,
+                   delay: configuration.delay,
+                   usingSpringWithDamping: configuration.damping,
+                   initialSpringVelocity: configuration.velocity,
+                   options: [],
       animations: {
         self.transform = CGAffineTransform.identity
         self.alpha = alpha
@@ -525,7 +561,11 @@ fileprivate extension Animatable where Self: UIView {
     let scale = CGAffineTransform(scaleX: animationValues.scaleX, y: animationValues.scaleY)
     let translateAndScale = translate.concatenating(scale)
 
-    UIView.animate(withDuration: configuration.duration, delay: configuration.delay, usingSpringWithDamping: configuration.damping, initialSpringVelocity: configuration.velocity, options: [],
+    UIView.animate(withDuration: configuration.duration,
+                   delay: configuration.delay,
+                   usingSpringWithDamping: configuration.damping,
+                   initialSpringVelocity: configuration.velocity,
+                   options: [],
       animations: {
         self.transform = translateAndScale
         self.alpha = alpha

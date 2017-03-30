@@ -41,8 +41,17 @@ public class AnimationPromise<T: UIView> where T: Animatable {
   }
 
   @discardableResult
-  public func  then(_ animation: AnimationType, duration: TimeInterval? = nil, damping: CGFloat? = nil, velocity: CGFloat? = nil, force: CGFloat? = nil) -> AnimationPromise {
-    let animTuple = AnimationTuple(type: animation, configuration: AnimationConfiguration(damping: damping ?? view.damping, velocity: velocity ?? view.velocity, duration: duration ?? view.duration, delay: delayForNextAnimation, force: force ?? view.force))
+  public func  then(_ animation: AnimationType,
+                    duration: TimeInterval? = nil,
+                    damping: CGFloat? = nil,
+                    velocity: CGFloat? = nil,
+                    force: CGFloat? = nil) -> AnimationPromise {
+    let configuration = AnimationConfiguration(damping: damping ?? view.damping,
+                                               velocity: velocity ?? view.velocity,
+                                               duration: duration ?? view.duration,
+                                               delay: delayForNextAnimation,
+                                               force: force ?? view.force)
+    let animTuple = AnimationTuple(type: animation, configuration: configuration)
     animationList.append(animTuple)
     if animationList.count == 1 { // If it's the only animation, launch it immediately
       view.doAnimation(animation, configuration: animTuple.configuration, promise: self)
