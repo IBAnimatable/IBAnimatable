@@ -139,6 +139,7 @@
 		E27691EB1CAFC91A004A725C /* SystemPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691EA1CAFC91A004A725C /* SystemPushAnimator.swift */; };
 		E27691EF1CAFCA29004A725C /* SystemRevealAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691EE1CAFCA29004A725C /* SystemRevealAnimator.swift */; };
 		E27691F31CAFCD67004A725C /* SystemRotateAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27691F21CAFCD67004A725C /* SystemRotateAnimator.swift */; };
+		E28760EA1E8D0BDE003B324E /* PresentOverCurrentContextSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28760E91E8D0BDE003B324E /* PresentOverCurrentContextSegue.swift */; };
 		E28E28211D6CCA5C0043D56E /* ActivityIndicatorAnimationAudioEqualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E28051D6CCA5C0043D56E /* ActivityIndicatorAnimationAudioEqualizer.swift */; };
 		E28E28221D6CCA5C0043D56E /* ActivityIndicatorAnimationBallClipRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E28061D6CCA5C0043D56E /* ActivityIndicatorAnimationBallClipRotate.swift */; };
 		E28E28231D6CCA5C0043D56E /* ActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E28071D6CCA5C0043D56E /* ActivityIndicatorAnimationBallClipRotateMultiple.swift */; };
@@ -354,6 +355,7 @@
 		E27691EA1CAFC91A004A725C /* SystemPushAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPushAnimator.swift; sourceTree = "<group>"; };
 		E27691EE1CAFCA29004A725C /* SystemRevealAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemRevealAnimator.swift; sourceTree = "<group>"; };
 		E27691F21CAFCD67004A725C /* SystemRotateAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemRotateAnimator.swift; sourceTree = "<group>"; };
+		E28760E91E8D0BDE003B324E /* PresentOverCurrentContextSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentOverCurrentContextSegue.swift; sourceTree = "<group>"; };
 		E28E28051D6CCA5C0043D56E /* ActivityIndicatorAnimationAudioEqualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationAudioEqualizer.swift; sourceTree = "<group>"; };
 		E28E28061D6CCA5C0043D56E /* ActivityIndicatorAnimationBallClipRotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationBallClipRotate.swift; sourceTree = "<group>"; };
 		E28E28071D6CCA5C0043D56E /* ActivityIndicatorAnimationBallClipRotateMultiple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationBallClipRotateMultiple.swift; sourceTree = "<group>"; };
@@ -451,6 +453,7 @@
 			isa = PBXGroup;
 			children = (
 				AE0FAD3C1C1ED1EC00B5289B /* DismissSegue.swift */,
+				E28760E91E8D0BDE003B324E /* PresentOverCurrentContextSegue.swift */,
 				AEE552AC1C82D1E1009CF623 /* PresentFadeSegue.swift */,
 				AE65CF911C96E35600A723F8 /* PresentFadeWithDismissInteractionSegue.swift */,
 				E20078A21CB912E1002B2C16 /* PresentFoldSegue.swift */,
@@ -1078,6 +1081,7 @@
 				E20078A51CB91307002B2C16 /* PresentFoldWithDismissInteractionSegue.swift in Sources */,
 				E2A062B31CB19BB900C54B40 /* ExplodeAnimator.swift in Sources */,
 				AE65CF931C96E35600A723F8 /* PresentFadeWithDismissInteractionSegue.swift in Sources */,
+				E28760EA1E8D0BDE003B324E /* PresentOverCurrentContextSegue.swift in Sources */,
 				E28E282A1D6CCA5C0043D56E /* ActivityIndicatorAnimationBallRotateChase.swift in Sources */,
 				AE677B981CADCF5900D62273 /* SystemSuckEffectAnimator.swift in Sources */,
 				E28E28321D6CCA5C0043D56E /* ActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
