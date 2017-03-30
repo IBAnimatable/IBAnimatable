@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7ad-nV-MlE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7ad-nV-MlE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -699,14 +699,14 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="wJu-F0-n8q"/>
-                                                <exclude reference="398-Kc-LQ7"/>
-                                                <exclude reference="rr4-b8-F5L"/>
-                                                <exclude reference="xvb-UR-kQ5"/>
                                                 <exclude reference="Aon-La-YKB"/>
+                                                <exclude reference="xvb-UR-kQ5"/>
+                                                <exclude reference="wJu-F0-n8q"/>
                                                 <exclude reference="eCr-Jf-Oif"/>
                                                 <exclude reference="nM6-2Q-yff"/>
                                                 <exclude reference="q1V-TU-IF0"/>
+                                                <exclude reference="398-Kc-LQ7"/>
+                                                <exclude reference="rr4-b8-F5L"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -1005,6 +1005,10 @@
         <scene sceneID="3Gb-go-mY3">
             <objects>
                 <viewController id="1dm-2z-9gI" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sOB-Lj-43E"/>
+                        <viewControllerLayoutGuide type="bottom" id="nXd-N1-zpG"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Den-DD-xOx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="301.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1013,7 +1017,7 @@
                                 <rect key="frame" x="161" y="136" width="53" height="30"/>
                                 <state key="normal" title="Present"/>
                                 <connections>
-                                    <segue destination="qdi-bw-dbA" kind="presentation" id="VIb-bL-vUS"/>
+                                    <segue destination="qdi-bw-dbA" kind="presentation" customClass="PresentOverCurrentContextSegue" customModule="IBAnimatable" id="VIb-bL-vUS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1032,6 +1036,10 @@
         <scene sceneID="jZz-Gv-ZzW">
             <objects>
                 <viewController id="d47-jK-71I" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N02-kw-SB1"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bz4-Ck-TUe"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ys6-pQ-cOD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="301.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1064,45 +1072,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="9Vi-ji-WpQ">
-                                <rect key="frame" x="20" y="70" width="335" height="161"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note that all the presentation parameters are also available when presenting over current context." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U72-tv-dXC">
-                                        <rect key="frame" x="8.5" y="0.0" width="318.5" height="61"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uK1-74-RMJ" userLabel="Dismiss button" customClass="AnimatableButton" customModule="IBAnimatable">
-                                        <rect key="frame" x="110.5" y="101" width="114" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="iLh-YD-evM"/>
-                                        </constraints>
-                                        <inset key="contentEdgeInsets" minX="30" minY="0.0" maxX="30" maxY="0.0"/>
-                                        <state key="normal" title="Dismiss">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="6"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="45K-qE-rLh" kind="unwind" unwindAction="dismissCurrentViewController:" id="TuH-7D-fhi"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you try to customise the modal?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U72-tv-dXC">
+                                <rect key="frame" x="10" y="139.5" width="355" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="9Vi-ji-WpQ" firstAttribute="centerX" secondItem="ElG-i8-3nL" secondAttribute="centerX" id="Ex8-eF-ePl"/>
-                            <constraint firstAttribute="trailing" secondItem="9Vi-ji-WpQ" secondAttribute="trailing" constant="20" id="MGU-eK-ZHv"/>
-                            <constraint firstItem="9Vi-ji-WpQ" firstAttribute="centerY" secondItem="ElG-i8-3nL" secondAttribute="centerY" id="Rdb-dz-TPn"/>
-                            <constraint firstItem="9Vi-ji-WpQ" firstAttribute="leading" secondItem="ElG-i8-3nL" secondAttribute="leading" constant="20" id="TMm-zW-59d"/>
+                            <constraint firstItem="U72-tv-dXC" firstAttribute="leading" secondItem="ElG-i8-3nL" secondAttribute="leading" constant="10" id="6lQ-bf-2cI"/>
+                            <constraint firstAttribute="trailing" secondItem="U72-tv-dXC" secondAttribute="trailing" constant="10" id="J74-bb-zdl"/>
+                            <constraint firstItem="U72-tv-dXC" firstAttribute="centerY" secondItem="ElG-i8-3nL" secondAttribute="centerY" id="x9L-Z0-ED9"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -1113,13 +1094,11 @@
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                             <real key="value" value="6"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="overCurrentContext" value="YES"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="_presentationAnimationType" value="cover(left)"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="_dismissalAnimationType" value="cover(left)"/>
                     </userDefinedRuntimeAttributes>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dXr-t9-cRz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="45K-qE-rLh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="6431" y="-66"/>
         </scene>
