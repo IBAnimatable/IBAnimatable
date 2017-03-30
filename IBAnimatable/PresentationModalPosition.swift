@@ -81,5 +81,5 @@ public extension PresentationModalPosition {
       self = .center
     }
   }
-  
+
 }
