@@ -124,18 +124,18 @@ extension AnimatablePresentationController {
 
 private extension AnimatablePresentationController {
 
-  func modalSize() -> CGSize {
+  var modalSize: CGSize {
     let containerSize = containerFrame.size
     let width = CGFloat(presentationConfiguration.modalSize.0.width(parentSize: containerSize))
     let height = CGFloat(presentationConfiguration.modalSize.1.height(parentSize: containerSize))
     return CGSize(width: width, height: height)
   }
 
-  func modalCenter() -> CGPoint? {
-    return presentationConfiguration.modalPosition.calculateCenter(containerBounds: containerFrame, modalSize: modalSize())
+  var modalCenter: CGPoint? {
+    return presentationConfiguration.modalPosition.modalCenter(in: containerFrame, modalSize: modalSize)
   }
 
-  func modalOrigin() -> CGPoint? {
+  var modalOrigin: CGPoint? {
     return presentationConfiguration.modalPosition.calculateOrigin()
   }
 
@@ -158,10 +158,10 @@ public extension AnimatablePresentationController {
     var presentedViewFrame = CGRect.zero
     let sizeForChildContentContainer = size(forChildContentContainer: presentedViewController, withParentContainerSize: containerBounds.size)
     let origin: CGPoint
-    if let center = modalCenter() {
+    if let center = modalCenter {
       origin = calculateOrigin(center: center, size: sizeForChildContentContainer)
     } else {
-      origin = modalOrigin() ?? .zero
+      origin = modalOrigin ?? .zero
     }
 
     presentedViewFrame.size = sizeForChildContentContainer
@@ -170,7 +170,7 @@ public extension AnimatablePresentationController {
   }
 
   override func size(forChildContentContainer container: UIContentContainer, withParentContainerSize parentSize: CGSize) -> CGSize {
-    return modalSize()
+    return modalSize
   }
 
   override func containerViewWillLayoutSubviews() {
