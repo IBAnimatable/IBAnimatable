@@ -9,7 +9,11 @@ import UIKit
 open class AnimatableModalViewController: UIViewController, PresentationDesignable {
 
   // MARK: - AnimatablePresentationController
-  @IBInspectable public var overCurrentContext: Bool = false
+  public var contextFrameForPresentation: CGRect? {
+    didSet {
+      presenter?.presentationConfiguration?.contextFrameForPresentation = contextFrameForPresentation
+    }
+  }
 
   @IBInspectable var _presentationAnimationType: String? {
     didSet {

@@ -11,8 +11,8 @@ public protocol PresentationDesignable: class {
 
   var presenter: PresentationPresenter? { get set }
 
-  /// Present over current context, imitates `UIModalPresentation.currentContext`. If true, the presentedVC will have the same frame as the presentingVC 
-  var overCurrentContext: Bool { get set }
+  /// Frame of the presentingVC's dimmingView. Used that property if you want to simulate a presentation `overCurrentContext`. If nil, the dimmingView will be in fullscreen.
+  var contextFrameForPresentation: CGRect? { get set }
 
   /// Presentation animation type, all supported animation type can be found in `PresentationAnimationType`
   var presentationAnimationType: PresentationAnimationType { get set }
@@ -79,13 +79,7 @@ public extension PresentationDesignable where Self: UIViewController {
     }
 
     var presentationConfiguration = PresentationConfiguration()
-
-    presentationConfiguration.contextFrameForPresentation = CGRect(origin: .zero, size: CGSize(width: 300, height: 300))
-//    if overCurrentContext {
-//      let correctedOrigin = view.convert(view.frame.origin, to: nil)
-//      presentationConfiguration.contextFrameForPresentation = CGRect(origin: correctedOrigin, size: view.bounds.size)
-//    }
-
+    presentationConfiguration.contextFrameForPresentation = contextFrameForPresentation
     presentationConfiguration.modalPosition = modalPosition
     presentationConfiguration.modalSize = modalSize
     presentationConfiguration.cornerRadius = cornerRadius
