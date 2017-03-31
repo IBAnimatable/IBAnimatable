@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		33A8B9ED1C7E790800082529 /* SystemCubeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A8B9EB1C7E790800082529 /* SystemCubeAnimator.swift */; };
+		48D436311E8E221500538E7D /* TimeLineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D436301E8E221500538E7D /* TimeLineTableViewController.swift */; };
 		7305EC0E1E1996E000BF4C9A /* AnimationChainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7305EC0D1E1996E000BF4C9A /* AnimationChainable.swift */; };
 		731205811D28A3830009BCAC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731205801D28A3830009BCAC /* Utils.swift */; };
 		732485D71D4902510068FD93 /* ParamType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732485D61D4902510068FD93 /* ParamType.swift */; };
@@ -219,6 +220,7 @@
 
 /* Begin PBXFileReference section */
 		33A8B9EB1C7E790800082529 /* SystemCubeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemCubeAnimator.swift; sourceTree = "<group>"; };
+		48D436301E8E221500538E7D /* TimeLineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineTableViewController.swift; sourceTree = "<group>"; };
 		7305EC0D1E1996E000BF4C9A /* AnimationChainable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationChainable.swift; sourceTree = "<group>"; };
 		731205801D28A3830009BCAC /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		732485D61D4902510068FD93 /* ParamType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParamType.swift; sourceTree = "<group>"; };
@@ -439,6 +441,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48D436321E8E2A8100538E7D /* DemoApp */ = {
+			isa = PBXGroup;
+			children = (
+				48D436331E8E2AB000538E7D /* code */,
+			);
+			name = DemoApp;
+			sourceTree = "<group>";
+		};
+		48D436331E8E2AB000538E7D /* code */ = {
+			isa = PBXGroup;
+			children = (
+				48D436301E8E221500538E7D /* TimeLineTableViewController.swift */,
+			);
+			name = code;
+			sourceTree = "<group>";
+		};
 		AE0FAD391C1ECA2900B5289B /* extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -644,6 +662,7 @@
 				AED1A0FD1BFE9820001346FA /* LaunchScreen.storyboard */,
 				E2DAD6301D5F141F00333ABF /* Main.storyboard */,
 				AED1A0FF1BFE9820001346FA /* DemoApp.storyboard */,
+				48D436321E8E2A8100538E7D /* DemoApp */,
 				AE28D0551CDFF7D50043273C /* IBAnimatable Playground */,
 				AED1A1011BFE9820001346FA /* Info.plist */,
 			);
@@ -752,8 +771,8 @@
 				AE299BDB1C03BB670018CCDC /* TintDesignable.swift */,
 				AE0FAD421C1ED52800B5289B /* ViewControllerDesignable.swift */,
 				E21E840F1D3A36C600C742E7 /* PresentationDesignable.swift */,
-				C4B504DF1E8832E7001E096A /* RefreshControlerDesignable.swift */,
 				C47A737B1E86A9BD0044EFF8 /* SliderImagesDesignable.swift */,
+				C4B504DF1E8832E7001E096A /* RefreshControlerDesignable.swift */,
 			);
 			name = Designable;
 			sourceTree = "<group>";
@@ -1191,6 +1210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48D436311E8E221500538E7D /* TimeLineTableViewController.swift in Sources */,
 				733323031D56BCF200B88F6E /* UserInterfaceTableViewController.swift in Sources */,
 				AE1B9A661CE3EB100098D962 /* InteractionTableViewController.swift in Sources */,
 				73A99B671D5FC8650079C7EC /* BorderViewController.swift in Sources */,

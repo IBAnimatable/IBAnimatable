@@ -17,7 +17,7 @@ open class AnimatableViewController: UIViewController, ViewControllerDesignable,
   @IBInspectable open var rootWindowBackgroundColor: UIColor?
 
   // MARK: - TransitionAnimatable
-  @IBInspectable  var _transitionAnimationType: String? {
+  @IBInspectable open var _transitionAnimationType: String? {
     didSet {
       if let _transitionAnimationType = _transitionAnimationType {
         transitionAnimationType = TransitionAnimationType(string: _transitionAnimationType)
@@ -29,7 +29,7 @@ open class AnimatableViewController: UIViewController, ViewControllerDesignable,
   @IBInspectable open var transitionDuration: Double = .nan
 
   open var interactiveGestureType: InteractiveGestureType = .none
-  @IBInspectable var _interactiveGestureType: String? {
+  @IBInspectable open var _interactiveGestureType: String? {
     didSet {
       if let _interactiveGestureType = _interactiveGestureType {
         interactiveGestureType = InteractiveGestureType(string: _interactiveGestureType)
@@ -47,7 +47,6 @@ open class AnimatableViewController: UIViewController, ViewControllerDesignable,
   open override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     resetHideNavigationBar()
-
   }
 
   open override var preferredStatusBarStyle: UIStatusBarStyle {
