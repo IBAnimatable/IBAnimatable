@@ -172,8 +172,6 @@ Easily add color layer on top of the UI element especially `AnimatableImageView`
 | hideNavigationBar | Bool | whether to hide navigation bar. The default value is `false`. |
 
 #### `RefreshControlDesignable`
-Display a `UIRefreshControl` in `AnimatableTableViewController`
-
 | Property name | Data type | Description |
 | ------------- |:-------------:| ----- |
 | hasRefreshControl | Bool | whether to add a `UIRefreshControl`. The default value is `false`. |

@@ -1,7 +1,4 @@
 //
-//  TimeLineTableViewController.swift
-//  IBAnimatable
-//
 //  Created by Eric Marchand on 31/03/2017.
 //  Copyright © 2017 IBAnimatable. All rights reserved.
 //
@@ -9,7 +6,7 @@
 import UIKit
 import IBAnimatable
 
-public class TimeLineTableViewController: AnimatableTableViewController {
+public class RefreshTableViewController: AnimatableTableViewController {
 
   override public func viewDidLoad() {
     super.viewDidLoad()
@@ -36,7 +33,7 @@ public class TimeLineTableViewController: AnimatableTableViewController {
 
   // Function to update message recursively
   func updateMessage(refreshControl: UIRefreshControl, time: TimeInterval) {
-    if time < 0 {
+    guard time >= 0 else {
       return
     }
     var attributes: [String : Any] = [:]

@@ -18,7 +18,6 @@ All notable changes to this project will be documented in this file.
 [#417](https://github.com/IBAnimatable/IBAnimatable/pull/417) by [@phimage](https://github.com/phimage)
 - Add `AnimatableTableViewController` to support `UIRefreshControl` customization.
 [#418](https://github.com/IBAnimatable/IBAnimatable/pull/418) by [@phimage](https://github.com/phimage)
-CHANGELOG
 
 #### Bugfixes
 - Make corner sides case insensitive.

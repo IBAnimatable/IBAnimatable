@@ -25,16 +25,17 @@ public protocol RefreshControlDesignable {
 public extension RefreshControlDesignable where Self: UITableViewController {
 
   func configureRefreshController() {
-    if isViewLoaded {
-      if hasRefreshControl {
-        if refreshControl == nil {
-          refreshControl = UIRefreshControl()
-        }
-        refreshControl?.tintColor = refreshControlTintColor
-        refreshControl?.backgroundColor = refreshControlBackgroundColor
-      } else {
-        refreshControl = nil
+    guard !isViewLoaded else {
+      return
+    }
+    if hasRefreshControl {
+      if refreshControl == nil {
+        refreshControl = UIRefreshControl()
       }
+      refreshControl?.tintColor = refreshControlTintColor
+      refreshControl?.backgroundColor = refreshControlBackgroundColor
+    } else {
+      refreshControl = nil
     }
   }
 

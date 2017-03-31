@@ -1,7 +1,4 @@
 //
-//  AnimatableTableViewController.swift
-//  IBAnimatable
-//
 //  Created by phimage on 26/03/2017.
 //  Copyright © 2017 IBAnimatable. All rights reserved.
 //

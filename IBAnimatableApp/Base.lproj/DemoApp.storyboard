@@ -3401,10 +3401,10 @@
             </objects>
             <point key="canvasLocation" x="8145" y="482"/>
         </scene>
-        <!--Time Line Table View Controller-->
+        <!--Table View Controller-->
         <scene sceneID="3oo-QP-Iqp">
             <objects>
-                <tableViewController id="DWs-Hm-hGO" customClass="TimeLineTableViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="DWs-Hm-hGO" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="117" sectionHeaderHeight="28" sectionFooterHeight="28" id="ho8-uA-Rom" customClass="AnimatableTableView" customModule="IBAnimatable">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3848,15 +3848,6 @@
                             <outlet property="delegate" destination="DWs-Hm-hGO" id="sbK-sG-FUs"/>
                         </connections>
                     </tableView>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="hasRefreshControl" value="YES"/>
-                        <userDefinedRuntimeAttribute type="color" keyPath="refreshControlBackgroundColor">
-                            <color key="value" red="0.72886490821838379" green="0.46856951713562012" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="refreshControlTintColor">
-                            <color key="value" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ho-XZ-9UL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
