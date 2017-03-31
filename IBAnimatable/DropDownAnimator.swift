@@ -65,7 +65,9 @@ private extension DropDownAnimator {
     let animation = CAKeyframeAnimation(keyPath: "position.y")
     animation.values = [y - UIScreen.main.bounds.height, y + 20, y - 10, y]
     animation.keyTimes = [0, 0.5, 0.75, 1]
-    animation.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut), CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear), CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)]
+    animation.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut),
+                                 CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear),
+                                 CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)]
     animation.duration = transitionDuration
     animation.delegate = self
     self.completion = completion

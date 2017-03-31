@@ -39,19 +39,24 @@ public extension PlaceholderDesignable where Self: UITextView {
   }
 
   public func update(_ placeholderLabel: UILabel, using constraints: inout [NSLayoutConstraint]) {
-    var newConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-(\(textContainerInset.left + textContainer.lineFragmentPadding))-[placeholder]",
-                                                                        options: [], metrics: nil,
-                                                                        views: ["placeholder": placeholderLabel])
-    newConstraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|-(\(textContainerInset.top))-[placeholder]",
-                                                                     options: [], metrics: nil,
-                                                                     views: ["placeholder": placeholderLabel])
+    var format = "H:|-(\(textContainerInset.left + textContainer.lineFragmentPadding))-[placeholder]"
+    var newConstraints = NSLayoutConstraint.constraints(withVisualFormat: format,
+                                                        options: [], metrics: nil,
+                                                        views: ["placeholder": placeholderLabel])
+
+    format = "V:|-(\(textContainerInset.top))-[placeholder]"
+    newConstraints += NSLayoutConstraint.constraints(withVisualFormat: format,
+                                                     options: [], metrics: nil,
+                                                     views: ["placeholder": placeholderLabel])
+
+    let constant = -(textContainerInset.left + textContainerInset.right + textContainer.lineFragmentPadding * 2.0)
     newConstraints.append(NSLayoutConstraint(item: placeholderLabel,
-      attribute: .width,
-      relatedBy: .equal,
-      toItem: self,
-      attribute: .width,
-      multiplier: 1.0,
-      constant: -(textContainerInset.left + textContainerInset.right + textContainer.lineFragmentPadding * 2.0)))
+                                             attribute: .width,
+                                             relatedBy: .equal,
+                                             toItem: self,
+                                             attribute: .width,
+                                             multiplier: 1.0,
+                                             constant: constant))
 
     removeConstraints(constraints)
     addConstraints(newConstraints)

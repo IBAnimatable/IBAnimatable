@@ -8,7 +8,9 @@ import UIKit
 // FIXME: almost same as `AnimatableView`, Need to refactor to encasuplate.
 @available(iOS 9, *)
 @IBDesignable
-open class AnimatableStackView: UIStackView, CornerDesignable, FillDesignable, BorderDesignable, RotationDesignable, ShadowDesignable, TintDesignable, GradientDesignable, MaskDesignable, Animatable {
+open class AnimatableStackView: UIStackView, CornerDesignable, FillDesignable, BorderDesignable,
+                                             RotationDesignable, ShadowDesignable, TintDesignable, GradientDesignable,
+                                             MaskDesignable, Animatable {
 
   // MARK: - CornerDesignable
   @IBInspectable open var cornerRadius: CGFloat = CGFloat.nan {

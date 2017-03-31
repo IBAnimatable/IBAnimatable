@@ -92,7 +92,8 @@ extension AnimatablePresentationController {
     if let keyboardFrame = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
       let presentedFrame = frameOfPresentedViewInContainerView
       let duration = (notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue ?? 0.5
-      let translatedFrame = presentationConfiguration.keyboardTranslation.translationFrame(keyboardFrame: keyboardFrame, presentedFrame: presentedFrame)
+      let translatedFrame = presentationConfiguration.keyboardTranslation.translationFrame(keyboardFrame: keyboardFrame,
+                                                                                           presentedFrame: presentedFrame)
 
       let curve = UIViewAnimationOptions(rawValue: UInt(duration))
       UIView.animate(withDuration: duration, delay: 0, options: curve, animations: {
