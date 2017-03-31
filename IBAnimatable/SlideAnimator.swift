@@ -63,7 +63,8 @@ extension SlideAnimator: UIViewControllerAnimatedTransitioning {
     }
 
     let travelDistance = isHorizontal ? containerView.bounds.width : containerView.bounds.height
-    let travel = CGAffineTransform(translationX: isHorizontal ? (isReverse ? travelDistance : -travelDistance) : 0, y: isHorizontal ? 0 : (isReverse ? travelDistance : -travelDistance))
+    let travel = CGAffineTransform(translationX: isHorizontal ? (isReverse ? travelDistance : -travelDistance) : 0,
+                                   y: isHorizontal ? 0 : (isReverse ? travelDistance : -travelDistance))
     containerView.addSubview(toView)
     if isFade {
       toView.alpha = 0

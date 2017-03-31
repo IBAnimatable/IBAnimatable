@@ -46,9 +46,13 @@ extension SystemCameraIrisAnimator: UIViewControllerAnimatedTransitioning {
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     switch self.hollowState {
     case .open:
-      animateWithCATransition(transitionContext: transitionContext, type: TransitionAnimationType.SystemTransitionType.cameraIrisHollowOpen, subtype: nil)
+      animateWithCATransition(transitionContext: transitionContext,
+                              type: TransitionAnimationType.SystemTransitionType.cameraIrisHollowOpen,
+                              subtype: nil)
     case .close:
-      animateWithCATransition(transitionContext: transitionContext, type: TransitionAnimationType.SystemTransitionType.cameraIrisHollowClose, subtype: nil)
+      animateWithCATransition(transitionContext: transitionContext,
+                              type: TransitionAnimationType.SystemTransitionType.cameraIrisHollowClose,
+                              subtype: nil)
     case .none:
       animateWithCATransition(transitionContext: transitionContext, type: TransitionAnimationType.SystemTransitionType.cameraIris, subtype: nil)
 

@@ -71,10 +71,14 @@ open class AnimatableViewController: UIViewController, ViewControllerDesignable,
 
     let toViewController = segue.destination
     // If interactiveGestureType hasn't been set
+    let transitionManager = TransitionPresenterManager.shared
     if case .none = interactiveGestureType {
-      toViewController.transitioningDelegate = TransitionPresenterManager.shared.retrievePresenter(transitionAnimationType: transitionAnimationType, transitionDuration: transitionDuration)
+      toViewController.transitioningDelegate = transitionManager.retrievePresenter(transitionAnimationType: transitionAnimationType,
+                                                                                   transitionDuration: transitionDuration)
     } else {
-      toViewController.transitioningDelegate = TransitionPresenterManager.shared.retrievePresenter(transitionAnimationType: transitionAnimationType, transitionDuration: transitionDuration, interactiveGestureType: interactiveGestureType)
+      toViewController.transitioningDelegate = transitionManager.retrievePresenter(transitionAnimationType: transitionAnimationType,
+                                                                                   transitionDuration: transitionDuration,
+                                                                                   interactiveGestureType: interactiveGestureType)
     }
   }
 

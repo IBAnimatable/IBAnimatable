@@ -39,7 +39,9 @@ private extension TransitionPushedViewController {
       return
     }
 
-    gestureLabel.text = retrieveGestureText(interactiveGestureType: navigationController.interactiveGestureType, transitionAnimationType: navigationController.transitionAnimationType, exit: "pop")
+    gestureLabel.text = retrieveGestureText(interactiveGestureType: navigationController.interactiveGestureType,
+                                            transitionAnimationType: navigationController.transitionAnimationType,
+                                            exit: "pop")
   }
 
 }
