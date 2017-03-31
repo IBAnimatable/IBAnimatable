@@ -190,6 +190,32 @@ extension TransitionAnimationType {
         return .cross
       }
     }
+
+    var matchingGesture: InteractiveGestureType.GestureDirection {
+      switch self {
+      case .left: return .left
+      case .right: return .right
+      case .top: return .top
+      case .bottom: return .bottom
+      case .forward: return .open
+      case .backward: return .close
+      default:
+        fatalError("No matching GestureDirection for \(self)")
+      }
+    }
+
+    var opposingGesture: InteractiveGestureType.GestureDirection {
+      switch self {
+      case .left: return .right
+      case .right: return .left
+      case .top: return .bottom
+      case .bottom: return .top
+      case .forward: return .close
+      case .backward: return .open
+      default:
+        fatalError("No opposing GestureDirection for \(self)")
+      }
+    }
   }
 }
 
@@ -202,6 +228,24 @@ extension TransitionAnimationType {
     case none
     case open
     case close
+
+    var opposite: HollowState {
+      switch self {
+      case .close: return .open
+      case .open: return .close
+      case .none:
+        fatalError("No opposing HollowState for HollowState.none")
+      }
+    }
+
+    var opposingGesture: InteractiveGestureType.GestureDirection {
+      switch self {
+      case .open: return .close
+      case .close: return .open
+      case .none:
+        fatalError("No opposing GestureDirection for HollowState.none")
+      }
+    }
   }
 }
 
@@ -213,6 +257,13 @@ extension TransitionAnimationType {
   public enum PageType: String {
     case curl
     case unCurl
+
+    var opposite: PageType {
+      switch self {
+      case .curl: return .unCurl
+      case .unCurl: return .curl
+      }
+    }
   }
 }
 

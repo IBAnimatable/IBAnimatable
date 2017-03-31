@@ -3,8 +3,6 @@
 //  Copyright © 2017 IBAnimatable. All rights reserved.
 //
 
-import Foundation
-
 import UIKit
 
 /// Protocol for designing slider image

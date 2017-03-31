@@ -3,7 +3,6 @@
 //  Copyright © 2016 IBAnimatable. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 public enum ColorType: String, IBEnum {

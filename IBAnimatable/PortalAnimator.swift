@@ -25,11 +25,11 @@ public class PortalAnimator: NSObject, AnimatedTransitioning {
       self.zoomScale = zoomScale
     }
 
-    switch fromDirection {
+    switch direction {
     case .forward:
-      self.transitionAnimationType = .portal(direction: .forward, zoomScale: self.zoomScale)
-      self.reverseAnimationType = .portal(direction: .backward, zoomScale: self.zoomScale)
-      self.interactiveGestureType = .pinch(direction: .close)
+      self.transitionAnimationType = .portal(direction: direction, zoomScale: self.zoomScale)
+      self.reverseAnimationType = .portal(direction: direction.opposite, zoomScale: self.zoomScale)
+      self.interactiveGestureType = .pinch(direction: direction.opposingGesture)
     default:
       self.transitionAnimationType = .portal(direction: .backward, zoomScale: self.zoomScale)
       self.reverseAnimationType = .portal(direction: .forward, zoomScale: self.zoomScale)
