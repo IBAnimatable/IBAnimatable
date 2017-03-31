@@ -1,4 +1,4 @@
-### Animatable UI elements 
+### Animatable UI elements
 To use `IBAnimatable`, we can drag and drop a UIKit element and connect it with `Animatable` UI element in Identity inspector. Here are the supported `Animatable` UI elements to map UIKit elements.
 
 | UIKit elements | Animatable UI elements | Description |
@@ -18,6 +18,7 @@ To use `IBAnimatable`, we can drag and drop a UIKit element and connect it with 
 | UINavigationBar | DesignableNavigationBar | |
 | UIViewController | AnimatableViewController | |
 | UINavigationController | AnimatableNavigationController | |
+| UITableViewController | AnimatableTableViewController| |
 | UISlider | AnimatableSlider | |
 | UIActivityIndicatorView | AnimatableActivityIndicatorView | [List of animations available](./ActivityIndicator.md) |
 
@@ -170,6 +171,26 @@ Easily add color layer on top of the UI element especially `AnimatableImageView`
 | ------------- |:-------------:| ----- |
 | hideNavigationBar | Bool | whether to hide navigation bar. The default value is `false`. |
 
+#### `RefreshControlDesignable`
+Display a `UIRefreshControl` in `AnimatableTableViewController`
+
+| Property name | Data type | Description |
+| ------------- |:-------------:| ----- |
+| hasRefreshControl | Bool | whether to add a `UIRefreshControl`. The default value is `false`. |
+| refreshControlTintColor | Optional&lt;UIColor> | tint color of the `UIRefreshControl` |
+| refreshControlBackgroundColor | Optional&lt;UIColor> | background color of the `UIRefreshControl`  |
+
+#### `SliderImagesDesignable`
+
+| Property name | Data type | Description |
+| ------------- |:-------------:| ----- |
+| thumbImage | Optional&lt;UIImage> | the thumb image when slider state is `normal`. |
+| thumbHighlightedImage | Optional&lt;UIImage> | the thumb image when slider state is `highlighted`. |
+| minimumTrackImage | Optional&lt;UIImage> | the minimum track image when slider state is `normal`. |
+| minimumTrackHighlightedImage | Optional&lt;UIImage> | the minimum track image when slider state is `highlighted`. |
+| maximumTrackImage | Optional&lt;UIImage> | the maximum track image when slider state is `normal`. |
+| maximumTrackHighlightedImage | Optional&lt;UIImage> | the maximum track image when slider state is `highlighted`. |
+
 ### Animatable protocol
 #### Properties
 | Property name | Data type | Description |
@@ -223,5 +244,3 @@ Also see [Transition Animators](Transitions.md#transition-animators) and [Intera
 
 ### Segues
 See [Segues](Transitions.md#segues)
-
-
