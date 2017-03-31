@@ -12,7 +12,7 @@ public class RefreshTableViewController: AnimatableTableViewController {
     super.viewDidLoad()
 
     // Install action on refresh
-    self.refreshControl?.addTarget(self, action: #selector(TimeLineTableViewController.refresh(_:)), for: .valueChanged)
+    self.refreshControl?.addTarget(self, action: #selector(RefreshTableViewController.refresh(_:)), for: .valueChanged)
   }
 
   public func refresh(_ refreshControl: UIRefreshControl) {

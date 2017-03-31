@@ -6,7 +6,8 @@
 import UIKit
 
 @IBDesignable
-open class AnimatableTableViewController: UITableViewController, ViewControllerDesignable, StatusBarDesignable, RootWindowDesignable, TransitionAnimatable, RefreshControlDesignable {
+open class AnimatableTableViewController: UITableViewController, ViewControllerDesignable, StatusBarDesignable,
+                                             RootWindowDesignable, TransitionAnimatable, RefreshControlDesignable {
 
   // MARK: - ViewControllerDesignable
   @IBInspectable open var hideNavigationBar: Bool = false
