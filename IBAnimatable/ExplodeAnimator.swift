@@ -13,21 +13,16 @@ public class ExplodeAnimator: NSObject, AnimatedTransitioning {
   public var interactiveGestureType: InteractiveGestureType?
 
   // MARK: - private
-  fileprivate var xFactor: CGFloat = 10.0
-  fileprivate var minAngle: CGFloat = -10.0
-  fileprivate var maxAngle: CGFloat = 10.0
+  fileprivate var xFactor: CGFloat
+  fileprivate var minAngle: CGFloat
+  fileprivate var maxAngle: CGFloat
 
   public init(xFactor: CGFloat?, minAngle: CGFloat?, maxAngle: CGFloat?, transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
-    if let xFactor = xFactor {
-      self.xFactor = xFactor
-    }
-    if let minAngle = minAngle {
-      self.minAngle = minAngle
-    }
-    if let maxAngle = maxAngle {
-      self.maxAngle = maxAngle
-    }
+
+    self.xFactor = xFactor ?? 10.0
+    self.minAngle = minAngle ?? -10.0
+    self.maxAngle = maxAngle ?? 10.0
 
     self.transitionAnimationType = .explode(xFactor: self.xFactor, minAngle: self.minAngle, maxAngle: self.maxAngle)
     self.reverseAnimationType = .explode(xFactor: self.xFactor, minAngle: self.minAngle, maxAngle: self.maxAngle)
