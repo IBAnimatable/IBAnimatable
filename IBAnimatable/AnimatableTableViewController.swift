@@ -19,7 +19,7 @@ open class AnimatableTableViewController: UITableViewController, ViewControllerD
   @IBInspectable open var rootWindowBackgroundColor: UIColor?
 
   // MARK: - TransitionAnimatable
-  @IBInspectable open var _transitionAnimationType: String? {
+  @IBInspectable var _transitionAnimationType: String? {
     didSet {
       if let _transitionAnimationType = _transitionAnimationType {
         transitionAnimationType = TransitionAnimationType(string: _transitionAnimationType)
@@ -31,7 +31,7 @@ open class AnimatableTableViewController: UITableViewController, ViewControllerD
   @IBInspectable open var transitionDuration: Double = .nan
 
   open var interactiveGestureType: InteractiveGestureType = .none
-  @IBInspectable open var _interactiveGestureType: String? {
+  @IBInspectable var _interactiveGestureType: String? {
     didSet {
       if let _interactiveGestureType = _interactiveGestureType {
         interactiveGestureType = InteractiveGestureType(string: _interactiveGestureType)
