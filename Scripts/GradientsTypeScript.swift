@@ -66,6 +66,7 @@ var switchPredefinedGradientType = "switch gradientType {\n"
 // Enum generator
 let gradientsType = parse(JSON(gradientTypeURL))
 for gradient in gradientsType! {
+  // swiftlint:disable:next for_where
   if var name = gradient["name"] as? String,
     let colors = gradient["colors"] as? [String],
     let startColor = colors.first,

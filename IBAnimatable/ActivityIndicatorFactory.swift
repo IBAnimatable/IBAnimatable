@@ -9,7 +9,7 @@ public struct ActivityIndicatorFactory {
   public static func makeActivityIndicator(activityIndicatorType: ActivityIndicatorType) -> ActivityIndicatorAnimating {
     switch activityIndicatorType {
     case .none:
-      fatalError()
+      fatalError("Invalid ActivityIndicatorAnimating")
     case .audioEqualizer:
       return ActivityIndicatorAnimationAudioEqualizer()
     case .ballBeat:

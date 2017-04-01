@@ -65,7 +65,9 @@ public protocol PresentationDesignable: class {
 public extension PresentationDesignable where Self: UIViewController {
 
   public func configurePresenter() {
-    presenter = PresentationPresenterManager.shared.retrievePresenter(presentationAnimationType: presentationAnimationType, transitionDuration: transitionDuration)
+    let presentationManager = PresentationPresenterManager.shared
+    presenter = presentationManager.retrievePresenter(presentationAnimationType: presentationAnimationType,
+                                                      transitionDuration: transitionDuration)
     presenter?.dismissalAnimationType = dismissalAnimationType
     transitioningDelegate = presenter
     modalPresentationStyle = .custom

@@ -1,12 +1,14 @@
 //
-//  Created by Jake Lin on 12/14/15.
-//  Copyright © 2015 IBAnimatable. All rights reserved.
+//  Created by phimage on 26/03/2017.
+//  Copyright © 2017 IBAnimatable. All rights reserved.
 //
 
 import UIKit
 
 @IBDesignable
-open class AnimatableViewController: UIViewController, ViewControllerDesignable, StatusBarDesignable, RootWindowDesignable, TransitionAnimatable {
+open class AnimatableTableViewController: UITableViewController, ViewControllerDesignable, StatusBarDesignable,
+                                             RootWindowDesignable, TransitionAnimatable, RefreshControlDesignable {
+
   // MARK: - ViewControllerDesignable
   @IBInspectable open var hideNavigationBar: Bool = false
 
@@ -17,7 +19,7 @@ open class AnimatableViewController: UIViewController, ViewControllerDesignable,
   @IBInspectable open var rootWindowBackgroundColor: UIColor?
 
   // MARK: - TransitionAnimatable
-  @IBInspectable  var _transitionAnimationType: String? {
+  @IBInspectable var _transitionAnimationType: String? {
     didSet {
       if let _transitionAnimationType = _transitionAnimationType {
         transitionAnimationType = TransitionAnimationType(string: _transitionAnimationType)
@@ -37,7 +39,30 @@ open class AnimatableViewController: UIViewController, ViewControllerDesignable,
     }
   }
 
+  // MARK: - RefreshControlDesignable
+
+  @IBInspectable open var hasRefreshControl: Bool = false {
+    didSet {
+      configureRefreshController()
+    }
+  }
+  @IBInspectable open var refreshControlTintColor: UIColor? {
+    didSet {
+      configureRefreshController()
+    }
+  }
+  @IBInspectable open var refreshControlBackgroundColor: UIColor? {
+    didSet {
+      configureRefreshController()
+    }
+  }
+
   // MARK: - Lifecylce
+  open override func viewDidLoad() {
+    super.viewDidLoad()
+    configureRefreshController()
+  }
+
   open override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     configureHideNavigationBar()
@@ -47,7 +72,6 @@ open class AnimatableViewController: UIViewController, ViewControllerDesignable,
   open override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     resetHideNavigationBar()
-
   }
 
   open override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -62,7 +86,7 @@ open class AnimatableViewController: UIViewController, ViewControllerDesignable,
 
     // Configure custom transition animation
     guard (segue.destination is PresentationDesignable) == false else {
-        return
+      return
     }
 
     if case .none = transitionAnimationType {

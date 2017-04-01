@@ -132,6 +132,7 @@ private extension FlipAnimator {
     let shadowView = UIView(frame: viewWithShadow.bounds)
     let gradient = CAGradientLayer()
     gradient.frame = shadowView.bounds
+    // swiftlint:disable:next object_literal
     gradient.colors = [UIColor(white: 0.0, alpha: 0.0), UIColor(white: 0.0, alpha: 0.5)]
     if horizontal {
       var axesValues = valuesForAxe(initialValue: reverse ? 0.0 : 1.0, reverseValue: reverse ? 0.2 : 0.0)
@@ -174,7 +175,9 @@ private extension FlipAnimator {
 
 private extension FlipAnimator {
 
-  func animateFlipTransition(flippedSectionOfFromView: (UIView, UIView), flippedSectionOfToView: (UIView, UIView), completion: @escaping AnimatableCompletion) {
+  func animateFlipTransition(flippedSectionOfFromView: (UIView, UIView),
+                             flippedSectionOfToView: (UIView, UIView),
+                             completion: @escaping AnimatableCompletion) {
     UIView.animateKeyframes(withDuration: transitionDuration, delay: 0, options: .layoutSubviews, animations: {
       UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5, animations: {
         flippedSectionOfFromView.0.layer.transform = self.rotate(angle: self.reverse ? -.pi * 2 : .pi * 2)

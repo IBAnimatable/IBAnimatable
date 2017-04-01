@@ -72,7 +72,7 @@ private extension CoverAnimator {
     case .bottom:
       initialFrame.origin.y = 0 - initialFrame.size.height
     default:
-      fatalError()
+      fatalError("Invalid cover direction")
     }
     return initialFrame
   }

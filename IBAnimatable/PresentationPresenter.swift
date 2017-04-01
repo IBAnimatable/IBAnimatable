@@ -43,15 +43,21 @@ public class PresentationPresenter: NSObject {
 extension PresentationPresenter: UIViewControllerTransitioningDelegate {
 
   // MARK: - presentation
-  public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+  public func presentationController(forPresented presented: UIViewController,
+                                     presenting: UIViewController?,
+                                     source: UIViewController) -> UIPresentationController? {
     guard let presentationConfiguration = presentationConfiguration else {
       return nil
     }
-    return AnimatablePresentationController(presentedViewController: presented, presentingViewController: presenting, presentationConfiguration: presentationConfiguration)
+    return AnimatablePresentationController(presentedViewController: presented,
+                                            presentingViewController: presenting,
+                                            presentationConfiguration: presentationConfiguration)
   }
 
   // MARK: - animation controller
-  public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+  public func animationController(forPresented presented: UIViewController,
+                                  presenting: UIViewController,
+                                  source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     animator?.transitionDuration = transitionDuration
     return animator
   }

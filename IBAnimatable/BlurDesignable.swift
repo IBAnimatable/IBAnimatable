@@ -28,9 +28,9 @@ public extension BlurDesignable where Self: UIView {
    configureBlurEffectStyle method, should be called in layoutSubviews() method
    */
   public func configureBlurEffectStyle() {
-    configureBlurEffectStyle(self)
+    configureBlurEffectStyle(for: self)
   }
-  public func configureBlurEffectStyle(_ blurableView: UIView) {
+  public func configureBlurEffectStyle(for blurableView: UIView) {
     // Used for caching the previous visual effect view
     var privateVisualEffectView: PrivateVisualEffectView?
 
@@ -92,7 +92,7 @@ public extension BlurDesignable where Self: UITableView {
       self.separatorEffect = nil
       return
     }
-    configureBlurEffectStyle(blurableView)
+    configureBlurEffectStyle(for: blurableView)
     guard let blurEffectStyle = blurEffectStyle else {
       return
     }

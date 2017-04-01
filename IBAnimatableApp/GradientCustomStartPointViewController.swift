@@ -15,7 +15,11 @@ class GradientCustomStartPointViewController: UIViewController {
 
   let gradientValues = ParamType(fromEnum: GradientType.self)
   let coordPointValues = ParamType.number(min: 0, max: 1, interval: 0.1, ascending: true, unit: "")
-  lazy var componentValues: [ParamType] = [self.gradientValues, self.coordPointValues, self.coordPointValues, self.coordPointValues, self.coordPointValues]
+  lazy var componentValues: [ParamType] = [self.gradientValues,
+                                           self.coordPointValues,
+                                           self.coordPointValues,
+                                           self.coordPointValues,
+                                           self.coordPointValues]
 
   override func viewDidLoad() {
     super.viewDidLoad()

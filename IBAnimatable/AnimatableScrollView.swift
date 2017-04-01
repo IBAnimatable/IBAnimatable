@@ -6,7 +6,10 @@
 import UIKit
 
 @IBDesignable
-open class AnimatableScrollView: UIScrollView, CornerDesignable, FillDesignable, BorderDesignable, RotationDesignable, ShadowDesignable, BlurDesignable, TintDesignable, GradientDesignable, MaskDesignable, Animatable {
+open class AnimatableScrollView: UIScrollView, CornerDesignable, FillDesignable, BorderDesignable,
+                                               RotationDesignable, ShadowDesignable, BlurDesignable,
+                                               TintDesignable, GradientDesignable, MaskDesignable,
+                                               Animatable {
 
   // MARK: - CornerDesignable
   @IBInspectable open var cornerRadius: CGFloat = CGFloat.nan {

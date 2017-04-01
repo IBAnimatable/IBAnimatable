@@ -3,8 +3,6 @@
 //  Copyright © 2017 IBAnimatable. All rights reserved.
 //
 
-import Foundation
-
 import UIKit
 
 /// Protocol for designing background image
@@ -33,18 +31,17 @@ extension UITableView: BackgroundDesignable {}
 extension UICollectionViewCell: BackgroundDesignable {}
 extension UICollectionView: BackgroundDesignable {}
 
-fileprivate typealias BackgroundImageView = AnimatableImageView
-
 public extension BackgroundImageDesignable where Self: BackgroundDesignable {
+
   public func configureBackgroundImage() {
     if let image = backgroundImage {
-      if let imageView = self.backgroundView as? AnimatableImageView {
+      if let imageView = backgroundView as? UIImageView {
         imageView.image = image
       } else {
-        backgroundView = BackgroundImageView(image: image)
+        backgroundView = PrivateAnimatableImageView(image: image)
       }
     } else {
-      if self.backgroundView is BackgroundImageView {
+      if backgroundView is PrivateAnimatableImageView {
         backgroundView = nil
       }
     }
@@ -52,10 +49,16 @@ public extension BackgroundImageDesignable where Self: BackgroundDesignable {
 
   public var backgroundImageView: UIImageView? {
     get {
-      return self.backgroundView as? UIImageView
+      return backgroundView as? UIImageView
     }
     set {
-      self.backgroundView = newValue
+      backgroundView = newValue
     }
   }
+
+}
+
+/// Private class of image view used in `BackgroundImageDesignable` only
+private class PrivateAnimatableImageView: AnimatableImageView {
+
 }

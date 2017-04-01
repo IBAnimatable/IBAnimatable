@@ -6,7 +6,9 @@
 import UIKit
 
 @IBDesignable
-open class AnimatableCheckBox: UIButton, CheckBoxDesignable, CornerDesignable, FillDesignable, BorderDesignable, ShadowDesignable, MaskDesignable, Animatable {
+open class AnimatableCheckBox: UIButton, CheckBoxDesignable, CornerDesignable, FillDesignable,
+                                         BorderDesignable, ShadowDesignable, MaskDesignable,
+                                         Animatable {
 
   // MARK: - CheckBoxDesignable
   @IBInspectable open var checked: Bool = false {
