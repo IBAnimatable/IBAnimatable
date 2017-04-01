@@ -24,18 +24,11 @@ public class TurnAnimator: NSObject, AnimatedTransitioning {
     fromDirection = direction
     self.transitionDuration = transitionDuration
 
-    switch direction {
-    case .right, .top, .bottom:
-      self.transitionAnimationType = .turn(from: direction)
-      self.reverseAnimationType = .turn(from: direction.opposite)
-      self.interactiveGestureType = .pan(from: direction.opposingGesture)
-      reverse = direction == .top ? false : true
-    default:
-      self.transitionAnimationType = .turn(from: .left)
-      self.reverseAnimationType = .turn(from: .right)
-      self.interactiveGestureType = .pan(from: .right)
-      reverse = false
-    }
+    self.transitionAnimationType = .turn(from: direction)
+    self.reverseAnimationType = .turn(from: direction.opposite)
+    self.interactiveGestureType = .pan(from: direction.opposingGesture)
+    reverse = direction == .right || direction == .bottom
+
     super.init()
   }
 }

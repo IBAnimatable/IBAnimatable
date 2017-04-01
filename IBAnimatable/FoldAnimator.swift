@@ -14,7 +14,7 @@ public class FoldAnimator: NSObject, AnimatedTransitioning {
 
   // MARK: - Private params
   fileprivate var fromDirection: TransitionAnimationType.Direction
-  fileprivate var folds: Int = 2
+  fileprivate var folds: Int
 
   // MARK: - Private fold transition
   fileprivate var transform: CATransform3D = CATransform3DIdentity
@@ -35,22 +35,13 @@ public class FoldAnimator: NSObject, AnimatedTransitioning {
     self.transitionDuration = transitionDuration
     horizontal = fromDirection.isHorizontal
 
-    if let folds = folds {
-      self.folds = folds
-    }
+    self.folds = folds ?? 2
 
-    switch direction {
-    case .right, .bottom, .top:
-      self.transitionAnimationType = .fold(from: direction, folds: folds)
-      self.reverseAnimationType = .fold(from: direction.opposite, folds: folds)
-      self.interactiveGestureType = .pan(from: direction.opposingGesture)
-      reverse = direction == .top ? false : true
-    default:
-      self.transitionAnimationType = .fold(from: .left, folds: folds)
-      self.reverseAnimationType = .fold(from: .right, folds: folds)
-      self.interactiveGestureType = .pan(from: .right)
-      reverse = false
-    }
+    self.transitionAnimationType = .fold(from: direction, folds: folds)
+    self.reverseAnimationType = .fold(from: direction.opposite, folds: folds)
+    self.interactiveGestureType = .pan(from: direction.opposingGesture)
+    reverse = direction == .right || direction == .bottom
+
     super.init()
   }
 }
