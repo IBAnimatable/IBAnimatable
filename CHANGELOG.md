@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 ### Next
 
 #### API breaking changes
-- `CornerSide`'s swift3 migration leftovers: renaming `.AllSides` to `.allSides`. If you were setting programatically a cornerSide to your view, you will just have to lowercase the A. [#409](https://github.com/IBAnimatable/IBAnimatable/pull/409) by [@tbaranes](https://github.com/tbaranes)
+- `CornerSide`'s swift3 migration leftovers: renaming `.AllSides` to `.allSides`. If you were setting programmatically a cornerSide to your view, you will just have to lowercase the A. [#409](https://github.com/IBAnimatable/IBAnimatable/pull/409) by [@tbaranes](https://github.com/tbaranes)
 - `AnimatableSlider` inherit from `UISlider`
 
 #### Enhancements
@@ -16,13 +16,14 @@ All notable changes to this project will be documented in this file.
 [#403](https://github.com/IBAnimatable/IBAnimatable/pull/403) by [@tbaranes](https://github.com/tbaranes)
 - Make images of `AnimatableSlider` designable.
 [#417](https://github.com/IBAnimatable/IBAnimatable/pull/417) by [@phimage](https://github.com/phimage)
-
+- Add `AnimatableTableViewController` to support `UIRefreshControl` customization.
+[#418](https://github.com/IBAnimatable/IBAnimatable/pull/418) by [@phimage](https://github.com/phimage)
 
 #### Bugfixes
 - Make corner sides case insensitive.
 [#394](https://github.com/IBAnimatable/IBAnimatable/issues/394) by [@mmadjer](https://github.com/mmadjer)
 - Frame is converted to window coordinate space to fix miscalculations in computed values (used with `slideOut`, ...) [#412](https://github.com/IBAnimatable/IBAnimatable/issues/412) by [@redent](https://github.com/redent)
- 
+
 ---
 ### [3.1.3](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.1.3)
 
@@ -207,13 +208,13 @@ None
 - Add `Turn` to support Turn transition animation. It supports only a direction `Turn(direction)`, if no specified, the default values are `Turn(Left)`. [#155](https://github.com/IBAnimatable/IBAnimatable/issues/155)
 - Add `CardsAnimator` to support Cards transition animation. It supports parameters `Cards(direction)`, if no specified, the default values are `Cards(Forward)`. [#155](https://github.com/IBAnimatable/IBAnimatable/issues/155)
 - Add `FlipAnimator` to support Flip transition animation. It supports parameters `Flip(direction)`, if no specified, the default values are `Flip(Left)`. Currently only support `Flip(Left)` and `Flip(Right)`. [#155](https://github.com/IBAnimatable/IBAnimatable/issues/155)
-- Add `ContainerTransition` to manage transition animations between two UIViewController in a container
+- Add `ContainerTransition` to manage transition animations between two `UIViewController` in a container
 - Add `AnimatableCollectionViewCell` [#167](https://github.com/IBAnimatable/IBAnimatable/pull/167)
 - Add `PinchInteractiveAnimator` to support `Pinch(Close)`, `Pinch(Open)` for `Pinch` gesture transition controller. [#125](https://github.com/IBAnimatable/IBAnimatable/issues/125)
 - Add `SlideAnimator` to support Slide transition animation. It supports parameters `Slide(direction, fade)`, if no specified, the default values are `Flip(Left)`. [#155](https://github.com/IBAnimatable/IBAnimatable/issues/155)
 - Add IBAnimatable Playground to demonstrate transitions and interactions. [#204](https://github.com/IBAnimatable/IBAnimatable/pull/204)
 - Add `Parallelogram` mask. [#207 - Parallelogram Mask support in Maskdesignable](https://github.com/IBAnimatable/IBAnimatable/pull/207)
-- Add `popToRootViewController` segue for poping to root ViewController of the NavigationController. [#212](https://github.com/IBAnimatable/IBAnimatable/pull/212)
+- Add `popToRootViewController` segue for popping to root ViewController of the NavigationController. [#212](https://github.com/IBAnimatable/IBAnimatable/pull/212)
 
 #### Bugfixes
 
@@ -308,7 +309,7 @@ None
 - Add `Navigator` to manage Push and Pop transition animations
 - Add `Presenter` to manage Present and Dismiss transition animations
 - Add `PresentFadeSegue`, `PresentFadeInSegue` and `PresentFadeOutSegue` for Present transition with Fade animations
-- Add `PresentFadeWithDismissInteractionSegue`, `PresentFadeInWithDismissInteractionSegue` and `PresentFadeOutWithDismissInteractionSegue` for Present transition with Fade animations and getsture interactions.
+- Add `PresentFadeWithDismissInteractionSegue`, `PresentFadeInWithDismissInteractionSegue` and `PresentFadeOutWithDismissInteractionSegue` for Present transition with Fade animations and gesture interactions.
 - Add `PanInteractiveAnimator` to handle Pan interaction for Dismiss and Pop
 - Demo App can experiment all transition animations (tap on "Forget Password" button to see)
 
@@ -367,5 +368,3 @@ None
 ### [1.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/1.0)
 
 - Initial release
-
-
