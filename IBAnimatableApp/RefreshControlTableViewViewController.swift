@@ -6,13 +6,18 @@
 import UIKit
 import IBAnimatable
 
-public class RefreshControlTableViewController: AnimatableTableViewController {
+public class RefreshControlTableViewViewController: AnimatableViewController {
+
+  @IBOutlet fileprivate weak var tableView: AnimatableTableView!
+  fileprivate let rows = ["Did you try to pull?", "Nice control, isn't it?", "Fully customisable in interface builder", "Amazing!", "iOS10 only... wanna make a PR to change this?"]
 
   override public func viewDidLoad() {
     super.viewDidLoad()
 
     // Install action on refresh
-    self.refreshControl?.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+    if #available(iOS 10.0, *) {
+      tableView.refreshControl?.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+    }
   }
 
   public func refresh(_ refreshControl: UIRefreshControl) {
@@ -37,7 +42,7 @@ public class RefreshControlTableViewController: AnimatableTableViewController {
     }
 
     var attributes = [String: Any]()
-    if let color = refreshControlTintColor {
+    if let color = tableView.refreshControlTintColor {
       attributes[NSForegroundColorAttributeName] = color
     }
     refreshControl.attributedTitle = NSAttributedString(string: "\(Int(time))", attributes: attributes )
@@ -45,6 +50,23 @@ public class RefreshControlTableViewController: AnimatableTableViewController {
     DispatchQueue.main.after(1) { [weak self] in
       self?.updateMessage(refreshControl: refreshControl, time: time - 1)
     }
+  }
+
+}
+
+
+// MARK: DispatchQueue utility extension
+
+extension RefreshControlTableViewViewController: UITableViewDataSource {
+
+  public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return rows.count
+  }
+
+  public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "refreshControllCell", for: indexPath) as UITableViewCell
+    cell.textLabel?.text = rows[indexPath.row]
+    return cell
   }
 
 }
