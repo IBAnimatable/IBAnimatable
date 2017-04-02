@@ -34,11 +34,15 @@ public extension RefreshControlDesignable where Self: UITableViewController {
 
 }
 
-@available(iOSApplicationExtension 10.0, *)
 public extension RefreshControlDesignable where Self: UITableView {
 
   func configureRefreshController() {
-    configureRefreshController(hasRefreshControl: hasRefreshControl, refreshControl: &refreshControl)
+    if #available(iOSApplicationExtension 10.0, *) {
+      configureRefreshController(hasRefreshControl: hasRefreshControl, refreshControl: &refreshControl)
+    } else {
+      var refreshControl = self.subviews.first { $0 is UIRefreshControl } as? UIRefreshControl
+      configureRefreshController(hasRefreshControl: hasRefreshControl, refreshControl: &refreshControl)
+    }
   }
 
 }

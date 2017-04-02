@@ -125,23 +125,17 @@ open var startPoint: GradientStartPoint = .top
   // MARK: - RefreshControlDesignable
   @IBInspectable open var hasRefreshControl: Bool = false {
     didSet {
-      if #available(iOSApplicationExtension 10.0, *) {
-        configureRefreshController()
-      }
+      configureRefreshController()
     }
   }
   @IBInspectable open var refreshControlTintColor: UIColor? {
     didSet {
-      if #available(iOSApplicationExtension 10.0, *) {
-        configureRefreshController()
-      }
+      configureRefreshController()
     }
   }
   @IBInspectable open var refreshControlBackgroundColor: UIColor? {
     didSet {
-      if #available(iOSApplicationExtension 10.0, *) {
-        configureRefreshController()
-      }
+      configureRefreshController()
     }
   }
 

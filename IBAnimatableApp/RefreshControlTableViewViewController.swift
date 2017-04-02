@@ -12,16 +12,21 @@ public class RefreshControlTableViewViewController: AnimatableViewController {
   fileprivate let rows = ["Did you try to pull?",
                           "Nice control, isn't it?",
                           "Fully customisable in interface builder",
-                          "Amazing!",
-                          "iOS10 only... wanna make a PR to change this?"]
+                          "Amazing!"]
 
   override public func viewDidLoad() {
     super.viewDidLoad()
 
     // Install action on refresh
+    let refreshControl: UIRefreshControl?
     if #available(iOS 10.0, *) {
-      tableView.refreshControl?.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+      refreshControl = tableView.refreshControl
+    } else {
+      refreshControl = UIRefreshControl()
+      tableView.addSubview(refreshControl!)
+      tableView.configureRefreshController()
     }
+    refreshControl?.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
   }
 
   public func refresh(_ refreshControl: UIRefreshControl) {
