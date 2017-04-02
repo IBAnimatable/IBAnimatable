@@ -1,6 +1,6 @@
 # Sometimes it's a README fix, or something like that - which isn't relevant for
 # including in a project's CHANGELOG for example
-not_declared_trivial = !(github.pr_title.include? "#trivial")
+not_declared_trivial = !(github.pr_title.include? "#no-public-changes")
 has_app_changes = !git.modified_files.grep(/IBAnimatable/).empty?
 
 # Make it more obvious that a PR is a work in progress and shouldn't be merged yet
