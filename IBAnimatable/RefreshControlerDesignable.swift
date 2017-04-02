@@ -25,6 +25,10 @@ public protocol RefreshControlDesignable {
 public extension RefreshControlDesignable where Self: UITableViewController {
 
   func configureRefreshController() {
+    guard isViewLoaded else {
+      return
+    }
+
     configureRefreshController(hasRefreshControl: hasRefreshControl, refreshControl: &refreshControl)
   }
 
