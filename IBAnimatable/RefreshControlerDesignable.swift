@@ -25,18 +25,32 @@ public protocol RefreshControlDesignable {
 public extension RefreshControlDesignable where Self: UITableViewController {
 
   func configureRefreshController() {
-    guard !isViewLoaded else {
-      return
-    }
-    if hasRefreshControl {
-      if refreshControl == nil {
-        refreshControl = UIRefreshControl()
-      }
-      refreshControl?.tintColor = refreshControlTintColor
-      refreshControl?.backgroundColor = refreshControlBackgroundColor
-    } else {
-      refreshControl = nil
-    }
+    configureRefreshController(hasRefreshControl: hasRefreshControl, refreshControl: &refreshControl)
   }
 
+}
+
+@available(iOSApplicationExtension 10.0, *)
+public extension RefreshControlDesignable where Self: UITableView {
+
+  func configureRefreshController() {
+    configureRefreshController(hasRefreshControl: hasRefreshControl, refreshControl: &refreshControl)
+  }
+
+}
+
+fileprivate extension RefreshControlDesignable {
+
+  func configureRefreshController(hasRefreshControl: Bool, refreshControl: inout UIRefreshControl?) {
+    guard hasRefreshControl else {
+      refreshControl = nil
+      return
+    }
+
+    if refreshControl == nil {
+      refreshControl = UIRefreshControl()
+    }
+    refreshControl?.tintColor = refreshControlTintColor
+    refreshControl?.backgroundColor = refreshControlBackgroundColor
+  }
 }

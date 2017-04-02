@@ -7,7 +7,8 @@ import UIKit
 
 @IBDesignable
 open class AnimatableTableView: UITableView, FillDesignable, BorderDesignable, GradientDesignable,
-                                             BackgroundImageDesignable, BlurDesignable, Animatable {
+                                             BackgroundImageDesignable, BlurDesignable, RefreshControlDesignable,
+                                             Animatable {
 
   // MARK: - FillDesignable
   @IBInspectable open var fillColor: UIColor? {
@@ -118,6 +119,29 @@ open var startPoint: GradientStartPoint = .top
   @IBInspectable open var blurOpacity: CGFloat = CGFloat.nan {
     didSet {
       configureBackgroundBlurEffectStyle()
+    }
+  }
+
+  // MARK: - RefreshControlDesignable
+  @IBInspectable open var hasRefreshControl: Bool = false {
+    didSet {
+      if #available(iOSApplicationExtension 10.0, *) {
+        configureRefreshController()
+      }
+    }
+  }
+  @IBInspectable open var refreshControlTintColor: UIColor? {
+    didSet {
+      if #available(iOSApplicationExtension 10.0, *) {
+        configureRefreshController()
+      }
+    }
+  }
+  @IBInspectable open var refreshControlBackgroundColor: UIColor? {
+    didSet {
+      if #available(iOSApplicationExtension 10.0, *) {
+        configureRefreshController()
+      }
     }
   }
 
