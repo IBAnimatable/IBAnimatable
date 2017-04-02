@@ -9,7 +9,11 @@ import IBAnimatable
 public class RefreshControlTableViewViewController: AnimatableViewController {
 
   @IBOutlet fileprivate weak var tableView: AnimatableTableView!
-  fileprivate let rows = ["Did you try to pull?", "Nice control, isn't it?", "Fully customisable in interface builder", "Amazing!", "iOS10 only... wanna make a PR to change this?"]
+  fileprivate let rows = ["Did you try to pull?",
+                          "Nice control, isn't it?",
+                          "Fully customisable in interface builder",
+                          "Amazing!",
+                          "iOS10 only... wanna make a PR to change this?"]
 
   override public func viewDidLoad() {
     super.viewDidLoad()
@@ -53,7 +57,6 @@ public class RefreshControlTableViewViewController: AnimatableViewController {
   }
 
 }
-
 
 // MARK: DispatchQueue utility extension
 
