@@ -8,7 +8,7 @@ import UIKit
 @IBDesignable
 open class AnimatableCollectionViewCell: UICollectionViewCell, CornerDesignable, FillDesignable, BorderDesignable,
                                                                ShadowDesignable, TableViewCellDesignable, GradientDesignable,
-                                                               Animatable {
+                                                               BackgroundImageDesignable, Animatable {
 
   // MARK: - CornerDesignable
   @IBInspectable open var cornerRadius: CGFloat = CGFloat.nan {
@@ -130,6 +130,13 @@ open class AnimatableCollectionViewCell: UICollectionViewCell, CornerDesignable,
   @IBInspectable var _startPoint: String? {
     didSet {
       startPoint = GradientStartPoint(string: _startPoint, default: .top)
+    }
+  }
+
+  // MARK: - BackgroundImageDesignable
+  @IBInspectable open var backgroundImage: UIImage? {
+    didSet {
+      configureBackgroundImage()
     }
   }
 

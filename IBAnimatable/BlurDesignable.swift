@@ -28,11 +28,14 @@ public extension BlurDesignable where Self: UIView {
    configureBlurEffectStyle method, should be called in layoutSubviews() method
    */
   public func configureBlurEffectStyle() {
+    configureBlurEffectStyle(for: self)
+  }
+  public func configureBlurEffectStyle(for blurableView: UIView) {
     // Used for caching the previous visual effect view
     var privateVisualEffectView: PrivateVisualEffectView?
 
     // Remove the existing visual effect view
-    subviews.flatMap { $0 as? PrivateVisualEffectView }
+    blurableView.subviews.flatMap { $0 as? PrivateVisualEffectView }
       .forEach {
         privateVisualEffectView = $0 // Cache it for the subviews
         $0.removeFromSuperview()
@@ -48,7 +51,7 @@ public extension BlurDesignable where Self: UIView {
     if let vibrancyEffectStyle = vibrancyEffectStyle {
       let blurEffectStyleForVibrancy = UIBlurEffect(style: vibrancyEffectStyle)
       let vibrancyEffectView = makeVisualEffectView(effect: UIVibrancyEffect(blurEffect: blurEffectStyleForVibrancy))
-      subviews.forEach {
+      blurableView.subviews.forEach {
         vibrancyEffectView.contentView.addSubview($0)
       }
 
@@ -60,11 +63,11 @@ public extension BlurDesignable where Self: UIView {
     } else {
       // If privateVisualEffectView is not `nil`, re-add them back to the subviews of original UI element.
       privateVisualEffectView?.contentView.subviews.forEach {
-        addSubview($0)
+        blurableView.addSubview($0)
       }
     }
 
-    insertSubview(blurEffectView, at: 0)
+    blurableView.insertSubview(blurEffectView, at: 0)
   }
 }
 
@@ -80,6 +83,24 @@ private extension BlurDesignable where Self: UIView {
     visualEffectView.frame = bounds
     visualEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     return visualEffectView
+  }
+}
+
+public extension BlurDesignable where Self: UITableView {
+  public func configureBackgroundBlurEffectStyle() {
+    guard let blurableView = backgroundView else {
+      self.separatorEffect = nil
+      return
+    }
+    configureBlurEffectStyle(for: blurableView)
+    guard let blurEffectStyle = blurEffectStyle else {
+      return
+    }
+    if let style = vibrancyEffectStyle {
+      self.separatorEffect = UIVibrancyEffect(blurEffect: UIBlurEffect(style: style))
+    } else {
+      self.separatorEffect = UIBlurEffect(style: blurEffectStyle)
+    }
   }
 }
 

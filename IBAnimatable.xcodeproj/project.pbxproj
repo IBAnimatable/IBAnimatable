@@ -105,6 +105,7 @@
 		AEE552AE1C82D1E1009CF623 /* PresentFadeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE552AC1C82D1E1009CF623 /* PresentFadeSegue.swift */; };
 		AEE552B11C839EB7009CF623 /* TransitionPresenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE552AF1C839EB7009CF623 /* TransitionPresenterManager.swift */; };
 		AEF4938D1CE0161C00B76FD6 /* Playground.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEF4938C1CE0161C00B76FD6 /* Playground.storyboard */; };
+		C4B4AD551E8645FD007A79A4 /* BackgroundImageDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4AD541E8645FD007A79A4 /* BackgroundImageDesignable.swift */; };
 		C47A737C1E86A9BD0044EFF8 /* SliderImagesDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47A737B1E86A9BD0044EFF8 /* SliderImagesDesignable.swift */; };
 		C4B504E01E8832E7001E096A /* RefreshControlerDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B504DF1E8832E7001E096A /* RefreshControlerDesignable.swift */; };
 		C4B504E51E8833C4001E096A /* AnimatableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B504E41E8833C4001E096A /* AnimatableTableViewController.swift */; };
@@ -315,6 +316,7 @@
 		AEEE200C1C18D10C00AD033B /* DesignableNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableNavigationBar.swift; sourceTree = "<group>"; };
 		AEEF86BD1CA8E9E200899AAB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEF4938C1CE0161C00B76FD6 /* Playground.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Playground.storyboard; sourceTree = "<group>"; };
+		C4B4AD541E8645FD007A79A4 /* BackgroundImageDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundImageDesignable.swift; sourceTree = "<group>"; };
 		C47A737B1E86A9BD0044EFF8 /* SliderImagesDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderImagesDesignable.swift; sourceTree = "<group>"; };
 		C4B504DF1E8832E7001E096A /* RefreshControlerDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshControlerDesignable.swift; sourceTree = "<group>"; };
 		C4B504E41E8833C4001E096A /* AnimatableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableTableViewController.swift; sourceTree = "<group>"; };
@@ -750,6 +752,7 @@
 				AE81DB4F1C12E060000AEB20 /* RotationDesignable.swift */,
 				AED1A1111BFE983A001346FA /* ShadowDesignable.swift */,
 				AE74D6D61C166FB100718E0E /* SideImageDesignable.swift */,
+				C4B4AD541E8645FD007A79A4 /* BackgroundImageDesignable.swift */,
 				AE0FADAA1C20357C00B5289B /* StatusBarDesignable.swift */,
 				AE0B0FE91C25372200E36B78 /* TableViewCellDesignable.swift */,
 				AE299BDB1C03BB670018CCDC /* TintDesignable.swift */,
@@ -1171,6 +1174,7 @@
 				E28E282C1D6CCA5C0043D56E /* ActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				AE677B991CADCF6500D62273 /* SystemCameraIrisAnimator.swift in Sources */,
 				E299DF5C1CD6067C00EC30D4 /* PresentCardsSegue.swift in Sources */,
+				C4B4AD551E8645FD007A79A4 /* BackgroundImageDesignable.swift in Sources */,
 				731205811D28A3830009BCAC /* Utils.swift in Sources */,
 				E2E62B7B1D69B23E00294A73 /* ActivityIndicatorAnimatable.swift in Sources */,
 				E210ABC61D3A9713001D0362 /* AnimatedPresenting.swift in Sources */,

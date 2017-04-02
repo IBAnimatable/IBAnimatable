@@ -7,7 +7,8 @@ import UIKit
 
 @IBDesignable
 open class AnimatableTableViewCell: UITableViewCell, CornerDesignable, FillDesignable, BorderDesignable,
-                                                     TableViewCellDesignable, GradientDesignable, Animatable {
+                                                     TableViewCellDesignable, GradientDesignable,
+                                                     BackgroundImageDesignable, Animatable {
 
   // MARK: - CornerDesignable
   @IBInspectable open var cornerRadius: CGFloat = CGFloat.nan {
@@ -104,6 +105,13 @@ open var startPoint: GradientStartPoint = .top
   @IBInspectable var _startPoint: String? {
     didSet {
       startPoint = GradientStartPoint(string: _startPoint, default: .top)
+    }
+  }
+
+  // MARK: - BackgroundImageDesignable
+  @IBInspectable open var backgroundImage: UIImage? {
+    didSet {
+      configureBackgroundImage()
     }
   }
 
