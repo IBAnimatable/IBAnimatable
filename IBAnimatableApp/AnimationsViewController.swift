@@ -101,14 +101,21 @@ extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSourc
       if #available(iOS 10.0, *) {
         if !self.animatableView.transform.isIdentity {
           Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { _ in
-            self.animatableView.alpha = 1
-            self.animatableView.transform = CGAffineTransform.identity
-            self.pickerView.isUserInteractionEnabled = true
+            self.resetAnimatableView()
           }
         } else {
-          self.pickerView.isUserInteractionEnabled = true
+          pickerView.isUserInteractionEnabled = true
         }
+      } else {
+        self.resetAnimatableView()
       }
     }
   }
+
+  private func resetAnimatableView() {
+    animatableView.alpha = 1
+    animatableView.transform = .identity
+    pickerView.isUserInteractionEnabled = true
+  }
+
 }
