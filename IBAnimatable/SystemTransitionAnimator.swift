@@ -17,46 +17,40 @@ class SystemTransitionAnimator: NSObject, AnimatedTransitioning {
   var systemTransitionType: TransitionAnimationType.SystemTransitionType
   var systemTransitionSubtype: String?
 
-  init(systemType: TransitionAnimationType.SystemTransitionType, duration: Duration, direction: TransitionAnimationType.Direction? = nil) {
+  init(systemType: TransitionAnimationType.SystemTransitionType, duration: Duration) {
 
     self.systemTransitionType = systemType
     self.transitionDuration = duration
+    self.transitionAnimationType = TransitionAnimationType(systemType: systemType)
+    self.reverseAnimationType = transitionAnimationType.reversed
+    self.systemTransitionSubtype = systemType == .rotate ? "90" : nil
 
-    if let direction = direction {
-      self.transitionAnimationType = TransitionAnimationType(systemType: systemType, direction: direction)
+    super.init()
+  }
 
-      switch systemType {
-      case .cube, .flip, .moveIn, .push, .reveal:
-        self.systemTransitionSubtype = direction.caTransitionSubtype
-        self.interactiveGestureType = .pan(from: direction.opposingGesture)
-      case .cameraIrisHollowClose, .cameraIrisHollowOpen, .cameraIris:
-        self.interactiveGestureType = .pinch(direction: direction.opposingGesture)
-      case .pageUnCurl, .pageCurl:
-        self.interactiveGestureType = .pan(from: direction.opposingGesture)
-      default:
-        break
-      }
-    } else {
-      self.transitionAnimationType = TransitionAnimationType(systemType: systemType)
-      self.systemTransitionSubtype = systemType == .rotate ? "90" : nil
+  init(systemType: TransitionAnimationType.SystemTransitionType, duration: Duration, direction: TransitionAnimationType.Direction) {
+
+    self.transitionAnimationType = TransitionAnimationType(systemType: systemType, direction: direction)
+    self.reverseAnimationType = transitionAnimationType.reversed
+    self.transitionDuration = duration
+    self.systemTransitionType = systemType
+
+    switch systemType {
+    case .cube, .flip, .moveIn, .push, .reveal:
+      self.systemTransitionSubtype = direction.caTransitionSubtype
+      self.interactiveGestureType = .pan(from: direction.opposingGesture)
+    case .cameraIrisHollowClose, .cameraIrisHollowOpen, .cameraIris:
+      self.interactiveGestureType = .pinch(direction: direction.opposingGesture)
+    case .pageUnCurl, .pageCurl:
+      self.interactiveGestureType = .pan(from: direction.opposingGesture)
+    default:
+      fatalError("Should never be executed: use other SystemTranitionAnimator.init")
     }
 
-    self.reverseAnimationType = transitionAnimationType.reversed
     super.init()
   }
 
   // MARK: - Helper Methods (Private)
-  fileprivate func toView(using transitionContext: UIViewControllerContextTransitioning) -> UIView? {
-    return transitionContext.view(forKey: UITransitionContextViewKey.to)
-  }
-
-  fileprivate func fromView(using transitionContext: UIViewControllerContextTransitioning) -> UIView? {
-    return transitionContext.view(forKey: UITransitionContextViewKey.from)
-  }
-
-  fileprivate func toViewController(using transitionContext: UIViewControllerContextTransitioning) -> UIViewController? {
-    return transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)
-  }
 
   fileprivate func performSystemTransition(using context: UIViewControllerContextTransitioning) {
     CALayer.animate({
@@ -80,12 +74,16 @@ extension SystemTransitionAnimator: UIViewControllerAnimatedTransitioning {
 
   func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
 
-    guard let toView = toView(using: transitionContext), fromView(using: transitionContext) != nil else {
+    let toViewTemp = transitionContext.view(forKey: UITransitionContextViewKey.to)
+    let fromViewTemp = transitionContext.view(forKey: UITransitionContextViewKey.from)
+    let toViewControllerTemp = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)
+
+    guard let toView = toViewTemp, fromViewTemp != nil else {
       transitionContext.completeTransition(true)
       return
     }
 
-    if let toViewController = toViewController(using: transitionContext) {
+    if let toViewController = toViewControllerTemp {
       toView.frame = transitionContext.finalFrame(for: toViewController)
     }
 
