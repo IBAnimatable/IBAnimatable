@@ -56,8 +56,8 @@ public class RefreshControlTableViewViewController: AnimatableViewController {
     }
     refreshControl.attributedTitle = NSAttributedString(string: "\(Int(time))", attributes: attributes )
 
-    DispatchQueue.main.after(1) { [weak self] in
-      self?.updateMessage(refreshControl: refreshControl, time: time - 1)
+    DispatchQueue.main.after(1) {
+      self.updateMessage(refreshControl: refreshControl, time: time - 1)
     }
   }
 

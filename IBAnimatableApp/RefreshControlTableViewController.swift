@@ -12,7 +12,7 @@ public class RefreshControlTableViewController: AnimatableTableViewController {
     super.viewDidLoad()
 
     // Install action on refresh
-    self.refreshControl?.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+    refreshControl?.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
   }
 
   public func refresh(_ refreshControl: UIRefreshControl) {
@@ -42,8 +42,8 @@ public class RefreshControlTableViewController: AnimatableTableViewController {
     }
     refreshControl.attributedTitle = NSAttributedString(string: "\(Int(time))", attributes: attributes )
 
-    DispatchQueue.main.after(1) { [weak self] in
-      self?.updateMessage(refreshControl: refreshControl, time: time - 1)
+    DispatchQueue.main.after(1) {
+      self.updateMessage(refreshControl: refreshControl, time: time - 1)
     }
   }
 
