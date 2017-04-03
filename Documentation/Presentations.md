@@ -211,6 +211,40 @@ If your modal contains a `UITextField` or `UITextView`, you can adjust its posit
 
 You can see all supported Keyboard Translation in the demo App, open the App and tap on "Playground" button, then tap on "presentations", then play with the different options.
 
+## Presenting over current context
+
+Using the above configuration, you can't have the same result as using `UIModalPresentationStyle.currentContext`, but `IBAnimatable` have a workaround to support it while supporting *all the above customisation*.
+
+That can be useful in a few cases, for example: having a split view controller, but you may want to present a controller over the first one, and let the second one clickable. You can see an example in the demo app: Playground -> Presentation -> Over context.
+
+![Presentation - Over Current Context](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentationOverCurrentContext.gif)
+
+### Using storyboards and segues
+
+In order to use this feature in storyboards, you have to use a custom segue. To use custom Segue, we can **control drag** from one `ViewController` to another `ViewController`, then select a custom Segue and set its class to `PresentOverCurrentContextSegue`.
+
+Using that usage allow you to use all the features of a custom presentation while writing 0 lines of code.
+
+You can see an example in "Presentation.storyboard".
+
+### Programatically
+
+For this special case, `AnimatableModalViewController` has another property that's not designable:
+
+| Property | Description |
+| ------------- | ------------- |
+| context frame for presentation | If not nil, the presented view controller will have use this frame, imitates `UIModalPresentationStyle.currentContext`  If nil, the presented view controller will be in fullscreen. *Note:* The modal position / size will be calculated based on this if not nil. |
+
+Anywhere before `presenting` your viewController, just set the `contextFrameForPresentation` that it should have.
+For example, if you want your presented view controller to have the same frame as the `viewController` presenting it, you will just have to do:
+
+```
+modalViewController.contextFrameForPresentation = presentingVC.view.frame
+modalViewController.present(presentingVC, animated: true)
+```
+
+That's all. You have presented a controller over the current context with a custom configuration!
+
 ## Contribution
 
 If you'd like to add more presentation options to `IBAnimatable`, it is super easy, please have a look at:

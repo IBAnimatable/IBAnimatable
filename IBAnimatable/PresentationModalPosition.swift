@@ -15,18 +15,20 @@ public enum PresentationModalPosition: IBEnum {
   case customCenter(centerPoint: CGPoint)
   case customOrigin(origin: CGPoint)
 
-  func calculateCenter(containerBounds: CGRect, modalSize: CGSize) -> CGPoint? {
+  func modalCenter(in containerFrame: CGRect, modalSize: CGSize) -> CGPoint? {
+    let xCenter = containerFrame.origin.x + (containerFrame.width / 2)
+    let yCenter = containerFrame.origin.y + (containerFrame.height / 2)
     switch self {
     case .center:
-      return CGPoint(x: containerBounds.width / 2, y: containerBounds.height / 2)
+      return CGPoint(x: xCenter, y: yCenter)
     case .topCenter:
-      return CGPoint(x: containerBounds.width / 2, y: modalSize.height / 2)
+      return CGPoint(x: xCenter, y: containerFrame.minY + (modalSize.height / 2))
     case .bottomCenter:
-      return CGPoint(x: containerBounds.width / 2, y: containerBounds.height - modalSize.height / 2)
+      return CGPoint(x: xCenter, y: containerFrame.maxY - (modalSize.height / 2))
     case .leftCenter:
-      return CGPoint(x: modalSize.width / 2, y: containerBounds.height / 2)
+      return CGPoint(x: containerFrame.minX + (modalSize.width / 2), y: yCenter)
     case .rightCenter:
-      return CGPoint(x: containerBounds.width - modalSize.width / 2, y: containerBounds.height / 2)
+      return CGPoint(x: containerFrame.maxX - (modalSize.width / 2), y: yCenter)
     case let .customCenter(point):
       return point
     case .customOrigin(_):
@@ -61,17 +63,17 @@ public extension PresentationModalPosition {
     let point = CGPoint(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
 
     switch name {
-      case "center":
+    case "center":
       self = .center
-      case "topcenter":
+    case "topcenter":
       self = .topCenter
-      case "bottomcenter":
+    case "bottomcenter":
       self = .bottomCenter
-      case "leftcenter":
+    case "leftcenter":
       self = .leftCenter
-      case "rightcenter":
+    case "rightcenter":
       self = .rightCenter
-      case "customcenter" where params.count > 2:
+    case "customcenter" where params.count > 2:
       self = .customCenter(centerPoint: point)
     case "customorigin" where params.count > 2:
       self = .customOrigin(origin: point)
@@ -79,5 +81,5 @@ public extension PresentationModalPosition {
       self = .center
     }
   }
-
+  
 }
