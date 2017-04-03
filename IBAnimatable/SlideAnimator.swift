@@ -71,6 +71,7 @@ extension SlideAnimator: UIViewControllerAnimatedTransitioning {
     }
     toView.transform = travel.inverted()
     animateSlideTransition(toView: toView, fromView: fromView, travel: travel) {
+      toView.transform = CGAffineTransform.identity
       fromView.transform = CGAffineTransform.identity
       transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
     }
