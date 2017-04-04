@@ -16,8 +16,8 @@ All notable changes to this project will be documented in this file.
 [#403](https://github.com/IBAnimatable/IBAnimatable/pull/403) by [@tbaranes](https://github.com/tbaranes)
 - Make images of `AnimatableSlider` designable.
 [#417](https://github.com/IBAnimatable/IBAnimatable/pull/417) by [@phimage](https://github.com/phimage)
-- Add `AnimatableTableViewController` to support `UIRefreshControl` customization.
-[#418](https://github.com/IBAnimatable/IBAnimatable/pull/418) by [@phimage](https://github.com/phimage)
+- Add `RefreshControlDesignable` to make `UIRefreshControl` customization available in Interface Builder. Currently supported by `UITableViewController` and `UITableView`
+[#418](https://github.com/IBAnimatable/IBAnimatable/pull/418) by [@phimage](https://github.com/phimage) and [#429](https://github.com/IBAnimatable/IBAnimatable/pull/429) by [@tbaranes](https://github.com/tbaranes)
 
 #### Bugfixes
 - Make corner sides case insensitive.
