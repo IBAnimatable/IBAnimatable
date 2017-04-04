@@ -23,6 +23,7 @@ All notable changes to this project will be documented in this file.
 - Make corner sides case insensitive.
 [#394](https://github.com/IBAnimatable/IBAnimatable/issues/394) by [@mmadjer](https://github.com/mmadjer)
 - Frame is converted to window coordinate space to fix miscalculations in computed values (used with `slideOut`, ...) [#412](https://github.com/IBAnimatable/IBAnimatable/issues/412) by [@redent](https://github.com/redent)
+- Reset destination view's `transform` property to `CGAffineTransform.identity` after a slide transition completes. [#432](https://github.com/IBAnimatable/IBAnimatable/pull/432) by [@broadwaylamb](https://github.com/broadwaylamb)
 
 ---
 ### [3.1.3](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.1.3)
