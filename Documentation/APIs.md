@@ -167,16 +167,33 @@ Easily add color layer on top of the UI element especially `AnimatableImageView`
 | toneOpacity | CGFloat | opacity of tone color. The default value is `CGFloat.NaN`. |
 
 #### `ViewControllerDesignable`
+
 | Property name | Data type | Description |
 | ------------- |:-------------:| ----- |
 | hideNavigationBar | Bool | whether to hide navigation bar. The default value is `false`. |
 
 #### `RefreshControlDesignable`
+
+
 | Property name | Data type | Description |
 | ------------- |:-------------:| ----- |
 | hasRefreshControl | Bool | whether to add a `UIRefreshControl`. The default value is `false`. |
 | refreshControlTintColor | Optional&lt;UIColor> | tint color of the `UIRefreshControl` |
 | refreshControlBackgroundColor | Optional&lt;UIColor> | background color of the `UIRefreshControl`  |
+
+**Note:** `AnimatableTableView` conforms to that protocol, **but** if your deployment target is less than 10, you will have to add your `UIRefreshControl` yourself:
+
+```
+let refreshControl: UIRefreshControl?
+if #available(iOS 10.0, *) {
+  refreshControl = tableView.refreshControl
+} else {
+  refreshControl = UIRefreshControl()
+  tableView.addSubview(refreshControl!)
+  tableView.configureRefreshController()
+}
+refreshControl?.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+```
 
 #### `SliderImagesDesignable`
 
