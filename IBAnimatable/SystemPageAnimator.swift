@@ -18,15 +18,8 @@ public class SystemPageAnimator: NSObject, AnimatedTransitioning {
   public init(type: TransitionAnimationType.PageType, transitionDuration: Duration) {
     self.transitionDuration = transitionDuration
     self.type = type
-
-    switch type {
-    case .curl:
-      self.transitionAnimationType = .systemPage(type: .curl)
-      self.reverseAnimationType = .systemPage(type: .unCurl)
-    case .unCurl:
-      self.transitionAnimationType = .systemPage(type: .unCurl)
-      self.reverseAnimationType = .systemPage(type: .curl)
-    }
+    self.transitionAnimationType = .systemPage(type: type)
+    self.reverseAnimationType = .systemPage(type: type.opposite)
 
     super.init()
   }

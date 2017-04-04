@@ -20,10 +20,10 @@ public class CardsAnimator: NSObject, AnimatedTransitioning {
     self.transitionDuration = transitionDuration
     fromDirection = direction
 
-    switch fromDirection {
+    switch direction {
     case .backward:
-      self.transitionAnimationType = .cards(direction: .backward)
-      self.reverseAnimationType = .cards(direction: .forward)
+      self.transitionAnimationType = .cards(direction: direction)
+      self.reverseAnimationType = .cards(direction: direction.opposite)
     default:
       self.transitionAnimationType = .cards(direction: .forward)
       self.reverseAnimationType = .cards(direction: .backward)

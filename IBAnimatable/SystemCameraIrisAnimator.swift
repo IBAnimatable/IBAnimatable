@@ -20,14 +20,10 @@ public class SystemCameraIrisAnimator: NSObject, AnimatedTransitioning {
     self.hollowState = hollowState
 
     switch hollowState {
-    case .open:
-      self.transitionAnimationType = .systemCameraIris(hollowState: .open)
-      self.reverseAnimationType = .systemCameraIris(hollowState: .close)
-      self.interactiveGestureType = .pinch(direction: .close)
-    case .close:
-      self.transitionAnimationType = .systemCameraIris(hollowState: .close)
-      self.reverseAnimationType = .systemCameraIris(hollowState: .open)
-      self.interactiveGestureType = .pinch(direction: .open)
+    case .open, .close:
+      self.transitionAnimationType = .systemCameraIris(hollowState: hollowState)
+      self.reverseAnimationType = .systemCameraIris(hollowState: hollowState.opposite)
+      self.interactiveGestureType = .pinch(direction: hollowState.opposingGesture)
     case .none:
       self.transitionAnimationType = .systemCameraIris(hollowState: .none)
       self.reverseAnimationType = .systemCameraIris(hollowState: .none)

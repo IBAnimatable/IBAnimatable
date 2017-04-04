@@ -19,19 +19,11 @@ public class SystemRevealAnimator: NSObject, AnimatedTransitioning {
     fromDirection = direction
     self.transitionDuration = transitionDuration
 
-    switch fromDirection {
-    case .right:
-      self.transitionAnimationType = .systemReveal(from: .right)
-      self.reverseAnimationType = .systemReveal(from: .left)
-      self.interactiveGestureType = .pan(from: .left)
-    case .top:
-      self.transitionAnimationType = .systemReveal(from: .top)
-      self.reverseAnimationType = .systemReveal(from: .bottom)
-      self.interactiveGestureType = .pan(from: .bottom)
-    case .bottom:
-      self.transitionAnimationType = .systemReveal(from: .bottom)
-      self.reverseAnimationType = .systemReveal(from: .top)
-      self.interactiveGestureType = .pan(from: .top)
+    switch direction {
+    case .right, .top, .bottom:
+      self.transitionAnimationType = .systemReveal(from: direction)
+      self.reverseAnimationType = .systemReveal(from: direction.opposite)
+      self.interactiveGestureType = .pan(from: direction.opposingGesture)
     default:
       self.transitionAnimationType = .systemPush(from: .left)
       self.reverseAnimationType = .systemPush(from: .right)
