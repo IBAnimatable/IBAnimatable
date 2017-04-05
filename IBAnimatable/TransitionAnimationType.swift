@@ -83,7 +83,8 @@ extension TransitionAnimationType {
       return .turn(from: direction.opposite)
     case let .cards(direction):
       return .cards(direction: direction.opposite)
-    case let .flip(direction): return .flip(from: direction.opposite)
+    case let .flip(direction):
+      return .flip(from: direction.opposite)
     case let .systemCube(direction):
       return .systemCube(from: direction.opposite)
     case let .systemFlip(direction):
