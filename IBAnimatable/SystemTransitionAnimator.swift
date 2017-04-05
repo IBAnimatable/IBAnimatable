@@ -5,7 +5,6 @@
 //  Created by Steven on 4/1/17.
 //  Copyright © 2017 IBAnimatable. All rights reserved.
 //
-
 import UIKit
 
 class SystemTransitionAnimator: NSObject, AnimatedTransitioning {
@@ -51,7 +50,6 @@ class SystemTransitionAnimator: NSObject, AnimatedTransitioning {
   }
 
   // MARK: - Helper Methods (Private)
-
   fileprivate func performSystemTransition(using context: UIViewControllerContextTransitioning) {
     CALayer.animate({
       let transition = CATransition()
@@ -92,4 +90,5 @@ extension SystemTransitionAnimator: UIViewControllerAnimatedTransitioning {
     performSystemTransition(using: transitionContext)
 
   }
+
 }

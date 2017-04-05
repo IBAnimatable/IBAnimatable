@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
 		48D436311E8E221500538E7D /* RefreshControlTableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D436301E8E221500538E7D /* RefreshControlTableViewViewController.swift */; };
 		7305EC0E1E1996E000BF4C9A /* AnimationChainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7305EC0D1E1996E000BF4C9A /* AnimationChainable.swift */; };
 		731205811D28A3830009BCAC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731205801D28A3830009BCAC /* Utils.swift */; };
@@ -100,6 +99,7 @@
 		AEE552AE1C82D1E1009CF623 /* PresentFadeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE552AC1C82D1E1009CF623 /* PresentFadeSegue.swift */; };
 		AEE552B11C839EB7009CF623 /* TransitionPresenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE552AF1C839EB7009CF623 /* TransitionPresenterManager.swift */; };
 		AEF4938D1CE0161C00B76FD6 /* Playground.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEF4938C1CE0161C00B76FD6 /* Playground.storyboard */; };
+		B062C7671E94D13B006C3CB8 /* SystemTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062C7661E94D13B006C3CB8 /* SystemTransitionAnimator.swift */; };
 		C47A737C1E86A9BD0044EFF8 /* SliderImagesDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47A737B1E86A9BD0044EFF8 /* SliderImagesDesignable.swift */; };
 		C4B4AD551E8645FD007A79A4 /* BackgroundImageDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4AD541E8645FD007A79A4 /* BackgroundImageDesignable.swift */; };
 		C4B504E01E8832E7001E096A /* RefreshControlerDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B504DF1E8832E7001E096A /* RefreshControlerDesignable.swift */; };
@@ -307,6 +307,7 @@
 		AEEE200C1C18D10C00AD033B /* DesignableNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableNavigationBar.swift; sourceTree = "<group>"; };
 		AEEF86BD1CA8E9E200899AAB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEF4938C1CE0161C00B76FD6 /* Playground.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Playground.storyboard; sourceTree = "<group>"; };
+		B062C7661E94D13B006C3CB8 /* SystemTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemTransitionAnimator.swift; sourceTree = "<group>"; };
 		C47A737B1E86A9BD0044EFF8 /* SliderImagesDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderImagesDesignable.swift; sourceTree = "<group>"; };
 		C4B4AD541E8645FD007A79A4 /* BackgroundImageDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundImageDesignable.swift; sourceTree = "<group>"; };
 		C4B504DF1E8832E7001E096A /* RefreshControlerDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshControlerDesignable.swift; sourceTree = "<group>"; };
@@ -517,7 +518,7 @@
 		AE4C53EF1C883DEC007C9EFA /* transition animator */ = {
 			isa = PBXGroup;
 			children = (
-				B00D68721E9040AC0087AEFC /* SystemTransitionAnimator.swift */,
+				B062C7661E94D13B006C3CB8 /* SystemTransitionAnimator.swift */,
 				AEE552A61C815AC5009CF623 /* FadeAnimator.swift */,
 				E2A062B21CB19BB900C54B40 /* ExplodeAnimator.swift */,
 				E20078A01CB8FB94002B2C16 /* FoldAnimator.swift */,
@@ -1057,6 +1058,7 @@
 				E2472EA51C6F97F800A20E27 /* ColorType.swift in Sources */,
 				AE6B016D1C2A444900950BB2 /* GradientDesignable.swift in Sources */,
 				E2DAD6391D5F4C2E00333ABF /* PresentationKeyboardTranslation.swift in Sources */,
+				B062C7671E94D13B006C3CB8 /* SystemTransitionAnimator.swift in Sources */,
 				E299DF5A1CD6025200EC30D4 /* CardsAnimator.swift in Sources */,
 				E222CDCA1CC4010800684CA0 /* PresentPortalWithDismissInteractionSegue.swift in Sources */,
 				E2614B611D23C94300BBBAFA /* AnimatableScrollView.swift in Sources */,
@@ -1107,7 +1109,6 @@
 				AE6B01841C2A445100950BB2 /* AnimatableTextView.swift in Sources */,
 				E22183BD1D3BD47400866197 /* PresentationModalSize.swift in Sources */,
 				E299DF581CD6003000EC30D4 /* PresentTurnWithDismissInteractionSegue.swift in Sources */,
-				B00D68731E9040AC0087AEFC /* SystemTransitionAnimator.swift in Sources */,
 				E21E840A1D3A30DF00C742E7 /* AnimatableModalViewController.swift in Sources */,
 				E2F45B571CDB845F001D2E37 /* FlipAnimator.swift in Sources */,
 				E28E283E1D6CCB550043D56E /* ActivityIndicatorAnimationBallPulseSync.swift in Sources */,
