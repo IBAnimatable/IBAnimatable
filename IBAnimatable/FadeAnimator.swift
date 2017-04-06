@@ -7,9 +7,9 @@ import UIKit
 
 public class FadeAnimator: NSObject, AnimatedTransitioning {
   // MARK: - AnimatorProtocol
-  public var transitionAnimationType: TransitionAnimationType
+  public var transitionAnimationType: TransitionAnimationType = .fade(direction: .cross)
   public var transitionDuration: Duration = defaultTransitionDuration
-  public var reverseAnimationType: TransitionAnimationType?
+  public var reverseAnimationType: TransitionAnimationType? = .fade(direction: .cross)
   public var interactiveGestureType: InteractiveGestureType? = .pan(from: .horizontal)
 
   // MARK: - private
@@ -19,17 +19,8 @@ public class FadeAnimator: NSObject, AnimatedTransitioning {
     self.direction = direction
     self.transitionDuration = transitionDuration
 
-    switch direction {
-    case .in:
-      self.transitionAnimationType = .fade(direction: .in)
-      self.reverseAnimationType = .fade(direction: .out)
-    case .out:
-      self.transitionAnimationType = .fade(direction: .out)
-      self.reverseAnimationType = .fade(direction: .in)
-    default:
-      self.transitionAnimationType = .fade(direction: .cross)
-      self.reverseAnimationType = .fade(direction: .cross)
-    }
+    self.transitionAnimationType = .fade(direction: direction)
+    self.reverseAnimationType = .fade(direction: direction.opposite)
 
     super.init()
   }

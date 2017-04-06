@@ -12,11 +12,11 @@ public struct AnimatorFactory {
                                   transitionDuration: Duration = defaultTransitionDuration) -> AnimatedTransitioning? {
     switch transitionAnimationType {
     case .systemRotate:
-      return SystemRotateAnimator(transitionDuration: transitionDuration)
+      return SystemTransitionAnimator(systemType: .rotate, duration: transitionDuration)
     case .systemSuckEffect:
-      return SystemSuckEffectAnimator(transitionDuration: transitionDuration)
+      return SystemTransitionAnimator(systemType: .suckEffect, duration: transitionDuration)
     case .systemRippleEffect:
-      return SystemRippleEffectAnimator(transitionDuration: transitionDuration)
+      return SystemTransitionAnimator(systemType: .rippleEffect, duration: transitionDuration)
     case let .explode(xFactor, minAngle, maxAngle):
       return ExplodeAnimator(xFactor: xFactor, minAngle: minAngle, maxAngle: maxAngle, transitionDuration: transitionDuration)
     case let .fade(direction):
@@ -36,19 +36,19 @@ public struct AnimatorFactory {
     case let .slide(direction, isFade):
       return SlideAnimator(from: direction, isFade: isFade, transitionDuration: transitionDuration)
     case let .systemCube(direction):
-      return SystemCubeAnimator(from: direction, transitionDuration: transitionDuration)
+      return SystemTransitionAnimator(systemType: .cube, duration: transitionDuration, direction: direction)
     case let .systemFlip(direction):
-      return SystemFlipAnimator(from: direction, transitionDuration: transitionDuration)
+      return SystemTransitionAnimator(systemType: .flip, duration: transitionDuration, direction: direction)
     case let .systemMoveIn(direction):
-      return SystemMoveInAnimator(from: direction, transitionDuration: transitionDuration)
+      return SystemTransitionAnimator(systemType: .moveIn, duration: transitionDuration, direction: direction)
     case let .systemPush(direction):
-      return SystemPushAnimator(from: direction, transitionDuration: transitionDuration)
+      return SystemTransitionAnimator(systemType: .push, duration: transitionDuration, direction: direction)
     case let .systemReveal(direction):
-      return SystemRevealAnimator(from: direction, transitionDuration: transitionDuration)
+      return SystemTransitionAnimator(systemType: .reveal, duration: transitionDuration, direction: direction)
     case let .systemPage(type):
-      return SystemPageAnimator(type: type, transitionDuration: transitionDuration)
+      return SystemTransitionAnimator(systemType: TransitionAnimationType.SystemTransitionType(pageType: type), duration: transitionDuration)
     case let .systemCameraIris(hollowState):
-      return SystemCameraIrisAnimator(hollowState: hollowState, transitionDuration: transitionDuration)
+    return SystemTransitionAnimator(systemType: TransitionAnimationType.SystemTransitionType(hollowState: hollowState), duration: transitionDuration)
     default:
       return nil
     }

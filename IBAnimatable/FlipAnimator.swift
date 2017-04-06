@@ -26,18 +26,11 @@ public class FlipAnimator: NSObject, AnimatedTransitioning {
     self.transitionDuration = transitionDuration
     horizontal = fromDirection.isHorizontal
 
-    switch fromDirection {
-    case .right:
-      self.transitionAnimationType = .flip(from: .right)
-      self.reverseAnimationType = .flip(from: .left)
-      self.interactiveGestureType = .pan(from: .left)
-      reverse = true
-    default:
-      self.transitionAnimationType = .flip(from: .left)
-      self.reverseAnimationType = .flip(from: .right)
-      self.interactiveGestureType = .pan(from: .right)
-      reverse = false
-    }
+    self.transitionAnimationType = .flip(from: direction)
+    self.reverseAnimationType = .flip(from: direction.opposite)
+    self.interactiveGestureType = .pan(from: direction.opposingGesture)
+    reverse = direction == .right
+
     super.init()
   }
 }

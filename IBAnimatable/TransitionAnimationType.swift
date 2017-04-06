@@ -35,6 +35,76 @@ public enum TransitionAnimationType {
   }
 }
 
+// MARK: - SystemType Initializers
+// Uses TransitionAnimationType.SystemTransitionType to create TransitionAnimationType
+extension TransitionAnimationType {
+  init(systemType: SystemTransitionType, direction: Direction) {
+    switch systemType {
+    case .cube: self = .systemCube(from: direction)
+    case .flip: self = .flip(from: direction)
+    case .moveIn: self = .systemMoveIn(from: direction)
+    case .push: self = .systemPush(from: direction)
+    case .reveal: self = .systemReveal(from: direction)
+    default: fatalError("SystemTransitionType Invalid")
+    }
+  }
+
+  init(systemType: SystemTransitionType) {
+    switch systemType {
+    case .rotate: self = .systemRotate
+    case .suckEffect: self = .systemSuckEffect
+    case .rippleEffect: self = .systemRippleEffect
+    case .pageCurl: self = .systemPage(type: .curl)
+    case .pageUnCurl: self = .systemPage(type: .unCurl)
+    case .cameraIris: self = .systemCameraIris(hollowState: .none)
+    case .cameraIrisHollowOpen: self = .systemCameraIris(hollowState: .open)
+    case .cameraIrisHollowClose: self = .systemCameraIris(hollowState: .close)
+    default: fatalError("SystemTransitionType Requires Direction")
+    }
+  }
+}
+
+extension TransitionAnimationType {
+
+  /// Reverses the direction of the animation
+  var reversed: TransitionAnimationType {
+    switch self {
+    case let .fade(direction):
+      return .fade(direction: direction.opposite)
+    case let .fold(direction, folds):
+      return .fold(from: direction.opposite, folds: folds)
+    case let .portal(direction, scale):
+      return .portal(direction: direction.opposite, zoomScale: scale)
+    case let .slide(direction, isFade):
+      return .slide(to: direction.opposite, isFade: isFade)
+    case let .natGeo(direction):
+      return .natGeo(to: direction.opposite)
+    case let .turn(direction):
+      return .turn(from: direction.opposite)
+    case let .cards(direction):
+      return .cards(direction: direction.opposite)
+    case let .flip(direction):
+      return .flip(from: direction.opposite)
+    case let .systemCube(direction):
+      return .systemCube(from: direction.opposite)
+    case let .systemFlip(direction):
+      return .systemFlip(from: direction.opposite)
+    case let .systemMoveIn(direction):
+      return .systemMoveIn(from: direction.opposite)
+    case let .systemPush(direction):
+      return .systemPush(from: direction.opposite)
+    case let .systemReveal(direction):
+      return .systemReveal(from: direction.opposite)
+    case let .systemPage(type):
+      return .systemPage(type: type.opposite)
+    case let .systemCameraIris(state):
+      return .systemCameraIris(hollowState: state.opposite)
+    case .none, .systemRotate, .systemSuckEffect, .systemRippleEffect, .explode:
+      return self
+    }
+  }
+}
+
 extension TransitionAnimationType: IBEnum {
   public init(string: String?) {
     guard let string = string else {
@@ -190,6 +260,34 @@ extension TransitionAnimationType {
         return .cross
       }
     }
+
+    /// Retrieves companion InteractiveGestureType.GestureDirection for Direction
+    var matchingGesture: InteractiveGestureType.GestureDirection {
+      switch self {
+      case .left: return .left
+      case .right: return .right
+      case .top: return .top
+      case .bottom: return .bottom
+      case .forward: return .open
+      case .backward: return .close
+      default:
+        fatalError("No matching GestureDirection for \(self)")
+      }
+    }
+
+    /// Retrieves counterpart InteractiveGestureType.GestureDirection for Direction
+    var opposingGesture: InteractiveGestureType.GestureDirection {
+      switch self {
+      case .left: return .right
+      case .right: return .left
+      case .top: return .bottom
+      case .bottom: return .top
+      case .forward: return .close
+      case .backward: return .open
+      default:
+        fatalError("No opposing GestureDirection for \(self)")
+      }
+    }
   }
 }
 
@@ -202,6 +300,24 @@ extension TransitionAnimationType {
     case none
     case open
     case close
+
+    var opposite: HollowState {
+      switch self {
+      case .close: return .open
+      case .open: return .close
+      case .none:
+        fatalError("No opposing HollowState for HollowState.none")
+      }
+    }
+
+    var opposingGesture: InteractiveGestureType.GestureDirection {
+      switch self {
+      case .open: return .close
+      case .close: return .open
+      case .none:
+        fatalError("No opposing GestureDirection for HollowState.none")
+      }
+    }
   }
 }
 
@@ -213,6 +329,13 @@ extension TransitionAnimationType {
   public enum PageType: String {
     case curl
     case unCurl
+
+    var opposite: PageType {
+      switch self {
+      case .curl: return .unCurl
+      case .unCurl: return .curl
+      }
+    }
   }
 }
 
@@ -237,6 +360,21 @@ extension TransitionAnimationType {
     case cameraIrisHollowOpen
     case cameraIrisHollowClose
     case rotate
+
+    init(pageType: PageType) {
+      switch pageType {
+      case .curl: self = .pageCurl
+      case .unCurl: self = .pageUnCurl
+      }
+    }
+
+    init(hollowState: HollowState) {
+      switch hollowState {
+      case .open: self = .cameraIrisHollowOpen
+      case .close: self = .cameraIrisHollowClose
+      case .none: self = .cameraIris
+      }
+    }
   }
 }
 
