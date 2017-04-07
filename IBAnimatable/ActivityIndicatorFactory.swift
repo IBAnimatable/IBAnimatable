@@ -47,9 +47,9 @@ public struct ActivityIndicatorFactory {
     case .ballTrianglePath:
       return ActivityIndicatorAnimationBallTrianglePath()
     case .ballZigZag:
-      return ActivityIndicatorAnimationBallZigZag()
+      return ActivityIndicatorAnimationBallZigZag(deflects: false)
     case .ballZigZagDeflect:
-      return ActivityIndicatorAnimationBallZigZagDeflect()
+      return ActivityIndicatorAnimationBallZigZag(deflects: true)
     case .cubeTransition:
       return ActivityIndicatorAnimationCubeTransition()
     case .lineScale:
@@ -69,9 +69,9 @@ public struct ActivityIndicatorFactory {
     case .semiCircleSpin:
       return ActivityIndicatorAnimationSemiCircleSpin()
     case .squareSpin:
-      return ActivityIndicatorAnimationSquareSpin()
+      return ActivityIndicatorAnimationSkewSpin(shape: .rectangle)
     case .triangleSkewSpin:
-      return ActivityIndicatorAnimationTriangleSkewSpin()
+      return ActivityIndicatorAnimationSkewSpin(shape: .triangle)
     }
   }
 }

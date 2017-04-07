@@ -154,7 +154,6 @@
 		E28E282F1D6CCA5C0043D56E /* ActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E28131D6CCA5C0043D56E /* ActivityIndicatorAnimationBallSpinFadeLoader.swift */; };
 		E28E28301D6CCA5C0043D56E /* ActivityIndicatorAnimationBallTrianglePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E28141D6CCA5C0043D56E /* ActivityIndicatorAnimationBallTrianglePath.swift */; };
 		E28E28311D6CCA5C0043D56E /* ActivityIndicatorAnimationBallZigZag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E28151D6CCA5C0043D56E /* ActivityIndicatorAnimationBallZigZag.swift */; };
-		E28E28321D6CCA5C0043D56E /* ActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E28161D6CCA5C0043D56E /* ActivityIndicatorAnimationBallZigZagDeflect.swift */; };
 		E28E28331D6CCA5C0043D56E /* ActivityIndicatorAnimationCubeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E28171D6CCA5C0043D56E /* ActivityIndicatorAnimationCubeTransition.swift */; };
 		E28E28341D6CCA5C0043D56E /* ActivityIndicatorAnimationLineScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E28181D6CCA5C0043D56E /* ActivityIndicatorAnimationLineScale.swift */; };
 		E28E28351D6CCA5C0043D56E /* ActivityIndicatorAnimationLineScaleParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E28191D6CCA5C0043D56E /* ActivityIndicatorAnimationLineScaleParty.swift */; };
@@ -163,8 +162,7 @@
 		E28E28381D6CCA5C0043D56E /* ActivityIndicatorAnimationOrbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E281C1D6CCA5C0043D56E /* ActivityIndicatorAnimationOrbit.swift */; };
 		E28E28391D6CCA5C0043D56E /* ActivityIndicatorAnimationPacman.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E281D1D6CCA5C0043D56E /* ActivityIndicatorAnimationPacman.swift */; };
 		E28E283A1D6CCA5C0043D56E /* ActivityIndicatorAnimationSemiCircleSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E281E1D6CCA5C0043D56E /* ActivityIndicatorAnimationSemiCircleSpin.swift */; };
-		E28E283B1D6CCA5C0043D56E /* ActivityIndicatorAnimationSquareSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E281F1D6CCA5C0043D56E /* ActivityIndicatorAnimationSquareSpin.swift */; };
-		E28E283C1D6CCA5C0043D56E /* ActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E28201D6CCA5C0043D56E /* ActivityIndicatorAnimationTriangleSkewSpin.swift */; };
+		E28E283C1D6CCA5C0043D56E /* ActivityIndicatorAnimationSkewSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E28201D6CCA5C0043D56E /* ActivityIndicatorAnimationSkewSpin.swift */; };
 		E28E283E1D6CCB550043D56E /* ActivityIndicatorAnimationBallPulseSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E283D1D6CCB550043D56E /* ActivityIndicatorAnimationBallPulseSync.swift */; };
 		E28E28401D6CCB5F0043D56E /* ActivityIndicatorAnimationBallBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E283F1D6CCB5F0043D56E /* ActivityIndicatorAnimationBallBeat.swift */; };
 		E28E28421D6CCB6B0043D56E /* ActivityIndicatorAnimationLineScalePulseOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E28411D6CCB6B0043D56E /* ActivityIndicatorAnimationLineScalePulseOut.swift */; };
@@ -367,7 +365,6 @@
 		E28E28131D6CCA5C0043D56E /* ActivityIndicatorAnimationBallSpinFadeLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationBallSpinFadeLoader.swift; sourceTree = "<group>"; };
 		E28E28141D6CCA5C0043D56E /* ActivityIndicatorAnimationBallTrianglePath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationBallTrianglePath.swift; sourceTree = "<group>"; };
 		E28E28151D6CCA5C0043D56E /* ActivityIndicatorAnimationBallZigZag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationBallZigZag.swift; sourceTree = "<group>"; };
-		E28E28161D6CCA5C0043D56E /* ActivityIndicatorAnimationBallZigZagDeflect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationBallZigZagDeflect.swift; sourceTree = "<group>"; };
 		E28E28171D6CCA5C0043D56E /* ActivityIndicatorAnimationCubeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationCubeTransition.swift; sourceTree = "<group>"; };
 		E28E28181D6CCA5C0043D56E /* ActivityIndicatorAnimationLineScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationLineScale.swift; sourceTree = "<group>"; };
 		E28E28191D6CCA5C0043D56E /* ActivityIndicatorAnimationLineScaleParty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationLineScaleParty.swift; sourceTree = "<group>"; };
@@ -376,8 +373,7 @@
 		E28E281C1D6CCA5C0043D56E /* ActivityIndicatorAnimationOrbit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationOrbit.swift; sourceTree = "<group>"; };
 		E28E281D1D6CCA5C0043D56E /* ActivityIndicatorAnimationPacman.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationPacman.swift; sourceTree = "<group>"; };
 		E28E281E1D6CCA5C0043D56E /* ActivityIndicatorAnimationSemiCircleSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationSemiCircleSpin.swift; sourceTree = "<group>"; };
-		E28E281F1D6CCA5C0043D56E /* ActivityIndicatorAnimationSquareSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationSquareSpin.swift; sourceTree = "<group>"; };
-		E28E28201D6CCA5C0043D56E /* ActivityIndicatorAnimationTriangleSkewSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationTriangleSkewSpin.swift; sourceTree = "<group>"; };
+		E28E28201D6CCA5C0043D56E /* ActivityIndicatorAnimationSkewSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationSkewSpin.swift; sourceTree = "<group>"; };
 		E28E283D1D6CCB550043D56E /* ActivityIndicatorAnimationBallPulseSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationBallPulseSync.swift; sourceTree = "<group>"; };
 		E28E283F1D6CCB5F0043D56E /* ActivityIndicatorAnimationBallBeat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationBallBeat.swift; sourceTree = "<group>"; };
 		E28E28411D6CCB6B0043D56E /* ActivityIndicatorAnimationLineScalePulseOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationLineScalePulseOut.swift; sourceTree = "<group>"; };
@@ -756,6 +752,13 @@
 			name = Animatable;
 			sourceTree = "<group>";
 		};
+		B06029DE1E9791880087BBD9 /* refactored */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = refactored;
+			sourceTree = "<group>";
+		};
 		E210ABC21D3A95E1001D0362 /* presentation animator */ = {
 			isa = PBXGroup;
 			children = (
@@ -769,6 +772,7 @@
 		E28E27C41D6CC0490043D56E /* animations */ = {
 			isa = PBXGroup;
 			children = (
+				B06029DE1E9791880087BBD9 /* refactored */,
 				E28E28051D6CCA5C0043D56E /* ActivityIndicatorAnimationAudioEqualizer.swift */,
 				E28E283F1D6CCB5F0043D56E /* ActivityIndicatorAnimationBallBeat.swift */,
 				E28E28061D6CCA5C0043D56E /* ActivityIndicatorAnimationBallClipRotate.swift */,
@@ -788,7 +792,6 @@
 				E28E28131D6CCA5C0043D56E /* ActivityIndicatorAnimationBallSpinFadeLoader.swift */,
 				E28E28141D6CCA5C0043D56E /* ActivityIndicatorAnimationBallTrianglePath.swift */,
 				E28E28151D6CCA5C0043D56E /* ActivityIndicatorAnimationBallZigZag.swift */,
-				E28E28161D6CCA5C0043D56E /* ActivityIndicatorAnimationBallZigZagDeflect.swift */,
 				E28E28171D6CCA5C0043D56E /* ActivityIndicatorAnimationCubeTransition.swift */,
 				E28E28181D6CCA5C0043D56E /* ActivityIndicatorAnimationLineScale.swift */,
 				E28E28191D6CCA5C0043D56E /* ActivityIndicatorAnimationLineScaleParty.swift */,
@@ -798,8 +801,7 @@
 				E28E281C1D6CCA5C0043D56E /* ActivityIndicatorAnimationOrbit.swift */,
 				E28E281D1D6CCA5C0043D56E /* ActivityIndicatorAnimationPacman.swift */,
 				E28E281E1D6CCA5C0043D56E /* ActivityIndicatorAnimationSemiCircleSpin.swift */,
-				E28E281F1D6CCA5C0043D56E /* ActivityIndicatorAnimationSquareSpin.swift */,
-				E28E28201D6CCA5C0043D56E /* ActivityIndicatorAnimationTriangleSkewSpin.swift */,
+				E28E28201D6CCA5C0043D56E /* ActivityIndicatorAnimationSkewSpin.swift */,
 			);
 			name = animations;
 			sourceTree = "<group>";
@@ -1039,7 +1041,6 @@
 				E28E28261D6CCA5C0043D56E /* ActivityIndicatorAnimationBallGridPulse.swift in Sources */,
 				E2BCCD381CDCA15D00431DA0 /* ContainerTransition.swift in Sources */,
 				AE6B01801C2A445100950BB2 /* AnimatableStackView.swift in Sources */,
-				E28E283B1D6CCA5C0043D56E /* ActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				AE6B01661C2A444000950BB2 /* MaskType.swift in Sources */,
 				E26B3EDC1CCD579200BFD0AB /* PresentNatGeoSegue.swift in Sources */,
 				E2E62B771D69B17900294A73 /* ActivityIndicatorType.swift in Sources */,
@@ -1052,7 +1053,7 @@
 				E210ABC41D3A95F9001D0362 /* CoverAnimator.swift in Sources */,
 				AE6B01831C2A445100950BB2 /* AnimatableTextField.swift in Sources */,
 				AE6B01731C2A444900950BB2 /* ShadowDesignable.swift in Sources */,
-				E28E283C1D6CCA5C0043D56E /* ActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
+				E28E283C1D6CCA5C0043D56E /* ActivityIndicatorAnimationSkewSpin.swift in Sources */,
 				AE6B01621C2A444000950BB2 /* AnimationType.swift in Sources */,
 				AE154B8C1C7D59EE0093C05B /* AnimatorFactory.swift in Sources */,
 				AEC23FC21CB3DE0900E42D99 /* InteractiveAnimator.swift in Sources */,
@@ -1076,7 +1077,6 @@
 				AE65CF931C96E35600A723F8 /* PresentFadeWithDismissInteractionSegue.swift in Sources */,
 				E28760EA1E8D0BDE003B324E /* PresentOverCurrentContextSegue.swift in Sources */,
 				E28E282A1D6CCA5C0043D56E /* ActivityIndicatorAnimationBallRotateChase.swift in Sources */,
-				E28E28321D6CCA5C0043D56E /* ActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				E2C5DCDD1E28BD12001E0E18 /* BorderType.swift in Sources */,
 				AE154B061C787DDE0093C05B /* AnimatableNavigationController.swift in Sources */,
 				E28E282F1D6CCA5C0043D56E /* ActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,

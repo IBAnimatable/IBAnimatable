@@ -5,32 +5,35 @@
 
 import UIKit
 
-public class ActivityIndicatorAnimationSquareSpin: ActivityIndicatorAnimating {
+public class ActivityIndicatorAnimationSkewSpin: ActivityIndicatorAnimating {
 
   // MARK: Properties
 
   fileprivate let duration: CFTimeInterval = 3
+  fileprivate let shape: ActivityIndicatorShape
+
+  // MARK: Initializer
+
+  init(shape: ActivityIndicatorShape) {
+    self.shape = shape
+  }
 
   // MARK: ActivityIndicatorAnimating
 
   public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
-
-    let animation = self.animation
-    let square = ActivityIndicatorShape.rectangle.makeLayer(size: size, color: color)
-    let frame = CGRect(x: (layer.bounds.size.width - size.width) / 2,
-                       y: (layer.bounds.size.height - size.height) / 2,
-                       width: size.width,
-                       height: size.height)
-    square.frame = frame
-    square.add(animation, forKey: "animation")
-    layer.addSublayer(square)
+    let x = (layer.bounds.size.width - size.width) / 2
+    let y = (layer.bounds.size.height - size.height) / 2
+    let triangle = shape.makeLayer(size: size, color: color)
+    triangle.frame = CGRect(x: x, y: y, width: size.width, height: size.height)
+    triangle.add(self.animation, forKey: "animation")
+    layer.addSublayer(triangle)
   }
 
 }
 
 // MARK: - Setup
 
-private extension ActivityIndicatorAnimationSquareSpin {
+private extension ActivityIndicatorAnimationSkewSpin {
 
   var animation: CAKeyframeAnimation {
     let timingFunction = CAMediaTimingFunction(controlPoints: 0.09, 0.57, 0.49, 0.9)

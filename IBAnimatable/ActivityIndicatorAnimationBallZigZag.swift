@@ -10,6 +10,13 @@ public class ActivityIndicatorAnimationBallZigZag: ActivityIndicatorAnimating {
   // MARK: Properties
 
   fileprivate let duration: CFTimeInterval = 0.7
+  fileprivate let deflects: Bool
+
+  // MARK: Initializer
+
+  init(deflects: Bool) {
+    self.deflects = deflects
+  }
 
   // MARK: ActivityIndicatorAnimating
 
@@ -32,6 +39,7 @@ public class ActivityIndicatorAnimationBallZigZag: ActivityIndicatorAnimating {
                         NSValue(caTransform3D: CATransform3DMakeTranslation(0, 0, 0))]
     animation.duration = duration
     animation.repeatCount = .infinity
+    animation.autoreverses = deflects
     animation.isRemovedOnCompletion = false
     let circle1 = makeCircleLayer(frame: frame, size: CGSize(width: circleSize, height: circleSize), color: color, animation: animation)
     layer.addSublayer(circle1)
