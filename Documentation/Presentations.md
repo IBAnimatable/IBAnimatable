@@ -213,7 +213,7 @@ You can see all supported Keyboard Translation in the demo App, open the App and
 
 ## Presenting over current context
 
-Using the above configuration, you can't have the same result as using `UIModalPresentationStyle.currentContext`, but `IBAnimatable` have a workaround to support it while supporting *all the above customisation*.
+Using the above configuration, you can't have the same result as using `UIModalPresentationStyle.overCurrentContext`, but `IBAnimatable` have a workaround to support it while supporting *all the above customisation*.
 
 That can be useful in a few cases, for example: having a split view controller, but you may want to present a controller over the first one, and let the second one clickable. You can see an example in the demo app: Playground -> Presentation -> Over context.
 
@@ -233,7 +233,7 @@ For this special case, `AnimatableModalViewController` has another property that
 
 | Property | Description |
 | ------------- | ------------- |
-| context frame for presentation | If not nil, the presented view controller will have use this frame, imitates `UIModalPresentationStyle.currentContext`  If nil, the presented view controller will be in fullscreen. *Note:* The modal position / size will be calculated based on this if not nil. |
+| context frame for presentation | If not nil, the presented view controller will have use this frame, imitates `UIModalPresentationStyle.overCurrentContext`  If nil, the presented view controller will be in fullscreen. *Note:* The modal position / size will be calculated based on this if not nil. |
 
 Anywhere before `presenting` your viewController, just set the `contextFrameForPresentation` that it should have.
 For example, if you want your presented view controller to have the same frame as the `viewController` presenting it, you will just have to do:
