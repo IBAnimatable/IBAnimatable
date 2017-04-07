@@ -23,6 +23,8 @@ All notable changes to this project will be documented in this file.
 [#418](https://github.com/IBAnimatable/IBAnimatable/pull/418) by [@phimage](https://github.com/phimage) and [#429](https://github.com/IBAnimatable/IBAnimatable/pull/429) by [@tbaranes](https://github.com/tbaranes)
 - Replace all `SystemAnimator` classes with `SystemTransitionAnimator`
 [#427](https://github.com/IBAnimatable/IBAnimatable/pull/427) by [@SD10](https://github.com/sd10)
+- Add `GradientDesignable` to `DesignableNavigationBar`
+[#437](https://github.com/IBAnimatable/IBAnimatable/pull/437) by [@phimage](https://github.com/phimage)
 
 #### Bugfixes
 - Make corner sides case insensitive.
