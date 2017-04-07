@@ -28,7 +28,7 @@ public class AnimatablePresentationController: UIPresentationController {
 
     configureDimmingView()
     configurePresentedView()
-    makeObservers()
+    configureObservers()
   }
 
   deinit {
@@ -87,7 +87,7 @@ private extension AnimatablePresentationController {
 
 extension AnimatablePresentationController {
 
-  fileprivate func makeObservers() {
+  fileprivate func configureObservers() {
     guard presentationConfiguration.keyboardTranslation != .none else {
       return
     }
