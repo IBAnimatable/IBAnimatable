@@ -6,8 +6,26 @@
 import UIKit
 
 @IBDesignable
-open class DesignableNavigationBar: UINavigationBar, NavigationBarDesignable {
+open class DesignableNavigationBar: UINavigationBar, NavigationBarDesignable, GradientDesignable {
+
+  // MARK: - NavigationBarDesignable
   @IBInspectable open var solidColor: Bool = false
+
+  // MARK: - GradientDesignable
+  @IBInspectable open var startColor: UIColor?
+  @IBInspectable open var endColor: UIColor?
+  open var predefinedGradient: GradientType?
+  @IBInspectable var _predefinedGradient: String? {
+    didSet {
+      predefinedGradient = GradientType(string: _predefinedGradient)
+    }
+  }
+  open var startPoint: GradientStartPoint = .top
+  @IBInspectable var _startPoint: String? {
+    didSet {
+      startPoint = GradientStartPoint(string: _startPoint, default: .top)
+    }
+  }
 
   // MARK: - Lifecycle
   open override func prepareForInterfaceBuilder() {
@@ -23,5 +41,6 @@ open class DesignableNavigationBar: UINavigationBar, NavigationBarDesignable {
   // MARK: - Private
   fileprivate func configureInspectableProperties() {
     configureNavigationBar()
+    configureGradient()
   }
 }
