@@ -11,6 +11,9 @@ public protocol PresentationDesignable: class {
 
   var presenter: PresentationPresenter? { get set }
 
+  /// Frame of the presentingVC's dimmingView. Used that property if you want to simulate a presentation `overCurrentContext`. If nil, the dimmingView will be in fullscreen.
+  var contextFrameForPresentation: CGRect? { get set }
+
   /// Presentation animation type, all supported animation type can be found in `PresentationAnimationType`
   var presentationAnimationType: PresentationAnimationType { get set }
 
@@ -76,6 +79,7 @@ public extension PresentationDesignable where Self: UIViewController {
     }
 
     var presentationConfiguration = PresentationConfiguration()
+    presentationConfiguration.contextFrameForPresentation = contextFrameForPresentation
     presentationConfiguration.modalPosition = modalPosition
     presentationConfiguration.modalSize = modalSize
     presentationConfiguration.cornerRadius = cornerRadius
@@ -118,4 +122,5 @@ public struct PresentationConfiguration {
   public var modalPosition: PresentationModalPosition = .center
   public var modalSize: (PresentationModalSize, PresentationModalSize) = (.half, .half)
   public var keyboardTranslation = ModalKeyboardTranslation.none
+  public var contextFrameForPresentation: CGRect?
 }
