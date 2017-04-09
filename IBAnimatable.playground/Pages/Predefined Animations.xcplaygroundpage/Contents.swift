@@ -67,6 +67,7 @@ iPhoneView.addSubview(view)
 //view.animate(.squash(repeatCount: 1))
 //view.animate(.flash(repeatCount: 1))
 //view.animate(.wobble(repeatCount: 1))
+//view.maskType = .none
 //view.animate(.swing(repeatCount: 1))
 
 //view.animate(.flip(along: .x))
