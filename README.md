@@ -13,14 +13,14 @@ Design and prototype customized UI, interaction, navigation, transition and anim
 **The app was made in Interface Builder with `IBAnimatable` without a single line of code**. Due to the size of [the GIF file on Dribbble](https://dribbble.com/shots/2453933-IBAnimatable-Design-App-Store-ready-Apps-in-Interface-Builder), it only demonstrates a subset of features. We can also find the full HD version on [YouTube](https://www.youtube.com/watch?v=dvD8X6J1YLM) or [MP4 on Github](https://github.com/IBAnimatable/IBAnimatable-Misc/blob/master/Videos/IBAnimatable.mp4?raw=true)
 
 ## Key features
-- [x] **100% compatible with `UIKit`**. All `IBAnimatable` APIs are extensions of `UIKit`. No pollutions to `UIKit`'s APIs.
-- [x] **100% compatible with Auto Layout and Size Classes**. No custom layout system.
-- [x] **User interface design and preview in IB**: corner radius, border, mask, shadow, gradient colors, tint color, blur effect etc.
-- [x] **Animation design in IB**: slide in/out, fade in/out, zoom in/out, flip, pop, shake, rotate, move etc.
-- [x] **Transition design in IB**: fade, slide, flip, cube, portal, fold, explosion etc.
-- [x] **Interactive gesture design in IB**: pan, screen edge pan, pinch etc. 
-- [x] **Presentation design in IB**: flip, cover, zoom, dropdown etc.
-- [x] **Activity indicator design in IB**: ball beat, ball rotate, cube transition, Pacman etc.  
+- ✅ **100% compatible with `UIKit`**. All `IBAnimatable` APIs are extensions of `UIKit`. No pollutions to `UIKit`'s APIs.
+- ✅ **100% compatible with Auto Layout and Size Classes**. No custom layout system.
+- ✅ **User interface design and preview in IB**: corner radius, border, mask, shadow, gradient colors, tint color, blur effect etc.
+- ✅ **Animation design in IB**: slide in/out, fade in/out, zoom in/out, flip, pop, shake, rotate, move etc.
+- ✅ **Transition design in IB**: fade, slide, flip, cube, portal, fold, explosion etc.
+- ✅ **Interactive gesture design in IB**: pan, screen edge pan, pinch etc. 
+- ✅ **Presentation design in IB**: flip, cover, zoom, dropdown etc.
+- ✅ **Activity indicator design in IB**: ball beat, ball rotate, cube transition, Pacman etc.  
 
 
 ![StoryboardPreview](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/Storyboard.jpg)
@@ -31,13 +31,19 @@ With `IBAnimatable`, we can design a UI in Interface Builder like what we can do
 
 As a designer, we love Sketch, which is a simple but yet super powerful tool to create UI. However, Sketch can't design interaction, navigation, transition and animation, and we may need another tool like Framer to design some of them. Moreover, to make an App Store ready App, we need to use Xcode and Interface Builder to implement the UI and animations. To speed up the process and minimize the waste, we create `IBAnimatable` to make Interface Builder designable and animatable.   
 
-## Swift 3
-IBAnimatable 3.0 is the latest major release of IBAnimatable. This version follows Swift 3 [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/) and contains a lot of breaking changes from version 2.x. Please check out [IBAnimatable 3.0 Migration Guide](Documentation/IBAnimatable 3.0 Migration Guide.md) for more information about how to migrate your project to 3.0. 
+## Version 4
+IBAnimatable 4.0 is the latest major release of IBAnimatable. This version introduces promise-like animation API, and contains some breaking changes from version 3.x. Please check out [IBAnimatable 4.0 Migration Guide](Documentation/IBAnimatable 4.0 Migration Guide.md) for more information about how to migrate your project to 4.0. 
 
-If you are using Xcode 8 with Swift 3, please use the latest tagged 3.x release.
+## Swift version
+### Swift 3 or 3.1
+If you migrate from Swift 2.x, please check out [IBAnimatable 3.0 Migration Guide](Documentation/IBAnimatable 3.0 Migration Guide.md) for more information about how to migrate your project to 3.0. Version 3 follows Swift 3 [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/) and contains a lot of breaking changes from version 2.x. 
 
-## Swift 2.2 or 2.3?
+If you are using Xcode 8 with Swift 3, please use the latest tagged 4.x release.
+
+### Swift 2.2 or 2.3?
 If you are using Xcode 7.3.1 with Swift 2.2 please use IBAnimatable 2.7. If you are using Xcode 8 with Swift 2.3, please use the latest tagged 2.x release (version 2.8.1). If you find any issue and create a PR for Swift 2.3, please PR to `swift2` branch. When you use Swift 2.3 with IBAnimatable, you may see some issue like `dlopen(IBAnimatable.framework, 1): Symbol not found: __TMVs20_DisabledRangeIndex_`. That's a bug of Xcode 8, please have a look at [Issue - Failed to render and update auto layout status](https://github.com/IBAnimatable/IBAnimatable/issues/349)
+
+**Version 2.8.1 is the last version to support Swift 2.3. Because Xcode 8.3 has stopped supporting Swift 2.3. We also stop the support for Swift 2.*, please migrate to Swift 3.**
 
 ## Languages
 [中文](Documentation/README.zh.md)
@@ -99,34 +105,26 @@ We can configure the animation settings in Attribute inspector. However, Interfa
 3. Select IBAnimatable.playground, choose one page in Swift playground, then click on "Assistant editor" button to split the playground. After that, select "Timeline" on the top of right-hand side to preview the animation. We can use Xcode menu "Editor" -> "Execute" to re-run the playground.
 
 ## How to animate programmatically
-As you saw above, we can prototype an App fully in Interface Builder without a single line of code, but `IBAnimatable` also provides APIs to let us fully control the UI and animations. `IBAnimatable` provides simple APIs like `pop()`. We can easily call them in one line.
+As you saw above, we can prototype an App fully in Interface Builder without a single line of code, but `IBAnimatable` also provides APIs to let us fully control the UI and animations. `IBAnimatable` provides simple promise-like APIs. We can easily call them in one line.
 
 ```swift
-view.pop(repeatCount: 1) // pop animation for the view
-view.squeezeFade(.in, direction:.left) // squeeze and fade in from left animation
+view.animate(.pop(repeatCount: 1)) // pop animation for the view
+view.animate(.squeezeFade(way: .in, direction: .left)) // squeeze and fade in from left animation
 ```  
 
 You can play around with all these predefined animations in the [Swift playground Page - Predefined Animations](IBAnimatable.playground/Pages/Predefined%20Animations.xcplaygroundpage)
 
 ### Animation properties
-There are some properties we can change to customize the animation. What we need to do is to set the properties and call `animate()` method to start the animation.
+There are some properties we can change to customize the animation. What we need to do is to pass the parameters to `animate()` method to start the animation.
 
 ```swift
-// Setup the animation
-view.animationType = .squeeze(way: .in, direction: .left)
-view.delay = 0.5
-view.damping = 0.5
-view.velocity = 2
-view.force = 1
-
-// Start the animation
-view.animate()
+view.animate(.squeeze(way: .in, direction: .left), duration: 1, damping: 1, velocity: 2, force: 1)
 ```
 
-You can play around with all animations with different properties in the [Swift playground Page - Animation Properties](IBAnimatable.playground/Pages/Animation%20Properties.xcplaygroundpage)
+You can play around with all animations with different parameters in the [Swift playground Page - Animation Properties](IBAnimatable.playground/Pages/Animation%20Properties.xcplaygroundpage)
 
 ### Chaining animations
-Sometimes, we need to run another animation after the previous one. With `IBAnimatable`, we can easily chain animations together to provide a sleek user experience.
+Sometimes, we need to run more animation after the previous one. With `IBAnimatable`, we can easily use promise-like API to chain all animations together to provide a sleek user experience.
 
 ```swift
 // We can chain the animations together, it is the source code of animated GIF in "Animate in Swift playground" section
@@ -140,6 +138,22 @@ view.animate(.squeezeFade(way: .in, direction: .down))
     .then(.slideFade(way: .out, direction: .down))
 ```
 
+### Delaying animations
+We can use `delay` method to delay the next animation.
+
+```swift
+view.animate(.squeeze(way: .in, direction: .left))
+    .delay(0.5)
+    .then(.shake(repeatCount: 3))
+```
+
+We can also delay the first animation.
+
+```swift
+view.delay(2)
+    .then(.squeeze(way: .in, direction: .left))
+```
+
 ## How to install
 ### Manually install
 
@@ -147,7 +161,7 @@ Copy and paste `IBAnimatable` folder in your Xcode project.
 
 ### [Swift package manager](https://swift.org/package-manager)
 
-Add `.Package(url: "https://github.com/IBanimatable/IBanimatable.git", majorVersion: 3)` to your `Package.swift`
+Add `.Package(url: "https://github.com/IBanimatable/IBanimatable.git", majorVersion: 4)` to your `Package.swift`
 
 ### [CocoaPods](https://cocoapods.org)
 
