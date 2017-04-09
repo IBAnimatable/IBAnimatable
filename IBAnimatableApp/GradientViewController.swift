@@ -27,7 +27,18 @@ class GradientViewController: UIViewController {
       gView.startColor = ColorType(rawValue: self.colorValues.value(at: 0))?.color
       gView.endColor = ColorType(rawValue: self.colorValues.value(at: 0))?.color
     }
+    var navigationBar = self.navigationController?.navigationBar as? DesignableNavigationBar
+    navigationBar?.copyGradient(from: gView)
+    navigationBar?.configureGradient()
   }
+
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    var navigationBar = self.navigationController?.navigationBar as? DesignableNavigationBar
+    navigationBar?.resetGradient()
+    navigationBar?.setBackgroundImage(nil, for: .default)
+  }
+
 }
 
 extension GradientViewController : UIPickerViewDelegate, UIPickerViewDataSource {
@@ -58,8 +69,29 @@ extension GradientViewController : UIPickerViewDelegate, UIPickerViewDataSource 
       gView.startColor = ColorType(rawValue: self.colorValues.value(at: pickerView.selectedRow(inComponent: 0)))?.color
       gView.endColor = ColorType(rawValue: self.colorValues.value(at: pickerView.selectedRow(inComponent: 1)))?.color
       gView.startPoint = GradientStartPoint(string: startPointValues.value(at: pickerView.selectedRow(inComponent: 2)))
-
     }
     gView.configureGradient()
+
+    var navigationBar = self.navigationController?.navigationBar as? DesignableNavigationBar
+    navigationBar?.copyGradient(from: gView)
+    navigationBar?.configureGradient()
   }
+}
+
+fileprivate extension GradientDesignable {
+
+  mutating func copyGradient(from designable: GradientDesignable) {
+    predefinedGradient = designable.predefinedGradient
+    startColor = designable.startColor
+    endColor = designable.endColor
+    startPoint = designable.startPoint
+  }
+
+  mutating func resetGradient(defaultStartPoint: GradientStartPoint = .top) {
+    predefinedGradient = nil
+    startColor = nil
+    endColor = nil
+    startPoint = defaultStartPoint
+  }
+
 }
