@@ -38,9 +38,19 @@ open class DesignableNavigationBar: UINavigationBar, NavigationBarDesignable, Gr
     configureInspectableProperties()
   }
 
+  open override func layoutSubviews() {
+    super.layoutSubviews()
+    configureAfterLayoutSubviews()
+  }
+
   // MARK: - Private
   fileprivate func configureInspectableProperties() {
     configureNavigationBar()
     configureGradient()
   }
+
+  fileprivate func configureAfterLayoutSubviews() {
+    configureGradient()
+  }
+
 }

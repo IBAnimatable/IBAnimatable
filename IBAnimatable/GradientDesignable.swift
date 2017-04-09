@@ -62,20 +62,17 @@ public extension GradientDesignable where Self: UINavigationBar {
       configureGradient(startColor: startColor, endColor: endColor)
     }
   }
-}
 
-fileprivate extension GradientDesignable where Self: UINavigationBar {
-
-  func configureGradient(startColor: UIColor, endColor: UIColor) {
+  fileprivate  func configureGradient(startColor: UIColor, endColor: UIColor) {
     let gradientLayer = makeGradientLayer()
     gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
     gradientLayer.configurePoints(with: startPoint)
-    let image = gradientLayer.image()
 
-    self.setBackgroundImage(image, for: .default)
+    let image = gradientLayer.makeImage()
+    setBackgroundImage(image, for: .default)
   }
 
-  func makeGradientLayer() -> CAGradientLayer {
+  fileprivate func makeGradientLayer() -> CAGradientLayer {
     let gradientLayer: CAGradientLayer = CAGradientLayer()
 
     let statusBarHeight: CGFloat = 64 // UIApplication.shared.statusBarFrame.height
@@ -89,7 +86,6 @@ fileprivate extension GradientDesignable where Self: UINavigationBar {
 }
 
 private class PrivateGradientView: UIView {
-  // MARK: - Life cycle
 
   init(frame: CGRect, layer: CAGradientLayer) {
     super.init(frame: frame)
@@ -107,8 +103,9 @@ private class PrivateGradientView: UIView {
 
 }
 
-extension CAGradientLayer {
-  fileprivate func configurePoints(with startPoint: GradientStartPoint) {
+fileprivate extension CAGradientLayer {
+
+  func configurePoints(with startPoint: GradientStartPoint) {
     switch startPoint {
     case .top:
       self.startPoint = CGPoint(x: 0.5, y: 0)
@@ -142,9 +139,9 @@ extension CAGradientLayer {
     }
   }
 
-  func image() -> UIImage? {
-    UIGraphicsBeginImageContext(self.frame.size)
-    self.render(in: UIGraphicsGetCurrentContext()!)
+  func makeImage() -> UIImage? {
+    UIGraphicsBeginImageContext(frame.size)
+    render(in: UIGraphicsGetCurrentContext()!)
     let outputImage = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
     return outputImage
