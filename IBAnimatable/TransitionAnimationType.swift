@@ -305,8 +305,7 @@ extension TransitionAnimationType {
       switch self {
       case .close: return .open
       case .open: return .close
-      case .none:
-        fatalError("No opposing HollowState for HollowState.none")
+      case .none: return .none
       }
     }
 
