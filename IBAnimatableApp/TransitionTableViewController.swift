@@ -48,92 +48,133 @@ private extension TransitionTableViewController {
 
     transitionAnimationsHeaders.append("Fade")
 
-    let fadeAnimations: [TransitionAnimationType] = [.fade(direction: .in), .fade(direction: .out), .fade(direction: .cross)]
+    let fadeAnimations: [TransitionAnimationType] = [.fade(direction: .in),
+                                                     .fade(direction: .out),
+                                                     .fade(direction: .cross)]
 
     transitionAnimations.append(toString(animations: fadeAnimations))
 
     transitionAnimationsHeaders.append("SystemCube")
-    let cubeAnimations: [TransitionAnimationType] = [
-      .systemCube(from: .left), .systemCube(from: .right), .systemCube(from: .top), .systemCube(from: .bottom)]
+
+    let cubeAnimations: [TransitionAnimationType] = [.systemCube(from: .left),
+                                                     .systemCube(from: .right),
+                                                     .systemCube(from: .top),
+                                                     .systemCube(from: .bottom)]
 
     transitionAnimations.append(toString(animations: cubeAnimations))
 
     transitionAnimationsHeaders.append("SystemFlip")
-    let flipSystemAnimations: [TransitionAnimationType] = [
-      .systemFlip(from: .left), .systemFlip(from: .right), .systemFlip(from: .top), .systemFlip(from: .bottom)]
+
+    let flipSystemAnimations: [TransitionAnimationType] = [.systemFlip(from: .left),
+                                                           .systemFlip(from: .right),
+                                                           .systemFlip(from: .top),
+                                                           .systemFlip(from: .bottom)]
 
     transitionAnimations.append(toString(animations: flipSystemAnimations))
 
     transitionAnimationsHeaders.append("SystemMoveIn")
-    let moveAnimations: [TransitionAnimationType] = [
-      .systemMoveIn(from: .left), .systemMoveIn(from: .right), .systemMoveIn(from: .top), .systemMoveIn(from: .bottom)]
+
+    let moveAnimations: [TransitionAnimationType] = [.systemMoveIn(from: .left),
+                                                     .systemMoveIn(from: .right),
+                                                     .systemMoveIn(from: .top),
+                                                     .systemMoveIn(from: .bottom)]
 
     transitionAnimations.append(toString(animations: moveAnimations))
 
     transitionAnimationsHeaders.append("SystemPush")
-    let pushAnimations: [TransitionAnimationType] = [
-      .systemPush(from: .left), .systemPush(from: .right), .systemMoveIn(from: .top), .systemMoveIn(from: .bottom)]
+
+    let pushAnimations: [TransitionAnimationType] = [.systemPush(from: .left),
+                                                     .systemPush(from: .right),
+                                                     .systemMoveIn(from: .top),
+                                                     .systemMoveIn(from: .bottom)]
 
     transitionAnimations.append(toString(animations: pushAnimations))
 
     transitionAnimationsHeaders.append("SystemReveal")
-    let revealAnimations: [TransitionAnimationType] = [
-      .systemReveal(from: .left), .systemReveal(from: .right), .systemReveal(from: .top), .systemReveal(from: .bottom)]
+
+    let revealAnimations: [TransitionAnimationType] = [.systemReveal(from: .left),
+                                                       .systemReveal(from: .right),
+                                                       .systemReveal(from: .top),
+                                                       .systemReveal(from: .bottom)]
 
     transitionAnimations.append(toString(animations: revealAnimations))
 
     transitionAnimationsHeaders.append("SystemPage")
+
     let pageAnimations: [TransitionAnimationType] = [.systemPage(type: .curl), .systemPage(type: .unCurl)]
 
     transitionAnimations.append(toString(animations: pageAnimations))
 
     transitionAnimationsHeaders.append("SystemCameraIris")
-    let cameraAnimations: [TransitionAnimationType] = [
-      .systemCameraIris(hollowState: .none), .systemCameraIris(hollowState: .open), .systemCameraIris(hollowState: .close)]
+
+    let cameraAnimations: [TransitionAnimationType] = [.systemCameraIris(hollowState: .none),
+                                                       .systemCameraIris(hollowState: .open),
+                                                       .systemCameraIris(hollowState: .close)]
 
     transitionAnimations.append(toString(animations: cameraAnimations))
 
     transitionAnimationsHeaders.append("Fold")
-    let foldAnimations: [TransitionAnimationType] = [
-      .fold(from: .left, folds: nil), .fold(from: .right, folds: nil), .fold(from: .top, folds: nil), .fold(from: .bottom, folds: nil)]
+
+    let foldAnimations: [TransitionAnimationType] = [.fold(from: .left, folds: nil),
+                                                     .fold(from: .right, folds: nil),
+                                                     .fold(from: .top, folds: nil),
+                                                     .fold(from: .bottom, folds: nil)]
 
     transitionAnimations.append(toString(animations: foldAnimations))
 
     transitionAnimationsHeaders.append("Portal")
-    let portalAnimations: [TransitionAnimationType] = [.portal(direction: .forward, zoomScale: 0.3), .portal(direction: .backward, zoomScale: nil)]
+
+    let portalAnimations: [TransitionAnimationType] = [.portal(direction: .forward, zoomScale: 0.3),
+                                                       .portal(direction: .backward, zoomScale: nil)]
 
     transitionAnimations.append(toString(animations: portalAnimations))
 
     transitionAnimationsHeaders.append("NatGeo")
+
     let natGeoAnimations: [TransitionAnimationType] = [.natGeo(to: .left), .natGeo(to: .right)]
+
     transitionAnimations.append(toString(animations: natGeoAnimations))
 
     transitionAnimationsHeaders.append("Turn")
-    let turnAnimations: [TransitionAnimationType] = [.turn(from: .left), .turn(from: .right), .turn(from: .top), .turn(from: .bottom)]
+
+    let turnAnimations: [TransitionAnimationType] = [.turn(from: .left),
+                                                     .turn(from: .right),
+                                                     .turn(from: .top),
+                                                     .turn(from: .bottom)]
+
     transitionAnimations.append(toString(animations: turnAnimations))
 
     transitionAnimationsHeaders.append("Cards")
+
     let cardAnimations: [TransitionAnimationType] = [.cards(direction: .forward), .cards(direction: .backward)]
+
     transitionAnimations.append(toString(animations: cardAnimations))
 
     transitionAnimationsHeaders.append("Flip")
+
     let flipAnimations: [TransitionAnimationType] = [.flip(from: .left), .flip(from: .right)]
+
     transitionAnimations.append(toString(animations: flipAnimations))
 
     transitionAnimationsHeaders.append("Slide")
-    let slideAnimations: [TransitionAnimationType] = [
-      .slide(to: .left, isFade: true), .slide(to: .right, isFade: false), .slide(to: .top, isFade: true), .slide(to: .bottom, isFade: false)]
+
+    let slideAnimations: [TransitionAnimationType] = [.slide(to: .left, isFade: true),
+                                                      .slide(to: .right, isFade: false),
+                                                      .slide(to: .top, isFade: true),
+                                                      .slide(to: .bottom, isFade: false)]
 
     transitionAnimations.append(toString(animations: slideAnimations))
 
     transitionAnimationsHeaders.append("Others")
-    let otherAnimations: [TransitionAnimationType] = [
-      .systemRotate, .systemRippleEffect, .explode(xFactor: nil, minAngle: nil, maxAngle: nil), .explode(xFactor: 10, minAngle: -20, maxAngle: 20)]
+    let otherAnimations: [TransitionAnimationType] = [.systemRotate,
+                                                      .systemRippleEffect,
+                                                      .explode(xFactor: nil, minAngle: nil, maxAngle: nil),
+                                                      .explode(xFactor: 10, minAngle: -20, maxAngle: 20)]
 
     transitionAnimations.append(toString(animations: otherAnimations))
   }
 
-  func toString(animations: [TransitionAnimationType]) -> [String] {
+  private func toString(animations: [TransitionAnimationType]) -> [String] {
     return animations.map { $0.asString }
   }
 
