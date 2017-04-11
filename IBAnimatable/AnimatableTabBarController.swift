@@ -1,11 +1,11 @@
 //
-//  Created by Jake Lin on 2/20/16.
-//  Copyright © 2016 IBAnimatable. All rights reserved.
+//  Created by phimage on 11/04/2017.
+//  Copyright © 2017 IBAnimatable. All rights reserved.
 //
 
 import UIKit
 
-open class AnimatableNavigationController: UINavigationController, TransitionAnimatable {
+open class AnimatableTabBarController: UITabBarController, TransitionAnimatable {
 
   // MARK: - TransitionAnimatable
   @IBInspectable  var _transitionAnimationType: String? {
@@ -40,7 +40,7 @@ open class AnimatableNavigationController: UINavigationController, TransitionAni
   }
 
   // MARK: - Private
-  // Must have a property to keep the reference alive because `UINavigationController.delegate` is `weak`
+  // Must have a property to keep the reference alive because `UITabBarController.delegate` is `weak`
   fileprivate var navigator: Navigator?
 
   fileprivate func configureNavigationControllerDelegate() {
