@@ -25,42 +25,10 @@ public extension GradientDesignable where Self: UIView {
 
 fileprivate extension GradientDesignable where Self: UIView {
   func configureGradient(startColor: UIColor, endColor: UIColor) {
-    // Default value is `.Top`
 
-    let gradientStartPoint = startPoint
     let gradientLayer = makeGradientLayer()
     gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
-    switch gradientStartPoint {
-    case .top:
-      gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
-      gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
-    case .topRight:
-      gradientLayer.startPoint = CGPoint(x: 1, y: 0)
-      gradientLayer.endPoint = CGPoint(x: 0, y: 1)
-    case .right:
-      gradientLayer.startPoint = CGPoint(x: 1, y: 0.5)
-      gradientLayer.endPoint = CGPoint(x: 0, y: 0.5)
-    case .bottomRight:
-      gradientLayer.startPoint = CGPoint(x: 1, y: 1)
-      gradientLayer.endPoint = CGPoint(x: 0, y: 0)
-    case .bottom:
-      gradientLayer.startPoint = CGPoint(x: 0.5, y: 1)
-      gradientLayer.endPoint = CGPoint(x: 0.5, y: 0)
-    case .bottomLeft:
-      gradientLayer.startPoint = CGPoint(x: 0, y: 1)
-      gradientLayer.endPoint = CGPoint(x: 1, y: 0)
-    case .left:
-      gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
-      gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
-    case .topLeft:
-      gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-      gradientLayer.endPoint = CGPoint(x: 1, y: 1)
-    case let .custom(start, end):
-      gradientLayer.startPoint = CGPoint(x: start.x, y: start.y)
-      gradientLayer.endPoint = CGPoint(x: end.x, y: end.y)
-    case .none:
-      break
-    }
+    gradientLayer.configurePoints(with: startPoint)
 
     subviews.filter { $0 is PrivateGradientView }.forEach {
       $0.removeFromSuperview()
@@ -78,7 +46,6 @@ fileprivate extension GradientDesignable where Self: UIView {
   }
 
   func configurePredefinedGradient() -> GradientColor? {
-
     guard let gradientType = predefinedGradient else {
       return nil
     }
@@ -86,8 +53,39 @@ fileprivate extension GradientDesignable where Self: UIView {
   }
 }
 
+public extension GradientDesignable where Self: UINavigationBar {
+  public func configureGradient() {
+    let predefinedGradient = configurePredefinedGradient()
+    if let startColor = startColor, let endColor = endColor {
+      configureGradient(startColor: startColor, endColor: endColor)
+    } else if let startColor = predefinedGradient?.start, let endColor = predefinedGradient?.end {
+      configureGradient(startColor: startColor, endColor: endColor)
+    }
+  }
+
+  fileprivate  func configureGradient(startColor: UIColor, endColor: UIColor) {
+    let gradientLayer = makeGradientLayer()
+    gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
+    gradientLayer.configurePoints(with: startPoint)
+
+    let image = gradientLayer.makeImage()
+    setBackgroundImage(image, for: .default)
+  }
+
+  fileprivate func makeGradientLayer() -> CAGradientLayer {
+    let gradientLayer: CAGradientLayer = CAGradientLayer()
+
+    let statusBarHeight: CGFloat = 64 // UIApplication.shared.statusBarFrame.height
+    let navBarFrame = CGRect(x: 0, y: 0, width: bounds.width, height: statusBarHeight)
+    gradientLayer.frame = navBarFrame
+
+    gradientLayer.cornerRadius = layer.cornerRadius
+    return gradientLayer
+  }
+
+}
+
 private class PrivateGradientView: UIView {
-  // MARK: - Life cycle
 
   init(frame: CGRect, layer: CAGradientLayer) {
     super.init(frame: frame)
@@ -101,6 +99,52 @@ private class PrivateGradientView: UIView {
 
   override class var layerClass: AnyClass {
     return CAGradientLayer.self
+  }
+
+}
+
+fileprivate extension CAGradientLayer {
+
+  func configurePoints(with startPoint: GradientStartPoint) {
+    switch startPoint {
+    case .top:
+      self.startPoint = CGPoint(x: 0.5, y: 0)
+      self.endPoint = CGPoint(x: 0.5, y: 1)
+    case .topRight:
+      self.startPoint = CGPoint(x: 1, y: 0)
+      self.endPoint = CGPoint(x: 0, y: 1)
+    case .right:
+      self.startPoint = CGPoint(x: 1, y: 0.5)
+      self.endPoint = CGPoint(x: 0, y: 0.5)
+    case .bottomRight:
+      self.startPoint = CGPoint(x: 1, y: 1)
+      self.endPoint = CGPoint(x: 0, y: 0)
+    case .bottom:
+      self.startPoint = CGPoint(x: 0.5, y: 1)
+      self.endPoint = CGPoint(x: 0.5, y: 0)
+    case .bottomLeft:
+      self.startPoint = CGPoint(x: 0, y: 1)
+      self.endPoint = CGPoint(x: 1, y: 0)
+    case .left:
+      self.startPoint = CGPoint(x: 0, y: 0.5)
+      self.endPoint = CGPoint(x: 1, y: 0.5)
+    case .topLeft:
+      self.startPoint = CGPoint(x: 0, y: 0)
+      self.endPoint = CGPoint(x: 1, y: 1)
+    case let .custom(start, end):
+      self.startPoint = CGPoint(x: start.x, y: start.y)
+      self.endPoint = CGPoint(x: end.x, y: end.y)
+    case .none:
+      break
+    }
+  }
+
+  func makeImage() -> UIImage? {
+    UIGraphicsBeginImageContext(frame.size)
+    render(in: UIGraphicsGetCurrentContext()!)
+    let outputImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    return outputImage
   }
 
 }
