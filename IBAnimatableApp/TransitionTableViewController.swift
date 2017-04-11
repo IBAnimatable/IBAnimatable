@@ -185,82 +185,47 @@ fileprivate extension TransitionAnimationType {
   var asString: String {
     switch self {
     case .fade(let direction):
-      return "Fade" + "(\(direction.asString))"
+      return "fade" + "(\(direction.rawValue)"
     case .systemCube(let direction):
-      return "SystemCube" + "(\(direction.asString)"
+      return "systemCube" + "(\(direction.rawValue)"
     case .systemFlip(let direction):
-      return "SystemFlip" + "(\(direction.asString))"
+      return "systemFlip" + "(\(direction.rawValue))"
     case .systemMoveIn(let direction):
-      return "SystemMoveIn" + "(\(direction.asString))"
+      return "systemMoveIn" + "(\(direction.rawValue))"
     case .systemPush(let direction):
-      return "SystemPush" + "(\(direction.asString))"
+      return "systemPush" + "(\(direction.rawValue))"
     case .systemReveal(let direction):
-      return "SystemReveal" + "(\(direction.asString))"
+      return "systemReveal" + "(\(direction.rawValue))"
     case .systemPage(let type):
-      return "SystemPage(\(type.asString))"
+      return "systemPage(\(type.rawValue))"
     case .systemCameraIris(let hollowState):
-      return hollowState == .none ? "SystemCameraIris" : "SystemCameraIris" + "(\(hollowState.asString))"
+      return "systemCameraIris" + (hollowState == .none ? "" : "(\(hollowState.rawValue))")
     case .fold(let direction, _):
-      return "Fold" + "(\(direction.asString))"
+      return "fold" + "(\(direction.rawValue))"
     case .portal(let direction, let zoomScale):
-      return zoomScale == nil ? "Portal" + "(\(direction.asString))" : "Portal" + "(\(direction.asString),\(zoomScale!))"
+      return "portal" + (zoomScale == nil ? "(\(direction.rawValue))" : "(\(direction.rawValue),\(zoomScale!))")
     case .natGeo(let direction):
-      return "NatGeo" + "(\(direction.asString))"
+      return "natGeo" + "(\(direction.rawValue))"
     case .turn(let direction):
-      return "Turn" + "(\(direction.asString))"
+      return "turn" + "(\(direction.rawValue))"
     case .cards(let direction):
-      return "Cards" + "(\(direction.asString))"
+      return "cards" + "(\(direction.rawValue))"
     case .flip(let direction):
-      return "Flip" + "(\(direction.asString))"
+      return "flip" + "(\(direction.rawValue))"
     case .slide(let direction, let isFade):
-      return isFade ? "Slide" + "(\(direction.asString), fade)" : "Slide" + "(\(direction.asString))"
+      return "slide" + (isFade ? "(\(direction.rawValue), fade)" : "slide" + "(\(direction.rawValue))")
     case .systemRotate:
-      return "SystemRotate"
+      return "systemRotate"
     case .systemRippleEffect:
-      return "SystemRippleEffect"
+      return "systemRippleEffect"
     case .systemSuckEffect:
-      return "SystemSuckEffect"
+      return "systemSuckEffect"
     case .explode(.some(let x), .some(let min), .some(let max)):
-      return "Explode" + "(\(x),\(min),\(max))"
+      return "explode" + "(\(x),\(min),\(max))"
     case .explode:
-      return "Explode"
+      return "explode"
     case .none:
-      return "None"
-    }
-  }
-}
-
-fileprivate extension TransitionAnimationType.Direction {
-  var asString: String {
-    switch self {
-    case .in: return "In"
-    case .out: return "Out"
-    case .left: return "Left"
-    case .right: return "Right"
-    case .top: return "Top"
-    case .bottom: return "Bottom"
-    case .forward: return "Forward"
-    case .backward: return "Backward"
-    case .cross: return "Cross"
-    }
-  }
-}
-
-fileprivate extension TransitionAnimationType.HollowState {
-  var asString: String {
-    switch self {
-    case .open: return "Open"
-    case .close: return "Close"
-    case .none: return ""
-    }
-  }
-}
-
-fileprivate extension TransitionAnimationType.PageType {
-  var asString: String {
-    switch self {
-    case .curl: return "Curl"
-    case .unCurl: return "UnCurl"
+      return "none"
     }
   }
 }
