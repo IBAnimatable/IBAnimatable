@@ -35,5 +35,8 @@ let force: CGFloat = 1
 view.animate(animationType, duration: duration, damping: damping, velocity: velocity, force: force)
     .delay(delay)
     .then(.shake(repeatCount: 3), duration: duration, damping: damping, velocity: velocity, force: force)
+    .completion {
+      print("animation done")
+    }
 
 //: [Next](@next)
