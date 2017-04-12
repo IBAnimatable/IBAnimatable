@@ -43,7 +43,7 @@ If you are using Xcode 8 with Swift 3, please use the latest tagged 4.x release.
 ### Swift 2.2 or 2.3?
 If you are using Xcode 7.3.1 with Swift 2.2 please use IBAnimatable 2.7. If you are using Xcode 8 with Swift 2.3, please use the latest tagged 2.x release (version 2.8.1). If you find any issue and create a PR for Swift 2.3, please PR to `swift2` branch. When you use Swift 2.3 with IBAnimatable, you may see some issue like `dlopen(IBAnimatable.framework, 1): Symbol not found: __TMVs20_DisabledRangeIndex_`. That's a bug of Xcode 8, please have a look at [Issue - Failed to render and update auto layout status](https://github.com/IBAnimatable/IBAnimatable/issues/349)
 
-**Version 2.8.1 is the last version to support Swift 2.3. Because Xcode 8.3 has stopped supporting Swift 2.3. We also stop the support for Swift 2.*, please migrate to Swift 3.**
+**Version 2.8.1 is the last version to support Swift 2.3. Because Xcode 8.3 has stopped supporting Swift 2.3. We also stopped supporting Swift 2.*, please migrate to Swift 3.**
 
 ## Languages
 [中文](Documentation/README.zh.md)

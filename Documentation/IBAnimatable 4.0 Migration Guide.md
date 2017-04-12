@@ -14,15 +14,15 @@ This guide is provided in order to ease the transition of existing applications 
 - **New promise-like animation APIs:** uses promise-like animation API to replace nested closures syntax.
 
 ## Breaking API Changes
-IBAnimatable 4 has introduced new promise-like animation APIs. If you used the old animation APIs in code before, this document can help you identify the most changes for those APIs.
+IBAnimatable 4 has introduced new promise-like animation APIs. If you used the old animation APIs in code before, this document can help you identify most changes for those APIs.
 
 ### Animation APIs
 #### Animations in Interface Builder
-If you can configure the animations in Interface Builder. There is no breaking changes at all 🎉 
+If your animations are configured in Interface Builder. There are no breaking changes at all 🎉 
 
 #### Animations in code
 
-There is an example how we improve animation APIs. Before version 4, we create chain-able animations like
+This is an example of how we've improved the animation APIs. Before version 4, we created chain-able animations like
 
 ```swift
 view.squeezeFade(.in, direction: .down) {
@@ -57,7 +57,7 @@ view.squeezeFade(.in, direction: .down) {
 ```
 After we set `velocity` for animation `pop`, we create a side effect to pass the value to the next animation. In this case, which is `shake`.
 
-To fix those issues, we create promise-like animation APIs.
+To fix those issues, we created promise-like animation APIs.
 
 We can implement the same animation effect as above like
 
@@ -70,6 +70,7 @@ view.animate(.squeezeFade(way: .in, direction: .down))
     .then(.flip(along: .x))
     .then(.flip(along: .y))
     .then(.slideFade(way: .out, direction: .down))
+    .completion { print("Animations finished!") }
 ```
 
 That's nice, clean and more understandable.
@@ -79,10 +80,10 @@ That's nice, clean and more understandable.
 As you have seen above, we remove all completion closures. We can use nice syntax `animate`, `delay` and `then` to compose the chain-able animations.
 
 ##### Removing individual animation API
-We remove all individual animation API like `slide(.in, direction: .left)`, `pop(repeatCount: 1)` and son on. They are replaced by `animate()` method with `AnimationType` enum like `animate(.slide(way: .in, direction: .left))` and `animate(.pop(repeatCount: 1))`. You can find all changes in [this commit: Update "Predefined Animations" to new animation API](https://github.com/IBAnimatable/IBAnimatable/commit/17e1f9c6c77fea56ac2a47d0fb48fba6c5da972d)
+We remove all individual animation API like `slide(.in, direction: .left)`, `pop(repeatCount: 1)` and so on. They are replaced by `animate()` method with `AnimationType` enum like `animate(.slide(way: .in, direction: .left))` and `animate(.pop(repeatCount: 1))`. You can find all changes in [this commit: Update "Predefined Animations" to new animation API](https://github.com/IBAnimatable/IBAnimatable/commit/17e1f9c6c77fea56ac2a47d0fb48fba6c5da972d)
 
 ##### Customizing animation in parameters
-Before, to customize the animation, we need to change the view's properties and then call `animate()` method.
+Before, to customize the animation, we needed to change the view's properties and then call `animate()` method.
 
 ```swift
 view.animationType = .squeeze(way: .in, direction: .left)
