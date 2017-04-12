@@ -133,7 +133,7 @@ public extension Animatable where Self: UIView {
   func autoRunAnimation() {
     if autoRun {
       autoRun = false
-      animate(self.animationType)
+      animate(animationType)
     }
   }
 }
@@ -453,7 +453,7 @@ fileprivate extension Animatable where Self: UIView {
     var scaleY: CGFloat = 1
 
     var frame: CGRect
-    if let window = self.window {
+    if let window = window {
       frame = window.convert(self.frame, to: window)
     } else {
       frame = self.frame
@@ -579,7 +579,7 @@ fileprivate extension Animatable where Self: UIView {
   }
 
   var screenSize: CGSize {
-    return self.window?.screen.bounds.size ?? CGSize.zero
+    return window?.screen.bounds.size ?? CGSize.zero
   }
 }
 // swiftlint:enable variable_name_min_length

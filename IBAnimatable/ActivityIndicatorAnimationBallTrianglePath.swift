@@ -20,7 +20,6 @@ public class ActivityIndicatorAnimationBallTrianglePath: ActivityIndicatorAnimat
     let deltaY = size.height / 2 - circleSize / 2
     let x = (layer.bounds.size.width - size.width) / 2
     let y = (layer.bounds.size.height - size.height) / 2
-    let animation = self.animation
 
     let topCenterCircle = ActivityIndicatorShape.ring.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
     change(animation: animation, values:["{0,0}", "{hx,fy}", "{-hx,fy}", "{0,0}"], deltaX: deltaX, deltaY: deltaY)

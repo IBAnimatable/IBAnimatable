@@ -20,13 +20,12 @@ public class TurnAnimator: NSObject, AnimatedTransitioning {
   fileprivate var reverse: Bool = false
 
   // MARK: - Life cycle
-  public init(from direction: TransitionAnimationType.Direction, transitionDuration: Duration) {
+  public init(from direction: TransitionAnimationType.Direction, duration: Duration) {
     fromDirection = direction
-    self.transitionDuration = transitionDuration
-
-    self.transitionAnimationType = .turn(from: direction)
-    self.reverseAnimationType = .turn(from: direction.opposite)
-    self.interactiveGestureType = .pan(from: direction.opposingGesture)
+    transitionDuration = duration
+    transitionAnimationType = .turn(from: direction)
+    reverseAnimationType = .turn(from: direction.opposite)
+    interactiveGestureType = .pan(from: direction.opposingGesture)
     reverse = direction == .right || direction == .bottom
 
     super.init()

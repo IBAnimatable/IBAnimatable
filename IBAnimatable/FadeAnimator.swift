@@ -19,8 +19,8 @@ public class FadeAnimator: NSObject, AnimatedTransitioning {
     self.direction = direction
     self.transitionDuration = transitionDuration
 
-    self.transitionAnimationType = .fade(direction: direction)
-    self.reverseAnimationType = .fade(direction: direction.opposite)
+    transitionAnimationType = .fade(direction: direction)
+    reverseAnimationType = .fade(direction: direction.opposite)
 
     super.init()
   }

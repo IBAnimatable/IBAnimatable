@@ -32,14 +32,14 @@ public class FoldAnimator: NSObject, AnimatedTransitioning {
   // MARK: - Life cycle
   public init(from direction: TransitionAnimationType.Direction, folds: Int?, transitionDuration: Duration) {
     fromDirection = direction
-    self.transitionDuration = transitionDuration
     horizontal = fromDirection.isHorizontal
 
+    self.transitionDuration = transitionDuration
     self.folds = folds ?? 2
 
-    self.transitionAnimationType = .fold(from: direction, folds: folds)
-    self.reverseAnimationType = .fold(from: direction.opposite, folds: folds)
-    self.interactiveGestureType = .pan(from: direction.opposingGesture)
+    transitionAnimationType = .fold(from: direction, folds: folds)
+    reverseAnimationType = .fold(from: direction.opposite, folds: folds)
+    interactiveGestureType = .pan(from: direction.opposingGesture)
     reverse = direction == .right || direction == .bottom
 
     super.init()
@@ -105,14 +105,14 @@ private extension FoldAnimator {
       rightFromViewFold.subviews[1].alpha = 0.0
 
       let leftToViewFold = makeSnapshot(from: toView, afterUpdates: true, offset: offset, left: true)
-      axesValues = valuesForAxe(initialValue: self.reverse ? width : 0.0, reverseValue: height / 2)
+      axesValues = valuesForAxe(initialValue: reverse ? width : 0.0, reverseValue: height / 2)
       leftToViewFold.layer.position = CGPoint(x: axesValues.0, y: axesValues.1)
       axesValues = valuesForAxe(initialValue: 0.0, reverseValue: 1.0)
       leftToViewFold.layer.transform = CATransform3DMakeRotation(.pi / 2, axesValues.0, axesValues.1, 0.0)
       toViewFolds.append(leftToViewFold)
 
       let rightToViewFold = makeSnapshot(from: toView, afterUpdates: true, offset: offset + foldSize, left: false)
-      axesValues = valuesForAxe(initialValue: self.reverse ? width : 0.0, reverseValue: height / 2)
+      axesValues = valuesForAxe(initialValue: reverse ? width : 0.0, reverseValue: height / 2)
       rightToViewFold.layer.position = CGPoint(x: axesValues.0, y: axesValues.1)
       axesValues = valuesForAxe(initialValue: 0.0, reverseValue: 1.0)
       rightToViewFold.layer.transform = CATransform3DMakeRotation(-.pi / 2, axesValues.0, axesValues.1, 0.0)

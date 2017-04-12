@@ -89,7 +89,7 @@ private class PrivateGradientView: UIView {
 
   init(frame: CGRect, layer: CAGradientLayer) {
     super.init(frame: frame)
-    self.layer.insertSublayer(layer, at: 0)
+    layer.insertSublayer(layer, at: 0)
     autoresizingMask = [.flexibleWidth, .flexibleHeight]
   }
 

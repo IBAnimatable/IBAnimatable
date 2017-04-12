@@ -89,7 +89,7 @@ private extension BlurDesignable where Self: UIView {
 public extension BlurDesignable where Self: UITableView {
   public func configureBackgroundBlurEffectStyle() {
     guard let blurableView = backgroundView else {
-      self.separatorEffect = nil
+      separatorEffect = nil
       return
     }
     configureBlurEffectStyle(for: blurableView)
@@ -97,9 +97,9 @@ public extension BlurDesignable where Self: UITableView {
       return
     }
     if let style = vibrancyEffectStyle {
-      self.separatorEffect = UIVibrancyEffect(blurEffect: UIBlurEffect(style: style))
+      separatorEffect = UIVibrancyEffect(blurEffect: UIBlurEffect(style: style))
     } else {
-      self.separatorEffect = UIBlurEffect(style: blurEffectStyle)
+      separatorEffect = UIBlurEffect(style: blurEffectStyle)
     }
   }
 }

@@ -19,7 +19,6 @@ public class ActivityIndicatorAnimationLineScalePulseOut: ActivityIndicatorAnima
     let y = (layer.bounds.size.height - size.height) / 2
     let beginTime = CACurrentMediaTime()
     let beginTimes = [0.4, 0.2, 0, 0.2, 0.4]
-    let animation = self.animation
 
     // Draw lines
     for i in 0 ..< 5 {

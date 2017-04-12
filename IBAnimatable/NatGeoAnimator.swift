@@ -19,12 +19,11 @@ public class NatGeoAnimator: NSObject, AnimatedTransitioning {
 
   // MARK: - Life cycle
 
-  public init(from direction: TransitionAnimationType.Direction, transitionDuration: Duration) {
-    self.transitionDuration = transitionDuration
+  public init(from direction: TransitionAnimationType.Direction, duration: Duration) {
+    transitionDuration = duration
     fromDirection = direction
-
-    self.transitionAnimationType = .natGeo(to: direction)
-    self.reverseAnimationType = .natGeo(to: direction.opposite)
+    transitionAnimationType = .natGeo(to: direction)
+    reverseAnimationType = .natGeo(to: direction.opposite)
 
     super.init()
   }

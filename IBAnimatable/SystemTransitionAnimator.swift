@@ -18,30 +18,30 @@ class SystemTransitionAnimator: NSObject, AnimatedTransitioning {
 
   init(systemType: TransitionAnimationType.SystemTransitionType, duration: Duration) {
 
-    self.systemTransitionType = systemType
-    self.transitionDuration = duration
-    self.transitionAnimationType = TransitionAnimationType(systemType: systemType)
-    self.reverseAnimationType = transitionAnimationType.reversed
-    self.systemTransitionSubtype = systemType == .rotate ? "90" : nil
+    systemTransitionType = systemType
+    transitionDuration = duration
+    transitionAnimationType = TransitionAnimationType(systemType: systemType)
+    reverseAnimationType = transitionAnimationType.reversed
+    systemTransitionSubtype = systemType == .rotate ? "90" : nil
 
     super.init()
   }
 
   init(systemType: TransitionAnimationType.SystemTransitionType, duration: Duration, direction: TransitionAnimationType.Direction) {
 
-    self.transitionAnimationType = TransitionAnimationType(systemType: systemType, direction: direction)
-    self.reverseAnimationType = transitionAnimationType.reversed
-    self.transitionDuration = duration
-    self.systemTransitionType = systemType
+    transitionAnimationType = TransitionAnimationType(systemType: systemType, direction: direction)
+    reverseAnimationType = transitionAnimationType.reversed
+    transitionDuration = duration
+    systemTransitionType = systemType
 
     switch systemType {
     case .cube, .flip, .moveIn, .push, .reveal:
-      self.systemTransitionSubtype = direction.caTransitionSubtype
-      self.interactiveGestureType = .pan(from: direction.opposingGesture)
+      systemTransitionSubtype = direction.caTransitionSubtype
+      interactiveGestureType = .pan(from: direction.opposingGesture)
     case .cameraIrisHollowClose, .cameraIrisHollowOpen, .cameraIris:
-      self.interactiveGestureType = .pinch(direction: direction.opposingGesture)
+      interactiveGestureType = .pinch(direction: direction.opposingGesture)
     case .pageUnCurl, .pageCurl:
-      self.interactiveGestureType = .pan(from: direction.opposingGesture)
+      interactiveGestureType = .pan(from: direction.opposingGesture)
     default:
       fatalError("Should never be executed: use other SystemTranitionAnimator.init")
     }

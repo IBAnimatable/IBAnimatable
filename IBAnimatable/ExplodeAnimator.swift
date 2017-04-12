@@ -24,8 +24,8 @@ public class ExplodeAnimator: NSObject, AnimatedTransitioning {
     self.minAngle = minAngle ?? -10.0
     self.maxAngle = maxAngle ?? 10.0
 
-    self.transitionAnimationType = .explode(xFactor: self.xFactor, minAngle: self.minAngle, maxAngle: self.maxAngle)
-    self.reverseAnimationType = .explode(xFactor: self.xFactor, minAngle: self.minAngle, maxAngle: self.maxAngle)
+    transitionAnimationType = .explode(xFactor: self.xFactor, minAngle: self.minAngle, maxAngle: self.maxAngle)
+    reverseAnimationType = .explode(xFactor: self.xFactor, minAngle: self.minAngle, maxAngle: self.maxAngle)
     super.init()
   }
 }

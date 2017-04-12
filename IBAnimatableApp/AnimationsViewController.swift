@@ -66,11 +66,11 @@ extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSourc
   func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
     switch component {
     case 0:
-      return self.view.frame.size.width * 0.5
+      return view.frame.size.width * 0.5
     case 1:
-      return self.view.frame.size.width * 0.25
+      return view.frame.size.width * 0.25
     case 2:
-      return self.view.frame.size.width * 0.25
+      return view.frame.size.width * 0.25
     default:
       return 0
     }

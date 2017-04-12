@@ -22,7 +22,6 @@ public class ActivityIndicatorAnimationLineSpinFadeLoader: ActivityIndicatorAnim
     let beginTime = CACurrentMediaTime()
     let beginTimes: [CFTimeInterval] = [0.12, 0.24, 0.36, 0.48, 0.6, 0.72, 0.84, 0.96]
 
-    let animation = self.animation
     for i in 0 ..< 8 {
       let line = makeLineLayer(angle: CGFloat.pi / 4 * CGFloat(i),
                         size: lineSize,
