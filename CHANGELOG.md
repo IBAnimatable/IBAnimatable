@@ -11,6 +11,9 @@ All notable changes to this project will be documented in this file.
 - Replace all `SystemAnimator` classes with `SystemTransitionAnimator`
 [#427](https://github.com/IBAnimatable/IBAnimatable/pull/427) by [@SD10](https://github.com/sd10)
 - `PresentationDesignable` now supports `contextFrameForPresentation` which allow you to present a controller with a custom configuration over another instead of being in fullscreen. Imitates `UIModalPresentationStyle.currentContext`
+- `ActivityIndicatorTriangleskewSpin/ActivityIndicatorSquareSpin` replaced by `ActivityIndicatorSkewSpin`
+- `ActivityIndicatorBallZigZagDeflect` replaced by `ActivityIndicatorBallZigZag` with `deflect` parameter in `init`
+[#435](https://github.com/IBAnimatable/IBAnimatable/pull/435)
 
 #### Enhancements
 - Conserve custom layer mask when using `Animatable*` instead of removing them
