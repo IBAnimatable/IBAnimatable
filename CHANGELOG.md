@@ -25,6 +25,8 @@ All notable changes to this project will be documented in this file.
 [#427](https://github.com/IBAnimatable/IBAnimatable/pull/427) by [@SD10](https://github.com/sd10)
 - Add `GradientDesignable` to `DesignableNavigationBar`
 [#437](https://github.com/IBAnimatable/IBAnimatable/pull/437) by [@phimage](https://github.com/phimage)
+- Add `AnimatableTabBarController` to support custom transition animations
+[#443](https://github.com/IBAnimatable/IBAnimatable/pull/443) by [@phimage](https://github.com/phimage)
 
 #### Bugfixes
 - Make corner sides case insensitive.

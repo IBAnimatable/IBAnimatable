@@ -70,9 +70,8 @@ extension Navigator: UINavigationControllerDelegate {
                                           -> UIViewControllerInteractiveTransitioning? {
     if let interactiveAnimator = interactiveAnimator, interactiveAnimator.interacting {
       return interactiveAnimator
-    } else {
-      return nil
     }
+    return nil
   }
 }
 
@@ -91,17 +90,11 @@ extension Navigator: UITabBarControllerDelegate {
       let toVCIndex = viewControllers.index(of: toVC) else {
         return nil
     }
-    if toVCIndex < fromVCIndex {
-      animator?.transitionDuration = transitionDuration
-      return animator
-    } else {
-      // Use the reverse animation
-      if let reverseTransitionAnimationType = animator?.reverseAnimationType {
-        return AnimatorFactory.makeAnimator(transitionAnimationType: reverseTransitionAnimationType, transitionDuration: transitionDuration)
-      }
-      animator?.transitionDuration = transitionDuration
-      return animator
+    if toVCIndex > fromVCIndex, let reverseTransitionAnimationType = animator?.reverseAnimationType {
+      return AnimatorFactory.makeAnimator(transitionAnimationType: reverseTransitionAnimationType, transitionDuration: transitionDuration)
     }
+    animator?.transitionDuration = transitionDuration
+    return animator
   }
 
   // MARK: - interaction controller
@@ -110,8 +103,7 @@ extension Navigator: UITabBarControllerDelegate {
     -> UIViewControllerInteractiveTransitioning? {
       if let interactiveAnimator = interactiveAnimator, interactiveAnimator.interacting {
         return interactiveAnimator
-      } else {
-        return nil
       }
+      return nil
   }
 }
