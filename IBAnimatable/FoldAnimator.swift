@@ -20,7 +20,7 @@ public class FoldAnimator: NSObject, AnimatedTransitioning {
   fileprivate var transform: CATransform3D = CATransform3DIdentity
   fileprivate var reverse: Bool = false
   fileprivate var horizontal: Bool = false
-  fileprivate var size: CGSize = CGSize.zero
+  fileprivate var size: CGSize = .zero
   fileprivate var foldSize: CGFloat = 0.0
   fileprivate var width: CGFloat {
       return horizontal ? size.width : size.height
@@ -30,11 +30,11 @@ public class FoldAnimator: NSObject, AnimatedTransitioning {
   }
 
   // MARK: - Life cycle
-  public init(from direction: TransitionAnimationType.Direction, folds: Int?, transitionDuration: Duration) {
+  public init(from direction: TransitionAnimationType.Direction, folds: Int?, duration: Duration) {
     fromDirection = direction
     horizontal = fromDirection.isHorizontal
 
-    self.transitionDuration = transitionDuration
+    transitionDuration = duration
     self.folds = folds ?? 2
 
     transitionAnimationType = .fold(from: direction, folds: folds)

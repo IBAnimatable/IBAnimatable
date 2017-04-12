@@ -17,8 +17,8 @@ public class ExplodeAnimator: NSObject, AnimatedTransitioning {
   fileprivate var minAngle: CGFloat
   fileprivate var maxAngle: CGFloat
 
-  public init(xFactor: CGFloat?, minAngle: CGFloat?, maxAngle: CGFloat?, transitionDuration: Duration) {
-    self.transitionDuration = transitionDuration
+  public init(xFactor: CGFloat?, minAngle: CGFloat?, maxAngle: CGFloat?, duration: Duration) {
+    transitionDuration = duration
 
     self.xFactor = xFactor ?? 10.0
     self.minAngle = minAngle ?? -10.0

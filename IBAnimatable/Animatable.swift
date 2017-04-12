@@ -579,7 +579,7 @@ fileprivate extension Animatable where Self: UIView {
   }
 
   var screenSize: CGSize {
-    return window?.screen.bounds.size ?? CGSize.zero
+    return window?.screen.bounds.size ?? .zero
   }
 }
 // swiftlint:enable variable_name_min_length
