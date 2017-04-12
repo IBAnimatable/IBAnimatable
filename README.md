@@ -154,6 +154,14 @@ view.delay(2)
     .then(.squeeze(way: .in, direction: .left))
 ```
 
+### Completion handler
+We can add a completion handler/closure to execute when all animations are completed.
+
+```swift
+view.animate(.squeeze(way: .in, direction: .left))
+    .completion { print("Animations finished!") }
+```
+
 ## How to install
 ### Manually install
 
@@ -203,7 +211,7 @@ Many thanks to [all contributors](graphs/contributors) 🤗 especially to [@tbar
 * Framer Studio - Design and preview animations in one place.
 * [Spring by Meng To](https://github.com/MengTo/Spring) - steal a lot of animation parameters from this project.
 * [VCTransitionsLibrary by Colin Eberhardt](https://github.com/ColinEberhardt/VCTransitionsLibrary) - port all transition animations from this project, and add parameters support and fix bugs.
-* [NVActivityIndicatorView by Vinh Nguyen](NVActivityIndicatorView by Vinh Nguyen - port all activity indicator animations from this project.) - port all activity indicator animations from this project.
+* [NVActivityIndicatorView by Vinh Nguyen](https://github.com/ninjaprox/NVActivityIndicatorView) - port all activity indicator animations from this project, and migrate to Swift 3.
 * [Invision ToDo App UI Kit](http://www.invisionapp.com/do), The demo App's original design is from this UI Kit and redone in Interface Builder. We also added interaction, navigation and animations.
 
 ## Change Log
