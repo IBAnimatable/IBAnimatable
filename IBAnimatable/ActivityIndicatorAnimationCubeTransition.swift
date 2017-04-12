@@ -26,7 +26,6 @@ public class ActivityIndicatorAnimationCubeTransition: ActivityIndicatorAnimatin
     deltaX = size.width - squareSize
     deltaY = size.height - squareSize
 
-    let animation = self.animation
     for i in 0 ..< 2 {
       let square = ActivityIndicatorShape.rectangle.makeLayer(size: CGSize(width: squareSize, height: squareSize), color: color)
       let frame = CGRect(x: x, y: y, width: squareSize, height: squareSize)

@@ -18,7 +18,7 @@ public class ActivityIndicatorAnimationTriangleSkewSpin: ActivityIndicatorAnimat
     let y = (layer.bounds.size.height - size.height) / 2
     let triangle = ActivityIndicatorShape.triangle.makeLayer(size: size, color: color)
     triangle.frame = CGRect(x: x, y: y, width: size.width, height: size.height)
-    triangle.add(self.animation, forKey: "animation")
+    triangle.add(animation, forKey: "animation")
     layer.addSublayer(triangle)
   }
 

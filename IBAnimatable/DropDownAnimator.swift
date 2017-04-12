@@ -12,8 +12,8 @@ public class DropDownAnimator: NSObject, AnimatedPresenting {
   fileprivate var completion: AnimatableCompletion?
 
   // MARK: - Life cycle
-  public init(transitionDuration: Duration) {
-    self.transitionDuration = transitionDuration
+  public init(duration: Duration) {
+    transitionDuration = duration
     super.init()
   }
 

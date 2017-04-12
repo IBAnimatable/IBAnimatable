@@ -21,7 +21,6 @@ public class ActivityIndicatorAnimationLineScalePulseOutRapid: ActivityIndicator
     let y = (layer.bounds.size.height - size.height) / 2
     let beginTimes = [0.5, 0.25, 0, 0.25, 0.5]
 
-    let animation = self.animation
     for i in 0 ..< 5 {
       let line = ActivityIndicatorShape.line.makeLayer(size: CGSize(width: lineSize, height: size.height), color: color)
       let frame = CGRect(x: x + lineSize * 2 * CGFloat(i),

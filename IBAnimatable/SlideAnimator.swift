@@ -18,15 +18,14 @@ public class SlideAnimator: NSObject, AnimatedTransitioning {
   fileprivate var isReverse = false
   fileprivate var isFade = false
 
-  public init(from direction: TransitionAnimationType.Direction, isFade: Bool, transitionDuration: Duration) {
+  public init(from direction: TransitionAnimationType.Direction, isFade: Bool, duration: Duration) {
     fromDirection = direction
-    self.transitionDuration = transitionDuration
+    transitionDuration = duration
     self.isFade = isFade
     isHorizontal = fromDirection.isHorizontal
-
-    self.transitionAnimationType = .slide(to: direction, isFade: isFade)
-    self.reverseAnimationType = .slide(to: direction.opposite, isFade: isFade)
-    self.interactiveGestureType = .pan(from: direction.matchingGesture)
+    transitionAnimationType = .slide(to: direction, isFade: isFade)
+    reverseAnimationType = .slide(to: direction.opposite, isFade: isFade)
+    interactiveGestureType = .pan(from: direction.matchingGesture)
     isReverse = direction == .right || direction == .bottom
 
     super.init()

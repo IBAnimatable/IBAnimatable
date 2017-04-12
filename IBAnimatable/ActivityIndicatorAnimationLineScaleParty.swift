@@ -22,7 +22,6 @@ public class ActivityIndicatorAnimationLineScaleParty: ActivityIndicatorAnimatin
     let beginTimes: [CFTimeInterval] = [0.77, 0.29, 0.28, 0.74]
 
     // Animation
-    let animation = self.animation
     for i in 0..<4 {
       let line = ActivityIndicatorShape.line.makeLayer(size: CGSize(width: lineSize, height: size.height), color: color)
       let frame = CGRect(x: x + lineSize * 2 * CGFloat(i), y: y, width: lineSize, height: size.height)

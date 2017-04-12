@@ -11,8 +11,8 @@ public class ZoomAnimator: NSObject, AnimatedPresenting {
   public var transitionDuration: Duration = defaultTransitionDuration
 
   // MARK: - Life cycle
-  public init(transitionDuration: Duration) {
-    self.transitionDuration = transitionDuration
+  public init(duration: Duration) {
+    transitionDuration = duration
     super.init()
   }
 

@@ -21,7 +21,6 @@ public class ActivityIndicatorAnimationBallSpinFadeLoader: ActivityIndicatorAnim
     let y = (layer.bounds.size.height - size.height) / 2
     let beginTime = CACurrentMediaTime()
     let beginTimes: [CFTimeInterval] = [0, 0.12, 0.24, 0.36, 0.48, 0.6, 0.72, 0.84]
-    let animation = self.animation
 
     // Draw circles
     for i in 0 ..< 8 {

@@ -57,11 +57,11 @@ extension MaskViewController : UIPickerViewDelegate, UIPickerViewDataSource {
     // the goal of this is to mask useless components
     switch component {
     case 0:
-      return self.view.frame.size.width * 0.5
+      return view.frame.size.width * 0.5
     case let c where c > selectedEntry.params.count:
       return 0
     default:
-      return self.view.frame.size.width * 0.25
+      return view.frame.size.width * 0.25
     }
   }
 

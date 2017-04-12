@@ -17,7 +17,7 @@ public class ActivityIndicatorAnimationBallScaleRippleMultiple: ActivityIndicato
   public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
         let beginTime = CACurrentMediaTime()
         let beginTimes = [0.0, 0.2, 0.4]
-        let animation = self.animation
+
         for i in 0 ..< 3 {
             let circle = ActivityIndicatorShape.ring.makeLayer(size: size, color: color)
             let frame = CGRect(x: (layer.bounds.size.width - size.width) / 2,

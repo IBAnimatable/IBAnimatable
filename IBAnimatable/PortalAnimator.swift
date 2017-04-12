@@ -17,15 +17,13 @@ public class PortalAnimator: NSObject, AnimatedTransitioning {
   fileprivate var fromDirection: TransitionAnimationType.Direction
   fileprivate var zoomScale: CGFloat
 
-  public init(from direction: TransitionAnimationType.Direction, zoomScale: CGFloat?, transitionDuration: Duration) {
-    self.transitionDuration = transitionDuration
+  public init(from direction: TransitionAnimationType.Direction, zoomScale: CGFloat?, duration: Duration) {
+    transitionDuration = duration
     fromDirection = direction
-
     self.zoomScale = zoomScale ?? 0.8
-
-    self.transitionAnimationType = .portal(direction: direction, zoomScale: self.zoomScale)
-    self.reverseAnimationType = .portal(direction: direction.opposite, zoomScale: self.zoomScale)
-    self.interactiveGestureType = .pinch(direction: direction.opposingGesture)
+    transitionAnimationType = .portal(direction: direction, zoomScale: self.zoomScale)
+    reverseAnimationType = .portal(direction: direction.opposite, zoomScale: self.zoomScale)
+    interactiveGestureType = .pinch(direction: direction.opposingGesture)
 
     super.init()
   }

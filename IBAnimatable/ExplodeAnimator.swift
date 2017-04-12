@@ -17,15 +17,15 @@ public class ExplodeAnimator: NSObject, AnimatedTransitioning {
   fileprivate var minAngle: CGFloat
   fileprivate var maxAngle: CGFloat
 
-  public init(xFactor: CGFloat?, minAngle: CGFloat?, maxAngle: CGFloat?, transitionDuration: Duration) {
-    self.transitionDuration = transitionDuration
+  public init(xFactor: CGFloat?, minAngle: CGFloat?, maxAngle: CGFloat?, duration: Duration) {
+    transitionDuration = duration
 
     self.xFactor = xFactor ?? 10.0
     self.minAngle = minAngle ?? -10.0
     self.maxAngle = maxAngle ?? 10.0
 
-    self.transitionAnimationType = .explode(xFactor: self.xFactor, minAngle: self.minAngle, maxAngle: self.maxAngle)
-    self.reverseAnimationType = .explode(xFactor: self.xFactor, minAngle: self.minAngle, maxAngle: self.maxAngle)
+    transitionAnimationType = .explode(xFactor: self.xFactor, minAngle: self.minAngle, maxAngle: self.maxAngle)
+    reverseAnimationType = .explode(xFactor: self.xFactor, minAngle: self.minAngle, maxAngle: self.maxAngle)
     super.init()
   }
 }
