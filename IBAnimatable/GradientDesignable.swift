@@ -34,7 +34,7 @@ fileprivate extension GradientDesignable where Self: UIView {
       $0.removeFromSuperview()
     }
 
-    let gradientView = PrivateGradientView(frame: bounds, layer: gradientLayer)
+    let gradientView = PrivateGradientView(frame: bounds, gradientLayer: gradientLayer)
     insertSubview(gradientView, at: 0)
   }
 
@@ -87,9 +87,9 @@ public extension GradientDesignable where Self: UINavigationBar {
 
 private class PrivateGradientView: UIView {
 
-  init(frame: CGRect, layer: CAGradientLayer) {
+  init(frame: CGRect, gradientLayer: CAGradientLayer) {
     super.init(frame: frame)
-    layer.insertSublayer(layer, at: 0)
+    layer.insertSublayer(gradientLayer, at: 0)
     autoresizingMask = [.flexibleWidth, .flexibleHeight]
   }
 
