@@ -14,14 +14,13 @@ public class ActivityIndicatorAnimationSquareSpin: ActivityIndicatorAnimating {
   // MARK: ActivityIndicatorAnimating
 
   public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
-
     let square = ActivityIndicatorShape.rectangle.makeLayer(size: size, color: color)
     let frame = CGRect(x: (layer.bounds.size.width - size.width) / 2,
                        y: (layer.bounds.size.height - size.height) / 2,
                        width: size.width,
                        height: size.height)
     square.frame = frame
-    square.add(animation, forKey: "animation")
+    square.add(defaultAnimation, forKey: "animation")
     layer.addSublayer(square)
   }
 
@@ -31,7 +30,7 @@ public class ActivityIndicatorAnimationSquareSpin: ActivityIndicatorAnimating {
 
 private extension ActivityIndicatorAnimationSquareSpin {
 
-  var animation: CAKeyframeAnimation {
+  var defaultAnimation: CAKeyframeAnimation {
     let timingFunction = CAMediaTimingFunction(controlPoints: 0.09, 0.57, 0.49, 0.9)
     let animation = CAKeyframeAnimation(keyPath: "transform")
     animation.keyTimes = [0, 0.25, 0.5, 0.75, 1]

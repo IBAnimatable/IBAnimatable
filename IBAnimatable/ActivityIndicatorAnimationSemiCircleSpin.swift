@@ -23,7 +23,7 @@ public class ActivityIndicatorAnimationSemiCircleSpin: ActivityIndicatorAnimatin
       height: size.height
     )
     circle.frame = frame
-    circle.add(animation, forKey: "animation")
+    circle.add(defaultAnimation, forKey: "animation")
     layer.addSublayer(circle)
   }
 }
@@ -32,7 +32,7 @@ public class ActivityIndicatorAnimationSemiCircleSpin: ActivityIndicatorAnimatin
 
 private extension ActivityIndicatorAnimationSemiCircleSpin {
 
-  var animation: CAKeyframeAnimation {
+  var defaultAnimation: CAKeyframeAnimation {
     let animation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
     animation.keyTimes = [0, 0.5, 1]
     animation.values = [0, CGFloat.pi, 2 * CGFloat.pi]

@@ -20,6 +20,7 @@ public class ActivityIndicatorAnimationBallTrianglePath: ActivityIndicatorAnimat
     let deltaY = size.height / 2 - circleSize / 2
     let x = (layer.bounds.size.width - size.width) / 2
     let y = (layer.bounds.size.height - size.height) / 2
+    let animation = defaultAnimation
 
     let topCenterCircle = ActivityIndicatorShape.ring.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
     change(animation: animation, values:["{0,0}", "{hx,fy}", "{-hx,fy}", "{0,0}"], deltaX: deltaX, deltaY: deltaY)
@@ -46,7 +47,7 @@ public class ActivityIndicatorAnimationBallTrianglePath: ActivityIndicatorAnimat
 
 private extension ActivityIndicatorAnimationBallTrianglePath {
 
-  var animation: CAKeyframeAnimation {
+  var defaultAnimation: CAKeyframeAnimation {
     let animation = CAKeyframeAnimation(keyPath:"transform")
     animation.keyTimes = [0, 0.33, 0.66, 1]
     animation.timingFunctions = [timingFunction, timingFunction, timingFunction]

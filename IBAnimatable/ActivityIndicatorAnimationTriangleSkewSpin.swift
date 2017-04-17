@@ -18,7 +18,7 @@ public class ActivityIndicatorAnimationTriangleSkewSpin: ActivityIndicatorAnimat
     let y = (layer.bounds.size.height - size.height) / 2
     let triangle = ActivityIndicatorShape.triangle.makeLayer(size: size, color: color)
     triangle.frame = CGRect(x: x, y: y, width: size.width, height: size.height)
-    triangle.add(animation, forKey: "animation")
+    triangle.add(defaultAnimation, forKey: "animation")
     layer.addSublayer(triangle)
   }
 
@@ -28,7 +28,7 @@ public class ActivityIndicatorAnimationTriangleSkewSpin: ActivityIndicatorAnimat
 
 private extension ActivityIndicatorAnimationTriangleSkewSpin {
 
-  var animation: CAKeyframeAnimation {
+  var defaultAnimation: CAKeyframeAnimation {
     let timingFunction = CAMediaTimingFunction(controlPoints: 0.09, 0.57, 0.49, 0.9)
     let animation = CAKeyframeAnimation(keyPath: "transform")
     animation.keyTimes = [0, 0.25, 0.5, 0.75, 1]

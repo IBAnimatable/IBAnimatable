@@ -21,6 +21,7 @@ public class ActivityIndicatorAnimationBallGridBeat: ActivityIndicatorAnimating 
     let durations = [0.96, 0.93, 1.19, 1.13, 1.34, 0.94, 1.2, 0.82, 1.19]
     let beginTime = CACurrentMediaTime()
     let beginTimes = [0.36, 0.4, 0.68, 0.41, 0.71, -0.15, -0.12, 0.01, 0.32]
+    let animation = defaultAnimation
 
     // Draw circles
     for i in 0 ..< 3 {
@@ -45,7 +46,7 @@ public class ActivityIndicatorAnimationBallGridBeat: ActivityIndicatorAnimating 
 
 private extension ActivityIndicatorAnimationBallGridBeat {
 
-  var animation: CAKeyframeAnimation {
+  var defaultAnimation: CAKeyframeAnimation {
     let animation = CAKeyframeAnimation(keyPath: "opacity")
     animation.keyTimes = [0, 0.5, 1]
     animation.timingFunctions = [timingFunction, timingFunction]
