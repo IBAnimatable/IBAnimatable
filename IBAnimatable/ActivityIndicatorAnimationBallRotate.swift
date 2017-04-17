@@ -16,7 +16,6 @@ public class ActivityIndicatorAnimationBallRotate: ActivityIndicatorAnimating {
 
   public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
     let circleSize: CGFloat = size.width / 5
-    let animation = self.animation
 
     // Draw circles
     let leftCircle = ActivityIndicatorShape.circle.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)

@@ -21,8 +21,8 @@ public class ActivityIndicatorAnimationLineSpinFadeLoader: ActivityIndicatorAnim
     let y = (layer.bounds.size.height - size.height) / 2
     let beginTime = CACurrentMediaTime()
     let beginTimes: [CFTimeInterval] = [0.12, 0.24, 0.36, 0.48, 0.6, 0.72, 0.84, 0.96]
+    let animation = defaultAnimation
 
-    let animation = self.animation
     for i in 0 ..< 8 {
       let line = makeLineLayer(angle: CGFloat.pi / 4 * CGFloat(i),
                         size: lineSize,
@@ -41,7 +41,7 @@ public class ActivityIndicatorAnimationLineSpinFadeLoader: ActivityIndicatorAnim
 
 private extension ActivityIndicatorAnimationLineSpinFadeLoader {
 
-  var animation: CAKeyframeAnimation {
+  var defaultAnimation: CAKeyframeAnimation {
     let animation = CAKeyframeAnimation(keyPath: "opacity")
     animation.keyTimes = [0, 0.5, 1]
     animation.timingFunctions = [timingFunction, timingFunction]

@@ -48,13 +48,13 @@ public extension TintDesignable where Self: UIView {
   }
 
   fileprivate func addColorSubview(color: UIColor, opacity: CGFloat) {
-    let subview = UIView(frame: self.bounds)
+    let subview = UIView(frame: bounds)
     subview.backgroundColor = color
     subview.alpha = opacity
     if layer.cornerRadius > 0 {
       subview.layer.cornerRadius = layer.cornerRadius
     }
     subview.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-    self.insertSubview(subview, at: 0)
+    insertSubview(subview, at: 0)
   }
 }

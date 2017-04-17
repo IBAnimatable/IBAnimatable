@@ -11,6 +11,8 @@ All notable changes to this project will be documented in this file.
 - Replace all `SystemAnimator` classes with `SystemTransitionAnimator`
 [#427](https://github.com/IBAnimatable/IBAnimatable/pull/427) by [@SD10](https://github.com/sd10)
 - `PresentationDesignable` now supports `contextFrameForPresentation` which allow you to present a controller with a custom configuration over another instead of being in fullscreen. Imitates `UIModalPresentationStyle.currentContext`
+- Transition Animator classes initializer parameter changed from transitionDuration -> duration
+[#446](https://github.com/IBAnimatable/IBAnimatable/pull/446) by [@SD10](https://github.com/sd10)
 
 #### Enhancements
 - Conserve custom layer mask when using `Animatable*` instead of removing them
@@ -33,6 +35,7 @@ All notable changes to this project will be documented in this file.
 [#394](https://github.com/IBAnimatable/IBAnimatable/issues/394) by [@mmadjer](https://github.com/mmadjer)
 - Frame is converted to window coordinate space to fix miscalculations in computed values (used with `slideOut`, ...) [#412](https://github.com/IBAnimatable/IBAnimatable/issues/412) by [@redent](https://github.com/redent)
 - Reset destination view's `transform` property to `CGAffineTransform.identity` after a slide transition completes. [#432](https://github.com/IBAnimatable/IBAnimatable/pull/432) by [@broadwaylamb](https://github.com/broadwaylamb)
+- Fixed `{Flip,Turn,Fold}Animator` which was resulting in broken transitions. Thanks to[@phimage](https://github.com/phimage) for the fix. [#441](https://github.com/IBAnimatable/IBAnimatable/pull/437) by [@tbaranes](https://github.com/tbaranes)
 
 ---
 ### [3.1.3](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.1.3)

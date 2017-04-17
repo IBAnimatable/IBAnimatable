@@ -20,13 +20,12 @@ public class TurnAnimator: NSObject, AnimatedTransitioning {
   fileprivate var reverse: Bool = false
 
   // MARK: - Life cycle
-  public init(from direction: TransitionAnimationType.Direction, transitionDuration: Duration) {
+  public init(from direction: TransitionAnimationType.Direction, duration: Duration) {
     fromDirection = direction
-    self.transitionDuration = transitionDuration
-
-    self.transitionAnimationType = .turn(from: direction)
-    self.reverseAnimationType = .turn(from: direction.opposite)
-    self.interactiveGestureType = .pan(from: direction.opposingGesture)
+    transitionDuration = duration
+    transitionAnimationType = .turn(from: direction)
+    reverseAnimationType = .turn(from: direction.opposite)
+    interactiveGestureType = .pan(from: direction.opposingGesture)
     reverse = direction == .right || direction == .bottom
 
     super.init()
@@ -56,10 +55,10 @@ extension TurnAnimator: UIViewControllerAnimatedTransitioning {
 
   private func animateTurnTransition(fromView: UIView, toView: UIView, completion: @escaping AnimatableCompletion) {
     let factor = reverse ? 1.0 : -1.0
-    toView.layer.transform = rotate(angle: factor * -.pi * 2)
+    toView.layer.transform = rotate(angle: factor * -.pi / 2)
     UIView.animateKeyframes(withDuration: transitionDuration, delay: 0.0, options: .layoutSubviews, animations: {
       UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5) {
-            fromView.layer.transform = self.rotate(angle: factor * .pi * 2)
+            fromView.layer.transform = self.rotate(angle: factor * .pi / 2)
       }
 
       UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5) {

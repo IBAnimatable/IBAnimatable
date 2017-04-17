@@ -21,14 +21,13 @@ public class FlipAnimator: NSObject, AnimatedTransitioning {
   fileprivate var horizontal: Bool = false
 
   // MARK: - Life cycle
-  public init(from direction: TransitionAnimationType.Direction, transitionDuration: Duration) {
+  public init(from direction: TransitionAnimationType.Direction, duration: Duration) {
     fromDirection = direction
-    self.transitionDuration = transitionDuration
+    transitionDuration = duration
     horizontal = fromDirection.isHorizontal
-
-    self.transitionAnimationType = .flip(from: direction)
-    self.reverseAnimationType = .flip(from: direction.opposite)
-    self.interactiveGestureType = .pan(from: direction.opposingGesture)
+    transitionAnimationType = .flip(from: direction)
+    reverseAnimationType = .flip(from: direction.opposite)
+    interactiveGestureType = .pan(from: direction.opposingGesture)
     reverse = direction == .right
 
     super.init()
@@ -91,7 +90,7 @@ private extension FlipAnimator {
     axesValues = valuesForAxe(initialValue: reverse ? 1.0 : 0.0, reverseValue: 0.5)
     updateAnchorPointAndOffset(anchorPoint: CGPoint(x: axesValues.0, y: axesValues.1), view: flippedSectionOfToView)
 
-    flippedSectionOfToView.layer.transform = rotate(angle: reverse ? .pi * 2 : -.pi * 2)
+    flippedSectionOfToView.layer.transform = rotate(angle: (reverse ? .pi : -.pi) / 2)
     return ((flippedSectionOfFromView, flippedSectionOfFromViewShadow), (flippedSectionOfToView, flippedSectionOfToViewShadow))
   }
 
@@ -173,7 +172,7 @@ private extension FlipAnimator {
                              completion: @escaping AnimatableCompletion) {
     UIView.animateKeyframes(withDuration: transitionDuration, delay: 0, options: .layoutSubviews, animations: {
       UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.5, animations: {
-        flippedSectionOfFromView.0.layer.transform = self.rotate(angle: self.reverse ? -.pi * 2 : .pi * 2)
+        flippedSectionOfFromView.0.layer.transform = self.rotate(angle: (self.reverse ? -.pi : .pi) / 2)
         flippedSectionOfFromView.1.alpha = 1.0
       })
 

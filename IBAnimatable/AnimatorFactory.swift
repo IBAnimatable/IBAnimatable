@@ -18,23 +18,23 @@ public struct AnimatorFactory {
     case .systemRippleEffect:
       return SystemTransitionAnimator(systemType: .rippleEffect, duration: transitionDuration)
     case let .explode(xFactor, minAngle, maxAngle):
-      return ExplodeAnimator(xFactor: xFactor, minAngle: minAngle, maxAngle: maxAngle, transitionDuration: transitionDuration)
+      return ExplodeAnimator(xFactor: xFactor, minAngle: minAngle, maxAngle: maxAngle, duration: transitionDuration)
     case let .fade(direction):
-      return FadeAnimator(direction: direction, transitionDuration: transitionDuration)
+      return FadeAnimator(direction: direction, duration: transitionDuration)
     case let .fold(direction, folds):
-      return FoldAnimator(from: direction, folds: folds, transitionDuration: transitionDuration)
+      return FoldAnimator(from: direction, folds: folds, duration: transitionDuration)
     case let .portal(direction, zoomScale):
-      return PortalAnimator(from: direction, zoomScale: zoomScale, transitionDuration: transitionDuration)
+      return PortalAnimator(from: direction, zoomScale: zoomScale, duration: transitionDuration)
     case let .natGeo(direction):
-      return NatGeoAnimator(from: direction, transitionDuration: transitionDuration)
+      return NatGeoAnimator(from: direction, duration: transitionDuration)
     case let .turn(direction):
-      return TurnAnimator(from: direction, transitionDuration: transitionDuration)
+      return TurnAnimator(from: direction, duration: transitionDuration)
     case let .cards(direction):
-      return CardsAnimator(from: direction, transitionDuration: transitionDuration)
+      return CardsAnimator(from: direction, duration: transitionDuration)
     case let .flip(direction):
-      return FlipAnimator(from: direction, transitionDuration: transitionDuration)
+      return FlipAnimator(from: direction, duration: transitionDuration)
     case let .slide(direction, isFade):
-      return SlideAnimator(from: direction, isFade: isFade, transitionDuration: transitionDuration)
+      return SlideAnimator(from: direction, isFade: isFade, duration: transitionDuration)
     case let .systemCube(direction):
       return SystemTransitionAnimator(systemType: .cube, duration: transitionDuration, direction: direction)
     case let .systemFlip(direction):
@@ -58,11 +58,11 @@ public struct AnimatorFactory {
                                   transitionDuration: Duration = defaultPresentationDuration) -> AnimatedPresenting {
     switch presentationAnimationType {
     case let .cover(direction):
-      return CoverAnimator(from: direction, transitionDuration: transitionDuration)
+      return CoverAnimator(from: direction, duration: transitionDuration)
     case .zoom:
-      return ZoomAnimator(transitionDuration: transitionDuration)
+      return ZoomAnimator(duration: transitionDuration)
     case .dropDown:
-      return DropDownAnimator(transitionDuration: transitionDuration)
+      return DropDownAnimator(duration: transitionDuration)
     case .flip, .crossDissolve:
       fatalError("System animation, will never be executed")
     }
