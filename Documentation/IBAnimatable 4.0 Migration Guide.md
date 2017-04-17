@@ -118,6 +118,9 @@ view.delay(delay)
 
 More details can be found in [this commit: Update "Animation Properties" playground to new animation API.](https://github.com/IBAnimatable/IBAnimatable/commit/d0e05864962617a121600c66b8fad9baed77dbf5)
 
+## Other breaking changes
+There are some other breaking changes, please see [CHANGELOG.md](../CHANGELOG.md).
+
 ## Credits
 Great thanks to @lastMove and @tbaranes for driving and implementing these changes 👍👍👍
 
