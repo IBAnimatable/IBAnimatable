@@ -71,54 +71,60 @@ view.squeezeFade(.in, direction:.left) // squeeze and fade in from left animatio
 在 [Swift Playground Page - Predefined Animations](../IBAnimatable.playground/Pages/Predefined%20Animations.xcplaygroundpage) 里面我们可以尝试不同的动画。
 
 ### 动画的属性
-我们可以通过修改动画的属性来进一步个性化我们的动画。我们只需要修改这项属性，然后调用 `animate()` 方法来运行动画。
+我们可以进一步个性化我们的动画。我们只需要在调用 `animate()` 方法的时候把相关参数传递即可。
 
 ```swift
-// Setup the animation
-view.animationType = .squeeze(way: .in, direction: .left)
-view.delay = 0.5
-view.damping = 0.5
-view.velocity = 2
-view.force = 1
-
-// Start the animation
-view.animate()
+view.animate(.squeeze(way: .in, direction: .left), duration: 1, damping: 1, velocity: 2, force: 1)
 ```
 
-我们可以在 [Swift Playgrourd Page - Animation Properties](../IBAnimatable.playground/Pages/Animation%20Properties.xcplaygroundpage) 里面尝试不同的动画属性。
+在 [Swift playground Page - Animation Properties](../IBAnimatable.playground/Pages/Animation%20Properties.xcplaygroundpage)
+里面我们可以尝试不同的属性的动画。
 
 ### 串联动画
-有时候我们需要把多个动画串联起来执行，`IBAnimatable` 提供非常简易的方式来把动画串联起来。
+`IBAnimatable` 提供了类 Promise 的动画 API 来串联动画。
 
 ```swift
-// 只要把下一个动画放在 `{}` closure 就可以了，下面的例子是当执行完从上而下的滑动后 Pop 的动画。
-view.squeeze(.in, direction: .down) { view.pop(repeatCount: 1) }
-
-// 这是 "Animate in Swift Playground" Gif 动画的源代码，把好几个动画串联起来执行。
-view.squeezeFade(.in, direction: .down) {
-  view.pop(repeatCount: 1) {
-    view.shake(repeatCount: 1) {
-      view.squeeze(repeatCount: 1) {
-        view.wobble(repeatCount: 1) {
-          view.flip(axis: .x) {
-            view.flip(axis: .y) {
-              view.slideFade(.out, direction: .down)
-            }
-          }
-        }
-      }
-    }
-  }
-}
+// We can chain the animations together, it is the source code of animated GIF in "Animate in Swift playground" section
+view.animate(.squeezeFade(way: .in, direction: .down))
+    .then(.pop(repeatCount: 1))
+    .then(.shake(repeatCount: 1))
+    .then(.squeeze(way: .in, direction: .down))
+    .then(.wobble(repeatCount: 1))
+    .then(.flip(along: .x))
+    .then(.flip(along: .y))
+    .then(.slideFade(way: .out, direction: .down))
 ```
-这些语法不是很漂亮，如果你有兴趣来完善它，请看 [Issue #14 - Chain-able animations](https://github.com/IBAnimatable/IBAnimatable/issues/14) ，我们一起来实现可串联动画的 API
+
+### 延时动画
+我们只需要调用 `delay` 方法来延时动画。
+
+```swift
+view.animate(.squeeze(way: .in, direction: .left))
+    .delay(0.5)
+    .then(.shake(repeatCount: 3))
+```
+
+我们甚至可以把 `delay` 作为第一个方法来调用。
+
+```swift
+view.delay(2)
+    .then(.squeeze(way: .in, direction: .left))
+```
+
+### 执行完毕的回调函数
+我们可以在动画执行完毕以后调用回调函数。
+
+```swift
+view.animate(.squeeze(way: .in, direction: .left))
+    .completion { print("Animations finished!") }
+```
 
 ## 怎样安装
 ### 手工安装
 把 `IBAnimatable` 文件夹拷贝到你的 Xcode 项目中
 
 ### Swift package manager
-在 `Package.swift` 中添加 `.Package(url: "https://github.com/IBAnimatable/IBanimatable.git", majorVersion: 3)` 。
+在 `Package.swift` 中添加 `.Package(url: "https://github.com/IBAnimatable/IBanimatable.git", majorVersion: 4)` 。
 
 ### CocoaPods
 
