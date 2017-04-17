@@ -6,7 +6,7 @@
 import UIKit
 
 /**
- Navigator for `UINavigationController` to support custom transition animation for Push and Pop
+ Navigator for `UINavigationController` or `UITabBarController` to support custom transition animation
  */
 public class Navigator: NSObject {
   var transitionAnimationType: TransitionAnimationType
@@ -43,6 +43,7 @@ public class Navigator: NSObject {
   }
 }
 
+// MARK: - navigation controller delegate
 extension Navigator: UINavigationControllerDelegate {
   // MARK: - animation controller
   public func navigationController(_ navigationController: UINavigationController,
@@ -69,8 +70,40 @@ extension Navigator: UINavigationControllerDelegate {
                                           -> UIViewControllerInteractiveTransitioning? {
     if let interactiveAnimator = interactiveAnimator, interactiveAnimator.interacting {
       return interactiveAnimator
-    } else {
-      return nil
     }
+    return nil
+  }
+}
+
+// MARK: - tabbar controller delegate
+extension Navigator: UITabBarControllerDelegate {
+
+  // MARK: - animation controller
+  public func tabBarController(_ tabBarController: UITabBarController,
+                               animationControllerForTransitionFrom fromVC: UIViewController,
+                               to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+
+    interactiveAnimator?.connectGestureRecognizer(to: toVC)
+
+    guard let viewControllers = tabBarController.viewControllers,
+      let fromVCIndex = viewControllers.index(of: fromVC),
+      let toVCIndex = viewControllers.index(of: toVC) else {
+        return nil
+    }
+    if toVCIndex > fromVCIndex, let reverseTransitionAnimationType = animator?.reverseAnimationType {
+      return AnimatorFactory.makeAnimator(transitionAnimationType: reverseTransitionAnimationType, transitionDuration: transitionDuration)
+    }
+    animator?.transitionDuration = transitionDuration
+    return animator
+  }
+
+  // MARK: - interaction controller
+  public func tabBarController(_ tabBarController: UITabBarController,
+                               interactionControllerFor animationController: UIViewControllerAnimatedTransitioning)
+    -> UIViewControllerInteractiveTransitioning? {
+      if let interactiveAnimator = interactiveAnimator, interactiveAnimator.interacting {
+        return interactiveAnimator
+      }
+      return nil
   }
 }
