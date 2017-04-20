@@ -3,7 +3,22 @@ All notable changes to this project will be documented in this file.
 `IBAnimatable` adheres to [Semantic Versioning](http://semver.org/).
 
 ## Versions
+
 ### Next
+
+#### API breaking changes
+
+N/A
+
+#### Enhancements
+
+N/A
+
+#### Bugfixes
+
+N/A
+
+### [4.0.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/4.0.0)
 
 #### API breaking changes
 - `CornerSide`'s swift3 migration leftovers: renaming `.AllSides` to `.allSides`. If you were setting programmatically a cornerSide to your view, you will just have to lowercase the A. [#409](https://github.com/IBAnimatable/IBAnimatable/pull/409) by [@tbaranes](https://github.com/tbaranes)
