@@ -18,39 +18,31 @@ N/A
 
 N/A
 
+---
 ### [4.0.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/4.0.0)
 
 #### API breaking changes
+- Introducing new promise-like animation APIs. Check out the [migration guide](https://github.com/IBAnimatable/IBAnimatable/blob/master/Documentation/IBAnimatable%204.0%20Migration%20Guide.md). [#385](https://github.com/IBAnimatable/IBAnimatable/pull/385) by [@lastmove](https://github.com/lastmove) and [@tbaranes](https://github.com/tbaranes)
 - `CornerSide`'s swift3 migration leftovers: renaming `.AllSides` to `.allSides`. If you were setting programmatically a cornerSide to your view, you will just have to lowercase the A. [#409](https://github.com/IBAnimatable/IBAnimatable/pull/409) by [@tbaranes](https://github.com/tbaranes)
-- `AnimatableSlider` inherit from `UISlider`
-- Replace all `SystemAnimator` classes with `SystemTransitionAnimator`
-[#427](https://github.com/IBAnimatable/IBAnimatable/pull/427) by [@SD10](https://github.com/sd10)
-- `PresentationDesignable` now supports `contextFrameForPresentation` which allow you to present a controller with a custom configuration over another instead of being in fullscreen. Imitates `UIModalPresentationStyle.currentContext`
-- Transition Animator classes initializer parameter changed from transitionDuration -> duration
-[#446](https://github.com/IBAnimatable/IBAnimatable/pull/446) by [@SD10](https://github.com/sd10)
+- `AnimatableSlider` inherit from `UISlider`. [#417](https://github.com/IBAnimatable/IBAnimatable/pull/417) by [@phimage](https://github.com/phimage)
+- Replace all `SystemAnimator` classes with `SystemTransitionAnimator` [#427](https://github.com/IBAnimatable/IBAnimatable/pull/427) by [@SD10](https://github.com/SD10)
+- `PresentationDesignable` now supports `contextFrameForPresentation` which allow you to present a controller with a custom configuration over another instead of being in fullscreen. Imitates `UIModalPresentationStyle.currentContext`. [#385](https://github.com/IBAnimatable/IBAnimatable/pull/385) by [@tbaranes](https://github.com/tbaranes)
+- Transition Animator classes initializer parameter changed from transitionDuration -> duration [#446](https://github.com/IBAnimatable/IBAnimatable/pull/446) by [@SD10](https://github.com/SD10)
 
 #### Enhancements
-- Conserve custom layer mask when using `Animatable*` instead of removing them
-[#407](https://github.com/IBAnimatable/IBAnimatable/pull/407) by [@DanielAsher](https://github.com/DanielAsher)
-- Add support for corner on AnimatableTableViewCell.
-[#403](https://github.com/IBAnimatable/IBAnimatable/pull/403) by [@tbaranes](https://github.com/tbaranes)
-- Make images of `AnimatableSlider` designable.
-[#417](https://github.com/IBAnimatable/IBAnimatable/pull/417) by [@phimage](https://github.com/phimage)
-- Add `RefreshControlDesignable` to make `UIRefreshControl` customization available in Interface Builder. Currently supported by `UITableViewController` and `UITableView`
-[#418](https://github.com/IBAnimatable/IBAnimatable/pull/418) by [@phimage](https://github.com/phimage) and [#429](https://github.com/IBAnimatable/IBAnimatable/pull/429) by [@tbaranes](https://github.com/tbaranes)
-- Replace all `SystemAnimator` classes with `SystemTransitionAnimator`
-[#427](https://github.com/IBAnimatable/IBAnimatable/pull/427) by [@SD10](https://github.com/sd10)
-- Add `GradientDesignable` to `DesignableNavigationBar`
-[#437](https://github.com/IBAnimatable/IBAnimatable/pull/437) by [@phimage](https://github.com/phimage)
-- Add `AnimatableTabBarController` to support custom transition animations
-[#443](https://github.com/IBAnimatable/IBAnimatable/pull/443) by [@phimage](https://github.com/phimage)
+- Conserve custom layer mask when using `Animatable*` instead of removing them [#407](https://github.com/IBAnimatable/IBAnimatable/pull/407) by [@DanielAsher](https://github.com/DanielAsher)
+- Add support for corner on AnimatableTableViewCell. [#403](https://github.com/IBAnimatable/IBAnimatable/pull/403) by [@tbaranes](https://github.com/tbaranes)
+- Make images of `AnimatableSlider` designable. [#417](https://github.com/IBAnimatable/IBAnimatable/pull/417) by [@phimage](https://github.com/phimage)
+- Add `RefreshControlDesignable` to make `UIRefreshControl` customization available in Interface Builder. Currently supported by `UITableViewController` and `UITableView`. [#418](https://github.com/IBAnimatable/IBAnimatable/pull/418) by [@phimage](https://github.com/phimage) and [#429](https://github.com/IBAnimatable/IBAnimatable/pull/429) by [@tbaranes](https://github.com/tbaranes)
+- Replace all `SystemAnimator` classes with `SystemTransitionAnimator`. [#427](https://github.com/IBAnimatable/IBAnimatable/pull/427) by [@SD10](https://github.com/SD10)
+- Add `GradientDesignable` to `DesignableNavigationBar`. [#437](https://github.com/IBAnimatable/IBAnimatable/pull/437) by [@phimage](https://github.com/phimage)
+- Add `AnimatableTabBarController` to support custom transition animations. [#443](https://github.com/IBAnimatable/IBAnimatable/pull/443) by [@phimage](https://github.com/phimage)
 
 #### Bugfixes
-- Make corner sides case insensitive.
-[#394](https://github.com/IBAnimatable/IBAnimatable/issues/394) by [@mmadjer](https://github.com/mmadjer)
-- Frame is converted to window coordinate space to fix miscalculations in computed values (used with `slideOut`, ...) [#412](https://github.com/IBAnimatable/IBAnimatable/issues/412) by [@redent](https://github.com/redent)
+- Make corner sides case insensitive. [#394](https://github.com/IBAnimatable/IBAnimatable/pull/394) by [@mmadjer](https://github.com/mmadjer)
+- Frame is converted to window coordinate space to fix miscalculations in computed values (used with `slideOut`, ...). [#412](https://github.com/IBAnimatable/IBAnimatable/pull/412) by [@redent](https://github.com/redent)
 - Reset destination view's `transform` property to `CGAffineTransform.identity` after a slide transition completes. [#432](https://github.com/IBAnimatable/IBAnimatable/pull/432) by [@broadwaylamb](https://github.com/broadwaylamb)
-- Fixed `{Flip,Turn,Fold}Animator` which was resulting in broken transitions. Thanks to[@phimage](https://github.com/phimage) for the fix. [#441](https://github.com/IBAnimatable/IBAnimatable/pull/437) by [@tbaranes](https://github.com/tbaranes)
+- Fixed `{Flip,Turn,Fold}Animator` which was resulting in broken transitions. Thanks to[@phimage](https://github.com/phimage) for the fix. [#441](https://github.com/IBAnimatable/IBAnimatable/pull/441) by [@tbaranes](https://github.com/tbaranes)
 
 ---
 ### [3.1.3](https://github.com/IBAnimatable/IBAnimatable/releases/tag/3.1.3)
