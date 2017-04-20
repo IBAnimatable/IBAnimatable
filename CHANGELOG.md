@@ -18,6 +18,7 @@ N/A
 
 N/A
 
+---
 ### [4.0.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/4.0.0)
 
 #### API breaking changes
