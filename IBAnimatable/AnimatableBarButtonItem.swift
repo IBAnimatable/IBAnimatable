@@ -41,6 +41,12 @@ open class AnimatableBarButtonItem: UIBarButtonItem, BarButtonItemDesignable, An
   @IBInspectable open var damping: CGFloat = CGFloat.nan
   @IBInspectable open var velocity: CGFloat = CGFloat.nan
   @IBInspectable open var force: CGFloat = CGFloat.nan
+  @IBInspectable open var _timingFunction: String = "" {
+    didSet {
+      timingFunction = TimingFunctionType(string: _timingFunction)
+    }
+  }
+  open var timingFunction: TimingFunctionType = .none
 
   // MARK: - Private
   fileprivate func configureInspectableProperties() {

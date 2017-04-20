@@ -10,7 +10,7 @@ public class ActivityIndicatorAnimationLineSpinFadeLoader: ActivityIndicatorAnim
   // MARK: Properties
 
   fileprivate let duration: CFTimeInterval = 1.2
-  fileprivate let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+  fileprivate let timingFunction: TimingFunctionType = .easeInOut
 
   // MARK: ActivityIndicatorAnimating
 
@@ -44,7 +44,7 @@ private extension ActivityIndicatorAnimationLineSpinFadeLoader {
   var defaultAnimation: CAKeyframeAnimation {
     let animation = CAKeyframeAnimation(keyPath: "opacity")
     animation.keyTimes = [0, 0.5, 1]
-    animation.timingFunctions = [timingFunction, timingFunction]
+    animation.timingFunctionsType = [timingFunction, timingFunction]
     animation.values = [1, 0.3, 1]
     animation.duration = duration
     animation.repeatCount = .infinity

@@ -56,7 +56,7 @@ class SystemTransitionAnimator: NSObject, AnimatedTransitioning {
       transition.type = systemTransitionType.rawValue
       transition.subtype = systemTransitionSubtype
       transition.duration = transitionDuration(using: context)
-      transition.timingFunction = CAMediaTimingFunction(controlPoints: 0.215, 0.61, 0.355, 1)
+      transition.timingFunctionType = .easeOutCubic
       context.containerView.layer.add(transition, forKey: kCATransition)
     }, completion: {
       context.completeTransition(!context.transitionWasCancelled)

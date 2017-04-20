@@ -44,9 +44,14 @@ public protocol Animatable: class {
    */
   var force: CGFloat { get set }
 
+  /**
+   Animation function as a timing curve. (default value should be none)
+   */
+  var timingFunction: TimingFunctionType { get set }
+
 }
 
-public extension Animatable where Self: UIView {
+public extension Animatable {
   public func configureAnimatableProperties() {
     // Apply default values
     if duration.isNaN {
@@ -65,7 +70,9 @@ public extension Animatable where Self: UIView {
       force = 1
     }
   }
+}
 
+public extension Animatable where Self: UIView {
   @discardableResult
   public func animate(_ animation: AnimationType,
                       duration: TimeInterval? = nil,
@@ -299,7 +306,7 @@ fileprivate extension Animatable where Self: UIView {
       let animation = CAKeyframeAnimation(keyPath: "position.x")
       animation.values = [0, 30 * configuration.force, -30 * configuration.force, 30 * configuration.force, 0]
       animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      animation.timingFunctionType = configuration.timingFunction ?? .easeInOut
       animation.duration = configuration.duration
       animation.isAdditive = true
       animation.repeatCount = Float(repeatCount)
@@ -313,7 +320,7 @@ fileprivate extension Animatable where Self: UIView {
       let animation = CAKeyframeAnimation(keyPath: "transform.scale")
       animation.values = [0, 0.2 * configuration.force, -0.2 * configuration.force, 0.2 * configuration.force, 0]
       animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      animation.timingFunctionType = configuration.timingFunction ?? .easeInOut
       animation.duration = configuration.duration
       animation.isAdditive = true
       animation.repeatCount = Float(repeatCount)
@@ -327,12 +334,12 @@ fileprivate extension Animatable where Self: UIView {
       let squashX = CAKeyframeAnimation(keyPath: "transform.scale.x")
       squashX.values = [1, 1.5 * configuration.force, 0.5, 1.5 * configuration.force, 1]
       squashX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      squashX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      squashX.timingFunctionType = .easeInOut
 
       let squashY = CAKeyframeAnimation(keyPath: "transform.scale.y")
       squashY.values = [1, 0.5, 1, 0.5, 1]
       squashY.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      squashY.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      squashY.timingFunctionType = .easeInOut
 
       let animationGroup = CAAnimationGroup()
       animationGroup.animations = [squashX, squashY]
@@ -348,12 +355,12 @@ fileprivate extension Animatable where Self: UIView {
       let morphX = CAKeyframeAnimation(keyPath: "transform.scale.x")
       morphX.values = [1, 1.3 * configuration.force, 0.7, 1.3 * configuration.force, 1]
       morphX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      morphX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      morphX.timingFunctionType = configuration.timingFunction ?? .easeInOut
 
       let morphY = CAKeyframeAnimation(keyPath: "transform.scale.y")
       morphY.values = [1, 0.7, 1.3 * configuration.force, 0.7, 1]
       morphY.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      morphY.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      morphY.timingFunctionType = configuration.timingFunction ?? .easeInOut
 
       let animationGroup = CAAnimationGroup()
       animationGroup.animations = [morphX, morphY]
@@ -369,12 +376,12 @@ fileprivate extension Animatable where Self: UIView {
       let squeezeX = CAKeyframeAnimation(keyPath: "transform.scale.x")
       squeezeX.values = [1, 1.5 * configuration.force, 0.5, 1.5 * configuration.force, 1]
       squeezeX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      squeezeX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      squeezeX.timingFunctionType = configuration.timingFunction ?? .easeInOut
 
       let squeezeY = CAKeyframeAnimation(keyPath: "transform.scale.y")
       squeezeY.values = [1, 0.5, 1, 0.5, 1]
       squeezeY.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      squeezeY.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      squeezeY.timingFunctionType = configuration.timingFunction ?? .easeInOut
 
       let animationGroup = CAAnimationGroup()
       animationGroup.animations = [squeezeX, squeezeY]
@@ -408,7 +415,7 @@ fileprivate extension Animatable where Self: UIView {
       let positionX = CAKeyframeAnimation(keyPath: "position.x")
       positionX.values = [0, 30 * configuration.force, -30 * configuration.force, 30 * configuration.force, 0]
       positionX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      positionX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      positionX.timingFunctionType = configuration.timingFunction ?? .easeInOut
       positionX.isAdditive = true
 
       let animationGroup = CAAnimationGroup()
@@ -488,7 +495,7 @@ fileprivate extension Animatable where Self: UIView {
       let animation = CABasicAnimation(keyPath: "opacity")
       animation.fromValue = 1
       animation.toValue = 0
-      animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      animation.timingFunctionType = configuration.timingFunction ?? .easeInOut
       animation.duration = configuration.duration
       animation.beginTime = CACurrentMediaTime() + configuration.delay
       animation.autoreverses = true
@@ -501,7 +508,7 @@ fileprivate extension Animatable where Self: UIView {
       let animation = CABasicAnimation(keyPath: "opacity")
       animation.fromValue = 0
       animation.toValue = 1
-      animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      animation.timingFunctionType = configuration.timingFunction ?? .easeInOut
       animation.duration = configuration.duration
       animation.beginTime = CACurrentMediaTime() + configuration.delay
       animation.autoreverses = true
@@ -515,7 +522,7 @@ fileprivate extension Animatable where Self: UIView {
     )
   }
 
-  // swiftlint:disable variable_name_min_length
+  // swiftlint:disable:next variable_name_min_length
   func animateBy(x: CGFloat, y: CGFloat, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
     let translate = CGAffineTransform(translationX: x, y: y)
     UIView.animate(withDuration: configuration.duration,
