@@ -25,7 +25,12 @@ public enum TimingFunctionType {
   // http://easings.net/
   case easeInSine, easeOutSine, easeInOutSine
   case easeInCubic, easeOutCubic, easeInOutCubic
-  // #12 add more types
+  case easeInQuad, easeOutQuad, easeInOutQuad
+  case easeInQuart, easeOutQuart, easeInOutQuart
+  case easeInQuint, easeOutQuint, easeInOutQuint
+  case easeInExpo, easeOutExpo, easeInOutExpo
+  case easeInCirc, easeOutCirc, easeInOutCirc
+  case easeInBack, easeOutBack, easeInOutBack
 
 }
 
@@ -53,18 +58,54 @@ extension TimingFunctionType: IBEnum {
       self = .default
 
     // customs
-    case "easeInSine":
+    case "easeinsine":
       self = .easeInSine
-    case "easeOutSine":
+    case "easeoutsine":
       self = .easeOutSine
-    case "easeInOutSine":
+    case "easeinoutsine":
       self = .easeInOutSine
-    case "easeInCubic":
+    case "easeinquad":
+      self = .easeInQuad
+    case "easeoutquad":
+      self = .easeOutQuad
+    case "easeinoutquad":
+      self = .easeInOutQuad
+    case "easeincubic":
       self = .easeInCubic
-    case "easeOutCubic":
+    case "easeoutcubic":
       self = .easeOutCubic
-    case "easeInOutCubic":
+    case "easeinoutcubic":
       self = .easeInOutCubic
+    case "easeinquart":
+      self = .easeInQuart
+    case "easeoutquart":
+      self = .easeOutQuart
+    case "easeinoutquart":
+      self = .easeInOutQuart
+    case "easeinquint":
+      self = .easeInQuint
+    case "easeoutquint":
+      self = .easeOutQuint
+    case "easeinoutquint":
+      self = .easeInOutQuint
+    case "easeinexpo":
+      self = .easeInExpo
+    case "easeoutexpo":
+      self = .easeOutExpo
+    case "easeinoutexpo":
+      self = .easeInOutExpo
+    case "easeincirc":
+      self = .easeInCirc
+    case "easeoutcirc":
+      self = .easeOutCirc
+    case "easeinoutcirc":
+      self = .easeInOutCirc
+    case "easeinback":
+      self = .easeInBack
+    case "easeoutback":
+      self = .easeOutBack
+    case "easeinoutback":
+      self = .easeInOutBack
 
     default:
       self = .none
@@ -102,12 +143,48 @@ extension TimingFunctionType {
       return .easeOutSine
     case .easeInOutSine:
       return .easeInOutSine
+    case .easeInQuad:
+      return .easeInQuad
+    case .easeOutQuad:
+      return .easeOutQuad
+    case .easeInOutQuad:
+      return .easeInOutQuad
     case .easeInCubic:
       return .easeInCubic
     case .easeOutCubic:
       return .easeOutCubic
     case .easeInOutCubic:
       return .easeInOutCubic
+    case .easeInQuart:
+      return .easeInQuart
+    case .easeOutQuart:
+      return .easeOutQuart
+    case .easeInOutQuart:
+      return .easeInOutQuart
+    case .easeInQuint:
+      return .easeInQuint
+    case .easeOutQuint:
+      return .easeOutQuint
+    case .easeInOutQuint:
+      return .easeInOutQuint
+    case .easeInExpo:
+      return .easeInExpo
+    case .easeOutExpo:
+      return .easeOutExpo
+    case .easeInOutExpo:
+      return .easeInOutExpo
+    case .easeInCirc:
+      return .easeInCirc
+    case .easeOutCirc:
+      return .easeOutCirc
+    case .easeInOutCirc:
+      return .easeInOutCirc
+    case .easeInBack:
+      return .easeInBack
+    case .easeOutBack:
+      return .easeOutBack
+    case .easeInOutBack:
+      return .easeInOutBack
 
     case .none:
       return .default // #12 return nil and use optional?
