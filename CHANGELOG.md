@@ -16,7 +16,7 @@ N/A
 
 #### Bugfixes
 
-N/A
+- `AnimatableTextField` won't override anymore the default border if no custom one set. [#457](https://github.com/IBAnimatable/IBAnimatable/pull/457) by [tbaranes](https://github.com/tbaranes)
 
 ---
 ### [4.0.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/4.0.0)
