@@ -101,8 +101,18 @@
 		AEE552AE1C82D1E1009CF623 /* PresentFadeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE552AC1C82D1E1009CF623 /* PresentFadeSegue.swift */; };
 		AEE552B11C839EB7009CF623 /* TransitionPresenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE552AF1C839EB7009CF623 /* TransitionPresenterManager.swift */; };
 		AEF4938D1CE0161C00B76FD6 /* Playground.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEF4938C1CE0161C00B76FD6 /* Playground.storyboard */; };
-		B0564B191EB000A300D1C5AB /* IBAnimatableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0564B181EB000A300D1C5AB /* IBAnimatableTests.swift */; };
+		B0564B191EB000A300D1C5AB /* AnimatableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0564B181EB000A300D1C5AB /* AnimatableViewTests.swift */; };
 		B0564B1B1EB000A300D1C5AB /* IBAnimatable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE6B01551C2A082300950BB2 /* IBAnimatable.framework */; };
+		B0564B2A1EB003D400D1C5AB /* AnimatableScrollViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0564B291EB003D400D1C5AB /* AnimatableScrollViewTests.swift */; };
+		B0564B2C1EB003F800D1C5AB /* AnimatableButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0564B2B1EB003F800D1C5AB /* AnimatableButtonTests.swift */; };
+		B0564B2E1EB0040700D1C5AB /* AnimatableCheckBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0564B2D1EB0040700D1C5AB /* AnimatableCheckBoxTests.swift */; };
+		B0564B301EB0041700D1C5AB /* AnimatableImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0564B2F1EB0041700D1C5AB /* AnimatableImageViewTests.swift */; };
+		B0564B321EB0042500D1C5AB /* AnimatableLabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0564B311EB0042500D1C5AB /* AnimatableLabelTests.swift */; };
+		B0564B341EB0043300D1C5AB /* AnimatableStackViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0564B331EB0043300D1C5AB /* AnimatableStackViewTests.swift */; };
+		B0564B361EB0044600D1C5AB /* AnimatableTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0564B351EB0044600D1C5AB /* AnimatableTableViewCellTests.swift */; };
+		B0564B381EB0045400D1C5AB /* AnimatableCollectionViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0564B371EB0045400D1C5AB /* AnimatableCollectionViewCellTests.swift */; };
+		B0564B3A1EB0046300D1C5AB /* AnimatableTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0564B391EB0046300D1C5AB /* AnimatableTextFieldTests.swift */; };
+		B0564B3C1EB0047100D1C5AB /* AnimatableTextViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0564B3B1EB0047100D1C5AB /* AnimatableTextViewTests.swift */; };
 		B062C7671E94D13B006C3CB8 /* SystemTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062C7661E94D13B006C3CB8 /* SystemTransitionAnimator.swift */; };
 		C4275F7D1E9D59A6000C7F0B /* AnimatableTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4275F7C1E9D59A6000C7F0B /* AnimatableTabBarController.swift */; };
 		C47A737C1E86A9BD0044EFF8 /* SliderImagesDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47A737B1E86A9BD0044EFF8 /* SliderImagesDesignable.swift */; };
@@ -332,8 +342,18 @@
 		AEEF86BD1CA8E9E200899AAB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEF4938C1CE0161C00B76FD6 /* Playground.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Playground.storyboard; sourceTree = "<group>"; };
 		B0564B161EB000A300D1C5AB /* IBAnimatableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IBAnimatableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0564B181EB000A300D1C5AB /* IBAnimatableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBAnimatableTests.swift; sourceTree = "<group>"; };
+		B0564B181EB000A300D1C5AB /* AnimatableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableViewTests.swift; sourceTree = "<group>"; };
 		B0564B1A1EB000A300D1C5AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0564B291EB003D400D1C5AB /* AnimatableScrollViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableScrollViewTests.swift; sourceTree = "<group>"; };
+		B0564B2B1EB003F800D1C5AB /* AnimatableButtonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableButtonTests.swift; sourceTree = "<group>"; };
+		B0564B2D1EB0040700D1C5AB /* AnimatableCheckBoxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableCheckBoxTests.swift; sourceTree = "<group>"; };
+		B0564B2F1EB0041700D1C5AB /* AnimatableImageViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableImageViewTests.swift; sourceTree = "<group>"; };
+		B0564B311EB0042500D1C5AB /* AnimatableLabelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableLabelTests.swift; sourceTree = "<group>"; };
+		B0564B331EB0043300D1C5AB /* AnimatableStackViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableStackViewTests.swift; sourceTree = "<group>"; };
+		B0564B351EB0044600D1C5AB /* AnimatableTableViewCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableTableViewCellTests.swift; sourceTree = "<group>"; };
+		B0564B371EB0045400D1C5AB /* AnimatableCollectionViewCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableCollectionViewCellTests.swift; sourceTree = "<group>"; };
+		B0564B391EB0046300D1C5AB /* AnimatableTextFieldTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableTextFieldTests.swift; sourceTree = "<group>"; };
+		B0564B3B1EB0047100D1C5AB /* AnimatableTextViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableTextViewTests.swift; sourceTree = "<group>"; };
 		B062C7661E94D13B006C3CB8 /* SystemTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemTransitionAnimator.swift; sourceTree = "<group>"; };
 		C4275F7C1E9D59A6000C7F0B /* AnimatableTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableTabBarController.swift; sourceTree = "<group>"; };
 		C47A737B1E86A9BD0044EFF8 /* SliderImagesDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderImagesDesignable.swift; sourceTree = "<group>"; };
@@ -812,7 +832,17 @@
 		B0564B171EB000A300D1C5AB /* IBAnimatableTests */ = {
 			isa = PBXGroup;
 			children = (
-				B0564B181EB000A300D1C5AB /* IBAnimatableTests.swift */,
+				B0564B181EB000A300D1C5AB /* AnimatableViewTests.swift */,
+				B0564B291EB003D400D1C5AB /* AnimatableScrollViewTests.swift */,
+				B0564B2B1EB003F800D1C5AB /* AnimatableButtonTests.swift */,
+				B0564B2D1EB0040700D1C5AB /* AnimatableCheckBoxTests.swift */,
+				B0564B2F1EB0041700D1C5AB /* AnimatableImageViewTests.swift */,
+				B0564B311EB0042500D1C5AB /* AnimatableLabelTests.swift */,
+				B0564B331EB0043300D1C5AB /* AnimatableStackViewTests.swift */,
+				B0564B351EB0044600D1C5AB /* AnimatableTableViewCellTests.swift */,
+				B0564B371EB0045400D1C5AB /* AnimatableCollectionViewCellTests.swift */,
+				B0564B391EB0046300D1C5AB /* AnimatableTextFieldTests.swift */,
+				B0564B3B1EB0047100D1C5AB /* AnimatableTextViewTests.swift */,
 				B0564B1A1EB000A300D1C5AB /* Info.plist */,
 			);
 			path = IBAnimatableTests;
@@ -1393,7 +1423,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0564B191EB000A300D1C5AB /* IBAnimatableTests.swift in Sources */,
+				B0564B3C1EB0047100D1C5AB /* AnimatableTextViewTests.swift in Sources */,
+				B0564B2E1EB0040700D1C5AB /* AnimatableCheckBoxTests.swift in Sources */,
+				B0564B3A1EB0046300D1C5AB /* AnimatableTextFieldTests.swift in Sources */,
+				B0564B191EB000A300D1C5AB /* AnimatableViewTests.swift in Sources */,
+				B0564B321EB0042500D1C5AB /* AnimatableLabelTests.swift in Sources */,
+				B0564B301EB0041700D1C5AB /* AnimatableImageViewTests.swift in Sources */,
+				B0564B341EB0043300D1C5AB /* AnimatableStackViewTests.swift in Sources */,
+				B0564B361EB0044600D1C5AB /* AnimatableTableViewCellTests.swift in Sources */,
+				B0564B2A1EB003D400D1C5AB /* AnimatableScrollViewTests.swift in Sources */,
+				B0564B2C1EB003F800D1C5AB /* AnimatableButtonTests.swift in Sources */,
+				B0564B381EB0045400D1C5AB /* AnimatableCollectionViewCellTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1678,6 +1718,7 @@
 				B0564B201EB000A300D1C5AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
