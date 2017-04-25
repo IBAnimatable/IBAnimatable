@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E7A1FD97E975236D04DEB3A /* Pods_IBAnimatable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A968FA238789A4EF60F5C8 /* Pods_IBAnimatable.framework */; };
 		48D436311E8E221500538E7D /* RefreshControlTableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D436301E8E221500538E7D /* RefreshControlTableViewViewController.swift */; };
+		6E7E77C0BD7B45FA2B254325 /* Pods_IBAnimatableApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAAFAA1E0A53A3397EB65D46 /* Pods_IBAnimatableApp.framework */; };
 		7305EC0E1E1996E000BF4C9A /* AnimationChainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7305EC0D1E1996E000BF4C9A /* AnimationChainable.swift */; };
 		731205811D28A3830009BCAC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731205801D28A3830009BCAC /* Utils.swift */; };
 		732485D71D4902510068FD93 /* ParamType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732485D61D4902510068FD93 /* ParamType.swift */; };
@@ -99,6 +101,8 @@
 		AEE552AE1C82D1E1009CF623 /* PresentFadeSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE552AC1C82D1E1009CF623 /* PresentFadeSegue.swift */; };
 		AEE552B11C839EB7009CF623 /* TransitionPresenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE552AF1C839EB7009CF623 /* TransitionPresenterManager.swift */; };
 		AEF4938D1CE0161C00B76FD6 /* Playground.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEF4938C1CE0161C00B76FD6 /* Playground.storyboard */; };
+		B0564B191EB000A300D1C5AB /* IBAnimatableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0564B181EB000A300D1C5AB /* IBAnimatableTests.swift */; };
+		B0564B1B1EB000A300D1C5AB /* IBAnimatable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE6B01551C2A082300950BB2 /* IBAnimatable.framework */; };
 		B062C7671E94D13B006C3CB8 /* SystemTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062C7661E94D13B006C3CB8 /* SystemTransitionAnimator.swift */; };
 		C4275F7D1E9D59A6000C7F0B /* AnimatableTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4275F7C1E9D59A6000C7F0B /* AnimatableTabBarController.swift */; };
 		C47A737C1E86A9BD0044EFF8 /* SliderImagesDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47A737B1E86A9BD0044EFF8 /* SliderImagesDesignable.swift */; };
@@ -201,6 +205,16 @@
 		E2F45B5B1CDBAF5C001D2E37 /* PresentFlipWithDismissInteractionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F45B5A1CDBAF5C001D2E37 /* PresentFlipWithDismissInteractionSegue.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B0564B1C1EB000A300D1C5AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE6C66F71BFBF93500134A35 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE6B01541C2A082300950BB2;
+			remoteInfo = IBAnimatable;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		AE6B01611C2A082300950BB2 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -216,7 +230,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		22A968FA238789A4EF60F5C8 /* Pods_IBAnimatable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IBAnimatable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		39AC8B24CBAB56BE64B1EB53 /* Pods-IBAnimatable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IBAnimatable.release.xcconfig"; path = "Pods/Target Support Files/Pods-IBAnimatable/Pods-IBAnimatable.release.xcconfig"; sourceTree = "<group>"; };
+		3DD64E52A808F406C6D3CF3D /* Pods-IBAnimatableTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IBAnimatableTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IBAnimatableTests/Pods-IBAnimatableTests.release.xcconfig"; sourceTree = "<group>"; };
 		48D436301E8E221500538E7D /* RefreshControlTableViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshControlTableViewViewController.swift; sourceTree = "<group>"; };
+		63BFB5D89A168E69777FF11A /* Pods-IBAnimatable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IBAnimatable.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IBAnimatable/Pods-IBAnimatable.debug.xcconfig"; sourceTree = "<group>"; };
+		6A2101DCD45E081D5C0E4CB3 /* Pods-IBAnimatableApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IBAnimatableApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-IBAnimatableApp/Pods-IBAnimatableApp.release.xcconfig"; sourceTree = "<group>"; };
 		7305EC0D1E1996E000BF4C9A /* AnimationChainable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationChainable.swift; sourceTree = "<group>"; };
 		731205801D28A3830009BCAC /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		732485D61D4902510068FD93 /* ParamType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParamType.swift; sourceTree = "<group>"; };
@@ -226,6 +245,8 @@
 		73B7D8851D233FB700DD3F43 /* IBEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBEnum.swift; sourceTree = "<group>"; };
 		73BDE6EB1D5654ED00D19EAE /* GradientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientViewController.swift; sourceTree = "<group>"; };
 		73ED71F71D34CA4700755C9B /* AnimationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationsViewController.swift; sourceTree = "<group>"; };
+		76B50A21332E50608EB8B105 /* Pods_IBAnimatableTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IBAnimatableTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BB8FB3B3E6FC8EE81904CF0 /* Pods-IBAnimatableApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IBAnimatableApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IBAnimatableApp/Pods-IBAnimatableApp.debug.xcconfig"; sourceTree = "<group>"; };
 		90F04E661DDDC1D9007614CB /* CornerSide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerSide.swift; sourceTree = "<group>"; };
 		90F04E681DDDC650007614CB /* CornerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerViewController.swift; sourceTree = "<group>"; };
 		AE0B0FE91C25372200E36B78 /* TableViewCellDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellDesignable.swift; sourceTree = "<group>"; };
@@ -310,15 +331,20 @@
 		AEEE200C1C18D10C00AD033B /* DesignableNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableNavigationBar.swift; sourceTree = "<group>"; };
 		AEEF86BD1CA8E9E200899AAB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEF4938C1CE0161C00B76FD6 /* Playground.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Playground.storyboard; sourceTree = "<group>"; };
+		B0564B161EB000A300D1C5AB /* IBAnimatableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IBAnimatableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0564B181EB000A300D1C5AB /* IBAnimatableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBAnimatableTests.swift; sourceTree = "<group>"; };
+		B0564B1A1EB000A300D1C5AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B062C7661E94D13B006C3CB8 /* SystemTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemTransitionAnimator.swift; sourceTree = "<group>"; };
 		C4275F7C1E9D59A6000C7F0B /* AnimatableTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableTabBarController.swift; sourceTree = "<group>"; };
 		C47A737B1E86A9BD0044EFF8 /* SliderImagesDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderImagesDesignable.swift; sourceTree = "<group>"; };
 		C4B4AD541E8645FD007A79A4 /* BackgroundImageDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundImageDesignable.swift; sourceTree = "<group>"; };
 		C4B504DF1E8832E7001E096A /* RefreshControlerDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshControlerDesignable.swift; sourceTree = "<group>"; };
 		C4B504E41E8833C4001E096A /* AnimatableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableTableViewController.swift; sourceTree = "<group>"; };
+		CAAFAA1E0A53A3397EB65D46 /* Pods_IBAnimatableApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IBAnimatableApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAB562E75DABEED7FCE0F309 /* FillDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillDesignable.swift; sourceTree = "<group>"; };
 		CAB5692C91C9ECC8018DE83E /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		CAB56A8BA4FB110D501DC1DC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D18E391923FC4D15F23D780C /* Pods-IBAnimatableTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IBAnimatableTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IBAnimatableTests/Pods-IBAnimatableTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7E765671C4C8961008C3116 /* IBAnimatable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = IBAnimatable.playground; sourceTree = "<group>"; };
 		E20027161D467E9700FEB28D /* ViewControllerAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerAnimatedTransitioning.swift; sourceTree = "<group>"; };
 		E20078A01CB8FB94002B2C16 /* FoldAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldAnimator.swift; sourceTree = "<group>"; };
@@ -421,6 +447,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E7A1FD97E975236D04DEB3A /* Pods_IBAnimatable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,12 +456,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE148F331C9C2C3D00E8126F /* IBAnimatable.framework in Frameworks */,
+				6E7E77C0BD7B45FA2B254325 /* Pods_IBAnimatableApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0564B131EB000A300D1C5AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0564B1B1EB000A300D1C5AB /* IBAnimatable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E106556FD1BF4D84BAF7368 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22A968FA238789A4EF60F5C8 /* Pods_IBAnimatable.framework */,
+				CAAFAA1E0A53A3397EB65D46 /* Pods_IBAnimatableApp.framework */,
+				76B50A21332E50608EB8B105 /* Pods_IBAnimatableTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AE0FAD391C1ECA2900B5289B /* extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -613,7 +659,10 @@
 				D7E765671C4C8961008C3116 /* IBAnimatable.playground */,
 				AE6C67141BFBF9BD00134A35 /* IBAnimatable */,
 				AE6C67011BFBF93500134A35 /* IBAnimatableApp */,
+				B0564B171EB000A300D1C5AB /* IBAnimatableTests */,
 				AE6C67001BFBF93500134A35 /* Products */,
+				F29A75BA8253138318503A96 /* Pods */,
+				1E106556FD1BF4D84BAF7368 /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -624,6 +673,7 @@
 			children = (
 				AE6C66FF1BFBF93500134A35 /* IBAnimatableApp.app */,
 				AE6B01551C2A082300950BB2 /* IBAnimatable.framework */,
+				B0564B161EB000A300D1C5AB /* IBAnimatableTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -759,6 +809,15 @@
 			name = Animatable;
 			sourceTree = "<group>";
 		};
+		B0564B171EB000A300D1C5AB /* IBAnimatableTests */ = {
+			isa = PBXGroup;
+			children = (
+				B0564B181EB000A300D1C5AB /* IBAnimatableTests.swift */,
+				B0564B1A1EB000A300D1C5AB /* Info.plist */,
+			);
+			path = IBAnimatableTests;
+			sourceTree = "<group>";
+		};
 		E210ABC21D3A95E1001D0362 /* presentation animator */ = {
 			isa = PBXGroup;
 			children = (
@@ -865,6 +924,19 @@
 			name = ActivityIndicator;
 			sourceTree = "<group>";
 		};
+		F29A75BA8253138318503A96 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				63BFB5D89A168E69777FF11A /* Pods-IBAnimatable.debug.xcconfig */,
+				39AC8B24CBAB56BE64B1EB53 /* Pods-IBAnimatable.release.xcconfig */,
+				8BB8FB3B3E6FC8EE81904CF0 /* Pods-IBAnimatableApp.debug.xcconfig */,
+				6A2101DCD45E081D5C0E4CB3 /* Pods-IBAnimatableApp.release.xcconfig */,
+				D18E391923FC4D15F23D780C /* Pods-IBAnimatableTests.debug.xcconfig */,
+				3DD64E52A808F406C6D3CF3D /* Pods-IBAnimatableTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -882,11 +954,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE6B015E1C2A082300950BB2 /* Build configuration list for PBXNativeTarget "IBAnimatable" */;
 			buildPhases = (
+				BBDB4E72F19B0D03A74ED486 /* [CP] Check Pods Manifest.lock */,
 				AE6B01501C2A082300950BB2 /* Sources */,
 				AE6B01511C2A082300950BB2 /* Frameworks */,
 				AE6B01521C2A082300950BB2 /* Headers */,
 				AE6B01531C2A082300950BB2 /* Resources */,
 				E24848AA1CDF5AFC003DB9C2 /* Run Script - SwiftLint */,
+				831E9C726E9B799CB37AAF8B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -901,11 +975,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE6C67111BFBF93500134A35 /* Build configuration list for PBXNativeTarget "IBAnimatableApp" */;
 			buildPhases = (
+				F3DB3DA8C121D486A9358A34 /* [CP] Check Pods Manifest.lock */,
 				AE6C66FB1BFBF93500134A35 /* Sources */,
 				AE6C66FC1BFBF93500134A35 /* Frameworks */,
 				AE6C66FD1BFBF93500134A35 /* Resources */,
 				AE6B01611C2A082300950BB2 /* Embed Frameworks */,
 				737708D21D85DA790055E750 /* ShellScript */,
+				F01A8353AA14873B9BA99B8A /* [CP] Embed Pods Frameworks */,
+				854EE0B41F0AF4B5C7FB1ADA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -916,13 +993,31 @@
 			productReference = AE6C66FF1BFBF93500134A35 /* IBAnimatableApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B0564B151EB000A300D1C5AB /* IBAnimatableTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0564B1E1EB000A300D1C5AB /* Build configuration list for PBXNativeTarget "IBAnimatableTests" */;
+			buildPhases = (
+				B0564B121EB000A300D1C5AB /* Sources */,
+				B0564B131EB000A300D1C5AB /* Frameworks */,
+				B0564B141EB000A300D1C5AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B0564B1D1EB000A300D1C5AB /* PBXTargetDependency */,
+			);
+			name = IBAnimatableTests;
+			productName = IBAnimatableTests;
+			productReference = B0564B161EB000A300D1C5AB /* IBAnimatableTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		AE6C66F71BFBF93500134A35 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = IBAnimatable;
 				TargetAttributes = {
@@ -933,6 +1028,10 @@
 					AE6C66FE1BFBF93500134A35 = {
 						CreatedOnToolsVersion = 7.1.1;
 						LastSwiftMigration = 0800;
+					};
+					B0564B151EB000A300D1C5AB = {
+						CreatedOnToolsVersion = 8.3.1;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -951,6 +1050,7 @@
 			targets = (
 				AE6C66FE1BFBF93500134A35 /* IBAnimatableApp */,
 				AE6B01541C2A082300950BB2 /* IBAnimatable */,
+				B0564B151EB000A300D1C5AB /* IBAnimatableTests */,
 			);
 		};
 /* End PBXProject section */
@@ -984,6 +1084,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B0564B141EB000A300D1C5AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -1000,6 +1107,51 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		831E9C726E9B799CB37AAF8B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IBAnimatable/Pods-IBAnimatable-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		854EE0B41F0AF4B5C7FB1ADA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IBAnimatableApp/Pods-IBAnimatableApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BBDB4E72F19B0D03A74ED486 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		E24848AA1CDF5AFC003DB9C2 /* Run Script - SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1013,6 +1165,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		F01A8353AA14873B9BA99B8A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IBAnimatableApp/Pods-IBAnimatableApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3DB3DA8C121D486A9358A34 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1207,7 +1389,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B0564B121EB000A300D1C5AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0564B191EB000A300D1C5AB /* IBAnimatableTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B0564B1D1EB000A300D1C5AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE6B01541C2A082300950BB2 /* IBAnimatable */;
+			targetProxy = B0564B1C1EB000A300D1C5AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AE154B0E1C788A560093C05B /* Transitions.storyboard */ = {
@@ -1241,6 +1439,7 @@
 /* Begin XCBuildConfiguration section */
 		AE6B015F1C2A082300950BB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63BFB5D89A168E69777FF11A /* Pods-IBAnimatable.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1264,6 +1463,7 @@
 		};
 		AE6B01601C2A082300950BB2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39AC8B24CBAB56BE64B1EB53 /* Pods-IBAnimatable.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1377,6 +1577,7 @@
 		};
 		AE6C67121BFBF93500134A35 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BB8FB3B3E6FC8EE81904CF0 /* Pods-IBAnimatableApp.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1393,6 +1594,7 @@
 		};
 		AE6C67131BFBF93500134A35 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A2101DCD45E081D5C0E4CB3 /* Pods-IBAnimatableApp.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1402,6 +1604,38 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IBAnimatable.IBAnimatableApp;
 				PRODUCT_NAME = IBAnimatableApp;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		B0564B1F1EB000A300D1C5AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = IBAnimatableTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.IBAnimatable.IBAnimatableTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		B0564B201EB000A300D1C5AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				INFOPLIST_FILE = IBAnimatableTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.IBAnimatable.IBAnimatableTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1436,6 +1670,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		B0564B1E1EB000A300D1C5AB /* Build configuration list for PBXNativeTarget "IBAnimatableTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0564B1F1EB000A300D1C5AB /* Debug */,
+				B0564B201EB000A300D1C5AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
