@@ -23,7 +23,7 @@ public extension FillDesignable where Self: UIView {
   public func configureOpacity() {
     if !opacity.isNaN && opacity >= 0 && opacity <= 1 {
       alpha = opacity
-      
+
       // Make better performance
       isOpaque = opacity == 1
     }
@@ -31,6 +31,18 @@ public extension FillDesignable where Self: UIView {
 }
 
 public extension FillDesignable where Self: UITableViewCell {
+  public func configureFillColor() {
+    if let fillColor = fillColor {
+      backgroundColor = fillColor
+      contentView.backgroundColor = fillColor
+    } else if let predefinedColor = predefinedColor?.color {
+      backgroundColor = predefinedColor
+      contentView.backgroundColor = predefinedColor
+    }
+  }
+}
+
+public extension FillDesignable where Self: UICollectionViewCell {
   public func configureFillColor() {
     if let fillColor = fillColor {
       backgroundColor = fillColor
