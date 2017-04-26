@@ -16,13 +16,13 @@ class CornerDesignableTests: XCTestCase {
   func testCornerRadius() {
     helper_testCornerRadius_UIView(element: AnimatableView())
     helper_testCornerRadius_UIView(element: AnimatableCheckBox())
-    helper_testCornerRadius_UICollectionViewCell(element: AnimatableCollectionViewCell())
     helper_testCornerRadius_UIView(element: AnimatableImageView())
     helper_testCornerRadius_UIView(element: AnimatableLabel())
     helper_testCornerRadius_UIView(element: AnimatableStackView())
     helper_testCornerRadius_UIView(element: AnimatableTableViewCell())
     helper_testCornerRadius_UIView(element: AnimatableStackView())
     helper_testCornerRadius_UIView(element: AnimatableView())
+    helper_testCornerRadius_UICollectionViewCell(element: AnimatableCollectionViewCell())
   }
 
   private func helper_testCornerRadius_UIView(element: MockUIViewCornerDesignable) {
@@ -94,7 +94,7 @@ class CornerDesignableTests: XCTestCase {
 
 }
 
-// MARK: - MockStringCornerDesignable
+// MARK: - MockUICornerDesignable
 fileprivate protocol MockUIViewCornerDesignable: class, CornerDesignable {
 
   var _cornerSides: String? { get set }
