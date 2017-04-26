@@ -5,7 +5,7 @@
 
 import UIKit
 
-public protocol ViewControllerDesignable {
+public protocol ViewControllerDesignable: class {
   var hideNavigationBar: Bool { get set }
 }
 

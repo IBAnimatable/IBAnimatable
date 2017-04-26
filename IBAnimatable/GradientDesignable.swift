@@ -5,7 +5,7 @@
 
 import UIKit
 
-public protocol GradientDesignable {
+public protocol GradientDesignable: class {
   var startColor: UIColor? { get set }
   var endColor: UIColor? { get set }
   var predefinedGradient: GradientType? { get set }

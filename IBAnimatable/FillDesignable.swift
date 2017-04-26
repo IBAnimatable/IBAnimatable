@@ -5,7 +5,7 @@
 
 import UIKit
 
-public protocol FillDesignable {
+public protocol FillDesignable: class {
   var fillColor: UIColor? { get set }
   var predefinedColor: ColorType? { get set }
   var opacity: CGFloat { get set }

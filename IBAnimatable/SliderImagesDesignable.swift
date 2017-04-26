@@ -6,7 +6,7 @@
 import UIKit
 
 /// Protocol for designing slider image
-public protocol SliderImagesDesignable {
+public protocol SliderImagesDesignable: class {
 
   /**
    * The thumb image when slider state is `normal`

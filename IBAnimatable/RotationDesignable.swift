@@ -9,7 +9,7 @@ import Darwin
 /**
   It is not able to preview the rotation in IB.
 */
-public protocol RotationDesignable {
+public protocol RotationDesignable: class {
   var rotate: CGFloat { get set }
 }
 

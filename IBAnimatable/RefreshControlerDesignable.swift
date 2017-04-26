@@ -5,7 +5,7 @@
 
 import UIKit
 
-public protocol RefreshControlDesignable {
+public protocol RefreshControlDesignable: class {
 
   /**
    Component need to display a refresh control

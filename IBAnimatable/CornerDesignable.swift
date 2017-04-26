@@ -5,7 +5,7 @@
 
 import UIKit
 
-public protocol CornerDesignable {
+public protocol CornerDesignable: class {
   /**
    `border-radius`
    */
