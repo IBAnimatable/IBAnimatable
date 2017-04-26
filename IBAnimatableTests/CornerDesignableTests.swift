@@ -62,7 +62,7 @@ class CornerDesignableTests: XCTestCase {
     return UIBezierPath(roundedRect: element.bounds, byRoundingCorners: corners, cornerRadii: cornerRadii).cgPath
   }
 
-  // MARK: test_cornerSides
+  // MARK: - test_cornerSides
 
   func test_cornerSides() {
     helper_test_cornerSides(element: AnimatableButton())
