@@ -23,11 +23,9 @@ public extension FillDesignable where Self: UIView {
   public func configureOpacity() {
     if !opacity.isNaN && opacity >= 0 && opacity <= 1 {
       alpha = opacity
-
+      
       // Make better performance
-      if opacity == 1 {
-        isOpaque = true
-      }
+      isOpaque = opacity == 1
     }
   }
 }
