@@ -17,6 +17,7 @@ N/A
 #### Bugfixes
 
 - `AnimatableTextField` won't override anymore the default border if no custom one set. [#457](https://github.com/IBAnimatable/IBAnimatable/pull/457) by [tbaranes](https://github.com/tbaranes)
+- Make `placeholderColor` working with `placeholderText` AND `placehodler`. It will keep the current priorirty: `placeholderText` > `placehodler`. [#459](https://github.com/IBAnimatable/IBAnimatable/pull/459) by [@tbaranes](https://github.com/tbaranes)
 
 ---
 ### [4.0.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/4.0.0)
