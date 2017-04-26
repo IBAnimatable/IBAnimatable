@@ -5,7 +5,7 @@
 
 import UIKit
 
-public protocol CheckBoxDesignable {
+public protocol CheckBoxDesignable: class {
   var checked: Bool { get set }
   var checkedImage: UIImage? { get set }
   var uncheckedImage: UIImage? { get set }
