@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 
 #### API breaking changes
 
-N/A
+- Designable protocols have been changed to `class` only protocols. [#463](https://github.com/IBAnimatable/IBAnimatable/pull/463) by [@SD10](https://github.com/SD10)
 
 #### Enhancements
 
