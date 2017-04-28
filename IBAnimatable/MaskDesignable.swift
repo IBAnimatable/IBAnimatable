@@ -49,6 +49,8 @@ public extension MaskDesignable where Self: UIView {
       maskWave(with: direction, width: width, offset: offset)
     case .triangle:
       maskTriangle()
+    case let .custom(pathProvider):
+      maskCustom(with: pathProvider)
     case .none:
       // If `previousMaskType` is `.none`, then we will **not** remove `layer.mask` before re-adding it. This allows for custom masks to be preserved.
       if case .none = previousMaskType {
@@ -273,6 +275,10 @@ private extension MaskDesignable where Self: UIView {
 
     path.addLine(to: CGPoint(x: path.currentPoint.x, y: originY))
     return path
+  }
+
+  func maskCustom(with provider: CustomMaskProvider) {
+    draw(provider(bounds.size))
   }
 }
 
