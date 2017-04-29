@@ -1,4 +1,4 @@
-# Change Log
+	# Change Log
 All notable changes to this project will be documented in this file.
 `IBAnimatable` adheres to [Semantic Versioning](http://semver.org/).
 
@@ -11,6 +11,8 @@ All notable changes to this project will be documented in this file.
 N/A
 
 #### Enhancements
+
+- Introduce `Custom` MaskType, you can now use `MaskDesignable` with custom masks. [#465](https://github.com/IBAnimatable/IBAnimatable/pull/465) by [@lastmove](https://github.com/lastmove)
 
 N/A
 
