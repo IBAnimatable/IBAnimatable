@@ -143,8 +143,8 @@ controlPoint1: CGPoint(x: frame.maxX - 12.38, y: frame.minY + 13.5),
 controlPoint2: CGPoint(x: frame.maxX - 10.18, y: frame.minY + 13.5))
     bezierPath.close()
     return bezierPath
-
   }
+
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     if component == 0 {
       if selectedEntry.name != entries[row].name {

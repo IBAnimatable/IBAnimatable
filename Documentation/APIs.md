@@ -89,13 +89,13 @@ To use `IBAnimatable`, we can drag and drop a UIKit element and connect it with 
 
 **Supported MaskType:**
 
-* `Circle`
-* `Polygon`: Can also specify the number of sides of the polygon, e.g. use `Polygon(6)` to have a polygon with 6 sides. If not specified, the default is 6 sides. 
-* `Triangle`
-* `Star`: Can also specify the points of the Star, e.g. use `Star(6)` to have a star with 6 points. If not specified, the default is 5 points. 
-* `Wave`: Can use parameters to customize the `Wave`. `Wave(down, 20, 5)` means the Wave faces down, width is 20 and offset is 5. If not specified, the default value is `Wave(up, 40, 0)`. 
-* `Parallelogram`: Can use parameters to customize the `Parallelogram`. `Parallelogram(60)` means the top left angle of the Parallelogram will have an angle of 60 degrees. The default value is `Parallelogram(60)`. if angle == 90 it will be a rectangular Mask. if angle < 90 the parallelogram will be oriented to left. 
-* `Custom`: Allows you to use your own bezier path as mask. Only usable from code (not from IB). You have to pass in parameter a closure that takes a `CGSize` (the current's view Size) and returns the `UIBezierPath`
+* `circle`
+* `polygon`: Can also specify the number of sides of the polygon, e.g. use `Polygon(6)` to have a polygon with 6 sides. If not specified, the default is 6 sides. 
+* `triangle`
+* `star`: Can also specify the points of the Star, e.g. use `Star(6)` to have a star with 6 points. If not specified, the default is 5 points. 
+* `wave`: Can use parameters to customize the `Wave`. `Wave(down, 20, 5)` means the Wave faces down, width is 20 and offset is 5. If not specified, the default value is `Wave(up, 40, 0)`. 
+* `parallelogram`: Can use parameters to customize the `Parallelogram`. `Parallelogram(60)` means the top left angle of the Parallelogram will have an angle of 60 degrees. The default value is `Parallelogram(60)`. if angle == 90 it will be a rectangular Mask. if angle < 90 the parallelogram will be oriented to left. 
+* `custom`: Allows you to use your own bezier path as mask. Only usable from code (not from IB). You have to pass in parameter a closure that takes a `CGSize` (the current's view Size) and returns the `UIBezierPath`
  
 
 #### `PaddingDesignable`
