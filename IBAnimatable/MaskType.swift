@@ -5,6 +5,8 @@
 
 import UIKit
 
+public typealias CustomMaskProvider = (CGSize) -> UIBezierPath
+
 /**
  Mask type for masking an IBAnimatable UI element.
 */
@@ -22,6 +24,9 @@ public enum MaskType: IBEnum {
   case wave(direction: WaveDirection, width: Double, offset: Double)
   ///  For parallelogram shape with an angle (default: 60). If `angle == 90` then it is a rectangular mask. If `angle < 90` then is a left-oriented parallelogram\-\
   case parallelogram(angle: Double)
+
+  /// Custom shape
+  case custom(pathProvider: CustomMaskProvider)
 
   case none
 

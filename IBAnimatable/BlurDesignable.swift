@@ -6,7 +6,7 @@
 import UIKit
 
 /// A protocol provides blur designable feature.
-public protocol BlurDesignable {
+public protocol BlurDesignable: class {
   /**
    Blur effect style: `extraLight`, `light`, `dark`, `regular` (iOS 10+) or `prominent` (iOS 10+).
    */

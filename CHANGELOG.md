@@ -1,4 +1,4 @@
-# Change Log
+	# Change Log
 All notable changes to this project will be documented in this file.
 `IBAnimatable` adheres to [Semantic Versioning](http://semver.org/).
 
@@ -8,9 +8,11 @@ All notable changes to this project will be documented in this file.
 
 #### API breaking changes
 
-N/A
+- Designable protocols have been changed to `class` only protocols. [#463](https://github.com/IBAnimatable/IBAnimatable/pull/463) by [@SD10](https://github.com/SD10)
 
 #### Enhancements
+
+- Introduce `Custom` MaskType, you can now use `MaskDesignable` with custom masks. [#465](https://github.com/IBAnimatable/IBAnimatable/pull/465) by [@lastmove](https://github.com/lastmove)
 
 N/A
 
@@ -19,6 +21,8 @@ N/A
 - `AnimatableTextField` won't override anymore the default border if no custom one set. [#457](https://github.com/IBAnimatable/IBAnimatable/pull/457) by [tbaranes](https://github.com/tbaranes)
 - Make `placeholderColor` working with `placeholderText` AND `placehodler`. It will keep the current priorirty: `placeholderText` > `placehodler`. [#459](https://github.com/IBAnimatable/IBAnimatable/pull/459) by [@tbaranes](https://github.com/tbaranes)
 - Fix `FillDesignable` protocol to set `fillColor` for `UICollectionViewCell`. [#462](https://github.com/IBAnimatable/IBAnimatable/pull/462) by [@SD10](https://github.com/SD10)
+- Fixed `AnimatableTextField` interface update when using it programatically [#458](https://github.com/IBAnimatable/IBAnimatable/pull/458) by [@tbaranes](https://github.com/tbaranes)
+
 ---
 ### [4.0.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/4.0.0)
 

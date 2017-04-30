@@ -6,7 +6,7 @@
 import UIKit
 
 /// Protocol for designing background image
-public protocol BackgroundImageDesignable {
+public protocol BackgroundImageDesignable: class {
 
   /**
    * The background image
