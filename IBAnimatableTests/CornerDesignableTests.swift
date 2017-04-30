@@ -26,7 +26,6 @@ class CornerDesignableTests: XCTestCase {
   }
 
   private func helper_testCornerRadius_UIView(element: MockUIViewCornerDesignable) {
-    var element = element
     element.cornerRadius = 3.0
     element.cornerSides = .allSides
     XCTAssertEqual(element.cornerRadius, element.layer.cornerRadius)
@@ -39,7 +38,6 @@ class CornerDesignableTests: XCTestCase {
   }
 
   private func helper_testCornerRadius_UICollectionViewCell(element: MockUICollectionViewCellCornerDesignable) {
-    var element = element
     element.cornerRadius = -1
     XCTAssertFalse(element.contentView.layer.masksToBounds)
     element.cornerRadius = 3.0

@@ -36,13 +36,11 @@ class FillDesignableTests: XCTestCase {
   }
 
   private func helper_testFillColor_UIView(element: MockUIViewFillDesignable) {
-    var element = element
     element.fillColor = .red
     XCTAssertEqual(element.backgroundColor, .red)
   }
 
   private func helper_testFillColor_Cell(element: MockCellFillDesignable) {
-    var element = element
     element.fillColor = .red
     XCTAssertEqual(element.backgroundColor, .red)
     XCTAssertEqual(element.contentView.backgroundColor, .red)
@@ -65,7 +63,6 @@ class FillDesignableTests: XCTestCase {
   }
 
   private func helper_testOpacity(element: MockUIViewFillDesignable) {
-    var element = element
     element.opacity = 0.5
     XCTAssertEqual(element.opacity, element.alpha)
     XCTAssertFalse(element.isOpaque)
@@ -91,13 +88,11 @@ class FillDesignableTests: XCTestCase {
   }
 
   private func helper_testPredefinedColor_UIView(element: MockUIViewFillDesignable) {
-    var element = element
     element.predefinedColor = .flatGreenSea
     XCTAssertEqual(element.backgroundColor, ColorType.flatGreenSea.color)
   }
 
   private func helper_testPredefinedColor_CellView(element: MockCellFillDesignable) {
-    var element = element
     element.predefinedColor = .flatClouds
     XCTAssertEqual(element.backgroundColor, ColorType.flatClouds.color)
     XCTAssertEqual(element.contentView.backgroundColor, ColorType.flatClouds.color)
@@ -120,7 +115,6 @@ class FillDesignableTests: XCTestCase {
   }
 
   private func helper_test_predefinedColor(element: MockUIViewFillDesignable) {
-    var element = element
     element._predefinedColor = "flatEmerland"
     XCTAssertEqual(element.predefinedColor, .flatEmerland)
     element._predefinedColor = "flatPomegranate"
