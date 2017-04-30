@@ -158,7 +158,7 @@ class FillDesignableTests: XCTestCase {
   }
 }
 
-// MARK: - MockFillDesignable
+// MARK: - MockUIViewFillDesignable
 
 fileprivate protocol MockUIViewFillDesignable: class, FillDesignable {
 
@@ -168,6 +168,8 @@ fileprivate protocol MockUIViewFillDesignable: class, FillDesignable {
   var isOpaque: Bool { get set }
 
 }
+
+// MARK: - MockCellFillDesignable
 
 fileprivate protocol MockCellFillDesignable: class, MockUIViewFillDesignable, FillDesignable {
 

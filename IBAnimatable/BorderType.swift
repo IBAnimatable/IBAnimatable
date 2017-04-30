@@ -43,6 +43,8 @@ public func == (lhs: BorderType, rhs: BorderType) -> Bool {
     return true
   case (.dash, .dash):
     return true
+  case (.none, .none):
+    return true
   default:
     return false
   }

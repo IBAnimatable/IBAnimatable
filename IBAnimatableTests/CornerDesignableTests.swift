@@ -92,7 +92,7 @@ class CornerDesignableTests: XCTestCase {
 
 }
 
-// MARK: - MockUICornerDesignable
+// MARK: - MockUIViewCornerDesignable
 fileprivate protocol MockUIViewCornerDesignable: class, CornerDesignable {
 
   var _cornerSides: String? { get set }
