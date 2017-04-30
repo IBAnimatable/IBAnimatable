@@ -22,7 +22,7 @@ public struct BorderSides: OptionSet {
   public static let bottom = BorderSides(rawValue: 1 << 2)
   public static let left = BorderSides(rawValue: 1 << 3)
 
-  public static let AllSides: BorderSides = [.top, .right, .bottom, .left]
+  public static let allSides: BorderSides = [.top, .right, .bottom, .left]
 
   public init(rawValue: Int) {
     self.rawValue = rawValue
@@ -30,7 +30,7 @@ public struct BorderSides: OptionSet {
 
   init(rawValue: String?) {
     guard let rawValue = rawValue, !rawValue.isEmpty else {
-      self = .AllSides
+      self = .allSides
       return
     }
     let sideElements = rawValue.lowercased().characters.split(separator: ",")
@@ -39,7 +39,7 @@ public struct BorderSides: OptionSet {
       .map { BorderSides(side: $0) }
 
     guard !sideElements.contains(.unknown) else {
-      self = .AllSides
+      self = .allSides
       return
     }
 
