@@ -13,8 +13,7 @@ All notable changes to this project will be documented in this file.
 #### Enhancements
 
 - Introduce `Custom` MaskType, you can now use `MaskDesignable` with custom masks. [#465](https://github.com/IBAnimatable/IBAnimatable/pull/465) by [@lastmove](https://github.com/lastmove)
-
-N/A
+- Add Unit Testing for Project. See [issue #434](https://github.com/IBAnimatable/IBAnimatable/issues/434) for current coverage. [@SD10](https://github.com/SD10)
 
 #### Bugfixes
 
