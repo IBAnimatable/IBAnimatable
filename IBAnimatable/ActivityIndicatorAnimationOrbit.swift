@@ -76,12 +76,12 @@ private extension ActivityIndicatorAnimationOrbit {
   }
 
   var coreScaleAnimation: CAKeyframeAnimation {
-    let inTimingFunction = CAMediaTimingFunction(controlPoints: 0.7, 0, 1, 0.5) // #12 add to TimingFunctionType enum??
-    let outTimingFunction = CAMediaTimingFunction(controlPoints: 0, 0.7, 0.5, 1) // #12 add to TimingFunctionType enum??
-    let standByTimingFunction = TimingFunctionType.linear.caType
+    let inTimingFunction: TimingFunctionType = .custom((0.7, 0), (1, 0.5))
+    let outTimingFunction: TimingFunctionType = .custom(( 0, 0.7), (0.5, 1))
+    let standByTimingFunction: TimingFunctionType = .linear
     let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
     scaleAnimation.keyTimes = [0, 0.45, 0.55, 1]
-    scaleAnimation.timingFunctions = [inTimingFunction, standByTimingFunction, outTimingFunction]
+    scaleAnimation.timingFunctionsType = [inTimingFunction, standByTimingFunction, outTimingFunction]
     scaleAnimation.values = [1, 1.3, 1.3, 1]
     scaleAnimation.duration = duration
     scaleAnimation.repeatCount = .infinity
@@ -126,9 +126,8 @@ private extension ActivityIndicatorAnimationOrbit {
 
   var ring1OpacityAnimation: CAKeyframeAnimation {
     let opacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
-    let timingFunction = CAMediaTimingFunction(controlPoints: 0.19, 1, 0.22, 1) // #12 add to TimingFunctionType enum??
     opacityAnimation.keyTimes = [0, 0.45, 1]
-    ring1ScaleAnimation.timingFunctions = [TimingFunctionType.linear.caType, timingFunction]
+    ring1ScaleAnimation.timingFunctionsType = [.linear, .easeOutExpo]
     opacityAnimation.values = [0.8, 0.8, 0]
     opacityAnimation.duration = duration
     return opacityAnimation
@@ -172,9 +171,8 @@ private extension ActivityIndicatorAnimationOrbit {
 
   var ring2OpacityAnimation: CAKeyframeAnimation {
     let opacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
-    let timingFunction = CAMediaTimingFunction(controlPoints: 0.19, 1, 0.22, 1) // #12 add to TimingFunctionType enum??
     opacityAnimation.keyTimes = [0, 0.55, 0.65, 1]
-    ring2ScaleAnimation.timingFunctions = [TimingFunctionType.linear.caType, timingFunction]
+    opacityAnimation.timingFunctionsType = [.linear, .easeOutExpo]
     opacityAnimation.values = [0.7, 0.7, 0, 0]
     opacityAnimation.duration = duration
     return opacityAnimation

@@ -14,7 +14,7 @@ struct AnimationConfiguration {
   let duration: TimeInterval
   let delay: TimeInterval
   let force: CGFloat
-  let timingFunction: TimingFunctionType? // #12 optionnal to simulate not defined, use default
+  let timingFunction: TimingFunctionType
 }
 
 public class AnimationPromise<T: UIView> where T: Animatable {

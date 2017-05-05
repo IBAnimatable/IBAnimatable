@@ -334,12 +334,12 @@ fileprivate extension Animatable where Self: UIView {
       let squashX = CAKeyframeAnimation(keyPath: "transform.scale.x")
       squashX.values = [1, 1.5 * configuration.force, 0.5, 1.5 * configuration.force, 1]
       squashX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      squashX.timingFunctionType = .easeInOut
+      squashX.timingFunctionType = configuration.timingFunction ?? .easeInOut
 
       let squashY = CAKeyframeAnimation(keyPath: "transform.scale.y")
       squashY.values = [1, 0.5, 1, 0.5, 1]
       squashY.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      squashY.timingFunctionType = .easeInOut
+      squashY.timingFunctionType = configuration.timingFunction ?? .easeInOut
 
       let animationGroup = CAAnimationGroup()
       animationGroup.animations = [squashX, squashY]

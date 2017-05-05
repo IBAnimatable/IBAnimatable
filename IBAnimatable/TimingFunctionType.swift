@@ -6,23 +6,21 @@
 import UIKit
 
 public enum TimingFunctionType {
-
+  // well known tining functions
   case linear
   case easeIn
   case easeOut
   case easeInOut
   case `default`
 
-  // #12 use a none or use optional with nil as default value in Animatable??
+  // not defined
   case none
 
-  // #12 sprint one?
-  // case spring(damping: CGFloat)
+  // custom one
+  case custom((x: Float, y: Float), (x: Float, y: Float))
+  case spring(damping: Float)
 
-  // #12 add a custom one?
-  // case custom(c1X Float, c1y: Float, c2x: Float, c2y: Float) // or named controlPoints
-
-  // http://easings.net/
+  // from http://easings.net/
   case easeInSine, easeOutSine, easeInOutSine
   case easeInCubic, easeOutCubic, easeInOutCubic
   case easeInQuad, easeOutQuad, easeInOutQuad
@@ -42,7 +40,7 @@ extension TimingFunctionType: IBEnum {
       return
     }
 
-    let (name, _) = TimingFunctionType.extractNameAndParams(from: string)
+    let (name, params) = TimingFunctionType.extractNameAndParams(from: string)
 
     switch name {
     // standards
@@ -58,6 +56,13 @@ extension TimingFunctionType: IBEnum {
       self = .default
 
     // customs
+    case "spring" where params.count == 1:
+      self = .spring(damping: params[0].toFloat() ?? 0)
+    case "custom" where params.count == 4:
+      let c1 = (params[0].toFloat() ?? 0, params[1].toFloat() ?? 0)
+      let c2 = (params[2].toFloat() ?? 0, params[3].toFloat() ?? 0)
+      self = .custom(c1, c2)
+
     case "easeinsine":
       self = .easeInSine
     case "easeoutsine":
@@ -116,6 +121,18 @@ extension TimingFunctionType: IBEnum {
 
 extension TimingFunctionType {
 
+  static func ?? (left: TimingFunctionType, right:  @autoclosure () throws -> TimingFunctionType) rethrows -> TimingFunctionType {
+    switch left {
+    case .none:
+      return try right()
+    default:
+      return left
+    }
+  }
+
+}
+extension TimingFunctionType {
+
   var caType: CAMediaTimingFunction {
     switch self {
     // standards
@@ -130,13 +147,11 @@ extension TimingFunctionType {
     case .default:
       return .default
 
-      // case .spring(let damping):
-      //  return CAMediaTimingFunction(controlPoints: 0.5, 1.1 + (Float(damping) / 3.0), 1, 1)
+    case .spring(let damping):
+      return CAMediaTimingFunction(controlPoints: 0.5, 1.1 + (damping / 3.0), 1, 1)
+    case .custom(let c1, let c2):
+      return CAMediaTimingFunction(controlPoints: c1.x, c1.y, c2.x, c2.y)
 
-      //case .custom(let c1x, let c1y, let c2x, let c2y):
-      //  return CAMediaTimingFunction(controlPoints: c1x, c1y, c2x, c2y)
-
-    // customs
     case .easeInSine:
       return .easeInSine
     case .easeOutSine:
@@ -187,7 +202,7 @@ extension TimingFunctionType {
       return .easeInOutBack
 
     case .none:
-      return .default // #12 return nil and use optional?
+      return .default
     }
   }
 
