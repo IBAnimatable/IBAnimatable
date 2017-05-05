@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F7F48681EBD0C8A009E525F /* ShadowDesignableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7F48671EBD0C8A009E525F /* ShadowDesignableTests.swift */; };
 		48D436311E8E221500538E7D /* RefreshControlTableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D436301E8E221500538E7D /* RefreshControlTableViewViewController.swift */; };
 		7305EC0E1E1996E000BF4C9A /* AnimationChainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7305EC0D1E1996E000BF4C9A /* AnimationChainable.swift */; };
 		731205811D28A3830009BCAC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731205801D28A3830009BCAC /* Utils.swift */; };
@@ -230,6 +231,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1F7F48671EBD0C8A009E525F /* ShadowDesignableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowDesignableTests.swift; sourceTree = "<group>"; };
 		48D436301E8E221500538E7D /* RefreshControlTableViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshControlTableViewViewController.swift; sourceTree = "<group>"; };
 		7305EC0D1E1996E000BF4C9A /* AnimationChainable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationChainable.swift; sourceTree = "<group>"; };
 		731205801D28A3830009BCAC /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -795,6 +797,7 @@
 				B0564B501EB046F600D1C5AB /* FillDesignableTests.swift */,
 				B0564B471EB01A8100D1C5AB /* Info.plist */,
 				B0564B521EB06BA500D1C5AB /* ColorTypeTests.swift */,
+				1F7F48671EBD0C8A009E525F /* ShadowDesignableTests.swift */,
 			);
 			path = IBAnimatableTests;
 			sourceTree = "<group>";
@@ -1283,6 +1286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0564B531EB06BA500D1C5AB /* ColorTypeTests.swift in Sources */,
+				1F7F48681EBD0C8A009E525F /* ShadowDesignableTests.swift in Sources */,
 				B0564B511EB046F600D1C5AB /* FillDesignableTests.swift in Sources */,
 				B0564B4F1EB01AD000D1C5AB /* CornerDesignableTests.swift in Sources */,
 			);
