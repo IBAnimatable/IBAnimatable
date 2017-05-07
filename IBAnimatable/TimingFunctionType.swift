@@ -119,9 +119,29 @@ extension TimingFunctionType: IBEnum {
 
 }
 
+extension TimingFunctionType: Hashable {
+
+  public static func == (left: TimingFunctionType, right: TimingFunctionType) -> Bool {
+    switch (left, right) {
+    case (.none, .none):
+      return true
+    case (.none, _):
+      return false
+    case (_, none):
+      return false
+    default:
+      return left.caType == right.caType
+    }
+  }
+
+  public var hashValue: Int {
+    return self.caType.hashValue
+  }
+}
+
 extension TimingFunctionType {
 
-  static func ?? (left: TimingFunctionType, right:  @autoclosure () throws -> TimingFunctionType) rethrows -> TimingFunctionType {
+  public static func ?? (left: TimingFunctionType, right:  @autoclosure () throws -> TimingFunctionType) rethrows -> TimingFunctionType {
     switch left {
     case .none:
       return try right()
@@ -133,7 +153,7 @@ extension TimingFunctionType {
 }
 extension TimingFunctionType {
 
-  var caType: CAMediaTimingFunction {
+  public var caType: CAMediaTimingFunction {
     switch self {
     // standards
     case .linear:
@@ -227,6 +247,25 @@ extension TimingFunctionType {
 
 }
 
+@available(iOSApplicationExtension 10.0, *)
+extension TimingFunctionType {
+  var cubicTimingParameters: UICubicTimingParameters {
+    switch self {
+    case .custom(let c1, let c2):
+      let cP1 = CGPoint(x: CGFloat(c1.x), y: CGFloat(c1.y))
+      let cP2 = CGPoint(x: CGFloat(c2.x), y: CGFloat(c2.y))
+      return UICubicTimingParameters(controlPoint1: cP1, controlPoint2: cP2)
+    default:
+      // Get control points from `CAMediaTimingFunction`
+      // (could also return it directly by doing a big switch)
+      let (c1, c2) = self.caType.controlPoints
+      let cP1 = CGPoint(x: CGFloat(c1.x), y: CGFloat(c1.y))
+      let cP2 = CGPoint(x: CGFloat(c2.x), y: CGFloat(c2.y))
+      return UICubicTimingParameters(controlPoint1: cP1, controlPoint2: cP2)
+    }
+  }
+}
+
 // MARK: CoreAnimation
 
 extension CAMediaTimingFunction {
@@ -269,6 +308,20 @@ extension CAMediaTimingFunction {
   @nonobjc public static let easeInBack = CAMediaTimingFunction(controlPoints: 0.6, -0.28, 0.735, 0.045)
   @nonobjc public static let easeOutBack = CAMediaTimingFunction(controlPoints: 0.175, 0.885, 0.32, 1.275)
   @nonobjc public static let easeInOutBack = CAMediaTimingFunction(controlPoints: 0.68, -0.55, 0.265, 1.55)
+
+}
+
+extension CAMediaTimingFunction {
+
+  /// Return the control points of the timing function.
+  public var controlPoints: ((x: Float, y: Float), (x: Float, y: Float)) {
+    var cps = [Float](repeating: 0, count: 4)
+    getControlPoint(at: 0, values: &cps[0])
+    getControlPoint(at: 1, values: &cps[1])
+    getControlPoint(at: 2, values: &cps[2])
+    getControlPoint(at: 3, values: &cps[3])
+    return ((cps[0], cps[1]), (cps[2], cps[3]))
+  }
 
 }
 

@@ -127,7 +127,7 @@ private extension ActivityIndicatorAnimationOrbit {
   var ring1OpacityAnimation: CAKeyframeAnimation {
     let opacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
     opacityAnimation.keyTimes = [0, 0.45, 1]
-    ring1ScaleAnimation.timingFunctionsType = [.linear, .easeOutExpo]
+    opacityAnimation.timingFunctionsType = [.linear, .easeOutExpo]
     opacityAnimation.values = [0.8, 0.8, 0]
     opacityAnimation.duration = duration
     return opacityAnimation
