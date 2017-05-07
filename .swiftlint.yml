@@ -30,3 +30,6 @@ opt_in_rules:
  - number_separator
  - object_literal
  - fatal_error_message
+
+excluded:
+- Pods
