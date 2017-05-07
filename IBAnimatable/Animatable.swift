@@ -193,22 +193,46 @@ fileprivate extension Animatable where Self: UIView {
     if x.isNaN && y.isNaN {
       return
     }
-    // Get the absolute position
-    let absolutePosition = convert(frame.origin, to: nil)
-    var xOffsetToMove: CGFloat
-    if x.isNaN {
-      xOffsetToMove = 0
-    } else {
-      xOffsetToMove = CGFloat(x) - absolutePosition.x
-    }
+    if case .none = configuration.timingFunction {
+      // Get the absolute position
+      let absolutePosition = convert(frame.origin, to: nil)
+      var xOffsetToMove: CGFloat
+      if x.isNaN {
+        xOffsetToMove = 0
+      } else {
+        xOffsetToMove = CGFloat(x) - absolutePosition.x
+      }
 
-    var yOffsetToMove: CGFloat
-    if y.isNaN {
-      yOffsetToMove = 0
+      var yOffsetToMove: CGFloat
+      if y.isNaN {
+        yOffsetToMove = 0
+      } else {
+        yOffsetToMove = CGFloat(y) - absolutePosition.y
+      }
+      animateBy(x: xOffsetToMove, y: yOffsetToMove, configuration: configuration, completion: completion)
     } else {
-      yOffsetToMove = CGFloat(y) - absolutePosition.y
+      let position = frame.origin
+      var xToMove: CGFloat
+      if x.isNaN {
+        xToMove = position.x
+      } else {
+        xToMove = CGFloat(x)
+      }
+
+      var yToMove: CGFloat
+      if y.isNaN {
+        yToMove = position.y
+      } else {
+        yToMove = CGFloat(y)
+      }
+
+      let path = UIBezierPath()
+      path.move(to: position)
+      path.addLine(to: CGPoint(x: xToMove, y: yToMove))
+
+      animatePosition(path: path, configuration: configuration, completion: completion)
+
     }
-    animateBy(x: xOffsetToMove, y: yOffsetToMove, configuration: configuration, completion: completion)
   }
 
   func slideFade(_ way: AnimationType.Way, direction: AnimationType.Direction,
@@ -446,9 +470,34 @@ fileprivate extension Animatable where Self: UIView {
       return
     }
 
-    let xOffsetToMove = x.isNaN ? 0: CGFloat(x)
-    let yOffsetToMove = y.isNaN ? 0: CGFloat(y)
-    animateBy(x: xOffsetToMove, y: yOffsetToMove, configuration: configuration, completion: completion)
+    if case .none = configuration.timingFunction {
+      // spring animation
+      let xOffsetToMove = x.isNaN ? 0: CGFloat(x)
+      let yOffsetToMove = y.isNaN ? 0: CGFloat(y)
+
+      animateBy(x: xOffsetToMove, y: yOffsetToMove, configuration: configuration, completion: completion)
+    } else {
+      let position = frame.origin
+      var xToMove: CGFloat
+      if x.isNaN {
+        xToMove = position.x
+      } else {
+        xToMove = position.x + CGFloat(x)
+      }
+
+      var yToMove: CGFloat
+      if y.isNaN {
+        yToMove = position.y
+      } else {
+        yToMove = position.y + CGFloat(y)
+      }
+
+      let path = UIBezierPath()
+      path.move(to: position)
+      path.addLine(to: CGPoint(x: xToMove, y: yToMove))
+
+      animatePosition(path: path, configuration: configuration, completion: completion)
+    }
   }
 
 // swiftlint:enable variable_name_min_length
@@ -539,6 +588,17 @@ fileprivate extension Animatable where Self: UIView {
         }
       }
     )
+  }
+
+  func animatePosition(path: UIBezierPath, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+    CALayer.animate({
+      let animation = CAKeyframeAnimation(keyPath: "position")
+      animation.timingFunctionType = configuration.timingFunction ?? .easeInOut
+      animation.duration = configuration.duration
+      animation.beginTime = CACurrentMediaTime() + configuration.delay
+      animation.path = path.cgPath
+      self.layer.add(animation, forKey: "animate position")
+    }, completion: completion)
   }
 
   func animateIn(animationValues: AnimationValues, alpha: CGFloat, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {

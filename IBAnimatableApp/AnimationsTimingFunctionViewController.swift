@@ -24,6 +24,8 @@ class AnimationsTimingFunctionViewController: UIViewController {
 
   @IBOutlet var timingFunctionView: TimingFunctionView!
   @IBOutlet weak var pickerView: UIPickerView!
+  @IBOutlet weak var starView: AnimatableView!
+  @IBOutlet weak var linearView: AnimatableView!
   // prebuit common params
   let entries: [PickerEntry] = [
     PickerEntry(params: [], name: "none"),
@@ -106,16 +108,33 @@ extension AnimationsTimingFunctionViewController : UIPickerViewDelegate, UIPicke
         pickerView.reloadComponent(4)
       }
     }
-    let animationString = selectedEntry.toString(
+    let string = selectedEntry.toString(
       selectedIndexes:
       pickerView.selectedRow(inComponent: 1),
       pickerView.selectedRow(inComponent: 2),
       pickerView.selectedRow(inComponent: 3),
       pickerView.selectedRow(inComponent: 4)
     )
-    let type = TimingFunctionType(string: animationString)
+    let type = TimingFunctionType(string: string)
     timingFunctionView.timingFunction = type
     delegate?.timingFunctionSelected(type)
+    starView.timingFunction = type
+
+    starFall(starView)
+    starFall(linearView)
+  }
+
+  func starFall(_ view: AnimatableView) {
+    let moveY = view.superview?.frame.height ?? 140
+    view.animate(.moveBy(x: 0, y: Double(moveY - 40))).completion {
+      if #available(iOS 10.0, *) {
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
+          view.transform = .identity
+        }
+      } else {
+        view.transform = .identity
+      }
+    }
   }
 
 }
