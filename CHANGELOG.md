@@ -23,6 +23,7 @@ All notable changes to this project will be documented in this file.
 - Fix `FillDesignable` protocol to set `fillColor` for `UICollectionViewCell`. [#462](https://github.com/IBAnimatable/IBAnimatable/pull/462) by [@SD10](https://github.com/SD10)
 - Fixed `AnimatableTextField` interface update when using it programatically [#458](https://github.com/IBAnimatable/IBAnimatable/pull/458) by [@tbaranes](https://github.com/tbaranes)
 - Replace `CGFloat.pi` with `CGFloat(Double.pi)` for `ActivityIndicatorShape`, which fixes missing activity indicator animations on 32 bit devices. [#470](https://github.com/IBAnimatable/IBAnimatable/pull/470) by [@broadwaylamb](https://github.com/broadwaylamb)
+- Fix ignoring the `delay` property for `UIView` animations [#472](https://github.com/IBAnimatable/IBAnimatable/pull/472) by [@broadway_lamb](https://github.com/broadwaylamb)
 
 ---
 ### [4.0.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/4.0.0)
