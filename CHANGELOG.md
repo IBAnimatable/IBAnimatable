@@ -14,7 +14,7 @@ All notable changes to this project will be documented in this file.
 
 - Introduce `Custom` MaskType, you can now use `MaskDesignable` with custom masks. [#465](https://github.com/IBAnimatable/IBAnimatable/pull/465) by [@lastmove](https://github.com/lastmove)
 
-N/A
+- Add `TimingFunctionType` attribute to `Animatable` to specifies the speed curve of an animation. [#456](https://github.com/IBAnimatable/IBAnimatable/pull/456) by [@phimage](https://github.com/phimage)
 
 #### Bugfixes
 
