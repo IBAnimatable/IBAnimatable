@@ -25,7 +25,7 @@ public class ActivityIndicatorAnimationBallZigZag: ActivityIndicatorAnimating {
     // Circle 1 animation
     let animation = CAKeyframeAnimation(keyPath:"transform")
     animation.keyTimes = [0.0, 0.33, 0.66, 1.0]
-    animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+    animation.timingFunctionType = .linear
     animation.values = [NSValue(caTransform3D: CATransform3DMakeTranslation(0, 0, 0)),
                         NSValue(caTransform3D: CATransform3DMakeTranslation(-deltaX, -deltaY, 0)),
                         NSValue(caTransform3D: CATransform3DMakeTranslation(deltaX, -deltaY, 0)),

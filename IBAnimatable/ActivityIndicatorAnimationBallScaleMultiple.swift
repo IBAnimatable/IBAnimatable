@@ -40,7 +40,7 @@ private extension ActivityIndicatorAnimationBallScaleMultiple {
   var animation: CAAnimationGroup {
     let animation = CAAnimationGroup()
     animation.animations = [scaleAnimation, opacityAnimation]
-    animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+    animation.timingFunctionType = .linear
     animation.duration = duration
     animation.repeatCount = .infinity
     animation.isRemovedOnCompletion = false
