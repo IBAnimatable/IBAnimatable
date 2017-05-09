@@ -202,12 +202,6 @@ open class AnimatableView: UIView, CornerDesignable, FillDesignable, BorderDesig
   @IBInspectable open var damping: CGFloat = CGFloat.nan
   @IBInspectable open var velocity: CGFloat = CGFloat.nan
   @IBInspectable open var force: CGFloat = CGFloat.nan
-  @IBInspectable open var _timingFunction: String = "" {
-    didSet {
-      timingFunction = TimingFunctionType(string: _timingFunction)
-    }
-  }
-  open var timingFunction: TimingFunctionType = .none
 
   // MARK: - Lifecycle
   open override func prepareForInterfaceBuilder() {

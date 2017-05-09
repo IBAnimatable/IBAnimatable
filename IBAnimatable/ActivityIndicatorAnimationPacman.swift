@@ -12,7 +12,7 @@ public class ActivityIndicatorAnimationPacman: ActivityIndicatorAnimating {
   fileprivate let duration: CFTimeInterval = 0.5
   fileprivate let circleDuration: CFTimeInterval = 1
   fileprivate var size: CGSize = .zero
-  fileprivate let timingFunction: TimingFunctionType = .default
+  fileprivate let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
 
   // MARK: ActivityIndicatorAnimating
 
@@ -55,7 +55,7 @@ private extension ActivityIndicatorAnimationPacman {
   var strokeStartAnimation: CAKeyframeAnimation {
     let strokeStartAnimation = CAKeyframeAnimation(keyPath: "strokeStart")
     strokeStartAnimation.keyTimes = [0, 0.5, 1]
-    strokeStartAnimation.timingFunctionsType = [timingFunction, timingFunction]
+    strokeStartAnimation.timingFunctions = [timingFunction, timingFunction]
     strokeStartAnimation.values = [0.125, 0, 0.125]
     strokeStartAnimation.duration = duration
     return strokeStartAnimation
@@ -64,7 +64,7 @@ private extension ActivityIndicatorAnimationPacman {
   var strokeEndAnimation: CAKeyframeAnimation {
     let strokeEndAnimation = CAKeyframeAnimation(keyPath: "strokeEnd")
     strokeEndAnimation.keyTimes = [0, 0.5, 1]
-    strokeEndAnimation.timingFunctionsType = [timingFunction, timingFunction]
+    strokeEndAnimation.timingFunctions = [timingFunction, timingFunction]
     strokeEndAnimation.values = [0.875, 1, 0.875]
     strokeEndAnimation.duration = duration
     return strokeEndAnimation
@@ -96,7 +96,7 @@ private extension ActivityIndicatorAnimationPacman {
   var circleAnimation: CAAnimationGroup {
     let animation = CAAnimationGroup()
     animation.animations = [translateAnimation, opacityAnimation]
-    animation.timingFunctionType = .linear
+    animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
     animation.duration = circleDuration
     animation.repeatCount = .infinity
     animation.isRemovedOnCompletion = false

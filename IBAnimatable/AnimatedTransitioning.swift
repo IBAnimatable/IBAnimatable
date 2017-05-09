@@ -47,7 +47,8 @@ public extension AnimatedTransitioning {
         transition.subtype = subtype
       }
       transition.duration = self.transitionDuration(using: transitionContext)
-      transition.timingFunctionType = .easeOutCubic
+      // Use `EaseOutQubic` for system built-in transition animations. Thanks to @lexrus
+      transition.timingFunction = CAMediaTimingFunction(controlPoints: 0.215, 0.61, 0.355, 1)
       containerView.layer.add(transition, forKey: kCATransition)
     },
     completion: {

@@ -9,7 +9,7 @@ public class ActivityIndicatorAnimationLineScaleParty: ActivityIndicatorAnimatin
 
   // MARK: Properties
 
-  fileprivate let timingFunction: TimingFunctionType = .default
+  fileprivate let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
 
   // MARK: ActivityIndicatorAnimating
 
@@ -42,7 +42,7 @@ private extension ActivityIndicatorAnimationLineScaleParty {
   var defaultAnimation: CAKeyframeAnimation {
     let animation = CAKeyframeAnimation(keyPath:"transform.scale")
     animation.keyTimes = [0, 0.5, 1]
-    animation.timingFunctionsType = [timingFunction, timingFunction]
+    animation.timingFunctions = [timingFunction, timingFunction]
     animation.values = [1, 0.5, 1]
     animation.repeatCount = .infinity
     animation.isRemovedOnCompletion = false

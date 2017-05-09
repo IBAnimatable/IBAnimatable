@@ -50,7 +50,7 @@ private extension ActivityIndicatorAnimationBallClipRotate {
   var animation: CAAnimationGroup {
     let animation = CAAnimationGroup()
     animation.animations = [scaleAnimation, rotateAnimation]
-    animation.timingFunctionType = .linear
+    animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
     animation.duration = duration
     animation.repeatCount = .infinity
     animation.isRemovedOnCompletion = false

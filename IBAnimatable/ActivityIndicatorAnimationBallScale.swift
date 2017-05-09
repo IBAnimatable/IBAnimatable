@@ -31,7 +31,7 @@ private extension ActivityIndicatorAnimationBallScale {
   var animation: CAAnimationGroup {
     let animation = CAAnimationGroup()
     animation.animations = [scaleAnimation, opacityAnimation]
-    animation.timingFunctionType = .easeInOut
+    animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
     animation.duration = duration
     animation.repeatCount = .infinity
     animation.isRemovedOnCompletion = false

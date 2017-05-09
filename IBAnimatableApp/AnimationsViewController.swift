@@ -19,7 +19,6 @@ class AnimationsViewController: UIViewController {
 
   @IBOutlet weak var animatableView: AnimatableView!
   @IBOutlet weak var pickerView: UIPickerView!
-  @IBOutlet weak var timingFunctionButton: UIButton!
   // prebuit common params
   let entries: [PickerEntry] = [
     PickerEntry(params: [wayParam, directionParam], name: "slide"),
@@ -49,20 +48,6 @@ class AnimationsViewController: UIViewController {
     pickerView.dataSource = self
     pickerView.delegate = self
   }
-
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let destination = segue.destination as? AnimationsTimingFunctionViewController {
-      destination.delegate = self
-    }
-  }
-}
-
-extension AnimationsViewController: TimingFunctionPickDelegate {
-
-  func timingFunctionSelected(_ timingFunction: TimingFunctionType) {
-    self.animatableView.timingFunction = timingFunction
-  }
-
 }
 
 extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSource {
