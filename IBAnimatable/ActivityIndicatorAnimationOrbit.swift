@@ -76,12 +76,12 @@ private extension ActivityIndicatorAnimationOrbit {
   }
 
   var coreScaleAnimation: CAKeyframeAnimation {
-    let inTimingFunction: TimingFunctionType = .custom((0.7, 0), (1, 0.5))
-    let outTimingFunction: TimingFunctionType = .custom(( 0, 0.7), (0.5, 1))
-    let standByTimingFunction: TimingFunctionType = .linear
+    let inTimingFunction = CAMediaTimingFunction(controlPoints: 0.7, 0, 1, 0.5)
+    let outTimingFunction = CAMediaTimingFunction(controlPoints: 0, 0.7, 0.5, 1)
+    let standByTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
     let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
     scaleAnimation.keyTimes = [0, 0.45, 0.55, 1]
-    scaleAnimation.timingFunctionsType = [inTimingFunction, standByTimingFunction, outTimingFunction]
+    scaleAnimation.timingFunctions = [inTimingFunction, standByTimingFunction, outTimingFunction]
     scaleAnimation.values = [1, 1.3, 1.3, 1]
     scaleAnimation.duration = duration
     scaleAnimation.repeatCount = .infinity
@@ -118,7 +118,7 @@ private extension ActivityIndicatorAnimationOrbit {
   var ring1ScaleAnimation: CAKeyframeAnimation {
     let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
     scaleAnimation.keyTimes = [0, 0.45, 0.45, 1]
-    scaleAnimation.timingFunctionType = .linear
+    scaleAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
     scaleAnimation.values = [0, 0, 1.3, 2]
     scaleAnimation.duration = duration
     return scaleAnimation
@@ -126,8 +126,9 @@ private extension ActivityIndicatorAnimationOrbit {
 
   var ring1OpacityAnimation: CAKeyframeAnimation {
     let opacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
+    let timingFunction = CAMediaTimingFunction(controlPoints: 0.19, 1, 0.22, 1)
     opacityAnimation.keyTimes = [0, 0.45, 1]
-    opacityAnimation.timingFunctionsType = [.linear, .easeOutExpo]
+    ring1ScaleAnimation.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear), timingFunction]
     opacityAnimation.values = [0.8, 0.8, 0]
     opacityAnimation.duration = duration
     return opacityAnimation
@@ -163,7 +164,7 @@ private extension ActivityIndicatorAnimationOrbit {
   var ring2ScaleAnimation: CAKeyframeAnimation {
     let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
     scaleAnimation.keyTimes = [0, 0.55, 0.55, 1]
-    scaleAnimation.timingFunctionType = .linear
+    scaleAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
     scaleAnimation.values = [0, 0, 1.3, 2.1]
     scaleAnimation.duration = duration
     return scaleAnimation
@@ -171,8 +172,9 @@ private extension ActivityIndicatorAnimationOrbit {
 
   var ring2OpacityAnimation: CAKeyframeAnimation {
     let opacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
+    let timingFunction = CAMediaTimingFunction(controlPoints: 0.19, 1, 0.22, 1)
     opacityAnimation.keyTimes = [0, 0.55, 0.65, 1]
-    opacityAnimation.timingFunctionsType = [.linear, .easeOutExpo]
+    ring2ScaleAnimation.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear), timingFunction]
     opacityAnimation.values = [0.7, 0.7, 0, 0]
     opacityAnimation.duration = duration
     return opacityAnimation

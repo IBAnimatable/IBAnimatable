@@ -10,8 +10,7 @@ public class ActivityIndicatorAnimationCubeTransition: ActivityIndicatorAnimatin
   // MARK: Properties
 
   fileprivate let duration: CFTimeInterval = 1.6
-  fileprivate let timingFunction: TimingFunctionType = .easeInOut
-  fileprivate let keyTimes: [NSNumber] = [0, 0.25, 0.5, 0.75, 1]
+  fileprivate let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
   fileprivate var deltaX: CGFloat = 0
   fileprivate var deltaY: CGFloat = 0
 
@@ -54,8 +53,8 @@ private extension ActivityIndicatorAnimationCubeTransition {
 
   var rotateAnimation: CAKeyframeAnimation {
     let rotateAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
-    rotateAnimation.keyTimes = keyTimes
-    rotateAnimation.timingFunctionsType = [timingFunction, timingFunction, timingFunction, timingFunction]
+    rotateAnimation.keyTimes = scaleAnimation.keyTimes
+    rotateAnimation.timingFunctions = scaleAnimation.timingFunctions
     rotateAnimation.values = [0, -CGFloat.pi / 2, -CGFloat.pi, -1.5 * CGFloat.pi, -2 * CGFloat.pi]
     rotateAnimation.duration = duration
     return rotateAnimation
@@ -63,8 +62,8 @@ private extension ActivityIndicatorAnimationCubeTransition {
 
   var scaleAnimation: CAKeyframeAnimation {
     let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
-    scaleAnimation.keyTimes = keyTimes
-    scaleAnimation.timingFunctionsType = [timingFunction, timingFunction, timingFunction, timingFunction]
+    scaleAnimation.keyTimes = [0, 0.25, 0.5, 0.75, 1]
+    scaleAnimation.timingFunctions = [timingFunction, timingFunction, timingFunction, timingFunction]
     scaleAnimation.values = [1, 0.5, 1, 0.5, 1]
     scaleAnimation.duration = duration
     return scaleAnimation
@@ -72,8 +71,8 @@ private extension ActivityIndicatorAnimationCubeTransition {
 
   var translateAnimation: CAKeyframeAnimation {
     let translateAnimation = CAKeyframeAnimation(keyPath: "transform.translation")
-    translateAnimation.keyTimes = keyTimes
-    translateAnimation.timingFunctionsType = [timingFunction, timingFunction, timingFunction, timingFunction]
+    translateAnimation.keyTimes = scaleAnimation.keyTimes
+    translateAnimation.timingFunctions = scaleAnimation.timingFunctions
     translateAnimation.values = [
       NSValue(cgSize: CGSize(width: 0, height: 0)),
       NSValue(cgSize: CGSize(width: deltaX, height: 0)),

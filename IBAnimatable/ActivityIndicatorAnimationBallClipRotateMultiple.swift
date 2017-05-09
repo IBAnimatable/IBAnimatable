@@ -17,7 +17,7 @@ public class ActivityIndicatorAnimationBallClipRotateMultiple: ActivityIndicator
     let bigCircleSize: CGFloat = size.width
     let smallCircleSize: CGFloat = size.width / 2
     let longDuration: CFTimeInterval = 1
-    let timingFunction: TimingFunctionType = .easeInOut
+    let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
     let circleLayer1 = makeCircleLayerOf(shape: .ringTwoHalfHorizontal,
              duration: longDuration,
              timingFunction: timingFunction,
@@ -40,18 +40,18 @@ public class ActivityIndicatorAnimationBallClipRotateMultiple: ActivityIndicator
 
 private extension ActivityIndicatorAnimationBallClipRotateMultiple {
 
-  func makeAnimation(duration: CFTimeInterval, timingFunction: TimingFunctionType, reverse: Bool) -> CAAnimation {
+  func makeAnimation(duration: CFTimeInterval, timingFunction: CAMediaTimingFunction, reverse: Bool) -> CAAnimation {
     // Scale animation
     let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
     scaleAnimation.keyTimes = [0, 0.5, 1]
-    scaleAnimation.timingFunctionsType = [timingFunction, timingFunction]
+    scaleAnimation.timingFunctions = [timingFunction, timingFunction]
     scaleAnimation.values = [1, 0.6, 1]
     scaleAnimation.duration = duration
 
     // Rotate animation
     let rotateAnimation = CAKeyframeAnimation(keyPath:"transform.rotation.z")
     rotateAnimation.keyTimes = scaleAnimation.keyTimes
-    rotateAnimation.timingFunctionsType = [timingFunction, timingFunction]
+    rotateAnimation.timingFunctions = [timingFunction, timingFunction]
     if !reverse {
       rotateAnimation.values = [0, CGFloat.pi, 2 * CGFloat.pi]
     } else {
@@ -71,7 +71,7 @@ private extension ActivityIndicatorAnimationBallClipRotateMultiple {
 
   // swiftlint:disable:next function_parameter_count
   func makeCircleLayerOf(shape: ActivityIndicatorShape,
-                         duration: CFTimeInterval, timingFunction: TimingFunctionType,
+                         duration: CFTimeInterval, timingFunction: CAMediaTimingFunction,
                          layerSize: CGSize, size: CGFloat,
                          color: UIColor, reverse: Bool) -> CALayer {
     let circleLayer = shape.makeLayer(size: CGSize(width: size, height: size), color: color)

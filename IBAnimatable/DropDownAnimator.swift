@@ -9,7 +9,6 @@ public class DropDownAnimator: NSObject, AnimatedPresenting {
 
   // MARK: - AnimatedPresenting
   public var transitionDuration: Duration = defaultTransitionDuration
-  fileprivate var timingFunctions: [TimingFunctionType] = [.easeOut, .linear, .easeOut]
   fileprivate var completion: AnimatableCompletion?
 
   // MARK: - Life cycle
@@ -66,7 +65,9 @@ private extension DropDownAnimator {
     let animation = CAKeyframeAnimation(keyPath: "position.y")
     animation.values = [y - UIScreen.main.bounds.height, y + 20, y - 10, y]
     animation.keyTimes = [0, 0.5, 0.75, 1]
-    animation.timingFunctionsType = timingFunctions
+    animation.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut),
+                                 CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear),
+                                 CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)]
     animation.duration = transitionDuration
     animation.delegate = self
     self.completion = completion

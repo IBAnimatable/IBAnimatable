@@ -9,7 +9,7 @@ public class ActivityIndicatorAnimationBallGridPulse: ActivityIndicatorAnimating
 
   // MARK: Properties
 
-  fileprivate let timingFunction: TimingFunctionType = .default
+  fileprivate let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
 
   // MARK: ActivityIndicatorAnimating
 
@@ -56,7 +56,7 @@ private extension ActivityIndicatorAnimationBallGridPulse {
   var scaleAnimation: CAKeyframeAnimation {
     let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
     scaleAnimation.keyTimes = [0, 0.5, 1]
-    scaleAnimation.timingFunctionsType = [timingFunction, timingFunction]
+    scaleAnimation.timingFunctions = [timingFunction, timingFunction]
     scaleAnimation.values = [1, 0.5, 1]
     return scaleAnimation
   }
@@ -64,7 +64,7 @@ private extension ActivityIndicatorAnimationBallGridPulse {
   var opacityAnimation: CAKeyframeAnimation {
     let opacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
     opacityAnimation.keyTimes = [0, 0.5, 1]
-    opacityAnimation.timingFunctionsType = [timingFunction, timingFunction]
+    opacityAnimation.timingFunctions = [timingFunction, timingFunction]
     opacityAnimation.values = [1, 0.7, 1]
     return opacityAnimation
   }

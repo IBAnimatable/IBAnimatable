@@ -101,13 +101,10 @@
 		AEF4938D1CE0161C00B76FD6 /* Playground.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEF4938C1CE0161C00B76FD6 /* Playground.storyboard */; };
 		B062C7671E94D13B006C3CB8 /* SystemTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062C7661E94D13B006C3CB8 /* SystemTransitionAnimator.swift */; };
 		C4275F7D1E9D59A6000C7F0B /* AnimatableTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4275F7C1E9D59A6000C7F0B /* AnimatableTabBarController.swift */; };
-		C444BF121EBF1E0C00B37997 /* AnimationsTimingFunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D360331EBF169D00E752B9 /* AnimationsTimingFunctionViewController.swift */; };
-		C470B7B61EA7E2CB0002CB50 /* TimingFunctionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C470B7B51EA7E2CB0002CB50 /* TimingFunctionType.swift */; };
 		C47A737C1E86A9BD0044EFF8 /* SliderImagesDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47A737B1E86A9BD0044EFF8 /* SliderImagesDesignable.swift */; };
 		C4B4AD551E8645FD007A79A4 /* BackgroundImageDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B4AD541E8645FD007A79A4 /* BackgroundImageDesignable.swift */; };
 		C4B504E01E8832E7001E096A /* RefreshControlerDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B504DF1E8832E7001E096A /* RefreshControlerDesignable.swift */; };
 		C4B504E51E8833C4001E096A /* AnimatableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B504E41E8833C4001E096A /* AnimatableTableViewController.swift */; };
-		C4D360321EBF0EBC00E752B9 /* TimingFunctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D360311EBF0EBC00E752B9 /* TimingFunctionView.swift */; };
 		CAB5610BC7B5D20C927AAB87 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB5692C91C9ECC8018DE83E /* Navigator.swift */; };
 		CAB566CA933963DAA0C7E074 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB56A8BA4FB110D501DC1DC /* Constants.swift */; };
 		E20027171D467E9700FEB28D /* ViewControllerAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20027161D467E9700FEB28D /* ViewControllerAnimatedTransitioning.swift */; };
@@ -315,13 +312,10 @@
 		AEF4938C1CE0161C00B76FD6 /* Playground.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Playground.storyboard; sourceTree = "<group>"; };
 		B062C7661E94D13B006C3CB8 /* SystemTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemTransitionAnimator.swift; sourceTree = "<group>"; };
 		C4275F7C1E9D59A6000C7F0B /* AnimatableTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableTabBarController.swift; sourceTree = "<group>"; };
-		C470B7B51EA7E2CB0002CB50 /* TimingFunctionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingFunctionType.swift; sourceTree = "<group>"; };
 		C47A737B1E86A9BD0044EFF8 /* SliderImagesDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderImagesDesignable.swift; sourceTree = "<group>"; };
 		C4B4AD541E8645FD007A79A4 /* BackgroundImageDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundImageDesignable.swift; sourceTree = "<group>"; };
 		C4B504DF1E8832E7001E096A /* RefreshControlerDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshControlerDesignable.swift; sourceTree = "<group>"; };
 		C4B504E41E8833C4001E096A /* AnimatableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableTableViewController.swift; sourceTree = "<group>"; };
-		C4D360311EBF0EBC00E752B9 /* TimingFunctionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingFunctionView.swift; sourceTree = "<group>"; };
-		C4D360331EBF169D00E752B9 /* AnimationsTimingFunctionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationsTimingFunctionViewController.swift; sourceTree = "<group>"; };
 		CAB562E75DABEED7FCE0F309 /* FillDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillDesignable.swift; sourceTree = "<group>"; };
 		CAB5692C91C9ECC8018DE83E /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		CAB56A8BA4FB110D501DC1DC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -599,7 +593,6 @@
 				AE87646F1D2332F60044E0AB /* MaskViewController.swift */,
 				E25EC6E61CDE034300743DB8 /* ContainerTransitionViewController.swift */,
 				73ED71F71D34CA4700755C9B /* AnimationsViewController.swift */,
-				C4D360331EBF169D00E752B9 /* AnimationsTimingFunctionViewController.swift */,
 				732485D61D4902510068FD93 /* ParamType.swift */,
 				734DAFF21D493EB6007E830B /* BlurEffectViewController.swift */,
 				73BDE6EB1D5654ED00D19EAE /* GradientViewController.swift */,
@@ -610,7 +603,6 @@
 				90F04E681DDDC650007614CB /* CornerViewController.swift */,
 				E27F1D5F1E90F16200BAB013 /* RefreshControlTableViewController.swift */,
 				48D436301E8E221500538E7D /* RefreshControlTableViewViewController.swift */,
-				C4D360311EBF0EBC00E752B9 /* TimingFunctionView.swift */,
 			);
 			name = code;
 			sourceTree = "<group>";
@@ -725,7 +717,6 @@
 				E2DAD6381D5F4C2E00333ABF /* PresentationKeyboardTranslation.swift */,
 				E2E62B761D69B17900294A73 /* ActivityIndicatorType.swift */,
 				E2C5DCDC1E28BD12001E0E18 /* BorderType.swift */,
-				C470B7B51EA7E2CB0002CB50 /* TimingFunctionType.swift */,
 			);
 			name = enum;
 			sourceTree = "<group>";
@@ -1141,7 +1132,6 @@
 				AE6B01881C2A445800950BB2 /* UIViewControllerExtension.swift in Sources */,
 				E24848AC1CDF65F7003DB9C2 /* SlideAnimator.swift in Sources */,
 				E2DAD63B1D5F5CC600333ABF /* DropDownAnimator.swift in Sources */,
-				C470B7B61EA7E2CB0002CB50 /* TimingFunctionType.swift in Sources */,
 				AE6B01771C2A444900950BB2 /* TintDesignable.swift in Sources */,
 				AE154B8F1C7D89CB0093C05B /* TransitionPresenter.swift in Sources */,
 				AE6B01781C2A444900950BB2 /* BarButtonItemDesignable.swift in Sources */,
@@ -1195,7 +1185,6 @@
 				733323031D56BCF200B88F6E /* UserInterfaceTableViewController.swift in Sources */,
 				AE1B9A661CE3EB100098D962 /* InteractionTableViewController.swift in Sources */,
 				73A99B671D5FC8650079C7EC /* BorderViewController.swift in Sources */,
-				C4D360321EBF0EBC00E752B9 /* TimingFunctionView.swift in Sources */,
 				E2D33E551D3A5557006F2492 /* PresentationPresentedViewController.swift in Sources */,
 				AE8764701D2332F60044E0AB /* MaskViewController.swift in Sources */,
 				73BDE6EC1D5654ED00D19EAE /* GradientViewController.swift in Sources */,
@@ -1215,7 +1204,6 @@
 				AED1A1031BFE9820001346FA /* AppDelegate.swift in Sources */,
 				732485D71D4902510068FD93 /* ParamType.swift in Sources */,
 				E27F1D601E90F16200BAB013 /* RefreshControlTableViewController.swift in Sources */,
-				C444BF121EBF1E0C00B37997 /* AnimationsTimingFunctionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

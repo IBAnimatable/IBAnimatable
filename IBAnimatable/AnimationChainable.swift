@@ -14,7 +14,6 @@ struct AnimationConfiguration {
   let duration: TimeInterval
   let delay: TimeInterval
   let force: CGFloat
-  let timingFunction: TimingFunctionType
 }
 
 public class AnimationPromise<T: UIView> where T: Animatable {
@@ -46,14 +45,12 @@ public class AnimationPromise<T: UIView> where T: Animatable {
                     duration: TimeInterval? = nil,
                     damping: CGFloat? = nil,
                     velocity: CGFloat? = nil,
-                    force: CGFloat? = nil,
-                    timingFunction: TimingFunctionType? = nil) -> AnimationPromise {
+                    force: CGFloat? = nil) -> AnimationPromise {
     let configuration = AnimationConfiguration(damping: damping ?? view.damping,
                                                velocity: velocity ?? view.velocity,
                                                duration: duration ?? view.duration,
                                                delay: delayForNextAnimation,
-                                               force: force ?? view.force,
-                                               timingFunction: timingFunction ?? view.timingFunction)
+                                               force: force ?? view.force)
     let animTuple = AnimationTuple(type: animation, configuration: configuration)
     animationList.append(animTuple)
     if animationList.count == 1 { // If it's the only animation, launch it immediately

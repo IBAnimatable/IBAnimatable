@@ -9,7 +9,7 @@ public class ActivityIndicatorAnimationBallGridBeat: ActivityIndicatorAnimating 
 
   // MARK: Properties
 
-  fileprivate let timingFunction: TimingFunctionType = .default
+  fileprivate let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
 
   // MARK: ActivityIndicatorAnimating
 
@@ -49,7 +49,7 @@ private extension ActivityIndicatorAnimationBallGridBeat {
   var defaultAnimation: CAKeyframeAnimation {
     let animation = CAKeyframeAnimation(keyPath: "opacity")
     animation.keyTimes = [0, 0.5, 1]
-    animation.timingFunctionsType = [timingFunction, timingFunction]
+    animation.timingFunctions = [timingFunction, timingFunction]
     animation.values = [1, 0.7, 1]
     animation.repeatCount = .infinity
     animation.isRemovedOnCompletion = false
