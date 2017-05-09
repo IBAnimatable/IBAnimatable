@@ -18,7 +18,6 @@ class BlurEffectViewController: UIViewController {
     }
     return values
   }()
-
 }
 
 extension BlurEffectViewController : UIPickerViewDelegate, UIPickerViewDataSource {
@@ -48,7 +47,7 @@ extension BlurEffectViewController : UIPickerViewDelegate, UIPickerViewDataSourc
   }
 
   func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-    let totalWidth = self.view.frame.size.width
+    let totalWidth = view.frame.size.width
     if component == 2 {
       return 0.2 * totalWidth
     } else {

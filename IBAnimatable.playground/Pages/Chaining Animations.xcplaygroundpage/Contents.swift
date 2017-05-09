@@ -14,29 +14,19 @@ PlaygroundPage.current.liveView = iPhoneView
 let view = CircleView()
 iPhoneView.addSubview(view)
 
-////: Start another animation in completion closure
-view.squeezeFade(.in, direction: .down) {
-    view.pop(repeatCount: 1) {
-        view.shake(repeatCount: 1) {
-            view.squeeze(repeatCount: 1) {
-                view.wobble(repeatCount: 1) {
-                    view.flip(axis: .x) {
-                        view.flip(axis: .y) {
-                            view.slideFade(.out, direction: .down)
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+////: Chain your animations
+view.animate(.squeezeFade(way: .in, direction: .down))
+    .then(.pop(repeatCount: 1))
+    .then(.shake(repeatCount: 1))
+    .then(.squeeze(way: .in, direction: .down))
+    .then(.wobble(repeatCount: 1))
+    .then(.flip(along: .x))
+    .then(.flip(along: .y))
+    .then(.slideFade(way: .out, direction: .down))
 
-//: To apply delay, we can specify the animationType and delay
-//view.animationType = AnimationType.pop(repeatCount: 1)
-//view.animate {
-//  view.delay = 0.3
-//  view.animationType = AnimationType.shake(repeatCount: 1)
-//  view.animate()
-//}
+//: To apply delay, we can specify the delay before doing specifying the animationType
+view.animate(.pop(repeatCount: 1))
+    .delay(0.3)
+    .then(.shake(repeatCount: 1))
 
 //: [Next](@next)

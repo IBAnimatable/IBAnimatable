@@ -3,7 +3,6 @@
 //  Copyright © 2015 IBAnimatable. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 /**
@@ -59,9 +58,7 @@ extension AnimationType: IBEnum {
       self = .none
       return
     }
-    let nameAndParams = AnimationType.extractNameAndParams(from: string)
-    let name = nameAndParams.name
-    let params = nameAndParams.params
+    let (name, params) = AnimationType.extractNameAndParams(from: string)
 
     switch name {
     case "slide":

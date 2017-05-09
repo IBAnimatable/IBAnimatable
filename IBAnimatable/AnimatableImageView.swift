@@ -6,7 +6,9 @@
 import UIKit
 
 @IBDesignable
-open class AnimatableImageView: UIImageView, CornerDesignable, FillDesignable, BorderDesignable, RotationDesignable, ShadowDesignable, BlurDesignable, TintDesignable, GradientDesignable, MaskDesignable, Animatable {
+open class AnimatableImageView: UIImageView, CornerDesignable, FillDesignable, BorderDesignable,
+                                             RotationDesignable, ShadowDesignable, BlurDesignable,
+                                             TintDesignable, GradientDesignable, MaskDesignable, Animatable {
 
   // MARK: - CornerDesignable
   @IBInspectable open var cornerRadius: CGFloat = CGFloat.nan {

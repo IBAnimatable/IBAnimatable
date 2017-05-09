@@ -44,10 +44,11 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
 
   fileprivate let animations = ["None", "Flip", "CrossDissolve", "Cover(Left)", "Cover(Right)", "Cover(Top)", "Cover(Bottom)", "Zoom", "DropDown"]
   fileprivate let positions = ["Center", "TopCenter", "BottomCenter", "LeftCenter", "RightCenter"]
-  fileprivate let sizes = ["Half", "Full"]
+  fileprivate let sizes = ["Half", "Full", "custom(100)"]
   fileprivate let keyboardTranslations = ["None", "MoveUp", "AboveKeyboard"]
   fileprivate let blurEffectStyles = ["None", "ExtraLight", "Light", "Dark"]
-  fileprivate let colors = [.black, .red, .orange, .brown, .yellow, .lightGray, .green, .cyan, .blue, .purple, UIColor.purple.withAlphaComponent(0.5), .darkGray, .magenta, .white]
+  fileprivate let colors = [.black, .red, .orange, .brown, .yellow, .lightGray, .green, .cyan, .blue, .purple,
+                            UIColor.purple.withAlphaComponent(0.5), .darkGray, .magenta, .white]
 
   fileprivate var selectedButton: UIButton?
 
@@ -69,7 +70,8 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
     presentedViewController.presentationAnimationType = PresentationAnimationType(string: selectedAnimationType) ?? .cover(from: .bottom)
     presentedViewController.dismissalAnimationType = PresentationAnimationType(string: selectedDismissalAnimationType) ?? .cover(from: .bottom)
     presentedViewController.modalPosition = PresentationModalPosition(string: selectedModalPosition)
-    presentedViewController.modalSize = (width: PresentationModalSize(string: selectedModalWidth)!, height: PresentationModalSize(string:selectedModalHeight)!)
+    presentedViewController.modalSize = (width: PresentationModalSize(string: selectedModalWidth)!,
+                                         height: PresentationModalSize(string:selectedModalHeight)!)
 
     presentedViewController.backgroundColor = colors[Int(sliderBackgroundColor.value)]
     presentedViewController.opacity = CGFloat(sliderOpacity.value)
@@ -106,7 +108,9 @@ class PresentingViewController: AnimatableViewController, UIPickerViewDataSource
 extension PresentingViewController {
 
   @IBAction func presentProgramatically() {
-    if let presentedViewController = UIStoryboard(name: "Presentations", bundle: nil).instantiateViewController(withIdentifier: "PresentationPresentedViewController") as? AnimatableModalViewController {
+    let storyboard = UIStoryboard(name: "Presentations", bundle: nil)
+    let presentedVC = storyboard.instantiateViewController(withIdentifier: "PresentationPresentedViewController")
+    if let presentedViewController = presentedVC as? AnimatableModalViewController {
       setupModal(for: presentedViewController)
       present(presentedViewController, animated: true, completion: nil)
     }
@@ -165,7 +169,7 @@ extension PresentingViewController {
   }
 
   @IBAction func shadowColorValueChanged(_ sender: UISlider) {
-//    labelShadowOpacity.text = "Shadow opacity (\(sender.value))"
+    //    labelShadowOpacity.text = "Shadow opacity (\(sender.value))"
   }
 
   @IBAction func shadowOpacityValueChanged(_ sender: UISlider) {
@@ -192,16 +196,16 @@ extension PresentingViewController {
   func showPicker() {
     pickerView.reloadAllComponents()
     resetSelectedItemPicker()
-    dimmingPickerView.fade(.in)
-    containerPickerView.slide(.in, direction: .up)
+    dimmingPickerView.animate(.fade(way: .in))
+    containerPickerView.animate(.slide(way: .in, direction: .up))
     dimmingPickerView.isHidden = false
   }
 
   @IBAction func hidePicker() {
-    dimmingPickerView.fade(.out, completion: {
+    dimmingPickerView.animate(.fade(way: .out)).completion {
       self.dimmingPickerView.isHidden = true
-    })
-    containerPickerView.slide(.out, direction: .down)
+    }
+    containerPickerView.animate(.slide(way: .out, direction: .down))
     selectedButton = nil
   }
 

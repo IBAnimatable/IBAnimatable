@@ -66,11 +66,11 @@ extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSourc
   func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
     switch component {
     case 0:
-      return self.view.frame.size.width * 0.5
+      return view.frame.size.width * 0.5
     case 1:
-      return self.view.frame.size.width * 0.25
+      return view.frame.size.width * 0.25
     case 2:
-      return self.view.frame.size.width * 0.25
+      return view.frame.size.width * 0.25
     default:
       return 0
     }
@@ -97,18 +97,25 @@ extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSourc
     let animationString = selectedEntry.toString(selectedIndexes: pickerView.selectedRow(inComponent: 1), pickerView.selectedRow(inComponent: 2))
     let animationType = AnimationType(string: animationString)
     pickerView.isUserInteractionEnabled = false
-    animatableView.animate(animation: animationType) {
+    animatableView.animate(animationType).completion {
       if #available(iOS 10.0, *) {
         if !self.animatableView.transform.isIdentity {
           Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { _ in
-            self.animatableView.alpha = 1
-            self.animatableView.transform = CGAffineTransform.identity
-            self.pickerView.isUserInteractionEnabled = true
+            self.resetAnimatableView()
           }
         } else {
-          self.pickerView.isUserInteractionEnabled = true
+          pickerView.isUserInteractionEnabled = true
         }
+      } else {
+        self.resetAnimatableView()
       }
     }
   }
+
+  private func resetAnimatableView() {
+    animatableView.alpha = 1
+    animatableView.transform = .identity
+    pickerView.isUserInteractionEnabled = true
+  }
+
 }

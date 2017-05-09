@@ -1,4 +1,4 @@
-### Animatable UI elements 
+### Animatable UI elements
 To use `IBAnimatable`, we can drag and drop a UIKit element and connect it with `Animatable` UI element in Identity inspector. Here are the supported `Animatable` UI elements to map UIKit elements.
 
 | UIKit elements | Animatable UI elements | Description |
@@ -18,6 +18,7 @@ To use `IBAnimatable`, we can drag and drop a UIKit element and connect it with 
 | UINavigationBar | DesignableNavigationBar | |
 | UIViewController | AnimatableViewController | |
 | UINavigationController | AnimatableNavigationController | |
+| UITableViewController | AnimatableTableViewController| |
 | UISlider | AnimatableSlider | |
 | UIActivityIndicatorView | AnimatableActivityIndicatorView | [List of animations available](./ActivityIndicator.md) |
 
@@ -88,13 +89,14 @@ To use `IBAnimatable`, we can drag and drop a UIKit element and connect it with 
 
 **Supported MaskType:**
 
-* `Circle`
-* `Polygon`: Can also specify the number of sides of the polygon, e.g. use `Polygon(6)` to have a polygon with 6 sides. If not specified, the default is 6 sides. 
-* `Triangle`
-* `Star`: Can also specify the points of the Star, e.g. use `Star(6)` to have a star with 6 points. If not specified, the default is 5 points. 
-* `Wave`: Can use parameters to customize the `Wave`. `Wave(down, 20, 5)` means the Wave faces down, width is 20 and offset is 5. If not specified, the default value is `Wave(up, 40, 0)`. 
-* `Parallelogram`: Can use parameters to customize the `Parallelogram`. `Parallelogram(60)` means the top left angle of the Parallelogram will have an angle of 60 degrees. The default value is `Parallelogram(60)`. if angle == 90 it will be a rectangular Mask. if angle < 90 the parallelogram will be oriented to left. 
- 
+* `circle`
+* `polygon`: Can also specify the number of sides of the polygon, e.g. use `Polygon(6)` to have a polygon with 6 sides. If not specified, the default is 6 sides.
+* `triangle`
+* `star`: Can also specify the points of the Star, e.g. use `Star(6)` to have a star with 6 points. If not specified, the default is 5 points.
+* `wave`: Can use parameters to customize the `Wave`. `Wave(down, 20, 5)` means the Wave faces down, width is 20 and offset is 5. If not specified, the default value is `Wave(up, 40, 0)`.
+* `parallelogram`: Can use parameters to customize the `Parallelogram`. `Parallelogram(60)` means the top left angle of the Parallelogram will have an angle of 60 degrees. The default value is `Parallelogram(60)`. if angle == 90 it will be a rectangular Mask. if angle < 90 the parallelogram will be oriented to left.
+* `custom`: Allows you to use your own bezier path as mask. Only usable from code (not from IB). You have to pass in parameter a closure that takes a `CGSize` (the current's view Size) and returns the `UIBezierPath`
+
 
 #### `PaddingDesignable`
 It is used in `AnimatableTextField` to add padding on either or both sides.
@@ -166,9 +168,44 @@ Easily add color layer on top of the UI element especially `AnimatableImageView`
 | toneOpacity | CGFloat | opacity of tone color. The default value is `CGFloat.NaN`. |
 
 #### `ViewControllerDesignable`
+
 | Property name | Data type | Description |
 | ------------- |:-------------:| ----- |
 | hideNavigationBar | Bool | whether to hide navigation bar. The default value is `false`. |
+
+#### `RefreshControlDesignable`
+
+
+| Property name | Data type | Description |
+| ------------- |:-------------:| ----- |
+| hasRefreshControl | Bool | whether to add a `UIRefreshControl`. The default value is `false`. |
+| refreshControlTintColor | Optional&lt;UIColor> | tint color of the `UIRefreshControl` |
+| refreshControlBackgroundColor | Optional&lt;UIColor> | background color of the `UIRefreshControl`  |
+
+**Note:** `AnimatableTableView` conforms to that protocol, **but** if your deployment target is less than 10, you will have to add your `UIRefreshControl` yourself:
+
+```
+let refreshControl: UIRefreshControl?
+if #available(iOS 10.0, *) {
+  refreshControl = tableView.refreshControl
+} else {
+  refreshControl = UIRefreshControl()
+  tableView.addSubview(refreshControl!)
+  tableView.configureRefreshController()
+}
+refreshControl?.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+```
+
+#### `SliderImagesDesignable`
+
+| Property name | Data type | Description |
+| ------------- |:-------------:| ----- |
+| thumbImage | Optional&lt;UIImage> | the thumb image when slider state is `normal`. |
+| thumbHighlightedImage | Optional&lt;UIImage> | the thumb image when slider state is `highlighted`. |
+| minimumTrackImage | Optional&lt;UIImage> | the minimum track image when slider state is `normal`. |
+| minimumTrackHighlightedImage | Optional&lt;UIImage> | the minimum track image when slider state is `highlighted`. |
+| maximumTrackImage | Optional&lt;UIImage> | the maximum track image when slider state is `normal`. |
+| maximumTrackHighlightedImage | Optional&lt;UIImage> | the maximum track image when slider state is `highlighted`. |
 
 ### Animatable protocol
 #### Properties
@@ -181,6 +218,7 @@ Easily add color layer on top of the UI element especially `AnimatableImageView`
 | damping | CGFloat | Used in UIView Spring animation (0 ~ 1 seconds). To smoothly decelerate the animation without oscillation, use a value of 1. Employ a damping ratio closer to zero to increase oscillation. The default value is 0.7. Notice: FadeOutIn, FadeInOut, Shake, Pop, Morph, Squeeze, Flash, Wobble and Swing animations do not use damping. |
 | velocity | CGFloat | used in UIView Spring animation. A value of 1 corresponds to the total animation distance traversed in one second. For example, if the total animation distance is 200 points and you want the start of the animation to match a view velocity of 100 pt/s, use a value of 0.5. The default is 0.7. Notice: FadeOutIn, FadeInOut, Shake, Pop, Morph, Squeeze, Flash, Wobble and Swing animations do not use damping. |
 | force | CGFloat | used to apply force to the animation. The number is higher, the animation property has more changes. e.g. for Pop animation, the higher force causes the view popping bigger. The default value is 1. |
+| timingFunction | TimingFunctionType | used to specifies the speed curve of an animation (not working with Spring animation). The default value is `none`. |
 | repeatCount | Float | Used to specify the count to repeat the animation. Can only be used in Shake, Pop, Morph, Squeeze, Flash, Wobble, Swing, Rotate and RotateCCW (rotate counterclockwise) animations. The default value is 1.  |
 | x | CGFloat | Used to specify the absolute x to move in `MoveTo` animation and x offset in `MoveBy`. When used in `MoveBy`, negative means moving left and positive means moving right. The default value is `CGFloat.NaN` |
 | y | CGFloat | Used to specify the absolute y to move in `MoveTo` animation and y offset in `MoveBy`. When used in `MoveBy`, negative means moving up and positive means moving down. The default value is `CGFloat.NaN`|
@@ -223,5 +261,3 @@ Also see [Transition Animators](Transitions.md#transition-animators) and [Intera
 
 ### Segues
 See [Segues](Transitions.md#segues)
-
-

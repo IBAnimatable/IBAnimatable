@@ -16,18 +16,11 @@ public class CardsAnimator: NSObject, AnimatedTransitioning {
   // MARK: - private
   fileprivate var fromDirection: TransitionAnimationType.Direction
 
-  public init(from direction: TransitionAnimationType.Direction, transitionDuration: Duration) {
-    self.transitionDuration = transitionDuration
+  public init(from direction: TransitionAnimationType.Direction, duration: Duration) {
+    transitionDuration = duration
     fromDirection = direction
-
-    switch fromDirection {
-    case .backward:
-      self.transitionAnimationType = .cards(direction: .backward)
-      self.reverseAnimationType = .cards(direction: .forward)
-    default:
-      self.transitionAnimationType = .cards(direction: .forward)
-      self.reverseAnimationType = .cards(direction: .backward)
-    }
+    transitionAnimationType = .cards(direction: direction)
+    reverseAnimationType = .cards(direction: direction.opposite)
 
     super.init()
   }

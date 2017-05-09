@@ -20,8 +20,8 @@ public class ActivityIndicatorAnimationLineScale: ActivityIndicatorAnimating {
     let y = (layer.bounds.size.height - size.height) / 2
     let beginTime = CACurrentMediaTime()
     let beginTimes = [0.1, 0.2, 0.3, 0.4, 0.5]
+    let animation = defaultAnimation
 
-    let animation = self.animation
     for i in 0 ..< 5 {
       let line = ActivityIndicatorShape.line.makeLayer(size: CGSize(width: lineSize, height: size.height), color: color)
       let frame = CGRect(x: x + lineSize * 2 * CGFloat(i), y: y, width: lineSize, height: size.height)
@@ -39,7 +39,7 @@ public class ActivityIndicatorAnimationLineScale: ActivityIndicatorAnimating {
 
 private extension ActivityIndicatorAnimationLineScale {
 
-  var animation: CAKeyframeAnimation {
+  var defaultAnimation: CAKeyframeAnimation {
     let animation = CAKeyframeAnimation(keyPath: "transform.scale.y")
     animation.keyTimes = [0, 0.5, 1]
     animation.timingFunctions = [timingFunction, timingFunction]

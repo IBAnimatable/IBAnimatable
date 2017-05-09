@@ -1,6 +1,6 @@
 # Sometimes it's a README fix, or something like that - which isn't relevant for
 # including in a project's CHANGELOG for example
-not_declared_trivial = !(github.pr_title.include? "#trivial")
+not_declared_trivial = !(github.pr_title.include? "#no-public-changes")
 has_app_changes = !git.modified_files.grep(/IBAnimatable/).empty?
 
 # Make it more obvious that a PR is a work in progress and shouldn't be merged yet
@@ -19,6 +19,12 @@ missing_doc_changes = git.modified_files.grep(/Documentation/).empty?
 doc_changes_recommended = git.insertions > 15
 if has_app_changes && missing_doc_changes && doc_changes_recommended
   warn("Consider adding supporting documentation to this change. Documentation can be found in the `docs` directory.")
+end
+
+missing_example_app_update = git.modified_files.grep(/IBAnimatableApp/).empty?
+demo_app_changes_recommended = git.insertions > 15
+if has_app_changes && missing_example_app_update && demo_app_changes_recommended
+  warn("Consider adding / updating the demo ap.")
 end
 
 # Run SwiftLint

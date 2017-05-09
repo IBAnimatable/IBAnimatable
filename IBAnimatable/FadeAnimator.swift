@@ -7,29 +7,20 @@ import UIKit
 
 public class FadeAnimator: NSObject, AnimatedTransitioning {
   // MARK: - AnimatorProtocol
-  public var transitionAnimationType: TransitionAnimationType
+  public var transitionAnimationType: TransitionAnimationType = .fade(direction: .cross)
   public var transitionDuration: Duration = defaultTransitionDuration
-  public var reverseAnimationType: TransitionAnimationType?
+  public var reverseAnimationType: TransitionAnimationType? = .fade(direction: .cross)
   public var interactiveGestureType: InteractiveGestureType? = .pan(from: .horizontal)
 
   // MARK: - private
   fileprivate var direction: TransitionAnimationType.Direction
 
-  public init(direction: TransitionAnimationType.Direction, transitionDuration: Duration) {
+  public init(direction: TransitionAnimationType.Direction, duration: Duration) {
     self.direction = direction
-    self.transitionDuration = transitionDuration
+    transitionDuration = duration
 
-    switch direction {
-    case .in:
-      self.transitionAnimationType = .fade(direction: .in)
-      self.reverseAnimationType = .fade(direction: .out)
-    case .out:
-      self.transitionAnimationType = .fade(direction: .out)
-      self.reverseAnimationType = .fade(direction: .in)
-    default:
-      self.transitionAnimationType = .fade(direction: .cross)
-      self.reverseAnimationType = .fade(direction: .cross)
-    }
+    transitionAnimationType = .fade(direction: direction)
+    reverseAnimationType = .fade(direction: direction.opposite)
 
     super.init()
   }

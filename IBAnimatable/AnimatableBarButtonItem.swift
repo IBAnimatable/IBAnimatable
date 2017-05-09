@@ -44,7 +44,6 @@ open class AnimatableBarButtonItem: UIBarButtonItem, BarButtonItemDesignable, An
 
   // MARK: - Private
   fileprivate func configureInspectableProperties() {
-//    configureAnimatableProperties()
-    confingBarButtonItemImage()
+    configureBarButtonItemImage()
   }
 }

@@ -46,6 +46,7 @@ let colorsType: Dictionary? = parseJSON(JSONData: JSON(colorsTypeURL))
 // Parsing
 if let colorsType = colorsType {
   for colorName in colorsType.keys {
+    // swiftlint:disable:next for_where
     if var rgbColors = colorsType[colorName] {
       var finalName = colorName.capitalized(with: NSLocale.current)
       finalName = finalName.replacingOccurrences(of: "-", with: "")

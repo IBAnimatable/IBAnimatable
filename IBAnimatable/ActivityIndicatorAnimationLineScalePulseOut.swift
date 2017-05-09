@@ -19,7 +19,7 @@ public class ActivityIndicatorAnimationLineScalePulseOut: ActivityIndicatorAnima
     let y = (layer.bounds.size.height - size.height) / 2
     let beginTime = CACurrentMediaTime()
     let beginTimes = [0.4, 0.2, 0, 0.2, 0.4]
-    let animation = self.animation
+    let animation = defaultAnimation
 
     // Draw lines
     for i in 0 ..< 5 {
@@ -43,7 +43,7 @@ public class ActivityIndicatorAnimationLineScalePulseOut: ActivityIndicatorAnima
 
 private extension ActivityIndicatorAnimationLineScalePulseOut {
 
-  var animation: CAKeyframeAnimation {
+  var defaultAnimation: CAKeyframeAnimation {
     let timingFunction = CAMediaTimingFunction(controlPoints: 0.85, 0.25, 0.37, 0.85)
     let animation = CAKeyframeAnimation(keyPath: "transform.scale.y")
     animation.keyTimes = [0, 0.5, 1]

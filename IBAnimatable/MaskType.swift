@@ -3,8 +3,9 @@
 //  Copyright © 2015 IBAnimatable. All rights reserved.
 //
 
-import Foundation
 import UIKit
+
+public typealias CustomMaskProvider = (CGSize) -> UIBezierPath
 
 /**
  Mask type for masking an IBAnimatable UI element.
@@ -23,6 +24,9 @@ public enum MaskType: IBEnum {
   case wave(direction: WaveDirection, width: Double, offset: Double)
   ///  For parallelogram shape with an angle (default: 60). If `angle == 90` then it is a rectangular mask. If `angle < 90` then is a left-oriented parallelogram\-\
   case parallelogram(angle: Double)
+
+  /// Custom shape
+  case custom(pathProvider: CustomMaskProvider)
 
   case none
 
@@ -44,9 +48,7 @@ public extension MaskType {
       return
     }
 
-    let nameAndParames = MaskType.extractNameAndParams(from: string)
-    let name = nameAndParames.name
-    let params = nameAndParames.params
+    let (name, params) = MaskType.extractNameAndParams(from: string)
 
     switch name {
     case "circle":
@@ -58,7 +60,9 @@ public extension MaskType {
     case "triangle":
       self = .triangle
     case "wave":
-      self = .wave(direction: WaveDirection(raw: params[safe: 0], defaultValue: .up), width: params[safe: 1]?.toDouble() ?? 40, offset: params[safe: 2]?.toDouble() ?? 0)
+      self = .wave(direction: WaveDirection(raw: params[safe: 0], defaultValue: .up),
+                   width: params[safe: 1]?.toDouble() ?? 40,
+                   offset: params[safe: 2]?.toDouble() ?? 0)
     case "parallelogram":
       self = .parallelogram(angle: params[safe: 0]?.toDouble() ?? 60)
     default:

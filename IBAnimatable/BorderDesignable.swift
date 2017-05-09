@@ -5,7 +5,7 @@
 
 import UIKit
 
-public protocol BorderDesignable {
+public protocol BorderDesignable: class {
   /**
    `bordertype: solid, dash, if not specified, solid will be used
    */
@@ -30,8 +30,9 @@ public protocol BorderDesignable {
 
 public extension BorderDesignable where Self: UITextField {
   public func configureBorder() {
-    // set the borderSytle to `.None` to support single side of border
-    borderStyle = .none
+    if borderWidth > 0 {
+      borderStyle = .none
+    }
     commonConfigBorder()
   }
 }

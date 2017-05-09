@@ -15,7 +15,7 @@ open class AnimatableNavigationController: UINavigationController, TransitionAni
       }
     }
   }
-   open var transitionAnimationType: TransitionAnimationType = .none {
+  open var transitionAnimationType: TransitionAnimationType = .none {
     didSet {
       configureNavigationControllerDelegate()
     }
@@ -58,7 +58,9 @@ open class AnimatableNavigationController: UINavigationController, TransitionAni
     if case .none = interactiveGestureType {
       navigator = Navigator(transitionAnimationType: transitionAnimationType, transitionDuration: duration)
     } else {
-      navigator = Navigator(transitionAnimationType: transitionAnimationType, transitionDuration: duration, interactiveGestureType: interactiveGestureType)
+      navigator = Navigator(transitionAnimationType: transitionAnimationType,
+                            transitionDuration: duration,
+                            interactiveGestureType: interactiveGestureType)
     }
     delegate = navigator
   }

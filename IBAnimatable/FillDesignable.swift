@@ -5,7 +5,7 @@
 
 import UIKit
 
-public protocol FillDesignable {
+public protocol FillDesignable: class {
   var fillColor: UIColor? { get set }
   var predefinedColor: ColorType? { get set }
   var opacity: CGFloat { get set }
@@ -25,14 +25,24 @@ public extension FillDesignable where Self: UIView {
       alpha = opacity
 
       // Make better performance
-      if opacity == 1 {
-        isOpaque = true
-      }
+      isOpaque = opacity == 1
     }
   }
 }
 
 public extension FillDesignable where Self: UITableViewCell {
+  public func configureFillColor() {
+    if let fillColor = fillColor {
+      backgroundColor = fillColor
+      contentView.backgroundColor = fillColor
+    } else if let predefinedColor = predefinedColor?.color {
+      backgroundColor = predefinedColor
+      contentView.backgroundColor = predefinedColor
+    }
+  }
+}
+
+public extension FillDesignable where Self: UICollectionViewCell {
   public func configureFillColor() {
     if let fillColor = fillColor {
       backgroundColor = fillColor

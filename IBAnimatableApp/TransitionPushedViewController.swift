@@ -26,7 +26,7 @@ private extension TransitionPushedViewController {
     // Shows nothing by default
     gestureLabel.text = "to pop"
 
-    guard let navigationController = self.navigationController as? AnimatableNavigationController else {
+    guard let navigationController = navigationController as? AnimatableNavigationController else {
       return
     }
 
@@ -39,7 +39,9 @@ private extension TransitionPushedViewController {
       return
     }
 
-    gestureLabel.text = retrieveGestureText(interactiveGestureType: navigationController.interactiveGestureType, transitionAnimationType: navigationController.transitionAnimationType, exit: "pop")
+    gestureLabel.text = retrieveGestureText(interactiveGestureType: navigationController.interactiveGestureType,
+                                            transitionAnimationType: navigationController.transitionAnimationType,
+                                            exit: "pop")
   }
 
 }

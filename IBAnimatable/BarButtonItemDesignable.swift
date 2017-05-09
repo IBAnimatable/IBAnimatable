@@ -5,12 +5,12 @@
 
 import UIKit
 
-public protocol BarButtonItemDesignable {
+public protocol BarButtonItemDesignable: class {
   var roundedImage: UIImage? { get set }
 }
 
 public extension BarButtonItemDesignable where Self: UIBarButtonItem {
-  public func confingBarButtonItemImage() {
+  public func configureBarButtonItemImage() {
     guard let roundedImage = roundedImage else {
       return
     }
