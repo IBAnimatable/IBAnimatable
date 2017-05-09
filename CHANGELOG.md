@@ -22,6 +22,7 @@ All notable changes to this project will be documented in this file.
 - Make `placeholderColor` working with `placeholderText` AND `placehodler`. It will keep the current priorirty: `placeholderText` > `placehodler`. [#459](https://github.com/IBAnimatable/IBAnimatable/pull/459) by [@tbaranes](https://github.com/tbaranes)
 - Fix `FillDesignable` protocol to set `fillColor` for `UICollectionViewCell`. [#462](https://github.com/IBAnimatable/IBAnimatable/pull/462) by [@SD10](https://github.com/SD10)
 - Fixed `AnimatableTextField` interface update when using it programatically [#458](https://github.com/IBAnimatable/IBAnimatable/pull/458) by [@tbaranes](https://github.com/tbaranes)
+- Replace `CGFloat.pi` with `CGFloat(Double.pi)` for `ActivityIndicatorShape`, which fixes missing activity indicator animations on 32 bit devices. [#470](https://github.com/IBAnimatable/IBAnimatable/pull/470) by [@broadwaylamb](https://github.com/broadwaylamb)
 
 ---
 ### [4.0.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/4.0.0)
