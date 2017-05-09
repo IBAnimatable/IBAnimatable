@@ -72,7 +72,7 @@ public extension Animatable where Self: UIView {
                       damping: CGFloat? = nil,
                       velocity: CGFloat? = nil,
                       force: CGFloat? = nil) -> AnimationPromise<Self> {
-    return AnimationPromise(view: self).then(animation, duration: duration, damping: damping, velocity: velocity, force: force)
+    return AnimationPromise(view: self).delay(delay).then(animation, duration: duration, damping: damping, velocity: velocity, force: force)
   }
 
   public func delay(_ delay: TimeInterval) -> AnimationPromise<Self> {
