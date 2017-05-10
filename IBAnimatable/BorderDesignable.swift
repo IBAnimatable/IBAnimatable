@@ -83,7 +83,7 @@ fileprivate extension BorderDesignable where Self: UIView {
 
 fileprivate extension BorderDesignable where Self: UIView {
   func drawBorders() {
-    if borderType == .solid, borderSides == .AllSides {
+    if borderType == .solid, borderSides == .allSides {
       layer.borderColor = borderColor!.cgColor
       layer.borderWidth = borderWidth
     } else {

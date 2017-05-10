@@ -79,7 +79,7 @@ open class AnimatableScrollView: UIScrollView, CornerDesignable, FillDesignable,
     }
   }
 
-  open var borderSides: BorderSides  = .AllSides {
+  open var borderSides: BorderSides  = .allSides {
     didSet {
       configureBorder()
     }

@@ -103,7 +103,7 @@ open class AnimatableCollectionViewCell: UICollectionViewCell, CornerDesignable,
     }
   }
 
-  open var borderSides: BorderSides  = .AllSides {
+  open var borderSides: BorderSides  = .allSides {
     didSet {
       configureBorder()
     }

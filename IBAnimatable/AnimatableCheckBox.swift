@@ -97,7 +97,7 @@ open class AnimatableCheckBox: UIButton, CheckBoxDesignable, CornerDesignable, F
     }
   }
 
-  open var borderSides: BorderSides  = .AllSides {
+  open var borderSides: BorderSides  = .allSides {
     didSet {
       configureBorder()
     }

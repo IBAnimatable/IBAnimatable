@@ -76,7 +76,7 @@ open class AnimatableLabel: UILabel, CornerDesignable, FillDesignable, Animatabl
     }
   }
 
-  open var borderSides: BorderSides  = .AllSides {
+  open var borderSides: BorderSides  = .allSides {
     didSet {
       configureBorder()
     }

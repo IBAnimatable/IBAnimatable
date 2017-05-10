@@ -78,7 +78,7 @@ open class AnimatableTextField: UITextField, CornerDesignable, FillDesignable, B
     }
   }
 
-  open var borderSides: BorderSides  = .AllSides {
+  open var borderSides: BorderSides  = .allSides {
     didSet {
       configureBorder()
     }

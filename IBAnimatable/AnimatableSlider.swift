@@ -71,7 +71,7 @@ open class AnimatableSlider: UISlider, SliderImagesDesignable, BorderDesignable,
     }
   }
 
-  open var borderSides: BorderSides  = .AllSides {
+  open var borderSides: BorderSides  = .allSides {
     didSet {
       configureBorder()
     }
