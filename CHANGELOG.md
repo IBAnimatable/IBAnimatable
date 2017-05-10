@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 ## Versions
 
 ### Next
+#### API breaking changes
+
+N/A
+
+#### Enhancements
+
+N/A
+
+#### Bugfixes
+
+N/A
+
+### [4.1.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/4.1.0)
 
 #### API breaking changes
 
@@ -13,7 +26,6 @@ All notable changes to this project will be documented in this file.
 #### Enhancements
 
 - Introduce `Custom` MaskType, you can now use `MaskDesignable` with custom masks. [#465](https://github.com/IBAnimatable/IBAnimatable/pull/465) by [@lastmove](https://github.com/lastmove)
-- Add `TimingFunctionType` attribute to `Animatable` to specifies the speed curve of an animation. [#456](https://github.com/IBAnimatable/IBAnimatable/pull/456) by [@phimage](https://github.com/phimage)
 - Add Unit Testing for Project. See [issue #434](https://github.com/IBAnimatable/IBAnimatable/issues/434) for current coverage. [@SD10](https://github.com/SD10)
 
 #### Bugfixes
