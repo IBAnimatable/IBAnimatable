@@ -20,7 +20,10 @@ script:
   - xcodebuild -showsdks
 
   # Build Framework in Release
-  - xcodebuild clean build -project "$XCODEPROJ" -scheme "$SCHEME" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty;
+  - xcodebuild clean build -project "$XCODEPROJ" -scheme "$SCHEME" -destination "$DESTINATION" -configuration Release | xcpretty;
+
+  # Test Framework in Release
+  - xcodebuild clean -project "$XCODEPROJ" -scheme "$SCHEME" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty;
 
   # Build App in Release
   - xcodebuild clean build -project "$XCODEPROJ" -scheme "$APP_SCHEME" -destination "$DESTINATION" -configuration Release | xcpretty;
