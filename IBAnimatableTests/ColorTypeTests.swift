@@ -9,7 +9,7 @@
 import XCTest
 @testable import IBAnimatable
 
-class ColorTypeTests: XCTestCase {
+final class ColorTypeTests: XCTestCase {
 
     override func setUp() {
         super.setUp()

@@ -9,7 +9,7 @@
 import XCTest
 @testable import IBAnimatable
 
-class CornerDesignableTests: XCTestCase {
+final class CornerDesignableTests: XCTestCase {
 
   // MARK: - testCornerRadius
 
