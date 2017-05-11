@@ -11,7 +11,7 @@ N/A
 
 #### Enhancements
 
-Add `TimingFunctionType` attribute to `Animatable` to specifies the speed curve of an animation. [#478](https://github.com/IBAnimatable/IBAnimatable/pull/456) by [@phimage](https://github.com/phimage)
+Add `TimingFunctionType` attribute to `Animatable` to specifies the speed curve of an animation. [#478](https://github.com/IBAnimatable/IBAnimatable/pull/478) by [@phimage](https://github.com/phimage)
 
 #### Bugfixes
 
