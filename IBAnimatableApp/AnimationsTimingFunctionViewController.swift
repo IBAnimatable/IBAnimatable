@@ -228,7 +228,6 @@ extension TimingFunctionType {
       return 30
     case .spring(_):
       return 31
-      
     }
   }
 }

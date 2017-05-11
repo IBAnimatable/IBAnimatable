@@ -478,7 +478,7 @@ fileprivate extension Animatable where Self: UIView {
     } else {
       let position = self.center
       var xToMove: CGFloat
-      if x.isNaN { 
+      if x.isNaN {
         xToMove = position.x
       } else {
         xToMove = position.x + CGFloat(x)
