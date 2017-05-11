@@ -195,7 +195,7 @@ fileprivate extension Animatable where Self: UIView {
     }
     if case .none = configuration.timingFunction {
       // Get the absolute position
-      let absolutePosition = convert(frame.origin, to: nil)
+      let absolutePosition = frame.origin
       var xOffsetToMove: CGFloat
       if x.isNaN {
         xOffsetToMove = 0
@@ -211,19 +211,19 @@ fileprivate extension Animatable where Self: UIView {
       }
       animateBy(x: xOffsetToMove, y: yOffsetToMove, configuration: configuration, completion: completion)
     } else {
-      let position = frame.origin
+      let position = center
       var xToMove: CGFloat
       if x.isNaN {
         xToMove = position.x
       } else {
-        xToMove = CGFloat(x)
+        xToMove = CGFloat(x) + frame.width / 2
       }
 
       var yToMove: CGFloat
       if y.isNaN {
         yToMove = position.y
       } else {
-        yToMove = CGFloat(y)
+        yToMove = CGFloat(y) + frame.height / 2
       }
 
       let path = UIBezierPath()
@@ -231,7 +231,6 @@ fileprivate extension Animatable where Self: UIView {
       path.addLine(to: CGPoint(x: xToMove, y: yToMove))
 
       animatePosition(path: path, configuration: configuration, completion: completion)
-
     }
   }
 
@@ -477,9 +476,9 @@ fileprivate extension Animatable where Self: UIView {
 
       animateBy(x: xOffsetToMove, y: yOffsetToMove, configuration: configuration, completion: completion)
     } else {
-      let position = frame.origin
+      let position = self.center
       var xToMove: CGFloat
-      if x.isNaN {
+      if x.isNaN { 
         xToMove = position.x
       } else {
         xToMove = position.x + CGFloat(x)
