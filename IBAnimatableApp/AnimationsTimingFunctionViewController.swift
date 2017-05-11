@@ -22,6 +22,12 @@ class AnimationsTimingFunctionViewController: UIViewController {
 
   weak var delegate: TimingFunctionPickDelegate?
 
+  var timingFunction: TimingFunctionType = .none {
+    didSet {
+      setTimingFunctionOnView()
+    }
+  }
+
   @IBOutlet var timingFunctionView: TimingFunctionView!
   @IBOutlet weak var pickerView: UIPickerView!
   @IBOutlet weak var starView: AnimatableView!
@@ -52,9 +58,23 @@ class AnimationsTimingFunctionViewController: UIViewController {
   var selectedEntry: PickerEntry!
   override func viewDidLoad() {
     super.viewDidLoad()
-    selectedEntry = entries[0]
+    let index = timingFunction.pickerIndex
+    selectedEntry = entries[index]
     pickerView.dataSource = self
     pickerView.delegate = self
+  }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+
+    let index = timingFunction.pickerIndex
+    pickerView.selectRow(index, inComponent: 0, animated: false)
+    setTimingFunctionOnView()
+  }
+
+  private func setTimingFunctionOnView() {
+    timingFunctionView?.timingFunction = timingFunction
+    starView?.timingFunction = timingFunction
   }
 }
 
@@ -116,15 +136,16 @@ extension AnimationsTimingFunctionViewController : UIPickerViewDelegate, UIPicke
       pickerView.selectedRow(inComponent: 4)
     )
     let type = TimingFunctionType(string: string)
-    timingFunctionView.timingFunction = type
-    delegate?.timingFunctionSelected(type)
-    starView.timingFunction = type
+    self.timingFunction = type
 
+    delegate?.timingFunctionSelected(type) // could be done only on dismiss
+
+    // make the two star fall
     starFall(starView)
     starFall(linearView)
   }
 
-  func starFall(_ view: AnimatableView) {
+  private func starFall(_ view: AnimatableView) {
     let moveY = view.superview?.frame.height ?? 140
     view.animate(.moveBy(x: 0, y: Double(moveY - 40))).completion {
       if #available(iOS 10.0, *) {
@@ -137,4 +158,77 @@ extension AnimationsTimingFunctionViewController : UIPickerViewDelegate, UIPicke
     }
   }
 
+}
+
+extension TimingFunctionType {
+
+  var pickerIndex: Int {
+    switch self {
+    case .none:
+      return 0
+    case .linear:
+      return 1
+    case .easeIn:
+      return 2
+    case .easeOut:
+      return 3
+    case .easeInOut:
+      return 4
+    case .default:
+      return 5
+    case .custom(_, _):
+      return 6
+    case .easeInSine:
+      return 7
+    case .easeOutSine:
+      return 8
+    case .easeInOutSine:
+      return 9
+    case .easeInQuad:
+      return 10
+    case .easeOutQuad:
+      return 11
+    case .easeInOutQuad:
+      return 12
+    case .easeInCubic:
+      return 13
+    case .easeOutCubic:
+      return 14
+    case .easeInOutCubic:
+      return 15
+    case .easeInQuart:
+      return 16
+    case .easeOutQuart:
+      return 17
+    case .easeInOutQuart:
+      return 18
+    case .easeInQuint:
+      return 19
+    case .easeOutQuint:
+      return 20
+    case .easeInOutQuint:
+      return 21
+    case .easeInExpo:
+      return 22
+    case .easeOutExpo:
+      return 23
+    case .easeInOutExpo:
+      return 24
+    case .easeInCirc:
+      return 25
+    case .easeOutCirc:
+      return 26
+    case .easeInOutCirc:
+      return 27
+    case .easeInBack:
+      return 28
+    case .easeOutBack:
+      return 29
+    case .easeInOutBack:
+      return 30
+    case .spring(_):
+      return 31
+      
+    }
+  }
 }

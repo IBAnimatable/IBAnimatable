@@ -53,6 +53,7 @@ class AnimationsViewController: UIViewController {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let destination = segue.destination as? AnimationsTimingFunctionViewController {
       destination.delegate = self
+      destination.timingFunction = self.animatableView.timingFunction
     }
   }
 }
