@@ -7,29 +7,55 @@
 //
 
 import XCTest
+@testable import IBAnimatable
 
 class AnimatableTextViewTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
+
+  var animatableTextView: AnimatableTextView!
+
+  override func setUp() {
+    super.setUp()
+    animatableTextView = AnimatableTextView()
+  }
+
+  override func tearDown() {
+    super.tearDown()
+  }
+
+}
+
+// MARK: - CornerDesignable Tests
+
+extension AnimatableTextViewTests: CornerDesignableTests {
+
+  func testCornerRadius() {
+    _testCornerRadius(animatableTextView)
+  }
+
+  func test_cornerSides() {
+    _test_cornerSides(animatableTextView)
+  }
+
+}
+
+// MARK: - FillDesignable Tests
+
+extension AnimatableTextViewTests: FillDesignableTests {
+
+  func testFillColor() {
+    _testFillColor(animatableTextView)
+  }
+
+  func testOpacity() {
+    _testOpacity(animatableTextView)
+  }
+
+  func testPredefinedColor() {
+    _testPredefinedColor(animatableTextView)
+  }
+
+  func test_predefinedColor() {
+    _test_predefinedColor(animatableTextView)
+  }
+
 }

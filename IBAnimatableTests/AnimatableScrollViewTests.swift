@@ -7,29 +7,55 @@
 //
 
 import XCTest
+@testable import IBAnimatable
 
-class AnimatableScrollViewTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
+final class AnimatableScrollViewTests: XCTestCase {
+
+  var animatableScrollView: AnimatableScrollView!
+
+  override func setUp() {
+    super.setUp()
+    animatableScrollView = AnimatableScrollView()
+  }
+
+  override func tearDown() {
+    super.tearDown()
+  }
+
+}
+
+// MARK: - CornerDesignable Tests
+
+extension AnimatableScrollViewTests: CornerDesignableTests {
+
+  func testCornerRadius() {
+    _testCornerRadius(animatableScrollView)
+  }
+
+  func test_cornerSides() {
+    _test_cornerSides(animatableScrollView)
+  }
+
+}
+
+// MARK: - FillDesignable Tests
+
+extension AnimatableScrollViewTests: FillDesignableTests {
+
+  func testFillColor() {
+    _testFillColor(animatableScrollView)
+  }
+
+  func testOpacity() {
+    _testOpacity(animatableScrollView)
+  }
+
+  func testPredefinedColor() {
+    _testPredefinedColor(animatableScrollView)
+  }
+
+  func test_predefinedColor() {
+    _test_predefinedColor(animatableScrollView)
+  }
+
 }
