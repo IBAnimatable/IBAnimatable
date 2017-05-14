@@ -20,6 +20,8 @@ class MaskViewController: UIViewController {
     let widthParam = ParamType.number(min: 15, max: 90, interval: 2, ascending: true, unit: "px")
 
     return [PickerEntry(params:[], name:"circle"),
+            PickerEntry(params:[], name:"ellipse"),
+            PickerEntry(params:[], name: "triangle"),
             PickerEntry(params:[sidesParam], name: "polygon"),
             PickerEntry(params:[pointsParam], name: "star"),
             PickerEntry(params:[waveParam, widthParam], name: "wave"),
