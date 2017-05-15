@@ -15,11 +15,11 @@ private let positiveNumberParam = ParamType.number(min: 0, max: 50, interval: 2,
 private let numberParam = ParamType.number(min: -50, max: 200, interval: 10, ascending: true, unit: "")
 private let repeatCountParam = ParamType.number(min: 1, max: 10, interval: 1, ascending: true, unit:"")
 
-class AnimationsViewController: UIViewController {
+final class AnimationsViewController: UIViewController {
 
   @IBOutlet weak var animatableView: AnimatableView!
   @IBOutlet weak var pickerView: UIPickerView!
-  @IBOutlet weak var timingFunctionButton: UIButton!
+  @IBOutlet weak var timingFunctionButton: UIBarButtonItem!
   // prebuit common params
   let entries: [PickerEntry] = [
     PickerEntry(params: [wayParam, directionParam], name: "slide"),
@@ -126,6 +126,7 @@ extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSourc
         self.resetAnimatableView()
       }
     }
+    timingFunctionButton.isEnabled = animationType.isCubic
   }
 
   private func resetAnimatableView() {

@@ -655,3 +655,42 @@ public extension Animatable where Self: UIBarItem {
   public func animate(completion: AnimatableCompletion? = nil) {
   }
 }
+
+public extension AnimationType {
+
+  /// This animation use damping and velocity parameters.
+  public var isSpring: Bool {
+    switch self {
+    case .moveBy, .moveTo:
+      return true
+    case .squeeze, .squeezeFade, .slide, .slideFade, .zoom, .zoomInvert:
+      return true
+    case .fade(way: .in), .fade(way: .out):
+      return true
+    case .rotate, .shake, .flip, .pop, .squash, .morph, .swing, .wobble, .flash:
+      return false
+    case .fade(way: .inOut), .fade(way: .outIn):
+      return false
+    case .none:
+      return false
+    }
+  }
+
+  /// This animation use timing function parameter.
+  public var isCubic: Bool {
+    switch self {
+    case .moveBy, .moveTo:
+      return true
+    case .rotate, .shake, .flip, .pop, .squash, .morph, .swing, .wobble, .flash:
+      return true
+    case .fade(.inOut), .fade(.outIn):
+      return true
+    case .squeeze, .squeezeFade, .slide, .slideFade, .zoom, .zoomInvert:
+      return false
+    case .fade(way: .in), .fade(way: .out):
+      return false
+    case .none:
+      return false
+    }
+  }
+}

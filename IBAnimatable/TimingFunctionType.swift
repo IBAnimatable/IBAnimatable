@@ -29,7 +29,6 @@ public enum TimingFunctionType {
   case easeInExpo, easeOutExpo, easeInOutExpo
   case easeInCirc, easeOutCirc, easeInOutCirc
   case easeInBack, easeOutBack, easeInOutBack
-
 }
 
 extension TimingFunctionType: IBEnum {
@@ -63,6 +62,7 @@ extension TimingFunctionType: IBEnum {
       let c2 = (params[2].toFloat() ?? 0, params[3].toFloat() ?? 0)
       self = .custom(c1, c2)
 
+    // from http://easings.net/
     case "easeinsine":
       self = .easeInSine
     case "easeoutsine":
@@ -112,6 +112,7 @@ extension TimingFunctionType: IBEnum {
     case "easeinoutback":
       self = .easeInOutBack
 
+    // default case
     default:
       self = .none
     }
@@ -167,11 +168,13 @@ extension TimingFunctionType {
     case .default:
       return .default
 
+    // customs
     case .spring(let damping):
       return CAMediaTimingFunction(controlPoints: 0.5, 1.1 + (damping / 3.0), 1, 1)
     case .custom(let c1, let c2):
       return CAMediaTimingFunction(controlPoints: c1.x, c1.y, c2.x, c2.y)
 
+    // from http://easings.net/
     case .easeInSine:
       return .easeInSine
     case .easeOutSine:
@@ -221,6 +224,7 @@ extension TimingFunctionType {
     case .easeInOutBack:
       return .easeInOutBack
 
+    // default case
     case .none:
       return .default
     }
@@ -247,7 +251,7 @@ extension TimingFunctionType {
 
 }
 
-@available(iOSApplicationExtension 10.0, *)
+@available(iOS 10.0, *)
 extension TimingFunctionType {
   var cubicTimingParameters: UICubicTimingParameters {
     switch self {
@@ -270,6 +274,7 @@ extension TimingFunctionType {
 
 extension CAMediaTimingFunction {
 
+  // standards
   @nonobjc public static let linear = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
   @nonobjc public static let easeIn = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
   @nonobjc public static let easeOut = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
@@ -327,7 +332,7 @@ extension CAMediaTimingFunction {
 
 internal extension CAAnimation {
 
-  // conveniant setter, getter not implemented
+  // convenient setter, getter not implemented
   var timingFunctionType: TimingFunctionType? {
     get {
       fatalError("You cannot read timingFunctionType, read instead timingFunction.")

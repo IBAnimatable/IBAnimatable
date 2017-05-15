@@ -74,7 +74,7 @@
                                 <segue destination="vRM-MU-A6k" kind="unwind" unwindAction="unwindToViewController:" id="fIn-mg-7PZ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="timeline" style="done" id="Sys-2e-9oC">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" image="settings" style="done" id="Sys-2e-9oC">
                             <connections>
                                 <segue destination="nZy-bh-TcX" kind="show" id="xCM-31-Cgm"/>
                             </connections>
@@ -84,6 +84,7 @@
                     <connections>
                         <outlet property="animatableView" destination="Xh0-cF-cXI" id="KAc-EI-RH8"/>
                         <outlet property="pickerView" destination="HGl-88-fhe" id="9xg-L7-mWu"/>
+                        <outlet property="timingFunctionButton" destination="Sys-2e-9oC" id="zKa-mx-lmm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AHr-XG-qqY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -91,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="654" y="227"/>
         </scene>
-        <!--Animations Timing Function View Controller-->
+        <!--AnimationsTimingFunctionView-->
         <scene sceneID="xM0-0r-7RX">
             <objects>
-                <viewController id="nZy-bh-TcX" customClass="AnimationsTimingFunctionViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="AnimationsTimingFunctionView" id="nZy-bh-TcX" customClass="AnimationsTimingFunctionViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BlT-ws-TUh"/>
                         <viewControllerLayoutGuide type="bottom" id="bWQ-kJ-swJ"/>
@@ -104,16 +105,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hYE-GB-9dy">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfe-No-HdH">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="347"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="303"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KQp-Dz-6nC">
-                                                <rect key="frame" x="0.0" y="0.0" width="275" height="347"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="275" height="303"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBb-rj-gA0" customClass="TimingFunctionView" customModule="IBAnimatableApp" customModuleProvider="target">
-                                                        <rect key="frame" x="38" y="74" width="200" height="200"/>
+                                                        <rect key="frame" x="38" y="52" width="200" height="200"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="200" id="7CV-Pr-016"/>
@@ -129,7 +130,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="55U-24-NF2" userLabel="Runaway">
-                                                <rect key="frame" x="275" y="0.0" width="50" height="347"/>
+                                                <rect key="frame" x="275" y="0.0" width="50" height="303"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bBD-W0-IF9" userLabel="Star View" customClass="AnimatableView" customModule="IBAnimatable">
                                                         <rect key="frame" x="11" y="8" width="28" height="28"/>
@@ -157,7 +158,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9R7-bI-R8o" userLabel="Linear Runaway">
-                                                <rect key="frame" x="325" y="0.0" width="50" height="347"/>
+                                                <rect key="frame" x="325" y="0.0" width="50" height="303"/>
                                                 <subviews>
                                                     <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fc4-eP-CR4" userLabel="LinearStar View" customClass="AnimatableView" customModule="IBAnimatable">
                                                         <rect key="frame" x="11" y="8" width="28" height="28"/>
@@ -187,7 +188,7 @@
                                         </subviews>
                                     </stackView>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tfS-HA-X1j">
-                                        <rect key="frame" x="0.0" y="347" width="375" height="256"/>
+                                        <rect key="frame" x="0.0" y="303" width="375" height="256"/>
                                         <color key="backgroundColor" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -213,6 +214,16 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="TimingFunction" id="8q9-dW-PcA">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="4H5-Ni-4Cn">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="iN9-bN-lde" kind="unwind" unwindAction="unwindToViewController:" id="mhs-XS-cVJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="linearView" destination="fc4-eP-CR4" id="5jM-H5-h3P"/>
                         <outlet property="pickerView" destination="tfS-HA-X1j" id="sWy-Zn-AEJ"/>
@@ -221,12 +232,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TKq-v2-9HG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="iN9-bN-lde" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1416.8" y="225.33733133433284"/>
         </scene>
     </scenes>
     <resources>
         <image name="back" width="21" height="21"/>
-        <image name="timeline" width="23" height="23"/>
+        <image name="settings" width="21" height="21"/>
     </resources>
 </document>

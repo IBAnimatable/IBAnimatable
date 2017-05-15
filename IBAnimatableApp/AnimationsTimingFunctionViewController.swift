@@ -18,7 +18,7 @@ protocol TimingFunctionPickDelegate: NSObjectProtocol {
   func timingFunctionSelected(_ timingFunction: TimingFunctionType)
 }
 
-class AnimationsTimingFunctionViewController: UIViewController {
+final class AnimationsTimingFunctionViewController: UIViewController {
 
   weak var delegate: TimingFunctionPickDelegate?
 
