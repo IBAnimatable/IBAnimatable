@@ -59,3 +59,13 @@ extension AnimatableImageViewTests: FillDesignableTests {
   }
 
 }
+
+// MARK: - RotationDesignable Tests
+
+extension AnimatableImageViewTests: RotationDesignableTests {
+
+  func testRotate() {
+    _testRotate(animatableImageView)
+  }
+
+}

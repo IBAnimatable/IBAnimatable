@@ -59,3 +59,13 @@ extension AnimatableLabelTests: FillDesignableTests {
   }
 
 }
+
+// MARK: - RotationDesignable Tests
+
+extension AnimatableLabelTests: RotationDesignableTests {
+
+  func testRotate() {
+    _testRotate(animatableLabel)
+  }
+
+}
