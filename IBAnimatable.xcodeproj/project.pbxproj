@@ -105,6 +105,7 @@
 		B0B332411ECA7FF400928CB4 /* AnimatableSliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B332401ECA7FF400928CB4 /* AnimatableSliderTests.swift */; };
 		B0B332431ECA81A800928CB4 /* SliderImagesDesignableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B332421ECA81A800928CB4 /* SliderImagesDesignableTests.swift */; };
 		B0B332451ECA880A00928CB4 /* RotationDesignableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B332441ECA880A00928CB4 /* RotationDesignableTests.swift */; };
+		B0B67C661ECAA09E008820A7 /* PaddingDesignableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B67C651ECAA09E008820A7 /* PaddingDesignableTests.swift */; };
 		B0FF353E1EC6916A005C5F62 /* CornerDesignableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FF353D1EC6916A005C5F62 /* CornerDesignableTests.swift */; };
 		B0FF35431EC6968F005C5F62 /* AnimatableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FF35421EC6968F005C5F62 /* AnimatableViewTests.swift */; };
 		B0FF35451EC6A5F5005C5F62 /* AnimatableScrollViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FF35441EC6A5F5005C5F62 /* AnimatableScrollViewTests.swift */; };
@@ -348,6 +349,7 @@
 		B0B332401ECA7FF400928CB4 /* AnimatableSliderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableSliderTests.swift; sourceTree = "<group>"; };
 		B0B332421ECA81A800928CB4 /* SliderImagesDesignableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderImagesDesignableTests.swift; sourceTree = "<group>"; };
 		B0B332441ECA880A00928CB4 /* RotationDesignableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotationDesignableTests.swift; sourceTree = "<group>"; };
+		B0B67C651ECAA09E008820A7 /* PaddingDesignableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingDesignableTests.swift; sourceTree = "<group>"; };
 		B0FF353D1EC6916A005C5F62 /* CornerDesignableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerDesignableTests.swift; sourceTree = "<group>"; };
 		B0FF35421EC6968F005C5F62 /* AnimatableViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableViewTests.swift; sourceTree = "<group>"; };
 		B0FF35441EC6A5F5005C5F62 /* AnimatableScrollViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableScrollViewTests.swift; sourceTree = "<group>"; };
@@ -841,6 +843,7 @@
 				B0FF35491EC6A8D3005C5F62 /* FillDesignableTests.swift */,
 				B0B332421ECA81A800928CB4 /* SliderImagesDesignableTests.swift */,
 				B0B332441ECA880A00928CB4 /* RotationDesignableTests.swift */,
+				B0B67C651ECAA09E008820A7 /* PaddingDesignableTests.swift */,
 			);
 			name = TestProtocols;
 			sourceTree = "<group>";
@@ -1377,6 +1380,7 @@
 				B0B332451ECA880A00928CB4 /* RotationDesignableTests.swift in Sources */,
 				B0FF353E1EC6916A005C5F62 /* CornerDesignableTests.swift in Sources */,
 				B0FF355F1EC6B57D005C5F62 /* AnimatableCollectionViewCellTests.swift in Sources */,
+				B0B67C661ECAA09E008820A7 /* PaddingDesignableTests.swift in Sources */,
 				B0FF35611EC6B65D005C5F62 /* AnimatableTextFieldTests.swift in Sources */,
 				B0B332411ECA7FF400928CB4 /* AnimatableSliderTests.swift in Sources */,
 				B0FF35551EC6B0C8005C5F62 /* AnimatableImageViewTests.swift in Sources */,
