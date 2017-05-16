@@ -59,3 +59,13 @@ extension AnimatableStackViewTests: FillDesignableTests {
   }
 
 }
+
+// MARK: - RotationDesignable Tests
+
+extension AnimatableStackViewTests: RotationDesignableTests {
+
+  func testRotate() {
+    _testRotate(animatableStackView)
+  }
+
+}

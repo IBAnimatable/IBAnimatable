@@ -24,7 +24,7 @@ final class AnimatableSliderTests: XCTestCase {
 
 }
 
-// MARK: - AnimatableSlider Tests
+// MARK: - SliderImagesDesignable Tests
 
 extension AnimatableSliderTests: SliderImagesDesignableTests {
 
@@ -50,6 +50,16 @@ extension AnimatableSliderTests: SliderImagesDesignableTests {
 
   func testMinimumTrackHighlightedImage() {
     _testMinimumTrackHighlightedImage(animatableSlider)
+  }
+
+}
+
+// MARK: - RotationDesignable Tests
+
+extension AnimatableSliderTests: RotationDesignableTests {
+
+  func testRotate() {
+    _testRotate(animatableSlider)
   }
 
 }
