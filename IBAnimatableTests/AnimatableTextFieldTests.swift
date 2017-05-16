@@ -67,13 +67,13 @@ extension AnimatableTextFieldTests: PaddingDesignableTests {
   func testPaddingLeft() {
     _testPaddingLeft(animatableTextField)
   }
-  
+
   func testPaddingRight() {
     _testPaddingRight(animatableTextField)
   }
-  
+
   func testPaddingSide() {
     _testPaddingSide(animatableTextField)
   }
-  
+
 }
