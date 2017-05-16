@@ -43,30 +43,21 @@ public protocol SliderImagesDesignable: class {
 public extension SliderImagesDesignable where Self: UISlider {
 
   func configureThumbImage() {
+    let highlightedImage = thumbHighlightedImage ?? thumbImage
     setThumbImage(thumbImage, for: .normal)
-    if let highlighted = thumbHighlightedImage {
-      setThumbImage(highlighted, for: .highlighted)
-    } else {
-      setThumbImage(thumbImage, for: .highlighted)
-    }
+    setThumbImage(highlightedImage, for: .highlighted)
   }
 
   func configureMinimumTrackImage() {
+    let highlightedImage = minimumTrackHighlightedImage ?? minimumTrackImage
     setMinimumTrackImage(minimumTrackImage, for: .normal)
-    if let highlighted = minimumTrackHighlightedImage {
-      setMinimumTrackImage(highlighted, for: .highlighted)
-    } else {
-      setMinimumTrackImage(minimumTrackImage, for: .highlighted)
-    }
+    setMinimumTrackImage(highlightedImage, for: .highlighted)
   }
 
   func configureMaximumTrackImage() {
+    let highlightedImage = maximumTrackHighlightedImage ?? maximumTrackImage
     setMaximumTrackImage(maximumTrackImage, for: .normal)
-    if let highlighted = maximumTrackHighlightedImage {
-      setMaximumTrackImage(highlighted, for: .highlighted)
-    } else {
-      setMaximumTrackImage(maximumTrackImage, for: .highlighted)
-    }
+    setMaximumTrackImage(highlightedImage, for: .highlighted)
   }
 
 }
