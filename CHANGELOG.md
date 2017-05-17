@@ -11,11 +11,11 @@ N/A
 
 #### Enhancements
 
-N/A
+Add `TimingFunctionType` attribute to `Animatable` to specifies the speed curve of an animation. [#478](https://github.com/IBAnimatable/IBAnimatable/pull/478) by [@phimage](https://github.com/phimage)
 
 #### Bugfixes
 
-N/A
+- Padding UIView for `PaddingDesignable` can't expand beyond `UITextField` and now has a default height of 1pt. [#483](https://github.com/IBAnimatable/IBAnimatable/pull/483) by [@SD10](https://github.com/SD10)
 
 ### [4.1.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/4.1.0)
 

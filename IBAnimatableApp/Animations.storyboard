@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6fu-hw-r8W">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6fu-hw-r8W">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,10 +21,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tQF-RJ-Z0F">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xyg-QW-Cwt">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xh0-cF-cXI" customClass="AnimatableView" customModule="IBAnimatable">
+                                                <rect key="frame" x="137.5" y="251.5" width="100" height="100"/>
                                                 <color key="backgroundColor" red="0.72941176470000002" green="0.46666666670000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="ELz-Iy-8c5"/>
@@ -41,6 +47,7 @@
                                         </constraints>
                                     </view>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HGl-88-fhe">
+                                        <rect key="frame" x="0.0" y="603" width="375" height="0.0"/>
                                         <color key="backgroundColor" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </pickerView>
@@ -67,11 +74,17 @@
                                 <segue destination="vRM-MU-A6k" kind="unwind" unwindAction="unwindToViewController:" id="fIn-mg-7PZ"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" image="settings" style="done" id="Sys-2e-9oC">
+                            <connections>
+                                <segue destination="nZy-bh-TcX" kind="show" id="xCM-31-Cgm"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="animatableView" destination="Xh0-cF-cXI" id="KAc-EI-RH8"/>
                         <outlet property="pickerView" destination="HGl-88-fhe" id="9xg-L7-mWu"/>
+                        <outlet property="timingFunctionButton" destination="Sys-2e-9oC" id="zKa-mx-lmm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AHr-XG-qqY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -79,8 +92,153 @@
             </objects>
             <point key="canvasLocation" x="654" y="227"/>
         </scene>
+        <!--AnimationsTimingFunctionView-->
+        <scene sceneID="xM0-0r-7RX">
+            <objects>
+                <viewController title="AnimationsTimingFunctionView" id="nZy-bh-TcX" customClass="AnimationsTimingFunctionViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BlT-ws-TUh"/>
+                        <viewControllerLayoutGuide type="bottom" id="bWQ-kJ-swJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="D1E-eb-4oi" customClass="AnimatableView" customModule="IBAnimatable">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hYE-GB-9dy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfe-No-HdH">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="303"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KQp-Dz-6nC">
+                                                <rect key="frame" x="0.0" y="0.0" width="275" height="303"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBb-rj-gA0" customClass="TimingFunctionView" customModule="IBAnimatableApp" customModuleProvider="target">
+                                                        <rect key="frame" x="38" y="52" width="200" height="200"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="200" id="7CV-Pr-016"/>
+                                                            <constraint firstAttribute="width" constant="200" id="VIN-pV-P2y"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="gBb-rj-gA0" firstAttribute="centerX" secondItem="KQp-Dz-6nC" secondAttribute="centerX" id="5Qv-I8-XIy"/>
+                                                    <constraint firstItem="gBb-rj-gA0" firstAttribute="centerY" secondItem="KQp-Dz-6nC" secondAttribute="centerY" id="uep-K7-fEe"/>
+                                                    <constraint firstAttribute="width" constant="275" id="yKB-G1-LW8"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="55U-24-NF2" userLabel="Runaway">
+                                                <rect key="frame" x="275" y="0.0" width="50" height="303"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bBD-W0-IF9" userLabel="Star View" customClass="AnimatableView" customModule="IBAnimatable">
+                                                        <rect key="frame" x="11" y="8" width="28" height="28"/>
+                                                        <color key="backgroundColor" red="0.72941176470000002" green="0.46666666670000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="28" id="SaH-pB-X1V"/>
+                                                            <constraint firstAttribute="height" constant="28" id="oqE-BG-Hif"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="force">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="star(5)"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="bBD-W0-IF9" firstAttribute="top" secondItem="55U-24-NF2" secondAttribute="top" constant="8" id="Rvt-Da-vHd"/>
+                                                    <constraint firstItem="bBD-W0-IF9" firstAttribute="leading" secondItem="55U-24-NF2" secondAttribute="leading" constant="11" id="lAw-o0-yLu"/>
+                                                    <constraint firstItem="bBD-W0-IF9" firstAttribute="centerX" secondItem="55U-24-NF2" secondAttribute="centerX" id="wvI-mL-2Sx"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9R7-bI-R8o" userLabel="Linear Runaway">
+                                                <rect key="frame" x="325" y="0.0" width="50" height="303"/>
+                                                <subviews>
+                                                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fc4-eP-CR4" userLabel="LinearStar View" customClass="AnimatableView" customModule="IBAnimatable">
+                                                        <rect key="frame" x="11" y="8" width="28" height="28"/>
+                                                        <color key="backgroundColor" red="0.72941176470000002" green="0.46666666670000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="28" id="1Ud-Qs-h1V"/>
+                                                            <constraint firstAttribute="height" constant="28" id="xOm-Cx-1r7"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="force">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="_maskType" value="star(5)"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="_timingFunction" value="linear"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="fc4-eP-CR4" firstAttribute="centerX" secondItem="9R7-bI-R8o" secondAttribute="centerX" id="Bfp-5S-Atu"/>
+                                                    <constraint firstItem="fc4-eP-CR4" firstAttribute="top" secondItem="9R7-bI-R8o" secondAttribute="top" constant="8" id="ZVN-32-Fzv"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tfS-HA-X1j">
+                                        <rect key="frame" x="0.0" y="303" width="375" height="256"/>
+                                        <color key="backgroundColor" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="256" id="5wF-IT-WY8"/>
+                                        </constraints>
+                                    </pickerView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="nfe-No-HdH" firstAttribute="centerX" secondItem="hYE-GB-9dy" secondAttribute="centerX" id="Ruj-5n-lJT"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hYE-GB-9dy" firstAttribute="top" secondItem="BlT-ws-TUh" secondAttribute="bottom" id="JUg-X4-FMb"/>
+                            <constraint firstItem="bWQ-kJ-swJ" firstAttribute="top" secondItem="hYE-GB-9dy" secondAttribute="bottom" id="LjD-tr-X0g"/>
+                            <constraint firstItem="hYE-GB-9dy" firstAttribute="leading" secondItem="D1E-eb-4oi" secondAttribute="leading" id="YKO-YS-eaW"/>
+                            <constraint firstAttribute="trailing" secondItem="hYE-GB-9dy" secondAttribute="trailing" id="yoH-no-mlq"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                <color key="value" red="0.70980392160000005" green="0.4549019608" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="TimingFunction" id="8q9-dW-PcA">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="4H5-Ni-4Cn">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="iN9-bN-lde" kind="unwind" unwindAction="unwindToViewController:" id="mhs-XS-cVJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="linearView" destination="fc4-eP-CR4" id="5jM-H5-h3P"/>
+                        <outlet property="pickerView" destination="tfS-HA-X1j" id="sWy-Zn-AEJ"/>
+                        <outlet property="starView" destination="bBD-W0-IF9" id="hfG-6i-YHP"/>
+                        <outlet property="timingFunctionView" destination="gBb-rj-gA0" id="K9C-3O-yFw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TKq-v2-9HG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="iN9-bN-lde" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1416.8" y="225.33733133433284"/>
+        </scene>
     </scenes>
     <resources>
         <image name="back" width="21" height="21"/>
+        <image name="settings" width="21" height="21"/>
     </resources>
 </document>

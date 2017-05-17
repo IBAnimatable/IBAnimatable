@@ -11,14 +11,6 @@ import XCTest
 
 final class ColorTypeTests: XCTestCase {
 
-    override func setUp() {
-        super.setUp()
-    }
-
-    override func tearDown() {
-        super.tearDown()
-    }
-
   func testColor() {
     XCTAssertEqual(#colorLiteral(red: 0.180392156862745, green: 0.8, blue: 0.443137254901961, alpha: 1.0), ColorType.flatEmerland.color)
     XCTAssertEqual(#colorLiteral(red: 0.752941176470588, green: 0.223529411764706, blue: 0.168627450980392, alpha: 1.0), ColorType.flatPomegranate.color)
@@ -41,4 +33,5 @@ final class ColorTypeTests: XCTestCase {
     XCTAssertEqual(#colorLiteral(red: 0.901960784313726, green: 0.494117647058824, blue: 0.133333333333333, alpha: 1.0), ColorType.flatCarrot.color)
     XCTAssertEqual(#colorLiteral(red: 0.827450980392157, green: 0.329411764705882, blue: 0.0, alpha: 1.0), ColorType.flatPumpkin.color)
   }
+
 }

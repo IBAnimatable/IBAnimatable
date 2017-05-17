@@ -49,10 +49,10 @@ private extension ActivityIndicatorAnimationBallPulseSync {
 
   var defaultAnimation: CAKeyframeAnimation {
     let deltaY = (size.height / 2 - circleSize / 2) / 2
-    let timingFunciton = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+    let timingFunction: TimingFunctionType = .easeInOut
     let animation = CAKeyframeAnimation(keyPath: "transform.translation.y")
     animation.keyTimes = [0, 0.33, 0.66, 1]
-    animation.timingFunctions = [timingFunciton, timingFunciton, timingFunciton]
+    animation.timingFunctionsType = [timingFunction, timingFunction, timingFunction]
     animation.values = [0, deltaY, -deltaY, 0]
     animation.duration = duration
     animation.repeatCount = .infinity
