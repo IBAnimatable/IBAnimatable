@@ -12,13 +12,14 @@ private let fadeWayParams = ParamType(fromEnum: AnimationType.FadeWay.self)
 private let axisParams = ParamType(fromEnum: AnimationType.Axis.self)
 private let rotationDirectionParams = ParamType(fromEnum: AnimationType.RotationDirection.self)
 private let positiveNumberParam = ParamType.number(min: 0, max: 50, interval: 2, ascending: true, unit:"")
-private let numberParam = ParamType.number(min: -50, max: 50, interval: 5, ascending: true, unit: "")
+private let numberParam = ParamType.number(min: -50, max: 200, interval: 10, ascending: true, unit: "")
 private let repeatCountParam = ParamType.number(min: 1, max: 10, interval: 1, ascending: true, unit:"")
 
-class AnimationsViewController: UIViewController {
+final class AnimationsViewController: UIViewController {
 
   @IBOutlet weak var animatableView: AnimatableView!
   @IBOutlet weak var pickerView: UIPickerView!
+  @IBOutlet weak var timingFunctionButton: UIBarButtonItem!
   // prebuit common params
   let entries: [PickerEntry] = [
     PickerEntry(params: [wayParam, directionParam], name: "slide"),
@@ -48,6 +49,21 @@ class AnimationsViewController: UIViewController {
     pickerView.dataSource = self
     pickerView.delegate = self
   }
+
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let destination = segue.destination as? AnimationsTimingFunctionViewController {
+      destination.delegate = self
+      destination.timingFunction = self.animatableView.timingFunction
+    }
+  }
+}
+
+extension AnimationsViewController: TimingFunctionPickDelegate {
+
+  func timingFunctionSelected(_ timingFunction: TimingFunctionType) {
+    self.animatableView.timingFunction = timingFunction
+  }
+
 }
 
 extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSource {
@@ -110,6 +126,7 @@ extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSourc
         self.resetAnimatableView()
       }
     }
+    timingFunctionButton.isEnabled = animationType.isCubic
   }
 
   private func resetAnimatableView() {

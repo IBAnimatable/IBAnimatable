@@ -44,9 +44,14 @@ public protocol Animatable: class {
    */
   var force: CGFloat { get set }
 
+  /**
+   Animation function as a timing curve. (default value should be none)
+   */
+  var timingFunction: TimingFunctionType { get set }
+
 }
 
-public extension Animatable where Self: UIView {
+public extension Animatable {
   public func configureAnimatableProperties() {
     // Apply default values
     if duration.isNaN {
@@ -65,7 +70,9 @@ public extension Animatable where Self: UIView {
       force = 1
     }
   }
+}
 
+public extension Animatable where Self: UIView {
   @discardableResult
   public func animate(_ animation: AnimationType,
                       duration: TimeInterval? = nil,
@@ -186,22 +193,45 @@ fileprivate extension Animatable where Self: UIView {
     if x.isNaN && y.isNaN {
       return
     }
-    // Get the absolute position
-    let absolutePosition = convert(frame.origin, to: nil)
-    var xOffsetToMove: CGFloat
-    if x.isNaN {
-      xOffsetToMove = 0
-    } else {
-      xOffsetToMove = CGFloat(x) - absolutePosition.x
-    }
+    if case .none = configuration.timingFunction {
+      // Get the absolute position
+      let absolutePosition = frame.origin
+      var xOffsetToMove: CGFloat
+      if x.isNaN {
+        xOffsetToMove = 0
+      } else {
+        xOffsetToMove = CGFloat(x) - absolutePosition.x
+      }
 
-    var yOffsetToMove: CGFloat
-    if y.isNaN {
-      yOffsetToMove = 0
+      var yOffsetToMove: CGFloat
+      if y.isNaN {
+        yOffsetToMove = 0
+      } else {
+        yOffsetToMove = CGFloat(y) - absolutePosition.y
+      }
+      animateBy(x: xOffsetToMove, y: yOffsetToMove, configuration: configuration, completion: completion)
     } else {
-      yOffsetToMove = CGFloat(y) - absolutePosition.y
+      let position = center
+      var xToMove: CGFloat
+      if x.isNaN {
+        xToMove = position.x
+      } else {
+        xToMove = CGFloat(x) + frame.width / 2
+      }
+
+      var yToMove: CGFloat
+      if y.isNaN {
+        yToMove = position.y
+      } else {
+        yToMove = CGFloat(y) + frame.height / 2
+      }
+
+      let path = UIBezierPath()
+      path.move(to: position)
+      path.addLine(to: CGPoint(x: xToMove, y: yToMove))
+
+      animatePosition(path: path, configuration: configuration, completion: completion)
     }
-    animateBy(x: xOffsetToMove, y: yOffsetToMove, configuration: configuration, completion: completion)
   }
 
   func slideFade(_ way: AnimationType.Way, direction: AnimationType.Direction,
@@ -299,7 +329,7 @@ fileprivate extension Animatable where Self: UIView {
       let animation = CAKeyframeAnimation(keyPath: "position.x")
       animation.values = [0, 30 * configuration.force, -30 * configuration.force, 30 * configuration.force, 0]
       animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      animation.timingFunctionType = configuration.timingFunction ?? .easeInOut
       animation.duration = configuration.duration
       animation.isAdditive = true
       animation.repeatCount = Float(repeatCount)
@@ -313,7 +343,7 @@ fileprivate extension Animatable where Self: UIView {
       let animation = CAKeyframeAnimation(keyPath: "transform.scale")
       animation.values = [0, 0.2 * configuration.force, -0.2 * configuration.force, 0.2 * configuration.force, 0]
       animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      animation.timingFunctionType = configuration.timingFunction ?? .easeInOut
       animation.duration = configuration.duration
       animation.isAdditive = true
       animation.repeatCount = Float(repeatCount)
@@ -327,12 +357,12 @@ fileprivate extension Animatable where Self: UIView {
       let squashX = CAKeyframeAnimation(keyPath: "transform.scale.x")
       squashX.values = [1, 1.5 * configuration.force, 0.5, 1.5 * configuration.force, 1]
       squashX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      squashX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      squashX.timingFunctionType = configuration.timingFunction ?? .easeInOut
 
       let squashY = CAKeyframeAnimation(keyPath: "transform.scale.y")
       squashY.values = [1, 0.5, 1, 0.5, 1]
       squashY.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      squashY.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      squashY.timingFunctionType = configuration.timingFunction ?? .easeInOut
 
       let animationGroup = CAAnimationGroup()
       animationGroup.animations = [squashX, squashY]
@@ -348,12 +378,12 @@ fileprivate extension Animatable where Self: UIView {
       let morphX = CAKeyframeAnimation(keyPath: "transform.scale.x")
       morphX.values = [1, 1.3 * configuration.force, 0.7, 1.3 * configuration.force, 1]
       morphX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      morphX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      morphX.timingFunctionType = configuration.timingFunction ?? .easeInOut
 
       let morphY = CAKeyframeAnimation(keyPath: "transform.scale.y")
       morphY.values = [1, 0.7, 1.3 * configuration.force, 0.7, 1]
       morphY.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      morphY.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      morphY.timingFunctionType = configuration.timingFunction ?? .easeInOut
 
       let animationGroup = CAAnimationGroup()
       animationGroup.animations = [morphX, morphY]
@@ -369,12 +399,12 @@ fileprivate extension Animatable where Self: UIView {
       let squeezeX = CAKeyframeAnimation(keyPath: "transform.scale.x")
       squeezeX.values = [1, 1.5 * configuration.force, 0.5, 1.5 * configuration.force, 1]
       squeezeX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      squeezeX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      squeezeX.timingFunctionType = configuration.timingFunction ?? .easeInOut
 
       let squeezeY = CAKeyframeAnimation(keyPath: "transform.scale.y")
       squeezeY.values = [1, 0.5, 1, 0.5, 1]
       squeezeY.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      squeezeY.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      squeezeY.timingFunctionType = configuration.timingFunction ?? .easeInOut
 
       let animationGroup = CAAnimationGroup()
       animationGroup.animations = [squeezeX, squeezeY]
@@ -408,7 +438,7 @@ fileprivate extension Animatable where Self: UIView {
       let positionX = CAKeyframeAnimation(keyPath: "position.x")
       positionX.values = [0, 30 * configuration.force, -30 * configuration.force, 30 * configuration.force, 0]
       positionX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
-      positionX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      positionX.timingFunctionType = configuration.timingFunction ?? .easeInOut
       positionX.isAdditive = true
 
       let animationGroup = CAAnimationGroup()
@@ -439,9 +469,34 @@ fileprivate extension Animatable where Self: UIView {
       return
     }
 
-    let xOffsetToMove = x.isNaN ? 0: CGFloat(x)
-    let yOffsetToMove = y.isNaN ? 0: CGFloat(y)
-    animateBy(x: xOffsetToMove, y: yOffsetToMove, configuration: configuration, completion: completion)
+    if case .none = configuration.timingFunction {
+      // spring animation
+      let xOffsetToMove = x.isNaN ? 0: CGFloat(x)
+      let yOffsetToMove = y.isNaN ? 0: CGFloat(y)
+
+      animateBy(x: xOffsetToMove, y: yOffsetToMove, configuration: configuration, completion: completion)
+    } else {
+      let position = self.center
+      var xToMove: CGFloat
+      if x.isNaN {
+        xToMove = position.x
+      } else {
+        xToMove = position.x + CGFloat(x)
+      }
+
+      var yToMove: CGFloat
+      if y.isNaN {
+        yToMove = position.y
+      } else {
+        yToMove = position.y + CGFloat(y)
+      }
+
+      let path = UIBezierPath()
+      path.move(to: position)
+      path.addLine(to: CGPoint(x: xToMove, y: yToMove))
+
+      animatePosition(path: path, configuration: configuration, completion: completion)
+    }
   }
 
 // swiftlint:enable variable_name_min_length
@@ -488,7 +543,7 @@ fileprivate extension Animatable where Self: UIView {
       let animation = CABasicAnimation(keyPath: "opacity")
       animation.fromValue = 1
       animation.toValue = 0
-      animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      animation.timingFunctionType = configuration.timingFunction ?? .easeInOut
       animation.duration = configuration.duration
       animation.beginTime = CACurrentMediaTime() + configuration.delay
       animation.autoreverses = true
@@ -501,7 +556,7 @@ fileprivate extension Animatable where Self: UIView {
       let animation = CABasicAnimation(keyPath: "opacity")
       animation.fromValue = 0
       animation.toValue = 1
-      animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+      animation.timingFunctionType = configuration.timingFunction ?? .easeInOut
       animation.duration = configuration.duration
       animation.beginTime = CACurrentMediaTime() + configuration.delay
       animation.autoreverses = true
@@ -515,7 +570,7 @@ fileprivate extension Animatable where Self: UIView {
     )
   }
 
-  // swiftlint:disable variable_name_min_length
+  // swiftlint:disable:next variable_name_min_length
   func animateBy(x: CGFloat, y: CGFloat, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
     let translate = CGAffineTransform(translationX: x, y: y)
     UIView.animate(withDuration: configuration.duration,
@@ -532,6 +587,17 @@ fileprivate extension Animatable where Self: UIView {
         }
       }
     )
+  }
+
+  func animatePosition(path: UIBezierPath, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+    CALayer.animate({
+      let animation = CAKeyframeAnimation(keyPath: "position")
+      animation.timingFunctionType = configuration.timingFunction ?? .easeInOut
+      animation.duration = configuration.duration
+      animation.beginTime = CACurrentMediaTime() + configuration.delay
+      animation.path = path.cgPath
+      self.layer.add(animation, forKey: "animate position")
+    }, completion: completion)
   }
 
   func animateIn(animationValues: AnimationValues, alpha: CGFloat, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
@@ -587,5 +653,44 @@ fileprivate extension Animatable where Self: UIView {
 public extension Animatable where Self: UIBarItem {
   // TODO: animations for `UIBarItem`
   public func animate(completion: AnimatableCompletion? = nil) {
+  }
+}
+
+public extension AnimationType {
+
+  /// This animation use damping and velocity parameters.
+  public var isSpring: Bool {
+    switch self {
+    case .moveBy, .moveTo:
+      return true
+    case .squeeze, .squeezeFade, .slide, .slideFade, .zoom, .zoomInvert:
+      return true
+    case .fade(way: .in), .fade(way: .out):
+      return true
+    case .rotate, .shake, .flip, .pop, .squash, .morph, .swing, .wobble, .flash:
+      return false
+    case .fade(way: .inOut), .fade(way: .outIn):
+      return false
+    case .none:
+      return false
+    }
+  }
+
+  /// This animation use timing function parameter.
+  public var isCubic: Bool {
+    switch self {
+    case .moveBy, .moveTo:
+      return true
+    case .rotate, .shake, .flip, .pop, .squash, .morph, .swing, .wobble, .flash:
+      return true
+    case .fade(.inOut), .fade(.outIn):
+      return true
+    case .squeeze, .squeezeFade, .slide, .slideFade, .zoom, .zoomInvert:
+      return false
+    case .fade(way: .in), .fade(way: .out):
+      return false
+    case .none:
+      return false
+    }
   }
 }
