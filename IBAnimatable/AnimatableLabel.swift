@@ -100,7 +100,7 @@ open class AnimatableLabel: UILabel, CornerDesignable, FillDesignable, Animatabl
   @IBInspectable open var damping: CGFloat = CGFloat.nan
   @IBInspectable open var velocity: CGFloat = CGFloat.nan
   @IBInspectable open var force: CGFloat = CGFloat.nan
-  @IBInspectable open var _timingFunction: String = "" {
+  @IBInspectable var _timingFunction: String = "" {
     didSet {
       timingFunction = TimingFunctionType(string: _timingFunction)
     }

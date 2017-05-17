@@ -12,7 +12,7 @@ class TimingFunctionView: UIView {
   private var shapeLayer: CAShapeLayer!
   private var tangentsLayer: CAShapeLayer!
 
-  @IBInspectable open var _timingFunction: String = "" {
+  @IBInspectable var _timingFunction: String = "" {
     didSet {
       timingFunction = TimingFunctionType(string: _timingFunction)
     }

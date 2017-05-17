@@ -113,7 +113,7 @@ open class AnimatableTextView: UITextView, CornerDesignable, FillDesignable, Bor
   @IBInspectable open var damping: CGFloat = CGFloat.nan
   @IBInspectable open var velocity: CGFloat = CGFloat.nan
   @IBInspectable open var force: CGFloat = CGFloat.nan
-  @IBInspectable open var _timingFunction: String = "" {
+  @IBInspectable var _timingFunction: String = "" {
     didSet {
       timingFunction = TimingFunctionType(string: _timingFunction)
     }
