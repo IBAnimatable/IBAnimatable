@@ -14,6 +14,8 @@ public typealias CustomMaskProvider = (CGSize) -> UIBezierPath
 public enum MaskType: IBEnum {
   /// For circle shape with diameter equals to min(width, height).
   case circle
+  /// For ellipse shape.
+  case ellipse
   /// For polygon shape with `n` sides. (min: 3, the default: 6).
   case polygon(sides: Int)
   /// For star shape with n points (min: 3, default: 5)
@@ -53,6 +55,8 @@ public extension MaskType {
     switch name {
     case "circle":
       self = .circle
+    case "ellipse":
+      self = .ellipse
     case "polygon":
       self = .polygon(sides: params[safe: 0]?.toInt() ?? 6)
     case "star":

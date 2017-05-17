@@ -39,6 +39,8 @@ public extension MaskDesignable where Self: UIView {
     switch maskType {
     case .circle:
       maskCircle()
+    case .ellipse:
+      maskEllipse()
     case let .parallelogram(angle):
       maskParallelogram(with: angle)
     case let .polygon(sides):
@@ -73,6 +75,14 @@ private extension MaskDesignable where Self: UIView {
     let size = CGSize(width: diameter, height: diameter)
     let circlePath = UIBezierPath(ovalIn: CGRect(origin: origin, size: size))
     draw(circlePath)
+  }
+
+  // MARK: - Circle
+
+  /// Mask a Ellipse shape.
+  func maskEllipse() {
+    let path = UIBezierPath(ovalIn: bounds)
+    draw(path)
   }
 
   // MARK: - Polygon
@@ -297,7 +307,9 @@ private extension MaskDesignable where Self: UIView {
     maskLayer.path = path.cgPath
     layer.mask = maskLayer
   }
+}
 
+private extension MaskDesignable {
   /**
    Return a radian from a provided degree a Bezier path on `layer.mask` using `CAShapeLayer`.
 
