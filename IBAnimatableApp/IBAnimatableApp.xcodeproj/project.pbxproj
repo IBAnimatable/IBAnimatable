@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E2307A311ECD81D6000E38B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2307A2B1ECD81D6000E38B2 /* Assets.xcassets */; };
 		E2307A331ECD81D6000E38B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2307A2E1ECD81D6000E38B2 /* LaunchScreen.storyboard */; };
-		E2307A361ECD826F000E38B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2307A351ECD826F000E38B2 /* Main.storyboard */; };
 		E2307A621ECD8278000E38B2 /* DemoApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2307A381ECD8278000E38B2 /* DemoApp.storyboard */; };
 		E2307A631ECD8278000E38B2 /* AnimationsTimingFunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2307A3B1ECD8278000E38B2 /* AnimationsTimingFunctionViewController.swift */; };
 		E2307A641ECD8278000E38B2 /* AnimationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2307A3C1ECD8278000E38B2 /* AnimationsViewController.swift */; };
@@ -45,15 +44,15 @@
 		E2307A831ECD8278000E38B2 /* UserInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2307A5F1ECD8278000E38B2 /* UserInterface.storyboard */; };
 		E2307A841ECD8278000E38B2 /* UserInterfaceActivityIndicator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2307A601ECD8278000E38B2 /* UserInterfaceActivityIndicator.storyboard */; };
 		E2307A851ECD8278000E38B2 /* UserInterfaceMask.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2307A611ECD8278000E38B2 /* UserInterfaceMask.storyboard */; };
-		E2307A871ECD828B000E38B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2307A861ECD828B000E38B2 /* AppDelegate.swift */; };
+		E2307A8A1ECD8736000E38B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2307A881ECD8736000E38B2 /* AppDelegate.swift */; };
+		E2307A8B1ECD8736000E38B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2307A891ECD8736000E38B2 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E2307A151ECD7F81000E38B2 /* IBAnimatable App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IBAnimatable App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2307A151ECD7F81000E38B2 /* IBAnimatableApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBAnimatableApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2307A2B1ECD81D6000E38B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2307A2F1ECD81D6000E38B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2307A301ECD81D6000E38B2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E2307A351ECD826F000E38B2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E2307A381ECD8278000E38B2 /* DemoApp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DemoApp.storyboard; sourceTree = "<group>"; };
 		E2307A3B1ECD8278000E38B2 /* AnimationsTimingFunctionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationsTimingFunctionViewController.swift; sourceTree = "<group>"; };
 		E2307A3C1ECD8278000E38B2 /* AnimationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationsViewController.swift; sourceTree = "<group>"; };
@@ -89,7 +88,8 @@
 		E2307A5F1ECD8278000E38B2 /* UserInterface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserInterface.storyboard; sourceTree = "<group>"; };
 		E2307A601ECD8278000E38B2 /* UserInterfaceActivityIndicator.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserInterfaceActivityIndicator.storyboard; sourceTree = "<group>"; };
 		E2307A611ECD8278000E38B2 /* UserInterfaceMask.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserInterfaceMask.storyboard; sourceTree = "<group>"; };
-		E2307A861ECD828B000E38B2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E2307A881ECD8736000E38B2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E2307A891ECD8736000E38B2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +106,7 @@
 		E2307A0C1ECD7F81000E38B2 = {
 			isa = PBXGroup;
 			children = (
-				E2307A171ECD7F81000E38B2 /* IBAnimatable App */,
+				E2307A171ECD7F81000E38B2 /* IBAnimatableApp */,
 				E2307A161ECD7F81000E38B2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -114,21 +114,21 @@
 		E2307A161ECD7F81000E38B2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E2307A151ECD7F81000E38B2 /* IBAnimatable App.app */,
+				E2307A151ECD7F81000E38B2 /* IBAnimatableApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E2307A171ECD7F81000E38B2 /* IBAnimatable App */ = {
+		E2307A171ECD7F81000E38B2 /* IBAnimatableApp */ = {
 			isa = PBXGroup;
 			children = (
-				E2307A351ECD826F000E38B2 /* Main.storyboard */,
-				E2307A861ECD828B000E38B2 /* AppDelegate.swift */,
+				E2307A891ECD8736000E38B2 /* Main.storyboard */,
+				E2307A881ECD8736000E38B2 /* AppDelegate.swift */,
 				E2307A371ECD8278000E38B2 /* Demo */,
 				E2307A391ECD8278000E38B2 /* Playground */,
 				E2307A2A1ECD81D6000E38B2 /* Supporting Files */,
 			);
-			path = "IBAnimatable App";
+			path = IBAnimatableApp;
 			sourceTree = "<group>";
 		};
 		E2307A2A1ECD81D6000E38B2 /* Supporting Files */ = {
@@ -225,9 +225,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E2307A141ECD7F81000E38B2 /* IBAnimatable App */ = {
+		E2307A141ECD7F81000E38B2 /* IBAnimatableApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E2307A271ECD7F81000E38B2 /* Build configuration list for PBXNativeTarget "IBAnimatable App" */;
+			buildConfigurationList = E2307A271ECD7F81000E38B2 /* Build configuration list for PBXNativeTarget "IBAnimatableApp" */;
 			buildPhases = (
 				E2307A111ECD7F81000E38B2 /* Sources */,
 				E2307A121ECD7F81000E38B2 /* Frameworks */,
@@ -237,9 +237,9 @@
 			);
 			dependencies = (
 			);
-			name = "IBAnimatable App";
+			name = IBAnimatableApp;
 			productName = "IBAnimatable App";
-			productReference = E2307A151ECD7F81000E38B2 /* IBAnimatable App.app */;
+			productReference = E2307A151ECD7F81000E38B2 /* IBAnimatableApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -258,7 +258,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E2307A101ECD7F81000E38B2 /* Build configuration list for PBXProject "IBAnimatable App" */;
+			buildConfigurationList = E2307A101ECD7F81000E38B2 /* Build configuration list for PBXProject "IBAnimatableApp" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -271,7 +271,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E2307A141ECD7F81000E38B2 /* IBAnimatable App */,
+				E2307A141ECD7F81000E38B2 /* IBAnimatableApp */,
 			);
 		};
 /* End PBXProject section */
@@ -286,9 +286,9 @@
 				E2307A7F1ECD8278000E38B2 /* Interactions.storyboard in Resources */,
 				E2307A311ECD81D6000E38B2 /* Assets.xcassets in Resources */,
 				E2307A7E1ECD8278000E38B2 /* Transitions.storyboard in Resources */,
-				E2307A361ECD826F000E38B2 /* Main.storyboard in Resources */,
 				E2307A7C1ECD8278000E38B2 /* Animations.storyboard in Resources */,
 				E2307A811ECD8278000E38B2 /* TransitionsInInterfaceBuilder.storyboard in Resources */,
+				E2307A8B1ECD8736000E38B2 /* Main.storyboard in Resources */,
 				E2307A821ECD8278000E38B2 /* RefreshControl.storyboard in Resources */,
 				E2307A801ECD8278000E38B2 /* Presentations.storyboard in Resources */,
 				E2307A621ECD8278000E38B2 /* DemoApp.storyboard in Resources */,
@@ -318,7 +318,7 @@
 				E2307A691ECD8278000E38B2 /* Functions.swift in Sources */,
 				E2307A6C1ECD8278000E38B2 /* InteractionTableViewController.swift in Sources */,
 				E2307A721ECD8278000E38B2 /* RefreshControlTableViewViewController.swift in Sources */,
-				E2307A871ECD828B000E38B2 /* AppDelegate.swift in Sources */,
+				E2307A8A1ECD8736000E38B2 /* AppDelegate.swift in Sources */,
 				E2307A671ECD8278000E38B2 /* ContainerTransitionViewController.swift in Sources */,
 				E2307A6B1ECD8278000E38B2 /* GradientViewController.swift in Sources */,
 				E2307A741ECD8278000E38B2 /* TransitionPresentedViewController.swift in Sources */,
@@ -479,7 +479,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E2307A101ECD7F81000E38B2 /* Build configuration list for PBXProject "IBAnimatable App" */ = {
+		E2307A101ECD7F81000E38B2 /* Build configuration list for PBXProject "IBAnimatableApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E2307A251ECD7F81000E38B2 /* Debug */,
@@ -488,13 +488,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E2307A271ECD7F81000E38B2 /* Build configuration list for PBXNativeTarget "IBAnimatable App" */ = {
+		E2307A271ECD7F81000E38B2 /* Build configuration list for PBXNativeTarget "IBAnimatableApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E2307A281ECD7F81000E38B2 /* Debug */,
 				E2307A291ECD7F81000E38B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

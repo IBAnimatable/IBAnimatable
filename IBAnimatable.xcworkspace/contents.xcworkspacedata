@@ -8,6 +8,6 @@
       location = "group:IBAnimatable/IBAnimatable.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:IBAnimatable App/IBAnimatable App.xcodeproj">
+      location = "group:IBAnimatableApp/IBAnimatableApp.xcodeproj">
    </FileRef>
 </Workspace>
