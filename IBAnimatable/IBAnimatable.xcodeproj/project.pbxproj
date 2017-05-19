@@ -185,8 +185,6 @@
 		E27FD2D11ECD7D8A00F74840 /* AnimatableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27FD2371ECD7D8A00F74840 /* AnimatableTextView.swift */; };
 		E27FD2D21ECD7D8A00F74840 /* AnimatableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27FD2381ECD7D8A00F74840 /* AnimatableView.swift */; };
 		E27FD2D31ECD7D8A00F74840 /* DesignableNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27FD2391ECD7D8A00F74840 /* DesignableNavigationBar.swift */; };
-		E2A546FA1ECECC7800842C1F /* FlatColorsTypeScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A546F81ECECC7800842C1F /* FlatColorsTypeScript.swift */; };
-		E2A546FB1ECECC7800842C1F /* GradientsTypeScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A546F91ECECC7800842C1F /* GradientsTypeScript.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -946,7 +944,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2A546FB1ECECC7800842C1F /* GradientsTypeScript.swift in Sources */,
 				E27FD2AD1ECD7D8A00F74840 /* TintDesignable.swift in Sources */,
 				E27FD2AF1ECD7D8A00F74840 /* AnimatedPresenting.swift in Sources */,
 				E27FD2BB1ECD7D8A00F74840 /* PresentFoldWithDismissInteractionSegue.swift in Sources */,
@@ -1013,7 +1010,6 @@
 				E27FD2681ECD7D8A00F74840 /* DropDownAnimator.swift in Sources */,
 				E27FD2AC1ECD7D8A00F74840 /* TableViewCellDesignable.swift in Sources */,
 				E27FD26E1ECD7D8A00F74840 /* FoldAnimator.swift in Sources */,
-				E2A546FA1ECECC7800842C1F /* FlatColorsTypeScript.swift in Sources */,
 				E27FD2541ECD7D8A00F74840 /* ActivityIndicatorAnimationOrbit.swift in Sources */,
 				E27FD27B1ECD7D8A00F74840 /* AnimatableViewController.swift in Sources */,
 				E27FD24C1ECD7D8A00F74840 /* ActivityIndicatorAnimationBallZigZag.swift in Sources */,
