@@ -79,7 +79,7 @@ $ git clone https://github.com/IBAnimatable/IBAnimatable.git
 
 ```bash
 $ cd IBAnimatable
-$ open IBAnimatable.xcodeproj
+$ open IBAnimatable.xcworkspace
 ```
 
 3) Compile and run the app on your simulator or iOS device
@@ -100,7 +100,7 @@ To use `IBAnimatable` to design the UI and animations in Interface Builder, just
 
 We can configure the animation settings in Attribute inspector. However, Interface Builder doesn't support previewing Animations, but we can still prototype animations in Swift playground. There are three sample pages to demonstrate how to design animation in Swift playground. You can find them in [IBAnimatable.playground](IBAnimatable.playground). 
 
-1. Open IBAnimatable.xcodeproj
+1. Open IBAnimatable.xcworkspace
 2. Select IBAnimatable Framework scheme and build it with `Command + b`
 3. Select IBAnimatable.playground, choose one page in Swift playground, then click on "Assistant editor" button to split the playground. After that, select "Timeline" on the top of right-hand side to preview the animation. We can use Xcode menu "Editor" -> "Execute" to re-run the playground.
 
