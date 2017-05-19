@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:IBAnimatable.playground">
+   </FileRef>
+   <FileRef
+      location = "group:IBAnimatable/IBAnimatable.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:IBAnimatableApp/IBAnimatableApp.xcodeproj">
+   </FileRef>
+</Workspace>
