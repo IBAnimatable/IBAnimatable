@@ -6,7 +6,7 @@
 import UIKit
 import IBAnimatable
 
-class TransitionPushedViewController: UIViewController {
+final class TransitionPushedViewController: UIViewController {
 
   @IBOutlet var gestureLabel: UILabel!
 

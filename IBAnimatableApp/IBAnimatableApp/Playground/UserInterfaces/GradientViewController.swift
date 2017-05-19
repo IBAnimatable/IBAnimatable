@@ -6,7 +6,7 @@
 import UIKit
 import IBAnimatable
 
-class GradientViewController: UIViewController {
+final class GradientViewController: UIViewController {
 
   @IBOutlet weak var gView: AnimatableView!
 

@@ -9,7 +9,7 @@
 import UIKit
 import IBAnimatable
 
-class CornerViewController: UIViewController {
+final class CornerViewController: UIViewController {
 
   @IBOutlet weak var viewToCorner: AnimatableView!
   @IBOutlet weak var topLeftCheckBox: AnimatableCheckBox!

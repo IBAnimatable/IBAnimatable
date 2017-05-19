@@ -6,7 +6,7 @@
 import UIKit
 import IBAnimatable
 
-class TransitionPresentedViewController: AnimatableViewController {
+final class TransitionPresentedViewController: AnimatableViewController {
 
   @IBOutlet var gestureLabel: UILabel!
   @IBOutlet var presentViaSegueButton: AnimatableButton!

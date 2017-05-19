@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class UserInterfaceTableViewController: UITableViewController {
+final class UserInterfaceTableViewController: UITableViewController {
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let gradientVC = segue.destination as? GradientViewController {

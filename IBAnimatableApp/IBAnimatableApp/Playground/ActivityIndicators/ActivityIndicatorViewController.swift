@@ -6,7 +6,7 @@
 import UIKit
 import IBAnimatable
 
-class ActivityIndicatorViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+final class ActivityIndicatorViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
   // MARK: Properties IB
 

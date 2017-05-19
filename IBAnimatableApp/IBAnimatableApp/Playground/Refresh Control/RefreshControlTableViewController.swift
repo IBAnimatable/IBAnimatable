@@ -6,7 +6,7 @@
 import UIKit
 import IBAnimatable
 
-public class RefreshControlTableViewController: AnimatableTableViewController {
+final class RefreshControlTableViewController: AnimatableTableViewController {
 
   override public func viewDidLoad() {
     super.viewDidLoad()

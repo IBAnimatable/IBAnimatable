@@ -6,7 +6,7 @@
 import UIKit
 import IBAnimatable
 
-class ContainerTransitionViewController: UIViewController, UITabBarDelegate {
+final class ContainerTransitionViewController: UIViewController, UITabBarDelegate {
 
   // MARK: Properties
 

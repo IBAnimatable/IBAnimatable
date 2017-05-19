@@ -6,7 +6,7 @@
 import UIKit
 import IBAnimatable
 
-class BlurEffectViewController: UIViewController {
+final class BlurEffectViewController: UIViewController {
 
   @IBOutlet var blurEffectView: AnimatableView!
 

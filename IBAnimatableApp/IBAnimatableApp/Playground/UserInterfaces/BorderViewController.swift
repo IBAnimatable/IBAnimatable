@@ -9,7 +9,7 @@ import IBAnimatable
 fileprivate let dashLength = ParamType.number(min: 1, max: 10, interval: 1, ascending: true, unit: "")
 fileprivate let dashSpaceLength = ParamType.number(min: 1, max: 10, interval: 1, ascending: true, unit: "")
 
-class BorderViewController: UIViewController {
+final class BorderViewController: UIViewController {
 
   // MARK: IBOutlets
 

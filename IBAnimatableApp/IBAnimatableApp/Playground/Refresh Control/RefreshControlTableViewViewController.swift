@@ -6,7 +6,7 @@
 import UIKit
 import IBAnimatable
 
-public class RefreshControlTableViewViewController: AnimatableViewController {
+final class RefreshControlTableViewViewController: AnimatableViewController {
 
   @IBOutlet fileprivate weak var tableView: AnimatableTableView!
   fileprivate let rows = ["Did you try to pull?",

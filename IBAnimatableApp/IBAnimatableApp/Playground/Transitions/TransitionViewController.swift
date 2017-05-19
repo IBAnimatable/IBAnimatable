@@ -6,7 +6,7 @@
 import UIKit
 import IBAnimatable
 
-class TransitionViewController: AnimatableViewController {
+final class TransitionViewController: AnimatableViewController {
 
   @IBOutlet var presentButton: AnimatableButton!
 

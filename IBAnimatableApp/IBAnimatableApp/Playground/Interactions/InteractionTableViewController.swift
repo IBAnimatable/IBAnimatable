@@ -5,7 +5,7 @@
 
 import UIKit
 
-class InteractionTableViewController: UITableViewController {
+final class InteractionTableViewController: UITableViewController {
 
 }
 

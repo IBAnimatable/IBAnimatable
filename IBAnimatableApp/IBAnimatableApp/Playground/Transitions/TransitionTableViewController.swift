@@ -6,7 +6,7 @@
 import UIKit
 import IBAnimatable
 
-class TransitionTableViewController: UITableViewController {
+final class TransitionTableViewController: UITableViewController {
 
   fileprivate var transitionAnimationsHeaders = [String]()
   fileprivate var transitionAnimations = [[String]]()

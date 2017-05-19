@@ -6,7 +6,7 @@ import UIKit
 import IBAnimatable
 
 @IBDesignable
-class TimingFunctionView: UIView {
+final class TimingFunctionView: UIView {
 
   // some sub layers
   private var shapeLayer: CAShapeLayer!

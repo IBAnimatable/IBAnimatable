@@ -6,7 +6,7 @@
 import UIKit
 import IBAnimatable
 
-class PresentingViewController: AnimatableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+final class PresentingViewController: AnimatableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
   // MARK: Properties IB
 

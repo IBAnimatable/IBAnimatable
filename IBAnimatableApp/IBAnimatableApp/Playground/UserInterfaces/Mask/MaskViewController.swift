@@ -6,7 +6,7 @@
 import UIKit
 import IBAnimatable
 
-class MaskViewController: UIViewController {
+final class MaskViewController: UIViewController {
 
   @IBOutlet var maskedView: AnimatableView!
   // @IBOutlet var maskedImageView: AnimatableImageView!
