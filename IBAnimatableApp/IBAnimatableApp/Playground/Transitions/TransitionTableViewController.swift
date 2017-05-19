@@ -185,9 +185,9 @@ fileprivate extension TransitionAnimationType {
   var asString: String {
     switch self {
     case .fade(let direction):
-      return "fade" + "(\(direction.rawValue)"
+      return "fade" + "(\(direction.rawValue))"
     case .systemCube(let direction):
-      return "systemCube" + "(\(direction.rawValue)"
+      return "systemCube" + "(\(direction.rawValue))"
     case .systemFlip(let direction):
       return "systemFlip" + "(\(direction.rawValue))"
     case .systemMoveIn(let direction):

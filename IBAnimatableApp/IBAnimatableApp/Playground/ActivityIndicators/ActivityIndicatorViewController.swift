@@ -6,7 +6,7 @@
 import UIKit
 import IBAnimatable
 
-class UserInterfaceActivityIndicatorViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ActivityIndicatorViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
   // MARK: Properties IB
 
@@ -33,7 +33,7 @@ class UserInterfaceActivityIndicatorViewController: UIViewController, UIPickerVi
 
 }
 
-extension UserInterfaceActivityIndicatorViewController {
+extension ActivityIndicatorViewController {
 
   @objc(numberOfComponentsInPickerView:)
   func numberOfComponents(in pickerView: UIPickerView) -> Int {

@@ -109,7 +109,7 @@ extension PresentingViewController {
 
   @IBAction func presentProgramatically() {
     let storyboard = UIStoryboard(name: "Presentations", bundle: nil)
-    let presentedVC = storyboard.instantiateViewController(withIdentifier: "PresentationPresentedViewController")
+    let presentedVC = storyboard.instantiateViewController(withIdentifier: "PresentedViewController")
     if let presentedViewController = presentedVC as? AnimatableModalViewController {
       setupModal(for: presentedViewController)
       present(presentedViewController, animated: true, completion: nil)
