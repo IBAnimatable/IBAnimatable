@@ -194,8 +194,8 @@
 			children = (
 				E2307A551ECD8278000E38B2 /* Animations.storyboard */,
 				E2307A561ECD8278000E38B2 /* Playground.storyboard */,
-				E2307A571ECD8278000E38B2 /* Transitions Presentations */,
 				E2307A5D1ECD8278000E38B2 /* UserInterface */,
+				E2307A571ECD8278000E38B2 /* Transitions Presentations */,
 			);
 			path = storyboards;
 			sourceTree = "<group>";
