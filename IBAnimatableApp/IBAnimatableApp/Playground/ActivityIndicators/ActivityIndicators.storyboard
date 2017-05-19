@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Wz2-Hk-E3D">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Activity Indicator-->
+        <scene sceneID="XoQ-zy-P7g">
+            <objects>
+                <viewController id="Wz2-Hk-E3D" customClass="ActivityIndicatorViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AVr-l3-mcS"/>
+                        <viewControllerLayoutGuide type="bottom" id="JOq-WV-Or9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="s3t-uY-U24" customClass="AnimatableView" customModule="IBAnimatable">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f8l-f9-P39" customClass="AnimatableView" customModule="IBAnimatable">
+                                <rect key="frame" x="0.0" y="20" width="375" height="431"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JF8-xw-qb4" customClass="AnimatableActivityIndicatorView" customModule="IBAnimatable">
+                                        <rect key="frame" x="137.5" y="165.5" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="FDN-lh-rVN"/>
+                                            <constraint firstAttribute="width" constant="100" id="ddU-ZR-B5M"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="_animationType" value="BallBeats"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your animation..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHt-Jp-Y8M">
+                                        <rect key="frame" x="0.0" y="413" width="375" height="18"/>
+                                        <color key="backgroundColor" red="0.72941176470000002" green="0.46666666670000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="JF8-xw-qb4" firstAttribute="centerX" secondItem="f8l-f9-P39" secondAttribute="centerX" id="2bP-Fw-ZgR"/>
+                                    <constraint firstAttribute="bottom" secondItem="gHt-Jp-Y8M" secondAttribute="bottom" id="CY3-vM-HtW"/>
+                                    <constraint firstAttribute="trailing" secondItem="gHt-Jp-Y8M" secondAttribute="trailing" id="PEI-Ey-9b6"/>
+                                    <constraint firstItem="JF8-xw-qb4" firstAttribute="centerY" secondItem="f8l-f9-P39" secondAttribute="centerY" id="dBC-Kx-Mg9"/>
+                                    <constraint firstItem="gHt-Jp-Y8M" firstAttribute="leading" secondItem="f8l-f9-P39" secondAttribute="leading" id="fmJ-am-OOs"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="_predefinedColor" value="flatMidnightBlue"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oBX-G5-Aa0">
+                                <rect key="frame" x="0.0" y="451" width="375" height="216"/>
+                                <color key="backgroundColor" red="0.72941176470000002" green="0.46666666670000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Wz2-Hk-E3D" id="Izr-iM-3UC"/>
+                                    <outlet property="delegate" destination="Wz2-Hk-E3D" id="2uU-ll-gaM"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="f8l-f9-P39" firstAttribute="top" secondItem="AVr-l3-mcS" secondAttribute="bottom" id="4ze-4g-TKM"/>
+                            <constraint firstItem="JOq-WV-Or9" firstAttribute="top" secondItem="oBX-G5-Aa0" secondAttribute="bottom" id="EdE-FJ-Vta"/>
+                            <constraint firstAttribute="trailing" secondItem="oBX-G5-Aa0" secondAttribute="trailing" id="GBv-61-zNP"/>
+                            <constraint firstItem="f8l-f9-P39" firstAttribute="leading" secondItem="s3t-uY-U24" secondAttribute="leading" id="IoQ-Z1-7EO"/>
+                            <constraint firstItem="oBX-G5-Aa0" firstAttribute="top" secondItem="f8l-f9-P39" secondAttribute="bottom" id="T5i-V0-dws"/>
+                            <constraint firstAttribute="trailing" secondItem="f8l-f9-P39" secondAttribute="trailing" id="sa1-tZ-Tc7"/>
+                            <constraint firstItem="oBX-G5-Aa0" firstAttribute="leading" secondItem="s3t-uY-U24" secondAttribute="leading" id="zWR-ke-NwG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Activity Indicator" id="dnd-WX-BNs">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="3zf-B6-oNU">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="W2t-Do-Y7I" kind="unwind" unwindAction="unwindToViewController:" id="fSA-RZ-1aH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="JF8-xw-qb4" id="mR0-uM-Ouz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Us4-fB-W5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="W2t-Do-Y7I" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="414" y="441"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="21" height="21"/>
+    </resources>
+</document>

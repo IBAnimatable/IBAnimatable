@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dfA-Oz-Rzp">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Interactions-->
+        <scene sceneID="y9s-ZW-H86">
+            <objects>
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="dfA-Oz-Rzp" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rx3-Wx-7El" customClass="AnimatableTableView" customModule="IBAnimatable">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="1" green="0.99997437000274658" blue="0.99999129772186279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <sections>
+                            <tableViewSection id="eLD-ed-gqX">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="RMO-OG-nWz" style="IBUITableViewCellStyleDefault" id="3sX-ZV-QuP" customClass="AnimatableTableViewCell" customModule="IBAnimatable">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3sX-ZV-QuP" id="URV-tO-1DS">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="ContainerView custom transitions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RMO-OG-nWz">
+                                                    <rect key="frame" x="16" y="0.0" width="344" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="1" green="0.99997437000274658" blue="0.99999129772186279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="0.72941176470000002" green="0.46666666670000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="wik-5c-GI1" kind="show" id="bVt-hz-xFp"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="b5Y-Ve-VLp" style="IBUITableViewCellStyleDefault" id="Yl7-nn-2ce" customClass="AnimatableTableViewCell" customModule="IBAnimatable">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yl7-nn-2ce" id="qST-IM-EMh">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="TabBar custom transitions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b5Y-Ve-VLp">
+                                                    <rect key="frame" x="16" y="0.0" width="344" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="0.72941176470000002" green="0.46666666670000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="f24-EJ-MMo" kind="show" id="Ofi-NN-IMe"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                <color key="value" red="0.72941176470000002" green="0.46666666670000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="dataSource" destination="dfA-Oz-Rzp" id="Ek8-8l-Tdm"/>
+                            <outlet property="delegate" destination="dfA-Oz-Rzp" id="vKT-PN-O8F"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Interactions" id="vhC-0O-J7t">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="Gi9-pK-xv3">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="t3o-Yv-ymG" kind="unwind" unwindAction="unwindToViewController:" id="K7r-ei-KE2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gUi-ht-sOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="t3o-Yv-ymG" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3297" y="-294"/>
+        </scene>
+        <!--Recents-->
+        <scene sceneID="JJd-nY-SkC">
+            <objects>
+                <viewController id="Zo0-ne-S9h" userLabel="Recents" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rvb-eB-3Fo"/>
+                        <viewControllerLayoutGuide type="bottom" id="oMF-dG-t6v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gyx-JV-sSQ">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.26168105850000001" green="1" blue="0.17631615510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="recents" id="O3c-iP-ZXd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HKj-c9-aFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4826" y="430"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Ila-kT-sPY">
+            <objects>
+                <viewController id="Toe-dI-q8h" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Geo-51-9sI"/>
+                        <viewControllerLayoutGuide type="bottom" id="fBZ-EX-AER"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Yaf-io-dbm">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="BW0-Bw-ABa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vLn-gs-sWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5474" y="430"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="Uu0-bK-5ek">
+            <objects>
+                <viewController id="IZl-oW-ADp" userLabel="Favorites" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oih-qR-bLW"/>
+                        <viewControllerLayoutGuide type="bottom" id="PKQ-2M-SJa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oEM-fl-ZZV">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="o9V-tw-wHB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p6O-89-jTc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4180" y="430"/>
+        </scene>
+        <!--Animatable Tab Bar Controller-->
+        <scene sceneID="7cg-Y1-YAp">
+            <objects>
+                <tabBarController id="f24-EJ-MMo" customClass="AnimatableTabBarController" customModule="IBAnimatable" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="ao5-4Y-bjx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="_transitionAnimationType" value="Fold(left,3)"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="_interactiveGestureType" value="default"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="IZl-oW-ADp" kind="relationship" relationship="viewControllers" id="VD6-kd-78y"/>
+                        <segue destination="Zo0-ne-S9h" kind="relationship" relationship="viewControllers" id="lRl-xf-Oeg"/>
+                        <segue destination="Toe-dI-q8h" kind="relationship" relationship="viewControllers" id="jQz-z2-iPJ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rM5-iV-9aV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3297" y="430"/>
+        </scene>
+        <!--Container Transition View Controller-->
+        <scene sceneID="vaV-1Z-TcO">
+            <objects>
+                <viewController id="wik-5c-GI1" customClass="ContainerTransitionViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c9B-zp-WyM"/>
+                        <viewControllerLayoutGuide type="bottom" id="X8g-nh-bqF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="L8f-q3-2fq">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tfq-47-rbv">
+                                <rect key="frame" x="0.0" y="554" width="375" height="49"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <tabBarItem systemItem="favorites" id="bS8-6T-ucL"/>
+                                    <tabBarItem tag="1" systemItem="recents" id="QrU-pB-9fY"/>
+                                    <tabBarItem tag="2" systemItem="bookmarks" id="o2y-3q-BuD"/>
+                                    <tabBarItem tag="3" systemItem="more" id="z1H-Tg-1jZ"/>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="wik-5c-GI1" id="5Mf-s5-eg2"/>
+                                </connections>
+                            </tabBar>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iy1-Oz-HwZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.72941176470000002" green="0.46666666670000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Iy1-Oz-HwZ" secondAttribute="trailing" id="A1J-Vf-hZd"/>
+                            <constraint firstItem="tfq-47-rbv" firstAttribute="leading" secondItem="L8f-q3-2fq" secondAttribute="leading" id="IQr-hw-LwO"/>
+                            <constraint firstItem="tfq-47-rbv" firstAttribute="top" secondItem="Iy1-Oz-HwZ" secondAttribute="bottom" id="XwB-q5-Wz2"/>
+                            <constraint firstItem="Iy1-Oz-HwZ" firstAttribute="leading" secondItem="L8f-q3-2fq" secondAttribute="leading" id="aJm-Mg-qnO"/>
+                            <constraint firstItem="Iy1-Oz-HwZ" firstAttribute="top" secondItem="c9B-zp-WyM" secondAttribute="bottom" id="ncV-v1-fkH"/>
+                            <constraint firstAttribute="trailing" secondItem="tfq-47-rbv" secondAttribute="trailing" id="nuF-K1-qIB"/>
+                            <constraint firstItem="X8g-nh-bqF" firstAttribute="top" secondItem="tfq-47-rbv" secondAttribute="bottom" id="oDt-dK-iR6"/>
+                        </constraints>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="containerView" destination="Iy1-Oz-HwZ" id="kch-2J-BEh"/>
+                        <outlet property="tabBar" destination="tfq-47-rbv" id="RVj-mX-asc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5um-lU-8J5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4180" y="-295"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="21" height="21"/>
+    </resources>
+</document>
