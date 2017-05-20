@@ -11,11 +11,11 @@ import XCTest
 
 final class AnimatableScrollViewTests: XCTestCase {
 
-  var animatableScrollView: AnimatableScrollView!
+  var element = AnimatableScrollView()
 
   override func setUp() {
     super.setUp()
-    animatableScrollView = AnimatableScrollView()
+    element = AnimatableScrollView()
   }
 
   override func tearDown() {
@@ -29,11 +29,11 @@ final class AnimatableScrollViewTests: XCTestCase {
 extension AnimatableScrollViewTests: CornerDesignableTests {
 
   func testCornerRadius() {
-    _testCornerRadius(animatableScrollView)
+    _testCornerRadius()
   }
 
   func test_cornerSides() {
-    _test_cornerSides(animatableScrollView)
+    _test_cornerSides()
   }
 
 }
@@ -43,19 +43,19 @@ extension AnimatableScrollViewTests: CornerDesignableTests {
 extension AnimatableScrollViewTests: FillDesignableTests {
 
   func testFillColor() {
-    _testFillColor(animatableScrollView)
+    _testFillColor()
   }
 
   func testOpacity() {
-    _testOpacity(animatableScrollView)
+    _testOpacity()
   }
 
   func testPredefinedColor() {
-    _testPredefinedColor(animatableScrollView)
+    _testPredefinedColor()
   }
 
   func test_predefinedColor() {
-    _test_predefinedColor(animatableScrollView)
+    _test_predefinedColor()
   }
 
 }
@@ -65,7 +65,7 @@ extension AnimatableScrollViewTests: FillDesignableTests {
 extension AnimatableScrollViewTests: RotationDesignableTests {
 
   func testRotate() {
-    _testRotate(animatableScrollView)
+    _testRotate()
   }
 
 }

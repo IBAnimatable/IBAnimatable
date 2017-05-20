@@ -11,11 +11,11 @@ import XCTest
 
 final class AnimatableStackViewTests: XCTestCase {
 
-  var animatableStackView: AnimatableStackView!
+  var element = AnimatableStackView()
 
   override func setUp() {
     super.setUp()
-    animatableStackView = AnimatableStackView()
+    element = AnimatableStackView()
   }
 
   override func tearDown() {
@@ -29,11 +29,11 @@ final class AnimatableStackViewTests: XCTestCase {
 extension AnimatableStackViewTests: CornerDesignableTests {
 
   func testCornerRadius() {
-    _testCornerRadius(animatableStackView)
+    _testCornerRadius()
   }
 
   func test_cornerSides() {
-    _test_cornerSides(animatableStackView)
+    _test_cornerSides()
   }
 
 }
@@ -43,19 +43,19 @@ extension AnimatableStackViewTests: CornerDesignableTests {
 extension AnimatableStackViewTests: FillDesignableTests {
 
   func testFillColor() {
-    //_testFillColor(animatableStackView) // broken see issue #461
+    //_testFillColor() // broken see issue #461
   }
 
   func testOpacity() {
-    //_testOpacity(animatableStackView) // broken see issue #461
+    //_testOpacity() // broken see issue #461
   }
 
   func testPredefinedColor() {
-    //_testPredefinedColor(animatableStackView) // broken see issue #461
+    //_testPredefinedColor() // broken see issue #461
   }
 
   func test_predefinedColor() {
-    _test_predefinedColor(animatableStackView)
+    _test_predefinedColor()
   }
 
 }
@@ -65,7 +65,7 @@ extension AnimatableStackViewTests: FillDesignableTests {
 extension AnimatableStackViewTests: RotationDesignableTests {
 
   func testRotate() {
-    _testRotate(animatableStackView)
+    _testRotate()
   }
 
 }

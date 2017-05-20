@@ -13,6 +13,10 @@ import XCTest
 
 protocol CornerDesignableTests: class {
 
+  associatedtype Element
+
+  var element: Element { get set }
+
   func testCornerRadius()
   func test_cornerSides()
 
@@ -20,9 +24,9 @@ protocol CornerDesignableTests: class {
 
 // MARK: - Universal Tests
 
-extension CornerDesignableTests {
+extension CornerDesignableTests where Element: StringCornerDesignable {
 
-  func _test_cornerSides(_ element: StringCornerDesignable) {
+  func _test_cornerSides() {
     element._cornerSides = "topLeft"
     XCTAssertEqual(element.cornerSides, .topLeft)
     element._cornerSides = "topRight"
@@ -41,9 +45,9 @@ extension CornerDesignableTests {
 
 // MARK: - UIView Tests
 
-extension CornerDesignableTests {
+extension CornerDesignableTests where Element: UIView, Element: CornerDesignable {
 
-  func _testCornerRadius<E: UIView>(_ element: E) where E: CornerDesignable {
+  func _testCornerRadius() {
     element.cornerRadius = 3.0
     element.cornerSides = .allSides
     XCTAssertEqual(element.cornerRadius, element.layer.cornerRadius)
@@ -61,9 +65,9 @@ extension CornerDesignableTests {
 
 // MARK: - UICollectionViewCell Tests
 
-extension CornerDesignableTests {
+extension CornerDesignableTests where Element: UICollectionViewCell, Element: CornerDesignable {
 
-  func _testCornerRadius<E: UICollectionViewCell>(_ element: E) where E: CornerDesignable {
+  func _testCornerRadius() {
     element.cornerRadius = -1
     XCTAssertFalse(element.contentView.layer.masksToBounds)
     element.cornerRadius = 3.0

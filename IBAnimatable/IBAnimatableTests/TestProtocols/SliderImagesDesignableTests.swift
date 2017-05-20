@@ -9,7 +9,11 @@
 import XCTest
 @testable import IBAnimatable
 
-protocol SliderImagesDesignableTests {
+protocol SliderImagesDesignableTests: class {
+
+  associatedtype Element
+
+  var element: Element { get set }
 
   func testThumbImage()
   func testThumbHighlightedImage()
@@ -20,15 +24,17 @@ protocol SliderImagesDesignableTests {
 
 }
 
-extension SliderImagesDesignableTests {
+// MARK: - UISlider Tests
 
-  func _testThumbImage<E: UISlider>(_ element: E) where E: SliderImagesDesignable {
+extension SliderImagesDesignableTests where Element: UISlider, Element: SliderImagesDesignable {
+
+  func _testThumbImage() {
     let normalImage = UIImage()
     element.thumbImage = normalImage
     XCTAssertEqual(element.thumbImage(for: .normal), normalImage)
   }
 
-  func _testThumbHighlightedImage<E: UISlider>(_ element: E) where E: SliderImagesDesignable {
+  func _testThumbHighlightedImage() {
     let normalImage = UIImage()
     let highlightedImage = UIImage()
     element.thumbImage = normalImage
@@ -39,13 +45,13 @@ extension SliderImagesDesignableTests {
     XCTAssertEqual(element.thumbImage(for: .highlighted), highlightedImage)
   }
 
-  func _testMaximumTrackImage<E: UISlider>(_ element: E) where E: SliderImagesDesignable {
+  func _testMaximumTrackImage() {
     let normalImage = UIImage()
     element.maximumTrackImage = normalImage
     XCTAssertEqual(element.maximumTrackImage(for: .normal), normalImage)
   }
 
-  func _testMaximumTrackHighlightedImage<E: UISlider>(_ element: E) where E: SliderImagesDesignable {
+  func _testMaximumTrackHighlightedImage() {
     let normalImage = UIImage()
     let highlightedImage = UIImage()
     element.maximumTrackImage = normalImage
@@ -56,13 +62,13 @@ extension SliderImagesDesignableTests {
     XCTAssertEqual(element.maximumTrackImage(for: .highlighted), highlightedImage)
   }
 
-  func _testMinimumTrackImage<E: UISlider>(_ element: E) where E: SliderImagesDesignable {
+  func _testMinimumTrackImage() {
     let normalImage = UIImage()
     element.minimumTrackImage = normalImage
     XCTAssertEqual(element.minimumTrackImage(for: .normal), normalImage)
   }
 
-  func _testMinimumTrackHighlightedImage<E: UISlider>(_ element: E) where E: SliderImagesDesignable {
+  func _testMinimumTrackHighlightedImage() {
     let normalImage = UIImage()
     let highlightedImage = UIImage()
     element.minimumTrackImage = normalImage

@@ -11,11 +11,11 @@ import XCTest
 
 final class AnimatableCollectionViewCellTests: XCTestCase {
 
-  var animatableCollectionViewCell: AnimatableCollectionViewCell!
+  var element = AnimatableCollectionViewCell()
 
   override func setUp() {
     super.setUp()
-    animatableCollectionViewCell = AnimatableCollectionViewCell()
+    element = AnimatableCollectionViewCell()
   }
 
   override func tearDown() {
@@ -29,11 +29,11 @@ final class AnimatableCollectionViewCellTests: XCTestCase {
 extension AnimatableCollectionViewCellTests: CornerDesignableTests {
 
   func testCornerRadius() {
-    _testCornerRadius(animatableCollectionViewCell)
+    _testCornerRadius()
   }
 
   func test_cornerSides() {
-    _test_cornerSides(animatableCollectionViewCell)
+    _test_cornerSides()
   }
 
 }
@@ -43,19 +43,19 @@ extension AnimatableCollectionViewCellTests: CornerDesignableTests {
 extension AnimatableCollectionViewCellTests: FillDesignableTests {
 
   func testFillColor() {
-    _testFillColor(animatableCollectionViewCell)
+    _testFillColor()
   }
 
   func testOpacity() {
-    _testOpacity(animatableCollectionViewCell)
+    _testOpacity()
   }
 
   func testPredefinedColor() {
-    _testPredefinedColor(animatableCollectionViewCell)
+    _testPredefinedColor()
   }
 
   func test_predefinedColor() {
-    _test_predefinedColor(animatableCollectionViewCell)
+    _test_predefinedColor()
   }
 
 }

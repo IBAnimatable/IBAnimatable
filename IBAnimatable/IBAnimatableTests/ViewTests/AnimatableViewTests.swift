@@ -11,11 +11,11 @@ import XCTest
 
 final class AnimatableViewTests: XCTestCase {
 
-  var animatableView: AnimatableView!
+  var element = AnimatableView()
 
   override func setUp() {
     super.setUp()
-    animatableView = AnimatableView()
+    element = AnimatableView()
   }
 
   override func tearDown() {
@@ -28,12 +28,12 @@ final class AnimatableViewTests: XCTestCase {
 
 extension AnimatableViewTests: CornerDesignableTests {
 
-  func test_cornerSides() {
-    _test_cornerSides(animatableView)
+  func testCornerRadius() {
+    _testCornerRadius()
   }
 
-  func testCornerRadius() {
-    _testCornerRadius(animatableView)
+  func test_cornerSides() {
+    _test_cornerSides()
   }
 
 }
@@ -43,19 +43,19 @@ extension AnimatableViewTests: CornerDesignableTests {
 extension AnimatableViewTests: FillDesignableTests {
 
   func testFillColor() {
-    _testFillColor(animatableView)
+    _testFillColor()
   }
 
   func testOpacity() {
-    _testOpacity(animatableView)
+    _testOpacity()
   }
 
   func testPredefinedColor() {
-    _testPredefinedColor(animatableView)
+    _testPredefinedColor()
   }
 
   func test_predefinedColor() {
-    _test_predefinedColor(animatableView)
+    _test_predefinedColor()
   }
 
 }
@@ -65,7 +65,7 @@ extension AnimatableViewTests: FillDesignableTests {
 extension AnimatableViewTests: RotationDesignableTests {
 
   func testRotate() {
-    _testRotate(animatableView)
+    _testRotate()
   }
 
 }

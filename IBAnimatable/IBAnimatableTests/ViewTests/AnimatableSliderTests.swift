@@ -11,11 +11,11 @@ import XCTest
 
 final class AnimatableSliderTests: XCTestCase {
 
-  var animatableSlider: AnimatableSlider!
+  var element = AnimatableSlider()
 
   override func setUp() {
     super.setUp()
-    animatableSlider = AnimatableSlider()
+    element = AnimatableSlider()
   }
 
   override func tearDown() {
@@ -29,27 +29,27 @@ final class AnimatableSliderTests: XCTestCase {
 extension AnimatableSliderTests: SliderImagesDesignableTests {
 
   func testThumbImage() {
-    _testThumbImage(animatableSlider)
+    _testThumbImage()
   }
 
   func testThumbHighlightedImage() {
-    _testThumbHighlightedImage(animatableSlider)
+    _testThumbHighlightedImage()
   }
 
   func testMaximumTrackImage() {
-    _testMaximumTrackImage(animatableSlider)
+    _testMaximumTrackImage()
   }
 
   func testMaximumTrackHighlightedImage() {
-    _testMaximumTrackHighlightedImage(animatableSlider)
+    _testMaximumTrackHighlightedImage()
   }
 
   func testMinimumTrackImage() {
-    _testMinimumTrackImage(animatableSlider)
+    _testMinimumTrackImage()
   }
 
   func testMinimumTrackHighlightedImage() {
-    _testMinimumTrackHighlightedImage(animatableSlider)
+    _testMinimumTrackHighlightedImage()
   }
 
 }
@@ -59,7 +59,7 @@ extension AnimatableSliderTests: SliderImagesDesignableTests {
 extension AnimatableSliderTests: RotationDesignableTests {
 
   func testRotate() {
-    _testRotate(animatableSlider)
+    _testRotate()
   }
 
 }

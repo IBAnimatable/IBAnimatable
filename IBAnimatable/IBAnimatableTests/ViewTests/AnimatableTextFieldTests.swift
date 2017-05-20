@@ -11,11 +11,11 @@ import XCTest
 
 class AnimatableTextFieldTests: XCTestCase {
 
-  var animatableTextField: AnimatableTextField!
+  var element = AnimatableTextField()
 
   override func setUp() {
     super.setUp()
-    animatableTextField = AnimatableTextField()
+    element = AnimatableTextField()
   }
 
   override func tearDown() {
@@ -29,11 +29,11 @@ class AnimatableTextFieldTests: XCTestCase {
 extension AnimatableTextFieldTests: CornerDesignableTests {
 
   func testCornerRadius() {
-    _testCornerRadius(animatableTextField)
+    _testCornerRadius()
   }
 
   func test_cornerSides() {
-    _test_cornerSides(animatableTextField)
+    _test_cornerSides()
   }
 
 }
@@ -43,19 +43,19 @@ extension AnimatableTextFieldTests: CornerDesignableTests {
 extension AnimatableTextFieldTests: FillDesignableTests {
 
   func testFillColor() {
-    _testFillColor(animatableTextField)
+    _testFillColor()
   }
 
   func testOpacity() {
-    _testOpacity(animatableTextField)
+    _testOpacity()
   }
 
   func testPredefinedColor() {
-    _testPredefinedColor(animatableTextField)
+    _testPredefinedColor()
   }
 
   func test_predefinedColor() {
-    _test_predefinedColor(animatableTextField)
+    _test_predefinedColor()
   }
 
 }
@@ -65,15 +65,15 @@ extension AnimatableTextFieldTests: FillDesignableTests {
 extension AnimatableTextFieldTests: PaddingDesignableTests {
 
   func testPaddingLeft() {
-    _testPaddingLeft(animatableTextField)
+    _testPaddingLeft()
   }
 
   func testPaddingRight() {
-    _testPaddingRight(animatableTextField)
+    _testPaddingRight()
   }
 
   func testPaddingSide() {
-    _testPaddingSide(animatableTextField)
+    _testPaddingSide()
   }
 
 }

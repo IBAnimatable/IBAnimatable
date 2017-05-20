@@ -11,11 +11,11 @@ import XCTest
 
 final class AnimatableTableViewCellTests: XCTestCase {
 
-  var animatableTableViewCell: AnimatableTableViewCell!
+  var element = AnimatableTableViewCell()
 
   override func setUp() {
     super.setUp()
-    animatableTableViewCell = AnimatableTableViewCell()
+    element = AnimatableTableViewCell()
   }
 
   override func tearDown() {
@@ -29,11 +29,11 @@ final class AnimatableTableViewCellTests: XCTestCase {
 extension AnimatableTableViewCellTests: CornerDesignableTests {
 
   func testCornerRadius() {
-    _testCornerRadius(animatableTableViewCell)
+    _testCornerRadius()
   }
 
   func test_cornerSides() {
-    _test_cornerSides(animatableTableViewCell)
+    _test_cornerSides()
   }
 
 }
@@ -43,19 +43,19 @@ extension AnimatableTableViewCellTests: CornerDesignableTests {
 extension AnimatableTableViewCellTests: FillDesignableTests {
 
   func testFillColor() {
-    _testFillColor(animatableTableViewCell)
+    _testFillColor()
   }
 
   func testOpacity() {
-    _testOpacity(animatableTableViewCell)
+    _testOpacity()
   }
 
   func testPredefinedColor() {
-    _testPredefinedColor(animatableTableViewCell)
+    _testPredefinedColor()
   }
 
   func test_predefinedColor() {
-    _test_predefinedColor(animatableTableViewCell)
+    _test_predefinedColor()
   }
 
 }
