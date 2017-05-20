@@ -418,7 +418,10 @@
 				E27FD0041ECD79DD00F74840 /* IBAnimatableTests */,
 				E27FCFF81ECD79DD00F74840 /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
 		};
 		E27FCFF81ECD79DD00F74840 /* Products */ = {
 			isa = PBXGroup;

@@ -109,7 +109,9 @@
 				E2307A171ECD7F81000E38B2 /* IBAnimatableApp */,
 				E2307A161ECD7F81000E38B2 /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		E2307A161ECD7F81000E38B2 /* Products */ = {
 			isa = PBXGroup;
