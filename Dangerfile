@@ -21,7 +21,7 @@ if has_app_changes && missing_doc_changes && doc_changes_recommended
   warn("Consider adding supporting documentation to this change. Documentation can be found in the `docs` directory.")
 end
 
-missing_example_app_update = git.modified_files.grep(/IBAnimatable App/).empty?
+missing_example_app_update = git.modified_files.grep(/IBAnimatableApp/).empty?
 demo_app_changes_recommended = git.insertions > 15
 if has_app_changes && missing_example_app_update && demo_app_changes_recommended
   warn("Consider adding / updating the demo ap.")
