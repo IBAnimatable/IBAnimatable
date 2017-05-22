@@ -46,7 +46,23 @@
 		E2A5477F1ECF1C4E00842C1F /* ActivityIndicators.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A5477D1ECF1C4E00842C1F /* ActivityIndicators.storyboard */; };
 		E2A547801ECF1C4E00842C1F /* ActivityIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A5477E1ECF1C4E00842C1F /* ActivityIndicatorViewController.swift */; };
 		E2A547841ECF1C9F00842C1F /* TimingFunctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A547831ECF1C9F00842C1F /* TimingFunctionView.swift */; };
+		E2CFE8D61ED2D7C700A45C55 /* IBAnimatable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CFE8D51ED2D7C700A45C55 /* IBAnimatable.framework */; };
+		E2CFE8D71ED2D7C700A45C55 /* IBAnimatable.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E2CFE8D51ED2D7C700A45C55 /* IBAnimatable.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E2CFE8D81ED2D7C700A45C55 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E2CFE8D71ED2D7C700A45C55 /* IBAnimatable.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E2307A151ECD7F81000E38B2 /* IBAnimatableApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBAnimatableApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +106,7 @@
 		E2A5477D1ECF1C4E00842C1F /* ActivityIndicators.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ActivityIndicators.storyboard; sourceTree = "<group>"; };
 		E2A5477E1ECF1C4E00842C1F /* ActivityIndicatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorViewController.swift; sourceTree = "<group>"; };
 		E2A547831ECF1C9F00842C1F /* TimingFunctionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingFunctionView.swift; sourceTree = "<group>"; };
+		E2CFE8D51ED2D7C700A45C55 /* IBAnimatable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IBAnimatable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2CFE8D61ED2D7C700A45C55 /* IBAnimatable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +124,7 @@
 		E2307A0C1ECD7F81000E38B2 = {
 			isa = PBXGroup;
 			children = (
+				E2CFE8D51ED2D7C700A45C55 /* IBAnimatable.framework */,
 				E2307A171ECD7F81000E38B2 /* IBAnimatableApp */,
 				E2307A161ECD7F81000E38B2 /* Products */,
 			);
@@ -283,6 +302,7 @@
 				E2307A121ECD7F81000E38B2 /* Frameworks */,
 				E2307A131ECD7F81000E38B2 /* Resources */,
 				E2A5DBD91ED04787004E6C65 /* Run Script - SwiftLint */,
+				E2CFE8D81ED2D7C700A45C55 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
