@@ -193,21 +193,29 @@ You can see all supported Transition Animators in the demo App, open the App and
 
 If your modal contains a `UITextField` or `UITextView`, you can adjust its position when the keyboard is opening. `IBAnimatable` provides a broad set of translation when the keyboard is opening. We can use them in Interface Builder as **Keyboard Transalation** as described in [Configuring a Presentation in Interface Builder](#configuring-a-presentation-in-interface-builder), or programmatically in code.
 
-### MoveUp
+### moveUp
 
 | Value | Effect |
 | ------------- | ------------- |
-| `MoveUp` | Move the modal up of the keyboard height |
+| `moveUp` | Move the modal up of the keyboard height |
 
 ![Transition - Fade Transition](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/KeyboardTranslationMoveUp.gif)
 
-### AboveKeyboard
+### aboveKeyboard
 
 | Value | Effect |
 | ------------- | ------------- |
-| `AboveKeyboard` | Position the modal above the keyboard |
+| `aboveKeyboard` | Position the modal above the keyboard |
 
 ![Transition - Fade Transition](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/KeyboardTranslationAboveKeyboard.gif)
+
+### stickOrMoveUp
+
+| Value | Effect |
+| ------------- | ------------- |
+| `stickOrMoveUp` | Move up the modal above the keyboard if the modal maxY is higher than keyboard minY |
+
+![Transition - Fade Transition](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/KeyboardTranslationStickOrMoveUpKeyboard.gif)
 
 You can see all supported Keyboard Translation in the demo App, open the App and tap on "Playground" button, then tap on "presentations", then play with the different options.
 
