@@ -11,11 +11,11 @@ import XCTest
 
 final class AnimatableCheckBoxTests: XCTestCase {
 
-  var animatableCheckBox: AnimatableCheckBox!
+  var element = AnimatableCheckBox()
 
   override func setUp() {
     super.setUp()
-    animatableCheckBox = AnimatableCheckBox()
+    element = AnimatableCheckBox()
   }
 
   override func tearDown() {
@@ -29,11 +29,11 @@ final class AnimatableCheckBoxTests: XCTestCase {
 extension AnimatableCheckBoxTests: CornerDesignableTests {
 
   func testCornerRadius() {
-    _testCornerRadius(animatableCheckBox)
+    _testCornerRadius()
   }
 
   func test_cornerSides() {
-    _test_cornerSides(animatableCheckBox)
+    _test_cornerSides()
   }
 
 }
@@ -43,19 +43,19 @@ extension AnimatableCheckBoxTests: CornerDesignableTests {
 extension AnimatableCheckBoxTests: FillDesignableTests {
 
   func testFillColor() {
-    _testFillColor(animatableCheckBox)
+    _testFillColor()
   }
 
   func testOpacity() {
-    _testOpacity(animatableCheckBox)
+    _testOpacity()
   }
 
   func testPredefinedColor() {
-    _testPredefinedColor(animatableCheckBox)
+    _testPredefinedColor()
   }
 
   func test_predefinedColor() {
-    _test_predefinedColor(animatableCheckBox)
+    _test_predefinedColor()
   }
 
 }

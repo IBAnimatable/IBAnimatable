@@ -9,7 +9,11 @@
 import XCTest
 @testable import IBAnimatable
 
-protocol PaddingDesignableTests {
+protocol PaddingDesignableTests: class {
+
+  associatedtype Element
+
+  var element: Element { get set }
 
   func testPaddingLeft()
   func testPaddingRight()
@@ -19,23 +23,23 @@ protocol PaddingDesignableTests {
 
 // MARK: - UITextField Tests
 
-extension PaddingDesignableTests {
+extension PaddingDesignableTests where Element: UITextField, Element: PaddingDesignable {
 
-  func _testPaddingLeft<E: UITextField>(_ element: E) where E: PaddingDesignable {
+  func _testPaddingLeft() {
     element.paddingLeft = 10.0
     let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10.0, height: 1))
     XCTAssertEqual(element.leftView?.frame, paddingView.frame)
     XCTAssertEqual(element.leftViewMode, .always)
   }
 
-  func _testPaddingRight<E: UITextField>(_ element: E) where E: PaddingDesignable {
+  func _testPaddingRight() {
     element.paddingRight = 15.0
     let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 15.0, height: 1))
     XCTAssertEqual(element.rightView?.frame, paddingView.frame)
     XCTAssertEqual(element.rightViewMode, .always)
   }
 
-  func _testPaddingSide<E: UITextField>(_ element: E) where E: PaddingDesignable {
+  func _testPaddingSide() {
     element.paddingSide = 20.0
     let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 20.0, height: 1))
     XCTAssertEqual(element.rightView?.frame, paddingView.frame)

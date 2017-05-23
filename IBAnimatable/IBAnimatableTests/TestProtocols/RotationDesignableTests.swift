@@ -9,7 +9,11 @@
 import XCTest
 @testable import IBAnimatable
 
-protocol RotationDesignableTests {
+protocol RotationDesignableTests: class {
+
+  associatedtype Element
+
+  var element: Element { get set }
 
   func testRotate()
 
@@ -17,9 +21,9 @@ protocol RotationDesignableTests {
 
 // MARK: - UIView Tests
 
-extension RotationDesignableTests {
+extension RotationDesignableTests where Element: UIView, Element: RotationDesignable {
 
-  func _testRotate<E: UIView>(_ element: E) where E: RotationDesignable {
+  func _testRotate() {
     element.rotate = -360
     XCTAssertEqual(element.transform, .identity)
     element.rotate = 360

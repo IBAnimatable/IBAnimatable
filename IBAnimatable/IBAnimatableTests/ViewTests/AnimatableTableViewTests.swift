@@ -11,11 +11,11 @@ import XCTest
 
 final class AnimatableTableViewTests: XCTestCase {
 
-  var animatableTableView: AnimatableTableView!
+  var element = AnimatableTableView()
 
   override func setUp() {
     super.setUp()
-    animatableTableView = AnimatableTableView()
+    element = AnimatableTableView()
   }
 
   override func tearDown() {
@@ -29,19 +29,19 @@ final class AnimatableTableViewTests: XCTestCase {
 extension AnimatableTableViewTests: FillDesignableTests {
 
   func testFillColor() {
-    _testFillColor(animatableTableView)
+    _testFillColor()
   }
 
   func testOpacity() {
-    _testOpacity(animatableTableView)
+    _testOpacity()
   }
 
   func testPredefinedColor() {
-    _testPredefinedColor(animatableTableView)
+    _testPredefinedColor()
   }
 
   func test_predefinedColor() {
-    _test_predefinedColor(animatableTableView)
+    _test_predefinedColor()
   }
 
 }

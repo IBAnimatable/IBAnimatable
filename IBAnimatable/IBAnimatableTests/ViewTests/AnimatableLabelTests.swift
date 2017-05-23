@@ -11,11 +11,11 @@ import XCTest
 
 final class AnimatableLabelTests: XCTestCase {
 
-  var animatableLabel: AnimatableLabel!
+  var element = AnimatableLabel()
 
   override func setUp() {
     super.setUp()
-    animatableLabel = AnimatableLabel()
+    element = AnimatableLabel()
   }
 
   override func tearDown() {
@@ -29,11 +29,11 @@ final class AnimatableLabelTests: XCTestCase {
 extension AnimatableLabelTests: CornerDesignableTests {
 
   func testCornerRadius() {
-    _testCornerRadius(animatableLabel)
+    _testCornerRadius()
   }
 
   func test_cornerSides() {
-    _test_cornerSides(animatableLabel)
+    _test_cornerSides()
   }
 
 }
@@ -43,19 +43,19 @@ extension AnimatableLabelTests: CornerDesignableTests {
 extension AnimatableLabelTests: FillDesignableTests {
 
   func testFillColor() {
-    _testFillColor(animatableLabel)
+    _testFillColor()
   }
 
   func testOpacity() {
-    _testOpacity(animatableLabel)
+    _testOpacity()
   }
 
   func testPredefinedColor() {
-    _testPredefinedColor(animatableLabel)
+    _testPredefinedColor()
   }
 
   func test_predefinedColor() {
-    _test_predefinedColor(animatableLabel)
+    _test_predefinedColor()
   }
 
 }
@@ -65,7 +65,7 @@ extension AnimatableLabelTests: FillDesignableTests {
 extension AnimatableLabelTests: RotationDesignableTests {
 
   func testRotate() {
-    _testRotate(animatableLabel)
+    _testRotate()
   }
 
 }

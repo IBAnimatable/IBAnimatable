@@ -11,11 +11,11 @@ import XCTest
 
 final class AnimatableButtonTests: XCTestCase {
 
-  var animatableButton: AnimatableButton!
+  var element = AnimatableButton()
 
   override func setUp() {
     super.setUp()
-    animatableButton = AnimatableButton()
+    element = AnimatableButton()
   }
 
   override func tearDown() {
@@ -29,11 +29,11 @@ final class AnimatableButtonTests: XCTestCase {
 extension AnimatableButtonTests: CornerDesignableTests {
 
   func testCornerRadius() {
-    _testCornerRadius(animatableButton)
+    _testCornerRadius()
   }
 
   func test_cornerSides() {
-    _test_cornerSides(animatableButton)
+    _test_cornerSides()
   }
 
 }
@@ -43,19 +43,19 @@ extension AnimatableButtonTests: CornerDesignableTests {
 extension AnimatableButtonTests: FillDesignableTests {
 
   func testFillColor() {
-    _testFillColor(animatableButton)
+    _testFillColor()
   }
 
   func testOpacity() {
-    _testOpacity(animatableButton)
+    _testOpacity()
   }
 
   func testPredefinedColor() {
-    _testPredefinedColor(animatableButton)
+    _testPredefinedColor()
   }
 
   func test_predefinedColor() {
-    _test_predefinedColor(animatableButton)
+    _test_predefinedColor()
   }
 
 }

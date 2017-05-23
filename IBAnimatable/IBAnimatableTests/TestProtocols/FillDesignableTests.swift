@@ -9,7 +9,11 @@
 import XCTest
 @testable import IBAnimatable
 
-protocol FillDesignableTests {
+protocol FillDesignableTests: class {
+
+  associatedtype Element
+
+  var element: Element { get set }
 
   func testFillColor()
   func testOpacity()
@@ -20,9 +24,9 @@ protocol FillDesignableTests {
 
 // MARK: - Universal Tests
 
-extension FillDesignableTests {
+extension FillDesignableTests where Element: StringFillDesignable {
 
-  func _test_predefinedColor(_ element: StringFillDesignable) {
+  func _test_predefinedColor() {
     element._predefinedColor = "flatEmerland"
     XCTAssertEqual(element.predefinedColor, .flatEmerland)
     element._predefinedColor = "flatPomegranate"
@@ -69,14 +73,14 @@ extension FillDesignableTests {
 
 // MARK: - UIView Tests
 
-extension FillDesignableTests {
+extension FillDesignableTests where Element: UIView, Element: FillDesignable {
 
-  func _testFillColor<E: UIView>(_ element: E) where E: FillDesignable {
+  func _testFillColor() {
     element.fillColor = .red
     XCTAssertEqual(element.backgroundColor, .red)
   }
 
-  func _testOpacity<E: UIView>(_ element: E) where E: FillDesignable {
+  func _testOpacity() {
     element.opacity = 0.5
     XCTAssertEqual(element.opacity, element.alpha)
     XCTAssertFalse(element.isOpaque)
@@ -85,7 +89,7 @@ extension FillDesignableTests {
     XCTAssertTrue(element.isOpaque)
   }
 
-  func _testPredefinedColor<E: UIView>(_ element: E) where E: FillDesignable {
+  func _testPredefinedColor() {
     element.predefinedColor = .flatGreenSea
     XCTAssertEqual(element.backgroundColor, ColorType.flatGreenSea.color)
   }
@@ -94,15 +98,15 @@ extension FillDesignableTests {
 
 // MARK: - UICollectionViewCell Tests
 
-extension FillDesignableTests {
+extension FillDesignableTests where Element: UICollectionViewCell, Element: FillDesignable {
 
-  func _testFillColor<E: UICollectionViewCell>(_ element: E) where E: FillDesignable {
+  func _testFillColor() {
     element.fillColor = .red
     XCTAssertEqual(element.backgroundColor, .red)
     XCTAssertEqual(element.contentView.backgroundColor, .red)
   }
 
-  func _testOpacity<E: UICollectionViewCell>(_ element: E) where E: FillDesignable {
+  func _testOpacity() {
     element.opacity = 0.5
     XCTAssertEqual(element.opacity, element.alpha)
     XCTAssertFalse(element.isOpaque)
@@ -111,7 +115,7 @@ extension FillDesignableTests {
     XCTAssertTrue(element.isOpaque)
   }
 
-  func _testPredefinedColor<E: UICollectionViewCell>(_ element: E) where E: FillDesignable {
+  func _testPredefinedColor() {
     element.predefinedColor = .flatClouds
     XCTAssertEqual(element.backgroundColor, ColorType.flatClouds.color)
     XCTAssertEqual(element.contentView.backgroundColor, ColorType.flatClouds.color)
