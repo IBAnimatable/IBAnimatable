@@ -858,6 +858,7 @@
 				E27FCFF31ECD79DD00F74840 /* Frameworks */,
 				E27FCFF41ECD79DD00F74840 /* Headers */,
 				E27FCFF51ECD79DD00F74840 /* Resources */,
+				E28984741ED40A91006DB1E0 /* Run Script - SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -875,7 +876,6 @@
 				E27FCFFC1ECD79DD00F74840 /* Sources */,
 				E27FCFFD1ECD79DD00F74840 /* Frameworks */,
 				E27FCFFE1ECD79DD00F74840 /* Resources */,
-				E2A5DBDA1ED04794004E6C65 /* Run Script - SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -944,7 +944,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		E2A5DBDA1ED04794004E6C65 /* Run Script - SwiftLint */ = {
+		E28984741ED40A91006DB1E0 /* Run Script - SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
