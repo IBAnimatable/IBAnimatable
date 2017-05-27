@@ -58,7 +58,7 @@ enum ParamType {
 
   func title(at index: Int) -> String {
     switch self {
-    case .enumeration(_):
+    case .enumeration:
       return value(at: index)
     case let .number(_, _, _, _, unit):
       return   ("\(value(at: index)) \(unit)").trimmingCharacters(in: CharacterSet.whitespaces)

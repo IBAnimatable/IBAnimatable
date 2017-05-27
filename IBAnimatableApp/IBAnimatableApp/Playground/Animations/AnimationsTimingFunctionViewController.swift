@@ -176,7 +176,7 @@ extension TimingFunctionType {
       return 4
     case .default:
       return 5
-    case .custom(_, _):
+    case .custom:
       return 6
     case .easeInSine:
       return 7
@@ -226,7 +226,7 @@ extension TimingFunctionType {
       return 29
     case .easeInOutBack:
       return 30
-    case .spring(_):
+    case .spring:
       return 31
     }
   }
