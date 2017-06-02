@@ -64,16 +64,40 @@ extension AnimatableTextFieldTests: FillDesignableTests {
 
 extension AnimatableTextFieldTests: PaddingDesignableTests {
 
-  func testPaddingLeft() {
-    _testPaddingLeft()
+  func testRightTextPadding() {
+    _testRightTextPadding()
   }
 
-  func testPaddingRight() {
-    _testPaddingRight()
+  func testLeftTextPadding() {
+    _testLeftTextPadding()
   }
 
-  func testPaddingSide() {
-    _testPaddingSide()
+  func testSideTextPadding() {
+    _testSideTextPadding()
+  }
+
+  func testRightPlaceholderPadding() {
+    _testRightPlaceholderPadding()
+  }
+
+  func testLeftPlaceholderPadding() {
+    _testLeftPlaceholderPadding()
+  }
+
+  func testSidePlaceholderPadding() {
+    _testSidePlaceholderPadding()
+  }
+
+  func testRightEditPadding() {
+    _testRightEditPadding()
+  }
+
+  func testLeftEditPadding() {
+    _testLeftEditPadding()
+  }
+
+  func testSideEditPadding() {
+    _testSideEditPadding()
   }
 
 }
