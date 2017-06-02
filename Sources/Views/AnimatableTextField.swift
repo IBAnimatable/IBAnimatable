@@ -115,22 +115,38 @@ open class AnimatableTextField: UITextField, CornerDesignable, FillDesignable, B
   }
 
   // MARK: - PaddingDesignable
-  @IBInspectable open var paddingLeft: CGFloat = CGFloat.nan {
-    didSet {
-      configurePaddingLeft()
-    }
+  
+  @IBInspectable open var leftTextPadding: CGFloat = CGFloat.nan
+  
+  @IBInspectable open var rightTextPadding: CGFloat = CGFloat.nan
+  
+  @IBInspectable open var sideTextPadding: CGFloat = CGFloat.nan
+  
+  @IBInspectable open var leftEditPadding: CGFloat = CGFloat.nan
+  
+  @IBInspectable open var rightEditPadding: CGFloat = CGFloat.nan
+  
+  @IBInspectable open var sideEditPadding: CGFloat = CGFloat.nan
+  
+  @IBInspectable open var leftPlaceholderPadding: CGFloat = CGFloat.nan
+  
+  @IBInspectable open var rightPlaceholderPadding: CGFloat = CGFloat.nan
+  
+  @IBInspectable open var sidePlaceholderPadding: CGFloat = CGFloat.nan
+  
+  override open func textRect(forBounds bounds: CGRect) -> CGRect {
+    let shouldNotModify = leftTextPadding.isNaN && rightTextPadding.isNaN && sideTextPadding.isNaN
+    return shouldNotModify ? bounds : UIEdgeInsetsInsetRect(bounds, textRectInsets)
   }
-
-  @IBInspectable open var paddingRight: CGFloat = CGFloat.nan {
-    didSet {
-      configurePaddingRight()
-    }
+  
+  override open func editingRect(forBounds bounds: CGRect) -> CGRect {
+    let shouldNotModify = leftEditPadding.isNaN && rightEditPadding.isNaN && sideEditPadding.isNaN
+    return shouldNotModify ? bounds : UIEdgeInsetsInsetRect(bounds, editRectInsets)
   }
-
-  @IBInspectable open var paddingSide: CGFloat = CGFloat.nan {
-    didSet {
-      configurePaddingSide()
-    }
+  
+  override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+    let shouldNotModify = leftPlaceholderPadding.isNaN && rightPlaceholderPadding.isNaN && sidePlaceholderPadding.isNaN
+    return shouldNotModify ? bounds : UIEdgeInsetsInsetRect(bounds, placeholderRectInsets)
   }
 
   // MARK: - SideImageDesignable

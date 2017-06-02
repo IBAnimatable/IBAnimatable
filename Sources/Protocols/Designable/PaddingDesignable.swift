@@ -6,53 +6,61 @@
 import UIKit
 
 public protocol PaddingDesignable: class {
-  /**
-    `padding-left`
-  */
-  var paddingLeft: CGFloat { get set }
-
-  /**
-    `padding-right`
-  */
-  var paddingRight: CGFloat { get set }
-
-  /**
-   `padding-left` and `padding-right`
-  */
-  var paddingSide: CGFloat { get set }
+  
+  var leftTextPadding: CGFloat { get set }
+  
+  var rightTextPadding: CGFloat { get set }
+  
+  var sideTextPadding: CGFloat { get set }
+  
+  var leftEditPadding: CGFloat { get set }
+  
+  var rightEditPadding: CGFloat { get set }
+  
+  var sideEditPadding: CGFloat { get set }
+  
+  var leftPlaceholderPadding: CGFloat { get set }
+  
+  var rightPlaceholderPadding: CGFloat { get set }
+  
+  var sidePlaceholderPadding: CGFloat { get set }
+  
 }
 
 public extension PaddingDesignable where Self: UITextField {
-  public func configurePaddingLeft() {
-    if paddingLeft.isNaN {
-      return
+  
+  public var textRectInsets: UIEdgeInsets {
+    if sideTextPadding.isNaN {
+      return insets(left: leftTextPadding, right: rightTextPadding)
+    } else {
+      return sideInsets(padding: sideTextPadding)
     }
-
-    let padding = UIView(frame: CGRect(x: 0, y: 0, width: paddingLeft, height: 1))
-    leftViewMode = .always
-    leftView = padding
+  }
+  
+  public var editRectInsets: UIEdgeInsets {
+    if sideEditPadding.isNaN {
+      return insets(left: leftEditPadding, right: rightEditPadding)
+    } else {
+      return sideInsets(padding: sideEditPadding)
+    }
+  }
+  
+  public var placeholderRectInsets: UIEdgeInsets {
+    if sidePlaceholderPadding.isNaN {
+      return insets(left: leftPlaceholderPadding, right: rightPlaceholderPadding)
+    } else {
+      return sideInsets(padding: sidePlaceholderPadding)
+    }
+  }
+  
+  private func sideInsets(padding: CGFloat) -> UIEdgeInsets {
+    return UIEdgeInsets(top: 0, left: padding, bottom: 0, right: padding)
+  }
+  
+  private func insets(left: CGFloat, right: CGFloat) -> UIEdgeInsets {
+    let l = left.isNaN ? 0 : left
+    let r = right.isNaN ? 0 : right
+    return UIEdgeInsets(top: 0, left: l, bottom: 0, right: r)
   }
 
-  public func configurePaddingRight() {
-    if paddingRight.isNaN {
-      return
-    }
-
-    let padding = UIView(frame: CGRect(x: 0, y: 0, width: paddingRight, height: 1))
-    rightViewMode = .always
-    rightView = padding
-  }
-
-  public func configurePaddingSide() {
-    if paddingSide.isNaN {
-      return
-    }
-
-    let padding = UIView(frame: CGRect(x: 0, y: 0, width: paddingSide, height: 1))
-    leftViewMode = .always
-    leftView = padding
-
-    rightViewMode = .always
-    rightView = padding
-  }
 }
