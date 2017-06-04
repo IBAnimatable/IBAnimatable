@@ -54,7 +54,7 @@ public enum AnimationType {
 }
 
 extension AnimationType {
-  
+
   public static func scaleTo(x: Double, y: Double) -> AnimationType {
     return .scale(fromX: 1, fromY: 1, toX: x, toY: y)
   }

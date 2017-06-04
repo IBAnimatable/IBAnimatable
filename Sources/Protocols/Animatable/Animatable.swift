@@ -513,7 +513,6 @@ fileprivate extension Animatable where Self: UIView {
         usingSpringWithDamping: configuration.damping,
         initialSpringVelocity: configuration.velocity,
         options: [],
-        
         animations: {
           self.transform = CGAffineTransform(scaleX: CGFloat(toX), y: CGFloat(toY))
         },
@@ -529,12 +528,12 @@ fileprivate extension Animatable where Self: UIView {
         scaleX.values = [fromX, toX]
         scaleX.keyTimes = [0, 1]
         scaleX.timingFunctionType = configuration.timingFunction ?? .easeInOut
-        
+
         let scaleY = CAKeyframeAnimation(keyPath: "transform.scale.y")
         scaleY.values = [fromY, toY]
         scaleY.keyTimes = [0, 1]
         scaleY.timingFunctionType = configuration.timingFunction ?? .easeInOut
-        
+
         let animationGroup = CAAnimationGroup()
         animationGroup.animations = [scaleX, scaleY]
         animationGroup.duration = configuration.duration
