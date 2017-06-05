@@ -28,4 +28,8 @@ if has_app_changes && missing_example_app_update && demo_app_changes_recommended
 end
 
 # Run SwiftLint
+swiftlint.config_file = './IBAnimatableApp/.swiftlint.yml'
+swiftlint.lint_files
+
+swiftlint.config_file = './IBAnimatable/.swiftlint.yml'
 swiftlint.lint_files
