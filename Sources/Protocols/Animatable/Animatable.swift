@@ -506,41 +506,51 @@ fileprivate extension Animatable where Self: UIView {
       return
     }
     if case .none = configuration.timingFunction {
-      transform = CGAffineTransform(scaleX: CGFloat(fromX), y: CGFloat(fromY))
-      UIView.animate(
-        withDuration: configuration.duration,
-        delay: configuration.delay,
-        usingSpringWithDamping: configuration.damping,
-        initialSpringVelocity: configuration.velocity,
-        options: [],
-        animations: {
-          self.transform = CGAffineTransform(scaleX: CGFloat(toX), y: CGFloat(toY))
-        },
-        completion: { completed in
-          if completed {
-            completion?()
-          }
-        }
-      )
+      springScale(fromX: fromX, fromY: fromY, toX: toX, toY: toY, configuration: configuration, completion: completion)
     } else {
-      CALayer.animate({
-        let scaleX = CAKeyframeAnimation(keyPath: "transform.scale.x")
-        scaleX.values = [fromX, toX]
-        scaleX.keyTimes = [0, 1]
-        scaleX.timingFunctionType = configuration.timingFunction ?? .easeInOut
-
-        let scaleY = CAKeyframeAnimation(keyPath: "transform.scale.y")
-        scaleY.values = [fromY, toY]
-        scaleY.keyTimes = [0, 1]
-        scaleY.timingFunctionType = configuration.timingFunction ?? .easeInOut
-
-        let animationGroup = CAAnimationGroup()
-        animationGroup.animations = [scaleX, scaleY]
-        animationGroup.duration = configuration.duration
-        animationGroup.beginTime = CACurrentMediaTime() + configuration.delay
-        self.layer.add(animationGroup, forKey: "scale")
-      }, completion: completion)
+      layerScale(fromX: fromX, fromY: fromY, toX: toX, toY: toY, configuration: configuration, completion: completion)
     }
+  }
+
+  private func springScale(fromX: Double, fromY: Double, toX: Double, toY: Double,
+                           configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+    transform = CGAffineTransform(scaleX: CGFloat(fromX), y: CGFloat(fromY))
+    UIView.animate(
+      withDuration: configuration.duration,
+      delay: configuration.delay,
+      usingSpringWithDamping: configuration.damping,
+      initialSpringVelocity: configuration.velocity,
+      options: [],
+      animations: {
+        self.transform = CGAffineTransform(scaleX: CGFloat(toX), y: CGFloat(toY))
+    },
+      completion: { completed in
+        if completed {
+          completion?()
+        }
+    }
+    )
+  }
+
+  private func layerScale(fromX: Double, fromY: Double, toX: Double, toY: Double,
+                          configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+    CALayer.animate({
+      let scaleX = CAKeyframeAnimation(keyPath: "transform.scale.x")
+      scaleX.values = [fromX, toX]
+      scaleX.keyTimes = [0, 1]
+      scaleX.timingFunctionType = configuration.timingFunction ?? .easeInOut
+
+      let scaleY = CAKeyframeAnimation(keyPath: "transform.scale.y")
+      scaleY.values = [fromY, toY]
+      scaleY.keyTimes = [0, 1]
+      scaleY.timingFunctionType = configuration.timingFunction ?? .easeInOut
+
+      let animationGroup = CAAnimationGroup()
+      animationGroup.animations = [scaleX, scaleY]
+      animationGroup.duration = configuration.duration
+      animationGroup.beginTime = CACurrentMediaTime() + configuration.delay
+      self.layer.add(animationGroup, forKey: "scale")
+    }, completion: completion)
   }
 
 // swiftlint:enable variable_name_min_length
