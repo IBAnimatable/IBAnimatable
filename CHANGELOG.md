@@ -14,6 +14,7 @@ N/A
 - Add `TimingFunctionType` attribute to `Animatable` to specifies the speed curve of an animation. [#478](https://github.com/IBAnimatable/IBAnimatable/pull/478) by [@phimage](https://github.com/phimage)
 Add new mask type `.ellipse`. [#481](https://github.com/IBAnimatable/IBAnimatable/pull/481) by [@phimage](https://github.com/phimage)
 - Add `stickOrMoveUp` keyboard translation option when presenting a viewController. [#489](https://github.com/IBAnimatable/IBAnimatable/pull/489) by [@tbaranes](https://github.com/tbaranes)
+- Add `scale`, `scaleTo` and `scaleFrom` animation types. [#494](https://github.com/IBAnimatable/IBAnimatable/pull/494) by [@phimage](https://github.com/phimage)
 
 #### Bugfixes
 

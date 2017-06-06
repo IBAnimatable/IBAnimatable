@@ -28,6 +28,7 @@ public enum AnimationType {
   case rotate(direction: RotationDirection, repeatCount: Int)
   case moveTo(x: Double, y: Double)
   case moveBy(x: Double, y: Double)
+  case scale(fromX: Double, fromY: Double, toX: Double, toY: Double)
   case none
 
   public enum FadeWay: String {
@@ -49,6 +50,19 @@ public enum AnimationType {
   public enum RotationDirection: String {
     case cw, ccw
   }
+
+}
+
+extension AnimationType {
+
+  public static func scaleTo(x: Double, y: Double) -> AnimationType {
+    return .scale(fromX: 1, fromY: 1, toX: x, toY: y)
+  }
+
+  public static func scaleFrom(x: Double, y: Double) -> AnimationType {
+    return .scale(fromX: x, fromY: y, toX: 1, toY: 1)
+  }
+
 }
 
 extension AnimationType: IBEnum {
@@ -106,6 +120,13 @@ extension AnimationType: IBEnum {
       self = .moveTo(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
     case "moveby":
       self = .moveBy(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
+    case "scale":
+      self = .scale(fromX: params[safe: 0]?.toDouble() ?? 0, fromY: params[safe: 1]?.toDouble() ?? 0,
+                    toX: params[safe: 2]?.toDouble() ?? 1, toY: params[safe: 3]?.toDouble() ?? 1)
+    case "scalefrom":
+      self = .scaleFrom(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
+    case "scaleto":
+      self = .scaleTo(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
     default:
       self = .none
     }
