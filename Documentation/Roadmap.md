@@ -197,6 +197,7 @@ You can find more details in https://github.com/IBAnimatable/IBAnimatable/milest
 	* <del>Rotate</del>
 	* <del>MoveTo</del>
 	* <del>MoveBy</del>
+	* <del>scale</del> - https://github.com/IBAnimatable/IBAnimatable/issues/121
 	* Jump - https://github.com/IBAnimatable/IBAnimatable/issues/75
 
 * Animation properties:
@@ -208,8 +209,8 @@ You can find more details in https://github.com/IBAnimatable/IBAnimatable/milest
 	* <del>velocity</del>
 	* <del>force</del>
 	* <del>repeatCount</del>
-	* Animating forever? `repeatCount = Float.Infinit` 
-	* timing: linear and easing
+	* Animating forever? `repeatCount = Float.Infinit`
+	* <del>timing: linear and easing</del>
 
 ### Interaction elements
 * <del>Unwind Segue</del>
@@ -229,9 +230,9 @@ You can find more details in https://github.com/IBAnimatable/IBAnimatable/milest
 * Automatically scrolling the view to follow the keyboard's focus.
 
 ### Navigation, transitioning animators and custom Segues
-* <del>Configurable custom transition animations for Push and Pop. </del> 
-* <del>Configurable custom transition animations for Present and Dismiss. </del> 
-* <del>Configurable gesture interactions for Dismiss and Pop. </del> 
+* <del>Configurable custom transition animations for Push and Pop. </del>
+* <del>Configurable custom transition animations for Present and Dismiss. </del>
+* <del>Configurable gesture interactions for Dismiss and Pop. </del>
 * Meaningful transition like https://www.google.com/design/spec/animation/meaningful-transitions.html
 * More transition like <del>https://github.com/ColinEberhardt/VCTransitionsLibrary</del> and http://transitiontreasury.com/
 
@@ -243,5 +244,3 @@ You can find more details in https://github.com/IBAnimatable/IBAnimatable/milest
 * Sketch plugin to export `IBAnimatable` styles from Sketch, e.g. generating `Opacity=0.5; fillColor=#336699;` from Sketch and easily apply in Interface Builder.
 
 **Any suggestions for the vision are welcome**, please modify the Roadmap.md file and create a PR. BTW: you can edit it on Github online and create a PR without manually forking the project now.
-
-

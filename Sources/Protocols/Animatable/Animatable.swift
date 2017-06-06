@@ -129,6 +129,8 @@ public extension Animatable where Self: UIView {
       moveBy(x: x, y: y, configuration: configuration, completion: completion)
     case let .moveTo(x, y):
       moveTo(x: x, y: y, configuration: configuration, completion: completion)
+    case let .scale(fromX, fromY, toX, toY):
+      scale(fromX: fromX, fromY: fromY, toX: toX, toY: toY, configuration: configuration, completion: completion)
     case .none:
       break
     }
@@ -499,6 +501,58 @@ fileprivate extension Animatable where Self: UIView {
     }
   }
 
+  func scale(fromX: Double, fromY: Double, toX: Double, toY: Double, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+    if fromX.isNaN || fromY.isNaN || toX.isNaN || toY.isNaN {
+      return
+    }
+    if case .none = configuration.timingFunction {
+      springScale(fromX: fromX, fromY: fromY, toX: toX, toY: toY, configuration: configuration, completion: completion)
+    } else {
+      layerScale(fromX: fromX, fromY: fromY, toX: toX, toY: toY, configuration: configuration, completion: completion)
+    }
+  }
+
+  private func springScale(fromX: Double, fromY: Double, toX: Double, toY: Double,
+                           configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+    transform = CGAffineTransform(scaleX: CGFloat(fromX), y: CGFloat(fromY))
+    UIView.animate(
+      withDuration: configuration.duration,
+      delay: configuration.delay,
+      usingSpringWithDamping: configuration.damping,
+      initialSpringVelocity: configuration.velocity,
+      options: [],
+      animations: {
+        self.transform = CGAffineTransform(scaleX: CGFloat(toX), y: CGFloat(toY))
+    },
+      completion: { completed in
+        if completed {
+          completion?()
+        }
+    }
+    )
+  }
+
+  private func layerScale(fromX: Double, fromY: Double, toX: Double, toY: Double,
+                          configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+    CALayer.animate({
+      let scaleX = CAKeyframeAnimation(keyPath: "transform.scale.x")
+      scaleX.values = [fromX, toX]
+      scaleX.keyTimes = [0, 1]
+      scaleX.timingFunctionType = configuration.timingFunction ?? .easeInOut
+
+      let scaleY = CAKeyframeAnimation(keyPath: "transform.scale.y")
+      scaleY.values = [fromY, toY]
+      scaleY.keyTimes = [0, 1]
+      scaleY.timingFunctionType = configuration.timingFunction ?? .easeInOut
+
+      let animationGroup = CAAnimationGroup()
+      animationGroup.animations = [scaleX, scaleY]
+      animationGroup.duration = configuration.duration
+      animationGroup.beginTime = CACurrentMediaTime() + configuration.delay
+      self.layer.add(animationGroup, forKey: "scale")
+    }, completion: completion)
+  }
+
 // swiftlint:enable variable_name_min_length
   func computeValues(way: AnimationType.Way, direction: AnimationType.Direction,
                      configuration: AnimationConfiguration,
@@ -661,7 +715,7 @@ public extension AnimationType {
   /// This animation use damping and velocity parameters.
   public var isSpring: Bool {
     switch self {
-    case .moveBy, .moveTo:
+    case .moveBy, .moveTo, .scale:
       return true
     case .squeeze, .squeezeFade, .slide, .slideFade, .zoom, .zoomInvert:
       return true
@@ -679,7 +733,7 @@ public extension AnimationType {
   /// This animation use timing function parameter.
   public var isCubic: Bool {
     switch self {
-    case .moveBy, .moveTo:
+    case .moveBy, .moveTo, .scale:
       return true
     case .rotate, .shake, .flip, .pop, .squash, .morph, .swing, .wobble, .flash:
       return true
