@@ -1,4 +1,8 @@
-line_length: 
+included:
+  - ../Sources/
+  - IBAnimatableTests/
+
+line_length:
   warning: 150
   ignores_comments: true
 file_length: 500
