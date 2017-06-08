@@ -6,57 +6,45 @@
 import UIKit
 
 public protocol PaddingDesignable: class {
-  
-  var leftTextPadding: CGFloat { get set }
-  
-  var rightTextPadding: CGFloat { get set }
-  
-  var sideTextPadding: CGFloat { get set }
-  
-  var leftEditPadding: CGFloat { get set }
-  
-  var rightEditPadding: CGFloat { get set }
-  
-  var sideEditPadding: CGFloat { get set }
-  
-  var leftPlaceholderPadding: CGFloat { get set }
-  
-  var rightPlaceholderPadding: CGFloat { get set }
-  
-  var sidePlaceholderPadding: CGFloat { get set }
-  
+
+  /**
+   `padding-left`
+   */
+  var paddingLeft: CGFloat { get set }
+
+  /**
+   `padding-right`
+   */
+  var paddingRight: CGFloat { get set }
+
+  /**
+   `padding-left` and `padding-right`
+   */
+  var paddingSide: CGFloat { get set }
+
 }
 
 public extension PaddingDesignable where Self: UITextField {
-  
-  public var textRectInsets: UIEdgeInsets {
-    if sideTextPadding.isNaN {
-      return insets(left: leftTextPadding, right: rightTextPadding)
+
+  public func paddedRect(forBounds bounds: CGRect) -> CGRect {
+    if paddingSide.isNaN && paddingLeft.isNaN && paddingRight.isNaN {
+      return bounds
+    }
+    return UIEdgeInsetsInsetRect(bounds, paddingInsets)
+  }
+
+  private var paddingInsets: UIEdgeInsets {
+    if paddingSide.isNaN {
+      return insets(left: paddingLeft, right: paddingRight)
     } else {
-      return sideInsets(padding: sideTextPadding)
+      return sideInsets(padding: paddingSide)
     }
   }
-  
-  public var editRectInsets: UIEdgeInsets {
-    if sideEditPadding.isNaN {
-      return insets(left: leftEditPadding, right: rightEditPadding)
-    } else {
-      return sideInsets(padding: sideEditPadding)
-    }
-  }
-  
-  public var placeholderRectInsets: UIEdgeInsets {
-    if sidePlaceholderPadding.isNaN {
-      return insets(left: leftPlaceholderPadding, right: rightPlaceholderPadding)
-    } else {
-      return sideInsets(padding: sidePlaceholderPadding)
-    }
-  }
-  
+
   private func sideInsets(padding: CGFloat) -> UIEdgeInsets {
     return UIEdgeInsets(top: 0, left: padding, bottom: 0, right: padding)
   }
-  
+
   private func insets(left: CGFloat, right: CGFloat) -> UIEdgeInsets {
     let l = left.isNaN ? 0 : left
     let r = right.isNaN ? 0 : right

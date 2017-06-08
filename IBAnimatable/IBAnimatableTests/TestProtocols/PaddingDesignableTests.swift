@@ -15,15 +15,9 @@ protocol PaddingDesignableTests: class {
 
   var element: Element { get set }
 
-  func testLeftTextPadding()
-  func testRightTextPadding()
-  func testSideTextPadding()
-  func testLeftEditPadding()
-  func testRightEditPadding()
-  func testSideEditPadding()
-  func testLeftPlaceholderPadding()
-  func testRightPlaceholderPadding()
-  func testSidePlaceholderPadding()
+  func testPaddingLeft()
+  func testPaddingRight()
+  func testPaddingSide()
 
 }
 
@@ -31,93 +25,43 @@ protocol PaddingDesignableTests: class {
 
 extension PaddingDesignableTests where Element: UITextField, Element: PaddingDesignable {
 
-  func _testLeftTextPadding() {
-    testTextPadding(edge: .left(20))
+  func _testPaddingLeft() {
+    testPadding(on: .left(20))
   }
 
-  func _testRightTextPadding() {
-    testTextPadding(edge: .right(21))
+  func _testPaddingRight() {
+    testPadding(on: .right(40))
   }
 
-  func _testSideTextPadding() {
-    testTextPadding(edge: .sides(22))
+  func _testPaddingSide() {
+    testPadding(on: .sides(60))
   }
 
-  func _testLeftEditPadding() {
-    testEditPadding(edge: .left(23))
-  }
+  // MARK: - Helper Methods
 
-  func _testRightEditPadding() {
-    testEditPadding(edge: .right(24))
-  }
-
-  func _testSideEditPadding() {
-    testEditPadding(edge: .sides(25))
-  }
-
-  func _testLeftPlaceholderPadding() {
-    testPlaceholderPadding(edge: .left(26))
-  }
-
-  func _testRightPlaceholderPadding() {
-    testPlaceholderPadding(edge: .right(27))
-  }
-
-  func _testSidePlaceholderPadding() {
-    testPlaceholderPadding(edge: .sides(28))
-  }
-
-  // MARK: - Test Helper Methods
-
-  private func testTextPadding(edge: Edge) {
-
-    let originalRect = element.textRect(forBounds: element.bounds)
-    let mockRect = UIEdgeInsetsInsetRect(originalRect, edge.insets)
+  private func testPadding(on edge: Edge) {
+    element.placeholder = "placeholderRect will not be called if this is nil"
+    let textRectOriginal = element.textRect(forBounds: element.bounds)
+    let editRectOriginal = element.editingRect(forBounds: element.bounds)
+    let placeholderRectOriginal = element.placeholderRect(forBounds: element.bounds)
 
     switch edge {
-    case .left(let padding): element.leftTextPadding = padding
-    case .right(let padding): element.rightTextPadding = padding
-    case .sides(let padding): element.sideTextPadding = padding
+    case .left(let padding): element.paddingLeft = padding
+    case .right(let padding): element.paddingRight = padding
+    case .sides(let padding): element.paddingSide = padding
     }
 
-    let newRect = element.textRect(forBounds: element.bounds)
-    XCTAssertEqual(newRect, mockRect)
+    let paddedTextRect = element.textRect(forBounds: element.bounds)
+    let paddedEditRect = element.editingRect(forBounds: element.bounds)
+    let paddedPlaceholderRect = element.placeholderRect(forBounds: element.bounds)
 
-  }
+    let mockTextRect = UIEdgeInsetsInsetRect(textRectOriginal, edge.insets)
+    let mockEditRect = UIEdgeInsetsInsetRect(editRectOriginal, edge.insets)
+    let mockPlaceholderRect = UIEdgeInsetsInsetRect(placeholderRectOriginal, edge.insets)
 
-  private func testEditPadding(edge: Edge) {
-
-    let originalRect = element.editingRect(forBounds: element.bounds)
-    let mockRect = UIEdgeInsetsInsetRect(originalRect, edge.insets)
-
-    switch edge {
-    case .left(let padding): element.leftEditPadding = padding
-    case .right(let padding): element.rightEditPadding = padding
-    case .sides(let padding): element.sideEditPadding = padding
-    }
-
-    let newRect = element.editingRect(forBounds: element.bounds)
-    XCTAssertEqual(newRect, mockRect)
-    print(mockRect)
-    print(newRect)
-
-  }
-
-  private func testPlaceholderPadding(edge: Edge) {
-
-    element.placeholder = "placeholderRect won't get called if this is nil"
-    let originalRect = element.placeholderRect(forBounds: element.bounds)
-    let mockRect = UIEdgeInsetsInsetRect(originalRect, edge.insets)
-
-    switch edge {
-    case .left(let padding): element.leftPlaceholderPadding = padding
-    case .right(let padding): element.rightPlaceholderPadding = padding
-    case .sides(let padding): element.sidePlaceholderPadding = padding
-    }
-
-    let newRect = element.placeholderRect(forBounds: element.bounds)
-    XCTAssertEqual(newRect, mockRect)
-
+    XCTAssertEqual(paddedTextRect, mockTextRect)
+    XCTAssertEqual(paddedEditRect, mockEditRect)
+    XCTAssertEqual(paddedPlaceholderRect, mockPlaceholderRect)
   }
 
 }
