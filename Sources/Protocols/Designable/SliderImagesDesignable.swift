@@ -2,7 +2,7 @@
 //  Created by phimage on 25/03/2017.
 //  Copyright © 2017 IBAnimatable. All rights reserved.
 //
-
+#if os(iOS)
 import UIKit
 
 /// Protocol for designing slider image
@@ -61,3 +61,4 @@ public extension SliderImagesDesignable where Self: UISlider {
   }
 
 }
+#endif

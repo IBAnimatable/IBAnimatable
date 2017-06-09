@@ -5,9 +5,13 @@
 
 import UIKit
 
+#if os(iOS)
+extension AnimatableTableViewController: RefreshControlDesignable {}
+#endif
+
 @IBDesignable
 open class AnimatableTableViewController: UITableViewController, ViewControllerDesignable, StatusBarDesignable,
-                                             RootWindowDesignable, TransitionAnimatable, RefreshControlDesignable {
+                                             RootWindowDesignable, TransitionAnimatable {
 
   // MARK: - ViewControllerDesignable
   @IBInspectable open var hideNavigationBar: Bool = false
@@ -39,6 +43,7 @@ open class AnimatableTableViewController: UITableViewController, ViewControllerD
     }
   }
 
+  #if os(iOS)
   // MARK: - RefreshControlDesignable
   @IBInspectable open var hasRefreshControl: Bool = false {
     didSet {
@@ -55,11 +60,14 @@ open class AnimatableTableViewController: UITableViewController, ViewControllerD
       configureRefreshController()
     }
   }
+  #endif
 
   // MARK: - Lifecylce
   open override func viewDidLoad() {
     super.viewDidLoad()
+    #if os(iOS)
     configureRefreshController()
+    #endif
   }
 
   open override func viewWillAppear(_ animated: Bool) {
@@ -73,12 +81,14 @@ open class AnimatableTableViewController: UITableViewController, ViewControllerD
     resetHideNavigationBar()
   }
 
+  #if os(iOS)
   open override var preferredStatusBarStyle: UIStatusBarStyle {
     if lightStatusBar {
       return .lightContent
     }
     return .default
   }
+  #endif
 
   open override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     super.prepare(for: segue, sender: sender)

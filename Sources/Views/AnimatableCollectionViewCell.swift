@@ -5,9 +5,13 @@
 
 import UIKit
 
+#if os(iOS)
+extension AnimatableCollectionViewCell: TableViewCellDesignable {}
+#endif
+
 @IBDesignable
 open class AnimatableCollectionViewCell: UICollectionViewCell, CornerDesignable, FillDesignable, BorderDesignable,
-                                                               ShadowDesignable, TableViewCellDesignable, GradientDesignable,
+                                                               ShadowDesignable, GradientDesignable,
                                                                BackgroundImageDesignable, Animatable {
 
   // MARK: - CornerDesignable

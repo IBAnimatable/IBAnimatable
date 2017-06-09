@@ -50,12 +50,14 @@ open class AnimatableViewController: UIViewController, ViewControllerDesignable,
 
   }
 
+  #if os(iOS)
   open override var preferredStatusBarStyle: UIStatusBarStyle {
     if lightStatusBar {
       return .lightContent
     }
     return .default
   }
+  #endif
 
   open override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     super.prepare(for: segue, sender: sender)

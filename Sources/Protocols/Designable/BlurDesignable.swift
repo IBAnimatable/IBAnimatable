@@ -86,6 +86,7 @@ private extension BlurDesignable where Self: UIView {
   }
 }
 
+#if os(iOS)
 public extension BlurDesignable where Self: UITableView {
   public func configureBackgroundBlurEffectStyle() {
     guard let blurableView = backgroundView else {
@@ -103,6 +104,7 @@ public extension BlurDesignable where Self: UITableView {
     }
   }
 }
+#endif
 
 /// Private class of visual effect view used in `BlurDesignable` only
 private class PrivateVisualEffectView: UIVisualEffectView {

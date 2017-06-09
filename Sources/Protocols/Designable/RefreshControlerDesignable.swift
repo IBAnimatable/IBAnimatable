@@ -2,7 +2,7 @@
 //  Created by phimage on 26/03/2017.
 //  Copyright © 2017 IBAnimatable. All rights reserved.
 //
-
+#if os(iOS)
 import UIKit
 
 public protocol RefreshControlDesignable: class {
@@ -62,3 +62,4 @@ fileprivate extension RefreshControlDesignable {
     refreshControl?.backgroundColor = refreshControlBackgroundColor
   }
 }
+#endif

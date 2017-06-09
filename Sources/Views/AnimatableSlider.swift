@@ -2,7 +2,7 @@
 //  Created by Tom Baranes on 25/06/16.
 //  Copyright © 2016 IBAnimatable. All rights reserved.
 //
-
+#if os(iOS)
 import UIKit
 
 @IBDesignable
@@ -160,3 +160,4 @@ open class AnimatableSlider: UISlider, SliderImagesDesignable, BorderDesignable,
     configureBorder()
   }
 }
+#endif

@@ -28,13 +28,17 @@ public class AnimatablePresentationController: UIPresentationController {
 
     configureDimmingView()
     configurePresentedView()
+    #if os(iOS)
     configureObservers()
+    #endif
   }
-
+  
+  #if os(iOS)
   deinit {
     NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
   }
+  #endif
 
   // MARK: Actions
 
@@ -85,6 +89,7 @@ private extension AnimatablePresentationController {
 
 // MARK: - Notifications
 
+#if os(iOS)
 extension AnimatablePresentationController {
 
   fileprivate func configureObservers() {
@@ -119,6 +124,7 @@ extension AnimatablePresentationController {
   }
 
 }
+#endif
 
 // MARK: - Size & origin helpers
 

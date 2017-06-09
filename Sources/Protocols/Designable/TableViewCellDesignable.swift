@@ -2,7 +2,7 @@
 //  Created by Jake Lin on 12/19/15.
 //  Copyright © 2015 IBAnimatable. All rights reserved.
 //
-
+#if os(iOS)
 import UIKit
 
 public protocol TableViewCellDesignable: class {
@@ -25,3 +25,4 @@ public extension TableViewCellDesignable where Self: UITableViewCell {
     }
   }
 }
+#endif

@@ -26,6 +26,7 @@ public class Navigator: NSObject {
 
     animator = AnimatorFactory.makeAnimator(transitionAnimationType: transitionAnimationType, transitionDuration: transitionDuration)
 
+    #if os(iOS)
     // If interactiveGestureType has been set
     if let interactiveGestureType = interactiveGestureType {
       // If configured as `.Default` then use the default interactive gesture type from the Animator
@@ -40,6 +41,7 @@ public class Navigator: NSObject {
                                                                                  transitionType: .navigationTransition(.pop))
       }
     }
+    #endif
   }
 }
 
