@@ -115,22 +115,23 @@ open class AnimatableTextField: UITextField, CornerDesignable, FillDesignable, B
   }
 
   // MARK: - PaddingDesignable
-  @IBInspectable open var paddingLeft: CGFloat = CGFloat.nan {
-    didSet {
-      configurePaddingLeft()
-    }
+
+  @IBInspectable open var paddingLeft: CGFloat = CGFloat.nan
+
+  @IBInspectable open var paddingRight: CGFloat = CGFloat.nan
+
+  @IBInspectable open var paddingSide: CGFloat = CGFloat.nan
+
+  override open func textRect(forBounds bounds: CGRect) -> CGRect {
+    return paddedRect(forBounds: bounds)
   }
 
-  @IBInspectable open var paddingRight: CGFloat = CGFloat.nan {
-    didSet {
-      configurePaddingRight()
-    }
+  override open func editingRect(forBounds bounds: CGRect) -> CGRect {
+    return paddedRect(forBounds: bounds)
   }
 
-  @IBInspectable open var paddingSide: CGFloat = CGFloat.nan {
-    didSet {
-      configurePaddingSide()
-    }
+  override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+    return paddedRect(forBounds: bounds)
   }
 
   // MARK: - SideImageDesignable
