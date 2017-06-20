@@ -18,9 +18,9 @@ private let scaleParam = ParamType.number(min: 0, max: 2, interval: 0.1, ascendi
 
 final class AnimationsViewController: UIViewController {
 
-  @IBOutlet weak var animatableView: AnimatableView!
-  @IBOutlet weak var pickerView: UIPickerView!
-  @IBOutlet weak var timingFunctionButton: UIBarButtonItem!
+  @IBOutlet fileprivate weak var animatableView: AnimatableView!
+  @IBOutlet fileprivate weak var pickerView: UIPickerView!
+  @IBOutlet fileprivate weak var timingFunctionButton: UIBarButtonItem!
 
   // prebuit common params
   let entries: [PickerEntry] = [

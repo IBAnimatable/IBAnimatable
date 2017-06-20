@@ -8,14 +8,14 @@ import IBAnimatable
 
 final class GradientViewController: UIViewController {
 
-  @IBOutlet weak var gView: AnimatableView!
+  @IBOutlet fileprivate weak var gView: AnimatableView!
 
   let gradientValues = ParamType(fromEnum: GradientType.self)
   let startPointValues = ParamType.enumeration(values: ["top", "topLeft", "topRight", "left", "right", "bottom", "bottomRight", "bottomLeft"])
   let colorValues = ParamType(fromEnum: ColorType.self)
   var usePredefinedGradient = true
   lazy var componentValues: [ParamType] = {
-    return self.usePredefinedGradient ? [self.gradientValues, self.startPointValues] : [self.colorValues, self.colorValues, self.startPointValues]
+    self.usePredefinedGradient ? [self.gradientValues, self.startPointValues] : [self.colorValues, self.colorValues, self.startPointValues]
   }()
 
   override func viewDidLoad() {

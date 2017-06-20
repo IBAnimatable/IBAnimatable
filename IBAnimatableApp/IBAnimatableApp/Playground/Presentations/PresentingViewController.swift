@@ -10,35 +10,35 @@ final class PresentingViewController: AnimatableViewController, UIPickerViewData
 
   // MARK: Properties IB
 
-  @IBOutlet weak var btnAnimationType: AnimatableButton!
-  @IBOutlet weak var btnDismissalAnimationType: AnimatableButton!
-  @IBOutlet weak var btnModalPosition: AnimatableButton!
-  @IBOutlet weak var btnModalSize: AnimatableButton!
-  @IBOutlet weak var btnKeyboardTranslation: AnimatableButton!
-  @IBOutlet weak var btnBlurEffectStyle: AnimatableButton!
+  @IBOutlet fileprivate weak var btnAnimationType: AnimatableButton!
+  @IBOutlet fileprivate weak var btnDismissalAnimationType: AnimatableButton!
+  @IBOutlet fileprivate weak var btnModalPosition: AnimatableButton!
+  @IBOutlet fileprivate weak var btnModalSize: AnimatableButton!
+  @IBOutlet fileprivate weak var btnKeyboardTranslation: AnimatableButton!
+  @IBOutlet fileprivate weak var btnBlurEffectStyle: AnimatableButton!
 
-  @IBOutlet weak var labelCornerRadius: UILabel!
-  @IBOutlet weak var labelOpacity: UILabel!
-  @IBOutlet weak var labelBlurOpacity: UILabel!
-  @IBOutlet weak var labelShadowOpacity: UILabel!
-  @IBOutlet weak var labelShadowRadius: UILabel!
-  @IBOutlet weak var labelShadowOffsetX: UILabel!
-  @IBOutlet weak var labelShadowOffsetY: UILabel!
+  @IBOutlet fileprivate weak var labelCornerRadius: UILabel!
+  @IBOutlet fileprivate weak var labelOpacity: UILabel!
+  @IBOutlet fileprivate weak var labelBlurOpacity: UILabel!
+  @IBOutlet fileprivate weak var labelShadowOpacity: UILabel!
+  @IBOutlet fileprivate weak var labelShadowRadius: UILabel!
+  @IBOutlet fileprivate weak var labelShadowOffsetX: UILabel!
+  @IBOutlet fileprivate weak var labelShadowOffsetY: UILabel!
 
-  @IBOutlet weak var dimmingPickerView: AnimatableView!
-  @IBOutlet weak var containerPickerView: AnimatableView!
-  @IBOutlet weak var pickerView: UIPickerView!
+  @IBOutlet fileprivate weak var dimmingPickerView: AnimatableView!
+  @IBOutlet fileprivate weak var containerPickerView: AnimatableView!
+  @IBOutlet fileprivate weak var pickerView: UIPickerView!
 
-  @IBOutlet var sliderBackgroundColor: UISlider!
-  @IBOutlet var sliderCornerRadius: UISlider!
-  @IBOutlet var switchDismissOnTap: UISwitch!
-  @IBOutlet var sliderOpacity: UISlider!
-  @IBOutlet var sliderBlurOpacity: UISlider!
-  @IBOutlet var sliderShadowColor: UISlider!
-  @IBOutlet var sliderShadowOpacity: UISlider!
-  @IBOutlet var sliderShadowRadius: UISlider!
-  @IBOutlet var sliderShadowOffsetX: UISlider!
-  @IBOutlet var sliderShadowOffsetY: UISlider!
+  @IBOutlet fileprivate var sliderBackgroundColor: UISlider!
+  @IBOutlet fileprivate var sliderCornerRadius: UISlider!
+  @IBOutlet fileprivate var switchDismissOnTap: UISwitch!
+  @IBOutlet fileprivate var sliderOpacity: UISlider!
+  @IBOutlet fileprivate var sliderBlurOpacity: UISlider!
+  @IBOutlet fileprivate var sliderShadowColor: UISlider!
+  @IBOutlet fileprivate var sliderShadowOpacity: UISlider!
+  @IBOutlet fileprivate var sliderShadowRadius: UISlider!
+  @IBOutlet fileprivate var sliderShadowOffsetX: UISlider!
+  @IBOutlet fileprivate var sliderShadowOffsetY: UISlider!
 
   // MARK: Properties
 

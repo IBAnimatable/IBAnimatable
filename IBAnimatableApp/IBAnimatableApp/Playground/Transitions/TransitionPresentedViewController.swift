@@ -8,9 +8,9 @@ import IBAnimatable
 
 final class TransitionPresentedViewController: AnimatableViewController {
 
-  @IBOutlet var gestureLabel: UILabel!
-  @IBOutlet var presentViaSegueButton: AnimatableButton!
-  @IBOutlet var presentViaDismissInteractionSegueButton: AnimatableButton!
+  @IBOutlet fileprivate var gestureLabel: UILabel!
+  @IBOutlet fileprivate var presentViaSegueButton: AnimatableButton!
+  @IBOutlet fileprivate var presentViaDismissInteractionSegueButton: AnimatableButton!
 
   var presentingSegueClass: UIStoryboardSegue.Type?
   var presentingWithDismissInteractionSegueClass: UIStoryboardSegue.Type?

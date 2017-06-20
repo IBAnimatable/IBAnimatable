@@ -8,7 +8,7 @@ import IBAnimatable
 
 final class TransitionPushedViewController: UIViewController {
 
-  @IBOutlet var gestureLabel: UILabel!
+  @IBOutlet fileprivate var gestureLabel: UILabel!
 
   override func viewDidLoad() {
     super.viewDidLoad()
