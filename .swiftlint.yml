@@ -6,14 +6,14 @@ number_separator:
   minimum_length: 5
 large_tuple:
   warning: 3
-
+private_outlet:
+    allow_private_set: true
 disabled_rules:
   - todo
   - identifier_name
   - function_body_length
   - cyclomatic_complexity
   - type_name
-
 opt_in_rules:
  - closure_spacing
  - conditional_returns_on_newline
@@ -30,3 +30,7 @@ opt_in_rules:
  - number_separator
  - object_literal
  - fatal_error_message
+ - private_outlet
+ - implicit_return
+ - multiline_parameters
+ - vertical_parameter_alignment_on_call
