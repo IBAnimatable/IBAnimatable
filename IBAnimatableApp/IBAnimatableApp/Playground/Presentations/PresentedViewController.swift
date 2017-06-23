@@ -8,7 +8,7 @@ import IBAnimatable
 
 final class PresentedViewController: AnimatableModalViewController {
 
-  @IBOutlet var presentViaSegueButton: AnimatableButton!
+  @IBOutlet private var presentViaSegueButton: AnimatableButton!
 
   override func viewDidLoad() {
     super.viewDidLoad()

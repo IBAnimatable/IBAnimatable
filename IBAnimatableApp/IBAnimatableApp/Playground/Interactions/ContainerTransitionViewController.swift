@@ -10,8 +10,8 @@ final class ContainerTransitionViewController: UIViewController, UITabBarDelegat
 
   // MARK: Properties
 
-  @IBOutlet var tabBar: UITabBar!
-  @IBOutlet var containerView: UIView!
+  @IBOutlet fileprivate var tabBar: UITabBar!
+  @IBOutlet fileprivate var containerView: UIView!
 
   fileprivate var viewControllers = [AnimatableViewController]()
   fileprivate var currentViewController: AnimatableViewController?

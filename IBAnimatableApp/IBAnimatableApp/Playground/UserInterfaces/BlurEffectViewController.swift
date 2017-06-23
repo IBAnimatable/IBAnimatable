@@ -8,7 +8,7 @@ import IBAnimatable
 
 final class BlurEffectViewController: UIViewController {
 
-  @IBOutlet var blurEffectView: AnimatableView!
+  @IBOutlet fileprivate var blurEffectView: AnimatableView!
 
   let opacityValues = ParamType.number(min: 0.0, max: 1.0, interval: 0.1, ascending: false, unit: "")
   lazy var values: [String] = {

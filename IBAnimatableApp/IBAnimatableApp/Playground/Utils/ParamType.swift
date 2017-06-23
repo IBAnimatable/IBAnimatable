@@ -27,7 +27,7 @@ enum ParamType {
 
   init<T: RawRepresentable>(fromEnum: T.Type) where T: Hashable {
     let iterator = iterateEnum(fromEnum)
-    let values = iterator.map { return String(describing: $0.rawValue) }
+    let values = iterator.map { String(describing: $0.rawValue) }
     self = .enumeration(values: values)
   }
 
@@ -76,7 +76,7 @@ extension PickerEntry {
   func toString(selectedIndexes indexes: Int?...) -> String {
 
     let paramString = indexes.enumerated().flatMap({ (i: Int, index: Int?) -> String? in
-      return params[safe:i]?.value(at: index ?? 0)
+      params[safe:i]?.value(at: index ?? 0)
     }).joined(separator: ",")
 
     return "\(name)(\(paramString))"

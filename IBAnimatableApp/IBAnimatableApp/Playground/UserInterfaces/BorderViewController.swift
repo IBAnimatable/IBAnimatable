@@ -13,12 +13,12 @@ final class BorderViewController: UIViewController {
 
   // MARK: IBOutlets
 
-  @IBOutlet weak var viewToBorder: AnimatableView!
-  @IBOutlet weak var topCheckBox: AnimatableCheckBox!
-  @IBOutlet weak var botCheckBox: AnimatableCheckBox!
-  @IBOutlet weak var leftCheckBox: AnimatableCheckBox!
-  @IBOutlet weak var rightCheckBox: AnimatableCheckBox!
-  @IBOutlet weak var pickerView: UIPickerView!
+  @IBOutlet fileprivate weak var viewToBorder: AnimatableView!
+  @IBOutlet fileprivate weak var topCheckBox: AnimatableCheckBox!
+  @IBOutlet fileprivate weak var botCheckBox: AnimatableCheckBox!
+  @IBOutlet fileprivate weak var leftCheckBox: AnimatableCheckBox!
+  @IBOutlet fileprivate weak var rightCheckBox: AnimatableCheckBox!
+  @IBOutlet fileprivate weak var pickerView: UIPickerView!
 
   // MARK: Properties
 
