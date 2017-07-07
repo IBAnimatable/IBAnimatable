@@ -19,6 +19,7 @@ Add new mask type `.ellipse`. [#481](https://github.com/IBAnimatable/IBAnimatabl
 
 #### Bugfixes
 - `PlaceholderDesignable` now applies `placeholderColor` to `Placeholder` defined in Interface Builder before checking the `placeholderText` property. [#499](https://github.com/IBAnimatable/IBAnimatable/pull/499) by [@SD10](https://github.com/sd10)
+- Fixes bug where Interface Builder doesn't recognize the delegate outlet for `UITableView` and `UICollectionView`. [#506](https://github.com/IBAnimatable/IBAnimatable/pull/506) by [@SD10](https://github.com/sd10)
 ### [4.1.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/4.1.0)
 
 #### API breaking changes
