@@ -5,16 +5,6 @@
 
 import UIKit
 
-/// Protocol for designing background image
-public protocol BackgroundImageDesignable: class {
-
-  /**
-   * The background image
-   */
-  var backgroundImage: UIImage? { get set }
-
-}
-
 /// Protocol for designing background
 public protocol BackgroundDesignable: class {
 
@@ -25,13 +15,17 @@ public protocol BackgroundDesignable: class {
 
 }
 
-extension UITableViewCell: BackgroundDesignable {}
-extension UITableViewHeaderFooterView: BackgroundDesignable {}
-extension UITableView: BackgroundDesignable {}
-extension UICollectionViewCell: BackgroundDesignable {}
-extension UICollectionView: BackgroundDesignable {}
+/// Protocol for designing background image
+public protocol BackgroundImageDesignable: class, BackgroundDesignable {
 
-public extension BackgroundImageDesignable where Self: BackgroundDesignable {
+  /**
+   * The background image
+   */
+  var backgroundImage: UIImage? { get set }
+
+}
+
+public extension BackgroundImageDesignable {
 
   public func configureBackgroundImage() {
     if let image = backgroundImage {
