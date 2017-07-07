@@ -6,53 +6,49 @@
 import UIKit
 
 public protocol PaddingDesignable: class {
+
   /**
-    `padding-left`
-  */
+   `padding-left`
+   */
   var paddingLeft: CGFloat { get set }
 
   /**
-    `padding-right`
-  */
+   `padding-right`
+   */
   var paddingRight: CGFloat { get set }
 
   /**
    `padding-left` and `padding-right`
-  */
+   */
   var paddingSide: CGFloat { get set }
+
 }
 
 public extension PaddingDesignable where Self: UITextField {
-  public func configurePaddingLeft() {
-    if paddingLeft.isNaN {
-      return
-    }
 
-    let padding = UIView(frame: CGRect(x: 0, y: 0, width: paddingLeft, height: 1))
-    leftViewMode = .always
-    leftView = padding
+  public func paddedRect(forBounds bounds: CGRect) -> CGRect {
+    if paddingSide.isNaN && paddingLeft.isNaN && paddingRight.isNaN {
+      return bounds
+    }
+    return UIEdgeInsetsInsetRect(bounds, paddingInsets)
   }
 
-  public func configurePaddingRight() {
-    if paddingRight.isNaN {
-      return
-    }
-
-    let padding = UIView(frame: CGRect(x: 0, y: 0, width: paddingRight, height: 1))
-    rightViewMode = .always
-    rightView = padding
-  }
-
-  public func configurePaddingSide() {
+  private var paddingInsets: UIEdgeInsets {
     if paddingSide.isNaN {
-      return
+      return insets(left: paddingLeft, right: paddingRight)
+    } else {
+      return sideInsets(padding: paddingSide)
     }
-
-    let padding = UIView(frame: CGRect(x: 0, y: 0, width: paddingSide, height: 1))
-    leftViewMode = .always
-    leftView = padding
-
-    rightViewMode = .always
-    rightView = padding
   }
+
+  private func sideInsets(padding: CGFloat) -> UIEdgeInsets {
+    return UIEdgeInsets(top: 0, left: padding, bottom: 0, right: padding)
+  }
+
+  private func insets(left: CGFloat, right: CGFloat) -> UIEdgeInsets {
+    let l = left.isNaN ? 0 : left
+    let r = right.isNaN ? 0 : right
+    return UIEdgeInsets(top: 0, left: l, bottom: 0, right: r)
+  }
+
 }

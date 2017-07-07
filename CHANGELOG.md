@@ -15,11 +15,11 @@ N/A
 Add new mask type `.ellipse`. [#481](https://github.com/IBAnimatable/IBAnimatable/pull/481) by [@phimage](https://github.com/phimage)
 - Add `stickOrMoveUp` keyboard translation option when presenting a viewController. [#489](https://github.com/IBAnimatable/IBAnimatable/pull/489) by [@tbaranes](https://github.com/tbaranes)
 - Add `scale`, `scaleTo` and `scaleFrom` animation types. [#494](https://github.com/IBAnimatable/IBAnimatable/pull/494) by [@phimage](https://github.com/phimage)
+- `PaddingDesignable` now applies padding to the underlying text, edit, and placeholder rects -- opposed to using a `UIView` spacer. [#492](https://github.com/IBAnimatable/IBAnimatable/pull/492) by [@SD10](https://github.com/sd10)
 
 #### Bugfixes
-
-- Padding UIView for `PaddingDesignable` can't expand beyond `UITextField` and now has a default height of 1pt. [#483](https://github.com/IBAnimatable/IBAnimatable/pull/483) by [@SD10](https://github.com/SD10)
-
+- `PlaceholderDesignable` now applies `placeholderColor` to `Placeholder` defined in Interface Builder before checking the `placeholderText` property. [#499](https://github.com/IBAnimatable/IBAnimatable/pull/499) by [@SD10](https://github.com/sd10)
+- Fixes bug where Interface Builder doesn't recognize the delegate outlet for `UITableView` and `UICollectionView`. [#506](https://github.com/IBAnimatable/IBAnimatable/pull/506) by [@SD10](https://github.com/sd10)
 ### [4.1.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/4.1.0)
 
 #### API breaking changes

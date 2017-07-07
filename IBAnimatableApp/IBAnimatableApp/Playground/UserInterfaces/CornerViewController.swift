@@ -11,11 +11,11 @@ import IBAnimatable
 
 final class CornerViewController: UIViewController {
 
-  @IBOutlet weak var viewToCorner: AnimatableView!
-  @IBOutlet weak var topLeftCheckBox: AnimatableCheckBox!
-  @IBOutlet weak var topRightCheckBox: AnimatableCheckBox!
-  @IBOutlet weak var bottomLeftCheckBox: AnimatableCheckBox!
-  @IBOutlet weak var bottomRightCheckBox: AnimatableCheckBox!
+  @IBOutlet fileprivate weak var viewToCorner: AnimatableView!
+  @IBOutlet fileprivate weak var topLeftCheckBox: AnimatableCheckBox!
+  @IBOutlet fileprivate weak var topRightCheckBox: AnimatableCheckBox!
+  @IBOutlet fileprivate weak var bottomLeftCheckBox: AnimatableCheckBox!
+  @IBOutlet fileprivate weak var bottomRightCheckBox: AnimatableCheckBox!
 
   @IBAction func boxChecked(_ sender: AnimatableCheckBox) {
     let corner: CornerSides

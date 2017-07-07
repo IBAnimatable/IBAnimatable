@@ -11,7 +11,7 @@ import IBAnimatable
 
 final class GradientCustomStartPointViewController: UIViewController {
 
-  @IBOutlet weak var gView: AnimatableView!
+  @IBOutlet fileprivate weak var gView: AnimatableView!
 
   let gradientValues = ParamType(fromEnum: GradientType.self)
   let coordPointValues = ParamType.number(min: 0, max: 1, interval: 0.1, ascending: true, unit: "")

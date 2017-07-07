@@ -10,7 +10,7 @@ final class ActivityIndicatorViewController: UIViewController, UIPickerViewDeleg
 
   // MARK: Properties IB
 
-  @IBOutlet weak var activityIndicatorView: AnimatableActivityIndicatorView!
+  @IBOutlet fileprivate weak var activityIndicatorView: AnimatableActivityIndicatorView!
 
   // MARK: Properties
 

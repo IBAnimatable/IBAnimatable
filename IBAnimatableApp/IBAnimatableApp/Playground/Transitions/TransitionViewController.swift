@@ -8,7 +8,7 @@ import IBAnimatable
 
 final class TransitionViewController: AnimatableViewController {
 
-  @IBOutlet var presentButton: AnimatableButton!
+  @IBOutlet fileprivate var presentButton: AnimatableButton!
 
   override func viewDidLoad() {
     super.viewDidLoad()

@@ -26,26 +26,59 @@ protocol PaddingDesignableTests: class {
 extension PaddingDesignableTests where Element: UITextField, Element: PaddingDesignable {
 
   func _testPaddingLeft() {
-    element.paddingLeft = 10.0
-    let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10.0, height: 1))
-    XCTAssertEqual(element.leftView?.frame, paddingView.frame)
-    XCTAssertEqual(element.leftViewMode, .always)
+    testPadding(on: .left(20))
   }
 
   func _testPaddingRight() {
-    element.paddingRight = 15.0
-    let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 15.0, height: 1))
-    XCTAssertEqual(element.rightView?.frame, paddingView.frame)
-    XCTAssertEqual(element.rightViewMode, .always)
+    testPadding(on: .right(40))
   }
 
   func _testPaddingSide() {
-    element.paddingSide = 20.0
-    let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 20.0, height: 1))
-    XCTAssertEqual(element.rightView?.frame, paddingView.frame)
-    XCTAssertEqual(element.rightViewMode, .always)
-    XCTAssertEqual(element.leftView?.frame, paddingView.frame)
-    XCTAssertEqual(element.leftViewMode, .always)
+    testPadding(on: .sides(60))
+  }
+
+  // MARK: - Helper Methods
+
+  private func testPadding(on edge: Edge) {
+    element.placeholder = "placeholderRect will not be called if this is nil"
+    let textRectOriginal = element.textRect(forBounds: element.bounds)
+    let editRectOriginal = element.editingRect(forBounds: element.bounds)
+    let placeholderRectOriginal = element.placeholderRect(forBounds: element.bounds)
+
+    switch edge {
+    case .left(let padding): element.paddingLeft = padding
+    case .right(let padding): element.paddingRight = padding
+    case .sides(let padding): element.paddingSide = padding
+    }
+
+    let paddedTextRect = element.textRect(forBounds: element.bounds)
+    let paddedEditRect = element.editingRect(forBounds: element.bounds)
+    let paddedPlaceholderRect = element.placeholderRect(forBounds: element.bounds)
+
+    let mockTextRect = UIEdgeInsetsInsetRect(textRectOriginal, edge.insets)
+    let mockEditRect = UIEdgeInsetsInsetRect(editRectOriginal, edge.insets)
+    let mockPlaceholderRect = UIEdgeInsetsInsetRect(placeholderRectOriginal, edge.insets)
+
+    XCTAssertEqual(paddedTextRect, mockTextRect)
+    XCTAssertEqual(paddedEditRect, mockEditRect)
+    XCTAssertEqual(paddedPlaceholderRect, mockPlaceholderRect)
+  }
+
+}
+
+// MARK: - Helper Enum
+
+fileprivate enum Edge {
+  case left(CGFloat)
+  case right(CGFloat)
+  case sides(CGFloat)
+
+  var insets: UIEdgeInsets {
+    switch self {
+    case .left(let value): return UIEdgeInsets(top: 0, left: value, bottom: 0, right: 0)
+    case .right(let value): return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: value)
+    case .sides(let value): return UIEdgeInsets(top: 0, left: value, bottom: 0, right: value)
+    }
   }
 
 }

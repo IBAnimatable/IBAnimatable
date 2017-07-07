@@ -28,10 +28,10 @@ final class AnimationsTimingFunctionViewController: UIViewController {
     }
   }
 
-  @IBOutlet var timingFunctionView: TimingFunctionView!
-  @IBOutlet weak var pickerView: UIPickerView!
-  @IBOutlet weak var starView: AnimatableView!
-  @IBOutlet weak var linearView: AnimatableView!
+  @IBOutlet fileprivate var timingFunctionView: TimingFunctionView!
+  @IBOutlet fileprivate weak var pickerView: UIPickerView!
+  @IBOutlet fileprivate weak var starView: AnimatableView!
+  @IBOutlet fileprivate weak var linearView: AnimatableView!
   // prebuit common params
   let entries: [PickerEntry] = [
     PickerEntry(params: [], name: "none"),
