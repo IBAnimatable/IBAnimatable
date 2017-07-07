@@ -17,6 +17,7 @@ public class Navigator: NSObject {
   // interaction controller
   fileprivate var interactiveAnimator: InteractiveAnimator?
 
+  #if os(iOS)
   public init(transitionAnimationType: TransitionAnimationType,
               transitionDuration: Duration = defaultTransitionDuration,
               interactiveGestureType: InteractiveGestureType? = nil) {
@@ -26,7 +27,6 @@ public class Navigator: NSObject {
 
     animator = AnimatorFactory.makeAnimator(transitionAnimationType: transitionAnimationType, transitionDuration: transitionDuration)
 
-    #if os(iOS)
     // If interactiveGestureType has been set
     if let interactiveGestureType = interactiveGestureType {
       // If configured as `.Default` then use the default interactive gesture type from the Animator
@@ -41,8 +41,16 @@ public class Navigator: NSObject {
                                                                                  transitionType: .navigationTransition(.pop))
       }
     }
-    #endif
   }
+  #endif
+
+  public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration) {
+    self.transitionAnimationType = transitionAnimationType
+    self.transitionDuration = transitionDuration
+    super.init()
+    animator = AnimatorFactory.makeAnimator(transitionAnimationType: transitionAnimationType, transitionDuration: transitionDuration)
+  }
+
 }
 
 // MARK: - navigation controller delegate

@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B0058EAF1EEA9FCC00E93AA9 /* IBAnimatable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0058EA61EEA9FCC00E93AA9 /* IBAnimatable.framework */; };
-		B0058EB41EEA9FCC00E93AA9 /* IBAnimatable_tvOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0058EB31EEA9FCC00E93AA9 /* IBAnimatable_tvOSTests.swift */; };
-		B0058EB61EEA9FCC00E93AA9 /* IBAnimatable tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = B0058EA81EEA9FCC00E93AA9 /* IBAnimatable tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0058EBD1EEAA0EB00E93AA9 /* ActivityIndicatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27FD1DA1ECD7D8A00F74840 /* ActivityIndicatorType.swift */; };
 		B0058EBE1EEAA0EB00E93AA9 /* AnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27FD1DB1ECD7D8A00F74840 /* AnimationType.swift */; };
 		B0058EBF1EEAA0EB00E93AA9 /* BlurEffectStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27FD1DC1ECD7D8A00F74840 /* BlurEffectStyle.swift */; };
@@ -363,11 +361,7 @@
 
 /* Begin PBXFileReference section */
 		B0058EA61EEA9FCC00E93AA9 /* IBAnimatable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IBAnimatable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0058EA81EEA9FCC00E93AA9 /* IBAnimatable tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IBAnimatable tvOS.h"; sourceTree = "<group>"; };
-		B0058EA91EEA9FCC00E93AA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0058EAE1EEA9FCC00E93AA9 /* IBAnimatable tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IBAnimatable tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0058EB31EEA9FCC00E93AA9 /* IBAnimatable_tvOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBAnimatable_tvOSTests.swift; sourceTree = "<group>"; };
-		B0058EB51EEA9FCC00E93AA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2561F5D1ECD7DD900A6D853 /* IBAnimatable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBAnimatable.h; sourceTree = "<group>"; };
 		E2561F5E1ECD7DD900A6D853 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E27FCFF71ECD79DD00F74840 /* IBAnimatable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IBAnimatable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -587,24 +581,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B0058EA71EEA9FCC00E93AA9 /* IBAnimatable tvOS */ = {
-			isa = PBXGroup;
-			children = (
-				B0058EA81EEA9FCC00E93AA9 /* IBAnimatable tvOS.h */,
-				B0058EA91EEA9FCC00E93AA9 /* Info.plist */,
-			);
-			path = "IBAnimatable tvOS";
-			sourceTree = "<group>";
-		};
-		B0058EB21EEA9FCC00E93AA9 /* IBAnimatable tvOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				B0058EB31EEA9FCC00E93AA9 /* IBAnimatable_tvOSTests.swift */,
-				B0058EB51EEA9FCC00E93AA9 /* Info.plist */,
-			);
-			path = "IBAnimatable tvOSTests";
-			sourceTree = "<group>";
-		};
 		E2561F5C1ECD7DD900A6D853 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -619,8 +595,6 @@
 			children = (
 				E27FD18B1ECD7D8A00F74840 /* Sources */,
 				E27FD0041ECD79DD00F74840 /* IBAnimatableTests */,
-				B0058EA71EEA9FCC00E93AA9 /* IBAnimatable tvOS */,
-				B0058EB21EEA9FCC00E93AA9 /* IBAnimatable tvOSTests */,
 				E27FCFF81ECD79DD00F74840 /* Products */,
 			);
 			indentWidth = 2;
@@ -1050,7 +1024,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0058EB61EEA9FCC00E93AA9 /* IBAnimatable tvOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1401,7 +1374,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0058EB41EEA9FCC00E93AA9 /* IBAnimatable_tvOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1853,6 +1825,7 @@
 				B0058EB91EEA9FCC00E93AA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B0058EBA1EEA9FCC00E93AA9 /* Build configuration list for PBXNativeTarget "IBAnimatable tvOSTests" */ = {
 			isa = XCConfigurationList;
@@ -1861,6 +1834,7 @@
 				B0058EBC1EEA9FCC00E93AA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E27FCFF11ECD79DD00F74840 /* Build configuration list for PBXProject "IBAnimatable" */ = {
 			isa = XCConfigurationList;
