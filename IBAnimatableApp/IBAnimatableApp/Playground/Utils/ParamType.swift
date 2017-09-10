@@ -9,7 +9,7 @@ import UIKit
 extension String {
   /// Returns `NSAttributedString` with specified color.
   func colorize(_ color: UIColor) -> NSAttributedString {
-    return NSAttributedString(string: self, attributes: [NSForegroundColorAttributeName: color])
+    return NSAttributedString(string: self, attributes: [.foregroundColor: color])
   }
 }
 
@@ -75,7 +75,7 @@ extension PickerEntry {
   /// Convert the entry to a `AnimationType` string
   func toString(selectedIndexes indexes: Int?...) -> String {
 
-    let paramString = indexes.enumerated().flatMap({ (i: Int, index: Int?) -> String? in
+    let paramString = indexes.enumerated().flatMap({ (__val:(Int, Int?)) -> String? in let (i,index) = __val; 
       params[safe:i]?.value(at: index ?? 0)
     }).joined(separator: ",")
 

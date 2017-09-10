@@ -15,7 +15,7 @@ final class RefreshControlTableViewController: AnimatableTableViewController {
     refreshControl?.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
   }
 
-  public func refresh(_ refreshControl: UIRefreshControl) {
+  @objc public func refresh(_ refreshControl: UIRefreshControl) {
     // could update attributedTitle of refreshControl here
     // Simulate an asynchrone refresh, could be a network request...
     let time: TimeInterval = 5
@@ -38,7 +38,7 @@ final class RefreshControlTableViewController: AnimatableTableViewController {
 
     var attributes = [String: Any]()
     if let color = refreshControlTintColor {
-      attributes[NSForegroundColorAttributeName] = color
+      attributes[NSAttributedStringKey.foregroundColor] = color
     }
     refreshControl.attributedTitle = NSAttributedString(string: "\(Int(time))", attributes: attributes )
 

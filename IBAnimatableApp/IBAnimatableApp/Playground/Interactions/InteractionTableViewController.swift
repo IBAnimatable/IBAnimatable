@@ -17,7 +17,7 @@ extension InteractionTableViewController {
   override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
     if let header = view as? UITableViewHeaderFooterView {
       header.textLabel?.textColor = .white
-      header.textLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFontWeightLight)
+      header.textLabel?.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.light)
     }
   }
 }
