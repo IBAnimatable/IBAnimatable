@@ -50,7 +50,7 @@ final class RefreshControlTableViewViewController: AnimatableViewController {
       return
     }
 
-    var attributes = [String: Any]()
+    var attributes = [NSAttributedStringKey: Any]()
     if let color = tableView.refreshControlTintColor {
       attributes[NSAttributedStringKey.foregroundColor] = color
     }
