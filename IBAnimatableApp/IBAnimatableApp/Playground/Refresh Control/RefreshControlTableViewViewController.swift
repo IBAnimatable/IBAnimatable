@@ -29,7 +29,8 @@ final class RefreshControlTableViewViewController: AnimatableViewController {
     refreshControl?.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
   }
 
-  @objc public func refresh(_ refreshControl: UIRefreshControl) {
+  @objc
+  public func refresh(_ refreshControl: UIRefreshControl) {
     // could update attributedTitle of refreshControl here
     // Simulate an asynchrone refresh, could be a network request...
     let time: TimeInterval = 5

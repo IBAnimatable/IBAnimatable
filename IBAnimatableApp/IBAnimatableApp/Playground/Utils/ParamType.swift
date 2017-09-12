@@ -75,7 +75,7 @@ extension PickerEntry {
   /// Convert the entry to a `AnimationType` string
   func toString(selectedIndexes indexes: Int?...) -> String {
 
-    let paramString = indexes.enumerated().flatMap({ (__val:(Int, Int?)) -> String? in let (i,index) = __val; 
+    let paramString = indexes.enumerated().flatMap({ (val: (Int, Int?)) -> String? in let (i, index) = val
       return params[safe:i]?.value(at: index ?? 0)
     }).joined(separator: ",")
 
