@@ -121,7 +121,6 @@ extension AnimationType: IBEnum {
     case "moveby":
       self = .moveBy(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
     case "scale":
-      // We need to split this up or it results in `expression too complex to compile in a reasonable amount of time`
       let fromX = params[safe: 0]?.toDouble() ?? 0
       let fromY = params[safe: 1]?.toDouble() ?? 0
       let toX = params[safe: 2]?.toDouble() ?? 1
