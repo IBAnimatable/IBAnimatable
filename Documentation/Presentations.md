@@ -140,6 +140,24 @@ You can find that example in the demo application by choosing "Playground", then
 
 ![Modal size - Custom](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/PresentationSizeCustom.png)
 
+### Golden ratio
+
+Divide your screen according to the [golden number](https://en.wikipedia.org/wiki/Golden_ratio)
+
+| `GoldenRatio`, `GoldenLarge` | ≈ 62 % of the screen size (width or height) |
+| `GoldenSmall` | ≈ 38 % of the  screen (width or height) |
+
+### Others ratio
+
+| `Third` | A third of the screen (width or height) |
+| `Quarter` | A quarter of the screen (width or height) |
+| `Fifth` | A fifth of the  screen (width or height) |
+| `Sixth` | A sixth of the  screen (width or height) |
+| `Seventh` | A seventh of the  screen (width or height) |
+| `Eighth` | A eighth of the  screen (width or height) |
+| `ThreeQuarters` | Three quarters of the  screen (width or height) |
+| `TwoThirds` | Two thirds of the  screen (width or height) |
+
 ## Presentation Animators
 
 `IBAnimatable` provides a broad set of Presentation Animators. We can use them in Interface Builder as **Presentation Animation** and **Dismissal Animation** as described in [Configuring a Presentation in Interface Builder](#configuring-a-presentation-in-interface-builder), or programmatically in code. They are all standard Transition Animators conform to `UIViewControllerAnimatedTransitioning`.

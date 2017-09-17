@@ -28,7 +28,7 @@ public enum PresentationModalSize: IBEnum {
   func height(parentSize: CGSize) -> Float {
     return size(for: Float(parentSize.height))
   }
-  
+
   private func size(for value: Float) -> Float {
     switch self {
     case .half:
@@ -62,7 +62,7 @@ public enum PresentationModalSize: IBEnum {
 
 }
 
-private let goldenRatio: Float = (1.0 + CoreFoundation.sqrt(5.0))/2.0
+private let goldenRatio: Float = (1.0 + CoreFoundation.sqrt(5.0)) / 2.0
 
 public extension PresentationModalSize {
   init?(string: String?) {
