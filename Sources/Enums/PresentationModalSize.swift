@@ -9,32 +9,60 @@ public enum PresentationModalSize: IBEnum {
 
   case half
   case full
+  case third
+  case quarter
+  case fifth
+  case sixth
+  case seventh
+  case eighth
+  case threeQuarters
+  case twoThirds
+  case goldenSmall
+  case goldenLarge
   case custom(size: Float)
 
   func width(parentSize: CGSize) -> Float {
-    switch self {
-    case .half:
-      return floorf(Float(parentSize.width) / 2.0)
-    case .full:
-      return Float(parentSize.width)
-    case .custom(let size):
-      return size
-    }
+    return size(for: Float(parentSize.width))
   }
 
   func height(parentSize: CGSize) -> Float {
-
-  switch self {
+    return size(for: Float(parentSize.height))
+  }
+  
+  private func size(for value: Float) -> Float {
+    switch self {
     case .half:
-      return floorf(Float(parentSize.height) / 2.0)
+      return floorf(value / 2.0)
     case .full:
-      return Float(parentSize.height)
+      return value
+    case  .third:
+      return floorf(value / 3.0)
+    case  .quarter:
+      return floorf(value / 4.0)
+    case  .fifth:
+      return floorf(value / 5.0)
+    case  .sixth:
+      return floorf(value / 6.0)
+    case  .seventh:
+      return floorf(value / 7.0)
+    case .eighth:
+      return floorf(value / 8.0)
+    case .threeQuarters:
+      return floorf(3.0 * value / 4.0)
+    case .twoThirds:
+      return floorf(2.0 * value / 3.0)
+    case .goldenSmall:
+      return floorf(value - value / goldenRatio)
+    case .goldenLarge:
+      return floorf(value / goldenRatio)
     case .custom(let size):
       return size
     }
   }
 
 }
+
+private let goldenRatio: Float = (1.0 + CoreFoundation.sqrt(5.0))/2.0
 
 public extension PresentationModalSize {
   init?(string: String?) {
@@ -44,12 +72,32 @@ public extension PresentationModalSize {
 
     let (name, params) = PresentationModalSize.extractNameAndParams(from: string)
     switch name {
-      case "half":
+    case "half":
       self = .half
-      case "full":
+    case "full":
       self = .full
-      case "custom" where params.count == 1:
-        self = .custom(size: params[0].toFloat() ?? 0)
+    case "third":
+      self = .third
+    case "quarter":
+      self = .quarter
+    case "fifth":
+      self = .fifth
+    case "sixth":
+      self = .sixth
+    case "seventh":
+      self = .seventh
+    case "eighth":
+      self = .eighth
+    case "threequarters":
+      self = .threeQuarters
+    case "twothirds":
+      self = .twoThirds
+    case "goldensmall":
+      self = .goldenSmall
+    case "goldenlarge", "goldenratio":
+      self = .goldenLarge
+    case "custom" where params.count == 1:
+      self = .custom(size: params[0].toFloat() ?? 0)
     default:
       return nil
     }
