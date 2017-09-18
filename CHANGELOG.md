@@ -17,6 +17,20 @@ N/A
 
 N/A
 
+### [5.0.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/5.0.0)
+
+### API breaking changes
+
+N/A
+
+### Enhancements
+- Support for Swift 4.0 
+
+### Bugfixes
+
+N/A
+
+
 ### [4.2.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/4.2.0)
 
 #### API breaking changes
