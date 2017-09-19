@@ -11,7 +11,7 @@ N/A
 
 #### Enhancements
 
-- Add more screen size ratio to present  modal view controller. [#512](https://github.com/IBAnimatable/IBAnimatable/pull/512) by [@phimage](https://github.com/phimage)
+N/A
 
 #### Bugfixes
 
@@ -25,6 +25,7 @@ N/A
 
 ### Enhancements
 - Support for Swift 4.0 
+- Add more screen size ratio to present  modal view controller. [#512](https://github.com/IBAnimatable/IBAnimatable/pull/512) by [@phimage](https://github.com/phimage)
 
 ### Bugfixes
 
