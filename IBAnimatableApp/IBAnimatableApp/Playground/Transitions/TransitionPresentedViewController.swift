@@ -108,7 +108,7 @@ private extension TransitionPresentedViewController {
   // To extract the type without parameters
   func extractAnimationType(_ animationType: String) -> String {
     if let range = animationType.range(of: "(") {
-      return animationType.substring(to: range.lowerBound)
+      return String(animationType[..<range.lowerBound])
     }
     return animationType
   }

@@ -40,7 +40,7 @@ public class InteractiveAnimator: UIPercentDrivenInteractiveTransition {
     }
   }
 
-  func handleGesture(for gestureRecognizer: UIGestureRecognizer) {
+  @objc func handleGesture(for gestureRecognizer: UIGestureRecognizer) {
     let (progress, shouldFinishInteractiveTransition) = calculateProgress(for: gestureRecognizer)
 
     switch gestureRecognizer.state {

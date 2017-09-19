@@ -121,8 +121,11 @@ extension AnimationType: IBEnum {
     case "moveby":
       self = .moveBy(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
     case "scale":
-      self = .scale(fromX: params[safe: 0]?.toDouble() ?? 0, fromY: params[safe: 1]?.toDouble() ?? 0,
-                    toX: params[safe: 2]?.toDouble() ?? 1, toY: params[safe: 3]?.toDouble() ?? 1)
+      let fromX = params[safe: 0]?.toDouble() ?? 0
+      let fromY = params[safe: 1]?.toDouble() ?? 0
+      let toX = params[safe: 2]?.toDouble() ?? 1
+      let toY = params[safe: 3]?.toDouble() ?? 1
+      self = .scale(fromX: fromX, fromY: fromY, toX: toX, toY: toY)
     case "scalefrom":
       self = .scaleFrom(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
     case "scaleto":

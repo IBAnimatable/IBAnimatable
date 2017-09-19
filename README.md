@@ -35,15 +35,20 @@ As a designer, we love Sketch, which is a simple but yet super powerful tool to 
 IBAnimatable 4.0 is the latest major release of IBAnimatable. This version introduces promise-like animation API, and contains some breaking changes from version 3.x. Please check out [IBAnimatable 4.0 Migration Guide](Documentation/IBAnimatable 4.0 Migration Guide.md) for more information about how to migrate your project to 4.0. 
 
 ## Swift version
+### Swift 4
+There are no API breaking changes when migrating from Swift 3.2 to Swift 4 using IBAnimatable.
+
+If you are using Xcode 9 with Swift 4, please use the latest tagged 5.x release.
+
+### Swift 3.2
+There are no API breaking changes when migrating from Swift 3.1 to Swift 3.2 using IBAnimatable.
+
+If you are using Xcode 9 and Swift 3.2, please use the 4.2 release.
+
 ### Swift 3 or 3.1
 If you migrate from Swift 2.x, please check out [IBAnimatable 3.0 Migration Guide](Documentation/IBAnimatable 3.0 Migration Guide.md) for more information about how to migrate your project to 3.0. Version 3 follows Swift 3 [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/) and contains a lot of breaking changes from version 2.x. 
 
 If you are using Xcode 8 with Swift 3, please use the latest tagged 4.x release.
-
-### Swift 2.2 or 2.3?
-If you are using Xcode 7.3.1 with Swift 2.2 please use IBAnimatable 2.7. If you are using Xcode 8 with Swift 2.3, please use the latest tagged 2.x release (version 2.8.1). If you find any issue and create a PR for Swift 2.3, please PR to `swift2` branch. When you use Swift 2.3 with IBAnimatable, you may see some issue like `dlopen(IBAnimatable.framework, 1): Symbol not found: __TMVs20_DisabledRangeIndex_`. That's a bug of Xcode 8, please have a look at [Issue - Failed to render and update auto layout status](https://github.com/IBAnimatable/IBAnimatable/issues/349)
-
-**Version 2.8.1 is the last version to support Swift 2.3. Because Xcode 8.3 has stopped supporting Swift 2.3. We also stopped supporting Swift 2.*, please migrate to Swift 3.**
 
 ## Languages
 [中文](Documentation/README.zh.md)
