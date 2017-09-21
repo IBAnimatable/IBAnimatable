@@ -6,7 +6,6 @@
 import UIKit
 
 // FIXME: almost same as `AnimatableView`, Need to refactor to encasuplate.
-@available(iOS 9, *)
 @IBDesignable
 open class AnimatableStackView: UIStackView, CornerDesignable, FillDesignable, BorderDesignable,
                                              RotationDesignable, ShadowDesignable, TintDesignable, GradientDesignable,
