@@ -124,7 +124,7 @@ view.animate(.squeeze(way: .in, direction: .left))
 把 `IBAnimatable` 文件夹拷贝到你的 Xcode 项目中
 
 ### Swift package manager
-在 `Package.swift` 中添加 `.Package(url: "https://github.com/IBAnimatable/IBanimatable.git", majorVersion: 4)` 。
+在 `Package.swift` 中添加 `.Package(url: "https://github.com/IBAnimatable/IBanimatable.git", majorVersion: 5)` 。
 
 ### CocoaPods
 
