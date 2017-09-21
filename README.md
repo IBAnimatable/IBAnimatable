@@ -5,7 +5,7 @@ Design and prototype customized UI, interaction, navigation, transition and anim
 ![IBAnimatable hero image](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/IBAnimatable.gif)
 
 [![Build Status](https://travis-ci.org/IBAnimatable/IBAnimatable.svg?branch=master)](https://travis-ci.org/IBAnimatable/IBAnimatable)
-[![Language](https://img.shields.io/badge/language-Swift%203.0-orange.svg)](https://swift.org)
+[![Language](https://img.shields.io/badge/language-Swift%204.0-orange.svg)](https://swift.org)
 [![CocoaPods](https://img.shields.io/cocoapods/v/IBAnimatable.svg?style=flat)](http://cocoadocs.org/docsets/IBAnimatable/)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/github/license/IBAnimatable/IBAnimatable.svg?style=flat)](https://github.com/IBAnimatable/IBAnimatable/blob/master/LICENSE)
@@ -13,14 +13,14 @@ Design and prototype customized UI, interaction, navigation, transition and anim
 **The app was made in Interface Builder with `IBAnimatable` without a single line of code**. Due to the size of [the GIF file on Dribbble](https://dribbble.com/shots/2453933-IBAnimatable-Design-App-Store-ready-Apps-in-Interface-Builder), it only demonstrates a subset of features. We can also find the full HD version on [YouTube](https://www.youtube.com/watch?v=dvD8X6J1YLM) or [MP4 on Github](https://github.com/IBAnimatable/IBAnimatable-Misc/blob/master/Videos/IBAnimatable.mp4?raw=true)
 
 ## Key features
-- ✅ **100% compatible with `UIKit`**. All `IBAnimatable` APIs are extensions of `UIKit`. No pollutions to `UIKit`'s APIs.
-- ✅ **100% compatible with Auto Layout and Size Classes**. No custom layout system.
-- ✅ **User interface design and preview in IB**: corner radius, border, mask, shadow, gradient colors, tint color, blur effect etc.
-- ✅ **Animation design in IB**: slide in/out, fade in/out, zoom in/out, flip, pop, shake, rotate, move etc.
-- ✅ **Transition design in IB**: fade, slide, flip, cube, portal, fold, explosion etc.
-- ✅ **Interactive gesture design in IB**: pan, screen edge pan, pinch etc. 
-- ✅ **Presentation design in IB**: flip, cover, zoom, dropdown etc.
-- ✅ **Activity indicator design in IB**: ball beat, ball rotate, cube transition, Pacman etc.  
+✅ **100% compatible with `UIKit`**. All `IBAnimatable` APIs are extensions of `UIKit`. No pollutions to `UIKit`'s APIs.
+✅ **100% compatible with Auto Layout and Size Classes**. No custom layout system.
+✅ **User interface design and preview in IB**: corner radius, border, mask, shadow, gradient colors, tint color, blur effect etc.
+✅ **Animation design in IB**: slide in/out, fade in/out, zoom in/out, flip, pop, shake, rotate, move etc.
+✅ **Transition design in IB**: fade, slide, flip, cube, portal, fold, explosion etc.
+✅ **Interactive gesture design in IB**: pan, screen edge pan, pinch etc. 
+✅ **Presentation design in IB**: flip, cover, zoom, dropdown etc.
+✅ **Activity indicator design in IB**: ball beat, ball rotate, cube transition, Pacman etc.  
 
 
 ![StoryboardPreview](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/Storyboard.jpg)
@@ -31,8 +31,10 @@ With `IBAnimatable`, we can design a UI in Interface Builder like what we can do
 
 As a designer, we love Sketch, which is a simple but yet super powerful tool to create UI. However, Sketch can't design interaction, navigation, transition and animation, and we may need another tool like Framer to design some of them. Moreover, to make an App Store ready App, we need to use Xcode and Interface Builder to implement the UI and animations. To speed up the process and minimize the waste, we create `IBAnimatable` to make Interface Builder designable and animatable.   
 
-## Version 4
-IBAnimatable 4.0 is the latest major release of IBAnimatable. This version introduces promise-like animation API, and contains some breaking changes from version 3.x. Please check out [IBAnimatable 4.0 Migration Guide](Documentation/IBAnimatable 4.0 Migration Guide.md) for more information about how to migrate your project to 4.0. 
+## Version 5
+IBAnimatable 5.0 is the latest major release of IBAnimatable. This version supports Swift 4, there is not API breaking changes from migrating from version 4.x. 
+
+If you migrate from version 3.x. Please check out [IBAnimatable 4.0 Migration Guide](Documentation/IBAnimatable 4.0 Migration Guide.md) for more information.
 
 ## Swift version
 ### Swift 4
@@ -174,7 +176,7 @@ Copy and paste `IBAnimatable` folder in your Xcode project.
 
 ### [Swift package manager](https://swift.org/package-manager)
 
-Add `.Package(url: "https://github.com/IBanimatable/IBanimatable.git", majorVersion: 4)` to your `Package.swift`
+Add `.Package(url: "https://github.com/IBanimatable/IBanimatable.git", majorVersion: 5)` to your `Package.swift`
 
 ### [CocoaPods](https://cocoapods.org)
 
