@@ -32,7 +32,7 @@ With `IBAnimatable`, we can design a UI in Interface Builder like what we can do
 As a designer, we love Sketch, which is a simple but yet super powerful tool to create UI. However, Sketch can't design interaction, navigation, transition and animation, and we may need another tool like Framer to design some of them. Moreover, to make an App Store ready App, we need to use Xcode and Interface Builder to implement the UI and animations. To speed up the process and minimize the waste, we create `IBAnimatable` to make Interface Builder designable and animatable.   
 
 ## Version 5
-IBAnimatable 5.0 is the latest major release of IBAnimatable. This version supports Swift 4, there is not API breaking changes from migrating from version 4.x. 
+IBAnimatable 5.0 is the latest major release of IBAnimatable. This version supports Swift 4. There are no API breaking changes from migrating from version 4.x. 
 
 If you migrate from version 3.x. Please check out [IBAnimatable 4.0 Migration Guide](Documentation/IBAnimatable 4.0 Migration Guide.md) for more information.
 
