@@ -13,14 +13,14 @@ Design and prototype customized UI, interaction, navigation, transition and anim
 **The app was made in Interface Builder with `IBAnimatable` without a single line of code**. Due to the size of [the GIF file on Dribbble](https://dribbble.com/shots/2453933-IBAnimatable-Design-App-Store-ready-Apps-in-Interface-Builder), it only demonstrates a subset of features. We can also find the full HD version on [YouTube](https://www.youtube.com/watch?v=dvD8X6J1YLM) or [MP4 on Github](https://github.com/IBAnimatable/IBAnimatable-Misc/blob/master/Videos/IBAnimatable.mp4?raw=true)
 
 ## Key features
-✅ **100% compatible with `UIKit`**. All `IBAnimatable` APIs are extensions of `UIKit`. No pollutions to `UIKit`'s APIs.
-✅ **100% compatible with Auto Layout and Size Classes**. No custom layout system.
-✅ **User interface design and preview in IB**: corner radius, border, mask, shadow, gradient colors, tint color, blur effect etc.
-✅ **Animation design in IB**: slide in/out, fade in/out, zoom in/out, flip, pop, shake, rotate, move etc.
-✅ **Transition design in IB**: fade, slide, flip, cube, portal, fold, explosion etc.
-✅ **Interactive gesture design in IB**: pan, screen edge pan, pinch etc. 
-✅ **Presentation design in IB**: flip, cover, zoom, dropdown etc.
-✅ **Activity indicator design in IB**: ball beat, ball rotate, cube transition, Pacman etc.  
+- ✅ **100% compatible with `UIKit`**. All `IBAnimatable` APIs are extensions of `UIKit`. No pollutions to `UIKit`'s APIs.
+- ✅ **100% compatible with Auto Layout and Size Classes**. No custom layout system.
+- ✅ **User interface design and preview in IB**: corner radius, border, mask, shadow, gradient colors, tint color, blur effect etc.
+- ✅ **Animation design in IB**: slide in/out, fade in/out, zoom in/out, flip, pop, shake, rotate, move etc.
+- ✅ **Transition design in IB**: fade, slide, flip, cube, portal, fold, explosion etc.
+- ✅ **Interactive gesture design in IB**: pan, screen edge pan, pinch etc. 
+- ✅ **Presentation design in IB**: flip, cover, zoom, dropdown etc.
+- ✅ **Activity indicator design in IB**: ball beat, ball rotate, cube transition, Pacman etc.  
 
 
 ![StoryboardPreview](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/Storyboard.jpg)
