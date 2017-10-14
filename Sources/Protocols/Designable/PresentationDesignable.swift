@@ -102,7 +102,7 @@ public extension PresentationDesignable where Self: UIViewController {
       modalTransitionStyle = dismissalSystemTransition
     }
   }
-  
+
   public func configurePresenterFrameForPresentation() {
        presenter?.presentationConfiguration?.contextFrameForPresentation = contextFrameForPresentation?()
     print("presenter \( presenter?.presentationConfiguration?.contextFrameForPresentation)")
@@ -127,5 +127,5 @@ public class PresentationConfiguration {
   public var modalPosition: PresentationModalPosition = .center
   public var modalSize: (PresentationModalSize, PresentationModalSize) = (.half, .half)
   public var keyboardTranslation = ModalKeyboardTranslation.none
-  public var contextFrameForPresentation: CGRect? = nil
+  public var contextFrameForPresentation: CGRect?
 }
