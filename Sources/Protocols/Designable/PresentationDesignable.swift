@@ -105,7 +105,6 @@ public extension PresentationDesignable where Self: UIViewController {
 
   public func configurePresenterFrameForPresentation() {
        presenter?.presentationConfiguration?.contextFrameForPresentation = contextFrameForPresentation?()
-    print("presenter \( presenter?.presentationConfiguration?.contextFrameForPresentation)")
   }
 
 }
