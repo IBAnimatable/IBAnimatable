@@ -15,7 +15,7 @@ N/A
 
 #### Bugfixes
 
-N/A
+- Fix presented modal view (over context) frame when device orientation changed. [#516](https://github.com/IBAnimatable/IBAnimatable/pull/516) by [@phimage](https://github.com/phimage)
 
 ### [5.0.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/5.0.0)
 
@@ -24,7 +24,7 @@ N/A
 N/A
 
 ### Enhancements
-- Support for Swift 4.0 
+- Support for Swift 4.0
 - Add more screen size ratio to present  modal view controller. [#512](https://github.com/IBAnimatable/IBAnimatable/pull/512) by [@phimage](https://github.com/phimage)
 
 ### Bugfixes
@@ -441,5 +441,3 @@ None
 ### [1.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/1.0)
 
 - Initial release
-
-

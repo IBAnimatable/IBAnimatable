@@ -9,9 +9,9 @@ import UIKit
 open class AnimatableModalViewController: UIViewController, PresentationDesignable {
 
   // MARK: - AnimatablePresentationController
-  public var contextFrameForPresentation: CGRect? {
+  public var contextFrameForPresentation: (() -> CGRect)? {
     didSet {
-      presenter?.presentationConfiguration?.contextFrameForPresentation = contextFrameForPresentation
+      configurePresenterFrameForPresentation()
     }
   }
 
@@ -179,4 +179,10 @@ open class AnimatableModalViewController: UIViewController, PresentationDesignab
     super.viewDidAppear(animated)
     configureDismissalTransition()
   }
+
+  open override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    configurePresenterFrameForPresentation()
+  }
+
 }
