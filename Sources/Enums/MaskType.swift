@@ -74,3 +74,30 @@ public extension MaskType {
     }
   }
 }
+
+extension MaskType {
+  
+  func bezierPath(in rect: CGRect) -> UIBezierPath {
+    switch self {
+    case .circle:
+      return UIBezierPath(circleIn: rect)
+    case .ellipse:
+      return UIBezierPath(ovalIn: rect)
+    case let .parallelogram(angle):
+      return UIBezierPath(parallelogramIn: rect, with: angle)
+    case let .polygon(sides):
+      return UIBezierPath(polygonIn: rect, with: sides)
+    case let .star(points):
+      return UIBezierPath(starIn: rect, with: points)
+    case let .wave(direction, width, offset):
+      return UIBezierPath(waveIn: rect, with: direction == .up, width: CGFloat(width), offset: CGFloat(offset))
+    case .triangle:
+      return UIBezierPath(triangleIn: rect)
+    case let .custom(pathProvider):
+      return pathProvider(rect.size)
+    case .none:
+      return UIBezierPath()
+    }
+  }
+  
+}
