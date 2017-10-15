@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4511F371F93F1B2002E0FAF /* UIBezierPathExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4511F361F93F1B2002E0FAF /* UIBezierPathExtension.swift */; };
 		E2561F5F1ECD7DD900A6D853 /* IBAnimatable.h in Headers */ = {isa = PBXBuildFile; fileRef = E2561F5D1ECD7DD900A6D853 /* IBAnimatable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E27FD0011ECD79DD00F74840 /* IBAnimatable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E27FCFF71ECD79DD00F74840 /* IBAnimatable.framework */; };
 		E27FD02C1ECD7BCE00F74840 /* ColorTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27FD0121ECD7BCE00F74840 /* ColorTypeTests.swift */; };
@@ -198,6 +199,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C4511F361F93F1B2002E0FAF /* UIBezierPathExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBezierPathExtension.swift; sourceTree = "<group>"; };
 		E2561F5D1ECD7DD900A6D853 /* IBAnimatable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBAnimatable.h; sourceTree = "<group>"; };
 		E2561F5E1ECD7DD900A6D853 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E27FCFF71ECD79DD00F74840 /* IBAnimatable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IBAnimatable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -698,6 +700,7 @@
 				E27FD1EF1ECD7D8A00F74840 /* CALayerExtension.swift */,
 				E27FD1F01ECD7D8A00F74840 /* UIColorExtension.swift */,
 				E27FD1F11ECD7D8A00F74840 /* UIViewControllerExtension.swift */,
+				C4511F361F93F1B2002E0FAF /* UIBezierPathExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1019,6 +1022,7 @@
 				E27FD2BA1ECD7D8A00F74840 /* PresentFoldSegue.swift in Sources */,
 				E27FD28B1ECD7D8A00F74840 /* PresentationModalPosition.swift in Sources */,
 				E27FD25F1ECD7D8A00F74840 /* PresentationPresenter.swift in Sources */,
+				C4511F371F93F1B2002E0FAF /* UIBezierPathExtension.swift in Sources */,
 				E27FD28F1ECD7D8A00F74840 /* TransitionType.swift in Sources */,
 				E27FD2CF1ECD7D8A00F74840 /* AnimatableTableViewCell.swift in Sources */,
 				E27FD2821ECD7D8A00F74840 /* ColorType.swift in Sources */,

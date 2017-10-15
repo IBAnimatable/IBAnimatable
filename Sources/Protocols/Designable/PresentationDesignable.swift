@@ -78,7 +78,7 @@ public extension PresentationDesignable where Self: UIViewController {
       modalTransitionStyle = systemTransition
     }
 
-    var presentationConfiguration = PresentationConfiguration()
+    let presentationConfiguration = PresentationConfiguration()
     presentationConfiguration.contextFrameForPresentation = contextFrameForPresentation?()
     presentationConfiguration.modalPosition = modalPosition
     presentationConfiguration.modalSize = modalSize
