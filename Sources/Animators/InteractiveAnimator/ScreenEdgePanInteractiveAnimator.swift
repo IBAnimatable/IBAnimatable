@@ -2,7 +2,7 @@
 //  Created by Jake Lin on 4/5/16.
 //  Copyright © 2016 IBAnimatable. All rights reserved.
 //
-
+#if os(iOS)
 import UIKit
 
 public class ScreenEdgePanInteractiveAnimator: InteractiveAnimator {
@@ -85,3 +85,4 @@ public class ScreenEdgePanInteractiveAnimator: InteractiveAnimator {
     return (progress, shouldFinishInteractiveTransition)
   }
 }
+#endif

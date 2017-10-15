@@ -2,7 +2,7 @@
 //  Created by Jake Lin on 4/26/16.
 //  Copyright © 2016 IBAnimatable. All rights reserved.
 //
-
+#if os(iOS)
 import UIKit
 
 public class PinchInteractiveAnimator: InteractiveAnimator {
@@ -67,3 +67,4 @@ public class PinchInteractiveAnimator: InteractiveAnimator {
     return (progress, shouldFinishInteractiveTransition)
   }
 }
+#endif

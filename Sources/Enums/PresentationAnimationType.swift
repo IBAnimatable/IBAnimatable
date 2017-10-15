@@ -21,10 +21,18 @@ public enum PresentationAnimationType: IBEnum {
 
   public var systemTransition: UIModalTransitionStyle? {
     switch self {
-    case .crossDissolve: return .crossDissolve
-    case .flip: return .flipHorizontal
-    case .cover(from: .bottom): return .coverVertical
-    default: return nil
+    case .crossDissolve:
+      return .crossDissolve
+    case .flip:
+      #if os(iOS)
+      return .flipHorizontal
+      #else
+      return nil
+      #endif
+    case .cover(from: .bottom):
+      return .coverVertical
+    default:
+      return nil
     }
   }
 

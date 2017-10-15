@@ -5,10 +5,13 @@
 
 import UIKit
 
+#if os(iOS)
+extension AnimatableTableViewCell: TableViewCellDesignable {}
+#endif
+
 @IBDesignable
 open class AnimatableTableViewCell: UITableViewCell, CornerDesignable, FillDesignable, BorderDesignable,
-                                                     TableViewCellDesignable, GradientDesignable,
-                                                     BackgroundImageDesignable, Animatable {
+                                                     GradientDesignable, BackgroundImageDesignable, Animatable {
 
   // MARK: - CornerDesignable
   @IBInspectable open var cornerRadius: CGFloat = CGFloat.nan {
@@ -156,7 +159,9 @@ open var startPoint: GradientStartPoint = .top
   fileprivate func configureInspectableProperties() {
     configureAnimatableProperties()
     configureOpacity()
+    #if os(iOS)
     configureSeparatorMargins()
+    #endif
   }
 
   fileprivate func configureAfterLayoutSubviews() {

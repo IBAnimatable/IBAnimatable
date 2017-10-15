@@ -17,6 +17,7 @@ public class Navigator: NSObject {
   // interaction controller
   fileprivate var interactiveAnimator: InteractiveAnimator?
 
+  #if os(iOS)
   public init(transitionAnimationType: TransitionAnimationType,
               transitionDuration: Duration = defaultTransitionDuration,
               interactiveGestureType: InteractiveGestureType? = nil) {
@@ -41,6 +42,15 @@ public class Navigator: NSObject {
       }
     }
   }
+  #endif
+
+  public init(transitionAnimationType: TransitionAnimationType, transitionDuration: Duration = defaultTransitionDuration) {
+    self.transitionAnimationType = transitionAnimationType
+    self.transitionDuration = transitionDuration
+    super.init()
+    animator = AnimatorFactory.makeAnimator(transitionAnimationType: transitionAnimationType, transitionDuration: transitionDuration)
+  }
+
 }
 
 // MARK: - navigation controller delegate

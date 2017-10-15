@@ -27,7 +27,9 @@ public class TransitionPresenterManager {
     if let presenter = presenter {
       // Update the `transitionDuration` and `interactiveGestureType` every time to reuse the same presenter with the same type
       presenter.transitionDuration = transitionDuration
+      #if os(iOS)
       presenter.interactiveGestureType = interactiveGestureType
+      #endif
       return presenter
     }
 

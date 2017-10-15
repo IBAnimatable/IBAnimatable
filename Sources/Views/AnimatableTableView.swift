@@ -5,10 +5,13 @@
 
 import UIKit
 
+#if os(iOS)
+extension AnimatableTableView: BlurDesignable, RefreshControlDesignable {}
+#endif
+
 @IBDesignable
 open class AnimatableTableView: UITableView, FillDesignable, BorderDesignable, GradientDesignable,
-                                             BackgroundImageDesignable, BlurDesignable, RefreshControlDesignable,
-                                             Animatable {
+                                             BackgroundImageDesignable, Animatable {
 
   // MARK: - FillDesignable
   @IBInspectable open var fillColor: UIColor? {
@@ -90,10 +93,13 @@ open var startPoint: GradientStartPoint = .top
   @IBInspectable open var backgroundImage: UIImage? {
     didSet {
       configureBackgroundImage()
+      #if os(iOS)
       configureBackgroundBlurEffectStyle()
+      #endif
     }
   }
 
+  #if os(iOS)
   // MARK: - BlurDesignable
   open var blurEffectStyle: UIBlurEffectStyle? {
     didSet {
@@ -138,6 +144,7 @@ open var startPoint: GradientStartPoint = .top
       configureRefreshController()
     }
   }
+  #endif
 
   // MARK: - Animatable
   open var animationType: AnimationType = .none

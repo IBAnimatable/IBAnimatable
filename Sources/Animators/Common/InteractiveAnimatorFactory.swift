@@ -2,7 +2,7 @@
 //  Created by Jake Lin on 4/6/16.
 //  Copyright © 2016 IBAnimatable. All rights reserved.
 //
-
+#if os(iOS)
 import UIKit
 /**
  Interactive Animator Factory
@@ -21,3 +21,4 @@ struct InteractiveAnimatorFactory {
     }
   }
 }
+#endif
