@@ -63,6 +63,9 @@ private extension MaskDesignable where Self: UIView {
     let maskLayer = CAShapeLayer()
     maskLayer.frame = CGRect(origin: .zero, size: bounds.size)
     maskLayer.path = path.cgPath
+    if path.usesEvenOddFillRule {
+      maskLayer.fillRule = kCAFillRuleEvenOdd
+    }
     layer.mask = maskLayer
   }
 }

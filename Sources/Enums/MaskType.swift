@@ -26,6 +26,14 @@ public enum MaskType: IBEnum {
   case wave(direction: WaveDirection, width: Double, offset: Double)
   ///  For parallelogram shape with an angle (default: 60). If `angle == 90` then it is a rectangular mask. If `angle < 90` then is a left-oriented parallelogram\-\
   case parallelogram(angle: Double)
+  /// For heart shape.
+  case heart
+  /// For ring shape with radius (min: 1). 
+  case ring(radius: Double)
+  /// For gear shape with radius (min: 1) and cogs count (min: 2).
+  case gear(radius: Double, cogs: Int)
+  /// For super ellipse shape.
+  case superEllipse(n: Double)
 
   /// Custom shape
   case custom(pathProvider: CustomMaskProvider)
@@ -69,6 +77,14 @@ public extension MaskType {
                    offset: params[safe: 2]?.toDouble() ?? 0)
     case "parallelogram":
       self = .parallelogram(angle: params[safe: 0]?.toDouble() ?? 60)
+    case "heart":
+      self = .heart
+    case "ring":
+      self = .ring(radius: params[safe: 0]?.toDouble() ?? 10 )
+    case "gear":
+      self = .gear(radius: params[safe: 0]?.toDouble() ?? 10, cogs: params[safe: 1]?.toInt() ?? 6 )
+    case "superellipse":
+      self = .superEllipse(n: params[safe: 0]?.toDouble() ?? M_E )
     default:
       self = .none
     }
@@ -76,7 +92,7 @@ public extension MaskType {
 }
 
 extension MaskType {
-  
+
   func bezierPath(in rect: CGRect) -> UIBezierPath {
     switch self {
     case .circle:
@@ -93,11 +109,19 @@ extension MaskType {
       return UIBezierPath(waveIn: rect, with: direction == .up, width: CGFloat(width), offset: CGFloat(offset))
     case .triangle:
       return UIBezierPath(triangleIn: rect)
+    case .heart:
+      return UIBezierPath(heartIn: rect)
+    case .ring(let radius):
+      return UIBezierPath(ringIn: rect, radius: CGFloat(radius))
+    case .gear(let radius, let cogs):
+      return UIBezierPath(gearIn: rect, radius: CGFloat(radius), cogs: cogs)
+    case .superEllipse(let n):
+      return UIBezierPath(superEllipseInRect: rect, n: CGFloat(n))
     case let .custom(pathProvider):
       return pathProvider(rect.size)
     case .none:
       return UIBezierPath()
     }
   }
-  
+
 }
