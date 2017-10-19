@@ -18,6 +18,9 @@ final class MaskViewController: UIViewController {
     let angleParam = ParamType.number(min: 60, max: 120, interval: 2, ascending: true, unit: "°") // default 6
     let waveParam = ParamType(fromEnum: MaskType.WaveDirection.self)
     let widthParam = ParamType.number(min: 15, max: 90, interval: 2, ascending: true, unit: "px")
+    let radiusParam = ParamType.number(min: 10, max: 40, interval: 10, ascending: true, unit: "px")
+    let cogsParam = ParamType.number(min: 3, max: 10, interval: 1, ascending: true, unit: "cogs")
+    let nParam = ParamType.number(min: 0.25, max: 2, interval: 0.25, ascending: true, unit: "n")
 
     return [PickerEntry(params:[], name:"circle"),
             PickerEntry(params:[], name:"ellipse"),
@@ -26,6 +29,10 @@ final class MaskViewController: UIViewController {
             PickerEntry(params:[pointsParam], name: "star"),
             PickerEntry(params:[waveParam, widthParam], name: "wave"),
             PickerEntry(params:[angleParam], name: "parallelogram"),
+            PickerEntry(params:[], name: "heart"),
+            PickerEntry(params:[radiusParam], name: "ring"),
+            PickerEntry(params:[radiusParam, cogsParam], name: "gear"),
+            PickerEntry(params:[nParam], name: "superellipse"),
             PickerEntry(params:[], name: "none"),
             PickerEntry(params:[], name: "CUSTOM Bubble")
     ]
