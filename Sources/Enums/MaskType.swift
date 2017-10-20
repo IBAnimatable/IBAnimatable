@@ -34,6 +34,10 @@ public enum MaskType: IBEnum {
   case gear(radius: Double, cogs: Int)
   /// For super ellipse shape.
   case superEllipse(n: Double)
+  /// For drop shape.
+  case drop
+  /// For plus sign shape
+  case plusSign(width: Double)
 
   /// Custom shape
   case custom(pathProvider: CustomMaskProvider)
@@ -85,6 +89,10 @@ public extension MaskType {
       self = .gear(radius: params[safe: 0]?.toDouble() ?? 10, cogs: params[safe: 1]?.toInt() ?? 6 )
     case "superellipse":
       self = .superEllipse(n: params[safe: 0]?.toDouble() ?? M_E )
+    case "drop":
+      self = .drop
+    case "plussign":
+      self = .plusSign(width: params[safe: 0]?.toDouble() ?? 10 )
     default:
       self = .none
     }
@@ -117,6 +125,10 @@ extension MaskType {
       return UIBezierPath(gearIn: rect, radius: CGFloat(radius), cogs: cogs)
     case .superEllipse(let n):
       return UIBezierPath(superEllipseInRect: rect, n: CGFloat(n))
+    case .drop:
+      return UIBezierPath(dropInRect: rect)
+    case .plusSign(let width):
+      return UIBezierPath(plusSignInRect: rect, width: CGFloat(width))
     case let .custom(pathProvider):
       return pathProvider(rect.size)
     case .none:

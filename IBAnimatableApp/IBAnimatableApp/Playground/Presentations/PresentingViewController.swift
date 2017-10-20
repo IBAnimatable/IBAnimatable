@@ -72,7 +72,7 @@ final class PresentingViewController: AnimatableViewController, UIPickerViewData
     presentedViewController.dismissalAnimationType = PresentationAnimationType(string: selectedDismissalAnimationType) ?? .cover(from: .bottom)
     presentedViewController.modalPosition = PresentationModalPosition(string: selectedModalPosition)
     presentedViewController.modalSize = (width: PresentationModalSize(string: selectedModalWidth)!,
-                                         height: PresentationModalSize(string:selectedModalHeight)!)
+                                         height: PresentationModalSize(string: selectedModalHeight)!)
 
     presentedViewController.backgroundColor = colors[Int(sliderBackgroundColor.value)]
     presentedViewController.opacity = CGFloat(sliderOpacity.value)

@@ -41,7 +41,7 @@ final class GradientViewController: UIViewController {
 
 }
 
-extension GradientViewController : UIPickerViewDelegate, UIPickerViewDataSource {
+extension GradientViewController: UIPickerViewDelegate, UIPickerViewDataSource {
   func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
     return componentValues[component].count()
   }

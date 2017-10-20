@@ -78,7 +78,7 @@ final class AnimationsTimingFunctionViewController: UIViewController {
   }
 }
 
-extension AnimationsTimingFunctionViewController : UIPickerViewDelegate, UIPickerViewDataSource {
+extension AnimationsTimingFunctionViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
   func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
     if component == 0 {
