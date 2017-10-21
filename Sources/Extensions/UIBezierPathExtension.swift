@@ -344,6 +344,34 @@ extension UIBezierPath {
     addLine(to: CGPoint(x: midX - signWidth / 2, y: top))
   }
 
+  /**
+   Create a Bezier path for a moon shape.
+   
+   - Parameter bounds: The bounds of shape.
+   - Parameter angle: The angle.
+   */
+  convenience init(moonInRect bounds: CGRect, with angle: CGFloat) {
+    self.init()
+    let radius = ceil(min(bounds.width, bounds.height) / 2)
+    let radian: CGFloat
+    if angle > 0 && angle < 180 {
+      radian = -angle * .pi / 180
+    } else {
+      radian = -90 * .pi / 180
+    }
+
+    addArc(withCenter: .zero, radius: radius, startAngle: -radian / 2, endAngle: radian / 2, clockwise: true)
+
+    if angle > 0 && angle < 180 {
+      addArc(withCenter: CGPoint(x: radius * cos(radian / 2.0), y: 0.0),
+             radius: radius * sin(radian/2.0), startAngle: CGFloat.pi / 2, endAngle: -CGFloat.pi / 2.0, clockwise: false)
+    } else {
+      addLine(to: .zero)
+    }
+
+    close()
+    self.translate(to: bounds.center)
+  }
 }
 
 private extension UIBezierPath {

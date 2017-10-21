@@ -38,6 +38,8 @@ public enum MaskType: IBEnum {
   case drop
   /// For plus sign shape
   case plusSign(width: Double)
+  /// For moon shape
+  case moon(angle: Double)
 
   /// Custom shape
   case custom(pathProvider: CustomMaskProvider)
@@ -93,6 +95,8 @@ public extension MaskType {
       self = .drop
     case "plussign":
       self = .plusSign(width: params[safe: 0]?.toDouble() ?? 10 )
+    case "moon":
+      self = .moon(angle: params[safe: 0]?.toDouble() ?? 60 )
     default:
       self = .none
     }
@@ -129,6 +133,8 @@ extension MaskType {
       return UIBezierPath(dropInRect: rect)
     case .plusSign(let width):
       return UIBezierPath(plusSignInRect: rect, width: CGFloat(width))
+    case .moon(let angle):
+      return UIBezierPath(moonInRect: rect, with: CGFloat(angle))
     case let .custom(pathProvider):
       return pathProvider(rect.size)
     case .none:

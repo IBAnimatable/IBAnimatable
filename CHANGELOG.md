@@ -11,6 +11,7 @@ N/A
 
 #### Enhancements
 
+- Add new mask types `.drop`, `.plusSign`, `.moon`. [#519](https://github.com/IBAnimatable/IBAnimatable/pull/519) by [@phimage](https://github.com/phimage)
 - Add new mask types `.heart`, `.gear`, `.ring`, `.superEllipse`. [#518](https://github.com/IBAnimatable/IBAnimatable/pull/518) by [@phimage](https://github.com/phimage)
 
 #### Bugfixes
