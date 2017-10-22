@@ -92,6 +92,10 @@ public extension Animatable where Self: UIView {
     let completion = {
       promise.animationCompleted()
     }
+    doAnimation(animation, configuration: configuration , completion: completion)
+  }
+  internal func doAnimation(_ animation: AnimationType? = nil, configuration: AnimationConfiguration, completion: @escaping () -> Void) {
+    
     switch animation ?? animationType {
     case let .slide(way, direction):
       slide(way, direction: direction, configuration: configuration, completion: completion)
@@ -131,6 +135,10 @@ public extension Animatable where Self: UIView {
       moveTo(x: x, y: y, configuration: configuration, completion: completion)
     case let .scale(fromX, fromY, toX, toY):
       scale(fromX: fromX, fromY: fromY, toX: toX, toY: toY, configuration: configuration, completion: completion)
+    case let .compound(x, y):
+      doAnimation(x, configuration: configuration) {
+        self.doAnimation(y, configuration: configuration, completion: completion)
+      }
     case .none:
       break
     }
@@ -725,6 +733,8 @@ public extension AnimationType {
       return false
     case .fade(way: .inOut), .fade(way: .outIn):
       return false
+    case .compound:
+      return true
     case .none:
       return false
     }
@@ -743,6 +753,8 @@ public extension AnimationType {
       return false
     case .fade(way: .in), .fade(way: .out):
       return false
+    case .compound:
+      return true
     case .none:
       return false
     }

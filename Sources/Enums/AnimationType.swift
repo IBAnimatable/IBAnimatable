@@ -9,7 +9,7 @@ import UIKit
  Predefined Animation Type
  */
 
-public enum AnimationType {
+public indirect enum AnimationType {
   case slide(way: Way, direction: Direction)
   case squeeze(way: Way, direction: Direction)
   case slideFade(way: Way, direction: Direction)
@@ -29,6 +29,7 @@ public enum AnimationType {
   case moveTo(x: Double, y: Double)
   case moveBy(x: Double, y: Double)
   case scale(fromX: Double, fromY: Double, toX: Double, toY: Double)
+  case compound(x: AnimationType, y: AnimationType)
   case none
 
   public enum FadeWay: String {
@@ -130,12 +131,18 @@ extension AnimationType: IBEnum {
       self = .scaleFrom(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
     case "scaleto":
       self = .scaleTo(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
+    case "compound":
+      self = .compound(x: params[safe: 0]?.toAnimationType() ?? .none, y: params[safe: 1]?.toAnimationType() ?? .none)
     default:
       self = .none
     }
   }
 }
-
+private extension String {
+  func toAnimationType() -> AnimationType? {
+    return AnimationType(string: self)
+  }
+}
 private func retrieveRepeatCount(string: String?) -> Int {
   // Default value for repeat count is `1`
   guard let string = string, let repeatCount = Int(string) else {
