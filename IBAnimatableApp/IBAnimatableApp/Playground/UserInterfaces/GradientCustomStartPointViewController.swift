@@ -27,7 +27,7 @@ final class GradientCustomStartPointViewController: UIViewController {
   }
 }
 
-extension GradientCustomStartPointViewController : UIPickerViewDelegate, UIPickerViewDataSource {
+extension GradientCustomStartPointViewController: UIPickerViewDelegate, UIPickerViewDataSource {
   func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
     return componentValues[component].count()
   }
