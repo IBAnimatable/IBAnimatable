@@ -29,7 +29,7 @@ public indirect enum AnimationType {
   case moveTo(x: Double, y: Double)
   case moveBy(x: Double, y: Double)
   case scale(fromX: Double, fromY: Double, toX: Double, toY: Double)
-  case compound(x: AnimationType, y: AnimationType)
+  case compound(animations: [AnimationType])
   case none
 
   public enum FadeWay: String {
@@ -132,7 +132,7 @@ extension AnimationType: IBEnum {
     case "scaleto":
       self = .scaleTo(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
     case "compound":
-      self = .compound(x: params[safe: 0]?.toAnimationType() ?? .none, y: params[safe: 1]?.toAnimationType() ?? .none)
+      self = .compound(animations: params.map { $0.toAnimationType() ?? .none } )
     default:
       self = .none
     }
@@ -140,7 +140,9 @@ extension AnimationType: IBEnum {
 }
 private extension String {
   func toAnimationType() -> AnimationType? {
-    return AnimationType(string: self)
+    let type = self.replacingOccurrences(of: "[", with: "(")
+      .replacingOccurrences(of: "]", with: ")")
+    return AnimationType(string: type)
   }
 }
 private func retrieveRepeatCount(string: String?) -> Int {

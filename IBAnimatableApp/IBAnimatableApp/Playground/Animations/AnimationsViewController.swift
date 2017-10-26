@@ -15,7 +15,7 @@ private let positiveNumberParam = ParamType.number(min: 0, max: 50, interval: 2,
 private let numberParam = ParamType.number(min: -50, max: 200, interval: 10, ascending: true, unit: "")
 private let repeatCountParam = ParamType.number(min: 1, max: 10, interval: 1, ascending: true, unit:"")
 private let scaleParam = ParamType.number(min: 0, max: 2, interval: 0.1, ascending: true, unit: "")
-private let animationParam = ParamType.enumeration(values: ["slide", "shake", "pop", "wobble"])
+private let animationParam = ParamType.enumeration(values: ["slide", "shake", "pop", "pop[2]"])
 
 final class AnimationsViewController: UIViewController {
 
@@ -46,7 +46,7 @@ final class AnimationsViewController: UIViewController {
     PickerEntry(params: [scaleParam, scaleParam], name: "scaleFrom"),
     PickerEntry(params: [scaleParam, scaleParam], name: "scaleTo"),
     PickerEntry(params: [scaleParam, scaleParam, scaleParam, scaleParam], name: "scale"),
-    PickerEntry(params: [animationParam, animationParam], name: "compound")
+    PickerEntry(params: [animationParam, animationParam.reversed], name: "compound")
     ]
   var pickerSizeRatio: CGFloat = 0.25 {
     didSet {

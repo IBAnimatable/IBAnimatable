@@ -135,10 +135,10 @@ public extension Animatable where Self: UIView {
       moveTo(x: x, y: y, configuration: configuration, completion: completion)
     case let .scale(fromX, fromY, toX, toY):
       scale(fromX: fromX, fromY: fromY, toX: toX, toY: toY, configuration: configuration, completion: completion)
-    case let .compound(x, y):
-      doAnimation(x, configuration: configuration) {
-        self.doAnimation(y, configuration: configuration, completion: completion)
-      }
+    case let .compound(animations):
+      animations.reversed().reduce(completion) { result, animation in
+        return { self.doAnimation(animation, configuration: configuration, completion: result) }
+        }()
     case .none:
       break
     }

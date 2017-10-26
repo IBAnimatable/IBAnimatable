@@ -64,6 +64,15 @@ enum ParamType {
       return   ("\(value(at: index)) \(unit)").trimmingCharacters(in: CharacterSet.whitespaces)
     }
   }
+
+  var reversed: ParamType {
+    switch self {
+    case .number(let min, let max, let interval, let ascending, let unit):
+      return .number(min: min, max: max, interval: interval, ascending: !ascending, unit: unit)
+    case .enumeration(let values):
+      return .enumeration(values: values.reversed())
+    }
+  }
 }
 
 struct PickerEntry {
