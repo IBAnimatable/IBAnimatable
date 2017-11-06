@@ -7,12 +7,12 @@ import Foundation
 import UIKit
 import IBAnimatable
 
-fileprivate let c1x = ParamType.number(min: 0, max: 1, interval: 0.1, ascending: true, unit: "")
-fileprivate let c1y = ParamType.number(min: 0, max: 1, interval: 0.1, ascending: true, unit: "")
-fileprivate let c2x = ParamType.number(min: 0, max: 1, interval: 0.1, ascending: true, unit: "")
-fileprivate let c2y = ParamType.number(min: 0, max: 1, interval: 0.1, ascending: true, unit: "")
+private let c1x = ParamType.number(min: 0, max: 1, interval: 0.1, ascending: true, unit: "")
+private let c1y = ParamType.number(min: 0, max: 1, interval: 0.1, ascending: true, unit: "")
+private let c2x = ParamType.number(min: 0, max: 1, interval: 0.1, ascending: true, unit: "")
+private let c2y = ParamType.number(min: 0, max: 1, interval: 0.1, ascending: true, unit: "")
 
-fileprivate let damping = ParamType.number(min: 0, max: 1, interval: 0.1, ascending: true, unit: "")
+private let damping = ParamType.number(min: 0, max: 1, interval: 0.1, ascending: true, unit: "")
 
 protocol TimingFunctionPickDelegate: NSObjectProtocol {
   func timingFunctionSelected(_ timingFunction: TimingFunctionType)
@@ -28,10 +28,10 @@ final class AnimationsTimingFunctionViewController: UIViewController {
     }
   }
 
-  @IBOutlet fileprivate var timingFunctionView: TimingFunctionView!
-  @IBOutlet fileprivate weak var pickerView: UIPickerView!
-  @IBOutlet fileprivate weak var starView: AnimatableView!
-  @IBOutlet fileprivate weak var linearView: AnimatableView!
+  @IBOutlet private var timingFunctionView: TimingFunctionView!
+  @IBOutlet private weak var pickerView: UIPickerView!
+  @IBOutlet private weak var starView: AnimatableView!
+  @IBOutlet private weak var linearView: AnimatableView!
   // prebuit common params
   let entries: [PickerEntry] = [
     PickerEntry(params: [], name: "none"),
@@ -56,6 +56,7 @@ final class AnimationsTimingFunctionViewController: UIViewController {
   ]
 
   var selectedEntry: PickerEntry!
+
   override func viewDidLoad() {
     super.viewDidLoad()
     let index = timingFunction.pickerIndex

@@ -202,7 +202,7 @@ fileprivate extension TransitionAnimationType {
       return "systemCameraIris" + (hollowState == .none ? "" : "(\(hollowState.rawValue))")
     case .fold(let direction, _):
       return "fold" + "(\(direction.rawValue))"
-    case .portal(let direction, let zoomScale):
+    case let .portal(direction, zoomScale):
       return "portal" + (zoomScale == nil ? "(\(direction.rawValue))" : "(\(direction.rawValue),\(zoomScale!))")
     case .natGeo(let direction):
       return "natGeo" + "(\(direction.rawValue))"
@@ -212,7 +212,7 @@ fileprivate extension TransitionAnimationType {
       return "cards" + "(\(direction.rawValue))"
     case .flip(let direction):
       return "flip" + "(\(direction.rawValue))"
-    case .slide(let direction, let isFade):
+    case let .slide(direction, isFade):
       return "slide" + (isFade ? "(\(direction.rawValue), fade)" : "slide" + "(\(direction.rawValue))")
     case .systemRotate:
       return "systemRotate"
@@ -220,7 +220,7 @@ fileprivate extension TransitionAnimationType {
       return "systemRippleEffect"
     case .systemSuckEffect:
       return "systemSuckEffect"
-    case .explode(.some(let x), .some(let min), .some(let max)):
+    case let .explode(.some(x), .some(min), .some(max)):
       return "explode" + "(\(x),\(min),\(max))"
     case .explode:
       return "explode"
