@@ -29,7 +29,7 @@ public indirect enum AnimationType {
   case moveTo(x: Double, y: Double)
   case moveBy(x: Double, y: Double)
   case scale(fromX: Double, fromY: Double, toX: Double, toY: Double)
-  case compound(animations: [AnimationType])
+  case compound(animations: [AnimationType], run: Run)
   case none
 
   public enum FadeWay: String {
@@ -51,6 +51,9 @@ public indirect enum AnimationType {
   public enum RotationDirection: String {
     case cw, ccw
   }
+  public enum Run: String{
+    case sequential, parallel
+  }
 
 }
 
@@ -69,10 +72,20 @@ extension AnimationType {
 extension AnimationType: IBEnum {
 
   public init(string: String?) {
-    guard let string = string else {
+    guard var string = string else {
       self = .none
       return
     }
+
+    // Manage special case to parse
+    if string.starts(with: "[") { // [ animation1, animation2, ...]
+      string = string.dropFirst().dropLast().replacingOccurrences(of: "(", with: "[").replacingOccurrences(of: ")", with: "]")
+      string = "compound("+string+", \(Run.sequential.rawValue))"
+    } else if string.contains("+") { // animation1 + animation2 + ...
+      string = string.replacingOccurrences(of: "+", with: ",")
+      string = "compound("+string+", \(Run.parallel.rawValue))"
+    }
+
     let (name, params) = AnimationType.extractNameAndParams(from: string)
 
     switch name {
@@ -132,7 +145,19 @@ extension AnimationType: IBEnum {
     case "scaleto":
       self = .scaleTo(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
     case "compound":
-      self = .compound(animations: params.map { $0.toAnimationType() ?? .none } )
+      var params = params
+      if let last = params.popLast() {
+        var runP: Run
+        if let run = Run(raw: last) {
+          runP = run
+        } else {
+          params.append(last)
+          runP = .parallel
+        }
+        self = .compound(animations: params.map { $0.toAnimationType() ?? .none }, run: runP)
+      } else {
+        self = .none
+      }
     default:
       self = .none
     }

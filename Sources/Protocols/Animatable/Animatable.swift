@@ -92,10 +92,10 @@ public extension Animatable where Self: UIView {
     let completion = {
       promise.animationCompleted()
     }
-    doAnimation(animation, configuration: configuration , completion: completion)
+    doAnimation(animation, configuration: configuration, completion: completion)
   }
+
   internal func doAnimation(_ animation: AnimationType? = nil, configuration: AnimationConfiguration, completion: @escaping () -> Void) {
-    
     switch animation ?? animationType {
     case let .slide(way, direction):
       slide(way, direction: direction, configuration: configuration, completion: completion)
@@ -135,10 +135,34 @@ public extension Animatable where Self: UIView {
       moveTo(x: x, y: y, configuration: configuration, completion: completion)
     case let .scale(fromX, fromY, toX, toY):
       scale(fromX: fromX, fromY: fromY, toX: toX, toY: toY, configuration: configuration, completion: completion)
-    case let .compound(animations):
-      animations.reversed().reduce(completion) { result, animation in
-        return { self.doAnimation(animation, configuration: configuration, completion: result) }
-        }()
+    case let .compound(animations, run):
+      let animations = animations.filter {
+        if case .none = $0 {
+          return false
+        }
+        return true
+      }
+      guard !animations.isEmpty else {
+        completion()
+        return
+      }
+      switch run {
+      case .sequential:
+        animations.reversed().reduce(completion) { result, animation in
+          return { self.doAnimation(animation, configuration: configuration, completion: result) }
+          }()
+      case .parallel:
+        var finalized = 0
+        let finalCompletion: () -> Void = {
+          finalized += 1
+          if finalized == animations.count {
+            completion()
+          }
+        }
+        for animation in animations {
+          self.doAnimation(animation, configuration: configuration, completion: finalCompletion)
+        }
+      }
     case .none:
       break
     }
@@ -733,8 +757,10 @@ public extension AnimationType {
       return false
     case .fade(way: .inOut), .fade(way: .outIn):
       return false
-    case .compound:
-      return true
+    case .compound(let animations, _):
+      return animations.reduce(false) { result, animation in
+        return result || animation.isSpring
+      }
     case .none:
       return false
     }
@@ -753,8 +779,10 @@ public extension AnimationType {
       return false
     case .fade(way: .in), .fade(way: .out):
       return false
-    case .compound:
-      return true
+    case .compound(let animations, _):
+      return animations.reduce(false) { result, animation in
+        return result || animation.isCubic
+      }
     case .none:
       return false
     }
