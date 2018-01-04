@@ -32,7 +32,7 @@ open class AnimatableModalViewController: UIViewController, PresentationDesignab
 
   @IBInspectable var _dismissalAnimationType: String? {
     didSet {
-      if let animationType = PresentationAnimationType(string: _presentationAnimationType) {
+      if let animationType = PresentationAnimationType(string: _dismissalAnimationType) {
         dismissalAnimationType = animationType
       }
     }
