@@ -13,6 +13,7 @@ N/A
 
 - Add new mask types `.drop`, `.plusSign`, `.moon`. [#519](https://github.com/IBAnimatable/IBAnimatable/pull/519) by [@phimage](https://github.com/phimage)
 - Add new mask types `.heart`, `.gear`, `.ring`, `.superEllipse`. [#518](https://github.com/IBAnimatable/IBAnimatable/pull/518) by [@phimage](https://github.com/phimage)
+- Add suppport for radial gradient. Currently not working with `startPoint`. [#527](https://github.com/IBAnimatable/IBAnimatable/pull/527) by [@tbaranes](https://github.com/tbaranes)
 
 #### Bugfixes
 
