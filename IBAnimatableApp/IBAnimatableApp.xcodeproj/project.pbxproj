@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E20DAEBD20037C5E00BE1C88 /* UserInterfaceGradients.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20DAEBC20037C5E00BE1C88 /* UserInterfaceGradients.storyboard */; };
+		E20DAEBF20037C7800BE1C88 /* UserInterfaceGradientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20DAEBE20037C7800BE1C88 /* UserInterfaceGradientsTableViewController.swift */; };
 		E2307A311ECD81D6000E38B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2307A2B1ECD81D6000E38B2 /* Assets.xcassets */; };
 		E2307A331ECD81D6000E38B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2307A2E1ECD81D6000E38B2 /* LaunchScreen.storyboard */; };
 		E2307A621ECD8278000E38B2 /* DemoApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2307A381ECD8278000E38B2 /* DemoApp.storyboard */; };
@@ -65,6 +67,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E20DAEBC20037C5E00BE1C88 /* UserInterfaceGradients.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserInterfaceGradients.storyboard; sourceTree = "<group>"; };
+		E20DAEBE20037C7800BE1C88 /* UserInterfaceGradientsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInterfaceGradientsTableViewController.swift; sourceTree = "<group>"; };
 		E2307A151ECD7F81000E38B2 /* IBAnimatableApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBAnimatableApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2307A2B1ECD81D6000E38B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2307A2F1ECD81D6000E38B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -121,6 +125,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E20DAEBB20037C4200BE1C88 /* Gradients */ = {
+			isa = PBXGroup;
+			children = (
+				E20DAEBC20037C5E00BE1C88 /* UserInterfaceGradients.storyboard */,
+				E20DAEBE20037C7800BE1C88 /* UserInterfaceGradientsTableViewController.swift */,
+				E2A5476D1ECF1C4400842C1F /* GradientViewController.swift */,
+				E2A5476C1ECF1C4400842C1F /* GradientCustomStartPointViewController.swift */,
+			);
+			path = Gradients;
+			sourceTree = "<group>";
+		};
 		E2307A0C1ECD7F81000E38B2 = {
 			isa = PBXGroup;
 			children = (
@@ -254,13 +269,12 @@
 			isa = PBXGroup;
 			children = (
 				E2A5476E1ECF1C4400842C1F /* Mask */,
+				E20DAEBB20037C4200BE1C88 /* Gradients */,
 				E2A547711ECF1C4400842C1F /* UserInterface.storyboard */,
+				E2A547721ECF1C4400842C1F /* UserInterfaceTableViewController.swift */,
 				E2A547691ECF1C4400842C1F /* BlurEffectViewController.swift */,
 				E2A5476A1ECF1C4400842C1F /* BorderViewController.swift */,
 				E2A5476B1ECF1C4400842C1F /* CornerViewController.swift */,
-				E2A5476C1ECF1C4400842C1F /* GradientCustomStartPointViewController.swift */,
-				E2A5476D1ECF1C4400842C1F /* GradientViewController.swift */,
-				E2A547721ECF1C4400842C1F /* UserInterfaceTableViewController.swift */,
 			);
 			path = UserInterfaces;
 			sourceTree = "<group>";
@@ -362,6 +376,7 @@
 				E2A5477A1ECF1C4400842C1F /* UserInterface.storyboard in Resources */,
 				E2307A311ECD81D6000E38B2 /* Assets.xcassets in Resources */,
 				E2A5477F1ECF1C4E00842C1F /* ActivityIndicators.storyboard in Resources */,
+				E20DAEBD20037C5E00BE1C88 /* UserInterfaceGradients.storyboard in Resources */,
 				E2307A8B1ECD8736000E38B2 /* Main.storyboard in Resources */,
 				E2A547371ECF1C0E00842C1F /* Presentations.storyboard in Resources */,
 				E2307A621ECD8278000E38B2 /* DemoApp.storyboard in Resources */,
@@ -408,6 +423,7 @@
 				E2A5474C1ECF1C0E00842C1F /* Functions.swift in Sources */,
 				E2A547301ECF1C0E00842C1F /* AnimationsViewController.swift in Sources */,
 				E2A547341ECF1C0E00842C1F /* InteractionTableViewController.swift in Sources */,
+				E20DAEBF20037C7800BE1C88 /* UserInterfaceGradientsTableViewController.swift in Sources */,
 				E2A5473B1ECF1C0E00842C1F /* RefreshControlTableViewController.swift in Sources */,
 				E2A547761ECF1C4400842C1F /* GradientCustomStartPointViewController.swift in Sources */,
 				E2A547381ECF1C0E00842C1F /* PresentingViewController.swift in Sources */,
