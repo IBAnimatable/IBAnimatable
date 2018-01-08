@@ -118,6 +118,12 @@ open class AnimatableCollectionViewCell: UICollectionViewCell, CornerDesignable,
   @IBInspectable open var removeSeparatorMargins: Bool = false
 
   // MARK: - GradientDesignable
+  open var gradientMode: GradientMode = .linear
+  @IBInspectable var _gradientMode: String? {
+    didSet {
+      gradientMode = GradientMode(string: _gradientMode) ?? .linear
+    }
+  }
   @IBInspectable open var startColor: UIColor?
   @IBInspectable open var endColor: UIColor?
   open var predefinedGradient: GradientType?
