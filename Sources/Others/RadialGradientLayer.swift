@@ -25,14 +25,19 @@ final class RadialGradientLayer: CALayer {
   override func draw(in ctx: CGContext) {
     ctx.saveGState()
     let colorSpace = CGColorSpaceCreateDeviceRGB()
-    let gradient = CGGradient(colorsSpace: colorSpace, colors: colors as CFArray, locations: [0.0,1.0])!
-    let size = frame.size
-    let radius = max(max(size.width - endPoint.x, endPoint.x), max(size.height - endPoint.y, endPoint.y))
+    let gradient = CGGradient(colorsSpace: colorSpace, colors: colors as CFArray, locations: [0, 1])!
+
+    let startCenter = CGPoint(x: bounds.width * startPoint.x,
+                              y: bounds.height * startPoint.y)
+    let endCenter = CGPoint(x: bounds.width * endPoint.x,
+                            y: bounds.height * endPoint.y)
+
+    let endRadius = max(max(frame.size.width - endPoint.x, endPoint.x), max(frame.size.height - endPoint.y, endPoint.y))
     ctx.drawRadialGradient(gradient,
-                           startCenter: startPoint,
+                           startCenter: startCenter,
                            startRadius: 0,
-                           endCenter: endPoint,
-                           endRadius: radius,
+                           endCenter: endCenter,
+                           endRadius: endRadius,
                            options: .drawsAfterEndLocation)
   }
 
