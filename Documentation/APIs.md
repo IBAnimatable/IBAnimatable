@@ -72,6 +72,7 @@ To use `IBAnimatable`, we can drag and drop a UIKit element and connect it with 
 #### `GradientDesignable`
 | Property name | Data type | Description |
 | ------------- |:-------------:| ----- |
+| gradientMode | Optional&lt;GradientMode> | Gradient mode. All gradient mode are in enum [`GradientMode`](../IBAnimatable/GradientMode.swift), default value is `.linear`. |
 | startColor | Optional&lt;UIColor> | start gradient color |
 | endColor | Optional&lt;UIColor> | end gradient color |
 | predefinedGradient | Optional&lt;String> | Predefined gradients. All predefined gradients are in enum [`GradientType`](../IBAnimatable/GradientType.swift), To find the predefined gradients, you can use [uigradients.com](http://uigradients.com), e.g. `Juicy Orange` on the website maps to `JuicyOrange` in the enum. |
