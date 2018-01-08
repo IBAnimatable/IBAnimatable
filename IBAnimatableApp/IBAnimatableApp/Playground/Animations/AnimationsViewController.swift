@@ -45,7 +45,7 @@ final class AnimationsViewController: UIViewController {
     PickerEntry(params: [scaleParam, scaleParam], name: "scaleFrom"),
     PickerEntry(params: [scaleParam, scaleParam], name: "scaleTo"),
     PickerEntry(params: [scaleParam, scaleParam, scaleParam, scaleParam], name: "scale")
-    ]
+  ]
   var pickerSizeRatio: CGFloat = 0.25 {
     didSet {
       if oldValue != pickerSizeRatio {
@@ -55,6 +55,7 @@ final class AnimationsViewController: UIViewController {
   }
 
   var selectedEntry: PickerEntry!
+
   override func viewDidLoad() {
     super.viewDidLoad()
     selectedEntry = entries[0]
