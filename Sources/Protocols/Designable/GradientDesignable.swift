@@ -94,7 +94,7 @@ extension GradientDesignable {
     let layer = CAGradientLayer()
     layer.colors = colors
 
-    let points = layerPoints()
+    let points = gradientPoints()
     layer.startPoint = points.0
     layer.endPoint = points.1
     return layer
@@ -104,13 +104,13 @@ extension GradientDesignable {
     let layer = RadialGradientLayer()
     layer.colors = colors
 
-    let points = layerPoints()
+    let points = gradientPoints()
     layer.startPoint = points.0
     layer.endPoint = points.1
     return layer
   }
 
-  private func layerPoints() -> (CGPoint, CGPoint) {
+  private func gradientPoints() -> (CGPoint, CGPoint) {
     switch startPoint {
     case .top:
       return (CGPoint(x: 0.5, y: 0), CGPoint(x: 0.5, y: 1))
