@@ -11,24 +11,19 @@ public protocol FillDesignable: class {
   var opacity: CGFloat { get set }
 }
 
+// MARK: - UIView
+
 public extension FillDesignable where Self: UIView {
   public func configureFillColor() {
-    if let fillColor = fillColor {
-      backgroundColor = fillColor
-    } else if let predefinedColor = predefinedColor?.color {
-      backgroundColor = predefinedColor
-    }
+    configureFillColor(in: self)
   }
 
   public func configureOpacity() {
-    if !opacity.isNaN && opacity >= 0 && opacity <= 1 {
-      alpha = opacity
-
-      // Make better performance
-      isOpaque = opacity == 1
-    }
+    configureOpacity(in: self)
   }
 }
+
+// MARK: - UITableViewCell
 
 public extension FillDesignable where Self: UITableViewCell {
   public func configureFillColor() {
@@ -42,6 +37,8 @@ public extension FillDesignable where Self: UITableViewCell {
   }
 }
 
+// MARK: - UICollectionViewCell
+
 public extension FillDesignable where Self: UICollectionViewCell {
   public func configureFillColor() {
     if let fillColor = fillColor {
@@ -54,9 +51,29 @@ public extension FillDesignable where Self: UICollectionViewCell {
   }
 }
 
-private extension FillDesignable {
+// MARK: - Common
 
-  func predefinedColor(string predefinedColor: String?) -> UIColor? {
+extension FillDesignable {
+
+  func configureFillColor(in view: UIView) {
+    if let fillColor = fillColor {
+      view.backgroundColor = fillColor
+    } else if let predefinedColor = predefinedColor?.color {
+      view.backgroundColor = predefinedColor
+    }
+  }
+
+  func configureOpacity(in view: UIView) {
+    guard !opacity.isNaN && opacity >= 0 && opacity <= 1 else {
+      return
+    }
+
+    view.alpha = opacity
+    // Make better performance
+    view.isOpaque = opacity == 1
+  }
+
+  private func predefinedColor(string predefinedColor: String?) -> UIColor? {
     return ColorType(rawValue: predefinedColor ?? "")?.color
   }
 

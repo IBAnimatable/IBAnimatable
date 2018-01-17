@@ -8,11 +8,7 @@
 
 import Foundation
 
-private struct AssociatedKeys {
-  static var ib = "IBAnimatable"
-}
-
-public final class IB: NSObject, CornerDesignable {
+public final class IB: NSObject, CornerDesignable, FillDesignable {
 
   let view: UIView
 
@@ -20,6 +16,8 @@ public final class IB: NSObject, CornerDesignable {
     self.view = view
     super.init()
   }
+
+  // MARK: - CornerDesignable
 
   public var cornerRadius: CGFloat = CGFloat.nan {
     didSet {
@@ -33,6 +31,32 @@ public final class IB: NSObject, CornerDesignable {
     }
   }
 
+  // MARK: - FillDesignable
+
+  public var fillColor: UIColor? {
+    didSet {
+      configureFillColor(in: view)
+    }
+  }
+
+  public var predefinedColor: ColorType? {
+    didSet {
+      configureFillColor(in: view)
+    }
+  }
+
+  public var opacity: CGFloat = CGFloat.nan {
+    didSet {
+      configureOpacity(in: view)
+    }
+  }
+
+}
+
+// MARK: -
+
+private struct AssociatedKeys {
+  static var ib = "IBAnimatable"
 }
 
 extension UIView {
