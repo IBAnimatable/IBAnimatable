@@ -513,7 +513,6 @@
 		E27FD18B1ECD7D8A00F74840 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				E2CC5EC7200F8965009FEF65 /* IB.swift */,
 				E27FD1D91ECD7D8A00F74840 /* Enums */,
 				E27FD1F41ECD7D8A00F74840 /* Protocols */,
 				E27FD2291ECD7D8A00F74840 /* Views */,
@@ -716,6 +715,7 @@
 		E27FD1F21ECD7D8A00F74840 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				E2CC5EC7200F8965009FEF65 /* IB.swift */,
 				E27FD1F31ECD7D8A00F74840 /* AnimationChainable.swift */,
 				E20DAEB92003682F00BE1C88 /* RadialGradientLayer.swift */,
 			);
