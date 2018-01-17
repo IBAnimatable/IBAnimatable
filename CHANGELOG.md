@@ -19,6 +19,7 @@ N/A
 
 - Fix presented modal view (over context) frame when device orientation changed. [#516](https://github.com/IBAnimatable/IBAnimatable/pull/516) by [@phimage](https://github.com/phimage)
 - Fix dismissal animation type of AnimatableModalViewController when the type is set in Interface Builder. [#526](https://github.com/IBAnimatable/IBAnimatable/pull/526) by [@kazyk](https://github.com/kazyk)
+- Fix view's borders when using it with corner radius `allSides` [#530](https://github.com/IBAnimatable/IBAnimatable/pull/530) by [@tbaranes](https://github.com/tbaranes)
 
 ### [5.0.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/5.0.0)
 
