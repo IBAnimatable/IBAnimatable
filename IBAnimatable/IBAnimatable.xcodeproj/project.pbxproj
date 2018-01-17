@@ -188,7 +188,7 @@
 		E27FD2D11ECD7D8A00F74840 /* AnimatableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27FD2371ECD7D8A00F74840 /* AnimatableTextView.swift */; };
 		E27FD2D21ECD7D8A00F74840 /* AnimatableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27FD2381ECD7D8A00F74840 /* AnimatableView.swift */; };
 		E27FD2D31ECD7D8A00F74840 /* DesignableNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27FD2391ECD7D8A00F74840 /* DesignableNavigationBar.swift */; };
-		E2CC5EC8200F8965009FEF65 /* IB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CC5EC7200F8965009FEF65 /* IB.swift */; };
+		E2AD5F872020AE3800832382 /* IB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AD5F862020AE3800832382 /* IB.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -388,7 +388,7 @@
 		E27FD2391ECD7D8A00F74840 /* DesignableNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableNavigationBar.swift; sourceTree = "<group>"; };
 		E2A546F81ECECC7800842C1F /* FlatColorsTypeScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatColorsTypeScript.swift; sourceTree = "<group>"; };
 		E2A546F91ECECC7800842C1F /* GradientsTypeScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientsTypeScript.swift; sourceTree = "<group>"; };
-		E2CC5EC7200F8965009FEF65 /* IB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IB.swift; sourceTree = "<group>"; };
+		E2AD5F862020AE3800832382 /* IB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -513,7 +513,6 @@
 		E27FD18B1ECD7D8A00F74840 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				E2CC5EC7200F8965009FEF65 /* IB.swift */,
 				E27FD1D91ECD7D8A00F74840 /* Enums */,
 				E27FD1F41ECD7D8A00F74840 /* Protocols */,
 				E27FD2291ECD7D8A00F74840 /* Views */,
@@ -716,9 +715,9 @@
 		E27FD1F21ECD7D8A00F74840 /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				E2CC5EC7200F8965009FEF65 /* IB.swift */,
 				E27FD1F31ECD7D8A00F74840 /* AnimationChainable.swift */,
 				E20DAEB92003682F00BE1C88 /* RadialGradientLayer.swift */,
+				E2AD5F862020AE3800832382 /* IB.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -1048,6 +1047,7 @@
 				E27FD2AC1ECD7D8A00F74840 /* TableViewCellDesignable.swift in Sources */,
 				E27FD26E1ECD7D8A00F74840 /* FoldAnimator.swift in Sources */,
 				E27FD2541ECD7D8A00F74840 /* ActivityIndicatorAnimationOrbit.swift in Sources */,
+				E2AD5F872020AE3800832382 /* IB.swift in Sources */,
 				E27FD27B1ECD7D8A00F74840 /* AnimatableViewController.swift in Sources */,
 				E27FD24C1ECD7D8A00F74840 /* ActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				E27FD2C91ECD7D8A00F74840 /* AnimatableImageView.swift in Sources */,
@@ -1122,7 +1122,6 @@
 				E27FD2441ECD7D8A00F74840 /* ActivityIndicatorAnimationBallRotate.swift in Sources */,
 				E27FD2C11ECD7D8A00F74840 /* PresentSlideWithDismissInteractionSegue.swift in Sources */,
 				E27FD2A41ECD7D8A00F74840 /* PresentationDesignable.swift in Sources */,
-				E2CC5EC8200F8965009FEF65 /* IB.swift in Sources */,
 				E27FD27C1ECD7D8A00F74840 /* PresentationBackgroundView.swift in Sources */,
 				E27FD2701ECD7D8A00F74840 /* PortalAnimator.swift in Sources */,
 				E27FD2A81ECD7D8A00F74840 /* ShadowDesignable.swift in Sources */,
