@@ -10,9 +10,9 @@ import Foundation
 
 public final class IB: NSObject, CornerDesignable, FillDesignable {
 
-  let view: UIView
+  private let view: UIView
 
-  init(view: UIView) {
+  fileprivate init(view: UIView) {
     self.view = view
     super.init()
   }
