@@ -33,23 +33,13 @@ public extension CornerDesignable where Self: UICollectionViewCell {
 
   public func configureCornerRadius() {
     if !cornerRadius.isNaN && cornerRadius > 0 {
-
       // Remove any previous corner mask, i.e. coming from UIView type implementation
       if layer.mask?.name == "cornerSideLayer" {
         layer.mask?.removeFromSuperlayer()
       }
       layer.cornerRadius = 0.0
 
-      if cornerSides == .allSides {
-        contentView.layer.cornerRadius = cornerRadius
-      } else {
-        contentView.layer.cornerRadius = 0.0
-
-        // if a layer mask is specified, remove it
-        contentView.layer.mask?.removeFromSuperlayer()
-        contentView.layer.mask = cornerSidesLayer(inRect: bounds)
-      }
-
+      applyCorner(in: contentView)
       contentView.layer.masksToBounds = true
     } else {
       contentView.layer.masksToBounds = false
@@ -67,15 +57,14 @@ extension CornerDesignable {
       return
     }
 
-    if cornerSides == .allSides {
-      view.layer.cornerRadius = cornerRadius
-    } else {
-      view.layer.cornerRadius = 0.0
+    applyCorner(in: view)
+  }
 
-      // if a layer mask is specified, remove it
-      view.layer.mask?.removeFromSuperlayer()
-      view.layer.mask = cornerSidesLayer(inRect: view.bounds)
-    }
+  private func applyCorner(in view: UIView) {
+    view.layer.cornerRadius = 0.0
+    // if a layer mask is specified, remove it
+    view.layer.mask?.removeFromSuperlayer()
+    view.layer.mask = cornerSidesLayer(inRect: view.bounds)
   }
 
   private func cornerSidesLayer(inRect bounds: CGRect) -> CAShapeLayer {
