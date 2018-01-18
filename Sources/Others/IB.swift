@@ -12,9 +12,15 @@ public final class IB: NSObject, CornerDesignable, FillDesignable {
 
   private let view: UIView
 
+  // MARK: Life cycle
+
   fileprivate init(view: UIView) {
     self.view = view
     super.init()
+  }
+
+  public func reload() {
+    configureCornerRadius(in: view)
   }
 
   // MARK: - CornerDesignable
