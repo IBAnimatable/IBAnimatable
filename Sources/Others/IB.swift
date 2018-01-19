@@ -9,7 +9,7 @@
 import Foundation
 
 public final class IB: NSObject, CornerDesignable, FillDesignable, BorderDesignable,
-                       RotationDesignable, ShadowDesignable {
+                       RotationDesignable, ShadowDesignable, BlurDesignable {
 
   private let view: UIView
 
@@ -117,6 +117,26 @@ public final class IB: NSObject, CornerDesignable, FillDesignable, BorderDesigna
   public var shadowOffset: CGPoint = CGPoint(x: CGFloat.nan, y: CGFloat.nan) {
     didSet {
       configureShadowOffset(in: view)
+    }
+  }
+
+  // MARK: - BlurDesignable
+
+  public var blurEffectStyle: UIBlurEffectStyle? {
+    didSet {
+      configureBlurEffectStyle(in: view)
+    }
+  }
+
+  public var vibrancyEffectStyle: UIBlurEffectStyle? {
+    didSet {
+      configureBlurEffectStyle(in: view)
+    }
+  }
+
+  public var blurOpacity: CGFloat = CGFloat.nan {
+    didSet {
+      configureBlurEffectStyle(in: view)
     }
   }
 
