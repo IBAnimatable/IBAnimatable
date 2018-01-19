@@ -9,7 +9,7 @@
 import Foundation
 
 public final class IB: NSObject, CornerDesignable, FillDesignable, BorderDesignable,
-                      RotationDesignable {
+                       RotationDesignable, ShadowDesignable {
 
   private let view: UIView
 
@@ -23,6 +23,7 @@ public final class IB: NSObject, CornerDesignable, FillDesignable, BorderDesigna
   public func reload() {
     configureCornerRadius(in: view)
     configureBorder(in: view)
+    configureMaskShadow(in: view)
   }
 
   // MARK: - CornerDesignable
@@ -90,6 +91,32 @@ public final class IB: NSObject, CornerDesignable, FillDesignable, BorderDesigna
   public var rotate: CGFloat = CGFloat.nan {
     didSet {
       configureRotate(in: view)
+    }
+  }
+
+  // MARK: - ShadowDesignable
+
+  public var shadowColor: UIColor? {
+    didSet {
+      configureShadowColor(in: view)
+    }
+  }
+
+  public var shadowRadius: CGFloat = CGFloat.nan {
+    didSet {
+      configureShadowRadius(in: view)
+    }
+  }
+
+  public var shadowOpacity: CGFloat = CGFloat.nan {
+    didSet {
+      configureShadowOpacity(in: view)
+    }
+  }
+
+  public var shadowOffset: CGPoint = CGPoint(x: CGFloat.nan, y: CGFloat.nan) {
+    didSet {
+      configureShadowOffset(in: view)
     }
   }
 
