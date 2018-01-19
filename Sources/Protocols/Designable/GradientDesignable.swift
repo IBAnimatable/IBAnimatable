@@ -18,18 +18,7 @@ public protocol GradientDesignable: class {
 extension GradientDesignable where Self: UIView {
 
   public func configureGradient() {
-    subviews.filter { $0 is PrivateGradientView }.forEach {
-      $0.removeFromSuperview()
-    }
-
-    guard let gradientLayer = makeGradientLayer() else {
-      return
-    }
-
-    gradientLayer.cornerRadius = layer.cornerRadius
-    gradientLayer.frame = bounds
-    let gradientView = PrivateGradientView(frame: bounds, gradientLayer: gradientLayer)
-    insertSubview(gradientView, at: 0)
+    configureGradient(in: self)
   }
 
 }
@@ -64,9 +53,24 @@ extension CALayer {
 
 }
 
-// MARK: - Gradients maker
+// MARK: - Common
 
 extension GradientDesignable {
+
+  func configureGradient(in view: UIView) {
+    view.subviews.filter { $0 is PrivateGradientView }.forEach {
+      $0.removeFromSuperview()
+    }
+
+    guard let gradientLayer = makeGradientLayer() else {
+      return
+    }
+
+    gradientLayer.cornerRadius = view.layer.cornerRadius
+    gradientLayer.frame = view.bounds
+    let gradientView = PrivateGradientView(frame: view.bounds, gradientLayer: gradientLayer)
+    view.insertSubview(gradientView, at: 0)
+  }
 
   private func makeGradientLayer() -> CALayer? {
     guard let colors = gradientColors() else {

@@ -9,7 +9,8 @@
 import Foundation
 
 public final class IB: NSObject, CornerDesignable, FillDesignable, BorderDesignable,
-                       RotationDesignable, ShadowDesignable, BlurDesignable {
+                       RotationDesignable, ShadowDesignable, BlurDesignable,
+                       GradientDesignable {
 
   private let view: UIView
 
@@ -137,6 +138,34 @@ public final class IB: NSObject, CornerDesignable, FillDesignable, BorderDesigna
   public var blurOpacity: CGFloat = CGFloat.nan {
     didSet {
       configureBlurEffectStyle(in: view)
+    }
+  }
+
+  // MARK: - GradientDesignable
+
+  public var gradientMode: GradientMode = .linear {
+    didSet {
+      configureGradient(in: view)
+    }
+  }
+  public var startColor: UIColor? {
+    didSet {
+      configureGradient(in: view)
+    }
+  }
+  public var endColor: UIColor? {
+    didSet {
+      configureGradient(in: view)
+    }
+  }
+  public var predefinedGradient: GradientType? {
+    didSet {
+      configureGradient(in: view)
+    }
+  }
+  public var startPoint: GradientStartPoint = .top {
+    didSet {
+      configureGradient(in: view)
     }
   }
 
