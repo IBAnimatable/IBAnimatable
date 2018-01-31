@@ -28,77 +28,85 @@ public protocol BorderDesignable: class {
 
 }
 
+// MARK: - UIView
+
+public extension BorderDesignable where Self: UIView {
+  public func configureBorder() {
+    configureBorder(in: self)
+  }
+}
+
+// MARK: - UITextField
+
 public extension BorderDesignable where Self: UITextField {
   public func configureBorder() {
     if borderWidth > 0 {
       borderStyle = .none
     }
-    commonConfigBorder()
+    configureBorder(in: self)
   }
 }
 
-public extension BorderDesignable where Self: UIView {
-  public func configureBorder() {
-    commonConfigBorder()
+// MARK: - Common
+
+extension BorderDesignable {
+  func configureBorder(in view: UIView) {
+    guard borderColor != nil, borderWidth > 0 else {
+      clearLayer(in: view)
+      return
+    }
+
+    clearLayer(in: view)
+    if let mask = view.layer.mask as? CAShapeLayer {
+      applyBorderOnMask(mask, in: view)
+    } else {
+      drawBorders(in: view)
+    }
   }
 }
 
 // MARK: - Layer
 
-fileprivate extension BorderDesignable where Self: UIView {
-  func commonConfigBorder() {
-    guard borderColor != nil, borderWidth > 0 else {
-      clearLayer()
-      return
-    }
-
-    clearLayer()
-    if let mask = layer.mask as? CAShapeLayer {
-      applyBorderOnMask(mask)
-    } else {
-      drawBorders()
-    }
-  }
-
-  private func clearLayer() {
-    layer.borderColor = nil
-    layer.borderWidth = 0
-    layer.sublayers?.filter { $0.name == "borderSideLayer" || $0.name == "borderAllSides" }
+extension BorderDesignable {
+  private func clearLayer(in view: UIView) {
+    view.layer.borderColor = nil
+    view.layer.borderWidth = 0
+    view.layer.sublayers?.filter { $0.name == "borderSideLayer" || $0.name == "borderAllSides" }
       .forEach { $0.removeFromSuperlayer() }
   }
 
-  private func applyBorderOnMask(_ mask: CAShapeLayer) {
+  private func applyBorderOnMask(_ mask: CAShapeLayer, in view: UIView) {
     let borderLayer = CAShapeLayer()
     borderLayer.name = "borderAllSides"
     borderLayer.path = mask.path
     borderLayer.fillColor = UIColor.clear.cgColor
     borderLayer.strokeColor = borderColor!.cgColor
     borderLayer.lineWidth = borderWidth
-    borderLayer.frame = bounds
-    layer.insertSublayer(borderLayer, at: 0)
+    borderLayer.frame = view.bounds
+    view.layer.insertSublayer(borderLayer, at: 0)
   }
 }
 
 // MARK: - Drawing
 
-fileprivate extension BorderDesignable where Self: UIView {
-  func drawBorders() {
+extension BorderDesignable {
+  private func drawBorders(in view: UIView) {
     if borderType == .solid, borderSides == .AllSides {
-      layer.borderColor = borderColor!.cgColor
-      layer.borderWidth = borderWidth
+      view.layer.borderColor = borderColor!.cgColor
+      view.layer.borderWidth = borderWidth
     } else {
-      drawBordersSides()
+      drawBordersSides(in: view)
     }
   }
 
-  func drawBordersSides() {
+  private func drawBordersSides(in view: UIView) {
     let shapeLayer = CAShapeLayer()
     shapeLayer.name = "borderSideLayer"
-    shapeLayer.path = makeBorderPath().cgPath
+    shapeLayer.path = makeBorderPath(in: view.bounds).cgPath
     shapeLayer.fillColor = UIColor.clear.cgColor
     shapeLayer.strokeColor = borderColor!.cgColor
     shapeLayer.lineWidth = borderWidth
-    shapeLayer.frame = bounds
+    shapeLayer.frame = view.bounds
     switch borderType {
     case let .dash(dashLength, spaceLength):
       shapeLayer.lineJoin = kCALineJoinRound
@@ -106,11 +114,11 @@ fileprivate extension BorderDesignable where Self: UIView {
     case .solid, .none:
       break
     }
-    layer.insertSublayer(shapeLayer, at: 0)
+    view.layer.insertSublayer(shapeLayer, at: 0)
   }
 
-  func makeBorderPath() -> UIBezierPath {
-    let lines = makeLines()
+  private func makeBorderPath(in bounds: CGRect) -> UIBezierPath {
+    let lines = makeLines(in: bounds)
     let borderPath = UIBezierPath()
     lines.forEach {
       borderPath.move(to: $0.start)
@@ -119,7 +127,7 @@ fileprivate extension BorderDesignable where Self: UIView {
     return borderPath
   }
 
-  func makeLines() -> [(start: CGPoint, end: CGPoint)] {
+  private func makeLines(in bounds: CGRect) -> [(start: CGPoint, end: CGPoint)] {
     let shift = borderWidth / 2
     var lines = [(start: CGPoint, end: CGPoint)]()
     if borderSides.contains(.top) {
