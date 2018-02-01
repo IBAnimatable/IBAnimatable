@@ -8,7 +8,8 @@
 
 import Foundation
 
-public final class IB: NSObject, CornerDesignable, FillDesignable, BorderDesignable {
+public final class IB: NSObject, CornerDesignable, FillDesignable, BorderDesignable,
+                      RotationDesignable {
 
   private let view: UIView
 
@@ -81,6 +82,14 @@ public final class IB: NSObject, CornerDesignable, FillDesignable, BorderDesigna
   public var borderSides: BorderSides  = .AllSides {
     didSet {
       configureBorder(in: view)
+    }
+  }
+
+  // MARK: - RotationDesignable
+
+  public var rotate: CGFloat = CGFloat.nan {
+    didSet {
+      configureRotate(in: view)
     }
   }
 

@@ -13,10 +13,20 @@ public protocol RotationDesignable: class {
   var rotate: CGFloat { get set }
 }
 
-public extension RotationDesignable where Self: UIView {
+// MARK: - UIView
+
+extension RotationDesignable where Self: UIView {
   public func configureRotate() {
+    configureRotate(in: self)
+  }
+}
+
+// MARK: - Common
+
+extension RotationDesignable {
+  func configureRotate(in view: UIView) {
     if !rotate.isNaN && rotate > -360 && rotate < 360 {
-      transform = CGAffineTransform(rotationAngle: .pi * rotate / 180)
+      view.transform = CGAffineTransform(rotationAngle: .pi * rotate / 180)
     }
   }
 }
