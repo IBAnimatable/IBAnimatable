@@ -9,7 +9,7 @@
 import Foundation
 
 public final class IB: NSObject, CornerDesignable, FillDesignable, BorderDesignable,
-RotationDesignable{
+                      RotationDesignable {
 
   private let view: UIView
 
