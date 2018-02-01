@@ -24,7 +24,7 @@ end
 missing_example_app_update = git.modified_files.grep(/IBAnimatableApp/).empty?
 demo_app_changes_recommended = git.insertions > 15
 if has_app_changes && missing_example_app_update && demo_app_changes_recommended
-  warn("Consider adding / updating the demo ap.")
+  warn("Consider adding / updating the demo app.")
 end
 
 # Run SwiftLint
