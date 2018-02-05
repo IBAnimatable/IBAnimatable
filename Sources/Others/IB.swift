@@ -10,7 +10,7 @@ import Foundation
 
 public final class IB: NSObject, CornerDesignable, FillDesignable, BorderDesignable,
                        RotationDesignable, ShadowDesignable, BlurDesignable,
-                       GradientDesignable {
+                       GradientDesignable, MaskDesignable {
 
   private let view: UIView
 
@@ -22,6 +22,7 @@ public final class IB: NSObject, CornerDesignable, FillDesignable, BorderDesigna
   }
 
   public func reload() {
+    configureMask(in: view, previousMaskType: maskType)
     configureCornerRadius(in: view)
     configureBorder(in: view)
     configureMaskShadow(in: view)
@@ -166,6 +167,16 @@ public final class IB: NSObject, CornerDesignable, FillDesignable, BorderDesigna
   public var startPoint: GradientStartPoint = .top {
     didSet {
       configureGradient(in: view)
+    }
+  }
+
+  // MARK: - MaskDesignable
+
+  public var maskType: MaskType = .none {
+    didSet {
+      configureMask(in: view, previousMaskType: oldValue)
+      configureBorder(in: view)
+      configureMaskShadow(in: view)
     }
   }
 
