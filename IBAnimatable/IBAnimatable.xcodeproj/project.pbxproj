@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48D80DCA20403DAC00D3137B /* AnimatableTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D80DC920403DAC00D3137B /* AnimatableTabBarItem.swift */; };
 		C4511F371F93F1B2002E0FAF /* UIBezierPathExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4511F361F93F1B2002E0FAF /* UIBezierPathExtension.swift */; };
 		E20DAEB82003662900BE1C88 /* GradientMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20DAEB72003662900BE1C88 /* GradientMode.swift */; };
 		E20DAEBA2003682F00BE1C88 /* RadialGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20DAEB92003682F00BE1C88 /* RadialGradientLayer.swift */; };
@@ -202,6 +203,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		48D80DC920403DAC00D3137B /* AnimatableTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableTabBarItem.swift; sourceTree = "<group>"; };
 		C4511F361F93F1B2002E0FAF /* UIBezierPathExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBezierPathExtension.swift; sourceTree = "<group>"; };
 		E20DAEB72003662900BE1C88 /* GradientMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientMode.swift; sourceTree = "<group>"; };
 		E20DAEB92003682F00BE1C88 /* RadialGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialGradientLayer.swift; sourceTree = "<group>"; };
@@ -828,6 +830,7 @@
 				E27FD2311ECD7D8A00F74840 /* AnimatableScrollView.swift */,
 				E27FD2321ECD7D8A00F74840 /* AnimatableSlider.swift */,
 				E27FD2331ECD7D8A00F74840 /* AnimatableStackView.swift */,
+				48D80DC920403DAC00D3137B /* AnimatableTabBarItem.swift */,
 				E27FD2341ECD7D8A00F74840 /* AnimatableTableView.swift */,
 				E27FD2351ECD7D8A00F74840 /* AnimatableTableViewCell.swift */,
 				E27FD2361ECD7D8A00F74840 /* AnimatableTextField.swift */,
@@ -1041,6 +1044,7 @@
 				E27FD2491ECD7D8A00F74840 /* ActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				E27FD28C1ECD7D8A00F74840 /* PresentationModalSize.swift in Sources */,
 				E27FD27A1ECD7D8A00F74840 /* AnimatableTableViewController.swift in Sources */,
+				48D80DCA20403DAC00D3137B /* AnimatableTabBarItem.swift in Sources */,
 				E27FD2A91ECD7D8A00F74840 /* SideImageDesignable.swift in Sources */,
 				E27FD2A31ECD7D8A00F74840 /* PlaceholderDesignable.swift in Sources */,
 				E27FD2681ECD7D8A00F74840 /* DropDownAnimator.swift in Sources */,

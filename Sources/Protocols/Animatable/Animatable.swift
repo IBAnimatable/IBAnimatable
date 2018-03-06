@@ -92,7 +92,24 @@ public extension Animatable where Self: UIView {
     let completion = {
       promise.animationCompleted()
     }
-    switch animation ?? animationType {
+    doAnimation(animation ?? self.animationType, configuration: configuration, completion: completion)
+  }
+
+  /**
+   `autoRunAnimation` method, should be called in layoutSubviews() method
+   */
+  func autoRunAnimation() {
+    if autoRun {
+      autoRun = false
+      animate(animationType)
+    }
+  }
+}
+
+fileprivate extension UIView {
+
+  func doAnimation(_ animationType: AnimationType, configuration: AnimationConfiguration, completion: @escaping () -> Void) {
+    switch animationType {
     case let .slide(way, direction):
       slide(way, direction: direction, configuration: configuration, completion: completion)
     case let .squeeze(way, direction):
@@ -135,19 +152,6 @@ public extension Animatable where Self: UIView {
       break
     }
   }
-
-  /**
-   `autoRunAnimation` method, should be called in layoutSubviews() method
-   */
-  func autoRunAnimation() {
-    if autoRun {
-      autoRun = false
-      animate(animationType)
-    }
-  }
-}
-
-fileprivate extension Animatable where Self: UIView {
 
   // MARK: - Animation methods
   func slide(_ way: AnimationType.Way, direction: AnimationType.Direction,
@@ -264,7 +268,7 @@ fileprivate extension Animatable where Self: UIView {
     }
   }
 
-    func squeezeFade(_ way: AnimationType.Way, direction: AnimationType.Direction,
+  func squeezeFade(_ way: AnimationType.Way, direction: AnimationType.Direction,
                      configuration: AnimationConfiguration,
                      completion: AnimatableCompletion? = nil) {
     let values = computeValues(way: way, direction: direction, configuration: configuration, shouldScale: true)
@@ -704,9 +708,26 @@ fileprivate extension Animatable where Self: UIView {
 }
 // swiftlint:enable variable_name_min_length
 
+// Animations for `UIBarItem`
 public extension Animatable where Self: UIBarItem {
-  // TODO: animations for `UIBarItem`
-  public func animate(completion: AnimatableCompletion? = nil) {
+
+  public func animate(_ animation: AnimationType? = nil,
+                      duration: TimeInterval? = nil,
+                      damping: CGFloat? = nil,
+                      velocity: CGFloat? = nil,
+                      force: CGFloat? = nil,
+                      view: UIView,
+                      completion: AnimatableCompletion? = nil) {
+
+    let configuration = AnimationConfiguration(damping: damping ?? self.damping,
+                                               velocity: velocity ?? self.velocity,
+                                               duration: duration ?? self.duration,
+                                               delay: 0,
+                                               force: force ?? self.force,
+                                               timingFunction: timingFunction ?? self.timingFunction)
+    view.doAnimation(animation ?? self.animationType, configuration: configuration) {
+      completion?()
+    }
   }
 }
 
