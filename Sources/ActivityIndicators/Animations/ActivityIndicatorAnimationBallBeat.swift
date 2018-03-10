@@ -18,7 +18,7 @@ public class ActivityIndicatorAnimationBallBeat: ActivityIndicatorAnimating {
     let circleSize = (size.width - circleSpacing * 2) / 3
     let x = (layer.bounds.size.width - size.width) / 2
     let y = (layer.bounds.size.height - circleSize) / 2
-    let beginTime = CACurrentMediaTime()
+    let beginTime = layer.currentMediaTime
     let beginTimes = [0.35, 0, 0.35]
 
     // Draw circles
