@@ -14,7 +14,7 @@ public class ActivityIndicatorAnimationBallPulse: ActivityIndicatorAnimating {
     let circleSize: CGFloat = (size.width - 2 * circleSpacing) / 3
     let x: CGFloat = (layer.bounds.size.width - size.width) / 2
     let y: CGFloat = (layer.bounds.size.height - circleSize) / 2
-    let beginTime = CACurrentMediaTime()
+    let beginTime = layer.currentMediaTime
     let beginTimes: [CFTimeInterval] = [0.12, 0.24, 0.36]
     let animation = defaultAnimation
 

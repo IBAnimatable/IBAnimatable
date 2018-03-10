@@ -18,7 +18,7 @@ public class ActivityIndicatorAnimationLineScale: ActivityIndicatorAnimating {
     let lineSize = size.width / 9
     let x = (layer.bounds.size.width - size.width) / 2
     let y = (layer.bounds.size.height - size.height) / 2
-    let beginTime = CACurrentMediaTime()
+    let beginTime = layer.currentMediaTime
     let beginTimes = [0.1, 0.2, 0.3, 0.4, 0.5]
     let animation = defaultAnimation
 
