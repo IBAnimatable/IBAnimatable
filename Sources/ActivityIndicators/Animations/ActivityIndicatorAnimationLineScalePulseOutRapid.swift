@@ -11,7 +11,6 @@ public class ActivityIndicatorAnimationLineScalePulseOutRapid: ActivityIndicator
 
   fileprivate let duration: CFTimeInterval = 0.9
   fileprivate let timingFunction = CAMediaTimingFunction(controlPoints: 0.11, 0.49, 0.38, 0.78)
-  fileprivate let beginTime = CACurrentMediaTime()
 
   // MARK: ActivityIndicatorAnimating
 
@@ -28,7 +27,7 @@ public class ActivityIndicatorAnimationLineScalePulseOutRapid: ActivityIndicator
                          width: lineSize,
                          height: size.height)
 
-      animation.beginTime = beginTime + beginTimes[i]
+      animation.beginTime = layer.currentMediaTime + beginTimes[i]
       line.frame = frame
       line.add(animation, forKey: "animation")
       layer.addSublayer(line)
@@ -44,7 +43,7 @@ private extension ActivityIndicatorAnimationLineScalePulseOutRapid {
     let animation = CAKeyframeAnimation(keyPath: "transform.scale.y")
     animation.keyTimes = [0, 0.8, 0.9]
     animation.timingFunctions = [timingFunction, timingFunction]
-    animation.beginTime = beginTime
+    animation.beginTime = CACurrentMediaTime()
     animation.values = [1, 0.3, 1]
     animation.duration = duration
     animation.repeatCount = .infinity

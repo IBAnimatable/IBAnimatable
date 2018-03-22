@@ -54,3 +54,9 @@ func iterateEnum<T: Hashable>(from: T.Type) -> AnyIterator<T> {
     return next.hashValue == x ? next : nil
   }
 }
+
+extension CALayer {
+    var currentMediaTime: CFTimeInterval {
+       return convertTime(CACurrentMediaTime(), from: nil)
+    }
+}

@@ -192,7 +192,7 @@ fileprivate extension UIView {
       animation.duration = configuration.duration
       animation.repeatCount = Float(repeatCount)
       animation.autoreverses = false
-      animation.beginTime = CACurrentMediaTime() + configuration.delay
+      animation.beginTime = self.layer.currentMediaTime + configuration.delay
       self.layer.add(animation, forKey: "rotate")
       }, completion: completion)
 
@@ -344,7 +344,7 @@ fileprivate extension UIView {
       animation.duration = configuration.duration
       animation.isAdditive = true
       animation.repeatCount = Float(repeatCount)
-      animation.beginTime = CACurrentMediaTime() + configuration.delay
+      animation.beginTime = self.layer.currentMediaTime + configuration.delay
       self.layer.add(animation, forKey: "shake")
     }, completion: completion)
   }
@@ -358,7 +358,7 @@ fileprivate extension UIView {
       animation.duration = configuration.duration
       animation.isAdditive = true
       animation.repeatCount = Float(repeatCount)
-      animation.beginTime = CACurrentMediaTime() + configuration.delay
+      animation.beginTime = self.layer.currentMediaTime + configuration.delay
       self.layer.add(animation, forKey: "pop")
     }, completion: completion)
   }
@@ -379,7 +379,7 @@ fileprivate extension UIView {
       animationGroup.animations = [squashX, squashY]
       animationGroup.duration = configuration.duration
       animationGroup.repeatCount = Float(repeatCount)
-      animationGroup.beginTime = CACurrentMediaTime() + configuration.delay
+      animationGroup.beginTime = self.layer.currentMediaTime + configuration.delay
       self.layer.add(animationGroup, forKey: "squash")
     }, completion: completion)
   }
@@ -400,7 +400,7 @@ fileprivate extension UIView {
       animationGroup.animations = [morphX, morphY]
       animationGroup.duration = configuration.duration
       animationGroup.repeatCount = Float(repeatCount)
-      animationGroup.beginTime = CACurrentMediaTime() + configuration.delay
+      animationGroup.beginTime = self.layer.currentMediaTime + configuration.delay
       self.layer.add(animationGroup, forKey: "morph")
     }, completion: completion)
   }
@@ -421,7 +421,7 @@ fileprivate extension UIView {
       animationGroup.animations = [squeezeX, squeezeY]
       animationGroup.duration = configuration.duration
       animationGroup.repeatCount = Float(repeatCount)
-      animationGroup.beginTime = CACurrentMediaTime() + configuration.delay
+      animationGroup.beginTime = self.layer.currentMediaTime + configuration.delay
       self.layer.add(animationGroup, forKey: "squeeze")
     }, completion: completion)
   }
@@ -434,7 +434,7 @@ fileprivate extension UIView {
       animation.duration = configuration.duration
       animation.repeatCount = Float(repeatCount) * 2.0
       animation.autoreverses = true
-      animation.beginTime = CACurrentMediaTime() + configuration.delay
+      animation.beginTime = self.layer.currentMediaTime + configuration.delay
       self.layer.add(animation, forKey: "flash")
     }, completion: completion)
   }
@@ -455,7 +455,7 @@ fileprivate extension UIView {
       let animationGroup = CAAnimationGroup()
       animationGroup.animations = [rotation, positionX]
       animationGroup.duration = configuration.duration
-      animationGroup.beginTime = CACurrentMediaTime() + configuration.delay
+      animationGroup.beginTime = self.layer.currentMediaTime + configuration.delay
       animationGroup.repeatCount = Float(repeatCount)
       self.layer.add(animationGroup, forKey: "wobble")
     }, completion: completion)
@@ -469,7 +469,7 @@ fileprivate extension UIView {
       animation.duration = configuration.duration
       animation.isAdditive = true
       animation.repeatCount = Float(repeatCount)
-      animation.beginTime = CACurrentMediaTime() + configuration.delay
+      animation.beginTime = self.layer.currentMediaTime + configuration.delay
       self.layer.add(animation, forKey: "swing")
     }, completion: completion)
   }
@@ -565,7 +565,7 @@ fileprivate extension UIView {
       let animationGroup = CAAnimationGroup()
       animationGroup.animations = [scaleX, scaleY]
       animationGroup.duration = configuration.duration
-      animationGroup.beginTime = CACurrentMediaTime() + configuration.delay
+      animationGroup.beginTime = self.layer.currentMediaTime + configuration.delay
       self.layer.add(animationGroup, forKey: "scale")
     }, completion: completion)
   }
@@ -617,7 +617,7 @@ fileprivate extension UIView {
       animation.toValue = 0
       animation.timingFunctionType = configuration.timingFunction ?? .easeInOut
       animation.duration = configuration.duration
-      animation.beginTime = CACurrentMediaTime() + configuration.delay
+      animation.beginTime = self.layer.currentMediaTime + configuration.delay
       animation.autoreverses = true
       self.layer.add(animation, forKey: "fade")
       }, completion: completion)
@@ -630,7 +630,7 @@ fileprivate extension UIView {
       animation.toValue = 1
       animation.timingFunctionType = configuration.timingFunction ?? .easeInOut
       animation.duration = configuration.duration
-      animation.beginTime = CACurrentMediaTime() + configuration.delay
+      animation.beginTime = self.layer.currentMediaTime + configuration.delay
       animation.autoreverses = true
       animation.isRemovedOnCompletion = false
       self.layer.add(animation, forKey: "fade")
@@ -666,7 +666,7 @@ fileprivate extension UIView {
       let animation = CAKeyframeAnimation(keyPath: "position")
       animation.timingFunctionType = configuration.timingFunction ?? .easeInOut
       animation.duration = configuration.duration
-      animation.beginTime = CACurrentMediaTime() + configuration.delay
+      animation.beginTime = self.layer.currentMediaTime + configuration.delay
       animation.path = path.cgPath
       self.layer.add(animation, forKey: "animate position")
     }, completion: completion)

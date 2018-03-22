@@ -19,7 +19,7 @@ public class ActivityIndicatorAnimationBallGridPulse: ActivityIndicatorAnimating
     let x = (layer.bounds.size.width - size.width) / 2
     let y = (layer.bounds.size.height - size.height) / 2
     let durations: [CFTimeInterval] = [0.72, 1.02, 1.28, 1.42, 1.45, 1.18, 0.87, 1.45, 1.06]
-    let beginTime = CACurrentMediaTime()
+    let beginTime = layer.currentMediaTime
     let beginTimes: [CFTimeInterval] = [-0.06, 0.25, -0.17, 0.48, 0.31, 0.03, 0.46, 0.78, 0.45]
 
     // Draw circles
