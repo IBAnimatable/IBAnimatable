@@ -46,9 +46,8 @@ open class AnimatableTabBarController: UITabBarController, TransitionAnimatable 
         return
     }
     // Animate the children image view
-    let subviews = tabBarButton.subviews.filter { $0 is UIImageView }
-    if let view = subviews.first {
-      animatable.animate(view: view)
+    if let imageView = tabBarButton.subviews.first(where: { $0 is UIImageView }) {
+      animatable.animate(view: imageView)
     }
   }
 
