@@ -79,14 +79,12 @@ open class AnimatableTabBarController: UITabBarController, TransitionAnimatable 
   }
 }
 
-fileprivate extension UITabBar {
+private extension UITabBar {
 
     func view(for item: UITabBarItem) -> UIControl? {
       // return item.value(forKeyPath: "view") as? UIControl // apple could not allow that
-      guard let items = self.items else {
-        return nil
-      }
-      guard let index = items.index(of: item) else {
+      guard let items = self.items,
+        let index = items.index(of: item) else {
         return nil
       }
       // get all buttons

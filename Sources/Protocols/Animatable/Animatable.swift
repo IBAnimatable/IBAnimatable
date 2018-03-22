@@ -154,7 +154,8 @@ fileprivate extension UIView {
   }
 
   // MARK: - Animation methods
-  func slide(_ way: AnimationType.Way, direction: AnimationType.Direction,
+  func slide(_ way: AnimationType.Way,
+             direction: AnimationType.Direction,
              configuration: AnimationConfiguration,
              completion: AnimatableCompletion? = nil) {
     let values = computeValues(way: way, direction: direction, configuration: configuration, shouldScale: false)
@@ -167,7 +168,8 @@ fileprivate extension UIView {
     }
   }
 
-  func squeeze(_ way: AnimationType.Way, direction: AnimationType.Direction,
+  func squeeze(_ way: AnimationType.Way,
+               direction: AnimationType.Direction,
                configuration: AnimationConfiguration,
                completion: AnimatableCompletion? = nil) {
     let values = computeValues(way: way, direction: direction, configuration: configuration, shouldScale: true)
@@ -179,7 +181,8 @@ fileprivate extension UIView {
     }
   }
 
-  func rotate(direction: AnimationType.RotationDirection, repeatCount: Int,
+  func rotate(direction: AnimationType.RotationDirection,
+              repeatCount: Int,
               configuration: AnimationConfiguration,
               completion: AnimatableCompletion? = nil) {
     CALayer.animate({
@@ -240,7 +243,8 @@ fileprivate extension UIView {
     }
   }
 
-  func slideFade(_ way: AnimationType.Way, direction: AnimationType.Direction,
+  func slideFade(_ way: AnimationType.Way,
+                 direction: AnimationType.Direction,
                  configuration: AnimationConfiguration,
                  completion: AnimatableCompletion? = nil) {
     let values = computeValues(way: way, direction: direction, configuration: configuration, shouldScale: false)
@@ -268,9 +272,10 @@ fileprivate extension UIView {
     }
   }
 
-  func squeezeFade(_ way: AnimationType.Way, direction: AnimationType.Direction,
-                     configuration: AnimationConfiguration,
-                     completion: AnimatableCompletion? = nil) {
+  func squeezeFade(_ way: AnimationType.Way,
+                   direction: AnimationType.Direction,
+                   configuration: AnimationConfiguration,
+                   completion: AnimatableCompletion? = nil) {
     let values = computeValues(way: way, direction: direction, configuration: configuration, shouldScale: true)
     switch way {
     case .in:
@@ -516,8 +521,12 @@ fileprivate extension UIView {
     }
   }
 
-  private func springScale(fromX: Double, fromY: Double, toX: Double, toY: Double,
-                           configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+  private func springScale(fromX: Double,
+                           fromY: Double,
+                           toX: Double,
+                           toY: Double,
+                           configuration: AnimationConfiguration,
+                           completion: AnimatableCompletion? = nil) {
     transform = CGAffineTransform(scaleX: CGFloat(fromX), y: CGFloat(fromY))
     UIView.animate(
       withDuration: configuration.duration,
@@ -536,8 +545,12 @@ fileprivate extension UIView {
     )
   }
 
-  private func layerScale(fromX: Double, fromY: Double, toX: Double, toY: Double,
-                          configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+  private func layerScale(fromX: Double,
+                          fromY: Double,
+                          toX: Double,
+                          toY: Double,
+                          configuration: AnimationConfiguration,
+                          completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let scaleX = CAKeyframeAnimation(keyPath: "transform.scale.x")
       scaleX.values = [fromX, toX]
@@ -558,7 +571,8 @@ fileprivate extension UIView {
   }
 
 // swiftlint:enable variable_name_min_length
-  func computeValues(way: AnimationType.Way, direction: AnimationType.Direction,
+  func computeValues(way: AnimationType.Way,
+                     direction: AnimationType.Direction,
                      configuration: AnimationConfiguration,
                      shouldScale: Bool) -> AnimationValues {
     let scale = 3 * configuration.force
@@ -636,7 +650,7 @@ fileprivate extension UIView {
                    usingSpringWithDamping: configuration.damping,
                    initialSpringVelocity: configuration.velocity,
                    options: [],
-      animations: {
+                   animations: {
         self.transform = translate
       },
       completion: { completed in
@@ -669,7 +683,7 @@ fileprivate extension UIView {
                    usingSpringWithDamping: configuration.damping,
                    initialSpringVelocity: configuration.velocity,
                    options: [],
-      animations: {
+                   animations: {
         self.transform = CGAffineTransform.identity
         self.alpha = alpha
       },
@@ -690,7 +704,7 @@ fileprivate extension UIView {
                    usingSpringWithDamping: configuration.damping,
                    initialSpringVelocity: configuration.velocity,
                    options: [],
-      animations: {
+                   animations: {
         self.transform = translateAndScale
         self.alpha = alpha
       },
