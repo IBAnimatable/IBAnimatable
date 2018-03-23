@@ -300,7 +300,6 @@ fileprivate extension Animatable where Self: UIView {
                 completion: completion)
     case .out:
       let scale = (invert ? 0.1 :  2) * configuration.force
-      alpha = self.alpha
       toAlpha = 0
       animateOut(animationValues: AnimationValues(x: 0, y: 0, scaleX: scale, scaleY: scale),
                  alpha: toAlpha,
