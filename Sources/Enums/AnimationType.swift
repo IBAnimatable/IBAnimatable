@@ -51,7 +51,7 @@ public indirect enum AnimationType {
   public enum RotationDirection: String {
     case cw, ccw
   }
-  public enum Run: String{
+  public enum Run: String {
     case sequential, parallel
   }
 
@@ -72,21 +72,12 @@ extension AnimationType {
 extension AnimationType: IBEnum {
 
   public init(string: String?) {
-    guard var string = string else {
+    guard let string = string else {
       self = .none
       return
     }
 
-    // Manage special case to parse
-    if string.starts(with: "[") { // [ animation1, animation2, ...]
-      string = string.dropFirst().dropLast().replacingOccurrences(of: "(", with: "[").replacingOccurrences(of: ")", with: "]")
-      string = "compound("+string+", \(Run.sequential.rawValue))"
-    } else if string.contains("+") { // animation1 + animation2 + ...
-      string = string.replacingOccurrences(of: "+", with: ",")
-      string = "compound("+string+", \(Run.parallel.rawValue))"
-    }
-
-    let (name, params) = AnimationType.extractNameAndParams(from: string)
+    let (name, params) = AnimationType.extractNameAndParams(from: string.parseNameAndParams)
 
     switch name {
     case "slide":
@@ -104,31 +95,31 @@ extension AnimationType: IBEnum {
     case "zoominvert":
       self = .zoomInvert(way: Way(raw: params[safe: 0], defaultValue: .in))
     case "shake":
-      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      let repeatCount = retrieveRepeatCount(string: params[safe: 0])
       self = .shake(repeatCount: repeatCount)
     case "pop":
-      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      let repeatCount = retrieveRepeatCount(string: params[safe: 0])
       self = .pop(repeatCount: repeatCount)
     case "squash":
-      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      let repeatCount = retrieveRepeatCount(string: params[safe: 0])
       self = .squash(repeatCount: repeatCount)
     case "flip":
       let axis = Axis(raw: params[safe: 0], defaultValue: .x)
       self = .flip(along: axis)
     case "morph":
-      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      let repeatCount = retrieveRepeatCount(string: params[safe: 0])
       self = .morph(repeatCount: repeatCount)
     case "flash":
-      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      let repeatCount = retrieveRepeatCount(string: params[safe: 0])
       self = .flash(repeatCount: repeatCount)
     case "wobble":
-      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      let repeatCount = retrieveRepeatCount(string: params[safe: 0])
       self = .wobble(repeatCount: repeatCount)
     case "swing":
-      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      let repeatCount = retrieveRepeatCount(string: params[safe: 0])
       self = .swing(repeatCount: repeatCount)
     case "rotate":
-      let repeatCount = retrieveRepeatCount(string:params[safe: 1])
+      let repeatCount = retrieveRepeatCount(string: params[safe: 1])
       self = .rotate(direction: RotationDirection(raw: params[safe: 0], defaultValue: .cw), repeatCount: repeatCount)
     case "moveto":
       self = .moveTo(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
@@ -154,7 +145,7 @@ extension AnimationType: IBEnum {
           params.append(last)
           runP = .parallel
         }
-        self = .compound(animations: params.map { $0.toAnimationType() ?? .none }, run: runP)
+        self = .compound(animations: params.map { $0.animationType ?? .none }, run: runP)
       } else {
         self = .none
       }
@@ -162,9 +153,25 @@ extension AnimationType: IBEnum {
       self = .none
     }
   }
+
 }
 private extension String {
-  func toAnimationType() -> AnimationType? {
+
+  var parseNameAndParams: String {
+    var string = self
+    if string.starts(with: "[") { // [ animation1, animation2, ...]
+      string = string.dropFirst().dropLast()
+        .replacingOccurrences(of: "(", with: "[")
+        .replacingOccurrences(of: ")", with: "]")
+      string = "compound("+string+", \(AnimationType.Run.sequential.rawValue))"
+    } else if string.contains("+") { // animation1 + animation2 + ...
+      string = string.replacingOccurrences(of: "+", with: ",")
+      string = "compound("+string+", \(AnimationType.Run.parallel.rawValue))"
+    }
+    return string
+  }
+
+  var animationType: AnimationType? {
     let type = self.replacingOccurrences(of: "[", with: "(")
       .replacingOccurrences(of: "]", with: ")")
     return AnimationType(string: type)
