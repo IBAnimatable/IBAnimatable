@@ -68,7 +68,7 @@ extension PaddingDesignableTests where Element: UITextField, Element: PaddingDes
 
 // MARK: - Helper Enum
 
-fileprivate enum Edge {
+private enum Edge {
   case left(CGFloat)
   case right(CGFloat)
   case sides(CGFloat)

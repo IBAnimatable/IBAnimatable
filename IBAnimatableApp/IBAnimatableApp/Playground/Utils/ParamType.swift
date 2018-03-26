@@ -34,7 +34,7 @@ enum ParamType {
   /// Number of different values to show in the picker
   func count() -> Int {
     switch self {
-    case .number(let min, let max, let interval, _, _):
+    case let .number(min, max, interval, _, _):
       return Int(ceil((max - min) / interval) + 1)
     case .enumeration(let val):
       return val.count

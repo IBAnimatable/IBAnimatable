@@ -1,0 +1,44 @@
+//
+//  RadialGradientLayer.swift
+//  IBAnimatable
+//
+//  Created by Tom Baranes on 08/01/2018.
+//  Copyright © 2018 IBAnimatable. All rights reserved.
+//
+
+import UIKit
+
+final class RadialGradientLayer: CALayer {
+  var startPoint: CGPoint = .zero
+  var endPoint: CGPoint = .zero
+  var colors = [CGColor]()
+
+  required override init() {
+    super.init()
+    needsDisplayOnBoundsChange = true
+  }
+
+  required init(coder aDecoder: NSCoder) {
+    super.init()
+  }
+
+  override func draw(in ctx: CGContext) {
+    ctx.saveGState()
+    let colorSpace = CGColorSpaceCreateDeviceRGB()
+    let gradient = CGGradient(colorsSpace: colorSpace, colors: colors as CFArray, locations: [0, 1])!
+
+    let startCenter = CGPoint(x: bounds.width * startPoint.x,
+                              y: bounds.height * startPoint.y)
+    let endCenter = CGPoint(x: bounds.width * endPoint.x,
+                            y: bounds.height * endPoint.y)
+
+    let endRadius = max(max(frame.size.width - endPoint.x, endPoint.x), max(frame.size.height - endPoint.y, endPoint.y))
+    ctx.drawRadialGradient(gradient,
+                           startCenter: startCenter,
+                           startRadius: 0,
+                           endCenter: endCenter,
+                           endRadius: endRadius,
+                           options: .drawsAfterEndLocation)
+  }
+
+}

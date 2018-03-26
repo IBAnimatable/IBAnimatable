@@ -16,7 +16,7 @@ public protocol BackgroundDesignable: class {
 }
 
 /// Protocol for designing background image
-public protocol BackgroundImageDesignable: class, BackgroundDesignable {
+public protocol BackgroundImageDesignable: BackgroundDesignable {
 
   /**
    * The background image

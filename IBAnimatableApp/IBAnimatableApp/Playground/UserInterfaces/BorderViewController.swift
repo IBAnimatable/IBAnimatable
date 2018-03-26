@@ -6,19 +6,19 @@
 import UIKit
 import IBAnimatable
 
-fileprivate let dashLength = ParamType.number(min: 1, max: 10, interval: 1, ascending: true, unit: "")
-fileprivate let dashSpaceLength = ParamType.number(min: 1, max: 10, interval: 1, ascending: true, unit: "")
+private let dashLength = ParamType.number(min: 1, max: 10, interval: 1, ascending: true, unit: "")
+private let dashSpaceLength = ParamType.number(min: 1, max: 10, interval: 1, ascending: true, unit: "")
 
 final class BorderViewController: UIViewController {
 
   // MARK: IBOutlets
 
-  @IBOutlet fileprivate weak var viewToBorder: AnimatableView!
-  @IBOutlet fileprivate weak var topCheckBox: AnimatableCheckBox!
-  @IBOutlet fileprivate weak var botCheckBox: AnimatableCheckBox!
-  @IBOutlet fileprivate weak var leftCheckBox: AnimatableCheckBox!
-  @IBOutlet fileprivate weak var rightCheckBox: AnimatableCheckBox!
-  @IBOutlet fileprivate weak var pickerView: UIPickerView!
+  @IBOutlet private weak var viewToBorder: AnimatableView!
+  @IBOutlet private weak var topCheckBox: AnimatableCheckBox!
+  @IBOutlet private weak var botCheckBox: AnimatableCheckBox!
+  @IBOutlet private weak var leftCheckBox: AnimatableCheckBox!
+  @IBOutlet private weak var rightCheckBox: AnimatableCheckBox!
+  @IBOutlet private weak var pickerView: UIPickerView!
 
   // MARK: Properties
 

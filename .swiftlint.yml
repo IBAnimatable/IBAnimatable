@@ -6,8 +6,6 @@ number_separator:
   minimum_length: 5
 large_tuple:
   warning: 3
-private_outlet:
-    allow_private_set: true
 disabled_rules:
   - todo
   - identifier_name
@@ -34,3 +32,11 @@ opt_in_rules:
  - implicit_return
  - multiline_parameters
  - vertical_parameter_alignment_on_call
+ - unneeded_parentheses_in_closure_argument
+ - joined_default_parameter
+ - pattern_matching_keywords
+ - array_init
+ - contains_over_first_not_nil
+ - let_var_whitespace
+ - literal_expression_end_indentation
+ # - trailing_closure // false positive

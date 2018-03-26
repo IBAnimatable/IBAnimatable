@@ -11,9 +11,9 @@ private let directionParam = ParamType(fromEnum: AnimationType.Direction.self)
 private let fadeWayParams = ParamType(fromEnum: AnimationType.FadeWay.self)
 private let axisParams = ParamType(fromEnum: AnimationType.Axis.self)
 private let rotationDirectionParams = ParamType(fromEnum: AnimationType.RotationDirection.self)
-private let positiveNumberParam = ParamType.number(min: 0, max: 50, interval: 2, ascending: true, unit:"")
+private let positiveNumberParam = ParamType.number(min: 0, max: 50, interval: 2, ascending: true, unit: "")
 private let numberParam = ParamType.number(min: -50, max: 200, interval: 10, ascending: true, unit: "")
-private let repeatCountParam = ParamType.number(min: 1, max: 10, interval: 1, ascending: true, unit:"")
+private let repeatCountParam = ParamType.number(min: 1, max: 10, interval: 1, ascending: true, unit: "")
 private let scaleParam = ParamType.number(min: 0, max: 2, interval: 0.1, ascending: true, unit: "")
 private let animationParam = ParamType.enumeration(values: ["slide", "shake", "pop", "pop[2]"])
 private let runParam = ParamType(fromEnum: AnimationType.Run.self)
@@ -48,7 +48,7 @@ final class AnimationsViewController: UIViewController {
     PickerEntry(params: [scaleParam, scaleParam], name: "scaleTo"),
     PickerEntry(params: [scaleParam, scaleParam, scaleParam, scaleParam], name: "scale"),
     PickerEntry(params: [animationParam, animationParam.reversed, runParam], name: "compound")
-    ]
+  ]
   var pickerSizeRatio: CGFloat = 0.25 {
     didSet {
       if oldValue != pickerSizeRatio {
@@ -58,6 +58,7 @@ final class AnimationsViewController: UIViewController {
   }
 
   var selectedEntry: PickerEntry!
+
   override func viewDidLoad() {
     super.viewDidLoad()
     selectedEntry = entries[0]
@@ -81,7 +82,7 @@ extension AnimationsViewController: TimingFunctionPickDelegate {
 
 }
 
-extension AnimationsViewController : UIPickerViewDelegate, UIPickerViewDataSource {
+extension AnimationsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
   func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
     if component == 0 {

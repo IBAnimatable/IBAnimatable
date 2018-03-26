@@ -11,11 +11,17 @@ N/A
 
 #### Enhancements
 
+- Add new mask types `.drop`, `.plusSign`, `.moon`. [#519](https://github.com/IBAnimatable/IBAnimatable/pull/519) by [@phimage](https://github.com/phimage)
 - Add new mask types `.heart`, `.gear`, `.ring`, `.superEllipse`. [#518](https://github.com/IBAnimatable/IBAnimatable/pull/518) by [@phimage](https://github.com/phimage)
+- Add suppport for radial gradient. Currently not working with `startPoint`. [#527](https://github.com/IBAnimatable/IBAnimatable/pull/527) by [@tbaranes](https://github.com/tbaranes)
 
 #### Bugfixes
-
+- Zoom out animation won't override view alpha [#545](https://github.com/IBAnimatable/IBAnimatable/pull/545) by [@tbaranes](https://github.com/tbaranes)
 - Fix presented modal view (over context) frame when device orientation changed. [#516](https://github.com/IBAnimatable/IBAnimatable/pull/516) by [@phimage](https://github.com/phimage)
+- Fix dismissal animation type of AnimatableModalViewController when the type is set in Interface Builder. [#526](https://github.com/IBAnimatable/IBAnimatable/pull/526) by [@kazyk](https://github.com/kazyk)
+- Fix view's borders when using it with corner radius `allSides` [#530](https://github.com/IBAnimatable/IBAnimatable/pull/530) by [@tbaranes](https://github.com/tbaranes)
+- Fix CACurrentMediaTime usage by calling it on the CALayer object with conversion. [#541](https://github.com/IBAnimatable/IBAnimatable/pull/541) by [@lukas2](https://github.com/lukas2)
+- Animate TabBarItem image view when clicking on it. [#539](https://github.com/IBAnimatable/IBAnimatable/pull/539) by [@phimage](https://github.com/phimage)
 
 ### [5.0.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/5.0.0)
 

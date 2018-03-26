@@ -21,7 +21,7 @@ public class ActivityIndicatorAnimationBallPulseSync: ActivityIndicatorAnimating
     circleSize = (size.width - circleSpacing * 2) / 3
     let x = (layer.bounds.size.width - size.width) / 2
     let y = (layer.bounds.size.height - circleSize) / 2
-    let beginTime = CACurrentMediaTime()
+    let beginTime = layer.currentMediaTime
     let beginTimes: [CFTimeInterval] = [0.07, 0.14, 0.21]
     let animation = defaultAnimation
 

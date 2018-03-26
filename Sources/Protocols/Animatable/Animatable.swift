@@ -168,21 +168,9 @@ public extension Animatable where Self: UIView {
     }
   }
 
-  /**
-   `autoRunAnimation` method, should be called in layoutSubviews() method
-   */
-  func autoRunAnimation() {
-    if autoRun {
-      autoRun = false
-      animate(animationType)
-    }
-  }
-}
-
-fileprivate extension Animatable where Self: UIView {
-
   // MARK: - Animation methods
-  func slide(_ way: AnimationType.Way, direction: AnimationType.Direction,
+  func slide(_ way: AnimationType.Way,
+             direction: AnimationType.Direction,
              configuration: AnimationConfiguration,
              completion: AnimatableCompletion? = nil) {
     let values = computeValues(way: way, direction: direction, configuration: configuration, shouldScale: false)
@@ -195,7 +183,8 @@ fileprivate extension Animatable where Self: UIView {
     }
   }
 
-  func squeeze(_ way: AnimationType.Way, direction: AnimationType.Direction,
+  func squeeze(_ way: AnimationType.Way,
+               direction: AnimationType.Direction,
                configuration: AnimationConfiguration,
                completion: AnimatableCompletion? = nil) {
     let values = computeValues(way: way, direction: direction, configuration: configuration, shouldScale: true)
@@ -207,7 +196,8 @@ fileprivate extension Animatable where Self: UIView {
     }
   }
 
-  func rotate(direction: AnimationType.RotationDirection, repeatCount: Int,
+  func rotate(direction: AnimationType.RotationDirection,
+              repeatCount: Int,
               configuration: AnimationConfiguration,
               completion: AnimatableCompletion? = nil) {
     CALayer.animate({
@@ -217,7 +207,7 @@ fileprivate extension Animatable where Self: UIView {
       animation.duration = configuration.duration
       animation.repeatCount = Float(repeatCount)
       animation.autoreverses = false
-      animation.beginTime = CACurrentMediaTime() + configuration.delay
+      animation.beginTime = self.layer.currentMediaTime + configuration.delay
       self.layer.add(animation, forKey: "rotate")
       }, completion: completion)
 
@@ -268,7 +258,8 @@ fileprivate extension Animatable where Self: UIView {
     }
   }
 
-  func slideFade(_ way: AnimationType.Way, direction: AnimationType.Direction,
+  func slideFade(_ way: AnimationType.Way,
+                 direction: AnimationType.Direction,
                  configuration: AnimationConfiguration,
                  completion: AnimatableCompletion? = nil) {
     let values = computeValues(way: way, direction: direction, configuration: configuration, shouldScale: false)
@@ -296,9 +287,10 @@ fileprivate extension Animatable where Self: UIView {
     }
   }
 
-    func squeezeFade(_ way: AnimationType.Way, direction: AnimationType.Direction,
-                     configuration: AnimationConfiguration,
-                     completion: AnimatableCompletion? = nil) {
+  func squeezeFade(_ way: AnimationType.Way,
+                   direction: AnimationType.Direction,
+                   configuration: AnimationConfiguration,
+                   completion: AnimatableCompletion? = nil) {
     let values = computeValues(way: way, direction: direction, configuration: configuration, shouldScale: true)
     switch way {
     case .in:
@@ -332,7 +324,6 @@ fileprivate extension Animatable where Self: UIView {
                 completion: completion)
     case .out:
       let scale = (invert ? 0.1 :  2) * configuration.force
-      alpha = 1
       toAlpha = 0
       animateOut(animationValues: AnimationValues(x: 0, y: 0, scaleX: scale, scaleY: scale),
                  alpha: toAlpha,
@@ -367,7 +358,7 @@ fileprivate extension Animatable where Self: UIView {
       animation.duration = configuration.duration
       animation.isAdditive = true
       animation.repeatCount = Float(repeatCount)
-      animation.beginTime = CACurrentMediaTime() + configuration.delay
+      animation.beginTime = self.layer.currentMediaTime + configuration.delay
       self.layer.add(animation, forKey: "shake")
     }, completion: completion)
   }
@@ -381,7 +372,7 @@ fileprivate extension Animatable where Self: UIView {
       animation.duration = configuration.duration
       animation.isAdditive = true
       animation.repeatCount = Float(repeatCount)
-      animation.beginTime = CACurrentMediaTime() + configuration.delay
+      animation.beginTime = self.layer.currentMediaTime + configuration.delay
       self.layer.add(animation, forKey: "pop")
     }, completion: completion)
   }
@@ -402,7 +393,7 @@ fileprivate extension Animatable where Self: UIView {
       animationGroup.animations = [squashX, squashY]
       animationGroup.duration = configuration.duration
       animationGroup.repeatCount = Float(repeatCount)
-      animationGroup.beginTime = CACurrentMediaTime() + configuration.delay
+      animationGroup.beginTime = self.layer.currentMediaTime + configuration.delay
       self.layer.add(animationGroup, forKey: "squash")
     }, completion: completion)
   }
@@ -423,7 +414,7 @@ fileprivate extension Animatable where Self: UIView {
       animationGroup.animations = [morphX, morphY]
       animationGroup.duration = configuration.duration
       animationGroup.repeatCount = Float(repeatCount)
-      animationGroup.beginTime = CACurrentMediaTime() + configuration.delay
+      animationGroup.beginTime = self.layer.currentMediaTime + configuration.delay
       self.layer.add(animationGroup, forKey: "morph")
     }, completion: completion)
   }
@@ -444,7 +435,7 @@ fileprivate extension Animatable where Self: UIView {
       animationGroup.animations = [squeezeX, squeezeY]
       animationGroup.duration = configuration.duration
       animationGroup.repeatCount = Float(repeatCount)
-      animationGroup.beginTime = CACurrentMediaTime() + configuration.delay
+      animationGroup.beginTime = self.layer.currentMediaTime + configuration.delay
       self.layer.add(animationGroup, forKey: "squeeze")
     }, completion: completion)
   }
@@ -457,7 +448,7 @@ fileprivate extension Animatable where Self: UIView {
       animation.duration = configuration.duration
       animation.repeatCount = Float(repeatCount) * 2.0
       animation.autoreverses = true
-      animation.beginTime = CACurrentMediaTime() + configuration.delay
+      animation.beginTime = self.layer.currentMediaTime + configuration.delay
       self.layer.add(animation, forKey: "flash")
     }, completion: completion)
   }
@@ -478,7 +469,7 @@ fileprivate extension Animatable where Self: UIView {
       let animationGroup = CAAnimationGroup()
       animationGroup.animations = [rotation, positionX]
       animationGroup.duration = configuration.duration
-      animationGroup.beginTime = CACurrentMediaTime() + configuration.delay
+      animationGroup.beginTime = self.layer.currentMediaTime + configuration.delay
       animationGroup.repeatCount = Float(repeatCount)
       self.layer.add(animationGroup, forKey: "wobble")
     }, completion: completion)
@@ -492,7 +483,7 @@ fileprivate extension Animatable where Self: UIView {
       animation.duration = configuration.duration
       animation.isAdditive = true
       animation.repeatCount = Float(repeatCount)
-      animation.beginTime = CACurrentMediaTime() + configuration.delay
+      animation.beginTime = self.layer.currentMediaTime + configuration.delay
       self.layer.add(animation, forKey: "swing")
     }, completion: completion)
   }
@@ -544,8 +535,12 @@ fileprivate extension Animatable where Self: UIView {
     }
   }
 
-  private func springScale(fromX: Double, fromY: Double, toX: Double, toY: Double,
-                           configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+  private func springScale(fromX: Double,
+                           fromY: Double,
+                           toX: Double,
+                           toY: Double,
+                           configuration: AnimationConfiguration,
+                           completion: AnimatableCompletion? = nil) {
     transform = CGAffineTransform(scaleX: CGFloat(fromX), y: CGFloat(fromY))
     UIView.animate(
       withDuration: configuration.duration,
@@ -564,8 +559,12 @@ fileprivate extension Animatable where Self: UIView {
     )
   }
 
-  private func layerScale(fromX: Double, fromY: Double, toX: Double, toY: Double,
-                          configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
+  private func layerScale(fromX: Double,
+                          fromY: Double,
+                          toX: Double,
+                          toY: Double,
+                          configuration: AnimationConfiguration,
+                          completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let scaleX = CAKeyframeAnimation(keyPath: "transform.scale.x")
       scaleX.values = [fromX, toX]
@@ -580,13 +579,14 @@ fileprivate extension Animatable where Self: UIView {
       let animationGroup = CAAnimationGroup()
       animationGroup.animations = [scaleX, scaleY]
       animationGroup.duration = configuration.duration
-      animationGroup.beginTime = CACurrentMediaTime() + configuration.delay
+      animationGroup.beginTime = self.layer.currentMediaTime + configuration.delay
       self.layer.add(animationGroup, forKey: "scale")
     }, completion: completion)
   }
 
 // swiftlint:enable variable_name_min_length
-  func computeValues(way: AnimationType.Way, direction: AnimationType.Direction,
+  func computeValues(way: AnimationType.Way,
+                     direction: AnimationType.Direction,
                      configuration: AnimationConfiguration,
                      shouldScale: Bool) -> AnimationValues {
     let scale = 3 * configuration.force
@@ -631,7 +631,7 @@ fileprivate extension Animatable where Self: UIView {
       animation.toValue = 0
       animation.timingFunctionType = configuration.timingFunction ?? .easeInOut
       animation.duration = configuration.duration
-      animation.beginTime = CACurrentMediaTime() + configuration.delay
+      animation.beginTime = self.layer.currentMediaTime + configuration.delay
       animation.autoreverses = true
       self.layer.add(animation, forKey: "fade")
       }, completion: completion)
@@ -644,7 +644,7 @@ fileprivate extension Animatable where Self: UIView {
       animation.toValue = 1
       animation.timingFunctionType = configuration.timingFunction ?? .easeInOut
       animation.duration = configuration.duration
-      animation.beginTime = CACurrentMediaTime() + configuration.delay
+      animation.beginTime = self.layer.currentMediaTime + configuration.delay
       animation.autoreverses = true
       animation.isRemovedOnCompletion = false
       self.layer.add(animation, forKey: "fade")
@@ -664,7 +664,7 @@ fileprivate extension Animatable where Self: UIView {
                    usingSpringWithDamping: configuration.damping,
                    initialSpringVelocity: configuration.velocity,
                    options: [],
-      animations: {
+                   animations: {
         self.transform = translate
       },
       completion: { completed in
@@ -680,7 +680,7 @@ fileprivate extension Animatable where Self: UIView {
       let animation = CAKeyframeAnimation(keyPath: "position")
       animation.timingFunctionType = configuration.timingFunction ?? .easeInOut
       animation.duration = configuration.duration
-      animation.beginTime = CACurrentMediaTime() + configuration.delay
+      animation.beginTime = self.layer.currentMediaTime + configuration.delay
       animation.path = path.cgPath
       self.layer.add(animation, forKey: "animate position")
     }, completion: completion)
@@ -697,7 +697,7 @@ fileprivate extension Animatable where Self: UIView {
                    usingSpringWithDamping: configuration.damping,
                    initialSpringVelocity: configuration.velocity,
                    options: [],
-      animations: {
+                   animations: {
         self.transform = CGAffineTransform.identity
         self.alpha = alpha
       },
@@ -718,7 +718,7 @@ fileprivate extension Animatable where Self: UIView {
                    usingSpringWithDamping: configuration.damping,
                    initialSpringVelocity: configuration.velocity,
                    options: [],
-      animations: {
+                   animations: {
         self.transform = translateAndScale
         self.alpha = alpha
       },
@@ -736,9 +736,26 @@ fileprivate extension Animatable where Self: UIView {
 }
 // swiftlint:enable variable_name_min_length
 
+// Animations for `UIBarItem`
 public extension Animatable where Self: UIBarItem {
-  // TODO: animations for `UIBarItem`
-  public func animate(completion: AnimatableCompletion? = nil) {
+
+  public func animate(_ animation: AnimationType? = nil,
+                      duration: TimeInterval? = nil,
+                      damping: CGFloat? = nil,
+                      velocity: CGFloat? = nil,
+                      force: CGFloat? = nil,
+                      view: UIView,
+                      completion: AnimatableCompletion? = nil) {
+
+    let configuration = AnimationConfiguration(damping: damping ?? self.damping,
+                                               velocity: velocity ?? self.velocity,
+                                               duration: duration ?? self.duration,
+                                               delay: 0,
+                                               force: force ?? self.force,
+                                               timingFunction: timingFunction ?? self.timingFunction)
+    view.doAnimation(animation ?? self.animationType, configuration: configuration) {
+      completion?()
+    }
   }
 }
 

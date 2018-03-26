@@ -37,7 +37,7 @@ public struct CornerSides: OptionSet {
       return
     }
 
-    let sideElements = rawValue.lowercased().characters.split(separator: ",")
+    let sideElements = rawValue.lowercased().split(separator: ",")
       .map(String.init)
       .map { CornerSide(rawValue: $0.trimmingCharacters(in: CharacterSet.whitespaces)) }
       .map { CornerSides(side: $0) }

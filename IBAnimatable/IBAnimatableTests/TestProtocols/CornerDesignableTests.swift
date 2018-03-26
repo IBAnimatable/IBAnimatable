@@ -48,17 +48,25 @@ extension CornerDesignableTests where Element: StringCornerDesignable {
 extension CornerDesignableTests where Element: UIView, Element: CornerDesignable {
 
   func _testCornerRadius() {
-    element.cornerRadius = 3.0
+    element.cornerRadius = 3
     element.cornerSides = .allSides
-    XCTAssertEqual(element.cornerRadius, element.layer.cornerRadius)
+    testRadiusPath(for: .allCorners)
     element.cornerSides = [.bottomLeft, .bottomRight, .topLeft]
+    testRadiusPath(for: [.bottomLeft, .bottomRight, .topLeft])
+  }
+
+  private func testRadiusPath(for sides: UIRectCorner) {
     let mask = element.layer.mask as? CAShapeLayer
-    XCTAssertEqual(mask?.frame, CGRect(origin: .zero, size: element.bounds.size))
-    XCTAssertEqual(mask?.name, "cornerSideLayer")
-    let cornerRadii = CGSize(width: element.cornerRadius, height: element.cornerRadius)
-    let corners: UIRectCorner = [.bottomLeft, .bottomRight, .topLeft]
-    let mockPath = UIBezierPath(roundedRect: element.bounds, byRoundingCorners: corners, cornerRadii: cornerRadii).cgPath
-    XCTAssertEqual(mask?.path, mockPath)
+    if sides == .allCorners {
+      XCTAssertNil(mask)
+    } else {
+      XCTAssertEqual(mask?.frame, CGRect(origin: .zero, size: element.bounds.size))
+      XCTAssertEqual(mask?.name, "cornerSideLayer")
+      let cornerRadii = CGSize(width: element.cornerRadius, height: element.cornerRadius)
+      let corners: UIRectCorner = sides
+      let mockPath = UIBezierPath(roundedRect: element.bounds, byRoundingCorners: corners, cornerRadii: cornerRadii).cgPath
+      XCTAssertEqual(mask?.path, mockPath)
+    }
   }
 
 }
@@ -73,18 +81,25 @@ extension CornerDesignableTests where Element: UICollectionViewCell, Element: Co
     element.cornerRadius = 3.0
     XCTAssertNil(element.layer.mask)
     XCTAssertEqual(element.layer.cornerRadius, 0.0)
+
     element.cornerSides = .allSides
-    XCTAssertEqual(element.contentView.layer.cornerRadius, element.cornerRadius)
+    testRadiusPath(for: .allCorners)
     element.cornerSides = [.bottomLeft, .bottomRight, .topLeft]
-    XCTAssertEqual(element.contentView.layer.cornerRadius, 0.0)
+    testRadiusPath(for: [.bottomLeft, .bottomRight, .topLeft])
+  }
+
+  private func testRadiusPath(for sides: UIRectCorner) {
     let mask = element.contentView.layer.mask as? CAShapeLayer
-    XCTAssertEqual(mask?.frame, CGRect(origin: .zero, size: element.bounds.size))
-    XCTAssertEqual(mask?.name, "cornerSideLayer")
-    let cornerRadii = CGSize(width: element.cornerRadius, height: element.cornerRadius)
-    let corners: UIRectCorner = [.bottomLeft, .bottomRight, .topLeft]
-    let mockPath = UIBezierPath(roundedRect: element.bounds, byRoundingCorners: corners, cornerRadii: cornerRadii).cgPath
-    XCTAssertEqual(mask?.path, mockPath)
-    XCTAssertTrue(element.contentView.layer.masksToBounds)
+    if sides == .allCorners {
+      XCTAssertNil(mask)
+    } else {
+      XCTAssertEqual(mask?.frame, CGRect(origin: .zero, size: element.contentView.bounds.size))
+      XCTAssertEqual(mask?.name, "cornerSideLayer")
+      let cornerRadii = CGSize(width: element.cornerRadius, height: element.cornerRadius)
+      let corners: UIRectCorner = sides
+      let mockPath = UIBezierPath(roundedRect: element.contentView.bounds, byRoundingCorners: corners, cornerRadii: cornerRadii).cgPath
+      XCTAssertEqual(mask?.path, mockPath)
+    }
   }
 
 }

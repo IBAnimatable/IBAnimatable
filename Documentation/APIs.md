@@ -72,6 +72,7 @@ To use `IBAnimatable`, we can drag and drop a UIKit element and connect it with 
 #### `GradientDesignable`
 | Property name | Data type | Description |
 | ------------- |:-------------:| ----- |
+| gradientMode | Optional&lt;GradientMode> | Gradient mode. All gradient mode are in enum [`GradientMode`](../IBAnimatable/GradientMode.swift), default value is `.linear`. |
 | startColor | Optional&lt;UIColor> | start gradient color |
 | endColor | Optional&lt;UIColor> | end gradient color |
 | predefinedGradient | Optional&lt;String> | Predefined gradients. All predefined gradients are in enum [`GradientType`](../IBAnimatable/GradientType.swift), To find the predefined gradients, you can use [uigradients.com](http://uigradients.com), e.g. `Juicy Orange` on the website maps to `JuicyOrange` in the enum. |
@@ -90,11 +91,19 @@ To use `IBAnimatable`, we can drag and drop a UIKit element and connect it with 
 **Supported MaskType:**
 
 * `circle`
+* `ellipse`
 * `polygon`: Can also specify the number of sides of the polygon, e.g. use `Polygon(6)` to have a polygon with 6 sides. If not specified, the default is 6 sides.
 * `triangle`
 * `star`: Can also specify the points of the Star, e.g. use `Star(6)` to have a star with 6 points. If not specified, the default is 5 points.
 * `wave`: Can use parameters to customize the `Wave`. `Wave(down, 20, 5)` means the Wave faces down, width is 20 and offset is 5. If not specified, the default value is `Wave(up, 40, 0)`.
 * `parallelogram`: Can use parameters to customize the `Parallelogram`. `Parallelogram(60)` means the top left angle of the Parallelogram will have an angle of 60 degrees. The default value is `Parallelogram(60)`. if angle == 90 it will be a rectangular Mask. if angle < 90 the parallelogram will be oriented to left.
+* `heart`
+* `ring`: Can also specify the radius of the Ring, e.g. use `Ring(6)` to have a ring with 6 as radius.
+* `gear`: Can also specify the radius of the Gear and the number of cogs , e.g. use `Gear(6, 8)` to have a gear with 6 as radius and 8 cogs.
+* `superellipse`: Can also specify the curve of [Superellipse](https://en.wikipedia.org/wiki/Superellipse), e.g use `superellipse(1)` to have a diamond.
+* `drop`
+* `plussign`: Can also specify the thickness of the plus sign, e.g. use `Plussign(10)` to have a plug sign with 10 as thickness.
+* `moon`: Can also specify the angle to change the Moon shape.
 * `custom`: Allows you to use your own bezier path as mask. Only usable from code (not from IB). You have to pass in parameter a closure that takes a `CGSize` (the current's view Size) and returns the `UIBezierPath`
 
 

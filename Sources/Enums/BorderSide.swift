@@ -33,7 +33,7 @@ public struct BorderSides: OptionSet {
       self = .AllSides
       return
     }
-    let sideElements = rawValue.lowercased().characters.split(separator: ",")
+    let sideElements = rawValue.lowercased().split(separator: ",")
       .map(String.init)
       .map { BorderSide(rawValue: $0.trimmingCharacters(in: CharacterSet.whitespaces)) }
       .map { BorderSides(side: $0) }

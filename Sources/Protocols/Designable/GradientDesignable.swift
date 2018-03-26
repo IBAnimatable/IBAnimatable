@@ -6,88 +6,146 @@
 import UIKit
 
 public protocol GradientDesignable: class {
+  var gradientMode: GradientMode { get set }
   var startColor: UIColor? { get set }
   var endColor: UIColor? { get set }
   var predefinedGradient: GradientType? { get set }
   var startPoint: GradientStartPoint { get set }
 }
 
-public extension GradientDesignable where Self: UIView {
+// MARK: - UIView
+
+extension GradientDesignable where Self: UIView {
+
   public func configureGradient() {
-    let predefinedGradient = configurePredefinedGradient()
-    if let startColor = startColor, let endColor = endColor {
-      configureGradient(startColor: startColor, endColor: endColor)
-    } else if let startColor = predefinedGradient?.start, let endColor = predefinedGradient?.end {
-      configureGradient(startColor: startColor, endColor: endColor)
-    }
+    configureGradient(in: self)
   }
+
 }
 
-fileprivate extension GradientDesignable where Self: UIView {
-  func configureGradient(startColor: UIColor, endColor: UIColor) {
+// MARK: - NavigationBar
 
-    let gradientLayer = makeGradientLayer()
-    gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
-    gradientLayer.configurePoints(with: startPoint)
+extension GradientDesignable where Self: UINavigationBar {
 
-    subviews.filter { $0 is PrivateGradientView }.forEach {
-      $0.removeFromSuperview()
-    }
-
-    let gradientView = PrivateGradientView(frame: bounds, gradientLayer: gradientLayer)
-    insertSubview(gradientView, at: 0)
-  }
-
-  func makeGradientLayer() -> CAGradientLayer {
-    let gradientLayer: CAGradientLayer = CAGradientLayer()
-    gradientLayer.frame = bounds
-    gradientLayer.cornerRadius = layer.cornerRadius
-    return gradientLayer
-  }
-
-  func configurePredefinedGradient() -> GradientColor? {
-    guard let gradientType = predefinedGradient else {
-      return nil
-    }
-    return gradientType.colors
-  }
-}
-
-public extension GradientDesignable where Self: UINavigationBar {
   public func configureGradient() {
-    let predefinedGradient = configurePredefinedGradient()
-    if let startColor = startColor, let endColor = endColor {
-      configureGradient(startColor: startColor, endColor: endColor)
-    } else if let startColor = predefinedGradient?.start, let endColor = predefinedGradient?.end {
-      configureGradient(startColor: startColor, endColor: endColor)
-    }
-  }
-
-  fileprivate  func configureGradient(startColor: UIColor, endColor: UIColor) {
+    let navBarFrame = CGRect(x: 0, y: 0, width: bounds.width, height: UIApplication.shared.statusBarFrame.height)
     let gradientLayer = makeGradientLayer()
-    gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
-    gradientLayer.configurePoints(with: startPoint)
+    gradientLayer?.frame = navBarFrame
+    gradientLayer?.cornerRadius = layer.cornerRadius
 
-    let image = gradientLayer.makeImage()
+    let image = gradientLayer?.makeImage()
     setBackgroundImage(image, for: .default)
   }
 
-  fileprivate func makeGradientLayer() -> CAGradientLayer {
-    let gradientLayer: CAGradientLayer = CAGradientLayer()
+}
 
-    let statusBarHeight: CGFloat = 64 // UIApplication.shared.statusBarFrame.height
-    let navBarFrame = CGRect(x: 0, y: 0, width: bounds.width, height: statusBarHeight)
-    gradientLayer.frame = navBarFrame
+// MARK: - Layers
 
-    gradientLayer.cornerRadius = layer.cornerRadius
-    return gradientLayer
+extension CALayer {
+
+  fileprivate func makeImage() -> UIImage? {
+    UIGraphicsBeginImageContext(frame.size)
+    render(in: UIGraphicsGetCurrentContext()!)
+    let outputImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    return outputImage
   }
 
 }
 
+// MARK: - Common
+
+extension GradientDesignable {
+
+  func configureGradient(in view: UIView) {
+    view.subviews.filter { $0 is PrivateGradientView }.forEach {
+      $0.removeFromSuperview()
+    }
+
+    guard let gradientLayer = makeGradientLayer() else {
+      return
+    }
+
+    gradientLayer.cornerRadius = view.layer.cornerRadius
+    gradientLayer.frame = view.bounds
+    let gradientView = PrivateGradientView(frame: view.bounds, gradientLayer: gradientLayer)
+    view.insertSubview(gradientView, at: 0)
+  }
+
+  private func makeGradientLayer() -> CALayer? {
+    guard let colors = gradientColors() else {
+      return nil
+    }
+
+    switch gradientMode {
+    case .linear:
+      return makeLinearLayer(colors: colors)
+    case .radial:
+      return makeRadialLayer(colors: colors)
+    }
+  }
+
+  private func gradientColors() -> [CGColor]? {
+    if let startColor = startColor, let endColor = endColor {
+      return [startColor.cgColor, endColor.cgColor]
+    } else if let startColor = predefinedGradient?.colors.start, let endColor = predefinedGradient?.colors.end {
+      return [startColor.cgColor, endColor.cgColor]
+    }
+    return nil
+  }
+
+  private func makeLinearLayer(colors: [CGColor]) -> CAGradientLayer {
+    let layer = CAGradientLayer()
+    layer.colors = colors
+
+    let points = gradientPoints()
+    layer.startPoint = points.0
+    layer.endPoint = points.1
+    return layer
+  }
+
+  private func makeRadialLayer(colors: [CGColor]) -> RadialGradientLayer {
+    let layer = RadialGradientLayer()
+    layer.colors = colors
+
+    let points = gradientPoints()
+    layer.startPoint = points.0
+    layer.endPoint = points.1
+    return layer
+  }
+
+  private func gradientPoints() -> (CGPoint, CGPoint) {
+    switch startPoint {
+    case .top:
+      return (CGPoint(x: 0.5, y: 0), CGPoint(x: 0.5, y: 1))
+    case .topRight:
+      return (CGPoint(x: 1, y: 0), CGPoint(x: 0, y: 1))
+    case .right:
+      return (CGPoint(x: 1, y: 0.5), CGPoint(x: 0, y: 0.5))
+    case .bottomRight:
+      return (CGPoint(x: 1, y: 1), CGPoint(x: 0, y: 0))
+    case .bottom:
+      return (CGPoint(x: 0.5, y: 1), CGPoint(x: 0.5, y: 0))
+    case .bottomLeft:
+      return (CGPoint(x: 0, y: 1), CGPoint(x: 1, y: 0))
+    case .left:
+      return (CGPoint(x: 0, y: 0.5), CGPoint(x: 1, y: 0.5))
+    case .topLeft:
+      return (CGPoint(x: 0, y: 0), CGPoint(x: 1, y: 1))
+    case let .custom(start, end):
+      return (CGPoint(x: start.x, y: start.y), CGPoint(x: end.x, y: end.y))
+    case .none:
+      return (.zero, .zero)
+    }
+  }
+
+}
+
+// MARK: - PrivateGradientView
+
 private class PrivateGradientView: UIView {
 
-  init(frame: CGRect, gradientLayer: CAGradientLayer) {
+  init(frame: CGRect, gradientLayer: CALayer) {
     super.init(frame: frame)
     layer.insertSublayer(gradientLayer, at: 0)
     autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -98,53 +156,7 @@ private class PrivateGradientView: UIView {
   }
 
   override class var layerClass: AnyClass {
-    return CAGradientLayer.self
-  }
-
-}
-
-fileprivate extension CAGradientLayer {
-
-  func configurePoints(with startPoint: GradientStartPoint) {
-    switch startPoint {
-    case .top:
-      self.startPoint = CGPoint(x: 0.5, y: 0)
-      self.endPoint = CGPoint(x: 0.5, y: 1)
-    case .topRight:
-      self.startPoint = CGPoint(x: 1, y: 0)
-      self.endPoint = CGPoint(x: 0, y: 1)
-    case .right:
-      self.startPoint = CGPoint(x: 1, y: 0.5)
-      self.endPoint = CGPoint(x: 0, y: 0.5)
-    case .bottomRight:
-      self.startPoint = CGPoint(x: 1, y: 1)
-      self.endPoint = CGPoint(x: 0, y: 0)
-    case .bottom:
-      self.startPoint = CGPoint(x: 0.5, y: 1)
-      self.endPoint = CGPoint(x: 0.5, y: 0)
-    case .bottomLeft:
-      self.startPoint = CGPoint(x: 0, y: 1)
-      self.endPoint = CGPoint(x: 1, y: 0)
-    case .left:
-      self.startPoint = CGPoint(x: 0, y: 0.5)
-      self.endPoint = CGPoint(x: 1, y: 0.5)
-    case .topLeft:
-      self.startPoint = CGPoint(x: 0, y: 0)
-      self.endPoint = CGPoint(x: 1, y: 1)
-    case let .custom(start, end):
-      self.startPoint = CGPoint(x: start.x, y: start.y)
-      self.endPoint = CGPoint(x: end.x, y: end.y)
-    case .none:
-      break
-    }
-  }
-
-  func makeImage() -> UIImage? {
-    UIGraphicsBeginImageContext(frame.size)
-    render(in: UIGraphicsGetCurrentContext()!)
-    let outputImage = UIGraphicsGetImageFromCurrentImageContext()
-    UIGraphicsEndImageContext()
-    return outputImage
+    return CALayer.self
   }
 
 }

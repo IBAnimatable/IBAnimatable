@@ -13,6 +13,7 @@ final class GradientCustomStartPointViewController: UIViewController {
 
   @IBOutlet fileprivate weak var gView: AnimatableView!
 
+  var useRadialGradient = false
   let gradientValues = ParamType(fromEnum: GradientType.self)
   let coordPointValues = ParamType.number(min: 0, max: 1, interval: 0.1, ascending: true, unit: "")
   lazy var componentValues: [ParamType] = [self.gradientValues,
@@ -23,11 +24,12 @@ final class GradientCustomStartPointViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    gView.gradientMode = useRadialGradient ? .radial : .linear
     gView.predefinedGradient = GradientType(rawValue: gradientValues.value(at: 0))
   }
 }
 
-extension GradientCustomStartPointViewController : UIPickerViewDelegate, UIPickerViewDataSource {
+extension GradientCustomStartPointViewController: UIPickerViewDelegate, UIPickerViewDataSource {
   func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
     return componentValues[component].count()
   }
