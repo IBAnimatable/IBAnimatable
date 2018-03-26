@@ -92,11 +92,24 @@ public extension Animatable where Self: UIView {
     let completion = {
       promise.animationCompleted()
     }
-    doAnimation(animation, configuration: configuration, completion: completion)
+    doAnimation(animation ?? self.animationType, configuration: configuration, completion: completion)
   }
 
-  internal func doAnimation(_ animation: AnimationType? = nil, configuration: AnimationConfiguration, completion: @escaping () -> Void) {
-    switch animation ?? animationType {
+  /**
+   `autoRunAnimation` method, should be called in layoutSubviews() method
+   */
+  func autoRunAnimation() {
+    if autoRun {
+      autoRun = false
+      animate(animationType)
+    }
+  }
+}
+
+fileprivate extension UIView {
+
+  func doAnimation(_ animation: AnimationType, configuration: AnimationConfiguration, completion: @escaping () -> Void) {
+    switch animation {
     case let .slide(way, direction):
       slide(way, direction: direction, configuration: configuration, completion: completion)
     case let .squeeze(way, direction):
