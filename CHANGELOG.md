@@ -16,7 +16,7 @@ N/A
 - Add suppport for radial gradient. Currently not working with `startPoint`. [#527](https://github.com/IBAnimatable/IBAnimatable/pull/527) by [@tbaranes](https://github.com/tbaranes)
 
 #### Bugfixes
-- Fix CornerDesignable refactor 24d308d5ca that caused changed rendering behaviour (always applied mask, even when case .allSides)
+- Zoom out animation won't override view alpha [#545](https://github.com/IBAnimatable/IBAnimatable/pull/545) by [@tbaranes](https://github.com/tbaranes)
 - Fix presented modal view (over context) frame when device orientation changed. [#516](https://github.com/IBAnimatable/IBAnimatable/pull/516) by [@phimage](https://github.com/phimage)
 - Fix dismissal animation type of AnimatableModalViewController when the type is set in Interface Builder. [#526](https://github.com/IBAnimatable/IBAnimatable/pull/526) by [@kazyk](https://github.com/kazyk)
 - Fix view's borders when using it with corner radius `allSides` [#530](https://github.com/IBAnimatable/IBAnimatable/pull/530) by [@tbaranes](https://github.com/tbaranes)
