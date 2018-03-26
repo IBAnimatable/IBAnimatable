@@ -39,6 +39,18 @@ open class AnimatableTabBarController: UITabBarController, TransitionAnimatable 
     }
   }
 
+  // MARK: - UITabBarDelegate
+  open override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+    guard let animatable = item as? (UITabBarItem & Animatable),
+      let tabBarButton = tabBar.view(for: item) else {
+        return
+    }
+    // Animate the children image view
+    if let imageView = tabBarButton.subviews.first(where: { $0 is UIImageView }) {
+      animatable.animate(view: imageView)
+    }
+  }
+
   // MARK: - Private
   // Must have a property to keep the reference alive because `UITabBarController.delegate` is `weak`
   fileprivate var navigator: Navigator?
@@ -64,4 +76,27 @@ open class AnimatableTabBarController: UITabBarController, TransitionAnimatable 
     }
     delegate = navigator
   }
+}
+
+private extension UITabBar {
+
+    func view(for item: UITabBarItem) -> UIControl? {
+      // return item.value(forKeyPath: "view") as? UIControl // apple could not allow that
+      guard let items = self.items,
+        let index = items.index(of: item) else {
+        return nil
+      }
+      // get all buttons
+      // 1/ filter on control, not safe if apple add a new control in bar
+      let controls = self.subviews.filter { $0 is UIControl }
+      // 2/ filter on name, not safe if button class change
+      // let controls = self.subviews.filter { String(describing: type(of: $0 )) == "UITabBarButton" }
+
+      guard index < controls.count else {
+        // item could be not in tab bar (see "More")
+        return nil
+      }
+      return controls[index] as? UIControl
+    }
+
 }

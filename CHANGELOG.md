@@ -21,6 +21,7 @@ N/A
 - Fix dismissal animation type of AnimatableModalViewController when the type is set in Interface Builder. [#526](https://github.com/IBAnimatable/IBAnimatable/pull/526) by [@kazyk](https://github.com/kazyk)
 - Fix view's borders when using it with corner radius `allSides` [#530](https://github.com/IBAnimatable/IBAnimatable/pull/530) by [@tbaranes](https://github.com/tbaranes)
 - Fix CACurrentMediaTime usage by calling it on the CALayer object with conversion. [#541](https://github.com/IBAnimatable/IBAnimatable/pull/541) by [@lukas2](https://github.com/lukas2)
+- Animate TabBarItem image view when clicking on it. [#539](https://github.com/IBAnimatable/IBAnimatable/pull/539) by [@phimage](https://github.com/phimage)
 
 ### [5.0.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/5.0.0)
 
