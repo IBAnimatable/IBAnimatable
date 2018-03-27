@@ -9,7 +9,7 @@ import UIKit
  Predefined Animation Type
  */
 
-public enum AnimationType {
+public indirect enum AnimationType {
   case slide(way: Way, direction: Direction)
   case squeeze(way: Way, direction: Direction)
   case slideFade(way: Way, direction: Direction)
@@ -29,6 +29,7 @@ public enum AnimationType {
   case moveTo(x: Double, y: Double)
   case moveBy(x: Double, y: Double)
   case scale(fromX: Double, fromY: Double, toX: Double, toY: Double)
+  case compound(animations: [AnimationType], run: Run)
   case none
 
   public enum FadeWay: String {
@@ -49,6 +50,9 @@ public enum AnimationType {
   }
   public enum RotationDirection: String {
     case cw, ccw
+  }
+  public enum Run: String {
+    case sequential, parallel
   }
 
 }
@@ -72,7 +76,8 @@ extension AnimationType: IBEnum {
       self = .none
       return
     }
-    let (name, params) = AnimationType.extractNameAndParams(from: string)
+
+    let (name, params) = AnimationType.extractNameAndParams(from: string.parseNameAndParams)
 
     switch name {
     case "slide":
@@ -90,31 +95,31 @@ extension AnimationType: IBEnum {
     case "zoominvert":
       self = .zoomInvert(way: Way(raw: params[safe: 0], defaultValue: .in))
     case "shake":
-      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      let repeatCount = retrieveRepeatCount(string: params[safe: 0])
       self = .shake(repeatCount: repeatCount)
     case "pop":
-      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      let repeatCount = retrieveRepeatCount(string: params[safe: 0])
       self = .pop(repeatCount: repeatCount)
     case "squash":
-      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      let repeatCount = retrieveRepeatCount(string: params[safe: 0])
       self = .squash(repeatCount: repeatCount)
     case "flip":
       let axis = Axis(raw: params[safe: 0], defaultValue: .x)
       self = .flip(along: axis)
     case "morph":
-      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      let repeatCount = retrieveRepeatCount(string: params[safe: 0])
       self = .morph(repeatCount: repeatCount)
     case "flash":
-      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      let repeatCount = retrieveRepeatCount(string: params[safe: 0])
       self = .flash(repeatCount: repeatCount)
     case "wobble":
-      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      let repeatCount = retrieveRepeatCount(string: params[safe: 0])
       self = .wobble(repeatCount: repeatCount)
     case "swing":
-      let repeatCount = retrieveRepeatCount(string:params[safe: 0])
+      let repeatCount = retrieveRepeatCount(string: params[safe: 0])
       self = .swing(repeatCount: repeatCount)
     case "rotate":
-      let repeatCount = retrieveRepeatCount(string:params[safe: 1])
+      let repeatCount = retrieveRepeatCount(string: params[safe: 1])
       self = .rotate(direction: RotationDirection(raw: params[safe: 0], defaultValue: .cw), repeatCount: repeatCount)
     case "moveto":
       self = .moveTo(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
@@ -130,12 +135,48 @@ extension AnimationType: IBEnum {
       self = .scaleFrom(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
     case "scaleto":
       self = .scaleTo(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
+    case "compound":
+      var params = params
+      if let last = params.popLast() {
+        var runP: Run
+        if let run = Run(raw: last) {
+          runP = run
+        } else {
+          params.append(last)
+          runP = .parallel
+        }
+        self = .compound(animations: params.map { $0.animationType ?? .none }, run: runP)
+      } else {
+        self = .none
+      }
     default:
       self = .none
     }
   }
-}
 
+}
+private extension String {
+
+  var parseNameAndParams: String {
+    var string = self
+    if string.starts(with: "[") { // [ animation1, animation2, ...]
+      string = string.dropFirst().dropLast()
+        .replacingOccurrences(of: "(", with: "[")
+        .replacingOccurrences(of: ")", with: "]")
+      string = "compound("+string+", \(AnimationType.Run.sequential.rawValue))"
+    } else if string.contains("+") { // animation1 + animation2 + ...
+      string = string.replacingOccurrences(of: "+", with: ",")
+      string = "compound("+string+", \(AnimationType.Run.parallel.rawValue))"
+    }
+    return string
+  }
+
+  var animationType: AnimationType? {
+    let type = self.replacingOccurrences(of: "[", with: "(")
+      .replacingOccurrences(of: "]", with: ")")
+    return AnimationType(string: type)
+  }
+}
 private func retrieveRepeatCount(string: String?) -> Int {
   // Default value for repeat count is `1`
   guard let string = string, let repeatCount = Int(string) else {

@@ -15,6 +15,8 @@ private let positiveNumberParam = ParamType.number(min: 0, max: 50, interval: 2,
 private let numberParam = ParamType.number(min: -50, max: 200, interval: 10, ascending: true, unit: "")
 private let repeatCountParam = ParamType.number(min: 1, max: 10, interval: 1, ascending: true, unit: "")
 private let scaleParam = ParamType.number(min: 0, max: 2, interval: 0.1, ascending: true, unit: "")
+private let animationParam = ParamType.enumeration(values: ["slide", "shake", "pop", "pop[2]"])
+private let runParam = ParamType(fromEnum: AnimationType.Run.self)
 
 final class AnimationsViewController: UIViewController {
 
@@ -44,7 +46,8 @@ final class AnimationsViewController: UIViewController {
     PickerEntry(params: [numberParam, numberParam], name: "moveto"),
     PickerEntry(params: [scaleParam, scaleParam], name: "scaleFrom"),
     PickerEntry(params: [scaleParam, scaleParam], name: "scaleTo"),
-    PickerEntry(params: [scaleParam, scaleParam, scaleParam, scaleParam], name: "scale")
+    PickerEntry(params: [scaleParam, scaleParam, scaleParam, scaleParam], name: "scale"),
+    PickerEntry(params: [animationParam, animationParam.reversed, runParam], name: "compound")
   ]
   var pickerSizeRatio: CGFloat = 0.25 {
     didSet {
@@ -95,7 +98,7 @@ extension AnimationsViewController: UIPickerViewDelegate, UIPickerViewDataSource
   func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
     switch component {
     case 0:
-      return view.frame.size.width * 0.5
+      return view.frame.size.width * 0.35
     case 1...4:
       return view.frame.size.width * pickerSizeRatio
     default:
@@ -132,6 +135,8 @@ extension AnimationsViewController: UIPickerViewDelegate, UIPickerViewDataSource
     if case .scale = animationType {
       resetTimeInterval = 1
       pickerSizeRatio = 0.120
+    } else if case .compound = animationType {
+      pickerSizeRatio = 0.20
     } else {
       pickerSizeRatio = 0.25
     }
