@@ -25,8 +25,10 @@ public class ContainerTransition: NSObject {
   // MARK: Life cycle
 
   public init(animationType: TransitionAnimationType,
-              container: UIView, parentViewController: UIViewController,
-              fromViewController: UIViewController?, toViewController: UIViewController,
+              container: UIView,
+              parentViewController: UIViewController,
+              fromViewController: UIViewController?,
+              toViewController: UIViewController,
               completion: ContainerTransitionCompletion? = nil) {
 
     self.completion = completion
@@ -65,6 +67,7 @@ public class ContainerTransition: NSObject {
     animator?.transitionDuration = transitionDuration
     animator?.animateTransition(using: self)
   }
+
   public var isAnimated: Bool { return false }
   public var isInteractive: Bool { return false }
   public var presentationStyle: UIModalPresentationStyle { return .none }

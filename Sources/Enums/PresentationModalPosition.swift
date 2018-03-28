@@ -31,7 +31,7 @@ public enum PresentationModalPosition: IBEnum {
       return CGPoint(x: containerFrame.maxX - (modalSize.width / 2), y: yCenter)
     case let .customCenter(point):
       return point
-    case .customOrigin(_):
+    case .customOrigin:
       return nil
     }
   }

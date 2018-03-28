@@ -54,7 +54,8 @@ extension FadeAnimator: UIViewControllerAnimatedTransitioning {
       containerView.addSubview(toView)
     }
 
-    UIView.animate(withDuration: transitionDuration(using: transitionContext),
+    UIView.animate(
+      withDuration: transitionDuration(using: transitionContext),
       animations: {
         switch self.direction {
         case .in:

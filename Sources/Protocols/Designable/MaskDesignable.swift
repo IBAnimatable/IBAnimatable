@@ -33,7 +33,6 @@ public protocol MaskDesignable: class {
   var maskType: MaskType { get set }
 }
 
-
 // MARK: - UIView
 
 extension MaskDesignable where Self: UIView {

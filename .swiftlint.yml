@@ -1,4 +1,4 @@
-line_length: 
+line_length:
   warning: 150
   ignores_comments: true
 file_length: 500
@@ -12,6 +12,8 @@ disabled_rules:
   - function_body_length
   - cyclomatic_complexity
   - type_name
+  - pattern_matching_keywords
+  - multiple_closures_with_trailing_closure
 opt_in_rules:
  - closure_spacing
  - conditional_returns_on_newline

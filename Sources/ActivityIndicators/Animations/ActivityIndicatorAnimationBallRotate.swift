@@ -66,7 +66,7 @@ private extension ActivityIndicatorAnimationBallRotate {
   }
 
   var rotateAnimation: CAKeyframeAnimation {
-    let rotateAnimation = CAKeyframeAnimation(keyPath:"transform.rotation.z")
+    let rotateAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
     rotateAnimation.keyTimes = [0, 0.5, 1]
     rotateAnimation.timingFunctions = [timingFunction, timingFunction]
     rotateAnimation.values = [0, CGFloat.pi, 2 * CGFloat.pi]

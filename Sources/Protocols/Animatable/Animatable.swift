@@ -161,9 +161,12 @@ fileprivate extension UIView {
       }
       switch run {
       case .sequential:
-        animations.reversed().reduce(completion) { result, animation in
-          return { self.doAnimation(animation, configuration: configuration, completion: result) }
-          }()
+        let launch = animations.reversed().reduce(completion) { result, animation in
+          return {
+            self.doAnimation(animation, configuration: configuration, completion: result)
+          }
+        }
+        launch()
       case .parallel:
         var finalized = 0
         let finalCompletion: () -> Void = {

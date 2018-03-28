@@ -65,7 +65,7 @@ extension TurnAnimator: UIViewControllerAnimatedTransitioning {
         toView.layer.transform = self.rotate(angle: 0.0)
       }
     }) { _ in
-        completion()
+      completion()
     }
   }
 
