@@ -38,7 +38,8 @@ public class AnimatablePresentationController: UIPresentationController {
 
   // MARK: Actions
 
-  @objc func dimmingViewTapped(gesture: UIGestureRecognizer) {
+  @objc
+  func dimmingViewTapped(gesture: UIGestureRecognizer) {
     if gesture.state == .ended && presentationConfiguration.dismissOnTap {
       presentingViewController.dismiss(animated: true, completion: nil)
     }
@@ -96,7 +97,8 @@ extension AnimatablePresentationController {
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
   }
 
-  @objc func keyboardWillShow(notification: NSNotification) {
+  @objc
+  func keyboardWillShow(notification: NSNotification) {
     if let keyboardFrame = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
       let presentedFrame = frameOfPresentedViewInContainerView
       let duration = (notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue ?? 0.5
@@ -110,7 +112,8 @@ extension AnimatablePresentationController {
     }
   }
 
-  @objc func keyboardWillHide(notification: NSNotification) {
+  @objc
+  func keyboardWillHide(notification: NSNotification) {
     let duration = (notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as AnyObject).doubleValue ?? 0.5
     let curve = UIViewAnimationOptions(rawValue: UInt(duration))
     UIView.animate(withDuration: duration, delay: 0, options: curve, animations: {

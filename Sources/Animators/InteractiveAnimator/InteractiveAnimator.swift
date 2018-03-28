@@ -40,7 +40,8 @@ public class InteractiveAnimator: UIPercentDrivenInteractiveTransition {
     }
   }
 
-  @objc func handleGesture(for gestureRecognizer: UIGestureRecognizer) {
+  @objc
+  func handleGesture(for gestureRecognizer: UIGestureRecognizer) {
     let (progress, shouldFinishInteractiveTransition) = calculateProgress(for: gestureRecognizer)
 
     switch gestureRecognizer.state {
@@ -73,7 +74,6 @@ public class InteractiveAnimator: UIPercentDrivenInteractiveTransition {
       // Something happened then cancel the transition.
       interacting = false
       cancel()
-      break
     }
   }
 

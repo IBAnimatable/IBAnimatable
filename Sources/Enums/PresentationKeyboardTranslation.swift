@@ -17,7 +17,6 @@ public enum ModalKeyboardTranslation: String, IBEnum {
     switch self {
     case .moveUp:
         frame.origin.y -= keyboardFrame.height
-        break
     case .aboveKeyboard:
         frame.origin.y = keyboardMinY - presentedFrame.height - 20
     case .stickOrMoveUp:

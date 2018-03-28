@@ -52,10 +52,10 @@ private extension ActivityIndicatorShape {
     let layer = CAShapeLayer()
     let path = UIBezierPath()
     path.addArc(withCenter: CGPoint(x: size.width / 2, y: size.height / 2),
-                          radius: size.width / 2,
-                          startAngle: 0,
-                          endAngle: 2 * CGFloat(Double.pi),
-                          clockwise: false)
+                radius: size.width / 2,
+                startAngle: 0,
+                endAngle: 2 * CGFloat(Double.pi),
+                clockwise: false)
     layer.fillColor = color.cgColor
     layer.apply(path: path, size: size)
     return layer
@@ -65,10 +65,10 @@ private extension ActivityIndicatorShape {
     let layer = CAShapeLayer()
     let path = UIBezierPath()
     path.addArc(withCenter: CGPoint(x: size.width / 2, y: size.height / 2),
-                          radius: size.width / 2,
-                          startAngle: -CGFloat(Double.pi) / 6,
-                          endAngle: -5 * CGFloat(Double.pi) / 6,
-                          clockwise: false)
+                radius: size.width / 2,
+                startAngle: -CGFloat(Double.pi) / 6,
+                endAngle: -5 * CGFloat(Double.pi) / 6,
+                clockwise: false)
     path.close()
     layer.fillColor = color.cgColor
     layer.apply(path: path, size: size)
@@ -85,10 +85,10 @@ private extension ActivityIndicatorShape {
     let layer = CAShapeLayer()
     let path = UIBezierPath()
     path.addArc(withCenter: CGPoint(x: size.width / 2, y: size.height / 2),
-                          radius: size.width / 2,
-                          startAngle: 0,
-                          endAngle: 2 * CGFloat(Double.pi),
-                          clockwise: false)
+                radius: size.width / 2,
+                startAngle: 0,
+                endAngle: 2 * CGFloat(Double.pi),
+                clockwise: false)
     layer.fillColor = nil
     layer.strokeColor = color.cgColor
     layer.lineWidth = lineWidth
@@ -100,19 +100,19 @@ private extension ActivityIndicatorShape {
     let layer = CAShapeLayer()
     let path = UIBezierPath()
     path.addArc(withCenter: CGPoint(x: size.width / 2, y: size.height / 2),
-                          radius:size.width / 2,
-                          startAngle:-3 * CGFloat(Double.pi) / 4,
-                          endAngle:-CGFloat(Double.pi) / 4,
-                          clockwise:true)
+                radius: size.width / 2,
+                startAngle: -3 * CGFloat(Double.pi) / 4,
+                endAngle: -CGFloat(Double.pi) / 4,
+                clockwise: true)
     path.move(
       to: CGPoint(x: size.width / 2 - size.width / 2 * cos(CGFloat(Double.pi) / 4),
-        y: size.height / 2 + size.height / 2 * sin(CGFloat(Double.pi) / 4))
+                  y: size.height / 2 + size.height / 2 * sin(CGFloat(Double.pi) / 4))
     )
     path.addArc(withCenter: CGPoint(x: size.width / 2, y: size.height / 2),
-                          radius:size.width / 2,
-                          startAngle:-5 * CGFloat(Double.pi) / 4,
-                          endAngle:-7 * CGFloat(Double.pi) / 4,
-                          clockwise:false)
+                radius: size.width / 2,
+                startAngle: -5 * CGFloat(Double.pi) / 4,
+                endAngle: -7 * CGFloat(Double.pi) / 4,
+                clockwise: false)
     layer.fillColor = nil
     layer.strokeColor = color.cgColor
     layer.lineWidth = lineWidth
@@ -124,19 +124,19 @@ private extension ActivityIndicatorShape {
     let layer = CAShapeLayer()
     let path = UIBezierPath()
     path.addArc(withCenter: CGPoint(x: size.width / 2, y: size.height / 2),
-                          radius:size.width / 2,
-                          startAngle:3 * CGFloat(Double.pi) / 4,
-                          endAngle:5 * CGFloat(Double.pi) / 4,
-                          clockwise:true)
+                radius: size.width / 2,
+                startAngle: 3 * CGFloat(Double.pi) / 4,
+                endAngle: 5 * CGFloat(Double.pi) / 4,
+                clockwise: true)
     path.move(
       to: CGPoint(x: size.width / 2 + size.width / 2 * cos(CGFloat(Double.pi) / 4),
-        y: size.height / 2 - size.height / 2 * sin(CGFloat(Double.pi) / 4))
+                  y: size.height / 2 - size.height / 2 * sin(CGFloat(Double.pi) / 4))
     )
     path.addArc(withCenter: CGPoint(x: size.width / 2, y: size.height / 2),
-                          radius:size.width / 2,
-                          startAngle:-CGFloat(Double.pi) / 4,
-                          endAngle:CGFloat(Double.pi) / 4,
-                          clockwise:true)
+                radius: size.width / 2,
+                startAngle: -CGFloat(Double.pi) / 4,
+                endAngle: CGFloat(Double.pi) / 4,
+                clockwise: true)
     layer.fillColor = nil
     layer.strokeColor = color.cgColor
     layer.lineWidth = lineWidth
@@ -148,10 +148,10 @@ private extension ActivityIndicatorShape {
     let layer = CAShapeLayer()
     let path = UIBezierPath()
     path.addArc(withCenter: CGPoint(x: size.width / 2, y: size.height / 2),
-                          radius: size.width / 2,
-                          startAngle: -3 * CGFloat(Double.pi) / 4,
-                          endAngle: -CGFloat(Double.pi) / 4,
-                          clockwise: false)
+                radius: size.width / 2,
+                startAngle: -3 * CGFloat(Double.pi) / 4,
+                endAngle: -CGFloat(Double.pi) / 4,
+                clockwise: false)
     layer.fillColor = nil
     layer.strokeColor = color.cgColor
     layer.lineWidth = lineWidth
@@ -204,10 +204,10 @@ private extension ActivityIndicatorShape {
     let layer = CAShapeLayer()
     let path = UIBezierPath()
     path.addArc(withCenter: CGPoint(x: size.width / 2, y: size.height / 2),
-                          radius: size.width / 4,
-                          startAngle: 0,
-                          endAngle: 2 * CGFloat(Double.pi),
-                          clockwise: true)
+                radius: size.width / 4,
+                startAngle: 0,
+                endAngle: 2 * CGFloat(Double.pi),
+                clockwise: true)
     layer.fillColor = nil
     layer.strokeColor = color.cgColor
     layer.lineWidth = size.width / 2

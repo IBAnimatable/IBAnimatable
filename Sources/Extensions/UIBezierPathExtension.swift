@@ -364,7 +364,7 @@ extension UIBezierPath {
 
     if angle > 0 && angle < 180 {
       addArc(withCenter: CGPoint(x: radius * cos(radian / 2.0), y: 0.0),
-             radius: radius * sin(radian/2.0), startAngle: CGFloat.pi / 2, endAngle: -CGFloat.pi / 2.0, clockwise: false)
+             radius: radius * sin(radian / 2.0), startAngle: CGFloat.pi / 2, endAngle: -CGFloat.pi / 2.0, clockwise: false)
     } else {
       addLine(to: .zero)
     }
@@ -400,6 +400,7 @@ private extension UIBezierPath {
 
 extension CGFloat {
   static let 𝑒 = CGFloat(M_E)
+
   func sign() -> CGFloat {
     if self < 0 {
       return -1
@@ -425,6 +426,7 @@ private extension CGRect {
     let outerRadius = diameter / 2
     return (innerRadius, outerRadius)
   }
+
   var centeredSquare: CGRect {
     let width = ceil(min(size.width, size.height))
     let height = width

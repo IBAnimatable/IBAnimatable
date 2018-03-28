@@ -66,8 +66,8 @@ private extension ZoomAnimator {
                    usingSpringWithDamping: 0.6,
                    initialSpringVelocity: 0,
                    options: [.curveEaseOut],
-    animations: {
-      animatingView.transform = CGAffineTransform(scaleX: 1, y: 1)
+                   animations: {
+                    animatingView.transform = CGAffineTransform(scaleX: 1, y: 1)
     }) { _ in
       completion()
     }
@@ -79,9 +79,9 @@ private extension ZoomAnimator {
                    usingSpringWithDamping: 0.6,
                    initialSpringVelocity: 0,
                    options: [.curveEaseIn],
-    animations: {
-      animatingView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-      animatingView.alpha = 0.0
+                   animations: {
+                    animatingView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+                    animatingView.alpha = 0.0
     }) { _ in
       completion()
     }

@@ -25,10 +25,10 @@ public class ActivityIndicatorAnimationLineSpinFadeLoader: ActivityIndicatorAnim
 
     for i in 0 ..< 8 {
       let line = makeLineLayer(angle: CGFloat.pi / 4 * CGFloat(i),
-                        size: lineSize,
-                        origin: CGPoint(x: x, y: y),
-                        containerSize: size,
-                        color: color)
+                               size: lineSize,
+                               origin: CGPoint(x: x, y: y),
+                               containerSize: size,
+                               color: color)
       animation.beginTime = beginTime + beginTimes[i]
       line.add(animation, forKey: "animation")
       layer.addSublayer(line)

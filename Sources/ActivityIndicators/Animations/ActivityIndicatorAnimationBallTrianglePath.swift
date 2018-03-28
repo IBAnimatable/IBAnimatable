@@ -10,7 +10,7 @@ public class ActivityIndicatorAnimationBallTrianglePath: ActivityIndicatorAnimat
   // MARK: Properties
 
   fileprivate let duration: CFTimeInterval = 2
-  fileprivate let timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+  fileprivate let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
 
   // MARK: ActivityIndicatorAnimating
 
@@ -23,7 +23,7 @@ public class ActivityIndicatorAnimationBallTrianglePath: ActivityIndicatorAnimat
     let animation = defaultAnimation
 
     let topCenterCircle = ActivityIndicatorShape.ring.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
-    change(animation: animation, values:["{0,0}", "{hx,fy}", "{-hx,fy}", "{0,0}"], deltaX: deltaX, deltaY: deltaY)
+    change(animation: animation, values: ["{0,0}", "{hx,fy}", "{-hx,fy}", "{0,0}"], deltaX: deltaX, deltaY: deltaY)
     topCenterCircle.frame = CGRect(x: x + size.width / 2 - circleSize / 2, y: y, width: circleSize, height: circleSize)
     topCenterCircle.add(animation, forKey: "animation")
     layer.addSublayer(topCenterCircle)
@@ -35,7 +35,7 @@ public class ActivityIndicatorAnimationBallTrianglePath: ActivityIndicatorAnimat
     layer.addSublayer(bottomLeftCircle)
 
     let bottomRightCircle = ActivityIndicatorShape.ring.makeLayer(size: CGSize(width: circleSize, height: circleSize), color: color)
-    change(animation: animation, values: ["{0,0}", "{-fx,0}", "{-hx,-fy}", "{0,0}"], deltaX: deltaX, deltaY:deltaY)
+    change(animation: animation, values: ["{0,0}", "{-fx,0}", "{-hx,-fy}", "{0,0}"], deltaX: deltaX, deltaY: deltaY)
     bottomRightCircle.frame = CGRect(x: x + size.width - circleSize, y: y + size.height - circleSize, width: circleSize, height: circleSize)
     bottomRightCircle.add(animation, forKey: "animation")
     layer.addSublayer(bottomRightCircle)
@@ -48,7 +48,7 @@ public class ActivityIndicatorAnimationBallTrianglePath: ActivityIndicatorAnimat
 private extension ActivityIndicatorAnimationBallTrianglePath {
 
   var defaultAnimation: CAKeyframeAnimation {
-    let animation = CAKeyframeAnimation(keyPath:"transform")
+    let animation = CAKeyframeAnimation(keyPath: "transform")
     animation.keyTimes = [0, 0.33, 0.66, 1]
     animation.timingFunctions = [timingFunction, timingFunction, timingFunction]
     animation.duration = duration

@@ -25,10 +25,10 @@ public class ActivityIndicatorAnimationBallSpinFadeLoader: ActivityIndicatorAnim
     // Draw circles
     for i in 0 ..< 8 {
       let circle = makeCircleLayer(angle: CGFloat.pi / 4 * CGFloat(i),
-                            size: circleSize,
-                            origin: CGPoint(x: x, y: y),
-                            containerSize: size,
-                            color: color)
+                                   size: circleSize,
+                                   origin: CGPoint(x: x, y: y),
+                                   containerSize: size,
+                                   color: color)
 
       animation.beginTime = beginTime + beginTimes[i]
       circle.add(animation, forKey: "animation")
