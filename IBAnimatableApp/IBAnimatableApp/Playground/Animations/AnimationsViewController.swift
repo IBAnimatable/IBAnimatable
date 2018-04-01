@@ -47,6 +47,7 @@ final class AnimationsViewController: UIViewController {
     PickerEntry(params: [scaleParam, scaleParam], name: "scaleFrom"),
     PickerEntry(params: [scaleParam, scaleParam], name: "scaleTo"),
     PickerEntry(params: [scaleParam, scaleParam, scaleParam, scaleParam], name: "scale"),
+    PickerEntry(params: [repeatCountParam], name: "spin"),
     PickerEntry(params: [animationParam, animationParam.reversed, runParam], name: "compound")
   ]
   var pickerSizeRatio: CGFloat = 0.25 {

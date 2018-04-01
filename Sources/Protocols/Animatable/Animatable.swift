@@ -148,6 +148,8 @@ fileprivate extension UIView {
       moveTo(x: x, y: y, configuration: configuration, completion: completion)
     case let .scale(fromX, fromY, toX, toY):
       scale(fromX: fromX, fromY: fromY, toX: toX, toY: toY, configuration: configuration, completion: completion)
+    case let .spin(repeatCount):
+      spin(repeatCount: repeatCount, configuration: configuration, completion: completion)
     case let .compound(animations, run):
       let animations = animations.filter {
         if case .none = $0 {
@@ -217,7 +219,7 @@ fileprivate extension UIView {
               configuration: AnimationConfiguration,
               completion: AnimatableCompletion? = nil) {
     CALayer.animate({
-      let animation = CABasicAnimation(keyPath: "transform.rotation")
+      let animation = CABasicAnimation(keyPath: .rotation)
       animation.fromValue = direction == .cw ? 0 : CGFloat.pi * 2
       animation.toValue = direction == .cw  ? CGFloat.pi * 2 : 0
       animation.duration = configuration.duration
@@ -367,7 +369,7 @@ fileprivate extension UIView {
 
   func shake(repeatCount: Int, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
-      let animation = CAKeyframeAnimation(keyPath: "position.x")
+      let animation = CAKeyframeAnimation(keyPath: .positionX)
       animation.values = [0, 30 * configuration.force, -30 * configuration.force, 30 * configuration.force, 0]
       animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       animation.timingFunctionType = configuration.timingFunction ?? .easeInOut
@@ -381,7 +383,7 @@ fileprivate extension UIView {
 
   func pop(repeatCount: Int, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
-      let animation = CAKeyframeAnimation(keyPath: "transform.scale")
+      let animation = CAKeyframeAnimation(keyPath: .scale)
       animation.values = [0, 0.2 * configuration.force, -0.2 * configuration.force, 0.2 * configuration.force, 0]
       animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       animation.timingFunctionType = configuration.timingFunction ?? .easeInOut
@@ -395,12 +397,12 @@ fileprivate extension UIView {
 
   func squash(repeatCount: Int, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
-      let squashX = CAKeyframeAnimation(keyPath: "transform.scale.x")
+      let squashX = CAKeyframeAnimation(keyPath: .scaleX)
       squashX.values = [1, 1.5 * configuration.force, 0.5, 1.5 * configuration.force, 1]
       squashX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       squashX.timingFunctionType = configuration.timingFunction ?? .easeInOut
 
-      let squashY = CAKeyframeAnimation(keyPath: "transform.scale.y")
+      let squashY = CAKeyframeAnimation(keyPath: .scaleY)
       squashY.values = [1, 0.5, 1, 0.5, 1]
       squashY.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       squashY.timingFunctionType = configuration.timingFunction ?? .easeInOut
@@ -416,12 +418,12 @@ fileprivate extension UIView {
 
   func morph(repeatCount: Int, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
-      let morphX = CAKeyframeAnimation(keyPath: "transform.scale.x")
+      let morphX = CAKeyframeAnimation(keyPath: .scaleX)
       morphX.values = [1, 1.3 * configuration.force, 0.7, 1.3 * configuration.force, 1]
       morphX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       morphX.timingFunctionType = configuration.timingFunction ?? .easeInOut
 
-      let morphY = CAKeyframeAnimation(keyPath: "transform.scale.y")
+      let morphY = CAKeyframeAnimation(keyPath: .scaleY)
       morphY.values = [1, 0.7, 1.3 * configuration.force, 0.7, 1]
       morphY.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       morphY.timingFunctionType = configuration.timingFunction ?? .easeInOut
@@ -437,12 +439,12 @@ fileprivate extension UIView {
 
   func squeeze(repeatCount: Int, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
-      let squeezeX = CAKeyframeAnimation(keyPath: "transform.scale.x")
+      let squeezeX = CAKeyframeAnimation(keyPath: .scaleX)
       squeezeX.values = [1, 1.5 * configuration.force, 0.5, 1.5 * configuration.force, 1]
       squeezeX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       squeezeX.timingFunctionType = configuration.timingFunction ?? .easeInOut
 
-      let squeezeY = CAKeyframeAnimation(keyPath: "transform.scale.y")
+      let squeezeY = CAKeyframeAnimation(keyPath: .scaleY)
       squeezeY.values = [1, 0.5, 1, 0.5, 1]
       squeezeY.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       squeezeY.timingFunctionType = configuration.timingFunction ?? .easeInOut
@@ -471,12 +473,12 @@ fileprivate extension UIView {
 
   func wobble(repeatCount: Int, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
-      let rotation = CAKeyframeAnimation(keyPath: "transform.rotation")
+      let rotation = CAKeyframeAnimation(keyPath: .rotation)
       rotation.values = [0, 0.3 * configuration.force, -0.3 * configuration.force, 0.3 * configuration.force, 0]
       rotation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       rotation.isAdditive = true
 
-      let positionX = CAKeyframeAnimation(keyPath: "position.x")
+      let positionX = CAKeyframeAnimation(keyPath: .positionX)
       positionX.values = [0, 30 * configuration.force, -30 * configuration.force, 30 * configuration.force, 0]
       positionX.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       positionX.timingFunctionType = configuration.timingFunction ?? .easeInOut
@@ -493,7 +495,7 @@ fileprivate extension UIView {
 
   func swing(repeatCount: Int, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
-      let animation = CAKeyframeAnimation(keyPath: "transform.rotation")
+      let animation = CAKeyframeAnimation(keyPath: .rotation)
       animation.values = [0, 0.3 * configuration.force, -0.3 * configuration.force, 0.3 * configuration.force, 0]
       animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
       animation.duration = configuration.duration
@@ -582,12 +584,12 @@ fileprivate extension UIView {
                           configuration: AnimationConfiguration,
                           completion: AnimatableCompletion? = nil) {
     CALayer.animate({
-      let scaleX = CAKeyframeAnimation(keyPath: "transform.scale.x")
+      let scaleX = CAKeyframeAnimation(keyPath: .scaleX)
       scaleX.values = [fromX, toX]
       scaleX.keyTimes = [0, 1]
       scaleX.timingFunctionType = configuration.timingFunction ?? .easeInOut
 
-      let scaleY = CAKeyframeAnimation(keyPath: "transform.scale.y")
+      let scaleY = CAKeyframeAnimation(keyPath: .scaleY)
       scaleY.values = [fromY, toY]
       scaleY.keyTimes = [0, 1]
       scaleY.timingFunctionType = configuration.timingFunction ?? .easeInOut
@@ -640,9 +642,37 @@ fileprivate extension UIView {
     return (x: x, y: y, scaleX: scaleX, scaleY: scaleY)
   }
 
+  func spin(repeatCount: Int,
+            configuration: AnimationConfiguration,
+            completion: AnimatableCompletion? = nil) {
+    CALayer.animate({
+      let rotationX = CABasicAnimation(keyPath: .rotationX)
+      rotationX.toValue = NSNumber(value: Double.pi * 2)
+      rotationX.fromValue = NSNumber(floatLiteral: 0)
+      rotationX.timingFunctionType = configuration.timingFunction ?? .easeInOut
+      
+      let rotationY = CABasicAnimation(keyPath: .rotationY)
+      rotationY.toValue = NSNumber(value: Double.pi * 2 )
+      rotationY.fromValue = NSNumber(floatLiteral: 0)
+      rotationY.timingFunctionType = configuration.timingFunction ?? .easeInOut
+      
+      let rotationZ = CABasicAnimation(keyPath: .rotationZ)
+      rotationZ.toValue = NSNumber(value: Double.pi * 2)
+      rotationZ.fromValue = NSNumber(floatLiteral: 0)
+      rotationZ.timingFunctionType = configuration.timingFunction ?? .easeInOut
+      
+      let animationGroup = CAAnimationGroup()
+      animationGroup.animations = [rotationX, rotationY, rotationZ]
+      animationGroup.duration = configuration.duration
+      animationGroup.repeatCount = Float(repeatCount)
+      animationGroup.beginTime = CACurrentMediaTime() + configuration.delay
+      self.layer.add(animationGroup, forKey: "rotation")
+    }, completion: completion)
+  }
+
   func fadeOutIn(configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
-      let animation = CABasicAnimation(keyPath: "opacity")
+      let animation = CABasicAnimation(keyPath: .opacity)
       animation.fromValue = 1
       animation.toValue = 0
       animation.timingFunctionType = configuration.timingFunction ?? .easeInOut
@@ -655,7 +685,7 @@ fileprivate extension UIView {
 
   func fadeInOut(configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
-      let animation = CABasicAnimation(keyPath: "opacity")
+      let animation = CABasicAnimation(keyPath: .opacity)
       animation.fromValue = 0
       animation.toValue = 1
       animation.timingFunctionType = configuration.timingFunction ?? .easeInOut
@@ -693,7 +723,7 @@ fileprivate extension UIView {
 
   func animatePosition(path: UIBezierPath, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
-      let animation = CAKeyframeAnimation(keyPath: "position")
+      let animation = CAKeyframeAnimation(keyPath: .position)
       animation.timingFunctionType = configuration.timingFunction ?? .easeInOut
       animation.duration = configuration.duration
       animation.beginTime = self.layer.currentMediaTime + configuration.delay
@@ -786,7 +816,7 @@ public extension AnimationType {
       return true
     case .fade(way: .in), .fade(way: .out):
       return true
-    case .rotate, .shake, .flip, .pop, .squash, .morph, .swing, .wobble, .flash:
+    case .rotate, .shake, .flip, .pop, .squash, .morph, .swing, .wobble, .flash, .spin:
       return false
     case .fade(way: .inOut), .fade(way: .outIn):
       return false
@@ -804,7 +834,7 @@ public extension AnimationType {
     switch self {
     case .moveBy, .moveTo, .scale:
       return true
-    case .rotate, .shake, .flip, .pop, .squash, .morph, .swing, .wobble, .flash:
+    case .rotate, .shake, .flip, .pop, .squash, .morph, .swing, .wobble, .flash, .spin:
       return true
     case .fade(.inOut), .fade(.outIn):
       return true
@@ -821,3 +851,41 @@ public extension AnimationType {
     }
   }
 }
+
+/// Enumeration for Core Animation key path.
+enum AnimationKeyPath: String {
+  // Positions
+  case position = "position"
+  case positionX = "position.x"
+  case positionY = "position.y"
+  // Transforms
+  case transform  = "transform"
+  case rotation  = "transform.rotation"
+  case rotationX = "transform.rotation.x"
+  case rotationY = "transform.rotation.y"
+  case rotationZ = "transform.rotation.z"
+  case scale  = "transform.scale"
+  case scaleX = "transform.scale.x"
+  case scaleY = "transform.scale.y"
+  case scaleZ = "transform.scale.z"
+  case translation  = "transform.translation"
+  case translationX = "transform.translation.x"
+  case translationY = "transform.translation.y"
+  case translationZ = "transform.translation.z"
+  // Other properties
+  case opacity = "opacity"
+  case path = "path"
+}
+
+extension CABasicAnimation {
+  convenience init(keyPath: AnimationKeyPath) {
+    self.init(keyPath: keyPath.rawValue)
+  }
+}
+
+extension CAKeyframeAnimation {
+  convenience init(keyPath: AnimationKeyPath) {
+    self.init(keyPath: keyPath.rawValue)
+  }
+}
+
