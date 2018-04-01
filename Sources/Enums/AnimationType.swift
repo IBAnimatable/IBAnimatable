@@ -29,6 +29,7 @@ public indirect enum AnimationType {
   case moveTo(x: Double, y: Double)
   case moveBy(x: Double, y: Double)
   case scale(fromX: Double, fromY: Double, toX: Double, toY: Double)
+  case spin(repeatCount: Int)
   case compound(animations: [AnimationType], run: Run)
   case none
 
@@ -135,6 +136,9 @@ extension AnimationType: IBEnum {
       self = .scaleFrom(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
     case "scaleto":
       self = .scaleTo(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
+    case "spin":
+      let repeatCount = retrieveRepeatCount(string: params[safe: 0])
+      self = .spin(repeatCount: repeatCount)
     case "compound":
       var params = params
       if let last = params.popLast() {
