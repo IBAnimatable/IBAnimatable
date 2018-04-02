@@ -602,7 +602,7 @@ fileprivate extension UIView {
     }, completion: completion)
   }
 
-// swiftlint:enable variable_name_min_length
+  // swiftlint:enable variable_name_min_length
   func computeValues(way: AnimationType.Way,
                      direction: AnimationType.Direction,
                      configuration: AnimationConfiguration,
@@ -647,20 +647,20 @@ fileprivate extension UIView {
             completion: AnimatableCompletion? = nil) {
     CALayer.animate({
       let rotationX = CABasicAnimation(keyPath: .rotationX)
-      rotationX.toValue = NSNumber(value: Double.pi * 2)
-      rotationX.fromValue = NSNumber(floatLiteral: 0)
+      rotationX.toValue = CGFloat.pi * 2
+      rotationX.fromValue = 0
       rotationX.timingFunctionType = configuration.timingFunction ?? .easeInOut
-      
+
       let rotationY = CABasicAnimation(keyPath: .rotationY)
-      rotationY.toValue = NSNumber(value: Double.pi * 2 )
-      rotationY.fromValue = NSNumber(floatLiteral: 0)
+      rotationY.toValue = CGFloat.pi * 2
+      rotationY.fromValue = 0
       rotationY.timingFunctionType = configuration.timingFunction ?? .easeInOut
-      
+
       let rotationZ = CABasicAnimation(keyPath: .rotationZ)
-      rotationZ.toValue = NSNumber(value: Double.pi * 2)
-      rotationZ.fromValue = NSNumber(floatLiteral: 0)
+      rotationZ.toValue = CGFloat.pi * 2
+      rotationZ.fromValue = 0
       rotationZ.timingFunctionType = configuration.timingFunction ?? .easeInOut
-      
+
       let animationGroup = CAAnimationGroup()
       animationGroup.animations = [rotationX, rotationY, rotationZ]
       animationGroup.duration = configuration.duration
@@ -888,4 +888,3 @@ extension CAKeyframeAnimation {
     self.init(keyPath: keyPath.rawValue)
   }
 }
-
