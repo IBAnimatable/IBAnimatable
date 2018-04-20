@@ -17,6 +17,8 @@ N/A
 - Animate TabBarItem image view when clicking on it. [#539](https://github.com/IBAnimatable/IBAnimatable/pull/539) by [@phimage](https://github.com/phimage)
 - Add `compound` animation type to do `sequential` or `parallel` animations. [#520](https://github.com/IBAnimatable/IBAnimatable/pull/520) by [@phimage](https://github.com/phimage)
 - Add `spin` animation type. [#549](https://github.com/IBAnimatable/IBAnimatable/pull/549) by [@phimage](https://github.com/phimage)
+- Upgrade to Swift 4.1. [#557](https://github.com/IBAnimatable/IBAnimatable/pull/557) by [@JakeLin](https://github.com/JakeLin)
+
 
 #### Bugfixes
 - Zoom out animation won't override view alpha [#545](https://github.com/IBAnimatable/IBAnimatable/pull/545) by [@tbaranes](https://github.com/tbaranes)
