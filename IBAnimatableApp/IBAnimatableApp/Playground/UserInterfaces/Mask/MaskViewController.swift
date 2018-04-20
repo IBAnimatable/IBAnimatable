@@ -36,6 +36,7 @@ final class MaskViewController: UIViewController {
             PickerEntry(params: [], name: "drop"),
             PickerEntry(params: [widthParam], name: "plussign"),
             PickerEntry(params: [angleParam], name: "moon"),
+            PickerEntry(params: [widthParam, widthParam], name: "insetby"),
             PickerEntry(params: [], name: "none"),
             PickerEntry(params: [], name: "CUSTOM Bubble")
     ]
