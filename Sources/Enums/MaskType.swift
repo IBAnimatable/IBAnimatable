@@ -40,6 +40,8 @@ public enum MaskType: IBEnum {
   case plusSign(width: Double)
   /// For moon shape
   case moon(angle: Double)
+  /// For a smaller rectangle than the source rectangle, with the same center point.
+  case insetBy(dx: Double, dy: Double)
 
   /// Custom shape
   case custom(pathProvider: CustomMaskProvider)
@@ -97,6 +99,9 @@ public extension MaskType {
       self = .plusSign(width: params[safe: 0]?.toDouble() ?? 10 )
     case "moon":
       self = .moon(angle: params[safe: 0]?.toDouble() ?? 60 )
+    case "insetby":
+      let x = params[safe: 0]?.toDouble() ?? 0
+      self = .insetBy(dx: x, dy: params[safe: 1]?.toDouble() ?? x )
     default:
       self = .none
     }
@@ -135,6 +140,8 @@ extension MaskType {
       return UIBezierPath(plusSignInRect: rect, width: CGFloat(width))
     case .moon(let angle):
       return UIBezierPath(moonInRect: rect, with: CGFloat(angle))
+    case .insetBy(let dx, let dy):
+      return UIBezierPath(rect: rect.insetBy(dx: CGFloat(dx), dy:  CGFloat(dy)))
     case let .custom(pathProvider):
       return pathProvider(rect.size)
     case .none:
