@@ -48,8 +48,6 @@
 		E2A5477F1ECF1C4E00842C1F /* ActivityIndicators.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2A5477D1ECF1C4E00842C1F /* ActivityIndicators.storyboard */; };
 		E2A547801ECF1C4E00842C1F /* ActivityIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A5477E1ECF1C4E00842C1F /* ActivityIndicatorViewController.swift */; };
 		E2A547841ECF1C9F00842C1F /* TimingFunctionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A547831ECF1C9F00842C1F /* TimingFunctionView.swift */; };
-		E2CFE8D61ED2D7C700A45C55 /* IBAnimatable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CFE8D51ED2D7C700A45C55 /* IBAnimatable.framework */; };
-		E2CFE8D71ED2D7C700A45C55 /* IBAnimatable.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E2CFE8D51ED2D7C700A45C55 /* IBAnimatable.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,7 +57,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E2CFE8D71ED2D7C700A45C55 /* IBAnimatable.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,7 +107,6 @@
 		E2A5477D1ECF1C4E00842C1F /* ActivityIndicators.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ActivityIndicators.storyboard; sourceTree = "<group>"; };
 		E2A5477E1ECF1C4E00842C1F /* ActivityIndicatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorViewController.swift; sourceTree = "<group>"; };
 		E2A547831ECF1C9F00842C1F /* TimingFunctionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingFunctionView.swift; sourceTree = "<group>"; };
-		E2CFE8D51ED2D7C700A45C55 /* IBAnimatable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IBAnimatable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +114,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2CFE8D61ED2D7C700A45C55 /* IBAnimatable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +134,6 @@
 		E2307A0C1ECD7F81000E38B2 = {
 			isa = PBXGroup;
 			children = (
-				E2CFE8D51ED2D7C700A45C55 /* IBAnimatable.framework */,
 				E2307A171ECD7F81000E38B2 /* IBAnimatableApp */,
 				E2307A161ECD7F81000E38B2 /* Products */,
 			);
@@ -334,7 +328,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = IBAnimatable;
 				TargetAttributes = {
 					E2307A141ECD7F81000E38B2 = {
@@ -466,6 +460,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -473,6 +468,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -523,6 +519,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -530,6 +527,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

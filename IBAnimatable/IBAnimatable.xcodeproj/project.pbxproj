@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		48D80DCA20403DAC00D3137B /* AnimatableTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D80DC920403DAC00D3137B /* AnimatableTabBarItem.swift */; };
 		3676E7D02059457A0003B9DF /* AnimatableActivityIndicatorView.swift in Headers */ = {isa = PBXBuildFile; fileRef = E27FD22A1ECD7D8A00F74840 /* AnimatableActivityIndicatorView.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		3676E7D12059457A0003B9DF /* AnimatableBarButtonItem.swift in Headers */ = {isa = PBXBuildFile; fileRef = E27FD22B1ECD7D8A00F74840 /* AnimatableBarButtonItem.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		3676E7D22059457A0003B9DF /* AnimatableButton.swift in Headers */ = {isa = PBXBuildFile; fileRef = E27FD22C1ECD7D8A00F74840 /* AnimatableButton.swift */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -24,6 +23,7 @@
 		3676E7DD2059457A0003B9DF /* AnimatableTextView.swift in Headers */ = {isa = PBXBuildFile; fileRef = E27FD2371ECD7D8A00F74840 /* AnimatableTextView.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		3676E7DE2059457A0003B9DF /* AnimatableView.swift in Headers */ = {isa = PBXBuildFile; fileRef = E27FD2381ECD7D8A00F74840 /* AnimatableView.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		3676E7DF2059457A0003B9DF /* DesignableNavigationBar.swift in Headers */ = {isa = PBXBuildFile; fileRef = E27FD2391ECD7D8A00F74840 /* DesignableNavigationBar.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		48D80DCA20403DAC00D3137B /* AnimatableTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D80DC920403DAC00D3137B /* AnimatableTabBarItem.swift */; };
 		C4511F371F93F1B2002E0FAF /* UIBezierPathExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4511F361F93F1B2002E0FAF /* UIBezierPathExtension.swift */; };
 		E20DAEB82003662900BE1C88 /* GradientMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20DAEB72003662900BE1C88 /* GradientMode.swift */; };
 		E20DAEBA2003682F00BE1C88 /* RadialGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20DAEB92003682F00BE1C88 /* RadialGradientLayer.swift */; };
@@ -941,7 +941,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = IBAnimatable;
 				TargetAttributes = {
 					E27FCFF61ECD79DD00F74840 = {
@@ -1229,6 +1229,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1236,6 +1237,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1289,6 +1291,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1296,6 +1299,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

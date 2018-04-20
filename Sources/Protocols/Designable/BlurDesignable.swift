@@ -68,7 +68,7 @@ extension BlurDesignable {
     var privateVisualEffectView: PrivateVisualEffectView?
 
     // Remove the existing visual effect view
-    blurableView.subviews.flatMap { $0 as? PrivateVisualEffectView }.forEach {
+    blurableView.subviews.compactMap { $0 as? PrivateVisualEffectView }.forEach {
       privateVisualEffectView = $0 // Cache it for the subviews
       $0.removeFromSuperview()
     }

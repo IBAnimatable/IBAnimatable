@@ -83,7 +83,7 @@ final class TimingFunctionView: UIView {
 
         let controlPoint = CGPoint(x: CGFloat(array[0]), y: CGFloat(1.0 - array[1]))
         let point = CGPoint(x: controlPoint.x * width, y: controlPoint.y * height)
-        array.deallocate(capacity: 2)
+        array.deallocate()
 
         controlPoints.append(point)
       }
