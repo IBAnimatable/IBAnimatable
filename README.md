@@ -175,16 +175,25 @@ view.animate(.squeeze(way: .in, direction: .left))
 Copy and paste `IBAnimatable` folder in your Xcode project.
 
 ### [Swift package manager](https://swift.org/package-manager)
+To integrate using APple's Swift package manager, add the following as a dependency to your `Package.swift`:
 
-Add `.Package(url: "https://github.com/IBanimatable/IBanimatable.git", majorVersion: 5)` to your `Package.swift`
+```swift
+.package(url: "https://github.com/IBAnimatable/IBAnimatable.git", .upToNextMajor(from: "5.0.0"))
+```
 
 ### [CocoaPods](https://cocoapods.org)
+Add the following entry in your Podfile:
 
-Add `pod 'IBAnimatable'` to your Podfile.
+```ruby
+   pod 'IBAnimatable'
+```
 
 ### [Carthage](https://github.com/Carthage/Carthage)
+Add the following entry in your Cartfile:
 
-Add `github "IBanimatable/IBAnimatable"` to your Cartfile.
+```
+   github "IBAnimatable/IBAnimatable"
+```
 
 Please Notice, there is [a limitation of a built framework for `@IBDesignable` and `@IBInspectable`](https://github.com/Carthage/Carthage/issues/335), that will impact on `IBAnimatable` when you use Carthage. There is a workaround to use Carthage or Swift package manager with `IBAnimatable`, please have a look at [Carthage – no Animatable UI Classes appearing in Storyboard](https://github.com/IBAnimatable/IBAnimatable/issues/354)
 
