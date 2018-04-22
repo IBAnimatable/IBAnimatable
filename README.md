@@ -31,12 +31,53 @@ With `IBAnimatable`, we can design a UI in Interface Builder like what we can do
 
 As a designer, we love Sketch, which is a simple but yet super powerful tool to create UI. However, Sketch can't design interaction, navigation, transition and animation, and we may need another tool like Framer to design some of them. Moreover, to make an App Store ready App, we need to use Xcode and Interface Builder to implement the UI and animations. To speed up the process and minimize the waste, we create `IBAnimatable` to make Interface Builder designable and animatable.   
 
-## Version 5
-IBAnimatable 5.0 is the latest major release of IBAnimatable. This version supports Swift 4. There are no API breaking changes from migrating from version 4.x. 
+## How to install
+### Manually install
+
+Copy and paste `IBAnimatable` folder in your Xcode project.
+
+### [Swift package manager](https://swift.org/package-manager)
+To integrate using Apple's Swift package manager, add the following as a dependency to your `Package.swift`:
+
+```swift
+.package(url: "https://github.com/IBAnimatable/IBAnimatable.git", .upToNextMajor(from: "5.0.0"))
+```
+
+### [CocoaPods](https://cocoapods.org)
+Add the following entry in your Podfile:
+
+```ruby
+   pod 'IBAnimatable'
+```
+
+### [Carthage](https://github.com/Carthage/Carthage)
+Add the following entry in your Cartfile:
+
+```
+   github "IBAnimatable/IBAnimatable"
+```
+
+Please Notice, there is [a limitation of a built framework for `@IBDesignable` and `@IBInspectable`](https://github.com/Carthage/Carthage/issues/335), that will impact on `IBAnimatable` when you use Carthage. There is a workaround to use Carthage or Swift package manager with `IBAnimatable`, please have a look at [Carthage – no Animatable UI Classes appearing in Storyboard](https://github.com/IBAnimatable/IBAnimatable/issues/354)
+
+As @DanielAsher mentioned
+> I use carthage update --use-submodules --no-build --no-use-binaries and manually add the both the framework project and the framework as an embedded dependency.
+>This method is robust, and fine-grained, but perhaps not as easy as dragging the built framework into your project.
+
+### Git submodule
+
+Add this repo as a submodule, and add the project file to your workspace. You can then link against `IBAnimatable.framework` for your application target. 
+
+## Version 5.1
+IBAnimatable 5.1 is the latest major release of IBAnimatable. This version supports Swift 4.1. There are no API breaking changes from migrating from version 4.x. 
 
 If you migrate from version 3.x. Please check out [IBAnimatable 4.0 Migration Guide](Documentation/IBAnimatable 4.0 Migration Guide.md) for more information.
 
 ## Swift version
+### Swift 4.1
+There are no API breaking changes when migrating from Swift 4 to Swift 4.1 using IBAnimatable.
+
+If you are using Xcode 9.3 with Swift 4.1, please use the latest tagged 5.x release.
+
 ### Swift 4
 There are no API breaking changes when migrating from Swift 3.2 to Swift 4 using IBAnimatable.
 
@@ -168,42 +209,6 @@ We can add a completion handler/closure to execute when all animations are compl
 view.animate(.squeeze(way: .in, direction: .left))
     .completion { print("Animations finished!") }
 ```
-
-## How to install
-### Manually install
-
-Copy and paste `IBAnimatable` folder in your Xcode project.
-
-### [Swift package manager](https://swift.org/package-manager)
-To integrate using APple's Swift package manager, add the following as a dependency to your `Package.swift`:
-
-```swift
-.package(url: "https://github.com/IBAnimatable/IBAnimatable.git", .upToNextMajor(from: "5.0.0"))
-```
-
-### [CocoaPods](https://cocoapods.org)
-Add the following entry in your Podfile:
-
-```ruby
-   pod 'IBAnimatable'
-```
-
-### [Carthage](https://github.com/Carthage/Carthage)
-Add the following entry in your Cartfile:
-
-```
-   github "IBAnimatable/IBAnimatable"
-```
-
-Please Notice, there is [a limitation of a built framework for `@IBDesignable` and `@IBInspectable`](https://github.com/Carthage/Carthage/issues/335), that will impact on `IBAnimatable` when you use Carthage. There is a workaround to use Carthage or Swift package manager with `IBAnimatable`, please have a look at [Carthage – no Animatable UI Classes appearing in Storyboard](https://github.com/IBAnimatable/IBAnimatable/issues/354)
-
-As @DanielAsher mentioned
-> I use carthage update --use-submodules --no-build --no-use-binaries and manually add the both the framework project and the framework as an embedded dependency.
->This method is robust, and fine-grained, but perhaps not as easy as dragging the built framework into your project.
-
-### Git submodule
-
-Add this repo as a submodule, and add the project file to your workspace. You can then link against `IBAnimatable.framework` for your application target. 
 
 ## How to contribute
 All of us can contribute to this project. Fewer overheads mean less time to build quality Apps and more time to enjoy coffee ☕️.
