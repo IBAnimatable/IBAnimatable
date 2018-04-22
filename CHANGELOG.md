@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 ## Versions
 
 ### Next
+
+#### API breaking changes
+N/A
+
+#### Enhancements
+N/A
+
+#### Bugfixes
+N/A
+
+### [5.1.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/5.1.0)
+
 #### API breaking changes
 
 N/A
