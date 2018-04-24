@@ -32,6 +32,7 @@ N/A
 - Add `spin` animation type. [#549](https://github.com/IBAnimatable/IBAnimatable/pull/549) by [@phimage](https://github.com/phimage)
 - Add `insetBy` mask type. [#554](https://github.com/IBAnimatable/IBAnimatable/pull/554) by [@phimage](https://github.com/phimage)
 - Upgrade to Swift 4.1. [#557](https://github.com/IBAnimatable/IBAnimatable/pull/557) by [@JakeLin](https://github.com/JakeLin)
+- Add `ib` to support IBAnimatable without interface builder. [#528](https://github.com/IBAnimatable/IBAnimatable/pull/528) by [@tbaranes](https://github.com/tbaranes)
 
 #### Bugfixes
 - Zoom out animation won't override view alpha [#545](https://github.com/IBAnimatable/IBAnimatable/pull/545) by [@tbaranes](https://github.com/tbaranes)
