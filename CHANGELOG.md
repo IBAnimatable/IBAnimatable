@@ -10,7 +10,8 @@ All notable changes to this project will be documented in this file.
 N/A
 
 #### Enhancements
-N/A
+
+- Allow to create new `compound` animation by code using operator `+`, or `Array` . [#559](https://github.com/IBAnimatable/IBAnimatable/pull/559) by [@phimage](https://github.com/phimage)
 
 #### Bugfixes
 N/A
