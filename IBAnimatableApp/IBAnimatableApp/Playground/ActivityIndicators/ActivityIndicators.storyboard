@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Wz2-Hk-E3D">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Wz2-Hk-E3D">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -84,6 +85,11 @@
                                 <segue destination="W2t-Do-Y7I" kind="unwind" unwindAction="unwindToViewController:" id="fSA-RZ-1aH"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="3nQ-X4-kvc">
+                            <connections>
+                                <segue destination="j9w-zr-MfL" kind="show" id="QSu-Hi-xnk"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicatorView" destination="JF8-xw-qb4" id="mR0-uM-Ouz"/>
@@ -93,6 +99,79 @@
                 <exit id="W2t-Do-Y7I" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="414" y="441"/>
+        </scene>
+        <!--Activity Indicator Collection View Controller-->
+        <scene sceneID="DRi-Ay-YsA">
+            <objects>
+                <collectionViewController id="j9w-zr-MfL" customClass="ActivityIndicatorCollectionViewController" customModule="IBAnimatableApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="vI7-8v-7uQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.72941176470000002" green="0.46666666670000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dQU-uK-78i">
+                            <size key="itemSize" width="185" height="162"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="cell" reuseIdentifier="cell" id="0xF-hs-nfq" customClass="ActivityIndicatorCollectionViewCell" customModule="IBAnimatableApp" customModuleProvider="target">
+                                <rect key="frame" x="95" y="0.0" width="185" height="162"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="185" height="162"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MSv-Zm-uNQ" userLabel="Activity Indicator" customClass="AnimatableActivityIndicatorView" customModule="IBAnimatable">
+                                            <rect key="frame" x="42.5" y="31" width="100" height="100"/>
+                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="dJb-l0-eW7"/>
+                                                <constraint firstAttribute="width" constant="100" id="hHb-Er-4uv"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                    <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKB-gM-TAH">
+                                            <rect key="frame" x="92.5" y="162" width="0.0" height="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="MSv-Zm-uNQ" firstAttribute="centerY" secondItem="0xF-hs-nfq" secondAttribute="centerY" id="8Yg-y4-qJn"/>
+                                    <constraint firstItem="RKB-gM-TAH" firstAttribute="centerX" secondItem="0xF-hs-nfq" secondAttribute="centerX" id="CmS-em-Iai"/>
+                                    <constraint firstAttribute="bottom" secondItem="RKB-gM-TAH" secondAttribute="bottom" id="KPW-HK-4Bc"/>
+                                    <constraint firstItem="MSv-Zm-uNQ" firstAttribute="centerX" secondItem="0xF-hs-nfq" secondAttribute="centerX" id="vxT-I3-xx8"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.17263868451118469" green="0.24610957503318787" blue="0.31611651182174683" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="activityIndicatorView" destination="MSv-Zm-uNQ" id="D6R-lv-2D0"/>
+                                    <outlet property="nameLabel" destination="RKB-gM-TAH" id="IWV-AZ-BSs"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="j9w-zr-MfL" id="Dva-65-VPh"/>
+                            <outlet property="delegate" destination="j9w-zr-MfL" id="UpR-Ce-rdD"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ujh-E1-4zP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1229.5999999999999" y="439.43028485757122"/>
         </scene>
     </scenes>
     <resources>

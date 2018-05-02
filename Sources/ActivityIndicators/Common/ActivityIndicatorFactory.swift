@@ -72,6 +72,14 @@ public struct ActivityIndicatorFactory {
       return ActivityIndicatorAnimationSquareSpin()
     case .triangleSkewSpin:
       return ActivityIndicatorAnimationTriangleSkewSpin()
+    case .circleStrokeSpin:
+      return ActivityIndicatorAnimationCircleStrokeSpin()
+    case .gear:
+      return ActivityIndicatorAnimationGear()
+    case .heartBeat:
+      return ActivityIndicatorAnimationHeartBeat()
+    case .triforce:
+      return ActivityIndicatorAnimationTriforce()
     }
   }
 }
