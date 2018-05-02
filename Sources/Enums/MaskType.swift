@@ -141,7 +141,7 @@ extension MaskType {
     case .moon(let angle):
       return UIBezierPath(moonInRect: rect, with: CGFloat(angle))
     case .insetBy(let dx, let dy):
-      return UIBezierPath(rect: rect.insetBy(dx: CGFloat(dx), dy:  CGFloat(dy)))
+      return UIBezierPath(rect: rect.insetBy(dx: CGFloat(dx), dy: CGFloat(dy)))
     case let .custom(pathProvider):
       return pathProvider(rect.size)
     case .none:
