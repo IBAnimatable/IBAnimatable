@@ -1,5 +1,5 @@
 //
-//  ActivityIndicatorCollectionViewController.swift.swift
+//  ActivityIndicatorCollectionViewController.swift
 //  IBAnimatableApp
 //
 //  Created by phimage on 02/05/2018.
@@ -16,6 +16,9 @@ final class ActivityIndicatorCollectionViewController: UICollectionViewControlle
     var types = [ActivityIndicatorType]()
     iterateEnum(ActivityIndicatorType.self).forEach {
       types.append($0)
+    }
+    if types.count % 2 != 0, let index = types.index(of: .none) {
+      types.remove(at: index)
     }
     return types
   }

@@ -13,8 +13,11 @@ public class ActivityIndicatorAnimationTriforce: ActivityIndicatorAnimating {
   // MARK: Properties
 
   fileprivate let duration: CFTimeInterval = 3 / 2
+  #if TRIFORCE
+  fileprivate let trueColor = true
+  #else
   fileprivate let trueColor = false
-
+  #endif
   // MARK: ActivityIndicatorAnimating
 
   public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
@@ -44,7 +47,7 @@ private extension ActivityIndicatorAnimationTriforce {
 
   var defaultAnimation: CAKeyframeAnimation {
     let timingFunction: TimingFunctionType = .linear
-    let animation = CAKeyframeAnimation(keyPath: "transform")
+    let animation = CAKeyframeAnimation(keyPath: .transform)
     animation.keyTimes = [0, 1]
     animation.timingFunctionsType = [timingFunction, timingFunction]
     animation.values = [

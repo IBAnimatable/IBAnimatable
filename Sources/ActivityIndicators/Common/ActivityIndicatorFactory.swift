@@ -74,6 +74,8 @@ public struct ActivityIndicatorFactory {
       return ActivityIndicatorAnimationTriangleSkewSpin()
     case .circleStrokeSpin:
       return ActivityIndicatorAnimationCircleStrokeSpin()
+    case .circleDashStrokeSpin:
+      return ActivityIndicatorAnimationCircleDashStrokeSpin()
     case .gear:
       return ActivityIndicatorAnimationGear()
     case .heartBeat:

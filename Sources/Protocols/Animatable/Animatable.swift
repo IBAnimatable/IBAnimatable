@@ -872,9 +872,13 @@ enum AnimationKeyPath: String {
   case translationX = "transform.translation.x"
   case translationY = "transform.translation.y"
   case translationZ = "transform.translation.z"
+  // Stroke
+  case strokeEnd = "strokeEnd"
+  case strokeStart = "strokeStart"
   // Other properties
   case opacity = "opacity"
   case path = "path"
+  case lineWidth = "lineWidth"
 }
 
 extension CABasicAnimation {
