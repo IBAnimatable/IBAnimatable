@@ -12,6 +12,7 @@ N/A
 #### Enhancements
 
 - Allow to create new `compound` animation by code using operator `+`, or `Array` . [#559](https://github.com/IBAnimatable/IBAnimatable/pull/559) by [@phimage](https://github.com/phimage)
+- Allow new activity indicators `circleStrokeSpin`,  `circleDashStrokeSpin`,  `gear`,  `heartBeat`  and  `triforce`  . [#561](https://github.com/IBAnimatable/IBAnimatable/pull/561) by [@phimage](https://github.com/phimage)
 
 #### Bugfixes
 N/A

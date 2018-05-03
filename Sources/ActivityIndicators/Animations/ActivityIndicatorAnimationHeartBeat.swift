@@ -32,15 +32,15 @@ public class ActivityIndicatorAnimationHeartBeat: ActivityIndicatorAnimating {
 private extension ActivityIndicatorAnimationHeartBeat {
 
   var defaultAnimation: CABasicAnimation {
-    let rotationAnimation = CABasicAnimation(keyPath: .scale)
-    rotationAnimation.timingFunctionType = .easeIn
-    rotationAnimation.duration = duration
-    rotationAnimation.repeatCount = .infinity
-    rotationAnimation.autoreverses = true
-    rotationAnimation.fromValue = 1
-    rotationAnimation.toValue = 0.7
-    rotationAnimation.isRemovedOnCompletion = false
-    return rotationAnimation
+    let scaleAnimation = CABasicAnimation(keyPath: .scale)
+    scaleAnimation.timingFunctionType = .easeIn
+    scaleAnimation.duration = duration
+    scaleAnimation.repeatCount = .infinity
+    scaleAnimation.autoreverses = true
+    scaleAnimation.fromValue = 1
+    scaleAnimation.toValue = 0.7
+    scaleAnimation.isRemovedOnCompletion = false
+    return scaleAnimation
   }
 
 }

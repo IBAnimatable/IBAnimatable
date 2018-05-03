@@ -27,6 +27,7 @@
 		C41A0E80209A39660069555A /* ActivityIndicatorAnimationHeartBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41A0E7F209A39660069555A /* ActivityIndicatorAnimationHeartBeat.swift */; };
 		C41A0E82209A3C1B0069555A /* ActivityIndicatorAnimationTriforce.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41A0E81209A3C1B0069555A /* ActivityIndicatorAnimationTriforce.swift */; };
 		C4511F371F93F1B2002E0FAF /* UIBezierPathExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4511F361F93F1B2002E0FAF /* UIBezierPathExtension.swift */; };
+		C456071F209BAACB002B1DF4 /* ActivityIndicatorAnimationCircleDashStrokeSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C456071E209BAACB002B1DF4 /* ActivityIndicatorAnimationCircleDashStrokeSpin.swift */; };
 		C46DC3E12099863A00501E63 /* ActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46DC3E02099863A00501E63 /* ActivityIndicatorAnimationCircleStrokeSpin.swift */; };
 		C46DC3E32099895E00501E63 /* ActivityIndicatorAnimationGear.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46DC3E22099895E00501E63 /* ActivityIndicatorAnimationGear.swift */; };
 		E20DAEB82003662900BE1C88 /* GradientMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20DAEB72003662900BE1C88 /* GradientMode.swift */; };
@@ -227,6 +228,7 @@
 		C41A0E7F209A39660069555A /* ActivityIndicatorAnimationHeartBeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationHeartBeat.swift; sourceTree = "<group>"; };
 		C41A0E81209A3C1B0069555A /* ActivityIndicatorAnimationTriforce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationTriforce.swift; sourceTree = "<group>"; };
 		C4511F361F93F1B2002E0FAF /* UIBezierPathExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBezierPathExtension.swift; sourceTree = "<group>"; };
+		C456071E209BAACB002B1DF4 /* ActivityIndicatorAnimationCircleDashStrokeSpin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationCircleDashStrokeSpin.swift; sourceTree = "<group>"; };
 		C46DC3E02099863A00501E63 /* ActivityIndicatorAnimationCircleStrokeSpin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationCircleStrokeSpin.swift; sourceTree = "<group>"; };
 		C46DC3E22099895E00501E63 /* ActivityIndicatorAnimationGear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationGear.swift; sourceTree = "<group>"; };
 		E20DAEB72003662900BE1C88 /* GradientMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientMode.swift; sourceTree = "<group>"; };
@@ -603,6 +605,7 @@
 				C46DC3E22099895E00501E63 /* ActivityIndicatorAnimationGear.swift */,
 				C41A0E7F209A39660069555A /* ActivityIndicatorAnimationHeartBeat.swift */,
 				C41A0E81209A3C1B0069555A /* ActivityIndicatorAnimationTriforce.swift */,
+				C456071E209BAACB002B1DF4 /* ActivityIndicatorAnimationCircleDashStrokeSpin.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -1163,6 +1166,7 @@
 				E27FD23C1ECD7D8A00F74840 /* ActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				E27FD2B21ECD7D8A00F74840 /* ViewControllerAnimatedTransitioning.swift in Sources */,
 				E27FD2501ECD7D8A00F74840 /* ActivityIndicatorAnimationLineScaleParty.swift in Sources */,
+				C456071F209BAACB002B1DF4 /* ActivityIndicatorAnimationCircleDashStrokeSpin.swift in Sources */,
 				E27FD2A71ECD7D8A00F74840 /* RotationDesignable.swift in Sources */,
 				E27FD2771ECD7D8A00F74840 /* AnimatableNavigationController.swift in Sources */,
 				E27FD2431ECD7D8A00F74840 /* ActivityIndicatorAnimationBallPulseSync.swift in Sources */,

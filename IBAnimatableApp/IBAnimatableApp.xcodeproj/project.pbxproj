@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C41A0E84209A42400069555A /* ActivityIndicatorCollectionViewController.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41A0E83209A42400069555A /* ActivityIndicatorCollectionViewController.swift.swift */; };
+		C41A0E84209A42400069555A /* ActivityIndicatorCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41A0E83209A42400069555A /* ActivityIndicatorCollectionViewController.swift */; };
 		E20DAEBD20037C5E00BE1C88 /* UserInterfaceGradients.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20DAEBC20037C5E00BE1C88 /* UserInterfaceGradients.storyboard */; };
 		E20DAEBF20037C7800BE1C88 /* UserInterfaceGradientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20DAEBE20037C7800BE1C88 /* UserInterfaceGradientsTableViewController.swift */; };
 		E2307A311ECD81D6000E38B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2307A2B1ECD81D6000E38B2 /* Assets.xcassets */; };
@@ -65,7 +65,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C41A0E83209A42400069555A /* ActivityIndicatorCollectionViewController.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorCollectionViewController.swift.swift; sourceTree = "<group>"; };
+		C41A0E83209A42400069555A /* ActivityIndicatorCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorCollectionViewController.swift; sourceTree = "<group>"; };
 		E20DAEBC20037C5E00BE1C88 /* UserInterfaceGradients.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserInterfaceGradients.storyboard; sourceTree = "<group>"; };
 		E20DAEBE20037C7800BE1C88 /* UserInterfaceGradientsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInterfaceGradientsTableViewController.swift; sourceTree = "<group>"; };
 		E2307A151ECD7F81000E38B2 /* IBAnimatableApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBAnimatableApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -289,7 +289,7 @@
 			children = (
 				E2A5477D1ECF1C4E00842C1F /* ActivityIndicators.storyboard */,
 				E2A5477E1ECF1C4E00842C1F /* ActivityIndicatorViewController.swift */,
-				C41A0E83209A42400069555A /* ActivityIndicatorCollectionViewController.swift.swift */,
+				C41A0E83209A42400069555A /* ActivityIndicatorCollectionViewController.swift */,
 			);
 			path = ActivityIndicators;
 			sourceTree = "<group>";
@@ -431,7 +431,7 @@
 				E2A547741ECF1C4400842C1F /* BorderViewController.swift in Sources */,
 				E2A547321ECF1C0E00842C1F /* ContainerTransitionViewController.swift in Sources */,
 				E2A547781ECF1C4400842C1F /* MaskViewController.swift in Sources */,
-				C41A0E84209A42400069555A /* ActivityIndicatorCollectionViewController.swift.swift in Sources */,
+				C41A0E84209A42400069555A /* ActivityIndicatorCollectionViewController.swift in Sources */,
 				E2A547731ECF1C4400842C1F /* BlurEffectViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

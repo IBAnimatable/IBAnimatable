@@ -46,14 +46,14 @@ private extension ActivityIndicatorAnimationCircleStrokeSpin {
   }
 
   var rotationAnimation: CABasicAnimation {
-    let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
+    let rotationAnimation = CABasicAnimation(keyPath: .rotation)
     rotationAnimation.byValue = Float.pi * 2
     rotationAnimation.timingFunctionType = .linear
     return rotationAnimation
   }
 
   var strokeEndAnimation: CABasicAnimation {
-    let strokeEndAnimation = CABasicAnimation(keyPath: "strokeEnd")
+    let strokeEndAnimation = CABasicAnimation(keyPath: .strokeEnd)
     strokeEndAnimation.duration = strokeEndDuration
     strokeEndAnimation.timingFunction = timingFunction
     strokeEndAnimation.fromValue = 0
@@ -62,7 +62,7 @@ private extension ActivityIndicatorAnimationCircleStrokeSpin {
   }
 
   var strokeStartAnimation: CABasicAnimation {
-    let strokeStartAnimation = CABasicAnimation(keyPath: "strokeStart")
+    let strokeStartAnimation = CABasicAnimation(keyPath: .strokeStart)
     strokeStartAnimation.duration = strokeStartDuration
     strokeStartAnimation.timingFunction = timingFunction
     strokeStartAnimation.fromValue = 0
