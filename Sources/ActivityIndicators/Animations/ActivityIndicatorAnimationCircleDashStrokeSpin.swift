@@ -65,26 +65,6 @@ public class ActivityIndicatorAnimationCircleDashStrokeSpin: ActivityIndicatorAn
 
 private extension ActivityIndicatorAnimationCircleDashStrokeSpin {
 
-  /*private func updateSegments() {
-    guard numSegments > 0, let segmentLayer = segmentLayer else { return }
-    
-    let angle = 2*CGFloat.pi / CGFloat(numSegments)
-    replicatorLayer.instanceCount = numSegments
-    replicatorLayer.instanceTransform = CATransform3DMakeRotation(angle, 0.0, 0.0, 1.0)
-    replicatorLayer.instanceDelay = 1.5*duration/Double(numSegments)
-    
-    let maxRadius = max(0,min(replicatorLayer.bounds.width, replicatorLayer.bounds.height))/2
-    let radius: CGFloat = maxRadius - lineWidth/2
-    
-    segmentLayer.bounds = CGRect(x:0, y:0, width: 2*maxRadius, height: 2*maxRadius)
-    segmentLayer.position = CGPoint(x: replicatorLayer.bounds.width/2, y: replicatorLayer.bounds.height/2)
-    
-    // set the path of the replicated segment layer.
-    let path = UIBezierPath(arcCenter: CGPoint(x: maxRadius, y: maxRadius), radius: radius, startAngle: -angle/2 - CGFloat.pi/2, endAngle: angle/2 - CGFloat.pi/2, clockwise: true)
-    
-    segmentLayer.path = path.cgPath
-  }*/
-
   var rotationAnimation: CABasicAnimation {
     let rotationAnimation = CABasicAnimation(keyPath: .rotation)
     rotationAnimation.byValue = Float.pi * 2
