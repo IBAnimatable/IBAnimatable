@@ -28,11 +28,9 @@ public class ActivityIndicatorAnimationCircleDashStrokeSpin: ActivityIndicatorAn
 
     let dotLayer = CAShapeLayer()
     dotLayer.lineCap = kCALineCapRound
-    dotLayer.strokeColor = color.cgColor
-    dotLayer.lineWidth = lineWidth
-    dotLayer.fillColor = nil
+    dotLayer.apply(mode: .stroke(lineWidth: lineWidth), color: color)
 
-    let angle = 2 * CGFloat.pi / CGFloat(instanceCount)
+    let angle: CGFloat = 2 * .pi / CGFloat(instanceCount)
     replicatorLayer.instanceCount = instanceCount
     replicatorLayer.instanceTransform = CATransform3DMakeRotation(angle, 0.0, 0.0, 1.0)
     replicatorLayer.instanceDelay = 1.5 * duration / Double(instanceCount)
