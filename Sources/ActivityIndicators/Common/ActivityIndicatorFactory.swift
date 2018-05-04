@@ -78,6 +78,8 @@ public struct ActivityIndicatorFactory {
       return ActivityIndicatorAnimationCircleDashStrokeSpin()
     case .gear:
       return ActivityIndicatorAnimationGear()
+    case .tripleGear:
+      return ActivityIndicatorAnimationTripleGear()
     case .heartBeat:
       return ActivityIndicatorAnimationHeartBeat()
     case .triforce:
