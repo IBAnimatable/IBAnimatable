@@ -17,6 +17,7 @@ public class ActivityIndicatorAnimationBallScaleMultiple: ActivityIndicatorAnima
     let beginTime = layer.currentMediaTime
     let beginTimes = [0, 0.2, 0.4]
 
+    let animation = defaultAnimation
     for i in 0 ..< 3 {
       let circle = ActivityIndicatorShape.circle.makeLayer(size: size, color: color)
       let frame = CGRect(x: (layer.bounds.size.width - size.width) / 2,
@@ -37,7 +38,7 @@ public class ActivityIndicatorAnimationBallScaleMultiple: ActivityIndicatorAnima
 
 private extension ActivityIndicatorAnimationBallScaleMultiple {
 
-  var animation: CAAnimationGroup {
+  var defaultAnimation: CAAnimationGroup {
     let animation = CAAnimationGroup()
     animation.animations = [scaleAnimation, opacityAnimation]
     animation.timingFunctionType = .linear

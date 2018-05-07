@@ -84,6 +84,8 @@ public struct ActivityIndicatorFactory {
       return ActivityIndicatorAnimationHeartBeat()
     case .triforce:
       return ActivityIndicatorAnimationTriforce()
+    case .rupee:
+      return ActivityIndicatorAnimationRupee()
     }
   }
 }
