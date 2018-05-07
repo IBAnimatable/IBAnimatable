@@ -57,7 +57,7 @@ private extension ActivityIndicatorAnimationBallPulseRise {
   }
 
   var oddScaleAnimation: CAKeyframeAnimation {
-    let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+    let scaleAnimation = CAKeyframeAnimation(keyPath: .scale)
     scaleAnimation.keyTimes = [0, 0.5, 1]
     scaleAnimation.timingFunctions = [timingFunction, timingFunction]
     scaleAnimation.values = [0.4, 1.1, 0.75]
@@ -66,7 +66,7 @@ private extension ActivityIndicatorAnimationBallPulseRise {
   }
 
   var oddTranslateAnimation: CAKeyframeAnimation {
-    let translateAnimation = CAKeyframeAnimation(keyPath: "transform.translation.y")
+    let translateAnimation = CAKeyframeAnimation(keyPath: .translationY)
     translateAnimation.keyTimes = [0, 0.25, 0.75, 1]
     translateAnimation.timingFunctions = [timingFunction, timingFunction, timingFunction]
     translateAnimation.values = [0, deltaY, -deltaY, 0]
@@ -92,7 +92,7 @@ private extension ActivityIndicatorAnimationBallPulseRise {
   }
 
   var evenScaleAnimation: CAKeyframeAnimation {
-    let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+    let scaleAnimation = CAKeyframeAnimation(keyPath: .scale)
     scaleAnimation.keyTimes = [0, 0.5, 1]
     scaleAnimation.timingFunctions = [timingFunction, timingFunction]
     scaleAnimation.values = [1.1, 0.4, 1]
@@ -101,7 +101,7 @@ private extension ActivityIndicatorAnimationBallPulseRise {
   }
 
   var evenTranslateAnimation: CAKeyframeAnimation {
-    let translateAnimation = CAKeyframeAnimation(keyPath: "transform.translation.y")
+    let translateAnimation = CAKeyframeAnimation(keyPath: .translationY)
     translateAnimation.keyTimes = [0, 0.25, 0.75, 1]
     translateAnimation.timingFunctions = [timingFunction, timingFunction, timingFunction]
     translateAnimation.values = [0, -deltaY, deltaY, 0]

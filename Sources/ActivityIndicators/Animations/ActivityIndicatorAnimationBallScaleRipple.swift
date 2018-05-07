@@ -41,7 +41,7 @@ private extension ActivityIndicatorAnimationBallScaleRipple {
   }
 
   var scaleAnimation: CAKeyframeAnimation {
-    let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+    let scaleAnimation = CAKeyframeAnimation(keyPath: .scale)
     scaleAnimation.keyTimes = [0, 0.7]
     scaleAnimation.timingFunction = timingFunction
     scaleAnimation.values = [0.1, 1]
@@ -50,7 +50,7 @@ private extension ActivityIndicatorAnimationBallScaleRipple {
   }
 
   var opacityAnimation: CAKeyframeAnimation {
-    let opacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
+    let opacityAnimation = CAKeyframeAnimation(keyPath: .opacity)
     opacityAnimation.keyTimes = [0, 0.7, 1]
     opacityAnimation.timingFunctions = [timingFunction, timingFunction]
     opacityAnimation.values = [1, 0.7, 0]

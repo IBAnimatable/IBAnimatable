@@ -34,14 +34,14 @@ public class ActivityIndicatorAnimationBallClipRotate: ActivityIndicatorAnimatin
 private extension ActivityIndicatorAnimationBallClipRotate {
 
   var scaleAnimation: CAKeyframeAnimation {
-    let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+    let scaleAnimation = CAKeyframeAnimation(keyPath: .scale)
     scaleAnimation.keyTimes = [0, 0.5, 1]
     scaleAnimation.values = [1, 0.6, 1]
     return scaleAnimation
   }
 
   var rotateAnimation: CAKeyframeAnimation {
-    let rotateAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
+    let rotateAnimation = CAKeyframeAnimation(keyPath: .rotationZ)
     rotateAnimation.keyTimes = scaleAnimation.keyTimes
     rotateAnimation.values = [0, CGFloat.pi, 2 * CGFloat.pi]
     return rotateAnimation

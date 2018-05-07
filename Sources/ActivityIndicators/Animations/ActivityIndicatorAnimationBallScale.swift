@@ -39,7 +39,7 @@ private extension ActivityIndicatorAnimationBallScale {
   }
 
   var scaleAnimation: CABasicAnimation {
-    let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
+    let scaleAnimation = CABasicAnimation(keyPath: .scale)
     scaleAnimation.duration = duration
     scaleAnimation.fromValue = 0
     scaleAnimation.toValue = 1
@@ -47,7 +47,7 @@ private extension ActivityIndicatorAnimationBallScale {
   }
 
   var opacityAnimation: CABasicAnimation {
-    let opacityAnimation = CABasicAnimation(keyPath: "opacity")
+    let opacityAnimation = CABasicAnimation(keyPath: .opacity)
     opacityAnimation.duration = duration
     opacityAnimation.fromValue = 1
     opacityAnimation.toValue = 0

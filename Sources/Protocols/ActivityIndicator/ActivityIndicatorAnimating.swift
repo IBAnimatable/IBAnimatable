@@ -15,4 +15,5 @@ public protocol ActivityIndicatorAnimating: class {
    - Parameter color: The color of the activity indicator.
    */
   func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor)
+
 }

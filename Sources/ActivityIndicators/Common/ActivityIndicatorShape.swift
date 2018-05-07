@@ -27,9 +27,9 @@ extension ActivityIndicatorShape {
     let path = self.path(size: size)
     let drawingMode = self.drawingMode(size: size)
     return ActivityIndicatorShape.makeShapeLayer(with: size,
-                                          color: color,
-                                          path: path,
-                                          mode: drawingMode)
+                                                 color: color,
+                                                 path: path,
+                                                 mode: drawingMode)
   }
 
   func path(size: CGSize) -> UIBezierPath {

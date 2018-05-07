@@ -48,7 +48,7 @@ public class ActivityIndicatorAnimationBallTrianglePath: ActivityIndicatorAnimat
 private extension ActivityIndicatorAnimationBallTrianglePath {
 
   var defaultAnimation: CAKeyframeAnimation {
-    let animation = CAKeyframeAnimation(keyPath: "transform")
+    let animation = CAKeyframeAnimation(keyPath: .transform)
     animation.keyTimes = [0, 0.33, 0.66, 1]
     animation.timingFunctions = [timingFunction, timingFunction, timingFunction]
     animation.duration = duration

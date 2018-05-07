@@ -39,7 +39,7 @@ private extension ActivityIndicatorAnimationBallClipRotatePulse {
   }
 
   func makeSmallCircleAnimation() -> CAKeyframeAnimation {
-    let animation = CAKeyframeAnimation(keyPath: "transform.scale")
+    let animation = CAKeyframeAnimation(keyPath: .scale)
     animation.keyTimes = [0, 0.3, 1]
     animation.timingFunctions = [timingFunction, timingFunction]
     animation.values = [1, 0.3, 1]
@@ -77,7 +77,7 @@ private extension ActivityIndicatorAnimationBallClipRotatePulse {
   }
 
   var scaleAnimation: CAKeyframeAnimation {
-    let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+    let scaleAnimation = CAKeyframeAnimation(keyPath: .scale)
     scaleAnimation.keyTimes = [0, 0.5, 1]
     scaleAnimation.timingFunctions = [timingFunction, timingFunction]
     scaleAnimation.values = [1, 0.6, 1]
@@ -86,7 +86,7 @@ private extension ActivityIndicatorAnimationBallClipRotatePulse {
   }
 
   var rotateAnimation: CAKeyframeAnimation {
-    let rotateAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
+    let rotateAnimation = CAKeyframeAnimation(keyPath: .rotationZ)
     rotateAnimation.keyTimes = scaleAnimation.keyTimes
     rotateAnimation.timingFunctions = [timingFunction, timingFunction]
     rotateAnimation.values = [0, CGFloat.pi, 2 * CGFloat.pi]

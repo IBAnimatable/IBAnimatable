@@ -48,7 +48,7 @@ private extension ActivityIndicatorAnimationBallScaleMultiple {
   }
 
   var scaleAnimation: CABasicAnimation {
-    let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
+    let scaleAnimation = CABasicAnimation(keyPath: .scale)
     scaleAnimation.duration = duration
     scaleAnimation.fromValue = 0
     scaleAnimation.toValue = 1
@@ -56,7 +56,7 @@ private extension ActivityIndicatorAnimationBallScaleMultiple {
   }
 
   var opacityAnimation: CAKeyframeAnimation {
-    let opacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
+    let opacityAnimation = CAKeyframeAnimation(keyPath: .opacity)
     opacityAnimation.duration = duration
     opacityAnimation.keyTimes = [0, 0.05, 1]
     opacityAnimation.values = [0, 1, 0]

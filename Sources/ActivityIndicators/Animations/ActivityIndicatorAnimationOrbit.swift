@@ -46,7 +46,7 @@ private extension ActivityIndicatorAnimationOrbit {
   }
 
   func makeSatelliteRotateAnimation(layer: CALayer) -> CAKeyframeAnimation {
-    let rotateAnimation = CAKeyframeAnimation(keyPath: "position")
+    let rotateAnimation = CAKeyframeAnimation(keyPath: .position)
     rotateAnimation.path = UIBezierPath(arcCenter: CGPoint(x: layer.bounds.midX, y: layer.bounds.midY),
                                         radius: (size.width - satelliteSize) / 2,
                                         startAngle: CGFloat.pi * 1.5,
@@ -79,7 +79,7 @@ private extension ActivityIndicatorAnimationOrbit {
     let inTimingFunction: TimingFunctionType = .custom((0.7, 0), (1, 0.5))
     let outTimingFunction: TimingFunctionType = .custom(( 0, 0.7), (0.5, 1))
     let standByTimingFunction: TimingFunctionType = .linear
-    let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+    let scaleAnimation = CAKeyframeAnimation(keyPath: .scale)
     scaleAnimation.keyTimes = [0, 0.45, 0.55, 1]
     scaleAnimation.timingFunctionsType = [inTimingFunction, standByTimingFunction, outTimingFunction]
     scaleAnimation.values = [1, 1.3, 1.3, 1]
@@ -116,7 +116,7 @@ private extension ActivityIndicatorAnimationOrbit {
   }
 
   var ring1ScaleAnimation: CAKeyframeAnimation {
-    let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+    let scaleAnimation = CAKeyframeAnimation(keyPath: .scale)
     scaleAnimation.keyTimes = [0, 0.45, 0.45, 1]
     scaleAnimation.timingFunctionType = .linear
     scaleAnimation.values = [0, 0, 1.3, 2]
@@ -125,7 +125,7 @@ private extension ActivityIndicatorAnimationOrbit {
   }
 
   var ring1OpacityAnimation: CAKeyframeAnimation {
-    let opacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
+    let opacityAnimation = CAKeyframeAnimation(keyPath: .opacity)
     opacityAnimation.keyTimes = [0, 0.45, 1]
     opacityAnimation.timingFunctionsType = [.linear, .easeOutExpo]
     opacityAnimation.values = [0.8, 0.8, 0]
@@ -161,7 +161,7 @@ private extension ActivityIndicatorAnimationOrbit {
   }
 
   var ring2ScaleAnimation: CAKeyframeAnimation {
-    let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+    let scaleAnimation = CAKeyframeAnimation(keyPath: .scale)
     scaleAnimation.keyTimes = [0, 0.55, 0.55, 1]
     scaleAnimation.timingFunctionType = .linear
     scaleAnimation.values = [0, 0, 1.3, 2.1]
@@ -170,7 +170,7 @@ private extension ActivityIndicatorAnimationOrbit {
   }
 
   var ring2OpacityAnimation: CAKeyframeAnimation {
-    let opacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
+    let opacityAnimation = CAKeyframeAnimation(keyPath: .opacity)
     opacityAnimation.keyTimes = [0, 0.55, 0.65, 1]
     opacityAnimation.timingFunctionsType = [.linear, .easeOutExpo]
     opacityAnimation.values = [0.7, 0.7, 0, 0]

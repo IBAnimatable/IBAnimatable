@@ -63,7 +63,7 @@ private extension DropDownAnimator {
 
   func animatePresengingDropDown(animatingView: UIView, completion: @escaping AnimatableCompletion) {
     let y = animatingView.center.y
-    let animation = CAKeyframeAnimation(keyPath: "position.y")
+    let animation = CAKeyframeAnimation(keyPath: .positionY)
     animation.values = [y - UIScreen.main.bounds.height, y + 20, y - 10, y]
     animation.keyTimes = [0, 0.5, 0.75, 1]
     animation.timingFunctionsType = timingFunctions

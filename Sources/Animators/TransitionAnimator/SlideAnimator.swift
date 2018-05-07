@@ -53,8 +53,8 @@ extension SlideAnimator: UIViewControllerAnimatedTransitioning {
     }
     toView.transform = travel.inverted()
     animateSlideTransition(toView: toView, fromView: fromView, travel: travel) {
-      toView.transform = CGAffineTransform.identity
-      fromView.transform = CGAffineTransform.identity
+      toView.transform = .identity
+      fromView.transform = .identity
       transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
     }
   }
@@ -66,7 +66,7 @@ private extension SlideAnimator {
   func animateSlideTransition(toView: UIView, fromView: UIView, travel: CGAffineTransform, completion: @escaping AnimatableCompletion) {
     UIView.animate(withDuration: transitionDuration, animations: {
       fromView.transform = travel
-      toView.transform = CGAffineTransform.identity
+      toView.transform = .identity
       if self.isFade {
         fromView.alpha = 0
         toView.alpha = 1

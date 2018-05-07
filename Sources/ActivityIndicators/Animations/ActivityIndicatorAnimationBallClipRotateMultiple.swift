@@ -42,14 +42,14 @@ private extension ActivityIndicatorAnimationBallClipRotateMultiple {
 
   func makeAnimation(duration: CFTimeInterval, timingFunction: TimingFunctionType, reverse: Bool) -> CAAnimation {
     // Scale animation
-    let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+    let scaleAnimation = CAKeyframeAnimation(keyPath: .scale)
     scaleAnimation.keyTimes = [0, 0.5, 1]
     scaleAnimation.timingFunctionsType = [timingFunction, timingFunction]
     scaleAnimation.values = [1, 0.6, 1]
     scaleAnimation.duration = duration
 
     // Rotate animation
-    let rotateAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
+    let rotateAnimation = CAKeyframeAnimation(keyPath: .rotationZ)
     rotateAnimation.keyTimes = scaleAnimation.keyTimes
     rotateAnimation.timingFunctionsType = [timingFunction, timingFunction]
     if !reverse {

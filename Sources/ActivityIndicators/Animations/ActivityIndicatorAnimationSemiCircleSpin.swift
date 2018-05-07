@@ -33,7 +33,7 @@ public class ActivityIndicatorAnimationSemiCircleSpin: ActivityIndicatorAnimatin
 private extension ActivityIndicatorAnimationSemiCircleSpin {
 
   var defaultAnimation: CAKeyframeAnimation {
-    let animation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
+    let animation = CAKeyframeAnimation(keyPath: .rotationZ)
     animation.keyTimes = [0, 0.5, 1]
     animation.values = [0, CGFloat.pi, 2 * CGFloat.pi]
     animation.duration = duration

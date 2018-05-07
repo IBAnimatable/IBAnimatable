@@ -41,7 +41,7 @@ private extension ActivityIndicatorAnimationBallPulse {
   var defaultAnimation: CAKeyframeAnimation {
     let duration: CFTimeInterval = 0.75
     let timingFunction = CAMediaTimingFunction(controlPoints: 0.2, 0.68, 0.18, 1.08)
-    let animation = CAKeyframeAnimation(keyPath: "transform.scale")
+    let animation = CAKeyframeAnimation(keyPath: .scale)
     animation.keyTimes = [0, 0.3, 1]
     animation.timingFunctions = [timingFunction, timingFunction]
     animation.values = [1, 0.3, 1]

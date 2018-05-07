@@ -42,7 +42,7 @@ public class ActivityIndicatorAnimationBallBeat: ActivityIndicatorAnimating {
 private extension ActivityIndicatorAnimationBallBeat {
 
   var scaleAnimation: CAKeyframeAnimation {
-    let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+    let scaleAnimation = CAKeyframeAnimation(keyPath: .scale)
     scaleAnimation.keyTimes = [0, 0.5, 1]
     scaleAnimation.values = [1, 0.75, 1]
     scaleAnimation.duration = duration
@@ -50,7 +50,7 @@ private extension ActivityIndicatorAnimationBallBeat {
   }
 
   var opacityAnimation: CAKeyframeAnimation {
-    let opacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
+    let opacityAnimation = CAKeyframeAnimation(keyPath: .opacity)
     opacityAnimation.keyTimes = [0, 0.5, 1]
     opacityAnimation.values = [1, 0.2, 1]
     opacityAnimation.duration = duration

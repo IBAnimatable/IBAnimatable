@@ -17,6 +17,16 @@ struct AnimationConfiguration {
   let timingFunction: TimingFunctionType
 }
 
+extension AnimationConfiguration {
+
+  /// Options for spring animation.
+  var options: UIViewAnimationOptions {
+    let curveOption = timingFunction.viewAnimationCurveOption ?? .curveLinear
+    return [curveOption, .allowUserInteraction]
+  }
+
+}
+
 public class AnimationPromise<T: UIView> where T: Animatable {
 
   private var view: T
