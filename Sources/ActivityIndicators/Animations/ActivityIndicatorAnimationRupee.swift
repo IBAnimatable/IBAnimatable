@@ -23,17 +23,17 @@ public class ActivityIndicatorAnimationRupee: ActivityIndicatorAnimating {
     let x = (layer.bounds.size.width - size.width) / 2
     let y = (layer.bounds.size.height - size.height) / 2
     let beginTime = layer.currentMediaTime
-    let beginTimes: [CFTimeInterval] = [0, 0.5, 0.0, 0.5, 0.0, 0.5, 0.0, 0.5]
+    let beginTimes: [CFTimeInterval] = [0.0, 0.5, 0.0, 0.5, 0.0, 0.0, 0.5, 0.0]
     let animation = defaultAnimation
 
     // Draw shapes
     for i in 0 ..< 8 {
       if i % 4 != 0 { // remove left and right
         let shapeLayer = makeLayer(angle: .pi / 4 * CGFloat(i),
-                                     size: maskSize,
-                                     origin: CGPoint(x: x, y: y),
-                                     containerSize: size,
-                                     color: color)
+                                   size: maskSize,
+                                   origin: CGPoint(x: x, y: y),
+                                   containerSize: size,
+                                   color: color)
         animation.beginTime = beginTime + beginTimes[i]
         shapeLayer.add(animation, forKey: "animation")
         layer.addSublayer(shapeLayer)
@@ -49,9 +49,7 @@ public class ActivityIndicatorAnimationRupee: ActivityIndicatorAnimating {
       y: origin.y + radius * (sin(angle) + 1),
       width: size,
       height: size)
-    
     layer.frame = frame
-    
     return layer
   }
 
@@ -59,7 +57,7 @@ public class ActivityIndicatorAnimationRupee: ActivityIndicatorAnimating {
 
 // MARK: - Setup
 
-private extension ActivityIndicatorAnimationRupe {
+private extension ActivityIndicatorAnimationRupee {
 
   var defaultAnimation: CAAnimationGroup {
     let animation = CAAnimationGroup()

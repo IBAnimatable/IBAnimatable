@@ -12,10 +12,12 @@ N/A
 #### Enhancements
 
 - Allow to create new `compound` animation by code using operator `+`, or `Array` . [#559](https://github.com/IBAnimatable/IBAnimatable/pull/559) by [@phimage](https://github.com/phimage)
-- Allow new activity indicators `circleStrokeSpin`, `circleDashStrokeSpin`, `gear`, `tripleGear`,  `heartBeat`  and  `triforce`  . [#561](https://github.com/IBAnimatable/IBAnimatable/pull/561) by [@phimage](https://github.com/phimage)
+- Add new activity indicators `circleStrokeSpin`, `circleDashStrokeSpin`, `gear`, `tripleGear`,  `heartBeat`  and  `triforce`  . [#561](https://github.com/IBAnimatable/IBAnimatable/pull/561) by [@phimage](https://github.com/phimage)
+- Add new activity indicator `rupee`. [#562](https://github.com/IBAnimatable/IBAnimatable/pull/562) by [@phimage](https://github.com/phimage)
 
 #### Bugfixes
-N/A
+
+- Fix some activity indicator animations . [#562](https://github.com/IBAnimatable/IBAnimatable/pull/562) by [@phimage](https://github.com/phimage)
 
 ### [5.1.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/5.1.0)
 
