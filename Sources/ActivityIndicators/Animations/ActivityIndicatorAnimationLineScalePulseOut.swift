@@ -45,7 +45,7 @@ private extension ActivityIndicatorAnimationLineScalePulseOut {
 
   var defaultAnimation: CAKeyframeAnimation {
     let timingFunction = CAMediaTimingFunction(controlPoints: 0.85, 0.25, 0.37, 0.85)
-    let animation = CAKeyframeAnimation(keyPath: "transform.scale.y")
+    let animation = CAKeyframeAnimation(keyPath: .scaleY)
     animation.keyTimes = [0, 0.5, 1]
     animation.timingFunctions = [timingFunction, timingFunction]
     animation.values = [1, 0.4, 1]

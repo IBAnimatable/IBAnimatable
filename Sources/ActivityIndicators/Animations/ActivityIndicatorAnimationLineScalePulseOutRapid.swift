@@ -40,7 +40,7 @@ public class ActivityIndicatorAnimationLineScalePulseOutRapid: ActivityIndicator
 private extension ActivityIndicatorAnimationLineScalePulseOutRapid {
 
   var defaultAnimation: CAKeyframeAnimation {
-    let animation = CAKeyframeAnimation(keyPath: "transform.scale.y")
+    let animation = CAKeyframeAnimation(keyPath: .scaleY)
     animation.keyTimes = [0, 0.8, 0.9]
     animation.timingFunctions = [timingFunction, timingFunction]
     animation.beginTime = CACurrentMediaTime()

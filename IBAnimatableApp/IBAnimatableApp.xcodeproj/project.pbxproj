@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C41A0E84209A42400069555A /* ActivityIndicatorCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41A0E83209A42400069555A /* ActivityIndicatorCollectionViewController.swift */; };
+		C473AEA1209D9B9D008DA12C /* PredefinedGradientCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C473AEA0209D9B9D008DA12C /* PredefinedGradientCollectionViewController.swift */; };
 		E20DAEBD20037C5E00BE1C88 /* UserInterfaceGradients.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20DAEBC20037C5E00BE1C88 /* UserInterfaceGradients.storyboard */; };
 		E20DAEBF20037C7800BE1C88 /* UserInterfaceGradientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20DAEBE20037C7800BE1C88 /* UserInterfaceGradientsTableViewController.swift */; };
 		E2307A311ECD81D6000E38B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2307A2B1ECD81D6000E38B2 /* Assets.xcassets */; };
@@ -66,6 +67,7 @@
 
 /* Begin PBXFileReference section */
 		C41A0E83209A42400069555A /* ActivityIndicatorCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorCollectionViewController.swift; sourceTree = "<group>"; };
+		C473AEA0209D9B9D008DA12C /* PredefinedGradientCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredefinedGradientCollectionViewController.swift; sourceTree = "<group>"; };
 		E20DAEBC20037C5E00BE1C88 /* UserInterfaceGradients.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserInterfaceGradients.storyboard; sourceTree = "<group>"; };
 		E20DAEBE20037C7800BE1C88 /* UserInterfaceGradientsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInterfaceGradientsTableViewController.swift; sourceTree = "<group>"; };
 		E2307A151ECD7F81000E38B2 /* IBAnimatableApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IBAnimatableApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +131,7 @@
 				E20DAEBE20037C7800BE1C88 /* UserInterfaceGradientsTableViewController.swift */,
 				E2A5476D1ECF1C4400842C1F /* GradientViewController.swift */,
 				E2A5476C1ECF1C4400842C1F /* GradientCustomStartPointViewController.swift */,
+				C473AEA0209D9B9D008DA12C /* PredefinedGradientCollectionViewController.swift */,
 			);
 			path = Gradients;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				E2A5473B1ECF1C0E00842C1F /* RefreshControlTableViewController.swift in Sources */,
 				E2A547761ECF1C4400842C1F /* GradientCustomStartPointViewController.swift in Sources */,
 				E2A547381ECF1C0E00842C1F /* PresentingViewController.swift in Sources */,
+				C473AEA1209D9B9D008DA12C /* PredefinedGradientCollectionViewController.swift in Sources */,
 				E2A5474D1ECF1C0E00842C1F /* ParamType.swift in Sources */,
 				E2A547751ECF1C4400842C1F /* CornerViewController.swift in Sources */,
 				E2A5474E1ECF1C0E00842C1F /* UIViewControllerExtension.swift in Sources */,

@@ -194,7 +194,6 @@ fileprivate extension UIView {
     let values = computeValues(way: way, direction: direction, configuration: configuration, shouldScale: false)
     switch way {
     case .in:
-
       animateIn(animationValues: values, alpha: 1, configuration: configuration, completion: completion)
     case .out:
       animateOut(animationValues: values, alpha: 1, configuration: configuration, completion: completion)
@@ -460,7 +459,7 @@ fileprivate extension UIView {
 
   func flash(repeatCount: Int, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
     CALayer.animate({
-      let animation = CABasicAnimation(keyPath: "opacity")
+      let animation = CABasicAnimation(keyPath: .opacity)
       animation.fromValue = 1
       animation.toValue = 0
       animation.duration = configuration.duration
@@ -565,7 +564,7 @@ fileprivate extension UIView {
       delay: configuration.delay,
       usingSpringWithDamping: configuration.damping,
       initialSpringVelocity: configuration.velocity,
-      options: [],
+      options: configuration.options,
       animations: {
         self.transform = CGAffineTransform(scaleX: CGFloat(toX), y: CGFloat(toY))
     },
@@ -709,7 +708,7 @@ fileprivate extension UIView {
                    delay: configuration.delay,
                    usingSpringWithDamping: configuration.damping,
                    initialSpringVelocity: configuration.velocity,
-                   options: [],
+                   options: configuration.options,
                    animations: {
         self.transform = translate
       },
@@ -742,9 +741,9 @@ fileprivate extension UIView {
                    delay: configuration.delay,
                    usingSpringWithDamping: configuration.damping,
                    initialSpringVelocity: configuration.velocity,
-                   options: [],
+                   options: configuration.options,
                    animations: {
-        self.transform = CGAffineTransform.identity
+        self.transform = .identity
         self.alpha = alpha
       },
       completion: { completed in
@@ -763,7 +762,7 @@ fileprivate extension UIView {
                    delay: configuration.delay,
                    usingSpringWithDamping: configuration.damping,
                    initialSpringVelocity: configuration.velocity,
-                   options: [],
+                   options: configuration.options,
                    animations: {
         self.transform = translateAndScale
         self.alpha = alpha

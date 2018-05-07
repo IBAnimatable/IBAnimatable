@@ -40,7 +40,7 @@ public class ActivityIndicatorAnimationLineScaleParty: ActivityIndicatorAnimatin
 private extension ActivityIndicatorAnimationLineScaleParty {
 
   var defaultAnimation: CAKeyframeAnimation {
-    let animation = CAKeyframeAnimation(keyPath: "transform.scale")
+    let animation = CAKeyframeAnimation(keyPath: .scale)
     animation.keyTimes = [0, 0.5, 1]
     animation.timingFunctionsType = [timingFunction, timingFunction]
     animation.values = [1, 0.5, 1]

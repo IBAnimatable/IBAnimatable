@@ -66,7 +66,7 @@ private extension ActivityIndicatorAnimationBallSpinFadeLoader {
   }
 
   var scaleAnimation: CAKeyframeAnimation {
-    let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+    let scaleAnimation = CAKeyframeAnimation(keyPath: .scale)
     scaleAnimation.keyTimes = [0, 0.5, 1]
     scaleAnimation.values = [1, 0.4, 1]
     scaleAnimation.duration = duration
@@ -74,7 +74,7 @@ private extension ActivityIndicatorAnimationBallSpinFadeLoader {
   }
 
   var opacityAnimation: CAKeyframeAnimation {
-    let opacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
+    let opacityAnimation = CAKeyframeAnimation(keyPath: .opacity)
     opacityAnimation.keyTimes = [0, 0.5, 1]
     opacityAnimation.values = [1, 0.3, 1]
     opacityAnimation.duration = duration

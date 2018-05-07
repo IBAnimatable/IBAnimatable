@@ -72,7 +72,7 @@ public class ContainerTransition: NSObject {
   public var isInteractive: Bool { return false }
   public var presentationStyle: UIModalPresentationStyle { return .none }
   public var transitionWasCancelled: Bool { return false }
-  public var targetTransform: CGAffineTransform { return CGAffineTransform.identity }
+  public var targetTransform: CGAffineTransform { return .identity }
   public var containerView: UIView { return container! }
 }
 

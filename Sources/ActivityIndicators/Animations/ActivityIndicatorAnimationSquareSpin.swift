@@ -32,7 +32,7 @@ private extension ActivityIndicatorAnimationSquareSpin {
 
   var defaultAnimation: CAKeyframeAnimation {
     let timingFunction = CAMediaTimingFunction(controlPoints: 0.09, 0.57, 0.49, 0.9)
-    let animation = CAKeyframeAnimation(keyPath: "transform")
+    let animation = CAKeyframeAnimation(keyPath: .transform)
     animation.keyTimes = [0, 0.25, 0.5, 0.75, 1]
     animation.timingFunctions = [timingFunction, timingFunction, timingFunction, timingFunction]
     animation.values = [

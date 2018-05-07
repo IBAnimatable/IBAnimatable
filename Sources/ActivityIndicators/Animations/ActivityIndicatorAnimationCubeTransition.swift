@@ -53,7 +53,7 @@ private extension ActivityIndicatorAnimationCubeTransition {
   }
 
   var rotateAnimation: CAKeyframeAnimation {
-    let rotateAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
+    let rotateAnimation = CAKeyframeAnimation(keyPath: .rotationZ)
     rotateAnimation.keyTimes = keyTimes
     rotateAnimation.timingFunctionsType = [timingFunction, timingFunction, timingFunction, timingFunction]
     rotateAnimation.values = [0, -CGFloat.pi / 2, -CGFloat.pi, -1.5 * CGFloat.pi, -2 * CGFloat.pi]
@@ -62,7 +62,7 @@ private extension ActivityIndicatorAnimationCubeTransition {
   }
 
   var scaleAnimation: CAKeyframeAnimation {
-    let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+    let scaleAnimation = CAKeyframeAnimation(keyPath: .scale)
     scaleAnimation.keyTimes = keyTimes
     scaleAnimation.timingFunctionsType = [timingFunction, timingFunction, timingFunction, timingFunction]
     scaleAnimation.values = [1, 0.5, 1, 0.5, 1]
@@ -71,7 +71,7 @@ private extension ActivityIndicatorAnimationCubeTransition {
   }
 
   var translateAnimation: CAKeyframeAnimation {
-    let translateAnimation = CAKeyframeAnimation(keyPath: "transform.translation")
+    let translateAnimation = CAKeyframeAnimation(keyPath: .translation)
     translateAnimation.keyTimes = keyTimes
     translateAnimation.timingFunctionsType = [timingFunction, timingFunction, timingFunction, timingFunction]
     translateAnimation.values = [

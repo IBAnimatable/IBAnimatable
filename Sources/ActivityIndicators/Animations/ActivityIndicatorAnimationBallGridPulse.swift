@@ -54,7 +54,7 @@ private extension ActivityIndicatorAnimationBallGridPulse {
   }
 
   var scaleAnimation: CAKeyframeAnimation {
-    let scaleAnimation = CAKeyframeAnimation(keyPath: "transform.scale")
+    let scaleAnimation = CAKeyframeAnimation(keyPath: .scale)
     scaleAnimation.keyTimes = [0, 0.5, 1]
     scaleAnimation.timingFunctionsType = [timingFunction, timingFunction]
     scaleAnimation.values = [1, 0.5, 1]
@@ -62,7 +62,7 @@ private extension ActivityIndicatorAnimationBallGridPulse {
   }
 
   var opacityAnimation: CAKeyframeAnimation {
-    let opacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
+    let opacityAnimation = CAKeyframeAnimation(keyPath: .opacity)
     opacityAnimation.keyTimes = [0, 0.5, 1]
     opacityAnimation.timingFunctionsType = [timingFunction, timingFunction]
     opacityAnimation.values = [1, 0.7, 1]

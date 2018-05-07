@@ -53,7 +53,7 @@ private extension ActivityIndicatorAnimationPacman {
   }
 
   var strokeStartAnimation: CAKeyframeAnimation {
-    let strokeStartAnimation = CAKeyframeAnimation(keyPath: "strokeStart")
+    let strokeStartAnimation = CAKeyframeAnimation(keyPath: .strokeStart)
     strokeStartAnimation.keyTimes = [0, 0.5, 1]
     strokeStartAnimation.timingFunctionsType = [timingFunction, timingFunction]
     strokeStartAnimation.values = [0.125, 0, 0.125]
@@ -62,7 +62,7 @@ private extension ActivityIndicatorAnimationPacman {
   }
 
   var strokeEndAnimation: CAKeyframeAnimation {
-    let strokeEndAnimation = CAKeyframeAnimation(keyPath: "strokeEnd")
+    let strokeEndAnimation = CAKeyframeAnimation(keyPath: .strokeEnd)
     strokeEndAnimation.keyTimes = [0, 0.5, 1]
     strokeEndAnimation.timingFunctionsType = [timingFunction, timingFunction]
     strokeEndAnimation.values = [0.875, 1, 0.875]
@@ -104,7 +104,7 @@ private extension ActivityIndicatorAnimationPacman {
   }
 
   var translateAnimation: CABasicAnimation {
-    let translateAnimation = CABasicAnimation(keyPath: "transform.translation.x")
+    let translateAnimation = CABasicAnimation(keyPath: .translationX)
     translateAnimation.fromValue = 0
     translateAnimation.toValue = -size.width / 2
     translateAnimation.duration = circleDuration
@@ -112,7 +112,7 @@ private extension ActivityIndicatorAnimationPacman {
   }
 
   var opacityAnimation: CABasicAnimation {
-    let opacityAnimation = CABasicAnimation(keyPath: "opacity")
+    let opacityAnimation = CABasicAnimation(keyPath: .opacity)
     opacityAnimation.fromValue = 1
     opacityAnimation.toValue = 0.7
     opacityAnimation.duration = circleDuration

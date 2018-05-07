@@ -47,7 +47,7 @@ public class ActivityIndicatorAnimationBallGridBeat: ActivityIndicatorAnimating 
 private extension ActivityIndicatorAnimationBallGridBeat {
 
   var defaultAnimation: CAKeyframeAnimation {
-    let animation = CAKeyframeAnimation(keyPath: "opacity")
+    let animation = CAKeyframeAnimation(keyPath: .opacity)
     animation.keyTimes = [0, 0.5, 1]
     animation.timingFunctionsType = [timingFunction, timingFunction]
     animation.values = [1, 0.7, 1]
