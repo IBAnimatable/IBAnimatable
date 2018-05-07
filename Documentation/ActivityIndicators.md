@@ -21,7 +21,7 @@ You can see an example of each animation in the demo app. Launch the app, then t
 | stopAnimating() | Stop the animation. The activityIndicator will be hidden if `hidesWhenStopped` value is `true`. |
 
 
-###Supported animation:
+### Supported animation:
 
 1. [AudioEqualizer](#audioequalizer)
 2. [BallBeat](#ballbeat)
@@ -54,98 +54,104 @@ You can see an example of each animation in the demo app. Launch the app, then t
 29. [SemiCircleSpin](#semicirclespin)
 30. [SquareSpin](#squarespin)
 31. [TriangleSkewSpin](#triangleskewspin)
+32. [CircleStrokeSpin](#circlestrokespin)
+33. [CircleDashStrokeSpin](#circledashstrokespin)
+34. [Gear](#gear)
+35. [TripleGear](#triplegear)
+36. [HeartBeat](#heartbeat)
+37. [Triforce](#triforce)
 
 ### AudioEqualizer
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorAudioEqualizer.gif)
+![ActivityIndicator - AudioEqualizer](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorAudioEqualizer.gif)
 
 ### BallBeat
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallBeat.gif)
+![ActivityIndicator - BallBeat](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallBeat.gif)
 
 ### BallClipRotate
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallClipRotate.gif)
+![ActivityIndicator - BallClipRotate](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallClipRotate.gif)
 
 ### BallClipRotateMultiple
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallClipRotateMultiple.gif)
+![ActivityIndicator - BallClipRotateMultiple](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallClipRotateMultiple.gif)
 
 ### BallClipRotatePulse
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallClipRotatePulse.gif)
+![ActivityIndicator - BallClipRotatePulse](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallClipRotatePulse.gif)
 
 ### BallGridBeat
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallGridBeat.gif)
+![ActivityIndicator - BallGridBeat](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallGridBeat.gif)
 
 ### BallGridPulse
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallGridPulse.gif)
+![ActivityIndicator - BallGridPulse](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallGridPulse.gif)
 
 ### BallPulse
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallPulse.gif)
+![ActivityIndicator - BallPulse](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallPulse.gif)
 
 ### BallPulseRise
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallPulseRise.gif)
+![ActivityIndicator - BallPulseRise](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallPulseRise.gif)
 
 ### BallPulseSync
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallPulseSync.gif)
+![ActivityIndicator - BallPulseSync](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallPulseSync.gif)
 
 ### BallRotate
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallRotate.gif)
+![ActivityIndicator - BallRotate](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallRotate.gif)
 
 ### BallRotateChase
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallRotateChase.gif)
+![ActivityIndicator - BallRotateChase](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallRotateChase.gif)
 
 ### BallScale
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallScale.gif)
+![ActivityIndicator - BallScale](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallScale.gif)
 
 ### BallScaleMultiple
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallScaleMultiple.gif)
+![ActivityIndicator - BallScaleMultiple](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallScaleMultiple.gif)
 
 ### BallScaleRipple
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallScaleRipple.gif)
+![ActivityIndicator - BallScaleRipple](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallScaleRipple.gif)
 
 ### BallScaleRippleMultiple
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallScaleRippleMultiple.gif)
+![ActivityIndicator - BallScaleRippleMultiple](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallScaleRippleMultiple.gif)
 
 ### BallSpinFadeLoader
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallSpinFadeLoader.gif)
+![ActivityIndicator - BallSpinFadeLoader](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallSpinFadeLoader.gif)
 
 ### BallTrianglePath
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallTrianglePath.gif)
+![ActivityIndicator - BallTrianglePath](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallTrianglePath.gif)
 
 ### BallZigZag
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallZigZag.gif)
+![ActivityIndicator - BallZigZag](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallZigZag.gif)
 
 ### BallZigZagDeflect
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallZigZagDeflect.gif)
+![ActivityIndicator - BallZigZagDeflect](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorBallZigZagDeflect.gif)
 
 ### CubeTransition
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorCubeTransition.gif)
+![ActivityIndicator - CubeTransition](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorCubeTransition.gif)
 
 ### LineScale
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorLineScale.gif)
+![ActivityIndicator - LineScale](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorLineScale.gif)
 
 ### LineScaleParty
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorLineScaleParty.gif)
+![ActivityIndicator - LineScaleParty](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorLineScaleParty.gif)
 
 ### LineScalePulseOut
 
@@ -153,28 +159,52 @@ You can see an example of each animation in the demo app. Launch the app, then t
 
 ### LineScalePulseOutRapid
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorLineScalePulseOutRapid.gif)
+![ActivityIndicator - LineScalePulseOutRapid](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorLineScalePulseOutRapid.gif)
 
 ### LineSpinFadeLoader
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorLineSpinFadeLoader.gif)
+![ActivityIndicator - LineSpinFadeLoader](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorLineSpinFadeLoader.gif)
 
 ### Orbit
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorOrbit.gif)
+![ActivityIndicator - Orbit](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorOrbit.gif)
 
 ### Pacman
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorPacman.gif)
+![ActivityIndicator - Pacman](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorPacman.gif)
 
 ### SemiCircleSpin
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorSemiCircleSpin.gif)
+![ActivityIndicator - SemiCircleSpin](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorSemiCircleSpin.gif)
 
 ### SquareSpin
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivitySquareSpin.gif)
+![ActivityIndicator - SquareSpin](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivitySquareSpin.gif)
 
 ### TriangleSkewSpin
 
-![ActivityIndicator - LineScalePulseOut](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorTriangleSkewSpin.gif)
+![ActivityIndicator - TriangleSkewSpin](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorTriangleSkewSpin.gif)
+
+### CircleStrokeSpin
+
+![ActivityIndicator - CircleStrokeSpin](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorCircleStrokeSpin.gif)
+
+### CircleDashStrokeSpin
+
+![ActivityIndicator - CircleDashStrokeSpin](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorCircleDashStrokeSpin.gif)
+
+### Gear
+
+![ActivityIndicator - Gear](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorGear.gif)
+
+### TripleGear
+
+![ActivityIndicator - TripleGear](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorTripleGear.gif)
+
+### HeartBeat
+
+![ActivityIndicator - HeartBeat](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorHeartBeat.gif)
+
+### Triforce
+
+![ActivityIndicator - Triforce](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorTriforce.gif)
