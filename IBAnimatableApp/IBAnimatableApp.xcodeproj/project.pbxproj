@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AEE931D020A090C50021E83A /* IBAnimatable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE931CF20A090C50021E83A /* IBAnimatable.framework */; };
 		C41A0E84209A42400069555A /* ActivityIndicatorCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41A0E83209A42400069555A /* ActivityIndicatorCollectionViewController.swift */; };
 		C473AEA1209D9B9D008DA12C /* PredefinedGradientCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C473AEA0209D9B9D008DA12C /* PredefinedGradientCollectionViewController.swift */; };
 		E20DAEBD20037C5E00BE1C88 /* UserInterfaceGradients.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20DAEBC20037C5E00BE1C88 /* UserInterfaceGradients.storyboard */; };
@@ -66,6 +67,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AEE931CF20A090C50021E83A /* IBAnimatable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IBAnimatable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C41A0E83209A42400069555A /* ActivityIndicatorCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorCollectionViewController.swift; sourceTree = "<group>"; };
 		C473AEA0209D9B9D008DA12C /* PredefinedGradientCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredefinedGradientCollectionViewController.swift; sourceTree = "<group>"; };
 		E20DAEBC20037C5E00BE1C88 /* UserInterfaceGradients.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserInterfaceGradients.storyboard; sourceTree = "<group>"; };
@@ -118,12 +120,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEE931D020A090C50021E83A /* IBAnimatable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AEE931CE20A090C50021E83A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AEE931CF20A090C50021E83A /* IBAnimatable.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E20DAEBB20037C4200BE1C88 /* Gradients */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +152,7 @@
 			children = (
 				E2307A171ECD7F81000E38B2 /* IBAnimatableApp */,
 				E2307A161ECD7F81000E38B2 /* Products */,
+				AEE931CE20A090C50021E83A /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
