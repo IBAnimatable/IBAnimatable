@@ -1,60 +1,65 @@
 //
-//  Created by Tom Baranes on 23/08/16.
-//  Copyright (c) 2016 IBAnimatable. All rights reserved.
+//  ActivityIndicatorAnimationRupee.swift
+//  IBAnimatable
+//
+//  Created by phimage on 07/05/2018.
+//  Copyright © 2018 IBAnimatable. All rights reserved.
 //
 
 import UIKit
 
-public class ActivityIndicatorAnimationBallSpinFadeLoader: ActivityIndicatorAnimating {
+public class ActivityIndicatorAnimationRupee: ActivityIndicatorAnimating {
 
   // MARK: Properties
 
   fileprivate let duration: CFTimeInterval = 1
+  fileprivate let maskType: MaskType = .polygon(sides: 6)
 
   // MARK: ActivityIndicatorAnimating
 
   public func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
-
-    let circleSpacing: CGFloat = -2
-    let circleSize = (size.width - 4 * circleSpacing) / 5
+    let maskSpacing: CGFloat = -2
+    let maskSize = (size.width - 4 * maskSpacing) / 5
     let x = (layer.bounds.size.width - size.width) / 2
     let y = (layer.bounds.size.height - size.height) / 2
     let beginTime = layer.currentMediaTime
-    let beginTimes: [CFTimeInterval] = [0, 0.12, 0.24, 0.36, 0.48, 0.6, 0.72, 0.84]
-
-    // Draw circles
+    let beginTimes: [CFTimeInterval] = [0, 0.5, 0.0, 0.5, 0.0, 0.5, 0.0, 0.5]
     let animation = defaultAnimation
-    for i in 0 ..< 8 {
-      let circle = makeCircleLayer(angle: CGFloat.pi / 4 * CGFloat(i),
-                                   size: circleSize,
-                                   origin: CGPoint(x: x, y: y),
-                                   containerSize: size,
-                                   color: color)
 
-      animation.beginTime = beginTime + beginTimes[i]
-      circle.add(animation, forKey: "animation")
-      layer.addSublayer(circle)
+    // Draw shapes
+    for i in 0 ..< 8 {
+      if i % 4 != 0 { // remove left and right
+        let shapeLayer = makeLayer(angle: .pi / 4 * CGFloat(i),
+                                     size: maskSize,
+                                     origin: CGPoint(x: x, y: y),
+                                     containerSize: size,
+                                     color: color)
+        animation.beginTime = beginTime + beginTimes[i]
+        shapeLayer.add(animation, forKey: "animation")
+        layer.addSublayer(shapeLayer)
+      }
     }
   }
 
-  func makeCircleLayer(angle: CGFloat, size: CGFloat, origin: CGPoint, containerSize: CGSize, color: UIColor) -> CALayer {
+  func makeLayer(angle: CGFloat, size: CGFloat, origin: CGPoint, containerSize: CGSize, color: UIColor) -> CALayer {
     let radius = containerSize.width / 2 - size / 2
-    let circle = ActivityIndicatorShape.circle.makeLayer(size: CGSize(width: size, height: size), color: color)
+    let layer = ActivityIndicatorShape.mask(type: maskType).makeLayer(size: CGSize(width: size, height: size), color: color)
     let frame = CGRect(
       x: origin.x + radius * (cos(angle) + 1),
       y: origin.y + radius * (sin(angle) + 1),
       width: size,
       height: size)
-
-    circle.frame = frame
-
-    return circle
+    
+    layer.frame = frame
+    
+    return layer
   }
+
 }
 
 // MARK: - Setup
 
-private extension ActivityIndicatorAnimationBallSpinFadeLoader {
+private extension ActivityIndicatorAnimationRupe {
 
   var defaultAnimation: CAAnimationGroup {
     let animation = CAAnimationGroup()

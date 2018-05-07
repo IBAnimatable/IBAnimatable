@@ -21,6 +21,7 @@ public class ActivityIndicatorAnimationBallGridPulse: ActivityIndicatorAnimating
     let durations: [CFTimeInterval] = [0.72, 1.02, 1.28, 1.42, 1.45, 1.18, 0.87, 1.45, 1.06]
     let beginTime = layer.currentMediaTime
     let beginTimes: [CFTimeInterval] = [-0.06, 0.25, -0.17, 0.48, 0.31, 0.03, 0.46, 0.78, 0.45]
+    let animation = defaultAnimation
 
     // Draw circles
     for i in 0 ..< 3 {
@@ -45,7 +46,7 @@ public class ActivityIndicatorAnimationBallGridPulse: ActivityIndicatorAnimating
 
 private extension ActivityIndicatorAnimationBallGridPulse {
 
-  var animation: CAAnimationGroup {
+  var defaultAnimation: CAAnimationGroup {
     let animation = CAAnimationGroup()
     animation.animations = [scaleAnimation, opacityAnimation]
     animation.repeatCount = .infinity

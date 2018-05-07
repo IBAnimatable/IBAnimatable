@@ -60,6 +60,7 @@ You can see an example of each animation in the demo app. Launch the app, then t
 35. [TripleGear](#triplegear)
 36. [HeartBeat](#heartbeat)
 37. [Triforce](#triforce)
+37. [Rupe](#rupe)
 
 ### AudioEqualizer
 
@@ -208,3 +209,7 @@ You can see an example of each animation in the demo app. Launch the app, then t
 ### Triforce
 
 ![ActivityIndicator - Triforce](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorTriforce.gif)
+
+### Rupe
+
+![ActivityIndicator - Rupe](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorRupe.gif)
