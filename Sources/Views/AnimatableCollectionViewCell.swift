@@ -6,7 +6,7 @@
 import UIKit
 
 @IBDesignable
-open class AnimatableCollectionViewCell: UICollectionViewCell, CornerDesignable, FillDesignable, BorderDesignable,
+open class AnimatableCollectionViewCell: UICollectionViewCell, CornerDesignable, FillDesignable, BorderDesignable, RotationDesignable,
                                                                ShadowDesignable, TableViewCellDesignable, GradientDesignable,
                                                                BackgroundImageDesignable, Animatable {
 
@@ -114,6 +114,14 @@ open class AnimatableCollectionViewCell: UICollectionViewCell, CornerDesignable,
       borderSides = BorderSides(rawValue: _borderSides)
     }
   }
+
+  // MARK: - RotationDesignable
+  @IBInspectable open var rotate: CGFloat = CGFloat.nan {
+    didSet {
+      configureRotate()
+    }
+  }
+
   // MARK: - TableViewCellDesignable
   @IBInspectable open var removeSeparatorMargins: Bool = false
 
