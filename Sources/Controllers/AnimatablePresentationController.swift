@@ -127,14 +127,7 @@ extension AnimatablePresentationController {
 
 private extension AnimatablePresentationController {
 
-  var modalSize: CGSize {
-    let containerSize = containerFrame.size
-    let width = CGFloat(presentationConfiguration.modalSize.0.width(parentSize: containerSize))
-    let height = CGFloat(presentationConfiguration.modalSize.1.height(parentSize: containerSize))
-    return CGSize(width: width, height: height)
-  }
-
-  var modalCenter: CGPoint? {
+  func modalCenter(for modalSize: CGSize) -> CGPoint? {
     return presentationConfiguration.modalPosition.modalCenter(in: containerFrame, modalSize: modalSize)
   }
 
@@ -161,7 +154,7 @@ public extension AnimatablePresentationController {
     var presentedViewFrame = CGRect.zero
     let sizeForChildContentContainer = size(forChildContentContainer: presentedViewController, withParentContainerSize: containerBounds.size)
     let origin: CGPoint
-    if let center = modalCenter {
+    if let center = modalCenter(for: sizeForChildContentContainer) {
       origin = calculateOrigin(center: center, size: sizeForChildContentContainer)
     } else {
       origin = modalOrigin ?? .zero
@@ -173,7 +166,26 @@ public extension AnimatablePresentationController {
   }
 
   override func size(forChildContentContainer container: UIContentContainer, withParentContainerSize parentSize: CGSize) -> CGSize {
-    return modalSize
+
+    let preferredContentSize = container.preferredContentSize
+
+    let widthSize = presentationConfiguration.modalSize.0
+    let heightSize = presentationConfiguration.modalSize.1
+
+    let width: CGFloat
+    if preferredContentSize.width != 0, case .preferred = widthSize {
+      width = preferredContentSize.width
+    } else {
+      width = CGFloat(widthSize.width(parentSize: parentSize))
+    }
+    let height: CGFloat
+    if preferredContentSize.height != 0, case .preferred = heightSize {
+      height = preferredContentSize.height
+    } else {
+      height = CGFloat(heightSize.height(parentSize: parentSize))
+    }
+
+    return CGSize(width: width, height: height)
   }
 
   override func containerViewWillLayoutSubviews() {
