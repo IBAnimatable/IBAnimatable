@@ -63,13 +63,13 @@ open class AnimatableModalViewController: UIViewController, PresentationDesignab
   }
   @IBInspectable var _modalWidth: String? {
     didSet {
-      let modalWidth = PresentationModalSize(string: _modalWidth) ?? .half
+      let modalWidth = PresentationModalSize(string: _modalWidth) ?? .default
       modalSize = (modalWidth, modalSize.height)
     }
   }
   @IBInspectable var _modalHeight: String? {
     didSet {
-      let modalHeight = PresentationModalSize(string: _modalHeight) ?? .half
+      let modalHeight = PresentationModalSize(string: _modalHeight) ?? .default
       modalSize = (modalSize.width, modalHeight)
     }
   }

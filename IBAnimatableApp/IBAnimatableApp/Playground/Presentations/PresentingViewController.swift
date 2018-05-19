@@ -45,7 +45,7 @@ final class PresentingViewController: AnimatableViewController, UIPickerViewData
   fileprivate let animations = ["None", "Flip", "CrossDissolve", "Cover(Left)", "Cover(Right)", "Cover(Top)", "Cover(Bottom)", "Zoom", "DropDown"]
   fileprivate let positions = ["Center", "TopCenter", "BottomCenter", "LeftCenter", "RightCenter"]
   fileprivate let sizes = ["Half", "Full", "custom(100)", "GoldenRatio", "Quarter", "ThreeQuarters",
-                           "Third", "TwoThirds", "Fifth", "Fifth", "Sixth", "Seventh", "Eighth"]
+                           "Third", "TwoThirds", "Fifth", "Fifth", "Sixth", "Seventh", "Eighth", "Preferred"]
   fileprivate let keyboardTranslations = ["None", "MoveUp", "AboveKeyboard", "stickOrMoveUp"]
   fileprivate let blurEffectStyles = ["None", "ExtraLight", "Light", "Dark"]
   fileprivate let colors = [.black, .red, .orange, .brown, .yellow, .lightGray, .green, .cyan, .blue, .purple,

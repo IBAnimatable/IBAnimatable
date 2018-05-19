@@ -23,7 +23,9 @@ public class ActivityIndicatorAnimationTripleGear: ActivityIndicatorAnimating {
     let mask: MaskType = .gear(radius: Double(layer.bounds.size.width / 20), cogs: 8)
     let gear = ActivityIndicatorShape.mask(type: mask).makeLayer(size: size / 2, color: color)
     gear.frame = CGRect(x: x, y: y, width: size.width / 2, height: size.height / 2)
-    gear.add(defaultAnimation, forKey: "animation")
+    let animation = defaultAnimation
+    animation.byValue = -Float.pi * 2
+    gear.add(animation, forKey: "animation")
     layer.addSublayer(gear)
 
     let mask2: MaskType = .gear(radius: Double(layer.bounds.size.width / 30), cogs: 8)
