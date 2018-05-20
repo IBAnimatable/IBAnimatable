@@ -14,14 +14,14 @@ final class GradientViewController: UIViewController {
   let startPointValues = ParamType.enumeration(values: ["top", "topLeft", "topRight", "left", "right", "bottom", "bottomRight", "bottomLeft"])
   let colorValues = ParamType(fromEnum: ColorType.self)
   var usePredefinedGradient = true
-  var useRadialGradient = false
+  var gradientMode: GradientMode = .linear
   lazy var componentValues: [ParamType] = {
     self.usePredefinedGradient ? [self.gradientValues, self.startPointValues] : [self.colorValues, self.colorValues, self.startPointValues]
   }()
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    gView.gradientMode = useRadialGradient ? .radial : .linear
+    gView.gradientMode = gradientMode
     if usePredefinedGradient {
       gView.predefinedGradient = GradientType(rawValue: gradientValues.value(at: 0))
       gView.startPoint = GradientStartPoint(string: startPointValues.value(at: 0))

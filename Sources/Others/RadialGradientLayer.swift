@@ -25,8 +25,9 @@ final class RadialGradientLayer: CALayer {
   override func draw(in ctx: CGContext) {
     ctx.saveGState()
     let colorSpace = CGColorSpaceCreateDeviceRGB()
-    let gradient = CGGradient(colorsSpace: colorSpace, colors: colors as CFArray, locations: [0, 1])!
-
+    guard !colors.isEmpty, let gradient = CGGradient(colorsSpace: colorSpace, colors: colors as CFArray, locations: [0, 1])  else {
+      return
+    }
     let startCenter = CGPoint(x: bounds.width * startPoint.x,
                               y: bounds.height * startPoint.y)
     let endCenter = CGPoint(x: bounds.width * endPoint.x,

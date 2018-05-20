@@ -12,11 +12,25 @@ import UIKit
 final class UserInterfaceGradientsTableViewController: UITableViewController {
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let gradientVC = segue.destination as? GradientViewController {
-      gradientVC.usePredefinedGradient = segue.identifier?.lowercased().contains("predefined") ?? false
-      gradientVC.useRadialGradient = segue.identifier?.lowercased().contains("radial") ?? false
-    } else if let gradientVC = segue.destination as? GradientCustomStartPointViewController {
-      gradientVC.useRadialGradient = segue.identifier?.lowercased().contains("radial") ?? false
+    if let identifier = segue.identifier?.lowercased() {
+      if let gradientVC = segue.destination as? GradientViewController {
+        gradientVC.usePredefinedGradient = identifier.contains("predefined")
+        if identifier.contains("radial") {
+          gradientVC.gradientMode = .radial
+        } else if identifier.contains("conical") {
+          gradientVC.gradientMode = .conical
+        } else {
+          gradientVC.gradientMode = .linear
+        }
+      } else if let gradientVC = segue.destination as? GradientCustomStartPointViewController {
+        if identifier.contains("radial") {
+          gradientVC.gradientMode = .radial
+        } else if identifier.contains("conical") {
+          gradientVC.gradientMode = .conical
+        } else {
+          gradientVC.gradientMode = .linear
+        }
+      }
     }
   }
 }

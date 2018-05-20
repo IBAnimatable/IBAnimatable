@@ -11,4 +11,5 @@ import Foundation
 public enum GradientMode: String, IBEnum {
   case linear
   case radial
+  case conical
 }
