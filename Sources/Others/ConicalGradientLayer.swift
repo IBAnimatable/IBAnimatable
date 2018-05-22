@@ -67,7 +67,7 @@ final class ConicalGradientLayer: CALayer {
                                   y: centerPoint.y - newValue.y)
       var angle = Double(atan2(centeredPoint.y - self.frame.midY, centeredPoint.x - self.frame.midX))
       if angle < 0 {
-        angle += + 2 * .pi
+        angle += 2 * .pi
       }
       self.endAngle = angle + 2 * .pi
     }
