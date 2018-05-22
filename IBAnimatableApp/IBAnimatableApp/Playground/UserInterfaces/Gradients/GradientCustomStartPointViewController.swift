@@ -9,7 +9,7 @@
 import UIKit
 import IBAnimatable
 
-final class GradientCustomStartPointViewController: UIViewController {
+final class GradientCustomStartPointViewController: UIViewController, GradientModePresenter {
 
   @IBOutlet fileprivate weak var gView: AnimatableView!
 
