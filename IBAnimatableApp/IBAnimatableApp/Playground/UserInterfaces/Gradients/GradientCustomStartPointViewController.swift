@@ -9,11 +9,11 @@
 import UIKit
 import IBAnimatable
 
-final class GradientCustomStartPointViewController: UIViewController {
+final class GradientCustomStartPointViewController: UIViewController, GradientModePresenter {
 
   @IBOutlet fileprivate weak var gView: AnimatableView!
 
-  var useRadialGradient = false
+  var gradientMode: GradientMode = .linear
   let gradientValues = ParamType(fromEnum: GradientType.self)
   let coordPointValues = ParamType.number(min: 0, max: 1, interval: 0.1, ascending: true, unit: "")
   lazy var componentValues: [ParamType] = [self.gradientValues,
@@ -24,7 +24,7 @@ final class GradientCustomStartPointViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    gView.gradientMode = useRadialGradient ? .radial : .linear
+    gView.gradientMode = gradientMode
     gView.predefinedGradient = GradientType(rawValue: gradientValues.value(at: 0))
   }
 }

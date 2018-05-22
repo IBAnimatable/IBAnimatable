@@ -82,6 +82,8 @@ extension GradientDesignable {
       return makeLinearLayer(colors: colors)
     case .radial:
       return makeRadialLayer(colors: colors)
+    case .conical:
+      return makeConicalLayer(colors: colors)
     }
   }
 
@@ -98,9 +100,8 @@ extension GradientDesignable {
     let layer = CAGradientLayer()
     layer.colors = colors
 
-    let points = gradientPoints()
-    layer.startPoint = points.0
-    layer.endPoint = points.1
+    layer.startPoint = startPoint.startPoint
+    layer.endPoint = startPoint.endPoint
     return layer
   }
 
@@ -108,35 +109,18 @@ extension GradientDesignable {
     let layer = RadialGradientLayer()
     layer.colors = colors
 
-    let points = gradientPoints()
-    layer.startPoint = points.0
-    layer.endPoint = points.1
+    layer.startPoint = startPoint.startPoint
+    layer.endPoint = startPoint.endPoint
     return layer
   }
 
-  private func gradientPoints() -> (CGPoint, CGPoint) {
-    switch startPoint {
-    case .top:
-      return (CGPoint(x: 0.5, y: 0), CGPoint(x: 0.5, y: 1))
-    case .topRight:
-      return (CGPoint(x: 1, y: 0), CGPoint(x: 0, y: 1))
-    case .right:
-      return (CGPoint(x: 1, y: 0.5), CGPoint(x: 0, y: 0.5))
-    case .bottomRight:
-      return (CGPoint(x: 1, y: 1), CGPoint(x: 0, y: 0))
-    case .bottom:
-      return (CGPoint(x: 0.5, y: 1), CGPoint(x: 0.5, y: 0))
-    case .bottomLeft:
-      return (CGPoint(x: 0, y: 1), CGPoint(x: 1, y: 0))
-    case .left:
-      return (CGPoint(x: 0, y: 0.5), CGPoint(x: 1, y: 0.5))
-    case .topLeft:
-      return (CGPoint(x: 0, y: 0), CGPoint(x: 1, y: 1))
-    case let .custom(start, end):
-      return (CGPoint(x: start.x, y: start.y), CGPoint(x: end.x, y: end.y))
-    case .none:
-      return (.zero, .zero)
-    }
+  private func makeConicalLayer(colors: [CGColor]) -> ConicalGradientLayer {
+    let layer = ConicalGradientLayer()
+    layer.colors = colors
+
+    layer.startPoint = startPoint.startPoint
+    layer.endPoint = startPoint.endPoint
+    return layer
   }
 
 }

@@ -54,3 +54,60 @@ extension GradientStartPoint {
     }
   }
 }
+
+extension GradientStartPoint {
+
+  var startPoint: CGPoint {
+    switch self {
+    case .top:
+      return CGPoint(x: 0.5, y: 0)
+    case .topRight:
+      return CGPoint(x: 1, y: 0)
+    case .right:
+      return CGPoint(x: 1, y: 0.5)
+    case .bottomRight:
+      return CGPoint(x: 1, y: 1)
+    case .bottom:
+      return CGPoint(x: 0.5, y: 1)
+    case .bottomLeft:
+      return CGPoint(x: 0, y: 1)
+    case .left:
+      return CGPoint(x: 0, y: 0.5)
+    case .topLeft:
+      return CGPoint(x: 0, y: 0)
+    case let .custom(start, _):
+      return start
+    case .none:
+      return .zero
+    }
+  }
+
+  var endPoint: CGPoint {
+    switch self {
+    case .top:
+      return CGPoint(x: 0.5, y: 1)
+    case .topRight:
+      return CGPoint(x: 0, y: 1)
+    case .right:
+      return CGPoint(x: 0, y: 0.5)
+    case .bottomRight:
+      return CGPoint(x: 0, y: 0)
+    case .bottom:
+      return CGPoint(x: 0.5, y: 0)
+    case .bottomLeft:
+      return  CGPoint(x: 1, y: 0)
+    case .left:
+      return CGPoint(x: 1, y: 0.5)
+    case .topLeft:
+      return CGPoint(x: 1, y: 1)
+    case let .custom(_, end):
+      return end
+    case .none:
+      return .zero
+    }
+  }
+
+  var points: (CGPoint, CGPoint) {
+    return (startPoint, endPoint)
+  }
+}

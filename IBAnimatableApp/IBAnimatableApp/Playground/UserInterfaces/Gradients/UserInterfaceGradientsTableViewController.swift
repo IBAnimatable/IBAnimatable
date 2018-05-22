@@ -8,15 +8,28 @@
 
 import Foundation
 import UIKit
+import IBAnimatable
 
 final class UserInterfaceGradientsTableViewController: UITableViewController {
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let gradientVC = segue.destination as? GradientViewController {
-      gradientVC.usePredefinedGradient = segue.identifier?.lowercased().contains("predefined") ?? false
-      gradientVC.useRadialGradient = segue.identifier?.lowercased().contains("radial") ?? false
-    } else if let gradientVC = segue.destination as? GradientCustomStartPointViewController {
-      gradientVC.useRadialGradient = segue.identifier?.lowercased().contains("radial") ?? false
+    if let identifier = segue.identifier?.lowercased() {
+      if let gradientVC = segue.destination as? GradientViewController {
+        gradientVC.usePredefinedGradient = identifier.contains("predefined")
+      }
+      if var gradientVC = segue.destination as? GradientModePresenter {
+        if identifier.contains("radial") {
+          gradientVC.gradientMode = .radial
+        } else if identifier.contains("conical") {
+          gradientVC.gradientMode = .conical
+        } else {
+          gradientVC.gradientMode = .linear
+        }
+      }
     }
   }
+}
+
+protocol GradientModePresenter {
+  var gradientMode: GradientMode { get set }
 }

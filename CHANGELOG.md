@@ -16,6 +16,7 @@ N/A
 - Add new activity indicator `rupee`. [#562](https://github.com/IBAnimatable/IBAnimatable/pull/562) by [@phimage](https://github.com/phimage)
 - Make AnimatableCollectionViewCell conforming to RotationDesignable [#565](https://github.com/IBAnimatable/IBAnimatable/pull/565) by [@tbaranes](https://github.com/tbaranes)
 - Add `preferred` presentation modal size. [#566](https://github.com/IBAnimatable/IBAnimatable/pull/566) by [@phimage](https://github.com/phimage)
+- Add `conical` gradient type. [#567](https://github.com/IBAnimatable/IBAnimatable/pull/567) by [@phimage](https://github.com/phimage)
 
 #### Bugfixes
 
