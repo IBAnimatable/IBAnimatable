@@ -559,21 +559,13 @@ fileprivate extension UIView {
                            configuration: AnimationConfiguration,
                            completion: AnimatableCompletion? = nil) {
     transform = CGAffineTransform(scaleX: CGFloat(fromX), y: CGFloat(fromY))
-    UIView.animate(
-      withDuration: configuration.duration,
-      delay: configuration.delay,
-      usingSpringWithDamping: configuration.damping,
-      initialSpringVelocity: configuration.velocity,
-      options: configuration.options,
-      animations: {
-        self.transform = CGAffineTransform(scaleX: CGFloat(toX), y: CGFloat(toY))
-    },
-      completion: { completed in
-        if completed {
-          completion?()
-        }
-    }
-    )
+    UIView.animate(with: configuration, animations: {
+      self.transform = CGAffineTransform(scaleX: CGFloat(toX), y: CGFloat(toY))
+    }, completion: { completed in
+      if completed {
+        completion?()
+      }
+    })
   }
 
   private func layerScale(fromX: Double,
@@ -704,20 +696,13 @@ fileprivate extension UIView {
   // swiftlint:disable:next variable_name_min_length
   func animateBy(x: CGFloat, y: CGFloat, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
     let translate = CGAffineTransform(translationX: x, y: y)
-    UIView.animate(withDuration: configuration.duration,
-                   delay: configuration.delay,
-                   usingSpringWithDamping: configuration.damping,
-                   initialSpringVelocity: configuration.velocity,
-                   options: configuration.options,
-                   animations: {
-        self.transform = translate
-      },
-      completion: { completed in
-        if completed {
-          completion?()
-        }
+    UIView.animate(with: configuration,animations: {
+      self.transform = translate
+    },completion: { completed in
+      if completed {
+        completion?()
       }
-    )
+    })
   }
 
   func animatePosition(path: UIBezierPath, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
@@ -737,19 +722,13 @@ fileprivate extension UIView {
     let translateAndScale = translate.concatenating(scale)
     transform = translateAndScale
 
-    UIView.animate(withDuration: configuration.duration,
-                   delay: configuration.delay,
-                   usingSpringWithDamping: configuration.damping,
-                   initialSpringVelocity: configuration.velocity,
-                   options: configuration.options,
-                   animations: {
-        self.transform = .identity
-        self.alpha = alpha
-      },
-      completion: { completed in
-        if completed {
-          completion?()
-        }
+    UIView.animate(with: configuration, animations: {
+      self.transform = .identity
+      self.alpha = alpha
+    }, completion: { completed in
+      if completed {
+        completion?()
+      }
     })
   }
 
@@ -758,21 +737,14 @@ fileprivate extension UIView {
     let scale = CGAffineTransform(scaleX: animationValues.scaleX, y: animationValues.scaleY)
     let translateAndScale = translate.concatenating(scale)
 
-    UIView.animate(withDuration: configuration.duration,
-                   delay: configuration.delay,
-                   usingSpringWithDamping: configuration.damping,
-                   initialSpringVelocity: configuration.velocity,
-                   options: configuration.options,
-                   animations: {
-        self.transform = translateAndScale
-        self.alpha = alpha
-      },
-      completion: { completed in
-        if completed {
-          completion?()
-        }
+    UIView.animate(with: configuration, animations: {
+      self.transform = translateAndScale
+      self.alpha = alpha
+    }, completion: { completed in
+      if completed {
+        completion?()
       }
-    )
+    })
   }
 
   var screenSize: CGSize {
@@ -889,5 +861,34 @@ extension CABasicAnimation {
 extension CAKeyframeAnimation {
   convenience init(keyPath: AnimationKeyPath) {
     self.init(keyPath: keyPath.rawValue)
+  }
+}
+
+extension UIView {
+  class func animate(with configuration: AnimationConfiguration, animations: @escaping () -> Void, completion: ((Bool) -> Void)? = nil) {
+    if configuration.animateWithSpring {
+      UIView.animate(withDuration: configuration.duration,
+                     delay: configuration.delay,
+                     usingSpringWithDamping: configuration.damping,
+                     initialSpringVelocity: configuration.velocity,
+                     options: configuration.options,
+                     animations: animations,
+                     completion: completion)
+    } else {
+      UIView.animate(withDuration: configuration.duration,
+                     delay: configuration.delay,
+                     options: configuration.options,
+                     animations: animations,
+                     completion: completion)
+    }
+  }
+}
+
+extension AnimationConfiguration {
+  var animateWithSpring: Bool {
+    if case .none = timingFunction {
+      return true
+    }
+    return false
   }
 }
