@@ -249,6 +249,15 @@ extension TimingFunctionType {
     }
   }
 
+  var isCurveOption: Bool {
+    switch self {
+    case .linear, .easeIn, .easeOut, .easeInOut:
+      return true
+    default :
+      return false
+    }
+  }
+
 }
 
 @available(iOS 10.0, *)

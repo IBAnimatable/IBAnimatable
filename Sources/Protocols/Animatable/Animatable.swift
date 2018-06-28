@@ -696,9 +696,9 @@ fileprivate extension UIView {
   // swiftlint:disable:next variable_name_min_length
   func animateBy(x: CGFloat, y: CGFloat, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
     let translate = CGAffineTransform(translationX: x, y: y)
-    UIView.animate(with: configuration,animations: {
+    UIView.animate(with: configuration, animations: {
       self.transform = translate
-    },completion: { completed in
+    }, completion: { completed in
       if completed {
         completion?()
       }
@@ -865,8 +865,15 @@ extension CAKeyframeAnimation {
 }
 
 extension UIView {
+  /// Animate view using `AnimationConfiguration`.
   class func animate(with configuration: AnimationConfiguration, animations: @escaping () -> Void, completion: ((Bool) -> Void)? = nil) {
-    if configuration.animateWithSpring {
+    if configuration.timingFunction.isCurveOption {
+      UIView.animate(withDuration: configuration.duration,
+                     delay: configuration.delay,
+                     options: configuration.options,
+                     animations: animations,
+                     completion: completion)
+    } else {
       UIView.animate(withDuration: configuration.duration,
                      delay: configuration.delay,
                      usingSpringWithDamping: configuration.damping,
@@ -874,21 +881,6 @@ extension UIView {
                      options: configuration.options,
                      animations: animations,
                      completion: completion)
-    } else {
-      UIView.animate(withDuration: configuration.duration,
-                     delay: configuration.delay,
-                     options: configuration.options,
-                     animations: animations,
-                     completion: completion)
     }
-  }
-}
-
-extension AnimationConfiguration {
-  var animateWithSpring: Bool {
-    if case .none = timingFunction {
-      return true
-    }
-    return false
   }
 }
