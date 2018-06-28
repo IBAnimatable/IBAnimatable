@@ -65,14 +65,25 @@ final class AnimationsViewController: UIViewController {
     selectedEntry = entries[0]
     pickerView.dataSource = self
     pickerView.delegate = self
+    timingFunctionButton.isEnabled = true
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if let destination = segue.destination as? AnimationsTimingFunctionViewController {
       destination.delegate = self
       destination.timingFunction = self.animatableView.timingFunction
+      destination.isCubic = selectedAnimation().isCubic
     }
   }
+
+  func selectedAnimation() -> AnimationType {
+    let animationString = selectedEntry.toString(selectedIndexes: pickerView.selectedRow(inComponent: 1),
+                                                 pickerView.selectedRow(inComponent: 2),
+                                                 pickerView.selectedRow(inComponent: 3),
+                                                 pickerView.selectedRow(inComponent: 4))
+    return AnimationType(string: animationString)
+  }
+
 }
 
 extension AnimationsViewController: TimingFunctionPickDelegate {
@@ -126,11 +137,8 @@ extension AnimationsViewController: UIPickerViewDelegate, UIPickerViewDataSource
         }
       }
     }
-    let animationString = selectedEntry.toString(selectedIndexes: pickerView.selectedRow(inComponent: 1),
-                                                 pickerView.selectedRow(inComponent: 2),
-                                                 pickerView.selectedRow(inComponent: 3),
-                                                 pickerView.selectedRow(inComponent: 4))
-    let animationType = AnimationType(string: animationString)
+    let animationType = selectedAnimation()
+
     pickerView.isUserInteractionEnabled = false
     var resetTimeInterval: TimeInterval = 0.2
     if case .scale = animationType {
@@ -154,7 +162,7 @@ extension AnimationsViewController: UIPickerViewDelegate, UIPickerViewDataSource
         self.resetAnimatableView()
       }
     }
-    timingFunctionButton.isEnabled = animationType.isCubic
+    // timingFunctionButton.isEnabled = animationType.isCubic
   }
 
   private func resetAnimatableView() {

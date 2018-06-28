@@ -21,8 +21,15 @@ extension AnimationConfiguration {
 
   /// Options for spring animation.
   var options: UIViewAnimationOptions {
-    let curveOption = timingFunction.viewAnimationCurveOption ?? .curveLinear
-    return [curveOption, .allowUserInteraction]
+    if let curveOption = timingFunction.viewAnimationCurveOption {
+      return [
+        .allowUserInteraction,
+        curveOption,
+        .overrideInheritedCurve,
+        .overrideInheritedOptions,
+        .overrideInheritedDuration]
+    }
+    return [.allowUserInteraction]
   }
 
 }

@@ -33,7 +33,7 @@ final class AnimationsTimingFunctionViewController: UIViewController {
   @IBOutlet private weak var starView: AnimatableView!
   @IBOutlet private weak var linearView: AnimatableView!
   // prebuit common params
-  let entries: [PickerEntry] = [
+  let entriesCubic: [PickerEntry] = [
     PickerEntry(params: [], name: "none"),
     PickerEntry(params: [], name: "linear"),
     PickerEntry(params: [], name: "easeIn"),
@@ -55,12 +55,29 @@ final class AnimationsTimingFunctionViewController: UIViewController {
     PickerEntry(params: [damping], name: "spring")
   ]
 
+  let entriesSpring: [PickerEntry] = [
+    PickerEntry(params: [], name: "none"),
+    PickerEntry(params: [], name: "linear"),
+    PickerEntry(params: [], name: "easeIn"),
+    PickerEntry(params: [], name: "easeOut"),
+    PickerEntry(params: [], name: "easeInOut")
+  ]
+
+  var isCubic = true
+  var entries: [PickerEntry] {
+    return isCubic ? entriesCubic: entriesSpring
+  }
+
   var selectedEntry: PickerEntry!
 
   override func viewDidLoad() {
     super.viewDidLoad()
     let index = timingFunction.pickerIndex
-    selectedEntry = entries[index]
+    if index < entries.count {
+      selectedEntry = entries[index]
+    } else {
+      selectedEntry = entries[0]
+    }
     pickerView.dataSource = self
     pickerView.delegate = self
   }
@@ -141,20 +158,29 @@ extension AnimationsTimingFunctionViewController: UIPickerViewDelegate, UIPicker
 
     delegate?.timingFunctionSelected(type) // could be done only on dismiss
 
+    linearView.timingFunction = .linear
+
     // make the two star fall
+    pickerView.isUserInteractionEnabled = false
     starFall(starView)
-    starFall(linearView)
+    starFall(linearView) {
+      self.pickerView.isUserInteractionEnabled = true
+    }
   }
 
-  private func starFall(_ view: AnimatableView) {
+  private func starFall(_ view: AnimatableView, completion: (() -> Void)? = nil) {
     let moveY = view.superview?.frame.height ?? 140
-    view.animate(.moveBy(x: 0, y: Double(moveY - 40))).completion {
-      if #available(iOS 10.0, *) {
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
-          view.transform = .identity
-        }
-      } else {
-        view.transform = .identity
+    let animationType: AnimationType = isCubic ? .moveBy(x: 0, y: Double(moveY - 40)): .slide(way: .out, direction: .down)
+
+    let animationCompletion: (() -> Void) = {
+      view.transform = .identity
+      completion?()
+      view.setNeedsLayout()
+    }
+
+    view.animate(animationType).completion {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        animationCompletion()
       }
     }
   }
