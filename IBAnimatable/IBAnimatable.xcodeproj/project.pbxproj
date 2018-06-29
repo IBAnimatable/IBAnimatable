@@ -25,6 +25,7 @@
 		3676E7DF2059457A0003B9DF /* DesignableNavigationBar.swift in Headers */ = {isa = PBXBuildFile; fileRef = E27FD2391ECD7D8A00F74840 /* DesignableNavigationBar.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		48A167122063CD0D00D7BCFB /* ConicalGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A167112063CD0D00D7BCFB /* ConicalGradientLayer.swift */; };
 		48D80DCA20403DAC00D3137B /* AnimatableTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D80DC920403DAC00D3137B /* AnimatableTabBarItem.swift */; };
+		C40AE6A220E6210100B24A44 /* ActivityIndicatorAnimationNewtonCradle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40AE6A120E6210100B24A44 /* ActivityIndicatorAnimationNewtonCradle.swift */; };
 		C414765F209C1BD700945C8B /* ActivityIndicatorAnimationTripleGear.swift in Sources */ = {isa = PBXBuildFile; fileRef = C414765E209C1BD700945C8B /* ActivityIndicatorAnimationTripleGear.swift */; };
 		C41A0E80209A39660069555A /* ActivityIndicatorAnimationHeartBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41A0E7F209A39660069555A /* ActivityIndicatorAnimationHeartBeat.swift */; };
 		C41A0E82209A3C1B0069555A /* ActivityIndicatorAnimationTriforce.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41A0E81209A3C1B0069555A /* ActivityIndicatorAnimationTriforce.swift */; };
@@ -32,6 +33,7 @@
 		C456071F209BAACB002B1DF4 /* ActivityIndicatorAnimationCircleDashStrokeSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C456071E209BAACB002B1DF4 /* ActivityIndicatorAnimationCircleDashStrokeSpin.swift */; };
 		C46DC3E12099863A00501E63 /* ActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46DC3E02099863A00501E63 /* ActivityIndicatorAnimationCircleStrokeSpin.swift */; };
 		C46DC3E32099895E00501E63 /* ActivityIndicatorAnimationGear.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46DC3E22099895E00501E63 /* ActivityIndicatorAnimationGear.swift */; };
+		C489AD1E20E640B300273B77 /* ActivityIndicatorAnimationCirclePendulum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C489AD1D20E640B300273B77 /* ActivityIndicatorAnimationCirclePendulum.swift */; };
 		C49C08DD20A05072002FCAFD /* ActivityIndicatorAnimationRupee.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49C08DC20A05072002FCAFD /* ActivityIndicatorAnimationRupee.swift */; };
 		E20DAEB82003662900BE1C88 /* GradientMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20DAEB72003662900BE1C88 /* GradientMode.swift */; };
 		E20DAEBA2003682F00BE1C88 /* RadialGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20DAEB92003682F00BE1C88 /* RadialGradientLayer.swift */; };
@@ -229,6 +231,7 @@
 /* Begin PBXFileReference section */
 		48A167112063CD0D00D7BCFB /* ConicalGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConicalGradientLayer.swift; sourceTree = "<group>"; };
 		48D80DC920403DAC00D3137B /* AnimatableTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableTabBarItem.swift; sourceTree = "<group>"; };
+		C40AE6A120E6210100B24A44 /* ActivityIndicatorAnimationNewtonCradle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationNewtonCradle.swift; sourceTree = "<group>"; };
 		C414765E209C1BD700945C8B /* ActivityIndicatorAnimationTripleGear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationTripleGear.swift; sourceTree = "<group>"; };
 		C41A0E7F209A39660069555A /* ActivityIndicatorAnimationHeartBeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationHeartBeat.swift; sourceTree = "<group>"; };
 		C41A0E81209A3C1B0069555A /* ActivityIndicatorAnimationTriforce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationTriforce.swift; sourceTree = "<group>"; };
@@ -236,6 +239,7 @@
 		C456071E209BAACB002B1DF4 /* ActivityIndicatorAnimationCircleDashStrokeSpin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationCircleDashStrokeSpin.swift; sourceTree = "<group>"; };
 		C46DC3E02099863A00501E63 /* ActivityIndicatorAnimationCircleStrokeSpin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationCircleStrokeSpin.swift; sourceTree = "<group>"; };
 		C46DC3E22099895E00501E63 /* ActivityIndicatorAnimationGear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationGear.swift; sourceTree = "<group>"; };
+		C489AD1D20E640B300273B77 /* ActivityIndicatorAnimationCirclePendulum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationCirclePendulum.swift; sourceTree = "<group>"; };
 		C49C08DC20A05072002FCAFD /* ActivityIndicatorAnimationRupee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationRupee.swift; sourceTree = "<group>"; };
 		E20DAEB72003662900BE1C88 /* GradientMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientMode.swift; sourceTree = "<group>"; };
 		E20DAEB92003682F00BE1C88 /* RadialGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialGradientLayer.swift; sourceTree = "<group>"; };
@@ -614,6 +618,8 @@
 				C41A0E81209A3C1B0069555A /* ActivityIndicatorAnimationTriforce.swift */,
 				C456071E209BAACB002B1DF4 /* ActivityIndicatorAnimationCircleDashStrokeSpin.swift */,
 				C49C08DC20A05072002FCAFD /* ActivityIndicatorAnimationRupee.swift */,
+				C40AE6A120E6210100B24A44 /* ActivityIndicatorAnimationNewtonCradle.swift */,
+				C489AD1D20E640B300273B77 /* ActivityIndicatorAnimationCirclePendulum.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -1093,6 +1099,7 @@
 				E27FD25F1ECD7D8A00F74840 /* PresentationPresenter.swift in Sources */,
 				C4511F371F93F1B2002E0FAF /* UIBezierPathExtension.swift in Sources */,
 				E27FD28F1ECD7D8A00F74840 /* TransitionType.swift in Sources */,
+				C40AE6A220E6210100B24A44 /* ActivityIndicatorAnimationNewtonCradle.swift in Sources */,
 				E27FD2CF1ECD7D8A00F74840 /* AnimatableTableViewCell.swift in Sources */,
 				E27FD2821ECD7D8A00F74840 /* ColorType.swift in Sources */,
 				E27FD2641ECD7D8A00F74840 /* PanInteractiveAnimator.swift in Sources */,
@@ -1204,6 +1211,7 @@
 				E20DAEBA2003682F00BE1C88 /* RadialGradientLayer.swift in Sources */,
 				E27FD2CB1ECD7D8A00F74840 /* AnimatableScrollView.swift in Sources */,
 				E27FD2C41ECD7D8A00F74840 /* AnimatableActivityIndicatorView.swift in Sources */,
+				C489AD1E20E640B300273B77 /* ActivityIndicatorAnimationCirclePendulum.swift in Sources */,
 				E27FD2911ECD7D8A00F74840 /* CALayerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
