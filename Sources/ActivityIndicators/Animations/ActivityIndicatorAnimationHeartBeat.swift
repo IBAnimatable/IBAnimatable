@@ -12,7 +12,7 @@ public class ActivityIndicatorAnimationHeartBeat: ActivityIndicatorAnimating {
 
   // MARK: Properties
 
-  fileprivate let duration: CFTimeInterval = 1
+  fileprivate let duration: CFTimeInterval = 0.8
 
   // MARK: ActivityIndicatorAnimating
 
@@ -33,12 +33,12 @@ private extension ActivityIndicatorAnimationHeartBeat {
 
   var defaultAnimation: CABasicAnimation {
     let scaleAnimation = CABasicAnimation(keyPath: .scale)
-    scaleAnimation.timingFunctionType = .easeIn
+    scaleAnimation.timingFunctionType = .easeOutBack
     scaleAnimation.duration = duration
     scaleAnimation.repeatCount = .infinity
     scaleAnimation.autoreverses = true
     scaleAnimation.fromValue = 1
-    scaleAnimation.toValue = 0.7
+    scaleAnimation.toValue = 0.8
     scaleAnimation.isRemovedOnCompletion = false
     return scaleAnimation
   }
