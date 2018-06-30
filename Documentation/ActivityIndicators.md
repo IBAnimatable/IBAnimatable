@@ -61,6 +61,9 @@ You can see an example of each animation in the demo app. Launch the app, then t
 36. [HeartBeat](#heartbeat)
 37. [Triforce](#triforce)
 37. [Rupe](#rupe)
+38. [NewtonCradle](#triforce)
+39. [CirclePendulum](#circlependulum)
+
 
 ### AudioEqualizer
 
@@ -213,3 +216,11 @@ You can see an example of each animation in the demo app. Launch the app, then t
 ### Rupe
 
 ![ActivityIndicator - Rupe](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorRupe.gif)
+
+### NewtonCradle
+
+![ActivityIndicator - NewtonCradle](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorNewtonCradle.gif)
+
+### CirclePendulum
+
+![ActivityIndicator - CirclePendulum](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorCirclePendulum.gif)

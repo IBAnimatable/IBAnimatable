@@ -18,6 +18,7 @@ N/A
 - Add `preferred` presentation modal size. [#566](https://github.com/IBAnimatable/IBAnimatable/pull/566) by [@phimage](https://github.com/phimage)
 - Add `conical` gradient type. [#567](https://github.com/IBAnimatable/IBAnimatable/pull/567) by [@phimage](https://github.com/phimage)
 - Animatable `timingFunction` parameter could now be used with all animation types. [#571](https://github.com/IBAnimatable/IBAnimatable/pull/571) by [@phimage](https://github.com/phimage)
+- Add new activity indicators `newtonCradle` and `circlePendulum`. [#573](https://github.com/IBAnimatable/IBAnimatable/pull/573) by [@phimage](https://github.com/phimage)
 
 #### Bugfixes
 
