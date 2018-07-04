@@ -46,4 +46,6 @@ public enum ActivityIndicatorType: String, IBEnum {
   case heartBeat
   case triforce
   case rupee
+  case newtonCradle
+  case circlePendulum
 }

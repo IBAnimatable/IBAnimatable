@@ -14,9 +14,9 @@ public class ActivityIndicatorAnimationTriforce: ActivityIndicatorAnimating {
 
   fileprivate let duration: CFTimeInterval = 3 / 2
   #if TRIFORCE
-  fileprivate let trueColor = true
+  public var trueColor = true
   #else
-  fileprivate let trueColor = false
+  public var trueColor = false
   #endif
   // MARK: ActivityIndicatorAnimating
 

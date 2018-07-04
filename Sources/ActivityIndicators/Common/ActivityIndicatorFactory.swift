@@ -7,7 +7,18 @@ import UIKit
 
 public struct ActivityIndicatorFactory {
   public static func makeActivityIndicator(activityIndicatorType: ActivityIndicatorType) -> ActivityIndicatorAnimating {
-    switch activityIndicatorType {
+    return activityIndicatorType.animator
+  }
+}
+
+extension ActivityIndicatorType {
+
+  func configureAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
+    self.animator.configureAnimation(in: layer, size: size, color: color)
+  }
+
+  var animator: ActivityIndicatorAnimating {
+    switch self {
     case .none:
       fatalError("Invalid ActivityIndicatorAnimating")
     case .audioEqualizer:
@@ -86,6 +97,10 @@ public struct ActivityIndicatorFactory {
       return ActivityIndicatorAnimationTriforce()
     case .rupee:
       return ActivityIndicatorAnimationRupee()
+    case .newtonCradle:
+      return ActivityIndicatorAnimationNewtonCradle()
+    case .circlePendulum:
+      return ActivityIndicatorAnimationCirclePendulum()
     }
   }
 }
