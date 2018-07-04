@@ -14,16 +14,16 @@ public class ActivityIndicatorAnimationCirclePendulum: ActivityIndicatorAnimatin
 
   // MARK: Properties
 
-  fileprivate let duration: CFTimeInterval = 1
+  public var duration: CFTimeInterval = 0.8
   fileprivate let ratio: CGFloat = 7
   fileprivate let ballCount: Int = 3
 
   #if LG
-  fileprivate let trueColor = true
+  public var primaryColor = true
   #else
-  fileprivate let trueColor = false
+  public var primaryColor = false
   #endif
-  fileprivate let colors: [UIColor] = [.red, .blue, .yellow]
+  fileprivate let colors: [UIColor] = [.magenta, .yellow, .cyan]
 
   fileprivate var ballSize: CGFloat = 0
 
@@ -35,7 +35,7 @@ public class ActivityIndicatorAnimationCirclePendulum: ActivityIndicatorAnimatin
     let yPos = size.height - ballSize / 2
 
     for i in 0 ..< ballCount {
-      let ball = ActivityIndicatorShape.circle.makeLayer(size: CGSize(width: ballSize, height: ballSize), color: trueColor ? colors[i]: color)
+      let ball = ActivityIndicatorShape.circle.makeLayer(size: CGSize(width: ballSize, height: ballSize), color: primaryColor ? colors[i]: color)
       ball.frame = CGRect(x: xPos, y: yPos, width: ballSize, height: ballSize)
       ball.add(makeAnimation(for: ball, in: layer, size: size, pos: i), forKey: "animation")
       layer.addSublayer(ball)

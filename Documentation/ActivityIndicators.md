@@ -61,7 +61,7 @@ You can see an example of each animation in the demo app. Launch the app, then t
 36. [HeartBeat](#heartbeat)
 37. [Triforce](#triforce)
 37. [Rupe](#rupe)
-38. [NewtonCradle](#triforce)
+38. [NewtonCradle](#newtoncradle)
 39. [CirclePendulum](#circlependulum)
 
 
@@ -224,3 +224,17 @@ You can see an example of each animation in the demo app. Launch the app, then t
 ### CirclePendulum
 
 ![ActivityIndicator - CirclePendulum](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/ActivityIndicatorCirclePendulum.gif)
+
+## Easter eggs 🥚🐰
+
+Compile this framework with flag
+
+- 🛡 `TRIFORCE` to reveal the true color of the `Triforce`:
+  - 🔺`red` for power.
+  - 🍃`green` for courage.
+  - 🔹`blue` for wisdom.
+- 📺 `LG` to use the primary colors on `CirclePendulum`.
+
+### For Cocoapod
+
+Use in Podfile `build_settings['OTHER_SWIFT_FLAGS'] = '-THE_FLAG'`
