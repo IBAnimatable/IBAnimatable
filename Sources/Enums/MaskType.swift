@@ -119,6 +119,8 @@ public extension MaskType {
   }
 }
 
+// MARK: UIKit
+
 extension MaskType {
 
   func bezierPath(in rect: CGRect) -> UIBezierPath {
@@ -165,7 +167,7 @@ extension MaskType {
 }
 
 extension CornerSides {
-  
+
   var rectCorner: UIRectCorner {
     if self == .allSides {
       return .allCorners
@@ -185,5 +187,5 @@ extension CornerSides {
     }
     return corners
   }
-  
+
 }
