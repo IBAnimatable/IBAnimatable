@@ -37,9 +37,9 @@ final class RefreshControlTableViewController: AnimatableTableViewController {
       return
     }
 
-    var attributes = [NSAttributedStringKey: Any]()
+    var attributes = [NSAttributedString.Key: Any]()
     if let color = refreshControlTintColor {
-      attributes[NSAttributedStringKey.foregroundColor] = color
+      attributes[NSAttributedString.Key.foregroundColor] = color
     }
     refreshControl.attributedTitle = NSAttributedString(string: "\(Int(time))", attributes: attributes )
 
