@@ -14,7 +14,7 @@ class SystemTransitionAnimator: NSObject, AnimatedTransitioning {
   var reverseAnimationType: TransitionAnimationType?
   var interactiveGestureType: InteractiveGestureType?
   var systemTransitionType: TransitionAnimationType.SystemTransitionType
-  var systemTransitionSubtype: String?
+  var systemTransitionSubtype: CATransitionSubtype?
 
   init(systemType: TransitionAnimationType.SystemTransitionType, duration: Duration) {
 
@@ -22,7 +22,7 @@ class SystemTransitionAnimator: NSObject, AnimatedTransitioning {
     transitionDuration = duration
     transitionAnimationType = TransitionAnimationType(systemType: systemType)
     reverseAnimationType = transitionAnimationType.reversed
-    systemTransitionSubtype = systemType == .rotate ? "90" : nil
+    systemTransitionSubtype = nil
 
     super.init()
   }
@@ -53,7 +53,11 @@ class SystemTransitionAnimator: NSObject, AnimatedTransitioning {
   fileprivate func performSystemTransition(using context: UIViewControllerContextTransitioning) {
     CALayer.animate({
       let transition = CATransition()
+      #if swift(>=4.2)
+      transition.type = CATransitionType(rawValue: systemTransitionType.rawValue)
+      #else
       transition.type = systemTransitionType.rawValue
+      #endif
       transition.subtype = systemTransitionSubtype
       transition.duration = transitionDuration(using: context)
       transition.timingFunctionType = .easeOutCubic

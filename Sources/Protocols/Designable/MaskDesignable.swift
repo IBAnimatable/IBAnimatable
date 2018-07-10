@@ -76,7 +76,7 @@ extension MaskDesignable {
     maskLayer.frame = CGRect(origin: .zero, size: view.bounds.size)
     maskLayer.path = path.cgPath
     if path.usesEvenOddFillRule {
-      maskLayer.fillRule = kCAFillRuleEvenOdd
+      maskLayer.fillRule = CAShapeLayerFillRule.evenOdd
     }
     view.layer.mask = maskLayer
   }

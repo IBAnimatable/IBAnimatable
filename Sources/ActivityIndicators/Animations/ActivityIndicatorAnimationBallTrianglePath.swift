@@ -10,7 +10,7 @@ public class ActivityIndicatorAnimationBallTrianglePath: ActivityIndicatorAnimat
   // MARK: Properties
 
   fileprivate let duration: CFTimeInterval = 2
-  fileprivate let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+  fileprivate let timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
 
   // MARK: ActivityIndicatorAnimating
 
@@ -60,7 +60,7 @@ private extension ActivityIndicatorAnimationBallTrianglePath {
   func change(animation: CAKeyframeAnimation, values rawValues: [String], deltaX: CGFloat, deltaY: CGFloat) {
     let values = NSMutableArray(capacity: 5)
     for rawValue in rawValues {
-      let point = CGPointFromString(translateString(valueString: rawValue, deltaX: deltaX, deltaY: deltaY))
+      let point = NSCoder.cgPoint(for: translateString(valueString: rawValue, deltaX: deltaX, deltaY: deltaY))
       values.add(NSValue(caTransform3D: CATransform3DMakeTranslation(point.x, point.y, 0)))
     }
     animation.values = values as [AnyObject]

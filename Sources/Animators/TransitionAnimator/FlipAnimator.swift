@@ -111,7 +111,7 @@ private extension FlipAnimator {
     rightHandView?.frame = snapshotRegion
     containerView?.addSubview(rightHandView!)
 
-    containerView?.sendSubview(toBack: view)
+    containerView?.sendSubviewToBack(view)
     return [leftHandView!, rightHandView!]
   }
 

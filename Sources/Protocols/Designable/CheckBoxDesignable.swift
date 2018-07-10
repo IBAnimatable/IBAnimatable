@@ -30,6 +30,6 @@ public extension CheckBoxDesignable where Self: UIButton {
       return
     }
 
-    setBackgroundImage(uncheckedImage, for: UIControlState())
+    setBackgroundImage(uncheckedImage, for: UIControl.State())
   }
 }

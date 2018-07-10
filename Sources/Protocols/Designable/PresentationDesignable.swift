@@ -41,7 +41,7 @@ public protocol PresentationDesignable: class {
   var opacity: CGFloat { get set }
 
   /// The blur effect style of the dimming view. If use this property, `backgroundColor` and `opacity` are ignored.
-  var blurEffectStyle: UIBlurEffectStyle? { get set }
+  var blurEffectStyle: UIBlurEffect.Style? { get set }
 
   /// The blur opacity of the dimming view. If use this property, `backgroundColor` and `opacity` are ignored.
   var blurOpacity: CGFloat { get set }
@@ -117,7 +117,7 @@ public class PresentationConfiguration {
   public var dismissOnTap: Bool = true
   public var backgroundColor: UIColor = .black
   public var opacity: CGFloat = 0.7
-  public var blurEffectStyle: UIBlurEffectStyle?
+  public var blurEffectStyle: UIBlurEffect.Style?
   public var blurOpacity: CGFloat = .nan
   public var shadowColor: UIColor?
   public var shadowRadius: CGFloat = .nan

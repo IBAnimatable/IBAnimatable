@@ -123,25 +123,25 @@ open class AnimatableView: UIView, CornerDesignable, FillDesignable, BorderDesig
   }
 
   // MARK: - BlurDesignable
-  open var blurEffectStyle: UIBlurEffectStyle? {
+  open var blurEffectStyle: UIBlurEffect.Style? {
     didSet {
       configureBlurEffectStyle()
     }
   }
   @IBInspectable var _blurEffectStyle: String? {
     didSet {
-      blurEffectStyle = UIBlurEffectStyle(string: _blurEffectStyle)
+      blurEffectStyle = UIBlurEffect.Style(string: _blurEffectStyle)
     }
   }
 
-  open var vibrancyEffectStyle: UIBlurEffectStyle? {
+  open var vibrancyEffectStyle: UIBlurEffect.Style? {
     didSet {
       configureBlurEffectStyle()
     }
   }
   @IBInspectable var _vibrancyEffectStyle: String? {
     didSet {
-      vibrancyEffectStyle = UIBlurEffectStyle(string: _vibrancyEffectStyle)
+      vibrancyEffectStyle = UIBlurEffect.Style(string: _vibrancyEffectStyle)
     }
   }
 

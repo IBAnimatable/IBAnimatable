@@ -27,7 +27,7 @@ public protocol AnimatedTransitioning: ViewControllerAnimatedTransitioning {
 public extension AnimatedTransitioning {
   public func animateWithCATransition(transitionContext: UIViewControllerContextTransitioning,
                                       type: TransitionAnimationType.SystemTransitionType,
-                                      subtype: String?) {
+                                      subtype: CATransitionSubtype?) {
     let (_, tempToView, tempContainerView) = retrieveViews(transitionContext: transitionContext)
     guard let toView = tempToView, let containerView = tempContainerView else {
       transitionContext.completeTransition(true)
@@ -42,7 +42,11 @@ public extension AnimatedTransitioning {
     containerView.addSubview(toView)
     CALayer.animate({
       let transition = CATransition()
+      #if swift(>=4.2)
+      transition.type = CATransitionType(rawValue: type.rawValue)
+      #else
       transition.type = type.rawValue
+      #endif
       if let subtype = subtype {
         transition.subtype = subtype
       }

@@ -124,13 +124,13 @@ public final class IB: NSObject, CornerDesignable, FillDesignable, BorderDesigna
 
   // MARK: - BlurDesignable
 
-  public var blurEffectStyle: UIBlurEffectStyle? {
+  public var blurEffectStyle: UIBlurEffect.Style? {
     didSet {
       configureBlurEffectStyle(in: view)
     }
   }
 
-  public var vibrancyEffectStyle: UIBlurEffectStyle? {
+  public var vibrancyEffectStyle: UIBlurEffect.Style? {
     didSet {
       configureBlurEffectStyle(in: view)
     }
