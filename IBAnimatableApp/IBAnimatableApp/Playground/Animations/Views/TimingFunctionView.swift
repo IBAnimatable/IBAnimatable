@@ -17,7 +17,7 @@ final class TimingFunctionView: UIView {
       timingFunction = TimingFunctionType(string: _timingFunction)
     }
   }
-  open var timingFunction: TimingFunctionType = .none {
+  public var timingFunction: TimingFunctionType = .none {
     didSet {
       self.setNeedsLayout()
     }
