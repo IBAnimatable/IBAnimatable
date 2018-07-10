@@ -28,6 +28,10 @@ public enum ColorType: String, IBEnum {
   case flatPumpkin
 }
 
+#if swift(>=4.2)
+extension ColorType: CaseIterable {}
+#endif
+
 extension ColorType {
   public var color: UIColor {
     switch self {

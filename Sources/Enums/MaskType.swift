@@ -59,6 +59,10 @@ public enum MaskType: IBEnum {
   }
 }
 
+#if swift(>=4.2)
+extension MaskType.WaveDirection: CaseIterable {}
+#endif
+
 public extension MaskType {
   init(string: String?) {
     guard let string = string else {
