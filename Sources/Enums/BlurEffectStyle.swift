@@ -5,7 +5,7 @@
 
 import UIKit
 
-extension UIBlurEffectStyle: IBEnum {
+extension UIBlurEffect.Style: IBEnum {
   /** initialize a UIBlurEffectStyle from string. `extraLight`, `light`, `dark`, `prominent` (iOS 10+), `extraLight` (iOS 10+)
   */
   public init?(string: String?) {

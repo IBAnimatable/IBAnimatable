@@ -11,7 +11,7 @@ import Foundation
 
 // MARK: - StringCornerDesignable Protocol
 
-protocol StringCornerDesignable: class, CornerDesignable {
+protocol StringCornerDesignable: CornerDesignable {
 
   var _cornerSides: String? { get set }
 

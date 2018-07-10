@@ -200,20 +200,20 @@ extension TransitionAnimationType {
     case cross
 
     // Convert from direction to CATransition Subtype used in `CATransition`
-    var caTransitionSubtype: String {
+    var caTransitionSubtype: CATransitionSubtype? {
       switch self {
       case .left:
-        return kCATransitionFromLeft
+        return CATransitionSubtype.fromLeft
       case .right:
-        return kCATransitionFromRight
+        return CATransitionSubtype.fromRight
       case .top:
         // The actual transition direction is oposite, need to reverse
-        return kCATransitionFromBottom
+        return CATransitionSubtype.fromBottom
       case .bottom:
         // The actual transition direction is oposite, need to reverse
-        return kCATransitionFromTop
+        return CATransitionSubtype.fromTop
       default:
-        return ""
+        return nil
       }
     }
 

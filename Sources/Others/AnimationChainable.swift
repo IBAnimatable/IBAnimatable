@@ -20,7 +20,7 @@ struct AnimationConfiguration {
 extension AnimationConfiguration {
 
   /// Options for spring animation.
-  var options: UIViewAnimationOptions {
+  var options: UIView.AnimationOptions {
     if let curveOption = timingFunction.viewAnimationCurveOption {
       return [
         .allowUserInteraction,

@@ -30,7 +30,7 @@ public extension PaddingDesignable where Self: UITextField {
     if paddingSide.isNaN && paddingLeft.isNaN && paddingRight.isNaN {
       return bounds
     }
-    return UIEdgeInsetsInsetRect(bounds, paddingInsets)
+    return bounds.inset(by: paddingInsets)
   }
 
   private var paddingInsets: UIEdgeInsets {
