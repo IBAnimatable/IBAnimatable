@@ -43,16 +43,34 @@ extension IBEnum {
 }
 
 /// IBEnum provide default initializer for RawRepresentable Enum
+#if swift(>=4.2)
+public extension IBEnum where Self: RawRepresentable & CaseIterable {
+  init?(string: String?) {
+    if let item = getCase(for: string, from: iterateEnum(from: Self.self)) {
+      self = item
+    } else {
+      return nil
+    }
+  }
+}
+#else
 public extension IBEnum where Self: RawRepresentable & Hashable {
   init?(string: String?) {
-    let lowerString = string?.lowercased()
-    let iterator = iterateEnum(from: Self.self)
-    for e in iterator {
-      if String(describing: e.rawValue).lowercased() == lowerString {
-        self = e as Self
-        return
-      }
+    if let item = getCase(for: string, from: iterateEnum(from: Self.self)) {
+      self = item
+    } else {
+      return nil
     }
-    return nil
   }
+}
+#endif
+
+private func getCase<T: IBEnum & RawRepresentable>(for string: String?, from iterator: AnyIterator<T>) -> T? {
+  let lowerString = string?.lowercased()
+  for item in iterator {
+    if String(describing: item.rawValue).lowercased() == lowerString {
+      return item
+    }
+  }
+  return nil
 }

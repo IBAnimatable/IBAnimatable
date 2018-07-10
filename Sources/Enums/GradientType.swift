@@ -181,6 +181,10 @@ public enum GradientType: String, IBEnum {
   case iiitDelhi
 }
 
+#if swift(>=4.2)
+extension GradientType: CaseIterable {}
+#endif
+
 extension GradientType {
   var colors: GradientColor {
     switch self {

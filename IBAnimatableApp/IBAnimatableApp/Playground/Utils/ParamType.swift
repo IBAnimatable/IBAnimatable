@@ -25,11 +25,19 @@ enum ParamType {
   case number(min: Double, max: Double, interval: Double, ascending: Bool, unit: String)
   case enumeration(values: [String])
 
+  #if swift(>=4.2)
+  init<T: RawRepresentable>(fromEnum: T.Type) where T: CaseIterable {
+    let iterator = iterateEnum(fromEnum)
+    let values = iterator.map { String(describing: $0.rawValue) }
+    self = .enumeration(values: values)
+  }
+  #else
   init<T: RawRepresentable>(fromEnum: T.Type) where T: Hashable {
     let iterator = iterateEnum(fromEnum)
     let values = iterator.map { String(describing: $0.rawValue) }
     self = .enumeration(values: values)
   }
+  #endif
 
   /// Number of different values to show in the picker
   func count() -> Int {

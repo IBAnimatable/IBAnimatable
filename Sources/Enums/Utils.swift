@@ -42,6 +42,11 @@ extension RawRepresentable {
   }
 }
 
+#if swift(>=4.2)
+func iterateEnum<T: CaseIterable>(from: T.Type) -> AnyIterator<T> {
+  return AnyIterator(T.allCases.makeIterator())
+}
+#else
 func iterateEnum<T: Hashable>(from: T.Type) -> AnyIterator<T> {
   var x = 0
   return AnyIterator {
@@ -54,6 +59,7 @@ func iterateEnum<T: Hashable>(from: T.Type) -> AnyIterator<T> {
     return next.hashValue == x ? next : nil
   }
 }
+#endif
 
 extension CALayer {
     var currentMediaTime: CFTimeInterval {
