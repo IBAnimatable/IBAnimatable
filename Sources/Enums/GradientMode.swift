@@ -13,3 +13,7 @@ public enum GradientMode: String, IBEnum {
   case radial
   case conical
 }
+
+#if swift(>=4.2)
+extension GradientMode: CaseIterable {}
+#endif

@@ -55,9 +55,9 @@ extension PaddingDesignableTests where Element: UITextField, Element: PaddingDes
     let paddedEditRect = element.editingRect(forBounds: element.bounds)
     let paddedPlaceholderRect = element.placeholderRect(forBounds: element.bounds)
 
-    let mockTextRect = UIEdgeInsetsInsetRect(textRectOriginal, edge.insets)
-    let mockEditRect = UIEdgeInsetsInsetRect(editRectOriginal, edge.insets)
-    let mockPlaceholderRect = UIEdgeInsetsInsetRect(placeholderRectOriginal, edge.insets)
+    let mockTextRect = textRectOriginal.inset(by: edge.insets)
+    let mockEditRect = editRectOriginal.inset(by: edge.insets)
+    let mockPlaceholderRect = placeholderRectOriginal.inset(by: edge.insets)
 
     XCTAssertEqual(paddedTextRect, mockTextRect)
     XCTAssertEqual(paddedEditRect, mockEditRect)

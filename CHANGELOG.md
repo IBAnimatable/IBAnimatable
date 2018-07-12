@@ -20,6 +20,7 @@ N/A
 - Animatable `timingFunction` parameter could now be used with all animation types. [#571](https://github.com/IBAnimatable/IBAnimatable/pull/571) by [@phimage](https://github.com/phimage)
 - Add new activity indicators `newtonCradle` and `circlePendulum`. [#573](https://github.com/IBAnimatable/IBAnimatable/pull/573) by [@phimage](https://github.com/phimage)
 - Add new mask `rounded` to  make a rounded rectangle. [#575](https://github.com/IBAnimatable/IBAnimatable/pull/575) by [@phimage](https://github.com/phimage)
+- Support for Swift 4.2. [#576](https://github.com/IBAnimatable/IBAnimatable/pull/576) by [@djbe](https://github.com/djbe)
 
 #### Bugfixes
 

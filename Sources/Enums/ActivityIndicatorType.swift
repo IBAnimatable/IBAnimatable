@@ -49,3 +49,7 @@ public enum ActivityIndicatorType: String, IBEnum {
   case newtonCradle
   case circlePendulum
 }
+
+#if swift(>=4.2)
+extension ActivityIndicatorType: CaseIterable {}
+#endif

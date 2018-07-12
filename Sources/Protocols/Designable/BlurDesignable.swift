@@ -10,12 +10,12 @@ public protocol BlurDesignable: class {
   /**
    Blur effect style: `extraLight`, `light`, `dark`, `regular` (iOS 10+) or `prominent` (iOS 10+).
    */
-  var blurEffectStyle: UIBlurEffectStyle? { get set }
+  var blurEffectStyle: UIBlurEffect.Style? { get set }
 
   /**
    Vibrancy effect style: `extraLight`, `light`, `dark`, `regular` (iOS 10+) or `prominent` (iOS 10+). Once specify the vibrancy effect style, all subviews of blur effect view will apply this vibrancy effect. The property should set once. Because once we use `UIVisualEffectView`, Apple uses a private class like `_UIVisualEffectContentView` to contain subviews which will change the view hierarchy. After that, we are not able to restore the original view hierarchy. Also, the Auto Layout constraints will be broken when the system change the view hierarchy. We need to manually re-set up the constraints or use Autoresizing masks to layout the subviews.
    */
-  var vibrancyEffectStyle: UIBlurEffectStyle? { get set }
+  var vibrancyEffectStyle: UIBlurEffect.Style? { get set }
 
   /**
    Blur opacity: The opacity of UI element using blur effect. The default value is 1.0 if not specified. There is some performance penalty when we use this property.

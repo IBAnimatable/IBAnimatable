@@ -19,29 +19,29 @@ final class ConicalGradientLayer: CALayer {
     super.init()
   }
 
-  open var colors = [CGColor]() {
+  public var colors = [CGColor]() {
     didSet {
       setNeedsDisplay()
     }
   }
 
   /// Start angle in radians. Defaults to 0.
-  open var startAngle: Double = 0.0 {
+  public var startAngle: Double = 0.0 {
     didSet {
       setNeedsDisplay()
     }
   }
 
   /// End angle in radians. Defaults to 2 pi.
-  open var endAngle: Double = 2 * .pi {
+  public var endAngle: Double = 2 * .pi {
     didSet {
       setNeedsDisplay()
     }
   }
 
-  open let centerPoint: CGPoint = CGPoint(x: 0.5, y: 0.5)
+  public let centerPoint: CGPoint = CGPoint(x: 0.5, y: 0.5)
 
-  open var startPoint: CGPoint {
+  public var startPoint: CGPoint {
     get {
       assertionFailure("not implemented")
       return .zero
@@ -57,7 +57,7 @@ final class ConicalGradientLayer: CALayer {
     }
   }
 
-  open var endPoint: CGPoint {
+  public var endPoint: CGPoint {
     get {
       assertionFailure("not implemented")
       return .zero
@@ -76,7 +76,7 @@ final class ConicalGradientLayer: CALayer {
   /// List of computed color transitions.
   private var transitions = [UIColor.Transition]()
 
-  open override func draw(in ctx: CGContext) {
+  public override func draw(in ctx: CGContext) {
     UIGraphicsPushContext(ctx)
     draw(in: ctx.boundingBoxOfClipPath)
     UIGraphicsPopContext()

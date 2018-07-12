@@ -234,7 +234,7 @@ extension TimingFunctionType {
 
 extension TimingFunctionType {
 
-  var viewAnimationCurveOption: UIViewAnimationOptions? {
+  var viewAnimationCurveOption: UIView.AnimationOptions? {
     switch self {
     case .linear:
       return .curveLinear
@@ -284,11 +284,11 @@ extension TimingFunctionType {
 extension CAMediaTimingFunction {
 
   // standards
-  @nonobjc public static let linear = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
-  @nonobjc public static let easeIn = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
-  @nonobjc public static let easeOut = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-  @nonobjc public static let easeInOut = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-  @nonobjc public static let `default`  = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
+  @nonobjc public static let linear = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+  @nonobjc public static let easeIn = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
+  @nonobjc public static let easeOut = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+  @nonobjc public static let easeInOut = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+  @nonobjc public static let `default`  = CAMediaTimingFunction(name: CAMediaTimingFunctionName.default)
 
   // http://easings.net/
   @nonobjc public static let easeInSine = CAMediaTimingFunction(controlPoints: 0.47, 0, 0.745, 0.715)

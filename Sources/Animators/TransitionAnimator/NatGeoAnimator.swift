@@ -87,7 +87,7 @@ private extension NatGeoAnimator {
       }
     }) { _ in
       if transitionContext.transitionWasCancelled {
-        containerView.bringSubview(toFront: fromView)
+        containerView.bringSubviewToFront(fromView)
         fromView.isUserInteractionEnabled = true
       }
 
@@ -126,7 +126,7 @@ private extension NatGeoAnimator {
       }
     }) { _ in
       if transitionContext.transitionWasCancelled {
-        containerView.bringSubview(toFront: fromView)
+        containerView.bringSubviewToFront(fromView)
         toView.isUserInteractionEnabled = false
       }
 

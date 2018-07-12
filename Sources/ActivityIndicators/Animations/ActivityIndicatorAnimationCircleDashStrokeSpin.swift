@@ -27,7 +27,7 @@ public class ActivityIndicatorAnimationCircleDashStrokeSpin: ActivityIndicatorAn
     replicatorLayer.frame = CGRect(x: x, y: y, width: size.width, height: size.height)
 
     let dotLayer = CAShapeLayer()
-    dotLayer.lineCap = kCALineCapRound
+    dotLayer.lineCap = CAShapeLayerLineCap.round
     dotLayer.apply(mode: .stroke(lineWidth: lineWidth), color: color)
 
     let angle: CGFloat = 2 * .pi / CGFloat(instanceCount)

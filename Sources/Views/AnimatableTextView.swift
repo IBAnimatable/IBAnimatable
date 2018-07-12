@@ -173,14 +173,14 @@ open class AnimatableTextView: UITextView, CornerDesignable, FillDesignable, Bor
   }
 
   deinit {
-    NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UITextViewTextDidChange, object: nil)
+    NotificationCenter.default.removeObserver(self, name: UITextView.textDidChangeNotification, object: nil)
   }
 
   // MARK: - Private
   private func configureInspectableProperties() {
     configureAnimatableProperties()
     configure(placeholderLabel: placeholderLabel, placeholderLabelConstraints: &placeholderLabelConstraints)
-    NotificationCenter.default.addObserver(self, selector: #selector(textDidChange), name: NSNotification.Name.UITextViewTextDidChange, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(textDidChange), name: UITextView.textDidChangeNotification, object: nil)
   }
 
   @objc

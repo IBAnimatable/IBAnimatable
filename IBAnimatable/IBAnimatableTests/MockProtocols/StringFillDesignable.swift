@@ -11,7 +11,7 @@ import Foundation
 
 // MARK: - StringFillDesignable Protocol
 
-protocol StringFillDesignable: class, FillDesignable {
+protocol StringFillDesignable: FillDesignable {
 
   var _predefinedColor: String? { get set }
 

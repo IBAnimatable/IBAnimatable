@@ -109,7 +109,7 @@ extension BorderDesignable {
     shapeLayer.frame = view.bounds
     switch borderType {
     case let .dash(dashLength, spaceLength):
-      shapeLayer.lineJoin = kCALineJoinRound
+      shapeLayer.lineJoin = CAShapeLayerLineJoin.round
       shapeLayer.lineDashPattern = [dashLength as NSNumber, spaceLength as NSNumber]
     case .solid, .none:
       break

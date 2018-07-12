@@ -41,7 +41,7 @@ private extension ActivityIndicatorAnimationCircleStrokeSpin {
     groupAnimation.duration = strokeStartDuration + beginTime
     groupAnimation.repeatCount = .infinity
     groupAnimation.isRemovedOnCompletion = false
-    groupAnimation.fillMode = kCAFillModeForwards
+    groupAnimation.fillMode = CAMediaTimingFillMode.forwards
     return groupAnimation
   }
 

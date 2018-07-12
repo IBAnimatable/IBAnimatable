@@ -41,12 +41,12 @@ public class ContainerTransition: NSObject {
     toViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     toViewController.view.frame = container.bounds
 
-    fromViewController?.willMove(toParentViewController: nil)
-    parentViewController.addChildViewController(toViewController)
+    fromViewController?.willMove(toParent: nil)
+    parentViewController.addChild(toViewController)
 
     guard let fromViewController = fromViewController else {
       container.addSubview(toViewController.view)
-      toViewController.didMove(toParentViewController: parentViewController)
+      toViewController.didMove(toParent: parentViewController)
       completion?()
       return
     }
@@ -90,8 +90,8 @@ extension ContainerTransition: UIViewControllerContextTransitioning {
 
   public func completeTransition(_ didComplete: Bool) {
     viewControllers?[UITransitionContextViewControllerKey.from]?.view.removeFromSuperview()
-    viewControllers?[UITransitionContextViewControllerKey.from]?.removeFromParentViewController()
-    viewControllers?[UITransitionContextViewControllerKey.to]?.didMove(toParentViewController: parentViewController)
+    viewControllers?[UITransitionContextViewControllerKey.from]?.removeFromParent()
+    viewControllers?[UITransitionContextViewControllerKey.to]?.didMove(toParent: parentViewController)
     parentViewController?.view.isUserInteractionEnabled = true
     completion?()
   }

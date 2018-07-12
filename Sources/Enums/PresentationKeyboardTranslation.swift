@@ -29,3 +29,7 @@ public enum ModalKeyboardTranslation: String, IBEnum {
     return frame
   }
 }
+
+#if swift(>=4.2)
+extension ModalKeyboardTranslation: CaseIterable {}
+#endif

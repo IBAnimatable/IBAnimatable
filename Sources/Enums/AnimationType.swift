@@ -58,6 +58,15 @@ public indirect enum AnimationType {
 
 }
 
+#if swift(>=4.2)
+extension AnimationType.Axis: CaseIterable {}
+extension AnimationType.Direction: CaseIterable {}
+extension AnimationType.FadeWay: CaseIterable {}
+extension AnimationType.RotationDirection: CaseIterable {}
+extension AnimationType.Run: CaseIterable {}
+extension AnimationType.Way: CaseIterable {}
+#endif
+
 extension AnimationType {
 
   public static func scaleTo(x: Double, y: Double) -> AnimationType {

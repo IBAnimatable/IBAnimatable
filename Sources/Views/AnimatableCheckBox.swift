@@ -198,7 +198,7 @@ open class AnimatableCheckBox: UIButton, CheckBoxDesignable, CornerDesignable, F
   // MARK: - Private
   fileprivate func setup() {
     // No title for CheckBox
-    setTitle("", for: UIControlState())
+    setTitle("", for: UIControl.State())
     tintColor = .clear
   }
 
