@@ -21,6 +21,7 @@ final class MaskViewController: UIViewController {
     let radiusParam = ParamType.number(min: 10, max: 40, interval: 10, ascending: true, unit: "px")
     let cogsParam = ParamType.number(min: 3, max: 10, interval: 1, ascending: true, unit: "cogs")
     let nParam = ParamType.number(min: 0.25, max: 2, interval: 0.25, ascending: true, unit: "n")
+    let cornerParam = ParamType.enumeration(values: ["all"] + iterateEnum(CornerSide.self).map { String(describing: $0.rawValue) })
 
     return [PickerEntry(params: [], name: "circle"),
             PickerEntry(params: [], name: "ellipse"),
@@ -37,6 +38,7 @@ final class MaskViewController: UIViewController {
             PickerEntry(params: [widthParam], name: "plussign"),
             PickerEntry(params: [angleParam], name: "moon"),
             PickerEntry(params: [widthParam, widthParam], name: "insetby"),
+            PickerEntry(params: [radiusParam, cornerParam], name: "rounded"),
             PickerEntry(params: [], name: "none"),
             PickerEntry(params: [], name: "CUSTOM Bubble")
     ]

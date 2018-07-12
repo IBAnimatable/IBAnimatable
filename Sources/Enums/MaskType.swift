@@ -42,6 +42,8 @@ public enum MaskType: IBEnum {
   case moon(angle: Double)
   /// For a smaller rectangle than the source rectangle, with the same center point.
   case insetBy(dx: Double, dy: Double)
+  /// For a rounded rectangle.
+  case rounded(radii: (Double, Double), cornerSides: CornerSides)
 
   /// Custom shape
   case custom(pathProvider: CustomMaskProvider)
@@ -106,11 +108,22 @@ public extension MaskType {
     case "insetby":
       let x = params[safe: 0]?.toDouble() ?? 0
       self = .insetBy(dx: x, dy: params[safe: 1]?.toDouble() ?? x )
+    case "rounded":
+      let radii = params.compactMap { $0.toDouble() }
+      let radius: Double = radii[safe: 0] ?? 0
+      let corners = params.compactMap { CornerSide(rawValue: $0).map { CornerSides(side: $0) } }
+      var cornerSides = CornerSides(corners)
+      if cornerSides == .unknown {
+        cornerSides = .allSides
+      }
+      self = .rounded(radii: (radius, radii[safe: 1] ?? radius), cornerSides: cornerSides)
     default:
       self = .none
     }
   }
 }
+
+// MARK: UIKit
 
 extension MaskType {
 
@@ -146,11 +159,37 @@ extension MaskType {
       return UIBezierPath(moonInRect: rect, with: CGFloat(angle))
     case .insetBy(let dx, let dy):
       return UIBezierPath(rect: rect.insetBy(dx: CGFloat(dx), dy: CGFloat(dy)))
+    case .rounded(let radii, let cornerSides):
+      return UIBezierPath(roundedRect: rect, byRoundingCorners: cornerSides.rectCorner, cornerRadii: CGSize(width: radii.0, height: radii.1))
     case let .custom(pathProvider):
       return pathProvider(rect.size)
     case .none:
       return UIBezierPath()
     }
+  }
+
+}
+
+extension CornerSides {
+
+  var rectCorner: UIRectCorner {
+    if self == .allSides {
+      return .allCorners
+    }
+    var corners: UIRectCorner = []
+    if self.contains(.topLeft) {
+      corners.insert(.topLeft)
+    }
+    if self.contains(.topRight) {
+      corners.insert(.topRight)
+    }
+    if self.contains(.bottomLeft) {
+      corners.insert(.bottomLeft)
+    }
+    if self.contains(.bottomRight) {
+      corners.insert(.bottomRight)
+    }
+    return corners
   }
 
 }

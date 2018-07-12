@@ -104,6 +104,8 @@ To use `IBAnimatable`, we can drag and drop a UIKit element and connect it with 
 * `drop`
 * `plussign`: Can also specify the thickness of the plus sign, e.g. use `Plussign(10)` to have a plug sign with 10 as thickness.
 * `moon`: Can also specify the angle to change the Moon shape.
+* `insetBy`: Must use the parameters to defined the inset for the inner rectangle e.g. use `insetBy(10, 12)`.
+* `rounded`: Choose the radius to define the corner radius, eg. use `rounded(10)`. Can also specify the `CornerSides` to choose rouned the corner, eg. use `rounded(10, topLeft)`.
 * `custom`: Allows you to use your own bezier path as mask. Only usable from code (not from IB). You have to pass in parameter a closure that takes a `CGSize` (the current's view Size) and returns the `UIBezierPath`
 
 

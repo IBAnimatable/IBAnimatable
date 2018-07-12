@@ -77,20 +77,7 @@ extension CornerDesignable {
     cornerSideLayer.frame = CGRect(origin: .zero, size: bounds.size)
 
     let cornerRadii = CGSize(width: cornerRadius, height: cornerRadius)
-    var roundingCorners: UIRectCorner = []
-    if cornerSides.contains(.topLeft) {
-      roundingCorners.insert(.topLeft)
-    }
-    if cornerSides.contains(.topRight) {
-      roundingCorners.insert(.topRight)
-    }
-    if cornerSides.contains(.bottomLeft) {
-      roundingCorners.insert(.bottomLeft)
-    }
-    if cornerSides.contains(.bottomRight) {
-      roundingCorners.insert(.bottomRight)
-    }
-
+    let roundingCorners: UIRectCorner = cornerSides.rectCorner
     cornerSideLayer.path = UIBezierPath(roundedRect: bounds,
                                         byRoundingCorners: roundingCorners,
                                         cornerRadii: cornerRadii).cgPath
