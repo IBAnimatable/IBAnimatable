@@ -72,6 +72,8 @@ private extension NatGeoAnimator {
     var toLayer = toView.layer
 
     let oldFrame = fromLayer.frame
+    let oldCenter = fromView.center
+    let oldAnchorPoint = fromLayer.anchorPoint
     fromLayer.anchorPoint = CGPoint(x: 0.0, y: 0.5)
     fromLayer.frame = oldFrame
     sourceFirstTransform(&fromLayer)
@@ -92,6 +94,8 @@ private extension NatGeoAnimator {
       }
 
       self.animationDidFinish(transitionContext, containerView: containerView, fromView: fromView, toView: toView)
+      fromLayer.anchorPoint = oldAnchorPoint
+      fromView.center = oldCenter
     }
   }
 
@@ -111,6 +115,8 @@ private extension NatGeoAnimator {
     var toLayer = fromView.layer
 
     let oldFrame = fromLayer.frame
+    let oldCenter = toView.center
+    let oldAnchorPoint = fromLayer.anchorPoint
     fromLayer.anchorPoint = CGPoint(x: 0.0, y: 0.5)
     fromLayer.frame = oldFrame
     sourceLastTransform(&fromLayer)
@@ -131,6 +137,8 @@ private extension NatGeoAnimator {
       }
 
       self.animationDidFinish(transitionContext, containerView: containerView, fromView: fromView, toView: toView)
+      fromLayer.anchorPoint = oldAnchorPoint
+      toView.center = oldCenter
     }
   }
 

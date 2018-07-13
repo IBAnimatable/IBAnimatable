@@ -25,6 +25,7 @@ N/A
 #### Bugfixes
 
 - Fix some activity indicator animations . [#562](https://github.com/IBAnimatable/IBAnimatable/pull/562) by [@phimage](https://github.com/phimage)
+- Fix wrong setted center in UIView after using NatGeo transition. [#578](https://github.com/IBAnimatable/IBAnimatable/pull/578) by [@edon2005](https://github.com/edon2005) 
 
 ### [5.1.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/5.1.0)
 
