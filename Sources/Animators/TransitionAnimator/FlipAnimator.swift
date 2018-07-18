@@ -46,6 +46,11 @@ extension FlipAnimator: UIViewControllerAnimatedTransitioning {
       return
     }
 
+    let (_, tempToViewController, _) = retrieveViewControllers(transitionContext: transitionContext)
+    if let toViewController = tempToViewController {
+      toView.frame = transitionContext.finalFrame(for: toViewController)
+    }
+
     containerView.insertSubview(toView, at: 0)
 
     transform.m34 = -0.002

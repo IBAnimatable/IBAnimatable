@@ -44,6 +44,11 @@ extension TurnAnimator: UIViewControllerAnimatedTransitioning {
       return
     }
 
+    let (_, tempToViewController, _) = retrieveViewControllers(transitionContext: transitionContext)
+    if let toViewController = tempToViewController {
+      toView.frame = transitionContext.finalFrame(for: toViewController)
+    }
+
     containerView.addSubview(toView)
     transform.m34 = -0.002
     containerView.layer.sublayerTransform = transform

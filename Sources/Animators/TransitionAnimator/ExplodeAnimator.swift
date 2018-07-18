@@ -42,6 +42,11 @@ extension ExplodeAnimator: UIViewControllerAnimatedTransitioning {
       return
     }
 
+    let (_, tempToViewController, _) = retrieveViewControllers(transitionContext: transitionContext)
+    if let toViewController = tempToViewController {
+      toView.frame = transitionContext.finalFrame(for: toViewController)
+    }
+
     containerView.insertSubview(toView, at: 0)
 
     let snapshots = makeSnapshots(toView: toView, fromView: fromView, containerView: containerView)

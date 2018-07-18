@@ -44,6 +44,11 @@ extension SlideAnimator: UIViewControllerAnimatedTransitioning {
       return
     }
 
+    let (_, tempToViewController, _) = retrieveViewControllers(transitionContext: transitionContext)
+    if let toViewController = tempToViewController {
+      toView.frame = transitionContext.finalFrame(for: toViewController)
+    }
+
     let travelDistance = isHorizontal ? containerView.bounds.width : containerView.bounds.height
     let travel = CGAffineTransform(translationX: isHorizontal ? (isReverse ? travelDistance : -travelDistance) : 0,
                                    y: isHorizontal ? 0 : (isReverse ? travelDistance : -travelDistance))

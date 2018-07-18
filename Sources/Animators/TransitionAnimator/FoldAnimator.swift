@@ -58,6 +58,11 @@ extension FoldAnimator: UIViewControllerAnimatedTransitioning {
       return
     }
 
+    let (_, tempToViewController, _) = retrieveViewControllers(transitionContext: transitionContext)
+    if let toViewController = tempToViewController {
+      toView.frame = transitionContext.finalFrame(for: toViewController)
+    }
+
     toView.frame = toView.frame.offsetBy(dx: toView.frame.size.width, dy: 0)
     containerView.addSubview(toView)
 
