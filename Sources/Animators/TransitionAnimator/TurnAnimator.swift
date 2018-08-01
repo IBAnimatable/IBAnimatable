@@ -55,6 +55,8 @@ extension TurnAnimator: UIViewControllerAnimatedTransitioning {
     toView.frame = fromView.frame
     animateTurnTransition(fromView: fromView, toView: toView) {
       transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+      self.transform.m34 = 0
+      containerView.layer.sublayerTransform = self.transform
     }
   }
 
