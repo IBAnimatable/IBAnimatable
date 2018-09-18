@@ -7,6 +7,21 @@ All notable changes to this project will be documented in this file.
 ### Next
 
 #### API breaking changes
+
+N/A
+
+#### Enhancements
+
+N/A
+
+#### Bugfixes
+
+N/A
+
+### [5.2.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/5.2.0)
+
+#### API breaking changes
+
 N/A
 
 #### Enhancements
@@ -14,7 +29,7 @@ N/A
 - Allow to create new `compound` animation by code using operator `+`, or `Array` . [#559](https://github.com/IBAnimatable/IBAnimatable/pull/559) by [@phimage](https://github.com/phimage)
 - Add new activity indicators `circleStrokeSpin`, `circleDashStrokeSpin`, `gear`, `tripleGear`,  `heartBeat`  and  `triforce`. [#561](https://github.com/IBAnimatable/IBAnimatable/pull/561) by [@phimage](https://github.com/phimage)
 - Add new activity indicator `rupee`. [#562](https://github.com/IBAnimatable/IBAnimatable/pull/562) by [@phimage](https://github.com/phimage)
-- Make AnimatableCollectionViewCell conforming to RotationDesignable [#565](https://github.com/IBAnimatable/IBAnimatable/pull/565) by [@tbaranes](https://github.com/tbaranes)
+- Make `AnimatableCollectionViewCell` conforming to `RotationDesignable` [#565](https://github.com/IBAnimatable/IBAnimatable/pull/565) by [@tbaranes](https://github.com/tbaranes)
 - Add `preferred` presentation modal size. [#566](https://github.com/IBAnimatable/IBAnimatable/pull/566) by [@phimage](https://github.com/phimage)
 - Add `conical` gradient type. [#567](https://github.com/IBAnimatable/IBAnimatable/pull/567) by [@phimage](https://github.com/phimage)
 - Animatable `timingFunction` parameter could now be used with all animation types. [#571](https://github.com/IBAnimatable/IBAnimatable/pull/571) by [@phimage](https://github.com/phimage)
