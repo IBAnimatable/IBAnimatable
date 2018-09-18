@@ -67,14 +67,14 @@ As @DanielAsher mentioned
 
 Add this repo as a submodule, and add the project file to your workspace. You can then link against `IBAnimatable.framework` for your application target. 
 
-## Version 5.1
-IBAnimatable 5.1 is the latest major release of IBAnimatable. This version supports Swift 4.2. There are no API breaking changes from migrating from version 4.x. 
+## Version 5.2
+IBAnimatable 5.2 is the latest major release of IBAnimatable. This version supports Swift 4.2. There are no API breaking changes from migrating from version 4.x. 
 
 If you migrate from version 3.x. Please check out [IBAnimatable 4.0 Migration Guide](Documentation/IBAnimatable 4.0 Migration Guide.md) for more information.
 
 ## Swift version
 ### Swift 4.2
-There are no API breaking changes when migrating from Swift 4 to Swift 4.1 using IBAnimatable.
+There are no API breaking changes when migrating from Swift 4.* to Swift 4.2 using IBAnimatable.
 
 If you are using Xcode 10 with Swift 4.2, please use the latest tagged 5.x release.
 
