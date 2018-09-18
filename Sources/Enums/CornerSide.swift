@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum CornerSide: String {
+public enum CornerSide: String, CaseIterable {
   case topLeft = "topleft"
   case topRight = "topright"
   case bottomLeft = "bottomleft"
