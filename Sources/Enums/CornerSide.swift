@@ -8,12 +8,16 @@
 
 import Foundation
 
-public enum CornerSide: String, CaseIterable {
+public enum CornerSide: String {
   case topLeft = "topleft"
   case topRight = "topright"
   case bottomLeft = "bottomleft"
   case bottomRight = "bottomright"
 }
+
+#if swift(>=4.2)
+extension CornerSide: CaseIterable {}
+#endif
 
 public struct CornerSides: OptionSet {
   public let rawValue: Int
