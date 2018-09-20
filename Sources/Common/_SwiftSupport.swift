@@ -5,6 +5,10 @@
 
 import UIKit
 
+/// Note: this file has a `_` in the filename on purpose, to ensure it is the
+/// first compiled file. See:
+/// https://bugs.swift.org/browse/SR-631
+
 /// Swift < 4.2 support
 #if !(swift(>=4.2))
 enum CAMediaTimingFunctionName {
