@@ -35,7 +35,7 @@
 		C46DC3E32099895E00501E63 /* ActivityIndicatorAnimationGear.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46DC3E22099895E00501E63 /* ActivityIndicatorAnimationGear.swift */; };
 		C489AD1E20E640B300273B77 /* ActivityIndicatorAnimationCirclePendulum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C489AD1D20E640B300273B77 /* ActivityIndicatorAnimationCirclePendulum.swift */; };
 		C49C08DD20A05072002FCAFD /* ActivityIndicatorAnimationRupee.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49C08DC20A05072002FCAFD /* ActivityIndicatorAnimationRupee.swift */; };
-		DD98209320F4A3CC0058D5FE /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD98209220F4A3CC0058D5FE /* SwiftSupport.swift */; };
+		DD98209320F4A3CC0058D5FE /* _SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD98209220F4A3CC0058D5FE /* _SwiftSupport.swift */; };
 		E20DAEB82003662900BE1C88 /* GradientMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20DAEB72003662900BE1C88 /* GradientMode.swift */; };
 		E20DAEBA2003682F00BE1C88 /* RadialGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20DAEB92003682F00BE1C88 /* RadialGradientLayer.swift */; };
 		E2561F5F1ECD7DD900A6D853 /* IBAnimatable.h in Headers */ = {isa = PBXBuildFile; fileRef = E2561F5D1ECD7DD900A6D853 /* IBAnimatable.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -241,7 +241,7 @@
 		C46DC3E22099895E00501E63 /* ActivityIndicatorAnimationGear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationGear.swift; sourceTree = "<group>"; };
 		C489AD1D20E640B300273B77 /* ActivityIndicatorAnimationCirclePendulum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationCirclePendulum.swift; sourceTree = "<group>"; };
 		C49C08DC20A05072002FCAFD /* ActivityIndicatorAnimationRupee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationRupee.swift; sourceTree = "<group>"; };
-		DD98209220F4A3CC0058D5FE /* SwiftSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSupport.swift; sourceTree = "<group>"; };
+		DD98209220F4A3CC0058D5FE /* _SwiftSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _SwiftSupport.swift; sourceTree = "<group>"; };
 		E20DAEB72003662900BE1C88 /* GradientMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientMode.swift; sourceTree = "<group>"; };
 		E20DAEB92003682F00BE1C88 /* RadialGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialGradientLayer.swift; sourceTree = "<group>"; };
 		E2561F5D1ECD7DD900A6D853 /* IBAnimatable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBAnimatable.h; sourceTree = "<group>"; };
@@ -701,8 +701,8 @@
 		E27FD1CE1ECD7D8A00F74840 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				DD98209220F4A3CC0058D5FE /* _SwiftSupport.swift */,
 				E27FD1CF1ECD7D8A00F74840 /* Constants.swift */,
-				DD98209220F4A3CC0058D5FE /* SwiftSupport.swift */,
 				E27FD1D01ECD7D8A00F74840 /* Typealias.swift */,
 			);
 			path = Common;
@@ -1066,7 +1066,7 @@
 				E27FD2B31ECD7D8A00F74840 /* DismissSegue.swift in Sources */,
 				E27FD2D01ECD7D8A00F74840 /* AnimatableTextField.swift in Sources */,
 				E27FD2C31ECD7D8A00F74840 /* PresentTurnWithDismissInteractionSegue.swift in Sources */,
-				DD98209320F4A3CC0058D5FE /* SwiftSupport.swift in Sources */,
+				DD98209320F4A3CC0058D5FE /* _SwiftSupport.swift in Sources */,
 				E27FD26F1ECD7D8A00F74840 /* NatGeoAnimator.swift in Sources */,
 				E27FD2761ECD7D8A00F74840 /* AnimatableModalViewController.swift in Sources */,
 				E27FD2901ECD7D8A00F74840 /* Utils.swift in Sources */,
