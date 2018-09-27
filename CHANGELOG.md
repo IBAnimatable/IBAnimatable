@@ -16,6 +16,20 @@ N/A
 
 #### Bugfixes
 
+N/A
+
+### [5.2.1](https://github.com/IBAnimatable/IBAnimatable/releases/tag/5.2.1)
+
+#### API breaking changes
+
+N/A
+
+#### Enhancements
+
+N/A
+
+#### Bugfixes
+
 - Fix support for older Swift versions for some users. [#590](https://github.com/IBAnimatable/IBAnimatable/pull/590) by [@djbe](https://github.com/djbe)
 
 ### [5.2.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/5.2.0)
