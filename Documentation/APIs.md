@@ -20,7 +20,7 @@ To use `IBAnimatable`, we can drag and drop a UIKit element and connect it with 
 | UINavigationController | AnimatableNavigationController | |
 | UITableViewController | AnimatableTableViewController| |
 | UISlider | AnimatableSlider | |
-| UIActivityIndicatorView | AnimatableActivityIndicatorView | [List of animations available](./ActivityIndicator.md) |
+| UIActivityIndicatorView | AnimatableActivityIndicatorView | [List of animations available](./ActivityIndicators.md) |
 
 ### Designable protocols
 `IBAnimatable` provides a set of Designable protocols as below. Because of the power of protocol-oriented programming in Swift, we don't even have to use Animatable default UI elements e.g. `AnimatableView` to unlocked the power of `IBAnimatable`. We can conform to `IBAnimatable` protocols to use the default implementation in protocol extension to create other custom UI elements.
@@ -34,18 +34,18 @@ To use `IBAnimatable`, we can drag and drop a UIKit element and connect it with 
 #### `BlurDesignable`
 | Property name | Data type | Description |
 | ------------- |:-------------:| ----- |
-| blurEffectStyle | Optional&lt;String> | Support three different blur effects: `ExtraLight`, `Light` and `Dark`, also can be found in emum [`BlurEffectStyle`](../IBAnimatable/BlurEffectStyle.swift). The look of blur effect in Interface Builder is different from Simulator or device. |
-| vibrancyEffectStyle | Optional&lt;String> | Support three different blur effects: `ExtraLight`, `Light` and `Dark`, also can be found in emum [`BlurEffectStyle`](../IBAnimatable/BlurEffectStyle.swift). Once specify the Vibrancy effect style, all subviews will apply this vibrancy effect. Pleace notice that once the vibrancy effect is applied, all the subviews will loose their constraints. The workaround for this is to reset programatically each of them. |
+| blurEffectStyle | Optional&lt;String> | Support three different blur effects: `ExtraLight`, `Light` and `Dark`, also can be found in emum [`BlurEffectStyle`](../Sources/Enums/BlurEffectStyle.swift). The look of blur effect in Interface Builder is different from Simulator or device. |
+| vibrancyEffectStyle | Optional&lt;String> | Support three different blur effects: `ExtraLight`, `Light` and `Dark`, also can be found in emum [`BlurEffectStyle`](../Sources/Enums/BlurEffectStyle.swift). Once specify the Vibrancy effect style, all subviews will apply this vibrancy effect. Pleace notice that once the vibrancy effect is applied, all the subviews will loose their constraints. The workaround for this is to reset programatically each of them. |
 | blurOpacity | CGFloat | Opacity of the blur effect specified above. the default value is `CGFloat.NaN`, the value range is from 0.0 to 1.0. |
 
 
 #### `BorderDesignable`
 | Property name | Data type | Description |
 | ------------- |:-------------:| ----- |
-| borderType | Optional&lt;String> | border type: `solid`, `dash`, also can be found in emum [`BorderSide`](../IBAnimatable/BorderType.swift). If not specified, then display solid borders. **Please notice**: If we use `maskType` property then `borderType` will be ignored. |
+| borderType | Optional&lt;String> | border type: `solid`, `dash`, also can be found in emum [`BorderSide`](../Sources/Enums/BorderType.swift). If not specified, then display solid borders. **Please notice**: If we use `maskType` property then `borderType` will be ignored. |
 | borderColor | Optional&lt;UIColor> | border color |
 | borderWidth | CGFloat | border width. Default value is `CGFloat.NaN`, the value is greater than 0. |
-| borderSide | Optional&lt;String> | border side: `top`, `right`, `bottom` or `left`, also can be found in emum [`BorderSide`](../IBAnimatable/BorderSide.swift). Multiple sides can be configured with a comma separated list of sides (e.g. `top,bottom`). If not specified, then display four sides. **Please notice**: If we use `maskType` property then `borderSide` will be ignored. |
+| borderSide | Optional&lt;String> | border side: `top`, `right`, `bottom` or `left`, also can be found in emum [`BorderSide`](../Sources/Enums/BorderSide.swift). Multiple sides can be configured with a comma separated list of sides (e.g. `top,bottom`). If not specified, then display four sides. **Please notice**: If we use `maskType` property then `borderSide` will be ignored. |
 
 
 #### `CheckBoxDesignable`
@@ -59,24 +59,24 @@ To use `IBAnimatable`, we can drag and drop a UIKit element and connect it with 
 | Property name | Data type | Description |
 | ------------- |:-------------:| ----- |
 | cornerRadius | CGFloat | rounded corner radius. The default value is `CGFloat.NaN`, the value is greater than 0. |
-| cornerSides | Optional&lt;String> | corner side: `topLeft`, `topRight`, `bottomLeft` or `bottomRight`, also can be found in emum [`CornerSide`](../IBAnimatable/CornerSide.swift). Multiple sides can be configured with a comma separated list of sides (e.g. `topLeft,topRight`). If not specified, then display four sides. **Please notice**: If we use `maskType` property then it will be replaced by `cornerSide`. |
+| cornerSides | Optional&lt;String> | corner side: `topLeft`, `topRight`, `bottomLeft` or `bottomRight`, also can be found in emum [`CornerSide`](../Sources/Enums/CornerSide.swift). Multiple sides can be configured with a comma separated list of sides (e.g. `topLeft,topRight`). If not specified, then display four sides. **Please notice**: If we use `maskType` property then it will be replaced by `cornerSide`. |
 
 #### `FillDesignable`
 | Property name | Data type | Description |
 | ------------- |:-------------:| ----- |
 | fillColor | Optional&lt;UIColor> | fill color of the UI Element |
 | opacity | CGFloat | opacity, alpha of the UI Element, the default value is `CGFloat.NaN`, the value is from 0.0 to 1.0. |
-| predefinedColor | Optional&lt;String> | Predefined color. All predefined colors are in enum [`ColorType`](../IBAnimatable/ColorType.swift). To find the predefined flat colors, you can use [flatuicolors.com](https://flatuicolors.com), all flat color start with `Flat`, e.g. `PETER RIVER` on the website maps to `FlatPeterRiver` in the enum. |
+| predefinedColor | Optional&lt;String> | Predefined color. All predefined colors are in enum [`ColorType`](../Sources/Enums/ColorType.swift). To find the predefined flat colors, you can use [flatuicolors.com](https://flatuicolors.com), all flat color start with `Flat`, e.g. `PETER RIVER` on the website maps to `FlatPeterRiver` in the enum. |
 
 
 #### `GradientDesignable`
 | Property name | Data type | Description |
 | ------------- |:-------------:| ----- |
-| gradientMode | Optional&lt;GradientMode> | Gradient mode. All gradient mode are in enum [`GradientMode`](../IBAnimatable/GradientMode.swift), default value is `.linear`. |
+| gradientMode | Optional&lt;GradientMode> | Gradient mode. All gradient mode are in enum [`GradientMode`](../Sources/Enums/GradientMode.swift), default value is `.linear`. |
 | startColor | Optional&lt;UIColor> | start gradient color |
 | endColor | Optional&lt;UIColor> | end gradient color |
-| predefinedGradient | Optional&lt;String> | Predefined gradients. All predefined gradients are in enum [`GradientType`](../IBAnimatable/GradientType.swift), To find the predefined gradients, you can use [uigradients.com](http://uigradients.com), e.g. `Juicy Orange` on the website maps to `JuicyOrange` in the enum. |
-| startPoint | Optional&lt;String> | start direction point, can find in enum [`GradientStartPoint `](../IBAnimatable/GradientStartPoint.swift). |
+| predefinedGradient | Optional&lt;String> | Predefined gradients. All predefined gradients are in enum [`GradientType`](../Sources/Enums/GradientType.swift), To find the predefined gradients, you can use [uigradients.com](http://uigradients.com), e.g. `Juicy Orange` on the website maps to `JuicyOrange` in the enum. |
+| startPoint | Optional&lt;String> | start direction point, can find in enum [`GradientStartPoint `](../Sources/Enums/GradientStartPoint.swift). |
 
 #### `NavigationBarDesignable`
 | Property name | Data type | Description |
@@ -86,7 +86,7 @@ To use `IBAnimatable`, we can drag and drop a UIKit element and connect it with 
 #### `MaskDesignable`
 | Property name | Data type | Description |
 | ------------- |:-------------:| ----- |
-| maskType | Optional&lt;String> | Supported maks type: All predefined animations are in enum [`MaskType`](../IBAnimatable/MaskType.swift) |
+| maskType | Optional&lt;String> | Supported maks type: All predefined animations are in enum [`MaskType`](../Sources/Enums/MaskType.swift) |
 
 **Supported MaskType:**
 
@@ -222,7 +222,7 @@ refreshControl?.addTarget(self, action: #selector(refresh(_:)), for: .valueChang
 #### Properties
 | Property name | Data type | Description |
 | ------------- |:-------------:| ----- |
-| animationType | Optional&lt;String> | Supported animations. All predefined animations are in enum [`AnimationType`](../IBAnimatable/AnimationType.swift) |
+| animationType | Optional&lt;String> | Supported animations. All predefined animations are in enum [`AnimationType`](../Sources/Enums/AnimationType.swift) |
 | autoRun | Bool | Whether to automatically start the animation. The default value is `true`. if it is true, the animation will automatically run when the view is loaded. If want to manually start the animation should set it to `false`. |
 | duration | CGFloat | Animation duration in seconds. The default value is 0.7. |
 | delay | Double | Delay to start the animation in seconds. The default value is 0. |
@@ -238,8 +238,8 @@ refreshControl?.addTarget(self, action: #selector(refresh(_:)), for: .valueChang
 | Property name | Data type | Description |
 | ------------- |:-------------:| ----- |
 | transitionAnimationType | Optional&lt;String> | Supported transition animations. Tap on "Playground" button to see all predefined transition animations, e.g. `Fade`, `SystemCube(Left)` and `SystemPageCurl(Bottom)`. The transition type starts with `System` can only use in Push/Pop transitions, not Present/Dismiss transitions. Note: For `SystemRotate` seems that only `SystemRotate(90)` is working. |
-| transitionDuration | Double | transition duration. The default value is defined in [`Constants`](../IBAnimatable/Constants.swift) (0.7 seconds) |
-| interactiveGestureType | Optional&lt;String> | interactive gesture type. used to specify the gesture to dismiss/pop current scence. All supported interactive gesture types are in [`InteractiveGestureType`](../IBAnimatable/InteractiveGestureType.swift) |
+| transitionDuration | Double | transition duration. The default value is defined in [`Constants`](../Sources/Common/Constants.swift) (0.7 seconds) |
+| interactiveGestureType | Optional&lt;String> | interactive gesture type. used to specify the gesture to dismiss/pop current scence. All supported interactive gesture types are in [`InteractiveGestureType`](../Sources/Enums/InteractiveGestureType.swift) |
 
 Also see [Transition Animators](Transitions.md#transition-animators) and [Interactive Animators](Transitions.md#interactive-animators)
 
@@ -265,8 +265,8 @@ With these methods, we can navigate back or dismiss current ViewController witho
 | Property name | Data type | Description |
 | ------------- |:-------------:| ----- |
 | transitionAnimationType | Optional&lt;String> | Supported transition animations. Tap on "Forgot Password" button to see all predefined transition animations, e.g. `Fade`, `SystemCube(Left)` and `SystemPageCurl(Bottom)`. The transition type starts with `System` can only use in Push/Pop transitions, not Present/Dismiss transitions. Note: For `SystemRotate` seems that only `SystemRotate(90)` is working. |
-| transitionDuration | Double | transition duration. The default value is defined in [`Constants`](../IBAnimatable/Constants.swift) (0.7 seconds) |
-| interactiveGestureType | Optional&lt;String> | interactive gesture type. used to specify the gesture to dismiss/pop current scence. All supported interactive gesture types are in [`InteractiveGestureType`](../IBAnimatable/InteractiveGestureType.swift) |
+| transitionDuration | Double | transition duration. The default value is defined in [`Constants`](../Sources/Common/Constants.swift) (0.7 seconds) |
+| interactiveGestureType | Optional&lt;String> | interactive gesture type. used to specify the gesture to dismiss/pop current scence. All supported interactive gesture types are in [`InteractiveGestureType`](../Sources/Enums/InteractiveGestureType.swift) |
 
 Also see [Transition Animators](Transitions.md#transition-animators) and [Interactive Animators](Transitions.md#interactive-animators)
 
