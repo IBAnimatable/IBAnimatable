@@ -20,7 +20,7 @@ public class PortalAnimator: NSObject, AnimatedTransitioning {
   public init(from direction: TransitionAnimationType.Direction, zoomScale: CGFloat?, duration: Duration) {
     transitionDuration = duration
     fromDirection = direction
-    self.zoomScale = zoomScale ?? 0.8
+    self.zoomScale = zoomScale ?? 0.7
     transitionAnimationType = .portal(direction: direction, zoomScale: self.zoomScale)
     reverseAnimationType = .portal(direction: direction.opposite, zoomScale: self.zoomScale)
     interactiveGestureType = .pinch(direction: direction.opposingGesture)
