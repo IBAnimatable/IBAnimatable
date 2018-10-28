@@ -226,7 +226,7 @@ All of us can contribute to this project. Fewer overheads mean less time to buil
 
 * If you like the project, please share it with the other designers and developers, and star 🌟 the project. 🤗
 
-Many thanks to [all contributors](graphs/contributors) 🤗 especially to [@tbaranes](https://github.com/tbaranes) who develops a lot of features and maintains the project.
+Many thanks to [all contributors](https://github.com/IBAnimatable/IBAnimatable/graphs/contributors) 🤗 especially to [@tbaranes](https://github.com/tbaranes) who develops a lot of features and maintains the project.
 
 ## Roadmap
 [Vision, Technical Considerations and Roadmap](Documentation/Roadmap.md)
