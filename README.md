@@ -70,7 +70,7 @@ Add this repo as a submodule, and add the project file to your workspace. You ca
 ## Version 5.2
 IBAnimatable 5.2 is the latest major release of IBAnimatable. This version supports Swift 4.2. There are no API breaking changes from migrating from version 4.x. 
 
-If you migrate from version 3.x. Please check out [IBAnimatable 4.0 Migration Guide](Documentation/IBAnimatable 4.0 Migration Guide.md) for more information.
+If you migrate from version 3.x. Please check out [IBAnimatable 4.0 Migration Guide](Documentation/IBAnimatable%204.0%20Migration%20Guide.md) for more information.
 
 ## Swift version
 ### Swift 4.2
@@ -94,7 +94,7 @@ There are no API breaking changes when migrating from Swift 3.1 to Swift 3.2 usi
 If you are using Xcode 9 and Swift 3.2, please use the 4.2 release.
 
 ### Swift 3 or 3.1
-If you migrate from Swift 2.x, please check out [IBAnimatable 3.0 Migration Guide](Documentation/IBAnimatable 3.0 Migration Guide.md) for more information about how to migrate your project to 3.0. Version 3 follows Swift 3 [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/) and contains a lot of breaking changes from version 2.x. 
+If you migrate from Swift 2.x, please check out [IBAnimatable 3.0 Migration Guide](Documentation/IBAnimatable%203.0%20Migration%20Guide.md) for more information about how to migrate your project to 3.0. Version 3 follows Swift 3 [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/) and contains a lot of breaking changes from version 2.x. 
 
 If you are using Xcode 8 with Swift 3, please use the latest tagged 4.x release.
 
