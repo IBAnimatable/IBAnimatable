@@ -159,7 +159,7 @@ public extension AnimatablePresentationController {
 
   // MARK: Presentation
 
-  public override var frameOfPresentedViewInContainerView: CGRect {
+  override var frameOfPresentedViewInContainerView: CGRect {
     let containerBounds = containerFrame
     var presentedViewFrame = CGRect.zero
     let sizeForChildContentContainer = size(forChildContentContainer: presentedViewController, withParentContainerSize: containerBounds.size)
@@ -223,7 +223,7 @@ public extension AnimatablePresentationController {
     }
   }
 
-  public override func presentationTransitionDidEnd(_ completed: Bool) {
+  override func presentationTransitionDidEnd(_ completed: Bool) {
     if !completed {
       dimmingView.removeFromSuperview()
     }
@@ -239,7 +239,7 @@ public extension AnimatablePresentationController {
     }
   }
 
-  public override func dismissalTransitionDidEnd(_ completed: Bool) {
+  override func dismissalTransitionDidEnd(_ completed: Bool) {
     if completed {
       dimmingView.removeFromSuperview()
     }

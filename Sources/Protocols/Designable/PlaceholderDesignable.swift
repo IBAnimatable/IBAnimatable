@@ -17,7 +17,7 @@ public extension PlaceholderDesignable where Self: UITextField {
 
   var placeholderText: String? { get { return "" } set {} }
 
-  public func configurePlaceholderColor() {
+  func configurePlaceholderColor() {
     let text = placeholder ?? placeholderText
     if let placeholderColor = placeholderColor, let placeholder = text {
       attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [.foregroundColor: placeholderColor])
@@ -27,7 +27,7 @@ public extension PlaceholderDesignable where Self: UITextField {
 
 public extension PlaceholderDesignable where Self: UITextView {
 
-  public func configure(placeholderLabel: UILabel, placeholderLabelConstraints: inout [NSLayoutConstraint]) {
+  func configure(placeholderLabel: UILabel, placeholderLabelConstraints: inout [NSLayoutConstraint]) {
     placeholderLabel.font = font
     placeholderLabel.textColor = placeholderColor
     placeholderLabel.textAlignment = textAlignment
@@ -39,7 +39,7 @@ public extension PlaceholderDesignable where Self: UITextView {
     update(placeholderLabel, using: &placeholderLabelConstraints)
   }
 
-  public func update(_ placeholderLabel: UILabel, using constraints: inout [NSLayoutConstraint]) {
+  func update(_ placeholderLabel: UILabel, using constraints: inout [NSLayoutConstraint]) {
     var format = "H:|-(\(textContainerInset.left + textContainer.lineFragmentPadding))-[placeholder]"
     var newConstraints = NSLayoutConstraint.constraints(withVisualFormat: format,
                                                         options: [], metrics: nil,

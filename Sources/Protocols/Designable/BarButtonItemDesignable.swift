@@ -10,7 +10,7 @@ public protocol BarButtonItemDesignable: class {
 }
 
 public extension BarButtonItemDesignable where Self: UIBarButtonItem {
-  public func configureBarButtonItemImage() {
+  func configureBarButtonItemImage() {
     guard let roundedImage = roundedImage else {
       return
     }

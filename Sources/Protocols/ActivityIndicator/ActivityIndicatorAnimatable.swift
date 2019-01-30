@@ -20,14 +20,14 @@ public protocol ActivityIndicatorAnimatable: class {
 public extension ActivityIndicatorAnimatable where Self: UIView {
 
   /// Start animating the activity indicator
-  public func startAnimating() {
+  func startAnimating() {
     isHidden = false
     configureLayer()
     isAnimating = true
   }
 
   /// Stop animating the activity indicator
-  public func stopAnimating() {
+  func stopAnimating() {
     layer.sublayers = nil
     isAnimating = false
     if hidesWhenStopped {

@@ -14,11 +14,11 @@ public protocol FillDesignable: class {
 // MARK: - UIView
 
 public extension FillDesignable where Self: UIView {
-  public func configureFillColor() {
+  func configureFillColor() {
     configureFillColor(in: self)
   }
 
-  public func configureOpacity() {
+  func configureOpacity() {
     configureOpacity(in: self)
   }
 }
@@ -26,7 +26,7 @@ public extension FillDesignable where Self: UIView {
 // MARK: - UITableViewCell
 
 public extension FillDesignable where Self: UITableViewCell {
-  public func configureFillColor() {
+  func configureFillColor() {
     if let fillColor = fillColor {
       backgroundColor = fillColor
       contentView.backgroundColor = fillColor
@@ -40,7 +40,7 @@ public extension FillDesignable where Self: UITableViewCell {
 // MARK: - UICollectionViewCell
 
 public extension FillDesignable where Self: UICollectionViewCell {
-  public func configureFillColor() {
+  func configureFillColor() {
     if let fillColor = fillColor {
       backgroundColor = fillColor
       contentView.backgroundColor = fillColor

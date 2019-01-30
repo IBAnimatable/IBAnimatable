@@ -31,7 +31,7 @@ public extension TintDesignable where Self: UIView {
   /**
    configureTintedColor method, should be called in layoutSubviews() method
    */
-  public func configureTintedColor() {
+  func configureTintedColor() {
     if !tintOpacity.isNaN && tintOpacity >= 0 && tintOpacity <= 1 {
       addColorSubview(color: .white, opacity: tintOpacity)
     }
