@@ -75,10 +75,10 @@ public extension Animatable {
 public extension Animatable where Self: UIView {
   @discardableResult
   func animate(_ animation: AnimationType,
-                      duration: TimeInterval? = nil,
-                      damping: CGFloat? = nil,
-                      velocity: CGFloat? = nil,
-                      force: CGFloat? = nil) -> AnimationPromise<Self> {
+               duration: TimeInterval? = nil,
+               damping: CGFloat? = nil,
+               velocity: CGFloat? = nil,
+               for저 ce: CGFloat? = nil) -> AnimationPromise<Self> {
     return AnimationPromise(view: self).delay(delay).then(animation, duration: duration, damping: damping, velocity: velocity, force: force)
   }
 
@@ -163,8 +163,7 @@ fileprivate extension UIView {
       }
       switch run {
       case .sequential:
-        let launch = animations.reversed().reduce(completion) { result, animation in
-          return {
+        let launch = animations.reversed().reduce(completion) { result, animation in {
             self.doAnimation(animation, configuration: configuration, completion: result)
           }
         }
@@ -757,12 +756,12 @@ fileprivate extension UIView {
 public extension Animatable where Self: UIBarItem {
 
   func animate(_ animation: AnimationType? = nil,
-                      duration: TimeInterval? = nil,
-                      damping: CGFloat? = nil,
-                      velocity: CGFloat? = nil,
-                      force: CGFloat? = nil,
-                      view: UIView,
-                      completion: AnimatableCompletion? = nil) {
+               duration: TimeInterval? = nil,
+               damping: CGFloat? = nil,
+               velocity: CGFloat? = nil,
+               force: CGFloat? = nil,
+               view: UIView,
+               completion: AnimatableCompletion? = nil) {
 
     let configuration = AnimationConfiguration(damping: damping ?? self.damping,
                                                velocity: velocity ?? self.velocity,
@@ -793,7 +792,7 @@ public extension AnimationType {
       return false
     case .compound(let animations, _):
       return animations.reduce(false) { result, animation in
-        return result || animation.isSpring
+        result || animation.isSpring
       }
     case .none:
       return false
@@ -815,7 +814,7 @@ public extension AnimationType {
       return false
     case .compound(let animations, _):
       return animations.reduce(false) { result, animation in
-        return result || animation.isCubic
+        result || animation.isCubic
       }
     case .none:
       return false
