@@ -51,6 +51,7 @@ N/A
 - Add new mask `rounded` to  make a rounded rectangle. [#575](https://github.com/IBAnimatable/IBAnimatable/pull/575) by [@phimage](https://github.com/phimage)
 - Support for Swift 4.2. [#576](https://github.com/IBAnimatable/IBAnimatable/pull/576) by [@djbe](https://github.com/djbe)
 - Upgrade for Xcode 10 [#588](https://github.com/IBAnimatable/IBAnimatable/pull/588) by [@JakeLin](https://github.com/JakeLin)
+- Support for Swift 5.0. [#603](https://github.com/IBAnimatable/IBAnimatable/pull/603) by [@shark-sea](https://github.com/shark-sea)
 
 #### Bugfixes
 
