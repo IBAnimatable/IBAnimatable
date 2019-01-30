@@ -82,10 +82,20 @@ private extension UITabBar {
 
     func view(for item: UITabBarItem) -> UIControl? {
       // return item.value(forKeyPath: "view") as? UIControl // apple could not allow that
+      #if swift(>=4.2)
       guard let items = self.items,
         let index = items.firstIndex(of: item) else {
+          return nil
+      }
+      
+      #else
+      guard let items = self.items,
+        let index = items.index(of: item) else {
         return nil
       }
+      
+      #endif
+      
       // get all buttons
       // 1/ filter on control, not safe if apple add a new control in bar
       let controls = self.subviews.filter { $0 is UIControl }
