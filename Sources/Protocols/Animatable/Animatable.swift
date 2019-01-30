@@ -52,7 +52,7 @@ public protocol Animatable: class {
 }
 
 public extension Animatable {
-  public func configureAnimatableProperties() {
+  func configureAnimatableProperties() {
     // Apply default values
     if duration.isNaN {
       duration = 0.7
@@ -74,7 +74,7 @@ public extension Animatable {
 
 public extension Animatable where Self: UIView {
   @discardableResult
-  public func animate(_ animation: AnimationType,
+  func animate(_ animation: AnimationType,
                       duration: TimeInterval? = nil,
                       damping: CGFloat? = nil,
                       velocity: CGFloat? = nil,
@@ -82,7 +82,7 @@ public extension Animatable where Self: UIView {
     return AnimationPromise(view: self).delay(delay).then(animation, duration: duration, damping: damping, velocity: velocity, force: force)
   }
 
-  public func delay(_ delay: TimeInterval) -> AnimationPromise<Self> {
+  func delay(_ delay: TimeInterval) -> AnimationPromise<Self> {
     let promise = AnimationPromise(view: self)
     return promise.delay(delay)
 
@@ -756,7 +756,7 @@ fileprivate extension UIView {
 // Animations for `UIBarItem`
 public extension Animatable where Self: UIBarItem {
 
-  public func animate(_ animation: AnimationType? = nil,
+  func animate(_ animation: AnimationType? = nil,
                       duration: TimeInterval? = nil,
                       damping: CGFloat? = nil,
                       velocity: CGFloat? = nil,
@@ -779,7 +779,7 @@ public extension Animatable where Self: UIBarItem {
 public extension AnimationType {
 
   /// This animation use damping and velocity parameters.
-  public var isSpring: Bool {
+  var isSpring: Bool {
     switch self {
     case .moveBy, .moveTo, .scale:
       return true
@@ -801,7 +801,7 @@ public extension AnimationType {
   }
 
   /// This animation use timing function parameter.
-  public var isCubic: Bool {
+  var isCubic: Bool {
     switch self {
     case .moveBy, .moveTo, .scale:
       return true

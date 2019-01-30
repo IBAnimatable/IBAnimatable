@@ -53,7 +53,7 @@ public extension PresentationModalPosition {
 
    - Parameter string: The optional string to be converted into `PresnetationModalPosition`.
    */
-  public init(string: String?) {
+  init(string: String?) {
     guard let string = string else {
       self = .center
       return

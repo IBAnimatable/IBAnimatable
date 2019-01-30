@@ -21,7 +21,7 @@ public protocol CornerDesignable: class {
 
 public extension CornerDesignable where Self: UIView {
 
-  public func configureCornerRadius() {
+  func configureCornerRadius() {
     configureCornerRadius(in: self)
   }
 
@@ -31,7 +31,7 @@ public extension CornerDesignable where Self: UIView {
 
 public extension CornerDesignable where Self: UICollectionViewCell {
 
-  public func configureCornerRadius() {
+  func configureCornerRadius() {
     if !cornerRadius.isNaN && cornerRadius > 0 {
       // Remove any previous corner mask, i.e. coming from UIView type implementation
       if layer.mask?.name == "cornerSideLayer" {

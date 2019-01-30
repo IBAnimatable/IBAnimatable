@@ -67,7 +67,7 @@ public protocol PresentationDesignable: class {
 
 public extension PresentationDesignable where Self: UIViewController {
 
-  public func configurePresenter() {
+  func configurePresenter() {
     let presentationManager = PresentationPresenterManager.shared
     presenter = presentationManager.retrievePresenter(presentationAnimationType: presentationAnimationType,
                                                       transitionDuration: transitionDuration)
@@ -96,14 +96,14 @@ public extension PresentationDesignable where Self: UIViewController {
     presenter?.presentationConfiguration = presentationConfiguration
   }
 
-  public func configureDismissalTransition() {
+  func configureDismissalTransition() {
     let animationType = dismissalAnimationType
     if let dismissalSystemTransition = animationType.systemTransition {
       modalTransitionStyle = dismissalSystemTransition
     }
   }
 
-  public func configurePresenterFrameForPresentation() {
+  func configurePresenterFrameForPresentation() {
        presenter?.presentationConfiguration?.contextFrameForPresentation = contextFrameForPresentation?()
   }
 

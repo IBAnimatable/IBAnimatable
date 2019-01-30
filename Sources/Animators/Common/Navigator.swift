@@ -86,8 +86,8 @@ extension Navigator: UITabBarControllerDelegate {
     interactiveAnimator?.connectGestureRecognizer(to: toVC)
 
     guard let viewControllers = tabBarController.viewControllers,
-      let fromVCIndex = viewControllers.index(of: fromVC),
-      let toVCIndex = viewControllers.index(of: toVC) else {
+      let fromVCIndex = viewControllers.firstIndex(of: fromVC),
+      let toVCIndex = viewControllers.firstIndex(of: toVC) else {
         return nil
     }
     if toVCIndex > fromVCIndex, let reverseTransitionAnimationType = animator?.reverseAnimationType {

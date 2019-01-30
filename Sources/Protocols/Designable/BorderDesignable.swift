@@ -31,7 +31,7 @@ public protocol BorderDesignable: class {
 // MARK: - UIView
 
 public extension BorderDesignable where Self: UIView {
-  public func configureBorder() {
+  func configureBorder() {
     configureBorder(in: self)
   }
 }
@@ -39,7 +39,7 @@ public extension BorderDesignable where Self: UIView {
 // MARK: - UITextField
 
 public extension BorderDesignable where Self: UITextField {
-  public func configureBorder() {
+  func configureBorder() {
     if borderWidth > 0 {
       borderStyle = .none
     }

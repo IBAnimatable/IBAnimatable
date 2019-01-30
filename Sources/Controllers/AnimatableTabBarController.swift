@@ -83,7 +83,7 @@ private extension UITabBar {
     func view(for item: UITabBarItem) -> UIControl? {
       // return item.value(forKeyPath: "view") as? UIControl // apple could not allow that
       guard let items = self.items,
-        let index = items.index(of: item) else {
+        let index = items.firstIndex(of: item) else {
         return nil
       }
       // get all buttons

@@ -27,7 +27,7 @@ public protocol BackgroundImageDesignable: BackgroundDesignable {
 
 public extension BackgroundImageDesignable {
 
-  public func configureBackgroundImage() {
+  func configureBackgroundImage() {
     if let image = backgroundImage {
       if let imageView = backgroundView as? UIImageView {
         imageView.image = image
@@ -41,7 +41,7 @@ public extension BackgroundImageDesignable {
     }
   }
 
-  public var backgroundImageView: UIImageView? {
+  var backgroundImageView: UIImageView? {
     get {
       return backgroundView as? UIImageView
     }

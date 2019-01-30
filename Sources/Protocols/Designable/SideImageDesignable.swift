@@ -49,7 +49,7 @@ public protocol SideImageDesignable: class {
 }
 
 public extension SideImageDesignable where Self: UITextField {
-  public func configureImages() {
+  func configureImages() {
     configureLeftImage()
     configureRightImage()
   }
