@@ -91,16 +91,16 @@ extension Navigator: UITabBarControllerDelegate {
       let toVCIndex = viewControllers.firstIndex(of: toVC) else {
         return nil
     }
-    
+
     #else
     guard let viewControllers = tabBarController.viewControllers,
       let fromVCIndex = viewControllers.index(of: fromVC),
       let toVCIndex = viewControllers.index(of: toVC) else {
         return nil
     }
-    
+
     #endif
-    
+
     if toVCIndex > fromVCIndex, let reverseTransitionAnimationType = animator?.reverseAnimationType {
       return AnimatorFactory.makeAnimator(transitionAnimationType: reverseTransitionAnimationType, transitionDuration: transitionDuration)
     }

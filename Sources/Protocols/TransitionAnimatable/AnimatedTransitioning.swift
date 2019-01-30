@@ -26,8 +26,8 @@ public protocol AnimatedTransitioning: ViewControllerAnimatedTransitioning {
 
 public extension AnimatedTransitioning {
   func animateWithCATransition(transitionContext: UIViewControllerContextTransitioning,
-                                      type: TransitionAnimationType.SystemTransitionType,
-                                      subtype: CATransitionSubtype?) {
+                               type: TransitionAnimationType.SystemTransitionType,
+                               subtype: CATransitionSubtype?) {
     let (_, tempToView, tempContainerView) = retrieveViews(transitionContext: transitionContext)
     guard let toView = tempToView, let containerView = tempContainerView else {
       transitionContext.completeTransition(true)

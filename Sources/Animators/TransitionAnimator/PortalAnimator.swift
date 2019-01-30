@@ -82,7 +82,7 @@ private extension PortalAnimator {
         rightHandView.frame = rightHandView.frame.offsetBy(dx: rightHandView.frame.width, dy: 0.0)
         toViewSnapshot.center = toView.center
         toViewSnapshot.frame = containerView.frame
-    },
+      },
       completion: { _ in
         fromView.isHidden = false
         if transitionContext.transitionWasCancelled {
@@ -93,7 +93,7 @@ private extension PortalAnimator {
           self.removeOtherViews(viewToKeep: toView)
         }
         transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-    }
+      }
     )
   }
 
