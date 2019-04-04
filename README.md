@@ -58,7 +58,25 @@ Add the following entry in your Cartfile:
    github "IBAnimatable/IBAnimatable"
 ```
 
-Please Notice, there is [a limitation of a built framework for `@IBDesignable` and `@IBInspectable`](https://github.com/Carthage/Carthage/issues/335), that will impact on `IBAnimatable` when you use Carthage. There is a workaround to use Carthage or Swift package manager with `IBAnimatable`, please have a look at [Carthage – no Animatable UI Classes appearing in Storyboard](https://github.com/IBAnimatable/IBAnimatable/issues/354)
+### [Accio](https://github.com/JamitLabs/Accio)
+Add the following etnry in your Package.swift:
+
+```swift
+.package(url: "https://github.com/SwiftKickMobile/SwiftMessages.git", .upToNextMajor(from: "6.0.2")),
+```
+
+Next, add `IBAnimatable` to your App targets dependencies like so:
+
+```swift
+.target(
+    name: "App",
+    dependencies: [
+        "IBAnimatable",
+    ]
+),
+```
+
+Please Notice, there is [a limitation of a built framework for `@IBDesignable` and `@IBInspectable`](https://github.com/Carthage/Carthage/issues/335), that will impact on `IBAnimatable` when you use Carthage or Accio. There is a workaround to use Carthage, Accio or Swift package manager with `IBAnimatable`, please have a look at [Carthage – no Animatable UI Classes appearing in Storyboard](https://github.com/IBAnimatable/IBAnimatable/issues/354)
 
 As @DanielAsher mentioned
 > I use carthage update --use-submodules --no-build --no-use-binaries and manually add the both the framework project and the framework as an embedded dependency.
