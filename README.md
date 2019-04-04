@@ -62,7 +62,7 @@ Add the following entry in your Cartfile:
 Add the following etnry in your Package.swift:
 
 ```swift
-.package(url: "https://github.com/SwiftKickMobile/SwiftMessages.git", .upToNextMajor(from: "6.0.2")),
+.package(url: "https://github.com/IBAnimatable/IBAnimatable.git", .upToNextMajor(from: "5.2.1")),
 ```
 
 Next, add `IBAnimatable` to your App targets dependencies like so:
