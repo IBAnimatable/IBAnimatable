@@ -74,8 +74,9 @@ public extension PresentationModalSize {
     guard let string = string else {
       return nil
     }
-
-    let (name, params) = PresentationModalSize.extractNameAndParams(from: string)
+    guard let (name, params) = string.extractNameAndParams() else {
+      return nil
+    }
     switch name {
     case "half":
       self = .half
@@ -102,7 +103,7 @@ public extension PresentationModalSize {
     case "goldenlarge", "goldenratio":
       self = .goldenLarge
     case "custom" where params.count == 1:
-      self = .custom(size: params[0].toFloat() ?? 0)
+      self = .custom(size: params.toFloat(0) ?? 0)
     case "preferred":
       self = .preferred
     default:

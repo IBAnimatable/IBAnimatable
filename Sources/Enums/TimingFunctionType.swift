@@ -38,9 +38,10 @@ extension TimingFunctionType: IBEnum {
       self = .none
       return
     }
-
-    let (name, params) = TimingFunctionType.extractNameAndParams(from: string)
-
+    guard let (name, params) = string.extractNameAndParams() else {
+      self = .none
+      return
+    }
     switch name {
     // standards
     case "linear":
@@ -56,10 +57,10 @@ extension TimingFunctionType: IBEnum {
 
     // customs
     case "spring" where params.count == 1:
-      self = .spring(damping: params[0].toFloat() ?? 0)
+      self = .spring(damping: params.toFloat(0) ?? 0)
     case "custom" where params.count == 4:
-      let c1 = (params[0].toFloat() ?? 0, params[1].toFloat() ?? 0)
-      let c2 = (params[2].toFloat() ?? 0, params[3].toFloat() ?? 0)
+      let c1 = (params.toFloat(0) ?? 0, params.toFloat(1) ?? 0)
+      let c2 = (params.toFloat(2) ?? 0, params.toFloat(3) ?? 0)
       self = .custom(c1, c2)
 
     // from http://easings.net/

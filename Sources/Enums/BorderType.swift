@@ -22,12 +22,15 @@ extension BorderType {
       return
     }
 
-    let (name, params) = AnimationType.extractNameAndParams(from: string)
+    guard let (name, params) = string.extractNameAndParams() else {
+      self = .none
+      return
+    }
     switch name {
     case "solid":
       self = .solid
     case "dash":
-      self = .dash(dashLength: params[safe: 0]?.toInt() ?? 1, spaceLength: params[safe: 1]?.toInt() ?? 1)
+      self = .dash(dashLength: params.toInt(0) ?? 1, spaceLength: params.toInt(1) ?? 1)
     default:
       self = .none
     }

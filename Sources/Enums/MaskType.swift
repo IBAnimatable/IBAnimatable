@@ -72,46 +72,48 @@ public extension MaskType {
       return
     }
 
-    let (name, params) = MaskType.extractNameAndParams(from: string)
-
+    guard let (name, params) = string.extractNameAndParams() else {
+      self = .none
+      return
+    }
     switch name {
     case "circle":
       self = .circle
     case "ellipse":
       self = .ellipse
     case "polygon":
-      self = .polygon(sides: params[safe: 0]?.toInt() ?? 6)
+      self = .polygon(sides: params.toInt(0) ?? 6)
     case "star":
-      self = .star(points: params[safe: 0]?.toInt() ?? 5)
+      self = .star(points: params.toInt(0) ?? 5)
     case "triangle":
       self = .triangle
     case "wave":
-      self = .wave(direction: WaveDirection(raw: params[safe: 0], defaultValue: .up),
-                   width: params[safe: 1]?.toDouble() ?? 40,
-                   offset: params[safe: 2]?.toDouble() ?? 0)
+      self = .wave(direction: WaveDirection(raw: params.toString(0), defaultValue: .up),
+                   width: params.toDouble(1) ?? 40,
+                   offset: params.toDouble(2) ?? 0)
     case "parallelogram":
-      self = .parallelogram(angle: params[safe: 0]?.toDouble() ?? 60)
+      self = .parallelogram(angle: params.toDouble(0) ?? 60)
     case "heart":
       self = .heart
     case "ring":
-      self = .ring(radius: params[safe: 0]?.toDouble() ?? 10 )
+      self = .ring(radius: params.toDouble(0) ?? 10 )
     case "gear":
-      self = .gear(radius: params[safe: 0]?.toDouble() ?? 10, cogs: params[safe: 1]?.toInt() ?? 6 )
+      self = .gear(radius: params.toDouble(0) ?? 10, cogs: params.toInt(1) ?? 6 )
     case "superellipse":
-      self = .superEllipse(n: params[safe: 0]?.toDouble() ?? M_E )
+      self = .superEllipse(n: params.toDouble(0) ?? M_E )
     case "drop":
       self = .drop
     case "plussign":
-      self = .plusSign(width: params[safe: 0]?.toDouble() ?? 10 )
+      self = .plusSign(width: params.toDouble(0) ?? 10 )
     case "moon":
-      self = .moon(angle: params[safe: 0]?.toDouble() ?? 60 )
+      self = .moon(angle: params.toDouble(0) ?? 60 )
     case "insetby":
-      let x = params[safe: 0]?.toDouble() ?? 0
-      self = .insetBy(dx: x, dy: params[safe: 1]?.toDouble() ?? x )
+      let x = params.toDouble(0) ?? 0
+      self = .insetBy(dx: x, dy: params.toDouble(1) ?? x )
     case "rounded":
-      let radii = params.compactMap { $0.toDouble() }
+      let radii = params.toDoubles()
       let radius: Double = radii[safe: 0] ?? 0
-      let corners = params.compactMap { CornerSide(rawValue: $0).map { CornerSides(side: $0) } }
+      let corners = params.compactMap { CornerSide(rawValue: $0.name).map { CornerSides(side: $0) } }
       var cornerSides = CornerSides(corners)
       if cornerSides == .unknown {
         cornerSides = .allSides

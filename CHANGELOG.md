@@ -12,7 +12,7 @@ N/A
 
 #### Enhancements
 
-N/A
+- Allow imbricated `AnimationType` options, `Array` and operator `+` to create `compound` animation by string. [#611](https://github.com/IBAnimatable/IBAnimatable/pull/611) by [@phimage](https://github.com/phimage)
 
 #### Bugfixes
 
