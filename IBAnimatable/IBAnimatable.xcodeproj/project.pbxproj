@@ -25,6 +25,7 @@
 		3676E7DF2059457A0003B9DF /* DesignableNavigationBar.swift in Headers */ = {isa = PBXBuildFile; fileRef = E27FD2391ECD7D8A00F74840 /* DesignableNavigationBar.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		48A167122063CD0D00D7BCFB /* ConicalGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A167112063CD0D00D7BCFB /* ConicalGradientLayer.swift */; };
 		48D80DCA20403DAC00D3137B /* AnimatableTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D80DC920403DAC00D3137B /* AnimatableTabBarItem.swift */; };
+		C40035A32281AF6200B7BAEE /* BorderTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40035A22281AF6200B7BAEE /* BorderTypeTests.swift */; };
 		C40AE6A220E6210100B24A44 /* ActivityIndicatorAnimationNewtonCradle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40AE6A120E6210100B24A44 /* ActivityIndicatorAnimationNewtonCradle.swift */; };
 		C414765F209C1BD700945C8B /* ActivityIndicatorAnimationTripleGear.swift in Sources */ = {isa = PBXBuildFile; fileRef = C414765E209C1BD700945C8B /* ActivityIndicatorAnimationTripleGear.swift */; };
 		C41A0E80209A39660069555A /* ActivityIndicatorAnimationHeartBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41A0E7F209A39660069555A /* ActivityIndicatorAnimationHeartBeat.swift */; };
@@ -233,6 +234,7 @@
 /* Begin PBXFileReference section */
 		48A167112063CD0D00D7BCFB /* ConicalGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConicalGradientLayer.swift; sourceTree = "<group>"; };
 		48D80DC920403DAC00D3137B /* AnimatableTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableTabBarItem.swift; sourceTree = "<group>"; };
+		C40035A22281AF6200B7BAEE /* BorderTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderTypeTests.swift; sourceTree = "<group>"; };
 		C40AE6A120E6210100B24A44 /* ActivityIndicatorAnimationNewtonCradle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationNewtonCradle.swift; sourceTree = "<group>"; };
 		C414765E209C1BD700945C8B /* ActivityIndicatorAnimationTripleGear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationTripleGear.swift; sourceTree = "<group>"; };
 		C41A0E7F209A39660069555A /* ActivityIndicatorAnimationHeartBeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationHeartBeat.swift; sourceTree = "<group>"; };
@@ -501,6 +503,7 @@
 			children = (
 				C4AC246422809C0600FB23FF /* AnimatableTypeTests.swift */,
 				E27FD0121ECD7BCE00F74840 /* ColorTypeTests.swift */,
+				C40035A22281AF6200B7BAEE /* BorderTypeTests.swift */,
 			);
 			path = InternalTests;
 			sourceTree = "<group>";
@@ -1247,6 +1250,7 @@
 				E27FD0401ECD7BCE00F74840 /* AnimatableTextViewTests.swift in Sources */,
 				E27FD0411ECD7BCE00F74840 /* AnimatableViewTests.swift in Sources */,
 				E27FD03C1ECD7BCE00F74840 /* AnimatableStackViewTests.swift in Sources */,
+				C40035A32281AF6200B7BAEE /* BorderTypeTests.swift in Sources */,
 				E27FD03D1ECD7BCE00F74840 /* AnimatableTableViewCellTests.swift in Sources */,
 				E27FD0391ECD7BCE00F74840 /* AnimatableLabelTests.swift in Sources */,
 				E27FD03A1ECD7BCE00F74840 /* AnimatableScrollViewTests.swift in Sources */,

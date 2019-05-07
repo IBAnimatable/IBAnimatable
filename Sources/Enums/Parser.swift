@@ -120,6 +120,10 @@ class NumberNode: Node {
   }
 }
 
+func + (lhs: NumberNode, rhs: NumberNode) -> NumberNode {
+  return NumberNode(value: lhs.value + rhs.value)
+}
+
 class ArrayNode: Node {
   let elements: [Node]
 
@@ -147,6 +151,22 @@ class BinaryOperatorNode: Node {
 
   override var description: String {
     return "\(type(of: self))(name: \"\(name)\", lhs: \(lhs), rhs: \(rhs))"
+  }
+
+  func evaluate() -> Any? {
+    return self.operator.evaluate(lhs: lhs, rhs: rhs)
+  }
+}
+
+extension Operator {
+  func evaluate(lhs: Node, rhs: Node) -> Any? {
+    if let lhs = lhs as? NumberNode, let rhs = rhs as? NumberNode {
+      switch self {
+      case .plus:
+        return lhs + rhs
+      }
+    }
+    return nil
   }
 }
 

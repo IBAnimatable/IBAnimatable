@@ -30,8 +30,17 @@ extension Array where Element: Node {
   }
 
   // MARK: Number
+  fileprivate func numberNode(at index: Int) -> NumberNode? {
+    var node: Node? = self[safe: index]
+    if let operatorNode = node as? BinaryOperatorNode,
+      let evaluate = operatorNode.evaluate() as? NumberNode {
+      node = evaluate
+    }
+    return node as? NumberNode
+  }
+
   func toDouble(_ index: Int) -> Double? {
-    if let node = self[safe: index] as? NumberNode {
+    if let node = numberNode(at: index) {
       return node.value
     }
     return nil
@@ -40,20 +49,21 @@ extension Array where Element: Node {
     let nodes = self.compactMap { $0 as? NumberNode }
     return nodes.map { Double($0.value) }
   }
+
   func toInt(_ index: Int) -> Int? {
-    if let node = self[safe: index] as? NumberNode {
+    if let node = numberNode(at: index) {
       return Int(node.value)
     }
     return nil
   }
   func toFloat(_ index: Int) -> Float? {
-    if let node = self[safe: index] as? NumberNode {
+    if let node = numberNode(at: index) {
       return Float(node.value)
     }
     return nil
   }
   func toCGFloat(_ index: Int) -> CGFloat? {
-    if let node = self[safe: index] as? NumberNode {
+    if let node = numberNode(at: index) {
       return CGFloat(node.value)
     }
     return nil
