@@ -203,5 +203,5 @@ extension AnimationType: ExpressibleByArrayLiteral {
       self = .none
     }
   }
-  
+
 }

@@ -13,7 +13,7 @@ extension Array {
 }
 
 extension Array where Element: Node {
-  
+
   // MARK: String
   func toString(_ index: Int) -> String? {
     if let node = self[safe: index] as? VariableNode {
@@ -21,16 +21,14 @@ extension Array where Element: Node {
     }
     return nil
   }
-  
+
   func contains(_ name: String) -> Bool {
-    for node in self {
-      if node.name == name {
-        return true
-      }
+    for node in self where node.name == name {
+      return true
     }
     return false
   }
-  
+
   // MARK: Number
   func toDouble(_ index: Int) -> Double? {
     if let node = self[safe: index] as? NumberNode {
@@ -69,7 +67,7 @@ extension Array where Element: Node {
     }
     return nil
   }
-  
+
 }
 
 extension RawRepresentable {
@@ -116,7 +114,7 @@ extension CALayer {
 }
 
 extension String {
-  
+
   func parseNameAndParams() -> [Node] {
     let parser = Parser(tokens: Lexer.tokenize(self.lowercased()))
     do {
@@ -128,7 +126,7 @@ extension String {
       return []
     }
   }
-  
+
   /**
    Helper function that returns a tuple containing the name and params from a string
    
@@ -144,20 +142,20 @@ extension String {
     let params: [Node] = (firstNode as? CallNode)?.arguments ?? []
     return (firstNode.name, params)
   }
-  
+
   public func parse<T: IBEnum>() -> T? {
     return T(string: self)
   }
-  
+
   public func parse<T: IBEnum>(default defaultValue: T) -> T {
     return T(string: self) ?? defaultValue
   }
-  
+
 }
 
 extension NSRegularExpression {
-  
-  func matched(_ string: String) -> (String, CountableRange<Int>)?  {
+
+  func matched(_ string: String) -> (String, CountableRange<Int>)? {
     let range = self.rangeOfFirstMatch(in: string, options: [], range: NSRange(0 ..< string.utf16.count))
     if range.location != NSNotFound {
       return ((string as NSString).substring(with: range), range.location ..< range.location + range.length)

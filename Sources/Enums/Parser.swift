@@ -24,7 +24,7 @@ enum Token {
 
 enum Operator: String {
   case plus = "+"
-  
+
   var precedence: Int {
     switch self {
     case .plus:
@@ -38,6 +38,7 @@ enum Operator: String {
 class Lexer {
 
   typealias TokenBuilder = (String, CountableRange<Int>) -> Token?
+
   static let tokenStringList: [String: TokenBuilder] = [
     "[ \t\n]": { _, _ in nil }, // trim
     "[a-zA-Z][a-zA-Z0-9]*": ({ .identifier($0, $1) }),
@@ -51,8 +52,9 @@ class Lexer {
   ]
 
   typealias TokenRegularExpression = (NSRegularExpression, TokenBuilder)
+
   static let tokenList: [TokenRegularExpression] = tokenStringList.map {
-      return (try! NSRegularExpression(pattern: "^\($0.0)", options: []), $0.1)
+    (try! NSRegularExpression(pattern: "^\($0.0)", options: []), $0.1) //swiftlint:disable:this force_try
   }
 
   /// Split input string to tokens
@@ -61,7 +63,6 @@ class Lexer {
     var content = input
     while !content.isEmpty {
       var found = false
-      
       for (regex, builder) in tokenList {
         if let (matched, range) = regex.matched(content) {
           if let token = builder(matched, range) {
@@ -77,7 +78,7 @@ class Lexer {
       if !found {
         let index = content.index(content.startIndex, offsetBy: 1)
         let intIndex = content.distance(from: content.startIndex, to: index)
-        tokens.append(.undefined(String(content[..<index]), intIndex..<intIndex+1))
+        tokens.append(.undefined(String(content[..<index]), intIndex..<intIndex + 1))
         content = String(content[index...])
       }
     }
@@ -90,9 +91,11 @@ class Lexer {
 class Node: CustomStringConvertible, Equatable {
   var range: CountableRange<Int> = 0..<0
   let name: String
+
   init(name: String) {
     self.name = name
   }
+
   var description: String {
     return "\(type(of: self))(name: \"\(name)\")"
   }
@@ -106,10 +109,12 @@ class VariableNode: Node {}
 
 class NumberNode: Node {
   let value: Double
+
   init(value: Double) {
     self.value = value
     super.init(name: "\(value)")
   }
+
   override var description: String {
     return "\(type(of: self))(value: \(value))"
   }
@@ -117,10 +122,12 @@ class NumberNode: Node {
 
 class ArrayNode: Node {
   let elements: [Node]
+
   init(elements: [Node]) {
     self.elements = elements
     super.init(name: "array")
   }
+
   override var description: String {
     return "\(elements))"
   }
@@ -130,12 +137,14 @@ class BinaryOperatorNode: Node {
   let `operator`: Operator
   let lhs: Node
   let rhs: Node
+
   init(operator: Operator, lhs: Node, rhs: Node) {
     self.operator = `operator`
     self.lhs = lhs
     self.rhs = rhs
     super.init(name: `operator`.rawValue)
   }
+
   override var description: String {
     return "\(type(of: self))(name: \"\(name)\", lhs: \(lhs), rhs: \(rhs))"
   }
@@ -143,17 +152,19 @@ class BinaryOperatorNode: Node {
 
 class CallNode: Node {
   let arguments: [Node]
+
   init(name: String, arguments: [Node]) {
     self.arguments = arguments
     super.init(name: name)
   }
+
   override var description: String {
     return "\(type(of: self))(name: \"\(name)\", arguments: \(arguments))"
   }
 }
 
 protocol ParentNode {
-  var children: [Node] {get}
+  var children: [Node] { get }
 }
 
 extension CallNode: ParentNode {
@@ -188,7 +199,7 @@ class Parser {
 
   let tokens: [Token]
   var currentIndex = 0
-  
+
   init(tokens: [Token]) {
     self.tokens = tokens
   }
@@ -202,22 +213,21 @@ class Parser {
     return tokens[currentIndex]
   }
 
-  @discardableResult func popCurrentToken() -> Token {
+  @discardableResult
+  func popCurrentToken() -> Token {
     defer { currentIndex += 1 }
     return tokens[currentIndex]
   }
-  
+
   // MARK: parse
 
   func parse() throws -> [Node] {
     currentIndex = 0
-    
     var nodes = [Node]()
     while currentIndex < tokens.count {
       let expr = try parseExpression()
       nodes.append(expr)
     }
-    
     return nodes
   }
 
@@ -291,11 +301,11 @@ class Parser {
         while true {
           let argument = try parseExpression()
           arguments.append(argument)
-          
+
           if case .parenthesisClose = currentToken() {
             break
           }
-          
+
           guard case .comma = popCurrentToken() else {
             throw ParseError.expectCharacter(",")
           }
@@ -327,7 +337,7 @@ class Parser {
       throw ParseError.unexpectToken
     }
   }
-  
+
   func currentTokenPrecedence() throws -> Int {
     guard currentIndex < tokens.count else {
       return -1
@@ -358,9 +368,9 @@ class Parser {
 
       var rhs = try parsePrimary()
       let nextPrecedence = try currentTokenPrecedence()
-      
+
       if tokenPrecedence < nextPrecedence {
-        rhs = try parseBinaryOperator(node: rhs, exprPrecedence: tokenPrecedence+1)
+        rhs = try parseBinaryOperator(node: rhs, exprPrecedence: tokenPrecedence + 1)
       }
       lhs = BinaryOperatorNode(operator: op, lhs: lhs, rhs: rhs)
     }
