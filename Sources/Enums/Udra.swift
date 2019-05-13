@@ -9,7 +9,7 @@
 import Foundation
 
 /// User defined runtime attributes parsing.
-class Udra {
+class Udra { //swiftlint:disable:this type_body_length
   // MARK: - Token
 
   /// User defined runtime attributes Tokens.
@@ -41,7 +41,7 @@ class Udra {
   /// User defined runtime attributes Lexer.
   class Lexer {
 
-    typealias TokenBuilder = (String, CountableRange<Int>) -> Token?
+    typealias TokenBuilder = (String, CountableRange<Int>) -> Token? //swiftlint:disable:this nesting
 
     static let tokenStringList: [String: TokenBuilder] = [
       "[ \t\n]": { _, _ in nil }, // trim
@@ -55,7 +55,7 @@ class Udra {
       ",": ({ .comma($1) })
     ]
 
-    typealias TokenRegularExpression = (NSRegularExpression, TokenBuilder)
+    typealias TokenRegularExpression = (NSRegularExpression, TokenBuilder) //swiftlint:disable:this nesting
 
     static let tokenList: [TokenRegularExpression] = tokenStringList.map {
       (try! NSRegularExpression(pattern: "^\($0.0)", options: []), $0.1) //swiftlint:disable:this force_try
@@ -338,7 +338,7 @@ class Udra {
       if case let .undefined(op, _) = currentToken() {
         throw ParseError.undefinedOperator(op)
       }
-      
+
       guard case let .operator(op, _) = currentToken() else {
         return -1
       }
@@ -371,7 +371,6 @@ class Udra {
   }
 
 }
-
 
 // MARK: node extensions
 
