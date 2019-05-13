@@ -12,11 +12,11 @@ extension Array {
   }
 }
 
-extension Array where Element: Node {
+extension Array where Element: Udra.Node {
 
   // MARK: String
   func toString(_ index: Int) -> String? {
-    if let node = self[safe: index] as? VariableNode {
+    if let node = self[safe: index] as? Udra.VariableNode {
       return node.name
     }
     return nil
@@ -30,13 +30,13 @@ extension Array where Element: Node {
   }
 
   // MARK: Number
-  fileprivate func numberNode(at index: Int) -> NumberNode? {
-    var node: Node? = self[safe: index]
-    if let operatorNode = node as? BinaryOperatorNode,
-      let evaluate = operatorNode.evaluate() as? NumberNode {
+  fileprivate func numberNode(at index: Int) -> Udra.NumberNode? {
+    var node: Udra.Node? = self[safe: index]
+    if let operatorNode = node as? Udra.BinaryOperatorNode,
+      let evaluate = operatorNode.evaluate() as? Udra.NumberNode {
       node = evaluate
     }
-    return node as? NumberNode
+    return node as? Udra.NumberNode
   }
 
   func toDouble(_ index: Int) -> Double? {
@@ -46,7 +46,7 @@ extension Array where Element: Node {
     return nil
   }
   func toDoubles() -> [Double] {
-    let nodes = self.compactMap { $0 as? NumberNode }
+    let nodes = self.compactMap { $0 as? Udra.NumberNode }
     return nodes.map { Double($0.value) }
   }
 
@@ -69,10 +69,10 @@ extension Array where Element: Node {
     return nil
   }
   func toBool(_ index: Int) -> Bool? {
-    if let node = self[safe: index] as? NumberNode {
+    if let node = self[safe: index] as? Udra.NumberNode {
       return node.value != 0
     }
-    if let node = self[safe: index] as? VariableNode, let value = Bool(node.name) {
+    if let node = self[safe: index] as? Udra.VariableNode, let value = Bool(node.name) {
       return value
     }
     return nil
@@ -125,8 +125,8 @@ extension CALayer {
 
 extension String {
 
-  func parseNameAndParams() -> [Node] {
-    let parser = Parser(tokens: Lexer.tokenize(self.lowercased()))
+  func parseNameAndParams() -> [Udra.Node] {
+    let parser = Udra.Parser(tokens: Udra.Lexer.tokenize(self.lowercased()))
     do {
       return try parser.parse()
     } catch {
@@ -144,12 +144,12 @@ extension String {
    - Discussion: the string format is like "enumName(param1,param2,param3)"
    - Returns: A tuple containing the name and an array of parameter string
    */
-  func extractNameAndParams() -> (String, [Node])? {
+  func extractNameAndParams() -> (String, [Udra.Node])? {
     let nodes = self.parseNameAndParams()
     guard let firstNode = nodes.first else {
       return nil
     }
-    let params: [Node] = (firstNode as? CallNode)?.arguments ?? []
+    let params: [Udra.Node] = (firstNode as? Udra.CallNode)?.arguments ?? []
     return (firstNode.name, params)
   }
 

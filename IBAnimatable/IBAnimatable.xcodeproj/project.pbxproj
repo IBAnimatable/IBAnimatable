@@ -36,7 +36,7 @@
 		C46DC3E32099895E00501E63 /* ActivityIndicatorAnimationGear.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46DC3E22099895E00501E63 /* ActivityIndicatorAnimationGear.swift */; };
 		C489AD1E20E640B300273B77 /* ActivityIndicatorAnimationCirclePendulum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C489AD1D20E640B300273B77 /* ActivityIndicatorAnimationCirclePendulum.swift */; };
 		C49C08DD20A05072002FCAFD /* ActivityIndicatorAnimationRupee.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49C08DC20A05072002FCAFD /* ActivityIndicatorAnimationRupee.swift */; };
-		C4AC245F228072F400FB23FF /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC245A228072F300FB23FF /* Parser.swift */; };
+		C4AC245F228072F400FB23FF /* Udra.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC245A228072F300FB23FF /* Udra.swift */; };
 		C4AC246522809C0600FB23FF /* AnimatableTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC246422809C0600FB23FF /* AnimatableTypeTests.swift */; };
 		DD98209320F4A3CC0058D5FE /* _SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD98209220F4A3CC0058D5FE /* _SwiftSupport.swift */; };
 		E20DAEB82003662900BE1C88 /* GradientMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20DAEB72003662900BE1C88 /* GradientMode.swift */; };
@@ -245,7 +245,7 @@
 		C46DC3E22099895E00501E63 /* ActivityIndicatorAnimationGear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationGear.swift; sourceTree = "<group>"; };
 		C489AD1D20E640B300273B77 /* ActivityIndicatorAnimationCirclePendulum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationCirclePendulum.swift; sourceTree = "<group>"; };
 		C49C08DC20A05072002FCAFD /* ActivityIndicatorAnimationRupee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationRupee.swift; sourceTree = "<group>"; };
-		C4AC245A228072F300FB23FF /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		C4AC245A228072F300FB23FF /* Udra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Udra.swift; sourceTree = "<group>"; };
 		C4AC246422809C0600FB23FF /* AnimatableTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableTypeTests.swift; sourceTree = "<group>"; };
 		DD98209220F4A3CC0058D5FE /* _SwiftSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _SwiftSupport.swift; sourceTree = "<group>"; };
 		E20DAEB72003662900BE1C88 /* GradientMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientMode.swift; sourceTree = "<group>"; };
@@ -754,7 +754,7 @@
 				E27FD1EB1ECD7D8A00F74840 /* TransitionAnimationType.swift */,
 				E27FD1EC1ECD7D8A00F74840 /* TransitionType.swift */,
 				E27FD1ED1ECD7D8A00F74840 /* Utils.swift */,
-				C4AC245A228072F300FB23FF /* Parser.swift */,
+				C4AC245A228072F300FB23FF /* Udra.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -1002,6 +1002,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1080,7 +1081,7 @@
 				E27FD26F1ECD7D8A00F74840 /* NatGeoAnimator.swift in Sources */,
 				E27FD2761ECD7D8A00F74840 /* AnimatableModalViewController.swift in Sources */,
 				E27FD2901ECD7D8A00F74840 /* Utils.swift in Sources */,
-				C4AC245F228072F400FB23FF /* Parser.swift in Sources */,
+				C4AC245F228072F400FB23FF /* Udra.swift in Sources */,
 				E27FD23B1ECD7D8A00F74840 /* ActivityIndicatorAnimationBallBeat.swift in Sources */,
 				E27FD2521ECD7D8A00F74840 /* ActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				E27FD2B71ECD7D8A00F74840 /* PresentFadeWithDismissInteractionSegue.swift in Sources */,

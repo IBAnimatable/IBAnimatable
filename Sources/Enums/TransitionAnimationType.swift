@@ -218,7 +218,7 @@ extension TransitionAnimationType {
       return self == .left || self == .right
     }
 
-    static func fromString(forParams params: [Node]) -> Direction? {
+    static func fromString(forParams params: [Udra.Node]) -> Direction? {
       if params.contains("left") {
         return .left
       } else if params.contains("right") {

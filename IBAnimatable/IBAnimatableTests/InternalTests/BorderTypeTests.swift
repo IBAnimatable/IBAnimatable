@@ -9,15 +9,15 @@
 import XCTest
 @testable import IBAnimatable
 final class BorderTypeTests: XCTestCase {
-  
+
   override func setUp() {
     super.setUp()
   }
-  
+
   override func tearDown() {
     super.tearDown()
   }
-  
+
   func testBorderType() {
     let types: [String: BorderType] = [
       "solid": .solid,
@@ -32,5 +32,5 @@ final class BorderTypeTests: XCTestCase {
       XCTAssertEqual("\(value)", "\(expected)", string) // test string if `AnimationType` not equatable
     }
   }
-  
+
 }

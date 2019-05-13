@@ -95,8 +95,8 @@ extension AnimationType: IBEnum {
     self.init(node: firstNode)
   }
 
-  init(node: Node) {
-    let params: [Node] = (node as? ParentNode)?.children ?? []
+  init(node: Udra.Node) {
+    let params: [Udra.Node] = (node as? Udra.ParentNode)?.children ?? []
     switch node.name {
     case "slide":
       self = .slide(way: Way(raw: params.toString(0), defaultValue: .in), direction: Direction(raw: params.toString(1), defaultValue: .left))
