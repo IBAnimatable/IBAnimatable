@@ -18,6 +18,21 @@ N/A
 
 N/A
 
+### [6.0.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/6.0.0)
+
+#### API breaking changes
+
+N/A
+
+#### Enhancements
+
+- Support Swift 5.0 [#603](https://github.com/IBAnimatable/IBAnimatable/pull/603) by [@shark-sea](https://github.com/shark-sea)
+- Update SwiftPM manifest file to support Accio [#608](https://github.com/IBAnimatable/IBAnimatable/pull/608) by [@Dschee](https://github.com/Dschee)
+
+#### Bugfixes
+
+N/A
+
 ### [5.2.1](https://github.com/IBAnimatable/IBAnimatable/releases/tag/5.2.1)
 
 #### API breaking changes
@@ -507,3 +522,5 @@ None
 ### [1.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/1.0)
 
 - Initial release
+
+
