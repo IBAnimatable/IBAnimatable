@@ -17,6 +17,6 @@ open class PresentOverCurrentContextSegue: UIStoryboardSegue {
         return CGRect(origin: correctedOrigin, size: source.view.bounds.size)
       }
     }
-    source.present(destination, animated: true, completion: nil)
+    present()
   }
 }

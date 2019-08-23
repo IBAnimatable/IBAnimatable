@@ -25,6 +25,7 @@
 		3676E7DF2059457A0003B9DF /* DesignableNavigationBar.swift in Headers */ = {isa = PBXBuildFile; fileRef = E27FD2391ECD7D8A00F74840 /* DesignableNavigationBar.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		48A167122063CD0D00D7BCFB /* ConicalGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A167112063CD0D00D7BCFB /* ConicalGradientLayer.swift */; };
 		48D80DCA20403DAC00D3137B /* AnimatableTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D80DC920403DAC00D3137B /* AnimatableTabBarItem.swift */; };
+		7E8A8028230FD8F100771F99 /* UIStoryboardSegueExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8A8027230FD8F100771F99 /* UIStoryboardSegueExtension.swift */; };
 		C40AE6A220E6210100B24A44 /* ActivityIndicatorAnimationNewtonCradle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40AE6A120E6210100B24A44 /* ActivityIndicatorAnimationNewtonCradle.swift */; };
 		C414765F209C1BD700945C8B /* ActivityIndicatorAnimationTripleGear.swift in Sources */ = {isa = PBXBuildFile; fileRef = C414765E209C1BD700945C8B /* ActivityIndicatorAnimationTripleGear.swift */; };
 		C41A0E80209A39660069555A /* ActivityIndicatorAnimationHeartBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41A0E7F209A39660069555A /* ActivityIndicatorAnimationHeartBeat.swift */; };
@@ -231,6 +232,7 @@
 /* Begin PBXFileReference section */
 		48A167112063CD0D00D7BCFB /* ConicalGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConicalGradientLayer.swift; sourceTree = "<group>"; };
 		48D80DC920403DAC00D3137B /* AnimatableTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableTabBarItem.swift; sourceTree = "<group>"; };
+		7E8A8027230FD8F100771F99 /* UIStoryboardSegueExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardSegueExtension.swift; sourceTree = "<group>"; };
 		C40AE6A120E6210100B24A44 /* ActivityIndicatorAnimationNewtonCradle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationNewtonCradle.swift; sourceTree = "<group>"; };
 		C414765E209C1BD700945C8B /* ActivityIndicatorAnimationTripleGear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationTripleGear.swift; sourceTree = "<group>"; };
 		C41A0E7F209A39660069555A /* ActivityIndicatorAnimationHeartBeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationHeartBeat.swift; sourceTree = "<group>"; };
@@ -757,6 +759,7 @@
 				E27FD1F01ECD7D8A00F74840 /* UIColorExtension.swift */,
 				E27FD1F11ECD7D8A00F74840 /* UIViewControllerExtension.swift */,
 				C4511F361F93F1B2002E0FAF /* UIBezierPathExtension.swift */,
+				7E8A8027230FD8F100771F99 /* UIStoryboardSegueExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -993,6 +996,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1173,6 +1177,7 @@
 				E27FD2A51ECD7D8A00F74840 /* RefreshControlerDesignable.swift in Sources */,
 				E27FD2971ECD7D8A00F74840 /* Animatable.swift in Sources */,
 				E27FD29B1ECD7D8A00F74840 /* BorderDesignable.swift in Sources */,
+				7E8A8028230FD8F100771F99 /* UIStoryboardSegueExtension.swift in Sources */,
 				E27FD27F1ECD7D8A00F74840 /* BlurEffectStyle.swift in Sources */,
 				E27FD24E1ECD7D8A00F74840 /* ActivityIndicatorAnimationCubeTransition.swift in Sources */,
 				C414765F209C1BD700945C8B /* ActivityIndicatorAnimationTripleGear.swift in Sources */,

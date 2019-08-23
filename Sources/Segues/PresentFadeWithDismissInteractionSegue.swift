@@ -10,6 +10,6 @@ open class PresentFadeWithDismissInteractionSegue: UIStoryboardSegue {
     let transitionPresenterManager = TransitionPresenterManager.shared
     destination.transitioningDelegate = transitionPresenterManager.retrievePresenter(transitionAnimationType: .fade(direction: .cross),
                                                                                      interactiveGestureType: .default)
-    source.present(destination, animated: true, completion: nil)
+    present()
   }
 }

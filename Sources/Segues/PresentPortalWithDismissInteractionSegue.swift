@@ -10,6 +10,6 @@ open class PresentPortalWithDismissInteractionSegue: UIStoryboardSegue {
     let transitionAnimationType: TransitionAnimationType = .portal(direction: .forward, zoomScale: nil)
     destination.transitioningDelegate = TransitionPresenterManager.shared.retrievePresenter(transitionAnimationType: transitionAnimationType,
                                                                                             interactiveGestureType: .default)
-    source.present(destination, animated: true, completion: nil)
+    present()
   }
 }

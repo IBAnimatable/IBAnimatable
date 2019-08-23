@@ -9,6 +9,6 @@ open class PresentExplodeSegue: UIStoryboardSegue {
   open override func perform() {
     let transitionType: TransitionAnimationType = .explode(xFactor: nil, minAngle: nil, maxAngle: nil)
     destination.transitioningDelegate = TransitionPresenterManager.shared.retrievePresenter(transitionAnimationType: transitionType)
-    source.present(destination, animated: true, completion: nil)
+    present()
   }
 }
