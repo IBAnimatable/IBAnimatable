@@ -12,7 +12,7 @@ N/A
 
 #### Enhancements
 
-N/A
+- Implement `Hashable` with `Hasher`. [#616](https://github.com/IBAnimatable/IBAnimatable/pull/616) by [@phimage](https://github.com/phimage)
 
 #### Bugfixes
 
