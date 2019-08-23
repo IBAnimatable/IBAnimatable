@@ -378,9 +378,15 @@ extension TransitionAnimationType {
 }
 
 extension TransitionAnimationType: Hashable {
+  #if swift(>=4.2)
+  public func hash(into hasher: inout Hasher) {
+    hasher.combine(stringValue)
+  }
+  #else
   public var hashValue: Int {
     return stringValue.hashValue
   }
+  #endif
 
   public static func == (lhs: TransitionAnimationType, rhs: TransitionAnimationType) -> Bool {
     return lhs.stringValue == rhs.stringValue
