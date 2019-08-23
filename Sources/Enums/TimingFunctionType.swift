@@ -135,9 +135,15 @@ extension TimingFunctionType: Hashable {
     }
   }
 
-  public var hashValue: Int {
-    return self.caType.hashValue
+  #if swift(>=4.2)
+  public func hash(into hasher: inout Hasher) {
+    hasher.combine(caType)
   }
+  #else
+  public var hashValue: Int {
+    return caType.hashValue
+  }
+  #endif
 }
 
 extension TimingFunctionType {
