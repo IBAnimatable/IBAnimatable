@@ -228,19 +228,19 @@ extension PresentingViewController {
   func resetSelectedItemPicker() {
     var row: Int?
     if selectedButton == btnAnimationType {
-      row = animations.index(of: selectedAnimationType ?? "")
+      row = animations.firstIndex(of: selectedAnimationType ?? "")
     } else if selectedButton == btnDismissalAnimationType {
-      row = animations.index(of: selectedDismissalAnimationType ?? "")
+      row = animations.firstIndex(of: selectedDismissalAnimationType ?? "")
     } else if selectedButton == btnModalPosition {
-      row = positions.index(of: selectedModalPosition ?? "")
+      row = positions.firstIndex(of: selectedModalPosition ?? "")
     } else if selectedButton == btnModalSize {
-      pickerView.selectRow(sizes.index(of: selectedModalWidth) ?? 0, inComponent: 0, animated: false)
-      pickerView.selectRow(sizes.index(of: selectedModalHeight) ?? 0, inComponent: 1, animated: false)
+      pickerView.selectRow(sizes.firstIndex(of: selectedModalWidth) ?? 0, inComponent: 0, animated: false)
+      pickerView.selectRow(sizes.firstIndex(of: selectedModalHeight) ?? 0, inComponent: 1, animated: false)
       return
     } else if selectedButton == btnKeyboardTranslation {
-      row = keyboardTranslations.index(of: selectedKeyboardTranslation ?? "")
+      row = keyboardTranslations.firstIndex(of: selectedKeyboardTranslation ?? "")
     } else if selectedButton == btnBlurEffectStyle {
-      row = blurEffectStyles.index(of: selectedBlurEffectStyle ?? "")
+      row = blurEffectStyles.firstIndex(of: selectedBlurEffectStyle ?? "")
     }
     pickerView.selectRow(row ?? 0, inComponent: 0, animated: false)
   }
@@ -287,3 +287,12 @@ extension PresentingViewController {
   }
 
 }
+
+/// Swift < 5.0 support
+#if swift(<5.0)
+extension Array where Element: Equatable {
+  public func firstIndex(of element: Element) -> Int? {
+    return self.index(of: element)
+  }
+}
+#endif
