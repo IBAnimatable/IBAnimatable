@@ -54,9 +54,15 @@ public enum PresentationAnimationType: IBEnum {
 }
 
 extension PresentationAnimationType: Hashable {
+  #if swift(>=4.2)
+  public func hash(into hasher: inout Hasher) {
+    hasher.combine(stringValue)
+  }
+  #else
   public var hashValue: Int {
     return stringValue.hashValue
   }
+  #endif
 
   public static func == (lhs: PresentationAnimationType, rhs: PresentationAnimationType) -> Bool {
     return lhs.stringValue == rhs.stringValue
