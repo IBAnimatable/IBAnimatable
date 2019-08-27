@@ -27,17 +27,15 @@ public class ActivityIndicatorAnimationRupee: ActivityIndicatorAnimating {
     let animation = defaultAnimation
 
     // Draw shapes
-    for i in 0 ..< 8 {
-      if i % 4 != 0 { // remove left and right
-        let shapeLayer = makeLayer(angle: .pi / 4 * CGFloat(i),
-                                   size: maskSize,
-                                   origin: CGPoint(x: x, y: y),
-                                   containerSize: size,
-                                   color: color)
-        animation.beginTime = beginTime + beginTimes[i]
-        shapeLayer.add(animation, forKey: "animation")
-        layer.addSublayer(shapeLayer)
-      }
+    for i in 0 ..< 8 where i % 4 != 0 {  // remove left and right
+      let shapeLayer = makeLayer(angle: .pi / 4 * CGFloat(i),
+                                 size: maskSize,
+                                 origin: CGPoint(x: x, y: y),
+                                 containerSize: size,
+                                 color: color)
+      animation.beginTime = beginTime + beginTimes[i]
+      shapeLayer.add(animation, forKey: "animation")
+      layer.addSublayer(shapeLayer)
     }
   }
 
