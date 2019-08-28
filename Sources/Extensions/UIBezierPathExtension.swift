@@ -44,7 +44,7 @@ extension UIBezierPath {
    */
   convenience init(polygonIn bounds: CGRect, with sides: Int) {
     self.init()
-    let center = CGPoint(x: bounds.width / 2.0, y: bounds.height / 2.0)
+    let center = bounds.center
     var angle: CGFloat = -.pi / 2
     let angleIncrement = .pi * 2 / CGFloat(sides)
     let length = min(bounds.width, bounds.height)
@@ -55,6 +55,56 @@ extension UIBezierPath {
       angle += angleIncrement
       self.addLine(to: point(from: angle, radius: radius, offset: center))
     }
+    close()
+  }
+
+  // MARK: - Rounded polygon
+
+  /**
+   Create a Bezier path for a rounded polygon shape with provided sides and radius.
+
+   - Parameter bounds: The bounds of shape.
+   - Parameter sides: The number of the polygon sides.
+   - Parameter cornerRadius: The radius of the polygon corner.
+   */
+  convenience init(roundedPolygonInRect bounds: CGRect, with sides: Int, cornerRadius: CGFloat) {
+    self.init()
+    let center = bounds.center
+    var angle: CGFloat = -.pi / 2
+    let angleIncrement = .pi * 2 / CGFloat(sides)
+    let length = min(bounds.width, bounds.height)
+    let r = length / 2.0 - cornerRadius * .pi / 180.0
+
+    // englobing polygon points
+    var points: [CGPoint] = [point(from: angle, radius: r, offset: center)]
+    for _ in 1...sides - 1 {
+      angle += angleIncrement
+      points.append(point(from: angle, radius: r, offset: center))
+    }
+
+    // configure
+    lineCapStyle = .round
+    usesEvenOddFillRule = true
+
+    // check cornerRadius
+    var cornerRadius = cornerRadius
+
+    if cornerRadius < 0 {
+      cornerRadius = 0
+    } else {
+      let maxCornerRadius = points[0].distance(to: points[1]) / 2.0
+      if cornerRadius > maxCornerRadius {
+        cornerRadius = maxCornerRadius
+      }
+    }
+
+    // Add arc and lines
+    let len = points.count
+    addArcPoint(previous: points[len - 1], current: points[0 % len], next: points[1 % len], cornerRadius: cornerRadius, isFirst: true)
+    for i in 0..<len {
+      addArcPoint(previous: points[i], current: points[(i + 1) % len], next: points[(i + 2) % len], cornerRadius: cornerRadius, isFirst: false)
+    }
+    // close path
     close()
   }
 
@@ -257,10 +307,10 @@ extension UIBezierPath {
    - Parameter n: The super ellipse main parameter.
    */
   convenience init(superEllipseInRect bounds: CGRect, n: CGFloat = CGFloat.𝑒) {
-    let a = bounds.width / 2
-    let b = bounds.height / 2
-    let n_2 = 2 / n
     let center = bounds.center
+    let a = center.x
+    let b = center.y
+    let n_2 = 2 / n
     let centerLeft = CGPoint(x: bounds.origin.x, y: bounds.midY)
 
     let x = { (t: CGFloat) -> CGFloat in
@@ -396,6 +446,38 @@ private extension UIBezierPath {
       translate(to: origine)
     }
   }
+
+  private func addArcPoint(previous: CGPoint, current: CGPoint, next: CGPoint, cornerRadius: CGFloat, isFirst: Bool) {
+    var c2p = CGPoint(x: previous.x - current.x, y: previous.y - current.y) // current & previous
+    var c2n = CGPoint(x: next.x - current.x, y: next.y - current.y) // current & next
+
+    let distanceP = c2p.distance(to: .zero)
+    let distanceN = c2p.distance(to: .zero)
+
+    c2p.x /= distanceP
+    c2p.y /= distanceP
+    c2n.x /= distanceN
+    c2n.y /= distanceN
+
+    let ω = acos(c2n.x * c2p.x + c2n.y * c2p.y)
+    let θ = (.pi / 2) - (ω / 2)
+
+    let radius = cornerRadius / θ * (.pi / 4)
+    let rTanθ = radius * tan(θ)
+
+    if isFirst {
+      let end = CGPoint(x: current.x + rTanθ * c2n.x, y: current.y + rTanθ * c2n.y)
+      move(to: end)
+    } else {
+      let start = CGPoint(x: current.x + rTanθ * c2p.x, y: current.y + rTanθ * c2p.y)
+      addLine(to: start)
+
+      let center = CGPoint(x: start.x + c2p.y * radius, y: start.y - c2p.x * radius)
+      let startAngle = atan2(c2p.x, -c2p.y)
+      let endAngle = startAngle + (2 * θ)
+      addArc(withCenter: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
+    }
+  }
 }
 
 extension CGFloat {
@@ -439,4 +521,12 @@ private extension CGRect {
   func flatten() -> (CGFloat, CGFloat, CGFloat, CGFloat) {
     return (origin.x, origin.y, size.width, size.height)
   }
+}
+
+fileprivate extension CGPoint {
+
+  func distance(to point: CGPoint) -> CGFloat {
+    return hypot(self.x - point.x, self.y - point.y)
+  }
+
 }
