@@ -59,8 +59,12 @@ public extension PresentationModalPosition {
       return
     }
 
-    let (name, params) = MaskType.extractNameAndParams(from: string)
-    let point = CGPoint(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
+    guard let (name, params) = string.extractNameAndParams() else {
+      self = .center
+      return
+    }
+
+    let point = CGPoint(x: params.toDouble(0) ?? 0, y: params.toDouble(1) ?? 0)
 
     switch name {
     case "center":

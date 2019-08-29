@@ -111,9 +111,10 @@ extension TransitionAnimationType: IBEnum {
       self = .none
       return
     }
-
-    let (name, params) = TransitionAnimationType.extractNameAndParams(from: string)
-
+    guard let (name, params) = string.extractNameAndParams() else {
+      self = .none
+      return
+    }
     switch name {
     case "systemrippleeffect":
       self = .systemRippleEffect
@@ -121,60 +122,56 @@ extension TransitionAnimationType: IBEnum {
       self = .systemSuckEffect
     case "explode":
       if params.count == 3 {
-        if let xFactor = Double(params[0]),
-          let minAngle = Double(params[1]),
-          let maxAngle = Double(params[2]) {
-          let xFactor = CGFloat(xFactor)
-          let minAngle = CGFloat(minAngle)
-          let maxAngle = CGFloat(maxAngle)
+        if let xFactor = params.toCGFloat(0),
+          let minAngle = params.toCGFloat(1),
+          let maxAngle = params.toCGFloat(2) {
           self = .explode(xFactor: xFactor, minAngle: minAngle, maxAngle: maxAngle)
           return
         }
       }
       self = .explode(xFactor: nil, minAngle: nil, maxAngle: nil)
     case "fade":
-      self = .fade(direction: Direction(raw: params[safe: 0], defaultValue: .cross))
+      self = .fade(direction: Direction(raw: params.toString(0), defaultValue: .cross))
     case "systemcamerairis":
-      self = .systemCameraIris(hollowState: HollowState(raw: params[safe: 0], defaultValue: .none))
+      self = .systemCameraIris(hollowState: HollowState(raw: params.toString(0), defaultValue: .none))
     case "systempage":
-      self = .systemPage(type: PageType(raw: params[safe: 0], defaultValue: .curl))
+      self = .systemPage(type: PageType(raw: params.toString(0), defaultValue: .curl))
     case "systemrotate":
       self = .systemRotate
     case "systemcube":
-      self = .systemCube(from: Direction(raw: params[safe: 0], defaultValue: .left))
+      self = .systemCube(from: Direction(raw: params.toString(0), defaultValue: .left))
     case "systemflip":
-      self = .systemFlip(from: Direction(raw: params[safe: 0], defaultValue: .left))
+      self = .systemFlip(from: Direction(raw: params.toString(0), defaultValue: .left))
     case "systemmovein":
-      self = .systemMoveIn(from: Direction(raw: params[safe: 0], defaultValue: .left))
+      self = .systemMoveIn(from: Direction(raw: params.toString(0), defaultValue: .left))
     case "systempush":
-      self = .systemPush(from: Direction(raw: params[safe: 0], defaultValue: .left))
+      self = .systemPush(from: Direction(raw: params.toString(0), defaultValue: .left))
     case "systemreveal":
-      self = .systemReveal(from: Direction(raw: params[safe: 0], defaultValue: .left))
+      self = .systemReveal(from: Direction(raw: params.toString(0), defaultValue: .left))
     case "natgeo":
-      self = .natGeo(to: Direction(raw: params[safe: 0], defaultValue: .left))
+      self = .natGeo(to: Direction(raw: params.toString(0), defaultValue: .left))
     case "turn":
-      self = .turn(from: Direction(raw: params[safe: 0], defaultValue: .left))
+      self = .turn(from: Direction(raw: params.toString(0), defaultValue: .left))
     case "cards":
-      self = .cards(direction: Direction(raw: params[safe: 0], defaultValue: .left))
+      self = .cards(direction: Direction(raw: params.toString(0), defaultValue: .left))
     case "flip":
-      self = .flip(from: Direction(raw: params[safe: 0], defaultValue: .left))
+      self = .flip(from: Direction(raw: params.toString(0), defaultValue: .left))
     case "fold":
-      let direction = Direction(raw: params[safe: 0], defaultValue: .left)
-      if let foldsString = params[safe: 1], let folds = Int(foldsString) {
+      let direction = Direction(raw: params.toString(0), defaultValue: .left)
+      if let folds = params.toInt(1) {
         self = .fold(from: direction, folds: folds)
       } else {
         self = .fold(from: direction, folds: nil)
       }
     case "portal":
-      let direction = Direction(raw: params[safe: 0], defaultValue: .left)
-      if let zoomScaleString = params[safe: 1], let zoomScale = Double(zoomScaleString) {
-        let zoomScale = CGFloat(zoomScale)
+      let direction = Direction(raw: params.toString(0), defaultValue: .left)
+      if let zoomScale = params.toCGFloat(1) {
         self = .portal(direction: direction, zoomScale: zoomScale)
       } else {
         self = .portal(direction: direction, zoomScale: nil)
       }
     case "slide":
-      let direction = Direction(raw: params[safe: 0], defaultValue: .left)
+      let direction = Direction(raw: params.toString(0), defaultValue: .left)
       let isFade = params.contains("fade")
       self = .slide(to: direction, isFade: isFade)
     default:
@@ -221,7 +218,7 @@ extension TransitionAnimationType {
       return self == .left || self == .right
     }
 
-    static func fromString(forParams params: [String]) -> Direction? {
+    static func fromString(forParams params: [Udra.Node]) -> Direction? {
       if params.contains("left") {
         return .left
       } else if params.contains("right") {
@@ -378,9 +375,15 @@ extension TransitionAnimationType {
 }
 
 extension TransitionAnimationType: Hashable {
+  #if swift(>=4.2)
+  public func hash(into hasher: inout Hasher) {
+    hasher.combine(stringValue)
+  }
+  #else
   public var hashValue: Int {
     return stringValue.hashValue
   }
+  #endif
 
   public static func == (lhs: TransitionAnimationType, rhs: TransitionAnimationType) -> Bool {
     return lhs.stringValue == rhs.stringValue

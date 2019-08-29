@@ -26,6 +26,7 @@
 		48A167122063CD0D00D7BCFB /* ConicalGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A167112063CD0D00D7BCFB /* ConicalGradientLayer.swift */; };
 		48D80DCA20403DAC00D3137B /* AnimatableTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D80DC920403DAC00D3137B /* AnimatableTabBarItem.swift */; };
 		7E8A8028230FD8F100771F99 /* UIStoryboardSegueExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8A8027230FD8F100771F99 /* UIStoryboardSegueExtension.swift */; };
+		C40035A32281AF6200B7BAEE /* BorderTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40035A22281AF6200B7BAEE /* BorderTypeTests.swift */; };
 		C40AE6A220E6210100B24A44 /* ActivityIndicatorAnimationNewtonCradle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40AE6A120E6210100B24A44 /* ActivityIndicatorAnimationNewtonCradle.swift */; };
 		C414765F209C1BD700945C8B /* ActivityIndicatorAnimationTripleGear.swift in Sources */ = {isa = PBXBuildFile; fileRef = C414765E209C1BD700945C8B /* ActivityIndicatorAnimationTripleGear.swift */; };
 		C41A0E80209A39660069555A /* ActivityIndicatorAnimationHeartBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41A0E7F209A39660069555A /* ActivityIndicatorAnimationHeartBeat.swift */; };
@@ -36,6 +37,8 @@
 		C46DC3E32099895E00501E63 /* ActivityIndicatorAnimationGear.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46DC3E22099895E00501E63 /* ActivityIndicatorAnimationGear.swift */; };
 		C489AD1E20E640B300273B77 /* ActivityIndicatorAnimationCirclePendulum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C489AD1D20E640B300273B77 /* ActivityIndicatorAnimationCirclePendulum.swift */; };
 		C49C08DD20A05072002FCAFD /* ActivityIndicatorAnimationRupee.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49C08DC20A05072002FCAFD /* ActivityIndicatorAnimationRupee.swift */; };
+		C4AC245F228072F400FB23FF /* Udra.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC245A228072F300FB23FF /* Udra.swift */; };
+		C4AC246522809C0600FB23FF /* AnimatableTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC246422809C0600FB23FF /* AnimatableTypeTests.swift */; };
 		DD98209320F4A3CC0058D5FE /* _SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD98209220F4A3CC0058D5FE /* _SwiftSupport.swift */; };
 		E20DAEB82003662900BE1C88 /* GradientMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20DAEB72003662900BE1C88 /* GradientMode.swift */; };
 		E20DAEBA2003682F00BE1C88 /* RadialGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20DAEB92003682F00BE1C88 /* RadialGradientLayer.swift */; };
@@ -233,6 +236,7 @@
 		48A167112063CD0D00D7BCFB /* ConicalGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConicalGradientLayer.swift; sourceTree = "<group>"; };
 		48D80DC920403DAC00D3137B /* AnimatableTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableTabBarItem.swift; sourceTree = "<group>"; };
 		7E8A8027230FD8F100771F99 /* UIStoryboardSegueExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardSegueExtension.swift; sourceTree = "<group>"; };
+		C40035A22281AF6200B7BAEE /* BorderTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderTypeTests.swift; sourceTree = "<group>"; };
 		C40AE6A120E6210100B24A44 /* ActivityIndicatorAnimationNewtonCradle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationNewtonCradle.swift; sourceTree = "<group>"; };
 		C414765E209C1BD700945C8B /* ActivityIndicatorAnimationTripleGear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationTripleGear.swift; sourceTree = "<group>"; };
 		C41A0E7F209A39660069555A /* ActivityIndicatorAnimationHeartBeat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationHeartBeat.swift; sourceTree = "<group>"; };
@@ -243,6 +247,8 @@
 		C46DC3E22099895E00501E63 /* ActivityIndicatorAnimationGear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationGear.swift; sourceTree = "<group>"; };
 		C489AD1D20E640B300273B77 /* ActivityIndicatorAnimationCirclePendulum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationCirclePendulum.swift; sourceTree = "<group>"; };
 		C49C08DC20A05072002FCAFD /* ActivityIndicatorAnimationRupee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorAnimationRupee.swift; sourceTree = "<group>"; };
+		C4AC245A228072F300FB23FF /* Udra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Udra.swift; sourceTree = "<group>"; };
+		C4AC246422809C0600FB23FF /* AnimatableTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableTypeTests.swift; sourceTree = "<group>"; };
 		DD98209220F4A3CC0058D5FE /* _SwiftSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _SwiftSupport.swift; sourceTree = "<group>"; };
 		E20DAEB72003662900BE1C88 /* GradientMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientMode.swift; sourceTree = "<group>"; };
 		E20DAEB92003682F00BE1C88 /* RadialGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialGradientLayer.swift; sourceTree = "<group>"; };
@@ -497,7 +503,9 @@
 		E27FD0111ECD7BCE00F74840 /* InternalTests */ = {
 			isa = PBXGroup;
 			children = (
+				C4AC246422809C0600FB23FF /* AnimatableTypeTests.swift */,
 				E27FD0121ECD7BCE00F74840 /* ColorTypeTests.swift */,
+				C40035A22281AF6200B7BAEE /* BorderTypeTests.swift */,
 			);
 			path = InternalTests;
 			sourceTree = "<group>";
@@ -748,6 +756,7 @@
 				E27FD1EB1ECD7D8A00F74840 /* TransitionAnimationType.swift */,
 				E27FD1EC1ECD7D8A00F74840 /* TransitionType.swift */,
 				E27FD1ED1ECD7D8A00F74840 /* Utils.swift */,
+				C4AC245A228072F300FB23FF /* Udra.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -1075,6 +1084,7 @@
 				E27FD26F1ECD7D8A00F74840 /* NatGeoAnimator.swift in Sources */,
 				E27FD2761ECD7D8A00F74840 /* AnimatableModalViewController.swift in Sources */,
 				E27FD2901ECD7D8A00F74840 /* Utils.swift in Sources */,
+				C4AC245F228072F400FB23FF /* Udra.swift in Sources */,
 				E27FD23B1ECD7D8A00F74840 /* ActivityIndicatorAnimationBallBeat.swift in Sources */,
 				E27FD2521ECD7D8A00F74840 /* ActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				E27FD2B71ECD7D8A00F74840 /* PresentFadeWithDismissInteractionSegue.swift in Sources */,
@@ -1235,6 +1245,7 @@
 				E27FD0361ECD7BCE00F74840 /* AnimatableCheckBoxTests.swift in Sources */,
 				E27FD0351ECD7BCE00F74840 /* AnimatableButtonTests.swift in Sources */,
 				E27FD03B1ECD7BCE00F74840 /* AnimatableSliderTests.swift in Sources */,
+				C4AC246522809C0600FB23FF /* AnimatableTypeTests.swift in Sources */,
 				E27FD0341ECD7BCE00F74840 /* SliderImagesDesignableTests.swift in Sources */,
 				E27FD02C1ECD7BCE00F74840 /* ColorTypeTests.swift in Sources */,
 				E27FD0331ECD7BCE00F74840 /* RotationDesignableTests.swift in Sources */,
@@ -1244,6 +1255,7 @@
 				E27FD0401ECD7BCE00F74840 /* AnimatableTextViewTests.swift in Sources */,
 				E27FD0411ECD7BCE00F74840 /* AnimatableViewTests.swift in Sources */,
 				E27FD03C1ECD7BCE00F74840 /* AnimatableStackViewTests.swift in Sources */,
+				C40035A32281AF6200B7BAEE /* BorderTypeTests.swift in Sources */,
 				E27FD03D1ECD7BCE00F74840 /* AnimatableTableViewCellTests.swift in Sources */,
 				E27FD0391ECD7BCE00F74840 /* AnimatableLabelTests.swift in Sources */,
 				E27FD03A1ECD7BCE00F74840 /* AnimatableScrollViewTests.swift in Sources */,

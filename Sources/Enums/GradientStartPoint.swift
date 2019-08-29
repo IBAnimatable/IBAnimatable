@@ -25,8 +25,10 @@ extension GradientStartPoint {
       self = .none
       return
     }
-
-    let (name, params) = AnimationType.extractNameAndParams(from: string)
+    guard let (name, params) = string.extractNameAndParams() else {
+      self = .none
+      return
+    }
     switch name {
     case "top":
       self = .top
@@ -45,10 +47,10 @@ extension GradientStartPoint {
     case "topleft":
       self = .topLeft
     case "custom":
-      self = .custom(start: CGPoint(x: params[safe: 0]?.toDouble() ?? 0,
-                                    y: params[safe: 1]?.toDouble() ?? 0),
-                     end: CGPoint(x: params[safe: 2]?.toDouble() ?? 0,
-                                  y: params[safe: 3]?.toDouble() ?? 0))
+      self = .custom(start: CGPoint(x: params.toDouble(0) ?? 0,
+                                    y: params.toDouble(1) ?? 0),
+                     end: CGPoint(x: params.toDouble(2) ?? 0,
+                                  y: params.toDouble(3) ?? 0))
     default:
       self = .none
     }

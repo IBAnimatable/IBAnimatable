@@ -87,78 +87,77 @@ extension AnimationType: IBEnum {
       return
     }
 
-    let (name, params) = AnimationType.extractNameAndParams(from: string.parseNameAndParams)
+    let nodes = string.parseNameAndParams()
+    guard let firstNode = nodes.first else {
+      self = .none
+      return
+    }
+    self.init(node: firstNode)
+  }
 
-    switch name {
+  init(node: Udra.Node) {
+    let params: [Udra.Node] = (node as? Udra.ParentNode)?.children ?? []
+    switch node.name {
     case "slide":
-      self = .slide(way: Way(raw: params[safe: 0], defaultValue: .in), direction: Direction(raw: params[safe: 1], defaultValue: .left))
+      self = .slide(way: Way(raw: params.toString(0), defaultValue: .in), direction: Direction(raw: params.toString(1), defaultValue: .left))
     case "squeeze":
-      self = .squeeze(way: Way(raw: params[safe: 0], defaultValue: .in), direction: Direction(raw: params[safe: 1], defaultValue: .left))
+      self = .squeeze(way: Way(raw: params.toString(0), defaultValue: .in), direction: Direction(raw: params.toString(1), defaultValue: .left))
     case "fade":
-      self = .fade(way: FadeWay(raw: params[safe: 0], defaultValue: .in))
+      self = .fade(way: FadeWay(raw: params.toString(0), defaultValue: .in))
     case "slidefade":
-      self = .slideFade(way: Way(raw: params[safe: 0], defaultValue: .in), direction: Direction(raw: params[safe: 1], defaultValue: .left))
+      self = .slideFade(way: Way(raw: params.toString(0), defaultValue: .in), direction: Direction(raw: params.toString(1), defaultValue: .left))
     case "squeezefade":
-      self = .squeezeFade(way: Way(raw: params[safe: 0], defaultValue: .in), direction: Direction(raw: params[safe: 1], defaultValue: .left))
+      self = .squeezeFade(way: Way(raw: params.toString(0), defaultValue: .in), direction: Direction(raw: params.toString(1), defaultValue: .left))
     case "zoom":
-      self = .zoom(way: Way(raw: params[safe: 0], defaultValue: .in))
+      self = .zoom(way: Way(raw: params.toString(0), defaultValue: .in))
     case "zoominvert":
-      self = .zoomInvert(way: Way(raw: params[safe: 0], defaultValue: .in))
+      self = .zoomInvert(way: Way(raw: params.toString(0), defaultValue: .in))
     case "shake":
-      let repeatCount = retrieveRepeatCount(string: params[safe: 0])
-      self = .shake(repeatCount: repeatCount)
+      self = .shake(repeatCount: params.toInt(0) ?? 1)
     case "pop":
-      let repeatCount = retrieveRepeatCount(string: params[safe: 0])
-      self = .pop(repeatCount: repeatCount)
+      self = .pop(repeatCount: params.toInt(0) ?? 1)
     case "squash":
-      let repeatCount = retrieveRepeatCount(string: params[safe: 0])
-      self = .squash(repeatCount: repeatCount)
+      self = .squash(repeatCount: params.toInt(0) ?? 1)
     case "flip":
-      let axis = Axis(raw: params[safe: 0], defaultValue: .x)
+      let axis = Axis(raw: params.toString(0), defaultValue: .x)
       self = .flip(along: axis)
     case "morph":
-      let repeatCount = retrieveRepeatCount(string: params[safe: 0])
-      self = .morph(repeatCount: repeatCount)
+      self = .morph(repeatCount: params.toInt(0) ?? 1)
     case "flash":
-      let repeatCount = retrieveRepeatCount(string: params[safe: 0])
-      self = .flash(repeatCount: repeatCount)
+      self = .flash(repeatCount: params.toInt(0) ?? 1)
     case "wobble":
-      let repeatCount = retrieveRepeatCount(string: params[safe: 0])
-      self = .wobble(repeatCount: repeatCount)
+      self = .wobble(repeatCount: params.toInt(0) ?? 1)
     case "swing":
-      let repeatCount = retrieveRepeatCount(string: params[safe: 0])
-      self = .swing(repeatCount: repeatCount)
+      self = .swing(repeatCount: params.toInt(0) ?? 1)
     case "rotate":
-      let repeatCount = retrieveRepeatCount(string: params[safe: 1])
-      self = .rotate(direction: RotationDirection(raw: params[safe: 0], defaultValue: .cw), repeatCount: repeatCount)
+      self = .rotate(direction: RotationDirection(raw: params.toString(0), defaultValue: .cw), repeatCount: params.toInt(1) ?? 1)
     case "moveto":
-      self = .moveTo(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
+      self = .moveTo(x: params.toDouble(0) ?? 0, y: params.toDouble(1) ?? 0)
     case "moveby":
-      self = .moveBy(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
+      self = .moveBy(x: params.toDouble(0) ?? 0, y: params.toDouble(1) ?? 0)
     case "scale":
-      let fromX = params[safe: 0]?.toDouble() ?? 0
-      let fromY = params[safe: 1]?.toDouble() ?? 0
-      let toX = params[safe: 2]?.toDouble() ?? 1
-      let toY = params[safe: 3]?.toDouble() ?? 1
+      let fromX = params.toDouble(0) ?? 0
+      let fromY = params.toDouble(1) ?? 0
+      let toX = params.toDouble(2) ?? 1
+      let toY = params.toDouble(3) ?? 1
       self = .scale(fromX: fromX, fromY: fromY, toX: toX, toY: toY)
     case "scalefrom":
-      self = .scaleFrom(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
+      self = .scaleFrom(x: params.toDouble(0) ?? 0, y: params.toDouble(1) ?? 0)
     case "scaleto":
-      self = .scaleTo(x: params[safe: 0]?.toDouble() ?? 0, y: params[safe: 1]?.toDouble() ?? 0)
+      self = .scaleTo(x: params.toDouble(0) ?? 0, y: params.toDouble(1) ?? 0)
     case "spin":
-      let repeatCount = retrieveRepeatCount(string: params[safe: 0])
-      self = .spin(repeatCount: repeatCount)
-    case "compound":
+      self = .spin(repeatCount: params.toInt(0) ?? 1)
+    case "compound", "array", "+":
       var params = params
       if let last = params.popLast() {
         var runP: Run
-        if let run = Run(raw: last) {
+        if let run = Run(raw: last.name) {
           runP = run
         } else {
           params.append(last)
-          runP = .parallel
+          runP = (node.name == "array") ? .sequential : .parallel
         }
-        self = .compound(animations: params.map { $0.animationType ?? .none }, run: runP)
+        self = .compound(animations: params.map { AnimationType(node: $0) }, run: runP)
       } else {
         self = .none
       }
@@ -205,35 +204,4 @@ extension AnimationType: ExpressibleByArrayLiteral {
     }
   }
 
-}
-
-private extension String {
-
-  var parseNameAndParams: String {
-    var string = self
-    if string.starts(with: "[") { // [ animation1, animation2, ...]
-      string = string.dropFirst().dropLast()
-        .replacingOccurrences(of: "(", with: "[")
-        .replacingOccurrences(of: ")", with: "]")
-      string = "compound("+string+", \(AnimationType.Run.sequential.rawValue))"
-    } else if string.contains("+") { // animation1 + animation2 + ...
-      string = string.replacingOccurrences(of: "+", with: ",")
-      string = "compound("+string+", \(AnimationType.Run.parallel.rawValue))"
-    }
-    return string
-  }
-
-  var animationType: AnimationType? {
-    let type = self.replacingOccurrences(of: "[", with: "(")
-      .replacingOccurrences(of: "]", with: ")")
-    return AnimationType(string: type)
-  }
-}
-private func retrieveRepeatCount(string: String?) -> Int {
-  // Default value for repeat count is `1`
-  guard let string = string, let repeatCount = Int(string) else {
-    return 1
-  }
-
-  return repeatCount
 }
