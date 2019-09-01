@@ -47,19 +47,21 @@ extension InteractiveGestureType: IBEnum {
       return
     }
 
-    let (name, params) = InteractiveGestureType.extractNameAndParams(from: string)
-
+    guard let (name, params) = string.extractNameAndParams() else {
+      self = .none
+      return
+    }
     switch name {
     case "default":
       self = .default
     case "pan":
-      let direction = GestureDirection(raw: params[safe: 0], defaultValue: .left)
+      let direction = GestureDirection(raw: params.toString(0), defaultValue: .left)
       self = .pan(from: direction)
     case "screenedgepan":
-      let direction = GestureDirection(raw: params[safe: 0], defaultValue: .left)
+      let direction = GestureDirection(raw: params.toString(0), defaultValue: .left)
       self = .screenEdgePan(from: direction)
     case "pinch":
-      let direction = GestureDirection(raw: params[safe: 0], defaultValue: .open)
+      let direction = GestureDirection(raw: params.toString(0), defaultValue: .open)
       self = .pinch(direction: direction)
     default:
       self = .none
