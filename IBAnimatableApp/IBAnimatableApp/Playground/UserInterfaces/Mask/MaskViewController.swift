@@ -27,6 +27,7 @@ final class MaskViewController: UIViewController {
             PickerEntry(params: [], name: "ellipse"),
             PickerEntry(params: [], name: "triangle"),
             PickerEntry(params: [sidesParam], name: "polygon"),
+            PickerEntry(params: [sidesParam, radiusParam], name: "roundedPolygon"),
             PickerEntry(params: [pointsParam], name: "star"),
             PickerEntry(params: [waveParam, widthParam], name: "wave"),
             PickerEntry(params: [angleParam], name: "parallelogram"),

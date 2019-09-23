@@ -14,6 +14,7 @@ N/A
 
 - Allow imbricated `AnimationType` options, `Array` and operator `+` to create `compound` animation by string. [#611](https://github.com/IBAnimatable/IBAnimatable/pull/611) by [@phimage](https://github.com/phimage)
 - Implement `Hashable` with `Hasher`. [#616](https://github.com/IBAnimatable/IBAnimatable/pull/616) by [@phimage](https://github.com/phimage)
+- Add `roundedPolygon`, a polygon `MaskType` with corner radius. [#619](https://github.com/IBAnimatable/IBAnimatable/pull/619) by [@phimage](https://github.com/phimage)
 
 #### Bugfixes
 
