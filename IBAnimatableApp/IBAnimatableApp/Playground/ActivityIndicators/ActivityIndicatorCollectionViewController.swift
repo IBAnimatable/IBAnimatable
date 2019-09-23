@@ -17,7 +17,7 @@ final class ActivityIndicatorCollectionViewController: UICollectionViewControlle
     iterateEnum(ActivityIndicatorType.self).forEach {
       types.append($0)
     }
-    if types.count % 2 != 0, let index = types.index(of: .none) {
+    if types.count % 2 != 0, let index = types.firstIndex(of: .none) {
       types.remove(at: index)
     }
     return types
