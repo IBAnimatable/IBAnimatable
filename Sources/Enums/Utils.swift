@@ -117,6 +117,7 @@ func iterateEnum<T: Hashable>(from: T.Type) -> AnyIterator<T> {
 }
 #endif
 
+import UIKit
 extension CALayer {
     var currentMediaTime: CFTimeInterval {
        return convertTime(CACurrentMediaTime(), from: nil)

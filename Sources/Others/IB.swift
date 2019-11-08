@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public final class IB: NSObject, CornerDesignable, FillDesignable, BorderDesignable,
                        RotationDesignable, ShadowDesignable, BlurDesignable,
