@@ -34,4 +34,28 @@ final class ColorTypeTests: XCTestCase {
     XCTAssertEqual(#colorLiteral(red: 0.827450980392157, green: 0.329411764705882, blue: 0.0, alpha: 1.0), ColorType.flatPumpkin.color)
   }
 
+  func testHexStringToColor() {
+    // without alpha
+    XCTAssertEqual(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), UIColor(hexString: "FFFFFF"))
+    XCTAssertEqual(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), UIColor(hexString: "000000"))
+    XCTAssertEqual(#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1), UIColor(hexString: "FF0000"))
+    XCTAssertEqual(#colorLiteral(red: 0, green: 1, blue: 0, alpha: 1), UIColor(hexString: "00FF00"))
+    XCTAssertEqual(#colorLiteral(red: 0, green: 0, blue: 1, alpha: 1), UIColor(hexString: "0000FF"))
+    XCTAssertEqual(#colorLiteral(red: 1, green: 0, blue: 1, alpha: 1), UIColor(hexString: "FF00FF"))
+    XCTAssertEqual(#colorLiteral(red: 0, green: 1, blue: 1, alpha: 1), UIColor(hexString: "00FFFF"))
+    XCTAssertEqual(#colorLiteral(red: 1, green: 1, blue: 0, alpha: 1), UIColor(hexString: "FFFF00"))
+
+    // with alpha
+    XCTAssertEqual(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0), UIColor(hexString: "00FFFFFF"))
+    XCTAssertEqual(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0), UIColor(hexString: "00000000"))
+    XCTAssertEqual(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), UIColor(hexString: "FFFFFFFF"))
+
+    // could not test with standards uicolor equals.
+    // XCTAssertEqual(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5), UIColor(hexString: "80FFFFFF"))
+    // XCTAssertEqual(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.8), UIColor(hexString: "CC000000"))
+    // XCTAssertEqual(#colorLiteral(red: 0.9019607843, green: 0.4941176471, blue: 0.1333333333, alpha: 1), UIColor(hexString: "E67E22"))
+    // XCTAssertEqual(#colorLiteral(red: 0.9058823529, green: 0.2980392157, blue: 0.2352941176, alpha: 1), UIColor(hexString: "E74C3C"))
+
+  }
+
 }
