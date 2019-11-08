@@ -15,3 +15,9 @@ public extension CALayer {
     CATransaction.commit()
   }
 }
+
+extension CALayer {
+    var currentMediaTime: CFTimeInterval {
+       return convertTime(CACurrentMediaTime(), from: nil)
+    }
+}

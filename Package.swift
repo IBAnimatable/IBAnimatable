@@ -1,9 +1,9 @@
-// swift-tools-version:4.2
+// swift-tools-version:5.0
 import PackageDescription
 
 let package = Package(
     name: "IBAnimatable",
-    // platforms: [.iOS("9.0")],
+    platforms: [.iOS(.v9)],
     products: [
         .library(name: "IBAnimatable", targets: ["IBAnimatable"])
     ],
