@@ -11,6 +11,11 @@ let package = Package(
         .target(
             name: "IBAnimatable",
             path: "Sources"
+        ),
+        .testTarget(
+            name: "IBAnimatableTests",
+            dependencies: ["IBAnimatable"],
+            path: "IBAnimatable/IBAnimatableTests"
         )
     ]
 )
