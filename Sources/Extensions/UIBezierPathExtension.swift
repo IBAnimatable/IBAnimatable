@@ -422,6 +422,32 @@ extension UIBezierPath {
     close()
     self.translate(to: bounds.center)
   }
+  
+  /**
+   Create a Bezier path for a kite shape.
+   
+   - Parameter bounds: The bounds of shape.
+   - Parameter angle: The angle.
+   */
+  convenience init(kiteInRect bounds: CGRect, with angle: CGFloat) {
+    self.init()
+    let topAngleRad = angle * .pi / 180
+    
+    let offset = abs(CGFloat(sin(topAngleRad - .pi / 2))) * bounds.height
+
+    if angle <= 90 {
+      move(to: CGPoint(x: bounds.width / 2, y: 0))
+      addLine(to: CGPoint(x: bounds.width, y: offset))
+      addLine(to: CGPoint(x: bounds.width / 2, y: bounds.height))
+      addLine(to: CGPoint(x: 0, y: offset))
+    } else { // dart shape
+      move(to: CGPoint(x: bounds.width / 2, y: offset))
+      addLine(to: CGPoint(x: bounds.width, y: 0))
+      addLine(to: CGPoint(x: bounds.width / 2, y: bounds.height))
+      addLine(to: CGPoint(x: 0, y: 0))
+    }
+    close()
+  }
 }
 
 private extension UIBezierPath {
