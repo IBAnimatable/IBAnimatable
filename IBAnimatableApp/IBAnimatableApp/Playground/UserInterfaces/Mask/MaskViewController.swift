@@ -15,7 +15,7 @@ final class MaskViewController: UIViewController {
   lazy var entries: [PickerEntry] = {
     let pointsParam = ParamType.number(min: 3, max: 10, interval: 1, ascending: true, unit: "points") // default 5
     let sidesParam = ParamType.number(min: 3, max: 10, interval: 1, ascending: true, unit: "sides") // default 6
-    let angleParam = ParamType.number(min: 60, max: 180, interval: 2, ascending: true, unit: "°") // default 6
+    let angleParam = ParamType.number(min: 20, max: 180, interval: 2, ascending: true, unit: "°") // default 6
     let waveParam = ParamType(fromEnum: MaskType.WaveDirection.self)
     let widthParam = ParamType.number(min: 15, max: 90, interval: 2, ascending: true, unit: "px")
     let radiusParam = ParamType.number(min: 10, max: 40, interval: 10, ascending: true, unit: "px")
@@ -40,6 +40,7 @@ final class MaskViewController: UIViewController {
             PickerEntry(params: [angleParam], name: "moon"),
             PickerEntry(params: [widthParam, widthParam], name: "insetby"),
             PickerEntry(params: [radiusParam, cornerParam], name: "rounded"),
+            PickerEntry(params: [angleParam], name: "kite"),
             PickerEntry(params: [], name: "none"),
             PickerEntry(params: [], name: "CUSTOM Bubble")
     ]

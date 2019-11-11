@@ -33,7 +33,6 @@ public class ActivityIndicatorAnimationBallRotateChase: ActivityIndicatorAnimati
 }
 
 // MARK: - Setup
-// swiftlint:disable variable_name_min_length
 private extension ActivityIndicatorAnimationBallRotateChase {
   func rotateAnimation(rate: Float, x: CGFloat, y: CGFloat, size: CGSize) -> CAAnimationGroup {
     let fromScale = 1 - rate
@@ -63,4 +62,3 @@ private extension ActivityIndicatorAnimationBallRotateChase {
     return animation
   }
 }
-// swiftlint:enable variable_name_min_length

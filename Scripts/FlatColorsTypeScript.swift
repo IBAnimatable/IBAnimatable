@@ -24,11 +24,9 @@ func parseJSON(JSONData: Data) -> [String: String]? {
   }
 }
 
-// swiftlint:disable variable_name_min_length
 func colorLiteral(r: Int, g: Int, b: Int, a: Double) -> String {
   return "#colorLiteral(red: \(CGFloat(r) / 255), green: \(CGFloat(g) / 255), blue: \(CGFloat(b) / 255), alpha: \(a))"
 }
-// swiftlint:enable variable_name_min_length
 
 // Generator constants
 let enumCase = "\tcase %@\n"
