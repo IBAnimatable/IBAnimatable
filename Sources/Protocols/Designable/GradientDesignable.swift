@@ -28,12 +28,22 @@ extension GradientDesignable where Self: UIView {
 extension GradientDesignable where Self: UINavigationBar {
 
   public func configureGradient() {
-    let navBarFrame = CGRect(x: 0, y: 0, width: bounds.width, height: UIApplication.shared.statusBarFrame.height)
-    let gradientLayer = makeGradientLayer()
-    gradientLayer?.frame = navBarFrame
-    gradientLayer?.cornerRadius = layer.cornerRadius
+    guard let gradientLayer = makeGradientLayer() else {
+      setBackgroundImage(nil, for: .default)
+      return
+    }
+    let statusBarHeight: CGFloat
+    if #available(iOS 13, *) {
+      statusBarHeight = 0 /*self.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0 */ 
+    } else {
+      statusBarHeight = UIApplication.shared.statusBarFrame.height
+    }
+    let height = bounds.height + statusBarHeight
+    let navBarFrame = CGRect(x: 0, y: 0, width: bounds.width, height: height)
+    gradientLayer.frame = navBarFrame
+    gradientLayer.cornerRadius = layer.cornerRadius
 
-    let image = gradientLayer?.makeImage()
+    let image = gradientLayer.makeImage()
     setBackgroundImage(image, for: .default)
   }
 
