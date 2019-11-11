@@ -46,6 +46,8 @@ public enum MaskType: IBEnum {
   case rounded(radii: (Double, Double), cornerSides: CornerSides)
   /// For rounded polygon shape with `n` sides. (min: 3, the default: 6).
   case roundedPolygon(sides: Int, cornerRadius: Double)
+  /// For kite shape.
+  case kite(angle: Double)
 
   /// Custom shape
   case custom(pathProvider: CustomMaskProvider)
@@ -123,6 +125,8 @@ public extension MaskType {
         cornerSides = .allSides
       }
       self = .rounded(radii: (radius, radii[safe: 1] ?? radius), cornerSides: cornerSides)
+    case "kite":
+      self = .kite(angle: params.toDouble(0) ?? 74)
     default:
       self = .none
     }
@@ -169,6 +173,8 @@ extension MaskType {
       return UIBezierPath(roundedRect: rect, byRoundingCorners: cornerSides.rectCorner, cornerRadii: CGSize(width: radii.0, height: radii.1))
     case .roundedPolygon(let sides, let cornerRadius):
       return UIBezierPath(roundedPolygonInRect: rect, with: sides, cornerRadius: CGFloat(cornerRadius))
+    case .kite(let angle):
+      return UIBezierPath(kiteInRect: rect, with: CGFloat(angle))
     case let .custom(pathProvider):
       return pathProvider(rect.size)
     case .none:

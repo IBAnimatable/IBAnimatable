@@ -141,7 +141,7 @@ extension TimingFunctionType: Hashable {
     hasher.combine(caType)
   }
   #else
-  public var hashValue: Int {
+  public var hashValue: Int { // swiftlint:disable:this legacy_hashing
     return caType.hashValue
   }
   #endif
