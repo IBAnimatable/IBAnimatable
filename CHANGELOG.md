@@ -20,6 +20,7 @@ N/A
 #### Bugfixes
 
 - Fix `swift build` [#623](https://github.com/IBAnimatable/IBAnimatable/pull/623) by [@phimage](https://github.com/phimage)
+- Fix grandient heigth on navigation bar [#625](https://github.com/IBAnimatable/IBAnimatable/pull/625) by [@phimage](https://github.com/phimage)
 
 ### [6.0.0](https://github.com/IBAnimatable/IBAnimatable/releases/tag/6.0.0)
 
