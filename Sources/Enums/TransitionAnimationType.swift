@@ -380,7 +380,7 @@ extension TransitionAnimationType: Hashable {
     hasher.combine(stringValue)
   }
   #else
-  public var hashValue: Int {
+  public var hashValue: Int { // swiftlint:disable:this legacy_hashing
     return stringValue.hashValue
   }
   #endif

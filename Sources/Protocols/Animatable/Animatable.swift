@@ -504,7 +504,6 @@ fileprivate extension UIView {
     }, completion: completion)
   }
 
-  // swiftlint:disable variable_name_min_length
   func moveBy(x: Double, y: Double, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
     if x.isNaN && y.isNaN {
       return
@@ -592,7 +591,6 @@ fileprivate extension UIView {
     }, completion: completion)
   }
 
-  // swiftlint:enable variable_name_min_length
   func computeValues(way: AnimationType.Way,
                      direction: AnimationType.Direction,
                      configuration: AnimationConfiguration,
@@ -692,7 +690,6 @@ fileprivate extension UIView {
     )
   }
 
-  // swiftlint:disable:next variable_name_min_length
   func animateBy(x: CGFloat, y: CGFloat, configuration: AnimationConfiguration, completion: AnimatableCompletion? = nil) {
     let translate = CGAffineTransform(translationX: x, y: y)
     UIView.animate(with: configuration, animations: {
@@ -750,7 +747,6 @@ fileprivate extension UIView {
     return window?.screen.bounds.size ?? .zero
   }
 }
-// swiftlint:enable variable_name_min_length
 
 // Animations for `UIBarItem`
 public extension Animatable where Self: UIBarItem {
@@ -791,9 +787,7 @@ public extension AnimationType {
     case .fade(way: .inOut), .fade(way: .outIn):
       return false
     case .compound(let animations, _):
-      return animations.reduce(false) { result, animation in
-        result || animation.isSpring
-      }
+      return animations.contains { $0.isSpring }
     case .none:
       return false
     }
@@ -813,9 +807,7 @@ public extension AnimationType {
     case .fade(way: .in), .fade(way: .out):
       return false
     case .compound(let animations, _):
-      return animations.reduce(false) { result, animation in
-        result || animation.isCubic
-      }
+      return animations.contains { $0.isCubic }
     case .none:
       return false
     }

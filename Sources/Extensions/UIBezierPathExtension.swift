@@ -422,7 +422,7 @@ extension UIBezierPath {
     close()
     self.translate(to: bounds.center)
   }
-  
+
   /**
    Create a Bezier path for a kite shape.
    
@@ -432,7 +432,7 @@ extension UIBezierPath {
   convenience init(kiteInRect bounds: CGRect, with angle: CGFloat) {
     self.init()
     let topAngleRad = angle * .pi / 180
-    
+
     let offset = abs(CGFloat(sin(topAngleRad - .pi / 2))) * bounds.height
 
     if angle <= 90 {
@@ -556,3 +556,4 @@ fileprivate extension CGPoint {
   }
 
 }
+// swiftlint:disable:this file_length
