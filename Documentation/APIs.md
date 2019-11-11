@@ -107,6 +107,7 @@ To use `IBAnimatable`, we can drag and drop a UIKit element and connect it with 
 * `insetBy`: Must use the parameters to defined the inset for the inner rectangle e.g. use `insetBy(10, 12)`.
 * `rounded`: Choose the radius to define the corner radius, eg. use `rounded(10)`. Can also specify the `CornerSides` to choose rouned the corner, eg. use `rounded(10, topLeft)`.
 * `roundedPolygon`: Could specify the number of sides of the polygon and the radius to define the corner radius, eg. use `roundedPolygon(6, 10)`. 
+* `kite`: Can use parameters to customize the `kite`. `kite(60)` means the top angle of the kite with its median will have an angle of 60 degrees. The default value is `kite(74)`. if angle == 90 it will be a triangle Mask. if angle > 90 the kite will be a "dart" or "arrowhead".
 * `custom`: Allows you to use your own bezier path as mask. Only usable from code (not from IB). You have to pass in parameter a closure that takes a `CGSize` (the current's view Size) and returns the `UIBezierPath`
 
 
