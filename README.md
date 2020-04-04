@@ -5,7 +5,7 @@ Design and prototype customized UI, interaction, navigation, transition and anim
 ![IBAnimatable hero image](https://raw.githubusercontent.com/IBAnimatable/IBAnimatable-Misc/master/IBAnimatable/IBAnimatable.gif)
 
 [![Build Status](https://travis-ci.org/IBAnimatable/IBAnimatable.svg?branch=master)](https://travis-ci.org/IBAnimatable/IBAnimatable)
-[![Language](https://img.shields.io/badge/language-Swift%205-orange.svg)](https://swift.org)
+[![Language](https://img.shields.io/badge/language-Swift%205.1-orange.svg)](https://swift.org)
 [![CocoaPods](https://img.shields.io/cocoapods/v/IBAnimatable.svg?style=flat)](http://cocoadocs.org/docsets/IBAnimatable/)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Accio supported](https://img.shields.io/badge/Accio-supported-0A7CF5.svg?style=flat)](https://github.com/JamitLabs/Accio)
@@ -41,7 +41,7 @@ Copy and paste `IBAnimatable` folder in your Xcode project.
 To integrate using Apple's Swift package manager, add the following as a dependency to your `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/IBAnimatable/IBAnimatable.git", .upToNextMajor(from: "6.0.0"))
+.package(url: "https://github.com/IBAnimatable/IBAnimatable.git", .upToNextMajor(from: "6.1.0"))
 ```
 
 ### [CocoaPods](https://cocoapods.org)
@@ -62,7 +62,7 @@ Add the following entry in your Cartfile:
 Add the following entry in your Package.swift:
 
 ```swift
-.package(url: "https://github.com/IBAnimatable/IBAnimatable.git", .upToNextMajor(from: "6.0.0")),
+.package(url: "https://github.com/IBAnimatable/IBAnimatable.git", .upToNextMajor(from: "6.1.0")),
 ```
 
 Next, add `IBAnimatable` to your App targets dependencies like so:
@@ -86,8 +86,11 @@ As @DanielAsher mentioned
 
 Add this repo as a submodule, and add the project file to your workspace. You can then link against `IBAnimatable.framework` for your application target. 
 
+## Version 6.1
+IBAnimatable 6.1 is the latest major release of IBAnimatable. This version supports Swift 5.1. There are no API breaking changes from migrating from version 5.x and 6.
+
 ## Version 6
-IBAnimatable 6 is the latest major release of IBAnimatable. This version supports Swift 5. There are no API breaking changes from migrating from version 5.x.
+IBAnimatable 6 supports Swift 5. There are no API breaking changes from migrating from version 5.x.
 
 ## Version 5.2
 This version supports Swift 4.2. There are no API breaking changes from migrating from version 4.x. 
@@ -95,6 +98,11 @@ This version supports Swift 4.2. There are no API breaking changes from migratin
 If you migrate from version 3.x. Please check out [IBAnimatable 4.0 Migration Guide](Documentation/IBAnimatable%204.0%20Migration%20Guide.md) for more information.
 
 ## Swift version
+### Swift 5.1
+There are no API breaking changes when migrating from Swift 5 to Swift 5.1 using IBAnimatable.
+
+If you are using Xcode 11 with Swift 5, please use the 6.0.0 release.
+
 ### Swift 4.2
 There are no API breaking changes when migrating from Swift 4.* to Swift 4.2 using IBAnimatable.
 
