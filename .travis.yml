@@ -8,9 +8,9 @@ env:
     - IOS_FRAMEWORK_SCHEME="IBAnimatable"
     - IOS_APP_SCHEME="IBAnimatableApp"
   matrix:
-    - DESTINATION="OS=11.4,name=iPad Pro (12.9-inch)" SCHEME=${IOS_FRAMEWORK_SCHEME}    APP_SCHEME=${IOS_APP_SCHEME}
-    - DESTINATION="OS=11.4,name=iPhone 6s Plus"        SCHEME=${IOS_FRAMEWORK_SCHEME}    APP_SCHEME=${IOS_APP_SCHEME}
-    - DESTINATION="OS=11.4,name=iPhone X"        SCHEME=${IOS_FRAMEWORK_SCHEME}    APP_SCHEME=${IOS_APP_SCHEME}
+    - DESTINATION="OS=13.3,name=iPad Pro (12.9-inch)" SCHEME=${IOS_FRAMEWORK_SCHEME}    APP_SCHEME=${IOS_APP_SCHEME}
+    - DESTINATION="OS=12.2,name=iPhone 6s Plus"        SCHEME=${IOS_FRAMEWORK_SCHEME}    APP_SCHEME=${IOS_APP_SCHEME}
+    - DESTINATION="OS=13.3,name=iPhone 11 Pro Max"        SCHEME=${IOS_FRAMEWORK_SCHEME}    APP_SCHEME=${IOS_APP_SCHEME}
 before_install:
   - bundle install
   - brew update
