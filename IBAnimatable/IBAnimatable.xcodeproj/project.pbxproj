@@ -1405,7 +1405,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.1;
 			};
 			name = Debug;
 		};
@@ -1425,7 +1425,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.1;
 			};
 			name = Release;
 		};
@@ -1438,7 +1438,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ibanimatable.IBAnimatableTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.1;
 			};
 			name = Debug;
 		};
@@ -1451,7 +1451,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ibanimatable.IBAnimatableTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 5.1;
 			};
 			name = Release;
 		};
