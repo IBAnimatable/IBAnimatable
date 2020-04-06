@@ -8,4 +8,5 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '9.0'
   s.source       = { :git => "https://github.com/IBAnimatable/IBAnimatable.git", tag: "#{s.version}" }
   s.source_files = "Sources/**/*.swift"
+  s.swift_versions = ['5.0', '5.1']
 end
