@@ -22,7 +22,7 @@ extension CornerSide: CaseIterable {}
 public struct CornerSides: OptionSet {
   public let rawValue: Int
 
-  public static let unknown = CornerSides(rawValue: 0)
+  public static let unknown: CornerSides = []
 
   public static let topLeft = CornerSides(rawValue: 1)
   public static let topRight = CornerSides(rawValue: 1 << 1)
