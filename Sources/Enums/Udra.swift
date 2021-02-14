@@ -9,7 +9,7 @@
 import Foundation
 
 /// User defined runtime attributes parsing.
-class Udra { //swiftlint:disable:this type_body_length
+class Udra { // swiftlint:disable:this type_body_length
   // MARK: - Token
 
   /// User defined runtime attributes Tokens.
@@ -41,7 +41,7 @@ class Udra { //swiftlint:disable:this type_body_length
   /// User defined runtime attributes Lexer.
   class Lexer {
 
-    typealias TokenBuilder = (String, CountableRange<Int>) -> Token? //swiftlint:disable:this nesting
+    typealias TokenBuilder = (String, CountableRange<Int>) -> Token? // swiftlint:disable:this nesting
 
     static let tokenStringList: [String: TokenBuilder] = [
       "[ \t\n]": { _, _ in nil }, // trim
@@ -55,10 +55,10 @@ class Udra { //swiftlint:disable:this type_body_length
       ",": ({ .comma($1) })
     ]
 
-    typealias TokenRegularExpression = (NSRegularExpression, TokenBuilder) //swiftlint:disable:this nesting
+    typealias TokenRegularExpression = (NSRegularExpression, TokenBuilder) // swiftlint:disable:this nesting
 
     static let tokenList: [TokenRegularExpression] = tokenStringList.map {
-      (try! NSRegularExpression(pattern: "^\($0.0)", options: []), $0.1) //swiftlint:disable:this force_try
+      (try! NSRegularExpression(pattern: "^\($0.0)", options: []), $0.1) // swiftlint:disable:this force_try
     }
 
     /// Split input string to tokens

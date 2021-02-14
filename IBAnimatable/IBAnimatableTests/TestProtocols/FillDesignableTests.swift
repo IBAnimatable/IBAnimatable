@@ -43,29 +43,29 @@ extension FillDesignableTests where Element: StringFillDesignable {
     XCTAssertEqual(element.predefinedColor, .flatAsbestos)
     element._predefinedColor = "flatPeterRiver"
     XCTAssertEqual(element.predefinedColor, .flatPeterRiver)
-    element._predefinedColor =  "flatSilver"
+    element._predefinedColor = "flatSilver"
     XCTAssertEqual(element.predefinedColor, .flatSilver)
     element._predefinedColor = "flatSunFlower"
     XCTAssertEqual(element.predefinedColor, .flatSunFlower)
-    element._predefinedColor =  "flatAmethyst"
+    element._predefinedColor = "flatAmethyst"
     XCTAssertEqual(element.predefinedColor, .flatAmethyst)
-    element._predefinedColor =  "flatAlizarin"
+    element._predefinedColor = "flatAlizarin"
     XCTAssertEqual(element.predefinedColor, .flatAlizarin)
-    element._predefinedColor =  "flatGreenSea"
+    element._predefinedColor = "flatGreenSea"
     XCTAssertEqual(element.predefinedColor, .flatGreenSea)
-    element._predefinedColor =  "flatBelizeHole"
+    element._predefinedColor = "flatBelizeHole"
     XCTAssertEqual(element.predefinedColor, .flatBelizeHole)
-    element._predefinedColor =  "flatNephritis"
+    element._predefinedColor = "flatNephritis"
     XCTAssertEqual(element.predefinedColor, .flatNephritis)
-    element._predefinedColor =  "flatMidnightBlue"
+    element._predefinedColor = "flatMidnightBlue"
     XCTAssertEqual(element.predefinedColor, .flatMidnightBlue)
-    element._predefinedColor =  "flatClouds"
+    element._predefinedColor = "flatClouds"
     XCTAssertEqual(element.predefinedColor, .flatClouds)
-    element._predefinedColor =  "flatWisteria"
+    element._predefinedColor = "flatWisteria"
     XCTAssertEqual(element.predefinedColor, .flatWisteria)
-    element._predefinedColor =  "flatCarrot"
+    element._predefinedColor = "flatCarrot"
     XCTAssertEqual(element.predefinedColor, .flatCarrot)
-    element._predefinedColor =  "flatPumpkin"
+    element._predefinedColor = "flatPumpkin"
     XCTAssertEqual(element.predefinedColor, .flatPumpkin)
   }
 

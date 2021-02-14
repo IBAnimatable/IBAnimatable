@@ -43,15 +43,15 @@ extension AnimatableStackViewTests: CornerDesignableTests {
 extension AnimatableStackViewTests: FillDesignableTests {
 
   func testFillColor() {
-    //_testFillColor() // broken see issue #461
+    // _testFillColor() // broken see issue #461
   }
 
   func testOpacity() {
-    //_testOpacity() // broken see issue #461
+    // _testOpacity() // broken see issue #461
   }
 
   func testPredefinedColor() {
-    //_testPredefinedColor() // broken see issue #461
+    // _testPredefinedColor() // broken see issue #461
   }
 
   func test_predefinedColor() {

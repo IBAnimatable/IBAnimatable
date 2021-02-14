@@ -34,7 +34,7 @@ final class AnimatableTypeTests: XCTestCase {
       animations: [.compound(animations: [types["shake(10)"]!, types["slide"]!], run: .parallel), types["shake(10)"]!],
       run: .parallel)
 
-    /// with array (default run mode sequential)
+    // with array (default run mode sequential)
     types["[shake,slide]"] = .compound(animations: [types["shake"]!, types["slide"]!], run: .sequential)
     types["[shake,slide,parallel]"] = .compound(animations: [types["shake"]!, types["slide"]!], run: .parallel)
     types["[shake(10), slide]"] = .compound(animations: [types["shake(10)"]!, types["slide"]!], run: .sequential)
@@ -47,13 +47,13 @@ final class AnimatableTypeTests: XCTestCase {
       animations: [.compound(animations: [types["shake(10)"]!, types["slide"]!], run: .sequential), types["shake(10)"]!],
       run: .sequential)
 
-    /// with operator (default run mode parallel)
+    // with operator (default run mode parallel)
     types["shake+slide"] = .compound(animations: [types["shake"]!, types["slide"]!], run: .parallel)
     types["shake(10)+slide"] = .compound(animations: [types["shake(10)"]!, types["slide"]!], run: .parallel)
     types["shake+slide+pop"] = .compound(animations: [types["shake+slide"]!, .pop(repeatCount: 1)], run: .parallel)
     // types["shake+slide+pop"] = .compound(animations: [types["shake"]!, types["slide"]!, .pop(repeatCount: 1)], run: .parallel) // if implement flatenize
 
-    /// with some mix
+    // with some mix
     types["[shake,shake+slide]"] = .compound(animations: [types["shake"]!, types["shake+slide"]!], run: .sequential)
     types["[shake(10),shake(10)+slide]"] = .compound(animations: [types["shake(10)"]!, types["shake(10)+slide"]!], run: .sequential)
 

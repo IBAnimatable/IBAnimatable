@@ -821,7 +821,7 @@ enum AnimationKeyPath: String {
   case positionX = "position.x"
   case positionY = "position.y"
   // Transforms
-  case transform  = "transform"
+  case transform = "transform"
   case rotation  = "transform.rotation"
   case rotationX = "transform.rotation.x"
   case rotationY = "transform.rotation.y"
