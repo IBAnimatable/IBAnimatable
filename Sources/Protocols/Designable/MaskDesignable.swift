@@ -6,7 +6,7 @@
 import UIKit
 
 /// A protocol provides mask designable feature.
-public protocol MaskDesignable: class {
+public protocol MaskDesignable: AnyObject {
   /**
    The type of the mask used for masking an IBAnimatable UI element.
 

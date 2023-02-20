@@ -14,7 +14,7 @@ extension UIViewController {
       predefinedGradients.append($0)
     }
 
-    let randomIndex: Int = Int(arc4random_uniform(UInt32(predefinedGradients.count)))
+    let randomIndex: Int = Int.random(in: 0..<predefinedGradients.count)
     return predefinedGradients[randomIndex]
   }
 

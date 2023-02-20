@@ -10,7 +10,7 @@ import UIKit
 
   To use them, `UIView`'s `clipsToBounds` and `CALayer`'s `masksToBounds` (`Clip Subviews` in IB) must be `false`,
 */
-public protocol ShadowDesignable: class {
+public protocol ShadowDesignable: AnyObject {
   /**
    `color` when using with `box-shadow`
   */

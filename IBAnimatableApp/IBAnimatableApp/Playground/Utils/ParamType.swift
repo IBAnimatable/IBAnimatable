@@ -93,7 +93,7 @@ extension PickerEntry {
   func toString(selectedIndexes indexes: Int?...) -> String {
 
     let paramString = indexes.enumerated().compactMap({ (val: (Int, Int?)) -> String? in let (i, index) = val
-      return params[safe:i]?.value(at: index ?? 0)
+      return params[safe: i]?.value(at: index ?? 0)
     }).joined(separator: ",")
 
     return "\(name)(\(paramString))"

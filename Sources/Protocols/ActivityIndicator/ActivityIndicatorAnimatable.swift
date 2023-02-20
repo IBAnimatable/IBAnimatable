@@ -6,7 +6,7 @@
 import UIKit
 
 /// Protocol for activity indicator view.
-public protocol ActivityIndicatorAnimatable: class {
+public protocol ActivityIndicatorAnimatable: AnyObject {
   /// Animation type
   var animationType: ActivityIndicatorType { get set }
   /// Color of the indicator

@@ -5,7 +5,7 @@
 
 import UIKit
 
-public protocol BarButtonItemDesignable: class {
+public protocol BarButtonItemDesignable: AnyObject {
   var roundedImage: UIImage? { get set }
 }
 

@@ -9,7 +9,7 @@
 import XCTest
 @testable import IBAnimatable
 
-protocol PaddingDesignableTests: class {
+protocol PaddingDesignableTests: AnyObject {
 
   associatedtype Element
 

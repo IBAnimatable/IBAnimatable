@@ -6,7 +6,7 @@
 import UIKit
 
 /// Protocol for transition animations
-public protocol TransitionAnimatable: class {
+public protocol TransitionAnimatable: AnyObject {
   /**
    Transition animation type: used to specify the transition animation
    */

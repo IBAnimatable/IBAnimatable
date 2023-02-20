@@ -288,7 +288,6 @@ extension PresentingViewController {
 
 }
 
-/// Swift < 5.0 support
 #if swift(<5.0)
 extension Array where Element: Equatable {
   public func firstIndex(of element: Element) -> Int? {

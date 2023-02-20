@@ -5,7 +5,7 @@
 
 import UIKit
 
-public protocol RootWindowDesignable: class {
+public protocol RootWindowDesignable: AnyObject {
   /**
    Root window background color
    */

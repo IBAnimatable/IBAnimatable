@@ -11,7 +11,7 @@ import XCTest
 
 // MARK: - CornerDesignableTests Protocol
 
-protocol CornerDesignableTests: class {
+protocol CornerDesignableTests: AnyObject {
 
   associatedtype Element
 

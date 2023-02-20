@@ -5,7 +5,7 @@
 
 import UIKit
 
-public protocol NavigationBarDesignable: class {
+public protocol NavigationBarDesignable: AnyObject {
   /**
    Specify whether is solid color only, if `true` will remove hairline from navigation bar
    */

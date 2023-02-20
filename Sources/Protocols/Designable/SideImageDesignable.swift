@@ -6,7 +6,7 @@
 import UIKit
 
 /// Protocol for designing side image
-public protocol SideImageDesignable: class {
+public protocol SideImageDesignable: AnyObject {
   /**
    * The left image
    */
