@@ -65,7 +65,7 @@ final class AnimationsTimingFunctionViewController: UIViewController {
 
   var isCubic = true
   var entries: [PickerEntry] {
-    return isCubic ? entriesCubic: entriesSpring
+    return isCubic ? entriesCubic : entriesSpring
   }
 
   var selectedEntry: PickerEntry!
@@ -170,7 +170,7 @@ extension AnimationsTimingFunctionViewController: UIPickerViewDelegate, UIPicker
 
   private func starFall(_ view: AnimatableView, completion: (() -> Void)? = nil) {
     let moveY = view.superview?.frame.height ?? 140
-    let animationType: AnimationType = isCubic ? .moveBy(x: 0, y: Double(moveY - 40)): .slide(way: .out, direction: .down)
+    let animationType: AnimationType = isCubic ? .moveBy(x: 0, y: Double(moveY - 40)) : .slide(way: .out, direction: .down)
 
     let animationCompletion: (() -> Void) = {
       view.transform = .identity

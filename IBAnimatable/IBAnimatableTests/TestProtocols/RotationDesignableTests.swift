@@ -9,7 +9,7 @@
 import XCTest
 @testable import IBAnimatable
 
-protocol RotationDesignableTests: class {
+protocol RotationDesignableTests: AnyObject {
 
   associatedtype Element
 

@@ -9,7 +9,7 @@
 import XCTest
 @testable import IBAnimatable
 
-protocol SliderImagesDesignableTests: class {
+protocol SliderImagesDesignableTests: AnyObject {
 
   associatedtype Element
 

@@ -5,7 +5,7 @@
 
 import UIKit
 
-public protocol PlaceholderDesignable: class {
+public protocol PlaceholderDesignable: AnyObject {
   /**
    `color` within `::-webkit-input-placeholder`, `::-moz-placeholder` or `:-ms-input-placeholder`
    */

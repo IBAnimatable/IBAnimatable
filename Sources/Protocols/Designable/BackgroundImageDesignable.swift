@@ -6,7 +6,7 @@
 import UIKit
 
 /// Protocol for designing background
-public protocol BackgroundDesignable: class {
+public protocol BackgroundDesignable: AnyObject {
 
   /**
    * The background view

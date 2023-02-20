@@ -5,7 +5,7 @@
 
 import UIKit
 
-public protocol TintDesignable: class {
+public protocol TintDesignable: AnyObject {
   /**
    Opacity in tint Color (White): from 0 to 1
    */

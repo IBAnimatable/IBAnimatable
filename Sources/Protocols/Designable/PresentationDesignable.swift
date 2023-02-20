@@ -7,7 +7,7 @@ import UIKit
 
 public typealias ModalSize = (width: PresentationModalSize, height: PresentationModalSize)
 /// PresentationDesignable is a protocol to define customised modal view controller which is used as the `presentedViewController` for `UIPresentationController`
-public protocol PresentationDesignable: class {
+public protocol PresentationDesignable: AnyObject {
 
   var presenter: PresentationPresenter? { get set }
 

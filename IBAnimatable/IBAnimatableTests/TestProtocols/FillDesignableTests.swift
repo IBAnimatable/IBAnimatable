@@ -9,7 +9,7 @@
 import XCTest
 @testable import IBAnimatable
 
-protocol FillDesignableTests: class {
+protocol FillDesignableTests: AnyObject {
 
   associatedtype Element
 

@@ -5,7 +5,7 @@
 
 import UIKit
 
-public protocol BorderDesignable: class {
+public protocol BorderDesignable: AnyObject {
   /**
    `bordertype: solid, dash, if not specified, solid will be used
    */

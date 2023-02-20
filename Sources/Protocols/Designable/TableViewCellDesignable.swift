@@ -5,7 +5,7 @@
 
 import UIKit
 
-public protocol TableViewCellDesignable: class {
+public protocol TableViewCellDesignable: AnyObject {
   var removeSeparatorMargins: Bool { get set }
 }
 

@@ -5,6 +5,6 @@
 
 import UIKit
 
-public protocol StatusBarDesignable: class {
+public protocol StatusBarDesignable: AnyObject {
   var lightStatusBar: Bool { get set }
 }

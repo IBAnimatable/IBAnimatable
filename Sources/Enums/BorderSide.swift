@@ -15,7 +15,7 @@ public enum BorderSide: String {
 public struct BorderSides: OptionSet {
   public let rawValue: Int
 
-  public static let unknown = BorderSides(rawValue: 0)
+  public static let unknown = BorderSides([])
 
   public static let top = BorderSides(rawValue: 1)
   public static let right = BorderSides(rawValue: 1 << 1)
